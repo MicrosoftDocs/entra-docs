@@ -61,10 +61,15 @@ To assign an azure RBAC role to a catalog within entitlement management, you'd d
 1. On the Catalogs page, open the catalog you want to add the Azure resource role to and select **Add Resources**.
 
 1. On the add resources page, select **Azure Resources (Preview)**.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-resources-catalog.png" alt-text="Screenshot of Azure resources within the available resources on the catalog add resources page.":::
+1. On the **Select Azure Resources** pane, select either **Subscription** or **Management Group**.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the azure resource type.":::
+1. From the list, select which Azure subscription or management group that you want to add to the catalog.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-subscription-list.png" alt-text="Screenshot of list of available azure subscriptions.":::
+1. With the resource selected, select **Add**.
 
-1. On the Azure resources page, select the Azure RBAC role you want to add to the catalog.
-
-1. After you have chosen all of the Azure RBAC roles you want to add to the catalog, select **Add** to add them to the catalog.
+> [!NOTE]
+> The identity governance administrator adding a subscription to the catalog must be the resource owner for the subscription.
 
 
 ## Add an Azure RBAC role to an access package
