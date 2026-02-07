@@ -46,6 +46,10 @@ By assigning Azure RBAC roles to employees, and guests, using Entitlement Manage
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
+To add Azure resources to a catalog, the administrator must have the following permissions at the same scope, either Management Group or Subscription, they're onboarding:
+- `Microsoft.Authorization/roleassignments/read` 
+- `Microsoft.Authorization/roleassignments/write `
+- `Microsoft.Authorization/roleassignments/delete`
 
 ## Add an Azure RBAC role to a Catalog
 
