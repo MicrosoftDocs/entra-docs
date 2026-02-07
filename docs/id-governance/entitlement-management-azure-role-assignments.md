@@ -63,6 +63,15 @@ To assign an azure RBAC role to a catalog within entitlement management, you'd d
     :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the azure resource type.":::
 1. From the list, select which Azure subscription or management group that you want to add to the catalog.
     :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-subscription-list.png" alt-text="Screenshot of list of available azure subscriptions.":::
+1. If choosing subscription, under Scope, choose where the role assignment applies.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-scope.png" alt-text="Screenshot of azure scope.":::
+1. For role type, you can select the following:
+    **Active**: For roles that should be permanently assigned. <br>
+    **Eligible**: For roles that require elevation via [Privileged Identity Management (PIM)]() when needed. 
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-type.png" alt-text="Screenshot of selecting the role type for the Azure role.":::
+1. Select the Azure RBAC Role to assign. Both built-in roles and Azure Custom roles are available.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-list.png" alt-text="Screenshot of selecting the Azure role.":::
+
 1. With the resource selected, select **Add**.
 
 > [!NOTE]
