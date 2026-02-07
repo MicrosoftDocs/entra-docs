@@ -80,11 +80,17 @@ To assign an azure RBAC role to a catalog within entitlement management, you'd d
 
 ## Add an Azure RBAC role to an access package
 
-Azure RBAC roles can also be assigned to specific access packages directly for more specific assignments. To add an Azure RBAC role to an access package, you'd do the following steps:
+Azure RBAC roles can also be assigned to both new, and existing, access packages directly for more specific assignments. To add an Azure RBAC role to an existing  access package, you'd do the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) with Catalog Owner permissions.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner or Access Package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
-1. 
+1. Select an existing access package you want to add the Azure RBAC roles to.
+
+1. On the access package overview page, select **Resources**.
+     :::image type="content" source="media/entitlement-management-azure-role-assignments/access-package-resource-roles.png" alt-text="Screenshot of resource role option on an existing access package.":::
 
 ## Next step
 
