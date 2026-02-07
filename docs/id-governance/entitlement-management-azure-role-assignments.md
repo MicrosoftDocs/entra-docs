@@ -91,19 +91,11 @@ Azure RBAC roles can also be assigned to both new, and existing, access packages
 
 1. On the access package overview page, select **Resources**.
      :::image type="content" source="media/entitlement-management-azure-role-assignments/access-package-resource-roles.png" alt-text="Screenshot of resource role option on an existing access package.":::
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
+1. On the add resources page, select **Azure Resources (Preview)**.
 
 ## Related content
 
-TODO: Add your next step link(s)
+
 
 - [Write concepts](article-concept.md)
 
