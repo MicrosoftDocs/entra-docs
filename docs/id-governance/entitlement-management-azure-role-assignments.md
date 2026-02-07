@@ -40,10 +40,7 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, Teams, and [Microsoft Entra Roles](entitlement-management-roles.md). To manage access to Azure resources, the ability to assign access to Azure RBAC roles directly to Access packages and Catalogs have been introduced.
 
-By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which azure roles are assigned to that identity. When you include an Azure RBAC role  as a resource in an access package, you can also specify whether that role assignment is “*eligible*” or “*active*”.
-
-
-
+By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which azure roles are assigned to that identity.
 
 ## Prerequisites
 
