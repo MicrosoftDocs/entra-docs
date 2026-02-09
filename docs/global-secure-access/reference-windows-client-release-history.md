@@ -122,7 +122,7 @@ Released for download on November 26, 2024.
 ### Functional changes
 - Adds support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
+> The mTLS connection gradually rolls out to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Adds support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Shows health check tests when loading a log zip file to Advanced diagnostics.
 - Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
