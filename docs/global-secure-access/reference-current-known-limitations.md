@@ -237,9 +237,9 @@ Known limitations for access controls include:
     - If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
     - Ensure that Source IP Restoration supports the traffic. If not, don't send the relevant traffic through Global Secure Access.
 - Currently, connecting through the Global Secure Access client is required to acquire Private Access traffic.
-- If you enable Universal Tenant Restrictions and access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
+- If you enable Universal Tenant Restrictions and access the Microsoft Entra admin center for a tenant on the allow list, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
-    - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
+    - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allow list. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
 - Only the Global Secure Access client for Windows (version 1.8.239.0 or later) supports Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
 - Microsoft Entra ID issues short-lived tokens for Global Secure Access. A Universal CAE access token lasts 60 to 90 minutes and supports near real-time revocation.
@@ -259,7 +259,7 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
-- An admin can create up to up to 256 security profiles per tenant, up to 1,000 policies per tenant, and up to 1,000 rules per tenant.
+- An admin can create up to 256 security profiles per tenant, up to 1,000 policies per tenant, and up to 1,000 rules per tenant.
 - An admin can configure 8,000 total destinations (which can be any combination of IP, FQDN, URL, or web category) in each tenant. For example, within a single tenant can create up to two policies targeting 4,000 domains each *or* up to 1,000 policies with eight domains each.
 - Admins can currently configure rules based on up to 1,000 total URLs.
 - TLS inspection supports up to 100 TLS inspection policies, 1,000 rules, and 8,000 destinations.
@@ -283,6 +283,6 @@ Global Secure Access is not available in the US Government community cloud High 
 
 For usage in US Government community (GCC) cloud, known limitations/disclaimers include:
 
-- Non Federal Information Processing Standard (FIPS) 140-2 certified: Note that while the GSA service is FedRAMP High accredited, it is not yet FIPS 140-2 certified. Microsoft is actively working toward achieving FIPS accreditation/certification, and this process is currently underway. Customers should consider this status when evaluating compliance requirements. FIPS 140-2 is a US government standard that defines FedRAMP minimum security requirements for cryptographic modules in products and systems. For more information, see [Federal Information Processisng Standard (FIPS) 140](/azure/compliance/offerings/offering-fips-140-2).
+- Non Federal Information Processing Standard (FIPS) 140-2 certified: Note that while the GSA service is FedRAMP High accredited, it is not yet FIPS 140-2 certified. Microsoft is actively working toward achieving FIPS accreditation/certification, and this process is currently underway. Customers should consider this status when evaluating compliance requirements. FIPS 140-2 is a US government standard that defines FedRAMP minimum security requirements for cryptographic modules in products and systems. For more information, see [Federal Information Processing Standard (FIPS) 140](/azure/compliance/offerings/offering-fips-140-2).
 - Data Residency Requirements: Customers should carefully consider data residency requirements when evaluating the GSA solution for their needs. When using GSA, there is a possibility that your data (up to and including customer content) may be Transport Layer Security (TLS) terminated and processed outside the United States esp. in cases where the users access GSA while traveling outside of the USA and its territories. Additionally, data may also be TLS terminated and processed outside of the USA when GSA routes traffic through the nearest available edge location, which may be outside USA borders depending on several factors. Factors for TLS termination and processing outside the US may include but not limited to: user’s physical location, proximity to edge locations, network latency, service availability, performance considerations, customer configurations and so on. As an example, a user near a USA border with a non-USA region may connect to a non-USA edge, where data inspection and policy enforcement take place.    
 
