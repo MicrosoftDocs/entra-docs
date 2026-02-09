@@ -1,7 +1,6 @@
 ---
 title: "Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics"
 description: Discover how to use advanced diagnostics to resolve issues with the Global Secure Access mobile client for Android and iOS.
-ms.service: global-secure-access
 ms.topic: troubleshooting
 ms.date: 04/29/2025
 ms.author: jayrusso

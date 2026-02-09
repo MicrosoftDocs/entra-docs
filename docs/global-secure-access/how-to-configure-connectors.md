@@ -1,11 +1,8 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
 description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 02/04/2026
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted

@@ -6,7 +6,6 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 ms.date: 11/07/2025
-ms.service: global-secure-access
 ms.custom: agent-id-ignite
 
 
