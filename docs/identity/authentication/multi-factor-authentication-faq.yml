@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 02/05/2026
+  ms.date: 02/09/2026
   ms.author: justinha
   author: justinha
   manager: dougeby
@@ -20,7 +20,7 @@ sections:
       - question: |
           What short codes are used for sending text messages to my users?
         answer: |
-          In the United States, we use the following short codes:
+          We use the short codes listed in the following table to send text messages to users for multifactor authentication. The short codes used depend on the country or region where the user is located.
           
           Country/Region | Short codes
           --------|------------
