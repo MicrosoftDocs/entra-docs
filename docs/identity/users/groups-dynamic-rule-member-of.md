@@ -57,6 +57,21 @@ This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. B
 1. Select **Add dynamic query**.
 1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
     1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`  
+    
+> [!NOTE]
+> Replace `'groupId'` with the **object ID of the source group** whose members you want to include in the dynamic group.
+>
+> The two examples are alternatives:
+>
+> - Use the **user** rule when creating a **Dynamic user** group.
+> - Use the **device** rule when creating a **Dynamic device** group.
+>
+> To include multiple source groups, specify multiple group object IDs. For example:
+>
+> ```text
+> user.memberof -any (group.objectId -in ['<groupObjectId1>', '<groupObjectId2>'])
+> ```
+
 1. Select **OK**.
 1. Select **Create group**.
