@@ -5,7 +5,7 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 02/09/2026
 
 ms.author: sarahlipsey
 author: shlipsey3
