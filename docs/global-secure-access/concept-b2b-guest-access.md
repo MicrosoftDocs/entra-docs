@@ -5,7 +5,6 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 12/02/2025
-ms.service: global-secure-access
 ms.reviewer: cagautham
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

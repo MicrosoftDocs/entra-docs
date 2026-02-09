@@ -2,11 +2,8 @@
 title: View and Analyze Deployment Logs in Global Secure Access
 description: Monitor and troubleshoot configuration changes in Global Secure Access using deployment logs. Learn how to view logs, configure settings, and analyze fields.
 #customer intent: As a Global Secure Access administrator, I want to monitor deployment logs so that I can track and troubleshoot configuration changes.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 04/30/2025
-ms.service: global-secure-access
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-description

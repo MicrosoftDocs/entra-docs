@@ -5,7 +5,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: reference
 ms.date: 05/20/2025
-ms.service: global-secure-access
 ms.reviewer: sumeetmittal
 
 # Customer intent: As an IT admin, I want to evaluate the regulatory constraints of using Global Secure Access in China so that I can ensure compliance and plan connectivity strategies effectively.   

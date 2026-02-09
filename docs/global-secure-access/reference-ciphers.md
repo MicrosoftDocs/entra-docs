@@ -5,7 +5,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: reference
 ms.date: 02/18/2025
-ms.service: global-secure-access
 ms.reviewer: sumeetmittal
 
 

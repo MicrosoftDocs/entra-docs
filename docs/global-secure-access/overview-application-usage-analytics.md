@@ -3,7 +3,6 @@ title: Application Usage Analytics Overview (Preview)
 description: "Gain visibility into application traffic to gain insights into app categories, risk scores, transactions, and organizational usage patterns."
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: overview
 ms.date: 12/18/2025
 ms.reviewer: kerenSemel

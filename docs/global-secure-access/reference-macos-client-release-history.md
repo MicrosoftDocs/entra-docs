@@ -1,7 +1,6 @@
 ---
 title: Global Secure Access Client for macOS Release Notes
 description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
-ms.service: global-secure-access
 ms.topic: reference
 ms.date: 11/25/2025
 ms.author: jayrusso
