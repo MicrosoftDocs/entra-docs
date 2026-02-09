@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/04/2026
+ms.date: 02/09/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -45,12 +45,12 @@ Use these steps to register your SCIM client app in your Microsoft Entra ID tena
 2)  Under **API permissions** -\> select Microsoft Graph “Application permissions” and grant one or more of the following permissions:
 
     1.  ```User.Read.All``` -\> To only provide “user” read access to your SCIM client.
-
     2.  ```User.ReadWrite.All``` -\> To provide both “user” read and write access to your SCIM client.
-
     3.  ```Group.Read.All``` -\> To only provide “group” read access to your SCIM client.
-
     4.  ```Group.ReadWrite.All``` -\> To provide both “group” read and write access to your SCIM client.
+    5.  ```CustomSecAttributeAssignment.Read.All``` -\> To only provide “user” read access to Custom Security Attributes
+    6.  ```CustomSecAttributeAssignment.ReadWrite.All``` -\> To provide “user” read and write access to Custom Security Attributes
+    7.  ```CustomSecAttributeDefinition.Read.All``` -> To provide read access to Custom Security Attributes Schema 
 
 3)  Grant **Admin consent** to the permissions.
 
@@ -254,6 +254,8 @@ Response is truncated for readability.
 
 Information about supported SCIM schemas can be retrieved by making a request to the /schemas endpoint. 
 
+Custom Security Attributes Schema Identifier: ```"urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes"```
+
 **API endpoints:**
 
 [https://graph.microsoft.com/rp/scim/schemas](https://graph.microsoft.com/rp/scim/schemas)
@@ -367,7 +369,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
   - The max page size is 100 entries per page.
 
-- In the “filter” query parameter, only the “eq” operator is supported for the following user attributes
+- In the “filter” query parameter, only the “and” logic operator is supported. The following user attributes are allowed for “eq” compare operator:
 
   - ```displayName```
 
@@ -379,8 +381,11 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
   - ```groups.value```
 
-  - urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:**mailNickname**
+  - ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:```**mailNickname**
+- The following user attributes are allowed for “ew” compare operator. 
 
+  - username  
+  - ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:```**mailNickname**
 - In the ```filter``` query parameter, only the *and* logical operator is supported for combining filters.
 
 - Any whitespaces encoded or unencoded in the query string around the "=" leads to rejecting the request with a “BadRequest” error. This applies to all query params - filter, attributes, excludedAttributes, count and cursor.
@@ -419,7 +424,15 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=id eq "1234"&attributes=na
 
 Authorization: Bearer \<bearer_token\>
 
-#### Example 3 – Get user by id with excluded attributes
+#### Example 3 – Get users with custom security attribute set
+
+**Request:**
+
+GET [https://graph.microsoft.com/rp/scim/users?attributes=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes:attributeSetName](https://graph.microsoft.com/rp/scim/users?attributes=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes:attributeSetName)
+
+Authorization: Bearer \<bearer_token\>
+
+#### Example 4 - Get user by id with excluded attributes
 
 **Request:**
 
@@ -427,7 +440,7 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=id eq "1234"& excludedAttr
 
 Authorization: Bearer \<bearer_token\>
 
-#### Example 4 – Get user by displayName
+#### Example 5 – Get user by displayName
 
 **Request:**
 
@@ -886,15 +899,16 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
   - The max page size is 100 entries per page.
 
-- In the ```filter``` query parameter, only the eq operator is supported for the following group attributes
+- In the ```filter``` query parameter, only the “and” logic operator is supported. The following group attributes are allowed for “eq” compare operator.  
 
   - ```displayName```
 
   - ```id```
 
   - ```members.value```
-
-- Nested group membership is not evaluated when using the member.value filter. Only direct memberships are evaluated.
+- The following group attributes are allowed for "ew" compare operator
+  - displayName
+- Nested group membership is not evaluated when using the ```member.value``` filter. Only direct memberships are evaluated.
 
 ### Errors for List groups
 
