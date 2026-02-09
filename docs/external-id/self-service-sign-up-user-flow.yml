@@ -3,10 +3,7 @@
 metadata:
   title: Add B2B Guest Sign-in
   description: Create sign-up and sign-in user flows for apps you build. Users with external identities can sign up, submit user attributes, and create a B2B collaboration guest account.
-  ms.author: cmulligan
-  author: csmulligan
   ms.date: 07/07/2025
-  ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
   ms.custom:

@@ -4,7 +4,6 @@ description: Learn about the administrative model for agents in Microsoft Entra,
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025

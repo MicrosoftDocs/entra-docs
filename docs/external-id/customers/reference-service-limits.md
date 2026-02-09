@@ -1,15 +1,8 @@
 ---
 title: Service limits and restrictions
 description: Learn about the service limits and restrictions in an external tenant.
- 
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: reference
 ms.date: 07/07/2025
-ms.author: cmulligan
 ms.custom: it-pro
 
 #Customer intent: As an IT admin, I want to know about the service limits and restrictions in my external tenant.

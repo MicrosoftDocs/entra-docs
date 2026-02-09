@@ -6,7 +6,6 @@ ms.topic: concept-article
 ms.date: 11/04/2025
 author: omondiatieno
 ms.author: jomondi
-manager: pmwongera
 ms.reviewer: dastrock
 
 #customer intent: As an IAM or security administrator, I want to understand how agent identities are created so that I can monitor and control their introduction into my tenant.

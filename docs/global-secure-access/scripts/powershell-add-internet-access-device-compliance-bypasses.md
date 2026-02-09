@@ -2,8 +2,6 @@
 title: PowerShell sample - Add Intune device compliance bypasses to Global Secure Access Internet Access
 description: PowerShell example that adds Intune-related endpoints to the Global Secure Access Internet Access custom bypass policy to mitigate device compliance issues.
 author: fgomulka
-manager: ashishj
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 06/06/2025
 ms.author: frankgomulka

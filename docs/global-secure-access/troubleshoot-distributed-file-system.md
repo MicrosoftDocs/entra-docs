@@ -1,12 +1,8 @@
 ---
 title: Learn how to solve an issue where Global Secure Access fails with a Distributed File System
 description: A troubleshooting article that includes a workaround for a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: troubleshooting
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: nbeesetti
 ai-usage: ai-assisted

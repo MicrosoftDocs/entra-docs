@@ -1,11 +1,8 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 Follow these steps to create a user flow a customer can use to sign in or sign up for an application.
 

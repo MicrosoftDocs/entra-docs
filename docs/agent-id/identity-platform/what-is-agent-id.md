@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn about agent identities, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/06/2025

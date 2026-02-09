@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: This article explains how access packages provide governance for agent identity access to resources.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.service: entra-id

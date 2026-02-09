@@ -3,7 +3,6 @@ title: Security for AI agents with Microsoft Entra Agent ID
 description: Understand why security is critical for AI agents. Learn about the challenges they introduce, the concept of agent sprawl, and how Microsoft is addressing AI security across the enterprise.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/10/2025
 ms.service: entra-id
 ms.topic: concept-article

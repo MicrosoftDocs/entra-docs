@@ -2,11 +2,10 @@
 title: Microsoft Entra ID Governance licensing for guest users 
 description: Learn how Microsoft Entra ID is licensed for guest users.
 author: owinfreyatl
-manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 11/03/2025
+ms.date: 02/03/2026
 ms.author: owinfrey
 ms.reviewer: jercon
 ---
@@ -49,7 +48,7 @@ The following table contains a list of currently billable actions for **guest us
 | Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br><br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where *"subjectLifecycle"* is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings are enabled in a group review. | Decision item summary.  |
-| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
+| Access Reviews    | [Access Review – inactive users](../identity/users/clean-up-stale-guest-accounts.md#monitor-guest-accounts-at-scale-with-inactive-guest-insights) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
 
 
 ## Guest billing in multitenant organizations
@@ -109,7 +108,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
  
 Your tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
  
-1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
+1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Owner role within the subscription or a resource group within the subscription.
  
 2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
  
@@ -125,7 +124,7 @@ After you complete these steps, your Azure subscription is billed based on your 
  
 If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
  
-- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
+- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Owner role within the subscription or a resource group within the subscription.
  
 - A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
  

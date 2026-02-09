@@ -112,6 +112,7 @@ Protect your network perimeter.
 | [Tenant restrictions v2 policy is configured](zero-trust-protect-networks.md#tenant-restrictions-v2-policy-is-configured) | Microsoft Entra ID P1 |
 | [Internet Access forwarding profile is enabled](zero-trust-protect-networks.md#internet-access-forwarding-profile-is-enabled) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
 | [Global Secure Access web content filtering is enabled and configured](zero-trust-protect-networks.md#global-secure-access-web-content-filtering-is-enabled-and-configured) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
+| [Network validation is configured through Universal Continuous Access Evaluation](zero-trust-protect-networks.md#network-validation-is-configured-through-universal-continuous-access-evaluation) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Protect engineering systems
 

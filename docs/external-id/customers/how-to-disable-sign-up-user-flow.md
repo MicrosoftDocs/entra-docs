@@ -3,9 +3,6 @@ title: Disable sign-up in a sign-up and sign-in user flow
 description: Disable sign-up in your user flow with Microsoft Graph API. Prevent new registrations and allow only sign-in for your external users. 
 ms.author: kengaderdus
 author: kengaderdus
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 06/30/2025
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange

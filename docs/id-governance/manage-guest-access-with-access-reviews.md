@@ -2,7 +2,6 @@
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
 author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
@@ -107,6 +106,10 @@ In some organizations, guests might not be aware of their group memberships.
 > Earlier versions of the portal didn't permit administrative access by users with the UserType of Guest. In some cases, an administrator in your directory might have changed a guest's UserType value to Member by using PowerShell. If this change previously occurred in your directory, the previous query might not include all guest users who historically had administrative access rights. In this case, you need to either change the guest's UserType or manually include the guest in the group membership.
 
 1. Create a security group in Microsoft Entra ID with the guests as members, if a suitable group doesn't already exist. For example, you can create a group with a manually maintained membership of guests. Or, you can create a dynamic group with a name such as "Guests of Contoso" for users in the Contoso tenant who have the UserType attribute value of Guest. For efficiency, ensure the group is predominately guests - don't select a group that has member users, as member users don't need to be reviewed. Also, keep in mind that a guest user who is a member of the group can see the other members of the group.
+
+> [!NOTE]
+> Guest users who are members of Microsoft Entra groups can see other members of the same group when viewing **My profile > Groups I’m in**. This behavior is independent of access reviews.If your organization wants to prevent guest users from seeing other guest accounts, you can update **Guest user access restrictions** in Microsoft Entra ID. For example, you can restrict guests to view only their own profile information.
+> To configure this setting, go to **Entra ID > External Identities > External collaboration settings**, and adjust the **Guest user access restrictions** accordingly.
 
 2. To create an access review for that group, select the reviewers to be the members themselves. For more information, see [Create an access review of groups or applications](create-access-review.md).
 

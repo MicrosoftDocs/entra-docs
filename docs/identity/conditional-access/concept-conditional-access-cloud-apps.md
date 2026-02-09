@@ -7,8 +7,8 @@ ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 01/26/2026
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom:
@@ -221,10 +221,10 @@ Use the following PowerShell script to list all applications in your tenant that
 $TenantId = Read-Host "Enter your Microsoft Entra tenant ID (GUID)"
 
 $BaselineScopes = @(
-  "openid","profile","email","offline_access",
-  "User.Read","User.Read.All","User.ReadBasic.All",
-  "People.Read","People.Read.All",
-  "GroupMember.Read.All","Member.Read.Hidden"
+  "openid", "profile", "email", "offline_access",
+  "User.Read", "User.Read.All", "User.ReadBasic.All",
+  "People.Read", "People.Read.All",
+  "GroupMember.Read.All", "Member.Read.Hidden"
 )
 
 Disconnect-MgGraph -ErrorAction SilentlyContinue
@@ -248,9 +248,9 @@ foreach ($g in ($grants | Group-Object clientId)) {
   $spObjectId = $g.Name
 
   $scopes = $g.Group |
-    ForEach-Object { ($_.scope -split '\s+') } |
-    Where-Object { $_ -and $_.Trim() -ne "" } |
-    Sort-Object -Unique
+  ForEach-Object { ($_.scope -split '\s+') } |
+  Where-Object { $_ -and $_.Trim() -ne "" } |
+  Sort-Object -Unique
 
   if ($scopes.Count -gt 0) {
     $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
@@ -263,27 +263,39 @@ foreach ($g in ($grants | Group-Object clientId)) {
   }
 }
 
-# Filter to tenant-owned apps
-$results = @()
+$resultsTenantOwned = @()
+$resultsNotTenantOwned = @()
+
+# Filter to tenant-owned or external apps
 foreach ($c in $candidates) {
   try {
     $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appOwnerOrganizationId"
     $sp = Invoke-MgGraphRequest -Method GET -Uri $spUri
 
     if ($sp.appOwnerOrganizationId -eq $TenantId) {
-      $results += [PSCustomObject]@{
+      $resultsTenantOwned += [PSCustomObject]@{
         ServicePrincipalObjectId = $c.ServicePrincipalObjectId
         Scopes = $c.Scopes
       }
     }
-  } catch {
+    else {
+      $resultsNotTenantOwned += [PSCustomObject]@{
+        ServicePrincipalObjectId = $c.ServicePrincipalObjectId
+        Scopes = $c.Scopes
+      }
+    }
+  }
+  catch {
     # Ignore non-enumerable / non-tenant-owned service principals
   }
 }
 
 # Output
-$results | Sort-Object ServicePrincipalObjectId 
+'=== All tenant-owned apps whose delegated consent grants include ONLY the OIDC scopes + specific directory scopes ==='
+$resultsTenantOwned | Sort-Object ServicePrincipalObjectId
 
+'=== All external apps whose delegated consent grants include ONLY the OIDC scopes + specific directory scopes ==='
+$resultsNotTenantOwned | Sort-Object ServicePrincipalObjectId
 ```
 
 #### [Usage and Insights report](#tab/usage-and-insights-report)

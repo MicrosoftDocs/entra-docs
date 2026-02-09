@@ -3,7 +3,6 @@ title: Govern provisioning to on-premises LDAP based apps
 description: This document describes how to configure Microsoft Entra ID to provision users into an on-premises LDAP directory.
 
 author: owinfreyATL
-manager: femila
 ms.service: entra-id-governance
 ms.subservice:
 ms.topic: how-to

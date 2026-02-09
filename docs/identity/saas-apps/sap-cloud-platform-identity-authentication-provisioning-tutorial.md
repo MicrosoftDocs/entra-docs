@@ -75,9 +75,14 @@ This is done in the Provisioning tab of your SAP Cloud Identity Services applica
 
 ## Add SAP Cloud Identity Services from the gallery
 
-Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
+Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or via the Graph API.
 
-If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at the next section.
+If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra using SAML, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services).
+
+> [!NOTE]
+> If you have previously configured an application registration for OpenID Connect integration, then you will not be able to configure provisioning for that application registration. Instead, create a separate enterprise application for provisioning.
+
+### Adding SAP Cloud Identity Services using the Microsoft Entra admin center
 
 **To add SAP Cloud Identity Services from the Microsoft Entra application gallery using the Microsoft Entra admin center, perform the following steps:**
 
@@ -85,6 +90,48 @@ If SAP Cloud Identity Services is already configured for single-sign on from Mic
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. To add the app from the gallery, type **SAP Cloud Identity Services** in the search box.
 1. Select **SAP Cloud Identity Services** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. Continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services) to configure provisioning.
+
+### Adding SAP Cloud Identity Services using Microsoft Graph
+
+You can create an application and service principal [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
+
+First, retrieve the gallery application template identifier for `SAP Cloud Identity Services`.
+
+```msgraph-interactive
+GET https://graph.microsoft.com/v1.0/applicationTemplates?$filter=displayName eq 'SAP Cloud Identity Services'
+```
+
+Extract the `id` of the application template from the response. Then, create the gallery application and service principal.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/v1.0/applicationTemplates/{applicationTemplateId}/instantiate
+Content-type: application/json
+
+{
+  "displayName": "SAP Cloud Identity Services"
+}
+```
+The response will contain the new application and service principal objects.
+
+Next, retrieve the template for provisioning configuration, using the `id` of the service principal just created.
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/templates
+```
+
+To enable provisioning, you'll need to create a job. Use the following request to create a provisioning job. Use the `id` from the previous step as the `templateId` when specifying the template to be used for the job.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
+Content-type: application/json
+
+{
+    "templateId": "sapcloudidentityservices"
+}
+```
+
+As described in the next section, you can then further configure the [provisioning job and template schema](/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&preserve-view=true) associated with the service principal. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisioning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 
 ## Configure automatic user provisioning to SAP Cloud Identity Services
 

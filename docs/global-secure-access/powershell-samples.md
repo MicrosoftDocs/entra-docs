@@ -1,12 +1,8 @@
 ---
 title: PowerShell samples for Global Secure Access
 description: Use these PowerShell samples for Global Secure Access.
-author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 02/21/2025
-ms.author: kenwith
 ms.reviewer: sumi
 ai-usage: ai-assisted
 ---

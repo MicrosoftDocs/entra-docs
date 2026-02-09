@@ -4,7 +4,6 @@ description: Describes how to use Entitlement Management with Private Access
 ms.service: entra-id-governance
 ms.subservice:
 author: owinfreyATL
-manager: dougeby
 
 ms.workload: identity
 ms.topic: overview
