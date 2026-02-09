@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 01/30/2026
+ms.date: 02/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -23,7 +23,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
 ## Version 2.26.108
-Released for download on February __, 2026.
+Released for download on February 9, 2026.
 ### Functional changes
 - Support for Private Access for Microsoft Entra-registered devices (preview). For more information, see [Bring Your Own Device](concept-bring-your-own-device.md).
 - Removes **Device is Microsoft Entra Joined** and **Entra user signed in to Windows** from health check tests since these checks are no longer prerequisites. The client supports Microsoft Entra-registered devices.
