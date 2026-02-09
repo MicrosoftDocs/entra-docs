@@ -3,7 +3,7 @@ title: Global Secure Access Client for macOS Release Notes
 description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 01/30/2026
+ms.date: 02/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -24,7 +24,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.25111702
-Released for download on February __, 2026.
+Released for download on February 5, 2026.
 ### Functional changes
 - Supports Intelligent Local Access (preview).
 - Supports contacting Private DNS only when the Private Access channel is active.
