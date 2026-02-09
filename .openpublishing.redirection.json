@@ -2986,6 +2986,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/verified-id/using-wallet-library.md",
+      "redirect_url": "/entra/verified-id/decentralized-identifier-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
       "redirect_url": "/entra/verified-id/whats-new",
       "redirect_document_id": false
