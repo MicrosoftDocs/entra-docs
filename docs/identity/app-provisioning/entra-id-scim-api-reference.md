@@ -533,9 +533,7 @@ If there is an error, then one of the following error codes are returned.
 
 **Request:**
 
-GET
-
-[https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName](https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName)
+GET [https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName](https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -861,7 +859,7 @@ The response conforms to SCIM specification.
 
 ## List groups
 
-Use the ```/groups``` endpoint to perform the following operations:
+Use the /groups endpoint to perform the following operations:
 
 - Get all groups in the tenant (with pagination).
 
