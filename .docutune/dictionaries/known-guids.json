@@ -4090,5 +4090,8 @@
   "Purview/sit-defn-us-social-security-number": "a44669fe-0d48-453d-a9b1-2cc83f2cba77",
   "Purview/sit-defn-us-uk-passport-number": "178ec42a-18b4-47cc-85c7-d62c92fd67f8",
   "Purview/sit-defn-ireland-drivers-license-number - IP address": "1daa4ad5-e2dd-4ca4-a788-54722c09efb2",
-  "Block Win32 API calls from Office macros": "92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b"
+  "Block Win32 API calls from Office macros": "92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b",
+  "Microsoft Information Protection Sync Service"	: "870c4f2e-85b6-4d43-bdda-6ed9a579b725",
+  "Customer Key app ID" :	"19f7f505-34aa-44a4-9dcc-6a768854d2ea",
+  "M365DataAtRestEncryption appId":	"c066d759-24ae-40e7-a56f-027002b5d3e4"
 }
