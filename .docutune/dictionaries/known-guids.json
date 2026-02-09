@@ -4089,5 +4089,6 @@
   "Purview/sit-defn-us-individual-taxpayer-identification-number": "e55e2a32-f92d-4985-a35d-a0b269eb687b",
   "Purview/sit-defn-us-social-security-number": "a44669fe-0d48-453d-a9b1-2cc83f2cba77",
   "Purview/sit-defn-us-uk-passport-number": "178ec42a-18b4-47cc-85c7-d62c92fd67f8",
-  "Purview/sit-defn-ireland-drivers-license-number - IP address": "1daa4ad5-e2dd-4ca4-a788-54722c09efb2"
+  "Purview/sit-defn-ireland-drivers-license-number - IP address": "1daa4ad5-e2dd-4ca4-a788-54722c09efb2",
+  "Block Win32 API calls from Office macros": "92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b"
 }
