@@ -4,7 +4,6 @@ description: "Learn about the features and benefits of our Secure Web and AI Gat
 author: garrodonnell
 ms.author: godonnell
 ms.reviwer: fgomulka
-ms.service: global-secure-access
 ms.topic: concept-article   
 ms.date: 11/03/2025
 ai-usage: ai-assisted

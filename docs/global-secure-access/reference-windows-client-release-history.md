@@ -1,7 +1,6 @@
 ---
 title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
-ms.service: global-secure-access
 ms.topic: reference
 ms.date: 12/03/2025
 ms.author: jayrusso

@@ -5,7 +5,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
 ms.date: 02/25/2025
-ms.service: global-secure-access
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.

@@ -3,7 +3,6 @@ title: "Configure Secure Web and AI Gateway for Microsoft Copilot Studio agents"
 description: "Learn how to configure Secure Web and AI Gateway for Microsoft Copilot Studio agents using Global Secure Access."
 author: garrodonnell
 ms.author: godonnell
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/03/2025
 ai-usage: ai-assisted

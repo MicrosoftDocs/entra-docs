@@ -1,11 +1,8 @@
 ---
 title: Global Secure Access Threat intelligence threat types
 description: Global Secure Access Threat intelligence threat types
-author: kenwith
-ms.author: kenwith
 ms.topic: reference
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---

@@ -5,7 +5,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
 ms.date: 02/25/2025
-ms.service: global-secure-access
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a custom Internet Key Exchange (IKE) policy to set up the communication tunnel with Global Secure Access.

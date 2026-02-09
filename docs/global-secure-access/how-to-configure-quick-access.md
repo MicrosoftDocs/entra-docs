@@ -1,11 +1,8 @@
 ---
 title: How to Configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted

@@ -4,7 +4,6 @@ description: Use the web category checker to find which web content category a U
 author: fgomulka
 ms.author: frankgomulka
 ms.topic: how-to
-ms.service: global-secure-access
 ms.date: 08/28/2025
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
