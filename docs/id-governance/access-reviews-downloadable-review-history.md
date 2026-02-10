@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ---
 
 # Create and manage downloadable access review history report in Microsoft Entra access reviews

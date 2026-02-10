@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: 
 ms.topic: install-set-up-deploy
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 

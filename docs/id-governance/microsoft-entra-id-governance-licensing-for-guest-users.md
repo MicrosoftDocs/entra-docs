@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 02/03/2026
-ms.author: owinfrey
 ms.reviewer: jercon
 ---
 

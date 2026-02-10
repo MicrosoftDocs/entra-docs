@@ -1,7 +1,6 @@
 ---
 title: Use custom attribute triggers in lifecycle workflows (Preview)
 description: This article discusses how to use Custom Attribute Triggers as an attribute change trigger within a workflow in Lifecycle Workflows.
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is

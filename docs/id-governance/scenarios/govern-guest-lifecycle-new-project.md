@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 04/09/2025
 zone_pivot_groups: identity-governance-guest-new-project
-ms.author: owinfrey
 ---
 
 

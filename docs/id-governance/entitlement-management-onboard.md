@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: article
 ms.date: 10/07/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to simplify onboarding external users to resources using access governance features.
 ---

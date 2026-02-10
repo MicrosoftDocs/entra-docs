@@ -6,7 +6,6 @@ documentationcenter: ''
 ms.service: entra-id-governance
 ms.topic: best-practice
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.custom: sfi-ga-nochange
 ---
 

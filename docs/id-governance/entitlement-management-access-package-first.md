@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 06/26/2025
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.

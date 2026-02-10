@@ -4,7 +4,6 @@ description: This article shows how to create custom alerts with Microsoft Entra
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/03/2025
-ms.author: owinfrey
 ms.custom:
 ---
 

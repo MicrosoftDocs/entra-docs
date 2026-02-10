@@ -5,7 +5,6 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
 

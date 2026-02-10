@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.topic: article
 ms.date: 04/09/2025
 ms.subservice:
-ms.author: owinfrey
 ---
 
 # Govern cloud users that are provisioned from and managed in Workday

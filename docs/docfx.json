@@ -84,6 +84,8 @@
       "ms.author": {
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
+        "id-governance/**/*.md": "owinfrey",
+        "id-governance/**/*.yml": "owinfrey",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jfields",

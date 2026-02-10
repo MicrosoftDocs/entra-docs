@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 10/17/2024
-ms.author: owinfrey
 ms.reviewer: hanki
 ms.custom: sfi-ga-nochange
 ---

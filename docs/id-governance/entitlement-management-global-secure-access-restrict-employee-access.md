@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 05/13/2025
-ms.author: owinfrey
 ms.reviewer: jercon
 ---
 

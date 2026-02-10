@@ -7,7 +7,6 @@ ms.subservice:
 ms.workload: identity
 ms.topic: overview
 ms.date: 04/09/2025
-ms.author: owinfrey
 ---
 
 # Automate identity lifecycle management with Microsoft Entra ID Governance

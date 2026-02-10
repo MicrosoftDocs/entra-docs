@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 09/05/2025
-ms.author: owinfrey
 ms.reviewer: jgangadhar
 ---
  

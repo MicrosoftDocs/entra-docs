@@ -7,7 +7,6 @@ documentationcenter: ''
 editor: ''
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.custom: sfi-image-nochange
 ---
 

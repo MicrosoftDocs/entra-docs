@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---

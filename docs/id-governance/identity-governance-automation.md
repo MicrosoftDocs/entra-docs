@@ -4,7 +4,6 @@ description: Learn how to write PowerShell scripts in Azure Automation to intera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 11/25/2024
-ms.author: owinfrey
 ms.custom:
 ---
 # Automate Microsoft Entra ID Governance tasks via Azure Automation and Microsoft Graph

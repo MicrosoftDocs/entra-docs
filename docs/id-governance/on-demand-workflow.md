@@ -1,7 +1,6 @@
 ---
 title: Run a workflow on-demand
 description: This article guides a user to running a workflow on demand using Lifecycle Workflows.
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to

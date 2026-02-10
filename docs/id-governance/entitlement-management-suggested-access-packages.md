@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 1/09/2025
-ms.author: owinfrey
 ms.reviewer: myra-ramdenbourg
 #Customer intent: As an administrator, I want to allow my users to see the access packages that are most relevant to them.
 ---

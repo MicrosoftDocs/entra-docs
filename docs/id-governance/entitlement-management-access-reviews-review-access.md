@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 09/06/2025
-ms.author: owinfrey
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Review access of an access package in entitlement management

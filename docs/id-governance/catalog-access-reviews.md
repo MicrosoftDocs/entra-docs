@@ -1,7 +1,6 @@
 ---
 title: Catalog Access Reviews (Preview)
 description: This article describes what Catalog Access Reviews are, how to create one, and how to complete a review for one.
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is

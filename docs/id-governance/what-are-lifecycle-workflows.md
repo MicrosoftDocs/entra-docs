@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/25/2024
-ms.author: owinfrey
 ---
 
 # What are lifecycle workflows?

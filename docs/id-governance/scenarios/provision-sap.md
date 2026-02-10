@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice:
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.reviewer: arvinh
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Configure a Logic App for Lifecycle Workflow use
 description: Configure an Azure Logic App for use with Lifecycle Workflows
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to

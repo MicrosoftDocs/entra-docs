@@ -4,7 +4,6 @@ description: Learn how to configure whether requestors can see approver details 
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/20/2025
-ms.author: owinfrey
 ms.reviewer: owinfrey
 ---
 

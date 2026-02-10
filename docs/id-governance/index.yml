@@ -5,7 +5,6 @@ summary: Microsoft Entra ID Governance helps you to protect, monitor, and audit 
 
 metadata: 
   description: "Learn how to protect, monitor, and audit access to critical assets while ensuring employee productivity."
-  ms.author: owinfrey
   ms.date: 11/25/2024
   ms.service: entra-id-governance
   ms.subservice: entitlement-management

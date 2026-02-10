@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024
-ms.author: owinfrey
 ms.custom: sfi-image-nochange
 ---
 

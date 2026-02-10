@@ -4,7 +4,6 @@ description: This page provides an overview of the Microsoft Entra ID Governance
 ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/03/2025
-ms.author: owinfrey
 ms.reviewer: amycolannino
 ---
 

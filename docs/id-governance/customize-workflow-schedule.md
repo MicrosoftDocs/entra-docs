@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/25/2025
-ms.author: owinfrey
 ms.reviewer: krbain
 ---
 

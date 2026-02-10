@@ -7,7 +7,6 @@ ms.subservice:
 
 ms.topic: concept-article
 ms.date: 04/09/2025
-ms.author: owinfrey
 ---
 
 # The principle of least privilege with Microsoft Entra ID Governance

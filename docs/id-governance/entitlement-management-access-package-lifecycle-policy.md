@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
-ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include requestor information to screen requestors and get requestors the resources they need to perform their job.
 ---
 # Change lifecycle settings for an access package in entitlement management

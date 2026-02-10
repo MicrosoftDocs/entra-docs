@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want the high-level steps that I should follow so that I can quickly start using entitlement management.
 ---

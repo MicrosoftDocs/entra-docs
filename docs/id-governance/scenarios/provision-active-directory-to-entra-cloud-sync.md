@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.topic: article
 ms.date: 04/09/2025
 ms.subservice:
-ms.author: owinfrey
 ---
 
 # Govern cloud users and groups that are provisioned from Active Directory using Microsoft Entra ID Governance

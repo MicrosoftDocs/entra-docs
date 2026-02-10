@@ -6,7 +6,6 @@ ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: article
 ms.date: 07/15/2024
-ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a < type of user >, I want < what? > so that < why? >.
 ---

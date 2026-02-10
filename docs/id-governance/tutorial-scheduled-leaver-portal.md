@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 11/25/2024
-ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
 ---
