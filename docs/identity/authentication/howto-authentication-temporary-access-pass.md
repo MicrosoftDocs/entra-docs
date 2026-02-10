@@ -24,11 +24,11 @@ This article shows you how to enable and use a TAP using the [Microsoft Entra ad
 
 ## Enable the Temporary Access Pass policy
 
-A TAP policy defines settings, such as the lifetime of passes created in the tenant, or the users and groups who can use a TAP to sign-in. 
+A TAP policy defines settings, such as the lifetime of passes created in the tenant, or the users and groups who can use a TAP to sign in. 
 
-Before users can sign-in with a TAP, you need to enable this method in the Authentication methods policy and choose which users and groups can sign in by using a TAP.
+Before users can sign in with a TAP, you need to enable this method in the Authentication methods policy and choose which users and groups can sign in by using a TAP.
 
-Although you can create a TAP for any user, only users included in the policy can sign-in with it. You need the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role to update the TAP Authentication methods policy.
+Although you can create a TAP for any user, only users included in the policy can sign in with it. You need the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role to update the TAP Authentication methods policy.
 
 To configure TAP in the Authentication methods policy:
 
@@ -130,13 +130,13 @@ The most common use for a TAP is for a user to register authentication details d
 
 The user is now signed in and can update or register a method such as FIDO2 security key. 
 Users who update their authentication methods due to losing their credentials or device should make sure they remove the old authentication methods. 
-Users can also continue to sign-in by using their password; a TAP doesn’t replace a user’s password.
+Users can also continue to sign in by using their password; a TAP doesn't replace a user's password.
 
 ### User management of Temporary Access Pass
 
 Users managing their [Security info](https://mysignins.microsoft.com/security-info) see an entry for the Temporary Access Pass. If a user doesn't have any other registered methods, they get a banner at the top of the screen that says to add a new sign-in method. Users can also see the TAP expiration time, and delete the TAP if it's no longer needed. 
 
-:::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/tap-my-security-info.png" alt-text="Screenshot of how users can manage a Temporary Access Pass in My Security Info..":::
+:::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/tap-my-security-info.png" alt-text="Screenshot of how users can manage a Temporary Access Pass in My Security Info.":::
 
 ### Device enrollment and passwordless registration
 
@@ -149,7 +149,7 @@ When using a Temporary Access Pass (TAP) to support device enrollment and passwo
 - If the device enrollment process reaches the Windows Hello for Business registration step after more than 10 minutes, a second single-use TAP must be provided to complete the credential enrollment. |
 |One multiuse TAP | If your organization enables multiuse TAPs, a user can sign in with a single TAP multiple times during its validity period. For example, a user can sign in with a single TAP multiple times for one hour.| In this case:<br>
 - A user can enter the same TAP once to enroll their device, and again to register Windows Hello for Business.
-- The 10-minute MFA requirement effectively restarts when the user begins to register the new authentication method. The timer restart protects the device enrollemnt and authentication registration process from interruption.<br>A multiuse TAP can simplify the end-user experience by reducing the need to distribute multiple passcodes. If you choose to enable multiuse TAPs, consider monitoring TAP usage to ensure it is not used more times than expected during its validity period. |
+- The 10-minute MFA requirement effectively restarts when the user begins to register the new authentication method. The timer restart protects the device enrollment and authentication registration process from interruption.<br>A multiuse TAP can simplify the end-user experience by reducing the need to distribute multiple passcodes. If you choose to enable multiuse TAPs, consider monitoring TAP usage to ensure it is not used more times than expected during its validity period. |
 
 ### Windows device setup
 
@@ -184,7 +184,7 @@ You can add a TAP as a sign-in method to an internal guest, but not other types 
 
 If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you'll receive an error stating **Temporary Access Pass cannot be added to an external guest user.**
 
-External guest users can sign-in to a resource tenant with a TAP issued by their home tenant if the TAP meets the home tenant authentication requirements and Cross Tenant Access policies have been configured to trust MFA from the users home tenant, see [Manage cross-tenant access settings for B2B collaboration](/entra/external-id/cross-tenant-access-settings-b2b-collaboration). 
+External guest users can sign in to a resource tenant with a TAP issued by their home tenant if the TAP meets the home tenant authentication requirements and Cross Tenant Access policies have been configured to trust MFA from the users home tenant, see [Manage cross-tenant access settings for B2B collaboration](/entra/external-id/cross-tenant-access-settings-b2b-collaboration). 
 
 ### Expiration
 
