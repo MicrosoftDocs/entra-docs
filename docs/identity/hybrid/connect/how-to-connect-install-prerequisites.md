@@ -63,10 +63,10 @@ To read more about securing your Active Directory environment, see [Best practic
 
 #### Installation prerequisites
 
-Microsoft Entra Connect must be installed on a domain-joined server that runs Windows Server 2025 or Windows Server 2022. You can deploy Microsoft Entra Connect on older Windows Server versions in extended support; however, support for this configuration may require [a paid support program](/lifecycle/policies/fixed#extended-support). Installing unsupported versions of Windows Server may cause service failures or unexpected behavior.
+Microsoft Entra Connect must be installed on a domain-joined server that runs Windows Server 2025 or Windows Server 2022. You can deploy Microsoft Entra Connect on older Windows Server versions in extended support; however, support for this configuration may require [a paid support program](/lifecycle/policies/fixed#extended-support).
 
 > [!IMPORTANT]
-> There is a known issue on Windows Server 2025 that can cause Microsoft Entra Connect Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
+> There is a [known issue](/windows/release-health/resolved-issues-windows-server-2025#directory-synchronization-fails-for-ad-groups-exceeding-10-000-members) on Windows Server 2025 that can cause Microsoft Entra Connect Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
   
   
   
