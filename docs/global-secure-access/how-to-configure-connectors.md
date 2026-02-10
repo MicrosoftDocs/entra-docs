@@ -2,7 +2,7 @@
 title: How to configure connectors for Microsoft Entra Private Access
 description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 02/04/2026
+ms.date: 02/09/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -230,6 +230,29 @@ To create as many connector groups as you want:
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
+## Minimizing impact during connector server maintenance
+When performing maintenance (such as patching or reboots) on private network connector servers, you can minimize interruption to user connections by using a dedicated maintenance connector group. By temporarily moving a connector into this group, you ensure that no new traffic is routed to it while allowing existing sessions to complete gracefully.
+
+Connectors in Microsoft Entra Private Access are stateless agents that the service routes traffic through based on group assignments and availability. If a connector is unavailable, the service automatically directs new requests to other healthy connectors in the group.
+
+### Maintenance steps
+1. Create a maintenance connector group
+   - In the Microsoft Entra admin center, create a new connector group that is not assigned to any Private Access application.
+   - This group acts as a “parking spot” for maintenance.
+1. Move the connector into the maintenance connector group
+   - When you are ready to service a connector server, edit its assignment and move it into the maintenance connector group with a test private access app where there is no active traffic. Requests can be sent to validate end to end connectivity post-patching before moving back to production connector group.
+   - Once moved to a maintenance connector group the connector no longer receives new user connections and any existing connections continue until they gracefully finish.
+
+1. Drain existing sessions
+   - Wait an appropriate period to allow active connections to complete normally. The duration depends on your application workloads and session patterns.
+
+1. Perform maintenance
+   - Apply patches, reboots, or other updates required on the server.
+   - Ensure that the Microsoft Entra Private Network Connector services restart and are healthy before reintroducing the connector into production.
+
+1. Return the connector to its original group
+   - Once maintenance is complete and services are running, move the connector back into its original connector group.
+   - The connector will again start receiving traffic as part of that group’s high-availability pool.
 
 
 ## Next steps
