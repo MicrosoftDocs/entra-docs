@@ -1,7 +1,6 @@
 ---
 title: Externally determine the approval requirements for an access package using custom extensions
 description: A how-to guide on dynamically determining the approval requirements for an access package externally using a custom extension.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 11/04/2025

@@ -1,7 +1,6 @@
 ---
 title: Customize a workflow schedule
 description: Learn how to customize the schedule of a lifecycle workflow.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/25/2025

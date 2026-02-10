@@ -1,7 +1,6 @@
 ---
 title: 'Lifecycle workflows FAQs'
 description: Frequently asked questions about Lifecycle workflows.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: faq
 ms.date: 06/25/2025

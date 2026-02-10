@@ -1,7 +1,6 @@
 ---
 title: Request access packages on-behalf-of other identities
 description: This article describes how to set up an access package so that managers can approve, or deny, requests for identities they own, sponsor, or are reporting to them.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 06/18/2025

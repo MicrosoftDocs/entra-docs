@@ -1,7 +1,6 @@
 ---
 title: Check Workflow Insights
 description: Learn how to check workflow insights within your Microsoft Entra tenant.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 08/12/2024

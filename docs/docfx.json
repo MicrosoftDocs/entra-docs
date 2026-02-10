@@ -96,6 +96,8 @@
       "ms.service": {
         "global-secure-access/**/*.md": "global-secure-access",
         "global-secure-access/**/*.yml": "global-secure-access",
+        "id-governance/**/*.md": "entra-id-governance",
+        "id-governance/**/*.yml": "entra-id-governance",
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy/**/*.yml": "entra-id",
         "identity/app-provisioning/**/*.md": "entra-id",

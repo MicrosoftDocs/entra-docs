@@ -1,7 +1,6 @@
 ---
 title: What is the My Access portal? - Microsoft Entra
 description: A description of the My Access portal where users can manage access within Microsoft Entra.
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/10/2024
 

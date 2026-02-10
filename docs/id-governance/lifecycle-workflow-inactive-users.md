@@ -1,7 +1,6 @@
 ---
 title: Manage inactive users using Lifecycle Workflows
 description: This article walks you through managing inactive users with Lifecycle Workflows.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/28/2025

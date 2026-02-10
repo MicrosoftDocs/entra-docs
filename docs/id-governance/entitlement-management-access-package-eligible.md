@@ -1,7 +1,6 @@
 ---
 title: Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups
 description: This how-to article describes how to assign eligible membership and ownership to a group via Privileged Identity Management in an access package.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/04/2025

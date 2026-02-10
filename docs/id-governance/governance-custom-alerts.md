@@ -1,7 +1,6 @@
 ---
 title: 'Identity Governance custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/03/2025
 ms.custom:

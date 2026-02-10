@@ -1,7 +1,6 @@
 ---
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 09/06/2025

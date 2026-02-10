@@ -2,7 +2,6 @@
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025

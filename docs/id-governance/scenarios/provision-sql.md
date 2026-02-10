@@ -1,7 +1,6 @@
 ---
 title: Govern provisioning cloud users into on-premises SQL based applications using the ECMA Connector host
 description: This document describes how you can govern on-premises uses by provisioning them into SQL based applications using the ECMA Connector host
-ms.service: entra-id-governance
 ms.subservice:
 ms.topic: how-to
 ms.date: 04/09/2025

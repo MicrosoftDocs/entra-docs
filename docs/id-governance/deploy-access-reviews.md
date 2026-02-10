@@ -1,7 +1,6 @@
 ---
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025

@@ -1,7 +1,6 @@
 ---
 title: 'Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center'
 description: Tutorial for onboarding users to an organization using Lifecycle workflows with the Microsoft Entra admin center.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 04/08/2024

@@ -1,7 +1,6 @@
 ---
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/27/2025

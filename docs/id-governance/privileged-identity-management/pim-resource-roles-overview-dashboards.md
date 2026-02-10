@@ -4,7 +4,6 @@ description: Describes how to use a resource dashboard to perform an access revi
   in Microsoft Entra Privileged Identity Management (PIM).
 author: barclayn
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/17/2024

@@ -1,7 +1,6 @@
 ---
 title: Change lifecycle settings for an access package in entitlement management
 description: Learn how to change requestor information & lifecycle settings for an access package in entitlement management.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025

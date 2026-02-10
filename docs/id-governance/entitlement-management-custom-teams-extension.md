@@ -1,7 +1,6 @@
 ---
 title: Integrating Microsoft Entra Entitlement Management with Microsoft Teams using Custom Extensibility and Logic Apps
 description: This tutorial walks you through integrating Microsoft Teams with entitlement management using custom extensions and Logic Apps.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024

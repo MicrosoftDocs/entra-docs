@@ -1,7 +1,6 @@
 ---
 title: Configure Requestor Visibility of Approver Details (Preview)
 description: Learn how to configure whether requestors can see approver details for pending access package requests in the My Access portal at the tenant or package level.
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.reviewer: owinfrey

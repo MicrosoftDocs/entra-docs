@@ -1,7 +1,6 @@
 ---
 title: 'What is provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning and the ILM scenarios.
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/30/2024
 ---

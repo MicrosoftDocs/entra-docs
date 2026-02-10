@@ -2,7 +2,6 @@
 title: Govern access for external users in entitlement management
 description: Learn about the settings you can specify to govern access for external users in entitlement management.
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 09/09/2025

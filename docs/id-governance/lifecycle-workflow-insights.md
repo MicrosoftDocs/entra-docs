@@ -1,7 +1,6 @@
 ---
 title: Lifecycle Workflow Insights
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/25/2025

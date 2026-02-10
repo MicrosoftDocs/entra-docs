@@ -2,7 +2,6 @@
 title: Assign Microsoft Entra roles - Entitlement management (Preview)
 description: Learn how to assign Microsoft Entra roles with access packages.
 editor: mamtakumar
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/27/2025

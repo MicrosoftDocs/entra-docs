@@ -1,7 +1,6 @@
 ---
 title: Manage users synchronized from Active Directory Domain Services with workflows
 description: A how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
-ms.service: entra-id-governance
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/27/2024

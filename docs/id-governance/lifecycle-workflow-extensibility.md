@@ -1,7 +1,6 @@
 ---
 title: Workflow Extensibility
 description: Conceptual article discussing workflow extensibility with Lifecycle Workflows
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: article
 ms.date: 06/25/2025

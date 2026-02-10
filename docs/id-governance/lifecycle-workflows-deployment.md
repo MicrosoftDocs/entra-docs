@@ -1,7 +1,6 @@
 ---
 title: Plan a Lifecycle Workflow deployment
 description: Planning guide for a successful Lifecycle Workflow deployment.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024

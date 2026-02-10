@@ -2,7 +2,6 @@
 title: Manage access to your SAP applications
 description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: article
 ms.date: 01/29/2024
 ms.reviewer: markwahl-msft

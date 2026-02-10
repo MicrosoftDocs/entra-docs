@@ -1,7 +1,6 @@
 ---
 title: 'Automate employee mover tasks when they change jobs using the Microsoft Entra admin center'
 description: Tutorial for moving users that change jobs using Lifecycle workflows with the Microsoft Entra admin center.
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/13/2024

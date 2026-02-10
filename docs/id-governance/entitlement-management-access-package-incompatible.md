@@ -1,7 +1,6 @@
 ---
 title: Configure separation of duties for an access package in entitlement management
 description: Learn how to configure separation of duties enforcement for requests for an access package in entitlement management.
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/23/2024
