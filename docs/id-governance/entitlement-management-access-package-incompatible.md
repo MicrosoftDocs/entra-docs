@@ -61,7 +61,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 ### Configure incompatible access packages programmatically through Graph
 
-You can configure the groups and other access packages that are incompatible with an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to add, remove, and list the incompatible groups and access packages [of an access package](/graph/api/resources/accesspackage).
+You can configure the groups and other access packages that are incompatible with an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application with the `EntitlementManagement.ReadWrite.All` application permission, or an application with a catalog role, can call the API to add, remove, and list the incompatible groups and access packages [of an access package](/graph/api/resources/accesspackage).
 
 ### Configure incompatible access packages through Microsoft PowerShell
 
