@@ -2,13 +2,8 @@
 title: Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection
 description: Query Microsoft Graph risk detections and associated information from Microsoft Entra ID
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 05/27/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection and the Microsoft Graph PowerShell 

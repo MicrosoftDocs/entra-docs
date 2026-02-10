@@ -2,13 +2,8 @@
 title: Provide risk feedback in Microsoft Entra ID Protection
 description: How and why should you provide feedback on ID Protection risk detections.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 05/27/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: cokoopma
 ---
 # How To: Give risk feedback in Microsoft Entra ID Protection
