@@ -1,12 +1,9 @@
 ---
 title: 'Govern on-premises Active Directory users that are provisioned from and managed in Workday.'
 description: This article a tutorial on how to provision users and groups to AD with Workday.
-author: owinfreyATL
-ms.service: entra-id-governance
 ms.topic: article
 ms.date: 04/09/2025
 ms.subservice:
-ms.author: owinfrey
 ---
 
 # Govern on-premises Active Directory users that are provisioned from and managed in Workday.

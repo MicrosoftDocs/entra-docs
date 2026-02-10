@@ -1,13 +1,10 @@
 ---
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
-author: owinfreyatl
 editor: HANKI
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
 ms.reviewer: hanki
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.

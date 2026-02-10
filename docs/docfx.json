@@ -72,6 +72,8 @@
       "author": {
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
+        "id-governance/**/*.md": "owinfreyATL",
+        "id-governance/**/*.yml": "owinfreyATL",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jenniferf-skc",
@@ -82,6 +84,8 @@
       "ms.author": {
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
+        "id-governance/**/*.md": "owinfrey",
+        "id-governance/**/*.yml": "owinfrey",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jfields",
@@ -92,6 +96,8 @@
       "ms.service": {
         "global-secure-access/**/*.md": "global-secure-access",
         "global-secure-access/**/*.yml": "global-secure-access",
+        "id-governance/**/*.md": "entra-id-governance",
+        "id-governance/**/*.yml": "entra-id-governance",
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy/**/*.yml": "entra-id",
         "identity/app-provisioning/**/*.md": "entra-id",

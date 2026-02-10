@@ -1,12 +1,9 @@
 ---
 title: Microsoft Entra ID Governance licensing for guest users 
 description: Learn how Microsoft Entra ID is licensed for guest users.
-author: owinfreyatl
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 02/03/2026
-ms.author: owinfrey
 ms.reviewer: jercon
 ---
 

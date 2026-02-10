@@ -3,7 +3,6 @@ title: API concepts in Privileged Identity management
 description: Information for understanding the APIs in Microsoft Entra Privileged
   Identity Management (PIM).
 author: barclayn
-ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
 ms.date: 04/30/2025

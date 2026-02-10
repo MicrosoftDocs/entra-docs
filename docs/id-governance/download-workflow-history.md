@@ -1,9 +1,6 @@
 ---
 title: Download workflow history reports
 description: This article guides a user on downloading the history of a Lifecycle workflow.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/25/2025
