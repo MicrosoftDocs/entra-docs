@@ -1,7 +1,6 @@
 ---
 title: 'Access Reviews FAQs'
 description: Frequently asked questions about Access Reviews.
-author: owinfreyATL
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: faq

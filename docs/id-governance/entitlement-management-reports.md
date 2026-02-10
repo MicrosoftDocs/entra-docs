@@ -1,7 +1,6 @@
 ---
 title: View reports & logs in entitlement management
 description: Learn how to view the identity assignments report and audit logs in entitlement management.
-author: owinfreyatl
 editor: jocastel-MSFT
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

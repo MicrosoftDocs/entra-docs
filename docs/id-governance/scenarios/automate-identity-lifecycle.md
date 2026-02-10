@@ -3,7 +3,6 @@ title: 'Automate identity lifecycle management with Microsoft Entra ID Governanc
 description: Describes overview of identity lifecycle management for Microsoft Entra ID Governance.
 ms.service: entra-id-governance
 ms.subservice:
-author: owinfreyATL
 
 ms.workload: identity
 ms.topic: overview

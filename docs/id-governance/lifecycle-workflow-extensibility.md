@@ -1,7 +1,6 @@
 ---
 title: Workflow Extensibility
 description: Conceptual article discussing workflow extensibility with Lifecycle Workflows
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows

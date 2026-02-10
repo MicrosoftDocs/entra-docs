@@ -1,7 +1,6 @@
 ---
 title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
-author: owinfreyATL
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article

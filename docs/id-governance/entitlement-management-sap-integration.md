@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra SAP IAG integration (Preview)
 description: Learn how to integrate SAP Identity Access Governance (IAG) with Microsoft Entra to streamline access management.
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

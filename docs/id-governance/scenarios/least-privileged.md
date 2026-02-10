@@ -4,8 +4,6 @@ description: This article describes the concept of least privilege and how it re
 ms.service: entra-id-governance
 ms.subservice:
 
-author: owinfreyATL
-
 
 ms.topic: concept-article
 ms.date: 04/09/2025

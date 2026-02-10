@@ -1,7 +1,6 @@
 ---
 title: Configure Verified ID settings for an access package in entitlement management
 description: Learn how to configure verified ID settings for an access package in entitlement management.
-author: owinfreyatl
 editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

@@ -1,7 +1,6 @@
 ---
 title: Using groups managed by Privileged Identity Management with access packages
 description: This article serves as a reference for Microsoft Entra ID behavior when assignment periods of an access package and PIM policy don't align.
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: concept-article

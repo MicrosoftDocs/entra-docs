@@ -1,7 +1,6 @@
 ---
 title: Delegated Workflow Management (Preview)
 description: This article informs a user about delegating management of workflows using Lifecycle workflows.
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows

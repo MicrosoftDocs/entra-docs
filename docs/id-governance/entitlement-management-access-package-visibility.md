@@ -1,7 +1,6 @@
 ---
 title: Understand access package visibility in the My Access portal
 description: A conceptual article describing access package visibility in the My Access portal.
-author: owinfreyATL
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual

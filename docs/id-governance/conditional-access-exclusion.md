@@ -1,7 +1,6 @@
 ---
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
-author: owinfreyATL
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews

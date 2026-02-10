@@ -1,7 +1,6 @@
 ---
 title: Sensitivity Labels in Lifecycle Workflows
 description: This article describes sensitivity labels in Workflows, and how to see them during the task creation process.
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows

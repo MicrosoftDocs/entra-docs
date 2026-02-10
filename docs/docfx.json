@@ -72,6 +72,8 @@
       "author": {
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
+        "id-governance/**/*.md": "owinfreyATL",
+        "id-governance/**/*.yml": "owinfreyATL",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jenniferf-skc",

@@ -1,7 +1,6 @@
 ---
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
-author: owinfreyATL
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to

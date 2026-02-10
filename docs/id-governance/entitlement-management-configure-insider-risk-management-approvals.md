@@ -1,7 +1,6 @@
 ---
 title: Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
 description: This article describes how to configure Insider risk management-based approvals for access package requests.
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

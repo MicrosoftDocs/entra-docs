@@ -1,7 +1,6 @@
 ---
 title: Auditing Lifecycle Workflows
 description: Information about audit logs with Lifecycle Workflows
-author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
