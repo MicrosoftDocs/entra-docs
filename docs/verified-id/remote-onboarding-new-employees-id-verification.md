@@ -2,12 +2,8 @@
 title: Onboard new remote employees using ID verification
 description: A design pattern describing how to onboard new employees remotely
 services: decentralized-identity
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: article
 ms.date: 12/17/2024
-ms.author: barclayn
 ---
 
 

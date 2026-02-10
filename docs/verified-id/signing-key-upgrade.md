@@ -2,12 +2,8 @@
 title: Upgrade signing keys
 description: Learn how to upgrade Microsoft Entra Verified ID signing keys to become FIPS compliant.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information on how to upgrade signing keys to become FIPS compliant.
 ---

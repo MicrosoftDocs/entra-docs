@@ -1,12 +1,8 @@
 ---
 title: Issuer service communication examples - Microsoft Entra Verified ID
 description: Details of communication between identity provider and issuer service
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 04/30/2025
-ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information
 ---
 
