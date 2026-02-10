@@ -1,13 +1,10 @@
 ---
 title: Delegation and roles in entitlement management
 description: Learn how to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
-author: owinfreyatl
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: article
 ms.date: 02/20/2024
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.

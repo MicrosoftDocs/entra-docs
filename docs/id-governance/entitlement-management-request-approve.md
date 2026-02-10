@@ -1,13 +1,10 @@
 ---
 title: Approve or deny access requests - entitlement management
 description: Learn how to use the My Access portal to approve or deny requests to an access package in Microsoft Entra entitlement management.
-author: owinfreyatl
 editor: mamtakumar
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As an approver, I want steps for how to approve requests for access packages so that I can unlock requestors who need to use the resources.
 ---

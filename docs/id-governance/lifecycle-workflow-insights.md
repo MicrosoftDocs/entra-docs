@@ -1,12 +1,9 @@
 ---
 title: Lifecycle Workflow Insights
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities.
-author: owinfreyATL
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 06/25/2025
-ms.author: owinfrey
 ms.reviewer: krbain
 
 #CustomerIntent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
