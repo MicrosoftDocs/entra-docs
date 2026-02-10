@@ -81,7 +81,9 @@
         "identity/app-provisioning/**/*.md": "jenniferf-skc",
         "identity/app-provisioning**/*.yml": "jenniferf-skc",
         "external-id/**/*.md": "csmulligan",
-        "external-id/**/*.yml": "csmulligan"
+        "external-id/**/*.yml": "csmulligan",
+        "verified-id/**/*.md": "barclayn",
+        "verified-id/**/*.yml": "barclayn"
       },
       "ms.author": {
         "global-secure-access/**/*.md": "kenwith",
@@ -95,7 +97,9 @@
         "identity/app-provisioning/**/*.md": "jfields",
         "identity/app-provisioning**/*.yml": "jfields",
         "external-id/**/*.md": "cmulligan",
-        "external-id/**/*.yml": "cmulligan"
+        "external-id/**/*.yml": "cmulligan",
+        "verified-id/**/*.md": "barclayn",
+        "verified-id/**/*.yml": "barclayn"
       },
       "ms.service": {
         "global-secure-access/**/*.md": "global-secure-access",
@@ -109,7 +113,9 @@
         "identity/app-provisioning/**/*.md": "entra-id",
         "identity/app-provisioning**/*.yml": "entra-id",
         "external-id/**/*.md": "entra-external-id",
-        "external-id/**/*.yml": "entra-external-id"
+        "external-id/**/*.yml": "entra-external-id",
+        "verified-id/**/*.md": "entra-verified-id",
+        "verified-id/**/*.yml": "entra-verified-id"
       },
       "ms.subservice": {
         "identity/app-proxy/**/*.md": "app-proxy",
@@ -120,32 +126,32 @@
         "external-id/**/*.yml": "external"
       },
       "manager": {
-        "architecture/*.md": "dougeby",
-        "architecture/*.yml": "dougeby",
+        "architecture/**/*.md": "dougeby",
+        "architecture/**/*.yml": "dougeby",
         "external-id/**/*.md": "dougeby",
         "external-id/**/*.yml": "dougeby",
-        "fundamentals/*.md": "dougeby",
-        "fundamentals/*.yml": "dougeby",
-        "global-secure-access/*.md": "dougeby",
-        "global-secure-access/*.yml": "dougeby",
+        "fundamentals/**/*.md": "dougeby",
+        "fundamentals/**/*.yml": "dougeby",
+        "global-secure-access/**/*.md": "dougeby",
+        "global-secure-access/**/*.yml": "dougeby",
         "id-governance/**/*.md": "dougeby",
         "id-governance/**/*.yml": "dougeby",
-        "id-protection/*.md": "dougeby",
-        "id-protection/*.yml": "dougeby",
+        "id-protection/**/*.md": "dougeby",
+        "id-protection/**/*.yml": "dougeby",
         "identity/**/*.md": "dougeby",
         "identity/**/*.yml": "dougeby",
-        "identity/saas-apps/*.md": "dougeby",
-        "identity/saas-apps/*.yml": "dougeby",
-        "identity/enterprise-apps/*.md": "dougeby",
-        "identity/enterprise-apps/*.yml": "dougeby",
+        "identity/saas-apps/**/*.md": "dougeby",
+        "identity/saas-apps/**/*.yml": "dougeby",
+        "identity/enterprise-apps/**/*.md": "dougeby",
+        "identity/enterprise-apps/**/*.yml": "dougeby",
         "agent-id/**/*.md": "pmwongera",
         "agent-id/**/*.yml": "pmwongera",
-        "permissions-management/*.md": "dougeby",
-        "permissions-management/*.yml": "dougeby",
+        "permissions-management/**/*.md": "dougeby",
+        "permissions-management/**/*.yml": "dougeby",
         "standards/**/*.md": "dougeby",
         "standards/**/*.yml": "dougeby",
-        "verified-id/*.md": "dougeby",
-        "verified-id/*.yml": "dougeby",
+        "verified-id/**/*.md": "dougeby",
+        "verified-id/**/*.yml": "dougeby",
         "workload-id/**/*.md": "pmwongera",
         "workload-id/**/*.yml": "pmwongera"
       },

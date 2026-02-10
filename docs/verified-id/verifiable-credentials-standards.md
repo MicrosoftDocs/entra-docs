@@ -1,12 +1,8 @@
 ---
 title: Microsoft Entra Verified ID-supported standards
 description: This article outlines current and upcoming standards
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/16/2024
-ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
 
