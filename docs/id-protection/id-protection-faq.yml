@@ -2,12 +2,7 @@
 metadata:
   title: Microsoft Entra ID Protection FAQ
   description: Frequently asked questions around Microsoft Entra ID Protection.
-  
-  ms.service: entra-id-protection
   ms.topic: faq
-
-  author: shlipsey3
-  ms.author: sarahlipsey
   ms.date: 06/12/2025
   ms.reviewer: etbasser
 

@@ -2,12 +2,8 @@
 title: Plan your Microsoft Entra Verified ID issuance solution
 description: Learn to plan your end-to-end issuance solution.
 documentationCenter: ''
-author: barclayn
-manager: martinco
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/17/2024
-ms.author: barclayn
 ms.custom: references_regions
 ---
 

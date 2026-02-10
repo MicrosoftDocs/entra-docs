@@ -1,12 +1,8 @@
 ---
 title: Integrate Verified ID APIs
 description: Learn how you can implement Microsoft Entra Verified ID in your solutions.
-ms.service: entra-verified-id
-author: barclayn
-manager: pmwongera
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.author: barclayn
 ---
 
 # Integrate Verified ID APIs

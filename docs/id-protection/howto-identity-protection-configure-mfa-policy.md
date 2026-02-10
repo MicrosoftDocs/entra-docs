@@ -2,13 +2,8 @@
 title: Configure the MFA registration policy
 description: Learn how to configure the Microsoft Entra ID Protection multifactor authentication registration policy.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 08/06/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: etbasser
 ---
 # How To: Configure the multifactor authentication registration policy
