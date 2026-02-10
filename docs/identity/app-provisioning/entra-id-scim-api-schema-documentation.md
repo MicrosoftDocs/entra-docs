@@ -29,23 +29,23 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 | SCIM Attribute | Entra ID Attribute | Notes / Restrictions |
 |---|---|---|
 | active | accountEnabled |  |
-| addresses[type eq "work"].country | country | Only one ‘addresses’ value is allowed, and it requires a type of ‘work’. |
-| addresses[type eq "work"].locality | city |
-| addresses[type eq "work"].postalCode | postalCode |
-| addresses[type eq "work"].region | state |
-| addresses[type eq "work"].streetAddress | streetAddress |
+| addresses[type eq *work*].country | country | Only one *addresses* value is allowed, and it requires a type of *work*. |
+| addresses[type eq *work*].locality | city |
+| addresses[type eq *work*].postalCode | postalCode |
+| addresses[type eq *work*].region | state |
+| addresses[type eq *work*].streetAddress | streetAddress |
 | displayName | displayName |  |
-| emails[type eq "other"].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
-| emails[type eq "proxyAddress"].value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This is currently implemented as type work, primary false and will be changed in an upcoming release) |
-| emails[type eq "work" and primary eq true].value | mail | Only one value of type work and primary true is allowed. |
+| emails[type eq ].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
+| emails[type eq *proxyAddress*.value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This is currently implemented as type work, primary false and will be changed in an upcoming release) |
+| emails[type eq *work* and primary eq true].value | mail | Only one value of type *work* and primary *true* is allowed. |
 | groups.value | *See notes* | Read only. The user’s group memberships. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
-| ims[type eq ‘work’].value | imAddresses |  |
+| ims[type eq *work*].value | imAddresses |  |
 | name.familyName | surname |  |
 | name.givenName | givenName |  |
 | password | *See notes* | Required for users with a userName value containing a domain name that is managed (non-federated). Write only (cannot be read). Can only be set on user creation, cannot be used to update a user’s password. |
-| phoneNumbers[type eq "fax"].value | faxNumber | Only one value of this type is allowed. |
-| phoneNumbers[type eq "mobile"].value | mobilePhone | Only one value of this type is allowed. |
-| phoneNumbers[type eq "work"].value | businessPhones | Only one value of this type is allowed. |
+| phoneNumbers[type eq *fax*].value | faxNumber | Only one value of this type is allowed. |
+| phoneNumbers[type eq *mobile*].value | mobilePhone | Only one value of this type is allowed. |
+| phoneNumbers[type eq *work*].value | businessPhones | Only one value of this type is allowed. |
 | preferredLanguage | preferredLanguage | Only allows a single language value and will not accept a ranked preference list. |
 | title | jobTitle |  |
 | userName | userPrincipalName |  |
