@@ -79,7 +79,7 @@
         "id-protection/**/*.md": "shlipsey3",
         "id-protection/**/*.yml": "shlipsey3",
         "identity/app-provisioning/**/*.md": "jenniferf-skc",
-        "identity/app-provisioning**/*.yml": "jenniferf-skc",
+        "identity/app-provisioning/**/*.yml": "jenniferf-skc",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "verified-id/**/*.md": "barclayn",
@@ -95,7 +95,7 @@
         "id-protection/**/*.md": "sarahlipsey",
         "id-protection/**/*.yml": "sarahlipsey",
         "identity/app-provisioning/**/*.md": "jfields",
-        "identity/app-provisioning**/*.yml": "jfields",
+        "identity/app-provisioning/**/*.yml": "jfields",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
         "verified-id/**/*.md": "barclayn",
@@ -111,7 +111,7 @@
         "id-protection/**/*.md": "entra-id-protection",
         "id-protection/**/*.yml": "entra-id-protection",
         "identity/app-provisioning/**/*.md": "entra-id",
-        "identity/app-provisioning**/*.yml": "entra-id",
+        "identity/app-provisioning/**/*.yml": "entra-id",
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
@@ -121,7 +121,7 @@
         "external-id/**/*.md": "external",
         "external-id/**/*.yml": "external",
         "identity/app-provisioning/**/*.md": "app-provisioning",
-        "identity/app-provisioning**/*.yml": "app-provisioning",
+        "identity/app-provisioning/**/*.yml": "app-provisioning",
         "identity/app-proxy/**/*.md": "app-proxy",
         "identity/app-proxy/**/*.yml": "app-proxy"
       },
@@ -194,7 +194,8 @@
     }, 
     "template": [
       "docs.html",
-      "default","DocFx.Plugins.PlantUml/template"
+      "default",
+      "DocFx.Plugins.PlantUml/template"
     ],
     "dest": "entra",
     "recommendations": true,
