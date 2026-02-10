@@ -1,14 +1,8 @@
 ---
 title: Conditional Access - Block access
 description: Create a custom Conditional Access policy to Block access.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/26/2026
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: calebb, lhuangnorth
 ---

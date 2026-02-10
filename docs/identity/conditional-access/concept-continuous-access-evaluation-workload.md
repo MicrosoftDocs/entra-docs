@@ -1,11 +1,8 @@
 ---
 title: Continuous Access Evaluation for Workload Identities in Entra ID
 description: Learn how to enable continuous access evaluation for workload identities to enforce Conditional Access policies and instantly revoke tokens.
-ms.service: entra-workload-id
 ms.topic: article
 ms.date: 08/28/2025
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: joroja
 ms.custom:

@@ -1,15 +1,9 @@
 ---
 title: Conditional Access for Agent Identities in Microsoft Entra
 description: Learn how Conditional Access for Agent IDs in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 11/05/2025
 ms.custom: agent-id-ignite
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ---

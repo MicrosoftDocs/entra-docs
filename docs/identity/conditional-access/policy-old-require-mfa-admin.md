@@ -1,14 +1,8 @@
 ---
 title: Require MFA for administrators with Conditional Access
 description: Create a custom Conditional Access policy to require administrators to perform multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---
