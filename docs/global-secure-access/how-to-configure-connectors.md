@@ -237,10 +237,10 @@ Connectors in Microsoft Entra Private Access are stateless agents that the servi
 
 ### Maintenance steps
 1. Create a maintenance connector group
-   - In the Microsoft Entra admin center, create a new connector group that is not assigned to any Private Access application.
+   - In the Microsoft Entra admin center, create a new connector group that is **only** to Private Access test application.
    - This group acts as a “parking spot” for maintenance.
 1. Move the connector into the maintenance connector group
-   - When you are ready to service a connector server, edit its assignment and move it into the maintenance connector group with a test private access app where there is no active traffic. Requests can be sent to validate end to end connectivity post-patching before moving back to production connector group.
+   - When you are ready to service a connector server, edit its assignment and move it into the maintenance connector group with a test Private Access app where there is no active traffic.
    - Once moved to a maintenance connector group the connector no longer receives new user connections and any existing connections continue until they gracefully finish.
 
 1. Drain existing sessions
@@ -249,6 +249,7 @@ Connectors in Microsoft Entra Private Access are stateless agents that the servi
 1. Perform maintenance
    - Apply patches, reboots, or other updates required on the server.
    - Ensure that the Microsoft Entra Private Network Connector services restart and are healthy before reintroducing the connector into production.
+   - Post-patching, requests can be sent to the test application to validate end to end connectivity.
 
 1. Return the connector to its original group
    - Once maintenance is complete and services are running, move the connector back into its original connector group.
