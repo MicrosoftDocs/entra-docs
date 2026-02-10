@@ -4,7 +4,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 02/10/2026
 ms.author: justinha
 author: tilarso
 manager: dougeby
@@ -112,13 +112,13 @@ Id                                   CreatedDateTime       IsUsable IsUsableOnce
 
 ```
 
-For more information, see [New-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationtemporaryaccesspassmethod) and [Get-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationtemporaryaccesspassmethod?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
+For more information, see [New-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationtemporaryaccesspassmethod) and [Get-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationtemporaryaccesspassmethod).
 
 ## Use a Temporary Access Pass
 
-The most common use for a TAP is for a user to register authentication details during the first sign-in or device setup, without the need to complete extra security prompts. Authentication methods are registered at [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). Users can also update existing authentication methods here.
+The most common use for a TAP is for a user to register authentication details during the first sign-in or device setup, without the need to complete extra security prompts. Authentication methods are registered at [Security info](https://mysignins.microsoft.com/security-info). Users can also update existing authentication methods here.
 
-1. Open a web browser to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+1. Open a web browser to [Security info](https://mysignins.microsoft.com/security-info).
 1. Enter the UPN of the account you created the TAP for, such as *tapuser@contoso.com*.
 1. If the user is included in the TAP policy, they see a screen to enter their TAP.
 1. Enter the TAP that was displayed in the Microsoft Entra admin center.
@@ -134,9 +134,26 @@ Users can also continue to sign-in by using their password; a TAP doesn’t repl
 
 ### User management of Temporary Access Pass
 
-Users managing their security information at [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) see an entry for the Temporary Access Pass. If a user doesn't have any other registered methods, they get a banner at the top of the screen that says to add a new sign-in method. Users can also see the TAP expiration time, and delete the TAP if it's no longer needed. 
+Users managing their [Security info](https://mysignins.microsoft.com/security-info) see an entry for the Temporary Access Pass. If a user doesn't have any other registered methods, they get a banner at the top of the screen that says to add a new sign-in method. Users can also see the TAP expiration time, and delete the TAP if it's no longer needed. 
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/tap-my-security-info.png" alt-text="Screenshot of how users can manage a Temporary Access Pass in My Security Info..":::
+
+### Device enrollemnt and passwordless registration
+
+When using a Temporary Access Pass (TAP) to support device enrollment and passwordless credential registration (for example, Windows Hello for Business), there are two supported approaches to ensure a smooth end-user experience.
+
+Option | Process | Steps
+-------|---------|------
+Two single-use TAPs | If your organization enforces single-use TAPs, and the overall device enrollment process takes longer than 10 minutes, users need to enter another TAP for passwordless credential registration.<br>
+When users enter a single-use TAP to register a passwordless authentication method, the registration must be completed within 10 minutes of sign-in. This behavior is consistent across all new authentication method registrations that require multifactor authentication (MFA), including registrations initiated through [Security info](https://mysignins.microsoft.com/security-info). The 10-minute requirement relates to MFA enforcement during credential registration, but not TAP specifically.|
+In this scenario:<br>
+- The first single-use TAP is used to complete device enrollment.<br>
+- If the device enrollment process reaches the Windows Hello for Business registration step after more than 10 minutes, a second single-use TAP must be provided to complete the credential enrollment. |
+One multiuse TAP | If your organization enables multiuse TAPs, a user can sign in with a single TAP multiple times during its validity period. For example, a user can sign in with a single TAP multiple times for one hour.|
+In this case:<br>
+- A user can enter the same TAP once to enroll their device, and again to register Windows Hello for Business.
+- The 10-minute MFA requirement effectively restarts when the user begins to register the new authentication method. The timer restart protects the device enrollemnt and authentication registration process from interruption.<br>
+A multiuse TAP can simplify the end-user experience by reducing the need to distribute multiple passcodes. If you choose to enable multiuse TAPs, consider monitoring TAP usage to ensure it is not used more times than expected during its validity period. |
 
 ### Windows device setup
 
@@ -148,6 +165,7 @@ For joined devices to Microsoft Entra ID:
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
+
 > [!NOTE]
 > For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
 
@@ -195,7 +213,7 @@ You can also use PowerShell:
 Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 ```
 
-For more information, see [Remove-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationtemporaryaccesspassmethod?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
+For more information, see [Remove-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationtemporaryaccesspassmethod).
 
 ## Replace a Temporary Access Pass 
 
