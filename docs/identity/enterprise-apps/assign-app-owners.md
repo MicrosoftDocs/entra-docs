@@ -85,6 +85,9 @@ Content-Type: application/json
 > [!NOTE]
 > If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
 
+> [!NOTE]
+> Currently due to background applications and service principals objects settings dependencies, the application owners added by other than Entra admin center means (Graph API, PowerShell), will not be able to manage some enterprise applications settings like attributes and claims, modify configured SAML certificates properties or token encryption settings, etc. 
+
 ## Next steps
 
 - [Delegate app registration permissions in Microsoft Entra ID](~/identity/role-based-access-control/delegate-app-roles.md)
