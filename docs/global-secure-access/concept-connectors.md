@@ -47,7 +47,7 @@ Learn more in [Microsoft Entra private network connector groups](concept-connect
 
 The service routes new requests to an available connector. If a connector is temporarily unavailable, it doesn't receive traffic.
 
-Connectors are stateless and store no configuration data on the machine. They store only the settings for connecting to the service and the authentication certificate. When they connect to the service, they pull the required configuration data and refresh it every few minutes.
+Connectors are stateless and store no configuration data on the machine. They store only the settings for connecting to the service and the authentication certificate. When they connect to the service, they pull the required configuration data and refresh it every few minutes. To learn more about maintenance on connectors, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md).
 
 ### Connector status
 
