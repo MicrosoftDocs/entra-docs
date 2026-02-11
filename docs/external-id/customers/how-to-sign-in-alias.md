@@ -1,11 +1,6 @@
 ---
 title: Sign in with alias
 description: Learn how to Sign in with alias/username with External ID for customer identity and access management (CIAM). Get detailed steps to enable username as a sign-in identifier and create users with both email address and username. 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id 
-ms.subservice: external
 ms.topic: how-to
 ms.date: 09/10/2025
 ms.custom: it-pro

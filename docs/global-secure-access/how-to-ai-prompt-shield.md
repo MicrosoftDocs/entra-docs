@@ -1,7 +1,6 @@
 ---
 title: Protect Enterprise Generative AI apps with Prompt Shield (preview)
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield."
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/08/2025
 ms.author: jayrusso

@@ -1,11 +1,8 @@
 ---
 title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted

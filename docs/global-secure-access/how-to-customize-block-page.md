@@ -4,7 +4,6 @@ description: Use custom block pages to display organization-specific messaging i
 author: fgomulka
 ms.author: frankgomulka
 ms.topic: how-to
-ms.service: global-secure-access
 ms.date: 09/24/2025
 ms.reviewer: kenwith
 ai-usage: ai-assisted

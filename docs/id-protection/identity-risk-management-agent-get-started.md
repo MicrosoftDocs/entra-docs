@@ -2,14 +2,8 @@
 title: Identity Risk Management Agent
 description: Learn about the Identity Risk Management Agent and its role in identifying and mitigating risks within Microsoft Entra ID Protection.
 
-ms.service: entra-id-protection
-
 ms.topic: concept-article
 ms.date: 12/01/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 # Identity Risk Management Agent (Preview)

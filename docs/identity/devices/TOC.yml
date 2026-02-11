@@ -110,6 +110,8 @@
     items:
       - name: Azure Linux VMs and Microsoft Entra ID
         href: howto-vm-sign-in-azure-ad-linux.md
+      - name: Troubleshoot using dsregcmd on Linux
+        href: troubleshoot-device-registration-tool-linux.md
   - name: Virtual Devices
     expanded: false
     items:        

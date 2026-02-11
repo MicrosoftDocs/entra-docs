@@ -5,7 +5,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: reference
 ms.date: 05/29/2025
-ms.service: global-secure-access
 ms.reviewer: abhijeetsinha
 
 #customer intent: As an IT admin, I want to know which certifications Global Secure Access supports so that I can ensure compliance with industry standards.

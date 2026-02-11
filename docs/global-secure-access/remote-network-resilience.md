@@ -3,7 +3,6 @@ title: Enhance Remote Network Resilience with Global Secure Access
 description: "This article provides techniques to improve remote network resilience with Global Secure Access."
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: best-practice
 ms.date: 09/02/2025
 ms.reviewer: abhijeetsinha

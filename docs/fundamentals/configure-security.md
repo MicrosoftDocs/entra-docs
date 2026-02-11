@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 01/26/2026
+ms.date: 02/09/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -113,6 +113,8 @@ Protect your network perimeter.
 | [Internet Access forwarding profile is enabled](zero-trust-protect-networks.md#internet-access-forwarding-profile-is-enabled) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
 | [Global Secure Access web content filtering is enabled and configured](zero-trust-protect-networks.md#global-secure-access-web-content-filtering-is-enabled-and-configured) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
 | [Network validation is configured through Universal Continuous Access Evaluation](zero-trust-protect-networks.md#network-validation-is-configured-through-universal-continuous-access-evaluation) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Global Secure Access client is deployed on all managed endpoints](zero-trust-protect-networks.md#global-secure-access-client-is-deployed-on-all-managed-endpoints) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Protect engineering systems
 

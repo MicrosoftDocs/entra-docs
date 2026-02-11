@@ -4,7 +4,6 @@ description: Learn how to configure and use GSA Cloud Firewall to protect agains
 author: jenniferf-skc    
 ms.author: jfields
 ms.topic: how-to
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.date: 11/18/2025
 ms.custom: it-pro

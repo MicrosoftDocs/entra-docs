@@ -1,9 +1,6 @@
 ---
 title: "Quickstart: Create a remote network, apply Conditional Access, and review the logs"
 description: Learn how to Create a remote network, apply Conditional Access, and review the logs in Global Secure Access.
-author: kenwith
-ms.author: kenwith
-ms.service: global-secure-access
 ms.topic: quickstart
 ms.date: 02/21/2025
 ai-usage: ai-assisted

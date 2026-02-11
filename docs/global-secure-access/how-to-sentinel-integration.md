@@ -3,7 +3,6 @@ title: Integrate Global Secure Access with Microsoft Sentinel
 description: Strengthen your organization's security posture by integrating Global Secure Access with Microsoft Sentinel using preconfigured workbooks and analytics rules.
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 12/17/2025
 ms.reviewer: kerenSemel

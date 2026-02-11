@@ -2,7 +2,6 @@
 title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 #customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 10/13/2025
 ms.author: jayrusso

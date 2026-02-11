@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 02/02/2026
+ms.date: 02/09/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -27,6 +27,12 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Network validation is configured through Universal Continuous Access Evaluation
 [!INCLUDE [25371](../includes/secure-recommendations/25371.md)]
+
+### Global Secure Access client is deployed on all managed endpoints
+[!INCLUDE [25372](../includes/secure-recommendations/25372.md)]
+
+### Global Secure Access licenses are available in the tenant and assigned to users
+[!INCLUDE [25375](../includes/secure-recommendations/25375.md)]
 
 ### Internet Access forwarding profile is enabled
 [!INCLUDE [25406](../includes/secure-recommendations/25406.md)]

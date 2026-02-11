@@ -7,7 +7,6 @@ ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---

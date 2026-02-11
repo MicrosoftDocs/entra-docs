@@ -3,7 +3,6 @@ title: Create a Microsoft Entra entitlement management access package for an app
 description: You can use Microsoft Entra entitlement management to enforce the policies for who can get assigned access to an application.
 author: markwahl-msft
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: mwahl

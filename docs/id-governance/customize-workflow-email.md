@@ -1,9 +1,6 @@
 ---
 title: Customize emails sent from workflow tasks
 description: Get a step-by-step guide for customizing emails that you send by using tasks within lifecycle workflows.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 09/22/2025

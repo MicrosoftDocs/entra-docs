@@ -1,12 +1,9 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Netskope
 description: Learn how to configure and deploy Microsoft Entra and Netskope Security Service Edge (SSE) solutions together for optimized security and connectivity across private applications, Microsoft 365, and internet access.
-author: kenwith
 contributors:
 ms.topic: concept-article
-ms.service: global-secure-access
 ms.date: 10/07/2025
-ms.author: kenwith
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---

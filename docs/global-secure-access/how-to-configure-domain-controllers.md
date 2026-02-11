@@ -1,11 +1,8 @@
 ---
 title: Configure Microsoft Entra Private Access for Active Directory Domain Controllers
 description: Learn how to configure Microsoft Entra Private Access for Active Directory Domain Controllers.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 01/21/2026
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

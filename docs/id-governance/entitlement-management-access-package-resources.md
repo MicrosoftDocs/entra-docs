@@ -1,12 +1,9 @@
 ---
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
-author: owinfreyatl
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
-ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Change resource roles for an access package in entitlement management
