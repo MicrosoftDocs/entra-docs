@@ -453,7 +453,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     "totalResults": 0,
     "Resources": [],
     "startIndex": 1,
-    "itemsPerPage": 20
+    "itemsPerPage": 0
 }
 ```
 
