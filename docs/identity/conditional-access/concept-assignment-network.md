@@ -1,14 +1,8 @@
 ---
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 09/22/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange

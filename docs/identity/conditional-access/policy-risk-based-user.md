@@ -1,13 +1,8 @@
 ---
 title: Require remediation for risky users
 description: Create Conditional Access policies using Microsoft Entra ID Protection user risk.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 10/30/2025
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth, cokoopma
 ---
