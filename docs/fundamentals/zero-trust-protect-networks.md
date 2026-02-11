@@ -39,3 +39,15 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Global Secure Access web content filtering is enabled and configured
 [!INCLUDE [25408](../includes/secure-recommendations/25408.md)]
+
+### Microsoft 365 traffic is actively flowing through Global Secure Access
+[!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
+
+### Universal tenant restrictions block unauthorized external tenant access
+[!INCLUDE [25377](../includes/secure-recommendations/25377.md)]
+
+### External collaboration is governed by explicit cross-tenant access policies
+[!INCLUDE [25378](../includes/secure-recommendations/25378.md)]
+
+### Conditional Access policies use compliant network controls
+[!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
