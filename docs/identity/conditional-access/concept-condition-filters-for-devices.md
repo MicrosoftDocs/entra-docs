@@ -2,14 +2,8 @@
 title: Filter for devices as a condition in Conditional Access policy
 description: Use filter for devices in Conditional Access to enhance security posture.
 
-ms.service: entra-id
-ms.subservice: conditional-access
-
 ms.topic: how-to
 ms.date: 05/19/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: sandeo
 ---

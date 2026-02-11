@@ -82,6 +82,8 @@
         "identity/app-provisioning/**/*.yml": "jenniferf-skc",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
+        "identity/conditional-access/**/*.md": "shlipsey3",
+        "identity/conditional-access/**/*.yml": "shlipsey3",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -98,6 +100,8 @@
         "identity/app-provisioning/**/*.yml": "jfields",
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy/**/*.yml": "kenwith",
+        "identity/conditional-access/**/*.md": "sarahlipsey",
+        "identity/conditional-access/**/*.yml": "sarahlipsey",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -114,6 +118,8 @@
         "identity/app-provisioning/**/*.yml": "entra-id",
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy/**/*.yml": "entra-id",
+        "identity/conditional-access/**/*.md": "entra-id",
+        "identity/conditional-access/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
         "verified-id/**/*.yml": "entra-verified-id"
       },
@@ -123,7 +129,9 @@
         "identity/app-provisioning/**/*.md": "app-provisioning",
         "identity/app-provisioning/**/*.yml": "app-provisioning",
         "identity/app-proxy/**/*.md": "app-proxy",
-        "identity/app-proxy/**/*.yml": "app-proxy"
+        "identity/app-proxy/**/*.yml": "app-proxy",
+        "identity/conditional-access/**/*.md": "conditional-access",
+        "identity/conditional-access/**/*.yml": "conditional-access"
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",

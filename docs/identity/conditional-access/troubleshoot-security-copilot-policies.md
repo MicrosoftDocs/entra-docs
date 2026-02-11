@@ -1,14 +1,8 @@
 ---
 title: Troubleshoot Conditional Access policies for Microsoft Security Copilot
 description: Security Copilot Conditional Access - Learn to create, assign, and troubleshoot policies using custom security attributes for better protection.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 06/04/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---
