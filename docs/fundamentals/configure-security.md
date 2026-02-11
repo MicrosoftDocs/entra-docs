@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/09/2026
+ms.date: 02/11/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -117,7 +117,7 @@ Protect your network perimeter.
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Microsoft 365 traffic is actively flowing through Global Secure Access](zero-trust-protect-networks.md#microsoft-365-traffic-is-actively-flowing-through-global-secure-access) | Microsoft Entra Suite |
 | [Universal tenant restrictions block unauthorized external tenant access](zero-trust-protect-networks.md#universal-tenant-restrictions-block-unauthorized-external-tenant-access) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
-| [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-tenants.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
+| [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
 | [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
 
 ## Protect engineering systems

@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 02/09/2026
+ms.date: 02/11/2026
 
 ms.author: sarahlipsey
 author: shlipsey
