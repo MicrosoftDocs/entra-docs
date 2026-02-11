@@ -56,7 +56,7 @@ To configure user consent settings through the Microsoft Entra admin center:
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
+:::image type="content" source="media/configure-user-consent/User_consent_config.png" alt-text="Screenshot of the 'User consent settings' pane.":::
 
 :::zone-end
 
