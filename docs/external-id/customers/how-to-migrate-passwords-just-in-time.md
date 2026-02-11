@@ -35,7 +35,7 @@ Before you begin, ensure you have:
     - [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) 
     - [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator)
     - Authentication Extensibility Password Administrator. This role gives you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
-    You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph). 
+    This action should be performed via the Graph API. You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph#tabpanel_1_ms-graph). 
 
 
 ## Overview of the JIT migration process
