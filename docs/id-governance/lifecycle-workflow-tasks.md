@@ -785,21 +785,7 @@ Example of usage within the workflow:
     "displayName": "Remove all access package assignments for user",
     "isEnabled": true,
     "taskDefinitionId": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
-    "arguments": [
-        {
-             "description": "Remove all access packages assigned to the user",
-            "displayName": "Remove all access package assignments for user",
-            "id": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
-            "version": 1,
-            "parameters": [
-                {
-                    "name": "daysUntilExpiration",
-                    "values": [],
-                    "valueType": "string"
-                }
-            ]
-        }
-    ]
+    "arguments": []
 ```
 
 
@@ -860,11 +846,10 @@ Example of usage within the workflow:
             "displayName": "Remove licenses from user",
             "id": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
             "version": 1,
-            "parameters": [
+            "arguments": [
                 {
                     "name": "licenses",
-                    "values": [],
-                    "valueType": "string"
+                    "value": []
                 }
             ]
         }
