@@ -1,13 +1,9 @@
 ---
 title: Deployment considerations for Microsoft Entra self-service password reset
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra self-service password reset
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: justinha
 author: gargi-sinha
-manager: martinco
 ms.reviewer: tilarso
 adobe-target: true
 ms.custom: sfi-image-nochange

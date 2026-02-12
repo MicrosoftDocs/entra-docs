@@ -1,13 +1,8 @@
 ---
 title: Enable per-user multifactor authentication
 description: Learn how to enable per-user Microsoft Entra multifactor authentication by changing the user state
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/13/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: lvandenende
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---

@@ -1,14 +1,9 @@
 ---
 title: Manage authentication methods
 description: Learn about the authentication methods policy and different ways to manage authentication methods.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: jpettere
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
