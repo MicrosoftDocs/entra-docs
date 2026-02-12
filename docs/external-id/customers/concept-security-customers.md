@@ -1,13 +1,6 @@
 ---
 title: Security Features in External Tenants
 description: Learn about security features and fundamentals for Microsoft Entra External ID customer identity and access management (CIAM) in external tenant configurations. 
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 01/28/2026
 ms.custom: it-pro

@@ -1,11 +1,8 @@
 ---
 title: Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
-
+ai-usage: ai-assisted
 author: garrodonnell
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 12/12/2025
 ms.author: godonnell
@@ -219,6 +216,11 @@ Generate an encryption certificate in Azure Key Vault. The public key is configu
 
 Create an Azure Function that validates user credentials against your legacy identity provider.
 
+> [!IMPORTANT]
+> The customer-hosted endpoint configured for the OnPasswordSubmit custom authentication extension must be a customer-managed HTTPS endpoint, typically implemented as an Azure Function. This endpoint is invoked by Microsoft Entra External ID during sign-in to validate the user's password against the legacy identity system and return the migration result.
+>
+> The URL must not point to Microsoft Graph, a Microsoft Entra service endpoint, or the legacy identity provider's interactive sign-in URL. It must reference the Function App function endpoint that implements your validation logic. You're responsible for securing this endpoint.
+
 #### 2.2.1 Request schema
 
 When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
@@ -226,7 +228,8 @@ When sending a request to your custom authentication extension, Entra will inclu
 ```json
 {  
   "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",  
+  "data": {  
     "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
@@ -241,12 +244,6 @@ When sending a request to your custom authentication extension, Entra will inclu
       },  
       "protocol": "OAUTH2.0",  
       "clientServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "resourceServicePrincipal": {  
         "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
         "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
         "appDisplayName": "My Test application",  
@@ -291,7 +288,7 @@ Entra expects the response from your custom extension in the below format.
       {  
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
-    ]
+    ],
     "nonce": "{nonce-value-from-external-id}"
   }  
 }  
@@ -1049,7 +1046,7 @@ Content-type: application/json
 
 ## 5. Test and validate before deploying to production
 
-Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely.
+Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely. For more information on testing custom extensions, see [Test your custom authentication extension](../../identity-platform/custom-extension-tokenissuancestart-configuration.md#step-5-test-the-application).
 
 Consider the following testing checklist:
 
@@ -1060,9 +1057,32 @@ Consider the following testing checklist:
 - **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
+If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
+
+## Known issues
+
+**Password complexity mismatch in Native Auth**: During a Native Auth flow, if a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards an error is returned instead of redirecting to SSPR.
+ 
+This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
+
+## Frequently asked questions
+
+### Which URL should I use for the OnPasswordSubmit custom authentication extension?
+
+Use a customer-hosted HTTPS endpoint, typically an Azure Function, that validates the password against the legacy identity system. The URL must not reference Microsoft Graph, a Microsoft Entra service, or the legacy identity provider's interactive sign-in endpoint. It must point to your Function App function endpoint that implements the validation logic.
+
+### Why do on-premises attributes appear in the user schema?
+
+External ID uses the shared Microsoft Entra user model, which includes on-premises attributes. In External ID, these attributes are read-only and aren't used for identity matching or write-back during JIT password migration. User resolution occurs earlier in the sign-in flow using configured sign-in identifiers such as UPN or email.
+
+### Where should I deploy JIT migration components?
+
+Deploy JIT migration components in a secure identity subscription with limited RBAC. Tightly control administrative access to prevent unauthorized changes to customer-hosted authentication logic. This separation helps protect the authentication flow and user accounts from compromise.
+
 ## Next steps
 
 - [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
+- [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
 - [Azure Key Vault documentation](/azure/key-vault/)

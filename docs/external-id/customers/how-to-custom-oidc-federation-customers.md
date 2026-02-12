@@ -1,15 +1,8 @@
 ---
 title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
- 
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
 ms.date: 09/15/2025
-ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 

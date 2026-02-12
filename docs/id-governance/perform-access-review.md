@@ -1,14 +1,10 @@
 ---
 title: Review access to groups & applications in access reviews
 description: Learn how to review access of group members or application access in Microsoft Entra access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 ---

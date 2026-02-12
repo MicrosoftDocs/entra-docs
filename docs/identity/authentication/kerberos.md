@@ -52,7 +52,7 @@ For example, when a Microsoft Entra ID-joined Windows client accesses a file sha
 
 In hybrid scenarios, Microsoft Entra Kerberos allows your Microsoft Entra ID tenant to operate as a dedicated Kerberos realm alongside your existing on-premises Active Directory realm. When a user signs in to a Windows device that's either Microsoft Entra ID joined or hybrid joined, the device authenticates with Microsoft Entra ID and receives a [Primary Refresh Token (PRT)](../devices/concept-primary-refresh-token.md).
 
-In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm `KERBEROS.MICROSOFTONLINE.COM`. This is a partial TGT to access on-premises resources. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
+In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm KERBEROS.MICROSOFTONLINE.COM, which is used for authentication to cloud resources. A separate partial TGT is issued for accessing on-premises resources, as described later in this document. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
 
 ### Cloud only identities scenarios (Preview)
 

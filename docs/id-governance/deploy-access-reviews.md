@@ -1,13 +1,9 @@
 ---
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.

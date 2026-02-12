@@ -1,13 +1,8 @@
 ---
 title: Configure Akamai WAF with Microsoft Entra External ID
 description: Learn how to configure Akamai Web Application Firewall (WAF) to protect against attacks for Microsoft Entra External ID tenants.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 01/29/2026
-ms.author: cmulligan
 ms.custom: it-pro
 
 #CustomerIntent: As an IT administrator, I want to learn how to enable the Akamai Web Application Firewall (WAF) service for an external tenant with a Akamai WAF so that I can protect web applications from common exploits and vulnerabilities.
