@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<instancename>.veza.com/login`.
+    `https://<instancename>.vezacloud.com/login`.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
