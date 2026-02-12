@@ -56,11 +56,11 @@ Configure and test Microsoft Entra SSO with Samsara using a test user called **B
 
 To configure and test Microsoft Entra SSO with Samsara, perform the following steps:
 
+1. **[Configure domain verification in Samsara](https://kb.samsara.com/hc/en-us/articles/31499789674893-Verify-Domains-for-Secure-SSO-Authentication#UUID-9e9af4f3-fa9a-e18c-723d-66e148c98140)** - to enable SSO within Samsara, domain verification is a prerequisite.
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Samsara SSO](#configure-samsara-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Samsara test user](#create-samsara-test-user)** - to have a counterpart of B.Simon in Samsara that's linked to the Microsoft Entra representation of user.
+1. **[Create Samsara test user](#create-samsara-test-user)** - to have a counterpart of B.Simon in Samsara that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,39 +73,27 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Browse to **Entra ID** > **Enterprise apps** > **Samsara** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set-up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. Open your Samsara dashboard and navigate to Settings > Single Sign-On tab. If you want to create a user SSO connection, click **Add** in the user SSO box. If you want to create a driver SSO connection, click **Add** in the driver SSO box. You will need to copy over values from Samsara into Entra ID SAML Configuration.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
+1. In Entra ID, on the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign-on URL** text box, type a URL using one of the following patterns:
-    `https://cloud.samsara.com/signin/<ORGID>` for US cloud customers
-    `https://cloud.eu.samsara.com/signin/<ORGID>` for EU cloud customers
+    a. Copy the link from Service Provider Entity ID field in Samsara into the **Identifier (Entity ID)** text box in Entra ID.
 
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `urn:auth0:samsara-dev:samlp-orgid-<ORGID>`
-
-	c. In the **Reply URL** text box, type a URL using the following pattern:
-	`https://samsara-dev.auth0.com/login/callback?connection=samlp-orgid-<ORGID>`
+	b. Copy the link from Post-back/ACS URL field in Samsara into the **Reply URL** text box in Entra ID.
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign-on URL, Reply URL, and Identifier. Contact the [Samsara Client support team](mailto:support@samsara.com) to get these values, or in Samsara, go to **Settings** > **Single-Sign-On** > **New SAML Connection** to obtain the \<ORGID\>. You also can refer to the patterns shown in the **Basic SAML Configuration** section.
+	> Update these values with the actual Reply URL and Identifier. Contact the [Samsara Client support team](mailto:support@samsara.com) to get these values, or in Samsara, go to **Settings** > **Single-Sign-On** and select the connection you want to create in order to obtain the right ACS and Identifier URLs.
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find and copy the **App Federation Metadata URL** or download the **Federation Metadata XML**. In the Samsara dashboard in Settings > Single Sign-on in the relevant SSO configuration (user or driver), paste the metadata URL or upload the file. Click **Save** to apply the changes.
 
-	![The Certificate download link](common/certificatebase64.png)
-
-1. On the **Set-up Samsara** section, copy the **login URL**
-
-	![Copy configuration URLs](common/copy-configuration-urls.png)
+	<img width="711" height="248" alt="entra_id_sso_doc" src="https://github.com/user-attachments/assets/225ddbc9-6e2e-42b0-8ccc-10b422462e7a" />
 	
 <a name='create-an-azure-ad-test-user'></a>
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
-## Configure Samsara SSO
-
-To configure single sign-on on **Samsara** side, you need to send the downloaded **Certificate (Base64)** and **Login URL** from Azure portal to [Samsara support team](mailto:support@samsara.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Samsara test user
 
@@ -128,5 +116,8 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 You can also use Microsoft My Apps to test the application in any mode. When you select the Samsara tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Samsara for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
+
+For more information, please refer to the Samsara KB article on SSO configuration. [Samsara SSO KB Article](https://kb.samsara.com/hc/en-us/articles/18709097464077-Single-Sign-On-SSO-Authentication#UUID-ff7f0e21-59f5-e6d4-6b81-2f090c691895_section-idm232308954423931).
+
 
 Once you configure Samsara you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
