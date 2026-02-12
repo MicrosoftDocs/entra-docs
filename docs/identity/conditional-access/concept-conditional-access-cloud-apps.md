@@ -204,12 +204,20 @@ Use the following PowerShell script to list all applications in your tenant that
 
 ```powershell
 # ==============================
-# Inventory of tenant-owned apps whose delegated consent grants include ONLY
+# Inventory of apps whose delegated consent grants include ONLY
 # the OIDC scopes + specific directory scopes listed below.
+#
+# Enhancements incorporated:
+#  - Supported both PowerShell 5.1 and 7.x
+#  - Add user sign-in count (last 7 days) per app
 #
 # Output:
 #  - ServicePrincipalObjectId (oauth2PermissionGrants.clientId = SP object id)
+#  - AppId
+#  - AppDisplayName
+#  - AppOwnerOrganizationId (for classification)
 #  - Scopes (union of delegated scopes granted)
+#  - UserSigninsLast7Days (Successful + Failed)
 # ==============================
 
 $TenantId = Read-Host "Enter your Microsoft Entra tenant ID (GUID)"
@@ -222,12 +230,16 @@ $BaselineScopes = @(
 )
 
 Disconnect-MgGraph -ErrorAction SilentlyContinue
+
 Connect-MgGraph -TenantId $TenantId -Scopes @(
   "DelegatedPermissionGrant.Read.All",
-  "Directory.Read.All"
+  "Directory.Read.All",
+  "Reports.Read.All"
 )
 
+# ------------------------------
 # Pull oauth2PermissionGrants (paging)
+# ------------------------------
 $uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope,consentType"
 $grants = @()
 while ($uri) {
@@ -236,15 +248,16 @@ while ($uri) {
   $uri = $resp.'@odata.nextLink'
 }
 
-# Build baseline-only candidate set (paste-safe: no leading pipes)
-$candidates = @()
+# ------------------------------
+# Build baseline-only candidate set (Jun: HashSet per clientId)
+# ------------------------------
+$scopesByClient = @{}  # key: clientId (SP objectId), value: HashSet[string] (case-insensitive)
 
-$scopesByClient = @{}  # key: clientId string, value: HashSet[string]
 foreach ($g in $grants) {
   $cid = $g.clientId.ToString().Trim()
+  if (-not $cid) { continue }
 
   if (-not $scopesByClient.ContainsKey($cid)) {
-    # Use HashSet for fast add + uniqueness
     $scopesByClient[$cid] = [System.Collections.Generic.HashSet[string]]::new(
       [System.StringComparer]::OrdinalIgnoreCase
     )
@@ -259,10 +272,10 @@ foreach ($g in $grants) {
 
 $candidates = foreach ($cid in $scopesByClient.Keys) {
   $scopes = $scopesByClient[$cid]
+  if ($scopes.Count -le 0) { continue }
 
-  # Outside baseline?
   $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
-  if ($outside.Count -eq 0 -and $scopes.Count -gt 0) {
+  if ($outside.Count -eq 0) {
     [PSCustomObject]@{
       ServicePrincipalObjectId = $cid
       Scopes = ($scopes -join ' ')
@@ -270,39 +283,89 @@ $candidates = foreach ($cid in $scopesByClient.Keys) {
   }
 }
 
+# ------------------------------
+# Pull per-app sign-in summary for last 7 days (Graph REST via Invoke-MgGraphRequest)
+# Endpoint: GET /beta/reports/getAzureADApplicationSignInSummary(period='D7')
+# In this API output, 'id' corresponds to the appId (clientId)
+# ------------------------------
+$signInSummary = @()
+$signInUri = "https://graph.microsoft.com/beta/reports/getAzureADApplicationSignInSummary(period='D7')"
+
+while ($signInUri) {
+  $resp = Invoke-MgGraphRequest -Method GET -Uri $signInUri
+
+  if ($resp -and $resp.value) {
+    $signInSummary += $resp.value
+  }
+
+  # Paging (if present)
+  $signInUri = $resp.'@odata.nextLink'
+}
+
+# appId -> total sign-ins (7d)
+$signInCountByAppId = @{}
+foreach ($s in $signInSummary) {
+  $appId = $s.id
+  if (-not $appId) { continue }
+
+  # PS5.1-safe null handling
+  $success = 0
+  $failed  = 0
+  if ($null -ne $s.successfulSignInCount) { $success = [int]$s.successfulSignInCount }
+  if ($null -ne $s.failedSignInCount)     { $failed  = [int]$s.failedSignInCount }
+
+  $signInCountByAppId[$appId] = $success + $failed
+}
+
 $resultsTenantOwned = @()
 $resultsNotTenantOwned = @()
 
-# Filter to tenant-owned or external apps
+# ------------------------------
+# Filter to tenant-owned or external apps; enrich with appId/displayName + sign-in counts
+# ------------------------------
 foreach ($c in $candidates) {
   try {
-    $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appOwnerOrganizationId"
+    $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appId,displayName,appOwnerOrganizationId"
     $sp = Invoke-MgGraphRequest -Method GET -Uri $spUri
 
+    $signinCount7d = 0
+    if ($sp.appId -and $signInCountByAppId.ContainsKey($sp.appId)) {
+      $signinCount7d = $signInCountByAppId[$sp.appId]
+    }
+
+    $row = [PSCustomObject]@{
+      ServicePrincipalObjectId = $c.ServicePrincipalObjectId
+      AppId                   = $sp.appId
+      AppDisplayName          = $sp.displayName
+      AppOwnerOrganizationId  = $sp.appOwnerOrganizationId
+      Scopes                  = $c.Scopes
+      UserSigninsLast7Days    = $signinCount7d
+    }
+
     if ($sp.appOwnerOrganizationId -eq $TenantId) {
-      $resultsTenantOwned += [PSCustomObject]@{
-        ServicePrincipalObjectId = $c.ServicePrincipalObjectId
-        Scopes = $c.Scopes
-      }
+      $resultsTenantOwned += $row
     }
     else {
-      $resultsNotTenantOwned += [PSCustomObject]@{
-        ServicePrincipalObjectId = $c.ServicePrincipalObjectId
-        Scopes = $c.Scopes
-      }
+      $resultsNotTenantOwned += $row
     }
   }
   catch {
-    # Ignore non-enumerable / non-tenant-owned service principals
+    # Ignore non-enumerable / missing service principals
   }
 }
 
+# ------------------------------
 # Output
-'=== All tenant-owned apps whose delegated consent grants include ONLY the OIDC scopes + specific directory scopes ==='
-$resultsTenantOwned | Sort-Object ServicePrincipalObjectId
+# ------------------------------
+'=== Tenant-owned apps whose delegated consent grants include ONLY baseline scopes + user sign-ins (last 7 days) ==='
+$resultsTenantOwned |
+  Sort-Object UserSigninsLast7Days -Descending |
+  Format-Table -AutoSize
 
-'=== All external apps whose delegated consent grants include ONLY the OIDC scopes + specific directory scopes ==='
-$resultsNotTenantOwned | Sort-Object ServicePrincipalObjectId
+'=== External apps whose delegated consent grants include ONLY baseline scopes + user sign-ins (last 7 days) ==='
+$resultsNotTenantOwned |
+  Sort-Object UserSigninsLast7Days -Descending |
+  Format-Table -AutoSize
 ```
 
 #### [Usage and Insights report](#tab/usage-and-insights-report)
