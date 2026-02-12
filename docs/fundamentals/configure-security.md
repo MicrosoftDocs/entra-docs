@@ -155,7 +155,7 @@ Collect and analyze security logs and triage alerts.
 | [Privileged users sign in with phishing-resistant methods](zero-trust-monitor-detect.md#privileged-users-sign-in-with-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged) | Microsoft Entra ID P2 |
 | [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged) | Microsoft Entra ID P2  |
-| [All risky workload identities are triaged]
+| [All risky workload identities are triaged](zero-trust-monitor-detect.md#all-risky-workload-identities-are-triaged) | Microsoft Entra ID P2 |
 | [Tenant creation events are triaged](zero-trust-monitor-detect.md#tenant-creation-events-are-triaged) | Microsoft Entra ID P1 |
 | [All user sign-in activity uses strong authentication methods](zero-trust-monitor-detect.md#all-user-sign-in-activity-uses-strong-authentication-methods) | Microsoft Entra ID P1 |
 | [High priority Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#high-priority-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
