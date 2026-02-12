@@ -21,6 +21,8 @@ items:
           href: configure-inheritable-permissions-blueprints.md
         - name: Control user access to agents
           href: control-user-access-agents.md
+        - name: Assign agents to applications
+          href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Agent identity administration
     items:
         - name: Register agents with Agent Registry
@@ -31,6 +33,8 @@ items:
           href: manage-agents-without-identity.md
         - name: Agent communication
           href: /entra/agent-id/identity-platform/registry-agent-to-agent-protocol?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+        - name: Maintain agent identity sponsors
+          href: /entra/id-governance/agent-sponsor-tasks.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
 - name: Concepts
   expanded: true
   items:
