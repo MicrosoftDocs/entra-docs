@@ -31,6 +31,9 @@ This policy can help organizations accomplish the following initiatives:
 1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
    1. Under **Include**, choose **Select resources**.
    1. Choose **Office 365**, then select **Select**.
+  
+1. Under **Conditions** > **Filter for devices**, select the following options:
+   1. Under **Exclude filtered devices**, configure the rule with: `device.isCompliant -eq True -and device.trustType -eq "ServerAD"`
 1. Under **Access controls** > **Session**, select **Use app enforced restrictions**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
