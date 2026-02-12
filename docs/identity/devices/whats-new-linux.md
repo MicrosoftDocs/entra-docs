@@ -25,31 +25,32 @@ This article provides information about the latest updates to Microsoft single s
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
 
-
 #### [Ubuntu20.04](#tab/ubuntu2004)
+
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msft-identity-broker/)
 
 #### [Ubuntu22.04](#tab/ubuntu2204)
+
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
 
 #### [Ubuntu24.04](#tab/ubuntu2404)
+
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/)
 
 #### [RedHat 8](#tab/redhat8)
 
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
-
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
 
 #### [RedHat 9](#tab/redhat9)
+
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 
 #### [RedHat 10](#tab/redhat10)
 
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/)
-
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/)
 
 ---
@@ -123,11 +124,12 @@ Add the Microsoft repository.
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    sudo dnf install -y dnf-plugins-core
+
    # for rhel 8/9
    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
 
    # for rhel10:
-   sudo dnf config-manager --add-repo 
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-prod
    ```
    
 ### [RHEL insiders-fast Repository](#tab/redhat-install-insiders-fast)
@@ -137,13 +139,12 @@ Add the Microsoft repository.
 ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    sudo dnf install -y dnf-plugins-core
-   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
-   
+
    # for rhel 8 and 9
-   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
 
    # for rhel10:
-   sudo dnf config-manager --add-repo 
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
 ```
 
 ---
