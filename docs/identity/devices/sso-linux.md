@@ -194,7 +194,7 @@ Run the following commands to uninstall the Microsoft Identity Broker and remove
 Beginning with version `2.0.2` of the microsoft-identity-broker, Phish-Resistant MFA (PRMFA) is supported on Linux devices using:
 - SmartCard
 - Certificate Based Authentication (CBA)
-- FIDO2 key with a PIV (Personal Identity Verification) profile (certificate on a FIDO device)
+- USB tokens containing a PIV/Smartcard applet
 
 This feature is in preview and requires extra configuration steps to enable support for SmartCard/CBA on Linux devices.
 
