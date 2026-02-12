@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 02/12/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
@@ -15,7 +15,7 @@ ms.reviewer: dastrock
 
 # Create agent identities in agent identity platform
 
-After you create an agent identity blueprint, the next step is to create one or more agent identities that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
+After you create an agent identity blueprint, the next step is to create one or more [agent identities](agent-identities.md) that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
 	
 This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs.
 	
@@ -23,18 +23,17 @@ If you want to quickly create agent identities for testing purposes, consider us
 
 ## Prerequisites
 
-Before creating agent identities, ensure you have:
+To create agent identities, you need:
 
-- [Understand agent identities](./agent-identities.md)
-- A configured agent identity blueprint (see [Create an agent blueprint](create-blueprint.md)). Record the agent identity blueprint app ID from the creation process
-- A web service or application (running locally or deployed to Azure) that host the agent identity creation logic <!--- I am stumped here - is this the blueprint app I created before? Or do I need to create a separate app registration? --->
+- An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
+- A web service or application (running locally or deployed to Azure) that hosts the agent identity creation logic.
 
 ## Get an access token using agent identity blueprint
 
 You use the agent identity blueprint to create each agent identity. Request an access token from Microsoft Entra using your agent identity blueprint:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
-<!--- Should we also provide steps for people not using an Azure VM or whatever is needed for this to work? I honestly didn't even know how to get started here. --->
+
 When using a managed identity as a credential, you must first obtain an access token using your managed identity. Managed identity tokens can be requested from an IP address locally exposed in the compute environment. Refer to the [managed identity documentation for details](/entra/identity/managed-identities-azure-resources/).
 
 ```
@@ -56,7 +55,6 @@ grant_type=client_credentials
 ```
 
 A `client_secret` parameter can also be used instead of `client_assertion` and `client_assertion_type`, when a client secret is being used in local development.
-
 
 ## [Microsoft.Identity.Web](#tab/microsoft-identity-web)
 
