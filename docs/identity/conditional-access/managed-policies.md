@@ -48,6 +48,7 @@ As threats evolve, Microsoft might update these policies to use new features, fu
 - [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
+- [Phishing-resistant multifactor authentication for admins](#Phishing-resistant-multifactor-authentication-for-admins)
 
 ### Block all high risk agents from accessing all resources (Preview)
 
@@ -107,6 +108,9 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
     - This setup ensures that the policy doesn't block legitimate users and that you’re getting maximum value on your P2 licenses.
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
+
+### Phishing-resistant multifactor authentication for admins
+Accounts that are assigned privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised. 
 
 ## Security defaults policies
 
