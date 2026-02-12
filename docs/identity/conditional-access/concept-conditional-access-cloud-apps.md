@@ -228,7 +228,7 @@ Connect-MgGraph -TenantId $TenantId -Scopes @(
 )
 
 # Pull oauth2PermissionGrants (paging)
-$uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope"
+$uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope,consentType"
 $grants = @()
 while ($uri) {
   $resp = Invoke-MgGraphRequest -Method GET -Uri $uri
@@ -238,21 +238,34 @@ while ($uri) {
 
 # Build baseline-only candidate set (paste-safe: no leading pipes)
 $candidates = @()
-foreach ($g in ($grants | Group-Object clientId)) {
-  $spObjectId = $g.Name
 
-  $scopes = $g.Group |
-  ForEach-Object { ($_.scope -split '\s+') } |
-  Where-Object { $_ -and $_.Trim() -ne "" } |
-  Sort-Object -Unique
+$scopesByClient = @{}  # key: clientId string, value: HashSet[string]
+foreach ($g in $grants) {
+  $cid = $g.clientId.ToString().Trim()
 
-  if ($scopes.Count -gt 0) {
-    $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
-    if ($outside.Count -eq 0) {
-      $candidates += [PSCustomObject]@{
-        ServicePrincipalObjectId = $spObjectId
-        Scopes = ($scopes -join " ")
-      }
+  if (-not $scopesByClient.ContainsKey($cid)) {
+    # Use HashSet for fast add + uniqueness
+    $scopesByClient[$cid] = [System.Collections.Generic.HashSet[string]]::new(
+      [System.StringComparer]::OrdinalIgnoreCase
+    )
+  }
+
+  foreach ($s in ($g.scope -split '\s+')) {
+    if ($s -and $s.Trim().Length -gt 0) {
+      [void]$scopesByClient[$cid].Add($s.Trim())
+    }
+  }
+}
+
+$candidates = foreach ($cid in $scopesByClient.Keys) {
+  $scopes = $scopesByClient[$cid]
+
+  # Outside baseline?
+  $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
+  if ($outside.Count -eq 0 -and $scopes.Count -gt 0) {
+    [PSCustomObject]@{
+      ServicePrincipalObjectId = $cid
+      Scopes = ($scopes -join ' ')
     }
   }
 }
