@@ -36,13 +36,21 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 #### [Ubuntu24.04](#tab/ubuntu2404)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/)
 
+#### [RedHat 8](#tab/redhat8)
+
+- [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
+
+- [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
+
 #### [RedHat 9](#tab/redhat9)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 
-#### [RedHat 8](#tab/redhat8)
-- [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
-- [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
+#### [RedHat 10](#tab/redhat10)
+
+- [microsoft-identity-broker](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/)
+
+- [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/)
 
 ---
 
@@ -115,24 +123,50 @@ Add the Microsoft repository.
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    sudo dnf install -y dnf-plugins-core
+   # for rhel 8/9
    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
-   ```
 
+   # for rhel10:
+   sudo dnf config-manager --add-repo 
+   ```
+   
 ### [RHEL insiders-fast Repository](#tab/redhat-install-insiders-fast)
 
 Add the Microsoft repository.  
 
 ```bash
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   sudo dnf install -y dnf-plugins-core
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+   
+   # for rhel 8 and 9
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel
+
+   # for rhel10:
+   sudo dnf config-manager --add-repo 
 ```
 
 ---
 
 ## Changes
 
-### 2.5.1 - Jan 29, 2025 - (Preview Release in fast Insiders channel)
+> [!WARNING]
+> When upgrading from version 2.0.2 or earlier to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+
+### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
+
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
+
+#### Assets
+- Ubuntu-24.04 - [microsoft-identity-broker_2.5.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.2-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.5.2-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.2-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm)
+
+### 2.5.1 - Jan 29, 2026 - (Preview Release in fast Insiders channel)
+
 - (Linux) Fix smartcard dialogs layout for GTK4
 - (Linux) Fix a wrong callback issue if the browser is reused.
 - (Linux) Add GetDeviceState support with TLS 1.3 in CPP broker
@@ -146,7 +180,8 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/micro
 - Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm) 
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm)
 
-### 2.5.0 - Jan 13, 2025 - (Preview Release in fast Insiders channel)
+### 2.5.0 - Jan 13, 2026 - (Preview Release in fast Insiders channel)
+
 - (Linux) Change package file names to include target OS
 - (Linux) Misc Bug Fixes
 - (Linux) Include a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
@@ -156,9 +191,6 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/micro
 - (Linux) Update certificates/keys location used by Linux device broker
 - (Linux) Include broker version in broker-produced telemetry
 - (xplat) Add DUNA xplat and DUNA iOS CBA
-
-> [!WARNING]
-> When upgrading from version 2.0.2 or earlier to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
 
 #### Assets
 
@@ -352,4 +384,5 @@ For version-specific issues:
 - Check the release notes for known issues
 - Verify system requirements are met
 - Review logs using: `journalctl --user -u microsoft-identity-broker.service`
+
 - Consider using the microsoft-identity-diagnostics package for detailed troubleshooting
