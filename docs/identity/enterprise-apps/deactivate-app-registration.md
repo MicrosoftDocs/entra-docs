@@ -73,7 +73,7 @@ The following table outlines the different approaches in more detail:
 
 ## Deactivate an application
 
-To deactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least a [Cloud Application Administrator](~/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
+To deactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
@@ -127,15 +127,15 @@ To deactivate an application using Microsoft Graph API or Microsoft Entra admin 
 
 You can view deactivated applications to monitor their status and track which applications have been temporarily disabled in your tenant.
 
-### Microsoft Entra admin center
+## [Microsoft Entra admin center](#tab/admin-center)
+
 1. Navigate to the Microsoft Entra admin center –> **App Registrations** pane.
-1.  Select the **Deactivated applications** tab.
+1. Select the **Deactivated applications** tab.
 1. Alternatively, navigate to the **Enterprise apps** pane and check on a given enterprise app under **Manage** -> **Properties** -> **Activation status**.
 
     :::image type="content" source="media/deactivate-app-registration/view-activation-status.png" alt-text="Screenshot showing the Activation status field in the Enterprise app Properties page displaying whether an application is active or deactivated":::
 
-
-### Microsoft Graph API
+## [Microsoft Graph API](#tab/graph-api)
 
 1. List all deactivated applications
 
@@ -148,6 +148,8 @@ You can view deactivated applications to monitor their status and track which ap
     ```http
     GET https://graph.microsoft.com/beta/applications/{application-id}?$select=displayName,isDisabled,appId
     ```
+
+---
 
 > [!IMPORTANT]
 > Deactivation must be performed on the app registration (application object). The deactivated state is then reflected on the enterprise app (service principal object). You can't deactivate the service principal directly. You can only disable sign-in on the service principal, by using set `accountEnabled = false`.
