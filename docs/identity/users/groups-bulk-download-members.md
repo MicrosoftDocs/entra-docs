@@ -27,7 +27,8 @@ To download all members of a specific group:
 
     :::image type="content" source="media/bulk-operations/group-members-tab.png" alt-text="Screenshot of a selected group's Members tab listing users and service principals.":::
 
-3. Select **Bulk operations** > **Download members**.
+3. On the **Members** page command bar, select **Download members**.
+   If you see a **Bulk operations** menu instead, select **Bulk operations** > **Download members**.
 
     :::image type="content" source="media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
