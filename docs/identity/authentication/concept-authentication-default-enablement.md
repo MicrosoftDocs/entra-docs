@@ -1,15 +1,8 @@
 ---
 title: Protecting authentication methods in Microsoft Entra ID
 description: Learn about authentication features that can be enabled by default in Microsoft Entra ID
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 04/29/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

@@ -1,13 +1,8 @@
 ---
 title: Enable passkeys in Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/27/2026
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.

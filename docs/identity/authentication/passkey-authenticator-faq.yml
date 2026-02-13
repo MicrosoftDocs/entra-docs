@@ -2,13 +2,8 @@
 metadata:
   title: Passkeys in Microsoft Authenticator FAQs
   description: Frequently asked questions and answers related to passkey support in Microsoft Authenticator. 
-  ms.service: entra-id
-  ms.subservice: authentication
   ms.topic: faq
   ms.date: 12/10/2025
-  ms.author: justinha
-  author: justinha
-  manager: dougeby
   ms.reviewer: mjsantani
 title: Frequently asked questions about passkey support in Microsoft Authenticator
 summary: |
