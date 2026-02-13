@@ -55,7 +55,6 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ## View product licenses assigned to a group
 
 
-```powershell
 The [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet can be used to retrieve the group object and check the *AssignedLicenses* property: it lists all product licenses currently assigned to the group.
 
 ```powershell
