@@ -92,7 +92,7 @@ Remote network connectivity allows you to connect branch offices and other remot
 
 You can use the baseline security profile to apply tenant-wide web content filtering policies to all remote network traffic. The baseline profile enforces policies at the lowest priority in the policy stack and applies to all Internet Access traffic routed through the service, making it ideal for securing remote network locations.
 
-### Configure web content filtering for remote networks
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles** > **Baseline profile**.
 1. Select **Link a policy** and then select **Existing policy**.
@@ -102,7 +102,7 @@ You can use the baseline security profile to apply tenant-wide web content filte
 > [!NOTE]
 > The baseline security profile applies to all traffic routed through Global Secure Access, including both client-based and remote network traffic. No Conditional Access policy configuration is required for remote network traffic, as the baseline profile enforces policies by default.
 
-### Configure web content filtering for remote networks using the Microsoft Graph API
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 You can also configure the baseline profile programmatically using Microsoft Graph network access APIs. For a complete tutorial, see [Configure Microsoft Entra Internet Access using Microsoft Graph APIs](/graph/tutorial-entra-internet-access).
 
@@ -154,6 +154,8 @@ You can also configure the baseline profile programmatically using Microsoft Gra
     }
     ```
 1. Select **Run query** to link the policy.
+
+---
 
 For more information on applying security policies to remote networks, see [Apply security policies to remote network traffic](how-to-apply-security-policies-remote-network.md).
 

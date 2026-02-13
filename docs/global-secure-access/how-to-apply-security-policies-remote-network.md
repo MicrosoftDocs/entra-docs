@@ -37,20 +37,11 @@ Key characteristics of the baseline profile:
 - **Automatic enforcement**: Applies to all traffic without requiring Conditional Access policy configuration.
 - **Tenant-wide coverage**: Enforces policies on all remote network traffic automatically.
 - **Lowest priority**: Operates at priority 65,000 in the policy stack, allowing user-specific profiles to override when needed.
-- **Comprehensive policy support**: Can include web content filtering, threat intelligence, TLS inspection, and cloud firewall policies.
 
-For more information on security profile concepts, see [Understand Microsoft Entra Internet Access](concept-internet-access.md).
 
-## Supported security policies for remote networks
+For more information on security profile concepts, see [Understand Microsoft Entra Internet Access](concept-internet-access.md).    
 
-Any security policy within Global Secure Access can be associated with the baseline security profile to protect remote network traffic. The following policy types are supported:
-
-- **Web content filtering policies**: Control access to websites based on categories, FQDNs, or URLs.
-- **Threat intelligence policies**: Block access to known malicious destinations based on Microsoft and third-party threat intelligence.
-- **TLS inspection policies**: Decrypt and inspect HTTPS traffic for advanced threat detection.
-- **Cloud firewall policies**: Define granular firewall rules for network traffic control.
-
-## Configure security policies using the Microsoft Entra admin center
+## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 Follow these steps to apply security policies to remote network traffic using the baseline profile.
 
@@ -59,7 +50,7 @@ Follow these steps to apply security policies to remote network traffic using th
 If you haven't already created a security policy, create one first:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Secure** and select the type of policy you want to create:
+1. Browse to **Global Secure Access** > **Secure** and select the type of policy you want to create, such as:
    - **Web content filtering policy**
    - **Threat intelligence policies**
    - **TLS inspection policies**
@@ -80,9 +71,9 @@ If you haven't already created a security policy, create one first:
 > [!NOTE]
 > The baseline security profile automatically applies to all traffic routed through Global Secure Access, including remote network traffic. No Conditional Access policy configuration is required.
 
-## Configure security policies using Microsoft Graph API
+## [Microsoft Graph API](#tab/microsoft-graph-api)
 
-You can also configure the baseline profile programmatically using Microsoft Graph network access APIs. For a complete tutorial on configuring Internet Access policies with Microsoft Graph, see [Configure Microsoft Entra Internet Access using Microsoft Graph APIs](/graph/tutorial-entra-internet-access).
+You can configure the baseline profile programmatically using Microsoft Graph network access APIs. For a complete tutorial on configuring Internet Access policies with Microsoft Graph, see [Configure Microsoft Entra Internet Access using Microsoft Graph APIs](/graph/tutorial-entra-internet-access).
 
 ### Prerequisites for API access
 
@@ -206,6 +197,8 @@ Content-type: application/json
   }
 }
 ```
+
+---
 
 ## Verify policy enforcement
 
