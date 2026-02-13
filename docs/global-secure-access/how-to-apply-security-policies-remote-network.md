@@ -63,10 +63,12 @@ If you haven't already created a security policy, create one first:
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles** > **Baseline profile**.
 1. Select **Edit profile**.
 1. In the **Link policies** view, select **Link a policy** > **Existing policy**.
-1. Choose the policy type (web content filtering, threat intelligence, TLS inspection, or cloud firewall).
+1. Choose the policy type (such as web content filtering, threat intelligence, TLS inspection, or cloud firewall).
 1. Select the policy you want to apply and assign it a priority.
 1. Select **Add**.
 1. Select **Save**.
+
+    :::image type="content" source="media/how-to-apply-security-policies-remote-network/baseline-profile-link-policy.png" alt-text="Screenshot of the baseline profile page showing how to link a security policy to the baseline profile." lightbox="media/how-to-apply-security-policies-remote-network/baseline-profile-link-policy.png":::
 
 > [!NOTE]
 > The baseline security profile automatically applies to all traffic routed through Global Secure Access, including remote network traffic. No Conditional Access policy configuration is required.

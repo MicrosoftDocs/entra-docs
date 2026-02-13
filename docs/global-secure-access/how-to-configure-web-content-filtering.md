@@ -99,6 +99,8 @@ You can use the baseline security profile to apply tenant-wide web content filte
 1. Select the web content filtering policy you want to apply to remote network traffic and select **Add**.
 1. The baseline profile automatically applies to all remote network traffic without requiring a Conditional Access policy.
 
+    :::image type="content" source="media/how-to-configure-web-content-filtering/baseline-profile-security-profiles.png" alt-text="Screenshot of the Security profiles page showing the Baseline profile tab with the baseline profile listed at priority 65000." lightbox="media/how-to-configure-web-content-filtering/baseline-profile-security-profiles.png":::
+
 > [!NOTE]
 > The baseline security profile applies to all traffic routed through Global Secure Access, including both client-based and remote network traffic. No Conditional Access policy configuration is required for remote network traffic, as the baseline profile enforces policies by default.
 
