@@ -1,13 +1,8 @@
 ---
 title: Register passkeys in Authenticator on Android and iOS devices
 description: Registration and management of passkeys with Microsoft Authenticator on Android and iOS devices.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 12/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: hanki77, tilarso
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange

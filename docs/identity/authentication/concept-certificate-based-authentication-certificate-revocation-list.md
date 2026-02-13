@@ -1,13 +1,9 @@
 ---
 title: Understand Microsoft Entra certificate-based authentication Certificate revocation list
 description: Learn how certificate revocation list works with Microsoft Entra certificate-based authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 08/26/2025
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vranganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high

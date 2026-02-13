@@ -1,13 +1,8 @@
 ---
 title: Security questions authentication method
 description: Learn about using security questions in Microsoft Entra ID to help improve and secure sign-in events
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
 # Uses details from securing Entra include file entra-docs-pr\docs\includes\secure-recommendations\22072.md for important box.
