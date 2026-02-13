@@ -1,11 +1,11 @@
 ---
 title: Microsoft Entra hybrid join using Microsoft Entra Kerberos (Preview)
-description: Explains prerequisites and steps to set up Microsoft Entra hybrid join by using Microsoft Entra .
+description: Explains prerequisites and steps to set up Microsoft Entra hybrid join by using Microsoft Entra Kerberos.
 #customer intent: As a hybrid identity administrator, I want to allow users to join devices to Microsoft Entra ID.
 author: nbeesett
 ms.author: justinha
 ms.reviewer: nbeesett
-ms.date: 02/02/2026
+ms.date: 02/13/2026
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: devices
@@ -13,7 +13,7 @@ ms.subservice: devices
 
 # Microsoft Entra hybrid join using Microsoft Entra Kerberos (Preview) 
 
-You can use Microsoft Entra Kerberos to perform Microsoft Entra hybrid join for a device without requiring Active Directory Federation Services (ADFS) or Microsoft Entra Connect sync. You get the Microsoft Entra hybrid join behavior instantly without the ADFS setup.
+You can use Microsoft Entra Kerberos to perform Microsoft Entra hybrid join for a device without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect sync. You get the Microsoft Entra hybrid join behavior instantly without the ADFS setup.
 
 ## Use cases
 
@@ -29,15 +29,15 @@ The following use cases are enabled for preview:
 Make sure you have the following permissions and configuration set up to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos. There are no license requirements.
 
 - **Role requirements**: The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group and the Enterprise Admins group and a Microsoft Entra user with the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow#permissions). 
-- **Configure the KDC proxy server Group Policy Object (GPO)**: This prerequisite is only required if you deployed a KDC Proxy Server GPO to your client computer. The user who configures the GPO must be a Domain Admin or be delegated permissions to configure a GPO.
+- **Configure the Key Distribution Center (KDC) proxy server Group Policy Object (GPO)**: This prerequisite is only required if you deployed a KDC Proxy Server GPO to your client computer. The user who configures the GPO must be a Domain Admin or be delegated permissions to configure a GPO.
 - **Configure Microsoft Entra Device Registration Service Principal**: Add a Kerberos entry to the Microsoft Entra device registration service principal. The user who configures the service principal must have the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
-- **Deploy a domain controller that runs Windows Server 2025**: Install at least one domain controller that runs Windows Server 2025 [build 26100.6905](https://support.microsoft.com/en-us/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later in the Active Directory domain.
-- **Configure client computer for Entra Kerberos based join**: You need to deploy [Windows 11 build 26100.6584](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later on the client computer that you want to register with Entra as Entra hybrid join using Entra Kerberos.
+- **Deploy a domain controller that runs Windows Server 2025**: Install at least one domain controller that runs Windows Server 2025 [build 26100.6905](https://support.microsoft.com/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later in the Active Directory domain.
+- **Configure client computer for Entra Kerberos based join**: You need to deploy [Windows 11 build 26100.6584](https://support.microsoft.com/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later on the client computer that you want to register with Entra as Entra hybrid join using Entra Kerberos.
 
   >[!NOTE]
   >The client computer must have unimpeded network connectivity with the domain controller that runs Windows Server 2025 during join.
 
-- **Configure Service Connection Point (SCP):** You can use Microsoft Entra Connect or write to AD using PowerShell. You can find more details [here](entra/identity/devices/hybrid-join-manual#configure-a-service-connection-point). 
+- **Configure Service Connection Point (SCP):** You can use Microsoft Entra Connect or write to Active Directory Domain Services (AD DS) by using PowerShell. For more information, see [Configure a service connection point](/entra/identity/devices/hybrid-join-manual#configure-a-service-connection-point). 
 
 ## Create and configure Microsoft Entra Kerberos Trusted Domain Object
 
@@ -175,14 +175,14 @@ Write-Host "Tags:"
 
 ## Deploy a domain controller that runs Windows Server 2025 
 
-Follow these [instructions](windows-server/identity/ad-ds/deploy/upgrade-domain-controllers) to deploy a domain controller to your domain. Make sure the domain controller runs Windowser Server 2025 [build 26100.6905](https://support.microsoft.com/en-us/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later.
+Follow these [instructions](/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers) to deploy a domain controller to your domain. Make sure the domain controller runs Windows Server 2025 [build 26100.6905](https://support.microsoft.com/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later.
 
    >[!Note] 
    >You need to install a domain controller that runs Windows Server 2025 in every domain that you want to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos.
 
 ### Configure the client computer for Microsoft Entra Kerberos join
 
-1. Deploy [Windows 11 build 26100.6584](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later on a client computer, or use Windows update to update your existing Windows 11 client computer.
+1. Deploy [Windows 11 build 26100.6584](https://support.microsoft.com/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later on a client computer, or use Windows update to update your existing Windows 11 client computer.
 1. Join the client computer to the Active Directory domain and restart it.
  
 ## FAQ
