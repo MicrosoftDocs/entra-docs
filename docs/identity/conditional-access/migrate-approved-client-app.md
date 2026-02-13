@@ -1,14 +1,8 @@
 ---
 title: Migrate approved client app to application protection policy in Conditional Access 
 description: The approved client app control is going away. Migrate to App protection policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/12/2026
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: jogro
 ---

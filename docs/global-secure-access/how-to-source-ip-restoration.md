@@ -1,11 +1,8 @@
 ---
 title: Enable Source IP Restoration with Global Secure Access
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 09/30/2025
-ms.author: kenwith
-author: kenwith
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

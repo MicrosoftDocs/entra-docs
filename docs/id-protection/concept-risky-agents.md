@@ -1,12 +1,9 @@
 ---
 title: ID Protection for Agents
 description: Learn about how Microsoft Entra ID Protection identifies risky agents.
-ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 11/07/2025
 ms.custom: agent-id-ignite
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: etbasser
 ---
 

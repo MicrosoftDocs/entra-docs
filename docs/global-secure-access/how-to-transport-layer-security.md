@@ -3,7 +3,6 @@ title: Configure Transport Layer Security Inspection Policies
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
 ms.date: 11/07/2025

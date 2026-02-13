@@ -1,12 +1,8 @@
 ---
 title: Frequently asked questions - Azure Verifiable Credentials
 description: Find answers to common questions about Verifiable Credentials.
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: faq
 ms.date: 04/30/2025
-ms.author: barclayn
 ms.custom: sfi-image-nochange
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
 ---

@@ -1,13 +1,10 @@
 ---
 title: 'Microsoft Entra ID Governance use cases'
 description: This article describes use cases Microsoft Entra ID Governance.
-ms.service: entra-id-governance
-author: owinfreyATL
 
 
 ms.topic: article
 ms.date: 04/09/2025
-ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance use cases

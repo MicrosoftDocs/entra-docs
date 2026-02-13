@@ -1,11 +1,8 @@
 ---
 title: Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks.
 description: Microsoft and Palo Alto Network’s Security Service Edge (SSE) coexistence solution guide.
-author: kenwith
-ms.author: kenwith
 ms.topic: how-to
 ms.date: 10/07/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

@@ -4,7 +4,6 @@ description: Configure Microsoft Entra Private Access to tunnel specific applica
 author: jricketts
 ms.author: jricketts
 ms.reviewer: jebley
-ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.topic: how-to
 ms.date: 10/29/2024

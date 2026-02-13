@@ -1,12 +1,9 @@
 ---
 title: How to Apply Conditional Access Policies to Microsoft Entra Private Access Apps
 description: How to apply Conditional Access policies to Microsoft Entra Private Access apps.
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

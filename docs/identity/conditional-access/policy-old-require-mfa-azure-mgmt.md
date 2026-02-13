@@ -1,14 +1,8 @@
 ---
 title: Require MFA for Azure management with Conditional Access
 description: Create a custom Conditional Access policy to require multifactor authentication for Azure management tasks.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---

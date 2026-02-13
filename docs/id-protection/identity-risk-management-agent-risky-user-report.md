@@ -1,11 +1,8 @@
 ---
 title: Review agent findings in the Risky user report
 description: Learn about how the Identity Risk Management Agent works with the Risky user report in Microsoft Entra ID Protection
-ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 11/08/2025
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 ---
 # Review agent findings

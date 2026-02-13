@@ -5,7 +5,6 @@ author: fgomulka
 ms.author: frankgomulka
 ms.topic: how-to
 ms.date: 05/29/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.reviewer: fgomulka
 ---

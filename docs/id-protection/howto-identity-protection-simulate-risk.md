@@ -2,13 +2,8 @@
 title: Simulate Risk Detections in Microsoft Entra ID Protection for Enhanced Security
 description: Learn how to simulate risk detections in Microsoft Entra ID Protection to enhance security. Test risk-based policies effectively.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 02/28/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 ---
 # Simulate Risk Detections in Microsoft Entra ID Protection

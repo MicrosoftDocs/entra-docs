@@ -1,14 +1,8 @@
 ---
 title: Office 365 App in Conditional Access reference
 description: What are all of the services included in the Office 365 app in Microsoft Entra Conditional Access
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: reference
 ms.date: 01/23/2026
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ---

@@ -4,12 +4,9 @@ title: Microsoft Entra Verified ID documentation
 summary: Verifiable credentials help you build solutions that empower customers to manage their own data.
 
 metadata: 
-  author: barclayn
   description: "Learn how to incorporate verifiable credentials into your solutions empowering customers to control information about themselves"
-  ms.author: barclayn
   ms.collection: na
   ms.date: 04/30/2025
-  ms.service: entra-id  
   ms.topic: landing-page  
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | reference | tutorial | video | whats-new

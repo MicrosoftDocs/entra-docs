@@ -1,11 +1,8 @@
 ---
 title: Risky user report
 description: Learn about the risky user report in Microsoft Entra ID Protection
-ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 11/05/2025
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risky user report

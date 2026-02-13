@@ -1,12 +1,9 @@
 ---
 title: Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
 description: Learn how you can use entitlement management and Global Secure Access to restrict employee access to cloud apps.
-author: owinfreyatl
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 05/13/2025
-ms.author: owinfrey
 ms.reviewer: jercon
 ---
 

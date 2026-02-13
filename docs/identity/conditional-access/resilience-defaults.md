@@ -1,14 +1,8 @@
 ---
 title: Resilience defaults for Microsoft Entra Conditional Access
 description: Discover how to configure resilience defaults in Microsoft Entra to ensure secure access during outages while balancing real-time policy evaluation needs.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: article
 ms.date: 09/12/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
 manager: dougeby
 ms.reviewer: ludwignick
 ---

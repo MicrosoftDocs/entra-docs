@@ -1,7 +1,6 @@
 ---
 title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 02/02/2026
 ms.author: jayrusso
@@ -23,8 +22,11 @@ This article describes how to download and install the Global Secure Access clie
 ## Prerequisites
 
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
-   - Microsoft Entra registered devices aren't supported.
+- A device joined to or registered (preview) in the onboarded tenant:
+    - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. To learn more, see [Global Secure Access client overview](concept-clients.md).
+    - If the device isn't joined or registered, the Global Secure Access client registers it to the tenant when the user signs in.
+    - If the device isn't joined and has multiple registrations, sign-in with the Microsoft Entra user of the tenant that Global Secure Access should connect to.
+    - On Microsoft Entra registered devices, only Private Access traffic is supported.
 - The Global Secure Access client requires a 64-bit version of Windows 10 (LTSC 2021 or newer), Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
@@ -39,7 +41,8 @@ The most current version of the Global Secure Access client is available to down
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-:::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+
+   :::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
 ## Install the Global Secure Access client
 ### Automated installation
@@ -59,105 +62,105 @@ Package the installation script into a `.intunewin` file.
 
 1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.
 
-> [!NOTE]
-> The name of the `.exe` file must be `GlobalSecureAccessClient.exe` for the PowerShell installation script to work properly. If you modify the name of the `.exe` file to something else, you must also modify the $installerPath in the PowerShell script.
+   > [!NOTE]
+   > The name of the `.exe` file must be `GlobalSecureAccessClient.exe` for the PowerShell installation script to work properly. If you modify the name of the `.exe` file to something else, you must also modify the $installerPath in the PowerShell script.
 
-> [!NOTE]
-> The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
+   > [!NOTE]
+   > The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
 
-```powershell
-# Create log directory and log helper
-$logFile = "$env:ProgramData\GSAInstall\install.log"
-New-Item -ItemType Directory -Path (Split-Path $logFile) -Force | Out-Null
+   ```powershell
+   # Create log directory and log helper
+   $logFile = "$env:ProgramData\GSAInstall\install.log"
+   New-Item -ItemType Directory -Path (Split-Path $logFile) -Force | Out-Null
 
-function Write-Log {
-    param([string]$message)
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $logFile -Value "$timestamp - $message"
-}
+   function Write-Log {
+       param([string]$message)
+       $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+       Add-Content -Path $logFile -Value "$timestamp - $message"
+   }
 
-try {
-    $ErrorActionPreference = 'Stop'
-    Write-Log "Starting Global Secure Access client installation."
+   try {
+       $ErrorActionPreference = 'Stop'
+       Write-Log "Starting Global Secure Access client installation."
 
-    # IPv4 preferred via DisabledComponents registry value
-    $ipv4RegPath    = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"
-    $ipv4RegName    = "DisabledComponents"
-    $ipv4RegValue   = 0x20  # Prefer IPv4 over IPv6
-    $rebootRequired = $false
+       # IPv4 preferred via DisabledComponents registry value
+       $ipv4RegPath    = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"
+       $ipv4RegName    = "DisabledComponents"
+       $ipv4RegValue   = 0x20  # Prefer IPv4 over IPv6
+       $rebootRequired = $false
 
-    # Ensure the key exists
-    if (-not (Test-Path $ipv4RegPath)) {
-        New-Item -Path $ipv4RegPath -Force | Out-Null
-        Write-Log "Created registry key: $ipv4RegPath"
-    }
+       # Ensure the key exists
+       if (-not (Test-Path $ipv4RegPath)) {
+           New-Item -Path $ipv4RegPath -Force | Out-Null
+           Write-Log "Created registry key: $ipv4RegPath"
+       }
 
-    # Get current value if present
-    $existingValue = $null
-    $valueExists = $false
-    try {
-        $existingValue = Get-ItemPropertyValue -Path $ipv4RegPath -Name $ipv4RegName -ErrorAction Stop
-        $valueExists = $true
-    } catch {
-        $valueExists = $false
-    }
+       # Get current value if present
+       $existingValue = $null
+       $valueExists = $false
+       try {
+           $existingValue = Get-ItemPropertyValue -Path $ipv4RegPath -Name $ipv4RegName -ErrorAction Stop
+           $valueExists = $true
+       } catch {
+           $valueExists = $false
+       }
 
-    # Determine if we must change it
-    $expected = [int]$ipv4RegValue
-    $needsChange = -not $valueExists -or ([int]$existingValue -ne $expected)
+       # Determine if we must change it
+       $expected = [int]$ipv4RegValue
+       $needsChange = -not $valueExists -or ([int]$existingValue -ne $expected)
 
-    if ($needsChange) {
-        if (-not $valueExists) {
-            # Create as DWORD when missing
-            New-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -PropertyType DWord -Value $expected -Force | Out-Null
-            Write-Log ("IPv4Preferred value missing. Created '{0}' with value 0x{1} (dec {2})." -f $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
-        } else {
-            # Update if different
-            Set-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -Value $expected
-            Write-Log ("IPv4Preferred value differed. Updated '{0}' from 0x{1} (dec {2}) to 0x{3} (dec {4})." -f `
-                $ipv4RegName, ([Convert]::ToString([int]$existingValue,16)), [int]$existingValue, ([Convert]::ToString($expected,16)), $expected)
-        }
-        $rebootRequired = $true
-    } else {
-        Write-Log ("IPv4Preferred already set correctly: {0}=0x{1} (dec {2}). No change." -f `
-            $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
-    }
+       if ($needsChange) {
+           if (-not $valueExists) {
+               # Create as DWORD when missing
+               New-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -PropertyType DWord -Value $expected -Force | Out-Null
+               Write-Log ("IPv4Preferred value missing. Created '{0}' with value 0x{1} (dec {2})." -f $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
+           } else {
+               # Update if different
+               Set-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -Value $expected
+               Write-Log ("IPv4Preferred value differed. Updated '{0}' from 0x{1} (dec {2}) to 0x{3} (dec {4})." -f `
+                   $ipv4RegName, ([Convert]::ToString([int]$existingValue,16)), [int]$existingValue, ([Convert]::ToString($expected,16)), $expected)
+           }
+           $rebootRequired = $true
+       } else {
+           Write-Log ("IPv4Preferred already set correctly: {0}=0x{1} (dec {2}). No change." -f `
+               $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
+       }
 
-    # Resolve installer path
-    $ScriptRoot = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
-    $installerPath = Join-Path -Path $ScriptRoot -ChildPath "GlobalSecureAccessClient.exe"
-    Write-Log "Running installer from $installerPath"
+       # Resolve installer path
+       $ScriptRoot = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
+       $installerPath = Join-Path -Path $ScriptRoot -ChildPath "GlobalSecureAccessClient.exe"
+       Write-Log "Running installer from $installerPath"
 
-    if (Test-Path $installerPath) {
-        $installProcess = Start-Process -FilePath $installerPath -ArgumentList "/quiet" -Wait -PassThru
+       if (Test-Path $installerPath) {
+           $installProcess = Start-Process -FilePath $installerPath -ArgumentList "/quiet" -Wait -PassThru
 
-        if ($installProcess.ExitCode -eq 1618) {
-            Write-Log "Another installation is in progress. Exiting with code 1618."
-            exit 1618
-        } elseif ($installProcess.ExitCode -ne 0) {
-            Write-Log "Installer exited with code $($installProcess.ExitCode)."
-            exit $installProcess.ExitCode
-        }
+           if ($installProcess.ExitCode -eq 1618) {
+               Write-Log "Another installation is in progress. Exiting with code 1618."
+               exit 1618
+           } elseif ($installProcess.ExitCode -ne 0) {
+               Write-Log "Installer exited with code $($installProcess.ExitCode)."
+               exit $installProcess.ExitCode
+           }
 
-        Write-Log "Installer completed successfully."
-    } else {
-        Write-Log "Installer not found at $installerPath"
-        exit 1
-    }
+           Write-Log "Installer completed successfully."
+       } else {
+           Write-Log "Installer not found at $installerPath"
+           exit 1
+       }
 
-    if ($rebootRequired) {
-        Write-Log "Reboot required due to registry value creation or update."
-        exit 3010  # Soft reboot required
-    } else {
-        Write-Log "Installation complete. No reboot required."
-        exit 0
-    }
-}
-catch {
-    Write-Log "Fatal error: $_"
-    exit 1603
-}
-```
+       if ($rebootRequired) {
+           Write-Log "Reboot required due to registry value creation or update."
+           exit 3010  # Soft reboot required
+       } else {
+           Write-Log "Installation complete. No reboot required."
+           exit 0
+       }
+   }
+   catch {
+       Write-Log "Fatal error: $_"
+       exit 1603
+   }
+   ```
 
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 

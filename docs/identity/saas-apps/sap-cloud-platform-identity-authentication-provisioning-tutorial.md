@@ -77,7 +77,10 @@ This is done in the Provisioning tab of your SAP Cloud Identity Services applica
 
 Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or via the Graph API.
 
-If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services).
+If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra using SAML, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services).
+
+> [!NOTE]
+> If you have previously configured an application registration for OpenID Connect integration, then you will not be able to configure provisioning for that application registration. Instead, create a separate enterprise application for provisioning.
 
 ### Adding SAP Cloud Identity Services using the Microsoft Entra admin center
 

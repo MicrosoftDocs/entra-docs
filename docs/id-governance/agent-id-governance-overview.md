@@ -1,9 +1,6 @@
 ---
 title: Governing Agent Identities (Preview)
 description: This article describes governing agent identities.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 10/25/2025
 

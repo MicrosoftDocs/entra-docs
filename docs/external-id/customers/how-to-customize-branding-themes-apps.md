@@ -2,11 +2,9 @@
 title: Customize the sign-in experience for your application with branding themes in external tenants
 description: Learn about how to create branding themes and apply them to the sign-in experience for your application in Microsoft External ID for external tenants.
 author: rolyon
-manager: pmwongera
 ms.author: rolyon
 ms.date: 01/29/2026
 ms.reviewer: 
-ms.service: identity-platform
 ms.topic: how-to
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to customize the sign-in experience for my application.
 
