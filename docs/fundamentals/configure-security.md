@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/09/2026
+ms.date: 02/11/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -115,6 +115,10 @@ Protect your network perimeter.
 | [Network validation is configured through Universal Continuous Access Evaluation](zero-trust-protect-networks.md#network-validation-is-configured-through-universal-continuous-access-evaluation) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access client is deployed on all managed endpoints](zero-trust-protect-networks.md#global-secure-access-client-is-deployed-on-all-managed-endpoints) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Microsoft 365 traffic is actively flowing through Global Secure Access](zero-trust-protect-networks.md#microsoft-365-traffic-is-actively-flowing-through-global-secure-access) | Microsoft Entra Suite |
+| [Universal tenant restrictions block unauthorized external tenant access](zero-trust-protect-networks.md#universal-tenant-restrictions-block-unauthorized-external-tenant-access) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
+| [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
 
 ## Protect engineering systems
 
@@ -151,7 +155,7 @@ Collect and analyze security logs and triage alerts.
 | [Privileged users sign in with phishing-resistant methods](zero-trust-monitor-detect.md#privileged-users-sign-in-with-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged) | Microsoft Entra ID P2 |
 | [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged) | Microsoft Entra ID P2  |
-| [All risky workload identities are triaged]
+| [All risky workload identities are triaged](zero-trust-monitor-detect.md#all-risky-workload-identities-are-triaged) | Microsoft Entra ID P2 |
 | [Tenant creation events are triaged](zero-trust-monitor-detect.md#tenant-creation-events-are-triaged) | Microsoft Entra ID P1 |
 | [All user sign-in activity uses strong authentication methods](zero-trust-monitor-detect.md#all-user-sign-in-activity-uses-strong-authentication-methods) | Microsoft Entra ID P1 |
 | [High priority Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#high-priority-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
