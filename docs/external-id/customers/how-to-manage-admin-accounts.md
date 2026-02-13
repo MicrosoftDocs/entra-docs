@@ -74,6 +74,9 @@ You can also invite a new guest user to manage your tenant. To invite a new gues
 
 An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
 
+> [!NOTE]
+> You can invite external users for administrative purposes only. You can’t use this feature to invite customers to sign in to your apps. [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) isn’t compatible with customer identity and access management (CIAM) user flows.
+
 ## Change or add a role assignment
 
 You can assign a role when you create a user or invite a guest user. You can add a role, change the role, or remove a role for a user:
