@@ -90,7 +90,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for US Government|● |● |
 
 > [!NOTE]
-> Cloud sync can be use for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. 
+> Cloud sync can be use for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud. 
 
 ## Next steps 
 
