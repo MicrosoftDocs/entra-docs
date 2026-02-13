@@ -727,7 +727,7 @@ For more information, see [Microsoft Graph permissions reference - Microsoft Gra
 
 ---
 
-### Public Preview - Cloud Managed Remote Mailboxes
+### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
 
 **Type:** New feature    
 **Service category:** User Management    
