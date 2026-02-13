@@ -212,7 +212,8 @@ The following table compares the features available for password protection in e
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |**Smart lockout**| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in|Same as workforce. |
-| **Custom banned passwords**| The Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. | Not available. |
+|**Global banned passwords**| [Global banned password list](~/identity/authentication/concept-password-ban-bad.md#global-banned-password-list) automatically blocks commonly used weak or compromised passwords based on analysis of Microsoft Entra security telemetry data.|Same as workforce. |
+| **Custom banned passwords**| [Custom banned passwords list ](../../identity/authentication/tutorial-configure-custom-password-protection.md) lets you add specific strings to evaluate and block during password creation and reset.| Same as workforce. |
 
 ## Token customization
 
