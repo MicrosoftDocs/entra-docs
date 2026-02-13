@@ -3,14 +3,8 @@ title:  Sign in with a passkey (FIDO2) for your work or school account
 description: Learn how to sign in with a passkey (FIDO2) for your work or school account.
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/10/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management

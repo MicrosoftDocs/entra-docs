@@ -1,13 +1,9 @@
 ---
 title: How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID (Preview)
 description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 12/05/2025
-ms.author: justinha
 author: hanki71
-manager: dougeby
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.

@@ -1,14 +1,11 @@
 ---
 title: Migrate to Microsoft Entra multifactor authentication with federations
 description: Step-by-step guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication with federation
-ms.service: entra-id
-ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha
-manager: martinco
 ms.reviewer: michmcla
 ---
 # Migrate to Microsoft Entra multifactor authentication with federation

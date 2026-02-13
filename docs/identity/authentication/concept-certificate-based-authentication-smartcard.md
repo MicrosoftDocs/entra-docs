@@ -1,15 +1,8 @@
 ---
 title: Windows smart card sign-in using Microsoft Entra certificate-based authentication
 description: Learn how to enable Windows smart card sign-in using Microsoft Entra certificate-based authentication
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---

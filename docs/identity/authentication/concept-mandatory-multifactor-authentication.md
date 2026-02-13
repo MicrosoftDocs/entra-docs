@@ -1,13 +1,8 @@
 ---
 title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 01/28/2026
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: shahjoy
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
