@@ -19,7 +19,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- An OIDC identity provider, such as a [Microsoft Entra ID tenant](../..//identity-platform/quickstart-create-new-tenant).
+- An OIDC identity provider, such as a [Microsoft Entra ID tenant](../../identity-platform/quickstart-create-new-tenant).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in the external tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
