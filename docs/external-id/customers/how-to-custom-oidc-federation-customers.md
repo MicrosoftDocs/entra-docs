@@ -19,6 +19,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
+- An OIDC identity provider, such as a [Microsoft Entra ID tenant](../..//identity-platform/quickstart-create-new-tenant).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in the external tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
@@ -34,7 +35,8 @@ Before moving to next step, populate your redirect URIs as follows:
 
 ## Enable sign-in and sign-up with your identity provider
 
-To enable sign-in and sign-up for users with an account in your identity provider, you need to register Microsoft Entra ID as an application in your identity provider. This step allows your identity provider to recognize and issue tokens to your Microsoft Entra ID for federation.
+To enable sign-in and sign-up for users with an account in your identity provider, you need to register Microsoft Entra External ID as an application in your identity provider. This step allows your identity provider to recognize and issue tokens to your Microsoft Entra External ID tenant for federation.
+
 Register the application using your populated redirect URIs. Save the details of your identity provider configuration to set up federation in your external tenant.
 
 ### Federation settings
@@ -65,7 +67,7 @@ To configure OpenID connect federation with your identity provider in Microsoft 
 
 ## Configure a new OpenID connect identity provider in the admin center
 
-After you configured your identity provider, in this step you'll configure a new OpenID connect federation in the Microsoft Entra admin center. 
+Now that your identity provider is configured, add it to your external tenant through the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
@@ -76,14 +78,12 @@ After you configured your identity provider, in this step you'll configure a new
 1. Enter the following details for your identity provider:
 
    - **Display name**: The name of your identity provider that will be displayed to your users during the sign-in and sign-up flows. For example, *Sign in with IdP name* or *Sign up with IdP name*.
-   - **Well-known endpoint** (also known as metadata URI) is the OIDC discovery URI to [obtain the configuration information](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) for your identity provider. The response to be retrieved from a well-known location is a JSON document, including its OAuth 2.0 endpoint locations. The metadata document should, at a minimum, contain the following properties: `issuer`, `authorization_endpoint`, `token_endpoint`, `token_endpoint_auth_methods_supported`, `response_types_supported`, `subject_types_supported`, and `jwks_uri`. See [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) specifications for more details.
+   - **Well-known endpoint** (also known as metadata URI) is the OIDC discovery URI to [obtain the configuration information](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) for your identity provider. The response to be retrieved from a well-known location is a JSON document, including its OAuth 2.0 endpoint locations. The metadata document should, at a minimum, contain the following properties: `issuer`, `authorization_endpoint`, `token_endpoint`, `token_endpoint_auth_methods_supported`, `response_types_supported`, `subject_types_supported`, and `jwks_uri`. For a Microsoft Entra ID tenant, use `https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration`. See [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) specifications for more details.
 
-   - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. An example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI can be taken from your discovery URI with the "issuer" tag and will look like: `https://login.b2clogin.com/{tenant}/v2.0/`. Issuer URI is a case-sensitive URL using https scheme contains scheme, host, and optionally, port number and path components and no query or fragment components.
-   > [!NOTE]
-   > Configuring other Microsoft Entra tenants as an external identity provider is currently not supported. So, the `microsoftonline.com` domain in the issuer URI isn't accepted.
+   - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. Issuer URI is a case-sensitive URL using https scheme contains scheme, host, and optionally, port number and path components and no query or fragment components. For example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI can be taken from your discovery URI with the "issuer" tag and will look like `https://login.b2clogin.com/{tenant}/v2.0/`. For a Microsoft Entra ID tenant, use `https://login.microsoftonline.com/<tenant-ID>/v2.0`.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, the public key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property jwks_uri.
-   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt`, and `private_key_jwt` authentication methods are supported.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. 
+   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. Only the `client_secret` authentication method is supported.
    > [!NOTE]
    > Due to possible security issues, client_secret_basic client authentication method isn't supported.
    - **Scope** defines the information and permissions you're looking to gather from your identity provider, for example `openid profile`. OpenID Connect requests must contain the `openid` scope value in scope in order to receive the ID token from your identity provider. Other scopes can be appended separated by spaces. Refer to the [OpenID Connect documentation](https://openid.net/specs/openid-connect-core-1_0.html) to see what other scopes may be available such as `profile`, `email`, etc.
