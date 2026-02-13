@@ -2,14 +2,8 @@
 title: ID Protection Risk Reports
 description: Learn how to access, filter, and use the Microsoft Entra ID Protection risk reports to mark users and sign-ins as risky or confirmed compromised.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 11/05/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risk reports

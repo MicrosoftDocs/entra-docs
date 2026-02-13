@@ -1,10 +1,6 @@
 ---
 title: Tutorial - Configure Microsoft Entra Verified ID verifier
 description: In this tutorial, you learn how to configure your tenant to verify credentials.
-ms.service: entra-verified-id
-author: barclayn
-manager: femila
-ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025
 ms.custom: sfi-image-nochange

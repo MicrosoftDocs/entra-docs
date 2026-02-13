@@ -2,12 +2,8 @@
 title: Register your website ID
 description: Learn how to register your website ID for did:web.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information to help me register my website ID.
 ---

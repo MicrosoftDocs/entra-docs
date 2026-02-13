@@ -1,15 +1,8 @@
 ---
 title: Telephony Fraud Protections and Throttles  
 description: Microsoft Entra ID uses heuristics and machine learning to detect and throttle suspicious telephony activity during MFA. Some regions require opt-in via support ticket due to elevated fraud risk.
-
-ms.service: entra-id  
-ms.subservice: authentication  
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/28/2025
-
-author: justinha
-ms.author: justinha
-manager: dougeby
 ms.reviewer: aloom3
 ms.custom: references_regions
 

@@ -1,12 +1,8 @@
 ---
 title: Global Secure Access and Universal Tenant Restrictions
 description: Learn about how Global Secure Access helps secure access to your corporate network by restricting access to external tenants.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
-manager: dougeby
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

@@ -1,13 +1,9 @@
 ---
 title: Use custom security attributes to scope a workflow
 description: Learn how to use custom security attribute to configure the scope of a workflow with lifecycle workflows.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 08/13/2024
-ms.author: owinfrey
 ms.reviewer: krbain
 
 #CustomerIntent: As an administrator, I want to be able to use custom security attributes of a user as part of the scope of a workflow so that I have greater control over which users specific workflows will run for.

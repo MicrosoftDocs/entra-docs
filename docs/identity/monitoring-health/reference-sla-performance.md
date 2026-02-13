@@ -41,20 +41,20 @@ To help you plan for moving workloads to Microsoft Entra ID, we publish past SLA
 
 The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies. The number is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated. We publish the previous month's availability during the first half of the current month.
 
-| Month     | 2021    | 2022    | 2023    | 2024    | 2025    |
-| ---       | ---     | ---     | ---     | ---     | ---     |
-| January   |         | 99.998% | 99.998% | 99.999% | 99.998% |
-| February  | 99.999% | 99.999% | 99.999% | 99.999% | 99.998% |
-| March     | 99.568% | 99.998% | 99.999% | 99.999% | 99.996% |
-| April     | 99.999% | 99.999% | 99.999% | 99.999% | 99.999%*|
-| May       | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
-| June      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
-| July      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
-| August    | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
-| September | 99.999% | 99.998% | 99.999% | 99.999% | 99.999% |
-| October   | 99.999% | 99.999% | 99.999% | 99.998% | 99.999% |
-| November  | 99.998% | 99.999% | 99.999% | 99.998% | 99.999% |
-| December  | 99.978% | 99.999% | 99.999% | 99.998% | 99.999% |
+| Month     | 2021    | 2022    | 2023    | 2024    | 2025    | 2026    |
+| ---       | ---     | ---     | ---     | ---     | ---     | ---     |
+| January   |         | 99.998% | 99.998% | 99.999% | 99.998% | 99.999% |
+| February  | 99.999% | 99.999% | 99.999% | 99.999% | 99.998% |         |
+| March     | 99.568% | 99.998% | 99.999% | 99.999% | 99.996% |         |
+| April     | 99.999% | 99.999% | 99.999% | 99.999% | 99.999%*|         |
+| May       | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| June      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| July      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| August    | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| September | 99.999% | 99.998% | 99.999% | 99.999% | 99.999% |         |
+| October   | 99.999% | 99.999% | 99.999% | 99.998% | 99.999% |         |
+| November  | 99.998% | 99.999% | 99.999% | 99.998% | 99.999% |         |
+| December  | 99.978% | 99.999% | 99.999% | 99.998% | 99.999% |         |
 
 <a name='how-is-azure-ad-sla-measured-'></a>
 

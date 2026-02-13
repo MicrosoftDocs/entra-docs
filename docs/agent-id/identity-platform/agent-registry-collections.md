@@ -4,7 +4,6 @@ description: Learn about Agent Registry collections in Microsoft Entra ID, which
 titleSuffix: Microsoft Entra Agent ID
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025

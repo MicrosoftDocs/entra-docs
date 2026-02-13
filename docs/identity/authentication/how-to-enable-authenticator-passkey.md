@@ -1,13 +1,8 @@
 ---
 title: Enable passkeys in Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/24/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.date: 01/27/2026
 ms.reviewer: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
@@ -24,8 +19,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
   - Make sure that Bluetooth and an active internet connection are enabled on both devices. 
     If your organization restricts Bluetooth usage, you can [permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments) to allow cross-device passkey sign-in and registration.
     Your organization needs to allow connectivity to endpoints in the following table to enable cross-device registration and authentication. 
-    Devices must be allowed to reach these URLs without interception. 
-    They need to be excluded from network proxies, interception, and other enterprise systems.
+    Devices must be allowed to reach these URLs. For more information about requirements for Apple devices, see [Use Apple products on enterprise networks](https://support.apple.com/101555).
 
     Platform | URL
     ---------|----
@@ -33,7 +27,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
-  > Users can't use cross-device registration or authentication if you enable attestation. 
+  > Users can't use cross-device registration if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 

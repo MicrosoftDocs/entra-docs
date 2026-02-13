@@ -1,12 +1,8 @@
 ---
 title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
 description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
-author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 02/21/2025
-ms.author: kenwith
 ms.reviewer: sumi
 ---
 
@@ -149,7 +145,7 @@ Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector up
 Write-Output "Access Token that you acquired is available in C:\token.txt. "
 Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
 
-} else {
+else {
     Write-Host "The required module is not made available at path: $folderPath"
 	Write-Host "This could be related to left over state from previous installation of connector on this machine."
 	Write-Host "You can try to go to c:\temp\ and double click the MicrosoftEntraPrivateNetworkConnectorInstaller.exe file. Click Uninstall if visible. This can clean the state. "

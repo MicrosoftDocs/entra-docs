@@ -1,17 +1,8 @@
 ---
 title: Microsoft Entra feature availability in Azure for US Government
 description: Learn which Microsoft Entra features are available in Azure for US Government. 
-
-
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
+ms.topic: reference
 ms.date: 01/15/2026
-
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: mattsmith
 ---
 

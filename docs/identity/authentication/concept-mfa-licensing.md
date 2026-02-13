@@ -1,13 +1,8 @@
 ---
 title: Microsoft Entra multifactor authentication versions and consumption plans
 description: Learn about the Microsoft Entra multifactor authentication client and different methods and versions available.
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: michmcla
 ms.custom: sfi-ga-nochange
 ---

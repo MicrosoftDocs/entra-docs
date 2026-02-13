@@ -1,13 +1,9 @@
 ---
 title: Microsoft traffic Conditional Access policies
 description: Learn how to apply Conditional Access policies to the Global Secure Access traffic.
-ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
-manager: dougeby
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ---

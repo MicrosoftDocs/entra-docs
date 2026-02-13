@@ -3,10 +3,8 @@ title: Create a remote network with a custom IKE policy
 description: Learn how to set up the bidirectional communication tunnel between Global Secure Access and your router.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.topic: how-to
 ms.date: 02/25/2025
-ms.service: global-secure-access
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a custom Internet Key Exchange (IKE) policy to set up the communication tunnel with Global Secure Access.

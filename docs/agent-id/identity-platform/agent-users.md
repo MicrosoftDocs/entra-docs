@@ -4,7 +4,6 @@ description: This article explains the concept of agent users, how they function
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.service: entra-id

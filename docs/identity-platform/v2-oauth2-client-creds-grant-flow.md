@@ -4,7 +4,7 @@ description: Build web applications by using the Microsoft identity platform imp
 author: OwenRichards1
 manager: pmwongera
 ms.author: owenrichards
-ms.date: 01/23/2025
+ms.date: 01/30/2026
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
@@ -15,6 +15,9 @@ ms.custom: sfi-image-nochange
 # Microsoft identity platform and the OAuth 2.0 client credentials flow
 
 The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. The grant specified in [RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4), sometimes called *two-legged OAuth*, can be used to access web-hosted resources by using the identity of an application. This type is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user, and is often referred to as *daemons* or *service accounts*.
+
+> [!NOTE]
+> When you configure machine-to-machine (M2M) authentication for [Microsoft Entra External ID](/entra/external-id/external-identities-overview), you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines.
 
 In the client credentials flow, permissions are granted directly to the application itself by an administrator. When the app presents a token to a resource, the resource enforces that the app itself has authorization to perform an action since there is no user involved in the authentication. This article covers both the steps needed to: 
 

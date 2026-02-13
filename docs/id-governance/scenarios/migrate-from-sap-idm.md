@@ -2,9 +2,7 @@
 title: Migrate identity management scenarios from SAP IDM to Microsoft Entra
 description: Learn the detailed steps for how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and provision those identities with access to SAP ECC, SAP S/4HANA, and other SAP and non-SAP applications, for organizations that were previously using SAP IDM.
 author: markwahl-msft
-manager: femila
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: mwahl

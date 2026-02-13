@@ -1,11 +1,6 @@
 ---
 title: Test a user flow
 description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your consumer and business customer apps.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 01/22/2025
 ms.custom: it-pro, sfi-ropc-nochange, sfi-image-nochange

@@ -1,14 +1,8 @@
 ---
 title: Conditional Access protections for Generative AI
 description: Protecting Gen AI services like Microsoft Security Copilot and Microsoft 365 Copilot with Conditional Access
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---

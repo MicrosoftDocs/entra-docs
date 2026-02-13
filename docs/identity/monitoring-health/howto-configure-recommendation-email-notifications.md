@@ -2,7 +2,6 @@
 title: How to configure Microsoft Entra recommendation emails
 description: Learn how to configure the automatically generated Microsoft Entra recommendation email notification settings for your tenant.
 author: shlipsey3
-manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

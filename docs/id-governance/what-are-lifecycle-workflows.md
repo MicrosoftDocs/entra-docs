@@ -1,13 +1,9 @@
 ---
 title: What are lifecycle workflows?
 description: Get an overview of the lifecycle workflow feature of Microsoft Entra ID.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 06/25/2024
-ms.author: owinfrey
 ---
 
 # What are lifecycle workflows?

@@ -1,12 +1,10 @@
 ---
 title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
-ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 02/02/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -24,8 +22,11 @@ This article describes how to download and install the Global Secure Access clie
 ## Prerequisites
 
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
-   - Microsoft Entra registered devices aren't supported.
+- A device joined to or registered (preview) in the onboarded tenant:
+    - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. To learn more, see [Global Secure Access client overview](concept-clients.md).
+    - If the device isn't joined or registered, the Global Secure Access client registers it to the tenant when the user signs in.
+    - If the device isn't joined and has multiple registrations, sign-in with the Microsoft Entra user of the tenant that Global Secure Access should connect to.
+    - On Microsoft Entra registered devices, only Private Access traffic is supported.
 - The Global Secure Access client requires a 64-bit version of Windows 10 (LTSC 2021 or newer), Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
@@ -40,7 +41,8 @@ The most current version of the Global Secure Access client is available to down
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-:::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+
+   :::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
 ## Install the Global Secure Access client
 ### Automated installation
@@ -60,105 +62,105 @@ Package the installation script into a `.intunewin` file.
 
 1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.
 
-> [!NOTE]
-> The name of the `.exe` file must be `GlobalSecureAccessClient.exe` for the PowerShell installation script to work properly. If you modify the name of the `.exe` file to something else, you must also modify the $installerPath in the PowerShell script.
+   > [!NOTE]
+   > The name of the `.exe` file must be `GlobalSecureAccessClient.exe` for the PowerShell installation script to work properly. If you modify the name of the `.exe` file to something else, you must also modify the $installerPath in the PowerShell script.
 
-> [!NOTE]
-> The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
+   > [!NOTE]
+   > The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
 
-```powershell
-# Create log directory and log helper
-$logFile = "$env:ProgramData\GSAInstall\install.log"
-New-Item -ItemType Directory -Path (Split-Path $logFile) -Force | Out-Null
+   ```powershell
+   # Create log directory and log helper
+   $logFile = "$env:ProgramData\GSAInstall\install.log"
+   New-Item -ItemType Directory -Path (Split-Path $logFile) -Force | Out-Null
 
-function Write-Log {
-    param([string]$message)
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Add-Content -Path $logFile -Value "$timestamp - $message"
-}
+   function Write-Log {
+       param([string]$message)
+       $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+       Add-Content -Path $logFile -Value "$timestamp - $message"
+   }
 
-try {
-    $ErrorActionPreference = 'Stop'
-    Write-Log "Starting Global Secure Access client installation."
+   try {
+       $ErrorActionPreference = 'Stop'
+       Write-Log "Starting Global Secure Access client installation."
 
-    # IPv4 preferred via DisabledComponents registry value
-    $ipv4RegPath    = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"
-    $ipv4RegName    = "DisabledComponents"
-    $ipv4RegValue   = 0x20  # Prefer IPv4 over IPv6
-    $rebootRequired = $false
+       # IPv4 preferred via DisabledComponents registry value
+       $ipv4RegPath    = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"
+       $ipv4RegName    = "DisabledComponents"
+       $ipv4RegValue   = 0x20  # Prefer IPv4 over IPv6
+       $rebootRequired = $false
 
-    # Ensure the key exists
-    if (-not (Test-Path $ipv4RegPath)) {
-        New-Item -Path $ipv4RegPath -Force | Out-Null
-        Write-Log "Created registry key: $ipv4RegPath"
-    }
+       # Ensure the key exists
+       if (-not (Test-Path $ipv4RegPath)) {
+           New-Item -Path $ipv4RegPath -Force | Out-Null
+           Write-Log "Created registry key: $ipv4RegPath"
+       }
 
-    # Get current value if present
-    $existingValue = $null
-    $valueExists = $false
-    try {
-        $existingValue = Get-ItemPropertyValue -Path $ipv4RegPath -Name $ipv4RegName -ErrorAction Stop
-        $valueExists = $true
-    } catch {
-        $valueExists = $false
-    }
+       # Get current value if present
+       $existingValue = $null
+       $valueExists = $false
+       try {
+           $existingValue = Get-ItemPropertyValue -Path $ipv4RegPath -Name $ipv4RegName -ErrorAction Stop
+           $valueExists = $true
+       } catch {
+           $valueExists = $false
+       }
 
-    # Determine if we must change it
-    $expected = [int]$ipv4RegValue
-    $needsChange = -not $valueExists -or ([int]$existingValue -ne $expected)
+       # Determine if we must change it
+       $expected = [int]$ipv4RegValue
+       $needsChange = -not $valueExists -or ([int]$existingValue -ne $expected)
 
-    if ($needsChange) {
-        if (-not $valueExists) {
-            # Create as DWORD when missing
-            New-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -PropertyType DWord -Value $expected -Force | Out-Null
-            Write-Log ("IPv4Preferred value missing. Created '{0}' with value 0x{1} (dec {2})." -f $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
-        } else {
-            # Update if different
-            Set-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -Value $expected
-            Write-Log ("IPv4Preferred value differed. Updated '{0}' from 0x{1} (dec {2}) to 0x{3} (dec {4})." -f `
-                $ipv4RegName, ([Convert]::ToString([int]$existingValue,16)), [int]$existingValue, ([Convert]::ToString($expected,16)), $expected)
-        }
-        $rebootRequired = $true
-    } else {
-        Write-Log ("IPv4Preferred already set correctly: {0}=0x{1} (dec {2}). No change." -f `
-            $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
-    }
+       if ($needsChange) {
+           if (-not $valueExists) {
+               # Create as DWORD when missing
+               New-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -PropertyType DWord -Value $expected -Force | Out-Null
+               Write-Log ("IPv4Preferred value missing. Created '{0}' with value 0x{1} (dec {2})." -f $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
+           } else {
+               # Update if different
+               Set-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -Value $expected
+               Write-Log ("IPv4Preferred value differed. Updated '{0}' from 0x{1} (dec {2}) to 0x{3} (dec {4})." -f `
+                   $ipv4RegName, ([Convert]::ToString([int]$existingValue,16)), [int]$existingValue, ([Convert]::ToString($expected,16)), $expected)
+           }
+           $rebootRequired = $true
+       } else {
+           Write-Log ("IPv4Preferred already set correctly: {0}=0x{1} (dec {2}). No change." -f `
+               $ipv4RegName, ([Convert]::ToString($expected,16)), $expected)
+       }
 
-    # Resolve installer path
-    $ScriptRoot = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
-    $installerPath = Join-Path -Path $ScriptRoot -ChildPath "GlobalSecureAccessClient.exe"
-    Write-Log "Running installer from $installerPath"
+       # Resolve installer path
+       $ScriptRoot = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Path }
+       $installerPath = Join-Path -Path $ScriptRoot -ChildPath "GlobalSecureAccessClient.exe"
+       Write-Log "Running installer from $installerPath"
 
-    if (Test-Path $installerPath) {
-        $installProcess = Start-Process -FilePath $installerPath -ArgumentList "/quiet" -Wait -PassThru
+       if (Test-Path $installerPath) {
+           $installProcess = Start-Process -FilePath $installerPath -ArgumentList "/quiet" -Wait -PassThru
 
-        if ($installProcess.ExitCode -eq 1618) {
-            Write-Log "Another installation is in progress. Exiting with code 1618."
-            exit 1618
-        } elseif ($installProcess.ExitCode -ne 0) {
-            Write-Log "Installer exited with code $($installProcess.ExitCode)."
-            exit $installProcess.ExitCode
-        }
+           if ($installProcess.ExitCode -eq 1618) {
+               Write-Log "Another installation is in progress. Exiting with code 1618."
+               exit 1618
+           } elseif ($installProcess.ExitCode -ne 0) {
+               Write-Log "Installer exited with code $($installProcess.ExitCode)."
+               exit $installProcess.ExitCode
+           }
 
-        Write-Log "Installer completed successfully."
-    } else {
-        Write-Log "Installer not found at $installerPath"
-        exit 1
-    }
+           Write-Log "Installer completed successfully."
+       } else {
+           Write-Log "Installer not found at $installerPath"
+           exit 1
+       }
 
-    if ($rebootRequired) {
-        Write-Log "Reboot required due to registry value creation or update."
-        exit 3010  # Soft reboot required
-    } else {
-        Write-Log "Installation complete. No reboot required."
-        exit 0
-    }
-}
-catch {
-    Write-Log "Fatal error: $_"
-    exit 1603
-}
-```
+       if ($rebootRequired) {
+           Write-Log "Reboot required due to registry value creation or update."
+           exit 3010  # Soft reboot required
+       } else {
+           Write-Log "Installation complete. No reboot required."
+           exit 0
+       }
+   }
+   catch {
+       Write-Log "Fatal error: $_"
+       exit 1603
+   }
+   ```
 
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
@@ -180,7 +182,7 @@ The `.intunewin` file is ready for you to deploy Microsoft Intune.
 
 #### Deploy Global Secure Access client with Intune
 
-Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
+For detailed guidance, see [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
 
 1. Navigate to [https://intune.microsoft.com](https://intune.microsoft.com/).
 1. Select **Apps** > **All apps** > **Add**.
@@ -278,7 +280,7 @@ In a production environment, it's a good practice to deploy new client versions 
 
 ### Configure Global Secure Access client settings with Intune
 
-Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing non-admin users from disabling the client or hiding specific buttons. 
+Administrators can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing general users from disabling the client or hiding specific buttons. 
 
 > [!IMPORTANT]
 > Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
@@ -297,7 +299,7 @@ Admins can use [remediation scripts](/intune/intune-service/fundamentals/remedia
 #### Detection script 
 
 ```powershell
-# Check GSA registry keys 
+# Check Global Secure Access registry keys 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -355,7 +357,7 @@ exit 1
 #### Remediation script
 
 ```powershell
-# Ensure GSA registry keys are present 
+# Ensure Global Secure Access registry keys are present 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -393,7 +395,7 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 
 ### Configure settings for Microsoft Entra Internet Access with Intune
 
-Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this limitation, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
 
 #### Disable QUIC in Microsoft Edge and Chrome with Intune 
 
@@ -612,7 +614,7 @@ To view the available client menu actions, select the Global Secure Access syste
 |**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with a Microsoft Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Disable**   |Select the **Disable** action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
 |**Enable**   |Enables the Global Secure Access client.         |
-|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you want to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.   You can also collect client logs on Windows by entering the following command in the Command Prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
 |**Advanced diagnostics**   |Select this action to open the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
@@ -647,6 +649,24 @@ To troubleshoot the Global Secure Access client, select the client icon in the t
 For more information on troubleshooting the Global Secure Access client, see the following articles:
 - [Troubleshoot the Global Secure Access client: advanced diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
+
+## Security recommendations
+To enhance the security of the Global Secure Access client, use the following configurations:
+
+### Upgrade to the latest client version
+Regularly test and deploy the latest Global Secure Access client release to take advantage of new features, performance improvements, and security fixes. Download the latest version of the [Global Secure Access client](#download-the-client) from the Microsoft Entra admin center.
+
+### Restrict nonprivileged users from disabling the client
+Administrators can prevent nonprivileged users on Windows devices from disabling or enabling the Global Secure Access client. This restriction ensures that the client stays on and that Global Secure Access continues to authenticate and secure network traffic. Enabling this restriction requires elevated privileges to disable the client.
+
+Before enforcing this restriction, let users work with the Global Secure Access client in a nonrestricted mode. Configure the client for your organization to ensure users don't need to disable the client in specific scenarios (for example, to access specific websites or to use a non-Microsoft VPN in parallel).
+
+To stop the Global Secure Access client on a device with restricted, nonprivileged users, make sure that there's a process in place to use a user with local administrator privileges when necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
+
+### Hide the Disable button
+In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood that users disable the client by accident or without authorization.
+
+For more information regarding hiding client menu buttons, see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons).
 
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solution, such as Microsoft Intune or Group Policy to control the registry values.

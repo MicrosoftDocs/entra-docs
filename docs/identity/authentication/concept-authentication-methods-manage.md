@@ -1,14 +1,9 @@
 ---
 title: Manage authentication methods
 description: Learn about the authentication methods policy and different ways to manage authentication methods.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: jpettere
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
@@ -108,7 +103,7 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 - Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
 
   >[!NOTE]
-  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted groups as much as possible. 
+  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. To avoid this limitation, consolidate targeted groups as much as possible.
 
 ## Usable and non-usable methods for users
 

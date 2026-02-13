@@ -3,7 +3,6 @@ title: Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agen
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how autonomous agents acquire tokens using the Microsoft Entra SDK for Agent ID to call downstream APIs independently.
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/05/2025

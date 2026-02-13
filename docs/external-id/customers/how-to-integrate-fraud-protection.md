@@ -1,11 +1,6 @@
 ---
 title: Fraud Protection Integration
 description: Learn how to configure Arkose Labs and Human fraud protection with Microsoft Entra External ID to block bot attacks and fake account creation during user sign-up flows.
-author: csmulligan
-ms.author: cmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 zone_pivot_groups: fraud-protection-integration
 ms.topic: how-to
 ms.date: 09/24/2025

@@ -1,12 +1,8 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
 description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 02/09/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -113,7 +109,7 @@ To enable TLS 1.2:
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 - Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on.
 - Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [extending the TCP and UDP ephemeral ports](concept-connectors.md#expanding-ephemeral-port-range) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
-- Consider creating a [performance baseline](https://learn.microsoft.com/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
+- Consider creating a [performance baseline](/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
 
 ### Prepare your on-premises environment
 
@@ -234,6 +230,30 @@ To create as many connector groups as you want:
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
+## Minimizing impact during connector server maintenance
+When performing maintenance (such as patching or reboots) on private network connector servers, you can minimize interruption to user connections by using a dedicated maintenance connector group. By temporarily moving a connector into this group, you ensure that no new traffic is routed to it while allowing existing sessions to complete gracefully.
+
+Connectors in Microsoft Entra Private Access are stateless agents that the service routes traffic through based on group assignments and availability. If a connector is unavailable, the service automatically directs new requests to other healthy connectors in the group.
+
+### Maintenance steps
+1. Create a maintenance connector group
+   - In the Microsoft Entra admin center, create a new connector group that is **only** to Private Access test application.
+   - This group acts as a “parking spot” for maintenance.
+1. Move the connector into the maintenance connector group
+   - When you are ready to service a connector server, edit its assignment and move it into the maintenance connector group with a test Private Access app where there is no active traffic.
+   - Once moved to a maintenance connector group the connector no longer receives new user connections and any existing connections continue until they gracefully finish.
+
+1. Drain existing sessions
+   - Wait an appropriate period to allow active connections to complete normally. The duration depends on your application workloads and session patterns.
+
+1. Perform maintenance
+   - Apply patches, reboots, or other updates required on the server.
+   - Ensure that the Microsoft Entra Private Network Connector services restart and are healthy before reintroducing the connector into production.
+   - Post-patching, requests can be sent to the test application to validate end to end connectivity.
+
+1. Return the connector to its original group
+   - Once maintenance is complete and services are running, move the connector back into its original connector group.
+   - The connector will again start receiving traffic as part of that group’s high-availability pool.
 
 
 ## Next steps

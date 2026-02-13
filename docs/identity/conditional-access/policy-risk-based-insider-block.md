@@ -1,14 +1,8 @@
 ---
 title: Block access for users with elevated insider risk
 description: Create Conditional Access policies using signals from Adaptive protection in Microsoft Purview.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: poulomib
 ---

@@ -1,12 +1,8 @@
 ---
 title: Create Custom Reports Using Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from more sources in addition to Microsoft Entra
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: tutorial
 ms.date: 04/11/2025
-ms.author: owinfrey
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer using data from other sources

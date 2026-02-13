@@ -1,12 +1,8 @@
 ---
 title: Plan a Microsoft Entra ID Protection deployment
 description: Create a plan to deploy Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 08/06/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pwongera
 ms.reviewer: jhenders, tracyyu, chuqiaoshi
 ms.custom: sfi-image-nochange
 ---

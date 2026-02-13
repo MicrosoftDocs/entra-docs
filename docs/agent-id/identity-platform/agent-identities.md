@@ -3,7 +3,6 @@ title: Overview of agent identities in Microsoft Entra
 description: Learn about agent identities in Microsoft Entra ID, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025

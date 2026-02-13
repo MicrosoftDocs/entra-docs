@@ -1,15 +1,9 @@
 ---
 title: B2B collaboration API and customization
 description: Microsoft Entra B2B collaboration supports your cross-company relationships by enabling business partners to selectively access your corporate applications.
-
-ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 12/10/2024
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an organization administrator, I want to customize the invitation process for external users using the Microsoft Graph REST API, so that I can tailor the onboarding experience and control the notifications sent to the users.

@@ -1,13 +1,9 @@
 ---
 title: Overview of Microsoft Entra ID Account Recovery
 description: Learn about Microsoft Entra ID Account Recovery, which enables users to regain access to their accounts through identity verification when they've lost all authentication methods.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 11/07/2025
-ms.author: justinha
 author: BullittRacer
-manager: dougeby
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn about account recovery and how it differs from password reset.
@@ -118,6 +114,7 @@ Account recovery is secure by default with evaluation mode for user verification
 
 ## Related content
 
+- [Frequently asked questions about Microsoft Entra ID account recovery](self-service-account-recovery.yml)
 - [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md) - Learn about traditional password reset capabilities and when to use SSPR versus account recovery
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview) - Understand the decentralized identity technology that powers SSAR's verification process  

@@ -1,14 +1,8 @@
 ---
 title: "Conditional Access Setup: Users, Groups, Agents, and Workload Identities"
 description: Learn how to include or exclude users, groups, and workload identities in Conditional Access policies for secure and flexible access management.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---

@@ -2,11 +2,8 @@
 title: Enhance accessibility with multifactor authentication in Microsoft Entra ID
 description: Explains authentication Methods Accessibility
 author:      gdaluz1 # GitHub alias
-ms.author: justinha
-ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
-ms.subservice: authentication
 ---
 # Improve accessibility with multifactor authentication in Microsoft Entra ID
 
