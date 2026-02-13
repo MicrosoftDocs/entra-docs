@@ -81,15 +81,6 @@ The knowledge base can be used by the Conditional Access Optimization Agent in t
 
 - **Policy naming remediation**: If a policy doesn't follow defined naming standards, the agent recommends an appropriately named replacement.
 
-## Scope and limitations
-
-During the Preview, the knowledge base has the following constraints:
-
-- One knowledge base document per tenant
-- Supported file formats: Word (.docx) and PDF
-- Maximum file size: 5 MB
-- The knowledge base only applies to future agent runs
-
 ## When should you use the knowledge base?
 
 Consider using the knowledge base if your organization:
@@ -99,13 +90,13 @@ Consider using the knowledge base if your organization:
 - Audits Conditional Access policies regularly
 - Needs recommendations to align with internal governance processes
 
-## Tips for writing guidance
+## Scope and limitations
 
-The agent might not accept the uploaded file right away. The following tips should help you craft a quality document that the agent can use.
+During the Preview, the knowledge base has the following constraints:
 
-- Be explicit.
-    - Say "global admin, security admin, conditional access admin" and not just "users with security-related roles" 
-    - If you have a strategy that applies certain policies to full time employees, explain how full time employees are defined/tracked, such as a user attribute or group membership
+- One knowledge base document per tenant
+- Supported file formats: Word (.docx) and PDF
+- Maximum file size: 5 MB
+- The knowledge base only applies to future agent runs
 
-- Avoid tables?
-- Use consistent headings?
+The upload process might fail if the document doesn't meet the listed criteria. If the document has a sensitivity label applied, the upload might also fail. Because organizations can customize the criteria for sensitivity labels, we can't suggest a specific sensitivity label.
