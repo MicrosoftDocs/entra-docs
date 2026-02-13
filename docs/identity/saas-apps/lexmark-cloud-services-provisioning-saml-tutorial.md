@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Configuring Lexmark Cloud Services (SAML) for automatic user provisioning with Microsoft Entra ID
+# Configure Lexmark Cloud Services (SAML) for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Lexmark Cloud Services (SAML) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to Lexmark Cloud Services (SAML) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -26,7 +26,7 @@ This article describes the steps you need to perform in both Lexmark Cloud Servi
 > * Keep user attributes synchronized between Microsoft Entra ID and Lexmark Cloud Services (SAML) [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Lexmark Cloud Services (SAML) (recommended).
 
 > [!NOTE]
-> Lexmark Cloud Services (SAML) application currently only supports user provisioning. Group provisioning is not supported and is planned for a future release.
+> Lexmark Cloud Services (SAML) application currently only supports user provisioning. Group provisioning isn't supported and is planned for a future release.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* An SAML federated organization in Lexmark Cloud Services with Organization Administrator role.
+* A SAML federated organization in Lexmark Cloud Services with Organization Administrator role.
 * Review the [lexmark documentation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/overview-v54808648.html?toc=2.5.0) on user provisioning.
 
 ## Step 1: Plan your provisioning deployment
@@ -52,17 +52,17 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Screenshot shows Account Management.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "Account Management")
 
-3. If necessary, select your organization, and then select Next.
+3. If necessary, select your organization, and then select **Next**.
 
     ![Screenshot shows Organization Menu.](media/lexmark-cloud-services-provisioning-saml-tutorial/organization.png "Organization")
 
 4. Ensure your organization is configured for SSO with [Lexmark Cloud Services (SAML) application](~/identity/saas-apps/lexmark-cloud-services-tutorial.md).
 
-5. In the **Select Organization** pane, select User provisioning.
+5. In the **Select Organization** pane, select **User provisioning**.
 
     ![Screenshot shows User Provisioning Menu.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning")
 
-6. Select Enable User Provisioning.
+6. Select  **Enable User Provisioning**.
 
     ![Screenshot shows Enable User Provisioning.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning-saml.png "Enable User Provisioning")
 
@@ -80,9 +80,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-lexmark-cloud-services-saml-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Lexmark Cloud Services (SAML) in Microsoft Entra ID:
+### To configure automatic user provisioning for Lexmark Cloud Services (SAML) in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an app owner ora [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an app owner or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Screenshot shows the enterprise applications blade.](common/enterprise-applications.png "Enterprise application")
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the Tenant URL field, input your Lexmark Cloud Services (SAML) Tenant URL and Secret Token. Select Test Connection to ensure Microsoft Entra ID can connect to Lexmark Cloud Services (SAML). If the connection fails, ensure your Lexmark Cloud Services (SAML) account has Admin permissions and try again.
+1. In the Tenant URL field, input your Lexmark Cloud Services (SAML) Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Lexmark Cloud Services (SAML). If the connection fails, ensure your Lexmark Cloud Services (SAML) account has Admin permissions and try again.
     
     ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -107,8 +107,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Properties** in the **Overview** page.  
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. select  **Apply** to save the changes.  
-
+1. Select the pencil to edit the properties: 
+    1. Enable notification emails and provide an email to receive quarantine emails. 
+    1. Enable accidental deletions prevention.
+    1. Select  **Apply**  to save the changes. 
+    
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select users.
