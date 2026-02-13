@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 5. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://www.n2f.com/app/`
+    `https://auth.n2f.com/`
 
 6. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
