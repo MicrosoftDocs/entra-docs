@@ -270,7 +270,6 @@ Known limitations for Internet Access include:
 - Transport Layer Security (TLS) inspection is in development.
 - URL path-based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - User-friendly end-user notifications are in development.
-- Remote network connectivity for Internet Access is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
 
