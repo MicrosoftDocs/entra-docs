@@ -42,7 +42,7 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - macOS 10.15 and later: [Intune Company Portal app](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
 - The device must be *enrolled in MDM*, for example, through Microsoft Intune.
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
-- Apple devices must be allowed to reach to both identity provider URLs and its own URLs. 
+- Apple devices must be allowed to reach to both identity provider URLs and its own URLs. For more information, see [Use Apple products on enterprise networks](https://support.apple.com/101555).
 
 The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
