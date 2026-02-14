@@ -20,6 +20,30 @@ To customize the end-user experience for Microsoft Entra multifactor authenticat
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
 
+## Account lockout (MFA Server only)
+
+
+>[!NOTE]
+>Account lockout only affects users who sign in by using MFA Server on-premises. 
+
+To prevent repeated MFA attempts as part of an attack, the account lockout settings let you specify how many failed attempts to allow before the account becomes locked out for a period of time. The account lockout settings are applied only when a PIN code is entered for the MFA prompt by using MFA Server on-premises.
+
+The following settings are available:
+
+* Number of MFA denials that trigger account lockout
+* Minutes until account lockout counter is reset
+* Minutes until account is automatically unblocked
+
+To configure account lockout settings, complete these steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Multifactor authentication** > **Account lockout**. You might need to click **Show more** to see **Multifactor authentication**.
+1. Enter the values for your environment, and then select **Save**.
+
+    ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
+
+   *Note: Block/Unblock users tab is deprecated,currently the tab will be visible but feature is not available.
+
 ## Report suspicious activity
 
 When an unknown and suspicious MFA prompt is received, users can report the activity by using Microsoft Authenticator or through their phone. **Report suspicious activity** is integrated with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) for risk-driven remediation, reporting, and least-privileged administration. 
