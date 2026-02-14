@@ -83,6 +83,9 @@ Policy 2: All users with an administrator role, accessing the Windows Azure Serv
 > [!WARNING]
 > Policies that require compliant devices may prompt users on Mac, iOS, and Android to select a device certificate during policy evaluation, even though device compliance is not enforced. These prompts may repeat until the device is made compliant.
 
+> [!WARNING]
+> Evaluation of certain attributes like TrustType are dependent on the browser and user. Edge natively supports enriched tokens for Entra-registered users and Entra-joined devices. Chrome requires the APAuthEnabled policy, which can be done via the Registry, InTune or Group Policy - without this enabled, logins from Chrome will not have the Device claims in the token.
+
 ### Setting attribute values
 
 Setting extension attributes is made possible through the Microsoft Graph API. For more information about setting device attributes, see the article [Update device](/graph/api/device-update?tabs=http#example-2--write-extensionattributes-on-a-device).
