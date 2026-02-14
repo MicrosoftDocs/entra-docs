@@ -21,12 +21,13 @@ You can add multiple members to a group by using a comma-separated values (CSV) 
 Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Your CSV template might look like this example:
 
 :::image type="content" source="./media/groups-bulk-import-members/template-with-callouts.png" alt-text="Screenshot that shows the spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
+**Currently version number is not included in the template**
 
 ### CSV template structure
 
 The rows in a downloaded CSV template are:
 
-- **Version number**: The first row that contains the version number must be included in the upload CSV.
+- **Version number**: The first row that contains the version number must be included in the upload CSV. **Currently version number is not included in the template**
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can choose the member object ID or the user principal name.
 - **Examples row**: The template includes a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
 
