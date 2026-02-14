@@ -135,44 +135,49 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your KnowledgeOwl company site as an administrator.
 
-1. Select **Settings** and then select **SSO**.
+1. Select **Security and access** and then select **Single sign-on**.
 
-	![Screenshot shows SSO selected from the Settings menu.](./media/knowledgeowl-tutorial/settings-sso-dropdown.png)
+    ![Screenshot shows Single sign-on selected from the Security and access menu.](./media/knowledgeowl-tutorial/security-sso-menu.png)
 
-1. In the Scroll to **SAML Settings** tab, perform the following steps:
+1. In the **SAML Settings** tab, perform the following steps:
 
-	![Screenshot shows SAML S S O Integration where you can make the changes described here.](./media/knowledgeowl-tutorial/sso-settings-required-fields.png)
+	![Screenshot shows the SAML settings where you can enable SAML SSO reader logins mentioned here.](./media/knowledgeowl-tutorial/sso-saml-settings.png)
 
-	a. Select **Enable SAML SSO**.
+	a. Select **Enable SAML SSO reader logins**.
 
-	b. Copy the **SP Entity ID** value and paste it into the **Identifier (Entity ID)** in the **Basic SAML Configuration** section on the Azure portal.
+	![Screenshot shows the Service provider metadata section where you can copy the values mentioned here.](./media/knowledgeowl-tutorial/sp-metadata.png)
 
-	c. Copy the **SP Login URL** value and paste it into the **Sign-on URL and Reply URL** textboxes in the **Basic SAML Configuration** section on the Azure portal.
+	b. In the **Service provider metadata** section, copy the **SP entity ID** value and paste it into the **Identifier (Entity ID)** in the **Basic SAML Configuration** section on the Azure portal.
 
-	d. In the **IdP entityID** textbox, paste the **Microsoft Entra Identifier** value, which you copied previously.
+	c. In the **Service provider metadata** section, copy the **SP login URL** value and paste it into the **Sign-on URL and Reply URL** textboxes in the **Basic SAML Configuration** section on the Azure portal.
 
-	e. In the **IdP Login URL** textbox, paste the **Login URL** value, which you copied previously.
+	![Screenshot shows the Identity provider metadata section where you can complete the steps mentioned here.](./media/knowledgeowl-tutorial/saml-identity-provider-metadata.png)
 
-	f. In the **IdP Logout URL** textbox, paste the **Logout URL** value, which you copied previously.
+	d. In the **Identity provider metadata** section, paste the **Microsoft Entra Identifier** value you previously copied into the **IdP entityID** textbox.
 
-	g. Upload the downloaded certificate form the Azure portal by selecting the **Upload** link beneath **IdP Certificate**.
+	e. Paste the **Login URL** value you previously copied into the **IdP login URL**.
 
-	h. Select **Save** at the bottom of the page.
+	f. Paste the **Logout URL** you previously copied into the **IdP logout URL** textbox.
 
-	![Screenshot shows the Save button.](./media/knowledgeowl-tutorial/sso-settings-saml-save.png)
+	g. Upload the downloaded certificate from the Azure portal by selecting the **Upload certificate** link beneath **IdP certificate**.
 
-	i. Open the **SAML Attribute Map** tab to map attributes and perform the following steps:
+	h. Select **Save** at the bottom of the section.
 
-	![Screenshot shows Map SAML Attributes where you can make the changes described here.](./media/knowledgeowl-tutorial/sso-settings-direct-attribute-fields.png)
+1. Open the **SAML attribute map** tab to map attributes and perform the following steps:
 
-	* Enter `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/ssoid` into the **SSO ID** textbox.
-	* Enter `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` into the **Username/Email** textbox.
-	* Enter `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname` into the **First Name** textbox.
-	* Enter `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` into the **Last Name** textbox.
+	![Screenshot shows Map SAML Attributes where you can make the changes described here.](./media/knowledgeowl-tutorial/saml-attribute-map.png)
 
-	j. Select **Save** at the bottom of the page.
+	a. Enter `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/ssoid` into the **SSO ID** textbox.
 
-	![Screenshot shows the Save button1.](./media/knowledgeowl-tutorial/sso-settings-direct-attribute-save.png)
+	b. Enter `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` into the **Username/Email** textbox.
+	
+   	c. Enter `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname` into the **First Name** textbox.
+	
+	d. Enter `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` into the **Last Name** textbox.
+
+	e. Select **Save** at the bottom of the page.
+
+	![Screenshot shows the Save button.](./media/knowledgeowl-tutorial/saml-attribute-map-save.png)
 
 ### Create KnowledgeOwl test user
 
