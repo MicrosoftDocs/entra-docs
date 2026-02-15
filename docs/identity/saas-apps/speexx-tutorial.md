@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
    1. In the **Identifier** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>`
-   1. In the **Reply URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>/adfs/postResponse`
+   1. In the **Reply URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>/back`
    1. In the **Sign-on URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>`
    
    > [!NOTE]
