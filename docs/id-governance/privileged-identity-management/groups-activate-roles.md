@@ -30,7 +30,7 @@ This article is for eligible members or owners who want to activate their group 
 
 When you need to take on a group membership or ownership, you can request activation by using the **My roles** navigation option in PIM.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **My roles** > **Groups**. 
     >[!NOTE]
@@ -56,7 +56,7 @@ If the [role requires approval](pim-resource-roles-approval-workflow.md) to acti
 
 ## View the status of your requests
 
-You can view the status of your pending requests to activate.  n It is important when your requests undergo approval of another person.
+You can view the status of your pending requests to activate. It is important when your requests undergo approval of another person.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

@@ -51,3 +51,24 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
+
+### Source IP restoration is enabled
+[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
+
+### Network traffic is routed through Global Secure Access for security policy enforcement
+[!INCLUDE [25381](../includes/secure-recommendations/25381.md)]
+
+### Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment
+[!INCLUDE [25382](../includes/secure-recommendations/25382.md)]
+
+### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
+[!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
+
+### Quick Access is bound to a Conditional Access policy
+[!INCLUDE [25394](../includes/secure-recommendations/25394.md)]
+
+### Entra Private Access Application segments are defined to enforce least-privilege access
+[!INCLUDE [25395](../includes/secure-recommendations/25395.md)]
+
+### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
+[!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
