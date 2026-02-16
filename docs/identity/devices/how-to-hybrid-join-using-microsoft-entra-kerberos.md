@@ -1,17 +1,17 @@
 ---
-title: Microsoft Entra hybrid join using Microsoft Entra Kerberos (Preview)
+title: Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview)
 description: Explains prerequisites and steps to set up Microsoft Entra hybrid join by using Microsoft Entra Kerberos.
 #customer intent: As a hybrid identity administrator, I want to allow users to join devices to Microsoft Entra ID.
 author: nbeesett
 ms.author: justinha
 ms.reviewer: nbeesett
-ms.date: 02/13/2026
+ms.date: 02/16/2026
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: devices
 ---
 
-# Microsoft Entra hybrid join using Microsoft Entra Kerberos (Preview) 
+# Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview) 
 
 You can use Microsoft Entra Kerberos to perform Microsoft Entra hybrid join for a device without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect sync. You get the Microsoft Entra hybrid join behavior instantly without the ADFS setup.
 
@@ -54,7 +54,7 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
       - If the policy is **Disabled**, select **Enabled**.
    1. Under **Options**, select **Show...**. This opens the **Show Contents** dialog box.
    
-      :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/show-contents.png" alt-text="Screenshot of dialog box to enable Specify KDC proxy servers for Kerberos clients."lightbox="media/entra-hybrid-join-using-entra-kerberos/show-contents.png":::
+      :::image type="content" source="media/how-to-hybrid-join-using-microsoft-entra-kerberos/show-contents.png" alt-text="Screenshot of dialog box to enable Specify KDC proxy servers for Kerberos clients."lightbox="media/how-to-hybrid-join-using-microsoft-entra-kerberos/show-contents.png":::
 
    1. Define the KDC proxy servers setting by using the following mapping. Replace `your_Microsoft Entra_tenant_id` with your Microsoft Entra tenant ID. **A blank space appears after https and before the closing / in the value mapping**.
 
@@ -62,12 +62,12 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
       |----|----|
       | KERBEROS.MICROSOFTONLINE.COM | `https login.microsoftonline.com:443:your_Microsoft Entra_tenant_id/kerberos /` |
 
-      :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/entra-hybrid-join-using-entra-kerberos/settings.png":::
+      :::image type="content" source="media/how-to-hybrid-join-using-microsoft-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/how-to-hybrid-join-using-microsoft-entra-kerberos/settings.png":::
 
    1. Select **OK** to close the **Show Contents** dialog box.
    1. In the **Specify KDC proxy servers for Kerberos clients** dialog box, select **Apply**.
 
-### Configure Entra Device Registration Service Principal
+### Configure Microsoft Entra Device Registration Service Principal
 
 1. Install [Microsoft Entra PowerShell](/powershell/entra-powershell/installation).
 1. Open an elevated PowerShell session by choosing **Run as administrator**.
@@ -177,8 +177,8 @@ Write-Host "Tags:"
 
 Follow these [instructions](/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers) to deploy a domain controller to your domain. Make sure the domain controller runs Windows Server 2025 [build 26100.6905](https://support.microsoft.com/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later.
 
-   >[!Note] 
-   >You need to install a domain controller that runs Windows Server 2025 in every domain that you want to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos.
+>[!Note] 
+>You need to install a domain controller that runs Windows Server 2025 in every domain that you want to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos.
 
 ### Configure the client computer for Microsoft Entra Kerberos join
 
