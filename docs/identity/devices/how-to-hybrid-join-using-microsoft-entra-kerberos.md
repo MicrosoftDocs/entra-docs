@@ -13,13 +13,13 @@ ms.subservice: devices
 
 # Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview) 
 
-You can use Microsoft Entra Kerberos to perform Microsoft Entra hybrid join for a device without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect sync. You get the Microsoft Entra hybrid join behavior instantly without the ADFS setup.
+You can use Microsoft Entra Kerberos to perform Microsoft Entra hybrid join for a device without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect sync. You get the Microsoft Entra hybrid join behavior instantly without the AD FS setup.
 
 ## Use cases
 
 The following use cases are enabled for preview:
 
-- Deploy nonpersistent Virtual Desktop Infrastructure (VDI) with Microsoft Entra hybrid join in a managed environment.
+- Deploy non-persistent Virtual Desktop Infrastructure (VDI) with Microsoft Entra hybrid join in a managed environment.
 - Deploy Microsoft Entra hybrid join for customers who have or want to use Microsoft Entra Cloud Sync.
 - Improve provisioning experience for Azure Virtual Desktop and Windows 365 hybrid deployment.
 - Deploy Microsoft Entra hybrid join for a disconnected forest setup where Microsoft Entra Connect Sync can't be used.
@@ -28,7 +28,12 @@ The following use cases are enabled for preview:
 
 Make sure you have the following permissions and configuration set up to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos. There are no license requirements.
 
-- **Role requirements**: The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group and the Enterprise Admins group and a Microsoft Entra user with the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow#permissions). 
+- **Role requirements**: The user who creates and configures Entra Kerberos Trusted Domain Object needs the following roles:
+  - A member of the Domain Admins and Enterprise Admins group in Active Directory Domain Services on-premises
+  - A [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) in Microsoft Entra ID 
+  
+  For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow#permissions). 
+
 - **Configure the Key Distribution Center (KDC) proxy server Group Policy Object (GPO)**: This prerequisite is only required if you deployed a KDC Proxy Server GPO to your client computer. The user who configures the GPO must be a Domain Admin or be delegated permissions to configure a GPO.
 - **Configure Microsoft Entra Device Registration Service Principal**: Add a Kerberos entry to the Microsoft Entra device registration service principal. The user who configures the service principal must have the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
 - **Deploy a domain controller that runs Windows Server 2025**: Install at least one domain controller that runs Windows Server 2025 [build 26100.6905](https://support.microsoft.com/topic/october-23-2025-kb5070881-os-build-26100-6905-out-of-band-8e7ac742-6785-4677-87e4-b73dd8ac0122) or later in the Active Directory domain.
@@ -211,7 +216,7 @@ To collect Kerberos logs, follow these steps:
    ```powershell
    start-auth.ps1
    ```
-1. On your client computer, open a PowerShell window with administrator privileges, run run the following script:
+1. On your client computer, open a PowerShell window with administrator privileges, run the following script:
    ```powershell
    start-auth.ps1
    ```
