@@ -48,7 +48,7 @@ Learn more about these scenarios at [Common use-cases and scenarios for Microsof
 
 ## Entra Domain Services in the cloud journey
 
-Entra Domain Services helps you to achieve your goal of "AD Minimization" — reducing reliance on legacy identity infrastructure in favor of modern, cloud-based identity such as Entra ID.
+Entra Domain Services helps you to achieve your goal of "AD minimization" — reducing reliance on legacy identity infrastructure in favor of modern, cloud-based identity such as Entra ID.
 
 Entra Domain Services acts as a bridge in this journey:
 
