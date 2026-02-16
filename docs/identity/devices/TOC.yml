@@ -73,7 +73,7 @@
             - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
               href: troubleshoot-hybrid-join-windows-current.md
             - name: Troubleshoot pending device state
-              href: https://learn.microsoft.com/troubleshoot/entra/entra-id/dir-dmns-obj/pending-devices
+              href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
             - name: Troubleshoot using dsregcmd
               href: troubleshoot-device-dsregcmd.md
             - name: Troubleshoot Microsoft Entra hybrid joined down level Windows devices
@@ -125,7 +125,7 @@
     - name: Enterprise state roaming Group Policy Object (GPO) settings
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
-      href: https://learn.microsoft.com/windows/configuration/windows-backup/catalog-esr
+      href: /windows/configuration/windows-backup/catalog-esr
 - name: Manage device identities
   href: manage-device-identities.md
 - name: Manage stale devices
@@ -145,7 +145,7 @@
     - name: Enforce TLS 1.2
       href: reference-device-registration-tls-1-2.md
     - name: Microsoft Graph APIs
-      href: https://learn.microsoft.com/graph/api/resources/device
+      href: /graph/api/resources/device
     - name: KDFv1 removal
       href: deprecation-key-derivation-function-version-1.md
 - name: Resources
