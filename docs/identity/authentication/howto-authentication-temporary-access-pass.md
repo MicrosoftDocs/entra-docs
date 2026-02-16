@@ -4,7 +4,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 02/16/2026
 ms.author: justinha
 author: tilarso
 manager: dougeby
@@ -145,7 +145,7 @@ When using a Temporary Access Pass (TAP) to support device enrollment and passwo
 
 | Option   | Process description | Steps   |
 |:--------:|:--------------------|:--------|
-| Two single-use TAPs | If your organization enforces single-use TAPs, and the overall device enrollment process takes longer than 10 minutes, users need to enter another TAP for passwordless credential registration. When users enter a single-use TAP to register a passwordless authentication method, the registration must be completed within 10 minutes of sign-in. <br>This behavior is consistent across all new authentication method registrations that require multifactor authentication (MFA), including registrations initiated through [Security info](https://mysignins.microsoft.com/security-info). The 10-minute requirement relates to MFA enforcement during credential registration, but not TAP specifically. | The first single-use TAP is used to complete device enrollment.<br>If the device enrollment process reaches the Windows Hello for Business registration step after more than 10 minutes, a second single-use TAP must be provided to register the credential.|
+| Two single-use TAPs | If your organization enforces single-use TAPs, and the overall device enrollment process takes longer than 10 minutes, users need to enter a second single-use TAP for their passwordless credential registration. <br>Note: When users enter a single-use TAP to register a passwordless authentication method, the registration must be completed within 10 minutes of sign-in. <br>This behavior is consistent across all new authentication method registrations that require multifactor authentication (MFA), including registrations initiated through [Security info](https://mysignins.microsoft.com/security-info). The 10-minute requirement relates to MFA enforcement during credential registration, but not TAP specifically. | The first single-use TAP is used to complete device enrollment.<br>If the device enrollment process reaches the Windows Hello for Business registration step after more than 10 minutes, a second single-use TAP must be provided to register the credential.|
 | One multiuse TAP | If your organization enables multiuse TAPs, a user can sign in with a single TAP multiple times during its validity period. For example, a user can sign in with a single TAP multiple times for one hour.<br>A multiuse TAP can simplify the end-user experience by reducing the need to distribute multiple passcodes. Monitor TAP usage to ensure it's not used more times than expected during its validity period. | A user can enter the same TAP once to enroll their device, and again to register Windows Hello for Business.<br>The 10-minute MFA requirement effectively restarts when the user begins to register the new authentication method. The timer restart prevents interruption for device setup. |
 
 ### Windows device setup
