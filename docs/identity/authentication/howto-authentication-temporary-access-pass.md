@@ -52,7 +52,7 @@ To configure TAP in the Authentication methods policy:
    | Minimum lifetime | 1 hour | 10 – 43,200 Minutes (30 days) | Minimum number of minutes that the TAP is valid. |
    | Maximum lifetime | 8 hours | 10 – 43,200 Minutes (30 days) | Maximum number of minutes that the TAP is valid. |
    | Default lifetime | 1 hour | 10 – 43,200 Minutes (30 days) | Individual passes within the minimum and maximum lifetime configured by the policy can override default value. |
-   | One-time use | False | True/False | When the policy is set to false, passes in the tenant can be used either once or more than once during its validity (maximum lifetime). By enforcing one-time use in the TAP policy, all passes created in the tenant are one-time use. |
+   | One-time use | False | True/False | When the policy is set to false, a TAP in the tenant can be used either once or more than once during its validity (maximum lifetime). If you enforce one-time use in the TAP policy, all passes created in the tenant are one-time use. |
    | Length | 8 | 8-48 characters | Defines the length of the passcode. |
 
 ## Create a Temporary Access Pass
@@ -228,9 +228,9 @@ Users in scope for these policies are redirected to the [Interrupt mode of the c
 
 - If a TAP isn't offered to a user during sign-in:
   - Make sure the user is in scope for TAP use in the Authentication methods policy.
-  - Make sure the user has a valid TAP, and if it's one-time use, it wasn’t used yet.
+  - Make sure the user has a valid TAP. If the TAP is one-time use, make sure it wasn’t used yet.
 - If **Temporary Access Pass sign in was blocked due to User Credential Policy** appears during sign-in with a TAP:
-  - Check that the user is in scope for the TAP policy
+  - Check that the user is in scope for the TAP policy.
   - Make sure the user doesn't have a TAP for multiple use while the Authentication methods policy requires a one-time TAP.
   - Check if a one-time TAP was already used.
 - If **Temporary Access Pass cannot be added to an external guest user** appears when you try to add a TAP to an account as an authentication method, the account is an external guest. Both internal and external guest accounts have an option to add a TAP for sign-in in the Microsoft Entra admin center and Microsoft Graph APIs. However, only internal guest accounts can be issued a TAP. 
