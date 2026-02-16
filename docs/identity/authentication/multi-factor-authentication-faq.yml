@@ -2,13 +2,8 @@
 metadata:
   title: Microsoft Entra multifactor authentication FAQ
   description: Frequently asked questions and answers related to Microsoft Entra multifactor authentication. 
-  ms.service: entra-id
-  ms.subservice: authentication
   ms.topic: faq
   ms.date: 02/09/2026
-  ms.author: justinha
-  author: justinha
-  manager: dougeby
   ms.reviewer: jpettere
 title: Frequently asked questions about Microsoft Entra multifactor authentication
 summary: |

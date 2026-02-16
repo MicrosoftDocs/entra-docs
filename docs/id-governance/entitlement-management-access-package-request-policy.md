@@ -209,7 +209,7 @@ There are two ways to create an access package assignment policy programmaticall
 
 ### Create an access package assignment policy through Graph
 
-You can create a policy using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application in a catalog role or with the `EntitlementManagement.ReadWrite.All` permission, can call the [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API.
+You can create a policy using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application in a catalog role, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API.
 
 ### Create an access package assignment policy through PowerShell
 

@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 02/09/2026
+ms.date: 02/11/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -39,3 +39,36 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Global Secure Access web content filtering is enabled and configured
 [!INCLUDE [25408](../includes/secure-recommendations/25408.md)]
+
+### Microsoft 365 traffic is actively flowing through Global Secure Access
+[!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
+
+### Universal tenant restrictions block unauthorized external tenant access
+[!INCLUDE [25377](../includes/secure-recommendations/25377.md)]
+
+### External collaboration is governed by explicit cross-tenant access policies
+[!INCLUDE [25378](../includes/secure-recommendations/25378.md)]
+
+### Conditional Access policies use compliant network controls
+[!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
+
+### Source IP restoration is enabled
+[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
+
+### Network traffic is routed through Global Secure Access for security policy enforcement
+[!INCLUDE [25381](../includes/secure-recommendations/25381.md)]
+
+### Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment
+[!INCLUDE [25382](../includes/secure-recommendations/25382.md)]
+
+### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
+[!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
+
+### Quick Access is bound to a Conditional Access policy
+[!INCLUDE [25394](../includes/secure-recommendations/25394.md)]
+
+### Entra Private Access Application segments are defined to enforce least-privilege access
+[!INCLUDE [25395](../includes/secure-recommendations/25395.md)]
+
+### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
+[!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
