@@ -83,7 +83,7 @@ The knowledge base can be used by the Conditional Access Optimization Agent in t
 
 ## When should you use the knowledge base?
 
-Consider using the knowledge base if your organization:
+Consider using the knowledge base of your organization:
 
 - Maintains strict Conditional Access naming standards
 - Separates policies by user persona or risk profile
