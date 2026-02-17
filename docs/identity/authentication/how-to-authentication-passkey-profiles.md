@@ -1,5 +1,5 @@
 ---
-title: How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID (Preview)
+title: How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID 
 description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 12/05/2025
@@ -8,12 +8,12 @@ ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ---
-# How to enable passkey (FIDO2) profiles in Microsoft Entra ID (preview)
+# How to enable passkey (FIDO2) profiles in Microsoft Entra ID 
 
 Passkey profiles enable granular group-based configurations for passkey FIDO2 authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
 
 >[!Note] 
->An Authentication Policy Administrator needs to configure a passkey profile (preview) to enable synced passkeys (preview). For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)](how-to-authentication-synced-passkeys.md).
+>An Authentication Policy Administrator needs to configure a passkey profile to enable synced passkeys. For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md).
 
 ## What are passkey profiles?
 
@@ -38,21 +38,21 @@ A passkey profile is a named set of policy rules that governs how users in targe
     - Passkey profile with no AAGUIDs: 0.4 KB
     - Passkey profile with 10 AAGUIDs: 0.3 KB
 
-## Enable passkey profiles (preview)
+## Enable passkey profiles 
 
 >[!NOTE]
->Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile** are supported. Support for more passkey profiles is in development.
+>Upon enabling passkey profiles, your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile** are supported. Support for more passkey profiles is in development.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
-1. Select **Passkey (FIDO2)**, and select **Opt-in to public preview** on the public preview banner to see the passkey profiles (preview).
+1. Select **Passkey (FIDO2)**.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to opt in to preview."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
 
    >[!NOTE]
    >Previous **Passkey (FIDO2)** policy settings are automatically transferred to the **Default passkey profile**. Previous user targets are also automatically transferred to **Enable and target**.
 
-1. To complete opting-in, select the **Default passkey profile**. 
+1. Select the **Default passkey profile**. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
    
@@ -109,10 +109,10 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
-## Disable passkey profiles (preview)
+## Disable passkey profiles
 
 > [!NOTE]
-> Opting out of passkey profiles (preview) will:
+> Disabling passkey profiles will:
 > * Remove all passkey profiles and their associated targets
 > * Revert your passkey policy to the configuration of your default passkey profile, including its user targets
 > * Disable support for synced passkeys
@@ -121,8 +121,8 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
-1. Select **Passkey (FIDO2)**, and select **Opt-out of public preview** on the public preview banner.
-1. Review the conditions of opting out, and click **opt-out** if you accept.
+1. Select **Passkey (FIDO2)**.
+1. Disable **Passkey (FIDO2)** and select **Save**.
 
 ## Examples of use cases for passkey profiles
 
@@ -147,4 +147,4 @@ Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bo
 
 ## Related content
 
-[How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)](how-to-authentication-synced-passkeys.md)
+[How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md)

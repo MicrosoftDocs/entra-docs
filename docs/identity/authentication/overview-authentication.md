@@ -22,7 +22,7 @@ The following table outlines when an authentication method can be used for prima
 | [Platform Credential for macOS](/entra/identity/authentication/concept-authentication-platform-credential-for-macos) | Yes               | MFA |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
 | [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
-| [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
+| [Synced passkey](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications)| Yes | No |
 | [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) |Yes  | MFA and SSPR |
@@ -51,7 +51,7 @@ The following phishing-resistant authentication methods are available in Microso
 
 - Windows Hello for Business
 - Platform Credential for macOS
-- Synced passkeys (FIDO2) (preview)
+- Synced passkeys (FIDO2) 
 - FIDO2 security keys
 - Passkeys in Microsoft Authenticator
 - Certificate-based authentication (CBA)  
