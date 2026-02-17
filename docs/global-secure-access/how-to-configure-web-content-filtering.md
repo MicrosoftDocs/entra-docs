@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 10/28/2025
+ms.date: 02/13/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -86,6 +86,81 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
+## Enable web content filtering for remote network traffic
+
+Remote network connectivity allows you to connect branch offices and other remote locations to Global Secure Access without installing the client on individual devices. To learn more about remote network connectivity, see [Global Secure Access remote network connectivity](concept-remote-network-connectivity.md).
+
+You can use the baseline security profile to apply tenant-wide web content filtering policies to all remote network traffic. The baseline profile enforces policies at the lowest priority in the policy stack and applies to all Internet Access traffic routed through the service, making it ideal for securing remote network locations.
+
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
+
+1. Browse to **Global Secure Access** > **Secure** > **Security profiles** > **Baseline profile**.
+1. Select **Link a policy** and then select **Existing policy**.
+1. Select the web content filtering policy you want to apply to remote network traffic and select **Add**.
+1. The baseline profile automatically applies to all remote network traffic without requiring a Conditional Access policy.
+
+    :::image type="content" source="media/how-to-configure-web-content-filtering/baseline-profile-security-profiles.png" alt-text="Screenshot of the Security profiles page showing the Baseline profile tab with the baseline profile listed at priority 65000." lightbox="media/how-to-configure-web-content-filtering/baseline-profile-security-profiles.png":::
+
+> [!NOTE]
+> The baseline security profile applies to all traffic routed through Global Secure Access, including both client-based and remote network traffic. No Conditional Access policy configuration is required for remote network traffic, as the baseline profile enforces policies by default.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
+You can also configure the baseline profile programmatically using Microsoft Graph network access APIs. For a complete tutorial, see [Configure Microsoft Entra Internet Access using Microsoft Graph APIs](/graph/tutorial-entra-internet-access).
+
+1. Open a web browser and navigate to **Graph Explorer** at https://aka.ms/ge.
+1. Select **GET** as the HTTP method from the dropdown.
+1. Set the API version to **beta**.
+1. Enter the following query to retrieve the baseline profile ID:
+    ```
+    GET https://graph.microsoft.com/beta/networkaccess/filteringProfiles
+    ```
+1. Select **Run query** and find the baseline profile ID (priority 65,000).
+1. Create a web content filtering policy:
+    ```
+    POST https://graph.microsoft.com/beta/networkaccess/filteringPolicies
+    Content-type: application/json
+
+    {
+      "name": "Block Social Media for Remote Networks",
+      "policyRules": [
+        {
+          "@odata.type": "#microsoft.graph.networkaccess.webCategoryFilteringRule",
+          "name": "Block Social Media",
+          "ruleType": "webCategory",
+          "destinations": [
+            {
+              "@odata.type": "#microsoft.graph.networkaccess.webCategory",
+              "name": "SocialNetworking"
+            }
+          ]
+        }
+      ],
+      "action": "block"
+    }
+    ```
+1. Link the policy to the baseline profile:
+    ```
+    POST https://graph.microsoft.com/beta/networkaccess/filteringProfiles/{baseline-profile-id}/policies
+    Content-type: application/json
+
+    {
+      "priority": 100,
+      "state": "enabled",
+      "@odata.type": "#microsoft.graph.networkaccess.filteringPolicyLink",
+      "loggingState": "enabled",
+      "policy": {
+        "id": "<filtering-policy-id>",
+        "@odata.type": "#microsoft.graph.networkaccess.filteringPolicy"
+      }
+    }
+    ```
+1. Select **Run query** to link the policy.
+
+---
+
+For more information on applying security policies to remote networks, see [Apply security policies to remote network traffic](how-to-apply-security-policies-remote-network.md).
+
 ## Internet Access flow diagram
 This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
 
@@ -134,7 +209,7 @@ The current blocking experience for all browsers includes a plaintext browser er
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
 
 > [!NOTE]
-> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
+> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Microsoft Entra admin center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
 ## Next steps
 
