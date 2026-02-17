@@ -50,4 +50,4 @@ The native authentication process continues to use standard endpoints for initia
 
 ## Related content
 
-- [Native authentication overview](concept-native-authentication-overview.md)
+- [Native authentication overview](concept-native-authentication.md)
