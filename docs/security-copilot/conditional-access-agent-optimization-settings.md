@@ -149,7 +149,7 @@ The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID
 
 Select **Manage agent identity** to view the agent details in Microsoft Entra Agent ID.
 
-:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot conditional-access-agent-optimization-settings/identity-permissions.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot of the agent settings view for permissions and identities.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
 
 - New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-is-agent-id.md).
 - Existing installations can switch from the user context to run under an agent identity at any time. 

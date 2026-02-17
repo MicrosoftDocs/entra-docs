@@ -41,7 +41,7 @@ This article provides an overview of the logic behind the suggestions and report
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
-- The agent can review up to 300users and 150 applications in a single run.
+- The agent can review up to 300 users and 150 applications in a single run.
 
 ## How it works
 

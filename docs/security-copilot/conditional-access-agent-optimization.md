@@ -65,7 +65,7 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
 > [!NOTE]
-> Security Copilot requires at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
+> Security Copilot requires that at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions identified by the agent include:
 
