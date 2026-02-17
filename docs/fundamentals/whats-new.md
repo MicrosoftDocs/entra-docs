@@ -25,7 +25,7 @@ This article provides information about the latest releases and change announcem
 
 ## January 2026
 
-### General Availability - Ability to convert Source of Authority of synced on-prem AD users to cloud users is now available 
+### General Availability - Ability to convert Source of Authority of synced on-premises AD users to cloud users is now available 
 
 **Type:** New feature  
 **Service category:** User Management  
@@ -386,7 +386,7 @@ Managing agent identity sponsors is key for lifecycle governance and access cont
 **Service category:** Other  
 **Product capability:** Platform  
 
-Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra agent id, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
+Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
 
 ---
 
@@ -576,7 +576,7 @@ This public preview allows you to configure URL filtering rules to granularl
 **Service category:** MFA    
 **Product capability:** Identity Security & Protection    
 
-Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the MicrosoftEntra portal.
+Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the Microsoft Entra admin center.
 
 The legacy “*Revoke MFA session*s” action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new “*Revoke sessions*” button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
 
@@ -630,7 +630,7 @@ This enhancement gives administrators greater flexibility to automate lifecycle 
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C   
 
-In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member id, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
+In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member ID, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
 
 ---
 
@@ -1235,7 +1235,7 @@ The Conditional access What If API can be used to programmatically test the impa
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** SSO  
 
-Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
+Enterprise apps SSO & User Provisioning SAML-based single sign-on (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
 
 - [Add an enterprise application](../external-id/customers/how-to-add-enterprise-application.md)
 - [Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
