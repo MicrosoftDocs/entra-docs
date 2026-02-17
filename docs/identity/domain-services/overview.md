@@ -41,7 +41,7 @@ You should consider using Entra Domain Services in the following scenarios:
 - **Isolate legacy workloads:** You want to keep AD‑dependent workloads in Azure while new applications use Microsoft Entra ID directly.
 - **Cloud-only legacy support:** You are a cloud-native organization with no on-premises Active Directory, but you have specific third-party applications that still require LDAP or traditional domain-join. Entra Domain Services bridges this gap without forcing you to build a full AD DS infrastructure.
 
-You use Entra Domain Services as a transitional capability alongside Entra ID, rather than as a replacement for cloud‑native identity services.
+You use Entra Domain Services as a transitional capability for Azure-hosted workloads that require legacy authentication, rather than as a general replacement for your on-premises Active Directory or a substitute for cloud-native identity services.
 
 Learn more about these scenarios at [Common use-cases and scenarios for Microsoft Entra Domain Services](scenarios.md).
 
