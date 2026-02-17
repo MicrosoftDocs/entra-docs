@@ -29,7 +29,7 @@ The agent settings described in this article cover standard options like trigger
 
 You can access the settings from two places in the Microsoft Entra admin center:
 
-- From **Agents** > **Conditional Access optimization agent** > **Settings**.
+- From **Agents** > **Conditional Access Optimization Agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings.png":::
@@ -44,11 +44,11 @@ The agent is configured to run every 24 hours, based on when it was initially co
 
 The **Capabilities** category includes important settings that you should review.
 
-:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png" alt-text="Screenshot of the Conditional Access Optimization agent Capabilities settings." lightbox="media/conditional-access-agent-optimization-settings/phased-rollout-settings.png":::
-
 - **Microsoft Entra objects to monitor**: Use the checkboxes to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
 - **Agent capabilities**: By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
 - **Phased rollout**: When the agent creates a new policy in report-only mode and that policy meets the criteria for a phased rollout, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
+
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png" alt-text="Screenshot of the Conditional Access Optimization agent Capabilities settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png":::
 
 ## Notifications
 

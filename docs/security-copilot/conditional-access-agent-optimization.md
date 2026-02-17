@@ -116,7 +116,7 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
-- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge base files](conditional-access-agent-optimization-knowledge-base.md) to the agent
+- Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions
 
 ## Built in integrations
 
