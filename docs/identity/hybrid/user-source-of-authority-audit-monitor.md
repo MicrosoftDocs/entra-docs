@@ -1,5 +1,5 @@
 ---
-title: How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID.
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,7 +11,7 @@ ms.date: 09/16/2025
 #CustomerIntent: As a IT administrator , I want to learn how to view logs so that I can see information about source of authority for my users.
 ---
 
-# How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)
+# How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID
 
 Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior Microsoft Graph API to monitor and report SOA changes in their environment. They can also integrate SOA changes with third-party monitoring systems. For more information, see [onPremisesSyncBehavior](/graph/api/resources/onpremisessyncbehavior).
 
@@ -48,5 +48,5 @@ For more information about how to create custom queries, see [Understand how pro
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) (Preview)](how-to-user-source-of-authority-configure.md)
+- [Configure User Source of Authority (SOA)](how-to-user-source-of-authority-configure.md)
 

@@ -1,12 +1,8 @@
 ---
 title: Filter for applications in Conditional Access policy
 description: Discover how to use Conditional Access filters for applications to streamline policy management and enhance security in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/22/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: calebb, oanae
 ms.custom:

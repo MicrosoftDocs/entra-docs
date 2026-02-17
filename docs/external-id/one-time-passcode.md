@@ -1,13 +1,8 @@
 ---
 title: Email one-time passcode authentication
 description: Learn how to enable and use email one-time passcode authentication for B2B guest users in Microsoft Entra External ID. This feature provides a seamless fallback authentication method for sign-in.
-
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 11/17/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.

@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 11/19/2025
+ms.date: 01/22/2026
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
@@ -15,7 +15,7 @@ ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-
 
 # Microsoft Entra built-in roles
 
-In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
+In Microsoft Entra ID, if another administrator or nonadministrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
 This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
@@ -663,12 +663,17 @@ Not every role returned by PowerShell or Microsoft Graph API is visible in Micro
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
 | Guest User | Not shown because it can't be used | NA |
+| Microsoft 365 Support Engineer | Not shown because it shouldn't be used | [Microsoft 365 Support Engineer documentation](#microsoft-365-support-engineer) |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |
 | Restricted Guest User | Not shown because it can't be used | NA |
 | User | Not shown because it can't be used | NA |
 | Workplace Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
+
+### Microsoft 365 Support Engineer
+
+[!INCLUDE [microsoft-365-support-engineer](includes/microsoft-365-support-engineer.md)]
 
 ### Modern Commerce Administrator
 

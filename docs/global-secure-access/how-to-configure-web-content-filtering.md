@@ -1,12 +1,8 @@
 ---
 title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
-author: kenwith    
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
 ms.date: 10/28/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -136,6 +132,9 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 > [!NOTE]
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
+
+> [!NOTE]
+> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
 ## Next steps
 

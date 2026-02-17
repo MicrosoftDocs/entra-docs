@@ -2,7 +2,6 @@
 title: Control user access to agents
 description: Learn how to control user and agent access to applications using app roles and the assignmentRequired property for secure access management.
 author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025

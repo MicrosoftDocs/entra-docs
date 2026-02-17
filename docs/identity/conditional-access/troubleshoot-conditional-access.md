@@ -1,13 +1,8 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 06/20/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
@@ -120,7 +115,7 @@ Admins use the audience report to learn why a CA policy applies or doesn't apply
 If you're locked out because of an incorrect setting in a Conditional Access policy:
 
 - Check if there are other admins in your organization who aren't blocked yet. An admin with access can disable the policy that's affecting your sign-in.
-- If no admin in your organization can update the policy, submit a support request. Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
+- If no admin in your organization can update the policy, [submit a support request](../../fundamentals/how-to-get-support.md#open-a-support-request). Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
 
 ## Next steps
 

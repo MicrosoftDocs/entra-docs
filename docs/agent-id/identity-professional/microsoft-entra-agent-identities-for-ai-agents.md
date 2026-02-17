@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra Agent ID extends comprehensive security capabilities to agents with conditional access, identity protection, identity governance, and network security controls designed specifically for agent scenarios.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/10/2025
 ms.custom: agent-id-ignite
 ms.service: entra-id

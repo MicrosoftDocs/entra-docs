@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/18/2025
+ms.date: 01/27/2026
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -41,6 +41,8 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - The dynamic group rule builder and validate feature can't be used for `memberOf` at this time.
 - The `memberOf` attribute can't be used with other operators. For example, you can't create a rule that states "Members Of group A can't be in Dynamic group B."
 - Users included in `memberOf` dynamic membership groups may cause a slower processing time for your tenant, if the tenant has a large number of groups or frequent dynamic membership groups updates.
+- Membership of a memberOf dynamic group doesn't automatically update when a child group is deleted or when members are removed from a child group. The affected users or devices remain members of the memberOf dynamic group until the rule is modified.
+
 
 ## Get started
 
@@ -55,6 +57,21 @@ This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. B
 1. Select **Add dynamic query**.
 1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
     1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`  
+    
+> [!NOTE]
+> Replace `'groupId'` with the **object ID of the source group** whose members you want to include in the dynamic group.
+>
+> The two examples are alternatives:
+>
+> - Use the **user** rule when creating a **Dynamic user** group.
+> - Use the **device** rule when creating a **Dynamic device** group.
+>
+> To include multiple source groups, specify multiple group object IDs. For example:
+>
+> ```text
+> user.memberof -any (group.objectId -in ['<groupObjectId1>', '<groupObjectId2>'])
+> ```
+
 1. Select **OK**.
 1. Select **Create group**.

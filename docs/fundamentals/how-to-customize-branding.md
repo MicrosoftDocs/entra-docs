@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 06/26/2025
+ms.date: 12/16/2025
 ms.author: sarahlipsey
 ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange
@@ -104,6 +104,10 @@ The sign-in experience process is grouped into sections. At the end of each sect
 - **Custom CSS:** Upload a custom CSS file to replace the Microsoft default style of the page.
     - [Download the CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css).
     - View the [CSS template reference guide](reference-company-branding-css-template.md).
+    
+    > [!IMPORTANT]
+    > Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID. Tenants. Tenants created before January 5 can continue to use custom CSS.
+
 
 ### Header
 

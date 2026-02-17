@@ -4,8 +4,10 @@ description: Azure DevOps Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role can manage all enterprise Azure DevOps policies, applicable to all Azure DevOps organizations backed by Microsoft Entra ID. Users in this role can manage these policies by navigating to any Azure DevOps organization that is backed by the company's Microsoft Entra ID. Additionally, users in this role can claim ownership of orphaned Azure DevOps organizations. This role grants no other Azure DevOps-specific permissions (for example, Project Collection Administrators) inside any of the Azure DevOps organizations backed by the company's Microsoft Entra organization.

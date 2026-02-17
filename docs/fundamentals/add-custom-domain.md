@@ -32,7 +32,7 @@ After you get your domain name, you can create your first directory. Sign in to 
 > [!TIP]
 > If you plan to federate on-premises Windows Server Active Directory with Microsoft Entra ID, then you need to select **I plan to configure this domain for single sign-on with my local Active Directory** when you run the Microsoft Entra Connect tool to synchronize your directories.
 >
-> You also need to register the same domain name you select for federating with your on-premises directory in the **Microsoft Entra Domain** step in the wizard. To see what that setup looks like, see [Verify the domain selected for federation](~/identity/hybrid/connect/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). If you don't have the Microsoft Entra Connect tool, you can [download it here](https://go.microsoft.com/fwlink/?LinkId=615771).
+> You also need to register the same domain name you select for federating with your on-premises directory in the **Microsoft Entra Domain** step in the wizard. To see what that setup looks like, see [Verify the domain selected for federation](~/identity/hybrid/connect/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). If you don't have the Microsoft Entra Connect tool, you can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
 
 ## Add your custom domain name
 

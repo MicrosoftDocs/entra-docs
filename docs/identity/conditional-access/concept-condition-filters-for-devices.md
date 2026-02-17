@@ -2,14 +2,8 @@
 title: Filter for devices as a condition in Conditional Access policy
 description: Use filter for devices in Conditional Access to enhance security posture.
 
-ms.service: entra-id
-ms.subservice: conditional-access
-
 ms.topic: how-to
 ms.date: 05/19/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: sandeo
 ---
@@ -55,7 +49,7 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name.
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](../role-based-access-control/manage-roles-portal.md or [custom roles](../role-based-access-control/custom-create.md).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](../role-based-access-control/manage-roles-portal.md) or [custom roles](../role-based-access-control/custom-create.md).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.

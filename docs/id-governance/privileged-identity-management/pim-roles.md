@@ -3,8 +3,6 @@ title: Roles you can't manage in Privileged Identity Management
 description: Describes the roles you can't manage in Microsoft Entra Privileged Identity
   Management (PIM).
 author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: article
 ms.subservice: privileged-identity-management
 ms.date: 02/24/2025
@@ -34,7 +32,7 @@ We support all Microsoft 365 roles in the Microsoft Entra roles and Administrato
 > For information about delays activating the Microsoft Entra Joined Device Local Administrator role, see [How to manage the local administrators group on Microsoft Entra joined devices](../../identity/devices/assign-local-admin.md#manage-the-microsoft-entra-joined-device-local-administrator-role).
 
 > [!NOTE]
-> You should use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview compliance portal. For more information, see [Privileged Identity Management (PIM) for Groups](concept-pim-for-groups.md#making-group-of-users-eligible-for-microsoft-entra-role). 
+> You should use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview portal. For more information, see [Privileged Identity Management (PIM) for Groups](concept-pim-for-groups.md#making-group-of-users-eligible-for-microsoft-entra-role). 
 
 ## Next steps
 

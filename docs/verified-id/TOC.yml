@@ -78,8 +78,6 @@
     href: how-to-opt-out.md
   - name: Using the Authenticator
     href: using-authenticator.md
-  - name: Using the Wallet Library
-    href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
   - name: Verified ID partner ecosystem

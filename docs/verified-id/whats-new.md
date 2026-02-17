@@ -1,13 +1,9 @@
 ---
 title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: whats-new
 ms.date: 09/23/2025
 ms.custom: references_regions
-ms.author: barclayn
 
 #Customer intent: As a Microsoft Entra Verified ID issuer, verifier or developer, I want to know what's new in the product so that I can make full use of the functionality as it becomes available.
 
@@ -17,10 +13,20 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## November 2025
+
+- **Integration guidance documentation**: Updated [integration guidance](integration-guidance.md) for IDV partners.
+
+- **IDV Partner Gallery updates**: 
+  - Updated partner documentation links for improved accessibility
+  - Clarified integration descriptions and fixed documentation typos
+
+
 
 ## October 2025
 
 Partner Gallery Update: Reorganized content and removed deprecated individual partner pages.
+
 
 ## September 2025
 

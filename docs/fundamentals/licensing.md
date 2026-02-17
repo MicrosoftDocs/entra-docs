@@ -26,7 +26,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 ## App provisioning
 
 [!INCLUDE [App provisioning](../includes/licensing-app-provisioning.md)]
-https://dev.azure.com/msft-skilling/Content/_workitems/edit/438678
+
 ## Authentication
 
 [!INCLUDE [Authentication](../includes/licensing-authentication.md)]

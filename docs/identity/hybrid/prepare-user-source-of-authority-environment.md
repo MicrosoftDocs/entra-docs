@@ -1,5 +1,5 @@
 ---
-title: Prepare Your Environment for User SOA (Preview)
+title: Prepare Your Environment for User SOA
 description: Learn the steps to prepare your environment to use Source of Authority (SOA) for users.
 author: owinfreyATL
 ms.topic: how-to
@@ -12,9 +12,9 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to prepare my environment so that I can minimize my on-premises footprint using user SOA.
 ---
 
-# Prepare your environment for user SOA (Preview)
+# Prepare your environment for user SOA
 
-Once you decide that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md).
+Once you decide that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA)](user-source-of-authority-guidance.md).
 
 The flow for preparing for user SOA is as follows:
 
@@ -150,7 +150,7 @@ Once your environment is prepped for transferring user SOA, the sequence for tra
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
-- [Guidance for using user Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md)
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID](how-to-user-source-of-authority-configure.md)
+- [Guidance for using user Source of Authority (SOA)](user-source-of-authority-guidance.md)
 
 

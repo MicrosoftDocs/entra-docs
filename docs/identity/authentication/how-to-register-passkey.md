@@ -3,14 +3,8 @@ title:  Register a Passkey (FIDO2)
 description: Registration and management of a passkey (FIDO2).
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/10/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management
