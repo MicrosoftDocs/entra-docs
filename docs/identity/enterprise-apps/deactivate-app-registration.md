@@ -208,7 +208,7 @@ To reactivate an application using Microsoft Graph API or Microsoft Entra admin 
 
 ## Prevent reactivation by nonadministrators
 
-Before deactivating the application, remove all owners from the application. This ensures only users with at least **[Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator)** role scope can reactivate the application.
+Before deactivating the application, remove all owners from the application. This ensures only users with at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role scope can reactivate the application.
 
 ## Audit deactivation and reactivation
 
