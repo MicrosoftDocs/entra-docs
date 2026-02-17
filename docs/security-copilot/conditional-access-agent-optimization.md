@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 ms.reviewer: jodah
 
-ms.date: 02/13/2026
+ms.date: 02/17/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -116,7 +116,7 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
-- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge artifacts]() to the agent
+- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge base files](conditional-access-agent-optimization-knowledge-base.md) to the agent
 
 ## Remove agent
 

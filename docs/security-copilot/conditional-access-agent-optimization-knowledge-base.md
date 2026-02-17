@@ -15,7 +15,7 @@ ms.subservice: conditional-access
 
 Organizations that use Conditional Access policies to protect access to resources should establish standards and patterns to stay organized. For example, having a consistent naming convention can keep you organized and prevent policy overlap or gaps. The Conditional Access Optimization Agent can use a document from your organization that maps out these standards so that agent reasons with context using the patterns that you design.
 
-Instead of relying only on generic best practices, the agent incorporates your organization's own conventions—such as how you name policies, how you separate admins from regular users, and which accounts must always be excluded. This helps produce recommendations that better reflect how Conditional Access is managed in your tenant.
+Instead of relying only on generic best practices, the agent incorporates your organization's own conventions, such as how you name policies, how you separate admins from regular users, and which accounts must always be excluded. This helps produce recommendations that better reflect how Conditional Access is managed in your tenant.
 
 Knowledge Bases are especially useful in environments where:
 
