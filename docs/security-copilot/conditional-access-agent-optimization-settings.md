@@ -34,7 +34,7 @@ You can access the settings from two places in the Microsoft Entra admin center:
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings.png":::
 
-After making any changes, select the **Save** button at the bottom of the page. 
+Select the category from the left-side menu to navigate through all the settings. After making any changes, select the **Save** button at the bottom of the page.
 
 ## Trigger
 
