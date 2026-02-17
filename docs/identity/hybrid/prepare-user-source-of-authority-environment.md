@@ -1,5 +1,5 @@
 ---
-title: Prepare Your Environment for User SOA (Preview)
+title: Prepare Your Environment for User SOA
 description: Learn the steps to prepare your environment to use Source of Authority (SOA) for users.
 author: owinfreyATL
 ms.topic: how-to
@@ -12,9 +12,9 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to prepare my environment so that I can minimize my on-premises footprint using user SOA.
 ---
 
-# Prepare your environment for user SOA (Preview)
+# Prepare your environment for user SOA
 
-Once you decide that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md).
+Once you decide that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA)](user-source-of-authority-guidance.md).
 
 The flow for preparing for user SOA is as follows:
 
@@ -35,7 +35,7 @@ Before transferring the SOA of users, retrieve the objects from your Active Dire
 
 ## Update Active Directory
 
-If you’re planning to only change the SOA for some Active Directory users, and all your users are currently in a single OU using Kerberos applications that don’t use LDAP, we recommend that you create a new AD DS OU for these objects. Having them in a separate OU will enable you to avoid inadvertently making updates to them in Active Directory after the SOA change. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
+If you’re planning to only change the SOA for some Active Directory users, and all your users are currently in a single OU using Kerberos applications that don’t use LDAP, we recommend that you create a new AD DS OU for these objects. Having them in a separate OU will enable you to avoid inadvertently making updates to them in Active Directory after the SOA change. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps&preserve-view=true).
 
 ## Prepare your Microsoft Exchange setup
 
@@ -150,7 +150,7 @@ Once your environment is prepped for transferring user SOA, the sequence for tra
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
-- [Guidance for using user Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md)
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID](how-to-user-source-of-authority-configure.md)
+- [Guidance for using user Source of Authority (SOA)](user-source-of-authority-guidance.md)
 
 

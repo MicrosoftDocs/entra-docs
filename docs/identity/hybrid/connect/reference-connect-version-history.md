@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 09/17/2025
+ms.date: 11/19/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -29,7 +29,7 @@ This article helps you keep track of the versions that have released and the cha
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under **Manage**.
+You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -68,7 +68,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)||
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
+|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
+|[2.6.1.0](#2610)||
 
 **All other versions are not supported**
 
@@ -91,7 +93,45 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.6.1.0
+
+### Release status
+
+02/02/2026: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
+
+### Bug Fixes
+
+- Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures. We recommend not using the Synchronization Service Manager UI in older versions.
+- Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant.
+- The default certificate lifetime for certificates managed by Microsoft Entra Connect is now 90 days. The certificate renewal threshold has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The certificate renewal process will now attempt to renew after 70% of the lifetime has elapsed instead of fixed 30 day intervals.
+- Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
+- Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
+- Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
+
+## 2.5.190.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
+### Release status
+
+11/19/2025: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- **AAD Connector V2 API Enforcement**: The default connector API version is now V2. Using the previous V1 connector API is no longer supported.
+
+### Bug fixes
+
+- Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
+- Fixed issue in the configuration wizard that resulted in "Directory synchronization for this directory currently has a mismatch in sync enabled and sync status" error when DirSync Status is in "Other".
+- The certificate renewal threshold for Application-based Authentication has been updated to 30 days. Entra-managed certificates will now automatically renew when their expiration date is 30 days or less.
+- Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
+
 ## 2.5.79.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
 
 ### Release status
 
@@ -113,6 +153,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ## 2.5.76.0
 
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
 ### Release status
 
 07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting August 14th, 2025, and will be done in multiple phases.  
@@ -133,6 +176,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 
 ## 2.5.3.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
 
 ### Release status
 

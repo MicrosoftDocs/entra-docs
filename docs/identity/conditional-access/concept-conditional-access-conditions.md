@@ -1,14 +1,8 @@
 ---
 title: How to Use Conditions in Conditional Access Policies
 description: Explore Conditional Access conditions, including user risk, sign-in risk, and insider risk, to secure your organization's resources with tailored policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 11/05/2025
 manager: dougeby
 ms.reviewer: lhuangnorth, sandeo
 ---
@@ -22,9 +16,13 @@ Admins combine multiple conditions to create specific, fine-grained Conditional 
 
 When users access a sensitive application, admins might consider multiple conditions in their access decisions, such as:
 
-- Sign-in risk information from Microsoft Entra ID Protection
+- Risk information from Microsoft Entra ID Protection
 - Network location
 - Device information
+
+## Agent risk (Preview)
+
+Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate agent risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised.
 
 ## User risk 
 

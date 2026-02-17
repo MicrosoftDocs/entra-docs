@@ -1,14 +1,8 @@
 ---
 title: Require reauthentication with Conditional Access
 description: Create a custom Conditional Access policy requiring reauthentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---

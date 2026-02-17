@@ -31,7 +31,9 @@ This article describes how a SOC analyst or IT admin could use the Microsoft Ent
 
 ## Scenario and investigation
 
-Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and understand any risky apps in their tenant. He starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). To view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and a Microsoft Entra role assignment of [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
+Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and understand any risky apps in their tenant. He starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). To view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and a Microsoft Entra role assignment of [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. He can use Microsoft Security Copilot to activate this role if he is blocked due to a lack of permissions to perform certain actions:
+
+- *Activate the {required role} so that I can perform {desired task}.*
 
 Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](./entra-security-scenarios.md#microsoft-security-copilot-scenarios-in-microsoft-entra-overview) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
 
@@ -39,7 +41,7 @@ Identity admins using [Security Copilot as a part of the Microsoft Entra admin c
 
 ### Explore Microsoft Entra risky service principals 
 
-Jason begins by asking natural language questions to get a better picture of the risk "hot spots". This uses [ID Protection risky workload identity](../id-protection/concept-workload-identity-risk.md) data as an initial filter on the scale of apps in their tenant based on our Microsoft detections. These service principals carry an elevated risk of compromise.  
+Jason starts his investigations by asking natural language questions to get a better picture of the risk "hot spots". This uses [ID Protection risky workload identity](../id-protection/concept-workload-identity-risk.md) data as an initial filter on the scale of apps in their tenant based on our Microsoft detections. These service principals carry an elevated risk of compromise.  
 
 He uses any of the following prompts to get the information he needs: 
 
@@ -93,7 +95,7 @@ Jason realizes he has another "low hanging fruit" opportunity: to reduce risk by
 1. Removing an unused app addresses many other risks with a single remediation action.
 1. You can often address unused apps aggressively through central action while keeping the risk of outage or business disruption low, since users aren't actually using the apps.
 
-Using the Copilot skill integrated with the existing [Microsoft Entra recommendation for unused apps](../identity/monitoring-health/recommendation-remove-unused-apps.md), Jason pulls the relevant data to investigate further or work with his team to improve their tenant security posture. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
+Using the Copilot prompts integrated with the existing [Microsoft Entra recommendation for unused apps](../identity/monitoring-health/recommendation-remove-unused-apps.md), Jason pulls the relevant data to investigate further or work with his team to improve their tenant security posture. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
 
 > [!NOTE]
 > The Copilot response returns a list of app registration or applications that are unused in past 90 days, which haven't been issued any tokens in that timeframe. 
@@ -102,6 +104,24 @@ He uses the following prompts to get the information he needs:
 
 - *Show me unused apps.* 
 - *How many unused apps do I have?* 
+
+### Explore Microsoft Entra applications or service principals with expiring credentials
+
+Jason sees another opportunity to renew an application credentials prior to their expiry date to maintain uninterrupted operations and minimizing the risk of any downtime resulting from outdated credentials. Application and service principal credentials can include certificates and other types of secrets that need to be registered with that application or service principal. These credentials are used to prove the identity of the application or service principal.
+
+Using the Copilot prompts integrated with the existing [Microsoft Entra recommendation for renew expiring app credential](../identity/monitoring-health/recommendation-renew-expiring-application-credential.md) and [Microsoft Entra recommendation for renew expiring service principal credential](../identity/monitoring-health/recommendation-renew-expiring-service-principal-credential.md), Jason pulls the relevant data to reduce the outage risk from expiring credentials and update or rotate them as needed. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
+
+> [!NOTE]
+> The Copilot response returns a list of applications or service principals that have credentials on them expiring within the next 30 days.
+> The following credentials are exempted from this recommendation:
+> - Credentials that were identified as expiring but have since been removed from the application registration.
+> - Credentials whose expiration date has lapsed show as **completed** in the list of **Impacted resources**.
+
+He uses the following prompts to get the information he needs: 
+
+- *Which enterprise applications have credentials about to expire?*
+- *Show me service principals with credentials that are expiring soon.*
+- *Show me applications with credentials that are expiring soon.*
 
 ### Explore Microsoft Entra Applications outside my tenant 
 

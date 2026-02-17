@@ -47,7 +47,7 @@ This section describes how to assign roles at tenant scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Entra ID** > **Roles & admins**.
+1. Browse to **Identity** > **Roles & admins**.
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
@@ -55,9 +55,11 @@ This section describes how to assign roles at tenant scope.
 
     :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
 
-1. Select **Add assignments** and then select the users or groups you want to assign to this role.
+1. Select **Add assignments** and then select the users, groups, or agent identities you want to assign to this role.
 
     Only role-assignable groups are displayed. If a group isn't listed, you'll need to create a role-assignable group. For more information, see [Create a role-assignable group in Microsoft Entra ID](groups-create-eligible.md).
+
+    For a list of roles that you can assign to agent identities, see [Authorization in Microsoft Entra Agent ID](../../agent-id/identity-professional/authorization-agent-id.md).
 
     If your experience is different than the following screenshot, you might have Microsoft Entra ID P2 and PIM. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
@@ -361,9 +363,10 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 | [User Administrator](permissions-reference.md#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins within the assigned administrative unit only. Cannot currently manage users' profile photographs. |
 | [&lt;Custom role&gt;](custom-create.md) | Can perform actions that apply to users, groups, or devices, according to the definition of the custom role. |
 
-Certain role permissions apply only to nonadministrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
+Certain role permissions apply only to nonadministrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following permissions are restricted when the target of an action is a user with another role or an administrator:
 
-- Read and modify user authentication methods, or reset user passwords
+- Read and modify user authentication methods
+- Reset user passwords
 - Modify sensitive user properties such as telephone numbers, alternate email addresses, or Open Authorization (OAuth) secret keys
 - Delete or restore user accounts
 

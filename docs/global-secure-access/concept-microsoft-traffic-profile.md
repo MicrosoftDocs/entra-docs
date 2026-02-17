@@ -3,10 +3,8 @@ title: Learn about the Microsoft Traffic Profile
 description: Learn about the capabilities and traffic handling in the Microsoft traffic profile
 author: alexpav
 ms.author: alexpav
-manager: sineado
 ms.topic: concept-article
 ms.date: 10/11/2024
-ms.service: global-secure-access
 ms.reviewer: katabish
 ---
 

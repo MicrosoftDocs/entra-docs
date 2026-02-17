@@ -3,11 +3,7 @@
 metadata:
   title: Add B2B collaboration users
   description: Learn how to add B2B collaboration users in the Microsoft Entra admin center. Invite guest users to the directory, groups, or applications, and manage their access to resources.
-  author: csmulligan
-  ms.author: cmulligan
-  manager: dougeby
-  ms.date: 10/21/2024
-  ms.service: entra-external-id
+  ms.date: 11/17/2025
   ms.topic: how-to
   ms.collection: M365-identity-device-management
   ms.custom:
@@ -68,7 +64,7 @@ procedureSection:
 
       There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Entra ID** > **Users** and select a user to update.
 
-      - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
+      - **Identity:** Enter the user's first and family name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
 
       - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 

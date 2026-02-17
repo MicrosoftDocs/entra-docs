@@ -2,8 +2,6 @@
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
 author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 08/29/2025
@@ -44,6 +42,8 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
     :::image type="content" source="./media/pim-how-to-add-role-to-user/select-role.png" alt-text="Screenshot showing the new assignment pane.":::
 
 1. Select a role you want to assign, select a member to whom you want to assign to the role, and then select **Next**.
+
+    You can select users, groups, or agent identities. For a list of roles that you can assign to agent identities, see [Authorization in Microsoft Entra Agent ID](../../agent-id/identity-professional/authorization-agent-id.md).
 
     [!INCLUDE [rbac-assign-roles-guest-user-note](../../includes/rbac-assign-roles-guest-user-note.md)]
 

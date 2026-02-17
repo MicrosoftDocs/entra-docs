@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot Conditional Access Authentication Strengths
 description: Learn how to resolve errors when you're using Microsoft Entra Conditional Access authentication strengths.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-ms.author: justinha
 author: inbarckms
-manager: dougeby
 ms.reviewer: inbarc
 ms.custom: sfi-image-nochange
 ---
@@ -34,7 +30,7 @@ To verify that you can use a method:
 
 1. Check which authentication methods are registered for the user in the policy for authentication methods. Select **Users and groups** > *username* > **Authentication methods**.
 
-If the user is registered for an enabled method that meets the authentication strength, the user might need to use another method that isn't available after primary authentication, such as Windows Hello for Business. For more information, see [How each authentication method works](concept-authentication-methods.md#how-each-authentication-method-works). The user needs to restart the session, select **Sign-in options**, and then select a method that the authentication strength requires.
+If the user is registered for an enabled method that meets the authentication strength, the user might need to use another method that isn't available after primary authentication, such as Windows Hello for Business. For more information, see [Authentication methods in Microsoft Entra ID](concept-authentication-methods.md). The user needs to restart the session, select **Sign-in options**, and then select a method that the authentication strength requires.
 
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/choose-another-method.png" alt-text="Screenshot of the dialog for choosing another sign-in method.":::
 

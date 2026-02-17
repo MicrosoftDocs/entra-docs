@@ -3,10 +3,8 @@ title: How to configure Global Secure Access threat intelligence
 description: Learn how to configure threat intelligence in Microsoft Entra Internet Access.
 author: fgomulka
 ms.author: frankgomulka
-manager: ashishj
 ms.topic: how-to
 ms.date: 05/29/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.reviewer: fgomulka
 ---
@@ -109,6 +107,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 
 > [!NOTE]
 > Applying a new security profile can take up to 60-90 minutes because security profiles are enforced via access tokens.
+
+> [!NOTE]
+> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
 
 ## Verify end user policy enforcement

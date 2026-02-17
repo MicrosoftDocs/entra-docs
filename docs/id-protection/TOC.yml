@@ -12,6 +12,14 @@
     href: ../security-copilot/security-copilot-in-entra.md?toc=/entra/id-protection/toc.json&bc=/entra/id-protection/breadcrumb/toc.json
   - name: Investigate incidents with Security Copilot
     href: ../security-copilot/entra-investigate-incident.md?toc=/entra/id-protection/toc.json&bc=/entra/id-protection/breadcrumb/toc.json
+  - name: Identity Risk Management Agent
+    items:
+    - name: Get started
+      href: identity-risk-management-agent-get-started.md
+    - name: Identity Risk Management Agent and the Risky user report
+      href: identity-risk-management-agent-risky-user-report.md
+    - name: Agent settings
+      href: identity-risk-management-agent-settings.md
 - name: Concepts
   expanded: true
   items:
@@ -23,8 +31,12 @@
     href: concept-risk-detection-types.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
+  - name: ID Protection for agents
+    href: concept-risky-agents.md
   - name: Risk reports
     href: concept-risk-reports.md
+  - name: Risky user report
+    href: concept-risky-user-report.md
   - name: User sign-in experience
     href: concept-identity-protection-user-experience.md
   - name: Securing workload identities

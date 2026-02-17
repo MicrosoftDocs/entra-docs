@@ -4,8 +4,10 @@ description: SharePoint Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
@@ -25,8 +27,8 @@ Users with this role have global permissions within Microsoft SharePoint Online,
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks | Create and manage OneDrive protection policy in Microsoft 365 Backup |
 > | microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks | Read and configure restore session for OneDrive in Microsoft 365 Backup |
-> | microsoft.backup/restorePoints/sites/allProperties/allTasks | Manage all restore points associated with selected SharePoint sites in M365 Backup |
-> | microsoft.backup/restorePoints/userDrives/allProperties/allTasks | Manage all restore points associated with selected OneDrive accounts in M365 Backup |
+> | microsoft.backup/restorePoints/sites/allProperties/allTasks | Manage all restore points associated with selected SharePoint sites in Microsoft 365 Backup |
+> | microsoft.backup/restorePoints/userDrives/allProperties/allTasks | Manage all restore points associated with selected OneDrive accounts in Microsoft 365 Backup |
 > | microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks | Create and manage SharePoint protection policy in Microsoft 365 Backup |
 > | microsoft.backup/sharePointRestoreSessions/allProperties/allTasks | Read and configure restore session for SharePoint in Microsoft 365 Backup |
 > | microsoft.backup/siteProtectionUnits/allProperties/allTasks | Manage sites added to SharePoint protection policy in Microsoft 365 Backup |

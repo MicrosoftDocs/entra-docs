@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: shlipsey3
   ms.author: sarahlipsey
-  ms.date: 10/02/2025
+  ms.date: 11/10/2025
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
@@ -18,15 +18,15 @@ highlightedContent:
     - title: What is Microsoft Entra?
       itemType: overview
       url: /entra/fundamentals/what-is-entra
+    - title: What is Microsoft Entra Agent ID?
+      url: /entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents
+      itemType: overview
     - title: Identity and access fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts
       itemType: concept
     - title: Microsoft Security Copilot + Microsoft Entra
       url: /entra/fundamentals/copilot-security-entra
       itemType: overview
-    - title: Secure Generative AI with Microsoft Entra
-      url: /entra/architecture/secure-generative-ai
-      itemType: concept
 
 ## BAND 1 - HIGHLIGHTED CONTENT END ##########################################
 
@@ -37,6 +37,10 @@ productDirectory:
       imageSrc: ./media/index/microsoft-entra-id-color.png
       summary: "Manage user identities and control access to your apps, data, and resources."
       url: /entra/identity/
+    - title: Microsoft Entra Agent ID
+      imageSrc: ./media/index/microsoft-entra-agent-id.png
+      summary: "Build, discover, govern, and protect agent identities."
+      url: /entra/agent-id/
     - title: Microsoft Entra ID Protection
       imageSrc: ./media/index/id-protection-color.png
       summary: "Identify and address identity risks in your organization."

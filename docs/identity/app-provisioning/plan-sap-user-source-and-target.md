@@ -1,13 +1,9 @@
 ---
 title: Plan deploying Microsoft Entra for user provisioning with SAP source and target apps
 description: Learn how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and give them access to SAP ECC, SAP S/4HANA, and other apps.
-author: markwahl-msft
-manager: pmwongera
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
@@ -139,7 +135,7 @@ Each of your organization's SAP applications might have their own requirements t
 
 If you're using SAP Cloud Identity Services to provision to SAP S/4HANA or other SAP applications, ensure that SAP Cloud Identity Services has the mappings to send these attributes from Microsoft Entra ID through SAP Cloud Identity Services into those applications. If you aren't using SAP Cloud Identity Services, skip to the next section.
 
-1. **Ensure that your SAP cloud directory has the user schema required by your SAP cloud applications.** In SAP Cloud Identity Services, each target system that's configured adds transformations from the data model of the source for identities supplied to SAP Cloud Identity Services to the requirements of the target. You might need to change those transformations in SAP Cloud Identity Services to correspond to how you plan to model identity, especially if you have multiple target systems configured. Then, record the required schema for Microsoft Entra to supply to SAP cloud applications via SAP Cloud Identity Services.
+**Ensure that your SAP cloud directory has the user schema required by your SAP cloud applications.** In SAP Cloud Identity Services, each target system that's configured adds transformations from the data model of the source for identities supplied to SAP Cloud Identity Services to the requirements of the target. You might need to change those transformations in SAP Cloud Identity Services to correspond to how you plan to model identity, especially if you have multiple target systems configured. Then, record the required schema for Microsoft Entra to supply to SAP cloud applications via SAP Cloud Identity Services.
 
 ### Define the relationship between worker records in your system of record sources and users in Microsoft Entra
 
@@ -163,9 +159,9 @@ Each attribute required by your applications needs to originate from some source
 
 ### Confirm that necessary BAPIs for SAP ECC are ready for use by Microsoft Entra
 
-The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SOAP endpoints, including SAP BAPIs.
+The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SAP ECC SOAP endpoints, including SAP BAPIs.
 
-If you aren't using SAP ECC and are only provisioning to SAP cloud services, skip to the next section.
+If you aren't using SAP ECC and are only provisioning to SAP cloud services or SAP S/4HANA On-Premise, skip to the next section.
 
 1. **Confirm that the BAPIs needed for provisioning are published.** Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
 
@@ -396,7 +392,7 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 ### Provision users to SAP ECC
 
-Now that you have the users in Microsoft Entra ID, you can provision them into SAP on-premises.
+Now that you have the users in Microsoft Entra ID, you can provision them into SAP ECC on-premises.
 
 If you aren't using SAP ECC, skip to the next section.
 
@@ -439,7 +435,7 @@ If you have Microsoft Entra ID Governance, you can automate changes to the appli
 1. **Review existing assignments.** Optionally, [perform a one-time access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md) or group membership. When this review finishes, the access review removes assignments or members of the group that are no longer necessary.
 1. **Configure the process to keep application role assignments up to date.** If you're using Microsoft Entra entitlement management and have SAP applications, see [Create an access package in entitlement management for an application with a single role by using PowerShell](../../id-governance/entitlement-management-access-package-create-app.md) to configure assignments to the application that represent SAP cloud identity services or SAP ECC. If you have applications in SAP BTP, you can configure entitlement management to assign users to Microsoft Entra security groups. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
-   In that access package, you can have policies for users to be assigned access when they request it. Assignments can be made [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or generated through [Lifecycle Workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+   In that access package, you can have policies for users to be assigned access when they request it. Assignments can be made [by an administrator](../../id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or generated through [Lifecycle Workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
 
 If you don't have Microsoft Entra ID Governance, you can [assign each individual user to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) in the Microsoft Entra admin center. You can assign individual users to the application via the PowerShell cmdlet `New-MgServicePrincipalAppRoleAssignedTo`.
 

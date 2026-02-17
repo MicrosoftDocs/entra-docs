@@ -1,12 +1,6 @@
 ---
 title: Regional opt-in for MFA telephony verification with external tenants (preview)
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 11/12/2024
 ms.reviewer: aloom3
@@ -19,7 +13,7 @@ ms.custom: it-pro, references_regions
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and making it harder for your customers to access your services. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md).
+To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium-rate numbers. They generate profits through a technique called traffic pumping. This technique often targets multifactor authentication systems, causing inflated charges, service instability, and system errors, making it harder for your customers to access your services.
 
 When a country code is blocked, customers trying to set up SMS verification for multifactor authentication (MFA) for your application might encounter the message "Try another verification method." To resolve this issue, you can activate telephony traffic for the specific country code for your application.
 
@@ -278,8 +272,7 @@ HTTP/1.1 201 Created
 }  
 ```
 
-## Next steps
+## Related content
 
-- [Understanding telephony fraud](~/identity/authentication/concept-mfa-telephony-fraud.md)
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md)
 - [Service limits and restrictions](reference-service-limits.md)

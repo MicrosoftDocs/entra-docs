@@ -486,6 +486,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/concept-secure-remote-workers.md",
+      "redirect_url": "/entra/fundamentals/configure-security",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/whatis.md",
       "redirect_url": "/entra/fundamentals/what-is-entra",
       "redirect_document_id": true
@@ -718,6 +723,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-approve-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-support-access-requests",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md",
+      "redirect_url": "/entra/identity/monitoring-health/overview-recommendations",
       "redirect_document_id": false
     },
     {
@@ -1028,6 +1038,16 @@
     {
       "source_path_from_root": "/docs/identity/devices/enroll-macos-admin.md",
       "redirect_url": "/mem/intune/configuration/platform-sso-macos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-app-configuration.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
       "redirect_document_id": false
     },
     {
@@ -2966,6 +2986,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/verified-id/using-wallet-library.md",
+      "redirect_url": "/entra/verified-id/decentralized-identifier-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
       "redirect_url": "/entra/verified-id/whats-new",
       "redirect_document_id": false
@@ -3019,7 +3044,66 @@
       "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-passwordless.md",
+      "redirect_url": "/entra/identity/authentication/concept-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-methods.md",
+      "redirect_url": "/entra/identity/authentication/overview-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-management.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-remediation-plans.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-contact-app-owners.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/overview-solutions-customers.md",
+      "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/quickstart-trial-setup.md",
+      "redirect_url": "/entra/external-id/external-identities-overview",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/hybrid/connect/four-steps.md",
+      "redirect_url": "/entra/identity/hybrid/whatis-hybrid-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/deactivate-application-portal.md",
+      "redirect_url": "/entra/identity/enterprise-apps/deactivate-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-b2b-guest-access.md",
+      "redirect_url": "/entra/global-secure-access/concept-external-user-access",
+      "redirect_document_id": true
     }
   ]
 }
-

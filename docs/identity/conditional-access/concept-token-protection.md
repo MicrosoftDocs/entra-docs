@@ -1,12 +1,8 @@
 ---
 title: How Token Protection Enhances Conditional Access Policies
 description: Protect your resources with token protection in Conditional Access policies. Understand requirements, limitations, and deployment best practices.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: article
 ms.date: 08/20/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: sgrandhi
 ms.custom:
@@ -39,6 +35,9 @@ The following devices and applications support accessing resources where a token
 
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
+
+> [!NOTE]  
+> For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 ### Supported applications
 

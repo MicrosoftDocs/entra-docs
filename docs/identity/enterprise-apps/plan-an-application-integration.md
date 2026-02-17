@@ -26,11 +26,6 @@ To download in-depth deployment plans, see [Next steps](#next-steps).
 
 Before integrating applications with Microsoft Entra ID, it's important to know where you are and where you want to go. The following questions are intended to help you think about your Microsoft Entra application integration project.
 
-### Policy inventory
-
- - What are your organization's policies for governing access to the applications
- - What are the compliance requirements for the applications to be integrated and properly licensed
-
 ### Application inventory
 
 - Where are all of your applications? Who owns them?
@@ -45,9 +40,7 @@ Before integrating applications with Microsoft Entra ID, it's important to know 
 - Where do your user accounts reside?
   - On-premises Active Directory
   - Microsoft Entra ID
-  - Another LDAP directory
   - Within a separate application database that you own
-  - In other applications such as within SAP Cloud Identity Services
   - In unsanctioned applications
   - All of the listed options
 - What permissions and role assignments do individual users currently have? Do you need to review their access or are you sure that your user access and role assignments are appropriate now?
@@ -77,7 +70,6 @@ The following articles discuss the different ways applications integrate with Mi
 
 - [Using applications in the Azure application gallery](what-is-single-sign-on.md)
 - [Integrating SaaS applications tutorials list](~/identity/saas-apps/tutorial-list.md)
-- [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](../../id-governance/identity-governance-applications-integrate.md)
 
 <a name='capabilities-for-apps-not-listed-in-the-azure-ad-gallery'></a>
 
@@ -85,9 +77,9 @@ The following articles discuss the different ways applications integrate with Mi
 
 You can add any application that already exists in your organization, or any third-party application  from a vendor who isn't already part of the Microsoft Entra gallery. Depending on your [license agreement](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing), the following capabilities are available:
 
-- Self-service integration of any application that supports OpenID Connect, or [Security Assertion Markup Language (SAML) 2.0](https://wikipedia.org/wiki/SAML_2.0) identity providers (SP-initiated or IdP-initiated)
-- Self-service integration of any web application that has an HTML-based sign-in page using [password-based SSO](./plan-sso-deployment.md#password-based-sso), Integrated Windows Authentication or header-based authentication
-- Self-service connection of applications that use the [System for Cross-Domain Identity Management (SCIM) protocol for user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md), or that have local user accounts stored in a SQL database, LDAP directory, or are managed through a SOAP or REST API or a MIM connector
+- Self-service integration of any application that supports [Security Assertion Markup Language (SAML) 2.0](https://wikipedia.org/wiki/SAML_2.0) identity providers (SP-initiated or IdP-initiated)
+- Self-service integration of any web application that has an HTML-based sign-in page using [password-based SSO](./plan-sso-deployment.md#password-based-sso)
+- Self-service connection of applications that use the [System for Cross-Domain Identity Management (SCIM) protocol for user provisioning](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 - Ability to add links to any application in the [Office 365 app launcher](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) or [My Apps](https://myapplications.microsoft.com/)
 
 If you're looking for developer guidance on how to integrate custom apps with Microsoft Entra ID, see [Authentication Scenarios for Microsoft Entra ID](~/identity-platform/authentication-vs-authorization.md). When you develop an app that uses a modern protocol like [OpenId Connect/OAuth](~/identity-platform/v2-protocols.md) to authenticate users, register it with the Microsoft identity platform. You can register by using the [App registrations](~/identity-platform/quickstart-register-app.md) experience in the Azure portal.
@@ -114,7 +106,6 @@ The following articles describe ways you can manage access to applications once 
 - [Automating with Microsoft Entra Connectors](~/identity/app-provisioning/user-provisioning.md)
 - [Assigning users to an application](./assign-user-or-group-access-portal.md)
 - [Assigning groups to an application](./assign-user-or-group-access-portal.md)
-- [Integrate the application with Microsoft Entra ID to ensure only authorized users can access the application](../../id-governance/identity-governance-applications-integrate.md#integrate-the-application-with-microsoft-entra-id-to-ensure-only-authorized-users-can-access-the-application)
 - [Sharing accounts](~/identity/users/users-sharing-accounts.md)
 
 ## Next steps

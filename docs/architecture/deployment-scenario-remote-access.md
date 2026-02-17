@@ -333,7 +333,7 @@ In this section, we describe the configuration steps for this solution.
 Follow these steps to create an Entitlement management catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-remote-access/identity-governance-catalogs-expanded.png":::

@@ -79,7 +79,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 - Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections. To control remote desktop permissions for Microsoft Entra joined devices, you need to add the individual user's SID to the appropriate group.
 
 > [!IMPORTANT]
-> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
+> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device, and having a user as a member in no more than 20 groups, to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
 
 ## Manage regular users
 

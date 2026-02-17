@@ -22,7 +22,7 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of groups.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
-| **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
+| **Sync client** | Before applying SOA, make sure you are on a supported version of your sync client so the client will honor the SOA setting. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
 | **Provisioning to AD DS (optional)** | To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. You also need to complete steps to prepare the groups for provisioning to AD DS with their original OU path. For more information, see [Prepare groups for Group SOA conversion and provisioning](concept-group-source-of-authority-guidance.md#prepare-groups-for-group-soa-conversion-and-provisioning). |
 
 ### Download Connect Sync client
@@ -553,6 +553,18 @@ Write-Host "`nScript completed."
 ```
 
 This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
+
+## Scope a group for SOA operations within an Administrative Unit
+
+To scope a group for Source of Authority operations within an Administrative Unit, do the following steps:
+
+1. Create a unit to use as the scope for the group. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+
+1. Add the group as a Hybrid Identity Administrator within the scope.
+    :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
+1. Add the group to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
+
+1. Transfer the SOA of a group within the scope of the unit. For a guide on transferring the SOA of groups, see: [Convert SOA for a test group](how-to-group-source-of-authority-configure.md#convert-soa-for-a-test-group).
 
 ## Related content
 

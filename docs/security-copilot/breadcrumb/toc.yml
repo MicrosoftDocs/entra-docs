@@ -4,5 +4,5 @@ items:
   topicHref: /entra/index
   items:
   - name: Security Copilot in Entra
-    tocHref: /entra/copilot/
-    topicHref: /entra/copilot/index
+    tocHref: /entra/security-copilot/
+    topicHref: /entra/security-copilot/index

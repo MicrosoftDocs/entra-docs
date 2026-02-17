@@ -29,6 +29,8 @@
     href: verified-id-pricing.md
   - name: OpenID Connect protocol details
     href: issuer-openid.md
+  - name: Account recovery
+    href: ~/identity/authentication/concept-account-recovery-overview.md
   - name: Plan and design 
     items:
     - name: Architecture planning overview
@@ -76,14 +78,16 @@
     href: how-to-opt-out.md
   - name: Using the Authenticator
     href: using-authenticator.md
-  - name: Using the Wallet Library
-    href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
-  - name: IDV partners
-    href: idv-partners.md
-  - name: Services partners
-    href: services-partners.md
+  - name: Verified ID partner ecosystem
+    items:
+    - name: IDV partners
+      href: idv-partners.md
+    - name: Services partners
+      href: services-partners.md
+    - name: Integration guidance
+      href: integration-guidance.md
 - name: Samples
   expanded: true
   items:

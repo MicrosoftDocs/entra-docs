@@ -10,7 +10,7 @@ ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 08/19/2024
+ms.date: 11/17/2025
 ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 ---
@@ -265,6 +265,9 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 
 You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 [!INCLUDE [Custom claims provider](../external-id/customers/includes/native-auth/support-custom-claims-provider.md)]
 

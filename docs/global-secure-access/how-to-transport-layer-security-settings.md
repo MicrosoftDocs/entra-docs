@@ -1,27 +1,18 @@
 ---
-title: Configure Transport Layer Security Inspection Settings (preview)
+title: Configure Transport Layer Security Inspection Settings
 description: Learn how to configure a Transport Layer Security inspection certificate authority
 author: HULKsmashGithub
 ms.author: jayrusso
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 10/28/2025
+ms.date: 12/16/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection settings (preview)
-Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate.
-
-> [!IMPORTANT]
-> The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.   
-> While in preview, don't use TLS inspection in production environments.    
- 
-
+# Configure Transport Layer Security inspection settings
+Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate. 
 
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
@@ -36,21 +27,21 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Switch to the **TLS inspection settings** tab.
 1. Select **+ Create certificate**. This step starts with generating a Certificate Sign Request (CSR). 
 1. In the **Create certificate** pane, fill in the following fields:
-   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. You can't reuse previous names.
+   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. **Important**: You can't reuse previous certificate names, even after deletion.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
 :::image type="content" source="media/how-to-transport-layer-security-settings/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
+1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, `basicConstraints=critical,CA:TRUE`, and `pathLenConstraint = 1` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
    
 1. Select **+ Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
 :::image type="content" source="media/how-to-transport-layer-security-settings/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
 
-1. After the certificate uploads, the status changes to **Active**.  We support **one** Active certificate currently.
-:::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
+1. The certificate uploads defaults to **Disabled** status. Set the status to **Enabled**. You can have **one** enabled certificate.
+:::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab showing certificate status is Enabled.":::   
 
 
 ### Test with a self-signed root certificate authority using OpenSSL
@@ -88,6 +79,13 @@ extendedKeyUsage = serverAuth
  ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
 1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
+**Configure TLS inspection in Microsoft Entra Internet Access**
+
+In the following example video, you can learn to configure TLS inspection in Microsoft Entra Internet Access using a self-signed certificate created with OpenSSL. Learn to build TLS inspection policies, configure security profiles, apply web content filtering, and enforce Conditional Access policies. Create custom block pages and implement threat intelligence policies.
+
+ > [!VIDEO 2f8c4249-79c5-4832-bd94-de4f4f647e8c]
+
+
 ### PowerShell examples to configure certificate authority for TLS inspection
 Examples of configuring TLS certificate using ADCS and OpenSSL can be found in below links: 
 * [Create a TLS certificates using ADCS](scripts/powershell-active-directory-certificate-service.md)
@@ -97,4 +95,5 @@ Examples of configuring TLS certificate using ADCS and OpenSSL can be found in b
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
 * [How to configure Transport Layer Security inspection policy](how-to-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+* [Troubleshoot Transport Layer Security inspection issues](troubleshoot-transport-layer-security.md)
 

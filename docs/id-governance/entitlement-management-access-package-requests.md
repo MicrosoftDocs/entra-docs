@@ -1,13 +1,9 @@
 ---
 title: View and remove requests for an access package in entitlement management - Microsoft Entra
 description: Learn how to view requests and remove for an access package in entitlement management.
-author: owinfreyatl
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
-ms.author: owinfrey
 #Customer intent: As an access package manager, I want detailed information about requests for access packages so that I can view the status and troubleshoot any issues.
 ---
 # View and remove requests for an access package in entitlement management
@@ -60,7 +56,7 @@ You can also remove a completed request that is no longer needed. To remove a re
 
 ### Remove a request with Microsoft Graph
 
-You can also remove a request using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [remove an accessPackageAssignmentRequest](/graph/api/accesspackageassignmentrequest-delete).
+You can also remove a request using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application with the catalog role, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [remove an accessPackageAssignmentRequest](/graph/api/accesspackageassignmentrequest-delete).
 
 ## Next steps
 

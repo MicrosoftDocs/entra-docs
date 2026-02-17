@@ -95,7 +95,7 @@ ms.topic: quickstart
 > 
 > ## Next steps
 > 
-> Learn more about web apps that sign in users in our multi-part scenario series.
+> Learn more about web apps that calls an API in our multi-part scenario series.
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-configuration.md)
+> > [Scenario: Web app that calls an API](scenario-web-app-call-api-app-configuration.md)
