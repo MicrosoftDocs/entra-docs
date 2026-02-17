@@ -66,7 +66,7 @@ items:
   - name: Continuous Access Evaluation for Application Proxy
     href: concept-continuous-access-evaluation.md
   - name: B2B Guest Access
-    href: concept-b2b-guest-access.md
+    href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides

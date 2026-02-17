@@ -43,7 +43,7 @@ Released for download on February 9, 2026.
 Released for download on December 3, 2025.
 ### Functional changes
 - Support for [Intelligent Local Access](enable-intelligent-local-access.md).
-- Support for [B2B guest access](concept-b2b-guest-access.md).
+- Support for [B2B guest access](concept-external-user-access.md).
 - The client package includes a tracert tool.
 - Support to display the **Disable Private Access** button when the **Disable** button is hidden. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
 - The Global Secure Access interface includes a **View account** link to the user's Microsoft Entra **My Account** homepage.
