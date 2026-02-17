@@ -251,4 +251,5 @@ To collect Kerberos logs, follow these steps:
 
 ## Related content
 
+[Microsoft Entra hybrid joined devices](concept-hybrid-join.md)
 
