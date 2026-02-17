@@ -167,7 +167,7 @@ Based on your investigation, take appropriate action such as escalating to secur
 
 ## Reactivate an application
 
-To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least **[Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator)** role.
+To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role.
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
