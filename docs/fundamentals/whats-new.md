@@ -161,7 +161,7 @@ Customer Action Required: 
     
 - Review updated hardening guidance and enable recommended flags:  
     
-- Disable [hard match takeover](https://learn.microsoft.com/powershell/module/microsoft.entra.directorymanagement/set-entradirsyncfeature?view=entra-powershell) 
+- Disable [hard match takeover](/powershell/module/microsoft.entra.directorymanagement/set-entradirsyncfeature?view=entra-powershell&preserve-view=true) 
     
 
 Additional Guidance: 
