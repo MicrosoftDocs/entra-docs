@@ -130,7 +130,7 @@ When you want the user to enter information themselves. This type is also called
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`locale`| string | the locale of this display |
-|`credential` | [displayCredential](#displaycredential-type) | the display properties of the verifiable credential |
+|`card` | [displayCredential](#displaycredential-type) | the display properties of the verifiable credential |
 |`consent` | [displayConsent](#displayconsent-type) | supplemental data when the verifiable credential is issued |
 |`claims`| [displayClaims](#displayclaims-type) array | labels for the claims included in the verifiable credential |
 
