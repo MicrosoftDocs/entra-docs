@@ -84,12 +84,12 @@ To deactivate an application using Microsoft Graph API or Microsoft Entra admin 
    - Previously issued access tokens will invalidate based on their lifetime. Expiration or invalidation of an access token depends on various factors such as default expiration time and token lifetime policy.
 1. Once you have confirmed you would like to deactivate the app, select the **Deactivate** button Deactivation takes place immediately and the `isDisabled` property for this application is set to `true`. You can ensure the app status reflects the change by verifying its deactivated **State** change on the **App Registration** page.
 
-    :::image type="content" source="media/deactivate-app-registration/deactivate-app-registration.png" alt-text="Screenshot of Deactivate app registration pane in Microsoft Entra admin center":::
+    :::image type="content" source="media/deactivate-app-registration/deactivate-app-registration.png" alt-text="Screenshot of Deactivate app registration pane in Microsoft Entra admin center.":::
 
 > [!IMPORTANT]
 > If the app has assigned owners, this information appears in the **Deactivate app registration** pane. Before deactivating, review the list of owners and decide whether to remove any of them. To prevent others from reactivating the app, remove all other owners.
 
-:::image type="content" source="media/deactivate-app-registration/remove-owners.png" alt-text="Screenshot showing the option to remove app owners before deactivating an app registration to prevent unauthorized reactivation":::
+:::image type="content" source="media/deactivate-app-registration/remove-owners.png" alt-text="Screenshot showing the option to remove app owners before deactivating an app registration to prevent unauthorized reactivation.":::
 
 ## [Microsoft Graph API](#tab/graph-api)
 
@@ -138,7 +138,7 @@ You can view deactivated applications to monitor their status and track which ap
 1. Select the **Deactivated applications** tab.
 1. Alternatively, navigate to the **Enterprise apps** pane and check on a given enterprise app under **Manage** -> **Properties** -> **Activation status**.
 
-    :::image type="content" source="media/deactivate-app-registration/view-activation-status.png" alt-text="Screenshot showing the Activation status field in the Enterprise app Properties page displaying whether an application is active or deactivated":::
+    :::image type="content" source="media/deactivate-app-registration/view-activation-status.png" alt-text="Screenshot showing the Activation status field in the Enterprise app Properties page displaying whether an application is active or deactivated.":::
 
 ## [Microsoft Graph API](#tab/graph-api)
 
@@ -181,7 +181,7 @@ To reactivate an application using Microsoft Graph API or Microsoft Entra admin 
    - Users will be able to sign in to the application.
 1. Once you have confirmed you would like to reactivate the app, select the **Reactivate** button. Reactivation takes place immediately and the `isDisabled` property for this application is set to `false`. You can ensure the app status reflects the change by verifying its **State** change on the **App Registration** page.
 
-    :::image type="content" source="media/deactivate-app-registration/reactivate-app.png" alt-text="Screenshot showing the option to reactivate an application":::
+    :::image type="content" source="media/deactivate-app-registration/reactivate-app.png" alt-text="Screenshot showing the option to reactivate an application.":::
 
 ## [Microsoft Graph API](#tab/graph-api)
 
@@ -219,7 +219,7 @@ Whenever an application is deactivated or reactivated, there will be a Microsoft
 
 In the Microsoft Entra admin center, you can find these events under **Monitoring & health > Audit logs**. When you select an **Update application** event, navigate to the **Modified Properties** tab in the **Audit Log Details** pane. 
 
-:::image type="content" source="media/deactivate-app-registration/audit-log-details.png" alt-text="Screenshot showing audit log details for application deactivation with `isDisabled` property changes":::
+:::image type="content" source="media/deactivate-app-registration/audit-log-details.png" alt-text="Screenshot showing audit log details for application deactivation with `isDisabled` property changes.":::
 
 You will see the Property Name `isDisabled` with Old Value and New Value, where "true" is deactivated and "false" or null is activated or reactivated.
 
