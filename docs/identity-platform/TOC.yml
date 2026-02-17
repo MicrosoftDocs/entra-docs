@@ -118,6 +118,8 @@
         - name: Content Security Policy (CSP) overview
           href: content-security-policy.md
           displayName: CSP, security headers, XSS protection
+        - name: 3P fraud protection for SMS MFA in native authentication
+          href: concept-native-authentication-sms-mfa-third-party-fraud-protection.md
         - name: Tokens and claims
           items:
             - name: Tokens and claims overview
