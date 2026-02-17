@@ -181,6 +181,9 @@ Here are the least privileged roles you should use when performing tasks for [ap
 > | Update single sign-on properties | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
+> [!NOTE]
+> In practice, consenting to Microsoft Graph application permissions typically requires the Global Administrator role. Privileged Role Administrator may not be sufficient depending on tenant consent policies, permission scopes, or Graph protection requirements.
+
 ## Entitlement management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [entitlement management](../../id-governance/entitlement-management-overview.md) in Microsoft Entra ID Governance.
