@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 ms.reviewer: jodah
 
-ms.date: 01/08/2026
+ms.date: 02/17/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -105,6 +105,18 @@ The policy suggestions identified by the agent include:
 When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](./conditional-access-agent-optimization-review-suggestions.md).
 
    :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
+
+## Settings
+
+The agent includes several powerful settings to expand the capabilities while making them unique to your organization. The following capabilities can be configured from the **Settings** tab. For more information, see [Conditional Access Optimization Agent settings](conditional-access-agent-optimization-settings.md).
+
+- Allow agent to run automatically, every 24-hours
+- Set the agent to check for changes to users and applications
+- Allow the agent to create policies in report-only mode
+- Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
+- Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
+- Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
+- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge base files](conditional-access-agent-optimization-knowledge-base.md) to the agent
 
 ## Remove agent
 
