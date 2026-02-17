@@ -37,14 +37,14 @@ Risk evaluation occurs when SMS MFA is required during the authentication flow. 
 Based on the evaluation, one of the following outcomes occurs:
 
 - Low or acceptable risk: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued.
-- High risk requiring additional verification: Device possession is verified before allowing the flow to continue.
+- High risk requiring extra verification: Device possession is verified before allowing the flow to continue.
 - High risk with failed evaluation: The sign-in attempt is blocked immediately, and no SMS challenge is sent.
 
 This gating mechanism prevents unnecessary SMS delivery and reduces exposure to ATO and IRSF attacks.
 
 ## Integration with native API authentication
 
-The third-party fraud protection does not replace native authentication endpoints. Instead, it extends the existing flow by introducing an additional risk decision point before SMS MFA.
+The third-party fraud protection doesn't replace native authentication endpoints. Instead, it extends the existing flow by introducing an extra risk decision point before SMS MFA.
 
 The native authentication process continues to use standard endpoints for initiating sign-in, challenging factors, and issuing tokens. The fraud protection layer influences whether the SMS challenge is permitted based on risk signals.
 
