@@ -47,7 +47,7 @@ This section describes how to assign roles at tenant scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Entra ID** > **Roles & admins**.
+1. Browse to **Identity** > **Roles & admins**.
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 

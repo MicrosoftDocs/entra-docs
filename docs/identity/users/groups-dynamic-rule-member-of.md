@@ -46,7 +46,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 
 ## Get started
 
-This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. Because `memberOf` isn't yet supported in the rule builder, you must enter your rule in the rule editor.
+This feature is available in the Azure portal, Microsoft Graph, and PowerShell. However, the `memberOf` attribute isn’t currently supported in the rule builder UI. To use `memberOf` in the Azure portal, you must define the rule by using the rule editor (advanced syntax).
 
 ### Create a memberOf dynamic group
 

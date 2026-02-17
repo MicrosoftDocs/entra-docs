@@ -206,15 +206,14 @@ Known limitations for the Global Secure Access client for Android include:
 - Private Domain Name System (DNS) must be disabled on the device. You can usually find this setting in System > Network and Internet.
 - Using non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance issues and unpredictable system errors.  
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+- Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS.
 
 ### [iOS client](#tab/ios-client)
 Known limitations for the Global Secure Access client for iOS include:
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Captive portal isn't supported.
-- Compliant network check enforcement isn't supported.
-- Memory leaks can result in the gradual increase of memory usage. This increased memory usage might lead to occasional VPN restarts, but the impact on user experience is minimal.
-- Streaming high-quality video might cause pauses.
+- Streaming high-quality video might cause pauses occasionally
+- Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS.
 
 ---
 
@@ -270,7 +269,6 @@ Known limitations for Internet Access include:
 - Transport Layer Security (TLS) inspection is in development.
 - URL path-based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - User-friendly end-user notifications are in development.
-- Remote network connectivity for Internet Access is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
 
