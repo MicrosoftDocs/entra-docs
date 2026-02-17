@@ -63,17 +63,17 @@ For more information, see:
 
 ### Federation that uses a new or existing farm with AD FS in Windows Server
 
-With federated sign-in, your users can sign in to Microsoft Entra ID-based services with their on-premises passwords. While they're on the corporate network, they don't even have to enter their passwords. By using the federation option with AD FS, you can deploy a new or existing farm with AD FS in Windows Server 2022. If you choose to specify an existing farm, Microsoft Entra Connect configures the trust between your farm and Microsoft Entra ID so that your users can sign in.
+With federated sign-in, your users can sign in to Microsoft Entra ID-based services with their on-premises passwords. While they're on the corporate network, they don't even have to enter their passwords. By using the federation option with AD FS, you can deploy a new or existing farm with AD FS in Windows Server 2025 or Windows Server 2022. If you choose to specify an existing farm, Microsoft Entra Connect configures the trust between your farm and Microsoft Entra ID so that your users can sign in.
 
 <center>  ![Federation with AD FS in Windows Server](./media/plan-connect-user-signin/federatedsignin.png)</center>  
 
-#### Deploy federation with AD FS in Windows Server 2022
+#### Deploy federation with AD FS in Windows Server
 
 If you're deploying a new farm, you need:
 
-* A Windows Server 2022 server for the federation server.
+* A Windows Server 2025 or Windows Server 2022 server for the federation server.
 
-* A Windows Server 2022 server for the Web Application Proxy.
+* A Windows Server 2025 or Windows Server 2022 server for the Web Application Proxy.
 
 * A .pfx file with one TLS/SSL certificate for your intended federation service name. For example: fs.contoso.com.
 
