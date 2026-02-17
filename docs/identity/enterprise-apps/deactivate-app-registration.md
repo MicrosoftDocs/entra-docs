@@ -28,8 +28,6 @@ Before you can deactivate an application, ensure you meet the following requirem
 - One of the following Microsoft Entra roles:
     - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)  
     - [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator)
-- Both of these Role-based access control actions:
-    -  `microsoft.directory/applications/disablement/update`
 - The following API permissions if using Microsoft Graph:
     - `Application.ReadWrite.All` (delegated or application)
     - `Application.ReadWrite.OwnedBy` (application, for owned apps only)
@@ -95,14 +93,16 @@ To deactivate an application using Microsoft Graph API or Microsoft Entra admin 
 
 ## [Microsoft Graph API](#tab/graph-api)
 
-1. Get the application ID if you don't have it
-
-    ```http
-    GET https://graph.microsoft.com/v1.0/applications?$filter=displayName eq 'Your App Name'
-    ```
-
 1. Deactivate the application
 
+    ```http
+    PATCH https://graph.microsoft.com/beta/applications/{applicationObjectId}
+    Content-Type: application/json
+
+    {
+        "isDisabled": true
+    }
+    ```
     ```http
     PATCH https://graph.microsoft.com/beta/applications(appId='{appId}')
     Content-Type: application/json
@@ -116,6 +116,12 @@ To deactivate an application using Microsoft Graph API or Microsoft Entra admin 
  
     ```http
     GET https://graph.microsoft.com/beta/applications/{applicationObjectId}
+    ```
+
+    The response includes `"isDisabled": true`.
+
+   ```http
+    GET https://graph.microsoft.com/beta/applications(appId='{appId}')
     ```
 
     The response includes `"isDisabled": true`.
@@ -202,7 +208,7 @@ To reactivate an application using Microsoft Graph API or Microsoft Entra admin 
 
 ## Prevent reactivation by nonadministrators
 
-Before deactivating the application, remove all owners from the application. This ensures only users with tenant-wide `microsoft.directory/applications/disablement/update` scope can reactivate the application. This scope is restricted to administrative roles.
+Before deactivating the application, remove all owners from the application. This ensures only users with at least **[Application Administrator](~/role-based-access-control/permissions-reference.md#application-administrator)** role scope can reactivate the application.
 
 ## Audit deactivation and reactivation
 
