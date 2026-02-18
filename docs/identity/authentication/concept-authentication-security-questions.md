@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
 
 > [!IMPORTANT]
-> Security Questions will be deprecated for Self‑Service Password Reset (SSPR) in March 2027. After that, users will not be able to use Security Questions to complete SSPR. [Learn more about setting up alternate authentication methods](tutorial-enable-sspr#select-authentication-methods-and-registration-options).
+> Security Questions will be deprecated for Self‑Service Password Reset (SSPR) in March 2027. After that, users will not be able to use Security Questions to complete SSPR. [Learn more about setting up alternate authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options).
 >
 > Security questions should be eliminated from your authentication strategy because they introduce significant security vulnerabilities. Answers are frequently guessable, reused across sites, or discoverable through open-source intelligence (OSINT). Threat actors can enumerate or phish users to derive likely responses (family names, schools, locations), then trigger password reset flows to bypass stronger authentication methods. Once threat actors successfully reset a password—especially on accounts without multifactor authentication—they gain valid credentials, establish persistent sessions, register additional authentication methods, add forwarding rules, and exfiltrate sensitive data.
 > 
