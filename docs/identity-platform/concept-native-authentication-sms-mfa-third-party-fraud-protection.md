@@ -14,7 +14,7 @@ ms.topic: concept-article
 
 Native authentication applications that use SMS-based multifactor authentication (MFA) are exposed to account takeover (ATO) and International Revenue Share Fraud (IRSF) risks. These threats commonly exploit automated traffic, compromised phone numbers, or SIM-based abuse to trigger SMS challenges at scale.
 
-This architecture introduces third-party fraud protection into native API authentication flows to evaluate risk before an SMS MFA challenge is issued. By incorporating external risk signals—such as device intelligence and phone number reputation—the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
+This architecture introduces third-party fraud protection into native API authentication flows to evaluate risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
 
 The following diagram illustrates the end-to-end authentication flow, showing how a native app coordinates with Microsoft Entra Native Authentication, a web application firewall (WAF), and a third-party fraud provider to gate SMS MFA based on real-time risk evaluation.
 
