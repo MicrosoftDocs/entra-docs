@@ -4,60 +4,65 @@ description: Learn how third-party fraud protection integrates with native authe
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.date: 02/17/2026
+ms.date: 02/18/2026
 ms.service: identity-platform
 ms.topic: concept-article
 #Customer intent: As a software developer, I want to understand how third-party fraud protection integrates with native authentication flows to assess risk and protect SMS-based multifactor authentication from account takeover threats.
 ---
 
-# Third-party fraud protection for native authentication with SMS MFA
+# Secure SMS MFA in native authentication with third‑party fraud protection
 
-Native authentication applications that use SMS-based multifactor authentication (MFA) are exposed to account takeover (ATO) and International Revenue Share Fraud (IRSF) risks. These threats commonly exploit automated traffic, compromised phone numbers, or SIM-based abuse to trigger SMS challenges at scale.
+Native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. While this model provides flexibility and control over the user experience, it also introduces fraud prevention risks, especially for SMS-based multifactor authentication (MFA).
 
-This architecture introduces third-party fraud protection into native API authentication flows to evaluate risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
+This article explains the fraud risks associated with native authentication, then provides guidance for integrating third-party fraud protection solutions to secure native authentication applications.
 
-The following diagram illustrates the end-to-end authentication flow, showing how a native application coordinates with Microsoft Entra Native Authentication, a web application firewall (WAF), and a third-party fraud provider to gate SMS MFA based on real-time risk evaluation.
+## Fraud risk in native authentication
 
-:::image type="content" source="./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.png" alt-text="Diagram of End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked."::: 
+Microsoft Entra provides baseline fraud protections for native authentication application, including:
 
-Third-party fraud protection provides an external risk signal that complements native authentication controls. The provider evaluates whether a phone number is genuinely associated with a real user and device, rather than a virtual environment, emulator, or automated system.
+- Regional blocking for known high‑fraud regions
+- Basic throttling of SMS one‑time passcode (OTP) requests
+- A phone number reputation signal
 
-This evaluation is performed passively using device intelligence, phone reputation, and behavioral signals. The result determines whether the authentication flow can proceed to SMS MFA or should be blocked.
+Native authentication applications that use SMS‑based MFA remain exposed to additional risks, including:
 
-## Device possession and phone number reputation
+- **International Revenue Share Fraud (IRSF)** which occurs when attackers artificially inflate SMS traffic to premium‑rate international destinations in order to extract revenue through telecom termination and revenue‑sharing mechanisms.
+- **Account takeover (ATO)** which occurs when attackers use automated, scripted techniques to initiate sign‑in attempts with valid‑looking credentials, causing the system to issue SMS verification challenges as if the activity were legitimate.
 
-A key capability of the third-party provider is establishing a trusted link between a device and a phone number. This is achieved by placing a device-bound key on the user’s device and later binding it to the phone number during authentication.
+In browser‑delegated authentication flows, Microsoft Entra mitigates these risks by using rich device telemetry and CAPTCHA challenges. Native authentication applications do not use the Microsoft‑hosted, browser‑delegated sign‑in experience, so they cannot rely on these mitigation approaches. Because native authentication applications do not provide sufficient signals for advanced fraud detection, Microsoft cannot deliver comprehensive, out‑of‑the‑box fraud mitigation for SMS MFA in native flows.
 
-By validating device possession, the system mitigates fraud scenarios such as SIM-swap attacks, where an attacker ports a victim’s number to a new SIM. The possession signal strengthens confidence that the authentication request originates from a legitimate user.
+To effectively mitigate fraud in native authentication scenarios that use SMS‑based MFA:
 
+- Native authentication applications owners must implement additional fraud detection and mitigation
+- Fraud decisions must occur before SMS one‑time passcodes (OTPs) are sent
+- Third‑party fraud providers assess risk using device, behavioral, and network signals collected outside of Microsoft Entra
 
-## Risk evaluation and decision points
+## Recommended fraud prevention architecture
 
-Risk evaluation occurs when SMS MFA is required during the authentication flow. Before an SMS challenge is issued, the native application triggers a reputation check through the third-party provider.
-Based on the evaluation, one of the following outcomes occurs:
+Microsoft recommends the a high-level architecture for securing native authentication app that user SMS-based MFA consisting of the native authentication app, third-party fraud protection provider, web application firewall (WAF), and Microsoft Entra.
 
-- **Low or acceptable risk**: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued.
-- **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.
-- **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent.
+The third-party fraud protection provider evaluate risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
 
-This gating mechanism prevents unnecessary SMS delivery and reduces exposure to ATO and IRSF attacks.
+| Component | Notes | 
+| --- |  --- |
+| **Native app**   | The native app integrates a third-party fraud detection SDK. The app collects limited, privacy‑preserving device and behavioral signals using the third‑party provider’s tooling and associates those signals with the current authentication session|
+|  **Third‑party fraud protection provider**  |  The third‑party fraud provider evaluates the signals collected from the native application and determines the risk level of the authentication attempt. Based on the evaluation, one of the following outcomes occurs:<br> - **Low or acceptable risk**: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued. <br> - **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.<br> - **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent. <br> You can use third‑party fraud providers such as [Human security](https://www.humansecurity.com/) and [Prove](https://www.prove.com/). |
+|  **Web application firewall (WAF)**  |  The WAF is a customer‑managed enforcement layer that sits in front of Microsoft Entra endpoints. The WAF consumes the fraud decision from the third‑party provider and enforces it consistently. Microsoft does not configure or operate the WAF; its behavior, including fail‑open or fail‑closed policies, is owned by the customer.|
+|  **Microsoft Entra**   |  Microsoft Entra processes only those requests that have passed upstream fraud checks. It does not receive raw device telemetry or third‑party risk scores. It issues SMS OTPs only after upstream approval and relies on its built‑in controls, such as throttling, regional restrictions, and phone number reputation signals to provide protection. |
 
-## Integration with native API authentication
+### Sign-in flow protection example
 
-The third-party fraud protection doesn't replace native authentication endpoints. Instead, it extends the existing flow by introducing an extra risk decision point before SMS MFA.
+This diagram shows how a native application integrates third‑party fraud protection into an SMS‑based MFA sign‑in flow. The native app coordinates with Microsoft Entra, a web application firewall (WAF), and an external fraud provider to evaluate risk before an SMS OTP is sent. By gating SMS MFA on real‑time risk signals, the flow helps block high‑risk sign‑in attempts while allowing legitimate users to complete authentication.
 
-The native authentication process continues to use standard endpoints for initiating sign-in, challenging factors, and issuing tokens. The fraud protection layer influences whether the SMS challenge is permitted based on risk signals.
+:::image type="content" source="./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.png" alt-text="Diagram of End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.":::
 
-## Third-party fraud protection providers
+Key aspects of the sign‑in flow shown in the diagram:
 
-Native authentication flows can integrate with third-party providers that specialize in fraud detection and risk evaluation for phone and device-based authentication scenarios.
-
-Examples of providers commonly used for this purpose include:
-
-
-- **Human Security** - Provides bot and fraud detection capabilities that analyze traffic patterns, device signals, and behavioral indicators to identify high-risk authentication attempts before SMS MFA is triggered.
-
-- **Prove** - Focuses on phone centric identity verification by evaluating phone number reputation and device possession. Prove can help detect SIM-swap and phone-based fraud scenarios before SMS challenges are issued.
+- The native application orchestrates the sign‑in flow and triggers fraud risk evaluation when SMS‑based MFA is required.
+- Microsoft Entra drives the authentication state and determines when MFA is needed, but defers SMS OTP delivery until fraud checks complete.
+- The web application firewall (WAF) acts as an enforcement point, allowing or blocking authentication requests based on fraud risk outcomes.
+- The third‑party fraud provider evaluates risk using device, phone number, and network signals collected outside Microsoft Entra.
+- SMS OTPs are sent only when the assessed risk is acceptable; high‑risk sign‑in attempts are blocked before SMS delivery.
 
 This article describes the integration pattern at a conceptual level. Specific provider capabilities and implementation details may vary.
 
