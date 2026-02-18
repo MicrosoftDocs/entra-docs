@@ -39,13 +39,13 @@ To effectively mitigate fraud in native authentication scenarios that use SMS‑
 
 ## Recommended fraud prevention architecture
 
-Microsoft recommends a high-level architecture for securing native authentication app that user SMS-based MFA consisting of the native authentication app, third-party fraud protection provider, web application firewall (WAF), and Microsoft Entra.
+Microsoft recommends a high-level architecture for securing native authentication applications that user SMS-based MFA consisting of the native authentication applications, third-party fraud protection provider, web application firewall (WAF), and Microsoft Entra.
 
 The third-party fraud protection provider evaluates risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
 
 | Component | Notes | 
 | --- |  --- |
-| **Native app**   | The native app integrates a third-party fraud detection SDK. The app collects limited, privacy‑preserving device and behavioral signals using the third‑party provider’s tooling and associates those signals with the current authentication session|
+| **Native applications**   | The native application integrates a third-party fraud detection SDK. The applications collect limited, privacy‑preserving device and behavioral signals using the third‑party provider’s tooling and associate those signals with the current authentication session|
 |  **Third‑party fraud protection provider**  |  The third‑party fraud provider evaluates the signals collected from the native application and determines the risk level of the authentication attempt. Based on the evaluation, one of the following outcomes occurs:<br> - **Low or acceptable risk**: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued. <br> - **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.<br> - **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent. <br> You can use third‑party fraud providers such as [Human security](https://www.humansecurity.com/) and [Prove](https://www.prove.com/). |
 |  **Web application firewall (WAF)**  |  The WAF is a customer‑managed enforcement layer that sits in front of Microsoft Entra endpoints. The WAF consumes the fraud decision from the third‑party provider and enforces it consistently. Microsoft doesn't configure or operate the WAF; its behavior, including fail‑open or fail‑closed policies, is owned by the customer.|
 |  **Microsoft Entra**   |  Microsoft Entra processes only those requests that have passed upstream fraud checks. It doesn't receive raw device telemetry or third‑party risk scores. It issues SMS OTPs only after upstream approval and relies on its built‑in controls, such as throttling, regional restrictions, and phone number reputation signals to provide protection. |
