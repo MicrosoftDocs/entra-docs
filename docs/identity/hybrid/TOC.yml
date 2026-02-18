@@ -17,7 +17,7 @@
         - name: Tools for synchronization
           href: sync-tools.md
         - name: Choosing the right sync client
-          href: https://aka.ms/EvaluateSyncOptions
+          href: common-scenarios.md
         - name: Steps to start
           href: get-started.md
         - name: Prerequisites

@@ -1537,7 +1537,7 @@ Customers who use this preview feature in Connect Sync should [switch their conf
 
 Customers who use Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios
 
 ---
 
@@ -2071,7 +2071,7 @@ Customers who use this preview feature in Connect Sync should [switch their conf
 
 Customers who provision Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://learn.microsoft.com/en-us/entra/identity/hybrid/common-scenarios
 
 ---
 
