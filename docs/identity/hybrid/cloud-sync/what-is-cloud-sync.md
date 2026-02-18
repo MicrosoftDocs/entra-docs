@@ -39,7 +39,7 @@ The following short video provides an excellent overview of Microsoft Entra Clou
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
 ## Choose the right sync client
-To determine if cloud sync is right for your organization, use the following link. It takes you to a tool that helps you evaluate your synchronization needs. For more information, evaluate your options using the [Wizard to evaluate sync options](https://aka.ms/EvaluateSyncOptions)
+To determine if cloud sync is right for your organization, review the supported sync scenarios. For more information, evaluate your options using the [supported sync scenarios comparison](../common-scenarios.md)
 
 
 <a name='comparison-between-azure-ad-connect-and-cloud-sync'></a>

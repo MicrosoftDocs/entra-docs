@@ -65,7 +65,7 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
 > [!NOTE]
-> Security Copilot requires at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
+> Security Copilot requires that at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions identified by the agent include:
 
@@ -116,7 +116,25 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
-- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge base files](conditional-access-agent-optimization-knowledge-base.md) to the agent
+- Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions
+
+## Built in integrations
+
+The Conditional Access Optimization Agent can make policy suggestions for organizations that use Intune for device management and Global Secure Access for network access. 
+
+### Intune integration
+
+The Conditional Access Optimization Agent integrates with Microsoft Intune to monitor device compliance and application protection policies configured in Intune and identify potential gaps in Conditional Access enforcement. This proactive and automated approach ensures that Conditional Access policies remain aligned with organizational security goals and compliance requirements. The agent suggestions are the same as the other policy suggestions, except that Intune provides part of the signal to the agent.
+
+Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
+
+To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
+
+### Global Secure Access integration
+
+Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion, **Turn on new policy to enforce Global Secure Access network access requirements**, helps you to align your Global Secure Access policies that include network locations and protected applications.
+
+With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources using the organization's secure Global Secure Access network before accessing corporate apps and data. Users connecting from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
 
 ## Remove agent
 
