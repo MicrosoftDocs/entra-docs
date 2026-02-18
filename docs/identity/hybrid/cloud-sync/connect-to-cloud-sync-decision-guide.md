@@ -55,7 +55,7 @@ Each disconnected forest can have dedicated agents while maintaining unified man
 
 Microsoft's development focus for new synchronization and provisioning capabilities centers on Cloud Sync. Features like group provisioning to Active Directory, advanced source of authority management, and cloud-native identity scenarios are available exclusively in Cloud Sync. Organizations using Connect sync might miss access to new capabilities or require additional tools to achieve similar functionality.
 
-## Comprehensive feature comparison
+## Comparison between Microsoft Entra Connect and Cloud Sync
 
 The following table provides a detailed comparison of technical capabilities between Microsoft Entra Connect and Cloud Sync:
 
