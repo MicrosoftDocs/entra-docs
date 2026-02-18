@@ -48,6 +48,19 @@ The third-party fraud protection doesn't replace native authentication endpoints
 
 The native authentication process continues to use standard endpoints for initiating sign-in, challenging factors, and issuing tokens. The fraud protection layer influences whether the SMS challenge is permitted based on risk signals.
 
+## Third-party fraud protection providers
+
+Native authentication flows can integrate with third-party providers that specialize in fraud detection and risk evaluation for phone- and device-based authentication scenarios.
+Examples of providers commonly used for this purpose include:
+
+
+- **Human Security** - Provides bot and fraud detection capabilities that analyze traffic patterns, device signals, and behavioral indicators to identify high-risk authentication attempts before SMS MFA is triggered.
+
+- **Prove** - Focuses on phone-centric identity verification by evaluating phone number reputation and device possession. Prove can help detect SIM-swap and phone-based fraud scenarios before SMS challenges are issued.
+
+
+This article describes the integration pattern at a conceptual level. Specific provider capabilities and implementation details may vary.
+
 ## Related content
 
 - [Native authentication overview](concept-native-authentication.md)
