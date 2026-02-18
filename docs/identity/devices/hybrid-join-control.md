@@ -9,7 +9,6 @@ ms.date: 06/27/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment

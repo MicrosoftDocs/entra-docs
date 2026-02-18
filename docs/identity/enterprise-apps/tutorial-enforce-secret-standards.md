@@ -2,7 +2,6 @@
 title: "Tutorial: Enforce secret and certificate standards using application management policies"
 description: Learn how to enforce secret and certificate standards using application management policies in Microsoft Entra ID.
 author: garrodonnell
-manager: dougeby
 ms.author: godonnell
 ms.service: entra-id
 ms.subservice: enterprise-apps

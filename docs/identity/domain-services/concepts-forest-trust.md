@@ -2,7 +2,6 @@
 title: How trusts work for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
 author: justinha
-manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services

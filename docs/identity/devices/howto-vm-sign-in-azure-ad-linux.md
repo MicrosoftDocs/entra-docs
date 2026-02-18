@@ -9,7 +9,6 @@ ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
