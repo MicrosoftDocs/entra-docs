@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
 
 > [!WARNING]
-> Security questions will be retired for Self‑Service Password Reset (SSPR) in March 2027. After that date, users will no longer be able to reset passwords using security questions. Ensure users are set up with [supported authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options) in the Authentication methods policy.
+> **Security questions will be retired for Self‑Service Password Reset (SSPR) in March 2027.** After that date, users will no longer be able to reset passwords using security questions. Ensure users are set up with [supported authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options) in the Authentication methods policy.
 >
 > This feature is being deprecated due to security risks and low reliability. Security questions are often guessable or susceptible to social engineering, increasing the risk of account takeover during SSPR. Stronger verification methods improve security and reduce reset failures and support escalations.
 >
