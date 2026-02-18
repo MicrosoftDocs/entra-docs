@@ -37,8 +37,20 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Internet Access forwarding profile is enabled
 [!INCLUDE [25406](../includes/secure-recommendations/25406.md)]
 
-### Global Secure Access web content filtering is enabled and configured
+### Web content filtering policies are configured
 [!INCLUDE [25408](../includes/secure-recommendations/25408.md)]
+
+### Web content filtering uses category-based rules
+[!INCLUDE [25409](../includes/secure-recommendations/25409.md)]
+
+### Web content filtering policies are linked to security profiles
+[!INCLUDE [25410](../includes/secure-recommendations/25410.md)]
+
+### Web content filtering integrates with Conditional Access
+[!INCLUDE [25407](../includes/secure-recommendations/25407.md)]
+
+### TLS inspection is enabled and correctly configured for outbound traffic
+[!INCLUDE [25411](../includes/secure-recommendations/25411.md)]
 
 ### Microsoft 365 traffic is actively flowing through Global Secure Access
 [!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
@@ -63,6 +75,12 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
 [!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
+
+### Private DNS is configured for internal name resolution
+[!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
+
+### Intelligent Local Access is enabled and configured
+[!INCLUDE [25405](../includes/secure-recommendations/25405.md)]
 
 ### Quick Access is bound to a Conditional Access policy
 [!INCLUDE [25394](../includes/secure-recommendations/25394.md)]
