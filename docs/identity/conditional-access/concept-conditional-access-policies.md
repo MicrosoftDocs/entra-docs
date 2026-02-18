@@ -3,7 +3,6 @@ title: Building Conditional Access policies in Microsoft Entra
 description: Understand the phases of Conditional Access policy enforcement in Microsoft Entra and how to apply them to secure user access.
 ms.topic: concept-article
 ms.date: 07/22/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom:
   - ai-gen-docs-bap

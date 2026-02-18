@@ -3,7 +3,6 @@ title: "Conditional Access Policy Insights: Monitoring and Evaluation"
 description: Discover how to analyze Conditional Access policy results with tools like Azure Monitor and insights workbooks for better policy management.
 ms.topic: article
 ms.date: 09/15/2025
-manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
