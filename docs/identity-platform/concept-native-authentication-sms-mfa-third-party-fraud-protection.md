@@ -16,7 +16,7 @@ Native authentication applications that use SMS-based multifactor authentication
 
 This architecture introduces third-party fraud protection into native API authentication flows to evaluate risk before an SMS MFA challenge is issued. By incorporating external risk signals, such as device intelligence and phone number reputation, the system can block high-risk sign-in attempts earlier and reduce exposure to fraud.
 
-The following diagram illustrates the end-to-end authentication flow, showing how a native app coordinates with Microsoft Entra Native Authentication, a web application firewall (WAF), and a third-party fraud provider to gate SMS MFA based on real-time risk evaluation.
+The following diagram illustrates the end-to-end authentication flow, showing how a native application coordinates with Microsoft Entra Native Authentication, a web application firewall (WAF), and a third-party fraud provider to gate SMS MFA based on real-time risk evaluation.
 
 [![End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.](./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.png)](./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow-lightbox.png#lightbox)
 
@@ -33,7 +33,7 @@ By validating device possession, the system mitigates fraud scenarios such as SI
 
 ## Risk evaluation and decision points
 
-Risk evaluation occurs when SMS MFA is required during the authentication flow. Before an SMS challenge is issued, the native app triggers a reputation check through the third-party provider.
+Risk evaluation occurs when SMS MFA is required during the authentication flow. Before an SMS challenge is issued, the native application triggers a reputation check through the third-party provider.
 Based on the evaluation, one of the following outcomes occurs:
 
 - Low or acceptable risk: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued.
@@ -50,14 +50,14 @@ The native authentication process continues to use standard endpoints for initia
 
 ## Third-party fraud protection providers
 
-Native authentication flows can integrate with third-party providers that specialize in fraud detection and risk evaluation for phone- and device-based authentication scenarios.
+Native authentication flows can integrate with third-party providers that specialize in fraud detection and risk evaluation for phone and device-based authentication scenarios.
+
 Examples of providers commonly used for this purpose include:
 
 
 - **Human Security** - Provides bot and fraud detection capabilities that analyze traffic patterns, device signals, and behavioral indicators to identify high-risk authentication attempts before SMS MFA is triggered.
 
-- **Prove** - Focuses on phone-centric identity verification by evaluating phone number reputation and device possession. Prove can help detect SIM-swap and phone-based fraud scenarios before SMS challenges are issued.
-
+- **Prove** - Focuses on phone centric identity verification by evaluating phone number reputation and device possession. Prove can help detect SIM-swap and phone-based fraud scenarios before SMS challenges are issued.
 
 This article describes the integration pattern at a conceptual level. Specific provider capabilities and implementation details may vary.
 
