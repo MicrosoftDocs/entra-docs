@@ -2,7 +2,7 @@
 title: Security questions authentication method
 description: Learn about using security questions in Microsoft Entra ID to help improve and secure sign-in events
 ms.topic: concept-article
-ms.date: 03/04/2025
+ms.date: 02/18/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
 # Uses details from securing Entra include file entra-docs-pr\docs\includes\secure-recommendations\22072.md for important box.
@@ -11,12 +11,12 @@ ms.custom: sfi-image-nochange
 
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
 
-> [!IMPORTANT]
-> Security Questions will be deprecated for Self‑Service Password Reset (SSPR) in March 2027. After that, users will not be able to use Security Questions to complete SSPR. [Learn more about setting up alternate authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options).
+> [!WARNING]
+> Security questions will be retired for Self‑Service Password Reset (SSPR) in March 2027. After that date, users will no longer be able to reset passwords using security questions. Ensure users are set up with [supported authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options) in the Authentication methods policy.
 >
-> Security questions should be eliminated from your authentication strategy because they introduce significant security vulnerabilities. Answers are frequently guessable, reused across sites, or discoverable through open-source intelligence (OSINT). Threat actors can enumerate or phish users to derive likely responses (family names, schools, locations), then trigger password reset flows to bypass stronger authentication methods. Once threat actors successfully reset a password—especially on accounts without multifactor authentication—they gain valid credentials, establish persistent sessions, register additional authentication methods, add forwarding rules, and exfiltrate sensitive data.
-> 
-> While some organizations may have business reasons for continuing to use security questions, this practice is strongly discouraged due to the inherent security weaknesses of knowledge-based authentication.
+> This feature is being deprecated due to security risks and low reliability. Security questions are often guessable or susceptible to social engineering, increasing the risk of account takeover during SSPR. Stronger verification methods improve security and reduce reset failures and support escalations.
+>
+> Prepare in advance to avoid user lockouts, helpdesk escalations, and failed password reset experiences once enforcement begins in March 2027.
 
 When users register for SSPR, they're prompted to choose the authentication methods to use. If they choose to use security questions, they pick from a set of questions to prompt for and then provide their own answers.
 
