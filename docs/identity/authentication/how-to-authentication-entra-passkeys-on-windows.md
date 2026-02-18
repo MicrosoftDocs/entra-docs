@@ -2,7 +2,7 @@
 title: Enable Microsoft Entra passkeys on Windows devices (preview)
 description: Explains Microsoft Entra passkeys on Windows devices and how admins can enable them for work or school accounts for phishing-resistant multifactor authentication.
 #customer intent: As an administrator, I want to enable Microsoft Entra passkeys can users with work and school accouts can sign in by using phishing-resistant multifactor authentication.
-author: hanki77
+author: hanki71
 ms.author: justinha
 ms.date: 02/18/2026
 ms.topic: how-to
