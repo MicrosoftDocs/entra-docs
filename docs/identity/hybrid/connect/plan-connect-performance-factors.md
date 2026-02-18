@@ -162,6 +162,9 @@ Microsoft Entra ID uses throttling to protect the cloud service from denial-of-s
 - Users updating their own identity records such as registering for MFA or SSPR (self-service password reset).
 - Operations within the graphical user interface.
 
+> [!IMPORTANT]
+> Increasing this throttling limit on an ad-hoc basis is not supported.
+
 Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle isn't impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 
 ### SQL database factors
