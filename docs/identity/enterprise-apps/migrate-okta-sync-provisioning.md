@@ -23,7 +23,7 @@ In this tutorial, learn to migrate user provisioning from Okta to Microsoft Entr
 
 When you switch from Okta provisioning to Microsoft Entra ID, there are two choices. Use a Microsoft Entra Connect server or Microsoft Entra cloud provisioning. 
 
-Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync).
 
 Microsoft Entra cloud provisioning is the most familiar migration path for Okta customers who use Universal Sync or User Sync. The cloud provisioning agents are lightweight. You can install them on, or near, domain controllers like the Okta directory sync agents. Don't install them on the same server.
 
