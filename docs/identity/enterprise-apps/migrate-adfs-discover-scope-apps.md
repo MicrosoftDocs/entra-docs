@@ -50,7 +50,6 @@ In the cloud environment, you need rich visibility, control over data travel, an
 - **Cloud Access Security Broker (CASB**) – A [CASB](/defender-cloud-apps/) typically works alongside your firewall to provide visibility into your employees’ cloud application usage and helps you protect your corporate data from cybersecurity threats. The CASB report can help you determine the most used apps in your organization, and the early targets to migrate to Microsoft Entra ID.
 - **Cloud Discovery** - By configuring [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps), you gain visibility into the cloud app usage, and can discover unsanctioned or Shadow IT apps.
 - **Azure Hosted Applications** - For apps connected to Azure infrastructure, you can use the APIs and tools on those systems to begin to take an inventory of hosted apps. In the Azure environment:
-  - Use the [Get-AzureWebsite](/powershell/module/servicemanagement/azure/get-azurewebsite) cmdlet to get information about Azure websites.
   - Use the [Get-AzWebApp](/powershell/module/Az.websites/get-Azwebapp) cmdlet to get information about your Azure Web Apps.
   - Query Microsoft Entra ID looking for [Applications](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity) and [Service Principals](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity).
 
