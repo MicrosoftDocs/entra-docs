@@ -1,13 +1,8 @@
 ---
 title: Tutorial - Perform a disaster recovery drill in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to perform a disaster recovery drill using replica sets in Microsoft Entra Domain Services
-author: justinha
-
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 02/19/2025
-ms.author: justinha
 #Customer intent: As an identity administrator, I want to perform a disaster recovery drill by using replica sets in Microsoft Entra Domain Services to demonstrate resiliency for geographically distributed domain data.
 ---
 
