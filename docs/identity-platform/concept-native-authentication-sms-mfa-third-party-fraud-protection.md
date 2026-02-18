@@ -18,7 +18,7 @@ This architecture introduces third-party fraud protection into native API authen
 
 The following diagram illustrates the end-to-end authentication flow, showing how a native application coordinates with Microsoft Entra Native Authentication, a web application firewall (WAF), and a third-party fraud provider to gate SMS MFA based on real-time risk evaluation.
 
-[![End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.](./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.png)](./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow-lightbox.png#lightbox)
+[![End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.](./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.png)]
 
 Third-party fraud protection provides an external risk signal that complements native authentication controls. The provider evaluates whether a phone number is genuinely associated with a real user and device, rather than a virtual environment, emulator, or automated system.
 
