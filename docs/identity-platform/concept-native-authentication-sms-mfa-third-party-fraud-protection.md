@@ -64,8 +64,6 @@ Key aspects of the sign‑in flow shown in the diagram:
 - The third‑party fraud provider evaluates risk using device, phone number, and network signals collected outside Microsoft Entra.
 - SMS OTPs are sent only when the assessed risk is acceptable; high‑risk sign‑in attempts are blocked before SMS delivery.
 
-This article describes the integration pattern at a conceptual level. Specific provider capabilities and implementation details may vary.
-
 ## Related content
 
 - [Native authentication overview](concept-native-authentication.md)
