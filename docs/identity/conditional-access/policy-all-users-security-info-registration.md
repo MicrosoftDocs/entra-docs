@@ -1,14 +1,8 @@
 ---
 title: Control security information registration with Conditional Access
 description: Create a custom Conditional Access policy for security info registration.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---

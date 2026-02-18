@@ -2,12 +2,8 @@
 metadata:
   title: B2B collaboration FAQs
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
-  ms.service: entra-external-id
   ms.topic: faq
   ms.date: 06/27/2025
-  ms.author: cmulligan
-  author: csmulligan
-  manager: dougeby
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs

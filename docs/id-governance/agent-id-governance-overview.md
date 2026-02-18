@@ -1,9 +1,6 @@
 ---
 title: Governing Agent Identities (Preview)
 description: This article describes governing agent identities.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 10/25/2025
 
@@ -59,7 +56,7 @@ To use access packages for agent identities, configure an access package with th
 
 Agents can then be assigned access packages through three different request pathways.
 
-- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&tabs=http).
+- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
 - The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 - An administrator can [directly assign the agent identity or agent user to the access package](entitlement-management-access-package-assignments.md#directly-assign-an-identity).
 

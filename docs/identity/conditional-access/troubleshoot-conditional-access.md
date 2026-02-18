@@ -1,13 +1,8 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 06/20/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange

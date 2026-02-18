@@ -14,7 +14,7 @@ ms.reviewer: krbain
 
 # Restrict guest access permissions in Microsoft Entra ID
 
-Microsoft Entra ID, part of Microsoft Entra, allows you to restrict what external guest users can see in their organization in Microsoft Entra ID. Guest users are set to a limited permission level by default in Microsoft Entra ID, while the default for member users is the full set of user permissions. There's another guest user permission level in your Microsoft Entra organization's external collaboration settings for even more restricted access, so that the guest access levels are:
+Microsoft Entra ID, part of Microsoft Entra, allows you to restrict what guest users can see in their organization in Microsoft Entra ID. Guest users are set to a limited permission level by default in Microsoft Entra ID, while the default for member users is the full set of user permissions. There's another guest user permission level in your Microsoft Entra organization's external collaboration settings for even more restricted access, so that the guest access levels are:
 
 Permission level             | Access level | Value
 ----------------             | ------------ | -----

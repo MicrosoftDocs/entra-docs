@@ -1,9 +1,6 @@
 ---
 title: Catalog Access Reviews (Preview)
 description: This article describes what Catalog Access Reviews are, how to create one, and how to complete a review for one.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 10/30/2025
@@ -64,7 +61,7 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. Select **Create** to finalize the access review. 
 
-You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Upload data from custom data resources
 

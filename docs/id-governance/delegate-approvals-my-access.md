@@ -1,9 +1,6 @@
 ---
 title: Delegate Approvals in My Access (Preview)
 description: A how-to article explaining how system admins can delegate approvals using My Access
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/26/2025
 

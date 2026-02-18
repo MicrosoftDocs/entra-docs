@@ -1,11 +1,7 @@
 ---
 title: Add your own Traffic Manager to application proxy
 description: Learn how to combine the application proxy service with a Traffic Manager solution.
-author: kenwith
-ms.author: kenwith
 ms.reviewer: ashishj
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 05/01/2025
 ms.custom: template-how-to

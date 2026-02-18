@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: This article explains how access packages provide governance for agent identity access to resources.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.service: entra-id
@@ -26,7 +25,7 @@ To use access packages, the IT admin first configures an access package with the
 
 Agents can then be assigned access packages through three different request pathways.
 
-- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&tabs=http).
+- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
 - The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 - An administrator can [directly assign the agent identity or agent user to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 

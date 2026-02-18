@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to 4me**.
 	
-11. Review the user attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 4me for update operations. Please ensure that [4me supports filtering](https://developer.4me.com/v1/scim/users/) on the matching attribute you have chosen. Select the **Save** button to commit any changes.
+11. Review the user attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 4me for update operations. Please ensure that [4me supports filtering](https://developer.xurrent.com/v1/scim/users/) on the matching attribute you have chosen. Select the **Save** button to commit any changes.
 
 	![Screenshot of 4me User attributes list.](media/4me-provisioning-tutorial/4me-user-attributes-first-part.png)
 	![Screenshot of 4me User attributes list-2.](media/4me-provisioning-tutorial/4me-user-attributes-second-part.png)

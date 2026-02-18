@@ -1,13 +1,8 @@
 ---
 title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
-ms.date: 09/23/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.topic: concept-article
+ms.date: 01/28/2026
 ms.reviewer: shahjoy
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
@@ -212,7 +207,7 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
-Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. 
+Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. After Phase 2 enforcement begins, you can submit a request to Microsoft Help and Support to temporarily lift enforcement. The request must be done by a Global Administrator due to the security implications. 
 
 >[!NOTE]
 > If you postponed the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
@@ -230,6 +225,22 @@ Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.
 
 ## FAQs
 
+**Question**: Which accounts are affected by Phase 2 MFA enforcement? 
+
+**Answer**: Azure Phase 2 enforcement applies to all user accounts that make Azure resource management actions through any Azure client, including PowerShell, CLI, SDKs, or even REST APIs. This enforcement is on the Azure Resource Manager server side, so any requests that target `https://management.azure.com` are under scope of enforcement. Automation accounts are not in scope as long as they use a managed identity or service principal. Any automation accounts that are set up as user identities will be enforced upon. 
+
+**Question**: How can I understand the impact of MFA enforcement without Conditional Access? 
+
+**Answer**: If your Microsoft Entra ID license doesn't include Conditional Access, you can use Azure Policy to understand how MFA enforcement impacts your tenant. During system enforcement, Microsoft deploys the [Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement) to your tenant. You can follow those steps to deploy the same Azure policy yourself at any time. You can deploy the policy in Audit mode, and then convert to Enforcement mode. You can choose the date to apply this policy in your tenant while you are in Enforcement mode. Then when Microsoft enforces MFA, there's no further impact to your tenant. 
+
+**Question**: Are there any exceptions for specific accounts?
+
+**Answer**: The system enforcement applies to all user accounts, regardless if they are a student account, break-glass account, an administrator account with activated or eligible roles, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them. Each of these account types can perform resource management actions in Azure, posing the same security risk if they are compromised. 
+
+**Question**: Are Microsoft Graph APIs under the scope for Phase 2 enforcement? 
+
+**Answer**: Generally, Microsoft Graph APIs aren't in scope for Azure MFA enforcement. Only requests sent to `https://management.azure.com/` are under scope of enforcement.
+
 **Question**: If the tenant is only used for testing, is MFA required? 
 
 **Answer**: Yes, every Azure tenant will require MFA, with no exception for test environments.  
@@ -237,10 +248,6 @@ Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
 **Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting in February 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
-
-**Question**: Is MFA mandatory for all users or only administrators? 
-
-**Answer**: All users who sign in to any of the [applications](#application-ids-and-urls) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
 **Question**: Do I need to complete MFA if I choose the option to **Stay signed in**?
 
