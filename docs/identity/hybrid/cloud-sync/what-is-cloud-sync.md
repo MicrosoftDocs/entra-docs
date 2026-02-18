@@ -57,6 +57,8 @@ With Microsoft Entra Cloud Sync, provisioning orchestration occurs entirely in M
 
 This architectural difference enables scenarios that are complex or impossible with traditional approaches, such as synchronizing from multiple disconnected forests to a single Microsoft Entra tenant without forest consolidation.
 
+For a detailed feature comparison table, see [Cloud Sync and Microsoft Entra Connect feature comparison](connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync).
+
 <a name='azure-ad-connect-cloud-sync-video'></a>
 
 ## Microsoft Entra Cloud sync video
