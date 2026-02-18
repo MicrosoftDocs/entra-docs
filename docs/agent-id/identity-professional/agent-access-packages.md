@@ -43,3 +43,4 @@ If the sponsor requests an extension, this request can trigger a new approval cy
 
 - [Governing agent identities](/entra/id-governance/agent-id-governance-overview)
 - [Create an access package in entitlement management](/entra/id-governance/entitlement-management-access-package-create)
+- [Conditional access for agent identities](/entra/identity/conditional-access/agent-id)
