@@ -26,6 +26,9 @@ The set of default permissions depends on whether the user is a native member of
 
   For example, guest users can't enumerate the list of all users, groups, and other directory objects. Guests can be added to administrator roles, which grant them full read and write permissions. Guests can also invite other guests.
 
+> [!NOTE]
+> As Intune employs its own RBAC system to manage access to device management features, restricted guest users will be able to access the Intune portal with the appropriate permissions.
+
 ## Compare member and guest default permissions
 
 | **Area** | **Member user permissions** | **Default guest user permissions** | **Restricted guest user permissions** |
