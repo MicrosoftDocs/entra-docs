@@ -13,7 +13,7 @@ ms.collection: msec-ai-copilot
 
 # Microsoft Entra Passkeys on Windows (Preview)
 
-This article describes **Microsoft Entra passkeys on Windows** in public preview. It covers how they work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
+This article describes **Microsoft Entra passkeys on Windows** in public preview. It covers how Microsoft Entra passkeys on Windows work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
 
 **Microsoft Entra passkeys on Windows** are currently in public preview and require opt‑in. You need to explicitly configure Microsoft Entra passkeys on Windows to enable the preview of passkey registration in Windows Hello.
 
@@ -21,7 +21,7 @@ This article describes **Microsoft Entra passkeys on Windows** in public preview
 
 **Microsoft Entra passkeys on Windows** allow users to register **passkeys (FIDO2)** directly into their device's local **Windows Hello** container and use them to sign in to Microsoft Entra ID. Microsoft Entra passkeys on Windows enable phishing-resistant sign‑in by using a Windows Hello biometric or PIN without requiring the device to be Microsoft Entra joined or registered.
 
-With this feature:
+By using Microsoft Entra passkeys on Windows:
 
 - Users can register **passkeys (FIDO2)** in the local Windows Hello container.
 - Devices **don't need to be joined or registered to Microsoft Entra** to use a local Windows passkey.
@@ -52,34 +52,25 @@ During public preview, Windows Hello passkeys are identified and controlled usin
 
 These AAGUIDs represent Windows Hello‑backed passkey providers and are used in **passkey profiles** to allow or block registration.
 
-## Microsoft Entra passkeys on Windows vs. Windows Hello for Business
+## How Microsoft Entra passkeys on Windows compare with Windows Hello for Business
 
-Although both features use Windows Hello, **Microsoft** **Entra passkeys on Windows** and **Windows Hello for Business (WHfB)** have different purposes and behavior.
+Although both features use Windows Hello, **Microsoft Entra passkeys on Windows** and **Windows Hello for Business** have different purposes and behavior.
 
 ### Windows Hello for Business
 
-- Windows Hello for Business credentials are **automatically provisioned** on some Entra joined or registered devices during device registration.
-
-- The credential is tied only to **the Entra account used to register the device**.
-
+- Windows Hello for Business credentials are **automatically provisioned** on some Microsoft Entra joined or registered devices during device registration.
+- The credential is tied only to **the Microsoft Entra account used to register the device**.
 - Windows Hello for Business credentials are **passkeys using a first‑party (1P) protocol**, but **not FIDO2 passkeys**.
-
-- WHfB enables **device sign‑in** using **facial recognition, fingerprint, or PIN** protected by Windows Hello.
-
-- WHfB provides **single sign‑on (SSO)** to Microsoft Entra–integrated resources after device sign‑in.
-
-- WHfB is primarily a **device‑bound sign‑in method** linked to device trust.
-
+- Windows Hello for Business enables **device sign‑in** using **facial recognition, fingerprint, or PIN** protected by Windows Hello.
+- Windows Hello for Business provides **single sign‑on (SSO)** to Microsoft Entra–integrated resources after device sign‑in.
+- Windows Hello for Business is primarily a **device‑bound sign‑in method** linked to device trust.
 - Registration and authentication are **not** controlled by the **Entra Authentication Method's P*asskey (FIDO2) polic*y**.
 
 ### Microsoft Entra passkeys on Windows
 
 - Entra passkeys on Windows are **FIDO2 passkeys**.
-
 - They can be registered **without device join or registration**.
-
 - Users can register **multiple passkeys** for **multiple Entra accounts** on the same device.
-
 - Registration and authentication are controlled using **Entra Authentication Method's P*asskey (FIDO2) polic*y**.
 
 In the majority of cases, if a user has Windows Hello for Business credential, Microsoft Entra prevents them from also registering a passkey (FIDO2) for the same account in the same Windows Hello container to avoid user confusion.
