@@ -70,9 +70,7 @@ dotnet add package Microsoft.Identity.Web
 
 ## Create an agent identity
 
-Using the access token acquired in the previous step, you can now create agent identities in your test tenant. Agent identity creation might occur in response to many different events or triggers, such as a user selecting a button to create a new agent.
-<!--- This is so vague. --->
-We recommend you create one agent identity for each agent, but you might choose a different approach based on your needs.
+Using the access token acquired in the previous step, you can now create agent identities in your test tenant. Agent identity creation might occur in response to many different events or triggers, such as a user selecting a button to create a new agent. We recommend you create one agent identity for each agent, but you might choose a different approach based on your needs.
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 

@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 02/12/2026
+ms.date: 02/18/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
@@ -39,9 +39,6 @@ In this article, you use Microsoft Graph PowerShell or another client to create 
 
 The steps in this guide use all delegated permissions, but you can use application permissions for those scenarios that require them.
 
-To obtain an access token with all of the required permissions for Microsoft Graph, run the following command:
-<!--- Need this for Graph if possible --->
-
 To connect to all of the required scopes for Microsoft Graph PowerShell, run the following command:
 
 ```powershell
@@ -57,10 +54,8 @@ Microsoft Entra Agent ID is in preview, so some steps are managed on the on the 
     - `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`
 
 ## Create an agent identity blueprint
-<!--- Interesting to need to specify "human user" here. Thoughts? --->
-Agent identity blueprints must have an owner and a sponsor. These details provide the human user or group that's accountable for the agent and the user or group that can make changes to the agent identity blueprint.  For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
-This step gets the user ID of the current user and create an agent identity blueprint application.
+Agent identity blueprints must have an owner and a sponsor. These details provide the human user or group that's accountable for the agent and the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -93,13 +88,12 @@ After creating the agent identity blueprint, record the value of the `appId` for
 
 ### [Microsoft Graph PowerShell](#tab/powershell)
 
-This step creates the agent identity blueprint application, assigns an owner and sponsor, and includes the following distinct tasks:
+This step creates the agent identity blueprint application, using the current user as the owner and sponsor, and includes the following distinct tasks:
 
 - Connect to your tenant with `AgentIdentityBlueprint.Create` and `User.Read` scopes.
-- Add your display name and user ID as the sponsor and owner values for the agent identity blueprint. <!--- How can we revise this step so that it doesn't automatically put the user id in both places? How do we follow our own best practice in the sample? --->
+- Adds the current user as the sponsor and owner for the agent identity blueprint. 
 - Create the agent identity blueprint application.
 
-<!--- Break this step up so that it's two steps, and show adding two different IDs for owner/sponsor.--->
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create","User.Read" -TenantId <your-tenant-id>
 
@@ -130,7 +124,6 @@ $response
 After creating the agent identity blueprint, record the value of the `appId` from the output.
 
 ---
-
 
 ## Configure credentials for the agent identity blueprint
 
@@ -194,7 +187,7 @@ New-MgBetaApplicationFederatedIdentityCredential `
 
 ### Other app credentials
 
-Other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are also supported. These kinds of credentials aren't recommended for production, but can be convenient for local development and testing. To add a password credential:
+Other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are supported, but not recommended for production. They can be convenient for local development and testing but don't align with security best practices.
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -244,7 +237,7 @@ Write-Host "Secret Text: $($response.secretText)"
 
 Be sure to securely store the `passwordCredential` values generated. It can't be viewed after initial creation. You can also use client certificates as credentials; see [Add a certificate credential](/graph/api/application-addkey?tabs=http#example-3-add-a-certificate-credential-to-an-application).
 
-If the agents created with the blueprint will support interactive agents, where the agent acts on behalf of a user, your blueprint must expose a scope so that the agent front end can pass an access token to the agent backend that can be used by the agent backend to get an access token to act on behalf of the user. To expose a scope you need to define ... <!--- This note is from Kyle - need explanation on what to put here. --->
+If the agents created with the blueprint will support interactive agents, where the agent acts on behalf of a user, your blueprint must expose a scope so that the agent front end can pass an access token to the agent backend. This token can then be used by the agent backend to get an access token to act on behalf of the user.
 
 ## Configure identifier URI and scope
 
@@ -356,9 +349,8 @@ Invoke-MgGraphRequest -Method POST `
 
 ## Delete an agent identity blueprint
 
-When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you must first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal.
+When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you must first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
 
-<!--- For this step it makes sense to provide all the "prepare you environment" steps and connecting to scopes, because it could be a step done without all the previous steps. --->
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
