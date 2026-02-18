@@ -1,5 +1,5 @@
 ---
-title: Enable Microsoft Entra passkeys on Windows devices
+title: Enable Microsoft Entra passkeys on Windows devices (preview)
 description: Explains Microsoft Entra passkeys on Windows devices and how admins can enable them for work or school accounts for phishing-resistant multifactor authentication.
 #customer intent: As an administrator, I want to enable Microsoft Entra passkeys can users with work and school accouts can sign in by using phishing-resistant multifactor authentication.
 author: hanki77
@@ -11,37 +11,32 @@ ms.subservice: authentication
 ms.collection: msec-ai-copilot
 ---
 
-# Microsoft Entra Passkeys on Windows (Public Preview)
+# Microsoft Entra Passkeys on Windows (Preview)
 
-This article describes **Microsoft** **Entra** **passkeys on Windows** in public preview, how they work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
+This article describes **Microsoft Entra passkeys on Windows** in public preview. It covers how they work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
 
-This feature is currently in public preview and requires opt‑in. You need to explicitly configure Microsoft Entra passkeys on Windows to enable the preview of passkey registration in Windows Hello.
+**Microsoft Entra passkeys on Windows** are currently in public preview and require opt‑in. You need to explicitly configure Microsoft Entra passkeys on Windows to enable the preview of passkey registration in Windows Hello.
 
 ## Overview
 
-**Microsoft** **Entra passkeys on Windows** allow users to register **passkeys (FIDO2)** directly into their device's local **Windows Hello** container and use them to sign in to Microsoft Entra ID. Microsoft Entra passkeys on Windows enable phishing-resistant sign‑in by using a Windows Hello biometric or PIN without requiring the device to be Microsoft Entra joined or registered.
+**Microsoft Entra passkeys on Windows** allow users to register **passkeys (FIDO2)** directly into their device's local **Windows Hello** container and use them to sign in to Microsoft Entra ID. Microsoft Entra passkeys on Windows enable phishing-resistant sign‑in by using a Windows Hello biometric or PIN without requiring the device to be Microsoft Entra joined or registered.
 
 With this feature:
 
 - Users can register **passkeys (FIDO2)** in the local Windows Hello container.
-
-- Devices **do not need to be Microsoft** **Entra joined or registered** to use a local Windows passkey.
-
-- A single Windows PC can store **multiple passkeys** for **multiple Microsoft** **Entra accounts**.
-
-- Passkeys (FIDO2) registered in Windows Hello participate in **Microsoft** **Entra passkey (FIDO2) policies** and **passkey profiles**.
+- Devices **don't need to be joined or registered to Microsoft Entra** to use a local Windows passkey.
+- A single Windows PC can store **multiple passkeys** for **multiple Microsoft Entra accounts**.
+- Passkeys (FIDO2) registered in Windows Hello participate in **Microsoft Entra passkey (FIDO2) policies** and **passkey profiles**.
 
 ## How Microsoft Entra passkeys on Windows work
 
 Windows Hello acts as a **secure local credential container** on Windows devices. The container is protected by user‑presence verification such as:
 
 - PIN
-
 - Fingerprint
-
 - Facial recognition
 
-Microsoft Entra passkeys on Windows allow **passkeys** **(FIDO2)** to be created and stored inside this Windows Hello container and used for authentication to Microsoft Entra ID.
+Microsoft Entra passkeys on Windows allow **passkeys (FIDO2)** to be created and stored inside this Windows Hello container and used for authentication to Microsoft Entra ID.
 
 This behavior is also applicable when the device is governed by **Windows Hello for Business policies configured through Microsoft Intune**. However, **passkeys (FIDO2) are distinct from the Windows Hello for Business credentials** that may be automatically registered during device registration to Microsoft Entra ID.
 
