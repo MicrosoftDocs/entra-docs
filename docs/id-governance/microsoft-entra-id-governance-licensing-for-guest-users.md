@@ -19,7 +19,7 @@ Under the guest billing model, guests are identified by a userType of **Guest** 
 
 ## Billable governance features
 
-Guest users are only billed when they actively use features that are exclusive to Microsoft Entra ID Governance. Features included with Microsoft Entra P2 aren't billed. Additionally, if a guest doesn't take any active governance-related action during a month, such as in cases where access was auto-assigned in a prior month, they won't be billed for that month.
+Guest users are only billed when they actively use features that are exclusive to Microsoft Entra ID Governance. Microsoft Entra P2 features are not billed, and linking an Azure subscription is not required or enforced for P2 actions. Additionally, if a guest doesn't take any active governance-related action during a month, such as in cases where access was auto-assigned in a prior month, they won't be billed for that month.
 
 You can identify actions that will be billed to the Microsoft Entra ID Governance for guests add-on by looking at your audit logs. Specifically, each billable action has these properties included:
 
@@ -54,7 +54,7 @@ Governance guest billing only applies for users with a userType of **guest**, so
 
 If these users are brought in with a userType of **guest** they accrue to the meter, however you can avoid being charged by setting up
 or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest won't accrue to the
-billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide).
+billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide&preserve-view=true).
 
 ## Billing examples
 

@@ -20,6 +20,9 @@ After you add the MSA (live.com) as one of your user flow's sign-in options, cus
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - A Microsoft account (live.com). If you don't already have one, sign up at https://www.live.com/.
 
+> [!NOTE]
+> This feature is available only for users who sign up with a Microsoft account (MSA). It isn’t available for [B2B guest users](/entra/external-id/user-properties) invited to the tenant.
+
 ## Create a Microsoft account application
 
 To enable sign-in for users with a Microsoft account, you need to create an application in a Microsoft Entra ID tenant. The resource tenant for the application can be any Microsoft Entra ID tenant, like your workforce or external tenant.  
