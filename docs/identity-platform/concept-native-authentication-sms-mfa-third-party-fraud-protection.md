@@ -36,9 +36,9 @@ By validating device possession, the system mitigates fraud scenarios such as SI
 Risk evaluation occurs when SMS MFA is required during the authentication flow. Before an SMS challenge is issued, the native application triggers a reputation check through the third-party provider.
 Based on the evaluation, one of the following outcomes occurs:
 
-- Low or acceptable risk: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued.
-- High risk requiring extra verification: Device possession is verified before allowing the flow to continue.
-- High risk with failed evaluation: The sign-in attempt is blocked immediately, and no SMS challenge is sent.
+- **Low or acceptable risk**: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued.
+- **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.
+- **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent.
 
 This gating mechanism prevents unnecessary SMS delivery and reduces exposure to ATO and IRSF attacks.
 
