@@ -265,11 +265,6 @@ Known limitations for Internet Access include:
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
-- End-user notifications are in development.
-- Transport Layer Security (TLS) inspection is in development.
-- URL path-based filtering and URL categorization for HTTP and HTTPS traffic are in development.
-- User-friendly end-user notifications are in development.
-- URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
 
 ## B2B guest access (preview) limitations
