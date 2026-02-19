@@ -3,8 +3,6 @@ title: "Tutorial: Enforce secret and certificate standards using application man
 description: Learn how to enforce secret and certificate standards using application management policies in Microsoft Entra ID.
 author: garrodonnell
 ms.author: godonnell
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 03/12/2024
 zone_pivot_groups: enterprise-app-graph-ps-ms-graph
