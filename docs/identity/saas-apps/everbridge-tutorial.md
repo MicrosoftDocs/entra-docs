@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     a. In the **Identifier** box, enter a URL that follows the pattern.
     `https://sso.everbridge.net/<API_Name>`
 
-    b. In the **Reply URL** box, enter a URL that follows below pattern.
+    b. In the **Reply URL** box, enter a URL that follows the pattern.
     * If you are configuring an account level SSO, use
       `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
