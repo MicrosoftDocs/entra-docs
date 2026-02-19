@@ -68,10 +68,10 @@ Although both features use Windows Hello, **Microsoft Entra passkeys on Windows*
 
 ### Microsoft Entra passkeys on Windows
 
-- Entra passkeys on Windows are **FIDO2 passkeys**.
+- Microsoft Entra passkeys on Windows are **FIDO2 passkeys**.
 - They can be registered **without device join or registration**.
-- Users can register **multiple passkeys** for **multiple Entra accounts** on the same device.
-- Registration and authentication are controlled using **Entra Authentication Method's P*asskey (FIDO2) polic*y**.
+- Users can register **multiple passkeys** for **multiple Microsoft Entra accounts** on the same device.
+- Registration and authentication are controlled by using **Microsoft Entra Authentication Methods Passkey (FIDO2) policy**.
 
 In the majority of cases, if a user has Windows Hello for Business credential, Microsoft Entra prevents them from also registering a passkey (FIDO2) for the same account in the same Windows Hello container to avoid user confusion.
 
@@ -80,46 +80,34 @@ In the majority of cases, if a user has Windows Hello for Business credential, M
 | Standard base | FIDO2 | First-party (1P) protocol |
 | Registration | User-initiated, does not require device join or registration | Automatically provisioned on some Entra joined or registered devices during device registration |
 | Device sign-in and single sign-on (SSO) | N/A | Enables device sign‑in and SSO to Microsoft Entra–integrated resources after device sign‑in |
-| Passkey Type | Device-bound | Device-bound |
+| Passkey type | Device-bound | Device-bound |
 | Credential binding | Bound to the device and stored in the local Windows Hello container. Users can register multiple passkeys for multiple work or school accounts on the same device. | Primarily a device‑bound sign‑in method linked to device trust. The credential is tied only to the work or school account used to register the device. |
-| Management | Microsoft Entra ID Authentication methods policy | Microsoft IntuneGroup Policy |
+| Management | Microsoft Entra ID Authentication methods policy | Microsoft Intune<br>Group Policy |
 
-**Use cases**
+### Use cases
 
-**Use Windows Hello for Business when:**
+Many organizations use Windows Hello for Business for managed devices, and use Microsoft Entra passkeys on Windows to cover personal or unmanaged scenarios.
 
-- You manage **corporate owned, Entra joined or registered devices‑owned, Entra joined or registered devices**
-
-- You want **automatic credential provisioning** during device onboarding
-
-- You require tight coupling between **device identity and authentication**
-
-- You rely on existing Windows Hello for Business lifecycle and policy controls
-
-**Use Microsoft Entra passkeys on Windows when:**
+Use Microsoft Entra passkeys on Windows when:
 
 - You want **passkeys (FIDO2) stored locally on Windows**
-
 - Users sign in from **unregistered, personal, or shared devices**
-
 - Users access **multiple Microsoft Entra accounts from a single PC**
-
 - You want authentication governed by **passkey profiles**
-
 - You need a **standards based**, **phishing-resistant sign-in method** without device join**‑based‑resistant**
 
-> [!TIP]
-> Many organizations use both approaches: Windows Hello for Business for managed devices, and Microsoft Entra passkeys on Windows to cover personal or unmanaged scenarios.
+Use Windows Hello for Business when:
+
+- You manage **corporate owned, Entra joined or registered devices‑owned, Entra joined or registered devices**
+- You want **automatic credential provisioning** during device onboarding
+- You require tight coupling between **device identity and authentication**
+- You rely on existing Windows Hello for Business lifecycle and policy controls
 
 ## Attestation support
 
-**Attestation is not supported for Microsoft Entra passkeys on Windows during public preview.**
+Attestation isn't supported for Microsoft Entra passkeys on Windows during public preview. As a result, if **Enforce attestation** is enabled in a passkey profile **that allows Windows Hello AAGUIDs**, passkey registration attempts to Windows Hello **will fail**.
 
-As a result:
-
-- If **attestation enforcement** is enabled in a passkey profile **that allows Windows Hello AAGUIDs**, passkey registration attempts to Windows Hello **will fail**.
-
-In the Authentication Methods Policy in the Microsoft Entra admin center, ensure that **Enforce attestation** is set to No for any passkey profile that includes Windows Hello AAGUIDs during public preview.
+In the Authentication methods policy in the Microsoft Entra admin center, ensure that **Enforce attestation** is set to **No** for any passkey profile that includes Windows Hello AAGUIDs during public preview.
 
 ## How to configure passkeys on Windows
 
@@ -135,7 +123,7 @@ To enable registration, **all** of the following conditions must be met:
 
 ### Required configuration
 
-- You must \*\*explicitly\*\* include the Windows Hello AAGUIDs in an \*\*allow list\*\* in a **passkey profile**.
+- You must **explicitly** include the Windows Hello AAGUIDs in an allow list in a **passkey profile**.
 
 - **Attestation must not be enforced**.
 
