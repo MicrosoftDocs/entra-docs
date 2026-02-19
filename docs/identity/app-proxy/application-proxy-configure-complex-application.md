@@ -1,13 +1,8 @@
 ---
 title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 05/01/2025
-ms.author: kenwith
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 ---
@@ -90,6 +85,9 @@ To edit/update an application segment, select the application segment from the l
 > Single sign-on with Integrated Windows Authentication (IWA) doesn't support wildcard Service Principal Names (SPNs). For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
 
 ## DNS updates
+
+> [!IMPORTANT]
+> The CNAME instructions shown in the portal UI when editing an application segment might differ from the instructions in this section. For complex (wildcard) applications, always use the CNAME configuration described here, pointing to `tenant.runtime.msappproxy.net`, not the generic `.msappproxy.net` endpoint shown in the portal.
 
 When using custom domains, create a DNS entry with a CNAME record for the external URL. For example, point `*.adventure-works.com` to the external URL of the application proxy endpoint. For wildcard applications, point the CNAME record to the relevant external URL: `<yourAADTenantId>.tenant.runtime.msappproxy.net`.
 

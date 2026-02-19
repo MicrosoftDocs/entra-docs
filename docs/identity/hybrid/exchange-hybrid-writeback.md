@@ -30,5 +30,5 @@ You can enable the connect sync scenario through the installer.  By selecting cu
 - [Exchange hybrid writeback with cloud sync](cloud-sync/exchange-hybrid.md)
 - [Common scenarios](common-scenarios.md)
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Prerequisites](prerequisites.md)

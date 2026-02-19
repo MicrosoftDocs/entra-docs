@@ -48,7 +48,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Container Apps            | [Managed identities in Azure Container Apps](/azure/container-apps/managed-identity) |
 | Azure Container Instance        | [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)                                                                                          |
 | Azure Container Registry        | [Use an Azure-managed identity in ACR Tasks](/azure/container-registry/container-registry-tasks-authentication-managed-identity)                                                                       |
-| Azure CycleCloud                | [Using Managed Identities](/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8)    |
+| Azure CycleCloud                | [Using Managed Identities](/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8&preserve-view=true)    |
 | Azure AI services        | [Configure customer-managed keys with Azure Key Vault for Azure AI services](/azure/ai-services/encryption/cognitive-services-encryption-keys-portal)                                                                          |
 | Azure Data Box                  | [Use customer-managed keys in Azure Key Vault for Azure Data Box](/azure/databox/data-box-customer-managed-encryption-key-portal)                                                                                             |
 | Azure Data Explorer             | [Configure managed identities for your Azure Data Explorer cluster](/azure/data-explorer/configure-managed-identities-cluster?tabs=portal)                                                                                                     |

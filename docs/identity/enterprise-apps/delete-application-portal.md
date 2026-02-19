@@ -1,13 +1,8 @@
 ---
 title: Delete an enterprise application
 description: Delete an enterprise application in Microsoft Entra ID.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/06/2025
-ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange

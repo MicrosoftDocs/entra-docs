@@ -1,12 +1,10 @@
 ---
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 01/26/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: sumeetmittal
 ms.custom: sfi-image-nochange
 

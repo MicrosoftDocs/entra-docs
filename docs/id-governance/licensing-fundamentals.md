@@ -6,7 +6,6 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 06/26/2025
-ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals

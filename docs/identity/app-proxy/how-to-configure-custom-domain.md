@@ -1,13 +1,8 @@
 ---
 title: Custom domains in Microsoft Entra application proxy
 description: Configure and manage custom domains in Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 05/01/2025
-ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -109,6 +104,9 @@ To publish your app through application proxy with a custom domain:
 
        > [!IMPORTANT] 
        > Ensure that you're properly using a CNAME record that points to the *`msappproxy.net`* domain. Don't point records to IP addresses or server DNS names since they aren't static and might affect the resiliency of the service.
+
+    > [!NOTE]
+    > The CNAME record you create in this step is for the application's external URL hostname (for example, `expenses.contoso.com`), which is different from the TXT record you created during domain verification in step 6 (for example, `contoso.com`). Because these records are on different DNS names, they don't conflict with each other or with [RFC 1912](https://www.ietf.org/rfc/rfc1912.txt), which prohibits a CNAME from coexisting with other record types at the same name.
    
 11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *`msappproxy.net`* domain appears as an alias.
 
