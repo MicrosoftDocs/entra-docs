@@ -88,6 +88,8 @@
         "identity/conditional-access/**/*.yml": "shlipsey3",
         "identity/domain-services/**/*.md": "justinha",
         "identity/domain-services/**/*.yml": "justinha",
+        "identity/enterprise-apps/**/*.md": "omondiatieno",
+        "identity/enterprise-apps/**/*.yml": "omondiatieno",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -110,6 +112,8 @@
         "identity/conditional-access/**/*.yml": "sarahlipsey",
         "identity/domain-services/**/*.md": "justinha",
         "identity/domain-services/**/*.yml": "justinha",
+        "identity/enterprise-apps/**/*.md": "jomondi",
+        "identity/enterprise-apps/**/*.yml": "jomondi",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -132,6 +136,8 @@
         "identity/conditional-access/**/*.yml": "entra-id",
         "identity/domain-services/**/*.md": "entra-id",
         "identity/domain-services/**/*.yml": "entra-id",
+        "identity/enterprise-apps/**/*.md": "entra-id",
+        "identity/enterprise-apps/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
         "verified-id/**/*.yml": "entra-verified-id"
       },
@@ -146,8 +152,10 @@
         "identity/authentication/**/*.yml": "authentication",
         "identity/conditional-access/**/*.md": "conditional-access",
         "identity/conditional-access/**/*.yml": "conditional-access",
+        "identity/enterprise-apps/**/*.md": "enterprise-apps",
+        "identity/enterprise-apps/**/*.yml": "enterprise-apps",
         "identity/domain-services/**/*.md": "domain-services",
-        "identity/domain-services/**/*.yml": "domain-services"
+        "identity/domain-services/**/*.yml": "domain-services",
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",
@@ -166,8 +174,6 @@
         "id-protection/**/*.yml": "dougeby",
         "identity/**/*.md": "dougeby",
         "identity/**/*.yml": "dougeby",
-        "identity/enterprise-apps/**/*.md": "dougeby",
-        "identity/enterprise-apps/**/*.yml": "dougeby",
         "identity/saas-apps/**/*.md": "dougeby",
         "identity/saas-apps/**/*.yml": "dougeby",
         "permissions-management/**/*.md": "dougeby",
