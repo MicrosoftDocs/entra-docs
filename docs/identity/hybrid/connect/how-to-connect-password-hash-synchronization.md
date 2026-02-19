@@ -17,7 +17,7 @@ search.appverid:
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
 
 > [!NOTE]
-> The file which stores password hash synchronization should not be updated as changes to this file can cause sync failures to occur.
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 ## How password hash synchronization works
 The Active Directory domain service stores passwords in the form of a hash value representation, of the actual user password. A hash value is a result of a one-way mathematical function (the *hashing algorithm*). There's no method to revert the result of a one-way function to the plain text version of a password. 
