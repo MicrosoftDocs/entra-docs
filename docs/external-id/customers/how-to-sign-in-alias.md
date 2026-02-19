@@ -85,6 +85,7 @@ Follow these steps to add a username to an existing external user in the Microso
 # [Microsoft Graph API](#tab/graph-api)
 
 **Create users with username with the Microsoft Graph API**
+
 After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to [add a username](#add-a-username-to-existing-users-with-the-microsoft-graph-api) to an existing user.
 The following request example shows how to create a user with both email address and username as sign-in identifiers.
 
@@ -114,11 +115,11 @@ Content-type: application/json
 }
 ```
 
-### Add a username to existing users with the Microsoft Graph API**
+**Add a username to existing users with the Microsoft Graph API**
 
 You can also add a username to an existing external user.
 
-### Step 1: Get the user details
+**Step 1: Get the user details**
 
 Use `$filter` to get the user object, and `$select` to return the ID and `identities[]` properties. The following request example shows how to retrieve a user account using the email address as a sign-in identifier.
 
@@ -155,7 +156,7 @@ Content-type: application/json
 }
 ```
 
-### Step 2: Update the user details
+**Step 2: Update the user details**
 
 Once you have the user details from the query above, you can update the `identities[]` property of the user. You must replace the entire `identities[]` property of the user.
 
