@@ -149,6 +149,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
 - Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
 
+### Known issues
+
+See: [Synchronization fails after upgrade if miiserver.exe.config was previously modified](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified)
+
+
 ## 2.5.190.0
 
 > [!NOTE]
