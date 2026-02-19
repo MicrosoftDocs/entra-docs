@@ -299,7 +299,7 @@ For reference, this snippet is what it should look like:
 ```
 
 > [!NOTE]
-> if the file is changed sync failures will occur.
+> If the file is changed, sync failures will occur.
 
 For information about security and FIPS, see [Microsoft Entra password hash sync, encryption, and FIPS compliance](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/aad-password-sync-encryption-and-fips-compliance/ba-p/243709).
 
