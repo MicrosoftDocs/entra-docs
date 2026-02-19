@@ -1,13 +1,8 @@
 ---
 title: Add users, groups, or devices to an administrative unit
 description: Add users, groups, or devices to an administrative unit in Microsoft Entra ID
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: role-based-access-control
 ms.date: 01/03/2025
-ms.author: barclayn
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---

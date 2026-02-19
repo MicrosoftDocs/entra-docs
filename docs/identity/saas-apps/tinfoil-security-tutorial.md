@@ -140,7 +140,7 @@ In order to enable Microsoft Entra users to sign in to TINFOIL SECURITY, they mu
 
 **To get a user provisioned, perform the following steps:**
 
-1. If the user is a part of an Enterprise account, you need to [contact the TINFOIL SECURITY support team](https://www.tinfoilsecurity.com/contact) to get the user account created.
+1. If the user is a part of an Enterprise account, you need to contact the TINFOIL SECURITY support team to get the user account created.
 
 1. If the user is a regular TINFOIL SECURITY SaaS user, then the user can add a collaborator to any of the user’s sites. This triggers a process to send an invitation to the specified email to create a new TINFOIL SECURITY user account.
 

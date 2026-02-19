@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
     c. **Sign on URL**: Enter a URL that has the following pattern: `https://<CUSTOMER_LENSES_BASE_URL>`. An example is `https://lenses.my.company.com`.
 
     > [!NOTE]
-    > These values aren't real. Update them with the actual Identifier,Reply URL and Sign on URL of the base URL of your Lenses portal instance. See the [Lenses.io SSO documentation](https://docs.lenses.io/install_setup/configuration/security.html#single-sign-on-sso-saml-2-0) for more information.
+    > These values aren't real. Update them with the actual Identifier,Reply URL and Sign on URL of the base URL of your Lenses portal instance. See the Lenses.io SSO documentation for more information.
 
 1. On the **Set up single sign-on with SAML** page, go to the **SAML Signing Certificate** section. Find **Federation Metadata XML**, and then select **Download** to download and save the certificate on your computer.
 
@@ -101,14 +101,14 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 ## Configure Lenses.io SSO
 
-To configure SSO on the **Lenses.io** portal, install the downloaded **Federation Metadata XML** on your Lenses instance and [configure Lenses to enable SSO](https://docs.lenses.io/install_setup/configuration/security.html#configure-lenses).
+To configure SSO on the **Lenses.io** portal, install the downloaded **Federation Metadata XML** on your Lenses instance and configure Lenses to enable SSO.
 
 ### Create Lenses.io test group permissions
 
 1. To create a group in Lenses, use the **Object ID** of the **LensesUsers** group. This is the ID that you copied in the user [creation section](#create-an-azure-ad-test-user-and-group).
 1. Assign the desired permissions for B.Simon.
 
-For more information, see [Azure - Lenses group mapping](https://docs.lenses.io/install_setup/configuration/security.html#azure-groups).
+For more information, see Azure - Lenses group mapping.
 
 ## Test SSO
 

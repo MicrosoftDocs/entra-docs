@@ -104,7 +104,7 @@ You're now ready to configure SSO on Abstract:
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract.
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
 3. In the **Configure SSO** section, enter your **Metadata URL** and **Entity ID**.
 4. Enter any manual exceptions you might have. Emails listed in the manual exceptions section bypass SSO and be able to log in with email and password. 
@@ -117,9 +117,9 @@ You're now ready to configure SSO on Abstract:
 
 To test SSO on Abstract:
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
-3. Select **Test with my Account**. If the test fails, please [contact our support team](https://help.abstract.com/hc/).
+3. Select **Test with my Account**. If the test fails, please contact the Abstract support team.
 
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract. This organization Admin account needs to be assigned to Abstract.

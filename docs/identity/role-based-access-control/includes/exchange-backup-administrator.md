@@ -1,13 +1,9 @@
 ---
 title: Exchange Backup Administrator
 description: Exchange Backup Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 Assign the Exchange Backup Administrator role to users who need to do the following tasks:
 - Manage all aspects of Microsoft 365 Backup for Exchange Online

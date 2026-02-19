@@ -5,7 +5,7 @@ author: shlipsey3
 
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/12/2025
 ms.author: sarahlipsey
 ms.reviewer: krbain

@@ -5,7 +5,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 05/20/2025
 ms.author: jricketts
 ms.custom: sfi-ropc-nochange

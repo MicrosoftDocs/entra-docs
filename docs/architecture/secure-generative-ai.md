@@ -6,7 +6,7 @@ ms.author: gasinh
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: article
+ms.topic: best-practice
 ms.date: 06/20/2025
 ms.reviewer: joflore
 ms.custom: sfi-ga-nochange

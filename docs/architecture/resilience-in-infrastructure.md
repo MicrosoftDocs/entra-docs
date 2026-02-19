@@ -4,7 +4,7 @@ description: A guide for architects and IT administrators on building resilience
 author: janicericketts
 ms.service: entra
 ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/16/2022
 ms.author: jricketts
 ---

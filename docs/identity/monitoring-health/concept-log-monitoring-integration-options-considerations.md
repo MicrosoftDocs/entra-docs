@@ -4,7 +4,7 @@ description: Introduction to the options and considerations for integrating Micr
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.subservice: monitoring-health
 ms.date: 05/27/2025
 ms.author: sarahlipsey
