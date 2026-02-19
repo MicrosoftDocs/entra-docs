@@ -90,6 +90,8 @@
         "identity/domain-services/**/*.yml": "justinha",
         "identity/enterprise-apps/**/*.md": "omondiatieno",
         "identity/enterprise-apps/**/*.yml": "omondiatieno",
+        "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
+        "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -114,6 +116,8 @@
         "identity/domain-services/**/*.yml": "justinha",
         "identity/enterprise-apps/**/*.md": "jomondi",
         "identity/enterprise-apps/**/*.yml": "jomondi",
+        "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
+        "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -138,6 +142,8 @@
         "identity/domain-services/**/*.yml": "entra-id",
         "identity/enterprise-apps/**/*.md": "entra-id",
         "identity/enterprise-apps/**/*.yml": "entra-id",
+        "identity/managed-identities-azure-resources/**/*.md": "entra-id",
+        "identity/managed-identities-azure-resources/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
         "verified-id/**/*.yml": "entra-verified-id"
       },
@@ -152,10 +158,12 @@
         "identity/authentication/**/*.yml": "authentication",
         "identity/conditional-access/**/*.md": "conditional-access",
         "identity/conditional-access/**/*.yml": "conditional-access",
+        "identity/domain-services/**/*.md": "domain-services",
+        "identity/domain-services/**/*.yml": "domain-services",
         "identity/enterprise-apps/**/*.md": "enterprise-apps",
         "identity/enterprise-apps/**/*.yml": "enterprise-apps",
-        "identity/domain-services/**/*.md": "domain-services",
-        "identity/domain-services/**/*.yml": "domain-services"
+        "identity/managed-identities-azure-resources/**/*.md": "managed-identities",
+        "identity/managed-identities-azure-resources/**/*.yml": "managed-identities"
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",

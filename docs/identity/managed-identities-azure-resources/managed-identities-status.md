@@ -1,14 +1,8 @@
 ---
 title: Azure Services and resources with managed identities
 description: Explore Azure services and resource types supporting managed identities for secure, credential-free authentication.
-
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 05/09/2025
 ms.topic: article
-ms.service: entra-id
-ms.subservice: managed-identities
-manager: CelesteDG
 
 #Customer intent: As an Azure admin or developer, I want to identify which Azure services support managed identities so that I can securely configure authentication for my resources.
 ---
