@@ -2,14 +2,8 @@
 title: Overview of admin consent workflow
 description: Learn how to manage the admin consent workflow, email notifications and audit logs related to consent requests.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: concept-article
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps

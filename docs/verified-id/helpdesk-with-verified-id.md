@@ -7,7 +7,6 @@ manager: femila
 ms.service: entra-verified-id
 ms.topic: concept-article
 ms.date: 12/13/2024
-ms.author: barclayn
 ---
 
 

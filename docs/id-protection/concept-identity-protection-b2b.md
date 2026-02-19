@@ -4,9 +4,6 @@ description: Learn how to use Microsoft Entra ID Protection for B2B users to sec
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 08/06/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---

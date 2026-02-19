@@ -4,9 +4,6 @@ description: How can users self-remediate risk when administrators allow it? Wha
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/30/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---

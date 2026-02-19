@@ -5,7 +5,7 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: how-to
-ms.date: 06/12/2025
+ms.date: 02/09/2026
 
 ms.author: sarahlipsey
 author: shlipsey3
@@ -19,7 +19,7 @@ ms.reviewer: jadedsouza
 
 The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score changes over time. 
 
-![Screenshot of the Recommendations page with the Secure Score details highlighted.](./media/concept-identity-secure-score/secure-score-overview.png)
+:::image type="content" source="media/concept-identity-secure-score/secure-score-overview.png" alt-text="Screenshot of the Recommendations page with the Secure Score details highlighted." lightbox="media/concept-identity-secure-score/secure-score-overview.png":::
 
 ## Prerequisites
 
@@ -68,13 +68,13 @@ Every 24 hours, we look at your security configuration and compare your settings
 To access the Identity Secure Score:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Entra ID** > **Identity Secure Score** to view the dashboard.
+1. Browse to **Entra ID** > **Identity Secure Score** to view the dashboard or **Entra ID** > **Overview** > **Recommendations**. Select the **Security** filter option to see only those recommendations that are included in the Identity Secure Score.
 
-The score and related recommendations are also found at **Entra ID** > **Overview** > **Recommendations**.
+:::image type="content" source="media/concept-identity-secure-score/recommendations-secure-score.png" alt-text="Screenshot of the Entra recommendations with the Secure Score filter highlighted." lightbox="media/concept-identity-secure-score/recommendations-secure-score.png":::
 
 Each recommendation is measured based on your configuration. If you're using non-Microsoft products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You might set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
 
-![Screenshot of the improvement action panel.](./media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png)
+:::image type="content" source="media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png" alt-text="Screenshot of the improvement action panel." lightbox="media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png":::
 
 - **To address** - You recognize that the improvement action is necessary and plan to address it at some point in the future. This state also applies to actions that are detected as partially, but not fully completed.
 - **Risk accepted** - Security should always be balanced with usability, and not every recommendation works for everyone. When that is the case, you can choose to accept the risk, or the remaining risk, and not enact the improvement action. You aren't awarded any points, and the action isn't visible in the list of improvement actions. You can view this action in history or undo it at any time.

@@ -2,7 +2,6 @@
 title: What's new in multitenant organization documentation
 description: Learn about the new features and documentation improvements in multitenant organizations for Microsoft Entra ID.
 author: kenwith
-manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview

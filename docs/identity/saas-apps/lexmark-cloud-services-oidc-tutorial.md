@@ -54,7 +54,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  
     1. Select **Go to application**.
  
-        [![Screenshot of showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
+        [![Screenshot of showing the identity configuration.](media/lexmark-oidc-tutorial/go-to-application.png)](media/lexmark-oidc-tutorial/go-to-application.png#lightbox)
  
     1. Copy **Application (client) ID**. You'll use it later in the Lexmark Cloud Services (OIDC) SSO configuration.
  
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Go to **Client secrets** tab and select **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
  
-        [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
+        [![Screenshot of showing the client secrets value.](media/lexmark-oidc-tutorial/client-secret.png)](media/lexmark-oidc-tutorial/client-secret.png#lightbox)
  
     1. Once you add a client secret, **Value** is generated. Copy the value. You'll use it later in the Lexmark Cloud Services (OIDC) SSO configuration.
  

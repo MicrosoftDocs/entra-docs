@@ -3,7 +3,6 @@ title: Find a Microsoft services partner
 description: Learn how you can adopt Microsoft's Security Service Edge (SSE) solution via Microsoft services partners.
 author: ccmartins
 ms.author: cammart
-ms.service: global-secure-access
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 07/01/2024
 

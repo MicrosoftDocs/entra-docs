@@ -179,7 +179,7 @@
 - name: Reference
   items:
   - name: Microsoft Graph API  
-    href: /graph/api/resources/azure-ad-overview
+    href: /graph/api/resources/identity-network-access-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
   - name: Microsoft Entra service limits

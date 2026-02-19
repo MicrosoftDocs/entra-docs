@@ -3,12 +3,8 @@ title: Admin API for managing Microsoft Entra Verified ID
 titleSuffix: Microsoft Entra Verified ID
 description: Learn how to manage your verifiable credential deployment using Admin API.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
-ms.author: barclayn
 ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I am trying to learn how to use the Admin API and automate my tenant.
 ---

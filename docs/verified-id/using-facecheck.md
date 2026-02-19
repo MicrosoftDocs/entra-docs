@@ -1,10 +1,6 @@
 ---
 title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
-ms.service: entra-verified-id
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025
 ms.custom: sfi-image-nochange

@@ -3,7 +3,6 @@ title: Call custom APIs from an agent using .NET
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call custom protected APIs from an agent using different approaches including IDownstreamApi, MicrosoftIdentityMessageHandler, and IAuthorizationHeaderProvider.
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025

@@ -9,7 +9,6 @@ ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation

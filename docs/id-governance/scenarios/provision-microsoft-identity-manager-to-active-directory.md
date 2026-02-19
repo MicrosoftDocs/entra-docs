@@ -7,7 +7,6 @@ ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice:
-ms.author: owinfrey
 ---
 
 # Govern on-premises users that are provisioned to Active Directory with Microsoft Identity Manager.

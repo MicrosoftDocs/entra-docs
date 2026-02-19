@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/25/2025
+ms.date: 02/09/2026
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 ---
@@ -27,10 +27,8 @@ Scenario monitoring and SLA Attainment are available in the Microsoft Entra Heal
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
-
-The page opens to the SLA Attainment page.
-
-:::image type="content" source="media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/concept-microsoft-entra-health/identity-health-landing-page-attainment-expanded.png":::
+    - The **Health Monitoring** tab contains a summary of the signals and alerts on the available health scenarios.
+    - The **SLA Attainment** tab displays the user authentication availability for Microsoft Entra ID per month. For more informtion, see [SLA performance for Microsoft Entra ID](reference-sla-performance.md).
 
 ## How Microsoft Entra Health monitoring (preview) works
 

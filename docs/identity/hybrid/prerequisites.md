@@ -67,5 +67,5 @@ For more information on the Microsoft Entra Connect accounts, see [Microsoft Ent
 ## Next steps
 - [Common scenarios](common-scenarios.md)
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)
