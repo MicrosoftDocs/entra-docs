@@ -1728,7 +1728,11 @@
       - name: Lexmark cloud services
         href: lexmark-cloud-services-tutorial.md
       - name: Lexmark cloud services oidc
-        href: lexmark-cloud-services-oidc-tutorial.md      
+        href: lexmark-cloud-services-oidc-tutorial.md
+      - name: Lexmark Cloud Services (SAML) - User Provisioning 
+        href: lexmark-cloud-services-provisioning-saml-tutorial.md
+      - name: Lexmark Cloud Services (OIDC) - User Provisioning
+        href: lexmark-cloud-services-provisioning-oidc-tutorial.md  
       - name: M-Files
         href: m-files-tutorial.md
       - name: Mail Luck!
