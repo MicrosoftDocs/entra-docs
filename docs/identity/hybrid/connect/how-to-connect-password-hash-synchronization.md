@@ -302,7 +302,7 @@ For reference, this snippet is what it should look like:
 ```
 
 > [!NOTE]
-> If the file changes, sync failures will occur.
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 For information about security and FIPS, see [Microsoft Entra password hash sync, encryption, and FIPS compliance](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/aad-password-sync-encryption-and-fips-compliance/ba-p/243709).
 
