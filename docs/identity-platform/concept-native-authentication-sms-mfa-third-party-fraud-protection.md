@@ -4,7 +4,7 @@ description: Learn how third-party fraud protection integrates with native authe
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.date: 02/18/2026
+ms.date: 02/19/2026
 ms.service: identity-platform
 ms.topic: concept-article
 #Customer intent: As a software developer, I want to understand how third-party fraud protection integrates with native authentication flows to assess risk and protect SMS-based multifactor authentication from account takeover threats.
