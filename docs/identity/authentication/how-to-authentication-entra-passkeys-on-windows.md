@@ -1,7 +1,7 @@
 ---
 title: Enable Microsoft Entra passkeys on Windows devices (preview)
 description: Explains Microsoft Entra passkeys on Windows devices and how admins can enable them for work or school accounts for phishing-resistant multifactor authentication.
-#customer intent: As an administrator, I want to enable Microsoft Entra passkeys can users with work and school accouts can sign in by using phishing-resistant multifactor authentication.
+#customer intent: As an administrator, I want to enable Microsoft Entra passkeys can users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
 author: hanki71
 ms.author: justinha
 ms.date: 02/18/2026
@@ -94,11 +94,11 @@ Use Microsoft Entra passkeys on Windows when:
 - Users sign in from **unregistered, personal, or shared devices**
 - Users access **multiple Microsoft Entra accounts from a single PC**
 - You want authentication governed by **passkey profiles**
-- You need a **standards based**, **phishing-resistant sign-in method** without device join**‑based‑resistant**
+- You need a **standards based**, **phishing-resistant sign-in method** without device join
 
 Use Windows Hello for Business when:
 
-- You manage **corporate owned, Entra joined or registered devices‑owned, Entra joined or registered devices**
+- You manage **corporate owned, Entra joined or registered devices**
 - You want **automatic credential provisioning** during device onboarding
 - You require tight coupling between **device identity and authentication**
 - You rely on existing Windows Hello for Business lifecycle and policy controls
@@ -113,20 +113,17 @@ In the Authentication methods policy in the Microsoft Entra admin center, ensure
 
 During public preview, Microsoft Entra passkeys on Windows require an Authentication Policy Administrator to **explicitly opt in**.
 
-To enable registration, **all** of the following conditions must be met:
+To enable registration, **all** of the following prerequisites and configuration requirements must be met.
 
 ### Prerequisites
 
 - Windows 10 or Windows 11
-
 - Device must be capable of Windows Hello
 
 ### Required configuration
 
 - You must **explicitly** include the Windows Hello AAGUIDs in an allow list in a **passkey profile**.
-
 - **Attestation must not be enforced**.
-
 - **Key restrictions must be enabled**.
 
 :::image type="content" source="media/how-to-authentication-entra-passkeys-on-windows/passkey-profile.png" alt-text="Screenshot of the passkey profile configuration settings showing Windows Hello AAGUIDs configuration options.":::
@@ -138,11 +135,9 @@ To enable registration, **all** of the following conditions must be met:
 
 **Question**: Do Microsoft Entra passkeys on Windows replace Windows Hello for Business?
 
-**Answer**: No. Microsoft Entra passkeys on Windows don't replace Windows Hello for Business.
+**Answer**: No. Microsoft Entra passkeys on Windows don't replace Windows Hello for Business. Windows Hello for Business remains the recommended solution for **corporate managed, Microsoft Entra joined or registered devices**. Microsoft Entra passkeys on Windows complement Windows Hello for Business by enabling **passkeys (FIDO2)** on Windows in scenarios where devices are **not joined or registered** in Microsoft Entra ID.
 
-Windows Hello for Business remains the recommended solution for **corporate managed, Entra joined or registered devices**. Microsoft Entra passkeys on Windows complement Windows Hello for Business by enabling **passkeys (FIDO2)** on Windows in scenarios where devices are **not joined or registered**.**‑managed, Entra joined or registered devices**
-
-**Question**: Is Microsoft Entra passkey synced?
+**Question**: Are Microsoft Entra passkeys synced?
 
 **Answer**: No. Microsoft Entra passkeys on Windows are **device-bound** and stored in the local Windows Hello container. They **aren't synced** across devices. Each device requires a separate passkey registration for each work or school account.
 
