@@ -5,7 +5,7 @@ description: This article describes the prerequisites required to integrate with
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 09/29/2025
 ms.subservice: hybrid

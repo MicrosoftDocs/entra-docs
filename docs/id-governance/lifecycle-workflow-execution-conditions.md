@@ -3,7 +3,7 @@ title: Lifecycle workflow execution conditions and scheduling
 description: Conceptual article about Lifecycle workflows execution conditions.
 ms.subservice: lifecycle-workflows
 ms.workload: identity
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/25/2024
 ms.custom: template-concept 
 ---
