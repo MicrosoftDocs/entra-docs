@@ -5,7 +5,7 @@ author: omondiatieno
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.date: 04/09/2025
-ms.topic: article
+ms.topic: concept-article
 ms.service: entra-id
 manager: mwongerapk
 ms.custom: sfi-image-nochange
