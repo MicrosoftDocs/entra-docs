@@ -280,7 +280,7 @@ $scope = @{
     value = "access_agent"
 }
 
-Update-MgApplication -ApplicationId $AppId `
+Update-MgBetaApplication -ApplicationId $AppId `
     -IdentifierUris @($IdentifierUri) `
     -Api @{ oauth2PermissionScopes = @($scope) }
 ```
