@@ -59,7 +59,7 @@ How the Global Secure Access client selects a tenant depends on platform and Mic
 | Windows Microsoft Entra Registered device | User selects a tenant at first sign-in; remains connected to that tenant. | ❌ | ❌ | ❌ | ✅ | Cannot switch to other registered tenants for now. Allows user to switch to a resource tenant using external user access(B2B). |
 | MacOS Microsoft Entra Registered device with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Uses Company Portal to Entra register the device. |
 | Android Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, entra registration can be done with Company portal and Authenticator app. |
-| iOS Microsoft Entra Registered without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. Unmanaged devices are not supported as of now. |
+| iOS Microsoft Entra Registered with device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. Unmanaged devices are not supported as of now. |
 
 ### Summary
 - ✅ Device join takes precedence on Windows.

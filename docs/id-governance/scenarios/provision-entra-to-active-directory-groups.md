@@ -2,7 +2,9 @@
 title: 'Govern on-premises Active Directory based apps (Kerberos) with Microsoft Entra Cloud Sync'
 description: This article a tutorial on how to provision users and groups from and managed in Microsoft Entra ID to Active Directory.
 author: justinha
-ms.topic: article
+manager: dougeby
+ms.service: entra-id-governance
+ms.topic: how-to
 ms.date: 06/09/2025
 ms.subservice:
 ms.author: justinha

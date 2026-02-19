@@ -3,8 +3,6 @@ title: Migrate Okta federation to Microsoft Entra authentication
 description: Migrate Okta-federated applications to managed authentication under Microsoft Entra ID. See how to migrate federation in a staged manner.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh

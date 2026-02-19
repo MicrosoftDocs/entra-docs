@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi

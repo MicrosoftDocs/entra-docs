@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure GaggleAMP SSO
 
-1. In another browser instance, navigate to the SAML SSO page created for you by the Gaggle support team (for example: *https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit*).
+1. In another browser instance, navigate to the SAML SSO page created for you by the Gaggle support team (for example: `https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit`).
 
 2. On your **SAML SSO** page, perform the following steps:  
    

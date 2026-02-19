@@ -1,7 +1,10 @@
 ---
 title: 'Govern cloud users that are provisioned from and managed in Workday.'
 description: This article a tutorial on how to provision users and groups from and managed in Workday.
-ms.topic: article
+author: owinfreyATL
+manager: femila
+ms.service: entra-id-governance
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice:
 ---
