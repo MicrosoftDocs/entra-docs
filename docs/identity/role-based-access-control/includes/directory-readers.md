@@ -1,13 +1,9 @@
 ---
 title: Directory Readers
 description: Directory Readers
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users in this role can read basic directory information. This role should be used for:

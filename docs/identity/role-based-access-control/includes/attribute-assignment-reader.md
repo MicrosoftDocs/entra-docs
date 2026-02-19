@@ -1,13 +1,9 @@
 ---
 title: Attribute Assignment Reader
 description: Attribute Assignment Reader
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.
