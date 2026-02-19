@@ -34,13 +34,11 @@ To enable username as a sign-in identifier, first enable the sign-in identifier 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" alt-text="Settings icon" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Sign-in identifiers** either from **Entra ID** > **External Identities** or from **Entra ID** > **Authentication methods**.
-1. On the **Sign-in identifiers** page, enable **Username** as a sign-in identifier.
+1. On the **Sign-in identifiers** page, enable **Username** as a sign-in identifier by choosing **Default regex**, which accepts any string, or specifying up to two custom regular expression patterns for stricter validation. If any pattern matches, the username is considered valid. Note that there is no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Authentication may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
 
    :::image type="content" source="media/how-to-sign-in-alias/signin-identifiers.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/signin-identifiers.png":::
 
 1. Select **Save** at the top of the page.
-
-1. **(Optional)** You can also enable custom username validation with a custom regex pattern. To do this, enter a custom regex value, select **Enable**, and then select **Save** to enable the custom validation.
 
 ## Create and update users with username
 
@@ -48,7 +46,7 @@ Once you enable username as a sign-in identifier, you can create new users with 
 
 # [Microsoft Entra admin center](#tab/admin-center)
 
-**Create users with username in the admin center**
+### Create users with username in the admin center
 
 You can create external users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API. This section describes creating users in the Microsoft Entra admin center.
 
@@ -66,7 +64,7 @@ You can create external users with both email address and username as sign-in id
 
 1. Select **Review + create** to create the user.
 
-**Update existing users to add a username in the admin center**
+### Update existing users to add a username in the admin center
 
 Follow these steps to add a username to an existing external user in the Microsoft Entra admin center. Username can only be added to external users with email and password accounts.
 
@@ -84,7 +82,7 @@ Follow these steps to add a username to an existing external user in the Microso
 
 # [Microsoft Graph API](#tab/graph-api)
 
-**Create users with username with the Microsoft Graph API**
+### Create users with username with the Microsoft Graph API
 
 After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers.
 The following request example shows how to create a user with both email address and username as sign-in identifiers.
@@ -115,7 +113,7 @@ Content-type: application/json
 }
 ```
 
-**Add a username to existing users with the Microsoft Graph API**
+### Add a username to existing users with the Microsoft Graph API
 
 You can also add a username to an existing external user.
 
@@ -156,7 +154,7 @@ Content-type: application/json
 }
 ```
 
-**Step 2: Update the user details**
+### Step 2: Update the user details
 
 Once you have the user details from the query above, you can update the `identities[]` property of the user. You must replace the entire `identities[]` property of the user.
 
