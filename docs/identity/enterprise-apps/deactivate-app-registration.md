@@ -28,6 +28,8 @@ Before you can deactivate an application, ensure you meet the following requirem
 - One of the following Microsoft Entra roles:
     - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)  
     - [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator)
+- OR a custom role with the following action:
+    - `microsoft.directory/applications/disablement/update`
 - The following API permissions if using Microsoft Graph:
     - `Application.ReadWrite.All` (delegated or application)
     - `Application.ReadWrite.OwnedBy` (application, for owned apps only)
@@ -70,11 +72,12 @@ The following table outlines the different approaches in more detail:
 
 ## Deactivate an application
 
-To deactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
+To deactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role or a custom role with the `microsoft.directory/applications/disablement/update` action.
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
-1. Navigate to the Microsoft Entra admin center –> **App Registrations** pane.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to  **App registrations**.
 1. Locate the app that needs deactivating from your list of registered apps.
 1. Once you have identified the app to deactivate, select the **Deactivate** button on its app registration page.
 1. Review the information provided in the **Deactivate app registration** pane before selecting the second **Deactivate** button.
@@ -134,7 +137,8 @@ You can view deactivated applications to monitor their status and track which ap
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
-1. Navigate to the Microsoft Entra admin center –> **App Registrations** pane.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to  **App registrations**.
 1. Select the **Deactivated applications** tab.
 1. Alternatively, navigate to the **Enterprise apps** pane and check on a given enterprise app under **Manage** -> **Properties** -> **Activation status**.
 
@@ -167,11 +171,12 @@ Based on your investigation, take appropriate action such as escalating to secur
 
 ## Reactivate an application
 
-To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role.
+To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role or a custom role with the `microsoft.directory/applications/disablement/update` action.
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
-1. Navigate to the Microsoft Entra admin center –> **App Registrations** pane.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to  **App registrations**.
 1. Select the **Deactivated applications** tab to locate the deactivated app you want to reactivate.
 1. Select the deactivated application from the list.
 1. On the app registration page, select the **Reactivate** button.
@@ -208,7 +213,7 @@ To reactivate an application using Microsoft Graph API or Microsoft Entra admin 
 
 ## Prevent reactivation by nonadministrators
 
-Before deactivating the application, remove all owners from the application. This ensures only users with at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role scope can reactivate the application.
+Before deactivating the application, remove all owners from the application. This ensures only users with at least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role or a custom role with the `microsoft.directory/applications/disablement/update` action can reactivate the application.
 
 ## Audit deactivation and reactivation
 

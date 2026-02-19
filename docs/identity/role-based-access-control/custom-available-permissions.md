@@ -141,6 +141,10 @@ Allows the ability to update the certificates and client secrets properties on s
 
 Grants the same permissions as microsoft.directory/applications/credentials/update, but only for single-tenant applications.
 
+#### microsoft.directory/applications/disablement/update
+
+Allows the ability to update whether an application is enabled for users to sign in.
+
 #### microsoft.directory/applications/owners/update
 
 Allows the ability to update the owner property on single-tenant and multitenant. Grants access to all fields on the application registration owners page:
