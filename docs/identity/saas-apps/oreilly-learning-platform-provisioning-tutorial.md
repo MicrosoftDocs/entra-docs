@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 Before you begin to configure the O'Reilly learning platform to support provisioning with Microsoft Entra ID, you’ll need to generate a SCIM API token within the O’Reilly Admin Console.
 
-1. Navigate to [O’Reilly Admin Console](https://learning.oreilly.com/) by logging in to your O’Reilly account. 
+1. Navigate to O'Reilly Admin Console by logging in to your O'Reilly account.
 1. Once you’ve logged in, select **Admin** in the top navigation and select **Integrations**.
 1. Scroll down to the **API tokens** section. Under API tokens, select **Create token** and select the **SCIM API**. Then give your token a name and expiration date, and select Continue. You’ll receive your API key in a pop-up message prompting you to store a copy of it in a secure place. Once you’ve saved a copy of your key, select the checkbox and Continue.
 1. You use the O’Reilly SCIM API token in Step 5.

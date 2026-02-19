@@ -2,7 +2,7 @@
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
 ms.custom: no-azure-ad-ps-ref
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/03/2025
 ---
 

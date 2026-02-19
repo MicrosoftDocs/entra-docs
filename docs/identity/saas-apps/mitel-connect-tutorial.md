@@ -135,7 +135,7 @@ To configure MiCloud Connect with SSO for Microsoft Entra ID, it's easiest to op
 
 In this section, you create a user named Britta Simon on your MiCloud Connect account. Users must be created and activated before using single sign-on.
 
-For details about adding users in the Mitel Account portal, see the [Adding a User](https://shoretelcommunity.force.com/s/article/Adding-Users-092815) article in the Mitel Knowledge Base.
+For details about adding users in the Mitel Account portal, see the Adding a User article in the Mitel Knowledge Base.
 
 Create a user on your MiCloud Connect account with the following details:
 

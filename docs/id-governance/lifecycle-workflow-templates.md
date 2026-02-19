@@ -2,7 +2,7 @@
 title: Lifecycle Workflows templates and categories
 description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/25/2025
 ms.custom: template-concept
 ---

@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 11/06/2025
 ms.author: barclayn
 ms.custom: it-pro
