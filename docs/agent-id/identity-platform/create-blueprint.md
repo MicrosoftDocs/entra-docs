@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 02/18/2026
+ms.date: 02/19/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
@@ -28,6 +28,8 @@ This guide walks you through creating an agent identity blueprint using the Micr
 
 ## Prepare your environment
 
+To streamline the process, take a few moments to get your environment set up for the right permissions and the beta version.
+
 ### Authorize a client to create agent identity blueprints
 
 In this article, you use Microsoft Graph PowerShell or another client to create your agent identity blueprint. You must authorize this client to create and configure an agent identity blueprint and create an agent identity blueprint principal. The client requires the following Microsoft Graph permissions:
@@ -47,7 +49,7 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 ### Use the beta version
 
-Microsoft Entra Agent ID is in preview, so some steps are managed on the on the `/beta` endpoint of the Microsoft Graph API or require the beta version of the PowerShell module.
+Microsoft Entra Agent ID is in preview, so some steps are managed on the `/beta` endpoint of the Microsoft Graph API or require the beta version of the PowerShell module.
 
 - For Microsoft Graph, ensure the version is set to beta.
 - For PowerShell, install the beta version of the module using the following command:
@@ -311,7 +313,7 @@ Update-MgBetaApplication -ApplicationId $AppId `
 
 ## Create an agent blueprint principal
 
-In this step you create a principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
+In this step, you create a principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -333,7 +335,7 @@ Authorization: Bearer <token>
 
 After creating the agent identity blueprint, create an agent identity blueprint principal using the newly created agent identity blueprint `appId`.
 
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create","User.Read", "AgentIdentityBlueprintPrincipal.Create" -TenantId `<your-tenant-id>`
+Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "User.Read", "AgentIdentityBlueprintPrincipal.Create" -TenantId `<your-tenant-id>`
 
 
 ```powershell
@@ -356,6 +358,8 @@ When an agent is decommissioned or deleted, the associated agent identity bluepr
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
+To send this request, you need the permission `AgentIdentityBlueprint.DeleteRestore.All`.
+
 ```http
 DELETE https://graph.microsoft.com/beta/applications/<agent-blueprint-id>
 OData-Version: 4.0
@@ -368,7 +372,7 @@ Authorization: Bearer <token>
 This step currently requires the beta version of the module and includes the following distinct tasks:
 
 - Install the beta version of the required module.
-- Connect to your tenant with the ?? scope.
+- Connect to your tenant with the `AgentIdentityBlueprint.DeleteRestore.All` scope.
 - Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
 
 ```powershell
