@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID Protection for B2B Users
 description: Learn how to use Microsoft Entra ID Protection for B2B users to secure your organization. Discover benefits and steps to unblock accounts.
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/06/2025
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange

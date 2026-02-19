@@ -7,7 +7,6 @@ ms.service: entra-id
 ms.topic: concept-article
 ms.subservice: role-based-access-control
 ms.date: 06/04/2025
-ms.author: barclayn
 ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
 
