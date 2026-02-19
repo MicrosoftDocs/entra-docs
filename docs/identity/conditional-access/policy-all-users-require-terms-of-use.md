@@ -3,7 +3,6 @@ title: Require Terms of Use at sign-in to Microsoft Admin Portals
 description: How to require terms of use acceptance before access to selected cloud apps is granted with Microsoft Entra Conditional Access.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: 
 ---
 # Require terms of use to be accepted before accessing Microsoft Admin Portals

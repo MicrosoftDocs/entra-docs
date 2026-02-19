@@ -235,7 +235,7 @@ Prior to including API permissions in an access package, ensure that the access 
 :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
 > [!NOTE]
-> Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
+> Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta&preserve-view=true#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
 
 ## Add a SAP IAG access right (Preview)
 

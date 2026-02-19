@@ -39,7 +39,7 @@ The following short video provides an excellent overview of Microsoft Entra Clou
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
 ## Choose the right sync client
-To determine if cloud sync is right for your organization, use the following link. It takes you to a tool that helps you evaluate your synchronization needs. For more information, evaluate your options using the [Wizard to evaluate sync options](https://aka.ms/EvaluateSyncOptions)
+To determine if cloud sync is right for your organization, review the supported sync scenarios. For more information, evaluate your options using the [supported sync scenarios comparison](../common-scenarios.md)
 
 
 <a name='comparison-between-azure-ad-connect-and-cloud-sync'></a>
@@ -90,7 +90,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for US Government|● |● |
 
 > [!NOTE]
-> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
+> Cloud sync can be use for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud. 
 
 ## Next steps 
 

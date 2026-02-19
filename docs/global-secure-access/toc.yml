@@ -66,7 +66,7 @@ items:
   - name: Continuous Access Evaluation for Application Proxy
     href: concept-continuous-access-evaluation.md
   - name: B2B Guest Access
-    href: concept-b2b-guest-access.md
+    href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides
@@ -106,6 +106,8 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
+      - name: Apply security policies to remote network traffic
+        href: how-to-apply-security-policies-remote-network.md
       - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN

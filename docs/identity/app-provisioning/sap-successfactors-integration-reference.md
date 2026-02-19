@@ -472,7 +472,8 @@ Usually the *personIdExternal* attribute value in SuccessFactors matches the *us
 ### Unsupported scenarios for phone and email write-back
 * In Employee Central, during onboarding personal email and personal phone is set as primary. The write-back app can't switch this setting and set business email and business phone as primary.
 * In Employee Central, business phone is set as primary. The write-back app can't change this and set cell phone as primary.
-* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used. 
+* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used.
+* The SuccessFactors provisioning connectors, including the write-back connector, are not supported in Microsoft tenants operated by 21Vianet (China).
 
 ## Next steps
 * [Learn how to configure SuccessFactors to Active Directory provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)

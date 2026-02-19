@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 06/05/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -46,6 +46,35 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
    Install-Module Microsoft.Graph.Beta -Scope AllUsers
    ```
 
+## Connect to Microsoft Graph
+
+Before running any `Get-Mg*`, `New-Mg*`, or `Update-Mg*` cmdlets in this article, you must first authenticate to Microsoft Graph.
+
+### Sign in
+
+```PowerShell
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+```
+
+You will be prompted to sign in and consent to the required permissions.
+
+1. Verify your connection
+
+   ```powershell
+   Get-MgContext
+   ```
+
+   This command confirms that you're signed in and shows the currently selected Microsoft Graph profile.
+
+2. Some examples in this article use Microsoft Graph beta API. To switch profiles:
+
+   ```powershell
+   Select-MgProfile -Name "beta"
+   ```
+
+> [!NOTE]
+> If you do not run `Connect-MgGraph`, all `Get-Mg*`, `New-Mg*`, and `Update-Mg*` commands in this document will fail.
+   
 ## Create settings at the directory level
 
 These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory.
@@ -174,7 +203,7 @@ Here are the settings defined in the `Group.Unified SettingsTemplate`. Unless ot
 | **GroupCreationAllowedGroupId**<br>Type: `String`<br>Default: `""` | GUID of the security group for which the members are allowed to create Microsoft 365 groups even when `EnableGroupCreation == false`. |
 | **UsageGuidelinesUrl**<br>Type: `String`<br>Default: `""` | A link to the Group Usage Guidelines. |
 | **ClassificationDescriptions**<br>Type: `String`<br>Default: `""` | A comma-delimited list of classification descriptions. The value of `ClassificationDescriptions` is only valid in this format:<br>`$setting["ClassificationDescriptions"] ="Classification:Description,Classification:Description"`<br>where Classification matches an entry in the ClassificationList.<br>This setting doesn't apply when `EnableMIPLabels == True`.<br>Character limit for property `ClassificationDescriptions` is 300, and commas can't be escaped. |
-| **DefaultClassification**<br>Type: `String`<br>Default: `""` | The classification that is to be used as the default classification for a group if none was specified.<br>This setting doesn't apply when `EnableMIPLabels == True`. |
+| **DefaultClassification**<br>Type: `String`<br>Default: `""` | The classification that is to be used as the default classification for a group if none was specified.<br>This setting doesn't apply when `EnableMIPLabels == True`. This value can only be set when `ClassificationList` is set in the same call.|
 | **PrefixSuffixNamingRequirement**<br>Type: `String`<br>Default: `""` | String of a maximum length of 64 characters that defines the naming convention configured for Microsoft 365 groups. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
 | **CustomBlockedWordsList**<br>Type: `String`<br>Default: `""` | Comma-separated string of phrases that users aren't allowed to use in group names or aliases. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
 | **EnableMSStandardBlockedWords**<br>Type: `Boolean`<br>Default: `False` | Deprecated. Don't use. |
