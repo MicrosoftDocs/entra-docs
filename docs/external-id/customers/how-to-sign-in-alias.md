@@ -32,7 +32,7 @@ You can allow users who sign in with an email address and password also sign up 
 To enable username as a sign-in identifier, first enable the sign-in identifier policy in the Microsoft Entra admin center. UserPrincipalName (UPN) and email address are selected by default. Once username is also  enabled, users who have been assigned a username will be able to sign in using either their email address or username.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" alt-text="Screenshot of the Microsoft Entra admin center showing the Sign-in identifiers page with Username enabled as a sign-in identifier." border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" alt-text="Settings icon" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Sign-in identifiers** either from **Entra ID** > **External Identities** or from **Entra ID** > **Authentication methods**.
 1. On the **Sign-in identifiers** page, enable **Username** as a sign-in identifier.
 
@@ -40,7 +40,7 @@ To enable username as a sign-in identifier, first enable the sign-in identifier 
 
 1. Select **Save** at the top of the page.
 
-1. **(Optional)** To enable custom username validation, enter a custom regex value, select **Enable**, and then select **Save** to enable the custom validation.
+1. **(Optional)** You can also enable custom username validation with a custom regex pattern. To do this, enter a custom regex value, select **Enable**, and then select **Save** to enable the custom validation.
 
 ## Create and update users with username
 
@@ -253,4 +253,3 @@ You can customize and localize other strings related to an end user's experience
 ## Related content
 
 - You can use the [Users API](/graph/api/user-post-users) to create users with both email address and username with Microsoft Graph.
-- You can [customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers#add-language-customization-to-a-user-flow).
