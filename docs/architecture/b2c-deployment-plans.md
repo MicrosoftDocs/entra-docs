@@ -3,7 +3,7 @@ title: Azure Active Directory B2C deployment plans
 description: Azure Active Directory B2C deployment guide for planning, implementation, and monitoring
 ms.service: entra
 ms.subservice: architecture
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: gasinh
 author: gargi-sinha

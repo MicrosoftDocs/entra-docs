@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.anaqua.com/anaqua/Public/login.aspx`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ANAQUA Client support team](https://go.anaqua.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact ANAQUA Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the metadata file and save it on your computer.
 
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure ANAQUA SSO
 
-To configure single sign-on on **ANAQUA** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [ANAQUA support team](https://go.anaqua.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ANAQUA** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to ANAQUA support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ANAQUA test user
 

@@ -88,14 +88,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
+1. Ensure the "Tenant URL" section is populated with the correct endpoint: `https://scim.workplace.com/`. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 
  	![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
  	![Authorize](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
 
    > [!NOTE]
-   > Failure to change the URL to https://scim.workplace.com/ results in a failure when trying to save the configuration 
+   > Failure to change the URL to `https://scim.workplace.com/` results in a failure when trying to save the configuration 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -214,7 +214,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the given s
 
 1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration is reset. You can confirm the upgrade is successful by confirming the Job ID starts with "FacebookWorkplace."
 
-1. Update the tenant URL in the Admin Credentials section to the following URL: https://scim.workplace.com/  
+1. Update the tenant URL in the Admin Credentials section to the following URL: `https://scim.workplace.com/`  
 
    ![Screenshot of Admin Credentials in the Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 

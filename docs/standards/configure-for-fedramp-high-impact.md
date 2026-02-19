@@ -37,8 +37,6 @@ The following is a list of FedRAMP resources:
 
 * [Federal Risk and Authorization Management Program](https://www.fedramp.gov/)
 
-* [FedRAMP Security Assessment Framework](https://reciprocity.com/blog/conducting-a-fedramp-risk-assessment/)
-
 * [Agency Guide for FedRAMP Authorizations](https://www.fedramp.gov/assets/resources/documents/Agency_Authorization_Playbook.pdf)
 
 * [Managing compliance in the cloud at Microsoft](https://www.microsoft.com/trustcenter/common-controls-hub)
