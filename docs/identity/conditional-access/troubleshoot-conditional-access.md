@@ -3,7 +3,6 @@ title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
 ms.topic: troubleshooting
 ms.date: 06/20/2025
-manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---

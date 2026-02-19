@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 08/28/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sempofu, micrider
 ms.custom: references_regions, sfi-ga-blocked
 ---
