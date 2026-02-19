@@ -3,7 +3,6 @@ title: Block authentication flows with Conditional Access policy
 description: Secure your organization by blocking device code flow and authentication transfer. Learn how to configure Conditional Access policies effectively.
 ms.topic: how-to
 ms.date: 12/04/2025
-manager: dougeby
 ms.reviewer: anjusingh, ludwignick
 ---
 # Block authentication flows with Conditional Access policy 

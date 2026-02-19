@@ -9,7 +9,6 @@ ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sgrandhi
 ---
 # Security update to remove KDFv1 algorithm support in Microsoft Entra authentication

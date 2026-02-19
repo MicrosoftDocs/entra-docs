@@ -3,7 +3,6 @@ title: Adaptive Session Lifetime Policies for Conditional Access
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
 ms.topic: how-to
 ms.date: 09/02/2025
-manager: dougeby
 ms.reviewer: inbarc
 ms.custom:
   - ai-gen-docs-bap

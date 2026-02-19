@@ -3,7 +3,6 @@ title: Conditional Access adaptive session lifetime policies
 description: Learn to configure Conditional Access adaptive session lifetime policies to protect critical apps, sensitive data, and high-impact users in your organization.
 ms.topic: article
 ms.date: 12/05/2025
-manager: dougeby
 ms.reviewer: inbarc
 ---
 # Conditional Access adaptive session lifetime policies
