@@ -243,7 +243,8 @@ You can customize the hint text of identifier field on the sign-in page for all 
 
 1. Select **Review + save** to save your changes.
 
-You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
+> [!TIP]
+> You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
 
 ### Customize and localize other strings related to username
 
