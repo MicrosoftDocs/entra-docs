@@ -33,7 +33,7 @@ Once you've migrated the apps, consider applying the following suggestions to en
 
   - For **Android devices**, from the [Google play store](https://play.google.com/store/apps/details?id=com.microsoft.intune)
 
-  - For **Apple devices**, from the [Apple App Store](https://apps.apple.com/us/app/intune-company-portal/id719171358) or they can download the My Apps mobile app for [iOS](https://apps.apple.com/app/id824048653).
+  - For **Apple devices**, from the [Apple App Store](https://apps.apple.com/us/app/intune-company-portal/id719171358).
 
 > [!VIDEO https://www.youtube.com/embed/8aUIuOXeDxw]
 
