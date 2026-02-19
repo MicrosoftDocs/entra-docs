@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
       `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
     * If you are configuring an org level SSO, use
-      `https://manager.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>alias/defaultAlias`
+      `https://manager.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
 	> [!NOTE]
 	> The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in Everbridge Manager Portal
