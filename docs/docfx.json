@@ -155,7 +155,7 @@
         "identity/enterprise-apps/**/*.md": "enterprise-apps",
         "identity/enterprise-apps/**/*.yml": "enterprise-apps",
         "identity/domain-services/**/*.md": "domain-services",
-        "identity/domain-services/**/*.yml": "domain-services",
+        "identity/domain-services/**/*.yml": "domain-services"
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",
