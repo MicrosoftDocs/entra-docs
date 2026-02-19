@@ -142,8 +142,6 @@
     href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Manage lifecycle workflows using Microsoft Security Copilot
     href: ~/security-copilot/entra-lifecycle-workflows.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-  - name: Identity Governance and optimization with Microsoft Security Copilot
-    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Tutorials
   expanded: true
   items:
@@ -208,6 +206,8 @@
       href: entitlement-management-onboard.md
     - name: Visibility in My Access portal
       href: entitlement-management-access-package-visibility.md      
+    - name: Access packages for agent identities
+      href: ~/agent-id/identity-professional/agent-access-packages.md
   - name: Access reviews
     items:
     - name: What are access reviews?

@@ -1,13 +1,9 @@
 ---
 title: Search Editor
 description: Search Editor
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users in this role can create, manage, and delete content for Microsoft Search in the Microsoft 365 admin center, including bookmarks, Q&As, and locations.

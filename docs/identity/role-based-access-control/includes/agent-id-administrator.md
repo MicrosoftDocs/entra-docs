@@ -1,13 +1,9 @@
 ---
 title: Agent ID Administrator
 description: Agent ID Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file, agent-id-ignite
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
