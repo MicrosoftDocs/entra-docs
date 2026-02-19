@@ -4,7 +4,6 @@ description: Learn how Conditional Access for Agent IDs in Microsoft Entra ID ex
 ms.topic: concept-article
 ms.date: 11/05/2025
 ms.custom: agent-id-ignite
-manager: dougeby
 ms.reviewer: kvenkit
 ---
 # Conditional Access for Agent ID (Preview)

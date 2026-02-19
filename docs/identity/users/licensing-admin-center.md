@@ -21,6 +21,8 @@ This article shows you how to use the Microsoft 365 license center to assign lic
 > Some Microsoft services aren't available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.
 >
 > For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users don't receive services in locations that aren't allowed.
+>
+> Group-based license assignment is a Microsoft Entra ID feature, but license assignment to groups is now managed through the Microsoft 365 admin center. You can still view group membership, license assignment status, and audit logs in the Microsoft Entra admin center.
 
 ## Assign a license
 

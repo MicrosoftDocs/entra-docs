@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 02/03/2026
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: myra-ramdenbourg
 ms.custom: sfi-image-nochange
 ---

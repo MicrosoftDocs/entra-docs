@@ -7,7 +7,6 @@ ms.topic: reference
 ms.date: 10/15/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: zhvolosh
 
 ---

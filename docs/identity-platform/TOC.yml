@@ -958,7 +958,7 @@
     - name: API reference
       items:
         - name: Microsoft Graph API reference (identity operations)
-          href: /graph/api/resources/azure-ad-overview
+          href: /graph/api/resources/identity-network-access-overview
         - name: MSA Server side API reference 
           href: reference-msa-server-side-api.md
         - name: Microsoft Entra ID WAM API reference

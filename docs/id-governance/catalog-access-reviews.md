@@ -61,7 +61,7 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. Select **Create** to finalize the access review. 
 
-You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Upload data from custom data resources
 

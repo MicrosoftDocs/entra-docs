@@ -3,7 +3,6 @@ title: How to Use Conditions in Conditional Access Policies
 description: Explore Conditional Access conditions, including user risk, sign-in risk, and insider risk, to secure your organization's resources with tailored policies.
 ms.topic: concept-article
 ms.date: 11/05/2025
-manager: dougeby
 ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
