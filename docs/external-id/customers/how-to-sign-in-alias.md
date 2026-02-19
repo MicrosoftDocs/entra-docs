@@ -220,8 +220,7 @@ Like other attributes, you can customize signup by pre-filling username or assig
 
 ## Test signing in with the alias or username
 
-You can test signing up and signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature.
-When you're testing the sign-up scenario, make sure to enter the username during the attribute collection step. If you sign in with email address, you'll see email address in `preferred_username` claim.  If you sign in with username, you'll see the username in `preferred_username` claim.
+You can test signing up and signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature. If you sign in with email address, you'll see email address in `preferred_username` claim.  If you sign in with username, you'll see the username in `preferred_username` claim.
 
 > [!NOTE]
 > The `identities[]` property on a user object isn’t enforced by the Microsoft Entra sign-in identifiers policy. While administrators can assign values to a user’s `identities[]` property, authentication is determined by the configured sign-in identifier policy. In other words, if a sign-in type is specified for a user but isn't enabled in the policy, the authentication attempt fails at runtime. For example, a user might be assigned the username *User1234*, but if the username sign-in method isn't enabled in the policy, the user won't be able to sign in using that username.  
@@ -243,6 +242,8 @@ You can customize the hint text of identifier field on the sign-in page for all 
    :::image type="content" source="media/how-to-sign-in-alias/edit-username-hint.png" alt-text="Screenshot of customizing the username hint text  in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/edit-username-hint.png":::
 
 1. Select **Review + save** to save your changes.
+
+You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
 
 ### Customize and localize other strings related to username
 
