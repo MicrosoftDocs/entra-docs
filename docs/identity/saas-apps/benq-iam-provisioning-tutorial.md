@@ -30,7 +30,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
-* An administrator account with BenQ IAM. You can register for a BenQ admin account at [BenQ IAM](https://service-portaltest.benq.com/login).
+* An administrator account with BenQ IAM.
 
 
 ## Step 1: Plan your provisioning deployment
@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure BenQ IAM to support provisioning with Microsoft Entra ID
 
-1. Sign in to the [BenQ IAM](https://service-portaltest.benq.com/login) with BenQ administrator account, select **SSO Setting** in the Account Management section.
+1. Sign in to the BenQ IAM portal with BenQ administrator account, select **SSO Setting** in the Account Management section.
 	![SSO Setting](media/benq-iam-provisioning-tutorial/sso-setting.png)
 
 2. Select **SSO by SAML** as SSO Setting in the pop up and select Next. 

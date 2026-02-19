@@ -139,11 +139,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure ON24 Virtual Environment SAML Connection SSO
 
-To configure single sign-on on **ON24 Virtual Environment SAML Connection** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [ON24 Virtual Environment SAML Connection support team](https://www.on24.com/about-us/support/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ON24 Virtual Environment SAML Connection** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to ON24 Virtual Environment SAML Connection support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ON24 Virtual Environment SAML Connection test user
 
-In this section, you create a user called Britta Simon in ON24 Virtual Environment SAML Connection. Work with [ON24 Virtual Environment SAML Connection support team](https://www.on24.com/about-us/support/) to add the users in the ON24 Virtual Environment SAML Connection platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ON24 Virtual Environment SAML Connection. Work with ON24 Virtual Environment SAML Connection support team to add the users in the ON24 Virtual Environment SAML Connection platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
