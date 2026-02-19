@@ -3,7 +3,6 @@ title: Agent OAuth flows - On-behalf-of flow
 description: Learn how agent applications operate on behalf of signed-in users using OAuth 2.0 On-Behalf-Of flows with agent identity blueprints and agent identities.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025

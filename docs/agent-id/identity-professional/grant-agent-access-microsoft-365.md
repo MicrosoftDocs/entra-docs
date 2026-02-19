@@ -2,7 +2,6 @@
 title: Grant Agents Access to Microsoft 365 Resources
 description: Learn how to grant access to agents through consent, manual authorization, and other authorization systems for Microsoft 365 resources.
 author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025

@@ -1,15 +1,8 @@
 ---
 title: External Tenant Overview
 description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: overview
-ms.date: 09/16/2025
+ms.date: 01/30/2026
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -110,6 +103,12 @@ Microsoft Entra MFA helps safeguard access to data and applications while mainta
 - You offer multiple apps to your customers, but you don't require MFA for every application. For example, the customer can sign into an auto insurance application with a social or local account, but must verify the phone number before accessing the home insurance application registered in the same directory. In your Conditional Access policy, you can target all users but just those apps for which you want to enforce MFA.
 
 Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
+
+### Machine-to-machine authentication (M2M)
+
+Machine-to-machine (M2M) authentication uses the [OAuth 2.0 client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to let an application authenticate directly with Microsoft Entra ID. This flow is intended for scenarios without user interaction, where backend services need to securely request access tokens and call APIs on their own behalf.
+
+For Microsoft Entra External ID applications, you can configure M2M authentication by using the client credentials flow with either a client secret or a certificate. This approach allows your application to authenticate as itself when accessing APIs. To enable M2M authentication, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure compliance with internal governance and licensing requirements.
 
 ### Microsoft Entra reliability and scalability
 

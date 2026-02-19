@@ -5,9 +5,6 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 09/12/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: gkinasewitz
 ms.custom: sfi-image-nochange
 ---

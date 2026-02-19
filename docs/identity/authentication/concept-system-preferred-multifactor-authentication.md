@@ -1,13 +1,8 @@
 ---
 title: System-preferred multifactor authentication (MFA)
 description: Learn how to use system-preferred multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/19/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: msft-poulomi
 
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.

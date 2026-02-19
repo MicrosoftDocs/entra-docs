@@ -2,11 +2,9 @@
 title: Customize the sign-in experience for your application with branding themes in external tenants
 description: Learn about how to create branding themes and apply them to the sign-in experience for your application in Microsoft External ID for external tenants.
 author: rolyon
-manager: pmwongera
 ms.author: rolyon
-ms.date: 01/26/2026
+ms.date: 01/29/2026
 ms.reviewer: 
-ms.service: identity-platform
 ms.topic: how-to
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to customize the sign-in experience for my application.
 
@@ -94,7 +92,7 @@ Here are some of the limits and constraints for branding themes.
 
 1. On the **Layout** tab, select the placement of web page elements on the sign-in page.
 
-   - **Layout template** – Choose whether the sign-in pane is centre-aligned on the page or right-aligned.
+   - **Layout template** – Choose whether the sign-in pane is center-aligned on the page or right-aligned.
    - **Header** – To show an image in a page header, select the checkbox and browse for the image you want to display. Requirements: Transparent PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
    - **Footer** – To show a page footer that includes links to your published privacy and cookies and/or terms of use statements, select the appropriate checkbox, enter the link text, and add the URL for your content.
      
@@ -120,7 +118,12 @@ Here are some of the limits and constraints for branding themes.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in.png" alt-text="Screenshot of the customized Sign in experience." lightbox="./media/how-to-customize-branding-themes-apps/sign-in.png":::
 
-1. On the **Custom text** tab, for the **Sign-in** page, select the **Default** link.
+1. On the **Custom text** tab, select the **Default** link for one of the pages, such as the **Sign-in** page.
+
+    - **Sign-in** – The page where users enter their credentials to sign in.
+    - **Sign-up** – The page where users create a new account.
+    - **Attribute collection** – The page where users provide additional information during sign-up or profile editing.
+    - **One-time code** – The page where users enter a one-time code sent to their email or phone for verification.
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-tab.png" alt-text="Screenshot of the Create a theme page and the Custom text tab settings." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-tab.png":::
 
@@ -129,6 +132,13 @@ Here are some of the limits and constraints for branding themes.
     Custom text set for a theme might impact localized UX as they will not be localized. To ensure full localization of all text, set custom text for each theme language.
   
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-edit.png" alt-text="Screenshot of the Edit custom text page for the Sign-in page." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-edit.png":::
+
+    On the **Sign-in** page, you can customize the **Display message box** text. This text appears at the bottom of the Microsoft Entra ID sign-in page and in the Microsoft Entra ID Join experience on Windows. Use this text to convey instructions or tips. Anyone can see your sign-in page, so don't put sensitive info here. It has a maximum of 1024 characters. Use the following syntax to format text including bold, italics, underline, or clickable link:
+
+    - Bold: `**text**` or `__text__`
+    - Italics: `*text*` or `_text_`
+    - Underline: `++text++`
+    - Hyperlink: `[text](link)`
 
 1. On the **Review** tab, review your settings.
 

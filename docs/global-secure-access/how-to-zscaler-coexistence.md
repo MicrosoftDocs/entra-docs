@@ -2,12 +2,8 @@
 title: Configure Microsoft and Zscaler for a Unified SASE Solution
 description: "Learn how to configure Microsoft and Zscaler SSE for unified SASE solutions to enhance security and connectivity in your organization."
 #customer intent: As a network administrator, I want to configure Microsoft and Zscaler SSE for unified SASE solutions so that I can enhance security and connectivity in my organization.  
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
 ms.date: 10/07/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

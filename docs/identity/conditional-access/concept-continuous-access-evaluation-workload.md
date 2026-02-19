@@ -4,9 +4,6 @@ description: Learn how to enable continuous access evaluation for workload ident
 ms.service: entra-workload-id
 ms.topic: concept-article
 ms.date: 08/28/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: joroja
 ms.custom:
   - ai-gen-docs-bap

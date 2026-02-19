@@ -5,9 +5,6 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 07/22/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: vmahtani
 ms.custom:
   - has-adal-ref

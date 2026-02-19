@@ -1,15 +1,10 @@
 ---
 title: Microsoft Entra Domain Services feature availability in Azure Government
 description: Learn which Domain Services features are available in Azure Government.
-
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: concept-article
 ms.date: 01/21/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ---

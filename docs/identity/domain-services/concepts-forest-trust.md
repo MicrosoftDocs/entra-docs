@@ -8,7 +8,6 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: concept-article
 ms.date: 06/30/2025
-ms.author: justinha
 ---
 
 # How trust relationships work for forests in Active Directory 
