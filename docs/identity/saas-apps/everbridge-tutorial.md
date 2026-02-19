@@ -35,6 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * EverBridge supports IDP-initiated SSO.
+* EverBridge supports SP-initiated SSO.
 
 ## Add EverBridge from the Gallery
 
