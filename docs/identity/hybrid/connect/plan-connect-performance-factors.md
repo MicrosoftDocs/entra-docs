@@ -15,7 +15,7 @@ ms.author: jomondi
 ---
 # Factors influencing the performance of Microsoft Entra Connect
 
-Microsoft Entra Connect syncs your Active Directory to Microsoft Entra ID. This server is a critical component of moving your user identities to the cloud. The primary factors that affect the performance of a Microsoft Entra Connect are:
+Microsoft Entra Connect syncs your Active Directory to Microsoft Entra ID. This service is a critical component of moving your user identities to the cloud. The primary factors that affect the performance of a Microsoft Entra Connect are:
 
 | **Design factor**| **Definition** |
 |:-|-|
@@ -163,7 +163,7 @@ Microsoft Entra ID uses throttling to protect the cloud service from denial-of-s
 - Operations within the graphical user interface.
 
 > [!IMPORTANT]
-> Increasing this throttling limit on an ad-hoc basis is not supported.
+> Increasing this throttling limit is not supported.
 
 Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle isn't impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 
