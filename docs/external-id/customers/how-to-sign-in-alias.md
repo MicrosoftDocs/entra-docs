@@ -40,7 +40,7 @@ To enable username as a sign-in identifier, first enable the sign-in identifier 
 
 1. Select **Save** at the top of the page.
 
-1. **(Optional)** To enable custom username validation, select **Customize** and **Enable** and specify the regex patterns. Select **Save** again to enable the custom validation.
+1. **(Optional)** To enable custom username validation, enter a custom regex value, select **Enable**, and then select **Save** to enable the custom validation.
 
 ## Create and update users with username
 
