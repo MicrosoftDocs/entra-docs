@@ -78,7 +78,8 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Lexmark Cloud Services (SAML) SSO
 
-To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need to send the **App Federation Metadata Url** to Lexmark Cloud Services (SAML) support team. They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need to send the **App Federation Metadata Url** to Lexmark Cloud Services (SAML) support team. They set this setting to have the SAML SSO connection set properly on both sides. Also review the [Lexmark documentation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/configuring-microsoft-entra-id-federation-for-saml.html) on Configuring Microsoft Entra ID with SAML Federation
+
 
 ### Create Lexmark Cloud Services (SAML) test user
 
