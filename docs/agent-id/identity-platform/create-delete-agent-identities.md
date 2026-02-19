@@ -19,7 +19,7 @@ After you create an agent identity blueprint, the next step is to create one or 
 	
 This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs.
 	
-If you want to quickly create agent identities for testing purposes, consider using [this PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
+If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
 
 ## Prerequisites
 

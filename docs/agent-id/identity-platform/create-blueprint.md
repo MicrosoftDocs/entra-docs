@@ -14,28 +14,28 @@ ms.reviewer: dastrock
 
 # Create an agent identity blueprint
 
-An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also establish the scope and authorization for agents created from this blueprint to receive incoming requests from other agents and users.
+An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also configure an identifier URI and define a scope for agents created from this blueprint if the agent is designed to receive incoming requests from other agents and users.
 
 This guide walks you through creating an agent identity blueprint using the Microsoft Graph REST API and Microsoft Graph PowerShell.
 
 ## Prerequisites
 
-- [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph permissions.
+- [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph Application permissions.
+- [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
 - [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) or [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles are required to create agent identity blueprints.
-- If using PowerShell, version 7 is required for Microsoft Entra PowerShell modules.
-- In preview, all operations with the agent identity blueprint require the beta version. 
+- If using PowerShell, version 7 is required.
+- In preview, all operations with the agent identity blueprint require the beta version for both Microsoft Graph and PowerShell. 
 
 ## Prepare your environment
 
 ### Authorize a client to create agent identity blueprints
 
-In this article, you use Microsoft Graph PowerShell or another client to create your agent identity blueprint. You must authorize this client to create an agent identity blueprint. The client requires the following Microsoft Graph permissions:
+In this article, you use Microsoft Graph PowerShell or another client to create your agent identity blueprint. You must authorize this client to create and configure an agent identity blueprint and create an agent identity blueprint principal. The client requires the following Microsoft Graph permissions:
 
 - [AgentIdentityBlueprint.Create](/graph/api/agentidentityblueprint-post?view=graph-rest-beta&preserve-view=true) delegated permission
 - [AgentIdentityBlueprint.AddRemoveCreds.All](/graph/api/agentidentityblueprint-addpassword?view=graph-rest-beta&preserve-view=true) delegated permission
 - [AgentIdentityBlueprint.ReadWrite.All](/graph/api/agentidentityblueprint-update?view=graph-rest-beta&preserve-view=true&tabs=http) delegated permission
 - [AgentIdentityBlueprintPrincipal.Create](/graph/api/agentidentityblueprintprincipal-post?view=graph-rest-beta&preserve-view=true) delegated permission
-- [User.Read](/graph/api/user-get?view=graph-rest-beta&preserve-view=true) delegated permission
 
 The steps in this guide use all delegated permissions, but you can use application permissions for those scenarios that require them.
 
@@ -55,13 +55,13 @@ Microsoft Entra Agent ID is in preview, so some steps are managed on the on the 
 
 ## Create an agent identity blueprint
 
-Agent identity blueprints must have an owner and a sponsor. These details provide the human user or group that's accountable for the agent and the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is human the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-This step creates the agent identity blueprint application, assigns an owner and sponsor, and requires the following details:
+This step creates the agent identity blueprint, assigns an owner and sponsor, and requires the following details:
 
-- The `AgentIdentityBlueprint.Create` and `User.Read` permissions. 
+- The `AgentIdentityBlueprint.Create` permission.
 - The OData-Version header must be set to 4.0.
 - An owner and a sponsor.
 
@@ -129,6 +129,8 @@ After creating the agent identity blueprint, record the value of the `appId` fro
 
 To request access tokens using the agent identity blueprint, you must add a [client credential](../../identity-platform/v2-oauth2-client-creds-grant-flow.md). We recommend using a [managed identity](../../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. For more information, see [Managed identities for Azure resources](../../identity/managed-identities-azure-resources/overview.md).
 
+Other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are supported, but not recommended for production. They can be convenient for local development and testing or where managed identities won't work, but these options don't align with security best practices. For more information, see [Security best practices for application properties](../../identity-platform/security-best-practices-for-app-registration.md#credentials-including-certificates-and-secrets).
+
 Keep in mind that to use a managed identity you must run your code on an Azure service, such as a virtual machine or Azure App Service. For local development and testing, use a [client secret](#other-app-credentials).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
@@ -187,7 +189,7 @@ New-MgBetaApplicationFederatedIdentityCredential `
 
 ### Other app credentials
 
-Other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are supported, but not recommended for production. They can be convenient for local development and testing but don't align with security best practices.
+For scenarios where managed identities won't work or if you're creating a blueprint locally for testing, use the following steps to add the credentials.
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -309,7 +311,7 @@ Update-MgBetaApplication -ApplicationId $AppId `
 
 ## Create an agent blueprint principal
 
-In this step you create a service principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
+In this step you create a principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
