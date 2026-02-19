@@ -2,7 +2,6 @@
 title: How to troubleshoot sign-up errors
 description: Learn how to troubleshoot sign-up errors using Microsoft Entra reports in the Microsoft Entra admin center
 author: shlipsey3
-manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health

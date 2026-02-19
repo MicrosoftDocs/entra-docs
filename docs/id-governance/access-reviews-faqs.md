@@ -1,13 +1,9 @@
 ---
 title: 'Access Reviews FAQs'
 description: Frequently asked questions about Access Reviews.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: faq
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: jgangadhar
 ms.custom: template-tutorial
 ---
@@ -58,7 +54,7 @@ If group ownership changes during the review like for example, new owners are ad
 
 ### How can I see which reviewers were notified for an access review?
 
-Once an access review starts, you can use the [contactedReviewers](/graph/api/resources/accessreviewreviewer?view=graph-rest-1.0) API to retrieve the list of all users who were, or would have been, notified via email to perform reviews. Even in scenarios where notifications were turned off, the API still provides the list of reviewers along with timestamps indicating when notification would happen.
+Once an access review starts, you can use the [contactedReviewers](/graph/api/resources/accessreviewreviewer) API to retrieve the list of all users who were, or would have been, notified via email to perform reviews. Even in scenarios where notifications were turned off, the API still provides the list of reviewers along with timestamps indicating when notification would happen.
 
 
 ## Next steps

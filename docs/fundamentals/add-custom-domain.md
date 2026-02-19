@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 03/05/2025
+ms.date: 12/04/2025
 ms.reviewer: elkuzmen
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange
 ---
@@ -91,15 +91,15 @@ To verify your custom domain name, follow these steps:
 
 If you can't verify a custom domain name, try the following suggestions:
 
-1. **Wait at least an hour and try again.** DNS records must propagate before you can verify the domain. This process can take an hour or more.
+- **Wait at least an hour and try again.** DNS records must propagate before you can verify the domain. This process can take an hour or more.
 
-2. **Make sure the DNS record is correct.** Go back to the domain name registrar site. Make sure the entry is there, and that it matches the DNS entry information provided in the Microsoft Entra admin center.
+- **Make sure the DNS record is correct.** Go back to the domain name registrar site. Make sure the entry is there, and that it matches the DNS entry information provided in the Microsoft Entra admin center.
 
   - If you can't update the record on the registrar site, share the entry with someone who has permissions to add the entry and verify it's correct.
 
-3. **Make sure the domain name isn't already in use in another directory.** A domain name can only be verified in one directory. If your domain name is currently verified in another directory, it can't also be verified in the new directory. To fix this duplication problem, you must delete the domain name from the old directory. For more information about deleting domain names, see [Manage custom domain names](~/identity/users/domains-manage.md).
+- **Make sure the domain name isn't already in use in another directory.** A domain name can only be verified in one directory. If your domain name is currently verified in another directory, it can't also be verified in the new directory. To fix this duplication problem, you must delete the domain name from the old directory. For more information about deleting domain names, see [Manage custom domain names](~/identity/users/domains-manage.md).
 
-4. **Make sure you don't have any unmanaged Power BI tenants.** If your users have activated Power BI through self-service sign-up and created an unmanaged tenant for your organization, you must take over management as an internal or external admin, using PowerShell. For more information, see [Take over an unmanaged directory](~/identity/users/domains-admin-takeover.md).
+- **Make sure you don't have any unmanaged Power BI tenants.** If your users have activated Power BI through self-service sign-up and created an unmanaged tenant for your organization, you must take over management as an internal or external admin, using PowerShell. For more information, see [Take over an unmanaged directory](~/identity/users/domains-admin-takeover.md).
 
 ## Related content
 

@@ -1,14 +1,9 @@
 ---
 title: Voice call authentication method
 description: Learn about using the voice call authentication method in Microsoft Entra ID to help improve and secure sign-in events
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 10/26/2025
-ms.author: justinha
 ms.reviewer: jupetter
-author: justinha
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use voice call authentication method in Microsoft Entra ID to improve and secure user sign-in events.
 ---

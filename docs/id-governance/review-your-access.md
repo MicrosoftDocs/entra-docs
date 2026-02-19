@@ -1,14 +1,10 @@
 ---
 title: Review your access to groups & apps in access reviews
 description: Learn how to review your own access to groups or applications in access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 ---
@@ -97,7 +93,7 @@ You can try the new experience with the updated user interface in My Access a co
 ### Email
 
 >[!IMPORTANT]
-> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+> There could be delays in receiving email and in some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. You can see an example email message below:
 

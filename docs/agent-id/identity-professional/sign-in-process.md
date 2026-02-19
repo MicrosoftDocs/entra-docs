@@ -3,7 +3,6 @@ title: Microsoft Entra Agent ID sign-in process
 description: Learn about the Microsoft Entra Agent ID sign-in process, including consent pages, trust criteria, and how to manage agent permissions for secure access to AI agents using work accounts.
 author: omondiatieno
 ms.author: jomondi
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025

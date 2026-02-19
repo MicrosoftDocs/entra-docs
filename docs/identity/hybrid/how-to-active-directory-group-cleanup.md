@@ -4,7 +4,6 @@ description: Step-by-step guide to identifying, triaging, and removing unused se
 author: Justinha
 ms.service: entra-id
 ms.subservice: hybrid
-manager: dougeby
 ms.topic: how-to
 ms.date: 08/04/2025
 ms.author: justinha

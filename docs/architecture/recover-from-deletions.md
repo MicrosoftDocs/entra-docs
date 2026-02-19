@@ -126,6 +126,11 @@ You can see soft-deleted Microsoft 365 Groups and cloud security groups in the A
 
 ![Screenshot that shows restoring groups in the Azure portal.](media/recoverability/deletion-restore-groups.png)
 
+> [!IMPORTANT]
+> Soft delete for security groups isn't supported in the following scenarios:
+> - EDU tenants using OneDrive for Business (OBD) storage
+> - Audience targeting with classic web parts (all tenancies)
+
 For more information on how to restore soft-deleted Microsoft 365 Groups and cloud security groups, see the following documentation:
 
 * To restore from the Azure portal, see [Restore a deleted Microsoft 365 Group](~/identity/users/groups-restore-deleted.md).

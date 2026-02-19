@@ -3,12 +3,8 @@ title: Specify the Request Service REST API issuance request
 titleSuffix: Microsoft Entra Verified ID
 description: Learn how to issue a verifiable credential.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
 ---

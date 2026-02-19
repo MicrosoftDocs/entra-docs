@@ -48,7 +48,7 @@ To download a filtered subset of groups:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
 
-2. Select **Manage filters** to edit the column filters.
+2. Select **Manage filters** to edit the column filters. Only selected columns appear in the CSV file.
 
     :::image type="content" source="Media/bulk-operations/filters-download-groups.png" alt-text="Screenshot of the Manage filters panel on the Groups page with filters applied and the Download groups action available.":::
 

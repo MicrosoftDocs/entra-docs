@@ -17,6 +17,9 @@ ms.author: jomondi
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
 
 Microsoft Entra Cloud Sync is a new offering from Microsoft designed to meet and accomplish your hybrid identity goals for synchronization of users, groups, and contacts to Microsoft Entra ID.  It accomplishes this by using the Microsoft Entra cloud provisioning agent instead of the Microsoft Entra Connect application.  However, it can be used alongside Microsoft Entra Connect Sync and it provides the following benefits:
+
+> [!IMPORTANT]
+> **Authentication precedence**: Enabling Microsoft Entra Cloud Sync does not change or override your tenant's configured authentication method. If Pass-through Authentication (PTA) or Password Hash Synchronization (PHS) is already configured, it continues to control user sign-ins. Cloud Sync is a synchronization technology and does not manage authentication behavior.
     
 - Support for synchronizing to a Microsoft Entra tenant from a multi-forest disconnected Active Directory forest environment: The common scenarios include merger and acquisition. In these cases, the acquired company's AD forests are isolated from the parent company's AD forests. Another scenario involves companies that historically had multiple AD forests.
 - Simplified installation with light-weight provisioning agents: The agents act as a bridge from AD to Microsoft Entra ID, with all the sync configuration managed in the cloud. 
@@ -39,7 +42,7 @@ The following short video provides an excellent overview of Microsoft Entra Clou
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
 ## Choose the right sync client
-To determine if cloud sync is right for your organization, use the following link. It takes you to a tool that helps you evaluate your synchronization needs. For more information, evaluate your options using the [Wizard to evaluate sync options](https://aka.ms/EvaluateSyncOptions)
+To determine if cloud sync is right for your organization, review the supported sync scenarios. For more information, evaluate your options using the [supported sync scenarios comparison](../common-scenarios.md)
 
 
 <a name='comparison-between-azure-ad-connect-and-cloud-sync'></a>
@@ -90,7 +93,23 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for US Government|● |● |
 
 > [!NOTE]
+> **Understanding "Not Supported" for Pass-through Authentication**: In the feature comparison table above, where Cloud Sync does not support Pass-through Authentication, this means Cloud Sync cannot configure or manage PTA. **It does not mean that existing Pass-through Authentication is disabled or replaced when Cloud Sync is enabled.** If PTA is already configured in your tenant, it will continue to handle authentication for user sign-ins, independently of Cloud Sync's synchronization operations.
+
+## Synchronization vs Authentication Responsibilities
+
+It's important to understand the separation between synchronization technology and authentication methods. The following table clarifies what each component controls:
+
+| Responsibility | Synchronization Technology (Microsoft Entra Cloud Sync / Microsoft Entra Connect Sync) | Authentication Method (Password Hash Synchronization / Pass-through Authentication / Federation) |
+|:---|:---|:---|
+| **What it controls** | • Object synchronization (users, groups, contacts)<br>• Attribute synchronization<br>• Writeback of certain attributes<br>• Directory extensions | • Password validation<br>• Sign-in behavior<br>• Where credentials are verified<br>• Enforcement of on-premises policies during sign-in |
+| **What it does NOT control** | • User authentication and sign-in<br>• Password validation<br>• Authentication method configuration | • Object and attribute synchronization<br>• Which objects sync to Microsoft Entra ID<br>• Sync schedule and frequency |
+| **Key point** | Synchronization moves data between directories | Authentication validates user credentials during sign-in |
+
+**Important**: Changing your synchronization technology (for example, from Microsoft Entra Connect Sync to Cloud Sync) does not change how users sign in or where passwords are validated. Authentication behavior is determined by the authentication method configured for your tenant, not by the synchronization technology used.
+
+> [!NOTE]
 > For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
+> Cloud sync can be use for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud. 
 
 ## Next steps 
 
