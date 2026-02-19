@@ -16,6 +16,9 @@ search.appverid:
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
 
+> [!NOTE]
+> The file which stores password hash synchronization should not be updated as changes to this file can cause sync failures to occur.
+
 ## How password hash synchronization works
 The Active Directory domain service stores passwords in the form of a hash value representation, of the actual user password. A hash value is a result of a one-way mathematical function (the *hashing algorithm*). There's no method to revert the result of a one-way function to the plain text version of a password. 
 
