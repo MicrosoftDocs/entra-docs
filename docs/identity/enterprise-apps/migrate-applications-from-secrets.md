@@ -3,7 +3,6 @@ title: Migrate applications away from secret-based authentication
 description: Migrate applications away from secret-based authentication to improve security and user experience.
 
 author: garrodonnell
-manager: dougeby
 ms.service: entra-id
 
 ms.topic: concept-article

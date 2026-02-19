@@ -9,7 +9,6 @@ ms.date: 01/08/2026
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: 
 ---
 # Microsoft Entra join a new Windows device during the out of box experience

@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 zone_pivot_groups: identity-extension-windows-environment

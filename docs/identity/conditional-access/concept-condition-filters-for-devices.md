@@ -4,7 +4,6 @@ description: Use filter for devices in Conditional Access to enhance security po
 
 ms.topic: how-to
 ms.date: 05/19/2025
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices

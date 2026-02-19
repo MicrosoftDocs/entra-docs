@@ -3,7 +3,6 @@ title: Require multifactor authentication for Microsoft admin portals
 description: Create a Conditional Access policy requiring multifactor authentication for admins accessing Microsoft admin portals.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for admins accessing Microsoft admin portals
