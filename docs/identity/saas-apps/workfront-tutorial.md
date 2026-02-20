@@ -80,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<companyname>.attasksandbox.com/SAML2`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Workfront Client support team](https://www.workfront.com/services-and-support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact Workfront Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

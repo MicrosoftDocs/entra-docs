@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenant-name>.instructure.com/saml2`
 
     > [!NOTE]
-    > These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Canvas Client support team](https://community.canvaslms.com/community/help) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact Canvas Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 

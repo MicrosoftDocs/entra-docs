@@ -92,6 +92,10 @@
         "identity/enterprise-apps/**/*.yml": "omondiatieno",
         "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
+        "identity/role-based-access-control/**/*.md": "rolyon",
+        "identity/role-based-access-control/**/*.yml": "rolyon",
+        "identity/users/**/*.md": "barclayn",
+        "identity/users/**/*.yml": "barclayn",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -118,6 +122,10 @@
         "identity/enterprise-apps/**/*.yml": "jomondi",
         "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
+        "identity/role-based-access-control/**/*.md": "rolyon",
+        "identity/role-based-access-control/**/*.yml": "rolyon",
+        "identity/users/**/*.md": "barclayn",
+        "identity/users/**/*.yml": "barclayn",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -144,6 +152,10 @@
         "identity/enterprise-apps/**/*.yml": "entra-id",
         "identity/managed-identities-azure-resources/**/*.md": "entra-id",
         "identity/managed-identities-azure-resources/**/*.yml": "entra-id",
+        "identity/role-based-access-control/**/*.md": "entra-id",
+        "identity/role-based-access-control/**/*.yml": "entra-id",
+        "identity/users/**/*.md": "entra-id",
+        "identity/users/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
         "verified-id/**/*.yml": "entra-verified-id"
       },
@@ -163,7 +175,11 @@
         "identity/enterprise-apps/**/*.md": "enterprise-apps",
         "identity/enterprise-apps/**/*.yml": "enterprise-apps",
         "identity/managed-identities-azure-resources/**/*.md": "managed-identities",
-        "identity/managed-identities-azure-resources/**/*.yml": "managed-identities"
+        "identity/managed-identities-azure-resources/**/*.yml": "managed-identities",
+        "identity/role-based-access-control/**/*.md": "role-based-access-control",
+        "identity/role-based-access-control/**/*.yml": "role-based-access-control",
+        "identity/users/**/*.md": "users",
+        "identity/users/**/*.yml": "users"
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",
@@ -182,8 +198,12 @@
         "id-protection/**/*.yml": "dougeby",
         "identity/**/*.md": "dougeby",
         "identity/**/*.yml": "dougeby",
+        "identity/role-based-access-control/**/*.md": "pmwongera",
+        "identity/role-based-access-control/**/*.yml": "pmwongera",
         "identity/saas-apps/**/*.md": "dougeby",
         "identity/saas-apps/**/*.yml": "dougeby",
+        "identity/users/**/*.md": "pmwongera",
+        "identity/users/**/*.yml": "pmwongera",
         "permissions-management/**/*.md": "dougeby",
         "permissions-management/**/*.yml": "dougeby",
         "standards/**/*.md": "dougeby",

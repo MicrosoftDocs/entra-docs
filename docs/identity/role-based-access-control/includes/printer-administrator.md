@@ -1,13 +1,9 @@
 ---
 title: Printer Administrator
 description: Printer Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users in this role can register printers and manage all aspects of all printer configurations in the Microsoft Universal Print solution, including the Universal Print Connector settings. They can consent to all delegated print permission requests. Printer Administrators also have access to print reports.

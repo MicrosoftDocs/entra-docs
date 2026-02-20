@@ -4,7 +4,7 @@ description: This article documents licensing requirements for Microsoft Entra f
 author: barclayn
 manager: pmwongera
 ms.service: entra
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/01/2025
 ms.subservice: fundamentals
 ms.author: barclayn

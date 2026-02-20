@@ -4,7 +4,7 @@ description: Learn about multitenant organization optional policy templates in M
 author: kenwith
 ms.service: entra-id
 ms.subservice: multitenant-organizations
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/23/2024
 ms.author: kenwith
 ms.custom: it-pro

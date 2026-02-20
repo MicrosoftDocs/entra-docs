@@ -1,13 +1,9 @@
 ---
 title: Microsoft 365 Support Engineer
 description: Microsoft 365 Support Engineer
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: rolyon
-ms.author: rolyon
 ---
 
 Template ID: 00cf5c54-4693-4f59-a0ac-ab79ef0a974d

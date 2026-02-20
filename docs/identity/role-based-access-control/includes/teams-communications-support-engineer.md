@@ -1,13 +1,9 @@
 ---
 title: Teams Communications Support Engineer
 description: Teams Communications Support Engineer
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center. Users in this role can view full call record information for all participants involved. This role has no access to view, create, or manage support tickets.

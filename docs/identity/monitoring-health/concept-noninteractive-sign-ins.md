@@ -4,7 +4,7 @@ description: Learn about the type of activity captured in the non-interactive si
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.subservice: monitoring-health
 ms.date: 02/09/2026
 ms.author: sarahlipsey

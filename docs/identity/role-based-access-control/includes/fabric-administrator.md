@@ -1,13 +1,9 @@
 ---
 title: Fabric Administrator
 description: Fabric Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users with this role have global permissions within Microsoft Fabric and Power BI, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Understanding Fabric admin roles](/fabric/admin/roles).

@@ -53,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Enable](./media/travelperk-provisioning-tutorial/configuration.png)
 
-4. You can also enable approvals through SCIM. Approvals help you set additional governance by ensuring trips get approved first by the specified approvers. You can learn more about this [here](https://support.travelperk.com/hc/en-us/articles/360034561252-Using-SSO).
+4. You can also enable approvals through SCIM. Approvals help you set additional governance by ensuring trips get approved first by the specified approvers. You can learn more about this in the TravelPerk documentation.
 
 5. You can specify whether you want every person's manager to automatically become the user responsible for the approval of trips. Therefore an approver is assigned in the corresponding automatic approval process. TravelPerk will map Azure's **manager** value, to the user's desired approver. The user needs to exist on the platform before becoming the provisioned user approver.
 Approvers aren't created if they aren't properly configured on TravelPerk.
