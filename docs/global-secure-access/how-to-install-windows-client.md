@@ -31,6 +31,7 @@ This article describes how to download and install the Global Secure Access clie
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
+   - Windows on Arm devices (such as Surface Pro and Surface Laptop with Snapdragon processors) require a separate client installer, available at **aka.ms/GlobalSecureAccess-WindowsOnArm**. Don't use the standard x64 installer on Arm64 devices.
 - You need local admin credentials to install or upgrade the Global Secure Access client.
 - The Global Secure Access client requires a license. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [buy licenses or get trial licenses](https://aka.ms/azureadlicense).
 
@@ -675,13 +676,12 @@ The Global Secure Access client uses specific registry keys to enable or disable
 
 ### Restrict nonprivileged users
 Administrators can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
-`Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`   
-`RestrictNonPrivilegedUsers REG_DWORD`
+`Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`
 
-|Data|Description|
-|--|--|
-| 0x0 | Nonprivileged users on the Windows device can disable and enable the client. |
-| 0x1 | Nonprivileged users on the Windows device are restricted from disabling and enabling the client. A UAC prompt requires local administrator credentials for disable and enable options. The administrator can also hide the disable button (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)). |
+|Value  |Type  |Data  |Description  |
+|---------|---------|---------|---------|
+|RestrictNonPrivilegedUsers  |REG_DWORD  |0x0  |Nonprivileged users on the Windows device can disable and enable the client.  |
+|RestrictNonPrivilegedUsers  |REG_DWORD  |0x1  |Nonprivileged users on the Windows device are restricted from disabling and enabling the client. A UAC prompt requires local administrator credentials for disable and enable options. The administrator can also hide the disable button (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)).  |
 
 ### Disable or enable Private Access on the client
 This registry value controls whether Private Access is enabled or disabled for the client. If a user is connected to the corporate network, they can choose to bypass Global Secure Access and directly access private applications.
