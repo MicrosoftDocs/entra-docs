@@ -111,7 +111,7 @@ To prevent attackers from taking over accounts, Microsoft blocks risky users fro
 
 ### Block access for high-risk users
 
-This policy helps protect your organization by restricting access for users identified as high risk by Microsoft Entra ID Protection. User risk represents the likelihood that a user account has been compromised, based on signals such as leaked credentials or other risk detections.When enabled, this policy blocks access for users who meet the configured high user risk level until the risk is remediated. Remediation follows existing Microsoft Entra ID Protection processes and guidance.
+This policy helps protect your organization by restricting access for users identified as high risk by Microsoft Entra ID Protection. User risk represents the likelihood that a user account has been compromised, based on signals such as leaked credentials or other risk detections. When enabled, this policy blocks access for users who meet the configured high user risk level until the risk is remediated. Remediation follows existing Microsoft Entra ID Protection processes and guidance.
 
 This policy targets:
 
