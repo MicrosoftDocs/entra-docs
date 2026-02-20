@@ -3,13 +3,8 @@ title: PowerShell examples for group-based licensing
 description: Learn how to manage group-based licensing in Microsoft Entra ID using Microsoft PowerShell. Includes examples for assigning licenses and troubleshooting errors.
 #customer intent: As an IT admin, I want to access PowerShell examples for common group-based licensing tasks so that I can simplify license magement in my organization.
 keywords: Entra ID licensing
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 03/19/2025
-ms.author: barclayn
 ---
 
 # Group-based licensing PowerShell examples
