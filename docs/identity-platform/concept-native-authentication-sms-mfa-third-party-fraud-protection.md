@@ -29,9 +29,9 @@ Native authentication applications that use SMS‑based MFA remain exposed to ex
 - **International Revenue Share Fraud (IRSF)** which occurs when attackers artificially inflate SMS traffic to premium‑rate international destinations in order to extract revenue through telecom termination and revenue‑sharing mechanisms.
 - **Account takeover (ATO)** which occurs when attackers use automated, scripted techniques to initiate sign‑in attempts with valid‑looking credentials, causing the system to issue SMS verification challenges as if the activity were legitimate.
 
-In browser‑delegated authentication flows, Microsoft Entra mitigates these risks by using rich device telemetry and CAPTCHA challenges. Native authentication applications don't use the Microsoft‑hosted, browser‑delegated sign‑in experience, so the risk profiling doesn't benefit from rich device telemetry. Because of this, native authentication scenarios that use SMS by default are less protected by extensive risk profiling than browser-delegated flows. Customers are therefore recommended to set up additional risk detection and protection using third party providers.
+In browser‑delegated authentication flows, Microsoft Entra mitigates these risks by using rich device telemetry and CAPTCHA challenges. Native authentication applications don't use the Microsoft‑hosted, browser‑delegated sign‑in experience, so the risk profiling doesn't benefit from rich device telemetry. Because of this, native authentication scenarios that use SMS by default are less protected by extensive risk profiling than browser-delegated flows. Customers are therefore recommended to set up extra risk detection and protection using third party providers.
 
-To effectively mitigate fraud in native authentication scenarios that use SMS:
+To effectively, mitigate fraud in native authentication scenarios that use SMS:
 
 - Native authentication applications owners must implement extra fraud detection and mitigation
 - Fraud decisions must occur before SMS one‑time passcodes (OTPs) are sent
@@ -62,7 +62,7 @@ Key aspects of the sign‑in flow:
 - Microsoft Entra drives authentication state and determines when MFA is required, while the 3P SDK handles all fraud‑related checks.
 - The WAF intercepts the /challenge request and uses the 3P SDK to obtain a risk assessment for the current session.
 - The 3P provider evaluates risk using signals it gathers independently, such as device, number reputation, and network attributes.
-- The SMS OTP is issued only when the 3P provider returns an Allow decision. If the provider returns Block or Challenge, the native app follows the 3P‑driven workflow—either blocking the flow or invoking the provider’s additional verification.
+- The SMS OTP is issued only when the 3P provider returns an Allow decision. If the provider returns Block or Challenge, the native app follows the 3P‑driven workflow—either blocking the flow or invoking the provider’s extra verification.
 - Once the session is allowed, the user completes SMS MFA and Microsoft Entra finalizes authentication.
 
 ## Related content
