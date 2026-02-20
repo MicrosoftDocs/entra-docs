@@ -2,12 +2,8 @@
 title: Create verifiable credentials for an ID token hint
 description: In this article, you learn how to use a quickstart to create a custom verifiable credential for an ID token hint.
 documentationCenter: ''
-author: barclayn
-manager: femila
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
-ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
 ---
@@ -18,7 +14,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 ## Create a custom credential
 
-In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
+In the **Azure portal**, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the Issue credentials quickstart for creating a custom credential.":::
 

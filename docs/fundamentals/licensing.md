@@ -2,10 +2,10 @@
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
-ms.topic: conceptual
-ms.date: 03/05/2025
+ms.topic: concept-article
+ms.date: 12/01/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
@@ -14,6 +14,8 @@ ms.author: barclayn
 
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
+>[!NOTE]
+>If you are troubleshooting licensing assignment issues, review [Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal](licensing-groups-resolve-problems.md).
 
 ## Microsoft Entra licensing options
 
@@ -69,10 +71,6 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
 
-## Microsoft Entra Permissions management
-
-Permissions Management supports all resources across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform but only requires licenses for [billable resources](../permissions-management/product-data-billable-resources.md).
-
 ## Microsoft Entra Private Access
 
 [Microsoft Entra Private access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
@@ -105,7 +103,6 @@ Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) su
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
-## Next steps
+## Related content
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
-- [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)

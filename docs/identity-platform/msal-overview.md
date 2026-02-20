@@ -2,11 +2,11 @@
 title: Overview of the Microsoft Authentication Library (MSAL)
 description: The Microsoft Authentication Library (MSAL) enables application developers to acquire tokens in order to call secured web APIs. These web APIs can be the Microsoft Graph, other Microsoft APIs, third-party web APIs, or your own web API. MSAL supports multiple application architectures and platforms.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: has-adal-ref
 ms.date: 11/13/2024
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -22,7 +22,7 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 * There's no need to directly use the OAuth libraries or code against the protocol in your application.
 * Can acquire tokens on behalf of a user or application (when applicable to the platform).
 * Maintains a token cache for you and handles token refreshes when they're close to expiring.
-* Helps you specify which audience you want your application to sign in. The sign in audience can include personal Microsoft accounts, social identities with Azure AD B2C organizations, work, school, or users in sovereign and national clouds.
+* Helps you specify which audience you want your application to sign in. The sign in audience can include personal Microsoft accounts, social identities with Microsoft Entra External ID, work, school, or users in sovereign and national clouds.
 * Helps you set up your application from configuration files.
 * Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.
 
@@ -33,8 +33,8 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 | Single-page apps (JavaScript) | [Tutorial: Sign-in users to a React Single-page application (SPA)](tutorial-single-page-app-react-prepare-app.md) |
 | Web applications | [Tutorial: Sign-in users to a ASP.NET Core Web application](tutorial-web-app-dotnet-prepare-app.md) |
 | Web APIs | [Tutorial: Implement a protected endpoint a ASP.NET Core API](tutorial-web-api-dotnet-register-app.md) |
-| Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-app-registration.md). |
-| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-app-registration.md) |
+| Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-app-configuration.md). |
+| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-app-configuration.md) |
 
 ## MSAL Languages and Frameworks
 

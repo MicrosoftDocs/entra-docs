@@ -2,11 +2,11 @@
 title: Custom claims provider overview
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/10/2023
-ms.reviewer: JasSuri
+ms.date: 09/16/2025
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -24,7 +24,7 @@ Key data about a user is often stored in systems external to Microsoft Entra ID.
 
 The following video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
 
-> [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=Z8Z3gR9fzZFzb5Bq]
 
 Use a custom claims provider for the following scenarios:
 
@@ -40,11 +40,6 @@ Use a custom claims provider for the following scenarios:
 An event listener is a procedure that waits for an event to occur. The custom authentication extension uses the **token issuance start** event listener. The  event is triggered when a token is about to be issued to your application. When the event is triggered the custom authentication extension REST API is called to fetch attributes from external systems.
 
 To set up a custom claims provider, you'll need to [create a REST API with a token issuance start event](./custom-extension-tokenissuancestart-setup.md), then [configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md).
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ## Authentication events trigger for Azure Functions client library for .NET
 

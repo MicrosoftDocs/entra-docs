@@ -2,7 +2,7 @@
 title: "Tutorial: Sign in users in .NET MAUI app using an external tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform.
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial

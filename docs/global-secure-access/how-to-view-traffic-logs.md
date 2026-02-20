@@ -1,16 +1,11 @@
 ---
 title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
-author: kenwith
-ms.author: kenwith
-manager: femila
 ms.topic: how-to
 ms.date: 04/24/2025
-ms.service: global-secure-access
 ai-usage: ai-assisted
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
-
 ---
 
 # How to use the Global Secure Access traffic logs (preview)
@@ -101,7 +96,7 @@ The log details provide valuable information about your network traffic. Not all
 You can export the Global Secure Access traffic logs (preview) to an endpoint for further analysis and alerting. This integration is configured in Microsoft Entra diagnostic settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 1. Select **Add Diagnostic setting**.
 1. Give your diagnostic setting a name.
 1. Select `NetworkAccessTrafficLogs`.

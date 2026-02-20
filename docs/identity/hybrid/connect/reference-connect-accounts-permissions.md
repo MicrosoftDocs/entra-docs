@@ -1,18 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Accounts and permissions'
 description: Learn about accounts that are used and created and the permissions that are required to install and use Microsoft Entra Connect.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
 ---
 # Microsoft Entra Connect: Accounts and permissions
 
@@ -296,7 +293,7 @@ For more information about Microsoft Entra Connect, see these articles:
 
 |Topic |Link|  
 | --- | --- |
-|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
+|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted)|
 |Install by using express settings | [Express installation of Microsoft Entra Connect](how-to-connect-install-express.md)|
 |Install by using customized settings | [Custom installation of Microsoft Entra Connect](./how-to-connect-install-custom.md)|
 |Upgrade from DirSync | [Upgrade from Azure AD Sync tool (DirSync)](how-to-dirsync-upgrade-get-started.md)|

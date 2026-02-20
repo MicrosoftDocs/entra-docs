@@ -1,20 +1,18 @@
 ---
 title: Configure TravelPerk for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk.
-
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
-
+ms.date: 05/20/2025
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk so that I can streamline the user management process and ensure that users have the appropriate access to TravelPerk.
 ---
 
-# Configure TravelPerk for automatic user provisioning
+# Configure TravelPerk for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both TravelPerk and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [TravelPerk](https://www.travelperk.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -55,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Enable](./media/travelperk-provisioning-tutorial/configuration.png)
 
-4. You can also enable approvals through SCIM. Approvals help you set additional governance by ensuring trips get approved first by the specified approvers. You can learn more about this [here](https://support.travelperk.com/hc/en-us/articles/360034561252-Using-SSO).
+4. You can also enable approvals through SCIM. Approvals help you set additional governance by ensuring trips get approved first by the specified approvers. You can learn more about this in the TravelPerk documentation.
 
 5. You can specify whether you want every person's manager to automatically become the user responsible for the approval of trips. Therefore an approver is assigned in the corresponding automatic approval process. TravelPerk will map Azure's **manager** value, to the user's desired approver. The user needs to exist on the platform before becoming the provisioned user approver.
 Approvers aren't created if they aren't properly configured on TravelPerk.
@@ -85,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for TravelPerk in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
    ![Enterprise applications blade](common/enterprise-applications.png)
 

@@ -1,20 +1,20 @@
 ---
-title: Microsoft Entra SSO integration with RStudio Connect SAML Authentication
+title: Configure RStudio Connect SAML Authentication for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and RStudio Connect SAML Authentication.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RStudio Connect SAML Authentication so that I can control who has access to RStudio Connect SAML Authentication, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with RStudio Connect SAML Authentication
+# Configure RStudio Connect SAML Authentication for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate RStudio Connect SAML Authentication with Microsoft Entra ID. When you integrate RStudio Connect SAML Authentication with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate RStudio Connect SAML Authentication
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * RStudio Connect SAML Authentication. There's a [45 day free evaluation](https://www.rstudio.com/products/connect/).
 
@@ -40,7 +41,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of RStudio Connect SAML Authentication into Microsoft Entra ID, you need to add RStudio Connect SAML Authentication from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **RStudio Connect SAML Authentication** in the search box.
 1. Select **RStudio Connect SAML Authentication** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -68,7 +69,7 @@ To configure and test Microsoft Entra SSO with RStudio Connect SAML Authenticati
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **RStudio Connect SAML Authentication** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **RStudio Connect SAML Authentication** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

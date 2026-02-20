@@ -2,14 +2,14 @@
 title: 'Verify your version of cloud sync or connect sync'
 description: This article describes the steps to verify the version of the provisioning agent or connect sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -43,6 +43,6 @@ To verify the version of the agent that is running, follow these steps:
 
 ## Next steps
 - [Common scenarios](common-scenarios.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)
 - [Prerequisites](prerequisites.md)

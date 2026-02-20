@@ -1,9 +1,9 @@
 ---
-title: Integrate Microsoft Entra single sign-on (SSO) with Maverics Identity Orchestrator SAML Connector
+title: Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector so that I can control who has access to Maverics Identity Orchestrator SAML Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Integrate Microsoft Entra single sign-on with Maverics Orchestrator SAML Connector
+# Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 
 Strata's Maverics Orchestrator provides a simple way to integrate on-premises applications with Microsoft Entra ID for authentication and access control. The Maverics Orchestrator is capable of modernizing authentication and authorization for apps that currently rely on headers, cookies, and other proprietary authentication methods. Maverics Orchestrator instances can be deployed on-premises or in the cloud.
 
@@ -28,7 +28,7 @@ This hybrid access article demonstrates how to migrate an on-premises web applic
 
 ## Prerequisites
 
-* A Microsoft Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Maverics Identity Orchestrator Platform account. Sign up at [maverics.strata.io](https://maverics.strata.io).
 * At least one application that uses header based authentication. In our examples, we work against an application called Sonar that's reachable at `https://localhost:8443`.
 ## Step 1: Setting up the Maverics Orchestrator

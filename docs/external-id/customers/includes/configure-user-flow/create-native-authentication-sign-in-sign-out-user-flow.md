@@ -1,11 +1,8 @@
 ---
 author: henrymbugua
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: henrymbuguakiarie
-ms.manager: mwongerapk
 ---
 
 Follow these steps to create a user flow.  
@@ -16,7 +13,7 @@ Follow these steps to create a user flow.
    1. Select the **Directories + subscriptions** icon in the toolbar. 
    1. On the **Portal settings | Directories + subscriptions** page, find your external tenant directory in the **Directory name** list, and then select **Switch**. 
  
-1. On the sidebar menu, select **Identity**. 
+1. On the sidebar menu, select **Entra ID**. 
 1. Select **External Identities** > **User flows**. 
 1. Select **+ New user flow**. 
 1. On the **Create** page: 

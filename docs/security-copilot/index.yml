@@ -1,0 +1,106 @@
+### YamlMime:Landing
+title: AI for Security in Microsoft Entra 
+summary: Learn how to secure your Microsoft Entra tenant with Security Copilot, agents, and Zero Trust principles.
+
+metadata:
+  title: AI for Security in Microsoft Entra documentation 
+  description: Microsoft Entra Security fundamentals to configure and maintain a secure tenant using Security Copilot agents, Zero Trust principles, and health monitoring.
+  author: cilwerner
+  manager: pmwongera
+  ms.author: cwerner
+  ms.date: 06/20/2025
+  ms.service: entra
+  ms.subservice: fundamentals
+  ms.topic: landing-page
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+  # Card 
+  - title: AI for Security in Microsoft Entra
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft Security Copilot in Microsoft Entra
+            url: security-copilot-in-entra.md
+          - text: Microsoft Security Copilot scenarios in Microsoft Entra
+            url: entra-security-scenarios.md
+
+  # Card
+  - title: Core Identity Management Scenarios
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Manage identities with Security Copilot
+            url: entra-enterprise-user-management.md
+      - linkListType: how-to-guide
+        links:
+          - text: Security and access control with Security Copilot
+            url: entra-security-access-control.md
+          - text: Understand monitoring and operations with Security Copilot
+            url: entra-monitoring-operations.md
+
+  # Card
+  - title: Governance and Lifecycle Management
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Governance and optimization with Security Copilot
+            url: entra-governance-optimization.md
+          - text: Manage lifecycle workflows using Security Copilot
+            url: entra-lifecycle-workflows.md
+
+  # Card
+  - title: Incident Response and Investigation
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Respond to identity threats using risky user summarization
+            url: entra-risky-user-summarization.md
+          - text: Investigate incidents using Security Copilot in Microsoft Entra
+            url: entra-investigate-incident.md
+          - text: Investigate app risk using Security Copilot in Microsoft Entra
+            url: entra-investigate-risky-apps.md
+
+  # Card 
+  - title: Microsoft Entra Agents
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Access Review Assistant
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+          - text: Application Risk Agent
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+          - text: Application Discovery Agent
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+          - text: Tenant Health Management Agent
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+          - text: Risk Management Agent
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+          - text: Tenant Compliance Agent
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+
+  # Card
+  - title: Using AI Responsibly
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Responsible AI overview
+            url: /copilot/security/responsible-ai-overview-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+      - linkListType: concept
+        links:
+          - text: Responsible AI FAQ
+            url: /copilot/security/rai-faqs-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+
+   # Card
+  - title: About Microsoft Entra ID
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Entra ID?
+            url: ~/fundamentals/whatis.md
+          - text: What's new in Microsoft Entra ID
+            url: ~/fundamentals/whats-new.md
+      - linkListType: concept
+        links:
+          - text: Microsoft Entra architecture
+            url: ~/architecture/architecture.md

@@ -1,16 +1,10 @@
 ---
 title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
-
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 04/21/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.topic: article
+ms.date: 11/06/2025
 ms.reviewer: swethar
+ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -27,7 +21,7 @@ As part of this work, we're making Microsoft-managed policies available in Micro
 
 ## How Microsoft-managed policies work
 
-Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
+Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Policies**.
 
 You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 
@@ -43,14 +37,21 @@ Microsoft enables these policies no less than 45 days after they're introduced i
 
 These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to create custom versions.
 
-As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness
+As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness. Microsoft‑managed Conditional Access policies automatically adapt to changes within a tenant to maintain consistent security posture without requiring administrator action. As Microsoft identifies new users, groups, or workloads that meet the eligibility criteria for an existing MMP policy, they are automatically included in the policy’s scope. These updates do not modify the policy’s settings, conditions, or grant controls, and any admin‑configured exclusions are always preserved to prevent accidental lockouts. This ensures that coverage stays current as the tenant evolves, while maintaining predictable behavior for administrators. Microsoft communicates these updates through standard notification channels to keep tenants informed.
 
+
+- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
 - [Block legacy authentication](#block-legacy-authentication)
 - [Block device code flow](#block-device-code-flow)
 - [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
 - [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
+- [Block access for high-risk users](#block-access-for-high-risk-users)
+
+### Block all high risk agents from accessing all resources (Preview)
+
+This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 
 ### Block legacy authentication
 
@@ -107,6 +108,18 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
 
+
+### Block access for high-risk users
+
+This policy helps protect your organization by restricting access for users identified as high risk by Microsoft Entra ID Protection. User risk represents the likelihood that a user account has been compromised, based on signals such as leaked credentials or other risk detections. When enabled, this policy blocks access for users who meet the configured high user risk level until the risk is remediated. Remediation follows existing Microsoft Entra ID Protection processes and guidance.
+
+This policy targets:
+
+- Organizations with Microsoft Entra ID P2 licenses
+- Organizations where security defaults aren't enabled
+
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
+
 ## Security defaults policies
 
 The following policies are available for when you upgrade from using security defaults.
@@ -160,7 +173,7 @@ Review the **Policy impact** tab of the managed policy to see a summary of how t
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use some or all of the following filters:
    - **Correlation ID** when you have a specific event to investigate.
    - **Conditional Access** to see policy failure and success.

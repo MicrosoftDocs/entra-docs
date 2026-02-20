@@ -1,21 +1,18 @@
 ---
-title: Configure dynamic membership groups with the memberOf attribute in the Azure portal
+title: Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
-
-author: billmath
-manager: femila
-ms.service: entra-id
-ms.subservice: users
-ms.topic: conceptual
-ms.date: 12/30/2024
-ms.author: billmath
+ms.topic: how-to
+ms.date: 01/27/2026
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
-# Configure dynamic membership groups with the memberOf attribute in the Azure portal
+# Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 
 This feature preview in Microsoft Entra ID enables admins to create dynamic membership groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
+
+>[!WARNING]
+>This is a preview feature and isn't intended for production use. The use of this feature comes with limitations that can affect dynamic group processing in the tenant. We recommend you review the [Preview limitations](#preview-limitations) section before using this feature.
 
 The following diagram illustrates how you could create Dynamic-Group-A with members of Security-Group-X and Security-Group-Y. Members of the groups inside Security-Group-X and Security-Group-Y don't become members of Dynamic-Group-A.
 
@@ -30,6 +27,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 ## Preview limitations
 
 
+- This preview should only be used in test environments as it can affect dynamic group processing in the tenant. We are working on addressing these limitations and will provide updates when they are available.
 - Each Microsoft Entra tenant is limited to 500 dynamic groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group quota of 15,000.
 - Each dynamic group can have up to 50 member groups.
 - When you add members of security groups to `memberOf` dynamic membership groups, only direct members of the security group become members of the dynamic group.
@@ -38,20 +36,37 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - The dynamic group rule builder and validate feature can't be used for `memberOf` at this time.
 - The `memberOf` attribute can't be used with other operators. For example, you can't create a rule that states "Members Of group A can't be in Dynamic group B."
 - Users included in `memberOf` dynamic membership groups may cause a slower processing time for your tenant, if the tenant has a large number of groups or frequent dynamic membership groups updates.
+- Membership of a memberOf dynamic group doesn't automatically update when a child group is deleted or when members are removed from a child group. The affected users or devices remain members of the memberOf dynamic group until the rule is modified.
+
 
 ## Get started
 
-This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. Because `memberOf` isn't yet supported in the rule builder, you must enter your rule in the rule editor.
+This feature is available in the Azure portal, Microsoft Graph, and PowerShell. However, the `memberOf` attribute isn’t currently supported in the rule builder UI. To use `memberOf` in the Azure portal, you must define the rule by using the rule editor (advanced syntax).
 
 ### Create a memberOf dynamic group
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select **New group**.
 1. Fill in group details. The group type can be **Security** or **Microsoft 365**, and the membership type can be set to **Dynamic User** or **Dynamic Device**.
 1. Select **Add dynamic query**.
-1. MemberOf isn't yet supported in the rule builder. Select **Edit** to write the rule in the **Rule syntax** box.
-    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId', 'groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId', 'groupId'])`
+1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
+    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`  
+    
+> [!NOTE]
+> Replace `'groupId'` with the **object ID of the source group** whose members you want to include in the dynamic group.
+>
+> The two examples are alternatives:
+>
+> - Use the **user** rule when creating a **Dynamic user** group.
+> - Use the **device** rule when creating a **Dynamic device** group.
+>
+> To include multiple source groups, specify multiple group object IDs. For example:
+>
+> ```text
+> user.memberof -any (group.objectId -in ['<groupObjectId1>', '<groupObjectId2>'])
+> ```
+
 1. Select **OK**.
 1. Select **Create group**.

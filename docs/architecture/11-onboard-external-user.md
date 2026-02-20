@@ -5,10 +5,10 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Onboard external users to line of business applications using Microsoft Entra B2B

@@ -1,18 +1,18 @@
 ---
 title: Configure O'Reilly learning platform for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to O'Reilly learning platform.
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to O'Reilly learning platform so that I can streamline the user management process and ensure that users have the appropriate access to O'Reilly learning platform.
 ---
 
-# Configure O'Reilly learning platform for automatic user provisioning
+# Configure O'Reilly learning platform for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both O'Reilly learning platform and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [O'Reilly learning platform](https://www.oreilly.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 Before you begin to configure the O'Reilly learning platform to support provisioning with Microsoft Entra ID, you’ll need to generate a SCIM API token within the O’Reilly Admin Console.
 
-1. Navigate to [O’Reilly Admin Console](https://learning.oreilly.com/) by logging in to your O’Reilly account. 
+1. Navigate to O'Reilly Admin Console by logging in to your O'Reilly account.
 1. Once you’ve logged in, select **Admin** in the top navigation and select **Integrations**.
 1. Scroll down to the **API tokens** section. Under API tokens, select **Create token** and select the **SCIM API**. Then give your token a name and expiration date, and select Continue. You’ll receive your API key in a pop-up message prompting you to store a copy of it in a secure place. Once you’ve saved a copy of your key, select the checkbox and Continue.
 1. You use the O’Reilly SCIM API token in Step 5.
@@ -68,7 +68,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for O'Reilly learning platform in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 

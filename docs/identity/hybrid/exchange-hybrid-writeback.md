@@ -1,16 +1,15 @@
 ---
 title: 'Exchange hybrid writeback with sync'
 description: This article describes the Exchange hybrid writeback feature with sync clients.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Exchange hybrid writeback 
@@ -31,5 +30,5 @@ You can enable the connect sync scenario through the installer.  By selecting cu
 - [Exchange hybrid writeback with cloud sync](cloud-sync/exchange-hybrid.md)
 - [Common scenarios](common-scenarios.md)
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Prerequisites](prerequisites.md)

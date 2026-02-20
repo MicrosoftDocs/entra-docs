@@ -2,20 +2,20 @@
 title: Configure Adobe Identity Management (SAML) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML).
 
-author: twimmers
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thwimmer
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (SAML).
 
 ---
 
-# Configure Adobe Identity Management (SAML) for automatic user provisioning
+# Configure Adobe Identity Management (SAML) for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Adobe Identity Management (SAML) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to Adobe Identity Management (SAML) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A federated directory in the [Adobe Admin Console](https://adminconsole.adobe.com/) with verified domains.
-* Review the [adobe documentation](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/add-azure-sync.ug.html) on user provisioning 
+* Review the [Adobe documentation](https://helpx.adobe.com/enterprise/using/add-azure-sync.html#add-sync) on user provisioning
 
 > [!NOTE]
 > If your organization uses the User Sync Tool or a UMAPI integration, you must first pause the integration. Then, add Microsoft Entra automatic provisioning to automate user management. Once Microsoft Entra automatic provisioning is configured and running, you can completely remove the User Sync Tool or UMAPI integration.
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Adobe Identity Management (SAML) in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Screenshot shows the enterprise applications blade.](common/enterprise-applications.png "Enterprise application")
 

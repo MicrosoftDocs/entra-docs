@@ -3,12 +3,12 @@ title: Sign in users in React SPA by using native authentication
 description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 02/07/2025
+ms.date: 11/17/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication API so that I can sign in users with a username (email) and password.
 ---
 
@@ -144,7 +144,7 @@ To do so, create a file called *src/client/SignInService.ts*, then add the follo
     };
 ```
 
-The `challenge_type` property shows the authentication methods that the client app supports. This app signs is using email with password, so the challenge type value is *password oob redirect*. Read more about [challenge types](concept-native-authentication-challenge-types.md).
+The `challenge_type` property shows the authentication methods that the client app supports. This app signs in using email with password, so the challenge type value is *password oob redirect*. Read more about [challenge types](concept-native-authentication-challenge-types.md).
 
 ## Create UI components
 
@@ -326,6 +326,10 @@ export const AppRoutes = () => {
 ## Run and test your app
 
 Use the steps in [Run and test you app](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md#run-and-test-you-app) to run your app, but this time, test the sign in flow by using the user account that you signed up earlier.
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next step
 

@@ -1,19 +1,16 @@
 ---
 title: 'Microsoft Entra Connect Sync: Directory extensions'
 description: This topic describes the directory extensions feature in Microsoft Entra Connect.
-
-author: billmath
-manager: femila
-
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 995ee876-4415-4bb0-a258-cca3cbb02193
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect Sync: Directory extensions
@@ -40,7 +37,9 @@ The wizard shows the attributes that are valid candidates to be used with Direct
 
 - Not all features in Microsoft Entra ID support multi-valued extension attributes. Refer to the documentation of the feature in which you plan to use these attributes to confirm they're supported. 
 
-- An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.
+- An object in Microsoft Entra ID can have up to 100 directory extension attribute values. For multi‑valued attributes, each individual value counts toward this 100‑value limit.
+
+- The maximum length of a string attribute value is 256 characters. If an attribute value exceeds this limit, the sync engine truncates the value.
 
 - It's not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of Microsoft Entra Connect you may still see these attributes show up in the installation wizard, you shouldn't enable them as its value won't sync to Microsoft Entra ID. [Learn mode](/openspecs/windows_protocols/ms-adts/a3aff238-5f0e-4eec-8598-0a59c30ecd56).
 

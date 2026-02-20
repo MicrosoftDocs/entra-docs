@@ -1,26 +1,20 @@
 ---
 title: Office 365 App in Conditional Access reference
 description: What are all of the services included in the Office 365 app in Microsoft Entra Conditional Access
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: reference
-ms.date: 12/6/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.date: 01/23/2026
 ms.reviewer: kvenkit
 ---
 
 # Apps included in Conditional Access Office 365 app suite
 
-The following list is provided as a reference and includes a detailed list of services and applications that are included in the Conditional Access [Office 365](concept-conditional-access-cloud-apps.md#office-365) app.
+The following list is provided as a reference and includes a detailed list of services and applications that are included in the Conditional Access [Office 365](concept-conditional-access-cloud-apps.md#office-365) app. In Conditional Access, the Microsoft 365 suite of applications appears under 'Office 365'.
 
 - App Studio for Microsoft Teams
 - Augmentation Loop
 - Call Recorder
 - Connectors
+- Copilot Data Platform 
 - DataSecurityInvestigation
 - Device Management Service
 - EDU Assignments
@@ -123,6 +117,7 @@ The following list is provided as a reference and includes a detailed list of se
 - OneDrive
 - OneDrive SyncEngine
 - OneNote
+- OneOutlook
 - Outlook Browser Extension
 - Outlook Service for Exchange
 - PowerApps Service

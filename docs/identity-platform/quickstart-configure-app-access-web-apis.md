@@ -2,9 +2,9 @@
 title: "Web API app registration and API permissions"
 description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-api
+ms.custom:
 ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
@@ -21,7 +21,7 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Completion of [Quickstart: Register an application](quickstart-register-app.md)
 * Completion of [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md)
 
@@ -43,7 +43,7 @@ Once you've registered both your client app and web API and you've exposed the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application (*not* your web API).
+1. Browse to **Entra ID** > **App registrations**, and then select your client application (*not* your web API).
 1. Select **API permissions**, then **Add a permission** and select **My APIs** in the sidebar.
 
 
@@ -56,7 +56,7 @@ Once you've registered both your client app and web API and you've exposed the A
     - **Application permissions** are for service- or daemon-type applications that need to access a web API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your web API, this option is disabled.
 
 1. Under **Select permissions**, expand the resource whose scopes you defined for your web API, and select the permissions the client app should have on behalf of the signed-in user.
-    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-access-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
+    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-expose-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
     
 1. Select the permission you created while completing the prerequisites, for example, `Employees.Read.All`.
 1. Select **Add permissions** to complete the process.
@@ -100,7 +100,7 @@ In the following steps, you grant permission to Microsoft Graph's *Files.Read.Al
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application.
+1. Browse to **Entra ID** > **App registrations**, and then select your client application.
 1. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**.
 1. All permissions exposed by Microsoft Graph are shown under **Select permissions**.
 1. Select the permission or permissions you want to grant your application. As an example, you might have a daemon app that scans files in your organization, alerting on a specific file type or name. Under **Select permissions**, expand **Files**, and then select the `Files.Read.All` permission.

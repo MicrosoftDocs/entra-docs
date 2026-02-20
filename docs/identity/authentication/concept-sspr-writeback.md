@@ -1,13 +1,8 @@
 ---
 title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: femila
+ms.topic: concept-article
+ms.date: 10/25/2025
 ms.reviewer: tilarso
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
@@ -25,6 +20,9 @@ Password writeback is supported in environments that use the following hybrid id
 * [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md)
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
+> [!NOTE]
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
+
 Password writeback provides the following features:
 
 * **Enforcement of on-premises Active Directory Domain Services (AD DS) password policies**: When a user resets their password, it's checked to ensure it meets your on-premises AD DS policy before committing it to that directory. This review includes checking the history, complexity, age, password filters, and any other password restrictions that you define in AD DS.
@@ -40,7 +38,7 @@ Password writeback provides the following features:
 To get started with SSPR writeback, complete either one or both of the following tutorials:
 
 - [Tutorial: Enable self-service password reset (SSPR) writeback](tutorial-enable-sspr-writeback.md)
-- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment (Preview)](tutorial-enable-cloud-sync-sspr-writeback.md)
+- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment](tutorial-enable-cloud-sync-sspr-writeback.md)
 
 <a name='azure-ad-connect-and-cloud-sync-side-by-side-deployment'></a>
 
@@ -65,9 +63,9 @@ When a user account configured for federation, password hash synchronization (or
    * The user object must exist in the AD DS connector space.
    * The user object must be linked to the corresponding metaverse (MV) object.
    * The user object must be linked to the corresponding Microsoft Entra connector object.
-   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InfromADUserAccountEnabled.xxx` on the link.
+   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InformADUserAccountEnabled.xxx` on the link.
 
-   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InfromADUserAccountEnabled.xxx` link to pick the correct one.
+   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InformADUserAccountEnabled.xxx` link to pick the correct one.
 
 1. After the user account is found, an attempt to reset the password directly in the appropriate AD DS forest is made.
 1. If the password set operation is successful, the user is told their password has been changed.

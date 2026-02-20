@@ -2,19 +2,19 @@
 title: Configure Hoxhunt for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Hoxhunt.
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Hoxhunt so that I can streamline the user management process and ensure that users have the appropriate access to Hoxhunt.
 ---
 
-# Configure Hoxhunt for automatic user provisioning
+# Configure Hoxhunt for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Hoxhunt and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Hoxhunt](https://www.hoxhunt.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -61,7 +61,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Hoxhunt in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -91,22 +91,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Hoxhunt in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Hoxhunt for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Hoxhunt API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by Hoxhunt
-   |---|---|---|---
-   |userName|String|&check;|&check;
-   |emails[type eq "work"].value|String||&check;
-   |active|Boolean||
-   |name.givenName|String||
-   |name.familyName|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |addresses[type eq "work"].country|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
-   |preferredLanguage|String||
-   |addresses[type eq "work"].locality|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
+   |Attribute|Type|Supported for filtering|Required by Hoxhunt|
+   |---|---|---|---|
+   |userName|String|&check;|&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |active|Boolean|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |addresses[type eq "work"].country|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|||
+   |preferredLanguage|String|||
+   |addresses[type eq "work"].locality|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|||
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Hoxhunt, change the **Provisioning Status** to **On** in the **Settings** section.
 

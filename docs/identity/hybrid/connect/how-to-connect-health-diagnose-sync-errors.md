@@ -2,15 +2,15 @@
 title: Microsoft Entra Connect Health - Diagnose duplicated attribute synchronization errors
 description: This document describes the diagnosis process of duplicated attribute synchronization errors and a potential fix of the orphaned object scenarios directly from the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 editor: billmath
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -128,7 +128,7 @@ The sync error will be resolved after the next sync. Connect Health will no long
 
 ## Failures and error messages
 **User with conflicting attribute is soft deleted in the Microsoft Entra ID. Ensure the user is hard deleted before retry.**  
-The user with conflicting attribute in Microsoft Entra ID should be cleaned before you can apply fix. Check out [how to delete the user permanently in Microsoft Entra ID](~/fundamentals/users-restore.yml) before retrying the fix. The user will also be automatically deleted permanently after 30 days in soft deleted state. 
+The user with conflicting attribute in Microsoft Entra ID should be cleaned before you can apply fix. Check out [how to delete the user permanently in Microsoft Entra ID](~/fundamentals/users-restore.md) before retrying the fix. The user will also be automatically deleted permanently after 30 days in soft deleted state. 
 
 **Updating source anchor to cloud-based user in your tenant is not supported.**  
 Cloud-based user in Microsoft Entra ID should not have source anchor. Updating source anchor is not supported in this case. Manual fix is required from on premises. 

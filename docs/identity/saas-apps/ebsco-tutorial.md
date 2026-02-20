@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with EBSCO
+title: Configure EBSCO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EBSCO.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EBSCO so that I can control who has access to EBSCO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with EBSCO
+# Configure EBSCO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EBSCO with Microsoft Entra ID. When you integrate EBSCO with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate EBSCO with Microsoft Entra ID. When
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EBSCO single sign-on (SSO) enabled subscription.
 
@@ -43,7 +44,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of EBSCO into Microsoft Entra ID, you need to add EBSCO from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **EBSCO** in the search box.
 1. Select **EBSCO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -71,7 +72,7 @@ To configure and test Microsoft Entra SSO with EBSCO, perform the following step
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **EBSCO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **EBSCO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -94,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	o	**Custid** = Enter unique EBSCO customer ID 
 
-	o	**Profile** = Clients can tailor the link to direct users to a specific profile (depending on what they purchase from EBSCO). They can enter a specific profile ID. The main IDs are eds (EBSCO Discovery Service) and ehost (EBSOCOhost databases). Instructions for the same are given [here](https://help.ebsco.com/interfaces/EBSCOhost/EBSCOhost_FAQs/How_do_I_set_up_direct_links_to_EBSCOhost_profiles_and_or_databases#profile).
+	o	**Profile** = Clients can tailor the link to direct users to a specific profile (depending on what they purchase from EBSCO). They can enter a specific profile ID. The main IDs are eds (EBSCO Discovery Service) and ehost (EBSOCOhost databases). Instructions for the same are given in the EBSCOhost documentation.
 
 1. EBSCO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

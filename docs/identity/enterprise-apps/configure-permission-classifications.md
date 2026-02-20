@@ -2,14 +2,8 @@
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: phsignor, jawoods
 ms.custom: no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
@@ -28,7 +22,7 @@ The minimum permissions needed to do basic sign-in are `openid`, `profile`, `ema
 
 To configure permission classifications, you need:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Application Administrator, or Cloud Application Administrator
 
 ## Manage permission classifications
@@ -39,7 +33,7 @@ To configure permission classifications, you need:
 Follow these steps to classify permissions using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Permission classifications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **Permission classifications**.
 1. Choose the tab for the permission classification you'd like to update.
 1. Choose **Add permissions** to classify another permission.
 1. Select the API and then select one or more delegated permissions.

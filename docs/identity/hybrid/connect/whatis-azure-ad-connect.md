@@ -2,13 +2,13 @@
 title: 'What is Microsoft Entra Connect and Connect Health.'
 description: Learn about the tools used to synchronize and monitor your on-premises environment with Microsoft Entra ID.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

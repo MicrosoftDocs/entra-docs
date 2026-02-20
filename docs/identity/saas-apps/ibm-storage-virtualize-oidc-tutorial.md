@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with IBM Storage Virtualize
+title: Configure IBM Storage Virtualize for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and IBM Storage Virtualize.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IBM Storage Virtualize so that I can control who has access to IBM Storage Virtualize, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with IBM Storage Virtualize
+# Configure IBM Storage Virtualize for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate IBM Storage Virtualize with Microsoft Entra ID. When you integrate IBM Storage Virtualize with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ Enable your users to be automatically signed in to IBM Storage Virtualize with t
 Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * IBM Storage Virtualize single sign-on (SSO) enabled subscription.
 
@@ -34,7 +36,7 @@ To configure the integration of IBM Storage Virtualize into Microsoft Entra ID, 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **IBM Storage Virtualize** in the search box.
 
@@ -46,7 +48,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IBM Storage Virtualize** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **IBM Storage Virtualize** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -86,7 +88,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 1. Sign in to the IBM Storage Virtualize administrator dashboard by using the following URL:
 `https://tenant.verify.ibm.com/ui/admin`.
 
-1. In the IBM Security Verify interface, select **Applications**  > **Add application**.
+1. In the IBM Security Verify interface, select **Applications **Add application**.
 
     > [!Note]
     >  Each system must be added as a separate application.

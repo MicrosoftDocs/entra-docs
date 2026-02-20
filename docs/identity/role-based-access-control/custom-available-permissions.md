@@ -1,17 +1,10 @@
 ---
 title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
-
-author: rolyon
-manager: femila
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 03/30/2025
-ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Application registration permissions for custom roles in Microsoft Entra ID

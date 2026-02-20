@@ -1,13 +1,12 @@
 ---
 title: Multitenant organization capabilities in Microsoft Entra ID
 description: Learn about the multitenant organization scenario and capabilities in Microsoft Entra ID.
-author: rolyon
-manager: femila
+author: kenwith
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/16/2024
-ms.author: rolyon
+ms.date: 01/28/2026
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -134,7 +133,7 @@ Multitenant organization people search is a collaboration feature that enables s
 Here are the primary benefits of using Microsoft 365 people search across multiple tenants:
 
 - B2B collaboration users can be made available for collaboration in Outlook. This can be enabled using the [showInAddressList](/graph/api/resources/user#properties) property set to true for Exchange Online mail users in the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
-- B2B collaboration users already shown in address lists can be made available for collaboration in most Microsoft 365 applications using the [userType](/graph/api/resources/user#properties) property set to Member, managed in [Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.yml) of the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
+- B2B collaboration users already shown in address lists can be made available for collaboration in most Microsoft 365 applications using the [userType](/graph/api/resources/user#properties) property set to Member, managed in [Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md) of the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
 
 Here are the primary constraints of using Microsoft 365 people search across multiple tenants:
 
@@ -183,6 +182,7 @@ Here are the primary benefits of using Microsoft 365 admin center to create your
 - Microsoft 365 admin center will pre-configure your tenants for auto-redemption of B2B collaboration invitations.
 - Microsoft 365 admin center will pre-configure your tenants for inbound user synchronization, though usage of cross-tenant synchronization remains optional.
 - Microsoft 365 admin center allows easy provisioning of employees into multiple tenants of your multitenant organization.
+- Microsoft 365 admin center can create Exchange Online Organization Relationships to view calendar availability information.
 
 Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization or provision employees:
 

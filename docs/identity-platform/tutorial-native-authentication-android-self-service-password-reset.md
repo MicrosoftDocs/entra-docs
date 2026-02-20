@@ -3,10 +3,10 @@ title: Self-service password reset in Android app using native authentication
 description: Learn how to implement self-service password reset (SSPR) to my Android app using native authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
@@ -57,7 +57,7 @@ To handle the request when the user selects the **Forget Password** button or li
 
             when (resetPasswordResult) { 
                 is ResetPasswordStartResult.CodeRequired -> { 
-                    // The implementation of submiteCode() please see below. 
+                    // The implementation of submitCode() please see below. 
                     submitCode(resetPasswordResult.nextState) 
                 } 
                 is ResetPasswordError -> {

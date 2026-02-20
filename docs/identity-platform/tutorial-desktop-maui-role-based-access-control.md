@@ -2,7 +2,7 @@
 title: "Tutorial: Use role-based access control in your .NET MAUI desktop app using the Microsoft identity platform"
 description: This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) shell and receive them in the ID token.
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial

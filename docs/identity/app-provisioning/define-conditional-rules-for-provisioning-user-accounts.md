@@ -1,14 +1,8 @@
 ---
 title: Scoping users or groups to be provisioned with scoping filters in Microsoft Entra ID
 description: Learn how to use scoping filters to define attribute-based rules that determine which users or groups are provisioned in Microsoft Entra ID.
-
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ai-usage: ai-assisted
@@ -72,7 +66,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="app-provisioning"
 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
 3. Select the application for which you have configured automatic provisioning: for example, "ServiceNow".
 
@@ -80,7 +74,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Identity** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
 
 3. Select your configuration.
 

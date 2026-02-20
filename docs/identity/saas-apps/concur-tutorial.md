@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Concur
+title: Configure Concur for Single sign-on with Microsoft Entra ID
 description: Learn how to configure SSO between Microsoft Entra ID and Concur.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Concur so that I can control who has access to Concur, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Concur
+# Configure Concur for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Concur with Microsoft Entra ID. When you integrate Concur with Microsoft Entra ID, you can:
 
@@ -30,7 +30,9 @@ In this article,  you learn how to integrate Concur with Microsoft Entra ID. Whe
 > For these reason you must start out with a custom non-gallery application to set up SSO when using the **Manage Single Sign-On** feature in SAP Concur.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Concur single sign-on (SSO) enabled subscription.
 
@@ -46,11 +48,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Concur into Microsoft Entra ID, you need to add Concur from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Concur** in the search box.
 1. Select **Concur** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-concur'></a>
 
@@ -74,7 +76,7 @@ To configure and test Microsoft Entra SSO with Concur, perform the following ste
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Concur** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Concur** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -98,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://<customer-domain>.concursolutions.com` | 
 
     > [!NOTE]
-    > These values aren't real. Update these values with the actual Sign-on URL, Identifier and Reply URL. Contact [Concur Client support team](https://www.concur.co.in/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Sign-on URL, Identifier and Reply URL. Contact Concur Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -114,10 +116,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Concur SSO
 
-To configure single sign-on on **Concur** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Concur support team](https://www.concur.co.in/contact). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Concur** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to Concur support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
   > [!NOTE]
-  > The configuration of your Concur subscription for federated SSO via SAML is a separate task, which you must contact [Concur Client support team](https://www.concur.co.in/contact) to perform.
+  > The configuration of your Concur subscription for federated SSO via SAML is a separate task, which you must contact Concur Client support team to perform.
 
 ### Create Concur test user
 

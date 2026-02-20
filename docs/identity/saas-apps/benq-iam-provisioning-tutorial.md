@@ -1,20 +1,18 @@
 ---
 title: Configure BenQ IAM for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BenQ IAM.
-
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BenQ IAM so that I can streamline the user management process and ensure that users have the appropriate access to BenQ IAM.
 ---
 
-# Configure BenQ IAM for automatic user provisioning
+# Configure BenQ IAM for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both BenQ IAM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [BenQ IAM](https://service-portal.benq.com/login) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -32,7 +30,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
-* An administrator account with BenQ IAM. You can register for a BenQ admin account at [BenQ IAM](https://service-portaltest.benq.com/login).
+* An administrator account with BenQ IAM.
 
 
 ## Step 1: Plan your provisioning deployment
@@ -44,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure BenQ IAM to support provisioning with Microsoft Entra ID
 
-1. Sign in to the [BenQ IAM](https://service-portaltest.benq.com/login) with BenQ administrator account, select **SSO Setting** in the Account Management section.
+1. Sign in to the BenQ IAM portal with BenQ administrator account, select **SSO Setting** in the Account Management section.
 	![SSO Setting](media/benq-iam-provisioning-tutorial/sso-setting.png)
 
 2. Select **SSO by SAML** as SSO Setting in the pop up and select Next. 
@@ -77,7 +75,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for BenQ IAM in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -109,10 +107,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
-   |userName|String|&check;
-   |externalId|String|
-   |active|Boolean|
-   |displayName|String|
+   |userName|String|&check;|
+   |externalId|String||
+   |active|Boolean||
+   |displayName|String||
 
 10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

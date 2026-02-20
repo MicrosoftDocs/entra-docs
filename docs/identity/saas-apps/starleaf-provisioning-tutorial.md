@@ -1,20 +1,18 @@
 ---
 title: Configure StarLeaf for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to StarLeaf.
-
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
-
+ms.date: 05/20/2025
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to StarLeaf so that I can streamline the user management process and ensure that users have the appropriate access to StarLeaf.
 ---
 
-# Configure StarLeaf for automatic user provisioning
+# Configure StarLeaf for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in StarLeaf and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to StarLeaf.
 
@@ -65,7 +63,7 @@ To configuring StarLeaf for automatic user provisioning with Microsoft Entra ID,
 **To add StarLeaf from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **StarLeaf**, select **StarLeaf** in the results panel.
 	![Screenshot of the StarLeaf in the results list.](common/search-new-app.png)
 
@@ -74,7 +72,7 @@ To configuring StarLeaf for automatic user provisioning with Microsoft Entra ID,
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in StarLeaf based on user and/or group assignments in Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 

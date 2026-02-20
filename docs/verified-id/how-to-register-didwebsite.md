@@ -2,12 +2,8 @@
 title: Register your website ID
 description: Learn how to register your website ID for did:web.
 documentationCenter: ''
-author: barclayn
-manager: femila
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information to help me register my website ID.
 ---
@@ -27,7 +23,7 @@ For the web trust system, you need to register your DID to be able to issue and 
 
 ## How do I register my decentralized ID?
 
-1. Go to the **Verified ID** page in the Azure portal.
+1. Go to the **Verified ID** page in the **Azure portal**.
 1. On the leftmost menu, select **Setup**.
 1. On the middle menu, under **Register decentralized ID**, select **Update**.
 

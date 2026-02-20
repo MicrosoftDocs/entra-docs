@@ -1,16 +1,15 @@
 ---
 title: Recommendation to minimize MFA prompts from known devices
 description: Learn about the recommendation to minimize multifactor authentication prompts from known devices in Microsoft Entra ID.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/09/2025
+ms.date: 06/12/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari
-
+ms.reviewer: jadedsouza
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to minimize the number of multifactor authentication prompts my users receive from known devices so that they can access resources more easily and securely.
 ---
 
@@ -40,7 +39,7 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
-1. Browse to **Protection** > **Multifactor authentication**.
+1. Browse to **Entra ID** > **Multifactor authentication**.
 
 1. Under the **Configure** heading, select the **Additional cloud-based multifactor authentication settings** link.
 

@@ -2,14 +2,14 @@
 title: 'How to programmatically configure cloud sync using MS Graph API'
 description: This topic describes how to enable inbound synchronization using just the Graph API
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -40,7 +40,7 @@ Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to 
 ### Enable tenant flags
 
 ```powershell
-Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
+Connect-MgGraph -Scopes "Organization.ReadWrite.All" ('-Environment <AzureEnvironment>')
 $organizationId = (Get-MgOrganization).Id
 $params = @{
 	onPremisesSyncEnabled = $true

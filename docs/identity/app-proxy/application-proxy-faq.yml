@@ -2,12 +2,8 @@
 metadata:
   title: Microsoft Entra application proxy frequently asked questions
   description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.
-  author: kenwith
-  ms.service: entra-id
-  ms.subservice: app-proxy
   ms.topic: faq
-  ms.date: 02/21/2025
-  ms.author: kenwith
+  ms.date: 12/29/2025
   ms.reviewer: ashishj
   ai-usage: ai-assisted
 title: Microsoft Entra application proxy frequently asked questions
@@ -23,9 +19,18 @@ sections:
         answer: |
             No, the following configuration items are being used by app proxy and shouldn't be altered or deleted:
             - Enable/Disable “Allow public clients flows”.
-            - CWAP_AuthSecret (Client secrets).
+            - Federated credentials.
             - API Permissions.
             Modifying any of the above configuration items on the App registration page breaks preauthentication for Microsoft Entra application proxy.
+
+      - question: |
+         An application proxy app's client secret (CWAP_AuthSecret) is nearing expiry or has already expired. What should I do?
+        answer: |
+              Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre-authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
+              Applications configured with Passthrough pre-authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
+           
+              You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
+              For more information about Federated Identity Credentials, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
 
       - question: |
          Can I delete an application proxy app from the App registrations page in the Microsoft Entra admin center? 
@@ -45,11 +50,7 @@ sections:
          Why is the Enable application proxy button grayed out?
         answer: |
               Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra private network connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
-      - question: |
-         What are TCP ports 10200 and 10201 used for?
-        answer: |
-              Using a port scan utility on application proxy public endpoints (msappproxy.net or custom) may show that TCP ports 10200 and 10201 are open, in addition to ports 80 and/or 443. These ports are used for internal service health monitoring purposes. No customer data is accessible over these ports, and the services behind them do not process any information; they simply respond with "OK".
-
+      
   - name: Connector configuration
     questions:
       - question: |
@@ -75,6 +76,14 @@ sections:
 
   - name: Application configuration
     questions:
+      - question: |
+         Do I need to manage or rotate client secrets when deploying Application Proxy apps?
+        answer: |
+              No. Application Proxy apps no longer rely on client secrets (CWAP_AuthSecret). For apps using Microsoft Entra ID preauthentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, doesn't expire, and requires no manual rotation or maintenance.
+              Applications configured with passthrough preauthentication or those using access tokens don't require Federated Identity Credentials.
+              You can safely ignore any existing CWAP secrets in the app registration and remove old or expired secrets.
+              For more information, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
+
       - question: |
          Can I use the domain suffixes `[tenant name].onmicrosoft.com` or `[tenant name].mail.onmicrosoft.com` in the external URL?
         answer: |
@@ -106,16 +115,6 @@ sections:
          Can a service principal manage application proxy using PowerShell or Microsoft Graph APIs?
         answer: |
               No, this is currently not supported.
-
-      - question: |
-         What happens if I delete CWAP_AuthSecret (the client secret) in the app registration?
-        answer: |
-              The client secret, also called *CWAP_AuthSecret*, is automatically added to the application object (app registration) when the Microsoft Entra application proxy app is created.
-          
-              The client secret is valid for one year. A new one-year client secret is automatically created before the current valid client secret expires. Three CWAP_AuthSecret client secrets are kept in the application object always. 
-          
-              > [!IMPORTANT]
-              > Deleting CWAP_AuthSecret breaks preauthentication for Microsoft Entra application proxy. Don't delete CWAP_AuthSecret.
 
       - question: |
          I'm using or want to use Microsoft Entra application proxy. Can I replace the "onmicrosoft.com" fallback domain of my tenant in Microsoft 365 as suggested in the article "Add and replace your onmicrosoft.com fallback domain in Microsoft 365"? 

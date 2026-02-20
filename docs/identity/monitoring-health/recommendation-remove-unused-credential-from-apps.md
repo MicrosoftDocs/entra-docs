@@ -1,16 +1,15 @@
 ---
 title: Recommendation to remove unused credentials from apps
 description: Learn how the Microsoft Entra recommendation to remove unused credentials from apps works and why it's important.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT Admin I need to know what credentials haven't been used so I can remove them to improve security.
 ---
 # Microsoft Entra recommendation: Remove unused credentials from apps (preview)
@@ -52,7 +51,7 @@ Applications that the recommendation identified appear in the list of **Impacted
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Remove unused credentials from applications** recommendation.
 
@@ -68,7 +67,7 @@ Applications that the recommendation identified appear in the list of **Impacted
     > If the origin of the credential is Service Principal, follow the guidance in the [**Service principals**](#service-principals) section.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to remove the unused credential.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and select the application that was surfaced as part of this recommendation. 
+    1. Alternatively, browse to **Entra ID** > **App registrations** and select the application that was surfaced as part of this recommendation. 
 
         :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-credential-from-apps/app-registrations-list-expanded.png":::
 
@@ -162,7 +161,7 @@ If the origin of the credential is **service principal**, there are a few consid
 
 Because there's often multiple service principals for a single application, it might be easier to navigate to Enterprise apps to view everything in one place.
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Identity** > **Applications** > **Enterprise applications**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Entra ID** > **Enterprise apps**.
 1. Search for and open the application that was surfaced as part of this recommendation.
 1. Select **Single sign-on** from the side menu.
 

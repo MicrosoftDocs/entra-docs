@@ -2,7 +2,7 @@
 title: Quickstart - Sign in users in a sample web app
 description: Web app quickstart that shows how to configure a sample web app that signs in employees in workforce tenant or customers in external tenant
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 03/10/2025
@@ -24,7 +24,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -289,7 +289,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer

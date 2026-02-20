@@ -1,23 +1,21 @@
 ---
 title: 'Microsoft Entra Connect Sync: Get started by using express settings'
 description: Learn how to download, install, and run the setup wizard for Microsoft Entra Connect Sync.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 # Get started with Microsoft Entra Connect Sync by using express settings
 
 If you have a single-forest topology and use [password hash sync](how-to-connect-password-hash-synchronization.md) for authentication, express settings are a good option to use when you install Microsoft Entra Connect Sync. Express settings  the default option to install Microsoft Entra Connect Sync, and it's used for the most commonly deployed scenario. It's only a few short steps to extend your on-premises directory to the cloud.
 
-Before you start installing Microsoft Entra Connect Sync, [download Microsoft Entra Connect Sync](https://go.microsoft.com/fwlink/?LinkId=615771), and be sure to complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md).
+Before you start installing Microsoft Entra Connect Sync, [download Microsoft Entra Connect Sync](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), and be sure to complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md).
 
 If the express settings installation doesn't match your topology, see [Related articles](#related-articles) for information about other scenarios.
 
@@ -53,7 +51,7 @@ For more information see [TLS 1.2 enforcement for Microsoft Entra Connect Sync](
 
   :::image type="content" source="media/how-to-connect-install-express/install-6.png" alt-text="Screenshot that shows the Connect to AD DS page in the installation wizard." lightbox="media/how-to-connect-install-express/install-6.png":::
 
- 7. The [Microsoft Entra ID sign-in configuration](plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.yml) in the [prerequisites](how-to-connect-install-prerequisites.md).
+ 7. The [Microsoft Entra ID sign-in configuration](plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.md) in the [prerequisites](how-to-connect-install-prerequisites.md).
 
   :::image type="content" source="media/how-to-connect-install-express/install-7.png" alt-text="Screenshot that shows examples of unverified domains in the installation wizard." lightbox="media/how-to-connect-install-express/install-7.png":::
 

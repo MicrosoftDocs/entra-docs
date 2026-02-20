@@ -1,15 +1,8 @@
 ---
 title: Require MFA for all users with Conditional Access
 description: Create a custom Conditional Access policy to require all users do multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for all users
@@ -37,13 +30,13 @@ For external user scenarios, the MFA authentication methods that a resource tena
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-behavior-when-an-all-resources-policy-has-an-app-exclusion).
+The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-for-all-resources).
 
 > [!WARNING]
 > [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) are currently incompatible with authentication strength. You should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -83,3 +76,4 @@ In the previous example policy, an organization might choose to not require mult
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
 - [Windows subscription activation](/windows/deployment/windows-subscription-activation#adding-conditional-access-policy)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)

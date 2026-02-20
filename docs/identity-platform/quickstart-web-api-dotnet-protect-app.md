@@ -2,11 +2,11 @@
 title: "Quickstart: Call a web API that is protected by the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET web API by using the Microsoft identity platform for authorization.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 04/03/2025
-ms.reviewer: jmprieur, dmwendia
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -21,7 +21,7 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *NewWebAPI1*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
@@ -121,7 +121,7 @@ Register your TodoListClient app in **App registrations** in the Microsoft Entra
 To register the TodoListClient app, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+1. Browse to **Entra ID** > **App registrations** and select **New registration**.
 1. Select **New registration**.
 1. When the **Register an application page** opens, enter your application's registration information:
 

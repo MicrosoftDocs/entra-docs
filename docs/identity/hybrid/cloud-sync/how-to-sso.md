@@ -2,13 +2,13 @@
 title: 'How to use single sign-on with cloud sync'
 description: This article describes how to install and use single sign-on with cloud sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

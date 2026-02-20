@@ -1,15 +1,9 @@
 ---
 title: Application Proxy Cookie Settings
 description: Microsoft Entra ID uses access and session cookies to access on-premises applications through application proxy. This article explains how to use and configure the cookie settings. 
-
-author: HULKsmashGithub
-manager: femila
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: jayrusso
 ms.reviewer: KaTabish
 
 #customer intent: As an IT admin, I want to understand and configure application proxy cookie settings so that I can secure access to on-premises applications.
@@ -43,7 +37,7 @@ Additionally, if your back-end application has cookies that need third-party con
 To set the cookie settings using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 5. Under **Additional Settings**, set the cookie setting to **Yes** or **No**.
 6. Select **Save** to apply your changes. 
 

@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with my.sdworx.com
+title: Configure my.sdworx.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and my.sdworx.com.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and my.sdworx.com so that I can control who has access to my.sdworx.com, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with my.sdworx.com
+# Configure my.sdworx.com for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate my.sdworx.com with Microsoft Entra ID. my.sdworx.com is an SD Worx portal. When you integrate my.sdworx.com with Microsoft Entra ID, you can:
 
@@ -24,7 +24,18 @@ In this article, you learn how to integrate my.sdworx.com with Microsoft Entra I
 * Enable your users to be automatically signed-in to my.sdworx.com with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment. my.sdworx.com supports **IDP** initiated single sign-on.
+You configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment (my.acc.sdworx.com) but not by using this gallery app (import SP metadata, to be provided by your my.sdworx.com contact). my.sdworx.com supports **IDP** and **SP** initiated single sign-on.
+ 
+When using **SP** initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed.
+
+
+
+You can configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment (my.acc.sdworx.com) but not by using the gallery app (import SP metadata, to be provided by your my.sdworx.com contact). My.sdworx.com supports **IDP** and **SP** initiated single sign-on.
+ 
+When using **SP** initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed.
+
+<!-- Changes done by Rhythm -->
+
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -34,9 +45,9 @@ You configure and test Microsoft Entra single sign-on for my.sdworx.com in a tes
 To integrate Microsoft Entra ID with my.sdworx.com, you need:
 
 * Before adding the application in your Microsoft Entra tenant, please contact your SD Worx consultant first to start up the track to activate the SSO for your company. The SSO won’t work before it's implemented and activated on the SD Worx Service Provider.
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * my.sdworx.com single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user
@@ -64,7 +75,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **my.sdworx.com** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **my.sdworx.com** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

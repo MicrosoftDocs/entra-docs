@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 02/25/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.reviewer: besiler
 
 #Customer intent: As an IT admin, you need to know how to use the sign-in log so that you can fix sign-in issues.
@@ -22,7 +22,7 @@ With the information in the Microsoft Entra sign-in log, you can figure out what
 
 To complete the scenario in this quickstart, you need:
 
-- An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md).
 - A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
 - **A test account called Isabella Simonsen** - If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/add-users.md#add-a-new-user).
@@ -43,7 +43,7 @@ This section provides you with the steps to analyze a failed sign-in. Filter the
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 1. Adjust the filter to view only the records for Isabella Simonsen:
 

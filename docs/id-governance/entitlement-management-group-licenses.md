@@ -1,12 +1,9 @@
 ---
 title: Manage the lifecycle of group-based licenses in Microsoft Entra ID
 description: This step-by-step tutorial shows how to create an access package for managing group-based licenses in entitlement management.
-author: owinfreyATL
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
-ms.author: owinfrey
 #Customer intent: As an IT admin, I want step-by-step instructions for creating an access package for managing the lifecycle of group-based licenses.
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
@@ -31,7 +28,7 @@ For more information, see [License requirements](entitlement-management-overview
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page Select **New access package**.
 
@@ -110,7 +107,7 @@ In this step, you delete the Office Licenses access package.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Open the **Office Licenses** access package. 
 

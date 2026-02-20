@@ -1,19 +1,14 @@
 ---
 title: SAML/WS-Fed federation for self-service sign-up 
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) and enable self-service sign-up for external users, who can sign in with their own work accounts.
- 
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.date: 05/07/2025
 ms.custom: it-pro, 
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with an external organization's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
 ---
 
-# Add the SAML/WS-Fed identity provider to a user flow (preview)
+# Add the SAML/WS-Fed identity provider to a user flow
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -32,7 +27,7 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Switch to your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select the user flow where you want to add the identity provider.
 

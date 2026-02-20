@@ -2,13 +2,13 @@
 title: Tutorial - Integrate an existing forest and a new forest with a single Microsoft Entra tenant using Microsoft Entra Cloud Sync.
 description: Learn how to add cloud sync to an existing hybrid identity environment.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -28,7 +28,7 @@ In this scenario, there's an existing forest synced using Microsoft Entra Connec
 ### In the Microsoft Entra admin center
 
 1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -78,7 +78,7 @@ Use the following steps to configure provisioning:
 You'll now verify that the users that you had in our on-premises directory have been synchronized and now exist in our Microsoft Entra tenant.  This process may take a few hours to complete.  To verify users are synchronized, do the following:
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 2. Browse to **Identity** > **Users**.
+ 2. Browse to **Entra ID** > **Users**.
  3. Verify that you see the new users in our tenant
 
 ## Test signing in with one of our users

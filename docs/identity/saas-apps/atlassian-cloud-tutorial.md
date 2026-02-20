@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra SSO integration with Atlassian Cloud
+title: Configure Atlassian Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Atlassian Cloud.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atlassian Cloud so that I can control who has access to Atlassian Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Atlassian Cloud
+# Configure Atlassian Cloud for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Atlassian Cloud with Microsoft Entra ID. When you integrate Atlassian Cloud with Microsoft Entra ID, you can:
 
@@ -23,7 +21,9 @@ In this article,  you learn how to integrate Atlassian Cloud with Microsoft Entr
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Atlassian Cloud single sign-on (SSO) enabled subscription.
 * To enable Security Assertion Markup Language (SAML) single sign-on for Atlassian Cloud products, you need to set up Atlassian Access. Learn more about [Atlassian Access](https://www.atlassian.com/enterprise/cloud/identity-manager).
@@ -43,7 +43,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Atlassian Cloud into Microsoft Entra ID, you need to add Atlassian Cloud from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Atlassian Cloud** in the search box.
 1. Select **Atlassian Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -80,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO.
    ![Screenshot shows the Security of identity provider.](./media/atlassian-cloud-tutorial/provider.png "Security")
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Atlassian Cloud** application integration page. Find the **Manage** section. Under **Getting Started**, select **Set up single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Atlassian Cloud** application integration page. Find the **Manage** section. Under **Getting Started**, select **Set up single sign-on**.
 
 1. On the **Select a Single sign-on method** page, select **SAML**.
 

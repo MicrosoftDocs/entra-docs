@@ -1,18 +1,15 @@
 ---
 title: 'Microsoft Entra Connect Sync: Make a change to the default configuration'
 description: Walks you through how to make a change to the configuration in Microsoft Entra Connect Sync.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 7b9df836-e8a5-4228-97da-2faec9238b31
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
 ---
 # Microsoft Entra Connect Sync: Make a change to the default configuration
 The purpose of this article is to walk you through how to make changes to the default configuration in Microsoft Entra Connect Sync. It provides steps for some common scenarios. With this knowledge, you should be able to make simple changes to your own configuration based on your own business rules.

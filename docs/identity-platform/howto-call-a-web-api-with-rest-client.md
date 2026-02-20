@@ -2,13 +2,13 @@
 title: Call an ASP.NET Core web API with Insomnia
 description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform and Insomnia.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 05/21/2024
 ms.service: identity-platform
-
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
+ms.custom: sfi-image-nochange
 #Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with Insomnia.
 ---
 
@@ -30,7 +30,7 @@ This article shows you how to call a protected ASP.NET Core web API using [Insom
 
 ::: zone pivot="no-api"
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   - Application Administrator
   - Application Developer
@@ -42,7 +42,7 @@ This article shows you how to call a protected ASP.NET Core web API using [Insom
 
 ::: zone pivot="api"
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   - Application Administrator
   - Application Developer
@@ -68,7 +68,7 @@ Follow these steps to create the web API registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application, such as *NewWebAPI1*.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select **Help me choose** option.
@@ -113,7 +113,7 @@ Follow these steps to create the web app registration:
 
 ::: zone pivot="no-api"
 
-1. Select **Home** to return to the home page. Browse to **Identity** > **Applications** > **App registrations**.
+1. Select **Home** to return to the home page. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application, such as **web-app-calls-web-api**.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
@@ -126,7 +126,7 @@ Follow these steps to create the web app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application, such as **web-app-calls-web-api**.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.

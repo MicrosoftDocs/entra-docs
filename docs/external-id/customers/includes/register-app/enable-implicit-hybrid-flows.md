@@ -1,11 +1,9 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 03/30/2023
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.custom: sfi-ropc-nochange
 ---
 
 The application you build uses the implicit flow, which needs to be enabled.

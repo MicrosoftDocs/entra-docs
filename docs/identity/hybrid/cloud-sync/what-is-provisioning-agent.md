@@ -2,14 +2,14 @@
 title: 'What is the provisioning agent?'
 description: This article describes the provisioning agent used by cloud sync and on-premsises app provisioning.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

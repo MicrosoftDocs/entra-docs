@@ -2,14 +2,8 @@
 title: Frequently asked questions about the admin consent workflow
 description: Find answers to frequently asked questions (FAQs) about the admin consent workflow.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: faq
 ms.date: 05/27/2022
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps

@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with IBM TRIRIGA on Cloud
+title: Configure IBM TRIRIGA on Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IBM TRIRIGA on Cloud.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IBM TRIRIGA on Cloud so that I can control who has access to IBM TRIRIGA on Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with IBM TRIRIGA on Cloud
+# Configure IBM TRIRIGA on Cloud for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate IBM TRIRIGA on Cloud with Microsoft Entra ID. IWMS that integrates functionalities across real estate, capital projects, facilities, workplace operations, portfolio data, and environmental and energy management within a single technology platform. When you integrate IBM TRIRIGA on Cloud with Microsoft Entra ID, you can:
 
@@ -30,9 +30,9 @@ You configure and test Microsoft Entra single sign-on for IBM TRIRIGA on Cloud i
 
 To integrate Microsoft Entra ID with IBM TRIRIGA on Cloud, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * IBM TRIRIGA on Cloud single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IBM TRIRIGA on Cloud** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **IBM TRIRIGA on Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

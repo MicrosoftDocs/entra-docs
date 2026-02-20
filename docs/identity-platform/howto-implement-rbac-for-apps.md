@@ -1,9 +1,9 @@
 ---
 title: Implement role-based access control in applications
 description: Learn how to implement role-based access control in your applications.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: OwenRichards1
+manager: pmwongera
+ms.author: owenrichards
 ms.date: 10/29/2024
 ms.reviewer: 
 ms.service: identity-platform

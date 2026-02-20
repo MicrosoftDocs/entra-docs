@@ -3,10 +3,10 @@ title: Add sign-up in an Android app using native authentication
 description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an Android mobile app using native authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial

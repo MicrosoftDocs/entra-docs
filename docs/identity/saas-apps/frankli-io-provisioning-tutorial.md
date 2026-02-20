@@ -1,22 +1,18 @@
 ---
 title: Configure frankli for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to frankli.
-
-
-author: thomasakelo
-manager: jeedes
-
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to frankli.io so that I can streamline the user management process and ensure that users have the appropriate access to frankli.io.
 ---
 
-# Configure frankli for automatic user provisioning
+# Configure frankli for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to do in both frankli and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [frankli](https://www.frankli.io/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS apps with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -73,7 +69,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for frankli in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,23 +99,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to frankli in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in frankli for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the frankli API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by frankliio
+   |Attribute|Type|Supported for filtering|Required by frankliio|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||&check;  
-   |name.givenName|String||&check; 
-   |name.familyName|String||&check; 
-   |emails[type eq "work"].value|String||&check; 
-   |addresses[type eq "work"].formatted|String||&check; 
-   |addresses[type eq "work"].streetAddress|String||&check; 
-   |addresses[type eq "work"].locality|String||&check; 
-   |addresses[type eq "work"].postalCode|String||&check; 
-   |addresses[type eq "work"].country|String||&check;    
-   |title|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |addresses[type eq "work"].formatted|String||&check;|
+   |addresses[type eq "work"].streetAddress|String||&check;|
+   |addresses[type eq "work"].locality|String||&check;|
+   |addresses[type eq "work"].postalCode|String||&check;|
+   |addresses[type eq "work"].country|String||&check;|
+   |title|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for frankli, change the **Provisioning Status** to **On** in the **Settings** section.
 

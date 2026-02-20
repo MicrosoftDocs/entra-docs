@@ -3,12 +3,11 @@ title: Understanding Tokens in Microsoft Entra ID
 description: To protect against token theft and replay attacks, explore the types of tokens used in Microsoft Entra, their role in authentication, and strategies.
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
-ms.date: 04/24/2025
+ms.topic: concept-article
+ms.date: 05/01/2025
 
 ms.author: jfields
 author: jenniferf-skc
-manager: femila
 ms.reviewer: jbley 
 ---
 
@@ -51,7 +50,7 @@ Another difference between the two token families: Sign-in session tokens are re
 
 | Token Type | Issued by | Purpose  | Scoped to Resource | Lifetime | Revocable | Renewable |
 |------|------|------|------|------|------|------|
-| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 14 days\*| Yes | Yes|
+| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 90 days\*| Yes | Yes|
 | Refresh Token| Entra ID| Request Access Tokens | Yes | 90 days\* | Yes | Yes |
 | Access Token | Entra ID | Access the resource | Yes | Variable 60-90 minutes| Yes, if CAE capable | No |
 | App auth cookie| Web app | Access the resource | Yes  | Determined by application| Depends on application | No |
@@ -63,7 +62,7 @@ Another difference between the two token families: Sign-in session tokens are re
 Adversaries can employ many different attack vectors to steal tokens. Once a token is stolen, the adversary can then impersonate the user, gaining unauthorized access and even exfiltrating sensitive data.
 Some examples of these attack vectors include:
 
- - **Adversary-in-the-middle**: A sophisticated form of a Man-in-the-Middle (MitM) attack. In this scenario, an attacker positions themselves between two communicating parties, intercepting and potentially altering the communication without either party's knowledge. This scenario allows the attacker to capture sensitive information such as credentials, session cookies, and other data, even bypassing security measures like multifactor authentication. 
+ - **Adversary-in-the-middle**: A sophisticated form of a Man-in-the-Middle (MitM) attack. In this scenario, an attacker positions themselves between two communicating parties, intercepting and potentially altering the communication without either party's knowledge. This scenario allows the attacker to capture sensitive information such as credentials, session cookies, and other data, even bypassing security measures like multifactor authentication. Learn more about [Adversary-in-the-middle phishing attacks](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/defeating-adversary-in-the-middle-phishing-attacks/1751777).
  - **Malware**: Malware can steal tokens from a device by infiltrating the system and monitoring network traffic or accessing stored data. Once installed, the malware can capture authentication tokens, session cookies, or other credentials by intercepting communications between the device and legitimate services. It can also exploit vulnerabilities to extract tokens directly from memory or storage. 
 
 In this article, we focus primarily on how to defeat attacks that are directed towards end users, such as those previously listed. Attack vectors such as server-side or application compromise are out of scope for this article. To mitigate these kinds of attacks, organizations should follow the general best practices of:

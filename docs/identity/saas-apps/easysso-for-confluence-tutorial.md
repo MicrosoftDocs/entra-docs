@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence
+title: Configure EasySSO for Confluence for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Confluence.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Confluence so that I can control who has access to EasySSO for Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence
+# Configure EasySSO for Confluence for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EasySSO for Confluence with Microsoft Entra ID. When you integrate EasySSO for Confluence with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate EasySSO for Confluence with Microso
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EasySSO for Confluence single sign-on (SSO) enabled subscription.
 
@@ -40,7 +39,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of EasySSO for Confluence into Microsoft Entra ID, you need to add EasySSO for Confluence from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **EasySSO for Confluence** in the search box.
 1. Select **EasySSO for Confluence** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -68,7 +67,7 @@ To configure and test Microsoft Entra SSO with EasySSO for Confluence, perform t
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **EasySSO for Confluence** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **EasySSO for Confluence** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

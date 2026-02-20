@@ -2,16 +2,15 @@
 title: How to troubleshoot sign-in errors
 description: Learn how to troubleshoot sign-in errors using Microsoft Entra reports in the Microsoft Entra admin center
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
 ms.date: 11/11/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to troubleshoot sign-in errors for various scenarios and using different tools so that I can resolve sign-in issues quickly.
-
 ---
 
 # How to troubleshoot Microsoft Entra sign-in errors
@@ -37,7 +36,7 @@ You need:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use the filters to narrow down the results
     - Search by username if you're troubleshooting a specific user.
     - Search by application if you're troubleshooting issues with a specific app.

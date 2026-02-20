@@ -2,11 +2,8 @@
 title: Configure Microsoft Entra External ID with Azure Web Application Firewall
 description: Learn how to configure Microsoft Entra External ID with Azure Web Application Firewall.
 author: gargi-sinha
-manager: martinco
 ms.author: gasinh
 ms.reviewer: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.custom: it-pro
 ms.date: 01/09/2025
@@ -19,7 +16,7 @@ In this article, you learn how to enable the [Azure Web Application Firewall](/a
 
 ## Prerequisites
 
-- **An Azure subscription**. If you don’t have one, [get an Azure account](https://azure.microsoft.com/free/) for free.
+- **An Azure subscription**. If you don’t have one, [get an Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) for free.
 - **A Microsoft Entra External ID tenant**. Authorization server that verifies user credentials with user flows in the tenant, also known as the identity provider (IdP). Learn how to [create an external tenant](how-to-create-external-tenant-portal.md).
 - **Azure Front Door Premium**. [Azure Front Door](/azure/frontdoor/) enables custom domains for the Microsoft Entra External ID tenant with security optimization and access to WAF managed rule sets.
 - **Azure Web Application Firewall** (requires Premium SKU). [Azure WAF](https://azure.microsoft.com/services/web-application-firewall/) manages traffic that the authorization server receives.

@@ -5,10 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/09/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure group managed service accounts

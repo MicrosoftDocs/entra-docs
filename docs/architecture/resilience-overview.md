@@ -9,7 +9,6 @@ ms.subservice: architecture
 ms.topic: overview
 ms.date: 08/26/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
 ms.custom:
   - it-pro
   - kr2b-contr-experiment

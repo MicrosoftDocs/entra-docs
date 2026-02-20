@@ -1,12 +1,8 @@
 ---
 title: How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
 description: Learn how to access Azure SQL with a service endpoint using Microsoft Entra Private Access.
-author: kenwith    
-ms.author: kenwith
-manager: femila
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -45,8 +41,8 @@ To set the policy to `proxy`:
 1. Choose the right connector group with the connector deployed in the service endpoint subnet.
 1. Select **Add application segment**:
     - Destination type: `FQDN` 
-    - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account>`. For example, `contosodbserver1.database.windows.net`.
-    - Ports: `1443`
+    - Fully Qualified Domain Name (FQDN): `<fqdn of the SQL server>`. For example, `contosodbserver1.database.windows.net`.
+    - Ports: `1433`
     - Protocol: `TCP`
 1. Select **Apply** to add the application segment.
 1. Select **Save** to save the application.

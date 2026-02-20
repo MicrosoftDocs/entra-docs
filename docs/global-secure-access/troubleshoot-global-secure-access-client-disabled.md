@@ -1,12 +1,10 @@
 ---
 title: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
 description: This document provides troubleshooting guidance for the Global Secure Access client when it shows the "disabled by your organization" error message.
-ms.service: global-secure-access
 ms.topic: troubleshooting
 ms.date: 03/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
 ms.reviewer: lirazbarak
 
 
@@ -45,7 +43,7 @@ To view the Global Secure Access traffic profile configuration:
     1. Run the command `dsregcmd /status` and check the **AzureAdPrt** field.   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/token-state.png" alt-text="Screenshot of the command line, showing the AzureAdPrt status of YES.":::
 
-1. Check if a conditional access policy is blocking the user. Network blocks can arise from conditional access settings, an unmanaged or noncompliant device, or unfulfilled MFA or ToU policies. To confirm that the Global Secure Access Client authenticated successfully to the policy service, check the list of non-interactive user sign-ins.   
+1. Check if a Conditional Access policy is blocking the user. Network blocks can arise from Conditional Access settings, an unmanaged or noncompliant device, or unfulfilled MFA or ToU policies. To confirm that the Global Secure Access Client authenticated successfully to the policy service, check the list of non-interactive user sign-ins.   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/sign-in-logs.png" alt-text="Screenshot of the Sign-in logs screen, showing the list of non-interactive user sign-ins.":::
 
 > [!NOTE]

@@ -3,15 +3,15 @@ title: 'Decommissioning Azure AD Connect V1'
 description: This article describes Azure AD Connect V1 decommissioning and how to migrate to V2.
 
 documentationcenter: ''
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 editor: ''
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ms.custom: docutune-disable
 ---
@@ -26,7 +26,7 @@ If you're still using Azure AD Connect V1, you must take action immediately.
 
 
 ##  Migrate to cloud sync
-Before moving to Microsoft Entra Connect Sync, you should see if cloud sync is right for you instead. Cloud sync uses a light-weight provisioning agent and is fully configurable through the portal. To choose the best sync tool for your situation, use the [Wizard to evaluate sync options.](https://aka.ms/EvaluateSyncOptions)
+Before moving to Microsoft Entra Connect Sync, you should see if cloud sync is right for you instead. Cloud sync uses a light-weight provisioning agent and is fully configurable through the portal. To choose the best sync tool for your situation, use the [supported sync scenarios comparison.](common-scenarios.md)
 
 Based on your environment and needs, you may qualify for moving to cloud sync. For a comparison of cloud sync and connect sync, see [Comparison between cloud sync and connect sync](cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync). To learn more, read [What is cloud sync?](cloud-sync/what-is-cloud-sync.md) and [What is the provisioning agent?](cloud-sync/what-is-provisioning-agent.md)
 
@@ -37,7 +37,7 @@ If you aren't yet eligible to move to cloud sync, use this table for more inform
 |-----|-----|
 |[Information on deprecation](connect/deprecated-azure-ad-connect.md)|Information on Azure AD Connect V1 deprecation|
 |[What is Microsoft Entra Connect V2?](connect/whatis-azure-ad-connect-v2.md)|Information on the latest version of Microsoft Entra Connect|
-|[Upgrading from a previous version](connect/how-to-upgrade-previous-version.md)|Information on moving from one version of Microsoft Entra Connect to another
+|[Upgrading from a previous version](connect/how-to-upgrade-previous-version.md)|Information on moving from one version of Microsoft Entra Connect to another|
 
 
 ## Frequently asked questions

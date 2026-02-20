@@ -1,13 +1,9 @@
 ---
 title: Add your own Traffic Manager to application proxy
 description: Learn how to combine the application proxy service with a Traffic Manager solution.
-author: kenwith
-ms.author: kenwith
 ms.reviewer: ashishj
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.custom: template-how-to
 ai-usage: ai-assisted
 ---
@@ -41,8 +37,37 @@ Configure application proxy for Traffic Manager.
 1. In the Traffic Manager solution, add the application proxy regional URLs that were created for each app as an endpoint.
 1. Configure the Traffic Manager's load balancing rules with a standard license.
 1. To give your Traffic Manager a user-friendly URL, create a CNAME record that points the alternate URL to the Traffic Manager's endpoint.
-1. With the `alternateUrl` property, configure the alternate URL on the [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing) of the app.
-1. If you want the alternate URL to be maintained throughout the user session, call `onPremisesPublishing` and set the  `useAlternateUrlForTranslationAndRedirect` flag to `true`.
+1. Configure the alternate URL on the app by using the Microsoft Graph API to update the `alternateUrl` property on the [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing). The `alternateUrl` property isn't available in the Microsoft Entra admin center and must be configured by using the Graph API. For more information, see [Update application](/graph/api/application-update).
+
+    The following example shows the request body for setting the `alternateUrl`:
+
+    ```http
+    PATCH https://graph.microsoft.com/beta/applications/{id}
+    Content-Type: application/json
+
+    {
+      "onPremisesPublishing": {
+        "alternateUrl": "https://www.contoso.com"
+      }
+    }
+    ```
+
+    > [!NOTE]
+    > The `onPremisesPublishing` property can't be updated in the same request as other application properties.
+
+1. If you want the alternate URL to be maintained throughout the user session, set the `useAlternateUrlForTranslationAndRedirect` flag to `true` in the same `onPremisesPublishing` object:
+
+    ```http
+    PATCH https://graph.microsoft.com/beta/applications/{id}
+    Content-Type: application/json
+
+    {
+      "onPremisesPublishing": {
+        "alternateUrl": "https://www.contoso.com",
+        "useAlternateUrlForTranslationAndRedirect": true
+      }
+    }
+    ```
 
 ## Sample application proxy configuration
 

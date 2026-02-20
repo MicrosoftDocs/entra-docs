@@ -1,14 +1,8 @@
 ---
 title: Configure group settings using PowerShell
 description: How to manage the settings for groups using Microsoft Entra cmdlets
-
-author: barclayn
-manager: femila
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-ms.date: 12/12/2024
-ms.author: barclayn
+ms.date: 06/05/2025
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
@@ -46,6 +40,35 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
    Install-Module Microsoft.Graph.Beta -Scope AllUsers
    ```
 
+## Connect to Microsoft Graph
+
+Before running any `Get-Mg*`, `New-Mg*`, or `Update-Mg*` cmdlets in this article, you must first authenticate to Microsoft Graph.
+
+### Sign in
+
+```PowerShell
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+```
+
+You will be prompted to sign in and consent to the required permissions.
+
+1. Verify your connection
+
+   ```powershell
+   Get-MgContext
+   ```
+
+   This command confirms that you're signed in and shows the currently selected Microsoft Graph profile.
+
+2. Some examples in this article use Microsoft Graph beta API. To switch profiles:
+
+   ```powershell
+   Select-MgProfile -Name "beta"
+   ```
+
+> [!NOTE]
+> If you do not run `Connect-MgGraph`, all `Get-Mg*`, `New-Mg*`, and `Update-Mg*` commands in this document will fail.
+   
 ## Create settings at the directory level
 
 These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory.
@@ -174,7 +197,7 @@ Here are the settings defined in the `Group.Unified SettingsTemplate`. Unless ot
 | **GroupCreationAllowedGroupId**<br>Type: `String`<br>Default: `""` | GUID of the security group for which the members are allowed to create Microsoft 365 groups even when `EnableGroupCreation == false`. |
 | **UsageGuidelinesUrl**<br>Type: `String`<br>Default: `""` | A link to the Group Usage Guidelines. |
 | **ClassificationDescriptions**<br>Type: `String`<br>Default: `""` | A comma-delimited list of classification descriptions. The value of `ClassificationDescriptions` is only valid in this format:<br>`$setting["ClassificationDescriptions"] ="Classification:Description,Classification:Description"`<br>where Classification matches an entry in the ClassificationList.<br>This setting doesn't apply when `EnableMIPLabels == True`.<br>Character limit for property `ClassificationDescriptions` is 300, and commas can't be escaped. |
-| **DefaultClassification**<br>Type: `String`<br>Default: `""` | The classification that is to be used as the default classification for a group if none was specified.<br>This setting doesn't apply when `EnableMIPLabels == True`. |
+| **DefaultClassification**<br>Type: `String`<br>Default: `""` | The classification that is to be used as the default classification for a group if none was specified.<br>This setting doesn't apply when `EnableMIPLabels == True`. This value can only be set when `ClassificationList` is set in the same call.|
 | **PrefixSuffixNamingRequirement**<br>Type: `String`<br>Default: `""` | String of a maximum length of 64 characters that defines the naming convention configured for Microsoft 365 groups. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
 | **CustomBlockedWordsList**<br>Type: `String`<br>Default: `""` | Comma-separated string of phrases that users aren't allowed to use in group names or aliases. For more information, see [Enforce a naming policy for Microsoft 365 groups](groups-naming-policy.md). |
 | **EnableMSStandardBlockedWords**<br>Type: `Boolean`<br>Default: `False` | Deprecated. Don't use. |
@@ -183,7 +206,7 @@ Here are the settings defined in the `Group.Unified SettingsTemplate`. Unless ot
 | **GuestUsageGuidelinesUrl**<br>Type: `String`<br>Default: `""` | The URL of a link to the guest usage guidelines. |
 | **AllowToAddGuests**<br>Type: `Boolean`<br>Default: `True` | A boolean indicating whether or not it is allowed to add guests to this directory. <br>This setting may be overridden and become read-only if `EnableMIPLabels` is set to *True* and a guest policy is associated with the sensitivity label assigned to the group.<br>If the `AllowToAddGuests` setting is set to False at the organization level, any `AllowToAddGuests` setting at the group level is ignored. If you want to enable guest access for only a few groups, you must set `AllowToAddGuests` to be true at the organization level, and then selectively disable it for specific groups. |
 | **ClassificationList**<br>Type: `String`<br>Default: `""` | A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups. <br>This setting doesn't apply when EnableMIPLabels == True. |
-| **EnableMIPLabels**<br>Type: `Boolean`<br>Default: `False` | The flag indicating whether sensitivity labels published in Microsoft Purview compliance portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
+| **EnableMIPLabels**<br>Type: `Boolean`<br>Default: `False` | The flag indicating whether sensitivity labels published in Microsoft Purview portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
 | **NewUnifiedGroupWritebackDefault**<br>Type: `Boolean`<br>Default: `True` | The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect. `NewUnifiedGroupWritebackDefault` is a global Microsoft 365 group setting. Default value is true. Updating the setting value to false changes the default writeback behavior for newly created Microsoft 365 groups, and doesn't change the **isEnabled** property value for existing Microsoft 365 groups. Group admin needs to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
 
 ## Example: Configure Guest policy for groups at the directory level

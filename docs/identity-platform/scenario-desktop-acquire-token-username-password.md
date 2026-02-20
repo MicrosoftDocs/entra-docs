@@ -2,11 +2,11 @@
 title: Acquire a token to call a web API using username and password (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app using username and password.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 01/15/2024
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
@@ -18,7 +18,7 @@ ms.topic: how-to
 In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
 >[!WARNING]
-> The username and password flow is **not recommended** as the application will be asking a user for their password directly, which is an insecure pattern. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
+> The username and password flow has been deprecated due to security risks. Microsoft recommends using a more secure authentication flow. Follow the guidance on how to [Migrate from ROPC](https://aka.ms/msal-ropc-migration).. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
 Additionally, by using a username and password, developers give up a number of things, including:
 

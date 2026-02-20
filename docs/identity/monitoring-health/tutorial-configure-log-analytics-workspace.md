@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
@@ -76,7 +76,7 @@ To send your identity log information to your new workspace, you need to configu
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **Add diagnostic setting**.
 
@@ -100,7 +100,7 @@ Your selected logs might take up to 15 minutes for the logs to populate in your 
 
 With your logs streaming to your Log Analytics workspace, you can run queries using the **Kusto Query Language (KQL)**. The least privileged role to run queries is the **Reports Reader** role
 
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics**.
 
 1. In the **Search** textbox, type your query, and select **Run**. 
 
@@ -144,11 +144,11 @@ Count the sign ins by day:
 
 Take five random entries and project the columns you wish to see in the results:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Take the top 5 in descending order and project the columns you wish to see:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Create a new column by combining the values to two other columns:
 

@@ -1,17 +1,15 @@
 ---
 title: Cross-tenant access activity workbook
 description: Learn how to use the cross-tenant access activity workbook in Microsoft Entra ID to monitor the resources your external users are accessing.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 11/04/2024
 ms.author: sarahlipsey
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I need to use the cross-tenant access activity workbook to monitor the resources my external users are accessing so I can ensure that my cross-tenant policies are working as expected.
-
 ---
 
 # Cross-tenant access activity workbook
@@ -36,7 +34,7 @@ For more information, see the [Microsoft Entra External ID documentation](~/exte
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Cross-tenant access activity** workbook from the **Usage** section.
 

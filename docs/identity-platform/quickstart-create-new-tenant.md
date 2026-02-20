@@ -2,7 +2,7 @@
 title: "Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 04/16/2025
@@ -23,7 +23,7 @@ Each Microsoft Entra tenant is distinct and separate from other Microsoft Entra 
 
 ## Prerequisites
 
-An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ## Determining the type of users you'll create apps for
 
@@ -54,7 +54,7 @@ To check the tenant:
 > [!TIP]
 > To find the tenant ID, you can:
 > * Hover over your account name to get the directory or tenant ID.
-> * Select **Identity** > **Overview** and look for **Tenant ID**.
+> * Browse to **Entra ID** > **Overview** > **Properties** and look for **Tenant ID**.
 
 If you don't have a tenant associated with your account, you'll see a GUID under your account name. You won't be able to do actions like registering apps until you create a Microsoft Entra tenant.
 

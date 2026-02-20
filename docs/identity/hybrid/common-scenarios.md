@@ -2,14 +2,14 @@
 title: 'Common hybrid scenarios with Microsoft Entra ID'
 description: This article describes the common scenarios for using Microsoft Entra Cloud Sync and Microsoft Entra Connect.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -81,6 +81,6 @@ For additional information, see [Choose the right authentication method for your
 
 ## Next steps
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)
 - [Prerequisites](prerequisites.md)

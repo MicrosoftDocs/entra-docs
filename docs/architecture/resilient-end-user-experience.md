@@ -7,10 +7,12 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/28/2024
+ms.date: 05/20/2025
 ---
 
 # Resilient end-user experience using Azure AD B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 The sign-up and sign-in end-user experience is made up of the following elements:
 

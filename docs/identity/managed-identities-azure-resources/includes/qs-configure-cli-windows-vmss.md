@@ -1,6 +1,4 @@
 ---
-author: rwike77
-ms.author: ryanwi
 ms.date: 05/27/2024
 ms.topic: include
 ms.custom:
@@ -12,7 +10,7 @@ In this article, you learn how to perform the following managed identities for A
 - Enable and disable the system-assigned managed identity on an Azure virtual machine scale set
 - Add and remove a user-assigned managed identity on an Azure virtual machine scale set
 
-If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prerequisites
 

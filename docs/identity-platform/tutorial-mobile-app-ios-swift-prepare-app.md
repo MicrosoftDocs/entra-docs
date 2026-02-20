@@ -3,7 +3,7 @@ title: Prepare your iOS (Swift) app for authentication
 description: The tutorials provide a step-by-step guide on how to prepare your iOS (Swift) app for authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
 ms.service: identity-platform

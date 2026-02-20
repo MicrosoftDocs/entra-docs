@@ -1,15 +1,12 @@
 ---
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
-author: owinfreyATL
-manager: femila
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: reference
-ms.date: 11/25/2024
-ms.author: owinfrey
+ms.date: 06/18/2025
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # What are access reviews?
@@ -41,7 +38,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 - **Have reviews recur periodically:** You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers are notified at the start of each review. Reviewers can approve or deny access with a friendly interface and with the help of smart recommendations.
 
 >[!NOTE]
->If you are ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
+>If you're ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
 
 ## Where do you create reviews?
 
@@ -54,18 +51,24 @@ Depending on what you want to review, you either create your access review in ac
 | Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |
+| Access rights from custom data resources (preview) | Managers  | access reviews | Access panel |
 
 ## License requirements
 
 [!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 
 >[!NOTE]
->Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations requires a Microsoft Entra ID Governance license.
+>Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, or an [access review of multiple resources together (preview)](catalog-access-reviews.md), requires a Microsoft Entra ID Governance license.
+
+## Access Review Agent (Preview)
+
+The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
 
 ## Next steps
 
 - [Prepare for an access review of users' access to an application](access-reviews-application-preparation.md)
 - [Create an access review of groups or applications](create-access-review.md)
 - [Create an access review of users in a Microsoft Entra administrative role](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)
+- [Create an access review to multiple resources in a catalog (preview)](catalog-access-reviews.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Complete an access review of groups or applications](complete-access-review.md)

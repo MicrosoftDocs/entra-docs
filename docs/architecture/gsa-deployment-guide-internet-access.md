@@ -5,7 +5,7 @@ customer intent: As a Microsoft Partner, I want to deploy Microsoft Entra Intern
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/06/2025
 ms.author: jricketts
 ---
@@ -90,6 +90,6 @@ After your pilot is complete, you have a repeatable process to understand how to
 - [Microsoft Global Secure Access deployment guide for Microsoft Traffic](gsa-deployment-guide-microsoft-traffic.md)
 - [Simulate remote network connectivity using Azure Virtual Network Gateway - Global Secure Access](../global-secure-access/how-to-simulate-remote-network.md)
 - [Simulate remote network connectivity using Azure vWAN - Global Secure Access](../global-secure-access/how-to-create-remote-network-vwan.md)
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)

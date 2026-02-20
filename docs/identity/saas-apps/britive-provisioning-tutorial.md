@@ -1,20 +1,18 @@
 ---
 title: Configure Britive for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive.
-
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive so that I can streamline the user management process and ensure that users have the appropriate access to Britive.
 ---
 
-# Configure Britive for automatic user provisioning
+# Configure Britive for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Britive and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Britive](https://www.britive.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -45,26 +43,26 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Britive to support provisioning with Microsoft Entra ID
 
-The application has to be manually configured using the steps provided in the this section:
-1. Login to Britive application with administrator privileges
-1. Select **Admin->User Administration->Identity Providers**
-1. Select **Add Identity Provider**. Enter the name and description. Select Add Identity Provider button.
+The application has to be manually configured using the steps provided in this section:
+1. Log in to the Britive application with administrator privileges.
+1. Select **Admin->Identity Management->Identity Providers**.
+1. Select **Add Identity Provider**. Enter the name and description. Select the **Add** button.
 
 	![Identity Provider](media/britive-provisioning-tutorial/identity.png)
 
-1. A configuration page similar to one displayed below is shown.
+1. A configuration page similar to the one displayed below is shown.
 
 	![Configuration Page](media/britive-provisioning-tutorial/configuration.png)
 
-1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
+1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application in the Azure portal.
 
 	![SCIM Page](media/britive-provisioning-tutorial/scim.png)
 
-1. Select **Create Token**. Select the validity of the token as required and select Create Token button.
+1. Select **Create Token**. Select the validity of the token as required and select the **Create Token** button.
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select the **Recreate token** button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
@@ -73,7 +71,7 @@ The application has to be manually configured using the steps provided in the th
 
 ## Step 3: Add Britive from the Microsoft Entra application gallery
 
-Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously set up Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -88,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Britive in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -120,51 +118,51 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
-   |userName|String|&check;
-   |active|Boolean|
-   |displayName|String|
-   |title|String|
-   |externalId|String|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |nickName|String|
-   |userType|String|
-   |locale|String|
-   |timezone|String|
-   |emails[type eq "home"].value|String|
-   |emails[type eq "other"].value|String|
-   |emails[type eq "work"].value|String|
-   |phoneNumbers[type eq "home"].value|String|
-   |phoneNumbers[type eq "other"].value|String|
-   |phoneNumbers[type eq "pager"].value|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |phoneNumbers[type eq "fax"].value|String|
-   |addresses[type eq "work"].formatted|String|
-   |addresses[type eq "work"].streetAddress|String|
-   |addresses[type eq "work"].locality|String|
-   |addresses[type eq "work"].region|String|
-   |addresses[type eq "work"].postalCode|String|
-   |addresses[type eq "work"].country|String|
-   |addresses[type eq "home"].formatted|String|
-   |addresses[type eq "home"].streetAddress|String|
-   |addresses[type eq "home"].locality|String|
-   |addresses[type eq "home"].region|String|
-   |addresses[type eq "home"].postalCode|String|
-   |addresses[type eq "home"].country|String|
-   |addresses[type eq "other"].formatted|String|
-   |addresses[type eq "other"].streetAddress|String|
-   |addresses[type eq "other"].locality|String|
-   |addresses[type eq "other"].region|String|
-   |addresses[type eq "other"].postalCode|String|
-   |addresses[type eq "other"].country|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
+   |userName|String|&check;|
+   |active|Boolean||
+   |displayName|String||
+   |title|String||
+   |externalId|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |nickName|String||
+   |userType|String||
+   |locale|String||
+   |timezone|String||
+   |emails[type eq "home"].value|String||
+   |emails[type eq "other"].value|String||
+   |emails[type eq "work"].value|String||
+   |phoneNumbers[type eq "home"].value|String||
+   |phoneNumbers[type eq "other"].value|String||
+   |phoneNumbers[type eq "pager"].value|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |phoneNumbers[type eq "fax"].value|String||
+   |addresses[type eq "work"].formatted|String||
+   |addresses[type eq "work"].streetAddress|String||
+   |addresses[type eq "work"].locality|String||
+   |addresses[type eq "work"].region|String||
+   |addresses[type eq "work"].postalCode|String||
+   |addresses[type eq "work"].country|String||
+   |addresses[type eq "home"].formatted|String||
+   |addresses[type eq "home"].streetAddress|String||
+   |addresses[type eq "home"].locality|String||
+   |addresses[type eq "home"].region|String||
+   |addresses[type eq "home"].postalCode|String||
+   |addresses[type eq "home"].country|String||
+   |addresses[type eq "other"].formatted|String||
+   |addresses[type eq "other"].streetAddress|String||
+   |addresses[type eq "other"].locality|String||
+   |addresses[type eq "other"].region|String||
+   |addresses[type eq "other"].postalCode|String||
+   |addresses[type eq "other"].country|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
 
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Britive**.
@@ -173,11 +171,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
-      |displayName|String|&check;
-      |externalId|String|
-      |members|Reference|
+      |displayName|String|&check;|
+      |externalId|String||
+      |members|Reference||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Britive, change the **Provisioning Status** to **On** in the **Settings** section.
 

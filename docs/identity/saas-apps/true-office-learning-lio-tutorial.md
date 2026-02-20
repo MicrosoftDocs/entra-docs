@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO
+title: Configure True Office Learning - LIO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and True Office Learning - LIO.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and True Office Learning - LIO so that I can control who has access to True Office Learning - LIO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO
+# Configure True Office Learning - LIO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate True Office Learning - LIO with Microsoft Entra ID. When you integrate True Office Learning - LIO with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate True Office Learning - LIO with Mic
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * True Office Learning - LIO single sign-on (SSO) enabled subscription.
 
@@ -40,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of True Office Learning - LIO into Microsoft Entra ID, you need to add True Office Learning - LIO from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **True Office Learning - LIO** in the search box.
 1. Select **True Office Learning - LIO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -68,7 +69,7 @@ To configure and test Microsoft Entra SSO with True Office Learning - LIO, perfo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **True Office Learning - LIO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **True Office Learning - LIO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

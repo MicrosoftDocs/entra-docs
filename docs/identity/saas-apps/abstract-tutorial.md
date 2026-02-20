@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with Abstract
+title: Configure Abstract for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Abstract.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Abstract so that I can control who has access to Abstract, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Abstract with Microsoft Entra ID
+# Configure Abstract for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Abstract with Microsoft Entra ID. When you integrate Abstract with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate Abstract with Microsoft Entra ID. W
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Abstract single sign-on (SSO) enabled subscription.
 
@@ -39,11 +41,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Abstract into Microsoft Entra ID, you need to add Abstract from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Abstract** in the search box.
 1. Select **Abstract** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-abstract'></a>
 
@@ -67,7 +69,7 @@ To configure and test Microsoft Entra SSO with Abstract, perform the following s
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Abstract** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Abstract** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -102,7 +104,7 @@ You're now ready to configure SSO on Abstract:
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract.
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
 3. In the **Configure SSO** section, enter your **Metadata URL** and **Entity ID**.
 4. Enter any manual exceptions you might have. Emails listed in the manual exceptions section bypass SSO and be able to log in with email and password. 
@@ -115,9 +117,9 @@ You're now ready to configure SSO on Abstract:
 
 To test SSO on Abstract:
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
-3. Select **Test with my Account**. If the test fails, please [contact our support team](https://help.abstract.com/hc/).
+3. Select **Test with my Account**. If the test fails, please contact the Abstract support team.
 
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract. This organization Admin account needs to be assigned to Abstract.

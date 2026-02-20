@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with ekarda
+title: Configure ekarda for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ekarda.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ekarda so that I can control who has access to Ekarda, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with ekarda
+# Configure ekarda for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ekarda with Microsoft Entra ID. When you integrate ekarda with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate ekarda with Microsoft Entra ID. Whe
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An ekarda subscription enabled for single sign-on (SSO).
 
@@ -40,7 +39,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of ekarda into Microsoft Entra ID, add ekarda from the gallery to your list of managed SaaS apps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **ekarda** in the search box.
 1. Select **ekarda** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +68,7 @@ To configure and test Microsoft Entra SSO with ekarda, perform the following ste
 Follow these steps in the Azure portal to enable Microsoft Entra SSO:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** >  **ekarda** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ekarda** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon to edit the **Basic SAML Configuration** settings.
 

@@ -3,8 +3,6 @@ title: Secure hybrid access with Microsoft Entra ID and Silverfort
 description: In this tutorial, learn how to integrate Silverfort with Microsoft Entra ID for secure hybrid access (SHA).
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
@@ -63,7 +61,7 @@ You need Silverfort deployed in your tenant or infrastructure to perform this tu
 Set up Silverfort Microsoft Entra Adapter in your Microsoft Entra tenant:
 
 - An Azure account with an active subscription
-  - You can create an [Azure free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+  - You can create an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 - One of the following roles in your Azure account: 
   - Cloud Application Administrator
   - Application Administrator

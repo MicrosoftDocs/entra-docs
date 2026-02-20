@@ -1,12 +1,8 @@
 ---
 title: Learn about Microsoft Entra Internet Access
 description: Learn about how Microsoft Entra Internet Access secures access to the Internet.
-author: kenwith
-ms.author: kenwith
-manager: femila
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/21/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -25,7 +21,7 @@ When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet A
 Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
 
 > [!NOTE]
-> While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) and firewalls like [Azure Firewall](/azure/firewall/web-categories/). Microsoft Entra Internet Access provides additional security value via policy integration with Microsoft Entra ID, policy enforcement on the cloud edge, universal support for all device platforms, and future security enhancements through Transport Layer Security (TLS) Inspection, such as higher fidelity web categorization. Learn more in the [FAQ](resource-faq.yml).
+> While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) and firewalls like [Azure Firewall](/azure/firewall/web-categories/). Microsoft Entra Internet Access provides additional security value via identity-aware policy integration with Microsoft Entra ID, policy enforcement on the cloud edge, universal support for all device platforms, and security enhancements through Transport Layer Security (TLS) Inspection, such as higher fidelity web categorization. Internet access also simplifies traditional policy management since policies are all based on the user identity. Learn more in the [FAQ](resource-faq.yml).
 
 ## Security profiles
 

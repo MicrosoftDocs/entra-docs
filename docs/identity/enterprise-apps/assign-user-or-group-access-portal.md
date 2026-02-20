@@ -2,14 +2,8 @@
 title: Manage users and groups assignment to an application
 description: Learn how to assign and unassign users, and groups, for an app using Microsoft Entra ID for identity management.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 04/14/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
@@ -34,7 +28,7 @@ For greater control, certain types of enterprise applications can be configured 
 
 To assign users to an enterprise application, you need:
 
-- A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator
@@ -49,7 +43,7 @@ To assign users to an enterprise application, you need:
 To assign a user or group account to an enterprise application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Users and groups**, and then select **Add user/group**.
 
@@ -138,8 +132,6 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
     ```
 
 To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraGroup` and replace `New-EntraUserAppRoleAssignment` with `New-EntraGroupAppRoleAssignment`.
-
-For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra/new-entragroupapproleassignment).
 
 ## Unassign users and groups from an application using Microsoft Entra PowerShell
 

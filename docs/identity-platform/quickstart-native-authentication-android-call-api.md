@@ -3,7 +3,7 @@ title: Call a web API in a sample Android mobile app
 description: Learn how to call web API in an Android (Kotlin) sample app.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
 ms.service: identity-platform

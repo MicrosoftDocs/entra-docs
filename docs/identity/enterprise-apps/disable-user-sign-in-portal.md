@@ -2,14 +2,8 @@
 title: Disable user sign-in for application
 description: Learn how to prevent users from signing in to an application in Microsoft Entra ID and prevent tokens from being issued.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: it-pro, enterprise-apps, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
@@ -22,6 +16,9 @@ zone_pivot_groups: enterprise-apps-all
 There might be situations while configuring or managing an application where you don't want tokens to be issued for an application. Or, you might want to block an application that you don't want your employees to try to access. To block user access to an application, you can disable user sign-in for the application, which prevents all tokens from being issued for that application.
 
 In this article, you learn how to prevent users from signing in to an application in Microsoft Entra ID through both the Microsoft Entra admin center and PowerShell. If you're looking for how to block specific users from accessing an application, use [user or group assignment](./assign-user-or-group-access-portal.md).
+
+> [!NOTE]
+> The steps in this article disable user sign-in for a single tenant. If you need to globally disable an application across all tenants (for multitenant apps), consider [deactivating the application](deactivate-application-portal.md) instead, which prevents all token issuance globally.
 
 ## Prerequisites
 
@@ -39,7 +36,7 @@ To disable user sign-in, you need:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for the application you want to disable a user from signing in, and select the application.
 1. Select **Properties**.
 1. Select **No** for **Enabled for users to sign-in?**.

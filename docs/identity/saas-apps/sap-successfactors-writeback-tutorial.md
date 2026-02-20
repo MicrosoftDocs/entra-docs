@@ -1,16 +1,14 @@
 ---
 title: Configure SAP SuccessFactors writeback in Microsoft Entra ID
 description: Learn how to configure attribute write-back to SAP SuccessFactors from Microsoft Entra ID
-
 author: cmmdesai
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors Writeback so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors Writeback.
 ---
 # Configure attribute write-back from Microsoft Entra ID to SAP SuccessFactors
@@ -217,7 +215,7 @@ This section provides steps for
 **To configure SuccessFactors Writeback:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 5. Search for **SuccessFactors Writeback**, and add that app from the gallery.
 
@@ -263,7 +261,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 4 | true | emailIsPrimary | Use this attribute to set business email as primary in SuccessFactors. If business email isn't primary, set this flag to false. |
    | 5 | userPrincipalName | [custom01 – custom15] | Using **Add New Mapping**, you can optionally write userPrincipalName or any Microsoft Entra attribute to a custom attribute available in the SuccessFactors User object.  |
    | 6 | On Prem SamAccountName | username | Using **Add New Mapping**, you can optionally map on-premises samAccountName to SuccessFactors username attribute. Use [Microsoft Entra Connect Sync: Directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) to sync samAccountName to Microsoft Entra ID. This appears in the source drop down as *extension_yourTenantGUID_samAccountName* |
-   | 7 | SSO | loginMethod | If SuccessFactors tenant is setup for [partial SSO](https://userapps.support.sap.com/sap/support/knowledge/2320766), then using Add New Mapping, you can optionally set loginMethod to a    constant value of "SSO" or "PWD". |
+   | 7 | SSO | loginMethod | If SuccessFactors tenant is setup for partial SSO, then using Add New Mapping, you can optionally set loginMethod to a    constant value of "SSO" or "PWD". |
    | 8 | telephoneNumber | businessPhoneNumber | Use this mapping to flow *telephoneNumber* from Microsoft Entra ID to SuccessFactors business / work phone number. |
    | 9 | 10605 | businessPhoneType | This constant value is the SuccessFactors ID value associated with business phone. Update this value to match your SuccessFactors environment. See the section [Retrieve constant value for phoneType](#retrieve-constant-value-for-phonetype) for steps to set this value. |
    | 10 | true | businessPhoneIsPrimary | Use this attribute to set the primary flag for business phone number. Valid values are true or false. |

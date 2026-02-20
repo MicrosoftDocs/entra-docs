@@ -1,17 +1,17 @@
 ---
 title: Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning.
-
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
+ms.date: 05/20/2025
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 ---
 
-# Configure Workplace from Meta for automatic user provisioning
+# Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Workplace from Meta](https://work.workplace.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -72,7 +72,7 @@ Add Workplace from Meta from the Microsoft Entra application gallery to start ma
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Workplace from Meta App based on user assignments in Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -88,14 +88,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
+1. Ensure the "Tenant URL" section is populated with the correct endpoint: `https://scim.workplace.com/`. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 
  	![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
  	![Authorize](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
 
    > [!NOTE]
-   > Failure to change the URL to https://scim.workplace.com/ results in a failure when trying to save the configuration 
+   > Failure to change the URL to `https://scim.workplace.com/` results in a failure when trying to save the configuration 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -177,7 +177,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the given s
 > Be sure to note any changes made to the settings listed in the previous section before completing the following steps. Failure to do so results in the loss of customized settings. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Workplace from Meta**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Workplace from Meta**.
 1. In the Properties section of your new custom app, copy the Object ID.
 
 	![Screenshot of Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/app-properties.png)
@@ -214,7 +214,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the given s
 
 1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration is reset. You can confirm the upgrade is successful by confirming the Job ID starts with "FacebookWorkplace."
 
-1. Update the tenant URL in the Admin Credentials section to the following URL: https://scim.workplace.com/  
+1. Update the tenant URL in the Admin Credentials section to the following URL: `https://scim.workplace.com/`  
 
    ![Screenshot of Admin Credentials in the Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 

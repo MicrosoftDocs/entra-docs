@@ -2,16 +2,14 @@
 title: Troubleshoot a custom authentication extension
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
 ms.date: 04/10/2024
-ms.reviewer: JasSuri
+ms.reviewer: jasuri
 ms.service: identity-platform
-
 ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom authentication extension, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
@@ -42,7 +40,7 @@ Microsoft Entra sign-in logs also integrate with [Azure Monitor](/azure/azure-mo
 To access the Microsoft Entra sign-in logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **Sign-in logs**, and then select the latest sign-in log.
 1. For more details, select the **Authentication Events** tab. Information related to the custom authentication extension REST API call is displayed, including any [error codes](#error-codes-reference).
 
@@ -193,7 +191,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
 1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
 1. If you haven't created an app secret, follow these steps:
@@ -202,7 +200,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     1. Select an expiration for the secret or specify a custom lifetime.
     1. Select **Add**.
     1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
-1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
+1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee`.
 1. Open your preferred API testing tool and create a new HTTP query.
 1. Change the **HTTP method** to `POST`.
 1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
@@ -218,7 +216,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     |`grant_type`| `client_credentials`|
     |`client_id`| The **Client ID** of your application.|
     |`client_secret`|The **Client Secret** of your application.|
-    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
+    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
 1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).

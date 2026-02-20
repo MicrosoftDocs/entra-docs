@@ -2,12 +2,12 @@
 title: Acquire tokens to call a web API using a daemon application
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---

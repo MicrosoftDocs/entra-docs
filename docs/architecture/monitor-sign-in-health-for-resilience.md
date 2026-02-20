@@ -5,10 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/16/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # Monitoring application sign-in health for resilience
@@ -130,7 +130,7 @@ To modify your queries and alerts for maximum effectiveness:
 - Always test alerts.
 - Modify alert sensitivity and frequency to receive important notifications. Admins can become desensitized to alerts and miss something important if they get too many.
 - In administrator's email clients, add the email from which alerts come to the allowed senders list. This approach prevents missed notifications due to a spam filter on their email clients.
-- [By design](https://github.com/MicrosoftDocs/azure-docs/issues/22637), alert queries in Azure Monitor can only include results from the past 48 hours.
+- By design, alert queries in Azure Monitor can only include results from the past 48 hours.
 
 ## Sample scripts
 

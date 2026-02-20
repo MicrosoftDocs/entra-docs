@@ -1,20 +1,21 @@
 ---
-title: Microsoft Entra integration with Palo Alto Networks Captive Portal
+title: Configure Palo Alto Networks Captive Portal for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks Captive Portal.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/09/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Captive Portal so that I can control who has access to Palo Alto Networks - Captive Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Palo Alto Networks Captive Portal
+
+# Configure Palo Alto Networks Captive Portal for automatic user provisioning with Microsoft Entra ID
 
 In this article,  you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
 Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides you with the following benefits:
@@ -25,6 +26,7 @@ Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides y
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Palo Alto Networks Captive Portal single sign-on (SSO)-enabled subscription.
 
@@ -40,7 +42,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Palo Alto Networks Captive Portal into Microsoft Entra ID, you need to add Palo Alto Networks Captive Portal from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Palo Alto Networks Captive Portal** in the search box.
 1. Select **Palo Alto Networks Captive Portal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +71,7 @@ To configure and test Microsoft Entra single sign-on with Palo Alto Networks Cap
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Palo Alto Networks Captive Portal** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Palo Alto Networks Captive Portal** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -78,10 +80,10 @@ Follow these steps to enable Microsoft Entra SSO.
 4. In the **Basic SAML Configuration** pane, perform the following steps:
 
    1. For **Identifier**, enter a URL that has the pattern
-      `https://<customer_firewall_host_name>/SAML20/SP`.
+      `https://<customer_firewall_host_name>:6082/SAML20/SP`.
 
    2. For **Reply URL**, enter a URL that has the pattern
-      `https://<customer_firewall_host_name>/SAML20/SP/ACS`.
+      `https://<customer_firewall_host_name>:6082/SAML20/SP/ACS`.
 
       > [!NOTE]
       > Update the placeholder values in this step with the actual identifier and reply URLs. To get the actual values, contact [Palo Alto Networks Captive Portal Client support team](https://support.paloaltonetworks.com/support).

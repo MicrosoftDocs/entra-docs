@@ -1,15 +1,14 @@
 ---
 title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Active Directory to Microsoft Entra ID - Configuration

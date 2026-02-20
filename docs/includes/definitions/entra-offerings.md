@@ -15,9 +15,17 @@ Microsoft Entra is available in several licensing options that allow you to choo
 
 **Microsoft Entra ID Free** - Included with Microsoft cloud subscriptions such as Microsoft Azure, Microsoft 365, and others.
 
-**Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3 for enterprise customers and Microsoft 365 Business Premium for small to medium businesses.
+**Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3, F1, F3, and Enterprise Mobility + Security E3 for enterprise customers. Entra ID P1 is also included in Microsoft 365 Business Premium for small to medium businesses.
 
-**Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product or included with Microsoft 365 E5 for enterprise customers.
+**Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product. It is also included with the following offers for enterprise customers:
+
+- Microsoft 365 E5
+- Microsoft Defender Suite (formerly Microsoft 365 E5 Security)
+- Microsoft Defender Suite FLW
+- Microsoft Defender + Purview Suite FLW
+- Enterprise Mobility + Security E5
+
+Entra ID P2 is also included in Microsoft Defender Suite for Microsoft 365 Business Premium and Microsoft Defender and Purview Suites for Microsoft 365 Business Premium for small to medium businesses.
 
 **Microsoft Entra Suite** - The suite combines Microsoft Entra products to secure access for your employees. It allows administrators to provide secure access from anywhere to any app or resource whether cloud or on-premises, while ensuring least privilege access. A Microsoft Entra ID P1 subscription is required. The Microsoft Entra suite includes five products:
 

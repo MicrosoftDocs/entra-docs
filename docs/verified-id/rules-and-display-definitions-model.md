@@ -2,12 +2,8 @@
 title: Rules and Display Definition Reference
 description: Rules and Display Definition Reference
 documentationCenter: ''
-author: barclayn
-manager: femila
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me disable 
 ---
@@ -98,7 +94,7 @@ When you want the user to enter information themselves. This type is also called
 | `type` | string (array) | a list of verifiable credential types this contract can issue |
 
 ## Example rules definition:
-```
+```json
 {
   "attestations": {
     "idTokenHints": [
@@ -128,14 +124,13 @@ When you want the user to enter information themselves. This type is also called
     ]
   }
 }
-
 ```
 
 ## displayModel type
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`locale`| string | the locale of this display |
-|`credential` | [displayCredential](#displaycredential-type) | the display properties of the verifiable credential |
+|`card` | [displayCredential](#displaycredential-type) | the display properties of the verifiable credential |
 |`consent` | [displayConsent](#displayconsent-type) | supplemental data when the verifiable credential is issued |
 |`claims`| [displayClaims](#displayclaims-type) array | labels for the claims included in the verifiable credential |
 
@@ -177,7 +172,7 @@ When you want the user to enter information themselves. This type is also called
 |`description` | string (optional) | the description of the claim |
 
 ## Example display definition:
-```
+```json
 {
   "locale": "en-US",
   "card": {

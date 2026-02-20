@@ -1,13 +1,8 @@
 ---
 title: Conditional Access - Block access by location
 description: Create a custom Conditional Access policy to block access to resources by IP location.
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: femila
 ms.reviewer: lhuangnorth
 ms.date: 04/01/2025
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 --- 
 # Block access by location
@@ -19,7 +14,7 @@ With the location condition in Conditional Access, you can control access to you
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Choose the type of location to create.
    - **Countries location** or **IP ranges location**.
    - Give your location a name.
@@ -33,7 +28,7 @@ More information about the location condition in Conditional Access can be found
 ## Create a Conditional Access policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -45,7 +40,7 @@ More information about the location condition in Conditional Access can be found
    1. Under **Include**, select **Selected networks and locations**
       1. Select the blocked location you created for your organization.
       1. Click **Select**.
-1. Under **Access controls** > select **Block Access**, and click **Select**.
+1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

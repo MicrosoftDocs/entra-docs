@@ -3,11 +3,11 @@ author: joflore
 ms.service: entra-id-protection
 
 ms.topic: include
-ms.date: 08/20/2024
+ms.date: 10/06/2025
 ms.author: joflore
 ---
 
-Administrators can take action on risky sign-in events and choose to:
+If the action buttons are greyed out, you need a higher privileged role. Administrators can take action on risky sign-in events and choose to:
 
 - **Confirm sign-in compromised** – This action confirms the sign-in is a true positive. The sign-in is considered risky until remediation steps are taken. 
 - **Confirm sign-in safe** – This action confirms the sign-in is a false positive. Similar sign-ins shouldn't be considered risky in the future. 

@@ -2,11 +2,9 @@
 title: Tutorial - Onboard external users to Microsoft Entra ID through an approval process
 description: Step-by-step tutorial for how to create an access package for external users requiring approvals in entitlement management.
 author: Sammak
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
-ms.author: owinfrey
 #Customer intent: As a IT admin, I want step-by-step instructions for creating an access package for managing external users through approvals.
 ---
 # Tutorial - Onboard external users to Microsoft Entra ID through an approval process
@@ -28,7 +26,7 @@ For more information, see [License requirements](entitlement-management-overview
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 3. When selecting the access package page if you see Access denied, ensure that a Microsoft Entra ID P2 or Microsoft Entra ID Governance license is present in your directory.
 
@@ -103,7 +101,7 @@ In this step, you can delete the **External user package** access package.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 4. Open the **External user package** access package. 
 

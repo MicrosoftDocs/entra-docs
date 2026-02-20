@@ -2,14 +2,8 @@
 title: Grant consent on behalf of a single user
 description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/12/2024
-ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
 ms.custom: enterprise-apps

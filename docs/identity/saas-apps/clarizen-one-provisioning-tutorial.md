@@ -3,8 +3,8 @@ title: Configure Clarizen One for automatic user provisioning with Microsoft Ent
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One.
 
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One so that I can streamline the user management process and ensure that users have the appropriate access to Clarizen One.
 ---
 
-# Configure Clarizen One for automatic user provisioning
+# Configure Clarizen One for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Clarizen One and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Clarizen One](https://www.clarizen.com/) by using the Microsoft Entra provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -49,10 +49,10 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Clarizen One to support provisioning with Microsoft Entra ID
 
 1. Select one of the four following Tenant URLs according to your Clarizen One environment and data center:
-      * US Production data center: https://servicesapp2.clarizen.com/scim/v2
-      * EU Production data center: https://serviceseu1.clarizen.com/scim/v2
-      * US Sandbox data center: https://servicesapp.clarizentb.com/scim/v2
-      * EU Sandbox data center: https://serviceseu.clarizentb.com/scim/v2
+      * US Production data center: `https://servicesapp2.clarizen.com/scim/v2`
+      * EU Production data center: `https://serviceseu1.clarizen.com/scim/v2`
+      * US Sandbox data center: `https://servicesapp.clarizentb.com/scim/v2`
+      * EU Sandbox data center: `https://serviceseu.clarizentb.com/scim/v2`
 
 1. Generate an [API key](https://success.clarizen.com/hc/articles/360011833079-API-Keys-Support). This value is entered in the **Secret Token** box on the **Provisioning** tab of your Clarizen One application.
 
@@ -75,7 +75,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Clarizen One in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
       ![Screenshot that shows the Enterprise applications pane.](common/enterprise-applications.png)
 

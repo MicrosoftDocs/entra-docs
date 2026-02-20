@@ -5,10 +5,10 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/28/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure external access to Microsoft Teams, SharePoint, and OneDrive with Microsoft Entra ID
@@ -37,7 +37,7 @@ Learn more:
 Guest users are invited to have access to resources.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 1. Find the **Guest user access** options.
 1. To prevent guest-user access to other guest-user details, and to prevent enumeration of group membership, select **Guest users have limited access to properties and memberships of directory objects**.
 

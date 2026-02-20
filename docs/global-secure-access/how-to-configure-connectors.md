@@ -1,15 +1,12 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
 description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
-manager: femila
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 02/09/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy
 
@@ -26,10 +23,10 @@ User identities must be synchronized from an on-premises directory or created di
 
 ### Windows server
 
-The Microsoft Entra private network connector requires a server running Windows Server 2012 R2 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
+The Microsoft Entra private network connector requires a server running Windows Server 2016 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
 
 * For high availability in your environment, we recommend having more than one Windows server.
-* The minimum .NET version required for the connector is v4.7.1+.
+* The minimum .NET version required for the connector is v4.7.2+.
 * For more information, see [private network connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
@@ -111,6 +108,8 @@ To enable TLS 1.2:
 
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 - Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on.
+- Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [extending the TCP and UDP ephemeral ports](concept-connectors.md#expanding-ephemeral-port-range) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
+- Consider creating a [performance baseline](/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
 
 ### Prepare your on-premises environment
 
@@ -183,7 +182,7 @@ If you choose to have more than one Windows server for your on-premises applicat
 For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra private network connectors](concept-connectors.md).
 
 > [!NOTE]
-> Microsoft Entra Private Access does not support multi-geo connectors. The cloud service instances for your connector are chosen in the same region as your Microsoft Entra tenant (or the closest region to it) even if you have connectors installed in regions different from your default region.
+> Microsoft Entra Private Access support for multi-geo connectors is currently in PREVIEW. By default, the cloud service instances for your connector are chosen in the same region as your Microsoft Entra tenant (or the closest region to it) even if you have connectors installed in regions different from your default region. Multi-Geo support lets customers optimize traffic flow by assigning connector groups according to their preferred geo locations instead of relying solely on the tenant's geo location.
 
 ## Verify the installation and registration
 
@@ -231,6 +230,30 @@ To create as many connector groups as you want:
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
+## Minimizing impact during connector server maintenance
+When performing maintenance (such as patching or reboots) on private network connector servers, you can minimize interruption to user connections by using a dedicated maintenance connector group. By temporarily moving a connector into this group, you ensure that no new traffic is routed to it while allowing existing sessions to complete gracefully.
+
+Connectors in Microsoft Entra Private Access are stateless agents that the service routes traffic through based on group assignments and availability. If a connector is unavailable, the service automatically directs new requests to other healthy connectors in the group.
+
+### Maintenance steps
+1. Create a maintenance connector group
+   - In the Microsoft Entra admin center, create a new connector group that is **only** to Private Access test application.
+   - This group acts as a “parking spot” for maintenance.
+1. Move the connector into the maintenance connector group
+   - When you are ready to service a connector server, edit its assignment and move it into the maintenance connector group with a test Private Access app where there is no active traffic.
+   - Once moved to a maintenance connector group the connector no longer receives new user connections and any existing connections continue until they gracefully finish.
+
+1. Drain existing sessions
+   - Wait an appropriate period to allow active connections to complete normally. The duration depends on your application workloads and session patterns.
+
+1. Perform maintenance
+   - Apply patches, reboots, or other updates required on the server.
+   - Ensure that the Microsoft Entra Private Network Connector services restart and are healthy before reintroducing the connector into production.
+   - Post-patching, requests can be sent to the test application to validate end to end connectivity.
+
+1. Return the connector to its original group
+   - Once maintenance is complete and services are running, move the connector back into its original connector group.
+   - The connector will again start receiving traffic as part of that group’s high-availability pool.
 
 
 ## Next steps

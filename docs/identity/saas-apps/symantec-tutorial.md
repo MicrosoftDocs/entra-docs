@@ -1,20 +1,20 @@
 ---
-title: Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
+title: Configure Symantec Web Security Service (WSS) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Symantec Web Security Service (WSS).
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Symantec Web Security Service (WSS) so that I can control who has access to Symantec Web Security Service (WSS), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
+# Configure Symantec Web Security Service (WSS) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate your Symantec Web Security Service (WSS) account with your Microsoft Entra account so that WSS can authenticate an end user provisioned in the Microsoft Entra ID using SAML authentication and enforce user or group level policy rules.
 
@@ -28,6 +28,7 @@ Integrating Symantec Web Security Service (WSS) with Microsoft Entra ID provides
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Symantec Web Security Service (WSS) single sign-on (SSO) enabled subscription.
 
@@ -48,7 +49,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Symantec Web Security Service (WSS) into Microsoft Entra ID, you need to add Symantec Web Security Service (WSS) from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Symantec Web Security Service (WSS)** in the search box.
 1. Select **Symantec Web Security Service (WSS)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -76,7 +77,7 @@ To configure and test Microsoft Entra SSO with Symantec Web Security Service (WS
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Symantec Web Security Service (WSS)** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Symantec Web Security Service (WSS)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

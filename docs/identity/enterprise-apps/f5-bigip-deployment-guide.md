@@ -1,19 +1,14 @@
 ---
 title: Secure hybrid access with F5 deployment guide
 description: Tutorial to deploy F5 BIG-IP Virtual Edition (VE) VM in Azure IaaS for Secure hybrid access
-
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
-
 ms.date: 11/07/2024
 ms.author: gasinh
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.reviewer: miccohen
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-ropc-nochange, sfi-image-nochange
 #customer intent: As an IT admin deploying F5 BIG-IP Virtual Edition (VE) in Azure, I want to follow a step-by-step tutorial to ensure a successful deployment, so that I can model a secure hybrid access (SHA) proof-of-concept and test new system updates and hotfixes.
 ---
 
@@ -33,7 +28,7 @@ Prior F5 BIG-IP experience or knowledge isn't necessary. However, we recommend y
 Deploying a BIG-IP in Azure for SHA requires:
 
 - A paid Azure subscription
-  - If you don't have one, you can get an [Azure free trial](https://azure.microsoft.com/free/)
+  - If you don't have one, you can get an [Azure free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 - Any of the following F5 BIG-IP license SKUs:
   - F5 BIG-IP® Best bundle
   - F5 BIG-IP Access Policy Manager™ (APM) standalone license
