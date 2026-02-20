@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A SAML federated organization in Lexmark Cloud Services with Organization Administrator role.
+* An OIDC federated organization in Lexmark Cloud Services with Organization Administrator role.
 * Review the [lexmark documentation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/overview-v54808648.html?toc=2.5.0) on user provisioning.
 
 ## Step 1: Plan your provisioning deployment
