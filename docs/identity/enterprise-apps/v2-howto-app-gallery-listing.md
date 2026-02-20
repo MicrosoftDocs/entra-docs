@@ -4,7 +4,7 @@ description: Learn how to publish your application in Microsoft Entra applicatio
 ms.topic: how-to
 
 ms.date: 10/09/2024
-ms.reviewer: ergreenl
+ms.reviewer: jeedes
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
 
 #customer intent: As a developer, I want to learn about the requirement for submitting my application to the Microsoft Entra application gallery, so that it can be publicly available for users to add to their tenants.
@@ -37,9 +37,9 @@ To publish your application in the gallery, you must first read and agree to spe
 
 - To implment support of SCIM 2.0 Provisioning please follow this tutorial: [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
-    - If you already support SCIM 2.0 in your application then you must support client credentials flow for authentication in SCIM. We are not onboarding applications that use Basic authentication, long lived bearer tokens or using code grants for authentication. We recommend you to use Client Credentials flow as artoculated [here](~//identity/app-provisioning/use-scim-to-provision-users-and-groups#oauth-20-client-credentials-grant-flow)
-    - Please make sure that you are testing the SCIM implementation and client credentials authentication flow using SCIM Validator tool. You can learn more about it from here: [Use the SCIM validator tool to validate your SCIM endpoint](~/identity/app-provisioning/use-scim-validator-tool.md).
-    - Additionally you also need to test the provisioning implementation using the non-gallery application in Microsoft Entra ID. You can also test the Client Credentials flow using Non-Gallery application template.You can learn more about it from here: [Test user provisioning with a non-gallery application](~/identity/app-provisioning/test-provisioning-non-gallery-application.md).
+    - If you already support SCIM 2.0 in your application then you must support client credentials flow for authentication in SCIM. We are not onboarding applications that use Basic authentication, long lived bearer tokens or using code grants for authentication. We recommend you to use Client Credentials flow as artoculated [here](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#oauth-20-client-credentials-grant-flow)
+    - Please make sure that you are testing the SCIM implementation and client credentials authentication flow using SCIM Validator tool. You can learn more about it from here: [Use the SCIM validator tool to validate your SCIM endpoint](~/identity/app-provisioning/use-scim-validator-tool).
+    - Additionally you also need to test the provisioning implementation using the non-gallery application in Microsoft Entra ID. You can also test the Client Credentials flow using Non-Gallery application template.You can learn more about it from here: [Test user provisioning with a non-gallery application](~/identity/app-provisioning/test-provisioning-non-gallery-application).
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
