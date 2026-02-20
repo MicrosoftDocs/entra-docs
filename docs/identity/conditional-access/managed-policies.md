@@ -47,6 +47,7 @@ As threats evolve, Microsoft might update these policies to use new features, fu
 - [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
+- [Block access for high-risk users](#block-access-for-high-risk-users)
 
 ### Block all high risk agents from accessing all resources (Preview)
 
@@ -106,6 +107,18 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
     - This setup ensures that the policy doesn't block legitimate users and that you’re getting maximum value on your P2 licenses.
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
+
+
+### Block access for high-risk users
+
+This policy helps protect your organization by restricting access for users identified as high risk by Microsoft Entra ID Protection. User risk represents the likelihood that a user account has been compromised, based on signals such as leaked credentials or other risk detections.When enabled, this policy blocks access for users who meet the configured high user risk level until the risk is remediated. Remediation follows existing Microsoft Entra ID Protection processes and guidance.
+
+This policy targets:
+
+- Organizations with Microsoft Entra ID P2 licenses
+- Organizations where security defaults aren't enabled
+
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
 ## Security defaults policies
 
