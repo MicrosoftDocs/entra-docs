@@ -4,7 +4,7 @@ description: Learn how third-party fraud protection integrates with native authe
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.date: 02/19/2026
+ms.date: 02/20/2026
 ms.service: identity-platform
 ms.topic: concept-article
 #Customer intent: As a software developer, I want to understand how third-party fraud protection integrates with native authentication flows to assess risk and protect SMS-based multifactor authentication from account takeover threats.
@@ -56,13 +56,14 @@ This diagram shows how a native application integrates third‑party fraud prote
 
 :::image type="content" source="./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.svg" alt-text="Diagram of End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.":::
 
-Key aspects of the sign‑in flow shown in the diagram:
+Key aspects of the sign‑in flow:
 
-- The native application orchestrates the sign‑in flow and triggers fraud risk evaluation when SMS‑based MFA is required.
-- Microsoft Entra drives the authentication state and determines when MFA is needed, but defers SMS OTP delivery until fraud checks complete.
-- The web application firewall (WAF) intercepts `/challenge` requests and evaluates fraud risk by consulting a third‑party provider before forwarding allowed requests to ESTS to send the OTP.
-- The third‑party fraud provider evaluates risk using device, phone number, and network signals collected outside Microsoft Entra.
-- SMS OTPs are sent only when the assessed risk is acceptable; high‑risk sign‑in attempts are blocked before SMS delivery.
+- The native application initializes a fraud‑evaluation session through the 3P provider’s SDK as part of the sign‑in process.
+- Microsoft Entra drives authentication state and determines when MFA is required, while the 3P SDK handles all fraud‑related checks.
+- The WAF intercepts the /challenge request and uses the 3P SDK to obtain a risk assessment for the current session.
+- The 3P provider evaluates risk using signals it gathers independently, such as device, number reputation, and network attributes.
+- The SMS OTP is issued only when the 3P provider returns an Allow decision. If the provider returns Block or Challenge, the native app follows the 3P‑driven workflow—either blocking the flow or invoking the provider’s additional verification.
+- Once the session is allowed, the user completes SMS MFA and Microsoft Entra finalizes authentication.
 
 ## Related content
 
