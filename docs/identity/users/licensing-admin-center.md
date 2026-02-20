@@ -3,14 +3,8 @@ title: Assign licenses to a group using the Microsoft 365 admin center
 description: How to assign licenses to groups using the Microsoft 365 admin center
 
 keywords: Azure AD licensing
-author: barclayn
-manager: pmwongera
-
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: barclayn
 ---
 
 # Assign licenses to users by group membership using the Microsoft 365 admin center

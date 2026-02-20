@@ -1,13 +1,8 @@
 ---
 title: Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/27/2026
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
