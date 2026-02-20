@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 09/29/2025
+ms.date: 02/20/2026
 
 #Customer intent: As a dev, devops, I want to learn about native authentication challenge types and capabilities, so that I can use them to notify native authentication API about the authentication flows that my app supports.
 ---

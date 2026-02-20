@@ -4,7 +4,7 @@ manager: dougeby
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
-ms.date: 07/20/2025
+ms.date: 02/27/2026
 ms.author: kengaderdus
 ---
 

@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 02/06/2026
+ms.date: 02/27/2026
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -234,7 +234,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 
 The app requests Microsoft Entra to select one of the supported challenge types for the user to authenticate with. To do so, the app makes a call to the `/signup/v1.0/challenge` endpoint. The app needs to include the continuation token that it acquires from the `/signup/v1.0/start` endpoint in the request.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
@@ -347,7 +347,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 The app submits the  one-time passcode sent to the user's email. Since we're submitting one-time passcode, an `oob` parameter is required, and the `grant_type` parameter must have a value *oob*.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
@@ -424,7 +424,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 For the password credential to be collected from the user, the app needs to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
@@ -487,7 +487,7 @@ This response is considered successful, but the app is required to switch to a w
 
 The app needs to submit the user's credential, in this case password, that Microsoft Entra requested in the previous step. The app needs to submit a password credential if it didn't do so via the `/signup/v1.0/start` endpoint. The app makes a request to the `/signup/v1.0/continue` endpoint to submit the password. Since we're submitting a password, a `password` parameter is required, and the `grant_type` parameter must have a value *password*.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
@@ -658,7 +658,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 To continue with the flow, the app needs to make a call to the `/signup/v1.0/continue` endpoint to submit the required user attributes. Since we're submitting attributes, an `attributes` parameter is required, and the `grant_type` parameter must have a value equal to *attributes*.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
@@ -797,7 +797,7 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 | `oauth/v2.0/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to challenge the user for second factor authentication method.|
 |  `oauth/v2.0/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
-| `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods for multifactor authentication (MFA). This endpoint only returns methods used as a second factor when MFA is required. Learn [how to use the introspect endpoint](#get-user-registered-strong-authentication-methods)|
+| `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods for multifactor authentication (MFA). Learn [how to use the introspect endpoint](#get-user-registered-strong-authentication-methods)|
 
 ### Sign-in challenge types
 
@@ -854,7 +854,7 @@ In the sections that follow, we summarize the sign-in flow into three basic step
 
 The authentication flow begins with the application making a POST request to the `/initiate` endpoint to start the sign-in flow.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate
@@ -1154,9 +1154,9 @@ The app makes a POST request to the `oauth2/v2.0/token` endpoint and provides th
 
 ### Get user registered strong authentication methods
 
-**For users whose primary authentication method is email with password**, use the `oauth2/v2.0/introspect` endpoint to request user's list of registered strong authentication methods.
+Use the `oauth2/v2.0/introspect` endpoint to request the user's list of registered strong authentication methods.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/introspect
@@ -1324,8 +1324,7 @@ Microsoft Entra determines the default MFA method for the user by priority as fo
 
 ## Register a strong authentication method API reference
 
-**For users whose primary authentication method is email with password**, native authentication supports registration of strong authentication method. When the app calls the [/oauth2/v2.0/token](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no registered strong method, the response, *registeration_required*, tells the app to have the user register one before tokens can be issued.
-
+Native authentication supports registration of strong authentication method. When the app calls the [/oauth2/v2.0/token](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no registered strong method, the response, *registeration_required*, tells the app to have the user register one before tokens can be issued.
 
 After the client app completes the flow to register a strong authentication method, it calls the `/oauth2/v2.0/token` endpoint to request for security tokens.
 
@@ -1344,7 +1343,7 @@ To use the strong authentication method registration  API, the app uses the endp
 
 The registration flow begins when the app requests the list of strong authentication methods the user is permitted to enroll.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/introspect
@@ -1443,7 +1442,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 In this step, submit the strong authentication method that the user wishes to register. Microsoft Entra then sends a challenge, such as email one-time passcode, to the user.
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/challenge 
@@ -1539,7 +1538,7 @@ If the error parameter has a value of *access_denied*, Microsoft Entra includes 
 In this step, make a call to the `/register/v1.0/continue` endpoint to complete registration of the strong authentication method.
 
 
-Here's an example of the request(we present the example request in multiple lines for readability):
+Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/continue 
