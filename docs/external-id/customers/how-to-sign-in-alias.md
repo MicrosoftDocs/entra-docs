@@ -117,7 +117,7 @@ Content-type: application/json
 
 You can also add a username to an existing external user.
 
-**Step 1: Get the user details**
+### Step 1: Get the user details
 
 Use `$filter` to get the user object, and `$select` to return the ID and `identities[]` properties. The following request example shows how to retrieve a user account using the email address as a sign-in identifier.
 
@@ -218,9 +218,11 @@ You can change the label of the username field that appears on the sign-up page.
 
 You can set a custom regular expression for input validation by configuring the `validationRegEx` for the username attribute. This setting isn't currently available in the admin center UI, but you can configure it using Microsoft Graph. To set this value, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. For reference, see the example on [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
 
+Note that there is no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Validation may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
+
 ## Prefill or assign usernames 
 
-Like other attributes, you can customize signup by pre-filling username or assigning it after gathering other user information.  To prefill the value, use a custom extension with the [onAttributeCollectionStart](../../identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md) event, and configure how it is presented via Page Layout or [configure via Microsoft Graph](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph). If you need to assign, modify, or validate the username after collecting more details, use the [onAttributeCollectionSubmit](../../identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md) event.
+Like other attributes, you can customize signup by pre-filling username or assigning it after gathering other user information. To prefill the value, use a custom extension with the [onAttributeCollectionStart](../../identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md) event, and configure how it is presented via Page Layout or [via Microsoft Graph](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph). If you need to assign, modify, or validate the username after collecting more details, use the [onAttributeCollectionSubmit](../../identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md) event.
 
 ## Test signing in with the alias or username
 
