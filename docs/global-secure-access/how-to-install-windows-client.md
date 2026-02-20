@@ -31,7 +31,7 @@ This article describes how to download and install the Global Secure Access clie
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
-   - Windows on Arm devices (such as Surface Pro and Surface Laptop with Snapdragon processors) require a separate client installer, available at **aka.ms/GlobalSecureAccess-WindowsOnArm**. Don't use the standard x64 installer on Arm64 devices.
+   - Windows on Arm devices (such as Surface Pro and Surface Laptop with Snapdragon processors) require a separate client installer, available at **https://aka.ms/GlobalSecureAccess-WindowsOnArm**. Don't use the standard x64 installer on Arm64 devices.
 - You need local admin credentials to install or upgrade the Global Secure Access client.
 - The Global Secure Access client requires a license. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [buy licenses or get trial licenses](https://aka.ms/azureadlicense).
 
