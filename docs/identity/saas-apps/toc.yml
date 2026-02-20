@@ -3600,9 +3600,9 @@
         href: lawvu-provisioning-tutorial.md
       - name: LDAP directory
         href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
-      - name: Lexmark Cloud Services (SAML) - User Provisioning 
+      - name: Lexmark Cloud Services (SAML) 
         href: lexmark-cloud-services-provisioning-saml-tutorial.md
-      - name: Lexmark Cloud Services (OIDC) - User Provisioning
+      - name: Lexmark Cloud Services (OIDC)
         href: lexmark-cloud-services-provisioning-oidc-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
