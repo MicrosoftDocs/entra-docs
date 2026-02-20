@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 This article explains how to configure Microsoft Entra application proxy and Azure Traffic Manager.
 
-With the application proxy geo-routing feature, you can optimize which region of application proxy your connector groups use. You can combine this functionality with a Traffic Manager solution of your choice. This combination enables a fully dynamic geo-aware solution based on your user location. It unlocks the rich rule set of your preferred Traffic Manager solution to prioritize how traffic is routed to the apps that you help protect by using application proxy. With this combination, users can use a single URL to access the instance of the app closest to them.
+With the application proxy geo-routing feature, you can optimize which region of application proxy your connector groups use. You can combine this functionality with a Traffic Manager solution of your choice. This combination enables a fully dynamic geo-aware solution based on your user location. It unlocks the rich rule set of your preferred Traffic Manager solution to prioritize how traffic is routed to the apps that you help protect by using application proxy. With this combination, users can use a single URL to access the instance of the app that's closest to them.
 
 :::image type="content" source="./media/application-proxy-integrate-with-traffic-manager/application-proxy-integrate-with-traffic-manager-diagram.png" alt-text="Diagram that shows Traffic Manager integration with application proxy.":::
 
@@ -24,7 +24,7 @@ With the application proxy geo-routing feature, you can optimize which region of
 
 ## Application proxy configuration
 
-To use Traffic Manager, you must configure application proxy. The configuration steps that follow refer to the following URL definitions:
+To use Traffic Manager, you must configure application proxy. The configuration steps that follow refer to these URL definitions:
 
 - **Regional URL**. The application proxy endpoints for each app. For example, `nam.contoso.com` and `india.contoso.com`.
 - **Alternate URL**: The URL configured for the Traffic Manager solution. For example, `contoso.com`.
@@ -34,6 +34,7 @@ To configure application proxy for Traffic Manager:
 1. Install connectors for each location that contains your app instances. For each connector group, use the geo-routing feature to assign the connectors to their respective regions.
 
 1. Set up your app instances with application proxy:
+
    1. For each app, upload a custom domain. Include the alternate URL to use for the apps as a subject alternative name (SAN) URL to the uploaded certificate.
    1. Assign each app to its respective connector group.
    1. If you prefer the alternate URL to be maintained throughout the user session, register each app and add the URL as a reply URL. This step is optional.
@@ -78,7 +79,7 @@ To configure application proxy for Traffic Manager:
 
 ## Sample application proxy configuration
 
-The following table shows a sample application proxy configuration. This sample uses the sample app domain `www.contoso.com` as the alternate URL.
+The following table shows a sample application proxy configuration. This configuration uses the sample app domain `www.contoso.com` as the alternate URL.
 
 |     | North America-based app | India-based app | Additional information |
 | ---- | ----------------------- | --------------- | ---------------------- |
@@ -101,9 +102,7 @@ Follow these steps to configure Traffic Manager:
 
 1. Add the app proxy endpoints.
 
-1. Add a `CNAME` record to point `www.contoso.com` to the Traffic Manager solution's URL. For example, `contoso.trafficmanager.net`.
-
-The alternate URL now points to the Traffic Manager solution.
+1. Add a `CNAME` record to point `www.contoso.com` to the Traffic Manager solution's URL. For example, use `contoso.trafficmanager.net`. The alternate URL now points to the Traffic Manager solution.
 
 ## Related content
 
