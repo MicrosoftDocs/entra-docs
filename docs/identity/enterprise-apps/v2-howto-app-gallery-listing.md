@@ -22,24 +22,24 @@ To publish your application in the Microsoft Entra application gallery, you need
 - Join the Microsoft partner network.
 
 > [!NOTE]
-> We're currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/security/blog/topic/secure-future-initiative/). Update requests for SSO will be processed on a case-by-case basis. We are not updating any SCIM based User Provisioning applications for now. Enabling SCIM based user provisioning for the existing gallery application is also treated as a new application request.
+> We're currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/security/blog/topic/secure-future-initiative/). Update requests for SSO are processed on a case-by-case basis. We aren't updating any SCIM (System for Cross-domain Identity Management) based User Provisioning applications for now. Enabling SCIM based user provisioning for the existing gallery application is also treated as a new application request.
 
 
 ## Prerequisites
 To publish your application in the gallery, you must first read and agree to specific [terms and conditions](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/).
 - Implement support for *single sign-on (SSO)*. To learn more about supported options, see [Plan a single sign-on deployment](plan-sso-deployment.md).
-    - We will not be onboarding any Password single sign-on applications anymore. Your application should support any of the Federation Protocol as mentioned below.
-	- For federated applications (SAML/WS-Fed), the application should preferably support [software-as-a-service (SaaS) model](https://azure.microsoft.com/overview/what-is-saas/) but it is not mandatory and it can be an on-premises application as well. Enterprise gallery applications must support multiple user configurations and not any specific user.
-	- For OpenID Connect, most applications work well as a multitenant application implementing the [Microsoft Entra consent framework](~/identity-platform/application-consent-experience.md). Refer to [this](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) link to convert the application into multitenant. If your application requires additional per-instance configuration, such as customers needing to control their own secrets and certificates or customer specific instance configuration then you can publish a single-tenant Open ID Connect application which is also supported in the Entra ID App Gallery now. But recommended option is to have a multi-tenant application in a true SaaS model.
+    - We won't be onboarding any Password single sign-on applications anymore. Your application should support any of the Federation Protocols as mentioned in the point below.
+	- For federated applications (SAML/WS-Fed), the application should preferably support [software-as-a-service (SaaS) model](https://azure.microsoft.com/overview/what-is-saas/) but it isn't mandatory and it can be an on-premises application as well. Enterprise gallery applications must support multiple user configurations and not any specific user.
+	- For OpenID Connect, most applications work well as a multitenant application implementing the [Microsoft Entra consent framework](~/identity-platform/application-consent-experience.md). Refer to [this](~/identity-platform/howto-convert-app-to-be-multi-tenant.md) link to convert the application into multitenant. If your application requires extra per-instance configuration, such as customers needing to control their own secrets and certificates or instance configuration then you can publish a single-tenant Open ID Connect application. This type of application publishing is also supported in the Entra ID App Gallery now. But recommended option is to have a multitenant application in a true SaaS model.
 
 - Provisioning is optional yet highly recommended. To learn more about Microsoft Entra SCIM, see [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
   
 
-- To implment support of SCIM 2.0 Provisioning please follow this tutorial: [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
+- To implement support of SCIM 2.0 Provisioning follow this tutorial: [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
-    - If you already support SCIM 2.0 in your application then you must support client credentials flow for authentication in SCIM. We are not onboarding applications that use Basic authentication, long lived bearer tokens or using code grants for authentication. We recommend you to use Client Credentials flow as artoculated [here](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#oauth-20-client-credentials-grant-flow)
-    - Please make sure that you are testing the SCIM implementation and client credentials authentication flow using SCIM Validator tool. You can learn more about it from here: [Use the SCIM validator tool to validate your SCIM endpoint](~/identity/app-provisioning/use-scim-validator-tool).
-    - Additionally you also need to test the provisioning implementation using the non-gallery application in Microsoft Entra ID. You can also test the Client Credentials flow using Non-Gallery application template.You can learn more about it from here: [Test user provisioning with a non-gallery application](~/identity/app-provisioning/test-provisioning-non-gallery-application).
+    - If you already support SCIM 2.0 in your application, then you must support client credentials flow for authentication in SCIM. We aren't onboarding applications that use Basic authentication, long lived bearer tokens or using code grants for authentication. We recommend you to use Client Credentials flow as articulated [here](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#oauth-20-client-credentials-grant-flow)
+    - Make sure that you're testing the SCIM implementation and client credentials authentication flow using SCIM Validator tool. You can learn more about it from here: [Use the SCIM validator tool to validate your SCIM endpoint](~/identity/app-provisioning/use-scim-validator-tool).
+    - Additionally you also need to test the provisioning implementation using the non-gallery application in Microsoft Entra ID. You can also test the Client Credentials flow using non-gallery application template. You can learn more about it from here: [Test user provisioning with a non-gallery application](~/identity/app-provisioning/test-provisioning-non-gallery-application).
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
@@ -47,7 +47,7 @@ You can sign up for a free, test Development account. It's free for 90 days and 
 
 ### Provide app documentation for your site
 
-Ease of adoption is an important factor for those that make decisions about enterprise software. Documentation that is clear and easy to follow helps your users adopt technology and it reduces support costs.
+Ease of adoption is an important factor for those people that make decisions about enterprise software. Documentation that's clear and easy to follow helps your users adopt technology and it reduces support costs.
 
 Create documentation that includes the following information at minimum:
 
@@ -58,7 +58,7 @@ Create documentation that includes the following information at minimum:
 - Licensing information for your application
 - Role-based access control for configuring SSO
 - SSO Configuration Steps
-    - UI configuration elements for SAML with expected values from the provider
+    - UI configuration elements for SAML (Simple Assertion Markup Language) with expected values from the provider
     - Service provider information to be passed to identity providers
 - If you use OIDC/OAuth, a list of permissions required for consent, with business justifications. Please use the least privileged permissions for your scenario.
 - Testing steps for pilot users
@@ -70,7 +70,7 @@ Create documentation that includes the following information at minimum:
 
 When your SAML application is added to the gallery, documentation is created that explains the step-by-step process. For an example, see [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). This documentation is created based on your submission to the gallery. You can easily update the documentation if you make changes to your application by using your GitHub account.
 
-For OIDC application, there is no application specific documentation, we have only the generic [tutorial](~/identity-platform/v2-protocols-oidc.md) for all the OpenID Connect applications.
+For Open ID Connect application, there's no application specific documentation. We have only the generic [tutorial](~/identity-platform/v2-protocols-oidc.md) for all the OpenID Connect applications.
 
 ## Submit your application
 
@@ -86,7 +86,7 @@ On the application **Registration** form, select the feature that you want to en
 
 If you're implementing a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) 2.0 endpoint for user provisioning, select **User Provisioning (SCIM 2.0)**. Download the schema to provide in the onboarding request. For more information, see [Export provisioning configuration and roll back to a known good state](~/identity/app-provisioning/export-import-provisioning-configuration.md). The schema that you configured is used when testing the non-gallery application to build the gallery application.
 
-If you wish to register an MDM application in the Microsoft Entra application gallery, select **Register an MDM app**.
+If you wish to register an MDM (Microsoft Device Management) application in the Microsoft Entra application gallery, select **Register an MDM app**.
 
 You can track application requests by customer name at the Microsoft Application Network portal. For more information, see [Application requests by Customers](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/AppRequestsByCustomers.aspx).
 
