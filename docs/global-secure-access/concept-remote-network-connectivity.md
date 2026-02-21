@@ -2,7 +2,7 @@
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 ms.topic: concept-article
-ms.date: 09/02/2025
+ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 
@@ -35,6 +35,21 @@ To connect a remote network to Global Secure Access, you set up an Internet Prot
 
 Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
+
+## Supported traffic forwarding profiles
+
+Remote networks don't support all the same traffic forwarding profiles as the Global Secure Access client. The following table summarizes which connectivity methods support each profile:
+
+| Traffic forwarding profile | Global Secure Access client | Remote network |
+|---|---|---|
+| **Microsoft traffic** | ✅ Supported | ✅ Supported |
+| **Internet Access** | ✅ Supported | ❌ Not supported as a traffic forwarding profile |
+| **Private Access** | ✅ Supported | ❌ Not supported |
+
+> [!IMPORTANT]
+> Only the **Microsoft traffic** forwarding profile can be assigned to remote networks. **Private Access** and **Internet Access** traffic forwarding profiles require the Global Secure Access client installed on end-user devices. For more information, see [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
+
+Although the Internet Access traffic forwarding profile is client-only, you can still apply Internet Access security policies (such as web content filtering) to remote network traffic. Use the [baseline security profile](how-to-apply-security-policies-remote-network.md) to enforce these policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware Conditional Access policies for Internet Access require the Global Secure Access client.
  
 ## Why remote network connectivity is important for you? 
 Maintaining security of a corporate network is increasingly difficult in a world of remote work and distributed teams. Security Service Edge (SSE) promises a world of security where customers can access their corporate resources from anywhere in the world without needing to back haul their traffic to headquarters.
