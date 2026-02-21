@@ -1,7 +1,11 @@
 ---
 title: Network planning and connections for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the virtual network design considerations and resources used for connectivity when you run Microsoft Entra Domain Services.
-ms.topic: article
+author: justinha
+manager: dougeby
+ms.service: entra-id
+ms.subservice: domain-services
+ms.topic: concept-article
 ms.date: 02/05/2025
 ms.reviewer: xyuan
 ms.custom: sfi-image-nochange
