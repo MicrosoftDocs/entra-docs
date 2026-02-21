@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: justinha
 ms.service: entra-id
 ms.subservice: hybrid
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dahnyahk

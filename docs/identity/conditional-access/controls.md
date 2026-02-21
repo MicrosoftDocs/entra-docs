@@ -1,7 +1,9 @@
 ---
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
-ms.topic: article
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: concept-article
 ms.date: 09/12/2025
 ms.reviewer: gkinasewitz
 ms.custom: sfi-image-nochange

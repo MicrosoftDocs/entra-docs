@@ -4,7 +4,7 @@ description: Discover how to manage and transition Active Directory groups to Mi
 author: justinha
 ms.service: entra-id
 ms.subservice: hybrid
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/09/2025
 ms.author: justinha
 ms.reviewer: dahnyahk

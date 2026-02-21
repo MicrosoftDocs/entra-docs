@@ -168,8 +168,6 @@
         "identity/app-proxy/**/*.yml": "app-proxy",
         "identity/authentication/**/*.md": "authentication",
         "identity/authentication/**/*.yml": "authentication",
-        "identity/conditional-access/**/*.md": "conditional-access",
-        "identity/conditional-access/**/*.yml": "conditional-access",
         "identity/domain-services/**/*.md": "domain-services",
         "identity/domain-services/**/*.yml": "domain-services",
         "identity/enterprise-apps/**/*.md": "enterprise-apps",
