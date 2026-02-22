@@ -29,9 +29,9 @@ Partners can enable the external user access feature with the Global Secure Acce
 
 ### Prerequisites
 To enable external user access with the Global Secure Access client, you must have:
-- External users(guest or member) configured in the resource tenant. For more information, see the following articles:
+- External users (guest or member) configured in the resource tenant. For more information, see the following articles:
     - [Quickstart: Add a external user and send an invitation](../external-id/b2b-quickstart-add-guest-users-portal.md)
-    - [Understand and manage the properties of external user users](../external-id/user-properties.md)
+    - [Understand and manage the properties of external users](../external-id/user-properties.md)
 - The Global Secure Access client installed and running on the device connected to the home tenant. To install the Global Secure Access client, see [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).   
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
