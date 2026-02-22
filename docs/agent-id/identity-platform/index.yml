@@ -22,8 +22,6 @@ landingContent:
             url: ./what-is-agent-id-platform.md
           - text: What is an agent identity?
             url: ./what-is-agent-id.md
-          - text: What is the Agent Registry?
-            url: ./what-is-agent-registry.md
 
   - title: Agent development
     linkLists:
@@ -33,8 +31,6 @@ landingContent:
             url: ./agent-users.md
           - text: Agent identity blueprint
             url: ./agent-blueprint.md
-          - text: Agent registry collections
-            url: ./agent-registry-collections.md
           - text: Tokens in agent IDs
             url: ./agent-token-claims.md
           - text: Service principals and agents
