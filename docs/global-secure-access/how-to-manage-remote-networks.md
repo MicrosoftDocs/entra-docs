@@ -49,7 +49,7 @@ Add a new device link or delete an existing device link from this page. You can'
 
 #### Traffic profiles
 
-From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft access profile can be applied to remote networks.
+From this page, you can enable or disable the available traffic forwarding profiles. The Microsoft traffic and Internet Access profiles can be assigned to remote networks. The Private Access profile requires the Global Secure Access client. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md).
 
 :::image type="content" source="media/how-to-manage-remote-networks/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
 
