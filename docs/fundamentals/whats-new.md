@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 10/30/2025
+ms.date: 02/22/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -22,6 +22,146 @@ This article provides information about the latest releases and change announcem
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+
+## February 2026
+
+### General Availability - Expanded attribute support in Lifecycle Workflows attribute changes trigger
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+
+The Attribute Changes trigger in Lifecycle Workflows now supports additional attribute types, enabling broader detection of organizational changes. Previously, this trigger was limited to a set of core attributes. With this update, you can configure workflows to respond when any of the following attributes change:
+* Custom security attributes
+* Directory extension attributes
+* EmployeeOrgData attributes
+* On-premises attributes 1–15
+
+This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments.
+
+---
+
+### General Availability - Delegated Workflow Management in Lifecycle Workflows
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers will be able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+
+---
+
+### General Availability - Device authorization grant flow in Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+Similar to Entra ID (workforce tenants), Entra External ID (external tenants) now supports device authorization grant flow, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer.
+
+---
+
+### General Availability - Sign-in with username/alias
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+In Microsoft Entra External ID (EEID), users who authenticate with a local email and password now can also sign in using a username (alias) as an alternate sign-in identifier. This alias can represent a customer or member ID, insurance number, frequent flyer number, or a self-chosen username.
+
+---
+
+### Upcoming change – Microsoft Entra Connect security update to block hard match for privileged roles
+
+**Type:** Plan for change  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+Beginning March 31, 2026, Microsoft Entra ID will block any attempt to hard match an on-premises Active Directory (AD) user to an existing Entra ID account that holds privileged roles. This safeguard prevents potential elevation‑of‑privilege scenarios where an attacker could attempt to take over a privileged cloud account by manipulating synchronization attributes.
+
+No customer action is required.
+
+---
+
+### General Availability - External Auth Methods is Generally Available
+
+**Type:** New feature  
+**Service category:** MFA  
+**Product capability:** User Authentication  
+
+External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third‑party MFA solutions seamlessly with Entra ID for enhanced security and flexibility.
+
+---
+
+### General Availability - Custom banned password lists supported in Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+EEID admins can now add specific strings to block during password creation and reset, in addition to already‑supported global banned password lists.
+
+---
+
+### Upcoming Changes - Jailbreak Detection in Authenticator App
+
+**Type:** New feature  
+**Service category:** Microsoft Authenticator App  
+**Product capability:** Identity Security & Protection  
+
+Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Entra credentials in the Android app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Entra accounts in Authenticator.
+
+---
+
+### Public Preview - BYOD support for Windows client using Entra registration
+
+**Type:** New feature  
+**Service category:** BYOD support  
+**Product capability:** Network Access  
+
+Bring Your Own Device (BYOD) support for Windows using Entra‑registered devices is now available in public preview. Users and partners can access corporate resources from their own devices. Admins can assign the Private Application traffic profile to internal accounts, including internal guest users.
+
+---
+
+### General Availability - Custom Block pages
+
+**Type:** New feature  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+Admins can now customize Global Secure Access block pages for Internet Access using Microsoft Graph API, including:
+- Tenant‑wide body text
+- Limited markdown
+- Hyperlinks to Terms of Use, ServiceNow/IT ticketing, MyAccess workflows
+
+---
+
+### General Availability - Microsoft Entra Connect Sync now supports Windows Server 2025
+
+**Type:** New feature  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+Microsoft Entra Connect Sync now officially supports Windows Server 2025. Organizations can upgrade identity synchronization servers to benefit from improved security, performance, and management capabilities. Microsoft recommends evaluating Cloud Sync for future‑proofed sync scenarios.
+
+---
+
+### General Availability - Microsoft Entra Provisioning Service available in Microsoft Azure operated by 21Vianet
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Outbound to SaaS Applications  
+
+The Microsoft Entra provisioning service is now available in the China (21Vianet) cloud for:
+- API‑driven provisioning
+- Cloud Sync
+- Cross‑tenant sync
+- SCIM provisioning
+- On‑prem app provisioning (ECMA)
+
+Gallery connectors like Workday, SuccessFactors, and AWS are not yet available.
+
+---
 
 ## January 2026
 
