@@ -2,7 +2,7 @@
 title: "Troubleshoot the Windows Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.topic: troubleshooting
-ms.date: 01/16/2026
+ms.date: 02/21/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -43,6 +43,14 @@ The following checks verify the health of the Global Secure Access client.
 The Windows client authenticates the user and the device to Global Secure Access services. The device authentication, based on a device token, requires that the device is either Microsoft Entra joined or Microsoft Entra hybrid joined. Microsoft Entra registered devices aren't currently supported.
 To check the status of your device, enter the following command in the Command Prompt: `dsregcmd.exe /status`.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-entra-joined.png" alt-text="Screenshot of the Command Prompt with the Device State, AzureAdJoined : Yes, highlighted.":::
+
+### Entra user signed in to Windows
+This check verifies that the user currently signed in to Windows is a Microsoft Entra user. The Global Secure Access client requires the Windows sign-in user to be a Microsoft Entra user, not a local-only account.
+
+If this test fails:
+1. Verify the user signed in to the device with a Microsoft Entra account or a Microsoft Entra hybrid identity.
+1. Check that the Windows sign-in session uses Microsoft Entra credentials (not a local account).
+1. Run `dsregcmd.exe /status` and verify the **SSO State** section shows `AzureAdPrt : YES`.
 
 ### Can connect to the internet
 This check indicates whether the device is connected to the internet. The Global Secure Access client requires an internet connection. This test is based on the [Network Connectivity Status Indicator (NCSI)](/windows-server/networking/ncsi/ncsi-overview) feature. 
