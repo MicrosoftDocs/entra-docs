@@ -38,18 +38,18 @@ To learn more about secure remote network-to-remote network connectivity, see th
 
 ## Supported traffic forwarding profiles
 
-Remote networks don't support all the same traffic forwarding profiles as the Global Secure Access client. The following table summarizes which connectivity methods support each profile:
+Remote networks support different traffic forwarding profiles for acquiring traffic. Traffic forwarding profiles control which traffic is routed through Global Secure Access. Security profiles (such as the baseline profile) control what policies are applied to that acquired traffic.
 
 | Traffic forwarding profile | Global Secure Access client | Remote network |
 |---|---|---|
 | **Microsoft traffic** | ✅ Supported | ✅ Supported |
-| **Internet Access** | ✅ Supported | ❌ Not supported as a traffic forwarding profile |
+| **Internet Access** | ✅ Supported | ✅ Supported |
 | **Private Access** | ✅ Supported | ❌ Not supported |
 
 > [!IMPORTANT]
-> Only the **Microsoft traffic** forwarding profile can be assigned to remote networks. **Private Access** and **Internet Access** traffic forwarding profiles require the Global Secure Access client installed on end-user devices. For more information, see [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
+> The **Microsoft traffic** and **Internet Access** traffic forwarding profiles can be assigned to remote networks. The **Private Access** traffic forwarding profile requires the Global Secure Access client installed on end-user devices. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md) and [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
 
-Although the Internet Access traffic forwarding profile is client-only, you can still apply Internet Access security policies (such as web content filtering) to remote network traffic. Use the [baseline security profile](how-to-apply-security-policies-remote-network.md) to enforce these policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware Conditional Access policies for Internet Access require the Global Secure Access client.
+Once traffic is acquired through a forwarding profile, you apply security policies to it using security profiles. The [baseline security profile](how-to-apply-security-policies-remote-network.md) enforces policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware security profiles linked to Conditional Access policies require the Global Secure Access client.
  
 ## Why remote network connectivity is important for you? 
 Maintaining security of a corporate network is increasingly difficult in a world of remote work and distributed teams. Security Service Edge (SSE) promises a world of security where customers can access their corporate resources from anywhere in the world without needing to back haul their traffic to headquarters.
