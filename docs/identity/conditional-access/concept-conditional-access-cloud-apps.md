@@ -405,7 +405,7 @@ If the [recommended baseline MFA policy without resource exclusions](policy-all-
 1. Adjust the filter to include your attribute set and definition from earlier.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 > [!NOTE]
 > Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining resource exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
