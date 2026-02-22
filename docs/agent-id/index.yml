@@ -39,6 +39,10 @@ additionalContent:
           links:
             - text: What is Microsoft Entra Agent ID?
               url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+            - text: Owners, sponsors, and managers
+              url: ./identity-platform/agent-owners-sponsors-managers.md
+            - text: Manage Agents in the end user experience
+              url: ./identity-platform/manage-agent.md
 
         
         ## CARD 2 ######################
@@ -75,7 +79,16 @@ additionalContent:
             - text: Create an agent identity
               url: ./identity-platform/create-delete-agent-identities.md                           
             - text: Configure Microsoft Entra SDK for agent identities
-              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md  
+              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md
+        ## CARD 2 ######################
+        - title: Authenticate and call APIs
+          links:
+            - text: Request tokens for autonomous agents
+              url: ./identity-platform/autonomous-agent-request-tokens.md
+            - text: Call Microsoft Graph from an agent
+              url: ./identity-platform/call-api-microsoft-graph.md
+            - text: Grant app permissions to an autonomous agent
+              url: ./identity-platform/autonomous-agent-request-authorization-entra-admin.md
     
     ## Section 3: Learn more ######################
     - title: Learn more
