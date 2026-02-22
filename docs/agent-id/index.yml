@@ -41,7 +41,7 @@ additionalContent:
               url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
             - text: Owners, sponsors, and managers
               url: ./identity-platform/agent-owners-sponsors-managers.md
-            - text: Manage Agents in the end user experience
+            - text: Manage agents in the end user experience
               url: ./identity-platform/manage-agent.md
 
         
@@ -68,19 +68,26 @@ additionalContent:
       summary: The platform that enables you to create and manage agent identities.
       items:
         ## CARD 1 ######################
-        - title: Microsoft agent identity platform for developers
+        - title: Learn about key concepts
           links:        
             - text: What is an agent identity blueprint?
               url: ./identity-platform/agent-blueprint.md
-            - text: Create an agent identity blueprint
-              url: ./identity-platform/create-blueprint.md
             - text: What is an agent identity?
               url: ./identity-platform/agent-identities.md
+            - text: What are agent users?
+              url: ./identity-platform/agent-users.md
+
+        ## CARD 2 ######################
+        - title: Build with the Microsoft agent identity platform
+          links:
+            - text: Create an agent identity blueprint
+              url: ./identity-platform/create-blueprint.md
             - text: Create an agent identity
-              url: ./identity-platform/create-delete-agent-identities.md                           
+              url: ./identity-platform/create-delete-agent-identities.md  
             - text: Configure Microsoft Entra SDK for agent identities
               url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md
-        ## CARD 2 ######################
+
+        ## CARD 3 ######################
         - title: Authenticate and call APIs
           links:
             - text: Request tokens for autonomous agents
@@ -89,7 +96,8 @@ additionalContent:
               url: ./identity-platform/call-api-microsoft-graph.md
             - text: Grant app permissions to an autonomous agent
               url: ./identity-platform/autonomous-agent-request-authorization-entra-admin.md
-    
+   
+
     ## Section 3: Learn more ######################
     - title: Learn more
       summary: Explore SDK references, API documentation, and code samples to build and manage agent identities.
@@ -98,7 +106,7 @@ additionalContent:
         - title: Technical references
           links:
             - text: SDK Reference
-              url:  https://aka.ms/agentidsdk
+              url:  /entra/msidweb/agent-id-sdk/overview
             - text: Microsoft Graph API reference
               url: /graph/api/overview 
             - text: OAuth protocols for Agent identities
