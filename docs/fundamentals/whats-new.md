@@ -32,12 +32,13 @@ This article provides information about the latest releases and change announcem
 **Product capability:** Identity Governance  
 
 The Attribute Changes trigger in Lifecycle Workflows now supports additional attribute types, enabling broader detection of organizational changes. Previously, this trigger was limited to a set of core attributes. With this update, you can configure workflows to respond when any of the following attributes change:
-* Custom security attributes
-* Directory extension attributes
-* EmployeeOrgData attributes
-* On-premises attributes 1–15
 
-This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments.
+- Custom security attributes
+- Directory extension attributes
+- EmployeeOrgData attributes
+- On-premises attributes 1–15
+
+This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments. For more information, see: [Use Custom attribute triggers in lifecycle workflows](../id-governance/workflow-custom-triggers.md).
 
 ---
 
@@ -47,17 +48,17 @@ This enhancement gives administrators greater flexibility to automate lifecycle 
 **Service category:** Lifecycle Workflows  
 **Product capability:** Identity Governance  
 
-Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers will be able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope. For more information, see: [Delegated workflow management](..//id-governance/manage-delegate-workflow.md).
 
 ---
 
-### General Availability - Device authorization grant flow in Entra External ID
+### General Availability - Device authorization grant flow in Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-Similar to Entra ID (workforce tenants), Entra External ID (external tenants) now supports device authorization grant flow, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer.
+Similar to Microsoft Entra ID (workforce tenants), Microsoft Entra External ID (external tenants) now supports device authorization grant flow, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer. For more information, see [OAuth 2.0 device authorization grant](../identity-platform/v2-oauth2-device-code.md).
 
 ---
 
@@ -67,7 +68,7 @@ Similar to Entra ID (workforce tenants), Entra External ID (external tenants) no
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-In Microsoft Entra External ID (EEID), users who authenticate with a local email and password now can also sign in using a username (alias) as an alternate sign-in identifier. This alias can represent a customer or member ID, insurance number, frequent flyer number, or a self-chosen username.
+In Microsoft Entra External ID (EEID), users who authenticate with a local email and password now can also sign in using a username (alias) as an alternate sign-in identifier. This alias can represent a customer or member ID, insurance number, frequent flyer number, or a self-chosen username. The alias can be collected from user or assigned during self-service sign-up, or assigned during user creation or user update via the Microsoft Graph API or Microsoft Entra admin center. For details, see [Sign in with alias](../external-id/customers/how-to-sign-in-alias.md).
 
 ---
 
@@ -77,7 +78,7 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 **Service category:** Entra Connect  
 **Product capability:** Entra Connect  
 
-Beginning March 31, 2026, Microsoft Entra ID will block any attempt to hard match an on-premises Active Directory (AD) user to an existing Entra ID account that holds privileged roles. This safeguard prevents potential elevation‑of‑privilege scenarios where an attacker could attempt to take over a privileged cloud account by manipulating synchronization attributes.
+Beginning March 31, 2026, Microsoft Entra ID will block any attempt to hard match an on-premises Active Directory (AD) user to an existing Microsoft Entra ID account that holds privileged roles. This safeguard prevents potential elevation‑of‑privilege scenarios where an attacker could attempt to take over a privileged cloud account by manipulating synchronization attributes.
 
 No customer action is required.
 
@@ -89,17 +90,17 @@ No customer action is required.
 **Service category:** MFA  
 **Product capability:** User Authentication  
 
-External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third‑party MFA solutions seamlessly with Entra ID for enhanced security and flexibility.
+We’re excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
 
 ---
 
-### General Availability - Custom banned password lists supported in Entra External ID
+### General Availability - Custom banned password lists supported in Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-EEID admins can now add specific strings to block during password creation and reset, in addition to already‑supported global banned password lists.
+In addition to the [global banned password lists](../identity/authentication/concept-password-ban-bad.md#global-banned-password-list) already supported, EEID admins can now add specific strings to block during password creation and reset. For more information, see [Password Protection - Custom banned password lists](../identity/authentication/concept-password-ban-bad.md#custom-banned-password-list).
 
 ---
 
@@ -109,17 +110,17 @@ EEID admins can now add specific strings to block during password creation and r
 **Service category:** Microsoft Authenticator App  
 **Product capability:** Identity Security & Protection  
 
-Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Entra credentials in the Android app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Entra accounts in Authenticator.
+Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Microsoft Entra credentials in the Android app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Microsoft Entra accounts in Authenticator.
 
 ---
 
-### Public Preview - BYOD support for Windows client using Entra registration
+### Public Preview - BYOD support for Windows client using Microsoft Entra registration
 
 **Type:** New feature  
 **Service category:** BYOD support  
 **Product capability:** Network Access  
 
-Bring Your Own Device (BYOD) support for Windows using Entra‑registered devices is now available in public preview. Users and partners can access corporate resources from their own devices. Admins can assign the Private Application traffic profile to internal accounts, including internal guest users.
+Bring Your Own Device (BYOD) support for Windows using Microsoft Entra‑registered devices is now available in public preview. Users and partners can access corporate resources from their own devices. Admins can assign the Private Application traffic profile to internal accounts, including internal guest users. For more information, see: [Bring Your Own Device (Preview)](../global-secure-access/concept-bring-your-own-device.md).
 
 ---
 
@@ -129,10 +130,14 @@ Bring Your Own Device (BYOD) support for Windows using Entra‑registered device
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-Admins can now customize Global Secure Access block pages for Internet Access using Microsoft Graph API, including:
-- Tenant‑wide body text
-- Limited markdown
-- Hyperlinks to Terms of Use, ServiceNow/IT ticketing, MyAccess workflows
+When you configure policies blocking your users from accessing a risky, NSFW, or unsanctioned sites or apps in GSA, they receive a clear HTML error message with Microsoft Entra Internet Access branding. We’ve heard from many admins that they’d like to start customizing that experience with text aligned to a company style guide, callouts to company Terms of Use documentation, hyperlinks to IT workflows, and more. 
+
+Global Secure Access now offers customized block pages for Internet Access. In the Microsoft Graph API, Admins can now:
+
+- Configure the  tenant-wide body text of the GSA block page.
+- Add hyperlinks via limited markdown to reference Terms of Use,  ServiceNow/IT ticketing services, or even MyAccess for ID Governance workflow integration. 
+
+For more information, see: [How to Customize Global Secure Access Block Page](../global-secure-access/how-to-customize-block-page.md).
 
 ---
 
@@ -142,7 +147,13 @@ Admins can now customize Global Secure Access block pages for Internet Access us
 **Service category:** Entra Connect  
 **Product capability:** Entra Connect  
 
-Microsoft Entra Connect Sync now officially supports Windows Server 2025. Organizations can upgrade identity synchronization servers to benefit from improved security, performance, and management capabilities. Microsoft recommends evaluating Cloud Sync for future‑proofed sync scenarios.
+Microsoft Entra Connect Sync now officially supports [Windows Server 2025](https://www.microsoft.com/evalcenter/download-windows-server-2025). This means you can confidently install and run Microsoft Entra Connect Sync on servers running Windows Server 2025, enabling your hybrid identity environment to take full advantage of the latest Windows Server enhancements.
+
+**What this means for you:** With this update, organizations can upgrade their identity synchronization servers to Windows Server 2025 without hesitation. Windows Server 2025 brings advanced features that improve security, performance, and flexibility, and our engineering team has thoroughly validated Microsoft Entra Connect Sync on this platform. Many customers have been eager to adopt Windows Server 2025 to leverage its enhanced security, better performance, and improved management capabilities. Now, with official support in place, you can benefit from these improvements while maintaining a reliable, fully supported hybrid identity solution.
+
+The Microsoft Entra Connect Sync .msi installation file is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details on available versions.
+
+**Consider moving to Cloud Sync:** Microsoft Entra Cloud Sync is a sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the [supported sync scenarios comparison](../identity/hybrid/common-scenarios.md) to see if Cloud Sync is the right sync client for you.
 
 ---
 
@@ -152,14 +163,7 @@ Microsoft Entra Connect Sync now officially supports Windows Server 2025. Organi
 **Service category:** Provisioning  
 **Product capability:** Outbound to SaaS Applications  
 
-The Microsoft Entra provisioning service is now available in the China (21Vianet) cloud for:
-- API‑driven provisioning
-- Cloud Sync
-- Cross‑tenant sync
-- SCIM provisioning
-- On‑prem app provisioning (ECMA)
-
-Gallery connectors like Workday, SuccessFactors, and AWS are not yet available.
+The Microsoft Entra provisioning service can be used in the 21Vianet / China cloud for the following scenarios: API-driven provisioning, Cloud Sync, Cross-tenant sync between China tenants, SCIM provisioning for the non-gallery / custom application, and on-premises app provisioning (ECMA). Specific gallery connectors such as Workday, SuccessFactors, and AWS aren't onboarded to the environment. For more information, see: [Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds](../identity/app-provisioning/known-issues.md#gallery-application-doesnt-support-provisioning-in-us-government-or-21vianet-china-clouds).
 
 ---
 
@@ -177,7 +181,7 @@ For more information, see: [Embrace cloud-first posture: Transfer user Source o
 
 ---
 
-### General Availability - Entra ID Governance guest billing meter enforcement
+### General Availability - Microsoft Entra ID Governance guest billing meter enforcement
 
 **Type:** New feature  
 **Service category:** Entitlement Management, Lifecycle Workflows  
