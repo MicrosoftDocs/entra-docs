@@ -23,6 +23,13 @@ Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Conne
 
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
+## February 2026
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2549.0)
+  - Security update: Support for TLS 1.0 and TLS 1.1 has been discontinued. The service now supports TLS 1.2 exclusively.
+  - Quality improvements & bug fixes
+    
 ## September 2025
 **Agent Updates**
 
