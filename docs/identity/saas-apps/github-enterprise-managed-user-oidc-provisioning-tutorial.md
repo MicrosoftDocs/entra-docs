@@ -97,7 +97,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     * For "Tenant URL", type the tenant URL you identified earlier.
 
-        For example, if your enterprise account's URL is https://github.com/enterprises/octo-corp, the name of the enterprise account is octo-corp.
+        For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`.  
+        For an enterprise on GHE.com, the Tenant URL is `https://api.{subdomain}.ghe.com/scim/v2/enterprises/{subdomain}`.
 
    * For "Secret token", paste the GitHub personal access token that you created earlier.
    
