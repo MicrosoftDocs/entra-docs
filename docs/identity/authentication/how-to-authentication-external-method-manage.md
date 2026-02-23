@@ -10,7 +10,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Manage an external multifactor authentication method in Microsoft Entra ID (Preview)
 
-External multifactor authentication (MFA) lets users choose an external provider to meet MFA requirements when they sign in to Microsoft Entra ID. The intended use of external MFA, previously known as external authentication methods, is to allow organizations to satisfy MFA requirements, while using their preferred MFA provider. Microsoft Entra ID continues to handle full policy evaluation and access decisions, as the identity control plane. 
+External multifactor authentication (MFA), previously known as external authentication methods, lets users choose an external provider to meet MFA requirements when they sign in to Microsoft Entra ID. Microsoft Entra ID continues to handle full policy evaluation and access decisions, as the identity control plane. 
 
 Here is a diagram of how external authentication method works:
 
