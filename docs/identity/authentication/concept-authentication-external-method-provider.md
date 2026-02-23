@@ -19,7 +19,7 @@ Multiple policies might apply to the sign-in, depending on their parameters. Tho
 
 Based on the authentication requirements, the user might need to sign in with another factor to meet the MFA requirement. The type of the second factor needs to complement the type of first factor.
 
-The tenant admin adds external MFA methods to Microsoft Entra ID. If a tenant requires an external authentication method for MFA, the sign-in is considered to meet the Microsoft Entra MFA requirement after Microsoft Entra ID validates both:
+The tenant admin adds external MFA methods to Microsoft Entra ID. If a tenant requires an external MFA method for MFA, the sign-in is considered to meet the Microsoft Entra MFA requirement after Microsoft Entra ID validates both:
 
 - The first factor completed with Microsoft Entra ID.
 - The second factor completed with the external MFA method.
@@ -30,7 +30,7 @@ That validation meets the MFA requirement for two or more types of methods:
 - Something you have (possession)
 - Something you are (inherence)
 
-External MFA methods are implemented on top of OpenID Connect (OIDC). This implementation requires at least three publicly facing endpoints to implement an external authentication method:
+External MFA methods are implemented on top of OpenID Connect (OIDC). This implementation requires at least three publicly facing endpoints to implement an external MFA method:
 
 - An OIDC Discovery endpoint, as described in [Discovery of provider metadata](#discovery-of-provider-metadata)
 - A valid OIDC authentication endpoint
@@ -64,7 +64,7 @@ Here's how sign-in works with an external MFA method:
 
 1. If the validation succeeds, that means that the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
 
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how an external authentication method works.":::
+:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how external MFA works.":::
 
 ## <a name = "configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external MFA provider with Microsoft Entra ID
 
@@ -101,7 +101,7 @@ The application registration process creates an application with several propert
 Another valid model for supporting integration is to use an application for each tenant. If you use a single-tenant registration, the tenant admin needs to create an application registration with the properties in the preceding table for a single-tenant application.
 
 > [!NOTE]
-> You need admin consent for the application in the tenant that uses the external MFA method. If you don't grant consent, the following error appears when an admin tries to use the external authentication method:
+> You need admin consent for the application in the tenant that uses the external MFA method. If you don't grant consent, the following error appears when an admin tries to use the external MFA method:
 > "AADSTS900491: Service principal \<your App ID> not found."
 
 ### Configure optional claims
