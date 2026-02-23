@@ -3,7 +3,6 @@ title: Require compliant, hybrid joined devices, or MFA
 description: Create a custom Conditional Access policy to require compliant, hybrid joined devices, or multifactor authentication.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users

@@ -372,6 +372,17 @@ groups:
     title: Onboard
   - id: identity-governance-guest-offboard
     title: Offboard
+# Owner: sidandrews
+- id: interface-portal-cli-powershell
+  title: Azure interface
+  prompt: Choose an Azure interface
+  pivots:
+  - id: interface-cli
+    title: Azure CLI
+  - id: interface-portal
+    title: Azure portal
+  - id: interface-shell
+    title: Azure PowerShell
 # Owner owinfrey
 - id: identity-extension-windows-environment
   title: Azure Virtual Machine extensions and extensions for Arc-enabled Windows Server.

@@ -1,9 +1,10 @@
 ---
 title: How Token Protection Enhances Conditional Access Policies
 description: Protect your resources with token protection in Conditional Access policies. Understand requirements, limitations, and deployment best practices.
-ms.topic: article
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: concept-article
 ms.date: 08/20/2025
-manager: dougeby
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange

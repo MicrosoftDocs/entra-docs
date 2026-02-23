@@ -3,11 +3,9 @@ title: Tutorial to migrate Okta sync provisioning to Microsoft Entra Connect-bas
 description: Migrate user provisioning from Okta to Microsoft Entra ID. See how to use Microsoft Entra Connect server or Microsoft Entra cloud provisioning.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
 ms.topic: tutorial
 ms.date: 12/04/2024
 ms.author: gasinh
-ms.subservice: enterprise-apps
 ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: I'm an IT admin using Okta for user provisioning. I want to migrate user provisioning to Microsoft Entra Connect synchronization, so I can add users into Microsoft Entra ID and Office 365.
 ---

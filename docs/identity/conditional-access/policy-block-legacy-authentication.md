@@ -3,7 +3,6 @@ title: Block legacy authentication with Conditional Access
 description: Create a custom Conditional Access policy to block legacy authentication protocols.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: calebb, lhuangnorth
 ---
 # Block legacy authentication with Conditional Access

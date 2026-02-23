@@ -5,8 +5,6 @@ description: Configure app management policies in Microsoft Entra ID to set rest
 
 author: arcrowe
 manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 07/23/2025

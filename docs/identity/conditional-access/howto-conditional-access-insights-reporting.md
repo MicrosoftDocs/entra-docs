@@ -1,9 +1,10 @@
 ---
 title: Conditional Access insights and reporting workbook
 description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies.
-ms.topic: article
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: how-to
 ms.date: 09/24/2025
-manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---

@@ -3,7 +3,6 @@ title: Require reauthentication with Conditional Access
 description: Create a custom Conditional Access policy requiring reauthentication.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require reauthentication and disable browser persistence

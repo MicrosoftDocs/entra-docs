@@ -7,7 +7,6 @@ ms.topic: concept-article
 ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 ---

@@ -1,15 +1,9 @@
 ---
 title: 'Plan application migration to Microsoft Entra ID'
 description: This article discusses the advantages of Microsoft Entra ID and provides a four-phase guide for planning and executing a migration strategy with detailed planning and exit criteria.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: concept-article
 
 ms.date: 05/31/2023
-ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 

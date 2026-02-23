@@ -1,14 +1,8 @@
 ---
 title: Group naming policy quickstart
 description: Explains how to add new users or delete existing users in Microsoft Entra ID
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
 ms.date: 12/16/2024
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management

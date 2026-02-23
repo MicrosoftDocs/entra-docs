@@ -1,13 +1,8 @@
 ---
 title: Overview of the Microsoft Entra application gallery
 description: Explore the Microsoft Entra application gallery for seamless SaaS integration with preconfigured SSO and user provisioning. Enhance cloud app deployment.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: overview
 ms.date: 01/05/2026
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.

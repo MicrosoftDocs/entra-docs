@@ -2,14 +2,8 @@
 title: Manage app consent policies
 description: Learn how to manage built-in and custom app consent policies to control when consent can be granted.
 
-manager: mwongerapk
-author: omondiatieno
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 01/22/2026
-ms.author: jomondi
 ms.reviewer: ergreenl, phsignor
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-portal-aad

@@ -46,11 +46,11 @@ To authenticate a user, the client app (such as a frontend or mobile app) should
     Content-Type: application/x-www-form-urlencoded
     
     client_id=<client-id>
-    grant_type=authorization_code
-    code=<authorization_code>
-    redirect_uri=<redirect_uri>
-    scope=api://<agent-blueprint-id>/access_agent
-    client_secret=<client-secret>  # Only if using a confidential client
+    &grant_type=authorization_code
+    &code=<authorization_code>
+    &redirect_uri=<redirect_uri>
+    &scope=api://<agent-blueprint-id>/access_agent
+    &client_secret=<client-secret>  # Only if using a confidential client
     ```
 
     The JSON response contains an access token that can be used to access the agent's API.

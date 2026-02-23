@@ -21,7 +21,7 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
-- Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide. 
+- Complete the [Get started with Global Secure Access](quickstart-access-admin-center.md) guide.
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
@@ -77,9 +77,12 @@ In this step, you create a security profile to group filtering policies. Then yo
 
 Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
 
-1. Browse to **Entra ID** > **Conditional Access**.
-1. Select **Create new policy**.
-1. Enter a name and assign a user or group.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Under **Assignments**, select **Users or workload identities**.
+   1. Under **Include**, select **All users**
 1. Select **Target resources** and **All internet resources with Global Secure Access**.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.

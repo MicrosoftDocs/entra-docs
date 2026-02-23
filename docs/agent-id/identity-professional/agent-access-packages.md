@@ -18,10 +18,10 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## Access request and approval process
 
-To use access packages, the IT admin first configures an access package with the relevant resources, including Entra roles, group memberships, app role assignments, and OAuth permission grants. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
+To use access packages, the IT admin first configures an access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to applications. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
 > [!NOTE]
-> If your agents aren't using Microsoft Entra agent IDs, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
+> If your agents are using service principals rather than  Microsoft Entra agent identities, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
 
 Agents can then be assigned access packages through three different request pathways.
 
@@ -43,3 +43,4 @@ If the sponsor requests an extension, this request can trigger a new approval cy
 
 - [Governing agent identities](/entra/id-governance/agent-id-governance-overview)
 - [Create an access package in entitlement management](/entra/id-governance/entitlement-management-access-package-create)
+- [Conditional access for agent identities](/entra/identity/conditional-access/agent-id)

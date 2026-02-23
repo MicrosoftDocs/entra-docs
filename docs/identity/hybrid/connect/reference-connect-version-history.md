@@ -25,6 +25,44 @@ This article helps you keep track of the versions that have released and the cha
 >
 >If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
+## Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified
+Applies to
+- Microsoft Entra Connect 2.5.190.0
+-	Microsoft Entra Connect 2.6.1.0
+### Issue
+After upgrading Microsoft Entra Connect, synchronization may fail if the `miiserver.exe.config` file was previously modified.
+
+### Symptom
+
+
+`Synchronization fails after upgrade with the following error: System.IO.FileLoadException: Could not load file or assembly 'System.Diagnostics.DiagnosticSource, Version=6.0.0.1'
+or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)`
+
+
+### Cause
+
+During upgrade, Microsoft Entra Connect detects that `miiserver.exe.config` has been modified and does not update the file. This results in a missing dependency binding required for synchronization.
+This scenario has been observed when the file was modified based on earlier guidance to support Password Hash Synchronization (PHS) in FIPS enabled environments as
+Workaround
+Manually update the configuration file.
+
+1.	Go to: %programfiles%\Microsoft Azure AD Sync\Bin
+
+1.	Back up `miiserver.exe.config`.
+
+1.	Open `miiserver.exe.config` and add the following entry inside the assemblyBinding section:
+`<dependentAssembly>
+  <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+  <bindingRedirect oldVersion="0.0.0.0-8.0.0.0" newVersion="8.0.0.0" /> 
+</dependentAssembly>`
+
+1.	Save the file.
+
+1.	Restart the ADSync service.
+
+
+
+
 ## Looking for the latest versions?
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
@@ -93,6 +131,9 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+
+
+
 ## 2.6.1.0
 
 ### Release status
@@ -108,6 +149,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
 - Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
 
+### Known issues
+
+See: [Synchronization fails after upgrade if miiserver.exe.config was previously modified](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified)
+
+
 ## 2.5.190.0
 
 > [!NOTE]
@@ -116,6 +162,10 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Release status
 
 11/19/2025: Released for download via the Microsoft Entra admin center.
+
+### Known issues
+
+See: [Synchronization fails after upgrade if miiserver.exe.config was previously modified](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified)
 
 ### Added features
 

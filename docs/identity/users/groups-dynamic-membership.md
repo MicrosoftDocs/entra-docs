@@ -1,14 +1,8 @@
 ---
 title: Manage Rules for Dynamic Membership Groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
