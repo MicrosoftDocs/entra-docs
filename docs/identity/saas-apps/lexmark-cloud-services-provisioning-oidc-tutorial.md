@@ -129,10 +129,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|| 
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|| 
 
-1. Select **groups**.
-
-1. Review the group attributes that are synchronized from Microsoft Entra ID to Lexmark Cloud Services (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Lexmark Cloud Services (OIDC) for update operations. Select the **Save** button to commit any changes.
-
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
