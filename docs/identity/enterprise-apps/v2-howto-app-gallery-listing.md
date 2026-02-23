@@ -47,7 +47,7 @@ You can sign up for a free, test Development account. It's free for 90 days and 
 
 ### Provide app documentation for your site
 
-Ease of adoption is an important factor for those people that make decisions about enterprise software. Documentation that's clear and easy to follow helps your users adopt technology and it reduces support costs.
+Ease of adoption is an important factor for those people that make decisions about enterprise software. Documentation that is clear and easy to follow helps your users adopt technology and it reduces support costs.
 
 Create documentation that includes the following information at minimum:
 
