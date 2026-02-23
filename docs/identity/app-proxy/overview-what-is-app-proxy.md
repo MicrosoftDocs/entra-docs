@@ -145,7 +145,7 @@ The remote access solution that application proxy and Microsoft Entra offer supp
 
 Another major benefit of implementing application proxy is extending Microsoft Entra ID to your on-premises environment. Implementing application proxy can be a key step in moving your organization and apps to the cloud. By moving to the cloud and away from on-premises authentication, you reduce your on-premises footprint and use Microsoft Entra identity management capabilities as your control plane.
 
-With minimal or no updates to existing applications, you have access to cloud capabilities such as SSO, multifactor authentication, and central management. Installing the necessary components to application proxy is a simple process for establishing a remote access framework. And by moving to the cloud, you have access to the latest Microsoft Entra features, updates, and functionality, such as high availability and the disaster recovery.
+With minimal or no updates to existing applications, you have access to cloud capabilities such as SSO, multifactor authentication, and central management. Installing the necessary components to application proxy is a simple process for establishing a remote access framework. And by moving to the cloud, you have access to the latest Microsoft Entra features, updates, and functionality, such as high availability and disaster recovery.
 
 To learn more about migrating your apps to Microsoft Entra ID, see [Resources for migrating applications to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md).
 
