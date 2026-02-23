@@ -28,7 +28,7 @@ For feature feedback, vote at [Connect Health User Voice channel](https://feedba
 
 Microsoft Entra Connect Health (version 4.5.2549.0)
   - Security update: Support for TLS 1.0 and TLS 1.1 has been discontinued. The service now supports TLS 1.2 exclusively.
-  - Quality improvements & bug fixes
+  - Quality improvements.
     
 ## September 2025
 **Agent Updates**
