@@ -23,8 +23,6 @@ This article explains how Microsoft Entra Agent ID extends security capabilities
 
 :::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
 
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
-
 ## Conditional access for agents
 
 Conditional access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
@@ -74,3 +72,7 @@ The Microsoft Entra Agent identity platform enables you to assign identities to 
 - Log and monitor agent activity for compliance.​
 
 For more information, see [Microsoft Entra Agent Identity Platform](../identity-platform/what-is-agent-id-platform.md)
+
+## How to get started
+
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
