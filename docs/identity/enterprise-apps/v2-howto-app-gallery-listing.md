@@ -70,7 +70,7 @@ Create documentation that includes the following information at minimum:
 
 When your SAML application is added to the gallery, documentation is created that explains the step-by-step process. For an example, see [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). This documentation is created based on your submission to the gallery. You can easily update the documentation if you make changes to your application by using your GitHub account.
 
-For Open ID Connect application, there's no application specific documentation. We have only the generic [tutorial](~/identity-platform/v2-protocols-oidc.md) for all the OpenID Connect applications.
+For Open ID Connect applications, there's no application specific documentation. We have only the generic [tutorial](~/identity-platform/v2-protocols-oidc.md) for all the OpenID Connect applications.
 
 ## Submit your application
 
