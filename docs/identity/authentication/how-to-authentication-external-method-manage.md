@@ -34,7 +34,7 @@ External MFAs are managed with the Microsoft Entra ID Authentication methods pol
 
 ### Configure external MFA in the admin center
 
-Before you configure external MFA in the admin center, make sure you have the [metadata to configure external MFA](#required-metadata-to-configure-external-MFA). 
+Before you configure external MFA in the admin center, make sure you have the [metadata to configure external MFA](#required-metadata-to-configure-external-mfa). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Add external MFA**.
