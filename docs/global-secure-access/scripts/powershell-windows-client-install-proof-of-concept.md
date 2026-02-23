@@ -38,7 +38,7 @@ if (-not (Test-IsAdmin)) {
     exit 1
 }
 # --- Config ---
-$ReleaseHistoryUrl = "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-windows-client-release-history"
+$ReleaseHistoryUrl = "https://learn.microsoft.com/entra/global-secure-access/reference-windows-client-release-history"
 $DownloadUrlX64    = "https://aka.ms/GlobalSecureAccess-Windows"
 $DownloadUrlARM    = "https://aka.ms/GlobalSecureAccess-WindowsOnArm"
 $InstallerPath     = Join-Path $env:TEMP "GSAClient.exe"

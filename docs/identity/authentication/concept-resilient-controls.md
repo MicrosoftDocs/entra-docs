@@ -273,7 +273,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 
 ## Learn more
 
-* [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
+* [Microsoft Entra authentication documentation](./overview-authentication.md)
 * [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 * [Configure named locations in Microsoft Entra ID](../conditional-access/concept-assignment-network.md)
 * [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md)
