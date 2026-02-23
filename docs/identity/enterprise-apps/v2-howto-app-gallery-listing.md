@@ -22,7 +22,7 @@ To publish your application in the Microsoft Entra application gallery, you need
 - Join the Microsoft partner network.
 
 > [!NOTE]
-> We're currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/security/blog/topic/secure-future-initiative/). Update requests for SSO are processed on a case-by-case basis. We aren't updating any SCIM (System for Cross-domain Identity Management) based User Provisioning applications for now. Enabling SCIM based user provisioning for the existing gallery application is also treated as a new application request.
+> We're currently not accepting new SSO or provisioning requests while we focus on the [Secure Future Initiative](https://www.microsoft.com/security/blog/topic/secure-future-initiative/). Update requests for SSO are processed on a case-by-case basis. We aren't updating any System for Cross-domain Identity Management (SCIM) based User Provisioning applications for now. Enabling SCIM based user provisioning for the existing gallery application is also treated as a new application request.
 
 
 ## Prerequisites
