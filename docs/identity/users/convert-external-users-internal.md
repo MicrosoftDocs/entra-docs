@@ -1,13 +1,8 @@
 ---
 title: Convert external users to internal users
 description: You can convert users from external to internal without the need to recreate them.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
 ms.date: 01/06/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.workload: identity
 ms.custom: sfi-image-nochange
 ms.reviewer: yuank

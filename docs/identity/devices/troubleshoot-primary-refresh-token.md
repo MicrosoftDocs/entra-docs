@@ -6,7 +6,7 @@ description: Troubleshoot primary refresh token issues during authentication thr
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 8/1/2023
+ms.date: 02/23/2026
 
 ms.author: gudlapreethi
 author: GudlaPreethi

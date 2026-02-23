@@ -9,7 +9,7 @@ metadata:
    ms.service: entra-id
    ms.topic: landing-page
    ms.custom: agent-id-ignite
-   ms.date: 01/09/2026
+   ms.date: 02/22/2026
    author: shlipsey3
    ms.author: sarahlipsey
 
@@ -22,15 +22,6 @@ landingContent:
             url: security-for-ai.md
           - text: Microsoft Entra Agent ID overview
             url: microsoft-entra-agent-identities-for-ai-agents.md
-
-  - title: Register and manage agents
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: What is the Agent Registry?
-            url: ../identity-platform/what-is-agent-registry.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
-          - text: Organize agents with collections
-            url: ../identity-platform/agent-registry-collections.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
 
   - title: Protect agent access to resources
     linkLists:

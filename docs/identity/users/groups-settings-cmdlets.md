@@ -1,14 +1,8 @@
 ---
 title: Configure group settings using PowerShell
 description: How to manage the settings for groups using Microsoft Entra cmdlets
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 06/05/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
@@ -46,6 +40,35 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
    Install-Module Microsoft.Graph.Beta -Scope AllUsers
    ```
 
+## Connect to Microsoft Graph
+
+Before running any `Get-Mg*`, `New-Mg*`, or `Update-Mg*` cmdlets in this article, you must first authenticate to Microsoft Graph.
+
+### Sign in
+
+```PowerShell
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+```
+
+You will be prompted to sign in and consent to the required permissions.
+
+1. Verify your connection
+
+   ```powershell
+   Get-MgContext
+   ```
+
+   This command confirms that you're signed in and shows the currently selected Microsoft Graph profile.
+
+2. Some examples in this article use Microsoft Graph beta API. To switch profiles:
+
+   ```powershell
+   Select-MgProfile -Name "beta"
+   ```
+
+> [!NOTE]
+> If you do not run `Connect-MgGraph`, all `Get-Mg*`, `New-Mg*`, and `Update-Mg*` commands in this document will fail.
+   
 ## Create settings at the directory level
 
 These steps create settings at directory level, which apply to all Microsoft 365 groups in the directory.

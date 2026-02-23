@@ -7,7 +7,6 @@ ms.topic: troubleshooting
 ms.date: 07/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: mozmaili
 ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---

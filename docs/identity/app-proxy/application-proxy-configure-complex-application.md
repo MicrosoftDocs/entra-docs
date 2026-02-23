@@ -86,6 +86,9 @@ To edit/update an application segment, select the application segment from the l
 
 ## DNS updates
 
+> [!IMPORTANT]
+> The CNAME instructions shown in the portal UI when editing an application segment might differ from the instructions in this section. For complex (wildcard) applications, always use the CNAME configuration described here, pointing to `tenant.runtime.msappproxy.net`, not the generic `.msappproxy.net` endpoint shown in the portal.
+
 When using custom domains, create a DNS entry with a CNAME record for the external URL. For example, point `*.adventure-works.com` to the external URL of the application proxy endpoint. For wildcard applications, point the CNAME record to the relevant external URL: `<yourAADTenantId>.tenant.runtime.msappproxy.net`.
 
 Alternatively, a dedicated DNS entry with a CNAME record for every individual application segment can be created as follows:

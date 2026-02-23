@@ -39,7 +39,7 @@ The **Organizational Branding Administrator** role is the minimum role required 
 
 **External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
 
-**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
+**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding) in the Azure AD B2C documentation.
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 

@@ -1,13 +1,8 @@
 ---
 title: Use My Staff to delegate user management
 description: Delegate user management using My Staff and administrative units
-author: barclayn
-manager: pmwongera
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.date: 02/12/2025
-ms.author: barclayn
 ms.reviewer: lenalepa
 ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---

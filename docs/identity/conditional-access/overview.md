@@ -3,7 +3,6 @@ title: "Microsoft Entra Conditional Access: Zero Trust Policy Engine"
 description: Explore Microsoft Entra Conditional Access, the Zero Trust policy engine that integrates signals to secure access to resources.
 ms.topic: overview
 ms.date: 11/05/2025
-manager: dougeby
 ms.reviewer: kvenkit
 ---
 # What is Conditional Access?

@@ -7,7 +7,7 @@ manager: mwongerapk
 tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.reviewer: martincoetzer
 ms.author: jomondi
@@ -15,7 +15,7 @@ ms.author: jomondi
 ---
 # Factors influencing the performance of Microsoft Entra Connect
 
-Microsoft Entra Connect syncs your Active Directory to Microsoft Entra ID. This server is a critical component of moving your user identities to the cloud. The primary factors that affect the performance of a Microsoft Entra Connect are:
+Microsoft Entra Connect syncs your Active Directory to Microsoft Entra ID. This service is a critical component of moving your user identities to the cloud. The primary factors that affect the performance of a Microsoft Entra Connect are:
 
 | **Design factor**| **Definition** |
 |:-|-|
@@ -153,14 +153,15 @@ Make sure your Microsoft Entra Connect server meets the hardware requirements ba
 
 ### Microsoft Entra ID factors
 
-Microsoft Entra ID uses throttling to protect the cloud service from denial-of-service (DoS) attacks. Currently Microsoft Entra ID has a throttling limit of 7,000 writes per 5 minutes (84,000 per hour). For example, the following operations can be throttled:
-
-
+Microsoft Entra ID uses throttling to protect the cloud service from denial-of-service (DoS) attacks. Currently Microsoft Entra ID has a throttling limit of 6,000 writes per 5 minutes (72,000 per hour). For example, the following operations can be throttled:
 
 - Microsoft Entra Connect export to Microsoft Entra ID.
 - PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as dynamic membership groups.
 - Users updating their own identity records such as registering for MFA or SSPR (self-service password reset).
 - Operations within the graphical user interface.
+
+> [!IMPORTANT]
+> Increasing this throttling limit is not supported.
 
 Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle isn't impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 

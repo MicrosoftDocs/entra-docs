@@ -3,7 +3,6 @@ title: Require MFA for guest users with Conditional Access
 description: Create a custom Conditional Access policy requiring guest users perform multifactor authentication.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for guest access

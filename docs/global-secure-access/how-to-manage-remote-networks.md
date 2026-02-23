@@ -70,7 +70,7 @@ To edit the details of a remote network:
         "@odata.context": "#$delta",
         "name": "ContosoRemoteNetwork2"
     }
-``` 
+```
 
 1. Select **Run query** to update the remote network.
 

@@ -6,7 +6,7 @@ ms.date: 08/19/2025
 ms.author: justinha
 ms.reviewer: dhanyahk
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ---
 # Embrace cloud-first posture: Convert Group Source of Authority to the cloud
 

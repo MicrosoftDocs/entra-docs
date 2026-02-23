@@ -1,9 +1,10 @@
 ---
 title: "Conditional Access: Manage Session Controls Effectively"
 description: Learn how session controls in Microsoft Entra Conditional Access policies enable secure, limited experiences for cloud apps based on device compliance.
-ms.topic: article
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: concept-article
 ms.date: 09/23/2025
-manager: dougeby
 ms.reviewer: joflore
 ---
 # Conditional Access: Session

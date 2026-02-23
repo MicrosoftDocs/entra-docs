@@ -3,7 +3,6 @@ title: Set Up Microsoft Entra Terms of Use with Conditional Access
 description: Set up Microsoft Entra terms of use with Conditional Access to require policy acceptance before resource access. Complete guide with prerequisites, step-by-step configuration, and troubleshooting tips.
 ms.topic: how-to
 ms.date: 07/21/2025
-manager: dougeby
 ms.reviewer: siz
 ms.custom:
   - sfi-image-nochange

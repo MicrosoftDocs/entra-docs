@@ -168,7 +168,7 @@ The **Alerts** widget shows a chart of alert counts by type and severity.
 
 ## No data available
 
-If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
+If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](quickstart-access-admin-center.md) guide to onboard your tenant.
 
 :::image type="content" source="media/concept-traffic-dashboard/no-data-available.png" alt-text="Screenshot of a widget with no data available.":::
 
