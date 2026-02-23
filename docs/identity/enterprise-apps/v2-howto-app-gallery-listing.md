@@ -86,7 +86,7 @@ On the application **Registration** form, select the feature that you want to en
 
 If you're implementing a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) 2.0 endpoint for user provisioning, select **User Provisioning (SCIM 2.0)**. Download the schema to provide in the onboarding request. For more information, see [Export provisioning configuration and roll back to a known good state](~/identity/app-provisioning/export-import-provisioning-configuration.md). The schema that you configured is used when testing the non-gallery application to build the gallery application.
 
-If you wish to register an MDM (Microsoft Device Management) application in the Microsoft Entra application gallery, select **Register an MDM app**.
+If you wish to register a Microsoft Device Management (MDM) application in the Microsoft Entra application gallery, select **Register an MDM app**.
 
 You can track application requests by customer name at the Microsoft Application Network portal. For more information, see [Application requests by Customers](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/AppRequestsByCustomers.aspx).
 
