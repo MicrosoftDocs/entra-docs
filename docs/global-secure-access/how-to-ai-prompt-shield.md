@@ -100,7 +100,7 @@ For more information, see [Create a Conditional Access policy targeting Global S
 The following sections list more details about the AI models that work with Prompt Shield.
 
 ### Top supported generative AI models
-Prompt Shield is preconfigured with custom extractors for the following models: Copilot, ChatGPT, Claude, Grok, Llama, Mistral, Cohere, Pi, and Qwen.
+Prompt Shield is preconfigured with custom extractors for the following models: ChatGPT, Claude, Cohere, Deepseek, Gemini, Grok, Meta AI, Mistral, Perplexity, Pi, and Qwen.
 
 ### Custom model support
 You can protect any custom JSON-based LLM or GenAI app by configuring a custom type model with a URL and JSON path.
