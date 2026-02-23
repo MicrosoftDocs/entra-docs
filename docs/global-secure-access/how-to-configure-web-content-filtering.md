@@ -53,7 +53,7 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL (Preview), or a valid FQDN, and then select **Add**.
      - Valid URLs and FQDNs in this feature can also include wildcards using the asterisk symbol, *, and can be comma-separated lists.
      - When entering FQDNs, use the domain name only. Don't include protocols (such as `https://`), port numbers, or URL paths. For example, enter `contoso.com` instead of `https://contoso.com:443/path`.
-     - To match all subdomains of a domain, use the wildcard format `*.domain.com`.
+     - To match all subdomains of a domain, use the wildcard format `*.domain.com`. Note that the wildcard `*.domain.com` matches subdomains like `www.domain.com` but doesn't match the root domain `domain.com` itself. To cover both the domain and all its subdomains, include both entries as a comma-separated list (for example, `*.google.com,google.com`).
      - When entering multiple FQDNs in a comma-separated list, don't include spaces between entries (for example, `contoso.com,fabrikam.com,*.example.com`).
      - Note, the URL filtering Preview supports a maximum of 1,000 URLs per tenant.
 1. Select **Next** to review the policy and then select **Create policy**.
