@@ -36,7 +36,7 @@ You can choose to direct different types of traffic based on your network needs.
 
 The following partners support coexistence:
 - [Cisco](concept-cisco-coexistence.md)
-- [Netskope](concept-netskope-coexistence.md)
+- [Netskope](how-to-netskope-coexistence.md)
 - [Palo Alto Networks](concept-palo-alto-coexistence.md)
 - [Zscaler](how-to-zscaler-coexistence.md)
 
