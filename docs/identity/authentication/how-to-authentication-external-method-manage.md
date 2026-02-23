@@ -25,7 +25,7 @@ To configure external MFA, you need the following information from your external
  
   For more information about how to set up the app registration, see [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id).
    
-   >[!IMPORTANT]
+   > [!IMPORTANT]
    > Ensure that the kid (Key ID) property is base64-encoded in both the JSON Web Token (JWT) header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
 
 ## Manage external MFA in the Microsoft Entra admin center
@@ -48,8 +48,8 @@ Before you configure external MFA in the admin center, make sure you have the [m
    - Discovery Endpoint: `https://adatum.com/.well-known/openid-configuration`
    - App ID: 11112222-bbbb-3333-cccc-4444dddd5555
 
-   >[!IMPORTANT]
-   >The user sees the display name in the method picker. You can't change the name after you create the method. The display name must be unique.
+   > [!IMPORTANT]
+   > The user sees the display name in the method picker. You can't change the name after you create the method. The display name must be unique.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add external MFA properties.":::
 
