@@ -26,7 +26,7 @@ With the application proxy geo-routing feature, you can optimize which region of
 
 To use Traffic Manager, you must configure application proxy. The configuration steps that follow refer to these URL definitions:
 
-- **Regional URL**. The application proxy endpoints for each app. For example, `nam.contoso.com` and `india.contoso.com`.
+- **Regional URL**: The application proxy endpoints for each app. For example, `nam.contoso.com` and `india.contoso.com`.
 - **Alternate URL**: The URL configured for the Traffic Manager solution. For example, `contoso.com`.
 
 To configure application proxy for Traffic Manager:
@@ -39,7 +39,7 @@ To configure application proxy for Traffic Manager:
    1. Assign each app to its respective connector group.
    1. If you prefer the alternate URL to be maintained throughout the user session, register each app and add the URL as a reply URL. This step is optional.
 
-1. In the Traffic Manager solution, add the regional URLs for application proxy that you created for each app as an endpoint.
+1. In the Traffic Manager solution, add the regional URLs for application proxy that you created for each app as endpoints.
 
 1. Configure the Traffic Manager solution's load-balancing rules with a standard license.
 
@@ -86,7 +86,7 @@ The following table shows a sample application proxy configuration. This configu
 | **Internal URL** | `contoso.com` | `contoso.com` | If the apps are hosted in different regions, you can use the same internal URL for each app. |
 | **External URL** | `nam.contoso.com` | `india.contoso.com` | Configure a custom domain for each app. |
 | **Custom domain certificate** | Domain Name System (DNS): `nam.contoso.com`<br> SAN: `www.contoso.com` | DNS: `india.contoso.com`<br> SAN: `www.contoso.com` | In the certificate that you upload for each app, set the SAN value to the alternate URL. The alternate URL is the URL that all users use to reach the app. |
-| **Connector group** | North America Geo Group | India Geo Group | Ensure you that assign each app to the correct connector group by using the geo-routing functionality. |
+| **Connector group** | North America Geo Group | India Geo Group | Ensure that you assign each app to the correct connector group by using the geo-routing functionality. |
 | **Redirects** | (Optional) To maintain redirects for the alternate URL, add the application registration for the app. | (Optional) To maintain redirects for the alternate URL, add the application registration for the app. | This step is required if the alternate URL `www.contoso.com` will be maintained for all redirections. |
 | **Reply URL** | `www.contoso.com` | `www.contoso.com` | |
 
