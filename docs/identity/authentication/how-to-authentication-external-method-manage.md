@@ -10,7 +10,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Manage an external multifactor authentication method in Microsoft Entra ID (Preview)
 
-External multifactor authentication (MFA) lets users choose an external provider to meet MFA requirements when they sign in to Microsoft Entra ID. The intended use of external MFA is to allow organizations to satisfy MFA requirements, while using their preferred MFA provider. Microsoft Entra ID continues to handle full policy evaluation and access decisions, as the identity control plane. 
+External multifactor authentication (MFA) lets users choose an external provider to meet MFA requirements when they sign in to Microsoft Entra ID. The intended use of external MFA, previously known as external authentication methods, is to allow organizations to satisfy MFA requirements, while using their preferred MFA provider. Microsoft Entra ID continues to handle full policy evaluation and access decisions, as the identity control plane. 
 
 Here is a diagram of how external authentication method works:
 
@@ -140,7 +140,11 @@ In the Microsoft Entra admin center:
 1. Select one or more external MFA method, and select **Save**.
 1. A success message appears, and the methods that you previously selected are listed in **Usable authentication methods**. 
 
-## Using external MFA and Conditional Access custom controls in parallel
+## Best practices for using external MFA and Conditional Access
+
+There are some important factors to consider when using external MFA and Conditional Access.
+
+### Using external MFA and Conditional Access custom controls in parallel
 
 External MFA and custom controls can operate in parallel. Microsoft recommends that admins configure two Conditional Access policies: 
 
@@ -148,6 +152,10 @@ External MFA and custom controls can operate in parallel. Microsoft recommends t
 - Another policy with the MFA grant required
 
 Include a test group of users for each policy, but not both. If a user is included in both policies, or any policy with both conditions, the user has to satisfy MFA during sign-in. They also have to satisfy the custom control, which makes them redirected to the external provider a second time.
+
+### Using external MFA with sign-in Frequency policies in Conditional Access
+
+Our research reinforced the importance of aligning MFA prompts with user intent. With external MFA, users are redirected to their MFA provider based on MFA freshness requirements configured through Conditional Access sign-in frequency policies. Excessively frequent reauthentication is discouraged, as it can negatively affect user experience, decrease productivity, and increase phishing risk by conditioning users to enter credentials without scrutiny. We recommend following our [reauthentication guidance](concepts-azure-multi-factor-authentication-prompts-session-lifetime.md) when configuring sign-in frequency policies.
 
 ## FAQ
 ### 1. Why doesn't external MFA work on Windows 10 during device setup?
