@@ -90,15 +90,15 @@ To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need 
    ![Screenshot of organization.](media/lexmark-oidc-tutorial/organization.png)
 1. From the Organization menu, select **Authentication Provider**.
    ![Screenshot of authentication provider.](media/lexmark-oidc-tutorial/authentication-provider.png)
-1. Select Configure on **Authentication Provider**.
+1. Select **Configure on Authentication Provider**.
    ![Screenshot of authentication provider configuration.](media/lexmark-oidc-tutorial/authentication-provider-configure.png)
-1. From the Authentication Provider Type menu, select **SAML**.
+1. From the **Authentication Provider Type** menu, select **SAML**.
    ![Screenshot of authentication provider type.](media/lexmark-oidc-tutorial/authentication-provider-type.png)
 
    > [!Note]
-   > The Domains field allows Lexmark Cloud Services to establish a new user account after the user logs in. Listing each organization domain is not required. If no domain is set, then the new users must be manually added to the organization before they log in.
+   > The Domains field allows Lexmark Cloud Services to establish a new user account after the user logs in. Listing each organization domain isn't required. If no domain is set, then the new users must be manually added to the organization before they log in.
 
-1. In the SAML Authentication Provider section, select either **With Metadata URL** or **Without Metadata URL**.
+1. In the **SAML Authentication Provider** section, select either **With Metadata URL** or **Without Metadata URL**.
 
    > [!Note]
    > We recommend selecting With Metadata URL for a shorter process.
@@ -119,8 +119,8 @@ To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need 
 
  If you want to configure the SAML Authentication Provider section without Metadata URL, then perform the following steps:
 1. In the SAML Authentication Provider section, select **Without Metadata URL**.
-   ![Screenshot of without metadata URL single sign on settings.](media/lexmark-oidc-tutorial/single-sign-on-settings.png)
-1. In the Identity provider entity ID (Required) field, depending on your location, type either of the following:
+   ![Screenshot of single sign on settings without metadata URL.](media/lexmark-oidc-tutorial/single-sign-on-settings.png)
+1. In the **Identity provider entity ID (Required)** field, depending on your location, type either of the following:
    - For EU:
       **`https://lexmarkb2ceu.b2clogin.com/LexmarkB2CEU.onmicrosoft.com/B2C_1A_TrustFrameworkBase_ciam`**
    - For US: 
@@ -129,13 +129,13 @@ To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need 
    > [!Note]
    > The URLs must be same to the URLs entered in Microsoft Entra ID.
 
-1. Enter the required information copied from Azure AD:
+1. Enter the required information copied from Microsoft Entra ID:
    - SSO target URL (Required)
    - SSO Logout URL (Required)
    - Certificate (Required)
 
    > [!Note]
-   > Make sure that you include the header and the footer for the certificate.
+   > Make sure you include the header and the footer for the certificate.
 
 1. Select **Configure Authentication Provider**.
 
@@ -143,7 +143,7 @@ To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need 
    > Once authentication configuration is completed, you will receive an email on configuration status. In case of configuration failure, contact your Lexmark representative.
 
 > [!Note]
-> Make sure that you do not exit the Lexmark Cloud Services portal or allow the portal to time out. It is time to test your SAML connection, and you may be unable to log in to correct any problems discovered during testing. For more information on testing the federation, see [Testing a federation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/testing-a-federation-v59215222.html).
+> Make sure that you don't exit the Lexmark Cloud Services portal or allow the portal to time out. It is time to test your SAML connection, and you might be unable to log in to correct any problems discovered during testing. For more information on testing the federation, see [Testing a federation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/testing-a-federation-v59215222.html).
 
 ### Create Lexmark Cloud Services (SAML) test user
 
