@@ -107,18 +107,18 @@ To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need 
 
    If you want to configure the **SAML Authentication Provider** section with Metadata URL, then perform the following steps:
 1. In the **SAML Authentication Provider** section, select **With Metadata URL**.
-   ![Screenshot of with metadata URL authentication provider.](media/lexmark-oidc-tutorial/authentication-provider.png)
-1. In the SAML Metadata URL (Required) field, paste the App Federation Metadata Url that you have previously copied and retained.
+   ![Screenshot of authentication provider with metadata URL option.](media/lexmark-oidc-tutorial/authentication-provider.png)
+1. In the **SAML Metadata URL (Required)** field, paste the App Federation Metadata URL that you have previously copied and retained.
 
    > [!Note]
    > For more information on App Federation Metadata Url, see [Downloading certificates and copying URLs](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/downloading-certificates-and-copying-urls-v5921516.html).
 
-1. Click **Configure Authentication Provider**.
+1. Select **Configure Authentication Provider**.
 
 ### Without Metadata URL
 
  If you want to configure the SAML Authentication Provider section without Metadata URL, then perform the following steps:
-1. In the SAML Authentication Provider section, select **Without Metadata URL**.
+1. In the **SAML Authentication Provider** section, select **Without Metadata URL**.
    ![Screenshot of single sign on settings without metadata URL.](media/lexmark-oidc-tutorial/single-sign-on-settings.png)
 1. In the **Identity provider entity ID (Required)** field, depending on your location, type either of the following:
    - For EU:
