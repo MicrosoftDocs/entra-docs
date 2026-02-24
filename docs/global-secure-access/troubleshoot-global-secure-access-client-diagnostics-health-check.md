@@ -294,7 +294,7 @@ function FindProxyForURL(url, host) {  
 #### Global Secure Access client and outbound proxies
 
 > [!IMPORTANT]
-> The Global Secure Access client doesn't support routing traffic through an outbound proxy. If the client is behind an outbound proxy, configure the PAC file exclusions as described previously to bypass the proxy for Global Secure Access traffic.
+> If the Global Secure Access client is behind an outbound proxy, configure PAC file exclusions to bypass the proxy for Global Secure Access traffic.
 
 ### No Hyper-V external virtual switch detected
 Hyper-V support: 
