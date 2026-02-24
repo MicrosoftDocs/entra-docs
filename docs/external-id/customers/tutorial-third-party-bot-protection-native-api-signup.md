@@ -4,6 +4,8 @@ description: Learn how to integrate third-party bot protection providers with Na
 ms.topic: tutorial
 ms.date: 02/24/2026
 ai-usage: ai-assisted
+ms.author: godonnell
+author: garrodonnell
 
 #CustomerIntent: As an IT administrator, I want to integrate third-party bot protection with Native API sign-up flows in Microsoft Entra External ID to protect against automated bot attacks and fake account creation.
 ---

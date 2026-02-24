@@ -4,6 +4,8 @@ description: Learn how to integrate third-party Account Takeover (ATO) protectio
 ms.topic: tutorial
 ms.date: 02/24/2026
 ai-usage: ai-assisted
+ms.author: godonnell
+author: garrodonnell
 
 #CustomerIntent: As a developer, I want to integrate third-party ATO protection with Native API authentication in Microsoft Entra External ID so that I can protect my apps from automated attacks and account compromise.
 ---
