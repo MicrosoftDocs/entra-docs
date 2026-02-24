@@ -24,6 +24,8 @@ In this article,  you learn how to integrate Salesforce Sandbox with Microsoft E
 > [!Note]
 >   We are aware that Salesforce will enforce the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
 >
+>   For customers using [OpenID Connect Authentication with Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_microsoft_only.htm&type=5) or if you have configured Salesforce with [custom OpenID Connect provider](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_plugin_custom.htm&type=5) then please ensure that you are using Entra ID V1 endpoint only as the V1 endpoint can provide the AMR claim in the token to Salesforce. V2 endpoint support will come soon but till that time please use V1 endpoint only. 
+>
 >  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
 
 ## Prerequisites
