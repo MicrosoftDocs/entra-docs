@@ -18,18 +18,17 @@ This tutorial guides you through integrating third-party bot protection provider
 
 ## Prerequisites
 
-1. An external tenant. If you don't already have one, [create an external tenant](how-to-create-external-tenant-portal.md).
-1. A registered application in the Microsoft Entra admin center with the following configuration:
-   - Application (client) ID and Directory (tenant) ID recorded
-   - Admin consent granted
-   - Public client and native authentication flows enabled
-1. A user flow created in the Microsoft Entra admin center and associated with your application.
-1. An account with at least an Authentication Extensibility Administrator or Application Administrator role in the external tenant.
-1. A custom domain associated with your external tenant.
-1. A third-party bot protection provider account (this tutorial uses HUMAN Security as an example) with the following configuration values:
+- An external tenant. If you don't already have one, [create an external tenant](how-to-create-external-tenant-portal.md).
+- A [registered application](/entra/identity-platform/quickstart-register-app) in the Microsoft Entra admin center with the following configuration:
+    - Application (client) ID and Directory (tenant) ID recorded.
+    - [Admin consent granted](/entra/identity-platform/quickstart-register-app#grant-admin-consent-external-tenants-only).
+    - [Public client and native authentication flows enabled](/entra/identity-platform/concept-native-authentication#how-to-enable-native-authentication).
+- A [user flow](how-to-user-flow-sign-up-sign-in-customers.md) created in the Microsoft Entra admin center and [associated with your application](how-to-user-flow-add-application.md).
+- A [custom domain](how-to-custom-url-domain.md) associated with your external tenant.
+- A third-party bot protection provider account (this tutorial uses HUMAN Security as an example) with the following configuration values:
    - Enforcer API credentials
    - SDK integration details
-1. A WAF platform account (this tutorial uses Cloudflare) with domain administrator privileges.
+- A WAF platform account (this tutorial uses Cloudflare) with domain administrator privileges.
 
 ## How bot protection works
 
@@ -46,6 +45,8 @@ This integration involves several key components working together to provide bot
 - **Native APIs:** Service endpoints that enable mobile and desktop apps to perform sign-up, sign-in, and self-service password reset (SSPR) flows in-app, without a browser redirect.
 - **Web Application Firewall (WAF):** A firewall that inspects incoming and outgoing HTTP traffic, intercepts sign-up requests, and coordinates with the third-party provider for bot detection.
 - **Third-party bot protection provider:** A third-party provider that delivers bot detection, device fingerprinting, and risk-assessment services to identify automated attacks.
+
+:::image type="content" source="media/tutorial-third-party-bot-protection-native-api-signup/native-app-signup-flow-waf.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and OTP-based MFA steps." lightbox="media/tutorial-third-party-bot-protection-native-api-signup/native-app-signup-flow-waf.png":::
 
 ## Configuration steps
 

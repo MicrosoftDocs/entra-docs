@@ -51,6 +51,8 @@ This integration involves several key components working together to provide ris
 - **Conditional Access (CA) policy:** A policy that specifies which users, apps, and conditions are in scope and the controls required to grant access, triggered by authentication context.
 - **Authentication context:** A Conditional Access feature that allows applying granular policies to specific actions or scenarios rather than at the app level.
 
+:::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/native-app-signin-flow.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and MFA steps." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/native-app-signin-flow.png":::
+
 ## Configuration steps
 
 1. Create a sign-in flow for an external tenant.
