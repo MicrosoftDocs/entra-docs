@@ -156,6 +156,16 @@ The Microsoft Entra Connect Sync .msi installation file is exclusively availabl
 
 ---
 
+### Public Preview - New end user homepage in My Account
+
+**Type:** New feature  
+**Service category:** My Profile/Account  
+**Product capability:** End User Experiences  
+
+The homepage at https://myaccount.microsoft.com has been updated to provide a more task-focused experience. Users will see pending actions like renewing expiring groups, approving access package requests, and setting up MFA directly on the homepage. Quick links to apps, groups, access packages, and sign-in details will be easier to find and use. This change is designed to streamline account management and help users stay on top of access and security tasks.
+
+---
+
 ### General Availability - Microsoft Entra Provisioning Service available in Microsoft Azure operated by 21Vianet
 
 **Type:** New feature  
@@ -163,6 +173,16 @@ The Microsoft Entra Connect Sync .msi installation file is exclusively availabl
 **Product capability:** Outbound to SaaS Applications  
 
 The Microsoft Entra provisioning service can be used in the 21Vianet / China cloud for the following scenarios: API-driven provisioning, Cloud Sync, Cross-tenant sync between China tenants, SCIM provisioning for the non-gallery / custom application, and on-premises app provisioning (ECMA). Specific gallery connectors such as Workday, SuccessFactors, and AWS aren't onboarded to the environment. For more information, see: [Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds](../identity/app-provisioning/known-issues.md#gallery-application-doesnt-support-provisioning-in-us-government-or-21vianet-china-clouds).
+
+---
+
+### General Availability - Revoke previously approved access package assignments in My Access
+
+**Type:** New feature  
+**Service category:** Entitlement Management  
+**Product capability:** Identity Governance  
+
+For Microsoft Entra ID Governance users, approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
 
 ---
 
