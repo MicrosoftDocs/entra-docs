@@ -1,7 +1,7 @@
 ---
 title: Bulk remove group members by uploading a CSV file
 description: Remove group members in bulk operations by using a comma-separated values (CSV) file.
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
@@ -13,7 +13,7 @@ You can remove a large number of members from a group by using a comma-separated
 
 ## Understand the CSV template
 
-Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Your CSV template might look like this example:
+Download and fill in the bulk upload CSV template to successfully remove Microsoft Entra group members in bulk. Your CSV template might look like this example:
 
 :::image type="content" source="./media/groups-bulk-remove-members/template-example.png" alt-text="Screenshot that shows the spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
 
@@ -21,16 +21,30 @@ Download and fill in the bulk upload CSV template to successfully add Microsoft 
 
 The rows in a downloaded CSV template are:
 
-- **Version number**: The first row that contains the version number must be included in the upload CSV.
-- **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can choose the member object ID or the user principal name.
-- **Examples row**: The template includes a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
+- **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can use either the member object ID or the user principal name (UPN).
+- **Examples row**: The template includes a row of example values (for example, `Example: 9832aad8-e4fe-496b-a604-95c6eF01ae75`). You must remove the examples row and replace it with your own entries.
+
+[!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
 ### More guidance
 
-- The first two rows of the upload template must not be removed or modified or the upload can't be processed.
-- The required columns are listed first.
-- We don't recommend adding new columns to the template. Any other columns you add are ignored and not processed.
-- We recommend that you download the latest version of the CSV template as often as possible.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
+
+- Enter one member per row. Don't use semicolons or other delimiters to separate multiple members in a single row.
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload:
+
+```csv
+Member object ID or user principal name [memberObjectIdOrUpn] Required
+alain@contoso.com
+isabella@contoso.com
+joseph@contoso.com
+```
+
+> [!TIP]
+> To get a list of current group members that you can edit, use the **Download members** bulk operation first. This gives you a CSV file with all current members that you can modify to include only the members you want to remove.
 
 ## Bulk remove group members
 
@@ -43,7 +57,7 @@ The rows in a downloaded CSV template are:
 
    :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="Screenshot that shows the Remove Members command is on the profile page for the group.":::
 
-1. Open the CSV file and add a line for each group member you want to remove from the group. Required values are **Member object ID** or **User principal name**. Then save the file.
+1. Open the CSV file and add a line for each group member you want to remove from the group. For each member, enter either their **User principal name** (UPN, such as `user@contoso.com`) or their **Object ID** (a GUID like `00aa00aa-bb11-cc22-dd33-44ee44ee44ee`). Enter one member per row. Then save the file.
 
     :::image type="content" source="./media/groups-bulk-remove-members/csv-file.png" alt-text="Screenshot that shows the CSV file contains names and IDs of the group members to remove.":::
 
@@ -52,11 +66,13 @@ The rows in a downloaded CSV template are:
 1. When your file passes validation, select **Submit** to start the bulk operation that removes the group members from the group.
 1. When the removal operation finishes, a notification states that the bulk operation succeeded.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk removal service limits](#bulk-removal-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk removal service limits](#bulk-removal-service-limits).
 
 ## Check removal status
 
-You can see the status of all your pending bulk requests on the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 :::image type="content" source="./media/groups-bulk-remove-members/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page.":::
 
