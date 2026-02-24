@@ -60,7 +60,7 @@ Create documentation that includes the following information at minimum:
 - SSO Configuration Steps
     - UI configuration elements for SAML (Simple Assertion Markup Language) with expected values from the provider
     - Service provider information to be passed to identity providers
-- If you use OIDC/OAuth, a list of permissions required for consent, with business justifications. Please use the least privileged permissions for your scenario.
+- If you use OIDC/OAuth, a list of permissions required for consent, with business justifications. Use the least privileged permissions for your scenario.
 - Testing steps for pilot users
 - Troubleshooting information, including error codes and messages
 - Support mechanisms for users
