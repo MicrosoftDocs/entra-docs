@@ -124,6 +124,7 @@ To complete the steps in this section, ensure you have the Organization Administ
 
 > [!NOTE]
 > The Domains field allows Lexmark Cloud Services to automatically establish a new user account after the user logs in. Listing each organization's domain is not required. If no domain is set, then the new users must be manually added to the organization before they log in.
+
 8. Select **Configure Authentication Provider**.
 ![Screenshot of Configure Authentication Provider.](media/lexmark-oidc-tutorial/configure-authentication-provider.png)
 
