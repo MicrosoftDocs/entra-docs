@@ -154,22 +154,22 @@ This tutorial uses a Cloudflare WAF. The Cloudflare WAF setup instructions are p
 
 1. Go to **Workers Routes**, then select **Create application**.
 
-   :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloudflare-workers-routes-page.png" alt-text="Screenshot showing the Cloudflare Workers Routes page.":::
+   :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-workers-routes-page.png" alt-text="Screenshot showing the Cloudflare Workers Routes page.":::
 
-   :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloudflare-workers-create-application.png" alt-text="Screenshot showing the Create application option in Cloudflare.":::
+   :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-workers-create-application.png" alt-text="Screenshot showing the Create application option in Cloudflare.":::
 
 1. Select **Start with Hello World**.
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloudflare.png" alt-text="Screenshot of Cloudflare application creation options showing GitHub, GitLab, Hello World, template, and static file upload buttons." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloudflare.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png" alt-text="Screenshot of Cloudflare application creation options showing GitHub, GitLab, Hello World, template, and static file upload buttons." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png":::
 
 1. Name the worker and select **Deploy**.
     :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/deploy-hello-world-worker.png" alt-text="Screenshot of Cloudflare Workers deployment screen showing worker name, code preview, and Deploy button for Hello World setup." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/deploy-hello-world-worker.png":::
 
 1. After the worker is deployed, select the **Settings** tab. Select **+Add** in **Domains & Routes**.
 
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloudflare-domains-routes-settings.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes-settings.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes-settings.png":::
 
 1. Select **Route**.
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes-settings.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/workerdomains-routes-settings.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png":::
 
 1. Select the domain from **Zone**. Add the following value in the **Route** field:
 
