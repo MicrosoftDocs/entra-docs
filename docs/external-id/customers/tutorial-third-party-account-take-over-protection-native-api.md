@@ -162,10 +162,10 @@ This tutorial uses a Cloudflare WAF. The Cloudflare WAF setup instructions are p
 
 1. After the worker is deployed, select the **Settings** tab. Select **+Add** in **Domains & Routes**.
 
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloudflare-domains-routes-settings.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png":::
 
 1. Select **Route**.
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/domains-routes-settings.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes-settings.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/workerdomains-routes-settings.png":::
 
 1. Select the domain from **Zone**. Add the following value in the **Route** field:
 
