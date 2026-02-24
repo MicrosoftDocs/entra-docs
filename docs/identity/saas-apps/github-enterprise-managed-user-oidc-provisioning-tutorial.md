@@ -96,9 +96,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 5. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User (OIDC) Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User (OIDC). If the connection fails, ensure your GitHub Enterprise Managed User (OIDC) account has created the secret token as an enterprise owner and try again.
 
     * For "Tenant URL", type the tenant URL you identified earlier.
-
-        For an enterprise called octo-corp on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/octo-corp`.  
-        For an enterprise called octo-corp on GHE.com, the Tenant URL is `https://api.octo-corp.ghe.com/scim/v2/enterprises/octo-corp`.
+      - For an enterprise called octo-corp on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/octo-corp`.  
+      - For an enterprise called octo-corp on GHE.com, the Tenant URL is `https://api.octo-corp.ghe.com/scim/v2/enterprises/octo-corp`.
 
    * For "Secret token", paste the GitHub personal access token that you created earlier.
    
