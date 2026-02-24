@@ -36,7 +36,7 @@ To enable username as a sign-in identifier, first enable the sign-in identifier 
 1. Browse to **Sign-in identifiers** either from **Entra ID** > **External Identities** or from **Entra ID** > **Authentication methods**.
 1. On the **Sign-in identifiers** page, enable **Username** as a sign-in identifier by choosing **Default regex**, which accepts any string, or specifying up to two custom regular expression patterns for stricter validation. If any pattern matches, the username is considered valid. Note that there is no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Authentication may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
 
-   :::image type="content" source="media/how-to-sign-in-alias/signin-identifiers.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/signin-identifiers.png":::
+   :::image type="content" source="media/how-to-sign-in-alias/sign-in-identifiers.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/sign-in-identifiers.png":::
 
 1. Select **Save** at the top of the page.
 
@@ -56,7 +56,7 @@ You can create external users with both email address and username as sign-in id
 1. Select **+ New user** > **Create external user**.
 1. Next to **Identities**, enter values for both **Email** and **User Name** sign-in methods. The selection order doesn’t matter.
 
-   :::image type="content" source="media/how-to-sign-in-alias/signin-method-dropdown.png" alt-text="Screenshot of the Sign-in method dropdown in the Create external user pane in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/signin-method-dropdown.png":::
+   :::image type="content" source="media/how-to-sign-in-alias/sign-in-method-dropdown.png" alt-text="Screenshot of the Sign-in method dropdown in the Create external user pane in the Microsoft Entra admin center." lightbox="media/how-to-sign-in-alias/sign-in-method-dropdown.png":::
 
 1. On the **Properties** tab, specify the email attribute for the user.
 
