@@ -140,11 +140,11 @@ Protect your network perimeter.
 | [Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access](zero-trust-protect-networks.md#domain-controller-rdp-access-is-protected-by-phishing-resistant-authentication-through-global-secure-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
-| [Outbound traffic from VNet integrated workloads is routed through Azure Firewall](zero-trust-protect-networks.md#outbound-traffic-from-vnet-integrated-workloads-is-routed-through-azure-firewall) | Azure Firewall Basic, Standard, or Premium |
+| [Outbound traffic from VNet integrated workloads is routed through Azure Firewall](zero-trust-protect-networks.md#outbound-traffic-from-vnet-integrated-workloads-is-routed-through-azure-firewall) | Azure Firewall Basic |
 | [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Standard |
 | [IDPS inspection is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#idps-inspection-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
 | [Application Gateway WAF is enabled in prevention mode](zero-trust-protect-networks.md#application-gateway-waf-is-enabled-in-prevention-mode) | Azure Application Gateway WAF_v2 |
-| [Azure Front Door WAF is enabled in prevention mode](zero-trust-protect-networks.md#azure-front-door-waf-is-enabled-in-prevention-mode) | Azure WAF on Azure Front Door Premium or Standard |
+| [Azure Front Door WAF is enabled in prevention mode](zero-trust-protect-networks.md#azure-front-door-waf-is-enabled-in-prevention-mode) | Azure Front Door Standard |
 
 ## Protect engineering systems
 
