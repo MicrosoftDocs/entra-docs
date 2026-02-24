@@ -1,117 +1,94 @@
 ---
-title: 'What is Microsoft Entra Cloud Sync?'
-description: Describes Microsoft Entra Cloud Sync.
+title: What is Microsoft Entra Cloud sync?
+description: Describes Microsoft Entra Cloud sync.
 
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 09/29/2025
+ms.date: 02/17/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 
 ---
 
-# What is Microsoft Entra Cloud Sync?
+# What is Microsoft Entra Cloud sync?
 
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
 
-Microsoft Entra Cloud Sync is a new offering from Microsoft designed to meet and accomplish your hybrid identity goals for synchronization of users, groups, and contacts to Microsoft Entra ID.  It accomplishes this by using the Microsoft Entra cloud provisioning agent instead of the Microsoft Entra Connect application.  However, it can be used alongside Microsoft Entra Connect Sync and it provides the following benefits:
+Microsoft Entra Cloud Sync is a hybrid identity synchronization service that provides modern, cloud-managed synchronization of users, groups, and contacts between Active Directory and Microsoft Entra ID. It represents Microsoft's strategic direction for hybrid identity, offering a lightweight, agent-based approach that simplifies deployment and management while enabling advanced scenarios like disconnected forest synchronization.
 
-> [!IMPORTANT]
-> **Authentication precedence**: Enabling Microsoft Entra Cloud Sync does not change or override your tenant's configured authentication method. If Pass-through Authentication (PTA) or Password Hash Synchronization (PHS) is already configured, it continues to control user sign-ins. Cloud Sync is a synchronization technology and does not manage authentication behavior.
-    
-- Support for synchronizing to a Microsoft Entra tenant from a multi-forest disconnected Active Directory forest environment: The common scenarios include merger and acquisition. In these cases, the acquired company's AD forests are isolated from the parent company's AD forests. Another scenario involves companies that historically had multiple AD forests.
-- Simplified installation with light-weight provisioning agents: The agents act as a bridge from AD to Microsoft Entra ID, with all the sync configuration managed in the cloud. 
-- Multiple provisioning agents can be used to simplify high availability deployments. They're critical for organizations relying upon password hash synchronization from AD to Microsoft Entra ID.
-- Support for large groups with up to 50,000 members. It's recommended to use only the OU scoping filter when synchronizing large groups.
+Cloud Sync solves common challenges organizations face with hybrid identity infrastructure by eliminating single points of failure, reducing on-premises management overhead, and enabling complex multi-forest scenarios that support organizational growth and change.
 
+## Core architecture and components
+
+Cloud sync is built on a modern, cloud-first architecture with two key components:
+
+**Microsoft Entra provisioning agent**: A lightweight, on-premises agent that acts as a secure bridge between Active Directory and Microsoft Entra ID. The agent uses the same proven technology as Microsoft Entra Application Proxy and Pass-Through Authentication, requiring only outbound connections and providing automatic updates from the cloud.
+
+**Microsoft Entra provisioning service**: A cloud-based orchestration service that manages synchronization configuration, scheduling, and processing. This service uses the same infrastructure as other Microsoft Entra provisioning capabilities and operates on a scheduler-based model with synchronization occurring every two minutes.
 
  :::image type="content" source="media/what-is-cloud-sync/architecture-2.png" alt-text="Diagram of basic cloud sync." lightbox="media//what-is-cloud-sync/architecture-2.png":::
 
+## How Cloud sync works
+
+Cloud sync leverages the System for Cross-domain Identity Management (SCIM) standard to ensure reliable and standards-based identity management. The synchronization process follows this flow:
+
+- **Agent communication**: The provisioning agent maintains a persistent outbound connection to Microsoft Entra services through Azure Service Bus, listening for synchronization requests.
+- **Request processing**: When synchronization occurs, the agent receives SCIM requests from the cloud service and queries Active Directory for the requested information.
+- **Data filtering and transformation**: The agent filters and transforms data based on configured scoping rules and attribute mappings before sending responses back to Microsoft Entra ID.
+- **Cloud processing**: The provisioning service processes the responses and commits changes to Microsoft Entra ID, maintaining synchronization state and handling incremental updates through watermark tracking.
+
+## Key capabilities
+
+| Capability | Description |
+|---|---|
+| Cloud-managed configuration | All synchronization configuration is stored and managed in Microsoft Entra ID through the Microsoft Entra admin center. Administrators can modify settings, monitor status, and troubleshoot issues from any location without VPN access. |
+| High availability through multi-agent support | Cloud sync supports multiple active provisioning agents deployed across different servers, providing automatic failover without configuration changes. Synchronization continues seamlessly when individual agents become unavailable. |
+| Disconnected forest synchronization | Cloud sync natively handles multiple disconnected Active Directory forests without requiring complex configurations or multiple synchronization instances. This capability supports mergers and acquisitions, historical multi-forest environments, and scenarios where forests cannot be connected. |
+| Simplified installation and management | The lightweight agent model requires minimal server resources and can be deployed on domain controllers or dedicated servers. Agents automatically receive security updates and patches from Microsoft. |
+| Advanced provisioning scenarios | Cloud sync enables cloud-to-AD provisioning scenarios, including group provisioning to Active Directory for governing on-premises applications. This bidirectional capability supports modern identity architectures where Microsoft Entra ID serves as the authoritative identity source. |
+
 <a name='how-is-azure-ad-connect-cloud-sync-different-from-azure-ad-connect-sync'></a>
 
-## How is Microsoft Entra Cloud Sync different from Microsoft Entra Connect Sync?
-With Microsoft Entra Cloud Sync, provisioning from AD to Microsoft Entra ID is orchestrated in Microsoft Online Services. An organization only needs to deploy, in their on-premises or IaaS-hosted environment, a light-weight agent that acts as a bridge between Microsoft Entra ID and AD. The provisioning configuration is stored in Microsoft Entra ID and managed as part of the service.
+## How is Microsoft Entra Cloud sync different from Microsoft Entra Connect sync?
+
+With Microsoft Entra Cloud Sync, provisioning orchestration occurs entirely in Microsoft Online Services rather than on-premises infrastructure. Organizations deploy lightweight agents in their on-premises or Infrastructure-as-a-Service (IaaS) environments that act as secure bridges between Microsoft Entra ID and Active Directory. All provisioning configuration, monitoring, and management is handled through the cloud service, eliminating the complexity of on-premises sync server management.
+
+This architectural difference enables scenarios that are complex or impossible with traditional approaches, such as synchronizing from multiple disconnected forests to a single Microsoft Entra tenant without forest consolidation.
+
+For a detailed feature comparison table, see [Cloud Sync and Microsoft Entra Connect feature comparison](connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync).
 
 <a name='azure-ad-connect-cloud-sync-video'></a>
 
-## Microsoft Entra Cloud Sync video
+## Microsoft Entra Cloud sync video
+
 The following short video provides an excellent overview of Microsoft Entra Cloud Sync:
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
-## Choose the right sync client
-To determine if cloud sync is right for your organization, review the supported sync scenarios. For more information, evaluate your options using the [supported sync scenarios comparison](../common-scenarios.md)
+## When to consider Cloud sync
 
+Cloud Sync is designed to modernize hybrid identity infrastructure and enable scenarios that traditional synchronization approaches cannot support effectively. Key scenarios include:
 
-<a name='comparison-between-azure-ad-connect-and-cloud-sync'></a>
+- Organizations undergoing mergers and acquisitions requiring rapid integration of disconnected forests
+- Companies seeking to eliminate single points of failure and improve synchronization reliability 
+- Environments requiring simplified management and reduced on-premises infrastructure
+- Multi-forest organizations where forest consolidation is not feasible
+- Organizations implementing cloud-first identity strategies with cloud-to-AD provisioning needs
 
-## Comparison between Microsoft Entra Connect and cloud sync
+For organizations evaluating migration from Microsoft Entra Connect or implementing new hybrid identity solutions, Cloud Sync offers significant architectural advantages. For detailed feature comparison, migration planning, and readiness assessment, see [Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide](connect-to-cloud-sync-decision-guide.md).
 
-The following table provides a comparison between Microsoft Entra Connect and Microsoft Entra Cloud Sync:
+## Integration with Microsoft Entra ecosystem
 
-| Feature | Connect sync| Cloud sync |
-|:--- |:---:|:---:|
-|Connect to single on-premises AD forest|● |● |
-| Connect to multiple on-premises AD forests |● |● |
-| Connect to multiple disconnected on-premises AD forests | |● |
-| Lightweight agent installation model | |● |
-| Multiple active agents for high availability | |● |
-| Support for user objects |● |● |
-| Support for group objects |● |● |
-| Support for contact objects |● |● |
-| Support for device objects |● | |
-| Allow basic customization for attribute flows |● |● |
-| Synchronize Exchange online attributes |● |● |
-| Synchronize extension attributes 1-15 |● |● |
-| Synchronize customer defined AD attributes (directory extensions) |●|●|
-| Support for Password Hash Sync |●|●|
-| Support for Pass-Through Authentication |●||
-| Support for federation |●|●|
-| Seamless Single Sign-on|● |●|
-| Supports installation on a Domain Controller |● |● |
-| Support for Windows Server 2022, Windows Server 2019, and Windows Server 2016|● |● |
-| Filter on Domains/OUs/groups |● |● |
-| Filter on objects' attribute values |● | |
-| Allow minimal set of attributes to be synchronized (MinSync) |● |● |
-| Allow removing attributes from flowing from AD to Microsoft Entra ID |● |● |
-| Allow advanced customization for attribute flows |● | |
-| Support for password writeback |● |● |
-| Support for device writeback|● |Customers should use [Cloud Kerberos trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust?tabs=intune) for this moving forward|
-| Support for group writeback| |●|
-| Support for merging user attributes from multiple domains|● | |
-| Microsoft Entra Domain Services support|● | |
-| [Exchange hybrid writeback](exchange-hybrid.md) |● |● |
-| Unlimited number of objects per AD domain |● | |
-| Support for up to 150,000 objects per AD domain |● |● |
-| Groups with up to 50,000 members |● |● |
-| Large groups with up to 250,000 members |● |  |
-| Cross domain references|● |● |
-| Cross forest references|● | |
-| On-demand provisioning| |● |
-| Support for US Government|● |● |
+Cloud Sync integrates seamlessly with the broader Microsoft Entra identity platform, supporting advanced scenarios like:
 
-> [!NOTE]
-> **Understanding "Not Supported" for Pass-through Authentication**: In the feature comparison table above, where Cloud Sync does not support Pass-through Authentication, this means Cloud Sync cannot configure or manage PTA. **It does not mean that existing Pass-through Authentication is disabled or replaced when Cloud Sync is enabled.** If PTA is already configured in your tenant, it will continue to handle authentication for user sign-ins, independently of Cloud Sync's synchronization operations.
-
-## Synchronization vs Authentication Responsibilities
-
-It's important to understand the separation between synchronization technology and authentication methods. The following table clarifies what each component controls:
-
-| Responsibility | Synchronization Technology (Microsoft Entra Cloud Sync / Microsoft Entra Connect Sync) | Authentication Method (Password Hash Synchronization / Pass-through Authentication / Federation) |
-|:---|:---|:---|
-| **What it controls** | • Object synchronization (users, groups, contacts)<br>• Attribute synchronization<br>• Writeback of certain attributes<br>• Directory extensions | • Password validation<br>• Sign-in behavior<br>• Where credentials are verified<br>• Enforcement of on-premises policies during sign-in |
-| **What it does NOT control** | • User authentication and sign-in<br>• Password validation<br>• Authentication method configuration | • Object and attribute synchronization<br>• Which objects sync to Microsoft Entra ID<br>• Sync schedule and frequency |
-| **Key point** | Synchronization moves data between directories | Authentication validates user credentials during sign-in |
-
-**Important**: Changing your synchronization technology (for example, from Microsoft Entra Connect Sync to Cloud Sync) does not change how users sign in or where passwords are validated. Authentication behavior is determined by the authentication method configured for your tenant, not by the synchronization technology used.
-
-> [!NOTE]
-> For information about synchronizing to Microsoft Entra tenants operated by 21 Vianet, the version of Microsoft 365 specific to China, see [Microsoft 365 operated by 21Vianet](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) and [Topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
-> Cloud sync can be use for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud. 
+- **Microsoft Entra ID Governance**: Enabling lifecycle management and access governance for hybrid identities
+- **Source of Authority (SOA) management**: Supporting cloud-first identity strategies where Microsoft Entra ID becomes the authoritative identity source
+- **HR-driven provisioning**: Working alongside HR application integrations to create end-to-end identity provisioning workflows
 
 ## Next steps 
 
-- [What is provisioning?](../what-is-provisioning.md)
+- [What is the provisioning agent?](what-is-provisioning-agent.md)
 - [Install cloud sync](how-to-install.md)
+- [Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide](connect-to-cloud-sync-decision-guide.md)

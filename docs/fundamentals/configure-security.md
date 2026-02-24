@@ -118,6 +118,9 @@ Protect your network perimeter.
 | [Web content filtering policies are linked to security profiles](zero-trust-protect-networks.md#web-content-filtering-policies-are-linked-to-security-profiles) | Microsoft Entra ID P1 |
 | [Web content filtering integrates with Conditional Access](zero-trust-protect-networks.md#web-content-filtering-integrates-with-conditional-access) | Microsoft Entra Internet Access |
 | [TLS inspection is enabled and correctly configured for outbound traffic](zero-trust-protect-networks.md#tls-inspection-is-enabled-and-correctly-configured-for-outbound-traffic) | Microsoft Entra ID P1 |
+| [Threat intelligence filtering protects internet traffic](zero-trust-protect-networks.md#threat-intelligence-filtering-protects-internet-traffic) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [AI Gateway protects enterprise generative AI applications from prompt injection attacks](zero-trust-protect-networks.md#ai-gateway-protects-enterprise-generative-ai-applications-from-prompt-injection-attacks) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Global Secure Access cloud firewall protects branch office internet traffic](zero-trust-protect-networks.md#global-secure-access-cloud-firewall-protects-branch-office-internet-traffic) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Network validation is configured through Universal Continuous Access Evaluation](zero-trust-protect-networks.md#network-validation-is-configured-through-universal-continuous-access-evaluation) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access client is deployed on all managed endpoints](zero-trust-protect-networks.md#global-secure-access-client-is-deployed-on-all-managed-endpoints) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
@@ -130,10 +133,13 @@ Protect your network perimeter.
 | [Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment](zero-trust-protect-networks.md#traffic-forwarding-profiles-are-scoped-to-appropriate-users-and-groups-for-controlled-deployment) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Private network connectors are active and healthy to maintain Zero Trust access to internal resources](zero-trust-protect-networks.md#private-network-connectors-are-active-and-healthy-to-maintain-zero-trust-access-to-internal-resources) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Private DNS is configured for internal name resolution](zero-trust-protect-networks.md#private-dns-is-configured-for-internal-name-resolution) | Microsoft Entra Private Access |
-| [Intelligent Local Access is enabled and configured](zero-trust-protect-networks.md#intelligent-local-access-is-enabled-and-configured) | <Microsoft Entra Private Access |
+| [Intelligent Local Access is enabled and configured](zero-trust-protect-networks.md#intelligent-local-access-is-enabled-and-configured) | Microsoft Entra Private Access |
+| [Quick Access is enabled and bound to a connector](zero-trust-protect-networks.md#quick-access-is-enabled-and-bound-to-a-connector) | P1, Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Quick Access is bound to a Conditional Access policy](zero-trust-protect-networks.md#quick-access-is-bound-to-a-conditional-access-policy) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Entra Private Access Application segments are defined to enforce least-privilege access](zero-trust-protect-networks.md#entra-private-access-application-segments-are-defined-to-enforce-least-privilege-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access](zero-trust-protect-networks.md#domain-controller-rdp-access-is-protected-by-phishing-resistant-authentication-through-global-secure-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Protect engineering systems
 
@@ -177,6 +183,9 @@ Collect and analyze security logs and triage alerts.
 | [ID Protection notifications are enabled](zero-trust-monitor-detect.md#id-protection-notifications-are-enabled) | Microsoft Entra ID P2 |
 | [No legacy authentication sign-in activity](zero-trust-monitor-detect.md#no-legacy-authentication-sign-in-activity) | Microsoft Entra ID P1 |
 | [All Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#all-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
+| [Network access activity is visible to security operations for threat detection and response](zero-trust-monitor-detect.md#network-access-activity-is-visible-to-security-operations-for-threat-detection-and-response) | Microsoft Entra ID P1 |
+| [Network access logs are retained for security analysis and compliance requirements](zero-trust-monitor-detect.md#network-access-logs-are-retained-for-security-analysis-and-compliance-requirements) | Microsoft Entra ID P1 |
+| [Global Secure Access deployment logs are populated and reviewed](zero-trust-monitor-detect.md#global-secure-access-deployment-logs-are-populated-and-reviewed) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Accelerate response and remediation
 

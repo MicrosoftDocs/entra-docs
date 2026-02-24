@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 10/30/2025
+ms.date: 02/22/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -37,7 +37,7 @@ For more information, see: [Embrace cloud-first posture: Transfer user Source o
 
 ---
 
-### General Availability - Entra ID Governance guest billing meter enforcement
+### General Availability - Microsoft Entra ID Governance guest billing meter enforcement
 
 **Type:** New feature  
 **Service category:** Entitlement Management, Lifecycle Workflows  
@@ -603,7 +603,7 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabli
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
  
-In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps](/entra/external-id/customers/how-to-customize-branding-themes-apps)
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [Customize branding themes for apps](/entra/external-id/customers/how-to-customize-branding-themes-apps).
 
 ---
 

@@ -50,9 +50,7 @@
       "feedback_system": "Standard",
       "feedback_github_repo": "MicrosoftDocs/entra-docs",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",
-      "searchScope": "Microsoft Entra",
-      "author": "kenwith",
-      "ms.author": "kenwith"
+      "searchScope": "Microsoft Entra"
     },
     "fileMetadata": {
       "feedback_product_url": {
@@ -94,6 +92,8 @@
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
+        "identity/users/**/*.md": "barclayn",
+        "identity/users/**/*.yml": "barclayn",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -122,6 +122,8 @@
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
+        "identity/users/**/*.md": "barclayn",
+        "identity/users/**/*.yml": "barclayn",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn"
       },
@@ -150,6 +152,8 @@
         "identity/managed-identities-azure-resources/**/*.yml": "entra-id",
         "identity/role-based-access-control/**/*.md": "entra-id",
         "identity/role-based-access-control/**/*.yml": "entra-id",
+        "identity/users/**/*.md": "entra-id",
+        "identity/users/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
         "verified-id/**/*.yml": "entra-verified-id"
       },
@@ -162,8 +166,6 @@
         "identity/app-proxy/**/*.yml": "app-proxy",
         "identity/authentication/**/*.md": "authentication",
         "identity/authentication/**/*.yml": "authentication",
-        "identity/conditional-access/**/*.md": "conditional-access",
-        "identity/conditional-access/**/*.yml": "conditional-access",
         "identity/domain-services/**/*.md": "domain-services",
         "identity/domain-services/**/*.yml": "domain-services",
         "identity/enterprise-apps/**/*.md": "enterprise-apps",
@@ -171,7 +173,9 @@
         "identity/managed-identities-azure-resources/**/*.md": "managed-identities",
         "identity/managed-identities-azure-resources/**/*.yml": "managed-identities",
         "identity/role-based-access-control/**/*.md": "role-based-access-control",
-        "identity/role-based-access-control/**/*.yml": "role-based-access-control"
+        "identity/role-based-access-control/**/*.yml": "role-based-access-control",
+        "identity/users/**/*.md": "users",
+        "identity/users/**/*.yml": "users"
       },
       "manager": {
         "agent-id/**/*.md": "pmwongera",
@@ -194,6 +198,8 @@
         "identity/role-based-access-control/**/*.yml": "pmwongera",
         "identity/saas-apps/**/*.md": "dougeby",
         "identity/saas-apps/**/*.yml": "dougeby",
+        "identity/users/**/*.md": "pmwongera",
+        "identity/users/**/*.yml": "pmwongera",
         "permissions-management/**/*.md": "dougeby",
         "permissions-management/**/*.yml": "dougeby",
         "standards/**/*.md": "dougeby",

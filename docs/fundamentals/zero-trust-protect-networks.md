@@ -52,6 +52,15 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### TLS inspection is enabled and correctly configured for outbound traffic
 [!INCLUDE [25411](../includes/secure-recommendations/25411.md)]
 
+### Threat intelligence filtering protects internet traffic
+[!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
+
+### AI Gateway protects enterprise generative AI applications from prompt injection attacks
+[!INCLUDE [25415](../includes/secure-recommendations/25415.md)]
+
+### Global Secure Access cloud firewall protects branch office internet traffic
+[!INCLUDE [25416](../includes/secure-recommendations/25416.md)]
+
 ### Microsoft 365 traffic is actively flowing through Global Secure Access
 [!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
 
@@ -82,6 +91,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Intelligent Local Access is enabled and configured
 [!INCLUDE [25405](../includes/secure-recommendations/25405.md)]
 
+### Quick Access is enabled and bound to a connector
+[!INCLUDE [25393](../includes/secure-recommendations/25393.md)]
+
 ### Quick Access is bound to a Conditional Access policy
 [!INCLUDE [25394](../includes/secure-recommendations/25394.md)]
 
@@ -90,3 +102,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
 [!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
+
+### Quick Access has user or group assignments
+[!INCLUDE [25480](../includes/secure-recommendations/25480.md)]
+
+### All Private Access apps have user or group assignments
+[!INCLUDE [25481](../includes/secure-recommendations/25481.md)]

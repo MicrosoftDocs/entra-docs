@@ -3,7 +3,9 @@ title: Common deployment scenarios for Microsoft Entra Domain Services | Microso
 description: Learn about some of the common scenarios and use-cases for Microsoft Entra Domain Services to provide value and meet business needs.
 
 ms.assetid: c5216ec9-4c4f-4b7e-830b-9d70cf176b20
-ms.topic: article
+ms.service: entra-id
+ms.subservice: domain-services
+ms.topic: concept-article
 ms.date: 02/05/2025
 ---
 # Common use-cases and scenarios for Microsoft Entra Domain Services
