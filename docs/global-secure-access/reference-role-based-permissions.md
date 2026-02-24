@@ -62,5 +62,5 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 
 ## Next steps
-- [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
+- [Get started with Global Secure Access](quickstart-access-admin-center.md)
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)
