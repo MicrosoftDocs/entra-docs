@@ -2,7 +2,7 @@
 title: Include file
 description: Include file for bulk operations CSV template note
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: include
 ms.date: 12/05/2025
