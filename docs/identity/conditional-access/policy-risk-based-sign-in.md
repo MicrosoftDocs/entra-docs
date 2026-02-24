@@ -3,7 +3,6 @@ title: Sign-in risk-based multifactor authentication
 description: Protect your organization by implementing Conditional Access policies that address sign-in risks using Microsoft Entra ID Protection.
 ms.topic: how-to
 ms.date: 10/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require multifactor authentication for elevated sign-in risk

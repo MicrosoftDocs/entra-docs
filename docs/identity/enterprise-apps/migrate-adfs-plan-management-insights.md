@@ -1,15 +1,9 @@
 ---
 title: 'Phase 4: Plan management and insights'
 description: This article describes phase 4 of planning migration of applications from AD FS to Microsoft Entra ID
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: concept-article
 
 ms.date: 05/30/2023
-ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 
@@ -39,7 +33,7 @@ Once you've migrated the apps, consider applying the following suggestions to en
 
   - For **Android devices**, from the [Google play store](https://play.google.com/store/apps/details?id=com.microsoft.intune)
 
-  - For **Apple devices**, from the [Apple App Store](https://apps.apple.com/us/app/intune-company-portal/id719171358) or they can download the My Apps mobile app for [iOS](https://appadvice.com/app/my-apps-azure-active-directory/824048653).
+  - For **Apple devices**, from the [Apple App Store](https://apps.apple.com/us/app/intune-company-portal/id719171358).
 
 > [!VIDEO https://www.youtube.com/embed/8aUIuOXeDxw]
 

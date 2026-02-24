@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.date: 09/04/2025
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---

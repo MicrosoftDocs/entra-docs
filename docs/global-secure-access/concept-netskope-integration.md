@@ -375,6 +375,6 @@ Learn more about Netskope Threat Protection in these articles:
 
 ## Related content
 
-- [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](concept-netskope-coexistence.md)
+- [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](how-to-netskope-coexistence.md)
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)   
 - [Create a custom Data Loss Prevention profile](how-to-full-data-loss-protection.md)

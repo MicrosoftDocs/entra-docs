@@ -95,7 +95,7 @@ Licensing Error Message
 
 License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
-``` 
+```
 
 ## Usage location not specified
 

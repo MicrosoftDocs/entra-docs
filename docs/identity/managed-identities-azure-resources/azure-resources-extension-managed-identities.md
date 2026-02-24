@@ -1,14 +1,8 @@
 ---
 title: Use Azure Resources Extension in VS Code for Managed Identities
 description: Learn how to use VS Code's Azure Resources extension to manage and configure Azure managed identities directly from your development environment.
-author: SHERMANOUKO
-manager: pmwongera
 ms.date: 06/12/2024
-
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
-ms.author: shermanouko
 ms.reviewer: arluca
 ---
 

@@ -3,7 +3,6 @@ title: Migrate a classic Conditional Access policy
 description: This article shows how to migrate a classic Conditional Access policy.
 ms.topic: how-to
 ms.date: 06/11/2025
-manager: dougeby
 ms.reviewer: nigu
 ---
 # Migrate from a classic policy

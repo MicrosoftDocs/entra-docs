@@ -3,7 +3,6 @@ title: Conditional Access - Require app protection policy for Windows
 description: Create a Conditional Access policy to require app protection policy for Windows.
 ms.topic: how-to
 ms.date: 10/24/2025
-manager: dougeby
 ms.reviewer: lhuangnorth, jogro
 ms.custom: sfi-image-nochange
 ---

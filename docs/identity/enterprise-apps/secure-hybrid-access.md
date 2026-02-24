@@ -4,8 +4,6 @@ description: Find partner solutions to integrate your legacy on-premises, public
 
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/17/2023

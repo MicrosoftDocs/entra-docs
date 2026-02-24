@@ -5,7 +5,7 @@ description: This article describes the prerequisites required to integrate with
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 09/29/2025
 ms.subservice: hybrid
@@ -67,5 +67,5 @@ For more information on the Microsoft Entra Connect accounts, see [Microsoft Ent
 ## Next steps
 - [Common scenarios](common-scenarios.md)
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)

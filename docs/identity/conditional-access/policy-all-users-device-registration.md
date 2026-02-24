@@ -3,7 +3,6 @@ title: Require MFA for device registration
 description: Improve visibility and enforce more granular control over the device registration process though Conditional Access.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---

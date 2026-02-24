@@ -3,14 +3,8 @@ title: Register a passkey (FIDO2) with a FIDO2 security key
 description: User registration of a passkey (FIDO2) with a FIDO2 security key.
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/28/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management

@@ -2,7 +2,7 @@
 title: Protect Enterprise Generative AI apps with Prompt Shield (preview)
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield."
 ms.topic: how-to
-ms.date: 11/08/2025
+ms.date: 02/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -100,7 +100,7 @@ For more information, see [Create a Conditional Access policy targeting Global S
 The following sections list more details about the AI models that work with Prompt Shield.
 
 ### Top supported generative AI models
-Prompt Shield is preconfigured with custom extractors for the following models: Copilot, ChatGPT, Claude, Grok, Llama, Mistral, Cohere, Pi, and Qwen.
+Prompt Shield is preconfigured with custom extractors for the following models: ChatGPT, Claude, Cohere, Deepseek, Gemini, Grok, Meta AI, Mistral, Perplexity, Pi, and Qwen.
 
 ### Custom model support
 You can protect any custom JSON-based LLM or GenAI app by configuring a custom type model with a URL and JSON path.

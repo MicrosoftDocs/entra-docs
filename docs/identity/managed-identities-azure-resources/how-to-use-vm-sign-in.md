@@ -1,15 +1,9 @@
 ---
 title: Use managed identities on an Azure VM for sign-inV
 description: Step-by-step instructions and examples for using an Azure VM-managed identities for Azure resources service principal for script client sign-in and resource access.
-
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 01/11/2022
-ms.author: shermanouko
 
 ms.tool: azure-cli, azure-powershell
 ms.devlang: azurecli

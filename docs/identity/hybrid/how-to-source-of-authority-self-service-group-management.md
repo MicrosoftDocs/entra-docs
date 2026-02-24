@@ -7,7 +7,6 @@ ms.subservice: hybrid
 ms.topic: how-to
 ms.date: 08/01/2025
 ms.author: justinha
-manager: dougeby
 ms.reviewer: mbhargav
 ---
 

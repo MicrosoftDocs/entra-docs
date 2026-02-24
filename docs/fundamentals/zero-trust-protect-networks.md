@@ -37,8 +37,29 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Internet Access forwarding profile is enabled
 [!INCLUDE [25406](../includes/secure-recommendations/25406.md)]
 
-### Global Secure Access web content filtering is enabled and configured
+### Web content filtering policies are configured
 [!INCLUDE [25408](../includes/secure-recommendations/25408.md)]
+
+### Web content filtering uses category-based rules
+[!INCLUDE [25409](../includes/secure-recommendations/25409.md)]
+
+### Web content filtering policies are linked to security profiles
+[!INCLUDE [25410](../includes/secure-recommendations/25410.md)]
+
+### Web content filtering integrates with Conditional Access
+[!INCLUDE [25407](../includes/secure-recommendations/25407.md)]
+
+### TLS inspection is enabled and correctly configured for outbound traffic
+[!INCLUDE [25411](../includes/secure-recommendations/25411.md)]
+
+### Threat intelligence filtering protects internet traffic
+[!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
+
+### AI Gateway protects enterprise generative AI applications from prompt injection attacks
+[!INCLUDE [25415](../includes/secure-recommendations/25415.md)]
+
+### Global Secure Access cloud firewall protects branch office internet traffic
+[!INCLUDE [25416](../includes/secure-recommendations/25416.md)]
 
 ### Microsoft 365 traffic is actively flowing through Global Secure Access
 [!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
@@ -51,3 +72,39 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
+
+### Source IP restoration is enabled
+[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
+
+### Network traffic is routed through Global Secure Access for security policy enforcement
+[!INCLUDE [25381](../includes/secure-recommendations/25381.md)]
+
+### Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment
+[!INCLUDE [25382](../includes/secure-recommendations/25382.md)]
+
+### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
+[!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
+
+### Private DNS is configured for internal name resolution
+[!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
+
+### Intelligent Local Access is enabled and configured
+[!INCLUDE [25405](../includes/secure-recommendations/25405.md)]
+
+### Quick Access is enabled and bound to a connector
+[!INCLUDE [25393](../includes/secure-recommendations/25393.md)]
+
+### Quick Access is bound to a Conditional Access policy
+[!INCLUDE [25394](../includes/secure-recommendations/25394.md)]
+
+### Entra Private Access Application segments are defined to enforce least-privilege access
+[!INCLUDE [25395](../includes/secure-recommendations/25395.md)]
+
+### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
+[!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
+
+### Quick Access has user or group assignments
+[!INCLUDE [25480](../includes/secure-recommendations/25480.md)]
+
+### All Private Access apps have user or group assignments
+[!INCLUDE [25481](../includes/secure-recommendations/25481.md)]

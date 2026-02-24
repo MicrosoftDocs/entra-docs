@@ -1,13 +1,8 @@
 ---
 title: Restore a deleted Microsoft 365 group or cloud security group
 description: Learn how to restore a deleted group, view restorable groups, and permanently delete a group in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
 ms.date: 11/03/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---

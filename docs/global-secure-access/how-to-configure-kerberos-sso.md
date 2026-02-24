@@ -125,7 +125,7 @@ Run the `nltest` command.
 
 `nltest /dsgetdc:contoso /keylist /kdc`
 
-Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `klist` flag.
+Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `KEYLIST` flag.
 
 ### How to avoid Kerberos Negative Caching on Windows Machines
 Kerberos is the preferred authentication method for services in Windows that verify user or host identities. Kerberos negative caching causes a delay in Kerberos tickets.

@@ -3099,6 +3099,11 @@
       "source_path": "docs/identity/enterprise-apps/deactivate-application-portal.md",
       "redirect_url": "/entra/identity/enterprise-apps/deactivate-app-registration",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-b2b-guest-access.md",
+      "redirect_url": "/entra/global-secure-access/concept-external-user-access",
+      "redirect_document_id": true
     }
   ]
 }

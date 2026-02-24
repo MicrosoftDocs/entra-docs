@@ -25,7 +25,7 @@ The objective of this article is to demonstrate the steps to be performed in Min
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A MindTickle tenant](https://www.mindtickle.com/)
+* A MindTickle tenant.
 * A user account in MindTickle with Admin permissions.
 
 ## Assigning users to MindTickle

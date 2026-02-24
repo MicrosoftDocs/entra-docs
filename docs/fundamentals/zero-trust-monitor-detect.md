@@ -62,3 +62,12 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 
 ### All Microsoft Entra recommendations are addressed
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+### Network access activity is visible to security operations for threat detection and response
+[!INCLUDE [25419](../includes/secure-recommendations/25419.md)]
+
+### Network access logs are retained for security analysis and compliance requirements
+[!INCLUDE [25420](../includes/secure-recommendations/25420.md)]
+
+### Global Secure Access deployment logs are populated and reviewed
+[!INCLUDE [25422](../includes/secure-recommendations/25422.md)]

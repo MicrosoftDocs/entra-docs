@@ -142,8 +142,6 @@
     href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Manage lifecycle workflows using Microsoft Security Copilot
     href: ~/security-copilot/entra-lifecycle-workflows.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-  - name: Identity Governance and optimization with Microsoft Security Copilot
-    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Tutorials
   expanded: true
   items:
@@ -208,6 +206,8 @@
       href: entitlement-management-onboard.md
     - name: Visibility in My Access portal
       href: entitlement-management-access-package-visibility.md      
+    - name: Access packages for agent identities
+      href: ~/agent-id/identity-professional/agent-access-packages.md
   - name: Access reviews
     items:
     - name: What are access reviews?
@@ -405,7 +405,7 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
-        - name: Using custom trigger attributes (Preview)
+        - name: Using custom trigger attributes
           href: workflow-custom-triggers.md    
         - name: Using custom security attributes scope
           href: manage-workflow-custom-security-attribute.md    
@@ -423,7 +423,7 @@
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
-        - name: Delegated Workflow Management (Preview)
+        - name: Delegated Workflow Management
           href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md

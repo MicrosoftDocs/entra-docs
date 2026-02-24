@@ -66,7 +66,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 1. On the application settings page, Quick Access in this example, select **Users and groups**.
 1. Select **Add user/group** to assign the users who are synchronized from Active Directory in the Microsoft Entra application where you configured the domain controllers.
-1. Create a Conditional Access policy that requires multifactor authentication (MFA) for these users. To learn how to create an MFA policy, see [Building a Conditional Access policy](/entra/identity/conditional-access/concept-conditional-access-policies).
+1. [Create a Conditional Access policy that requires phishing-resistant authentication](/entra/identity/conditional-access/policy-all-users-mfa-strength) for these users.
 
 ### 4. Enable the Private Access profile
 
