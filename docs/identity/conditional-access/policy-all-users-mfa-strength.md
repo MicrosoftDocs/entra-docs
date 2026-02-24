@@ -3,7 +3,6 @@ title: Require MFA for all users with Conditional Access
 description: Create a custom Conditional Access policy to require all users do multifactor authentication.
 ms.topic: how-to
 ms.date: 04/01/2025
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for all users

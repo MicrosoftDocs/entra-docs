@@ -1,13 +1,8 @@
 ---
-title: Download a list of groups
-description: Download group properties in bulk in the Microsoft Entra admin center.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
+title: Download a list of groups in the Azure portal
+description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID.
 ms.date: 12/05/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---

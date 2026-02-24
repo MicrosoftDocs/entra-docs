@@ -4,12 +4,11 @@ description: Extend the SSO experience by configuring Microsoft Entra hybrid joi
 
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices

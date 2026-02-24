@@ -1,14 +1,8 @@
 ---
 title: Group expiration policy quickstart
 description: Expiration for Microsoft 365 groups
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management

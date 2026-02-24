@@ -1,13 +1,8 @@
 ---
 title: Bulk restore deleted users in the Azure portal
 description: Restore deleted users in bulk in the Azure portal in Microsoft Entra ID
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
 ms.date: 12/05/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-image-nochange
 ms.reviewer: jeffsta
 ---

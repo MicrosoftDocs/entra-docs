@@ -3,7 +3,6 @@ title: The Conditional Access What If tool
 description: Simulate Conditional Access policy results with the What If tool to troubleshoot and optimize your environment.
 ms.topic: troubleshooting-general
 ms.date: 11/06/2025
-manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---

@@ -159,8 +159,9 @@ However, if this isn't possible, the following in-place OS upgrades are supporte
 
 |Initial OS|Supported in-place upgrade OS|
 |-----|-----|
-|Windows Server 2016|Windows Server 2022|
-|Windows Server 2019|Windows Server 2022|
+|Windows Server 2016|Windows Server 2025|
+|Windows Server 2019|Windows Server 2025|
+|Windows Server 2022|Windows Server 2025|
 
 ## Troubleshooting
 The following section contains troubleshooting and information that you can use if you encounter an issue upgrading Microsoft Entra Connect.

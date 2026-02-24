@@ -1,7 +1,6 @@
 ---
 title: Conditional Access - Block access by location
 description: Create a custom Conditional Access policy to block access to resources by IP location.
-manager: dougeby
 ms.reviewer: lhuangnorth
 ms.date: 04/01/2025
 ms.topic: how-to

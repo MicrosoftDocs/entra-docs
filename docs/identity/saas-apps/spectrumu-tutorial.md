@@ -107,7 +107,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure SpectrumU SSO
 
-To configure single sign-on on **SpectrumU** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [SpectrumU support team](https://enterprise.spectrum.com/support.html). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **SpectrumU** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to SpectrumU support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create SpectrumU test user
 

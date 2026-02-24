@@ -5,7 +5,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/08/2023
 ms.author: jricketts
 

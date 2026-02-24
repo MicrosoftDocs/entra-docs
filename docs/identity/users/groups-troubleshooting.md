@@ -1,14 +1,8 @@
 ---
 title: Fix problems with dynamic membership groups
 description: Troubleshooting tips for dynamic membership groups in Microsoft Entra ID
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: troubleshooting
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
