@@ -102,3 +102,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
 [!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
+
+### Quick Access has user or group assignments
+[!INCLUDE [25480](../includes/secure-recommendations/25480.md)]
+
+### All Private Access apps have user or group assignments
+[!INCLUDE [25481](../includes/secure-recommendations/25481.md)]

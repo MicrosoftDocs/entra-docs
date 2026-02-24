@@ -1,5 +1,5 @@
 ---
-title: Delegated Workflow Management (Preview)
+title: Delegated Workflow Management 
 description: This article informs a user about delegating management of workflows using Lifecycle workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to 
@@ -9,7 +9,7 @@ ms.date: 07/31/2025
 ---
 
 
-# Delegated workflow management (preview)
+# Delegated workflow management
 
 Workflows by default, unless specified during creation, are managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows grow and change to meet the needs of members of your organization, so does the need to limit who can manage them. With delegated workflow management, you can scope management of workflows using [Administrative Units](../identity/role-based-access-control/administrative-units.md). When scoped, specific admins are only granted access to manage specific workflows. Scoping allows for greater security within your environment by following Microsoft's least privileged access guidelines by only giving access to specifically what's needed.
 
@@ -90,7 +90,7 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. On the workflow overview page, select **Administration Scope**.
     > [!TIP]
-    > You can also select the **Administration scope (Preview)** card on the overview page to get to the administration scope page.
+    > You can also select the **Administration scope** card on the overview page to get to the administration scope page.
 1. On the administration scope page, select **Assign Administration scope**.
 
 1. From the administration scope pane, you can see the list of all administrative units in your tenant. 
