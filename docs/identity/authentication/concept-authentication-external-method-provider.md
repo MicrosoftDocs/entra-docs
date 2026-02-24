@@ -3,8 +3,8 @@ title: Microsoft Entra External MFA Method Provider Reference
 description: Learn how to configure an external MFA method provider for Microsoft Entra multifactor authentication.
 ms.topic: how-to
 ms.date: 02/23/2026
-author: gregkmsft
-ms.reviewer: gkinasewitz, gustavosa
+author: aloom3
+ms.reviewer: akulloomba
 ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external MFA method for tenants.
 ---
