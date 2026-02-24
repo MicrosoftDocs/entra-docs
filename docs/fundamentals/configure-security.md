@@ -138,6 +138,8 @@ Protect your network perimeter.
 | [Quick Access is bound to a Conditional Access policy](zero-trust-protect-networks.md#quick-access-is-bound-to-a-conditional-access-policy) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Entra Private Access Application segments are defined to enforce least-privilege access](zero-trust-protect-networks.md#entra-private-access-application-segments-are-defined-to-enforce-least-privilege-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access](zero-trust-protect-networks.md#domain-controller-rdp-access-is-protected-by-phishing-resistant-authentication-through-global-secure-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Protect engineering systems
 
@@ -181,6 +183,9 @@ Collect and analyze security logs and triage alerts.
 | [ID Protection notifications are enabled](zero-trust-monitor-detect.md#id-protection-notifications-are-enabled) | Microsoft Entra ID P2 |
 | [No legacy authentication sign-in activity](zero-trust-monitor-detect.md#no-legacy-authentication-sign-in-activity) | Microsoft Entra ID P1 |
 | [All Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#all-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
+| [Network access activity is visible to security operations for threat detection and response](zero-trust-monitor-detect.md#network-access-activity-is-visible-to-security-operations-for-threat-detection-and-response) | Microsoft Entra ID P1 |
+| [Network access logs are retained for security analysis and compliance requirements](zero-trust-monitor-detect.md#network-access-logs-are-retained-for-security-analysis-and-compliance-requirements) | Microsoft Entra ID P1 |
+| [Global Secure Access deployment logs are populated and reviewed](zero-trust-monitor-detect.md#global-secure-access-deployment-logs-are-populated-and-reviewed) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 
 ## Accelerate response and remediation
 

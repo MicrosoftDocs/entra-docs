@@ -2,7 +2,7 @@
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
 ms.topic: troubleshooting
-ms.date: 10/17/2025
+ms.date: 02/24/2026
 ms.reviewer: ashishj,dhruvinshah
 ai-usage: ai-assisted
 ---
@@ -229,7 +229,7 @@ Yes. To provide the best-in-class encryption to our customers, the application p
     
 **Can I place a forward proxy device between the connector server(s) and the back-end application server?**
 
-This scenario is supported starting from the connector version 1.5.1526.0 for Microsoft Entra application proxy, but isn't supported for Microsoft Entra Private Access. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md) for information about this support for App Proxy.
+This scenario is supported for both Microsoft Entra application proxy and Microsoft Entra Private Access. For application proxy, support starts from connector version 1.5.1526.0. For Private Access, support starts from connector version 1.5.3890.0. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md) for configuration details.
     
 **Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 
