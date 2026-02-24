@@ -1,7 +1,7 @@
 ---
 title: Bulk delete users in Microsoft Entra ID
 description: Delete users in bulk in Microsoft Entra ID
-ms.date: 12/05/2025
+ms.date: 02/24/2026
 ms.topic: how-to
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
