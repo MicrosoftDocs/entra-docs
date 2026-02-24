@@ -10,7 +10,7 @@ ms.date: 10/29/2025
 
 
 
-# Use Custom attribute triggers in lifecycle workflows (Preview)
+# Use Custom attribute triggers in lifecycle workflows
 
 Lifecycle Workflows allows you to trigger workflows to run automatically for users that meet the execution conditions of the workflow. There are many default attributes that you can use to trigger workflows, but sometimes you might require triggering a workflow based on a specific attribute not offered by default. Using custom attribute triggers, you can trigger a workflow to run for users based on when they move within your organization based on:
 
