@@ -1,5 +1,5 @@
 ---
-title: Delegated Workflow Management (Preview)
+title: Delegated Workflow Management 
 description: This article informs a user about delegating management of workflows using Lifecycle workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to 
