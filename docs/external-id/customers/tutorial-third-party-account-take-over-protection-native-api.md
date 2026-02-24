@@ -166,10 +166,10 @@ This tutorial uses a Cloudflare WAF. The Cloudflare WAF setup instructions are p
 
 1. After the worker is deployed, select the **Settings** tab. Select **+Add** in **Domains & Routes**.
 
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes-settings.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes-settings.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png" alt-text="Screenshot of the Settings tab with Domains & Routes section and a visible +Add link for adding routes." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png":::
 
 1. Select **Route**.
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/worker-domains-routes.png":::
+    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes.png" alt-text="Screenshot of Domains & Routes settings with Custom domain and Route options for mapping a Worker endpoint." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-domains-routes.png":::
 
 1. Select the domain from **Zone**. Add the following value in the **Route** field:
 
@@ -217,22 +217,22 @@ The following flow uses the WAF as the layer to evaluate the risk for the /token
 
 ### Logical flow to initiate MFA
 
-1. Invoke /token with the auth context defined for the MFA flow.
+1. Invoke `/token` with the auth context defined for the MFA flow.
 
-1. The /initiate endpoint continues to use a CredentialToken as state object for the first factor authentication flow.
+1. The `/initiate` endpoint continues to use a `CredentialToken` as state object for the first factor authentication flow.
 
-1. The /challenge endpoint continues to use a CredentialToken as state object for the first factor authentication flow.
+1. The `/challenge` endpoint continues to use a `CredentialToken` as state object for the first factor authentication flow.
+1. 
+1. On `/token`, risk is evaluated in WAF layer. If the WAF layer decides to review the request with a challenge, a new `/token` call is made with the `AuthContext` configured for the MFA flow ("c3" in this example).
 
-1. On /token, risk is evaluated in WAF layer. If the WAF layer decides to review the request with a challenge, a new /token call is made with the AuthContext configured for the MFA flow ("c3" in this example).
+1. The `/introspect` endpoint reads methods from `CredentialVerificationInputState` and returns them to the user.
 
-1. The /introspect endpoint reads methods from CredentialVerificationInputState and returns them to the user.
+1. The `/challenge` endpoint picks the strong auth method used for challenging, by reading the strong auth methods from `CredentialVerificationInputState` and comparing them against the request's challenge_types. When a method is selected and passed to EC UCV for challenge operation, the ID and type of the selected method are written to `CredentialVerificationIntermediateState`.
 
-1. The /challenge endpoint picks the strong auth method used for challenging, by reading the strong auth methods from CredentialVerificationInputState and comparing them against the request's challenge_types. When a method is selected and passed to EC UCV for challenge operation, the ID and type of the selected method are written to CredentialVerificationIntermediateState.
-
-1. The /token endpoint reads the strong auth method ID and type from CredentialVerificationIntermediateState, and passes this to EC UCV verify operation, along with the oob value from the request. When EC UCV returns successfully, the /token handler pops and merges CredentialVerificationIntermediateState onto CredentialToken. By doing so, the FlowToken in StsRequest is updated with MFA details. StsRequest runs through the pipeline to complete the authentication flow.
+1. The `/token` endpoint reads the strong auth method ID and type from `CredentialVerificationIntermediateState`, and passes this to EC UCV verify operation, along with the oob value from the request. When EC UCV returns successfully, the `/token` handler pops and merges `CredentialVerificationIntermediateState` onto `CredentialToken`. By doing so, the FlowToken in `StsRequest` is updated with MFA details. `StsRequest` runs through the pipeline to complete the authentication flow.
 
 > [!TIP]
-> Your native app must be prepared to handle the MFA flow when triggered. Ensure your app can call the /introspect endpoint, handle the /challenge for email OTP, and submit the OTP value in the final /token call.
+> Your native app must be prepared to handle the MFA flow when triggered. Ensure your app can call the `/introspect` endpoint, handle the `/challenge` for email OTP, and submit the OTP value in the final `/token` call.
 
 ## Next steps
 
@@ -246,110 +246,3 @@ Now that you've integrated ATO protection with native authentication, explore th
 - [Configure custom domains for external tenants](how-to-custom-url-domain.md)
 - [Enable Microsoft Entra multifactor authentication](/entra/identity/authentication/tutorial-enable-azure-mfa)
 - [Configure Cloudflare WAF with Microsoft Entra External ID](how-to-configure-waf-integration.md)
-
-## Appendix
-
-### POST /{tenant}/oauth2/v2.0/introspect
-
-This endpoint returns the list of registered strong-auth methods of the user. Currently, only email OTP is supported as a strong-auth method. Even if a user has multiple registered strong-auth methods, the endpoint only returns "email". The endpoint is included at this stage to help developers build it into their flow so they're familiar with it when more methods are supported.
-
-#### Request
-
-| Property | Required | Type | Description |
-|---|---|---|---|
-| client_id | Yes | string | The client ID. |
-| continuation_token | Yes | string | The opaque transport artifact. |
-
-#### Response
-
-| Property | Type | Description |
-|---|---|---|
-| continuation_token | string | Opaque state transport artifact the caller should save to send in the next request. |
-| methods | Array\<AuthenticationMethod\> | The list of registered strong authentication methods. |
-
-Type: AuthenticationMethod
-
-| Property | Type | Description |
-|---|---|---|
-| id | string | Key of the method. This is an autogenerated ID and should be used when calling the challenge endpoint. |
-| challenge_type | string | The challenge type of the method. Current supported types: oob. |
-| challenge_channel | string | The channel to which the auth method should be sent. Current supported channels: email. |
-| login_hint | string | The hint for the authentication method. Currently only email is supported, and this is the obfuscated user email. |
-
-#### Error responses
-
-The following errors are common between other endpoints within the Native Authentication APIs and also apply to this API.
-
-There are no unique errors specific to this API.
-
-| Scenario | Error \| Status code | Message |
-|---|---|---|
-| The continuation token is expired. | expired_token \| 400 | The continuation token is expired. |
-| The caller did not pass in the correct parameters. | invalid_request \| 400 | The request body must contain the following parameter: '{name}'. |
-| The caller passed in an incorrect parameter. | invalid_request \| 400 | {name} parameter is empty or not valid. |
-| The caller passed in an incorrect parameter value. | invalid_request \| 400 | Invalid request. The {name} request parameter value '{value}' is invalid. |
-| The continuation token is in an invalid state. | invalid_request \| 400 | The continuation_token provided is not valid for this endpoint. |
-| Something went wrong with the request. | server_error \| 500 | Non-retryable error has occurred. |
-| eSTS throttles the request. | temporarily_unavailable \| 429 | The server has terminated the request due to excessive request rate. Please wait a few seconds and try again. |
-
-### Modifications to existing APIs
-
-There are no changes to the initiate endpoint.
-
-#### Challenge endpoint
-
-`POST /{tenant}/oauth2/v2.0/challenge`
-
-**Existing responsibility:**
-
-- The /challenge endpoint sends the OTP to the user's email when the user uses email OTP as the first factor authentication. This functionality remains unchanged.
-- The /challenge endpoint can resend the OTP to the user's strong-auth method (email). This is existing functionality for the first factor and is reused as is.
-
-**Additional responsibility:**
-
-- The challenge endpoint is now also responsible for sending the OTP to the user's email when the user uses email OTP as the second factor authentication method.
-
-#### Request
-
-| Property | Required | Type | Description | Changes |
-|---|---|---|---|---|
-| client_id | Yes | string | The client ID. | No changes |
-| continuation_token | Yes | string | The opaque transport artifact. | No changes |
-| id | Yes | String | The ID of the auth method returned in the introspect response. | New parameter. This presents the ID of the auth method returned in the introspect API. |
-
-#### Response
-
-No changes in current response implementation.
-
-#### Error responses
-
-The same error response for an invalid parameter is used when `id` contains invalid values:
-
-| The caller passed in an incorrect parameter. | invalid_request \| 400 | {name} parameter is empty or not valid. |
-|---|---|---|
-
-
-#### Token endpoint
-
-`POST /{tenant}/oauth2/token`
-
-**Existing responsibility:**
-
-- The /token endpoint verifies the user's first factor authentication and, if successful, returns an access token.
-
-**Additional responsibility:**
-
-- The /token endpoint is now also responsible for verifying the user's second factor authentication, in this case the email OTP value.
-
-#### Request
-
-| Property | Required | Type | Description | Changes |
-|---|---|---|---|---|
-| grant_type | Yes | String | The grant type of the request. Currently can be "oob" or "password". | When making a second factor request to /token, grant type "mfa_oob" should be used. |
-
-#### Error responses
-
-New error response:
-
-| The user needs to perform second factor authentication. | error: invalid_grant \| 400 suberror: mfa_required | Strong Authentication is required. |
-|---|---|---|

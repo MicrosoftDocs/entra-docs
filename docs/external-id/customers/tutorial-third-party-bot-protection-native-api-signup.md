@@ -148,15 +148,15 @@ The standard sign-up flow using Native API endpoints is described in the [Native
 
 ### Sign-up flow with bot protection
 
-When the WAF intercepts a /start request and determines it's from a bot, it can either block the request entirely or present a challenge. The flow works as follows:
+When the WAF intercepts a `/start` request and determines it's from a bot, it can either block the request entirely or present a challenge. The flow works as follows:
 
-1. **App initiates sign-up:** The native app calls the /start endpoint to begin the sign-up flow.
+1. **App initiates sign-up:** The native app calls the `/start` endpoint to begin the sign-up flow.
 1. **WAF intercepts request:** The WAF receives the request and extracts device and behavioral signals.
 1. **Bot detection evaluation:** The WAF sends the signals to the bot protection provider for analysis.
 1. **Decision point:**
-   - If legitimate: Request is forwarded to Microsoft Entra /start endpoint.
+   - If legitimate: Request is forwarded to Microsoft Entra `/start` endpoint.
    - If suspicious: Request is blocked or challenged based on your configuration.
-1. **Sign-up continues:** If allowed, the standard sign-up flow proceeds with /challenge, /continue, and other endpoints.
+1. **Sign-up continues:** If allowed, the standard sign-up flow proceeds with `/challenge`, `/continue`, and other endpoints.
 
 > [!TIP]
 > To enhance bot detection accuracy, integrate your provider's SDK into your native app to collect device fingerprinting and behavioral signals. Pass these signals to the WAF through custom headers or request parameters.
