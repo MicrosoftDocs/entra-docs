@@ -12,10 +12,6 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 External multifactor authentication (MFA), previously known as external authentication methods, lets users choose an external provider to meet MFA requirements when they sign in with a work or school account. Microsoft Entra ID continues to handle full policy evaluation and access decisions as the identity control plane. 
 
-Here is a diagram of how external authentication method works:
-
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external MFA works.":::
-
 ## Required metadata to configure external MFA
 To configure external MFA, you need the following information from your external authentication provider:
 
@@ -70,7 +66,7 @@ If the application has permissions, then you can also enable the method before s
 Once the method is enabled, all users in scope can choose the method for any MFA prompts. If the application from the provider doesn't have consent approved, then any sign-in with the method fails.
 
 If the application is deleted or no longer has permission, users see an error and sign-in fails. The method can't be used.
-<!---screenshot of error--->
+
 
 ### Manage external MFA in the admin center
 
