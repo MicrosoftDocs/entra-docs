@@ -129,7 +129,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
 1. From the menu on the left, select the **Settings** menu. Under **Security**, select **Single Sign-On for Manager Portal**.
    
-     ![Configure single sign-on](./media/everbridge-tutorial/sso_settings.png)
+     ![Configure single sign-on](./media/everbridge-tutorial/sso-settings.png)
    
      a. In the **Name** box, enter the name of this setting. An example is your company name.
    
