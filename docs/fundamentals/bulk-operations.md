@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: article
-ms.date: 12/06/2025
+ms.date: 02/24/2026
 ms.author: barclayn
 ms.custom: it-pro
 ---
@@ -16,7 +16,7 @@ ms.custom: it-pro
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations.
+> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations. The new bulk operations service doesn't support exporting hidden memberships.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
