@@ -54,7 +54,7 @@ Governance guest billing only applies for users with a userType of **guest**, so
 
 If these users are brought in with a userType of **guest** they accrue to the meter, however you can avoid being charged by setting up
 or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest won't accrue to the
-billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide).
+billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide&preserve-view=true).
 
 ## Billing examples
 

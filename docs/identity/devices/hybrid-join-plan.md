@@ -4,12 +4,11 @@ description: Explains the steps that are required to implement Microsoft Entra h
 
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 

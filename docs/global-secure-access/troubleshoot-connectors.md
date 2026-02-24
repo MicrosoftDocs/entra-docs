@@ -22,7 +22,7 @@ When the installation of a connector fails, the root cause is usually one of the
 > [!NOTE]
 > The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
 
-## Use the Connector Diagnostics tool to identity connector installation and network problems
+## Use the Connector Diagnostics tool to identify connector installation and network problems
 
 The connector diagnostics tool is an exe command-line application that is included in the connector package. This tool is designed to diagnose common connector setup and runtime errors to identify installation or network problems. Currently, the tool supports the following checks:
 

@@ -49,10 +49,10 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Clarizen One to support provisioning with Microsoft Entra ID
 
 1. Select one of the four following Tenant URLs according to your Clarizen One environment and data center:
-      * US Production data center: https://servicesapp2.clarizen.com/scim/v2
-      * EU Production data center: https://serviceseu1.clarizen.com/scim/v2
-      * US Sandbox data center: https://servicesapp.clarizentb.com/scim/v2
-      * EU Sandbox data center: https://serviceseu.clarizentb.com/scim/v2
+      * US Production data center: `https://servicesapp2.clarizen.com/scim/v2`
+      * EU Production data center: `https://serviceseu1.clarizen.com/scim/v2`
+      * US Sandbox data center: `https://servicesapp.clarizentb.com/scim/v2`
+      * EU Sandbox data center: `https://serviceseu.clarizentb.com/scim/v2`
 
 1. Generate an [API key](https://success.clarizen.com/hc/articles/360011833079-API-Keys-Support). This value is entered in the **Secret Token** box on the **Provisioning** tab of your Clarizen One application.
 

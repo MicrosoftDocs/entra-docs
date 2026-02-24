@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<servername>.sapbydesign.com`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [SAP Business ByDesign Client support team](https://www.sap.com/products/cloud-analytics.support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact SAP Business ByDesign Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. The SAP Business ByDesign application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
@@ -160,7 +160,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create SAP Business ByDesign test user
 
-In this section, you create a user called Britta Simon in SAP Business ByDesign. Please work with [SAP Business ByDesign Client support team](https://www.sap.com/products/cloud-analytics.support.html) to add the users in the SAP Business ByDesign platform. 
+In this section, you create a user called Britta Simon in SAP Business ByDesign. Please work with SAP Business ByDesign Client support team to add the users in the SAP Business ByDesign platform. 
 
 > [!NOTE]
 > Please make sure that NameID value should match with the username field in the SAP Business ByDesign platform.

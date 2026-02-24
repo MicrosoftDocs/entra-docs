@@ -80,7 +80,7 @@ Write-Host "User data exported to $outputCsvPath"
 
 ### Create users 
 
-```azurepowershell 
+```azurepowershell
 # Import the Microsoft Graph module 
 Import-Module Microsoft.Graph 
 
@@ -260,7 +260,7 @@ Disconnect-MgGraph
  
 ### Remove members in bulk 
 
-```azurepowershell 
+```azurepowershell
 Import-Module Microsoft.Graph.Groups 
 
  # Authenticate to Microsoft Graph (you may need to provide your credentials) 

@@ -1,13 +1,8 @@
 ---
 title: Bulk create users in the Azure portal
 description: Add users in bulk in Microsoft Entra ID
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.date: 12/05/2025
+ms.date: 12/19/2024
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---

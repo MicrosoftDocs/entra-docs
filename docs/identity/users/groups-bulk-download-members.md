@@ -1,14 +1,8 @@
 ---
-title: Bulk download group membership list
-description: Download all members of a group to a CSV file from the Microsoft Entra admin center.
-
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.date: 12/05/2025
+title: Bulk download group membership list - Azure portal
+description: Add users in bulk in the Azure admin center.
+ms.date: 12/19/2024
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro
 ms.reviewer: yuan.karppanen
 ---

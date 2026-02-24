@@ -9,7 +9,6 @@ ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command

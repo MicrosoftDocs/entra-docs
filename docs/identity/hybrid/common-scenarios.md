@@ -5,7 +5,7 @@ description: This article describes the common scenarios for using Microsoft Ent
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
@@ -81,6 +81,6 @@ For additional information, see [Choose the right authentication method for your
 
 ## Next steps
 - [Tools for synchronization](sync-tools.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)
 - [Prerequisites](prerequisites.md)

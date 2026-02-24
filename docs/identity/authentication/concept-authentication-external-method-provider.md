@@ -1,22 +1,17 @@
 ---
-title: Microsoft Entra MFA External Method Provider Reference (Preview)
-description: Learn how to configure an external authentication method provider for Microsoft Entra multifactor authentication.
+title: Microsoft Entra External MFA Method Provider Reference
+description: Learn how to configure an external MFA method provider for Microsoft Entra multifactor authentication.
 ms.topic: how-to
-ms.date: 04/17/2025
+ms.date: 02/23/2026
 author: gregkmsft
 ms.reviewer: gkinasewitz, gustavosa
 ms.custom: sfi-ropc-blocked
-# Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method for tenants.
+# Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external MFA method for tenants.
 ---
 
-# Use Microsoft Entra MFA with an external provider (preview)
+# Use Microsoft Entra MFA with an external MFA provider
 
-This article describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA).
-
-> [!IMPORTANT]
-> The use of an external authentication provider is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
->
-> With this preview, you can use an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method. An external authentication method can satisfy the second factor of an MFA requirement for access to a resource or application. External authentication methods require at least a Microsoft Entra ID P1 license.
+This article describes how an external multifactor authentication (MFA) provider connects to Microsoft Entra MFA.
 
 When a user signs in, the tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access.
 
@@ -24,10 +19,10 @@ Multiple policies might apply to the sign-in, depending on their parameters. Tho
 
 Based on the authentication requirements, the user might need to sign in with another factor to meet the MFA requirement. The type of the second factor needs to complement the type of first factor.
 
-The tenant admin adds external authentication methods to Microsoft Entra ID. If a tenant requires an external authentication method for MFA, the sign-in is considered to meet the MFA requirement after Microsoft Entra ID validates both:
+The tenant admin adds external MFA methods to Microsoft Entra ID. If a tenant requires an external MFA method for MFA, the sign-in is considered to meet the Microsoft Entra MFA requirement after Microsoft Entra ID validates both:
 
 - The first factor completed with Microsoft Entra ID.
-- The second factor completed with the external authentication method.
+- The second factor completed with the external MFA method.
 
 That validation meets the MFA requirement for two or more types of methods:
 
@@ -35,45 +30,45 @@ That validation meets the MFA requirement for two or more types of methods:
 - Something you have (possession)
 - Something you are (inherence)
 
-External authentication methods are implemented on top of OpenID Connect (OIDC). This implementation requires at least three publicly facing endpoints to implement an external authentication method:
+External MFA methods are implemented on top of OpenID Connect (OIDC). This implementation requires at least three publicly facing endpoints to implement an external MFA method:
 
 - An OIDC Discovery endpoint, as described in [Discovery of provider metadata](#discovery-of-provider-metadata)
 - A valid OIDC authentication endpoint
 - A URL where the public certificates of the provider are published
 
-Here's how sign-in works with an external authentication method:
+Here's how sign-in works with an external MFA method:
 
 1. A user tries to sign in with a first factor, like a password, to an application protected by Microsoft Entra ID.
 
 1. Microsoft Entra ID determines that another factor needs to be satisfied (for example, if a Conditional Access policy requires MFA).
 
-1. The user chooses the external authentication method as a second factor.
+1. The user chooses the external MFA method as a second factor.
 
-1. Microsoft Entra ID redirects the user's browser session to the URL of the external authentication method.
+1. Microsoft Entra ID redirects the user's browser session to the URL of the external MFA method.
 
-   This URL is discovered from the discovery URL that an admin provisioned when they created the external authentication method.
+   This URL is discovered from the discovery URL that an admin provisioned when they created the external MFA method.
 
    The application provides an expired or nearly expired token that contains information to identify the user and tenant.
 
-1. The external authentication provider validates that the token came from Microsoft Entra ID, and checks the contents of the token.
+1. The external MFA provider validates that the token came from Microsoft Entra ID, and checks the contents of the token.
 
-1. The external authentication provider might make a call to Microsoft Graph to fetch additional information about the user.
+1. The external MFA provider might make a call to Microsoft Graph to fetch additional information about the user.
 
-1. The external authentication provider performs any actions it deems necessary, such as authenticating the user with a credential.
+1. The external MFA provider performs any actions it deems necessary, such as authenticating the user with a credential.
 
-1. The external authentication provider redirects the user back to Microsoft Entra ID with a valid token, including all the required claims.
+1. The external MFA provider redirects the user back to Microsoft Entra ID with a valid token, including all the required claims.
 
-1. Microsoft Entra ID validates that the token's signature came from the configured external authentication provider, and then checks the contents of the token.
+1. Microsoft Entra ID validates that the token's signature came from the configured external MFA provider, and then checks the contents of the token.
 
 1. Microsoft Entra ID validates the token against the requirements.
 
 1. If the validation succeeds, that means that the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
 
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how an external authentication method works.":::
+:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how external MFA works.":::
 
-## <a name = "configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external authentication provider with Microsoft Entra ID
+## <a name = "configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external MFA provider with Microsoft Entra ID
 
-To issue `id_token_hint`, external authentication methods need an application that represents the integration. You can create the application in two ways:
+To issue `id_token_hint`, external MFA methods need an application that represents the integration. You can create the application in two ways:
 
 - In each tenant that uses the external provider.
 - As one multitenant application. To enable the integration for their tenant, privileged role administrators need to grant consent.
@@ -106,7 +101,7 @@ The application registration process creates an application with several propert
 Another valid model for supporting integration is to use an application for each tenant. If you use a single-tenant registration, the tenant admin needs to create an application registration with the properties in the preceding table for a single-tenant application.
 
 > [!NOTE]
-> You need admin consent for the application in the tenant that uses the external authentication method. If you don't grant consent, the following error appears when an admin tries to use the external authentication method:
+> You need admin consent for the application in the tenant that uses the external MFA method. If you don't grant consent, the following error appears when an admin tries to use the external MFA method:
 > "AADSTS900491: Service principal \<your App ID> not found."
 
 ### Configure optional claims
@@ -116,7 +111,7 @@ A provider can configure more claims by using [optional claims for `id_token`](/
 > [!NOTE]
 > Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multitenant application is used for global Azure and Azure for US Government, each cloud environment requires a different application and application ID.
 
-## <a name = "add-an-eam-to-microsoft-entra-id"></a> Adding an external authentication method to Microsoft Entra ID
+## <a name = "add-an-eam-to-microsoft-entra-id"></a> Adding an external MFA method to Microsoft Entra ID
 
 External identity provider information is stored in the authentication methods policy of each tenant. The provider information is stored as an authentication method of the type `externalAuthenticationMethodConfiguration`.
 
@@ -126,9 +121,9 @@ Each provider has one entry in the list object of the policy. Each entry needs t
 - The included groups that can use the method.
 - The excluded groups that can't use the method.
 
-To set the MFA requirement for user sign-in, users with the Conditional Access Administrator role can create a policy with the Require MFA grant. External authentication methods aren't currently supported with authentication strengths.
+To set the MFA requirement for user sign-in, users with the Conditional Access Administrator role can create a policy with the Require MFA grant. External MFA methods aren't currently supported with authentication strengths.
 
-Learn more about [how to add an external authentication method](how-to-authentication-external-method-manage.md) in the Microsoft Entra admin center.
+Learn more about [how to add an external MFA method](how-to-authentication-external-method-manage.md) in the Microsoft Entra admin center.
 
 ## Microsoft Entra ID interaction with provider
 
@@ -138,7 +133,7 @@ The next sections explain provider requirements and include examples for how Mic
 
 An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data.
 
-The discovery URL *must* use the `https` scheme and *must* end with `/.well-known/openid-configuration`. You can't include any additional path segments, query strings, or fragments after this segment. The full discovery URL must be included in the discovery URL that you configure when you create the external authentication method.
+The discovery URL *must* use the `https` scheme and *must* end with `/.well-known/openid-configuration`. You can't include any additional path segments, query strings, or fragments after this segment. The full discovery URL must be included in the discovery URL that you configure when you create the external MFA method.
 
 The endpoint returns a provider metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return a valid content-length header. The metadata document *must* comply with [OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html) (incorporating errata set 2) and include all required OIDC metadata fields.
 
@@ -277,7 +272,7 @@ The authentication request parameters are listed in the following table.
 | `scope`                          | `openid` |             |
 | `response_type`                  | `Id_token` |The value used for the implicit flow. |
 | `response_mode`                  | `form_post` | We use the form `POST` to avoid issues with large URLs. We expect all the parameters to be sent in the body of the request. |
-| `client_id`                      |        | The client ID given to Microsoft Entra ID by the external identity provider, such as `ABCD`. For more information, see [External authentication method description](#add-an-eam-to-microsoft-entra-id). |
+| `client_id`                      |        | The client ID given to Microsoft Entra ID by the external identity provider, such as `ABCD`. For more information, see [External MFA method description](#add-an-eam-to-microsoft-entra-id). |
 | `redirect_uri`                   |        | The redirect Uniform Resource Identifier (URI) to which the external identity provider sends the response (`id_token_hint`). See an [example](#example-of-a-redirection-uri) after this table. |
 | `nonce` |               | A random string generated by Microsoft Entra ID. It can be the session ID. If provided, it needs to be returned in the response back to Microsoft Entra ID. |
 | `state` |               | If passed in, the provider should return `state` in its response. Microsoft Entra ID uses `state` to keep context about the call. |
@@ -296,9 +291,9 @@ The redirect URIs should be registered with the provider off-band. The redirect 
 - Azure for US Government: `https://login.microsoftonline.us/common/federation/externalauthprovider`
 - Microsoft Azure operated by 21Vianet: `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
 
-#### <a name = "example-of-an-eam-that-satisfies-mfa"></a> Example of an external authentication method that satisfies MFA
+#### <a name = "example-of-an-eam-that-satisfies-mfa"></a> Example of an external MFA method that satisfies MFA
 
-Here's an example where an external authentication method satisfies MFA requirements. This example helps a provider know what claims Microsoft Entra ID expects.  
+Here's an example of where an external MFA method satisfies MFA requirements. This example helps a provider know what claims Microsoft Entra ID expects.  
 
 Microsoft Entra ID uses the combination of the `acr` and `amr` values to validate that:
 
@@ -513,22 +508,22 @@ For example:
 
 `Timestamp: 2023-07-24 16:51:34Z`
 
-## Custom controls and external authentication methods
+## Custom controls and external MFA methods
 
-In Microsoft Entra ID, external authentication methods and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to external authentication methods.
+In Microsoft Entra ID, external MFA methods and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to external MFA methods.
 
 Customers who currently use an integration with an external provider by using custom controls can continue to use them, and any Conditional Access policies they configured to manage access. We recommend that admins create a parallel set of Conditional Access policies during the migration period:
 
 - The policies should use the **Require multifactor authentication** grant control instead of the custom control grant.  
 
   > [!NOTE]
-  > Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**.
+  > Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the external MFA method. Policies should only be configured with **Require multifactor authentication**.
 
-- The new policy can be tested first with a subset of users. The test group is excluded from the policy that requires custom controls, and included in the policy that requires MFA. When the admin is comfortable that the policy that requires MFA is satisfied by the external authentication method, the admin can include all required users in the policy with the MFA grant. The policy configured for custom controls can be moved to the **Off** setting.
+- The new policy can be tested first with a subset of users. The test group is excluded from the policy that requires custom controls, and included in the policy that requires MFA. When the admin is comfortable that the policy that requires MFA is satisfied by the external MFA method, the admin can include all required users in the policy with the MFA grant. The policy configured for custom controls can be moved to the **Off** setting.
 
 ## Integration support
 
-If you have any issues when you build external authentication method integration with Microsoft Entra ID, the Microsoft Customer Experience Engineering (CxE) Independent Solution Vendor (ISV) might be able to assist. To engage with the CxE ISV team, submit a [request for assistance](https://aka.ms/EAMProviderSupport).
+If you have any issues when you build external MFA method integration with Microsoft Entra ID, the Microsoft Customer Experience Engineering (CxE) Independent Solution Vendor (ISV) might be able to assist. To engage with the CxE ISV team, submit a [request for assistance](https://aka.ms/EAMProviderSupport).
 
 ## References
 
@@ -539,10 +534,10 @@ If you have any issues when you build external authentication method integration
 | Term | Description |
 |-----|------------|
 | MFA  | Multifactor authentication. |
-| External authentication method | An authentication method from a provider other than Microsoft Entra ID that is used as part of authenticating a user. |
+| External MFA method | An authentication method from a provider other than Microsoft Entra ID that is used as part of authenticating a user. |
 | OIDC | OpenID Connect is an authentication protocol based on OAuth 2.0. |
-| `00001111-aaaa-2222-bbbb-3333cccc4444` | An example of an `appid` value that's integrated for an external authentication method. |
+| `00001111-aaaa-2222-bbbb-3333cccc4444` | An example of an `appid` value that's integrated for an external MFA method. |
 
 ## Related content
 
-- For more information about how to configure an external authentication method in the [Microsoft Entra admin center](https://entra.microsoft.com), see [Manage an external authentication method in Microsoft (Preview)](how-to-authentication-external-method-manage.md).
+- For more information about how to configure an external MFA method in the [Microsoft Entra admin center](https://entra.microsoft.com), see [Manage an external MFA method in Microsoft](how-to-authentication-external-method-manage.md).

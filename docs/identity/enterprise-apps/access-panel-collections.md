@@ -2,14 +2,8 @@
 title: Create collections on the My Apps portal
 description: Use My Apps collections to Customize My Apps pages for a simpler My Apps experience for your users. Organize applications into groups with separate tabs.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 09/30/2024
-ms.author: jomondi
 ms.collection: M365-identity-device-management
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps

@@ -2,7 +2,7 @@
 title: Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID.
 ms.topic: reference
-ms.date: 01/20/2026
+ms.date: 02/23/2026
 ms.reviewer: kimhana
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
@@ -91,16 +91,16 @@ The following table lists Microsoft app support for passkey (FIDO2) without an a
 |----------------|----------|----------|----------|
 | [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#x2705; |
 | [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#x2705; |
-| Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
-| Word | &#x2705; | &#x2705; | &#10060; |
-| PowerPoint | &#x2705; | &#x2705; | &#10060; |
-| Excel | &#x2705; | &#x2705; | &#10060; |
-| OneNote | &#x2705; | &#x2705; | &#10060; |
-| Loop | N/A | &#x2705; | &#10060; |
+| Microsoft 365 Copilot (Office) | N/A | &#x2705; |&#x2705; |
+| Word | &#x2705; | &#x2705; | &#x2705; |
+| PowerPoint | &#x2705; | &#x2705; | &#x2705; |
+| Excel | &#x2705; | &#x2705; | &#x2705; |
+| OneNote | &#x2705; | &#x2705; | &#x2705; |
+| Loop | N/A | &#x2705; | &#x2705; |
 | OneDrive | &#x2705; | &#x2705; | &#10060; |
 | Outlook | &#x2705; | &#x2705; | &#10060; |
 | Teams | &#x2705; | &#x2705; | &#10060; |
-| Edge | &#x2705; | &#x2705; | &#10060; |
+| Edge | &#x2705; | &#x2705; | &#x2705; |
 
 ### Third-party app support without authentication broker
 

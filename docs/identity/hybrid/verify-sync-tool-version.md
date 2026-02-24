@@ -43,6 +43,6 @@ To verify the version of the agent that is running, follow these steps:
 
 ## Next steps
 - [Common scenarios](common-scenarios.md)
-- [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad)
+- [Choosing the right sync tool](common-scenarios.md)
 - [Steps to start](get-started.md)
 - [Prerequisites](prerequisites.md)
