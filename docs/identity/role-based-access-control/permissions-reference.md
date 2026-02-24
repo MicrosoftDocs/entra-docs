@@ -3,7 +3,7 @@ title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 search.appverid: MET150
 ms.topic: reference
-ms.date: 01/22/2026
+ms.date: 02/24/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -39,6 +39,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Provisioning Reader](#attribute-provisioning-reader) | Read the provisioning configuration of all active custom security attributes for an application.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
+> | [Authentication Extensibility Password Administrator](#authentication-extensibility-password-administrator) | Trigger a password submit event for custom authentication.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 0b00bede-4072-4d22-b441-e7df02a1ef63 |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
 > | [Azure DevOps Administrator](#azure-devops-administrator) | Can manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
@@ -130,6 +131,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams External Collaboration Administrator](#teams-external-collaboration-administrator) | Manage external collaboration policies and settings for Teams, including configuring external domains and controlling which groups and users can interact with the organization. | 2fe872fb-daa8-4afc-8f6c-53c4565cfef4 |
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
@@ -143,6 +145,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
+
 
 ## Agent ID Administrator
 
@@ -215,6 +218,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Authentication Extensibility Administrator
 
 [!INCLUDE [authentication-extensibility-administrator](includes/authentication-extensibility-administrator.md)]
+
+## Authentication Extensibility Password Administrator
+
+[!INCLUDE [authentication-extensibility-password-administrator](includes/authentication-extensibility-password-administrator.md)]
 
 ## Authentication Policy Administrator
 
@@ -579,6 +586,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Teams Devices Administrator
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
+
+## Teams External Collaboration Administrator
+
+[!INCLUDE [teams-external-collaboration-administrator](includes/teams-external-collaboration-administrator.md)]
 
 ## Teams Reader
 
