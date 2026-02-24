@@ -5,7 +5,7 @@ description: Explains prerequisites and steps to set up Microsoft Entra hybrid j
 author: nbeesett
 ms.author: justinha
 ms.reviewer: nbeesett
-ms.date: 02/16/2026
+ms.date: 02/24/2026
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: devices
@@ -88,18 +88,18 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
 1. Run the following command to check your service principal settings:
 
    ```powershell
-   \$drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
-   \$drsSP.ServicePrincipalNames
+   $drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
+   $drsSP.ServicePrincipalNames
    ```
 
 1. Check the displayed service principal names. If `adrs/enterpriseregistration.windows.net` isn't listed, run the following command to add it:
 
    ```powershell
-   \$spns = \[System.Collections.Generic.List\[string\]\]::new(\$drsSP.ServicePrincipalNames)
-   \$kerbSpn = "adrs/enterpriseregistration.windows.net"
-   \$spns.Add(\$kerbSpn)
-   Set-EntraServicePrincipal -ObjectId \$drsSp.ObjectId -ServicePrincipalNames \$spns
-   \$drsSP.ServicePrincipalNames
+   $spns = [System.Collections.Generic.List[string]]::new($drsSP.ServicePrincipalNames)
+   $kerbSpn = "adrs/enterpriseregistration.windows.net"
+   $spns.Add($kerbSpn)
+   Set-EntraServicePrincipal -ObjectId $drsSp.ObjectId -ServicePrincipalNames $spns
+   $drsSP.ServicePrincipalNames
    ```
 
    >[!Note]
@@ -108,74 +108,74 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
 1. Run the following command to check the tags of the service principal:
 
    ```powershell
-   \$drsSP.Tags
+   $drsSP.Tags
    ```
 
 1. Check the displayed tags. If `KerberosPolicy:ExchangeForJwt` isn't listed, run the following command to add it.
 
    ```powershell
-   \$tags = \[System.Collections.Generic.List\[string\]\]::new(\$drsSP.Tags)  
-   \$tags.Add("KerberosPolicy:ExchangeForJwt")
-   Set-EntraServicePrincipal -ObjectId \$drsSP.ObjectId -Tags \$tags
+   $tags = [System.Collections.Generic.List[string]]::new($drsSP.Tags)  
+   $tags.Add("KerberosPolicy:ExchangeForJwt")
+   Set-EntraServicePrincipal -ObjectId $drsSP.ObjectId -Tags $tags
    ```
 
 Or you can run the following script:
 
 ```powershell
-\# Use specific environment for your sovereign cloud
-\# Run Get-EntraEnvironment to retrieve the list of predefined environments
+# Use specific environment for your sovereign cloud
+# Run Get-EntraEnvironment to retrieve the list of predefined environments
 
 Connect-Entra -Environment 'Global' -Scopes "Application.ReadWrite.All"
 
-\# Get the service principal
+# Get the service principal
 
-\$drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
+$drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
 
-\# Prepare both updates
+# Prepare both updates
 
-\$needsUpdate = \$false
-\$spns = \[System.Collections.Generic.List\[string\]\]::new(\$drsSP.ServicePrincipalNames)
-\$tags = \[System.Collections.Generic.List\[string\]\]::new(\$drsSP.Tags)
+$needsUpdate = $false
+$spns = [System.Collections.Generic.List[string]]::new($drsSP.ServicePrincipalNames)
+$tags = [System.Collections.Generic.List[string]]::new($drsSP.Tags)
 
-\# Configure Kerberos SPN
+# Configure Kerberos SPN
 
-\$kerbSpn = "adrs/enterpriseregistration.windows.net"
-if (\$drsSP.ServicePrincipalNames -notcontains \$kerbSpn) {
+$kerbSpn = "adrs/enterpriseregistration.windows.net"
+if ($drsSP.ServicePrincipalNames -notcontains $kerbSpn) {
 Write-Host "Kerberos SPN needs to be added"
-\$spns.Add(\$kerbSpn)
-\$needsUpdate = \$true
+$spns.Add($kerbSpn)
+$needsUpdate = $true
 
 }
 
-\# Configure Kerberos policy tag
+# Configure Kerberos policy tag
 
-\$kerberosTag = "KerberosPolicy:ExchangeForJwt"
-if (\$drsSP.Tags -notcontains \$kerberosTag) {
+$kerberosTag = "KerberosPolicy:ExchangeForJwt"
+if ($drsSP.Tags -notcontains $kerberosTag) {
 Write-Host "Kerberos policy tag needs to be added"
-\$tags.Add(\$kerberosTag)
-\$needsUpdate = \$true
+$tags.Add($kerberosTag)
+$needsUpdate = $true
 
 }
 
-\# Single update operation
+# Single update operation
 
-if (\$needsUpdate) {
+if ($needsUpdate) {
 Write-Host "Updating service principal configuration..."
-Set-EntraServicePrincipal -ObjectId \$drsSP.Id -ServicePrincipalNames \$spns -Tags \$tags
+Set-EntraServicePrincipal -ObjectId $drsSP.Id -ServicePrincipalNames $spns -Tags $tags
 Write-Host "Service principal configuration updated successfully"
 } else {
 Write-Host "Service principal already configured correctly"
 
 }
 
-\# Display final configuration
+# Display final configuration
 
-\$drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
-Write-Host "\`nFinal Configuration:"
+$drsSP = Get-EntraServicePrincipal -Filter "AppId eq '01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9'"
+Write-Host "`nFinal Configuration:"
 Write-Host "SPNs:"
-\$drsSP.ServicePrincipalNames \| ForEach-Object { Write-Host " \$\_" }
+$drsSP.ServicePrincipalNames | ForEach-Object { Write-Host " $_" }
 Write-Host "Tags:"
-\$drsSP.Tags \| ForEach-Object { Write-Host " \$\_" }
+$drsSP.Tags | ForEach-Object { Write-Host " $_" }
 ```
 
 ## Deploy a domain controller that runs Windows Server 2025 
