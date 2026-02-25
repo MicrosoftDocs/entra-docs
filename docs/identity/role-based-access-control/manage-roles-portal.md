@@ -1,14 +1,8 @@
 ---
 title: Assign Microsoft Entra roles
 description: Learn how to assign Microsoft Entra roles to users and groups at tenant, application registration, administrative unit scopes using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. 
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 06/04/2025
-ms.author: barclayn
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
@@ -47,7 +41,7 @@ This section describes how to assign roles at tenant scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Entra ID** > **Roles & admins**.
+1. Browse to **Identity** > **Roles & admins**.
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
@@ -363,9 +357,10 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 | [User Administrator](permissions-reference.md#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins within the assigned administrative unit only. Cannot currently manage users' profile photographs. |
 | [&lt;Custom role&gt;](custom-create.md) | Can perform actions that apply to users, groups, or devices, according to the definition of the custom role. |
 
-Certain role permissions apply only to nonadministrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
+Certain role permissions apply only to nonadministrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following permissions are restricted when the target of an action is a user with another role or an administrator:
 
-- Read and modify user authentication methods, or reset user passwords
+- Read and modify user authentication methods
+- Reset user passwords
 - Modify sensitive user properties such as telephone numbers, alternate email addresses, or Open Authorization (OAuth) secret keys
 - Delete or restore user accounts
 

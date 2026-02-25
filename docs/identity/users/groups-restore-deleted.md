@@ -1,13 +1,8 @@
 ---
 title: Restore a deleted Microsoft 365 group or cloud security group
 description: Learn how to restore a deleted group, view restorable groups, and permanently delete a group in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
 ms.date: 11/03/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -25,6 +20,11 @@ User | Can restore any deleted Microsoft 365 group that they own
 
 >[!NOTE]
 > Soft delete is available for Microsoft 365 groups with assigned membership, Microsoft 365 groups with dynamic membership, and cloud security groups.
+
+> [!IMPORTANT]
+> Soft delete for security groups isn't supported in the following scenarios:
+> - EDU tenants using OneDrive for Business (OBD) storage
+> - Audience targeting with classic web parts (all tenancies)
 
 ## View and manage the deleted Microsoft 365 groups and cloud security groups that are available to restore
 

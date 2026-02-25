@@ -104,6 +104,8 @@ az ad sp list --filter "appId eq '{AppId}'"
 
 Any changes that you make to your application object are also reflected in its service principal object in the application's home tenant only (the tenant where it was registered). This means that deleting an application object will also delete its home tenant service principal object. However, restoring that application object through the app registrations UI won't restore its corresponding service principal. 
 
+For applications that need temporary suspension rather than permanent deletion, you can [deactivate the application](~/identity/enterprise-apps/deactivate-application-portal.md). Deactivation prevents new token issuance while preserving the application object and service principal for investigation or future reactivation.
+
 For more information on deletion and recovery of applications and their service principal objects, see [delete and recover applications and service principal objects](~/identity/enterprise-apps/delete-recover-faq.yml).
 
 ## Example

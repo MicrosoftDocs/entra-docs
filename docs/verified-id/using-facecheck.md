@@ -1,10 +1,6 @@
 ---
 title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
-ms.service: entra-verified-id
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025
 ms.custom: sfi-image-nochange
@@ -273,16 +269,11 @@ Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision
 
 ### How fair is Azure AI Vision Face API?
 
-Microsoft has conducted fairness testing of the Face API. The Azure AI services team is continuously striving to ensure responsible and inclusive use of AI.
-View the [Face API Fairness report](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
+Microsoft has conducted fairness testing of the Face API. The Azure AI services team is continuously striving to ensure responsible and inclusive use of AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
 
 ### Are you iBeta Level 2 conformant?
 
 Yes. Azure Face API AI and Face Check are iBeta Level 2 conformant to be resistant to various presentation styles of attack to impersonate a user. [Learn more](https://www.ibeta.com/iso-30107-3-presentation-attack-detection-confirmation-letters/) about iBeta’s ISO Presentation Attack Detection testing.
-
-### How fair is Azure AI Vision Face API?
-
-Microsoft conducted fairness testing of the Face API. The Azure AI Services team is continuously striving to ensure responsible and inclusive use of biometric AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
 
 ### If a user recently got a haircut, shaved their facial hair, or otherwise changed their physical appearance, will they be unable to complete a Face Check verification?
 

@@ -11,7 +11,6 @@ metadata:
   ms.topic: hub-page
   author: justinha
   ms.author: justinha
-  manager: dougeby
   ms.date: 10/23/2025
 
 productDirectory:
@@ -97,4 +96,4 @@ additionalContent:
           url: ../fundamentals/new-name.md
         - title: "Secure your organization's identities"
           summary: "Security recommendation to protect your identities."
-          url: ../fundamentals/concept-secure-remote-workers.md
+          url: ../fundamentals/configure-security.md

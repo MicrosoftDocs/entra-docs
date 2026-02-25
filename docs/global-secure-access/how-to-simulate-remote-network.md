@@ -1,12 +1,8 @@
 ---
 title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
-manager: dougeby
 ms.reviewer: absinh
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

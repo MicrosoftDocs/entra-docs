@@ -2,8 +2,6 @@
 title: PowerShell sample - Add a custom bypass rule to internet access forwarding profile
 description: PowerShell example that bypasses a certain fqdn or IP from being acquired by the Global Secure Access Client in the Internet Access forwarding profile.
 author: fgomulka
-manager: ashishj
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 06/06/2025
 ms.author: frankgomulka

@@ -47,7 +47,7 @@ These recommendations focus on ensuring least privilege access to your organizat
 ### App registrations must not have dangling or abandoned domain redirect URIs
 [!INCLUDE [21888](../includes/secure-recommendations/21888.md)]
 
-### Resource-specific consent to application is restricted
+### Resource-specific consent is restricted
 [!INCLUDE [21810](../includes/secure-recommendations/21810.md)]
 
 ### Workload Identities are not assigned privileged roles
@@ -55,6 +55,9 @@ These recommendations focus on ensuring least privilege access to your organizat
 
 ### Enterprise applications must require explicit assignment or scoped provisioning
 [!INCLUDE [21869](../includes/secure-recommendations/21869.md)]
+
+### Enterprise applications have owners
+[!INCLUDE [24518](../includes/secure-recommendations/24518.md)]
 
 ### Limit the maximum number of devices per user to 10
 [!INCLUDE [21837](../includes/secure-recommendations/21837.md)]

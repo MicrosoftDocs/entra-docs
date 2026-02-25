@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Configure Shopify Plus for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Shopify Plus with Microsoft Entra ID. When you integrate Shopify Plus with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate [Shopify Plus](https://www.shopify.com/plus) with Microsoft Entra ID. When you integrate Shopify Plus with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Shopify Plus.
 * Enable your users to be automatically signed-in to Shopify Plus with their Microsoft Entra accounts.
@@ -109,7 +109,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Shopify Plus SSO
 
-To view the full steps, see [Shopify's documentation on setting up SAML integrations](https://help.shopify.com/en/manual/shopify-plus/saml).
+To view the full steps, see [Shopify's documentation on setting up SAML integrations](https://help.shopify.com/en/manual/your-account/users/security/advanced-security-features/saml).
 
 To configure single sign-on on the **Shopify Plus** side, copy the **App Federation Metadata URL** from Microsoft Entra ID. Then, log into the [organization admin](https://shopify.plus) and go to **Users** > **Security**. Select **Set up configuration**, and then paste your App Federation Metadata URL in the **Identity provider metadata URL** section. Select **Add** to complete this step.
 

@@ -27,6 +27,12 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 ### Privileged role activations have monitoring and alerting configured
 [!INCLUDE [21818](../includes/secure-recommendations/21818.md)]
 
+### Activation alert for Global Administrator role assignments
+[!INCLUDE [21819](../includes/secure-recommendations/21819.md)]
+
+### Activation alert for all privileged role assignments
+[!INCLUDE [21820](../includes/secure-recommendations/21820.md)]
+
 ### Privileged users sign in with phishing-resistant methods
 [!INCLUDE [21781](../includes/secure-recommendations/21781.md)]
 
@@ -39,13 +45,16 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 ### All risky workload identities are triaged
 [!INCLUDE [21862](../includes/secure-recommendations/21862.md)]
 
+### Tenant creation events are triaged
+[!INCLUDE [21789](../includes/secure-recommendations/21789.md)]
+
 ### All user sign-in activity uses strong authentication methods
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
 
 ### High priority Microsoft Entra recommendations are addressed
 [!INCLUDE [22124](../includes/secure-recommendations/22124.md)]
 
-### ID Protection notifications enabled
+### ID Protection notifications are enabled
 [!INCLUDE [21798](../includes/secure-recommendations/21798.md)]
 
 ### No legacy authentication sign-in activity
@@ -53,3 +62,12 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 
 ### All Microsoft Entra recommendations are addressed
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+### Network access activity is visible to security operations for threat detection and response
+[!INCLUDE [25419](../includes/secure-recommendations/25419.md)]
+
+### Network access logs are retained for security analysis and compliance requirements
+[!INCLUDE [25420](../includes/secure-recommendations/25420.md)]
+
+### Global Secure Access deployment logs are populated and reviewed
+[!INCLUDE [25422](../includes/secure-recommendations/25422.md)]

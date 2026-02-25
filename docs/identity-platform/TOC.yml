@@ -305,13 +305,6 @@
       href: sample-v2-code.md#web-applications
     - name: How-to
       items:
-        - name: Web app that signs in users
-          expanded: false
-          items:
-            - name: Code configuration
-              href: scenario-web-app-sign-user-app-configuration.md
-            - name: Sign-in and sign-out
-              href: scenario-web-app-sign-user-sign-in.md
         - name: Web app that calls an API
           expanded: false
           items:
@@ -965,7 +958,7 @@
     - name: API reference
       items:
         - name: Microsoft Graph API reference (identity operations)
-          href: /graph/api/resources/azure-ad-overview
+          href: /graph/api/resources/identity-network-access-overview
         - name: MSA Server side API reference 
           href: reference-msa-server-side-api.md
         - name: Microsoft Entra ID WAM API reference
@@ -990,5 +983,3 @@
       href: https://devblogs.microsoft.com/microsoft365dev/category/microsoft-identity-platform/
     - name: "Blog: Microsoft Entra ID - Identity"
       href: https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity
-    - name: Azure roadmap - security and identity
-      href: https://azure.microsoft.com/roadmap/?category=security-identity

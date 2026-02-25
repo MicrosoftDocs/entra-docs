@@ -7,7 +7,6 @@ ms.topic: concept-article
 ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: dougeby
 ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 ---
@@ -172,7 +171,7 @@ The only native apps integrated today are Intune and Microsoft Edge Browser. For
 
 ## What is the lifetime of a PRT?
 
-Once issued, a PRT is valid for 90 days and is continuously renewed as long as the user actively uses the device. Organizations can require users re-authenticate in order to acces resources using the Sign-in [frequency session control](../conditional-access/concept-conditional-access-session.md)
+Once issued, a PRT is valid for 90 days and is continuously renewed as long as the user actively uses the device. Organizations can require users re-authenticate in order to access resources using the Sign-in [frequency session control](../conditional-access/concept-conditional-access-session.md).
 
 ## How is a PRT renewed?
 

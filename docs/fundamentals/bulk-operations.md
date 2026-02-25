@@ -5,8 +5,8 @@ author: barclayn
 manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 11/06/2025
+ms.topic: article
+ms.date: 02/24/2026
 ms.author: barclayn
 ms.custom: it-pro
 ---
@@ -16,7 +16,7 @@ ms.custom: it-pro
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations.
+> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations. The new bulk operations service doesn't support exporting hidden memberships.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
@@ -48,7 +48,7 @@ To download a filtered subset of groups:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
 
-2. Select **Manage filters** to edit the column filters.
+2. Select **Add filter** to open the **Manage filters** panel. Apply desired filters to narrow down the group list. Only selected columns appear in the CSV file.
 
     :::image type="content" source="Media/bulk-operations/filters-download-groups.png" alt-text="Screenshot of the Manage filters panel on the Groups page with filters applied and the Download groups action available.":::
 
@@ -70,7 +70,7 @@ To download all members of a specific group:
 
     :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
-4. Enter a filename and select **Start download**.
+4. Enter a filename and select **Start bulk operation**.
 
 5. Follow the download process as described in [Bulk download groups](#bulk-download-groups).
 
@@ -87,7 +87,9 @@ To add multiple members to a group:
 
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-import.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Import members selected.":::
 
-4. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
+4. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to import, one per row. You can use either:
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
+   - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
     :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the CSV template for importing members showing the ObjectId column for pasting member IDs.":::
 
@@ -109,9 +111,9 @@ To remove multiple members from a group:
 
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-remove.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Remove members selected.":::
 
-3. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
-
-
+3. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to remove, one per row. You can use either:
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
+   - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
 4. Upload the completed CSV file and select **Submit**.
 
@@ -152,7 +154,7 @@ To delete completed or failed bulk operations:
 
     :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the All devices page with Bulk operations open and the Download devices option selected.":::
 
-3. Enter a filename that matches your naming convention and select **Start download**.
+3. Enter a filename that matches your naming convention and select **Start bulk operation**.
     :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of a success notification after starting the Download devices job.":::
 
 4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.

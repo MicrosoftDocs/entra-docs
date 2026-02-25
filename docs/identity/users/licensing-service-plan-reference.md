@@ -3,13 +3,8 @@ title: Product names and service plan identifiers for licensing
 description: Identifier map to manage Microsoft Entra ID licensing in the Azure portal, the Microsoft 365 admin center, PowerShell, or Microsoft Graph
 
 keywords: Azure Active Directory licensing service plans
-author: Nicholak-MS
-manager: femila
-ms.service: entra-id
-ms.subservice: users
 ms.topic: reference
 ms.date: 10/29/2025
-ms.author: shegu
 ms.reviewer: Nicholak-MS
 ms.custom: it-pro
 ms.collection: M365-identity-device-management

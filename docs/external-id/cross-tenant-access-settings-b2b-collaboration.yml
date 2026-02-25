@@ -3,11 +3,7 @@
 metadata:
   title: Cross-tenant access settings
   description: Learn how to manage cross-tenant access settings for B2B collaboration and direct connect in Microsoft Entra External ID. Control inbound and outbound access, trust MFA, and device claims from other organizations.
-  ms.author: cmulligan
-  author: csmulligan
-  manager: dougeby
   ms.date: 10/21/2024
-  ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
   ms.custom:
@@ -240,7 +236,7 @@ procedureSection:
       - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c) 
       - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
       - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
-      - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+      - Microsoft Purview portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 
       ### Configure redemption order
 

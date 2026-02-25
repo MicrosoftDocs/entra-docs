@@ -1,12 +1,8 @@
 ---
 title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
 ---
@@ -664,7 +660,7 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 ```
 
-### Remove User from Teams
+### Remove User from selected Teams
 
 Allows a user to be removed from one or multiple static teams. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-user-team-task.png" alt-text="Screenshot of Workflows task: remove user from teams.":::
