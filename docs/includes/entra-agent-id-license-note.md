@@ -7,7 +7,7 @@
  ms.custom: include file, agent-id-ignite
 ---
 
-Microsoft Entra Agent ID is part of [Microsoft Agent 365](https://learn.microsoft.com/microsoft-agent-365/). Both are available through the [Frontier program](/copilot/frontier-program/) in Microsoft 365. To access these features you must have a license for Microsoft 365 Copilot and have enabled Frontier for your users.
+Microsoft Entra Agent ID is part of [Microsoft Agent 365](/microsoft-agent-365/). Both are available through the [Frontier program](https://adoption.microsoft.com/copilot/frontier-program/) in Microsoft 365. To access these features you must have a license for Microsoft 365 Copilot and have enabled Frontier for your users.
 
 To check these prerequisites:
 
