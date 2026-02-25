@@ -22,11 +22,7 @@ When a user registers a Windows 10 or later device with Microsoft Entra, a PRT i
 > [!NOTE]
 > Use Token Protection as part of a broader defense-in-depth strategy against token theft. For more information, see [Protecting tokens in Microsoft Entra](../devices/protecting-tokens-microsoft-entra-id.md). 
 
-## Requirements and availability
-
-The following devices, platforms, and applications support accessing resources where a token protection Conditional Access policy is applied.
-
-### Platform availability
+## Platform availability
 
 | Platform | Status |
 |----------|--------|
@@ -80,35 +76,6 @@ Select the guide for your target platform:
 
 - **Windows**: [Token Protection deployment guide - Windows](deployment-guide-token-protection-windows.md)
 - **iOS, iPadOS, and macOS**: [Token Protection deployment guide - Apple](deployment-guide-token-protection-apple.md)
-
-### Known limitations
-<!--- Should move to deployment guide - but make sure nothing is lost-->
-- Office perpetual clients aren't supported.
-- The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
-   - PowerShell modules accessing SharePoint
-   - PowerQuery extension for Excel
-   - Extensions to Visual Studio Code which access Exchange or SharePoint 
-- The following Windows client devices aren't supported: 
-   - Surface Hub 
-   - Windows-based Microsoft Teams Rooms (MTR) systems 
-- [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who don't meet these requirements see an unclear error message with no indication of the root cause.
-- Devices registered with Microsoft Entra ID using the following methods are unsupported:
-   - Microsoft Entra joined [Azure Virtual Desktop session hosts](/azure/virtual-desktop/azure-ad-joined-session-hosts).
-   - Windows devices deployed using [bulk enrollment](/mem/intune-service/enrollment/windows-bulk-enroll). 
-   - [Cloud PCs deployed by Windows 365](/windows-365/enterprise/identity-authentication#device-join-types) that are Microsoft Entra joined. 
-   - Power Automate hosted machine groups that are [Microsoft Entra joined](/power-automate/desktop-flows/hosted-machine-groups#general-network-requirements). 
-   - Windows Autopilot devices deployed using [self-deploying mode](/autopilot/self-deploying). 
-   - Windows virtual machines deployed in Azure using the virtual machine (VM) extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
-
-To identify the impacted devices due to unsupported registration types listed previously, inspect the `tokenProtectionStatusDetails` attribute in the sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
-
-To prevent disruption during onboarding, modify the token protection Conditional Access policy by adding a device filter condition that excludes devices in the previously described deployment category. For example, to exclude:
-
-- Cloud PCs that are Microsoft Entra joined, you can use `systemLabels -eq "CloudPC" and trustType -eq "AzureAD"`. 
-- Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
-- Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`.
-- Windows Autopilot devices deployed using self-deploying mode, you can use enrollmentProfileName property. As an example, if you have created an enrollment profile in Intune for your Autopilot self-deployment mode devices as "Autopilot self-deployment profile", you can use `enrollmentProfileName -eq "Autopilot self-deployment profile".
-- Windows virtual machines in Azure that are Microsoft Entra joined, you can use `profileType -eq "SecureVM" and trustType -eq "AzureAD"`. 
 
 ## Related content 
 

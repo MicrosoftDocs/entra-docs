@@ -55,18 +55,22 @@ Token Protection on Apple platforms can be used to protect the following resourc
 
 - Token Protection currently requires the Microsoft Enterprise SSO plug-in, which requires MDM management. *Unmanaged iOS and macOS devices are not supported at this time.* 
 - *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing these apps when the policy is enforced. 
-- In report-only mode, requests that do not use hardware-backed device registration appear as non-compliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review Readiness Using Report-Only Mode]() section.
+- In report-only mode, requests that do not use hardware-backed device registration appear as non-compliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics) section.
 - The **Token Protection – Sign-in Session** column in sign-in logs shows all requests without hardware-backed device identity as "Unbound." These logs include requests from users who are eligible to upgrade their registration.
-- External users who meet the token protection device registration requirements in their home tenant are supported. Users who don't meet these requirements will see an error message with no clear indication of the root cause.
+- [External users](../../external-id/what-is-b2b.md) who meet the token protection device registration requirements in their home tenant are supported. Users who don't meet these requirements will see an error message with no clear indication of the root cause.
 
 ## How to enable Token Protection on Apple platforms
 
-Unlike Windows, Apple platforms do not use a Trusted Platform Module (TPM). Instead, Microsoft Entra ID uses Apple Secure Enclave to store proof-of-possession keys.
-
-> [!NOTE]
-> On macOS devices without Secure Enclave (for example, some older Mac mini models), Microsoft Entra ID falls back to an enhanced version of the Apple Keychain (Data Protection Keychain). 
+Unlike Windows, Apple platforms do not use a Trusted Platform Module (TPM). Instead, Microsoft Entra ID uses Apple Secure Enclave to store proof-of-possession keys. On macOS devices without Secure Enclave (for example, some older Mac mini models), Microsoft Entra ID falls back to an enhanced version of the Apple Keychain (Data Protection Keychain). 
 
 This difference means that some prerequisite configuration is required before users can register devices in a way that supports Token Protection enforcement.
+
+The high-level steps to enable Token Protection on Apple platforms are as follows:
+
+1. [Configure hardware-backed device registration](#configure-hardware-backed-device-registration)
+1. [Configure the report-only Conditional Access policy](#configure-the-report-only-mode-policy)
+1. [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics)
+1. [Enforce the policy](#enforce-the-policy)
 
 ### Configure hardware-backed device registration
 
@@ -78,7 +82,7 @@ Complete the steps below for *each* platform you are deploying to. These steps m
 #### [iOS and iPadOS](#tab/ios-and-ipados)
 
 1. Install Microsoft Authenticator from the Apple App Store, or deploy it via your MDM solution. Authenticator serves as the authentication broker for Microsoft Entra sign-ins.
-1. Enable hardware-backed registration using the Microsoft Enterprise SSO plug-in for Apple Devices.
+1. Enable hardware-backed registration using the [Microsoft Enterprise SSO plug-in for Apple Devices](../../identity-platform/apple-sso-plugin.md).
 1. Set the `use_most_secure_storage` flag.
    - The flag applies only to new device registrations made after the flag is configured.
    - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
@@ -143,7 +147,6 @@ To view Token Protection related sign-in events in the admin center:
 1. Review the **Conditional Access** and **Report-Only** tabs (depending on the policy state) and select your token protection policy.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
     :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
-
 1. Select the **Basic Info** tab and check the **Token Protection - Sign In Session** field for more information.
 
 To filter the sign-in logs you might need to add the **Token Protection – Sign-in session status code** column to your view.
@@ -156,6 +159,7 @@ The sign-in logs include a `tokenProtectionStatusDetails` property that indicate
   "signInSessionStatusCode": <code>
 }
 ```
+#### Status code definitions
 
 | Status Code | Description | Action Required |
 |---|---|---|
@@ -290,15 +294,23 @@ We recommend communicating the change to affected users and your help desk team 
 
 ## End User Experience
 
-Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once policy is enforced. They will need to sign in again to access resources. A user that registered or enrolled their supported device doesn't experience any differences in the sign-in experience on a token protection supported application when the token protection requirement is enabled.
+There are some end user experiences to be aware of when deploying Token Protection.
 
-A user who hasn't registered or enrolled their device and if the token protection policy is enabled sees the following screenshot after authenticating.
+### Upgrade device registration
+
+Existing Microsoft Entra ID device registrations that were not created using hardware-backed key storage do not meet Token Protection requirements.
+
+Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once the policy is enforced. They will need to complete a one-time device registration upgrade and then sign in again to access resources. These users can be identified by [status codes 1003 and 1004](#status-code-definitions). Because users in this state can self-remediate, they are eligible for policy enforcement.
+
+A user that registered or enrolled their supported device doesn't experience any differences in the sign-in experience on a token protection supported application when the token protection requirement is enabled.
+
+### Sign-in experience
+
+When the Token Protection policy is enabled, users who haven't registered or enrolled their device will see the following screen after authenticating:
 
 :::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 
-A user that isn't using a supported application when the token protection policy is enabled will see the following screenshot after authenticating.
+When the Token Protection policy is enabled, users who aren't using a supported application will see the following screen after authenticating:
 
 :::image type="content" source="media/concept-token-protection/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
 
-<!--- This felt out of place above. Can link back up to the status codes. DOes this work here? Also, what is the article mentioned?--->
-Existing Microsoft Entra ID device registrations that were not created using hardware-backed key storage do not meet Token Protection requirements. When the policy is enforced, affected users will be required to complete a one-time device registration upgrade before accessing protected resources. This self-service process requires the user to re-authenticate to the tenant (see "Upgrading Device Registration Flow" for user experience details). These users can be identified by status codes 1003 and 1004. Because users in this state can self-remediate, they are eligible for policy enforcement.
