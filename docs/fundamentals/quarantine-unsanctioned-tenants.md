@@ -1,13 +1,9 @@
 ---  
 title: Quarantine unsanctioned tenants  
 description: Isolate unsanctioned tenants using Microsoft Entra features. Follow steps to quarantine unapproved tenants and strengthen security.  
-author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals  
 ms.topic: concept-article  
 ms.date: 04/14/2025  
-ms.author: barclayn  
 #customer intent: As an administrator, I want to quarantine unsanctioned tenants to reduce security risks and ensure compliance with security policies.  
 ---  
 

@@ -143,7 +143,6 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     }
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 3: Add tenants
@@ -378,7 +377,6 @@ By default, tenants added to the multitenant organization are member tenants. Op
     }
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 5: (Optional) Remove a member tenant
@@ -512,7 +510,6 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 7: Join the multitenant organization
@@ -709,7 +706,6 @@ If your tenant is the only multitenant organization owner, you must designate a 
     DELETE https://graph.microsoft.com/v1.0/tenantRelationships/multiTenantOrganization/tenants/{memberTenantId}
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 9: (Optional) Delete the multitenant organization

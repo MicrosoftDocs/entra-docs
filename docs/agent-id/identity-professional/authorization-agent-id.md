@@ -4,7 +4,6 @@ description: Learn about how authorization in Microsoft Entra Agent ID works for
 author: rolyon
 ms.author: rolyon
 ms.date: 11/04/2025
-ms.service: entra-id
 ms.topic: concept-article
 #customer intent: As a developer or IT administrator, I want to understand authorization controls for agent IDs so that I can properly configure roles and permissions while maintaining security boundaries for AI agents in my organization.
 ---

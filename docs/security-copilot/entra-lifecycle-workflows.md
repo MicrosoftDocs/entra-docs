@@ -1,9 +1,6 @@
 ---
 title: Manage lifecycle workflows with Microsoft Security Copilot 
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to create lifecycle workflows for Joiner, Mover, and Leaver scenarios. Execute workflows on-demand and use workflow insights to monitor execution and troubleshoot as needed.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

@@ -253,7 +253,6 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     HTTP/1.1 204 No Content
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 4: Sign in to the source tenant
@@ -658,7 +657,6 @@ ms.subservice: multitenant-organizations
 
 1. Save the appRoleId.
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 7: Test the connection to the target tenant
@@ -819,7 +817,6 @@ In the source tenant, to enable provisioning, create a provisioning job.
 
 1. Save the jobId.
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 9: Save your credentials
@@ -954,7 +951,6 @@ For cross-tenant synchronization to work, at least one internal user must be ass
     }
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 11: Test provision on demand
@@ -1116,7 +1112,6 @@ Now that you have a configuration, you can test on-demand provisioning with one 
     HTTP/1.1 204 No Content
     ```
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Step 13: Monitor provisioning
@@ -1524,7 +1519,6 @@ You are likely trying to update an object that doesn't exist using `PATCH`.
 
     - [Create identitySynchronization](/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization)
 
-ms.subservice: multitenant-organizations
 ---
 
 ## Next steps

@@ -68,10 +68,14 @@
         "docs/**/*.yml": "show_learn_banner"
       },
       "author": {
+        "agent-id/**/*.md": "SHERMANOUKO",
+        "agent-id/**/*.yml": "SHERMANOUKO",
         "architecture/**/*.md": "janicericketts",
         "architecture/**/*.yml": "janicericketts",
         "external-id/**/*.md": "csmulligan",
         "external-id/**/*.yml": "csmulligan",
+        "fundamentals/**/*.md": "barclayn",
+        "fundamentals/**/*.yml": "barclayn",
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
         "id-governance/**/*.md": "owinfreyATL",
@@ -98,14 +102,22 @@
         "identity/role-based-access-control/**/*.yml": "rolyon",
         "identity/users/**/*.md": "barclayn",
         "identity/users/**/*.yml": "barclayn",
+        "security-copilot/**/*.md": "cilwerner",
+        "security-copilot/**/*.yml": "cilwerner",
         "verified-id/**/*.md": "barclayn",
-        "verified-id/**/*.yml": "barclayn"
+        "verified-id/**/*.yml": "barclayn",
+        "workload-id/**/*.md": "SHERMANOUKO",
+        "workload-id/**/*.yml": "SHERMANOUKO"
       },
       "ms.author": {
+        "agent-id/**/*.md": "shermanouko",
+        "agent-id/**/*.yml": "shermanouko",
         "architecture/**/*.md": "jricketts",
         "architecture/**/*.yml": "jricketts",
         "external-id/**/*.md": "cmulligan",
         "external-id/**/*.yml": "cmulligan",
+        "fundamentals/**/*.md": "barclayn",
+        "fundamentals/**/*.yml": "barclayn",
         "global-secure-access/**/*.md": "kenwith",
         "global-secure-access/**/*.yml": "kenwith",
         "id-governance/**/*.md": "owinfrey",
@@ -132,14 +144,22 @@
         "identity/role-based-access-control/**/*.yml": "rolyon",
         "identity/users/**/*.md": "barclayn",
         "identity/users/**/*.yml": "barclayn",
+        "security-copilot/**/*.md": "cwerner",
+        "security-copilot/**/*.yml": "cwerner",
         "verified-id/**/*.md": "barclayn",
-        "verified-id/**/*.yml": "barclayn"
+        "verified-id/**/*.yml": "barclayn",
+        "workload-id/**/*.md": "shermanouko",
+        "workload-id/**/*.yml": "shermanouko"
       },
       "ms.service": {
+        "agent-id/**/*.md": "entra-id",
+        "agent-id/**/*.yml": "entra-id",
         "architecture/**/*.md": "entra",
         "architecture/**/*.yml": "entra",
         "external-id/**/*.md": "entra-external-id",
         "external-id/**/*.yml": "entra-external-id",
+        "fundamentals/**/*.md": "entra",
+        "fundamentals/**/*.yml": "entra",
         "global-secure-access/**/*.md": "global-secure-access",
         "global-secure-access/**/*.yml": "global-secure-access",
         "id-governance/**/*.md": "entra-id-governance",
@@ -167,11 +187,15 @@
         "identity/users/**/*.md": "entra-id",
         "identity/users/**/*.yml": "entra-id",
         "verified-id/**/*.md": "entra-verified-id",
-        "verified-id/**/*.yml": "entra-verified-id"
+        "verified-id/**/*.yml": "entra-verified-id",
+        "workload-id/**/*.md": "entra-workload-id",
+        "workload-id/**/*.yml": "entra-workload-id"
       },
       "ms.subservice": {
         "external-id/**/*.md": "external",
         "external-id/**/*.yml": "external",
+        "fundamentals/**/*.md": "fundamentals",
+        "fundamentals/**/*.yml": "fundamentals",
         "identity/app-provisioning/**/*.md": "app-provisioning",
         "identity/app-provisioning/**/*.yml": "app-provisioning",
         "identity/app-proxy/**/*.md": "app-proxy",
@@ -214,12 +238,14 @@
         "identity/users/**/*.yml": "pmwongera",
         "permissions-management/**/*.md": "dougeby",
         "permissions-management/**/*.yml": "dougeby",
+        "security-copilot/**/*.md": "pmwongera",
+        "security-copilot/**/*.yml": "pmwongera",
         "standards/**/*.md": "dougeby",
         "standards/**/*.yml": "dougeby",
         "verified-id/**/*.md": "dougeby",
         "verified-id/**/*.yml": "dougeby",
-        "workload-id/**/*.md": "pmwongera",
-        "workload-id/**/*.yml": "pmwongera"
+        "workload-id/**/*.md": "dougeby",
+        "workload-id/**/*.yml": "dougeby"
       },
       "titleSuffix": {
         "*.md": "Microsoft Entra",

@@ -3,8 +3,6 @@ title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
 author: shlipsey3
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 12/16/2025
 ms.author: sarahlipsey

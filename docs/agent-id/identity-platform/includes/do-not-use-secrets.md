@@ -1,10 +1,6 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
-
 ms.topic: include
 # Purpose:
 # To warn users against using client secrets in agent identity blueprints.
