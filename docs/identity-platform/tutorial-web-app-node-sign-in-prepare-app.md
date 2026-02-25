@@ -156,7 +156,7 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
                 <link rel='stylesheet' href='/stylesheets/style.css' />
             </head>            
             <body>
-                {{{content}}}
+                {{{body}}}
             </body>        
         </html>
     ```
