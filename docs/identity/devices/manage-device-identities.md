@@ -128,12 +128,13 @@ You can filter the device list by these attributes:
 Cloud Device Administrators and Intune Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed.
 The exported list includes these device identity attributes:
 
-`id,deviceId,displayName,accountEnabled,operatingSystem,operatingSystemVersion,trustType(joinType),mdm,securitySettingsManagement,isCompliant,registrationDateTime,approximateLastSignInDateTime,owner,upnName`
+`id,deviceId,isManaged,profileType,systemLabels,model,displayName,accountEnabled,operatingSystem,operatingSystemVersion,trustType(joinType),mdm,securitySettingsManagement,isCompliant,registrationDateTime,approximateLastSignInDateTime,owner,upnName`
 
 >[!Note]
 >trustType is where JoinType can be determined. A common translation is:
 >- AzureAD -> Microsoft Entra joined
 >- Workplace -> Microsoft Entra registered
+>- ServerAD -> Microsoft Entra hybrid joined
 
 The following filters can be applied for the export task:
 
@@ -145,6 +146,9 @@ The following filters can be applied for the export task:
 - Device type
 
 Additionally, columns can be managed by selecting **Manage view > Columns** to toggle which columns you would like to export.
+
+> [!NOTE]
+>Selecting **Owner** or **User principal name** can make processing take longer. If you prefer faster results, leave these options unchecked; enable them when you need the extra information.
 
 ## Configure device settings
 
