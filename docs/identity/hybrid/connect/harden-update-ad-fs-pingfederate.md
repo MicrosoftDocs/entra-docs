@@ -1,13 +1,9 @@
 ---
 title: Hardening updates for Microsoft Entra Connect Sync
 description: Learn how to upgrade Microsoft Entra Connect Sync to meet the minimum version requirements and prevent synchronization failures after September 30, 2026.
-author: omondiatieno
-ms.author: jomondi
-manager: mwongerapk
 ms.reviewer: sharonrutto
 ms.date: 09/19/2025
 ms.topic: concept-article
-ms.service: entra-id
 ms.subservice: hybrid-connect
 
 #customer intent: As an IT admin, I want to know the minimum version requirements for Microsoft Entra Connect Sync so that I can ensure compliance.

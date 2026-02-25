@@ -2,13 +2,9 @@
 title: Authenticate to Microsoft Entra ID by Using Application Identity
 description: This article describes how to allow the Microsoft Entra Connect application to authenticate with Microsoft Entra ID with modern, more secure credentials. 
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 07/24/2025
 ms.subservice: hybrid
-ms.author: jomondi
 ---
 
 # Authenticate to Microsoft Entra ID by using application identity
