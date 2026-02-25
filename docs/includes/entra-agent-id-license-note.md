@@ -12,4 +12,4 @@ Microsoft Entra Agent ID is part of [Microsoft Agent 365](/microsoft-agent-365/)
 To check these prerequisites:
 
 1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com) as a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).
-1. Browse to **Copilot** > **Settings** > **User access** > **Copilot Frontier** and make sure it's enabled for users. If you don't see this option, contact your administrator to check your Microsoft 365 Copilot licensing.
+1. Browse to **Copilot** > **Settings** > **User access** > **Copilot Frontier** and make sure it's enabled for users. If you don't see these options, contact your administrator to check your Microsoft 365 Copilot licensing.

@@ -23,6 +23,8 @@ This overview introduces the core components of the Microsoft agent identity pla
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
+## How to get started
+
 [!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
 
 ## Platform architecture overview

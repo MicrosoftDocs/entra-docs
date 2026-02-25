@@ -18,8 +18,6 @@ Agent identities are identity accounts within Microsoft Entra ID that provide un
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
-
 ## What is an agent
 
 In its most fundamental form, an agent is an application that attempts to achieve a goal by understanding its environment / context, making decisions and acting on them autonomously using available tools. Agents can act with or without human intervention when provided with proper goals or objectives.
