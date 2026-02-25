@@ -1,12 +1,8 @@
 ---
 title: Browser access guidance for third party mobile device management providers
 description: As an MDM provider, I want to update my Android Device policy to enable browser access during device registration so that my customers can access CA-protected resources seamlessly.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: reference
 ms.date: 10/15/2025
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: zhvolosh
 
 ---
