@@ -25,8 +25,6 @@ The primary goal of the What-if tool is to help you identify and resolve misconf
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
-You must also have the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) or Global Administrator role.
-
 ## Access the What-if tool
 
 To access the What-if tool for a workflow:
