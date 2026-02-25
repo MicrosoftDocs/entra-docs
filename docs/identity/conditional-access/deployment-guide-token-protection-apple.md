@@ -15,6 +15,10 @@ Before using this deployment guide, review [Token Protection in Microsoft Entra 
 > [!IMPORTANT]
 > Apple's native Mail and Calendar apps don't support Token Protection. Users relying on these applications will be blocked when the policy is enforced. Communicate this impact to affected users before deployment.
 
+## Prerequisites
+
+[!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
+
 ## Supported applications and resources
 
 Before enforcing the policy, ensure users are running supported and up-to-date client versions. Older or out-of-support versions may not be compatible and can be blocked.

@@ -22,10 +22,6 @@ When a user registers a Windows 10 or later device with Microsoft Entra, a PRT i
 > [!NOTE]
 > Use Token Protection as part of a broader defense-in-depth strategy against token theft. For more information, see [Protecting tokens in Microsoft Entra](../devices/protecting-tokens-microsoft-entra-id.md). 
 
-## Prerequisites
-
-[!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
-
 ## Requirements and availability
 
 The following devices, platforms, and applications support accessing resources where a token protection Conditional Access policy is applied.
@@ -68,11 +64,6 @@ On Windows, enforcement is also supported for:
 
 ## Deployment
 
-Select the guide for your target platform:
-
-- **Windows**: []()
-- **iOS, iPadOS, and macOS**: [Token Protection deployment guide - Apple](deployment-guide-token-protection-apple.md)
-
 For users, the deployment of a Conditional Access policy to enforce token protection should be invisible when using compatible client platforms on registered devices and compatible applications.
 
 To minimize the likelihood of user disruption due to app or device incompatibility, follow these recommendations: 
@@ -83,28 +74,15 @@ To minimize the likelihood of user disruption due to app or device incompatibili
 - Analyze these logs long enough to cover normal application use.
 - Add known, reliable users to an enforcement policy. 
 
-This process helps assess your users’ client and app compatibility for token protection enforcement. 
+This process helps assess your users' client and app compatibility for token protection enforcement. 
 
-### Supported applications
+Select the guide for your target platform:
 
-- OneDrive sync client version 22.217 or newer 
-- Teams native client version 1.6.00.1331 or newer 
-- Power BI desktop version 2.117.841.0 (May 2023) or newer 
-- [Exchange PowerShell module version 3.7.0 or newer](https://www.powershellgallery.com/packages/ExchangeOnlineManagement/3.7.0)
-- Microsoft Graph PowerShell version 2.0.0 or newer with [EnableLoginByWAM option](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support)
-- Visual Studio 2022 or newer when using the 'Windows authentication broker' Sign-in option 
-- Windows App version 2.0.379.0 or newer
-
-The following resources support Token Protection: 
-
-- Office 365 Exchange Online 
-- Office 365 SharePoint Online 
-- Microsoft Teams Services 
-- Azure Virtual Desktop 
-- Windows 365 
+- **Windows**: [Token Protection deployment guide - Windows](deployment-guide-token-protection-windows.md)
+- **iOS, iPadOS, and macOS**: [Token Protection deployment guide - Apple](deployment-guide-token-protection-apple.md)
 
 ### Known limitations
-
+<!--- Should move to deployment guide - but make sure nothing is lost-->
 - Office perpetual clients aren't supported.
 - The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
    - PowerShell modules accessing SharePoint

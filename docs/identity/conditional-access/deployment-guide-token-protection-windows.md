@@ -13,6 +13,10 @@ This guide covers the steps required to deploy and enforce Token Protection for 
 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
 
+## Prerequisites
+
+[!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
+
 ## Supported applications and resources
 
 Before enforcing the policy, ensure users are running supported and up-to-date client versions. Older or out-of-support versions may not be compatible and can be blocked.
