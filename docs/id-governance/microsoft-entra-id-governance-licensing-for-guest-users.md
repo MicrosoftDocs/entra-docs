@@ -88,7 +88,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 **April**:
 
-- From the second group of 200 guest users in March, 150 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
+- From the second group of 200 guest users in March, all 200 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
 
 - Billing: For April, Fabrikam is billed for 150 users and they aren't charged for the access package auto-assignment action, since these 150 guests have already been charged for April.
 
