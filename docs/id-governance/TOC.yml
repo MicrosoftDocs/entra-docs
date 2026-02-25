@@ -411,6 +411,8 @@
           href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
+        - name: Simulate workflow execution (Preview)
+          href: simulate-workflow-execution.md
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
