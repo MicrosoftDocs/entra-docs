@@ -3,7 +3,7 @@ title: Simulate workflow execution using the What-if tool (Preview)
 description: Learn how to use the What-if tool in Lifecycle Workflows to simulate workflow execution and preview results without impacting actual users.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 02/25/2026
+ms.date: 02/24/2026
 ms.custom: template-how-to
 ai-usage: ai-assisted
 ---
