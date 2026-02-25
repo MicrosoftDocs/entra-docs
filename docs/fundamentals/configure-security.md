@@ -2,8 +2,6 @@
 title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 02/11/2026
 

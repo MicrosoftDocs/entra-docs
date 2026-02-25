@@ -2,8 +2,6 @@
 title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 02/11/2026
 
