@@ -2,8 +2,8 @@
 title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 01/26/2026
-ms.reviewer: lhuangnorth
+ms.date: 02/24/2026
+ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref
   - ai-gen-docs-bap
@@ -75,18 +75,24 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 ## Microsoft Admin Portals
 
-When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to application IDs of the following Microsoft administrative portals:
+When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific application IDs. Those application IDs don't always correlate to one portal. When creating the Conditional Access policy, select the admin portal from the list. When reviewing logs that target these portals, however, the details reflect the underlying resource application IDs. For more information, see the [Audience reporting](troubleshoot-conditional-access.md#audience-reporting) section in the **Troubleshooting sign-in problems** article.
 
 - Azure portal
 - Exchange admin center
 - Microsoft 365 admin center
 - Microsoft 365 Defender portal
-- Microsoft Entra admin center
+- Microsoft Entra admin center 
+   - Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
 - Microsoft Intune admin center
+   - Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
 - Microsoft Purview portal
+   - Microsoft 365 365 Security and Compliance Center app ID: 80ccca67-54bd-44ab-8625-4b79c4dc7775
 - Microsoft Teams admin center
+   - Microsoft Office 365 app ID: 00000006-0000-0ff1-ce00-000000000000
 
-We're continually adding more administrative portals to the list.
+The Admin Portal grouping is primarily intended for include scenarios,for a simplified way to target one or more admin portals with Conditional Access policies (for example, enforcing MFA). This grouping is leveraged in our [MFA for admins Microsoft-managed policy](managed-policies.md#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) to streamline policy creation. 
+ 
+This option is not designed to serve as a bulk exclusion mechanism for backend services. 
 
 > [!NOTE]
 > Block policies that target the Microsoft Admin Portals will block end users from accessing the Microsoft 365 self-install page, as this page is currently located in the Microsoft 365 admin center. For information on alternative deployment options, see [Plan your enterprise deployment of Microsoft 365 Apps](/microsoft-365-apps/deploy/plan-microsoft-365-apps).
