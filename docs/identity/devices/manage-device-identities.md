@@ -147,8 +147,8 @@ The following filters can be applied for the export task:
 
 Additionally, columns can be managed by selecting **Manage view > Columns** to toggle which columns you would like to export.
 
->[!Note]
->Selecting "Owner" or "User principal name" will make processing take longer. If you prefer faster results, leave these options unchecked; enable them when you need the extra information.
+> [!NOTE]
+>Selecting **Owner** or **User principal name** can make processing take longer. If you prefer faster results, leave these options unchecked; enable them when you need the extra information.
 
 ## Configure device settings
 
