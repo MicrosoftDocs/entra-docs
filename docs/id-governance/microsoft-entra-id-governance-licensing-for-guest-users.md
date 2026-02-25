@@ -90,7 +90,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 - From the second group of 200 guest users in March, all 200 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
 
-- Billing: For April, Fabrikam is billed for 150 users and they aren't charged for the access package auto-assignment action, since these 150 guests have already been charged for April.
+- Billing: For April, Fabrikam is billed for 200 users. Although these users had both an inactive access review and an access‑package auto‑assignment in April, each guest is charged only once for the month.
 
 ### Scenario 3: Access Reviews for inactive users and user-to-group affiliation 
 
