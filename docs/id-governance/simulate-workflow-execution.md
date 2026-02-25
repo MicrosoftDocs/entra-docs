@@ -19,7 +19,7 @@ The What-if tool in Lifecycle Workflows lets you evaluate workflow execution bef
 The primary goal of the What-if tool is to help you identify and resolve misconfigurations and prevent accidental workflow executions before processing begins.
 
 > [!NOTE]
-> The What-if tool is currently in private preview. Workflows with change-based trigger types (attribute changes or group membership changes) aren't currently supported.
+> The What-if tool is currently in public preview. Workflows with change-based trigger types (attribute changes or group membership changes) aren't currently supported.
 
 ## Prerequisites
 
