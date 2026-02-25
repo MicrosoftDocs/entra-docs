@@ -31,7 +31,7 @@ You must also have the [Lifecycle Workflows Administrator](../identity/role-base
 
 To access the What-if tool for a workflow:
 
-1. Sign in to the [Microsoft Entra admin center](https://aka.ms/LCWWhatifPreview) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
@@ -41,9 +41,6 @@ To access the What-if tool for a workflow:
    > Workflows with attribute changes or group membership changes trigger types aren't currently supported by the What-if tool.
 
 1. On the workflow overview page, select **What if** from the command bar.
-
-   > [!NOTE]
-   > If the **What if** button isn't visible, confirm that you signed in using the preview URL: `https://aka.ms/LCWWhatifPreview`.
 
 ## Review users in scope
 
