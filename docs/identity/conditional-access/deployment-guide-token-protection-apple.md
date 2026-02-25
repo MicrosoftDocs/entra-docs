@@ -21,33 +21,23 @@ Before enforcing the policy, ensure users are running supported and up-to-date c
 
 ### Applications
 
-Token Protection can be applied to the following applications:
+Token Protection can be applied to the following applications.
 
-- **iOS and iPadOS**:
-   - Microsoft Authenticator
-   - Intune Company Portal
-   - Microsoft Teams
-   - Word, Excel, PowerPoint
-   - OneNote
-   - OneDrive
-   - Microsoft Edge
-   - Microsoft To Do
-   - Outlook Mobile
-   - Microsoft Loop
-   - Microsoft SharePoint
-
-- **macOS**:
-   - Microsoft Teams
-   - Word, Excel, PowerPoint
-   - Outlook
-   - Microsoft OneNote
-   - Intune Company Portal
-   - Visual Studio Code
-   - Microsoft 365 Copilot
-   - Microsoft To Do
-   - Microsoft Loop
-   - OneDrive
-   - Microsoft Edge
+| Application | iOS/iPadOS | macOS |
+|---|---|---|
+| Intune Company Portal | ✅ | ✅ |
+| Microsoft 365 Copilot |  | ✅ |
+| Microsoft Authenticator | ✅ |  |
+| Microsoft Edge | ✅ | ✅ |
+| Microsoft Loop | ✅ | ✅ |
+| Microsoft OneNote | ✅ | ✅ |
+| Microsoft SharePoint | ✅ |  |
+| Microsoft Teams | ✅ | ✅ |
+| Microsoft To Do | ✅ | ✅ |
+| OneDrive | ✅ | ✅ |
+| Outlook | ✅ | ✅ |
+| Visual Studio Code |  | ✅ |
+| Word, Excel, PowerPoint | ✅ | ✅ |
 
 ## Supported Resources
 
@@ -106,7 +96,7 @@ Before enforcing the policy, deploy it in report-only mode to assess impact and 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1.	Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users or workload identities**.
+1. Under **Assignments**, select **Users, agents, or workload identities**.
    1. Under **Include**, select the users or groups to target.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**
@@ -135,13 +125,26 @@ Before enforcing the policy, deploy it in report-only mode to assess impact and 
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 
-### Review readiness with sign-in logs and Log Analytics
+### Review readiness with logs and metrics
 
-After the report-only policy is in place and running, you should analyze your sign-in logs and investigate with Log Analytics to review enforcement readiness.
+After the report-only policy is in place and running, you should review the [Policy impact](concept-conditional-access-report-only.md#policy-impact), analyze your [sign-in logs](../monitoring-health/concept-sign-ins.md), and [investigate with Log Analytics](../monitoring-health/howto-analyze-activity-logs-log-analytics.md) to review enforcement readiness.
 
 ### Sign-in logs
 
-The Microsoft Entra sign-in logs include a `tokenProtectionStatusDetails` property that indicates whether a request uses a device-bound token.
+To view Token Protection related sign-in events in the admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+1. Select the sign-in event you're investigating.
+1. Review the **Conditional Access** and **Report-Only** tabs (depending on the policy state) and select your token protection policy.
+1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
+    :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
+
+1. Select the **Basic Info** tab and check the **Token Protection - Sign In Session** field for more information.
+
+To filter the sign-in logs you might need to add the **Token Protection – Sign-in session status code** column to your view.
+
+The sign-in logs include a `tokenProtectionStatusDetails` property that indicates whether a request uses a device-bound token.
 
 ```http
 "tokenProtectionStatusDetails": {
@@ -149,8 +152,6 @@ The Microsoft Entra sign-in logs include a `tokenProtectionStatusDetails` proper
   "signInSessionStatusCode": <code>
 }
 ```
-
-Existing Microsoft Entra ID device registrations that were not created using hardware-backed key storage do not meet Token Protection requirements. When the policy is enforced, affected users will be required to complete a one-time device registration upgrade before accessing protected resources. This self-service process requires the user to re-authenticate to the tenant (see "Upgrading Device Registration Flow" for user experience details). These users can be identified by status codes 1003 and 1004. Because users in this state can self-remediate, they are eligible for policy enforcement.
 
 | Status Code | Description | Action Required |
 |---|---|---|
@@ -168,9 +169,7 @@ To identify requests that are compliant or upgradeable with user action, filter 
 - `signInSessionStatus` == unbound with `signInSessionStatusCode` of 1003 or 1004
 
 Sample Microsoft Graph Query (Non-Interactive Sign-Ins):
-- `GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(signInEventTypes/any(t: t eq 'nonInteractiveUser') and (tokenProtectionStatusDetails/signInSessionStatusCode eq 1003 or tokenProtectionStatusDetails/signInSessionStatusCode eq 1004 or tokenProtectionStatusDetails/signInSessionStatus eq 'bound'))`
-
-You can also filter sign-in logs directly in the Microsoft Entra admin center using the **Token Protection – Sign-in session status code** column.
+`GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(signInEventTypes/any(t: t eq 'nonInteractiveUser') and (tokenProtectionStatusDetails/signInSessionStatusCode eq 1003 or tokenProtectionStatusDetails/signInSessionStatusCode eq 1004 or tokenProtectionStatusDetails/signInSessionStatus eq 'bound'))`
 
 #### Log Analytics
 
@@ -180,6 +179,9 @@ You can also use Log Analytics to query interactive and non-interactive sign-in 
 > The value of the string used in `enforcedSessionControls` and `sessionControlsNotSatisfied` changed from `"Binding"` to `"SignInTokenProtection"` in late June 2023. Queries on sign-in log data should be updated to reflect this change. The examples below cover both values to include historical data.
 
 The following sample query searches the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by application. These queries are samples only and are subject to change.
+
+<details>
+<summary>Requests by application</summary>
 
 ```kusto
 // Per-app query
@@ -214,6 +216,10 @@ AADNonInteractiveUserSignInLogs
 | extend PctAllowed = round(100.0 * Allow / (Allow + Block), 2)
 | sort by Requests desc
 ```
+</details>
+
+<details>
+<summary>Requests by user</summary>
 
 The following query searches the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by user.
 
@@ -248,6 +254,10 @@ AADNonInteractiveUserSignInLogs
 | extend PctAllowed = round(100.0 * Allow / (Allow + Block), 2)
 | sort by UserPrincipalName asc
 ```
+</details>
+
+<details>
+<summary>Devices don't meet policy requirements</summary>
 
 The following query searches the non-interactive sign-in logs for the last seven days to identify users whose devices do not satisfy Token Protection policy requirements and are candidates for a device registration upgrade. This query is particularly useful during the report-only phase. It surfaces users with status codes 1003 and 1004, those who will be prompted for a one-time registration upgrade when the policy is enforced, allowing you to proactively communicate the change or provide guidance ahead of enforcement.
 
@@ -264,6 +274,7 @@ AADNonInteractiveUserSignInLogs
 | where bindingStatusCode == "1003" or bindingStatusCode == "1004"
 | summarize count() by UserPrincipalName
 ```
+</details>
 
 ### Enforce the Policy
 
@@ -275,6 +286,15 @@ We recommend communicating the change to affected users and your help desk team 
 
 ## End User Experience
 
-Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once policy is enforced. They will need to sign in again to access resources.
+Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once policy is enforced. They will need to sign in again to access resources. A user that registered or enrolled their supported device doesn't experience any differences in the sign-in experience on a token protection supported application when the token protection requirement is enabled.
 
-A user that isn't using a supported application when the token protection policy is enabled will see the following image after authenticating.
+A user who hasn't registered or enrolled their device and if the token protection policy is enabled sees the following screenshot after authenticating.
+
+:::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
+
+A user that isn't using a supported application when the token protection policy is enabled will see the following screenshot after authenticating.
+
+:::image type="content" source="media/concept-token-protection/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
+
+<!--- This felt out of place above. Can link back up to the status codes. DOes this work here? Also, what is the article mentioned?--->
+Existing Microsoft Entra ID device registrations that were not created using hardware-backed key storage do not meet Token Protection requirements. When the policy is enforced, affected users will be required to complete a one-time device registration upgrade before accessing protected resources. This self-service process requires the user to re-authenticate to the tenant (see "Upgrading Device Registration Flow" for user experience details). These users can be identified by status codes 1003 and 1004. Because users in this state can self-remediate, they are eligible for policy enforcement.
