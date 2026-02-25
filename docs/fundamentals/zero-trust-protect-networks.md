@@ -108,3 +108,18 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### All Private Access apps have user or group assignments
 [!INCLUDE [25481](../includes/secure-recommendations/25481.md)]
+
+### Outbound traffic from VNet integrated workloads is routed through Azure Firewall
+[!INCLUDE [25535](../includes/secure-recommendations/25535.md)]
+
+### Threat intelligence is enabled in deny mode on Azure Firewall
+[!INCLUDE [25537](../includes/secure-recommendations/25537.md)]
+
+### IDPS inspection is enabled in deny mode on Azure Firewall
+[!INCLUDE [25539](../includes/secure-recommendations/25539.md)]
+
+### Application Gateway WAF is enabled in prevention mode
+[!INCLUDE [25541](../includes/secure-recommendations/25541.md)]
+
+### Azure Front Door WAF is enabled in prevention mode
+[!INCLUDE [25543](../includes/secure-recommendations/25543.md)]

@@ -3,8 +3,8 @@ title: Microsoft Entra External MFA Method Provider Reference
 description: Learn how to configure an external MFA method provider for Microsoft Entra multifactor authentication.
 ms.topic: how-to
 ms.date: 02/23/2026
-author: gregkmsft
-ms.reviewer: gkinasewitz, gustavosa
+author: aloom3
+ms.reviewer: akulloomba
 ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external MFA method for tenants.
 ---
@@ -63,8 +63,6 @@ Here's how sign-in works with an external MFA method:
 1. Microsoft Entra ID validates the token against the requirements.
 
 1. If the validation succeeds, that means that the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
-
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how external MFA works.":::
 
 ## <a name = "configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external MFA provider with Microsoft Entra ID
 
