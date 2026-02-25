@@ -234,8 +234,8 @@
         "standards/**/*.yml": "dougeby",
         "verified-id/**/*.md": "dougeby",
         "verified-id/**/*.yml": "dougeby",
-        "workload-id/**/*.md": "CelesteDG",
-        "workload-id/**/*.yml": "CelesteDG"
+        "workload-id/**/*.md": "dougeby",
+        "workload-id/**/*.yml": "dougeby"
       },
       "titleSuffix": {
         "*.md": "Microsoft Entra",
