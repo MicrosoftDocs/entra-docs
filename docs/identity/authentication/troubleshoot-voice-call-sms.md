@@ -13,7 +13,8 @@ This topic covers how to investigate and resolve problems with SMS or voice call
 
 This topic includes standardizes messages for support engineers and customers to begin and conclude investigation as well as conclusion of the investigation.
 
-FAQs
+## FAQs
+
 **Question:** Why didn't I receive a call or text message?  
 
 **Answer:** Telcom methods such as voice calls or SMS aren't reliable or guaranteed. In addition, telcom providers use other providers, who in turn use other providers. This practice increases the time required to investigate a problem. As a workaround, use other methods, such as passkey (FIDO2) or Microsoft Authenticator.
