@@ -1,14 +1,11 @@
 ---
 title: Configure a multitenant organization using PowerShell or Microsoft Graph API
 description: Learn how to configure a multitenant organization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
-author: kenwith
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 05/27/2025
-ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # Configure a multitenant organization using PowerShell or Microsoft Graph API
@@ -146,6 +143,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     }
     ```
 
+ms.subservice: multitenant-organizations
 ---
 
 ## Step 3: Add tenants
@@ -380,6 +378,7 @@ By default, tenants added to the multitenant organization are member tenants. Op
     }
     ```
 
+ms.subservice: multitenant-organizations
 ---
 
 ## Step 5: (Optional) Remove a member tenant
@@ -513,6 +512,7 @@ The Cairo tenant created a multitenant organization and added the Berlin and Ath
     - `Application.ReadWrite.All`
     - `Directory.ReadWrite.All`
 
+ms.subservice: multitenant-organizations
 ---
 
 ## Step 7: Join the multitenant organization
@@ -709,6 +709,7 @@ If your tenant is the only multitenant organization owner, you must designate a 
     DELETE https://graph.microsoft.com/v1.0/tenantRelationships/multiTenantOrganization/tenants/{memberTenantId}
     ```
 
+ms.subservice: multitenant-organizations
 ---
 
 ## Step 9: (Optional) Delete the multitenant organization

@@ -2,13 +2,11 @@
 title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: best-practice
 ms.date: 05/21/2025
 ms.author: gasinh
 ms.custom: sfi-ga-nochange
+ms.subservice: architecture
 ---
 
 # Best practices for all isolation architectures

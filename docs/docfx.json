@@ -68,6 +68,8 @@
         "docs/**/*.yml": "show_learn_banner"
       },
       "author": {
+        "architecture/**/*.md": "janicericketts",
+        "architecture/**/*.yml": "janicericketts",
         "external-id/**/*.md": "csmulligan",
         "external-id/**/*.yml": "csmulligan",
         "global-secure-access/**/*.md": "kenwith",
@@ -90,6 +92,8 @@
         "identity/enterprise-apps/**/*.yml": "omondiatieno",
         "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
+        "identity/multi-tenant-organizations/**/*.md": "kenwith",
+        "identity/multi-tenant-organizations/**/*.yml": "kenwith",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
         "identity/users/**/*.md": "barclayn",
@@ -98,6 +102,8 @@
         "verified-id/**/*.yml": "barclayn"
       },
       "ms.author": {
+        "architecture/**/*.md": "jricketts",
+        "architecture/**/*.yml": "jricketts",
         "external-id/**/*.md": "cmulligan",
         "external-id/**/*.yml": "cmulligan",
         "global-secure-access/**/*.md": "kenwith",
@@ -120,6 +126,8 @@
         "identity/enterprise-apps/**/*.yml": "jomondi",
         "identity/managed-identities-azure-resources/**/*.md": "kengaderdus",
         "identity/managed-identities-azure-resources/**/*.yml": "kengaderdus",
+        "identity/multi-tenant-organizations/**/*.md": "kenwith",
+        "identity/multi-tenant-organizations/**/*.yml": "kenwith",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
         "identity/users/**/*.md": "barclayn",
@@ -128,6 +136,8 @@
         "verified-id/**/*.yml": "barclayn"
       },
       "ms.service": {
+        "architecture/**/*.md": "entra",
+        "architecture/**/*.yml": "entra",
         "external-id/**/*.md": "entra-external-id",
         "external-id/**/*.yml": "entra-external-id",
         "global-secure-access/**/*.md": "global-secure-access",
@@ -150,6 +160,8 @@
         "identity/enterprise-apps/**/*.yml": "entra-id",
         "identity/managed-identities-azure-resources/**/*.md": "entra-id",
         "identity/managed-identities-azure-resources/**/*.yml": "entra-id",
+        "identity/multi-tenant-organizations/**/*.md": "entra-id",
+        "identity/multi-tenant-organizations/**/*.yml": "entra-id",
         "identity/role-based-access-control/**/*.md": "entra-id",
         "identity/role-based-access-control/**/*.yml": "entra-id",
         "identity/users/**/*.md": "entra-id",
@@ -180,8 +192,8 @@
       "manager": {
         "agent-id/**/*.md": "pmwongera",
         "agent-id/**/*.yml": "pmwongera",
-        "architecture/**/*.md": "dougeby",
-        "architecture/**/*.yml": "dougeby",
+        "architecture/**/*.md": "martinco",
+        "architecture/**/*.yml": "martinco",
         "external-id/**/*.md": "dougeby",
         "external-id/**/*.yml": "dougeby",
         "fundamentals/**/*.md": "dougeby",
@@ -245,7 +257,7 @@
       "no-loc": {
         "includes/policy/**/*.md": "[audit, deny, modify, disabled, auditifnotexists, deployifnotexists]"
       }
-    }, 
+    },
     "template": [
       "docs.html",
       "default",
@@ -253,7 +265,10 @@
     ],
     "dest": "entra",
     "recommendations": true,
-    "recommendation_types": ["Training", "Certification"],
+    "recommendation_types": [
+      "Training",
+      "Certification"
+    ],
     "contributors_to_exclude": [
       "alexbuckgit",
       "atookey",
@@ -327,5 +342,5 @@
         ]
       }
     }
-  } 
+  }
 }

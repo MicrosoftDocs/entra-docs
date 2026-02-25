@@ -1,14 +1,10 @@
 ---
 title: Microsoft Entra security operations for consumer accounts
 description: Guidance to establish baselines and how to monitor and alert on potential security issues with consumer accounts.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 05/20/2025
-ms.author: jricketts
 ms.custom: sfi-ropc-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra security operations for consumer accounts
