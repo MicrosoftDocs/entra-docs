@@ -52,7 +52,13 @@
   - name: Filter for applications
     href: concept-filter-for-applications.md
   - name: Token protection
-    href: concept-token-protection.md
+    items:
+    - name: Token protection overview
+      href: concept-token-protection.md
+    - name: Deploy token protection for Windows
+      href: deployment-guide-token-protection-windows.md
+    - name: Deploy token protection for Apple platforms
+      href: deployment-guide-token-protection-apple.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
   - name: Authentication transfer

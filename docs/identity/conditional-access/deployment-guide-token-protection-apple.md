@@ -21,7 +21,7 @@ Before using this deployment guide, review [Token Protection in Microsoft Entra 
 
 ## Supported applications and resources
 
-Before enforcing the policy, ensure users are running supported and up-to-date client versions. Older or out-of-support versions may not be compatible and can be blocked.
+The following applications and resources are covered by Token Protection on Apple platforms. Review these lists before enforcing the policy.
 
 ### Applications
 
@@ -43,7 +43,7 @@ Token Protection can be applied to the following applications.
 | Visual Studio Code |  | ✅ |
 | Word, Excel, PowerPoint | ✅ | ✅ |
 
-## Supported Resources
+### Supported Resources
 
 Token Protection on Apple platforms can be used to protect the following resources:
 
@@ -51,7 +51,7 @@ Token Protection on Apple platforms can be used to protect the following resourc
 - SharePoint Online
 - Microsoft Teams
 
-## Known Limitations
+### Known Limitations
 
 - Token Protection currently requires the Microsoft Enterprise SSO plug-in, which requires MDM management. *Unmanaged iOS and macOS devices are not supported at this time.* 
 - *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing these apps when the policy is enforced. 
@@ -72,14 +72,14 @@ The high-level steps to enable Token Protection on Apple platforms are as follow
 1. [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics)
 1. [Enforce the policy](#enforce-the-policy)
 
-### Configure hardware-backed device registration
+## Configure hardware-backed device registration
 
 Complete the steps below for *each* platform you are deploying to. These steps must be completed *before* users register their devices. 
 
 > [!NOTE]
 > Users who registered devices before these steps were completed will be prompted to upgrade their device registration to hardware-backed when the policy is enforced: see the [Upgrade Existing Device Registrations]() section.
 
-#### [iOS and iPadOS](#tab/ios-and-ipados)
+### [iOS and iPadOS](#tab/ios-and-ipados)
 
 1. Install Microsoft Authenticator from the Apple App Store, or deploy it via your MDM solution. Authenticator serves as the authentication broker for Microsoft Entra sign-ins.
 1. Enable hardware-backed registration using the [Microsoft Enterprise SSO plug-in for Apple Devices](../../identity-platform/apple-sso-plugin.md).
@@ -88,16 +88,19 @@ Complete the steps below for *each* platform you are deploying to. These steps m
    - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
    - For all other registrations, the flag takes effect only after the device is MDM-managed and the Microsoft Enterprise SSO plug-in profile is active.
 
-#### [macOS](#tab/macos)
+### [macOS](#tab/macos)
 
 1. Install the Microsoft Company Portal or deploy it via your MDM solution. Company Portal serves as the authentication broker for Microsoft Entra sign-ins.
 1. Enable hardware-backed registration using one of the following options:
    - Option A: Enable the **Microsoft Enterprise SSO plug-in** with the `use_most_secure_storage` flag.
-   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default and requires no additional flag configuration. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune]().
+      - The flag applies only to new device registrations made after the flag is configured.
+      - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
+      - For all other registrations, the flag takes effect only after the device is MDM-managed and the Microsoft Enterprise SSO plug-in profile is active.
+   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default and requires no additional flag configuration. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
 
 ---
 
-### Configure the report-only mode policy
+## Configure the report-only mode policy
 
 Before enforcing the policy, deploy it in report-only mode to assess impact and identify non-compliant sign-in sessions.
 
@@ -133,7 +136,7 @@ Before enforcing the policy, deploy it in report-only mode to assess impact and 
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 
-### Review readiness with logs and metrics
+## Review readiness with logs and metrics
 
 After the report-only policy is in place and running, you should review the [Policy impact](concept-conditional-access-report-only.md#policy-impact), analyze your [sign-in logs](../monitoring-health/concept-sign-ins.md), and [investigate with Log Analytics](../monitoring-health/howto-analyze-activity-logs-log-analytics.md) to review enforcement readiness.
 
@@ -143,13 +146,12 @@ To view Token Protection related sign-in events in the admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+   - Add the **Token Protection – Sign-in session status code** column to your view to quickly see related sign-in events.
 1. Select the sign-in event you're investigating.
 1. Review the **Conditional Access** and **Report-Only** tabs (depending on the policy state) and select your token protection policy.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
-    :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
+    :::image type="content" source="media/deployment-guide-token-protection-apple/sign-in-log-sample-macos.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
 1. Select the **Basic Info** tab and check the **Token Protection - Sign In Session** field for more information.
-
-To filter the sign-in logs you might need to add the **Token Protection – Sign-in session status code** column to your view.
 
 The sign-in logs include a `tokenProtectionStatusDetails` property that indicates whether a request uses a device-bound token.
 
@@ -159,7 +161,11 @@ The sign-in logs include a `tokenProtectionStatusDetails` property that indicate
   "signInSessionStatusCode": <code>
 }
 ```
-#### Status code definitions
+
+> [!NOTE]
+> Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once the policy is enforced. They will need to complete a one-time device registration upgrade and then sign in again to access resources. These users can be identified by **[status codes 1003 and 1004](#status-code-definitions)**. Because users in this state can self-remediate, they are eligible for policy enforcement.
+
+To identify which users you can apply the policy to, refer to the following status codes.
 
 | Status Code | Description | Action Required |
 |---|---|---|
@@ -179,14 +185,13 @@ To identify requests that are compliant or upgradeable with user action, filter 
 Sample Microsoft Graph Query (Non-Interactive Sign-Ins):
 `GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(signInEventTypes/any(t: t eq 'nonInteractiveUser') and (tokenProtectionStatusDetails/signInSessionStatusCode eq 1003 or tokenProtectionStatusDetails/signInSessionStatusCode eq 1004 or tokenProtectionStatusDetails/signInSessionStatus eq 'bound'))`
 
-#### Log Analytics
+### Log Analytics
 
 You can also use Log Analytics to query interactive and non-interactive sign-in logs for blocked requests due to Token Protection enforcement failure.
 
-> [!NOTE]
-> The value of the string used in `enforcedSessionControls` and `sessionControlsNotSatisfied` changed from `"Binding"` to `"SignInTokenProtection"` in late June 2023. Queries on sign-in log data should be updated to reflect this change. The examples below cover both values to include historical data.
-
 The following sample query searches the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by application. These queries are samples only and are subject to change.
+
+**Sample queries**:
 
 <details>
 <summary>Requests by application</summary>
@@ -284,7 +289,7 @@ AADNonInteractiveUserSignInLogs
 ```
 </details>
 
-### Enforce the Policy
+## Enforce the Policy
 
 After reviewing sign-in log data and confirming that your targeted users and devices are ready, move the **Enable policy** toggle from **Report-only** to **On**.
 
@@ -298,19 +303,15 @@ There are some end user experiences to be aware of when deploying Token Protecti
 
 ### Upgrade device registration
 
-Existing Microsoft Entra ID device registrations that were not created using hardware-backed key storage do not meet Token Protection requirements.
-
-Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once the policy is enforced. They will need to complete a one-time device registration upgrade and then sign in again to access resources. These users can be identified by [status codes 1003 and 1004](#status-code-definitions). Because users in this state can self-remediate, they are eligible for policy enforcement.
-
-A user that registered or enrolled their supported device doesn't experience any differences in the sign-in experience on a token protection supported application when the token protection requirement is enabled.
+Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once policy is enforced. They will need to sign in again to access resources.
 
 ### Sign-in experience
 
 When the Token Protection policy is enabled, users who haven't registered or enrolled their device will see the following screen after authenticating:
 
-:::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
+:::image type="content" source="media/deployment-guide-token-protection-apple/token-protection-device-registration-apple.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 
 When the Token Protection policy is enabled, users who aren't using a supported application will see the following screen after authenticating:
 
-:::image type="content" source="media/concept-token-protection/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
+:::image type="content" source="media/deployment-guide-token-protection-apple/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
 

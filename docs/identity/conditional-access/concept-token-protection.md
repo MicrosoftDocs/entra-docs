@@ -17,7 +17,7 @@ ms.custom:
 
 Token Protection is a Conditional Access session control that attempts to reduce token replay attacks by ensuring only device bound sign-in session tokens, like [Primary Refresh Tokens (PRTs)](../devices/concept-primary-refresh-token.md), are accepted by Microsoft Entra ID when applications request access to protected resources.  
 
-When a user registers a Windows 10 or later device with Microsoft Entra, a PRT is issued and cryptographically bound to that device. This binding ensures that even if a threat actor steals a token, it can't be used from another device. With Token Protection enforced, Microsoft Entra validates that only these bound sign-in session tokens are used by supported applications. 
+When a user registers a supported device with Microsoft Entra, a PRT is issued and cryptographically bound to that device. This binding ensures that even if a threat actor steals a token, it can't be used from another device. With Token Protection enforced, Microsoft Entra validates that only these bound sign-in session tokens are used by supported applications. 
 
 > [!NOTE]
 > Use Token Protection as part of a broader defense-in-depth strategy against token theft. For more information, see [Protecting tokens in Microsoft Entra](../devices/protecting-tokens-microsoft-entra-id.md). 
@@ -54,13 +54,11 @@ On Windows, enforcement is also supported for:
 - For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 **Apple (Preview)**:
-- macOS 11.0 or later. Requires the Microsoft Enterprise SSO plug-in. You can also use Platform SSO. Only MDM-managed devices are supported.
+- macOS 11.0 or later. Requires the Microsoft Enterprise SSO plug-in. Alternatively, you can also use Platform SSO. Only MDM-managed devices are supported.
 - iOS / iPadOS 14.0 or later. Requires the Microsoft Enterprise SSO plug-in. Only MDM-managed devices are supported.
 - For detailed steps on how to setup, see [Enabling Microsoft Enterprise SSO plug-in](../../identity-platform/apple-sso-plugin.md) and configuring [Platform SSO for macOS](/intune/intune-service/configuration/platform-sso-macos).
 
 ## Deployment
-
-For users, the deployment of a Conditional Access policy to enforce token protection should be invisible when using compatible client platforms on registered devices and compatible applications.
 
 To minimize the likelihood of user disruption due to app or device incompatibility, follow these recommendations: 
 
@@ -71,6 +69,8 @@ To minimize the likelihood of user disruption due to app or device incompatibili
 - Add known, reliable users to an enforcement policy. 
 
 This process helps assess your users' client and app compatibility for token protection enforcement. 
+
+### Deployment guides
 
 Select the guide for your target platform:
 
