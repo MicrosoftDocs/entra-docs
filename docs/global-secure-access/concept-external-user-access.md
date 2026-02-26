@@ -98,7 +98,7 @@ A: Yes, you can use a windows device which is registered to Entra for switching 
 - When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant.
 - External user access in the resource tenant will fail if compliant network policies are enforced for private applications. External users must be excluded from these policies.
 - When the client is already connected and the user is added to a new external tenant, the new tenant does not appear in the client UI. The client must be disabled and re-enabled for the new tenant to be shown.
-- On the resource tenant, if the Private Access traffic profile is assigned after the client is already connected, the client must be disabled and re-enabled for private traffic to take effect.
+- On the resource tenant, if the Private Access traffic profile is assigned after the client is connected, the client must be disabled and re-enabled for private traffic to take effect.
 
 ## Enable external user access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide external user access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.
