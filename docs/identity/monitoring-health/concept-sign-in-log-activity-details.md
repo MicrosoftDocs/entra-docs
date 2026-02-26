@@ -1,13 +1,8 @@
 ---
 title: Learn about the sign-in log activity details
 description: Learn about the information available on each of the tabs on the Microsoft Entra sign-in log activity details.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
-ms.subservice: monitoring-health
 ms.date: 07/01/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand the parts of a sign-in log so I can troubleshoot sign-in issues.

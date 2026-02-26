@@ -1,13 +1,8 @@
 ---
 title: How to investigate Health monitoring alerts (preview)
 description: Learn how to investigate Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
-author: shlipsey3
-manager: pmwongera 
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 02/09/2026
-ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.

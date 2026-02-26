@@ -1,8 +1,6 @@
 ---
 title: Frontline worker management
 description: Learn about frontline worker management capabilities that are provided through the My Staff portal.
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 03/19/2025
 ms.author: cmulligan

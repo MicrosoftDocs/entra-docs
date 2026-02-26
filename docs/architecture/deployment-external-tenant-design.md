@@ -2,7 +2,6 @@
 title: Microsoft Entra External ID deployment guide for tenant design
 description: Learn how to design a tenant, manage data residency, and understand compliance requirements in Microsoft Entra External ID.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/22/2025

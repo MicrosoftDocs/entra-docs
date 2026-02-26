@@ -1,14 +1,11 @@
 ---
 title: Secure and govern security operations center (SOC) access in a multitenant organization with Microsoft Defender for Cloud XDR and Microsoft Entra ID Governance
 description: Learn how to provide security operations analysts access to resources across tenants.
-author: kenwith
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 07/03/2025
-ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, DevOps, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # Govern access for security operations center (SOC) teams in a multitenant environment

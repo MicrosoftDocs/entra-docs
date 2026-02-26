@@ -2,13 +2,8 @@
 title: Quickstart guide to analyze a failed sign-in attempt
 description: In this quickstart, you learn how you can use the sign-in log to determine the reason for a failed sign-in to Microsoft Entra ID.
 
-ms.service: entra-id
-ms.subservice: monitoring-health
 ms.topic: quickstart
 ms.date: 02/25/2025
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
 ms.reviewer: besiler
 
 #Customer intent: As an IT admin, you need to know how to use the sign-in log so that you can fix sign-in issues.
