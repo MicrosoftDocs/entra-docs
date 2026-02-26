@@ -94,9 +94,11 @@ A: Yes, you can use a windows device which is registered to Entra for switching 
 ## Known limitations
 - External user access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
-- When Access Control is allowed on cross tenant settings for Global Secure Access, access isn't allowed because Global Secure Access controls these applications.
+- On the resource tenant, inbound access settings to private application is not allowed on cross tenant settings.
 - When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant.
 - External user access in the resource tenant will fail if compliant network policies are enforced for private applications. External users must be excluded from these policies.
+- When client is connected annd now user has a new guest tenant, client do not show the new tenant option on the UI. Client should be disabled and enabled to get the new tenant on the client UI.
+- On the resource tenant, if Private Access traffic profile is assigned to the user after client the client is connected, client should be disabled and enabled to get the private traffic.
 
 ## Enable external user access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide external user access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.
