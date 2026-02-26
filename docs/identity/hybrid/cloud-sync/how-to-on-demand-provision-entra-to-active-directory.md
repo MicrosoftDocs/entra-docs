@@ -1,13 +1,9 @@
 ---
 title: 'On-demand provisioning - Microsoft Entra ID to Active Directory'
 description: This article describes how to use on-demand provisioning when provisioning from Microsoft Entra ID to Active Directory.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 
