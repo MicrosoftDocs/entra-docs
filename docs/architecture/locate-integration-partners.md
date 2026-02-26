@@ -3,8 +3,6 @@ title: Microsoft Entra Suite services and integration partners
 description: Locate and engage partners for guidance on Microsoft Entra deployment.
 author: gargi-sinha
 ms.author: gasinh
-manager: martinco
-ms.service: entra
 ms.topic: partner-tools
 ms.date: 06/18/2025
 ms.reviewer: cammart

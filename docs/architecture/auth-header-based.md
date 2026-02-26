@@ -1,15 +1,9 @@
 ---
 title: Header-based authentication with Microsoft Entra ID
 description: Architectural guidance on achieving header-based authentication with Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 01/10/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Header-based authentication with Microsoft Entra ID
