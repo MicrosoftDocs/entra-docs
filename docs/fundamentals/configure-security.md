@@ -2,8 +2,6 @@
 title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 02/11/2026
 
@@ -141,7 +139,7 @@ Protect your network perimeter.
 | [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Outbound traffic from VNet integrated workloads is routed through Azure Firewall](zero-trust-protect-networks.md#outbound-traffic-from-vnet-integrated-workloads-is-routed-through-azure-firewall) | Azure Firewall Basic |
-| [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Standard |
+| [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
 | [IDPS inspection is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#idps-inspection-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
 | [Application Gateway WAF is enabled in prevention mode](zero-trust-protect-networks.md#application-gateway-waf-is-enabled-in-prevention-mode) | Azure Application Gateway WAF_v2 |
 | [Azure Front Door WAF is enabled in prevention mode](zero-trust-protect-networks.md#azure-front-door-waf-is-enabled-in-prevention-mode) | Azure Front Door Standard |

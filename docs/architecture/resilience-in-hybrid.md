@@ -1,12 +1,9 @@
 ---
 title: Build more resilient hybrid authentication in Microsoft Entra ID
 description: A guide for architects and IT administrators on building a resilient hybrid infrastructure.
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience in your hybrid architecture
 

@@ -2,12 +2,8 @@
 title: Customize tokens
 description: How to build security into applications with ID tokens, access tokens, and security tokens from the Microsoft identity platform.
 customer-intent: As an independent software developer, I want to learn how to build secure applications with Microsoft identity platform ID tokens, access tokens, and security tokens.
-author: jricketts
-manager: martinco
-ms.service: entra
 ms.topic: concept-article
 ms.date: 03/14/2024
-ms.author: jricketts
 ms.custom: sfi-ropc-nochange
 ---
 # Customize tokens

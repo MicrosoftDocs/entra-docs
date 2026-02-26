@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
-author: barclayn
 manager: pmwongera
-ms.service: entra
 ms.topic: troubleshooting
-ms.subservice: fundamentals
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: Sunayana
 ms.custom: sfi-image-nochange
 ---

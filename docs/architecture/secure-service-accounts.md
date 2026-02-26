@@ -1,14 +1,9 @@
 ---
 title: Introduction to securing Microsoft Entra service accounts
 description: Explanation of the types of service accounts available in Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 08/26/2022
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 # Securing cloud-based service accounts
 
