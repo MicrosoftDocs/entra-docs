@@ -75,7 +75,7 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 ## Microsoft Admin Portals
 
-When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific application IDs. Those application IDs don't always correlate to one portal. When creating the Conditional Access policy, select the admin portal from the list. When reviewing logs that target these portals, however, the details reflect the underlying resource application IDs. For more information, see the [Audience reporting](troubleshoot-conditional-access.md#audience-reporting) section in the **Troubleshooting sign-in problems** article.
+When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific underlying resource application IDs associated with Microsoft admin portals. It doesn't include the backend services that those portals might call or depend on. To identify service dependencies of the admin portals, use the [Conditional Access audience reporting in sign-in logs](troubleshoot-conditional-access.md#audience-reporting) 
 
 - Azure portal
 - Exchange admin center
@@ -92,7 +92,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 
 The Admin Portal grouping is primarily intended for include scenarios,for a simplified way to target one or more admin portals with Conditional Access policies (for example, enforcing MFA). This grouping is leveraged in our [MFA for admins Microsoft-managed policy](managed-policies.md#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) to streamline policy creation. 
  
-This option is not designed to serve as a bulk exclusion mechanism for backend services. 
+This option is not intended to function as a bulk exclusion mechanism for all backend services associated with the underlying application IDs. 
 
 > [!NOTE]
 > Block policies that target the Microsoft Admin Portals will block end users from accessing the Microsoft 365 self-install page, as this page is currently located in the Microsoft 365 admin center. For information on alternative deployment options, see [Plan your enterprise deployment of Microsoft 365 Apps](/microsoft-365-apps/deploy/plan-microsoft-365-apps).
