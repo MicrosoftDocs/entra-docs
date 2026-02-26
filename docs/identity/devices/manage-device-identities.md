@@ -1,12 +1,8 @@
 ---
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 02/03/2026
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: myra-ramdenbourg
 ms.custom: sfi-image-nochange
 ---

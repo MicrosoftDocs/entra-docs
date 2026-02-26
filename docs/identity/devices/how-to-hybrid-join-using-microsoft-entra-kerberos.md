@@ -7,8 +7,6 @@ ms.author: justinha
 ms.reviewer: nbeesett
 ms.date: 02/24/2026
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: devices
 ---
 
 # Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview) 

@@ -3,13 +3,9 @@ title: How to manage stale devices in Microsoft Entra ID
 description: Learn how to remove stale devices from your database of registered devices in Microsoft Entra ID.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
