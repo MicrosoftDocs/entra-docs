@@ -77,9 +77,32 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 **Service category:** Entra Connect  
 **Product capability:** Entra Connect  
 
-Beginning March 31, 2026, Microsoft Entra ID will block any attempt to hard match an on-premises Active Directory (AD) user to an existing Microsoft Entra ID account that holds privileged roles. This safeguard prevents potential elevation‑of‑privilege scenarios where an attacker could attempt to take over a privileged cloud account by manipulating synchronization attributes.
+**What is Hard-matching in Microsoft Entra Connect Sync and Cloud Sync?**
 
-No customer action is required.
+When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object’s sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
+
+To strengthen the security posture of your Microsoft Entra ID environment, we are introducing a change that will restrict certain types of hard-match operations by default.   
+
+**What’s changing**
+
+Beginning June 1, Microsoft Entra ID will block any attempt by Entra Connect Sync or Cloud Sync from hard-matching a new user object from Active Directory to an existing cloud-managed Entra ID user object that holds [privileged roles](https://docs.azure.cn/en-us/entra/identity/role-based-access-control/permissions-reference#all-roles).
+
+**This means:**
+
+*   If a cloud managed user already has [onPremisesImmutableId (sourceAnchor)](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) set and is assigned a privileged role, Microsoft Entra Connect Sync or Cloud Sync will no longer be able to take over the Source of Authority of that user by hard-matching with an incoming user object from Active Directory.  
+    
+*   This safeguard prevents attackers from taking over privileged cloud managed users in Entra by manipulating attributes of user objects in Active Directory. 
+    
+
+**What’s not changing**
+
+*   Hard match operations for non-privileged accounts are not affected.  
+*   [Soft match](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md?source=recommendations#hard-match-vs-soft-match) behavior is not affected.  
+    
+
+**Customer action required**
+
+If you encounter a hard match error after June 1, 2026, see our [documentation](../identity/hybrid/connect/tshoot-connect-sync-errors.md#existing-admin-role-conflict) for mitigation steps.
 
 ---
 
