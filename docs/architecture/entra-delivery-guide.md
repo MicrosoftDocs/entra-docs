@@ -2,12 +2,11 @@
 title: Microsoft Entra Suite workshop delivery guide
 description: This article is for use by the delivery expert that plans on delivering the Microsoft Entra Suite Workshop to customers. It aims to provide delivery experts with a comprehensive overview of the tasks that is required to successfully deliver the Microsoft Entra Suite Workshop to customers. It's structured chronologically following the standard and typical flow of a workshop delivery. It outlines how to use the Microsoft Entra Suite Workshop to deploy all the components of the suite. It gives organizations and IT admins a detailed plan to design and deploy Microsoft Entra ID Governance, Microsoft Entra Private Access, Microsoft Entra Internet Access, and Microsoft Entra Verified ID.
 ms.date: 08/01/2025
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 author: martincoetzer
 ms.author: martinco
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to deploy all components of the Microsoft Entra Suite.
+ms.subservice: architecture
 ---
 # Microsoft Entra Suite workshop delivery guide
 

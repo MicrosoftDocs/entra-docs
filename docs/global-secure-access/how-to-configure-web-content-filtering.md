@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 02/13/2026
+ms.date: 02/21/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -52,6 +52,10 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Select **Add rule**.
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL, or a valid FQDN, and then select **Add**.
      - Valid URLs and FQDNs in this feature can also include wildcards using the asterisk symbol, *, and can be comma-separated lists.
+     - When entering FQDNs, use the domain name only. Don't include protocols (such as `https://`), port numbers, or URL paths. For example, enter `contoso.com` instead of `https://contoso.com:443/path`.
+     - To match all subdomains of a domain, use the wildcard format `*.domain.com`. Note that the wildcard `*.domain.com` matches subdomains like `www.domain.com` but doesn't match the root domain `domain.com` itself. To cover both the domain and all its subdomains, include both entries as a comma-separated list (for example, `*.contoso.com,contoso.com`).
+     - When entering multiple FQDNs in a comma-separated list, don't include spaces between entries (for example, `contoso.com,fabrikam.com,*.example.com`).
+     - Note, the URL filtering Preview supports a maximum of 1,000 URLs per tenant.
 1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a security profile

@@ -1,15 +1,9 @@
 ---
 title: LDAP authentication with Microsoft Entra ID
 description: Architectural guidance on achieving LDAP authentication with Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 01/10/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # LDAP authentication with Microsoft Entra ID

@@ -405,7 +405,7 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
-        - name: Using custom trigger attributes (Preview)
+        - name: Using custom trigger attributes
           href: workflow-custom-triggers.md    
         - name: Using custom security attributes scope
           href: manage-workflow-custom-security-attribute.md    
@@ -423,7 +423,7 @@
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
-        - name: Delegated Workflow Management (Preview)
+        - name: Delegated Workflow Management
           href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md

@@ -6,10 +6,8 @@ manager: dougeby
 featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 10/30/2025
+ms.date: 02/22/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -37,7 +35,7 @@ For more information, see: [Embrace cloud-first posture: Transfer user Source o
 
 ---
 
-### General Availability - Entra ID Governance guest billing meter enforcement
+### General Availability - Microsoft Entra ID Governance guest billing meter enforcement
 
 **Type:** New feature  
 **Service category:** Entitlement Management, Lifecycle Workflows  

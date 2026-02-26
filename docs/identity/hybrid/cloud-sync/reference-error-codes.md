@@ -2,14 +2,9 @@
 title: Microsoft Entra Cloud Sync error codes and descriptions
 description: Reference article for cloud sync error codes
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: reference
 ms.date: 12/17/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # Microsoft Entra Cloud Sync error codes and descriptions

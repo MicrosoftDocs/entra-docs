@@ -1,7 +1,7 @@
 ---
 title: Bulk download group membership list - Azure portal
 description: Add users in bulk in the Azure admin center.
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.custom: it-pro
 ms.reviewer: yuan.karppanen
@@ -21,19 +21,45 @@ To download all members of a specific group:
 
     :::image type="content" source="media/bulk-operations/group-members-tab.png" alt-text="Screenshot of a selected group's Members tab listing users and service principals.":::
 
-3. Select **Bulk operations** > **Download members**.
+3. On the **Members** page command bar, select **Download members**.
+   If you see a **Bulk operations** menu instead, select **Bulk operations** > **Download members**.
 
     :::image type="content" source="media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
-4. Enter a filename and select **Start download**.
+4. Enter a filename and select **Start bulk operation**.
 
-5. Follow the download process as described in [Bulk download groups](groups-bulk-download.md#bulk-download-groups).
+5. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download group members submission successful. Click on the title for more information."
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
+6. Select the **Success!** notification title to open the job details. Select the filename to start downloading the CSV file.
+
+7. A **Download successful** notification confirms when the file has been downloaded. You can also select **More activity in the audit log** at the top of the Notifications panel to view all bulk operation activity.
+
+> [!TIP]
+> You can also select **Click here to view the status of each operation** in the download dialog to navigate directly to the **Bulk operation results** page, where you can monitor all pending and completed bulk operations.
+
+### Downloaded CSV file format
+
+The downloaded CSV file contains the following information for each group member:
+
+| Column | Description |
+|--------|-------------|
+| Object ID | The unique identifier (GUID) of the member |
+| User principal name | The UPN (for example, `user@contoso.com`) for user members |
+| Display name | The display name of the member |
+| Member type | Whether the member is a User, Group, or Service Principal |
+
+> [!TIP]
+> You can use the downloaded CSV file as a starting point when you need to remove members from a group. Simply edit the file to include only the members you want to remove, then upload it using the **Remove members** bulk operation.
+
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
 
 ## Check download status
 
-You can see the status of all of your pending bulk requests on the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
+
+1. Navigate to **Identity** > **Users** > **Bulk operation results**.
+2. Find your download operation in the list.
+3. When **Status** shows **Completed**, select the filename to download the CSV file.
 
 :::image type="content" source="./media/groups-bulk-download-members/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page." lightbox="./media/groups-bulk-download-members/bulk-center.png":::
 
