@@ -91,7 +91,7 @@ procedureSection:
   - title: |
       Manage user authentication options
     summary: |
-      [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can require other users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. Users can't update their own user object. To change or reset their own security methods, users can go to [Security info](https://aka.ms/security-info), or go to [self-service password reset](https://aka.ms/sspr) to reset their password. To manage other user's settings, complete the following steps:
+      [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can require other users to reset their password, re-register for MFA, or revoke the user's sessions. Users can't update their own user object. To change or reset their own security methods, users can go to [Security info](https://aka.ms/security-info), or go to [self-service password reset](https://aka.ms/sspr) to reset their password. To manage other user's settings, complete the following steps:
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
@@ -101,13 +101,7 @@ procedureSection:
         Choose the user you wish to perform an action on and select **Authentication methods**. At the top of the window, then choose one of the following options for the user:
           - **Reset password** resets the user's password and assigns a temporary password that must be changed on the next sign-in.
           - **Require re-register MFA** deactivates the user's hardware OATH tokens and deletes the following authentication methods from this user: phone numbers, Microsoft Authenticator apps and software OATH tokens. If needed, the user is requested to set up a new MFA authentication method the next time they sign in.
-          - **Revoke MFA sessions** forces users with enforced or enabled status in [per-user MFA](/entra/identity/authentication/howto-mfa-userstates) to complete MFA again by clearing their remembered sessions.  
- 
-            :::image type="content" source="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png" alt-text="Screenshot of manage authentication methods from the Microsoft Entra admin center." lightbox="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png":::
-
-            Microsoft recommends using **Revoke sessions** instead because it signs out users from all active sessions. To revoke sessions for a user in the Microsoft Entra ID admin center, select **Users** > select a user > **Overview** > **Revoke sessions**.
-
-            :::image type="content" source="media/howto-mfa-userdevicesettings/revoke-sessions.png" alt-text="Screenshot of how to revoke sessions for a user in the Microsoft Entra admin center.":::
+          - **Revoke sessions** invalidates a user’s refresh tokens, forcing reauthentication across active sessions and applications.  
 
   - title: |
       Delete users' existing app passwords
