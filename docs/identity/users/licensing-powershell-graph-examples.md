@@ -488,7 +488,7 @@ Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
 
 ## Remove direct licenses for users with group licenses
 
-The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](~/fundamentals/licensing.md).
+The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](~/fundamentals/concept-group-based-licensing.md).
 
 > [!NOTE]
 >To ensure that users don't lose access to services and data, it's important to confirm that directly assigned licenses don't provide more service functionality than the inherited licenses. It isn't currently possible to use PowerShell to determine which services are enabled through inherited licenses versus direct licenses. Therefore, the script uses a minimum level of services that are known to be inherited from groups to check and ensure that users don't experience unexpected service loss.
