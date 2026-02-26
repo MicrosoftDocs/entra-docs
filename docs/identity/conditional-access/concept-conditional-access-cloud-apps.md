@@ -77,18 +77,12 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific underlying resource application IDs associated with Microsoft admin portals. It doesn't include the backend services that those portals might call or depend on. To identify service dependencies of the admin portals, use the [Conditional Access audience reporting in sign-in logs](troubleshoot-conditional-access.md#audience-reporting) 
 
-- Azure portal
-- Exchange admin center
-- Microsoft 365 admin center
-- Microsoft 365 Defender portal
-- Microsoft Entra admin center 
-   - Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
-- Microsoft Intune admin center
-   - Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
-- Microsoft Purview portal
-   - Microsoft 365 365 Security and Compliance Center app ID: 80ccca67-54bd-44ab-8625-4b79c4dc7775
-- Microsoft Teams admin center
-   - Microsoft Office 365 app ID: 00000006-0000-0ff1-ce00-000000000000
+The following applications comprise the Microsoft Admin Portals:
+
+- Exchange Admin Center app ID: 497effe9-df71-4043-a8bb-14cf78c4b63b
+- Azure Portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
+- Microsoft Office 365 Portal app ID: 00000006-0000-0ff1-ce00-000000000000
+- Microsoft 365 Security And Compliance Center (Protection Center) app ID: 80ccca67-54bd-44ab-8625-4b79c4dc7775
 
 The Admin Portal grouping is primarily intended for include scenarios,for a simplified way to target one or more admin portals with Conditional Access policies (for example, enforcing MFA). This grouping is leveraged in our [MFA for admins Microsoft-managed policy](managed-policies.md#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) to streamline policy creation. 
  
