@@ -11,13 +11,7 @@ ms.reviewer: xueca
 
 This topic covers how to investigate and resolve problems with SMS or voice call sign-in methods for multifactor authentication (MFA).
 
-This topic includes standardizes messages for support engineers and customers to begin and conclude investigation as well as conclusion of the investigation.
-
-## FAQs
-
-**Question:** Why didn't I receive a call or text message?  
-
-**Answer:** Voice calls and SMS messages aren't reliable or guaranteed. In addition, voice call and SMS providers use other providers, who in turn use other providers. This practice increases the time required to investigate a problem. 
+Voice calls and SMS messages aren't reliable or guaranteed. In addition, voice call and SMS providers use other providers, who in turn use other providers. This practice increases the time required to investigate a problem. 
 
 To help Microsoft support investigate provider related issues, you need to submit a Correlation ID and timestamp for the sign ins that need investigation. You can find the Correlation ID and timestamp for the sign in the sign-in logs. The sign-in logs must be 48 hours old or less. 
 
