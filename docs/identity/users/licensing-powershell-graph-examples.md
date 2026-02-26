@@ -571,5 +571,5 @@ Write-Host "Script execution complete."
 To learn more about the feature set for license management through groups, see the following articles:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Microsoft Entra licensing](~/fundamentals/licensing.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
 * [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)

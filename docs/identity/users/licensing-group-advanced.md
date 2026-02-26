@@ -203,5 +203,5 @@ If you use group-based licensing, it's a good idea to familiarize yourself with 
 To learn more about other scenarios for license management through group-based licensing, see:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Microsoft Entra licensing](~/fundamentals/licensing.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
 * [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)
