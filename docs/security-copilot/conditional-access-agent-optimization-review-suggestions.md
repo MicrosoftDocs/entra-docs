@@ -4,7 +4,6 @@ description: Learn how to review and apply suggestions provided by the Security 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-manager: pmwongera
 ms.date: 02/17/2026
 ms.update-cycle: 180-days
 ms.service: entra-id

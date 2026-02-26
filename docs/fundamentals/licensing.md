@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
-author: barclayn
 manager: pmwongera
-ms.service: entra
 ms.topic: concept-article
 ms.date: 12/01/2025
-ms.subservice: fundamentals
-ms.author: barclayn
 ---
 
 # Microsoft Entra licensing

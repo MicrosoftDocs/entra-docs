@@ -2,12 +2,8 @@
 title: Authenticate applications and users with Microsoft Entra ID
 description: How applications can use Microsoft Entra ID to authenticate users and applications.
 customer-intent: I'm an independent software developer, and I want to learn how to use Microsoft Entra ID to authenticate users and applications.
-author: jricketts
-manager: martinco
-ms.service: entra
 ms.topic: concept-article
 ms.date: 03/14/2024
-ms.author: jricketts
 ---
 # Authenticate applications and users with Microsoft Entra ID
 

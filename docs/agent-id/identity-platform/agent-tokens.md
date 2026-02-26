@@ -2,9 +2,6 @@
 title: Tokens in Microsoft agent identity platform
 description: Learn about tokens in the Microsoft agent identity platform, including token types, claims structure, authentication flows, and how tokens enable secure communication between agent applications and resources.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/10/2025
 ms.reviewer: jmprieur
