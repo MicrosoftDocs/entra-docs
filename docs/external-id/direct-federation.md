@@ -19,6 +19,10 @@ Your Microsoft Entra tenant can be directly federated with external organization
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
 - A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
 
+> [!NOTE]
+> The Issuer value for the IdP must be a valid URI following RFC 3986 format (e.g., https://testdev.example.com or http://www.example.com/exk10l6w90DHM0yi). Single-word or non-URI values (e.g., testdev) are not supported and will be rejected by the portal.
+This aligns with Microsoft Entra ID's secure identifier patterns, as documented in [Restrictions on identifier URIs](~/identity-platform/identifier-uri-restrictions). For SAML IdPs, the Issuer must uniquely identify the provider as a URI, per SAML 2.0 standards and [Entra validation rules](~/identity/hybrid/connect/how-to-connect-fed-saml-idp#required-attributes).
+
 ## How to configure SAML/WS-Fed IdP federation
 
 ### Step 1: Determine if the partner needs to update their DNS text records
