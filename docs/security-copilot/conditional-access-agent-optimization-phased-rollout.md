@@ -27,37 +27,42 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 ## How it works
 
-When the Conditional Access Optimization Agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
+Any report-only policy that applies to *all users* is eligible for a phased rollout. The agent can suggest a phased rollout plan for policies it creates, or administrators can apply phased rollout to any existing report-only policy that targets all users. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
 
-Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher impact groups.
+Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher impact groups.
 
 There are three steps in the phased rollout process:
 
-1. [Agent creates a report-only policy with a phased rollout](#agent-creates-a-report-only-policy-with-a-phased-rollout)
+1. [Agent identifies a report-only policy for phased rollout](#agent-identifies-a-report-only-policy-for-phased-rollout)
 1. [Administrator reviews, edits, and accepts the rollout plan](#administrator-reviews-edits-and-accepts-the-rollout-plan)
-1. [Agent or Administrator executes the approved rollout plan](#administrator-executes-the-approved-rollout-plan)
+1. [Administrator executes the approved rollout plan](#administrator-executes-the-approved-rollout-plan)
 
 You can review the groups included in each phase and make changes before and during the phased rollout. When the first phase starts, a *new* policy is created and turned on for the groups included in the first phase. The original report-only mode policy remains intact.
 
-## Agent creates a report-only policy with a phased rollout
+## Agent identifies a report-only policy for phased rollout
 
-The agent creates a report-only policy and builds a separate phased rollout plan. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
+The agent can suggest a phased rollout plan when it creates new policies or to existing report-only policies that target all users. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
-:::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
+- For agent-created policies, look for **Suggested phased rollout** in the **Actions taken by agent** column in the list of suggestions.
 
-In the list of suggestions from the agent, look for **Suggested phased rollout** in the **Actions taken by agent** column.
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
+
+- For existing report-only policies, look for **Phased rollout available (preview)** in the **Conditional Access - Policies** page.
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list-expanded.png":::
 
 ### Administrator reviews, edits, and accepts the rollout plan
 
-Administrators need to review the details of the plan, including the groups included in each phase, the timing of each phase, and how the plan is executed.
+Administrators need to review the details of the plan, including the groups included in each phase, the timing of each phase, and how the plan is executed. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Conditional Access Optimization Agent** and select the **Review suggestions** button for a policy suggestion that includes a phased rollout.
+1. Browse to **Conditional Access Optimization Agent** or **Conditional Access - Policies** and select a policy with the phased rollout suggestion.
 
-1. From the policy details page, select **Review phases**.
+    1. From the **Conditional Access - Policies** page, select **Generate plan** from the panel that opens.
 
-    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png":::
+1. From the Conditional Access Optimization Agent policy details page or after the plan is generated, select **Review phases**.
+
+     :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png":::
 
 1. Select **Edit Groups** to edit the groups included in the phase.
 
