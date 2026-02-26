@@ -1,16 +1,12 @@
 ---
 title: Protect Microsoft 365 from on-premises attacks
 description: Learn how to configure your systems to help protect your Microsoft 365 cloud environment from on-premises compromise.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 01/03/2025
-ms.author: jricketts
 ms.custom:
   - it-pro
   - kr2b-contr-experiment
+ms.subservice: architecture
 ---
   
 # Protect Microsoft 365 from on-premises attacks

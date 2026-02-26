@@ -2,14 +2,10 @@
 title: Manual configuration for Microsoft Entra hybrid join
 description: Learn how to manually configure Microsoft Entra hybrid join devices.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ---
 

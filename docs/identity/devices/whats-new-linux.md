@@ -3,10 +3,8 @@ title: What's new in Microsoft single sign-on for Linux
 description: Discusses new feature releases of Microsoft single sign-on for Linux
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
-ms.service: entra-id
 ms.topic: whats-new
 ms.date:     02/03/2026
-ms.subservice: devices
 ms.custom: linux-related-content
 ---
 

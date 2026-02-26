@@ -4,7 +4,6 @@ description: Learn how to create an agent identity blueprint that serves as a te
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 02/19/2026
 ms.custom: agent-id-ignite

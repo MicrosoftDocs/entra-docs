@@ -2,8 +2,6 @@
 title: Security guidance - Protect identities and secrets
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect identities and secrets.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -52,6 +50,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Administrative privileges are tightly limited to prevent compromise
 [!INCLUDE [25383](../includes/secure-recommendations/25383.md)]
 
+### Application admin rights are constrained to specific Private Access apps
+[!INCLUDE [25384](../includes/secure-recommendations/25384.md)]
+
 ### Privileged accounts are cloud native identities
 [!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
 
@@ -75,6 +76,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ### Conditional Access policies enforce strong authentication for private apps
 [!INCLUDE [25396](../includes/secure-recommendations/25396.md)]
+
+### Application Proxy applications require preauthentication to block anonymous access
+[!INCLUDE [25401](../includes/secure-recommendations/25401.md)]
 
 ### Require password reset notifications for administrator roles
 [!INCLUDE [21891](../includes/secure-recommendations/21891.md)]
