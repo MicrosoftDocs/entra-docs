@@ -84,7 +84,7 @@ Admins with at least the [Security Reader](~/identity/role-based-access-control/
 
 :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 
-- The **Overview** page shows a summary of policy state, agents, users, devices, and applications, along with general and security alerts with suggestions.
+- The **Overview** page shows a summary of recent activity that relates to Conditional Access policies. Here you can see how many policies are enabled vs report-only, agent and user activity, applications, devices, and general security alerts with suggestions.
 - The **Coverage** page shows a summary of applications with and without Conditional Access policy coverage over the past seven days.
 
 On the **Policies** page, admins can filter Conditional Access policies based on items like the actor, target resource, condition, control applied, state, or date. This filtering lets admins quickly find specific policies based on their configuration.
