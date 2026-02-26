@@ -135,4 +135,4 @@ The error message display in the top-right corner as you try to upload the certi
 
 - [What is Global Secure Access?](../../global-secure-access/overview-what-is-global-secure-access.md)
 - [Plan a Microsoft Entra application proxy deployment](/entra/identity/app-proxy/conceptual-deployment-plan)
-- [ySecurity considerations for accessing apps remotely with Microsoft Entra application proxy](/entra/identity/app-proxy/application-proxy-security)
+- [Security considerations for accessing apps remotely with Microsoft Entra application proxy](/entra/identity/app-proxy/application-proxy-security)
