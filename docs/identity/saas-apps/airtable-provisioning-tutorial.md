@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Create an Airtable Personal Access Token to authorize provisioning with Microsoft Entra ID.
 
-1. Login to [Airtable Developer Hub](https://airtable.com) as an Admin user, and then navigate to `https://airtable.com/create/tokens`.
+1. Log in to [Airtable Developer Hub](https://airtable.com) as an Admin user, and then navigate to `https://airtable.com/create/tokens`.
 1. Select "Personal Access Tokens" from the left hand navigation bar.
 
    ![Screenshot of Personal Access Token Selection.](media/airtable-provisioning-tutorial/developer-hub-personal-access-token.png)
@@ -172,7 +172,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
