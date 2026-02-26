@@ -17,7 +17,13 @@ This topic includes standardizes messages for support engineers and customers to
 
 **Question:** Why didn't I receive a call or text message?  
 
-**Answer:** Telcom methods such as voice calls or SMS aren't reliable or guaranteed. In addition, telcom providers use other providers, who in turn use other providers. This practice increases the time required to investigate a problem. As a workaround, use other methods, such as passkey (FIDO2) or Microsoft Authenticator.
+**Answer:** Voice calls and SMS messages aren't reliable or guaranteed. In addition, voice call and SMS providers use other providers, who in turn use other providers. This practice increases the time required to investigate a problem. 
+
+To help Microsoft support investigate provider related issues, you need to submit a Correlation ID and timestamp for the sign ins that need investigation. You can find the Correlation ID and timestamp for the sign in the sign-in logs. The sign-in logs must be 48 hours old or less. 
+
+Microsoft support gives the Correlation ID and timestamp to the provider and asks for an investigation. The provider checks their logs. If they don't find a problem, they need to make a query to a downlevel partner, which can use other providers. As a result, investigation can take up to 4 weeks. 
+
+As a workaround, use other methods, such as passkey (FIDO2) or Microsoft Authenticator.
 
 ## Related content
 
