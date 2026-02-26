@@ -1,13 +1,9 @@
 ---
 title: 'Solution 3: Microsoft Entra ID with AD FS and Shibboleth'
 description: This article describes design considerations for using Microsoft Entra ID with AD FS and Shibboleth as a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 04/01/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Solution 3: Microsoft Entra ID with AD FS and Shibboleth

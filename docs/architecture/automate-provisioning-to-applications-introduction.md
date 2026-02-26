@@ -1,16 +1,12 @@
 ---
 title: Automate identity provisioning to applications introduction
 description: Learn to design solutions to automatically provision identities in hybrid environments to provide application access.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/23/2022
-ms.author: jricketts
 ms.custom:
   - it-pro
   - kr2b-contr-experiment
+ms.subservice: architecture
 ---
 
 # Introduction

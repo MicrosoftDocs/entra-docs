@@ -2,10 +2,8 @@
 title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/11/2026
+ms.date: 02/25/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -41,6 +39,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | None (included with Microsoft Entra ID) |
 | [High Global Administrator to privileged user ratio](zero-trust-protect-identities.md#high-global-administrator-to-privileged-user-ratio) | None (included with Microsoft Entra ID) |
 | [Administrative privileges are tightly limited to prevent compromise](zero-trust-protect-identities.md#administrative-privileges-are-tightly-limited-to-prevent-compromise) | Microsoft Entra ID P1 |
+| [Application admin rights are constrained to specific Private Access apps](zero-trust-protect-identities.md#application-admin-rights-are-constrained-to-specific-private-access-apps) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | None (included with Microsoft Entra ID) |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
 | [All Microsoft Entra privileged role assignments are managed with PIM](zero-trust-protect-identities.md#all-microsoft-entra-privileged-role-assignments-are-managed-with-pim) | Microsoft Entra ID P2 |
@@ -49,6 +48,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
 | [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](zero-trust-protect-identities.md#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [Conditional Access policies enforce strong authentication for private apps](zero-trust-protect-identities.md#conditional-access-policies-enforce-strong-authentication-for-private-apps) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Application Proxy applications require preauthentication to block anonymous access](zero-trust-protect-identities.md#application-proxy-applications-require-preauthentication-to-block-anonymous-access) | Microsoft Entra ID P1 |
 | [Require password reset notifications for administrator roles](zero-trust-protect-identities.md#require-password-reset-notifications-for-administrator-roles) | Microsoft Entra ID P1 |
 | [Block legacy authentication policy is configured](zero-trust-protect-identities.md#block-legacy-authentication-policy-is-configured) | Microsoft Entra ID P1 |
 | [Temporary access pass is enabled](zero-trust-protect-identities.md#temporary-access-pass-is-enabled) | Microsoft Entra ID P1 |
@@ -129,19 +129,22 @@ Protect your network perimeter.
 | [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
 | [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
 | [Source IP restoration is enabled](zero-trust-protect-networks.md#source-ip-restoration-is-enabled) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Global Secure Access signaling for Conditional Access is enabled](zero-trust-protect-networks.md#global-secure-access-signaling-for-conditional-access-is-enabled) | Microsoft Entra ID P1, Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Network traffic is routed through Global Secure Access for security policy enforcement](zero-trust-protect-networks.md#network-traffic-is-routed-through-global-secure-access-for-security-policy-enforcement) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment](zero-trust-protect-networks.md#traffic-forwarding-profiles-are-scoped-to-appropriate-users-and-groups-for-controlled-deployment) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Private network connectors are active and healthy to maintain Zero Trust access to internal resources](zero-trust-protect-networks.md#private-network-connectors-are-active-and-healthy-to-maintain-zero-trust-access-to-internal-resources) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Private network connectors are running the latest version](zero-trust-protect-networks.md#private-network-connectors-are-running-the-latest-version) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Private DNS is configured for internal name resolution](zero-trust-protect-networks.md#private-dns-is-configured-for-internal-name-resolution) | Microsoft Entra Private Access |
 | [Intelligent Local Access is enabled and configured](zero-trust-protect-networks.md#intelligent-local-access-is-enabled-and-configured) | Microsoft Entra Private Access |
 | [Quick Access is enabled and bound to a connector](zero-trust-protect-networks.md#quick-access-is-enabled-and-bound-to-a-connector) | P1, Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Quick Access is bound to a Conditional Access policy](zero-trust-protect-networks.md#quick-access-is-bound-to-a-conditional-access-policy) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Entra Private Access Application segments are defined to enforce least-privilege access](zero-trust-protect-networks.md#entra-private-access-application-segments-are-defined-to-enforce-least-privilege-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access](zero-trust-protect-networks.md#domain-controller-rdp-access-is-protected-by-phishing-resistant-authentication-through-global-secure-access) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Private Access sensors are enforcing strong authentication policies on domain controllers](zero-trust-protect-networks.md#private-access-sensors-are-enforcing-strong-authentication-policies-on-domain-controllers) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Outbound traffic from VNet integrated workloads is routed through Azure Firewall](zero-trust-protect-networks.md#outbound-traffic-from-vnet-integrated-workloads-is-routed-through-azure-firewall) | Azure Firewall Basic |
-| [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Standard |
+| [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
 | [IDPS inspection is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#idps-inspection-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
 | [Application Gateway WAF is enabled in prevention mode](zero-trust-protect-networks.md#application-gateway-waf-is-enabled-in-prevention-mode) | Azure Application Gateway WAF_v2 |
 | [Azure Front Door WAF is enabled in prevention mode](zero-trust-protect-networks.md#azure-front-door-waf-is-enabled-in-prevention-mode) | Azure Front Door Standard |

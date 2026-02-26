@@ -6,8 +6,6 @@ manager: dougeby
 featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 02/22/2026
 ms.author: owinfrey

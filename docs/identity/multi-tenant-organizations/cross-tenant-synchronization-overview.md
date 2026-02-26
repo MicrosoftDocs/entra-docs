@@ -1,14 +1,11 @@
 ---
 title: What is a cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 06/23/2025
-ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # What is cross-tenant synchronization?

@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Protection to Self-Remediate User Risk
 description: Learn how IT administrators use Microsoft Entra ID Protection to identify and remediate identity risks for users that access enterprise-managed resources.
 author: gargi-sinha
-manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
