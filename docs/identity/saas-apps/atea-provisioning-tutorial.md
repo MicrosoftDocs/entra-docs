@@ -72,29 +72,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+4. Set the **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic](common/application-provisioning.png)
 
-5. In the **Admin Credentials** section, select **Authorize**. It opens an Atea login dialog box in a new browser window.
+5. In the **Tenant URL** field, input your atea Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to atea. If the connection fails, ensure your atea account  has the required admin permissions and try again.
 
- 	 ![Atea authorize](media/atea-provisioning-tutorial/provisioning-authorize.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. On the Atea's log in dialog, sign in to your Atea's tenant and verify your identity.
-       
-      ![Atea login dialog](media/atea-provisioning-tutorial/atea-login.png)
+1. Select **Create** to create your configuration.
 
-7. Upon completing steps 5 and 6, select **Test Connection** to ensure Microsoft Entra ID can connect to Atea. If the connection fails, ensure your Atea has Admin permissions and try again.
-        
-      ![Atea test connection](media/atea-provisioning-tutorial/test-connection.png)
+1. Select **Properties** in the **Overview** page.
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications. And then select the **Send an email notification when a failure occurs** check box.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-	![Notification Email](common/provisioning-notification-email.png)
+![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Select **Save**.
-
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Atea**.
+1. Select **Attribute Mapping** in the left panel and select users.
 
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Atea in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Atea for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Atea API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -109,21 +103,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |phoneNumbers[type eq "mobile"].value|String|||
       |locale|String|||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
-13. To enable the Microsoft Entra provisioning service for Atea, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and groups that you would like to provision to Atea by choosing the relevant value in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to complete than next cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
