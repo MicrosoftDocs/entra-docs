@@ -16,6 +16,17 @@ Native authentication allows you to have full control over the design of your mo
 
 This article explains the fraud risks associated with native authentication, then provides guidance for integrating third-party fraud protection solutions to secure native authentication applications.
 
+## Prerequisites
+
+Before you integrate third‑party fraud protection with native authentication and SMS‑based MFA, make sure that the following requirements are met:
+
+- Your native application supports a secure handshake with a third‑party fraud protection provider.
+- Your authentication flow includes the ability to evaluate risk signals for users before issuing an SMS one‑time passcode (OTP).
+- You understand and account for existing [SMS throttling limits enforced by Microsoft Entra](../external-id/customers/reference-service-limits.md#telephony-throttling-limits).
+- You deploy a customer‑managed web application firewall (WAF) to enforce fraud decisions and to support any increase in SMS throttling limits.
+- You enable [regional opt‑in for SMS‑based MFA in supported geographies by using Microsoft Graph](../external-id/customers/how-to-region-code-opt-in.md).
+- Your native application has the required [permissions to access Microsoft Graph on behalf of a signed‑in user](/graph/auth-v2-service?tabs=http).
+
 ## Fraud risk in native authentication
 
 Microsoft Entra provides baseline fraud protections for native authentication application, including:
@@ -56,14 +67,13 @@ This diagram shows how a native application integrates third‑party fraud prote
 
 :::image type="content" source="./media/reference-native-auth-api/native-app-sms-mfa-third-party-fraud-protection-flow.svg" alt-text="Diagram of End-to-end native authentication flow showing how third-party risk evaluation gates SMS-based MFA before a sign-in completes or is blocked.":::
 
-Key aspects of the sign‑in flow:
+In native authentication flows that use SMS‑based MFA, the application evaluates fraud risk before Microsoft Entra sends an SMS one‑time passcode (OTP). The native app initializes a third‑party fraud protection SDK early in the sign‑in process and establishes device possession using provider‑specific mechanisms.
 
-- The native application initializes a fraud‑evaluation session through the 3P provider’s SDK as part of the sign‑in process.
-- Microsoft Entra drives authentication state and determines when MFA is required, while the 3P SDK handles all fraud‑related checks.
-- The WAF intercepts the /challenge request and uses the 3P SDK to obtain a risk assessment for the current session.
-- The 3P provider evaluates risk using signals it gathers independently, such as device, number reputation, and network attributes.
-- The SMS OTP is issued only when the 3P provider returns an Allow decision. If the provider returns Block or Challenge, the native app follows the 3P‑driven workflow—either blocking the flow or invoking the provider’s extra verification.
-- Once the session is allowed, the user completes SMS MFA and Microsoft Entra finalizes authentication.
+Microsoft Entra drives the authentication state and determines when MFA is required. When SMS MFA is triggered, the native app pauses the flow and performs a real‑time risk evaluation through the third‑party provider. As part of this evaluation, the app retrieves the user’s registered phone number from Microsoft Graph and validates it with the fraud provider to assess reputation and abuse signals.
+
+A customer‑managed web application firewall (WAF) enforces the fraud decision returned by the third‑party provider. If the provider allows the request, the WAF forwards it to Microsoft Entra, which issues the SMS OTP and completes authentication after the user submits the code. If the provider blocks the request, the sign‑in attempt stops and no SMS is sent. If the provider requires additional verification, the app completes the provider‑specific challenge before allowing the flow to continue.
+
+By gating SMS MFA on upstream risk evaluation, this flow reduces exposure to telephony fraud and account takeover while allowing legitimate users to complete authentication.
 
 ## Related content
 
