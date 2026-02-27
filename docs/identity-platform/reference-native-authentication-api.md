@@ -90,7 +90,7 @@ In step 21, the user is already signed up. However, if the app requires to autom
 
 The sign-up flow begins with the application making a POST request to the `/signup/v1.0/start` endpoint to start the sign-up flow.
 
-Here are examples of the request(we present the example request in multiple lines for readability):
+Here are examples of the request (we present the example request in multiple lines for readability):
 
 Example 1:
 
@@ -1268,7 +1268,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.   |  
 |`invalid_client`| The client ID included in the request isn't for a public client. |
 |`expired_token`| The continuation token included in the request is expired. |
-| `server_error` | Something went wrong with the request. |
+|`server_error`| Something went wrong with the request. |
 
 After the client app successfully retrieves a list of strong authentication methods registered for the user, the user selects a method they wish to use to complete the MFA challenge. The flow then proceed as follows:
 
