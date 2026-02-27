@@ -240,6 +240,13 @@ What happens if a group already exists in the target tenant?
 
 - If there is an existing group in the target tenant (created outside of cross-tenant synchronization), cross-tenant synchronization will not update it.
 
+What group types are supported?
+
+| Support | Source | Target |
+| --- | --- | --- |
+| Supported | Security group (static and dynamic)<br/>Microsoft 365 group | Security group (static) |
+| Not supported | All other group types, for example:<br/>- Mail-enabled security groups<br/>- Shared mailbox<br/>- Dynamic distribution groups<br/>- Distribution groups | All other group types, for example:<br/>- Microsoft 365 groups<br/>- Mail-enabled security groups<br/>- Shared mailbox<br/>- Dynamic distribution groups<br/>- Distribution groups |
+
 What are the restrictions for synchronizing groups?
 
 - Nested groups are not supported.
