@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.date: 02/27/2026
 ms.reviewer: egreenberg
 ms.custom: sfi-image-nochange
-ai-usage: ai-assisted
 # Customer intent: As an IT admin, I want to integrate Microsoft Entra activity logs with Azure Monitor logs so that I can analyze the logs with Log Analytics.
 ---
 
@@ -130,7 +129,7 @@ AADProvisioningLogs
 | take 100
 ```
 
-## Understand multiple sign-in records in Log Analytics
+## Multiple sign-in records in Log Analytics
 
 When you analyze Microsoft Entra ID sign-in logs, you might notice that Log Analytics shows multiple records for a single user sign-in, while the Microsoft Entra ID sign-in logs view displays only one. This behavior is expected.
 
@@ -142,9 +141,7 @@ During an interactive sign-in, a user might generate several requests that all s
 1. The first MFA attempt fails.
 1. The user retries MFA and succeeds.
 
-In the Microsoft Entra ID sign-in logs, these related requests are merged into a single sign-in event. The portal aggregates all activity with the same correlation ID and reports the final outcome. In this example, the sign-in appears as successful.
-
-### Log Analytics doesn't perform this aggregation
+In the Microsoft Entra ID sign-in logs, these related requests are merged into a single sign-in event. The portal aggregates all activity with the same correlation ID and reports the final outcome, so the sign-in appears as successful.
 
 Every request is sent individually, which means Log Analytics shows:
 
