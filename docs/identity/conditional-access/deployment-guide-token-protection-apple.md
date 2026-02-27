@@ -201,6 +201,8 @@ The following sample query searches the non-interactive sign-in logs for the las
 
 **Sample queries**:
 
+The following sample Log Analytics query searches the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by **Application**. 
+
 <details>
 <summary>Requests by application</summary>
 
@@ -239,6 +241,8 @@ AADNonInteractiveUserSignInLogs
 ```
 </details>
 
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting **Blocked** versus **Allowed** requests by **User**. 
+
 <details>
 <summary>Requests by user</summary>
 
@@ -276,6 +280,8 @@ AADNonInteractiveUserSignInLogs
 | sort by UserPrincipalName asc
 ```
 </details>
+
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state doesn't satisfy Token protection CA policy requirements.
 
 <details>
 <summary>Devices don't meet policy requirements</summary>
