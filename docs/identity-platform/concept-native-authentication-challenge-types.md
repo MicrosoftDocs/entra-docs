@@ -7,7 +7,11 @@ ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
+<<<<<<< HEAD
 ms.date: 02/20/2026
+=======
+ms.date: 01/13/2026
+>>>>>>> c09d811c038683fca8a808435b941226c9d42c1d
 
 #Customer intent: As a dev, devops, I want to learn about native authentication challenge types and capabilities, so that I can use them to notify native authentication API about the authentication flows that my app supports.
 ---
@@ -41,7 +45,7 @@ The following table summarizes the challenge type values an app should use for v
 | **Email OTP** | *oob* and *redirect* | *oob* and *redirect*  | Not applicable |
 
 **Important notes:**
-- Apps that use the [native authentication API](reference-native-authentication-overview.md) directly must include the *redirect* challenge type when declaring their supported challenge types.
+- Apps that use the [native authentication API](reference-native-authentication-api.md) directly must include the *redirect* challenge type when declaring their supported challenge types.
 - Apps that use native authentication SDKs (Android, iOS, or JavaScript) don't need to include the *redirect* challenge type as the SDK automatically includes it.
 
 ## Capabilities
@@ -69,5 +73,5 @@ The following table summarizes the behavior when either the native authenticatio
 ## Related content 
 
 - [Native authentication web fallback](concept-native-authentication-web-fallback.md)
-- [Native authentication Android SDK tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
+- [Native authentication Android SDK tutorials](quickstart-native-authentication-android-sign-in.md)
 - [Native authentication API reference](reference-native-authentication-api.md)
