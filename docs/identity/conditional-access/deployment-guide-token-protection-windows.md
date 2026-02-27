@@ -140,7 +140,7 @@ The following steps help you create a Conditional Access policy to require token
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
-> Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
+> Because Conditional Access policies requiring token protection are currently only available for Windows and Apple devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
 > 
 > In addition, you should configure the following policies: 
 > 
@@ -173,14 +173,19 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 
 :::image type="content" source="media/deployment-guide-token-protection-windows/sign-in-log-sample-unbound-status-code-1002.png" alt-text="Screenshot showing a sample sign-in with the Token Protection - Sign In Session attribute highlighted. " lightbox="media/deployment-guide-token-protection-windows/sign-in-log-sample-unbound-status-code-1002.png":::
 
+> [!NOTE]
+> **Sign-in logs output:** The value of the string used in `enforcedSessionControls` and `sessionControlsNotSatisfied` changed from `Binding` to `SignInTokenProtection` in late June 2023. Queries on sign-in log data should be updated to reflect this change. The examples cover both values to include historical data.
+
 ### Log Analytics
 
-You can also use [Log Analytics](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure.
+You can also use [Log Analytics](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure. These queries are only samples and are subject to change.
 
-Here's a sample Log Analytics query searching the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by **Application**. These queries are only samples and are subject to change.
+**Sample queries**:
 
-> [!NOTE]
-> **Sign In logs output:** The value of the string used in "enforcedSessionControls" and "sessionControlsNotSatisfied" changed from "Binding" to "SignInTokenProtection" in late June 2023. Queries on Sign In Log data should be updated to reflect this change. The examples cover both values to include historical data.
+The following sample Log Analytics query searches the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by **Application**. 
+
+<details>
+<summary>Requests by application</summary>
 
 ```kusto
 //Per Apps query 
@@ -206,12 +211,17 @@ AADNonInteractiveUserSignInLogs
 | sort by Requests desc 
 ```
 
-The result of the previous query should be similar to the following screenshot:
+The result of this query should be similar to the following screenshot:
 
 :::image type="content" source="media/concept-token-protection/log-analytics-results.png" alt-text="Screenshot showing example results of a Log Analytics query looking for token protection policies" lightbox="media/concept-token-protection/log-analytics-results.png":::
 
+</details>
+
 The following query example looks at the non-interactive sign-in log for the last seven days, highlighting **Blocked** versus **Allowed** requests by **User**. 
- 
+
+<details>
+<summary>Requests by user</summary>
+
 ```kusto
 //Per users query 
 // Select the log you want to query (SigninLogs or AADNonInteractiveUserSignInLogs ) 
@@ -236,7 +246,12 @@ AADNonInteractiveUserSignInLogs
 | sort by UserPrincipalName asc   
 ```
 
-The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state doesn't satisfy Token protection CA policy requirements. 
+</details>
+
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state doesn't satisfy Token protection CA policy requirements.
+
+<details>
+<summary>Devices don't meet policy requirements</summary>
 
 ```kusto
 AADNonInteractiveUserSignInLogs 

@@ -136,6 +136,14 @@ Before enforcing the policy, deploy it in report-only mode to assess impact and 
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 
+> [!TIP]
+> Because Conditional Access policies requiring token protection are currently only available for Windows and Apple devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
+> 
+> In addition, you should configure the following policies: 
+> 
+> - [Block access from unknown platforms](policy-all-users-device-unknown-unsupported.md)
+> - [Require device compliance for all known platforms](policy-all-users-device-compliance.md)
+
 ## Review readiness with logs and metrics
 
 After the report-only policy is in place and running, you should review the [Policy impact](concept-conditional-access-report-only.md#policy-impact), analyze your [sign-in logs](../monitoring-health/concept-sign-ins.md), and [investigate with Log Analytics](../monitoring-health/howto-analyze-activity-logs-log-analytics.md) to review enforcement readiness.
