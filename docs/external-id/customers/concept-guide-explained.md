@@ -1,15 +1,8 @@
 ---
 title: Get started guide features
 description: Learn about the features you set up with the get started guide. 
-
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-
-ms.subservice: external
 ms.topic: concept-article
 ms.date:  02/06/2025
-ms.author: cmulligan
 ms.custom: it-pro
 
 #Customer intent: As an it admin, I want to know about the functions I set up with the get started guide so that I can understand the value of the features and how to use them.

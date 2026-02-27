@@ -1,18 +1,15 @@
 ---
-title: Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
+title: Just-In-Time Password Migration to Microsoft Entra External ID
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
 ai-usage: ai-assisted
 author: garrodonnell
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 12/12/2025
 ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
-# Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
+# Just-In-Time Password Migration to Microsoft Entra External ID
 
 This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you're a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
 
@@ -1061,6 +1058,12 @@ Consider the following testing checklist:
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
 If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
+
+## Known issues
+
+**Password complexity mismatch in Native Auth**: During a Native Auth flow, if a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards an error is returned instead of redirecting to SSPR.
+ 
+This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
 
 ## Frequently asked questions
 

@@ -5,9 +5,8 @@ services: decentralized-identity
 author: barclayn
 manager: pmwongera
 ms.service: entra-verified-id
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/17/2024
-ms.author: barclayn
 ---
 
 

@@ -1,12 +1,8 @@
 ---
 title: Identity Proofing and Verification (IDV) Partner gallery for Microsoft Entra Verified ID
 description: Learn how to integrate with our IDV partners to tailor your end-user experience to your needs.
-ms.service: entra-verified-id
-author: barclayn
-manager: pmwongera
 ms.topic: how-to
 ms.date: 12/16/2025
-ms.author: barclayn
 ---
 
 # Microsoft Entra Verified ID Identity Verification partners

@@ -1,13 +1,8 @@
 ---
 title: Sign-ins to applications using SAML authentication
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins to applications that use SAML authentication
-author: shlipsey3
-manager: pmwongera 
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 07/31/2025
-ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to understand the health of my tenant through identity related signals and alerts so I can proactively address issues and maintain a healthy tenant.

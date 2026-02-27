@@ -1,7 +1,4 @@
 ---
-ms.author: kenwith
-author: kenwith
-ms.service: global-secure-access
 ms.topic: include
 ms.date: 02/21/2025
 ms.custom: include file

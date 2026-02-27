@@ -1,16 +1,9 @@
 ---
 title: Conditional Access for Agent Identities in Microsoft Entra
 description: Learn how Conditional Access for Agent IDs in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 11/05/2025
 ms.custom: agent-id-ignite
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: kvenkit
 ---
 # Conditional Access for Agent ID (Preview)
@@ -139,12 +132,6 @@ After you complete the previous steps, create a Conditional Access policy using 
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
       1. Include **All resources (formerly 'All cloud apps')**
-      1. Exclude **Select resources**.
-         1. Select **Select resources based on attributes**.
-         1. Set **Configure** to **Yes**.
-         1. Select the Attribute we created earlier called **Department**.
-         1. Set **Operator** to **Contains**.
-         1. Set **Value** to **HR**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
    1. Select **Select**.
@@ -175,11 +162,6 @@ The enhanced object picker replaces the previous flat list experience in both th
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
       1. Include **All resources (formerly 'All cloud apps')**
-      1. Exclude **Select resources**.
-         1. Select **Select specific resources**.
-         1. Using the enhanced object picker, switch between the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
-            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker with tabs for All, Enterprise applications, and Agent blueprints, showing resource selection options." lightbox="media/agent-id/enhanced-object-picker.png":::
-         1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
    1. Select **Select**.

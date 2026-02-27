@@ -1,13 +1,8 @@
 ---
 title: Add MSA for customer sign-in
 description: Learn how to add MSA as an identity provider for your external tenant.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 09/16/2025
-ms.author: cmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -24,6 +19,9 @@ After you add the MSA (live.com) as one of your user flow's sign-in options, cus
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - A Microsoft account (live.com). If you don't already have one, sign up at https://www.live.com/.
+
+> [!NOTE]
+> This feature is available only for users who sign up with a Microsoft account (MSA). It isn’t available for [B2B guest users](/entra/external-id/user-properties) invited to the tenant.
 
 ## Create a Microsoft account application
 

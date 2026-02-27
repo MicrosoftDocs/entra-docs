@@ -1,13 +1,8 @@
 ---
 title: System-preferred multifactor authentication (MFA)
 description: Learn how to use system-preferred multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 03/19/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.date: 02/27/2026
 ms.reviewer: msft-poulomi
 
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.
@@ -107,7 +102,7 @@ When a user signs in, the authentication process checks which authentication met
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
 1. [Passkey (FIDO2)](concept-authentication-passwordless.md#passkeys-fido2)
-1. [External authentication methods](how-to-authentication-external-method-manage.md)
+1. [External MFA](how-to-authentication-external-method-manage.md)
 1. [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md)
 1. [Time-based one-time password (TOTP)](concept-authentication-oath-tokens.md)<sup>1</sup>
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>

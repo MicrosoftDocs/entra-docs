@@ -1,7 +1,6 @@
 ---
 title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
-ms.service: global-secure-access
 ms.topic: troubleshooting
 ms.date: 01/16/2026
 ms.author: jayrusso

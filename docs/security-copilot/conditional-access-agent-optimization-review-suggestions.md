@@ -4,8 +4,7 @@ description: Learn how to review and apply suggestions provided by the Security 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-manager: pmwongera
-ms.date: 01/08/2026
+ms.date: 02/17/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -41,7 +40,7 @@ This article provides an overview of the logic behind the suggestions and report
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
-- The agent can review up to 150 users and 100 applications in a single run.
+- The agent can review up to 300 users and 150 applications in a single run.
 
 ## How it works
 

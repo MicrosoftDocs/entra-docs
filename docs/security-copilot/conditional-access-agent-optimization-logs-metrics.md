@@ -4,7 +4,6 @@ description: Learn about the Security Copilot for Microsoft Entra optimization a
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-manager: pmwongera
 ms.date: 12/11/2025
 ms.update-cycle: 180-days
 ms.service: entra-id

@@ -1,11 +1,8 @@
 ---
 title: Prepare SOA converted groups for provisioning to their original organizational unit (OU) path
 description: Steps to prepare SOA converted groups for provisioning to their original organizational unit (OU) path
-author: omondiatieno
-ms.service: entra-id
 ms.topic: Include
 ms.date: 10/10/2025
-ms.author: jomondi
 ms.custom: Include file
 ---
 ## Prepare SOA converted groups for provisioning to their original organizational unit (OU) path

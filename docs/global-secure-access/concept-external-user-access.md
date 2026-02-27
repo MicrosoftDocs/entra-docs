@@ -5,7 +5,6 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 12/02/2025
-ms.service: global-secure-access
 ms.reviewer: cagautham
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -26,13 +25,13 @@ The External User access feature in Global Secure Access allows partners to use 
 ## Enable external user access with the Global Secure Access client
 Partners can enable the external user access feature with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is an external user (guest or member) and offers the option to switch into the customer's tenant context. External users can access only assigned resources and only if they're included in the resource tenant's Private Access traffic forwarding profile. The client routes only traffic for the customer's private applications through the customer's Global Secure Access service.
 
-:::image type="content" source="media/concept-b2b-guest-access/client-agent.png" alt-text="Diagram of external user access with Global Secure Access." lightbox="media/concept-b2b-guest-access/client-agent.png":::
+:::image type="content" source="media/concept-external-user-access/client-agent.png" alt-text="Diagram of external user access with Global Secure Access." lightbox="media/concept-external-user-access/client-agent.png":::
 
 ### Prerequisites
 To enable external user access with the Global Secure Access client, you must have:
-- External users(guest or member) configured in the resource tenant. For more information, see the following articles:
+- External users (guest or member) configured in the resource tenant. For more information, see the following articles:
     - [Quickstart: Add a external user and send an invitation](../external-id/b2b-quickstart-add-guest-users-portal.md)
-    - [Understand and manage the properties of external user users](../external-id/user-properties.md)
+    - [Understand and manage the properties of external users](../external-id/user-properties.md)
 - The Global Secure Access client installed and running on the device connected to the home tenant. To install the Global Secure Access client, see [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).   
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
@@ -58,7 +57,7 @@ To enable external user access with the Global Secure Access client, follow thes
         > [!TIP]
         > The home tenant doesn't need to have Global Secure Access configured for this step to work.
     1. Verify that you're connected to the resource tenant. When true, the Global Secure Access **Organization** displays the name of the resource tenant.   
-    :::image type="content" source="media/concept-b2b-guest-access/organization-resource-tenant.png" alt-text="Screen shot of the Global Secure Access Status pane showing that the Organization is connected to the resource tenant.":::
+    :::image type="content" source="media/concept-external-user-access/organization-resource-tenant.png" alt-text="Screen shot of the Global Secure Access Status pane showing that the Organization is connected to the resource tenant.":::
 
 All the Global Secure Access tunnels to the home tenant (such as Private Access, Internet Access, or Microsoft 365 tunnels) disconnect and a new Private Access tunnel is created to the resource tenant. You should be able to access private applications configured on the resource tenant.
 
@@ -86,21 +85,25 @@ A: No, device registration isn't required on the resource tenant for external us
 **Q: Can I configure MFA on the resource tenant?**   
 A: Yes, you can configure MFA on the user and on the applications.
 
-**Q: How does a external user access an on-premises resource in the resource tenant when the resource uses AD DS and Kerberos (such as a file share or a Kerberos-integrated application)?**  
-A: This scenario isn't supported. Microsoft Entra B2B collaboration doesn't provide Kerberos tickets, and Global Secure Access Private Access doesn't proxy Kerberos or support Kerberos Constrained Delegation (KCD). As a result, external users can't directly access on-premises resources requiring Kerberos (for example, SMB file shares or applications using Integrated Windows Authentication).  
-For web applications, the only supported method for B2B users to access Kerberos-backed on-premises apps is by publishing the app through **Application Proxy with KCD**. For more information, see [Configure single sign-on with Kerberos constrained delegation](../identity/app-proxy/how-to-configure-sso-with-kcd.md).
+**Q: Is tenant connection status is persisted on reboot?**   
+A: Yes, the client retains the tenant connection after a reboot. Additionally, if the user has selected Disable Private Access, the tunnel’s disabled state will persist across reboots
+
+**Q: Is this feature supported from a windows Entra registered device(BYOD)?**   
+A: Yes, you can use a windows device which is registered to Entra for switching to resource tenant.
 
 ## Known limitations
 - External user access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
-- When Access Control is allowed on cross tenant settings for Global Secure Access, access isn't allowed because Global Secure Access controls these applications.
+- On the resource tenant, inbound access settings to private application is not allowed on cross tenant settings.
 - When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant.
 - External user access in the resource tenant will fail if compliant network policies are enforced for private applications. External users must be excluded from these policies.
+- When the client is already connected and the user is added to a new external tenant, the new tenant does not appear in the client UI. The client must be disabled and re-enabled for the new tenant to be shown.
+- On the resource tenant, if the Private Access traffic profile is assigned after the client is connected, the client must be disabled and re-enabled for private traffic to take effect.
 
 ## Enable external user access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide external user access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.
 
-:::image type="content" source="media/concept-b2b-guest-access/guest-access-overview.png" alt-text="Diagram showing an overview of external user access in Global Secure Access." lightbox="media/concept-b2b-guest-access/guest-access-overview.png":::
+:::image type="content" source="media/concept-external-user-access/guest-access-overview.png" alt-text="Diagram showing an overview of external user access in Global Secure Access." lightbox="media/concept-external-user-access/guest-access-overview.png":::
 
 
 To enable external user access for Windows 365 or Azure Virtual Desktop (AVD) virtual machines (VM) with Global Secure Access, follow these steps:

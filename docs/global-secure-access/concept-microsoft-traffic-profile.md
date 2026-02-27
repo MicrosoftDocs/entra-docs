@@ -5,7 +5,6 @@ author: alexpav
 ms.author: alexpav
 ms.topic: concept-article
 ms.date: 10/11/2024
-ms.service: global-secure-access
 ms.reviewer: katabish
 ---
 

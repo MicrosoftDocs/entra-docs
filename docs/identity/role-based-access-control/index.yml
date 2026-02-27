@@ -7,13 +7,8 @@ summary: Microsoft Entra role-based access control (RBAC) manages access to Micr
 metadata:
   title: Microsoft Entra RBAC documentation
   description: Learn how to use Microsoft Entra role-based access control (RBAC) to manage access in your organization.  
-  ms.service: entra-id
-  ms.subservice: role-based-access-control
-  manager: pmwongera
   ms.topic: landing-page
   ms.date: 02/18/2025
-  author: barclayn
-  ms.author: barclayn
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new

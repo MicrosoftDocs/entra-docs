@@ -1,11 +1,8 @@
 ---
 title: PowerShell sample - Recover from Global Secure Access break glass scenario
 description: PowerShell examples that re-enable any Conditional Access policies that were disabled in a break glass scenario. 
-author: kenwith
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 02/21/2025
-ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 

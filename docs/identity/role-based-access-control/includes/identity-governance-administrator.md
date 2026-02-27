@@ -1,13 +1,9 @@
 ---
 title: Identity Governance Administrator
 description: Identity Governance Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Users with this role can manage Microsoft Entra ID Governance configuration, including access packages, access reviews, catalogs and policies, ensuring access is approved and reviewed and guest users who no longer need access are removed.

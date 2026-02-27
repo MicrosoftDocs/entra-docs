@@ -1,13 +1,6 @@
 ---
 title: External Tenant Overview
 description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: overview
 ms.date: 01/30/2026
 ms.custom: it-pro, seo-july-2024

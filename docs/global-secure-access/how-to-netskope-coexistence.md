@@ -1,12 +1,9 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Netskope
 description: Learn how to configure and deploy Microsoft Entra and Netskope Security Service Edge (SSE) solutions together for optimized security and connectivity across private applications, Microsoft 365, and internet access.
-author: kenwith
 contributors:
 ms.topic: concept-article
-ms.service: global-secure-access
 ms.date: 10/07/2025
-ms.author: kenwith
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
@@ -219,7 +216,7 @@ In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netsko
 
 For this scenario:
 
-1. [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-access-profile.md#enable-the-microsoft-access-traffic-forwarding-profile).
+1. [Enable Microsoft Entra Microsoft Access forwarding profile](how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile).
 1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 ### Netskope Private Access and Netskope Internet Access configuration

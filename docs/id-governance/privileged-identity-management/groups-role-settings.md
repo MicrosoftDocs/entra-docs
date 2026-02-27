@@ -2,7 +2,6 @@
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
 author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 04/30/2025

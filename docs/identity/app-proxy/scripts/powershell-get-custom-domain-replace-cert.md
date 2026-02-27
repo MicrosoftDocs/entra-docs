@@ -107,7 +107,7 @@ foreach ($item in $allApps) {
          onPremisesPublishing = @{
             verifiedCustomDomainKeyCredential = @{
                 type="X509CertAndPassword";
-                value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
+                value = [convert]::ToBase64String([System.IO.File]::ReadAllBytes($certPfxFilePath));
             };
             verifiedCustomDomainPasswordCredential = @{
                 value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)) };

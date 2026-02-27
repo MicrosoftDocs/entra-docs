@@ -1,14 +1,8 @@
 ---
 title: Manage Rules for Dynamic Membership Groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
@@ -224,7 +218,7 @@ When you specify a value within an expression, it's important to use the correct
 - Double quotation marks are optional unless the value is a string.
 - Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, because they're case sensitive.
-- When a string value contains double quotation marks, you should escape both quotation marks by using the backslash (`\`) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
+- When a string value contains double quotation marks, you should escape both quotation marks by using the backtick (\`\) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
 - You can also perform null checks by using `null` as a value; for example, `user.department -eq null`.
 
 #### Use of null values

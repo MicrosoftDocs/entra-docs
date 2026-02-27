@@ -2,11 +2,8 @@
 title: Access Packages for Agent Identities in Microsoft Entra ID
 titleSuffix: Microsoft Entra Agent ID
 description: This article explains how access packages provide governance for agent identity access to resources.
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
 ms.topic: concept-article
 
 #customer-intent: As an IT admin, I want to configure access packages for agent identities so that I can ensure their access is intentional, auditable, and time-bound.
@@ -18,14 +15,14 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## Access request and approval process
 
-To use access packages, the IT admin first configures an access package with the relevant resources, including Entra roles, group memberships, app role assignments, and OAuth permission grants. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
+To use access packages, the IT admin first configures an access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to applications. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
 > [!NOTE]
-> If your agents aren't using Microsoft Entra agent IDs, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
+> If your agents are using service principals rather than  Microsoft Entra agent identities, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
 
 Agents can then be assigned access packages through three different request pathways.
 
-- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&tabs=http).
+- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
 - The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 - An administrator can [directly assign the agent identity or agent user to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
@@ -43,3 +40,4 @@ If the sponsor requests an extension, this request can trigger a new approval cy
 
 - [Governing agent identities](/entra/id-governance/agent-id-governance-overview)
 - [Create an access package in entitlement management](/entra/id-governance/entitlement-management-access-package-create)
+- [Conditional access for agent identities](/entra/identity/conditional-access/agent-id)

@@ -1,13 +1,8 @@
 ---
 title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: tutorial
 ms.date: 01/31/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
