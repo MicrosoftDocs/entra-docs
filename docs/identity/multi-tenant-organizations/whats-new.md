@@ -16,7 +16,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
-| February 2026 | Cross-tenant synchronization | Added support for security group synchronization (same cloud) in preview. See [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization) and [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization). |
+| March 2026 | Cross-tenant synchronization | Added support for security group synchronization (same cloud) in preview. See [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization) and [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization). |
 
 ## 2025
 
