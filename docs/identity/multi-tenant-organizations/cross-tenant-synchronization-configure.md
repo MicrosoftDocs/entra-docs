@@ -12,7 +12,7 @@ ms.subservice: multitenant-organizations
 # Configure cross-tenant synchronization
 
 ::: zone pivot="same-cloud-synchronization"
-This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users or security groups in your target tenant.
+This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users and security groups in your target tenant.
 
 For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
 
@@ -46,8 +46,8 @@ Cross-cloud synchronization supports these cloud pairs:
 
 By the end of this article, you'll be able to:
 
-- Create B2B users or security groups in your target tenant
-- Remove B2B users or security groups in your target tenant
+- Create B2B users and security groups in your target tenant
+- Remove B2B users and security groups in your target tenant
 - Keep user attributes synchronized between your source and target tenants
 
 ## Prerequisites
@@ -131,7 +131,7 @@ By the end of this article, you'll be able to:
 
 ::: zone-end
 
-## Step 2: Enable user or group synchronization in the target tenant
+## Step 2: Enable user and group synchronization in the target tenant
 
 > [!IMPORTANT]
 > Group synchronization is currently in PREVIEW.
@@ -314,7 +314,7 @@ Start small. Test with a small set of users before rolling out to everyone. When
 
 1. On the **Add Assignment** page, under **Users and groups**, select **None Selected**.
 
-1. On the **Users and groups** pane, search for and select one or more internal users or groups you want to assign to the configuration.
+1. On the **Users and groups** pane, search for and select one or more internal users and groups you want to assign to the configuration.
 
     If you select a group to assign to the configuration, only users that are direct members in the group will be in scope for provisioning. You can select a static group or a dynamic group. The assignment doesn't cascade to nested groups.
 
