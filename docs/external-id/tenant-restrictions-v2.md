@@ -603,6 +603,8 @@ If sign-in fails, the activity details give information about the reason for the
 
 :::image type="content" source="media/tenant-restrictions-v2/sign-in-details-failure.png" alt-text="Screenshot that shows activity details for a failed sign-in." lightbox="media/tenant-restrictions-v2/sign-in-details-failure-large.png":::
 
+If a service principal sign-in is blocked by tenant restrictions v2, the sign-in log will only appear in the tenant that received the sign-in request. No sign-in log will be generated in the tenant where the tenant restrictions v2 policy is configured.
+
 ## Audit logs
 
 Audit logs provide records of system and user activities, including activities that guest users initiated. You can view audit logs for the tenant under **Monitoring**, or you can view audit logs for a specific user by going to the user's profile.
