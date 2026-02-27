@@ -7,11 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-<<<<<<< HEAD
-ms.date: 02/20/2026
-=======
-ms.date: 01/13/2026
->>>>>>> c09d811c038683fca8a808435b941226c9d42c1d
+ms.date: 02/27/2026
 
 #Customer intent: As a dev, devops, I want to learn about native authentication challenge types and capabilities, so that I can use them to notify native authentication API about the authentication flows that my app supports.
 ---
