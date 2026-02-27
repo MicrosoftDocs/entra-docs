@@ -4,7 +4,7 @@ metadata:
   title: Manage authentication methods for Microsoft Entra multifactor authentication
   description: Learn how you can configure Microsoft Entra user settings for Microsoft Entra multifactor authentication
   ms.reviewer: jupetter
-  ms.date: 10/09/2025
+  ms.date: 02/27/2025
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
@@ -23,7 +23,7 @@ introduction: |
   - Add authentication methods for a specific user, including phone numbers used for MFA.
   - Reset a user's password.
   - Require a user to re-register for MFA.
-  - Revoke existing MFA sessions.
+  - Revoke sessions.
   - Delete a user's existing app passwords  
 
   > [!NOTE]
