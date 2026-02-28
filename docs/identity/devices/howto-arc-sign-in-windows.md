@@ -5,9 +5,6 @@ ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/24/2025
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 
