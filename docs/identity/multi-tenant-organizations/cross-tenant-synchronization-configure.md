@@ -46,9 +46,17 @@ Cross-cloud synchronization supports these cloud pairs:
 
 By the end of this article, you'll be able to:
 
+::: zone pivot="same-cloud-synchronization"
 - Create B2B users and security groups in your target tenant
 - Remove B2B users and security groups in your target tenant
 - Keep user attributes synchronized between your source and target tenants
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+- Create B2B users in your target tenant
+- Remove B2B users in your target tenant
+- Keep user attributes synchronized between your source and target tenants
+::: zone-end
 
 ## Prerequisites
 
@@ -131,11 +139,17 @@ By the end of this article, you'll be able to:
 
 ::: zone-end
 
+::: zone pivot="same-cloud-synchronization"
 ## Step 2: Enable user and group synchronization in the target tenant
 
 > [!IMPORTANT]
 > Group synchronization is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+## Step 2: Enable user synchronization in the target tenant
+::: zone-end
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
@@ -155,11 +169,13 @@ By the end of this article, you'll be able to:
 
 1. Select the **Allow user synchronization into this tenant** checkbox.
 
+::: zone pivot="same-cloud-synchronization"
 1. Optionally, select the **Allow group synchronization into this tenant** checkbox.
 
     For more information, see [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization).
 
     :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the Cross-tenant sync tab with the Allow user synchronization into this tenant and Allow group synchronization into this tenant checkboxes." lightbox="../../media/external-identities/access-settings-users-sync.png":::
+::: zone-end
 
 1. Select **Save**.
 
@@ -302,7 +318,11 @@ Start small. Test with a small set of users before rolling out to everyone. When
 
 1. In the **Scope** list, select whether to synchronize all users in the source tenant or only users assigned to the configuration.
 
-    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users**. Reducing the number of users in scope improves performance. If you want to synchronize groups, you must select **Sync only assigned users and groups**.
+    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users**. Reducing the number of users in scope improves performance. 
+
+    ::: zone pivot="same-cloud-synchronization"
+    If you want to synchronize groups, you must select **Sync only assigned users and groups**.
+    ::: zone-end
 
 1. If you made any changes, select **Save**.
 
@@ -356,6 +376,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. Select **Yes** and close the **Attribute Mapping** page.
 
+::: zone pivot="same-cloud-synchronization"
 1. On the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
 
 1. If you want to synchronize groups, set the **Enabled** toggle to **Yes**.
@@ -363,6 +384,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
     By default, this toggle is set to **No**.
 
 1. If you want to scoping filters for groups, follow similar previous steps as users.
+::: zone-end
 
 ## Step 9: Review attribute mappings
 
@@ -413,9 +435,11 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
+::: zone pivot="same-cloud-synchronization"
 1. On the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
 
 1. If you want to modify attribute mappings for groups, follow similar previous steps as users.
+::: zone-end
 
 > [!TIP]
 > You can map directory extensions by updating the schema of the cross-tenant synchronization. For more information, see [Map directory extensions in cross-tenant synchronization](cross-tenant-synchronization-directory-extensions.md).
@@ -677,6 +701,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ##### End the script
 ```
 
+::: zone pivot="same-cloud-synchronization"
 #### Symptom - Group skipped due to EntityTypeNotSupported
 
 Group is skipped from synchronization because EntityTypeNotSupported.
@@ -690,6 +715,7 @@ This message likely indicates that group synchronization is not enabled in the s
 **Solution**
 
 In the source tenant, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page. Make sure the **Enabled** toggle is set to **Yes**. For more information, see [Step 8: (Optional) Define who is in scope for provisioning with scoping filters](#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
+::: zone-end
 
 #### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
