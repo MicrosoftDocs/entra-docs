@@ -130,6 +130,27 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > [!NOTE]
 > You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and Conditional Access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
 
+### Rule evaluation order
+
+Within the Private Access forwarding profile, rules are evaluated sequentially based on priority numbers assigned to each rule. Rules with a lower numerical priority value take precedence over rules with a higher value. You can view these priority values in the Global Secure Access client under **Advanced Diagnostics** > **Forwarding Profile**.
+
+The following evaluation order applies to Private Access rules:
+
+1. **Private DNS rules** are evaluated first.
+1. **Enterprise Application rules** are evaluated next.
+1. **Quick Access rules** are evaluated last.
+
+When multiple Enterprise Applications define overlapping segments using different destination types (such as FQDN-based and CIDR-based segments), the priority between them is determined by the order in which the Enterprise Applications were created. The application created first receives a higher priority (lower numerical value) in the forwarding profile.
+
+> [!IMPORTANT]
+> There is no automatic prioritization based on rule specificity. For example, a broad CIDR-based rule (such as 10.0.0.0/8) can take precedence over a more specific FQDN-based rule if the CIDR-based Enterprise Application was created first. This behavior can result in traffic being matched by the broader rule before reaching the more specific one.
+
+To ensure the intended evaluation order when using a mix of FQDN-based and CIDR-based Enterprise Applications, follow these best practices:
+
+- Create Enterprise Applications with more specific FQDN-based segments **before** creating applications with broader CIDR-based segments.
+- After creating your applications, verify the rule evaluation order in the Global Secure Access client's **Forwarding Profile** tab to confirm that rules appear in the intended priority order.
+- If the priority order is incorrect, you might need to delete and recreate the Enterprise Applications in the correct sequence.
+
 ## Assign users and groups
 
 You need to grant access to the app you created by assigning users and/or groups to the app. For more information, see [Assign users and groups to an application.](/azure/active-directory/manage-apps/assign-user-or-group-access-portal)
