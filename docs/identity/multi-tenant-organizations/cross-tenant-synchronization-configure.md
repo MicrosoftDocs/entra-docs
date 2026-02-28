@@ -20,7 +20,6 @@ For important details on what this service does, how it works, and frequently as
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-
 This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and Commercial --> China.
 
 For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#clouds).
@@ -78,16 +77,9 @@ By the end of this article, you'll be able to:
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
-::: zone pivot="same-cloud-synchronization"
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
-::: zone-end
-
-::: zone pivot="cross-cloud-synchronization"
-- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
-::: zone-end
 
 ::: zone pivot="same-cloud-synchronization"
-
 ## Step 1: Plan your provisioning deployment
 
 1. Define how you would like to [structure the tenants in your organization](cross-tenant-synchronization-topology.md).
@@ -97,11 +89,9 @@ By the end of this article, you'll be able to:
 1. Determine who will be in [Scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
-
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-
 ## Step 1: Enable cross-cloud settings in both tenants
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
@@ -136,7 +126,6 @@ By the end of this article, you'll be able to:
     - Policy.Read.All
 
 1. Select **Save**.
-
 ::: zone-end
 
 ::: zone pivot="same-cloud-synchronization"
@@ -170,16 +159,16 @@ By the end of this article, you'll be able to:
 1. Select the **Allow user synchronization into this tenant** checkbox.
 
 ::: zone pivot="same-cloud-synchronization"
-1. Optionally, select the **Allow group synchronization into this tenant** checkbox.
+7a. Optionally, select the **Allow group synchronization into this tenant** checkbox.
 
     For more information, see [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization).
 
     :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the Cross-tenant sync tab with the Allow user synchronization into this tenant and Allow group synchronization into this tenant checkboxes." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 ::: zone-end
 
-1. Select **Save**.
+8. Select **Save**.
 
-1. If you see an **Enable cross-tenant sync and auto-redemption** dialog box asking if you want to enable auto-redemption, select **Yes**.
+9. If you see an **Enable cross-tenant sync and auto-redemption** dialog box asking if you want to enable auto-redemption, select **Yes**.
 
     Selecting **Yes** will automatically redeem invitations in the target tenant.
 
@@ -244,7 +233,6 @@ In this step, you automatically redeem invitations in the source tenant.
 3. At the top of the page, select **New configuration**.
 
 ::: zone pivot="same-cloud-synchronization"
-
 4. Provide a name for the configuration. 
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name.png":::
@@ -252,11 +240,9 @@ In this step, you automatically redeem invitations in the source tenant.
 5. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
-
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-
 4. Provide a name for the configuration. 
 
 5. Select the **Setup cross-tenant synchronization across Microsoft clouds** checkbox.
@@ -268,7 +254,6 @@ In this step, you automatically redeem invitations in the source tenant.
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
 
     On the Configurations page for cross-cloud synchronization, the **Tenant Name** and **Tenant ID** columns will be empty.
-
 ::: zone-end
 
 ## Step 6: Test the connection to the target tenant
@@ -584,7 +569,6 @@ This error indicates the policy to automatically redeem invitations in the sourc
 Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant).
 
 ::: zone pivot="cross-cloud-synchronization"
-
 #### Symptom - Test connection fails with ExternalTenantNotFound
 
 When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
@@ -622,7 +606,6 @@ This error indicates the cross-cloud setting for synchronization has not been en
 **Solution**
 
 In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization checkbox for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
-
 ::: zone-end
 
 #### Symptom - Automatic redemption checkbox is disabled
