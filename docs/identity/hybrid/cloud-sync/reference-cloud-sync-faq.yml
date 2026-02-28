@@ -34,7 +34,7 @@ sections:
       - question: |
           What's the difference between Microsoft Entra Connect Sync and cloud sync?
         answer: |
-          With Microsoft Entra Connect Sync, provisioning runs on the on-premises sync server. Configuration is stored on the on-premises sync server. With Microsoft Entra Cloud Sync, the provisioning configuration is stored in the cloud and runs in the cloud as part of the Microsoft Entra provisioning service. See the detailed article [What is Microsoft Entra Cloud Sync](what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync) for a detailed comparison.
+          With Microsoft Entra Connect Sync, provisioning runs on the on-premises sync server. Configuration is stored on the on-premises sync server. With Microsoft Entra Cloud Sync, the provisioning configuration is stored in the cloud and runs in the cloud as part of the Microsoft Entra provisioning service. See the detailed article [What is Microsoft Entra Cloud Sync](connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync) for a detailed comparison.
 
       - question: |
           Can I use cloud sync to sync from multiple Active Directory forests?

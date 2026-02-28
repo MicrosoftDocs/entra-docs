@@ -1,12 +1,8 @@
 ---
 title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 06/12/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
+ms.date: 01/05/2026
 ms.reviewer: ebasseri
 
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
@@ -54,7 +50,7 @@ Sign-in risks that aren't remediated impact the user risk, so having risk-based 
 
 ### Self-remediation of user risk
 
-If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
+If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. A secure password change (MFA and password change) can also remediate user risk. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
@@ -222,6 +218,30 @@ To configure this setting:
 ## Deleted users
 
 If a user was deleted from the directory that had a risk present, that user still appears in the risk report even though the account was deleted. Administrators can't dismiss risk for users who were deleted from the directory. To remove deleted users, open a Microsoft support case.
+
+## Token theft related detections
+
+With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in.
+
+The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer auto-remediated:
+
+- Microsoft Entra threat intelligence 
+- Anomalous token
+- Attacker in the Middle
+- MSTIC Nation State IP
+- Token issuer anomaly 
+
+ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user-level risk details provides valuable information to assist with investigation. This information includes:
+
+- Token Issuer type
+- Sign-in time
+- IP address
+- Sign-in location
+- Sign-in client
+- Sign-in request ID
+- Sign-in correlation ID
+
+If you have user risk-based Conditional Access policies configured and one of these detections that denotes suspicious token activity is fired on a user, the end user is required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
 
 ## PowerShell preview
 

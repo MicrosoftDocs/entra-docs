@@ -1,32 +1,64 @@
 ---
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
-author: owinfreyatl
-manager: dougeby
 editor: HANKI
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
 ms.reviewer: hanki
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.
 ---
 # Create and manage a catalog of resources in entitlement management
 
-This article shows you how to create and manage a catalog of resources and access packages in entitlement management.
+This article shows you how to create and manage a catalog of resources and access packages in entitlement management. Catalogs are also used in [access reviews (preview)](catalog-access-reviews.md).
+
+## Catalog privilege levels (Preview)
+
+Microsoft Entra ID Governance catalogs have two privilege levels that determine their security and management requirements:
+
+### Privilege levels
+
+- **Standard catalog**
+     - The default type for most catalogs.
+     - Remains standard as long as it doesn't contain privileged resources.
+     - Supports all catalog management actions and access patterns.
+
+- **Privileged catalog**
+     - Automatically assigned when a catalog contains resources that grant elevated permissions, such as:
+         - Microsoft Entra roles
+         - Application API permissions
+     - These catalogs apply stricter access and governance controls due to their security‑sensitive nature, such as more restrictive application permissions, tighter role requirements for catalog modification, and limits on automation to reduce the risk of unintended privileged access assignments.
+
+### What changes for privileged catalogs?
+
+Privileged catalogs have stricter controls to protect sensitive resources:
+
+- **Application access:**
+    - Applications must have directory role management permissions to write to a privileged catalog.
+    - Requests without these permissions are blocked.
+
+- **User access:**
+    - Only users who are either:
+        - Global Administrators, or Privileged Role Administrators who also have the Identity Governance Administrator role can perform create, update, or delete actions.
+    - Other users can read the catalog but can't modify it.
+
+- **Auto-assignment policies:**
+    - You can't create new auto-assignment policies for privileged catalogs.
+    - This prevents automated distribution of privileged roles or permissions.
+
+To manually update the privilege level of a catalog, see: [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
 
 ## Create a catalog
 
-A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. An administrator can create a catalog. In addition, a user delegated to the [catalog creator](entitlement-management-delegate.md) role can create a catalog for resources that they own. A nonadministrator who creates the catalog becomes the first catalog owner. A catalog owner can add more users, groups of users, or application service principals as catalog owners.
+A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. An administrator can create a catalog. In addition, a user delegated to the [catalog creator](entitlement-management-delegate.md) role can create a catalog for resources that they own. A nonadministrator who creates the catalog becomes the first catalog owner. A catalog owner can add more users, groups of users, or application service principals as catalog owners.  
 
 To create a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog creator. Identities who were assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If identities in your organization were assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these identities the Identity Governance Administrator role.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
     ![Screenshot that shows entitlement management catalogs in the Microsoft Entra admin center.](./media/entitlement-management-catalog-create/catalogs.png)
 
@@ -63,11 +95,11 @@ $catalog = New-MgEntitlementManagementCatalog -DisplayName "Marketing"
 
 ## Add resources to a catalog
 
-To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog are groups, applications, and SharePoint Online sites.
+To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog for use in access packages include groups, applications, SharePoint Online sites, and (in preview) SAP IAG resources.
 
 * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups.
 
-  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
+  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, you can either change the source of authority of an existing group configure it for group writeback, or create a new security group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
 
   * Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either, so they can't be added to catalogs.
 
@@ -80,13 +112,17 @@ To include resources in an access package, the resources must exist in a catalog
 > [!NOTE]
 > Search SharePoint Site by site name or an exact URL as the search box is case sensitive.
 
+* [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
+
+* When resources added to a catalog grant elevated permission, the catalog automatically has a **Privileged** [privilege level](#catalog-privilege-levels-preview).
+
 **Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
 To add resources to a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add resources to.
 
@@ -205,7 +241,7 @@ To remove resources from a catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to remove resources from.
 
@@ -225,7 +261,7 @@ To assign a user to the catalog owner role:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add administrators to.
 
@@ -246,7 +282,7 @@ To edit a catalog:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog creator.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to edit.
 
@@ -258,6 +294,26 @@ To edit a catalog:
 
 1. Select **Save**.
 
+## Update privilege level of a catalog (Preview)
+
+When you add resources that grant elevated permissions, such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog creator.
+1. Browse to **ID Governance** > **Catalogs**.
+
+1. On the Catalogs page, open the catalog you want to change the privilege level of.
+
+1. On the catalog overview page, under **Privilege level (Preview)**, select which level you want.
+    :::image type="content" source="media/entitlement-management-catalog-create/update-privilege-level.png" alt-text="Screenshot of updating privilege level in a catalog.":::
+1. Select **Save**.
+
+## Update privilege level of a catalog programmatically
+
+To update manually, update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
+
+
 ## Delete a catalog
 
 You can delete a catalog, but only if it doesn't have any access packages.
@@ -267,7 +323,7 @@ To delete a catalog:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog creator.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to delete.
 

@@ -1,11 +1,9 @@
 ---
-title: 'What are agent identities?'
+title: What are agent identities?
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about agent identities, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/06/2025
 ms.custom: agent-id-ignite
@@ -15,9 +13,9 @@ ms.reviewer: dastrock
 
 # What are agent identities
 
-[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
-
 Agent identities are identity accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. As organizations increasingly deploy autonomous AI systems, identity models designed for human users and applications prove insufficient. Agent identities address this gap by providing a specialized identity construct built specifically for the unique requirements of AI agents operating at enterprise scale.
+
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
 ## What is an agent
 
@@ -78,6 +76,12 @@ Several Microsoft products already use agent identities for authenticating AI ag
 
 - [**Agents built in Copilot Studio**](/copilot/security/agents-overview): In organizations that use Copilot Studio, users can quickly create AI agents using Copilot Studio's low-code tools. Each time an AI agent is created, the agent gets an agent identity in the Microsoft Entra tenant. The user who created the agent is recorded as its sponsor. The agent can then use its agent identity to send/receive chat messages to users, and connect to various systems like SharePoint or Dataverse. Any authentication performed by these agents is logged in Microsoft Entra ID as AI agents and viewable through the Microsoft Entra admin center.
 
-## Next steps
+## How to get started
 
-[Agent identity technical architecture and authentication](./agent-identities.md)
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+
+## Related content
+
+- [Agent identities in Microsoft Entra Agent ID](./agent-identities.md)
+- [What is Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md)
+- [What is the Microsoft Entra Agent identity platform](what-is-agent-id-platform.md)

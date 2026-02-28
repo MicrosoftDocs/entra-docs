@@ -5,9 +5,8 @@ author: justinha
 manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/05/2025
-ms.author: justinha
 ms.reviewer: xyuan
 ms.custom: sfi-image-nochange
 ---

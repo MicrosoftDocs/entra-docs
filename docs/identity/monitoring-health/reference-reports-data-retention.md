@@ -1,13 +1,8 @@
 ---
 title: Microsoft Entra data retention
 description: Learn about the data retention policies for the Microsoft Entra audit, sign-in, and provisioning logs. 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: reference
-ms.subservice: monitoring-health
-ms.date: 12/01/2023
-ms.author: sarahlipsey
+ms.date: 01/06/2026
 ms.reviewer: dhanyahk
 ---
 
@@ -55,6 +50,10 @@ Log storage within Microsoft Entra varies by report type and license type. You c
 
 > [!NOTE]
 > Risky users and workload identities are not deleted until the risk has been remediated.
+
+### Microsoft Entra External ID logs
+
+In the [Microsoft Entra External ID Basic plan](https://azure-int.microsoft.com/pricing/details/microsoft-entra-external-id/), logs are retained for 7 days. For more information, see [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers#activity-logs-and-reports). To retain logs for longer periods, use [Azure Monitor](/entra/external-id/customers/how-to-azure-monitor) in your external tenant.
 
 ## Can I see last month's data after getting a premium license?
 

@@ -3,13 +3,11 @@ title: Microsoft Entra Suite deployment scenario - Secure internet access
 description: Configure Microsoft Entra Suite products for strict default internet access policies to control internet access according to business requirements.
 ms.author: gasinh
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to configure strict access policies so that we can control access according to business requirements.
+ms.subservice: architecture
 ---
 # Microsoft Entra Suite deployment scenario - Secure internet access based on business needs
 

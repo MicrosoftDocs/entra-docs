@@ -1,12 +1,6 @@
 ---
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 10/07/2025
 ms.custom: it-pro, seo-july-2024

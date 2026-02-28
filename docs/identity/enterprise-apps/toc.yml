@@ -291,6 +291,8 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
+      - name: Deactivate an app registration
+        href: deactivate-app-registration.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application
@@ -313,6 +315,8 @@ items:
       href: ways-users-get-assigned-to-applications.md
     - name: Methods of removing user access to an app
       href: methods-for-removing-user-access.md
+    - name: Restrict password addition to apps
+      href: block-password-addition.md
   - name: Resources
     items:
         - name: Migration resources

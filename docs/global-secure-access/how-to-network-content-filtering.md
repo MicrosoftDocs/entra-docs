@@ -1,12 +1,10 @@
 ---
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
-ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 01/26/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: sumeetmittal
 ms.custom: sfi-image-nochange
 
@@ -69,22 +67,6 @@ To configure file policies, complete the following initial setup steps:
         :::image type="content" source="media/how-to-network-content-filtering/internet-access-rules.png" alt-text="Screenshot of the Global Secure Access Advanced Diagnostics window on the Forwarding Profile tab, showing Internet Access rules in the Rules section." lightbox="media/how-to-network-content-filtering/internet-access-rules.png":::
 1. Confirm access to web applications you plan for file policies.
 
-## Provision a service principal on your tenant
-To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. You need at least Cloud Application Administrator permission for this configuration setup. 
-
-You can manually trigger service principal creation through PowerShell, Azure CLI, or Microsoft Graph directly. To provision using Microsoft Graph:
-1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Run the following POST request to create the service principal:
-
-    ```http
-    POST https://graph.microsoft.com/v1.0/servicePrincipals
-    Content-Type: application/json
-
-    {
-      "appId": "2eba9957-8c82-4bfd-8025-e4a4a97a9110"
-    }
-    ```
-
 ## Configure a file policy
 
 To configure a file policy in Global Secure Access, complete the following steps:
@@ -113,6 +95,9 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
 1. Select **Create** to create the policy.
+
+> [!Note]
+> If you choose "Scan with Purview" action, please ensure you have configured corresponding data policy through Microsoft Purview.
 
 ### Link the file policy to a security profile
 
@@ -157,7 +142,6 @@ Test the configuration by attempting to upload or download files that match the 
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
 - Destination applications using WebSocket (such as Copilot) aren't supported.
-- You must manually provision a service principal on your tenant.
 - Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
@@ -169,15 +153,9 @@ To view traffic logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
 1. Select **Global Secure Access** > **Monitor** > **Traffic logs**.
 
-To show all traffic subject to Netskope inspection:
-1. Go to the Transactions tab. 
-1. Select Add filter.
-1. Search for or scroll to find the appropriate filter (for example, Action, policyName). 
-1. Select Apply.
-1. Check the filteringProfileName and policyName to identify the policies responsible for the applied action.
-
 ## Related content
 
+- [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)

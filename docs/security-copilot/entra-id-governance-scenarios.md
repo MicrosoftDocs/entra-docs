@@ -1,9 +1,6 @@
 ---
 title: Microsoft Security Copilot scenarios in Microsoft Entra ID Governance
 description: Learn how to use Microsoft Security Copilot with Microsoft Entra ID Governance for identity lifecycle and access management scenarios.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

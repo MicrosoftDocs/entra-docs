@@ -3,10 +3,8 @@ title: How to configure Global Secure Access threat intelligence
 description: Learn how to configure threat intelligence in Microsoft Entra Internet Access.
 author: fgomulka
 ms.author: frankgomulka
-manager: ashishj
 ms.topic: how-to
 ms.date: 05/29/2025
-ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.reviewer: fgomulka
 ---
@@ -22,16 +20,16 @@ You can configure a threat intelligence policy to block users from high-severity
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
-- Complete the [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md) guide.
+- Complete the [Get started with Global Secure Access](quickstart-access-admin-center.md) guide.
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: 
 
-```powershell 
+```powershell
 @New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443
-``` 
+```
 
 - (Optional) [Configure Transport Layer Security (TLS) inspection](how-to-transport-layer-security.md) in order for URL indicators to be evaluated against HTTPS traffic.
 
@@ -109,6 +107,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 
 > [!NOTE]
 > Applying a new security profile can take up to 60-90 minutes because security profiles are enforced via access tokens.
+
+> [!NOTE]
+> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
 
 ## Verify end user policy enforcement

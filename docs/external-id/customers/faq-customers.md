@@ -1,15 +1,8 @@
 ---
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: faq
-ms.date: 04/25/2025
+ms.date: 01/06/2026
 ms.custom: it-pro
 ---
 
@@ -118,7 +111,7 @@ For a detailed list of the External ID features and capabilities, see [Supported
 -->
 ### Will External ID support Microsoft Entra US Government Cloud?
 
-Currently, External ID supports public clouds only.
+External ID currently supports public clouds only. External ID in the public cloud is accredited for [Federal Risk and Authorization Management Program](/azure/compliance/offerings/offering-fedramp) (FedRAMP) High and [Department of Defense (DoD) Impact Level 2 (IL2)](/azure/compliance/offerings/offering-dod-il2).
 
 ## Developer Experiences
 

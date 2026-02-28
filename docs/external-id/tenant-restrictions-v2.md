@@ -1,12 +1,8 @@
 ---
 title: Configure Tenant Restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts that users can use on your networks and the devices that you manage. 
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/14/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure tenant restrictions v2 so that I can control access to external apps and enhance security for users who sign in from my organization's networks or devices.
@@ -61,12 +57,15 @@ You can scope tenant restrictions v2 to specific users, groups, organizations, o
 - All Office apps (all versions/release channels)
 - Universal Windows Platform (UWP) .NET applications
 - Authentication plane protection for all applications that authenticate with Microsoft Entra ID, including all Microsoft applications and any partner applications that use Microsoft Entra ID for authentication
-- Data plane protection for SharePoint Online, Exchange Online, and Microsoft Graph
+- Data plane protection for SharePoint Online, Exchange Online and Microsoft Graph
 - Anonymous access protection for Forms, SharePoint Online, OneDrive, and Teams (with federation controls configured)
 - Authentication and data plane protection for Microsoft tenant or consumer accounts
 - When you use universal tenant restrictions in Global Secure Access, all browsers and platforms
 - When you use Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge
 - Scenarios with device-based authentication (including custom applications integrated with Microsoft Graph)
+- Tenant Restrictions v2 (TRv2) enforcement over Azure ExpressRoute when the TRv2 header to be present.
+  - TRv2 headers are automatically added when using Universal TRv2 via GSA or Windows Group Policy Objects (GPO) for client-side signaling. This approach supports        both authentication and data plane protection.
+  - For proxy-based signaling, headers are injected only at the authentication plane protection and do not apply to the data plane protection. ExpressRoute operates      at the network layer and does not terminate TLS or inspect HTTP traffic and the header injection requires TLS interception and application-layer processing,          which must occur on a proxy or firewall before traffic enters ExpressRoute. If Trv2 headers are not added on the request, TRv2 will not enforced.
   
 ### Unsupported scenarios
 
