@@ -15,20 +15,20 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 # Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of Windows devices in on-premises Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later and Windows 11 24H2 or later. You can then centrally control and enforce Azure role-based access control policies that allow or deny access to the devices.
+Organizations can improve the security of on-premises Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later. You can then centrally control and enforce Azure role-based access control policies that allow or deny access to the servers.
 
-This article shows you how to create and configure an Azure Arc-enabled Windows machine and sign in by using Microsoft Entra ID-based authentication.
+This article shows you how to create and configure an Azure Arc-enabled Windows Server and sign in by using Microsoft Entra ID-based authentication.
 
-There are many security benefits of using Microsoft Entra ID-based authentication to sign in to Windows devices connected using Azure Arc. They include:
+There are many security benefits of using Microsoft Entra ID-based authentication to sign in to Windows Server machines connected using Azure Arc. They include:
 
-- Use Microsoft Entra authentication including passwordless to sign in to Windows devices. Reduce reliance on local administrator accounts.
-- Use Password complexity and password lifetime policies that you configure for Microsoft Entra ID also help secure Windows devices.
+- Use Microsoft Entra authentication including passwordless to sign in to Windows Server machines. Reduce reliance on local administrator accounts.
+- Use Password complexity and password lifetime policies that you configure for Microsoft Entra ID also help secure Windows Server machines.
 - Use Azure role-based access control:
   - Specify who can sign in as a regular user or with administrator privileges through the Virtual Machine Administrator Login and Virtual Machine User Login roles.
   - When users join or leave your team, you can update Azure role-based access control policy to grant access as appropriate.
   - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
-- Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows devices and to flag the use of unapproved local accounts on the devices.
-- Support for passwordless authentication methods and password-based authentication depending on your security requirements and Windows client version.
+- Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows Server machines and to flag the use of unapproved local accounts on the machines.
+- Support for passwordless authentication methods and password-based authentication depending on your security requirements and Windows Server version.
 
 
 > [!IMPORTANT]
@@ -38,9 +38,8 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 
 ### Supported Azure regions and Windows distributions
 
-This feature currently supports the following Windows distributions:
+This feature currently supports the following Windows Server distributions:
 
-- Windows 11 24H2 or later installed.
 - Windows Server 2025 or later installed with Desktop Experience.
 
 This feature is now available in the following Azure clouds:
@@ -102,14 +101,14 @@ To successfully authenticate and sign in to an Azure Arc-enabled Windows Server 
 > [!NOTE]
 >An Azure user who has the Owner or Contributor role assigned doesn't automatically have privileges to sign in to devices. The reason is to provide audited separation between the set of people who control virtual machines and the set of people who can access virtual machines.
 
-- **Authentication methods**: Depending on your configuration and Windows version, the following authentication methods are supported:
-  - **Passwordless authentication**: Requires Windows 11 with KB5018418 or later, Windows 10 20H2 with KB5018410 or later, or Windows Server 2022 with KB5018421 or later. Supports web account sign-in using Microsoft Entra credentials including passkeys, FIDO2 security keys, and other passwordless methods.
-  - **Password-based authentication**: Supported on all compatible Windows versions. Users on Microsoft Entra registered devices must use the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`).
+- **Authentication methods**: Depending on your configuration and Windows Server version, the following authentication methods are supported:
+  - **Passwordless authentication**: Requires Windows Server 2022 with KB5018421 or later, or Windows Server 2025 or later. Supports web account sign-in using Microsoft Entra credentials including passkeys, FIDO2 security keys, and other passwordless methods.
+  - **Password-based authentication**: Supported on all compatible Windows Server versions. Users on Microsoft Entra registered devices must use the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`).
 
 - **Client device requirements**: The device initiating the RDP connection must be:
   - Microsoft Entra joined to the same directory as the Arc-enabled server, or
   - Microsoft Entra hybrid joined to the same directory, or
-  - Microsoft Entra registered (Windows 10 20H1 or later) to the same directory.
+  - Microsoft Entra registered to the same directory.
 
 - **Password restrictions**: Temporary passwords cannot be used for remote desktop connections. Users with temporary passwords must change their password through another method (such as the Azure portal) before attempting to connect.
 
@@ -188,11 +187,10 @@ You can sign in over RDP using one of two methods:
 
 ### Sign in using passwordless authentication with Microsoft Entra ID
 
-To use passwordless authentication for your Windows VMs in Azure, you need the Windows client machine and the session host (VM) on the following operating systems:
+To use passwordless authentication for your Arc-enabled Windows Servers, the session host must be running:
 
-- Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
-- Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
-- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed allows for Microsoft Entra logins over RDP.
+- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
+- Windows Server 2025 or later installed.
 
 
 > [!NOTE]
@@ -220,9 +218,9 @@ To connect to the remote computer:
 Both [Password-based authentication](../../architecture/auth-password-based-sso.md), and [Passwordless authentication](../../identity/authentication/concept-authentication-passkeys-fido2.md) are supported to sign in to Windows virtual machines.
 
 > [!IMPORTANT]
-> Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login, or Virtual Machine User Login.
+> Remote connection to Arc-enabled servers that are joined to Microsoft Entra ID is allowed only from client devices that are either Microsoft Entra registered or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the server. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login, or Virtual Machine User Login.
 >
-> If you're using a Microsoft Entra registered Windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
+> If you're using a Microsoft Entra registered client device, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
 
 To sign in to your Windows Server 2019 virtual machine by using Microsoft Entra ID:
 
@@ -242,10 +240,10 @@ You're now signed in to the Windows Server 2019 Azure virtual machine with the r
 
 Use Azure Policy to:
 
-- Ensure that Microsoft Entra sign in is enabled for your new and existing Windows devices.
+- Ensure that Microsoft Entra sign in is enabled for your new and existing Arc-enabled Windows Servers.
 - Assess compliance of your environment at scale on a compliance dashboard.
 
-With this capability, you can use many levels of enforcement. You can flag new and existing Windows devices within your environment that don't have Microsoft Entra sign in enabled. You can also use Azure Policy to deploy the Microsoft Entra extension to the Arc-enabled Windows Server.
+With this capability, you can use many levels of enforcement. You can flag new and existing Arc-enabled Windows Servers within your environment that don't have Microsoft Entra sign in enabled. You can also use Azure Policy to deploy the Microsoft Entra extension to the Arc-enabled Windows Server.
 
 In addition to these capabilities, you can use Azure Policy to detect and flag Windows machines that have unapproved local accounts created on their devices. To learn more, review [Azure Policy](/azure/governance/policy/overview).
 
@@ -327,7 +325,7 @@ Exit code -2145648607 translates to `DSREG_AUTOJOIN_DISC_FAILED`. The extension 
 
 Exit code 51 translates to "This extension isn't supported on this operating system."
 
-The AADLoginForWindows extension is intended to be installed only on Arc-enabled Windows Servers with operating systems Windows Server 2025 or Windows 11 24H2 on Arc-enabled Windows Server. Ensure that your version or build of Windows is supported. If it isn't supported, uninstall the extension.
+The AADLoginForWindows extension is intended to be installed only on Arc-enabled Windows Servers with Windows Server 2022 or later operating systems. Ensure that your version of Windows Server is supported. If it isn't supported, uninstall the extension.
 
 ## Troubleshoot sign-in problems
 
@@ -355,9 +353,9 @@ You might get the following error message when you initiate a remote desktop con
 
 Try these solutions:
 
-- The Windows 10 or later PC that you're using to initiate the remote desktop connection must be Microsoft Entra joined, or Microsoft Entra hybrid joined to the same Microsoft Entra directory. For more information about device identity, see the article [What is a device identity?](./overview.md).
+- The client device that you're using to initiate the remote desktop connection must be Microsoft Entra joined, or Microsoft Entra hybrid joined to the same Microsoft Entra directory. For more information about device identity, see the article [What is a device identity?](./overview.md).
 
-  Windows 10 Build 20H1 added support for a Microsoft Entra registered PC to initiate an RDP connection to your device. When you're using a PC that's Microsoft Entra registered (not Microsoft Entra joined or Microsoft Entra hybrid joined) as the RDP client to initiate connections to your device, you must enter credentials in the format `AzureAD\UPN` (for example, `AzureAD\john@contoso.com`).
+  A Microsoft Entra registered client device is also supported to initiate an RDP connection to your Arc-enabled Windows Server. When you're using a client device that's Microsoft Entra registered (not Microsoft Entra joined or Microsoft Entra hybrid joined) as the RDP client to initiate connections to your server, you must enter credentials in the format `AzureAD\UPN` (for example, `AzureAD\john@contoso.com`).
 
   Verify that the AADLoginForWindows extension wasn't uninstalled after the Microsoft Entra join finished.
 
@@ -384,7 +382,7 @@ If you configure a legacy per-user **Enabled/Enforced Microsoft Entra multifacto
 
 If Windows Hello for Business isn't an option, configure a Conditional Access policy that excludes the Microsoft Azure Windows Virtual Machine Sign-in app. To learn more about Windows Hello for Business, see [Windows Hello for Business overview](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-Support for biometric authentication with RDP was added in Windows 10 version 1809. Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
+Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
 
 Share your feedback about this feature or report problems with using it on the [Microsoft Entra feedback forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
