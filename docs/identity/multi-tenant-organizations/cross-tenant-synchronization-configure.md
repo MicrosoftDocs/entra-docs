@@ -156,14 +156,18 @@ By the end of this article, you'll be able to:
 
 1. Select  the **Cross-tenant sync** tab.
 
-1. Select the **Allow user synchronization into this tenant** checkbox.
-
 ::: zone pivot="same-cloud-synchronization"
+7. Select the **Allow user synchronization into this tenant** checkbox.
+
     Optionally, select the **Allow group synchronization into this tenant** checkbox.
 
     For more information, see [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization).
 
     :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the Cross-tenant sync tab with the Allow user synchronization into this tenant and Allow group synchronization into this tenant checkboxes." lightbox="../../media/external-identities/access-settings-users-sync.png":::
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+7. Select the **Allow user synchronization into this tenant** checkbox.
 ::: zone-end
 
 8. Select **Save**.
