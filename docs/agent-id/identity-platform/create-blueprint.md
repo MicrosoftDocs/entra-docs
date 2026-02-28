@@ -17,7 +17,13 @@ An [agent identity blueprint](agent-blueprint.md) is used to create agent identi
 
 This guide walks you through creating an agent identity blueprint using the Microsoft Graph REST API and Microsoft Graph PowerShell.
 
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+
 ## Prerequisites
+
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+
+To create an agent identity blueprint, you need:
 
 - [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
