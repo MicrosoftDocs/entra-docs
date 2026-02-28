@@ -36,7 +36,7 @@ Using Microsoft Entra ID gives you granular per-application access controls to s
 
 ### Guided walkthrough
 
-For a guided walkthrough of many of the recommendations in this article, see the migration guide [Migrate from AD FS to Microsoft Entra ID for identity management](https://go.microsoft.com/fwlink/?linkid=2225005) when signed in to the Microsoft 365 admin center. To review best practices without signing in and activating automated setup features, go to the [Microsoft 365 Setup portal](https://go.microsoft.com/fwlink/?linkid=2229256).
+For a guided walkthrough of many of the recommendations in this article, see the migration guide [Migrate from AD FS to Microsoft Entra ID for identity management](https://go.microsoft.com/fwlink/?linkid=2225005) when signed in to the Microsoft 365 admin center. To review best practices without signing in and activating automated setup features, go to the [Microsoft 365 Setup portal](https://setup.cloud.microsoft).
 
 ## Related content
 

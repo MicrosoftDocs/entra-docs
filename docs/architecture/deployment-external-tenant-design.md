@@ -45,7 +45,7 @@ When you define the extension attribute, the name stored in the directory follow
 
    [ ![Diagram of the B2C extension attributes.](media/deployment-external/b2c-extensions-app.png)](media/deployment-external/b2c-extensions-app-expanded.png#lightbox)
 
-**GET**: [Extension properties](https://graph.microsoft.com/v1.0/applications/d29c324a-ede6-48d4-bc6a-e11d7748f1be/extensionProperties)
+**GET**: `https://graph.microsoft.com/v1.0/applications/{application-id}/extensionProperties`
 
 ```Kusto
   "value": [</br> 
