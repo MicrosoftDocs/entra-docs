@@ -1,13 +1,9 @@
 ---
 title: 'Security hardening to the autoupgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health '
 description: This article describes security improvements to improve autoupgrade.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 09/17/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ---
 
 # Security improvements to Microsoft Entra Connect Sync autoupgrade and Microsoft Entra Connect Health alerts 

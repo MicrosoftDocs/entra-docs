@@ -1,14 +1,9 @@
 ---
 title: Configure Advanced F5 Kerberos Delegation for Multi-Tier SaaS Architectures
 description: In this article, learn the steps you need to perform to integrate F5 with Microsoft Entra ID.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 

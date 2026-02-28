@@ -2,11 +2,8 @@
 title: Access Packages for Agent Identities in Microsoft Entra ID
 titleSuffix: Microsoft Entra Agent ID
 description: This article explains how access packages provide governance for agent identity access to resources.
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
 ms.topic: concept-article
 
 #customer-intent: As an IT admin, I want to configure access packages for agent identities so that I can ensure their access is intentional, auditable, and time-bound.

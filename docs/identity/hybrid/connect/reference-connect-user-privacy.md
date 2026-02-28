@@ -2,15 +2,10 @@
 title: 'Microsoft Entra Connect and user privacy'
 description: This document describes how to obtain GDPR compliancy with Microsoft Entra Connect.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
 ---
 
 # User privacy and Microsoft Entra Connect 

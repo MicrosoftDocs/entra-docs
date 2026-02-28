@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 #customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ms.topic: how-to
-ms.date: 10/13/2025
+ms.date: 02/21/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: cagautham
@@ -45,6 +45,13 @@ The Global Secure Access client for Android supports deployment in these Android
 
 The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. These scenarios, known as *Global Secure Access only mode*, require enabling a traffic forwarding profile and configuring the app based on the vendor documentation.
 
+When configuring through a non-Microsoft MDM, use the following key-value pairs in the managed app configuration:
+
+| Configuration key                | Value | Details |
+|----------------------------------|-------|---------|
+| Global Secure Access             | 1–3   | Required. Controls whether Global Secure Access is enabled in the Defender app. See the table in [Deploy Microsoft Defender for Endpoint on Android](#deploy-microsoft-defender-for-endpoint-on-android) for detailed value descriptions. |
+| GlobalSecureAccessPrivateChannel | 0–3   | Optional. Controls the Private Access channel. See the table in [Deploy Microsoft Defender for Endpoint on Android](#deploy-microsoft-defender-for-endpoint-on-android) for detailed value descriptions. |
+
 ## Deploy Microsoft Defender for Endpoint on Android
 
 To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and configure Global Secure Access. 
@@ -61,12 +68,15 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
 1. On the **Settings** tab:
     1. Set **Configuration settings format** to **Use configuration designer**.
-    1. Use the JSON editor to configure the disabled configuration keys:
+    1. Add the Global Secure Access configuration keys:
         1. Select the **+ Add** button.
-        1. In the search field, type `global` and select these configuration keys:
+        1. In the search field, type `global` and select the configuration keys listed in the following table:
             - **Global Secure Access** (this key is required to enable Global Secure Access). 
             - **GlobalSecureAccessPrivateChannel** (this optional key enables Global Secure Access Private channel). 
-        1. Set the appropriate values for each configuration key according to the following table: 
+        1. Set the appropriate values for each configuration key according to the following table:
+
+        > [!NOTE]
+        > The Android configuration keys differ from the iOS client keys. On Android, use `Global Secure Access` and `GlobalSecureAccessPrivateChannel` as shown here. Don't use the iOS key names (`EnableGSA`, `EnableGSAPrivateChannel`).
  
         | Configuration key                | Value    | Details   |
         |----------------------------------|----------|-----------|

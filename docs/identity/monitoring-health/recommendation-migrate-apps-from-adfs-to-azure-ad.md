@@ -2,13 +2,8 @@
 title: Recommendation to migrate applications away from AD FS
 description: Learn about the recommendation to migrate application authentication from AD FS to Microsoft Entra ID
 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 06/12/2025
-ms.author: sarahlipsey
 ms.reviewer: jadedsouza
 
 # Customer intent: As an IT admin, I want to migrate my applications from Active Directory Federated Services (AD FS) to Microsoft Entra ID so that I can take advantage of the security features of Microsoft Entra ID and maximize the value of my applications.
@@ -36,7 +31,7 @@ Using Microsoft Entra ID gives you granular per-application access controls to s
 
 ### Guided walkthrough
 
-For a guided walkthrough of many of the recommendations in this article, see the migration guide [Migrate from AD FS to Microsoft Entra ID for identity management](https://go.microsoft.com/fwlink/?linkid=2225005) when signed in to the Microsoft 365 admin center. To review best practices without signing in and activating automated setup features, go to the [Microsoft 365 Setup portal](https://setup.cloud.microsoft).
+For a guided walkthrough of many of the recommendations in this article, see the migration guide [Migrate from AD FS to Microsoft Entra ID for identity management](https://go.microsoft.com/fwlink/?linkid=2225005) when signed in to the Microsoft 365 admin center. To review best practices without signing in and activating automated setup features, go to the Microsoft 365 Setup portal.
 
 ## Related content
 
