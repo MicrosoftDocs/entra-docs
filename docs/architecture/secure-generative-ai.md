@@ -3,14 +3,12 @@ title: Secure Generative AI with Microsoft Entra
 description: Learn how to mitigate specific security challenges that Generative AI (Gen AI) poses to ensure organizational security with Microsoft Entra.
 author: gargi-sinha
 ms.author: gasinh
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: best-practice
 ms.date: 06/20/2025
 ms.reviewer: joflore
 ms.custom: sfi-ga-nochange
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
+ms.subservice: architecture
 ---
 # Secure Generative AI with Microsoft Entra
 

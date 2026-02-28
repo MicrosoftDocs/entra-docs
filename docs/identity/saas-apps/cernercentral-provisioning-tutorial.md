@@ -3,10 +3,6 @@ title: Configure Cerner Central for automatic user provisioning in Microsoft Ent
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: arvinh
@@ -65,7 +61,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Next, a system account must be created for Microsoft Entra ID. Use the instructions below to request a System Account for your sandbox and production environments.
 
-   * Instructions:  https://wiki.ucern.com/display/CernerCentral/Requesting+A+System+Account
+   * Instructions: https://wiki.cerner.com/display/public/CernerCentral/Requesting+a+System+Account+in+System+Account+Management
 
    * Sandbox: https://sandboxcernercentral.com/system-accounts/
 

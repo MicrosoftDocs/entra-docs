@@ -2,14 +2,8 @@
 title: Viewing apps using your tenant for identity management
 description: Understand how to view all applications using your Microsoft Entra tenant for identity management.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: reference
 ms.date: 07/14/2023
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
 

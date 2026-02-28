@@ -1,13 +1,8 @@
 ---
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2025
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
+ms.date: 02/03/2026
 ms.reviewer: myra-ramdenbourg
 ms.custom: sfi-image-nochange
 ---
@@ -126,11 +121,16 @@ You can filter the device list by these attributes:
 
 ## Download devices
 
-Cloud Device Administrators and Intune Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed. An export task might run for as long as an hour, depending on your selections. If the export task exceeds 1 hour, it fails, and no file is output.
-
+Cloud Device Administrators and Intune Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed.
 The exported list includes these device identity attributes:
 
-`displayName,accountEnabled,operatingSystem,operatingSystemVersion,joinType (trustType),registeredOwners,userNames,mdmDisplayName,isCompliant,registrationTime,approximateLastSignInDateTime,deviceId,isManaged,objectId,profileType,systemLabels,model`
+`id,deviceId,isManaged,profileType,systemLabels,model,displayName,accountEnabled,operatingSystem,operatingSystemVersion,trustType(joinType),mdm,securitySettingsManagement,isCompliant,registrationDateTime,approximateLastSignInDateTime,owner,upnName`
+
+>[!Note]
+>trustType is where JoinType can be determined. A common translation is:
+>- AzureAD -> Microsoft Entra joined
+>- Workplace -> Microsoft Entra registered
+>- ServerAD -> Microsoft Entra hybrid joined
 
 The following filters can be applied for the export task:
 
@@ -140,6 +140,11 @@ The following filters can be applied for the export task:
 - Activity timestamp
 - OS type
 - Device type
+
+Additionally, columns can be managed by selecting **Manage view > Columns** to toggle which columns you would like to export.
+
+> [!NOTE]
+>Selecting **Owner** or **User principal name** can make processing take longer. If you prefer faster results, leave these options unchecked; enable them when you need the extra information.
 
 ## Configure device settings
 

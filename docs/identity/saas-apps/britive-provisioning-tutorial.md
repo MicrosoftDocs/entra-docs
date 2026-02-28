@@ -3,8 +3,6 @@ title: Configure Britive for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -44,8 +42,8 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Britive to support provisioning with Microsoft Entra ID
 
 The application has to be manually configured using the steps provided in this section:
-1. Login to the Britive application with administrator privileges
-1. Select **Admin->Identity Management->Identity Providers**
+1. Log in to the Britive application with administrator privileges.
+1. Select **Admin->Identity Management->Identity Providers**.
 1. Select **Add Identity Provider**. Enter the name and description. Select the **Add** button.
 
 	![Identity Provider](media/britive-provisioning-tutorial/identity.png)
@@ -54,7 +52,7 @@ The application has to be manually configured using the steps provided in this s
 
 	![Configuration Page](media/britive-provisioning-tutorial/configuration.png)
 
-1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the **SCIM URL** and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
+1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application in the Azure portal.
 
 	![SCIM Page](media/britive-provisioning-tutorial/scim.png)
 

@@ -2,9 +2,6 @@
 title: Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
 ms.date: 11/05/2025
@@ -25,10 +22,12 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 
 ## Create a catalog
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+If you do not yet have a catalog, then create a new catalog. If you have a catalog already, then continue at the [next section](#add-a-custom-data-provided-resource-to-a-catalog).
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or catalog creator.
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+    > Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select **New catalog**.
 
@@ -37,13 +36,15 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
     Users see this information in an access package's details.
 1. Select **Create** to create the catalog.
 
+For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
+
 ## Add a custom data provided resource to a catalog
 
-With a catalog created, you can add custom data provided resource to it by doing the following steps:
+With a catalog created, you can add custom data provided resources to it by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you created in the previous section.
 
@@ -78,6 +79,8 @@ With a catalog created, you can add custom data provided resource to it by doing
 
 1. Select **Create**. 
 
+
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Get Access Review Object and Instance ID
 
@@ -115,6 +118,24 @@ After copying both the Access review object, and access review instance object, 
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
+## Custom data for access CSV fields
+
+When uploading CSVs to be included in the access data, the following parameters are included in the template:
+
+> [!NOTE]
+> All columns are mandatory.
+
+|Parameter  |Description  |
+|---------|---------|
+|PrincipalId     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
+|PrincipalType     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
+|PermissionId     |   A unique identifier for the permission in the application that will be reviewed. This helps distinguish between different permissions within the same app.      |
+|PermissionName     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
+|PermissionDescription     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
+|PermissionType     |   Indicates the category of permission.      |
+
+
+You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta&preserve-view=true).
 
 ## Active review state
 
@@ -126,33 +147,38 @@ At the **Active** stage:
 ## Applying stage
 
 
-In the **Applying** stage, you manually get a list of denied users by making the following API call:
+In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
-GET /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq ‘Deny’ and resourceId eq ‘<custom data provided resource ID>’)
+GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq 'Deny' and resourceId eq '<custom data provided resource ID>')
 ```
 
 For each decision item: 
 
-Remove access from your own system and Patch each decision item to indicate success or failure for removal by making the following API call:
+Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
-PATCH /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
-{ “applyResult” : “Success/Failure/PartialSuccess/NotSupported”, “applyDescription”: “ServiceNow ticket created” }
+PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
+Content-Type: application/json
+
+{
+ "applyResult": "AppliedSuccessfully",
+ "applyDescription": "ServiceNow ticket created"
+}
 ```
 
-The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review transitions to **Applied**.
+The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply using PATCH each of five decision items before the review transitions to **Applied**.
 
 
 
 
-## Complete and apply review decisions
+## Review status
 
 As reviewers take actions, the review progresses through several states:
 
 | Review Status | Description |
 |--------------------|-----------------|
-| Initializing | Review created; waiting for custom data upload. |
+| Initializing | Review instance created; waiting for custom data upload. |
 | Active | Reviewers can take decisions in the My Access portal. |
 | Applying | Review decisions are being remediated. |
 | Applied | All decisions are marked as applied. |

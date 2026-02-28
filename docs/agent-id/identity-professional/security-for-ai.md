@@ -1,11 +1,7 @@
 ---
 title: Security for AI agents with Microsoft Entra Agent ID
 description: Understand why security is critical for AI agents. Learn about the challenges they introduce, the concept of agent sprawl, and how Microsoft is addressing AI security across the enterprise.
-author: SHERMANOUKO
-ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/10/2025
-ms.service: entra-id
 ms.topic: concept-article
 ms.reviewer: kylemar
 
@@ -60,7 +56,7 @@ Organizations must demonstrate that AI systems operate within governance framewo
 
 ## Agent sprawl
 
-Agent proliferation creates a governance challenge termed "agent sprawl"—the uncontrolled expansion of agents across an organization without adequate visibility, management, or governance controls.
+Agent proliferation creates a governance challenge termed "agent sprawl"—the uncontrolled expansion of agents across an organization without adequate visibility, management, or lifecycle controls.
 
 ### How agent sprawl develops
 
@@ -112,7 +108,7 @@ Microsoft Entra Agent ID provides an identity and security framework designed to
     - Agent registry: Provides centralized metadata management, secure agent discovery, and automatic organization into security collections
 
 - Govern agent identities and lifecycle
-    - Identity governance for agent identities: Lifecycle management, access reviews, and compliance reporting for agent identities
+    - Identity governance for agent identities: Lifecycle management, access assignment, and compliance reporting for agent identities
 
 - Protect agent access to resources 
     - Global Secure Access for agent identities: Network-level security and zero-trust access for agent communications

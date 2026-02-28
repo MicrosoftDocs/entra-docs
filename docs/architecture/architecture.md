@@ -2,14 +2,12 @@
 title: Architecture overview
 description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
 author: barclayn
-manager: femila
 
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 09/10/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
+ms.subservice: architecture
 ---
 
 # What is the Microsoft Entra architecture?
@@ -22,7 +20,7 @@ With Microsoft Entra, you can create and manage users and groups, and enable per
 
 ## Microsoft Entra architecture
 
-Microsoft Entra ID combines extensive monitoring, automated rerouting, failover, and recovery capabilities within its geographically distributed architecture to provide company-wide availability and performance
+Microsoft Entra ID combines extensive monitoring, automated rerouting, failover, and recovery capabilities within its geographically distributed architecture to provide company-wide availability and performance.
 
 The following architecture elements are covered in this article:
 
@@ -91,7 +89,7 @@ Microsoft Entra ID operates across datacenters with the following characteristic
 
 #### Data consistency
 
-The directory model is one of eventual consistencies. One typical problem with distributed asynchronously replicating systems is that the data returned from a "particular" replica might not be up-to-date.
+The directory model is one of eventual consistency. One typical problem with distributed asynchronously replicating systems is that the data returned from a "particular" replica might not be up-to-date.
 
 Microsoft Entra ID provides read-write consistency for applications targeting a secondary replica by routing its writes to the primary replica, and synchronously pulling the writes back to the secondary replica.
 

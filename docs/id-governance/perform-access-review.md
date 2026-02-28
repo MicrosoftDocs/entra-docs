@@ -1,14 +1,10 @@
 ---
 title: Review access to groups & applications in access reviews
 description: Learn how to review access of group members or application access in Microsoft Entra access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 ---
@@ -23,8 +19,11 @@ You can review access to groups and applications via the [My Access portal](http
 The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations.
 
 ### Go directly to the Access Review Agent
-1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent
-1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+
+If you are in the middle of reviews, you can go directly to the Access Review agent in Microsoft Teams.
+
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent.
 1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
 
 ### Use email to go to the Access Review Agent

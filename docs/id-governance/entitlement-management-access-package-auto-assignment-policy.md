@@ -2,12 +2,9 @@
 title: Configure an automatic assignment policy for an access package in entitlement management - Microsoft Entra
 description: Learn how to configure automatic assignments based on rules for an access package in entitlement management.
 author: markwahl-msft
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2024
-ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include a policy for users to get and lose access package assignments automatically, without them or an administrator needing to request access.
 ---

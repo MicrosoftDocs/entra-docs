@@ -1,10 +1,6 @@
 ---
 title: Managing Users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle Workflows
 description: Conceptual article discussing managing Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra with Lifecycle Workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: concept-article
