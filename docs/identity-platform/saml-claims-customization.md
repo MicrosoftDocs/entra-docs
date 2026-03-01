@@ -44,7 +44,7 @@ To edit the name identifier value claim:
 
 If the SAML request contains the element `NameIDPolicy` with a specific format, then the Microsoft identity platform honors the format in the request.
 
-If the SAML request doesn't contain an element for `NameIDPolicy`, then the Microsoft identity platform issues the `nameID` with the  format you specify. If no format is specified, the Microsoft identity platform uses the default source format associated with the claim source selected. If a transformation results in a null or illegal value, Microsoft Entra ID sends a persistent pairwise identifier in the `nameID`.
+If the SAML request doesn't contain an element for `NameIDPolicy`, then the Microsoft identity platform issues the `nameID` with the  format you specify. If no format is specified, the Microsoft identity platform uses the default source format associated with the claim source selected. When the configured source attribute is null, the Microsoft identify platform will use the userprincipalName. If a transformation results in a null or illegal value, Microsoft Entra ID sends a persistent pairwise identifier in the `nameID`. 
 
 From the **Choose name identifier format** dropdown, select one of the options in the following table.
 
