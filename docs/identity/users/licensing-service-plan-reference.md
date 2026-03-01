@@ -21,6 +21,25 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 - **Service plans included**: A list of service plans in the product that correspond to the string ID and GUID
 - **Service plans included (friendly names)**: A list of service plans (friendly names) in the product that correspond to the string ID and GUID
 
+# Usage for Dynamic Groups
+
+Dynamic Groups strangely does not allowing querying for licenses - you can only query for 'user.assignedPlans', and these rarely have any sensible relation to what you see within Admin Center's Licensing portal, if any relation at all. The Validation page, if you have constructed the query correctly, WILL list off the user's assignedPlans that are being queried against - but the names listed will match neither this document nor the products they have. For example, the GUID `fafd7243-e5c1-4a3a-9e40-495efcb1d3c3` is listed as PROJECT_CLIENT_SUBSCRIPTION on this table, but simply 'Microsoft Office' when queried. Even ideas that seem reasonable, like searching for Intune to distinguish Business Standard from Business Basic - will not work, as the Intune license is likely named something completely different.
+
+A better method is getting the 'servicePlans' directly for a user from Microsoft Graph. `Connect-MgGraph -Scopes Organization.Read.All` and login with admin. 
+`Get-MgUser -UserId 'user@domain.com' -Property AssignedPlans | Select-Object -ExpandProperty AssignedPlans | Select-Object servicePlanID, Service | fl` to pull a given user's servicePlans. You will likely not recognize any off these, but a comparison can be made between two target users to try to find an appropriate servicePlan ID to include/exclude. 
+
+The syntax for this query is tricky. Below are examples: 
+```powershell
+# includes users with specified plan
+user.assignedPlans -any (assignedPlan.servicePlanId -eq "c63d4d19-e8cb-460e-b37c-4d6c34603745" and assignedPlan.capabilityStatus -eq "Enabled")
+# excludes users with specified plan
+-not (user.assignedPlans -any (assignedPlan.servicePlanId -eq "c63d4d19-e8cb-460e-b37c-4d6c34603745" and assignedPlan.capabilityStatus -eq "Enabled"))
+```
+
+`
+
+
+
 >[!NOTE]
 >This information was last updated on October 29, 2025.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
 ><br/>
