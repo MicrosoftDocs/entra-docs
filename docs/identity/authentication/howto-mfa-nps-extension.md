@@ -408,7 +408,7 @@ Verify that AD Connect is running, and that the user is present in both the on-p
 
 ### Why do I see HTTP connect errors in logs with all my authentications failing?
 
-Verify that https://adnotifications.windowsazure.com, https://strongauthenticationservice.auth.microsoft.com is reachable from the server running the NPS extension.
+Verify that `https://adnotifications.windowsazure.com` and `https://strongauthenticationservice.auth.microsoft.com` are reachable from the server running the NPS extension.
 
 ### Why is authentication not working, despite a valid certificate being present?
 

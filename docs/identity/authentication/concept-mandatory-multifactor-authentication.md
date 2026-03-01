@@ -97,7 +97,7 @@ Changes are required if you use the [msal4j](https://central.sonatype.com/artifa
 
 Changes are required if you use the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and one of the following APIs in your application. These APIs are [**deprecated** as of the `3.2.3` release](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/CHANGELOG.md#323-1).
 
-- [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokenbyusernamepassword)
+- [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/confidentialclientapplication#@azure-msal-node-confidentialclientapplication-acquiretokenbyusernamepassword)
 - [IConfidentialClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/iconfidentialclientapplication#@azure-msal-node-iconfidentialclientapplication-acquiretokenbyusernamepassword)
 - [IPublicClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/ipublicclientapplication#@azure-msal-node-ipublicclientapplication-acquiretokenbyusernamepassword)
 
