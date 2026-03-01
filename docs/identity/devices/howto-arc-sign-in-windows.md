@@ -4,7 +4,7 @@ description: Learn how to sign in to an Azure arc enabled server running Windows
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 11/24/2025
+ms.date: 03/01/2026
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 
