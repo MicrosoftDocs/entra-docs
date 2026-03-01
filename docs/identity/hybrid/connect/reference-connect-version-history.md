@@ -320,7 +320,7 @@ See: [Synchronization fails after upgrade if miiserver.exe.config was previously
 
 
 ### Miscellaneous 
-- The minimum .NET runtime requirement has been increased to 4.7.2.
+- The minimum .NET Framework requirement has been increased to 4.7.2.
 - Branding updates to match Microsoft Entra ID branding.
 
 
