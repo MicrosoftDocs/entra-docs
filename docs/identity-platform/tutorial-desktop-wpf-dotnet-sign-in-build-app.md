@@ -80,7 +80,7 @@ dotnet add package Microsoft.Identity.Client.Broker
     - Replace `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
 
 1. After creating the app settings file, we'll create another file called *AzureAdConfig.cs* that will help you read the configs from the app settings file. Create the *AzureAdConfig.cs* file in the root folder of the app.
-1. In the *AzureAdConfig.js* file, define the getters and setters for the `ClientId` and `Authority` properties. Add the following code:
+1. In the *AzureAdConfig.cs* file, define the getters and setters for the `ClientId` and `Authority` properties. Add the following code:
 
     ```csharp
     namespace sign_in_dotnet_wpf
@@ -306,7 +306,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
             authResult = await app.AcquireTokenSilent(scopes, firstAccount)
                     .ExecuteAsync();
         }
-        catch (MsalUiRequiredException ex)
+        catch (MsalUiRequiredException msalUiEx)
         {
             try
             {
@@ -316,9 +316,9 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
                     .WithPrompt(Prompt.SelectAccount)
                     .ExecuteAsync();
             }
-            catch (MsalException msalex)
+            catch (MsalException msalEx)
             {
-                ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalex}";
+                ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalEx}";
             }
             catch (Exception ex)
             {
