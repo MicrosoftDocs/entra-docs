@@ -41,7 +41,7 @@ From there, you can go to **All devices** to:
 >
 > - If you see a device that's **Microsoft Entra hybrid joined** with a state of **Pending** in the **Registered** column, the device has been synchronized from Microsoft Entra Connect and is waiting to complete registration from the client. See [How to plan your Microsoft Entra hybrid join implementation](hybrid-join-plan.md). For more information, see [Device management frequently asked questions](faq.yml).
 >
-> - For some iOS devices, device names that contain apostrophes can use different characters that look like apostrophes. So searching for such devices is a little tricky. If don't see correct search results, be sure the search string contains the matching apostrophe character.
+> - For some iOS devices, device names that contain apostrophes can use different characters that look like apostrophes. So searching for such devices is a little tricky. If you don't see correct search results, be sure the search string contains the matching apostrophe character.
 
 ## Manage an Intune device
 
@@ -55,7 +55,7 @@ There are two ways to enable or disable devices:
 - The toolbar, after you drill down for a specific device.
 
 > [!IMPORTANT]
-> - You must be a Intune Administrator or Cloud Device Administrator to enable or disable a device. 
+> - You must be an Intune Administrator or Cloud Device Administrator to enable or disable a device. 
 > - Disabling a device prevents it from authenticating via Microsoft Entra ID. This prevents it from accessing your Microsoft Entra resources that are protected by device-based Conditional Access and from using Windows Hello for Business credentials.
 > - Disabling a device revokes the Primary Refresh Token (PRT) and any refresh tokens on the device.
 > - Printers can't be enabled or disabled in Microsoft Entra ID.
@@ -69,8 +69,8 @@ There are two ways to delete a device:
 
 > [!IMPORTANT]
 > - You must be a Cloud Device Administrator, Intune Administrator or Windows 365 Administrator to delete a device.
-> - Printers can't be deleted before they are deleted from Universal Print.
-> - Windows Autopilot devices can't be deleted before they are deleted from Intune.
+> - Printers can't be deleted before they're deleted from Universal Print.
+> - Windows Autopilot devices can't be deleted before they're deleted from Intune.
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  
