@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Create an Airtable Personal Access Token to authorize provisioning with Microsoft Entra ID.
 
-1. Log in to [Airtable Developer Hub](https://airtable.com) as an Admin user, and then navigate to `https://airtable.com/create/tokens`.
+1. Log in to [Airtable Developer Hub](https://airtable.com) as an admin user, and then navigate to `https://airtable.com/create/tokens`.
 1. Select "Personal Access Tokens" from the left hand navigation bar.
 
    ![Screenshot of Personal Access Token Selection.](media/airtable-provisioning-tutorial/developer-hub-personal-access-token.png)
