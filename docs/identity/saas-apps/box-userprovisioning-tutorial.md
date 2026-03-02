@@ -109,6 +109,8 @@ The objective of this section is to outline how to enable provisioning of Active
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
 12. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to Box. The attributes selected as **Matching** properties are used to match the user accounts in Box for update operations. Select the Save button to commit any changes.
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
