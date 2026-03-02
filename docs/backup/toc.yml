@@ -1,0 +1,29 @@
+items:
+- name: Backup and Recovery documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Microsoft Entra Backup and Recovery?
+    href: overview.md
+- name: Concepts
+  expanded: true
+  items:
+  - name: Backup, difference report, and recovery model
+    href: backup-difference-report-recovery-model.md
+  - name: Supported objects and recoverable properties
+    href: scope-supported-objects-limitations.md
+  - name: Soft deletion
+    href: soft-deletion.md
+- name: How-to guides
+  expanded: true
+  items:
+  - name: View available backups
+    href: view-available-backups.md
+  - name: Create and review difference reports
+    href: create-review-difference-reports.md
+  - name: Recover objects
+    href: recover-objects.md
+  - name: Review recovery history
+    href: review-recovery-history.md
+- name: Troubleshooting
+  href: troubleshooting.md
