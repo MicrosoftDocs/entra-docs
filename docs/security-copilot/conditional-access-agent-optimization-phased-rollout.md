@@ -4,7 +4,7 @@ description: Learn about the phased rollout capability for the Security Copilot 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-ms.date: 01/08/2026
+ms.date: 03/02/2026
 
 ms.service: entra-id
 ms.subservice: conditional-access
