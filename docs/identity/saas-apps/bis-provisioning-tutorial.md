@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 <a name='step-2-configure-bis-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BIS to support provisioning with Microsoft Entra ID
-To get your credentials for authorization please contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
+To get your credentials for authorization contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
 
 <a name='step-3-add-bis-from-the-azure-ad-application-gallery'></a>
 
@@ -119,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:BIS:2.0:User:startdate|DateTime|||
    |urn:ietf:params:scim:schemas:extension:BIS:2.0:User:terminationdate|DateTime|||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
