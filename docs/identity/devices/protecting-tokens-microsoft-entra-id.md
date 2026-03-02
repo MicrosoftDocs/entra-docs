@@ -21,7 +21,7 @@ Ensure that you've the proper licensing for:
 - [Conditional Access](../conditional-access/overview.md#license-requirements)
 - [Microsoft Entra Internet Access for Microsoft services](../../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview)
 - [Microsoft Entra ID Protection](../../id-protection/overview-identity-protection.md#license-requirements)
-- [Token Protection](../conditional-access/concept-token-protection.md#prerequisites)
+- [Token Protection](../conditional-access/concept-token-protection.md)
 - [Microsoft Intune (minimum Plan 1)](/intune//intune-service/fundamentals/licenses#microsoft-intune-plan-1)
 - [Microsoft Defender for Endpoint XDR](/defender-xdr/prerequisites#licensing-requirements)
 
@@ -192,7 +192,7 @@ Primary Refresh Tokens (PRTs) are protected with a cryptographically secure tie 
 
 **Token Protection in Conditional Access**
 
-Enforcing Token Protection in Conditional Access ensures that only refresh tokens which are cryptographically bound to the device are used. Bearer refresh tokens, which can be used from any device, are automatically rejected. This method provides the highest level of security for protecting sign-in sessions, as the token can only be used from the device it was originally issued to. At the time of publication of this post, Token Protection in Conditional Access is available for Windows native applications connecting to Microsoft Teams, SharePoint, and Exchange. We're continuously working to expand the scope of Token Protection by adding support for extra platforms, applications, and resources. For an updated list of supported apps and resources, please refer to this article. [Token protection in Microsoft Entra Conditional Access - Microsoft Entra ID \| Microsoft Learn](../conditional-access/concept-token-protection.md#prerequisites).
+Enforcing Token Protection in Conditional Access ensures that only refresh tokens which are cryptographically bound to the device are used. Bearer refresh tokens, which can be used from any device, are automatically rejected. This method provides the highest level of security for protecting sign-in sessions, as the token can only be used from the device it was originally issued to. At the time of publication of this post, Token Protection in Conditional Access is available for Windows native applications connecting to Microsoft Teams, SharePoint, and Exchange. We're continuously working to expand the scope of Token Protection by adding support for extra platforms, applications, and resources. For an updated list of supported apps and resources, please refer to this article. [Token protection in Microsoft Entra Conditional Access](../conditional-access/concept-token-protection.md).
 
 Organizations are encouraged to pilot and deploy Token Protection for all supported applications, devices, and platforms. Applications that don't support Token Protection should be safeguarded with other
 policies such as network-based policies.

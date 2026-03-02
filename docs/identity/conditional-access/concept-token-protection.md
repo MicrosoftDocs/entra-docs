@@ -49,7 +49,7 @@ On Windows, enforcement is also supported for:
 ### Supported devices
 
 **Windows**:
-- Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
+- Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the known limitations section in the appropriate deployment guide for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 - For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
