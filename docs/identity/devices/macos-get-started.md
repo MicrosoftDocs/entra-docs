@@ -1,10 +1,6 @@
 ---
 title: Add Your Work or School Account to a macOS Device
 description: Learn how to add your work or school account to a macOS device for seamless access to organizational resources, enhanced security, and device management.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 01/22/2026
 

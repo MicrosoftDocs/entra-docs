@@ -2,7 +2,6 @@
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
-ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to
 ms.date: 10/13/2025

@@ -4,7 +4,6 @@ description: Learn how to create agent identities that represent AI agents in yo
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 02/19/2026
 ms.custom: agent-id-ignite
@@ -21,7 +20,11 @@ This article guides you through the process of building a simple web service tha
 	
 If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
 
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+
 ## Prerequisites
+
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
 
 To create agent identities, you need:
 

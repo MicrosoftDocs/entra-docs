@@ -4,7 +4,6 @@ description: Learn how to create agent users and authenticate using agent identi
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/10/2025
 ms.custom: agent-id-ignite

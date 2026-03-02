@@ -4,7 +4,6 @@ description: Streamline user management with User Source of Authority (SOA) in M
 author: owinfreyATL
 manager: dougeby
 ms.topic: concept-article
-ms.service: entra-id
 ms.subservice: hybrid
 ms.date: 09/30/2025
 ms.author: owinfrey

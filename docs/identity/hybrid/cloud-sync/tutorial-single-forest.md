@@ -2,14 +2,9 @@
 title: Tutorial - Integrate a single forest with a single Microsoft Entra tenant
 description: This topic describes the pre-requisites and the hardware requirements cloud sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # Tutorial: Integrate a single forest with a single Microsoft Entra tenant
