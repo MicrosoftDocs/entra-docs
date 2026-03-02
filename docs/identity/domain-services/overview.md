@@ -11,37 +11,37 @@ ms.custom: sfi-image-nochange
 
 Microsoft Entra Domain Services provides managed domain services such as domain join, group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. You use these domain services without the need to deploy, manage, and patch domain controllers (DCs) in the cloud.
 
-Use Entra Domain Services to support legacy applications that depend on Active Directory Domain Services (AD DS) protocols and can’t be easily modified to use modern authentication. By running these applications against a managed domain in Azure, you can lift and shift AD‑dependent workloads to the cloud without extending or operating their on‑premises AD DS infrastructure in Azure.
+Use Domain Services to support legacy applications that depend on Active Directory Domain Services (AD DS) protocols and can’t be easily modified to use modern authentication. By running these applications against a managed domain in Azure, you can lift and shift AD‑dependent workloads to the cloud without extending or operating their on‑premises AD DS infrastructure in Azure.
 
-Entra Domain Services integrates with Microsoft Entra ID, which acts as the source of authority for users, groups, and credentials. This integration enables users to sign in to applications and services connected to the managed domain using their existing identities, while allowing you to centralize identity management in Microsoft Entra ID.
+Domain Services integrates with Microsoft Entra ID, which acts as the source of authority for users, groups, and credentials. This integration enables users to sign in to applications and services connected to the managed domain by using their existing identities, while allowing you to centralize identity management in Microsoft Entra ID.
 
 > [!div class="nextstepaction"]
 > [To get started, create a Domain Services managed domain using the Microsoft Entra admin center][tutorial-create]
 
-Take a look at our short video to learn more about Entra Domain Services.
+Take a look at our short video to learn more about Microsoft Entra Domain Services.
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0a092182-e2de-4538-a6b4-adfcacf1cc54]
+> [!VIDEO https://videoencodingpublic-hgeaeyeba8gycee3.b01.azurefd.net/public-0a092182-e2de-4538-a6b4-adfcacf1cc54/combined_video_1001_1729741341074_1920x1080.mp4]
 
 <a name='how-does-azure-ad-ds-work'></a>
 
 ## When to use Microsoft Entra Domain Services
 
-Entra Domain Services is designed for organizations that are modernizing identity and access management with Entra ID but still have applications or workloads that depend on AD protocols.
+Domain Services helps organizations that run applications or workloads that still depend on AD DS protocols to modernize identity and access management with Microsoft Entra ID.
 
-You should consider using Entra Domain Services in the following scenarios:
+You should consider using Domain Services in the following scenarios:
 
 - **Lift-and-shift legacy applications:** You have applications running on-premises that depend on LDAP, Kerberos, NTLM, Group Policy, or domain join. You want to move these workloads to the cloud but avoid rewriting them to support modern authentication like OIDC or OAuth.
 - **Reduce on-premises footprint:** Your organization wants to move workloads to the cloud and retire on-premises hardware. Instead of maintaining a site-to-site VPN connection solely for authentication traffic back to on-premises AD DS, you can use a managed domain in Azure.
-- **Implement an AD-minimized strategy:** You are adopting a cloud-first strategy where Microsoft Entra ID is the primary identity provider. Entra Domain Services supports the remaining legacy AD-dependent workloads, and avoids the need to extend old AD DS artefacts into Azure.
-- **Isolate legacy workloads:** You want to keep AD‑dependent workloads in Azure while new applications use Microsoft Entra ID directly.
-- **Cloud-only legacy support:** You are a cloud-native organization with no on-premises Active Directory, but you have specific third-party applications that still require LDAP or traditional domain-join. Entra Domain Services bridges this gap without forcing you to build a full AD DS infrastructure.
+- **Implement an AD-minimized strategy:** You're adopting a cloud-first strategy where Microsoft Entra ID is the primary identity provider. Domain Services supports the remaining legacy AD DS-dependent workloads, and avoids the need to extend old AD DS artefacts into Azure.
+- **Isolate legacy workloads:** You want to keep AD DS‑dependent workloads in Azure while new applications use Microsoft Entra ID directly.
+- **Cloud-only legacy support:** You are a cloud-native organization with no on-premises AD DS, but you have specific third-party applications that still require LDAP or traditional domain-join. Domain Services bridges this gap without forcing you to build a full AD DS infrastructure.
 
-You use Entra Domain Services as a transitional capability for Azure-hosted workloads that require legacy authentication, rather than as a general replacement for your on-premises Active Directory or a substitute for cloud-native identity services.
+You can use Domain Services as a transitional capability for Azure-hosted workloads that require legacy authentication, rather than as a general replacement for your on-premises Active Directory or a substitute for cloud-native identity services.
 
 Learn more about these scenarios at [Common use-cases and scenarios for Microsoft Entra Domain Services](scenarios.md).
 
 
-## Entra Domain Services in the cloud journey
+## Microsoft Entra Domain Services in the cloud journey
 
 Entra Domain Services helps you to achieve your goal of "AD minimization" — reducing reliance on legacy identity infrastructure in favor of modern, cloud-based identity such as Entra ID.
 
@@ -54,21 +54,21 @@ This approach avoids the complexity and security burden of manually deploying an
 
 To learn more about Microsoft’s recommended approach, see [Cloud transformation posture](/entra/architecture/road-to-the-cloud-posture).
 
-## How does Entra Domain Services work?
+## How does Microsoft Entra Domain Services work?
 
-When you create an Entra Domain Services managed domain, you define a unique namespace, such as *aaddscontoso.com*. Two Windows Server domain controllers are deployed into your selected Azure region as part of a replica set.
+When you create a Domain Services managed domain, you define a unique namespace, such as *dscontoso.com*. Two Windows Server domain controllers are deployed into your selected Azure region as part of a replica set.
 
 These domain controllers are fully managed by Microsoft. You don’t need to configure, patch, or monitor them. The platform handles availability, backups, and encryption at rest.
 
-A managed domain is configured to perform a one‑way synchronization from Microsoft Entra ID. Users, groups, and credentials from Entra ID are made available in the managed domain so that applications, services, and virtual machines in Azure can use familiar AD DS capabilities such as domain join, Group Policy, LDAP, and Kerberos/NTLM authentication.
+A managed domain is configured to perform a one‑way synchronization from Microsoft Entra ID. Users, groups, and credentials from Microsoft Entra ID are made available in the managed domain so that applications, services, and virtual machines in Azure can use familiar AD DS capabilities such as domain join, Group Policy, LDAP, and Kerberos/NTLM authentication.
 
-In hybrid environments, identity information from on‑premises Active Directory Domain Services is synchronized to Microsoft Entra ID, and then made available to the managed domain.
+In hybrid environments, identity information from on‑premises AD DS is synchronized to Microsoft Entra ID, and then made available to the managed domain.
 
-Entra Domain Services works with both cloud‑only Microsoft Entra tenants and tenants synchronized with an on‑premises AD DS environment. The same set of managed domain capabilities is available in both scenarios.
+Domain Services works with both cloud‑only Microsoft Entra tenants, and tenants synchronized with an on‑premises AD DS environment. The same set of managed domain capabilities is available in both scenarios.
 
 You can also deploy multiple replica sets across Azure regions to improve availability and support disaster recovery scenarios for legacy applications. For more information, see [Replica sets concepts and features for managed domains][concepts-replica-sets].
 
-## Entra Domain Services features and benefits
+## Microsoft Entra Domain Services features and benefits
 
 To provide identity services to applications and VMs in the cloud, Domain Services is fully compatible with a traditional AD DS environment for operations such as domain-join, secure LDAP (LDAPS), Group Policy, DNS management, and LDAP bind and read support. LDAP write support is available for objects created in the managed domain, but not resources synchronized from Microsoft Entra ID.
 
