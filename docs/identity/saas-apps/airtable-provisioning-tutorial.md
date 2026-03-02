@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Create an Airtable Personal Access Token to authorize provisioning with Microsoft Entra ID.
 
-1. Log in to [Airtable Developer Hub](https://airtable.com) as an Admin user, and then navigate to `https://airtable.com/create/tokens`.
+1. Login to [Airtable Developer Hub](https://airtable.com) as an Admin user, and then navigate to `https://airtable.com/create/tokens`.
 1. Select "Personal Access Tokens" from the left hand navigation bar.
 
    ![Screenshot of Personal Access Token Selection.](media/airtable-provisioning-tutorial/developer-hub-personal-access-token.png)
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select users.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Airtable in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airtable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Airtable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -170,9 +170,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String|&check;|&check;
    |members|Reference||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
