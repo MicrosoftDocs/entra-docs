@@ -68,8 +68,8 @@
         "docs/**/*.yml": "show_learn_banner"
       },
       "author": {
-        "agent-id/**/*.md": "SHERMANOUKO",
-        "agent-id/**/*.yml": "SHERMANOUKO",
+        "agent-id/**/*.md": "Dickson-Mwendia",
+        "agent-id/**/*.yml": "Dickson-Mwendia",
         "architecture/**/*.md": "janicericketts",
         "architecture/**/*.yml": "janicericketts",
         "external-id/**/*.md": "csmulligan",
@@ -114,12 +114,12 @@
         "security-copilot/**/*.yml": "cilwerner",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn",
-        "workload-id/**/*.md": "SHERMANOUKO",
-        "workload-id/**/*.yml": "SHERMANOUKO"
+        "workload-id/**/*.md": "kengaderdus",
+        "workload-id/**/*.yml": "kengaderdus"
       },
       "ms.author": {
-        "agent-id/**/*.md": "shermanouko",
-        "agent-id/**/*.yml": "shermanouko",
+        "agent-id/**/*.md": "dmwendia",
+        "agent-id/**/*.yml": "dmwendia",
         "architecture/**/*.md": "jricketts",
         "architecture/**/*.yml": "jricketts",
         "external-id/**/*.md": "cmulligan",
@@ -164,8 +164,8 @@
         "security-copilot/**/*.yml": "cwerner",
         "verified-id/**/*.md": "barclayn",
         "verified-id/**/*.yml": "barclayn",
-        "workload-id/**/*.md": "shermanouko",
-        "workload-id/**/*.yml": "shermanouko"
+        "workload-id/**/*.md": "kengaderdus",
+        "workload-id/**/*.yml": "kengaderdus"
       },
       "ms.service": {
         "agent-id/**/*.md": "entra-id",
