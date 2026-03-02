@@ -1,0 +1,75 @@
+### YamlMime:Landing
+
+title: Microsoft Entra tenant governance documentation
+summary: Microsoft Entra tenant governance helps organizations discover, manage, and govern tenants across their environment with centralized policies and cross-tenant delegated administration.
+
+metadata:
+  description: "Learn how to discover, manage, and govern Microsoft Entra tenants across your organization."
+  ms.date: 03/02/2026
+  ms.topic: landing-page
+  ms.service: entra
+  author: barclayn
+  ms.author: barclay
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+  # Card
+  - title: About tenant governance
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is tenant governance?
+            url: overview.md
+
+  # Card
+  - title: Concepts
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Tenant discovery
+            url: tenant-discovery.md
+          - text: Governance relationships
+            url: governance-relationships.md
+          - text: Governance policy templates
+            url: governance-policy-templates.md
+          - text: Cross-tenant delegated administration
+            url: cross-tenant-delegated-administration.md
+          - text: Configuration management
+            url: configuration-management.md
+          - text: Secure tenant creation
+            url: secure-tenant-creation.md
+
+  # Card
+  - title: How-to guides
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Enable tenant discovery
+            url: how-to-enable-tenant-discovery.md
+          - text: Set up a governance relationship
+            url: how-to-setup-governance-relationship.md
+          - text: Use delegated administration and monitor activity
+            url: how-to-delegated-administration.md
+          - text: Create a tenant securely
+            url: how-to-create-tenant-securely.md
+
+  # Card
+  - title: Get started
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Get started with tenant governance
+            url: quickstart-get-started.md
+      - linkListType: deploy
+        links:
+          - text: End-to-end deployment guide
+            url: deployment-guide.md
+
+  # Card
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Frequently asked questions
+            url: faq.yml
