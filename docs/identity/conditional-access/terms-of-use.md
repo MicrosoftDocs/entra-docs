@@ -348,7 +348,7 @@ A: If you configure both Microsoft Entra terms of use and [Intune terms and cond
 **Q: What endpoints does the terms of use service use for authentication?**<br />
 A: Terms of use utilize the following endpoints for authentication: https://tokenprovider.termsofuse.identitygovernance.azure.com, https://myaccount.microsoft.com, and https://account.activedirectory.windowsazure.com. If your organization has an allow list of URLs for enrollment, you need to add these endpoints to your allow list, along with the Microsoft Entra endpoints for sign-in.
 
-**Q: Users are reporting that they need to accept the terms of use every time they sign in on Microsoft Edge. Why is this happening?
+**Q: Users are reporting that they need to accept the terms of use every time they sign in on Microsoft Edge. Why is this happening?**<br />
 A: When a user signs into their Edge profile with their work account, Edge obtains a Primary Refresh Token (PRT) that enables single-sign on. This PRT lets the authentication system recognize the user and their previous terms of use acceptance.
 
 Without signing into the Edge profile, each authentication might not carry the proper session context, so Microsoft Entra sees what looks like a fresh session and re-prompts for terms of use acceptance. Users should sync their work profile with their Edge profile to establish their identity so Edge remembers they accepted the terms of use.
