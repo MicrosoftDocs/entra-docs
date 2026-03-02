@@ -70,7 +70,7 @@ sections:
            
       - question: |
            Can I opt out or disable automatic upgrade of the agent?
-        answer: |reference-connect-health-faq
+        answer: |
            No, automatic upgrade is mandatory. If you don't want the agent to be upgraded when a new version is released, you should uninstall the agent.
        
       - question: |
