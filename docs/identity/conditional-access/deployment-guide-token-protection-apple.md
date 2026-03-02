@@ -158,7 +158,7 @@ To view Token Protection related sign-in events in the admin center:
 1. Select the sign-in event you're investigating.
 1. Review the **Conditional Access** and **Report-Only** tabs (depending on the policy state) and select your token protection policy.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
-    :::image type="content" source="media/deployment-guide-token-protection-apple/sign-in-log-sample-macos.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample-macos.png":::
+    :::image type="content" source="media/deployment-guide-token-protection-apple/sign-in-log-sample-macos.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/deployment-guide-token-protection-apple/sign-in-log-sample-macos.png":::
 1. Select the **Basic Info** tab and check the **Token Protection - Sign In Session** field for more information.
 
 The sign-in logs include a `tokenProtectionStatusDetails` property that indicates whether a request uses a device-bound token.
