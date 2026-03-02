@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select users.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to AlexisHR in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AlexisHR for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the AlexisHR API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	> [!NOTE]
 	> phonenumbers value should be in E164 format. For example +16175551212
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
