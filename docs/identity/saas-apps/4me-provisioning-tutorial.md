@@ -2,8 +2,11 @@
 title: Configure 4me for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to 4me.
 author: jeevansd
+manager: mwongerapk
+ms.service: entra-id
+ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 02/18/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 4me so that I can streamline the user management process and ensure that users have the appropriate access to 4me.
@@ -78,9 +81,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 5. To retrieve the **Tenant URL** and **Secret Token** of your 4me account, follow the walkthrough as described in Step 6.
 
@@ -100,42 +103,32 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.	
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-9. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to 4me**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select users.
 	
 11. Review the user attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 4me for update operations. Please ensure that [4me supports filtering](https://developer.xurrent.com/v1/scim/users/) on the matching attribute you have chosen. Select the **Save** button to commit any changes.
 
 	![Screenshot of 4me User attributes list.](media/4me-provisioning-tutorial/4me-user-attributes-first-part.png)
 	![Screenshot of 4me User attributes list-2.](media/4me-provisioning-tutorial/4me-user-attributes-second-part.png)
 	
-12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to 4me**.
-	
+1. Select **groups**. 
+
 13. Review the group attributes that are synchronized from Microsoft Entra ID to 4me in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in 4me for update operations. Select the **Save** button to commit any changes.
 
 	![Screenshot of 4me Group attributes list.](media/4me-provisioning-tutorial/4me-group-attribute.png)
 
-14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
-15. To enable the Microsoft Entra provisioning service for 4me, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-16. Define the users and/or groups that you would like to provision to 4me by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-17. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on 4me.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Connector Limitations
 
