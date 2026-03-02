@@ -645,7 +645,7 @@ Some products contain service plans that cannot be assigned to the same user at 
 -   Exchange Online (Plan 2) conflicts with Exchange Online (Plan 1).
 
 Also, It is not recommended to assign both SharePoint Online (Plan 1) and SharePoint Online (Plan 2) simultaneously.
-When using group-based licensing, you experience [this error condition](licensing-groups-resolve-problems.md#conflicting-service-plans). When using PowerShell, you see the *MutuallyExclusiveViolation* error.
+When using group-based licensing, you experience [this error condition](~/fundamentals/licensing-groups-resolve-problems.md#conflicting-service-plans). When using PowerShell, you see the *MutuallyExclusiveViolation* error.
 
 This section lists the most common service plans that are mutually exclusive, grouped by service type. You can use this information to plan your license deployment and avoid assignment errors. These tables are for reference purposes and are accurate only as of the date when this article was last updated. Microsoft does not plan to update them for newly added services periodically.
 
@@ -753,9 +753,7 @@ The following service plans cannot be assigned together:
 To learn more about the feature set for license management through groups, see the following:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assigning licenses to a group in Microsoft Entra ID](licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
+* [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)
 * [Microsoft Entra group-based licensing additional scenarios](licensing-group-advanced.md)
 * [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)
