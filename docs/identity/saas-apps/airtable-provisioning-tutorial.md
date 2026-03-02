@@ -1,6 +1,6 @@
 ---
 title: Configure Airtable for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Airtable.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable.
 author: jeevansd
 manager: pmwongera
 ms.service: entra-id
@@ -15,7 +15,7 @@ ms.author: jeedes
 
 # Configure Airtable for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Airtable and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Airtable](https://www.airtable.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Airtable and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Airtable](https://www.airtable.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -60,7 +60,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Airtable from the Microsoft Entra application gallery
 
-Add Airtable from the Microsoft Entra application gallery to start managing provisioning to Airtable. If you have previously setup Airtable for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Airtable from the Microsoft Entra application gallery to start managing provisioning to Airtable. If you have previously setup Airtable for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -172,7 +172,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
