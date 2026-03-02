@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 <a name='step-2-configure-bis-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BIS to support provisioning with Microsoft Entra ID
-To get your credentials for authorization contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
+To get your credentials for authorization please contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
 
 <a name='step-3-add-bis-from-the-azure-ad-application-gallery'></a>
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select users.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to BIS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BIS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the BIS API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 

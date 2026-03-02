@@ -107,6 +107,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
 9. In the **Attribute-Mapping** section, review the user attributes that are synchronized from Microsoft Entra ID to Bizagi Studio for Digital Process Automation. The attributes selected as **Matching** properties are used to match the user accounts in Bizagi Studio for Digital Process Automation for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Bizagi Studio for Digital Process Automation API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
@@ -128,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > [!NOTE]
 > Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types aren't supported yet.
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
