@@ -41,13 +41,13 @@ The scenario outlined in this article assumes that you already have the followin
 <a name='step-2-configure-bis-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BIS to support provisioning with Microsoft Entra ID
-To get your credentials for authorization please contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
+To get your credentials for authorization contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
 
 <a name='step-3-add-bis-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add BIS from the Microsoft Entra application gallery
 
-Add BIS from the Microsoft Entra application gallery to start managing provisioning to BIS. If you have previously setup BIS for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add BIS from the Microsoft Entra application gallery to start managing provisioning to BIS. If you have previously setup BIS for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
