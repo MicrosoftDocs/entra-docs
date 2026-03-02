@@ -10,6 +10,12 @@ ms.date: 12/23/2025
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
+## 2026
+
+| Date | Area | Description |
+| --- | --- | --- |
+| March 2026 | Roles | Added [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator), [Tenant Governance Reader](permissions-reference.md#tenant-governance-reader), [Tenant Governance Relationship Administrator](permissions-reference.md#tenant-governance-relationship-administrator), and [Tenant Governance Relationship Reader](permissions-reference.md#tenant-governance-relationship-reader) roles. |
+
 ## 2025
 
 | Date | Area | Description |
