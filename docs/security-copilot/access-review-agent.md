@@ -12,6 +12,9 @@ ms.date: 09/04/2025
 ---
 
 # Access Review Agent
+> [!NOTE]
+> Microsoft is reassessing the Access Review Agent public preview based on customer feedback received during the preview, and it will not move to general availability. The public preview will be removed on March 27, 2026. We sincerely thank the customers who partnered with us during the preview to explore how agentic AI can be used to improve access review quality. Additional details are available in the Microsoft 365 Message Center. We look forward to incorporating customer feedback and AI learnings from the preview into the core Access Review experience.
+
 Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
 
