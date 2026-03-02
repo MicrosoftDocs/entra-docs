@@ -3,7 +3,7 @@ title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
 ms.topic: concept-article
-ms.date: 02/11/2026
+ms.date: 03/02/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -70,9 +70,6 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
-
-### Source IP restoration is enabled
-[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
 
 ### Global Secure Access signaling for Conditional Access is enabled
 [!INCLUDE [25380](../includes/secure-recommendations/25380.md)]

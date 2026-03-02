@@ -3,7 +3,7 @@ title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.topic: reference
-ms.date: 02/25/2026
+ms.date: 03/02/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -128,7 +128,6 @@ Protect your network perimeter.
 | [Universal tenant restrictions block unauthorized external tenant access](zero-trust-protect-networks.md#universal-tenant-restrictions-block-unauthorized-external-tenant-access) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
 | [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
-| [Source IP restoration is enabled](zero-trust-protect-networks.md#source-ip-restoration-is-enabled) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access signaling for Conditional Access is enabled](zero-trust-protect-networks.md#global-secure-access-signaling-for-conditional-access-is-enabled) | Microsoft Entra ID P1, Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Network traffic is routed through Global Secure Access for security policy enforcement](zero-trust-protect-networks.md#network-traffic-is-routed-through-global-secure-access-for-security-policy-enforcement) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Traffic forwarding profiles are scoped to appropriate users and groups for controlled deployment](zero-trust-protect-networks.md#traffic-forwarding-profiles-are-scoped-to-appropriate-users-and-groups-for-controlled-deployment) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
