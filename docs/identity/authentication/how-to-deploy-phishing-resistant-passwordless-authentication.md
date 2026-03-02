@@ -390,7 +390,7 @@ Microsoft recommends that Microsoft Entra ID Protection customers take the follo
 1. Review the Microsoft Entra ID Protection deployment guidance: [Plan an ID Protection deployment](~/id-protection/how-to-deploy-identity-protection.md)
 1. Configure your risk logs to export to a SIEM
 1. Investigate and act on any medium **user** risk
-1. Configure a Conditional Access policy to block high-risk users**
+1. Configure a Conditional Access policy to block high-risk users
 
 After you deploy Microsoft Entra ID Protection, consider using [Conditional Access token protection](~/identity/conditional-access/concept-token-protection.md). As users sign in with phishing-resistant passwordless credentials, attacks and detections continue to evolve. For example, when user credentials can no longer be easily phished, attackers may move on to try to exfiltrate tokens from user devices. Token protection helps mitigate this risk by binding tokens to the hardware of the device they were issued to.
 
