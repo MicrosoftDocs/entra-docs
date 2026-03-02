@@ -75,7 +75,14 @@ Administrators need to review the details of the plan, including the groups incl
 
 ## Administrator executes the approved rollout plan
 
+Once you start a phased rollout, the agent helps you progress. The phased rollout suggestion is present throughout the rollout process and can show no action needed, suggest progressing to the next phase, or suggest rolling back.
+The guidance appears in both the Conditional Access Optimization Agent suggestion list and the Conditional Access - Policies list. Both policies indicate that the phased rollout deployment is in progress.
+ 
 You're provided several options to manage the phased rollout during deployment. During each phase, the agent monitors activity related to the policy to make sure there's no errors or issues. You can adjust the groups for phases that haven't started yet. Moving between phases or completing the deployment is done using the buttons at the top of the page.
+ 
+- Select **Move to next phase** to advance each phase of the rollout.
+- Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
+- Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
 
 - Select **Move to next phase** to advance each phase of the rollout.
 - Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
