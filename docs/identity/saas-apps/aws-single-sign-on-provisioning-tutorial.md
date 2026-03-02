@@ -227,7 +227,7 @@ There are two ways to resolve this
 ### Invalid characters
 Currently AWS IAM Identity Center isn't allowing some other characters that Microsoft Entra ID supports like tab (\t), new line (\n), return carriage (\r), and characters such as " <|>|;|:% ".
 
-You can also check the AWS IAM Identity Center troubleshooting tips [here](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html#azure-ad-troubleshooting)
+You can also check the AWS IAM Identity Center troubleshooting tips [here](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html#azure-ad-troubleshooting).
 
 ## Additional resources
 
