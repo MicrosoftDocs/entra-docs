@@ -1,6 +1,6 @@
 ---
 title: Configure Blinq for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Blinq.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Blinq.
 
 author: jeevansd
 manager: pmwongera
@@ -13,7 +13,7 @@ ms.author: jeedes
 
 # Configure Blinq for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to do in both Blinq and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Blinq](https://blinq.me/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to do in both Blinq and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Blinq](https://blinq.me/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Blinq to support provisioning with Microsoft Entra ID
 
 1. Navigate to [Blinq Admin Console](https://dash.blinq.me) in a separate browser tab.
-1. If you aren't logged in to Blinq you need to do so.
+1. If you aren't logged in to Blinq, you need to do so.
 1. Select your workspace in the top left hand corner of the screen and select **Settings** in the dropdown menu.
 
    	[![Screenshot of the Blinq settings option.](media/blinq-provisioning-tutorial/blinq-settings.png)](media/blinq-provisioning-tutorial/blinq-settings.png#lightbox)
