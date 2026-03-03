@@ -2,7 +2,7 @@
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 03/02/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: sumeetmittal
@@ -31,7 +31,7 @@ This article explains how to create a file policy to filter internet traffic flo
 
 This preview supports the following key scenarios and outcomes for HTTP/1.1 traffic:
 - Using **Basic file policy**, you can block files based on supported file MIME types. 
-- Using the **Scan with Purview** action in file policy, you can audit and block files based on:
+- By using the **Scan with Purview** action in file policy, you can audit and block files based on:
     - Microsoft Purview sensitivity labels
     - Sensitive content in the file
     - The user's risk level
@@ -97,7 +97,7 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. Select **Create** to create the policy.
 
 > [!Note]
-> If you choose "Scan with Purview" action, please ensure you have configured corresponding data policy through Microsoft Purview.
+> If you choose the **Scan with Purview** action, you must also configure a corresponding DLP policy in Microsoft Purview that targets inline web traffic. Without a matching Purview DLP policy, the file policy can't inspect file content or enforce allow or deny decisions. For details, see the [example walkthrough](#example-block-sensitive-pdf-uploads-to-chatgpt) and [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn).
 
 ### Link the file policy to a security profile
 
@@ -107,7 +107,7 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. Configure the link file policy:
     1. Select **+ Link a policy** > **Existing File policy**.
     1. From the **Policy name** menu, select the file policy you created.
-    1. Leave **Position** and **State** set to the defaults.
+    1. Keep the default values for **Position** and **State**.
     1. Select **Add**.
 1. Close the security profile. 
 
@@ -132,8 +132,46 @@ The file policy is successfully configured.
 ## Test the file policy
 Test the configuration by attempting to upload or download files that match the file policy conditions. Verify that the policy settings block or allow the actions.
 
-1. Open a test file that contains personal data, such as dlptest.com/sample-data.pdf.
-1. Try to share the test file with the destination you configured in the file policy. If the policy is configured properly, the action is blocked.
+### Example: Block sensitive PDF uploads to ChatGPT
+
+This example walks through an end-to-end test scenario that blocks a PDF file containing sensitive data (such as credit card numbers or Social Security numbers) from being uploaded to ChatGPT.
+
+#### Step 1: Configure the file policy destinations
+
+When you create or edit your file policy rule, add the following destinations to match ChatGPT file upload traffic:
+
+- `chatgpt.com/backend-api/files` (add as FQDN)
+- `chatgpt.com/backend-api/files/process_upload_stream` (add as FQDN)
+- `*.oaiusercontent.com` (add as FQDN)
+
+For **File types**, select **PDF** (or other file types you want to inspect).
+
+> [!TIP]
+> Web applications often use multiple URLs and FQDNs under the hood. Use browser developer tools or network traffic analysis to identify the correct upload endpoints for your target destination. For ChatGPT, the URLs listed here are the endpoints used for file upload operations.
+
+#### Step 2: Configure a Purview DLP policy (for Scan with Purview action)
+
+If you select **Scan with Purview** as the file policy action, you must also configure a corresponding Microsoft Purview DLP policy to inspect the file content and make the allow or deny decision.
+
+1. In the [Microsoft Purview portal](https://purview.microsoft.com), create a new DLP policy.
+1. Select the **Inline web traffic** policy type.
+1. In the **Cloud apps** step, search for and add **ChatGPT**.
+1. Configure the DLP rule to detect the sensitive information types you want to block (for example, credit card numbers or Social Security Numbers).
+1. Set the rule action to **Block**.
+1. Save and apply the policy.
+
+For detailed instructions on creating Purview DLP policies for network traffic, see [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn).
+
+> [!NOTE]
+> Network DLP with Global Secure Access integration is currently in preview. Global Secure Access forwards matching upload traffic to Microsoft Purview for content inspection. Purview evaluates the content against your DLP policy and returns an allow or deny decision. Global Secure Access then enforces the result.
+
+#### Step 3: Validate the policy
+
+1. On a managed device with the Global Secure Access client installed, open a browser and go to [ChatGPT](https://chatgpt.com).
+1. Prepare a test PDF file that contains sensitive data, such as sample credit card numbers or Social Security Numbers. You can use a sample file from [dlptest.com](https://dlptest.com/sample-data.pdf).
+1. In ChatGPT, attempt to upload the test PDF file.
+1. Verify that the upload is blocked. ChatGPT displays an error message because Global Secure Access prevented the file transfer.
+1. To confirm the block, check the traffic logs in the Microsoft Entra admin center under **Global Secure Access** > **Monitor** > **Traffic logs**.
 
 ## Known limitations
 
@@ -145,7 +183,7 @@ Test the configuration by attempting to upload or download files that match the 
 - Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
-> Apps might use multiple URLs and FQDNs under the hood when you interact with them. Make sure to configure the correct destination for the file policy to take effect.
+> Apps might use multiple URLs and FQDNs under the hood when you interact with them. Make sure to configure the correct destinations for the file policy to take effect. For example, ChatGPT uses `chatgpt.com/backend-api/files`, `chatgpt.com/backend-api/files/process_upload_stream`, and `*.oaiusercontent.com` for file uploads. Use browser developer tools or network traffic analysis to identify the correct endpoints for other applications.
 
 ## Monitoring and logging
 
