@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/03/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-ms.reviewer: sumeetmittal
+ms.reviewer: ZaherButt
 ms.custom: sfi-image-nochange
 
 #customer intent: As an IT admin, I want to configure Global Secure Access settings so that I can enforce network content filtering policies.
