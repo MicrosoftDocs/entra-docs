@@ -31,9 +31,9 @@ The following table contains the supported challenge type values:
 
 [!INCLUDE [native-auth-challenge-type](includes/native-auth-api/native-auth-challenge-type.md)]
 
-We add new values in the future when native authentication support new authentication methods.
+New values are added when native authentication supports new authentication methods.
 
-## Challenge types usage
+## Challenge type values for authentication flows
 
 The following table summarizes the challenge type values an app should use for the various authentication flows:
 
