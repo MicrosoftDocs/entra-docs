@@ -86,7 +86,7 @@ To ensure your policy works as expected, test it before rolling it out into prod
    1. Ensure **Every time** is selected.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 After confirming your settings using [report-only mode](howto-conditional-access-insights-reporting.md), move the **Enable policy** toggle from **Report-only** to **On**.
 

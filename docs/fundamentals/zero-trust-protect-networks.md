@@ -2,10 +2,8 @@
 title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 02/11/2026
+ms.date: 03/02/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -73,8 +71,8 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
 
-### Source IP restoration is enabled
-[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
+### Global Secure Access signaling for Conditional Access is enabled
+[!INCLUDE [25380](../includes/secure-recommendations/25380.md)]
 
 ### Network traffic is routed through Global Secure Access for security policy enforcement
 [!INCLUDE [25381](../includes/secure-recommendations/25381.md)]
@@ -84,6 +82,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
 [!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
+
+### Private network connectors are running the latest version
+[!INCLUDE [25392](../includes/secure-recommendations/25392.md)]
 
 ### Private DNS is configured for internal name resolution
 [!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
@@ -103,8 +104,26 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
 [!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
 
+### Private Access sensors are enforcing strong authentication policies on domain controllers
+[!INCLUDE [25403](../includes/secure-recommendations/25403.md)]
+
 ### Quick Access has user or group assignments
 [!INCLUDE [25480](../includes/secure-recommendations/25480.md)]
 
 ### All Private Access apps have user or group assignments
 [!INCLUDE [25481](../includes/secure-recommendations/25481.md)]
+
+### Outbound traffic from VNet integrated workloads is routed through Azure Firewall
+[!INCLUDE [25535](../includes/secure-recommendations/25535.md)]
+
+### Threat intelligence is enabled in deny mode on Azure Firewall
+[!INCLUDE [25537](../includes/secure-recommendations/25537.md)]
+
+### IDPS inspection is enabled in deny mode on Azure Firewall
+[!INCLUDE [25539](../includes/secure-recommendations/25539.md)]
+
+### Application Gateway WAF is enabled in prevention mode
+[!INCLUDE [25541](../includes/secure-recommendations/25541.md)]
+
+### Azure Front Door WAF is enabled in prevention mode
+[!INCLUDE [25543](../includes/secure-recommendations/25543.md)]

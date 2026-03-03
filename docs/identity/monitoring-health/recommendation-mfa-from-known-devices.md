@@ -1,13 +1,8 @@
 ---
 title: Recommendation to minimize MFA prompts from known devices
 description: Learn about the recommendation to minimize multifactor authentication prompts from known devices in Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 06/12/2025
-ms.author: sarahlipsey
 ms.reviewer: jadedsouza
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to minimize the number of multifactor authentication prompts my users receive from known devices so that they can access resources more easily and securely.

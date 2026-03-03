@@ -1,8 +1,6 @@
 ---
 title: Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
 description: Learn how to integrate macOS Platform Single Sign-On (PSSO) into your MDM solution.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 07/23/2025
 ms.author: godonnell

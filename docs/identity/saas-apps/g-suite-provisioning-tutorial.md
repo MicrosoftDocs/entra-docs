@@ -2,9 +2,6 @@
 title: Configure Google Cloud / Google Workspace for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud or Google Workspace.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 07/19/2024
 ms.author: jeedes

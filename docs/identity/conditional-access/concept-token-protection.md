@@ -4,7 +4,7 @@ description: Protect your resources with token protection in Conditional Access 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 03/03/2026
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange
@@ -68,7 +68,168 @@ To minimize the likelihood of user disruption due to app or device incompatibili
 - Analyze these logs long enough to cover normal application use.
 - Add known, reliable users to an enforcement policy. 
 
-This process helps assess your users' client and app compatibility for token protection enforcement. 
+This process helps assess your users’ client and app compatibility for token protection enforcement. 
+
+### Create a Conditional Access policy
+
+Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. We recommend piloting with a small subset to begin. 
+
+The following steps help you create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Under **Assignments**, select **Users or workload identities**.
+   1. Under **Include**, select the users or groups who are testing this policy.
+   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**
+   1. Under **Select**, select the following applications:
+       1. Office 365 Exchange Online
+       1. Office 365 SharePoint Online
+       1. Microsoft Teams Services
+       1. If you deployed Windows App in your environment, include:       
+          1. Azure Virtual Desktop
+          1. Windows 365
+          1. Windows Cloud Login
+       
+       > [!WARNING]
+       > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group might result in unintended failures. This change is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
+
+    1. Choose **Select**.
+1. Under **Conditions**:
+    1. Under **Device platforms**:
+       1. Set **Configure** to **Yes**.
+       1. **Include** > **Select device platforms** > **Windows**.
+       1. Select **Done**.
+    1. Under **Client apps**:
+       1. Set **Configure** to **Yes**.
+
+          > [!WARNING] 
+          > Not configuring the **Client Apps** condition, or leaving **Browser** selected might cause applications that use MSAL.js, such as Teams Web to be blocked.
+
+       1. Under Modern authentication clients, only select **Mobile apps and desktop clients**. Leave other items unchecked.
+       1. Select **Done**.
+1. Under **Access controls** > **Session**, select **Require token protection for sign-in sessions** and select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select create to enable your policy.
+
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+> [!TIP]
+> Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
+> 
+> In addition, you should configure the following policies: 
+> 
+> - [Block access from unknown platforms](policy-all-users-device-unknown-unsupported.md)
+> - [Require device compliance for all known platforms](policy-all-users-device-compliance.md)
+
+### Capture logs and analyze
+
+Monitor Conditional Access enforcement of token protection before and after enforcement by using features like [Policy impact](concept-conditional-access-report-only.md#policy-impact), [Sign-in logs](#sign-in-logs), and [Log Analytics](#log-analytics).
+
+#### Sign-in logs 
+
+Use Microsoft Entra sign-in log to verify the outcome of a token protection enforcement policy in report only mode or in enabled mode. 
+
+:::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+1. Select a specific request to determine if the policy is applied or not.
+1. Go to the **Conditional Access** or **Report-Only** pane depending on its state and select the name of your policy requiring token protection.
+1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
+1. To find more details about the binding state of the request, select the pane **Basic Info** and see the field **Token Protection - Sign In Session**. Possible values are: 
+   1. Bound: the request was using bound protocols. Some sign-ins might include multiple requests, and all requests must be bound to satisfy the token protection policy. Even if an individual request appears to be bound, it doesn't ensure compliance with the policy if other requests are unbound. To see all requests for a sign-in, you can filter all requests for a specific user or look by corelationid.
+   1. Unbound: the request wasn't using bound protocols. Possible `statusCodes` when request is unbound are:
+      1. 1002: The request is unbound due to the lack of Microsoft Entra ID device state. 
+      1. 1003: The request is unbound because the Microsoft Entra ID device state doesn't satisfy Conditional Access policy requirements for token protection. This error could be due to an unsupported device registration type, or the device wasn't registered using fresh sign-in credentials. 
+      1. 1005: The request is unbound for other unspecified reasons. 
+      1. 1006: The request is unbound because the OS version is unsupported. 
+      1. 1008: The request is unbound because the client isn't integrated with the platform broker, such as Windows Account Manager (WAM). 
+
+:::image type="content" source="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png" alt-text="Screenshot showing a sample sign-in with the Token Protection - Sign In Session attribute highlighted. " lightbox="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png":::
+
+#### Log Analytics
+
+You can also use [Log Analytics](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure.
+
+Here's a sample Log Analytics query searching the non-interactive sign-in logs for the last seven days, highlighting **Blocked** versus **Allowed** requests by **Application**. These queries are only samples and are subject to change.
+
+> [!NOTE]
+> **Sign In logs output:** The value of the string used in "enforcedSessionControls" and "sessionControlsNotSatisfied" changed from "Binding" to "SignInTokenProtection" in late June 2023. Queries on Sign In Log data should be updated to reflect this change. The examples cover both values to include historical data.
+
+```kusto
+//Per Apps query 
+// Select the log you want to query (SigninLogs or AADNonInteractiveUserSignInLogs ) 
+//SigninLogs 
+AADNonInteractiveUserSignInLogs 
+// Adjust the time range below 
+| where TimeGenerated > ago(7d) 
+| project Id,ConditionalAccessPolicies, Status,UserPrincipalName, AppDisplayName, ResourceDisplayName 
+| where ConditionalAccessPolicies != "[]" 
+| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
+//Add userPrincipalName if you want to filter  
+// | where UserPrincipalName =="<user_principal_Name>" 
+| mv-expand todynamic(ConditionalAccessPolicies) 
+| where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]' 
+| where ConditionalAccessPolicies.result !="reportOnlyNotApplied" and ConditionalAccessPolicies.result !="notApplied" 
+| extend SessionNotSatisfyResult = ConditionalAccessPolicies["sessionControlsNotSatisfied"] 
+| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'Binding', 'Block','Allow')
+| summarize by Id,UserPrincipalName, AppDisplayName, Result
+| summarize Requests = count(), Users = dcount(UserPrincipalName), Block = countif(Result == "Block"), Allow = countif(Result == "Allow"), BlockedUsers = dcountif(UserPrincipalName, Result == "Block") by AppDisplayName 
+| extend PctAllowed = round(100.0 * Allow/(Allow+Block), 2) 
+| sort by Requests desc 
+```
+
+The result of the previous query should be similar to the following screenshot:
+
+:::image type="content" source="media/concept-token-protection/log-analytics-results.png" alt-text="Screenshot showing example results of a Log Analytics query looking for token protection policies" lightbox="media/concept-token-protection/log-analytics-results.png":::
+
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting **Blocked** versus **Allowed** requests by **User**. 
+ 
+```kusto
+//Per users query 
+// Select the log you want to query (SigninLogs or AADNonInteractiveUserSignInLogs ) 
+//SigninLogs 
+AADNonInteractiveUserSignInLogs 
+// Adjust the time range below 
+| where TimeGenerated > ago(7d) 
+| project Id,ConditionalAccessPolicies, UserPrincipalName, AppDisplayName, ResourceDisplayName 
+| where ConditionalAccessPolicies != "[]" 
+| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
+//Add userPrincipalName if you want to filter  
+// | where UserPrincipalName =="<user_principal_Name>" 
+| mv-expand todynamic(ConditionalAccessPolicies) 
+| where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]'
+| where ConditionalAccessPolicies.result !="reportOnlyNotApplied" and ConditionalAccessPolicies.result !="notApplied" 
+| extend SessionNotSatisfyResult = ConditionalAccessPolicies.sessionControlsNotSatisfied 
+| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'Binding', 'Block','Allow')
+| summarize by Id, UserPrincipalName, AppDisplayName, ResourceDisplayName,Result
+| summarize Requests = count(),Block = countif(Result == "Block"), Allow = countif(Result == "Allow") by UserPrincipalName, AppDisplayName,ResourceDisplayName 
+| extend PctAllowed = round(100.0 * Allow/(Allow+Block), 2) 
+| sort by UserPrincipalName asc   
+```
+
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state doesn't satisfy Token protection CA policy requirements. 
+
+```kusto
+AADNonInteractiveUserSignInLogs 
+// Adjust the time range below 
+| where TimeGenerated > ago(7d) 
+| where TokenProtectionStatusDetails!= "" 
+| extend parsedBindingDetails = parse_json(TokenProtectionStatusDetails) 
+| extend bindingStatus = tostring(parsedBindingDetails["signInSessionStatus"]) 
+| extend bindingStatusCode = tostring(parsedBindingDetails["signInSessionStatusCode"]) 
+| where bindingStatusCode == 1003 
+| summarize count() by UserPrincipalName 
+```
+
+### End user experience
+
+A user that registered or enrolled their supported device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
+
+A user who hasn't registered or enrolled their device and if the token protection policy is enabled sees the following screenshot after authenticating.
 
 ### Deployment guides
 

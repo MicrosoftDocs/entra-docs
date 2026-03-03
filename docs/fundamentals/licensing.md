@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
-author: barclayn
 manager: pmwongera
-ms.service: entra
 ms.topic: concept-article
 ms.date: 12/01/2025
-ms.subservice: fundamentals
-ms.author: barclayn
 ---
 
 # Microsoft Entra licensing
@@ -34,6 +30,10 @@ This article discusses licensing options for the Microsoft Entra product family.
 ## Managed identities
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
+
+## Microsoft Entra Agent ID
+
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 ## Microsoft Entra ID Governance
 

@@ -2,9 +2,6 @@
 title: Authentication protocols in agents
 description: Learn about OAuth 2.0 protocols and token exchange patterns for agents in Microsoft Entra ID. Key concepts
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite

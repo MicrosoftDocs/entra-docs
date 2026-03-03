@@ -3,7 +3,6 @@ title: Microsoft Entra Conditional Access Optimization Agent settings
 description: Explore the settings available for the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot.
 ms.author: sarahlipsey
 author: shlipsey3
-manager: pmwongera
 ms.reviewer: jodah
 
 ms.date: 02/17/2026
