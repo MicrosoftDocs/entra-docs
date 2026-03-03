@@ -53,7 +53,7 @@ Token Protection on Apple platforms can be used to protect the following resourc
 
 ### Known Limitations
 
-- Token Protection currently requires the Microsoft Enterprise single-sign-on (SSO) plug-in, which requires MDM management. *Unmanaged iOS and macOS devices aren't supported at this time.* 
+- Token Protection currently requires the Microsoft Enterprise single-sign-on (SSO) plug-in, which requires  Microsoft Device Management (MDM). *Unmanaged iOS and macOS devices aren't supported at this time.* 
 - *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing these apps when the policy is enforced. 
 - In report-only mode, requests that don't use hardware-backed device registration appear as noncompliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics) section.
 - The **Token Protection – Sign-in Session** column in sign-in logs shows all requests without hardware-backed device identity as "Unbound." These logs include requests from users who are eligible to upgrade their registration.
@@ -328,4 +328,3 @@ When the Token Protection policy is enabled, users who haven't registered or enr
 When the Token Protection policy is enabled, users who aren't using a supported application will see the following screen after authenticating:
 
 :::image type="content" source="media/deployment-guide-token-protection-apple/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
-

@@ -19,7 +19,7 @@ Before using this deployment guide, review [Token Protection in Microsoft Entra 
 
 ## Supported applications and resources
 
-Before enforcing the policy, ensure users are running supported and up-to-date client versions. Older or out-of-support versions may not be compatible and can be blocked.
+Before enforcing the policy, ensure users are running supported and up-to-date client versions. Older or out-of-support versions might not be compatible and can be blocked.
 
 ### Applications
 
@@ -33,7 +33,7 @@ Token Protection can be applied to the following applications:
 - Exchange PowerShell module
 - Microsoft Graph PowerShell with [EnableLoginByWAM](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support) option
 - Windows App
-- Visual Studio when using the ‘Windows authentication broker’ Sign-in option
+- Visual Studio when using the 'Windows authentication broker' Sign-in option
 - Microsoft Edge
 - Microsoft To Do
 - Outlook <!-- Confirm if it's Microsoft Outlook --->
@@ -76,7 +76,7 @@ To prevent disruption during onboarding, modify the token protection Conditional
 - Cloud PCs that are Microsoft Entra joined, you can use `systemLabels -eq "CloudPC" and trustType -eq "AzureAD"`. 
 - Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
 - Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`.
-- Windows Autopilot devices deployed using self-deploying mode, you can use enrollmentProfileName property. As an example, if you have created an enrollment profile in Intune for your Autopilot self-deployment mode devices as "Autopilot self-deployment profile", you can use `enrollmentProfileName -eq "Autopilot self-deployment profile".
+- Windows Autopilot devices deployed using self-deploying mode, you can use enrollmentProfileName property. As an example, if you created an enrollment profile in Intune for your Autopilot self-deployment mode devices as "Autopilot self-deployment profile," you can use `enrollmentProfileName -eq "Autopilot self-deployment profile"`.
 - Windows virtual machines in Azure that are Microsoft Entra joined, you can use `profileType -eq "SecureVM" and trustType -eq "AzureAD"`. 
 
 ## How to enable Token Protection on Windows
