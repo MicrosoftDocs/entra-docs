@@ -23,7 +23,7 @@ Microsoft Entra ID account recovery is an advanced authentication recovery mecha
 
 ### Video: How to set up Microsoft Entra ID account recovery
 
-> [!VIDEO https://www.youtube.com/watch?v=iU-zJIGFEYQ]
+> [!VIDEO https://www.youtube.com/embed/iU-zJIGFEYQ]
 
 ### Key characteristics of account recovery
 

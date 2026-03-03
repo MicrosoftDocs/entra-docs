@@ -14,7 +14,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 
 ## Video: Recover your work or school account in Microsoft Entra ID
 
-> [!VIDEO https://www.youtube.com/watch?v=5ivST2bw7uQ]
+> [!VIDEO https://www.youtube.com/embed/5ivST2bw7uQ]
 
 ## User steps
 
