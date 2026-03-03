@@ -21,14 +21,14 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 Before creating an access package, confirm the following prerequisites are met in your organization:
 
-1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources. The forms of authorization set up by access packages incldue scenarios where:
+1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources. The forms of authorization set up by access packages include scenarios where:
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource to be able to access a target resource's APIs.
    - Agents need their identity to be assigned as members of groups.
    - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents).
 2. You have an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, are added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
 
    > [!NOTE]
-   > If you will be adding OAuth permissions or directory roles to the access package as resource roles, then the catalog will be marked as privileged.
+   > If you'll be adding OAuth API permissions or directory roles to the access package as resource roles, then the catalog will be [marked as privileged](/entra/id-governance/entitlement-management-catalog-create#What-changes-for-privileged-catalogs) when they are added to the access package.
 
 ## Create an access package for agent identities (Preview)
 
@@ -37,7 +37,7 @@ To use access packages for agents, the IT admin first configures a new access pa
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
     > [!TIP]
-    > If you will be adding OAuth permissions or directory roles to the access package as resource roles, then you will need to be a Global Administrator.
+    > If you'll be adding OAuth API permissions or directory roles to the access package as resource roles, then you will need to be a Global Administrator.
 1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. Select **New access package**.
