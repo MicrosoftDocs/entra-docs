@@ -24,15 +24,15 @@ Before creating an access package, confirm the following prerequisites are met i
 1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources. The forms of authorization set up by access packages incldue scenarios where:
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource to be able to access a target resource's APIs.
    - Agents need their identity to be assigned as members of groups.
-   - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id#microsoft-entra-roles-allowed-for-agents).
+   - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents).
 2. You have an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, are added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
 
    > [!NOTE]
    > If you will be adding OAuth permissions or directory roles to the access package as resource roles, then the catalog will be marked as privileged.
 
-## Create an access package (Preview)
+## Create an access package for agent identities (Preview)
 
-To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to applications. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.
+To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to application APIs. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
