@@ -20,8 +20,7 @@ This article explains the fraud risks associated with native authentication, the
 
 Before you integrate third‑party fraud protection with native authentication and SMS‑based MFA, make sure that the following requirements are met:
 
-- Your native application supports a secure handshake with a third‑party fraud protection provider.
-- Your authentication flow includes the ability to evaluate risk signals for users before issuing an SMS one‑time passcode (OTP).
+- Your native application integrates with a third‑party fraud protection provider to securely evaluate risk signals before issuing an SMS one‑time passcode (OTP).
 - You deploy a customer‑managed web application firewall (WAF) to enforce fraud decisions and to support any increase in SMS throttling limits.
 - You enable [regional opt‑in for SMS‑based MFA in supported geographies by using Microsoft Graph](../external-id/customers/how-to-region-code-opt-in.md).
 - Your native application has the required [permissions to access Microsoft Graph on behalf of a signed‑in user](/graph/auth-v2-service?tabs=http).
@@ -70,7 +69,7 @@ In native authentication flows that use SMS‑based MFA, the application evaluat
 
 Microsoft Entra External ID drives the authentication state and determines when MFA is required. When SMS MFA is triggered, the native app performs a real‑time risk evaluation through the third‑party provider. As part of this evaluation, the app retrieves the user’s registered phone number from Microsoft Graph to validates it with the fraud provider to assess reputation and abuse signals.
 
-A customer‑managed web application firewall (WAF) enforces the fraud decision returned by the third‑party provider. If the provider allows the request, the WAF forwards it to Microsoft Entra External ID, which issues the SMS OTP and completes authentication after the user submits the code. If the provider blocks the request, the sign‑in attempt stops and no SMS is sent. If the provider requires additional verification, the app completes the provider‑specific challenge before allowing the flow to continue.
+A customer‑managed web application firewall (WAF) enforces the fraud decision returned by the third‑party provider. If the provider allows the request, the WAF forwards it to Microsoft Entra External ID, which issues the SMS OTP and completes authentication after the user submits the code. If Microsoft detects high risk for the SMS challenge, the service blocks the request. The sign-in attempt stops, and Microsoft doesn’t send an SMS. If the provider requires additional verification, the app completes the provider‑specific challenge before allowing the flow to continue.
 
 By gating SMS MFA on upstream risk evaluation, this flow reduces exposure to telephony fraud, account takeover and other related threats while allowing legitimate users to complete authentication.
 
