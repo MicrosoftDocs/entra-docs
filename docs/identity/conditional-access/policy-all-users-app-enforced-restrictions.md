@@ -32,7 +32,7 @@ This policy can help organizations accomplish the following initiatives:
    1. Choose **Office 365**, then select **Select**.
 1. Under **Access controls** > **Session**, select **Use app enforced restrictions**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
