@@ -1,6 +1,6 @@
 ---
 title: Token Protection Deployment Guide - Apple Platforms (Preview)
-description: Deploy Token Protection with Microsoft Entra Conditional Access for mac OS, iOS, and iPadOS
+description: Deploy Token Protection with Microsoft Entra Conditional Access for macOS, iOS, and iPadOS
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -13,7 +13,7 @@ This guide covers the steps required to deploy and enforce Token Protection for 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
 
 > [!IMPORTANT]
-> Apple's native Mail and Calendar apps don't support Token Protection. Users relying on these applications will be blocked when the policy is enforced. Communicate this impact to affected users before deployment.
+> Apple's native Mail and Calendar apps don't support Token Protection. Users relying on these applications will be blocked when the policy is enforced. Communicate this behavior to affected users before deployment.
 
 ## Prerequisites
 
@@ -53,15 +53,15 @@ Token Protection on Apple platforms can be used to protect the following resourc
 
 ### Known Limitations
 
-- Token Protection currently requires the Microsoft Enterprise SSO plug-in, which requires MDM management. *Unmanaged iOS and macOS devices are not supported at this time.* 
+- Token Protection currently requires the Microsoft Enterprise single-sign-on (SSO) plug-in, which requires MDM management. *Unmanaged iOS and macOS devices aren't supported at this time.* 
 - *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing these apps when the policy is enforced. 
-- In report-only mode, requests that do not use hardware-backed device registration appear as non-compliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics) section.
+- In report-only mode, requests that don't use hardware-backed device registration appear as noncompliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics) section.
 - The **Token Protection – Sign-in Session** column in sign-in logs shows all requests without hardware-backed device identity as "Unbound." These logs include requests from users who are eligible to upgrade their registration.
 - [External users](../../external-id/what-is-b2b.md) who meet the token protection device registration requirements in their home tenant are supported. Users who don't meet these requirements will see an error message with no clear indication of the root cause.
 
 ## How to enable Token Protection on Apple platforms
 
-Unlike Windows, Apple platforms do not use a Trusted Platform Module (TPM). Instead, Microsoft Entra ID uses Apple Secure Enclave to store proof-of-possession keys. On macOS devices without Secure Enclave (for example, some older Mac mini models), Microsoft Entra ID falls back to an enhanced version of the Apple Keychain (Data Protection Keychain). 
+Unlike Windows, Apple platforms don't use a Trusted Platform Module (TPM). Instead, Microsoft Entra ID uses Apple Secure Enclave to store proof-of-possession keys. On macOS devices without Secure Enclave (for example, some older Mac mini models), Microsoft Entra ID falls back to an enhanced version of the Apple Keychain (Data Protection Keychain). 
 
 This difference means that some prerequisite configuration is required before users can register devices in a way that supports Token Protection enforcement.
 
@@ -74,7 +74,7 @@ The high-level steps to enable Token Protection on Apple platforms are as follow
 
 ## Configure hardware-backed device registration
 
-Complete the steps below for *each* platform you are deploying to. These steps must be completed *before* users register their devices. 
+Complete the following steps for *each* platform you're deploying to. These steps must be completed *before* users register their devices. 
 
 > [!NOTE]
 > Users who registered devices before these steps were completed will be prompted to upgrade their device registration to hardware-backed when the policy is enforced: see the [Upgrade Existing Device Registrations]() section.
@@ -96,13 +96,13 @@ Complete the steps below for *each* platform you are deploying to. These steps m
       - The flag applies only to new device registrations made after the flag is configured.
       - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
       - For all other registrations, the flag takes effect only after the device is MDM-managed and the Microsoft Enterprise SSO plug-in profile is active.
-   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default and requires no additional flag configuration. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
+   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default and requires no extra flag configuration. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
 
 ---
 
 ## Configure the report-only mode policy
 
-Before enforcing the policy, deploy it in report-only mode to assess impact and identify non-compliant sign-in sessions.
+Before enforcing the policy, deploy it in report-only mode to assess the affect and identify noncompliant sign-in sessions.
 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1.	Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -115,8 +115,8 @@ Before enforcing the policy, deploy it in report-only mode to assess impact and 
        1. Office 365 Exchange Online
        1. Office 365 SharePoint Online
 
-    > [!WARNING]
-    > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group might result in unintended failures. This change is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
+        > [!WARNING]
+        > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group might result in unintended failures. This change is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
 
     1. Choose **Select**.
 1. Under **Conditions**:
@@ -171,26 +171,26 @@ The sign-in logs include a `tokenProtectionStatusDetails` property that indicate
 ```
 
 > [!NOTE]
-> Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once the policy is enforced. They will need to complete a one-time device registration upgrade and then sign in again to access resources. These users can be identified by **status codes 1003 and 1004**. Because users in this state can self-remediate, they are eligible for policy enforcement.
+> Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to reauthenticate once the policy is enforced. They'll need to complete a one-time device registration upgrade and then sign in again to access resources. These users can be identified by **status codes 1003 and 1004**. Because users in this state can self-remediate, they're eligible for policy enforcement.
 
 To identify which users you can apply the policy to, refer to the following status codes.
 
 | Status Code | Description | Action Required |
 |---|---|---|
-| 1002 | Unbound - device is not registered with Microsoft Entra ID | User must register device |
+| 1002 | Unbound - device isn't registered with Microsoft Entra ID | User must register device |
 | 1003 | Unbound - device not registered with secure credentials (legacy registration) | User must perform one-time registration upgrade |
-| 1004 | Unbound - device registration is not hardware-backed | User must perform one-time registration upgrade |
+| 1004 | Unbound - device registration isn't hardware-backed | User must perform one-time registration upgrade |
 | 1005 | Unbound - unspecified reason | Varies |
-| 1006 | Unbound - OS version is not supported | User must upgrade OS |
-| 1007 | Unbound - not hardware-backed; signed-in user is not the registered device owner | User must re-register, or registered owner must perform upgrade |
-| 1008 | Unbound - client does not use an identity broker | The request is unbound because the client isn't integrated with the platform broker or broker app is not installed on the device. |
+| 1006 | Unbound - OS version isn't supported | User must upgrade OS |
+| 1007 | Unbound - not hardware-backed; signed-in user isn't the registered device owner | User must re-register, or registered owner must perform upgrade |
+| 1008 | Unbound - client doesn't use an identity broker | The request is unbound because the client isn't integrated with the platform broker or broker app isn't installed on the device. |
 
 To identify requests that are compliant or upgradeable with user action, filter for:
 
 - `signInSessionStatus` == bound, or
 - `signInSessionStatus` == unbound with `signInSessionStatusCode` of 1003 or 1004
 
-Sample Microsoft Graph Query (Non-Interactive Sign-Ins):
+Sample Microsoft Graph Query (Non-Interactive Sign-ins):
 `GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(signInEventTypes/any(t: t eq 'nonInteractiveUser') and (tokenProtectionStatusDetails/signInSessionStatusCode eq 1003 or tokenProtectionStatusDetails/signInSessionStatusCode eq 1004 or tokenProtectionStatusDetails/signInSessionStatus eq 'bound'))`
 
 ### Log Analytics
@@ -286,7 +286,7 @@ The following query example looks at the non-interactive sign-in log for the las
 <details>
 <summary>Devices don't meet policy requirements</summary>
 
-The following query searches the non-interactive sign-in logs for the last seven days to identify users whose devices do not satisfy Token Protection policy requirements and are candidates for a device registration upgrade. This query is particularly useful during the report-only phase. It surfaces users with status codes 1003 and 1004, those who will be prompted for a one-time registration upgrade when the policy is enforced, allowing you to proactively communicate the change or provide guidance ahead of enforcement.
+The following query searches the non-interactive sign-in logs for the last seven days to identify users whose devices don't satisfy Token Protection policy requirements and are candidates for a device registration upgrade. This query is useful during the report-only phase. The identified users with status codes 1003 and 1004 will be prompted for a one-time registration upgrade when the policy is enforced, allowing you to proactively communicate the change or provide guidance ahead of enforcement.
 
 ```kusto
 AADNonInteractiveUserSignInLogs
@@ -317,11 +317,11 @@ There are some end user experiences to be aware of when deploying Token Protecti
 
 ### Upgrade device registration
 
-Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to re-authenticate once policy is enforced. They will need to sign in again to access resources.
+Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to reauthenticate once policy is enforced. They'll need to sign in again to access resources.
 
 ### Sign-in experience
 
-When the Token Protection policy is enabled, users who haven't registered or enrolled their device will see the following screen after authenticating:
+When the Token Protection policy is enabled, users who haven't registered or enrolled their device will see the following screen if the policy is applied and the access token expired:
 
 :::image type="content" source="media/deployment-guide-token-protection-apple/token-protection-device-registration-apple.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 

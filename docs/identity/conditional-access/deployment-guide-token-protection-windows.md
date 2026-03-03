@@ -213,7 +213,7 @@ AADNonInteractiveUserSignInLogs
 
 The result of this query should be similar to the following screenshot:
 
-:::image type="content" source="media/concept-token-protection/log-analytics-results.png" alt-text="Screenshot showing example results of a Log Analytics query looking for token protection policies" lightbox="media/concept-token-protection/log-analytics-results.png":::
+:::image type="content" source="media/concept-token-protection/log-analytics-results.png" alt-text="Screenshot showing example results of a Log Analytics query looking for token protection policies." lightbox="media/concept-token-protection/log-analytics-results.png":::
 
 </details>
 
