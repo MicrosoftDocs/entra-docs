@@ -19,19 +19,20 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## Prerequisites
 
-Before creating an access package, confirm the following in your organization:
+Before creating an access package, confirm the following prerequisites are met in your organization:
 
-1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources. This can include:
+1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources. The forms of authorization set up by access packages incldue scenarios where:
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource to be able to access a target resource's APIs.
-   - Agents need their identity to be assigned as members of groups or directory roles.
-2. Select an existing catalog, or create a catalog, to hold those resources. The access package that you're creating, and any resources included in it, are added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
+   - Agents need their identity to be assigned as members of groups.
+   - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id#microsoft-entra-roles-allowed-for-agents).
+2. You have an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, are added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
 
    > [!NOTE]
    > If you will be adding OAuth permissions or directory roles to the access package as resource roles, then the catalog will be marked as privileged.
 
 ## Create an access package (Preview)
 
-To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to applications. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. 
+To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to applications. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -43,7 +44,7 @@ To use access packages for agents, the IT admin first configures a new access pa
 
 1. On the **Basics** tab, you give the access package a name, and description and specify which catalog to create the access package in. In the **Catalog** dropdown list, select the catalog where you want to put the access package.
 
-1. Select **Next: Resource roles**. On the **Resource roles** tab, you select the resource roles to include in the access package. Access packages for agent identities can have security group memberships, directory roles, or API permissions as resource roles. For more information, see [add a group](/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role), [add a Microsoft Entra role](/entra/id-governance/entitlement-management-access-package-resources#add-a-microsoft-entra-role-assignment) and [add an API permission](/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission-preview).
+1. Select **Next: Resource roles**. On the **Resource roles** tab, you select the resource roles to include in the access package. Access packages for agent identities can have security group memberships, directory roles, or API permissions as resource roles. For more information, see [add a group](/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role), [add a Microsoft Entra role](/entra/id-governance/entitlement-management-access-package-resources#add-a-microsoft-entra-role-assignment), and [add an API permission](/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission-preview).
 
     > [!TIP]
     > If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](/entra/id-governance/entitlement-management-access-package-resources) later.
@@ -65,7 +66,7 @@ To use access packages for agents, the IT admin first configures a new access pa
 
 1. Select **Create** to create the access package and its initial policy.
 
-In addition to using the Microsoft Entra Admin Center, you can also create an access package programmatically, through Microsoft Graph and through the PowerShell cmdlets for Microsoft Graph. For more information, see [Create an access package programmatically](/entra/id-governance/entitlement-management-access-package-create#create-an-access-package-programmatically).
+In addition to using the Microsoft Entra Admin Center, you can also create an access package programmatically, through Microsoft Graph, and through the PowerShell cmdlets for Microsoft Graph. For more information, see [Create an access package programmatically](/entra/id-governance/entitlement-management-access-package-create#create-an-access-package-programmatically).
 
 ## Access request and approval process
 
