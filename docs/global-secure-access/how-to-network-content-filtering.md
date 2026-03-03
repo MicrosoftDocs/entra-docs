@@ -2,7 +2,7 @@
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 03/02/2026
+ms.date: 03/03/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: sumeetmittal
@@ -78,20 +78,20 @@ To configure a file policy in Global Secure Access, complete the following steps
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **File policies**.
-1. Select **+ Create Policy**. Pick the appropriate options.
+1. Select **+ Create Policy**. Pick the options that fit your needs.
 1. On the **Basics** tab: 
     1. Enter the policy **Name**. 
     1. Enter the policy **Description**.
     1. Select **Next**.
 1. On the **Rules** tab:  
     1. Add a new rule.
-    1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
+    1. Enter the **Rule name**, **Description**, **Priority**, and **Status** as appropriate.
     1. Select the appropriate option for the **Action** menu:
         - To configure a basic data policy, select **Allow** or **Block**.
         - To use data policies configured in Microsoft Purview, select **Scan with Purview**.
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
-    1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
-    1. Select **+ Add destination** and choose an option for the destination.
+    1. For **Matching conditions**, select the appropriate **Activities** and **Content types**.
+    1. Select **+ Add destination** and configure the destinations.
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
 1. Select **Create** to create the policy.
@@ -140,11 +140,11 @@ This example walks through an end-to-end test scenario that blocks a PDF file co
 
 When you create or edit your file policy rule, add the following destinations to match ChatGPT file upload traffic:
 
-- `chatgpt.com/backend-api/files` (add as FQDN)
-- `chatgpt.com/backend-api/files/process_upload_stream` (add as FQDN)
+- `https://chatgpt.com/backend-api/files` (add as URL)
+- `https://chatgpt.com/backend-api/files/process_upload_stream` (add as URL)
 - `*.oaiusercontent.com` (add as FQDN)
 
-For **File types**, select **PDF** (or other file types you want to inspect).
+For **Content types**, select **PDF** (and other file types you want to inspect).
 
 > [!TIP]
 > Web applications often use multiple URLs and FQDNs under the hood. Use browser developer tools or network traffic analysis to identify the correct upload endpoints for your target destination. For ChatGPT, the URLs listed here are the endpoints used for file upload operations.
@@ -176,14 +176,14 @@ For detailed instructions on creating Purview DLP policies for network traffic, 
 ## Known limitations
 
 - Network content filtering doesn't support text. It only supports files.
-- Multipart encoding isn't supported, so file policy doesn't work for such applications (for example, Google Drive uses multipart encoding for file upload).
-- Compressed content is detected in zip format (the content isn't decompressed).
+- Multipart encoding isn't supported, so file policy doesn't work for such applications. For example, Google Drive uses multipart encoding for file upload.
+- Compressed content is detected in zip format. The content isn't decompressed.
 - Accuracy of true file type detection might not be 100%.
-- Destination applications using WebSocket (such as Copilot) aren't supported.
+- Destination applications that use WebSocket, such as Copilot, aren't supported.
 - Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
-> Apps might use multiple URLs and FQDNs under the hood when you interact with them. Make sure to configure the correct destinations for the file policy to take effect. For example, ChatGPT uses `chatgpt.com/backend-api/files`, `chatgpt.com/backend-api/files/process_upload_stream`, and `*.oaiusercontent.com` for file uploads. Use browser developer tools or network traffic analysis to identify the correct endpoints for other applications.
+> When you interact with apps, they might use multiple URLs and FQDNs under the hood. Make sure to configure the correct destinations for the file policy to take effect. For example, ChatGPT uses `chatgpt.com/backend-api/files`, `chatgpt.com/backend-api/files/process_upload_stream`, and `*.oaiusercontent.com` for file uploads. Use browser developer tools or network traffic analysis to identify the correct endpoints for other applications.
 
 ## Monitoring and logging
 
