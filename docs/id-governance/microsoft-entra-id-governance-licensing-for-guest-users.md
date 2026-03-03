@@ -178,7 +178,6 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 - You won't be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
 
 
-
 ## Related content
 
 - [Microsoft Entra ID Governance licensing fundamentals](licensing-fundamentals.md)
