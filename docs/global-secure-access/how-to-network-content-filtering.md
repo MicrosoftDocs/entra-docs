@@ -2,7 +2,7 @@
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 03/03/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: sumeetmittal
@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Create a file policy to filter network file content (preview)
+# Create a file policy to filter network file content
 
 Global Secure Access supports network content filtering through file policies. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
 
@@ -24,21 +24,22 @@ The network content filtering solution brings together Microsoft Purview's data 
 This article explains how to create a file policy to filter internet traffic flowing through Global Secure Access.
 
 > [!IMPORTANT]
-> The network content filtering with file policies feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.      
+> The **Scan with Purview** action in file policies is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> Basic file policy (block or allow by file MIME type) is generally available.
 
-## Scenarios included in this preview 
+## Supported scenarios
 
-This preview supports the following key scenarios and outcomes for HTTP/1.1 traffic:
-- Using **Basic file policy**, you can block files based on supported file MIME types. 
-- Using the **Scan with Purview** action in file policy, you can audit and block files based on:
+Network content filtering supports the following key scenarios and outcomes for HTTP/1.1 traffic:
+- Using **Basic file policy**, you can block files based on supported file MIME types.
+- Using the **Scan with Purview** action (preview) in file policy, you can audit and block files based on:
     - Microsoft Purview sensitivity labels
     - Sensitive content in the file
     - The user's risk level
 - You can generate Data loss prevention (DLP) admin alerts for rule matches.
 
 > [!IMPORTANT]
-> This preview supports network content filtering only for files over HTTP/1.1. It doesn't support network content filtering for text.
+> Network content filtering supports only files over HTTP/1.1. It doesn't support network content filtering for text.
 
 ## Prerequisites
 
@@ -88,7 +89,7 @@ To configure a file policy in Global Secure Access, complete the following steps
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
     1. Select the appropriate option for the **Action** menu:
         - To configure a basic data policy, select **Allow** or **Block**.
-        - To use data policies configured in Microsoft Purview, select **Scan with Purview**.
+        - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
     1. Select **+ Add destination** and choose an option for the destination.
@@ -96,8 +97,8 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. On the **Review** tab, review your settings.
 1. Select **Create** to create the policy.
 
-> [!Note]
-> If you choose "Scan with Purview" action, please ensure you have configured corresponding data policy through Microsoft Purview.
+> [!NOTE]
+> If you choose the **Scan with Purview** action (preview), ensure you have configured a corresponding data policy through Microsoft Purview.
 
 ### Link the file policy to a security profile
 
