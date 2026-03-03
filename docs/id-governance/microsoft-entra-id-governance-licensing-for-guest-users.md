@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 02/03/2026
+ms.date: 03/02/2026
 ms.reviewer: jercon
 ---
 
@@ -88,9 +88,9 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 **April**:
 
-- From the second group of 200 guest users in March, 150 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
+- From the second group of 200 guest users in March, all 200 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
 
-- Billing: For April, Fabrikam is billed for 150 users and they aren't charged for the access package auto-assignment action, since these 150 guests have already been charged for April.
+- Billing: For April, Fabrikam is billed for 200 users. Although these users had both an inactive access review and an access‑package auto‑assignment in April, each guest is charged only once for the month.
 
 ### Scenario 3: Access Reviews for inactive users and user-to-group affiliation 
 
@@ -176,7 +176,6 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 - You won't be able to create new workflows if the workflow scope includes guest users: 
     - The configured rule includes `userType=Guest`
 - You won't be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
-
 
 
 ## Related content

@@ -2,19 +2,15 @@
 title: How to manage external MFA in Microsoft Entra ID
 description: Learn how to manage external MFA methods for Microsoft Entra multifactor authentication
 ms.topic: how-to
-ms.date: 02/23/2026
-author: emakedon23
-ms.reviewer: emilymakedon, gustavosa
+ms.date: 02/24/2026
+author: aloom3
+ms.reviewer: akulloomba
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an authentication administrator, I want to learn how to manage an external multifactor authentication method for Microsoft Entra ID.
 ---
-# Manage an external multifactor authentication method in Microsoft Entra ID (Preview)
+# Manage an external multifactor authentication method in Microsoft Entra ID 
 
-External multifactor authentication (MFA), previously known as external authentication methods, lets users choose an external provider to meet MFA requirements when they sign in to Microsoft Entra ID. Microsoft Entra ID continues to handle full policy evaluation and access decisions, as the identity control plane. 
-
-Here is a diagram of how external authentication method works:
-
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external MFA works.":::
+External multifactor authentication (MFA), previously known as external authentication methods, lets users choose an external provider to meet MFA requirements when they sign in with a work or school account. Microsoft Entra ID continues to handle full policy evaluation and access decisions as the identity control plane. 
 
 ## Required metadata to configure external MFA
 To configure external MFA, you need the following information from your external authentication provider:
@@ -70,7 +66,7 @@ If the application has permissions, then you can also enable the method before s
 Once the method is enabled, all users in scope can choose the method for any MFA prompts. If the application from the provider doesn't have consent approved, then any sign-in with the method fails.
 
 If the application is deleted or no longer has permission, users see an error and sign-in fails. The method can't be used.
-<!---screenshot of error--->
+
 
 ### Manage external MFA in the admin center
 
@@ -158,12 +154,13 @@ Include a test group of users for each policy, but not both. If a user is includ
 Our research reinforced the importance of aligning MFA prompts with user intent. With external MFA, users are redirected to their MFA provider based on MFA freshness requirements configured through Conditional Access sign-in frequency policies. Excessively frequent reauthentication is discouraged, as it can negatively affect user experience, decrease productivity, and increase phishing risk by conditioning users to enter credentials without scrutiny. We recommend following our [reauthentication guidance](concepts-azure-multi-factor-authentication-prompts-session-lifetime.md) when configuring sign-in frequency policies.
 
 ## FAQ
-### 1. Why doesn't external MFA work on Windows 10 during device setup?
-**Answer:**  
-If you are setting up a device running **Windows 10** using an **external MFA-only identity**, you may encounter an issue where the **Out-of-Box (OOB) setup experience** fails and prevents you from proceeding with sign-in.
+
+**Question:** Why doesn't external MFA work on Windows 10 during device setup?
+
+**Answer:**  If you set up a device running **Windows 10** by using an **external MFA-only identity**, you may encounter an issue where the **Out-of-Box (OOB) setup experience** fails and prevents you from proceeding with sign-in.
 
 This behavior occurs because **Windows 10 does not natively support external MFA during OOBE (Out-of-Box Experience)**.  
-Microsoft no longer supports Windows 10 (https://www.microsoft.com/en-us/windows/end-of-support?msockid=26a3312b6b246f501ec624846a4f6e11), and there are **no plans to extend external MFA support** to it.
+Microsoft no longer supports Windows 10 (https://www.microsoft.com/windows/end-of-support?msockid=26a3312b6b246f501ec624846a4f6e11), and there are **no plans to extend external MFA support** to it.
 
 To use external MFA for sign-in, **upgrade to Windows 11**.
 

@@ -14,7 +14,7 @@ Web content filtering empowers you to implement granular Internet access control
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
-The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering (Preview), and FQDN filtering.
+The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
-1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL (Preview), or a valid FQDN, and then select **Add**.
+1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL, or a valid FQDN, and then select **Add**.
      - Valid URLs and FQDNs in this feature can also include wildcards using the asterisk symbol, *, and can be comma-separated lists.
      - When entering FQDNs, use the domain name only. Don't include protocols (such as `https://`), port numbers, or URL paths. For example, enter `contoso.com` instead of `https://contoso.com:443/path`.
      - To match all subdomains of a domain, use the wildcard format `*.domain.com`. Note that the wildcard `*.domain.com` matches subdomains like `www.domain.com` but doesn't match the root domain `domain.com` itself. To cover both the domain and all its subdomains, include both entries as a comma-separated list (for example, `*.contoso.com,contoso.com`).

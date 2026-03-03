@@ -1,15 +1,11 @@
 ---
 title: 'Microsoft Entra Connect: User sign-in'
 description: Microsoft Entra Connect user sign-in for custom settings.
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect user sign-in options

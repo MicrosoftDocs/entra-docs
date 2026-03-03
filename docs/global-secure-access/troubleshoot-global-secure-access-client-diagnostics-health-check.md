@@ -2,7 +2,7 @@
 title: "Troubleshoot the Windows Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.topic: troubleshooting
-ms.date: 02/21/2026
+ms.date: 02/24/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -291,10 +291,10 @@ function FindProxyForURL(url, host) {  
 }
 ```
  
-#### Add a system variable
-Configure the Global Secure Access client to route Global Secure Access traffic through a proxy:
-1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, `http://10.1.0.10:8080`.
-1. Restart the Global Secure Access client.
+#### Global Secure Access client and outbound proxies
+
+> [!IMPORTANT]
+> If the Global Secure Access client is behind an outbound proxy, configure PAC file exclusions to bypass the proxy for Global Secure Access traffic.
 
 ### No Hyper-V external virtual switch detected
 Hyper-V support: 

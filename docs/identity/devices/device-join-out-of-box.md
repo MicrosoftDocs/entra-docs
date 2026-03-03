@@ -2,13 +2,9 @@
 title: Join Windows 11 Devices to Microsoft Entra ID During OOBE
 description: Discover how to set up Microsoft Entra join on a Windows 11 device during OOBE, ensuring seamless integration with your organization's directory.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 01/08/2026
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: 
 ---
 # Microsoft Entra join a new Windows device during the out of box experience
