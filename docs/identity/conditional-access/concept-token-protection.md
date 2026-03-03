@@ -4,7 +4,7 @@ description: Protect your resources with token protection in Conditional Access 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 03/03/2026
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange
