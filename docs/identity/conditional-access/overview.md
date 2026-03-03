@@ -82,16 +82,17 @@ Admins can create policies from scratch or start with a template policy in the p
 
 Admins with at least the [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role can find Conditional Access in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access**.
 
-:::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
+- The **Overview** page shows a summary of recent activity that relates to Conditional Access policies. Here you can see how many policies are enabled vs report-only, agent and user activity, applications, devices, and general security alerts with suggestions.
+    :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 
-- The **Overview** page shows a summary of policy state, agents, users, devices, and applications, along with general and security alerts with suggestions.
-- The **Coverage** page shows a summary of applications with and without Conditional Access policy coverage over the past seven days.
+- The **Coverage** tab shows a summary of applications with and without Conditional Access policy coverage over the past seven days.
+    :::image type="content" source="media/overview/conditional-access-coverage-tab.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-coverage-tab.png":::
+- The **Policies** page lists all of the polices in your tenant, including report-only policies and policies created by the Conditional Access Optimization Agent (if applicable). Options to filter, view "What if" scenarios, and create new policies are available here.
+    :::image type="content" source="media/overview/conditional-access-policies-list.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-policies-list.png":::
 
-On the **Policies** page, admins can filter Conditional Access policies based on items like the actor, target resource, condition, control applied, state, or date. This filtering lets admins quickly find specific policies based on their configuration.
+### Conditional Access Optimization Agent
 
-### Conditional Access optimization agent
-
-The [Conditional Access optimization agent](../../security-copilot/conditional-access-agent-optimization.md) (preview) with Microsoft Security Copilot suggests new policies and changes to existing ones based on Zero Trust principles and Microsoft best practices. With one click, apply the suggestion to automatically update or create a Conditional Access policy. The agent needs at least the Microsoft Entra ID P1 license and [security compute units (SCU)](/copilot/security/manage-usage).
+The [Conditional Access Optimization Agent](../../security-copilot/conditional-access-agent-optimization.md) with Microsoft Security Copilot suggests new policies and changes to existing ones based on Zero Trust principles and Microsoft best practices. With one click, apply the suggestion to automatically update or create a Conditional Access policy. The agent needs at least the Microsoft Entra ID P1 license and [security compute units (SCU)](/copilot/security/manage-usage).
 
 ## License requirements
 
