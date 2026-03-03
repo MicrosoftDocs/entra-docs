@@ -16,12 +16,16 @@ This article outlines the pricing structure for Microsoft Entra External ID. It 
 
 ## MAU billing model
 
-The monthly active users (MAU) billing model for External ID applies to all guest users. Guest users include:
+Billing for External ID is based on monthly active users (MAU); that is, the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAU, we combine active users from all workforce and external tenants that are linked to a subscription.
+
+MAU billing helps reduce your costs by offering a free tier and flexible, predictable pricing. You can get started for free and pay for only what you use as your business grows.
+
+The MAU billing model for External ID applies to all guest users. Guest users include:
 
 - External guests for B2B collaboration in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These users sign in with *external* credentials. Their `UserType` property is set to `Guest`.
 
    > [!NOTE]
-   > If you own and operate multiple tenants, your member users can authenticate across your tenants without being counted in the MAU total. For B2B collaboration, the MAU billing model applies only to external users with a `UserType` value of `Guest`. It doesn't apply to users who originate from within the organization with a `UserType` value of `Member`.
+   > If you own and operate multiple tenants, your member users can authenticate across your tenants without being counted in the MAU total. For B2B collaboration, the MAU billing model applies only to external users who have a `UserType` value of `Guest`. It doesn't apply to users who originate from within the organization and have a `UserType` value of `Member`.
 
 - Internal guests in Microsoft Entra. These users sign in with `internal` credentials. Their `UserType` property is set to `Guest`.
 
@@ -34,13 +38,9 @@ The monthly active users (MAU) billing model for External ID applies to all gues
 
 For more info about the difference between internal and external guests, see [Understand and manage the properties of B2B guest users](user-properties.md).
 
-Billing is based on MAU, which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAU, we combine active users from all workforce and external tenants that are linked to a subscription.
-
-MAU billing helps you reduce costs by offering a free tier and flexible, predictable pricing. You can get started for free and pay for only what you use as your business grows.
-
 ## External ID pricing
 
-External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU.
+External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offer is free for the first 50,000 MAU.
 
 For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
 
@@ -85,7 +85,7 @@ Depending on how you created your external tenant, it might already be linked to
    1. On the Microsoft Entra admin center toolbar, select the **Settings** icon.
    1. On the **Directories + subscriptions** pane, find your external tenant in the **Directory name** list. Then select **Switch**.
 
-1. Select **Home** and find the **Billing** section. The take one of these actions:
+1. Select **Home** and find the **Billing** section. Then take one of these actions:
 
    - If your tenant is linked to a subscription, the subscription ID appears in this section. You can select the ID to view subscription details.
 
@@ -107,11 +107,14 @@ To move your external tenant resources to the new subscription, use Azure Resour
 
 If no subscriptions are available on the **Link a subscription** pane, here are some possible reasons:
 
-- You're trying link a workforce tenant to a subscription, but you're currently signed in to an external tenant. Switch to the workforce tenant: Select the **Settings** icon on the Microsoft Entra admin center toolbar, find your workforce tenant in the list on the **Directories + subscriptions** pane. Then select **Switch**.
+- You're trying link a workforce tenant to a subscription, but you're currently signed in to an external tenant. Switch to the workforce tenant:
+
+  1. On the Microsoft Entra admin center toolbar, select **Settings**.
+  1. On the **Directories + subscriptions** pane, find your workforce tenant in the list. Then select **Switch**.
 
 - You don't have the appropriate permissions. Be sure to sign in by using an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
 
-- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](~/fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
+- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription with your tenant](~/fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](#link-your-azure-ad-tenant-to-a-subscription).
 
 - No subscription exists. On the **Link a subscription** pane, you can create a subscription by selecting the link **If you don't already have a subscription you may create one here**.
 
