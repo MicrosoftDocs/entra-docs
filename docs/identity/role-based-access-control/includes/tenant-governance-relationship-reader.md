@@ -15,9 +15,9 @@ Assign the Tenant Governance Relationship Reader role to users who need to do th
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/tenantGovernance/invitations/standard/read | Read standard properties of tenant governance invitations |
-> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read standard properties of tenant governance policy templates |
-> | microsoft.directory/tenantGovernance/relationships/standard/read | Read standard properties of tenant governance relationships |
-> | microsoft.directory/tenantGovernance/requests/standard/read | Read standard properties of tenant governance requests |
-> | microsoft.directory/tenantGovernance/settings/standard/read | Read standard properties of tenant governance settings |
+> | microsoft.directory/tenantGovernance/invitations/standard/read | Read tenant governance invitations |
+> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read tenant governance policy templates |
+> | microsoft.directory/tenantGovernance/relationships/standard/read | Read tenant governance relationships |
+> | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
+> | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
 

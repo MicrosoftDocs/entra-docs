@@ -15,16 +15,16 @@ Assign the Tenant Governance Relationship Administrator role to users who need t
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/tenantGovernance/invitations/standard/read | Read standard properties of tenant governance invitations |
-> | microsoft.directory/tenantGovernance/policyTemplates/allProperties/update | Update all properties of tenant governance policy templates |
+> | microsoft.directory/tenantGovernance/invitations/standard/read | Read tenant governance invitations |
+> | microsoft.directory/tenantGovernance/policyTemplates/allProperties/update | Update tenant governance policy templates |
 > | microsoft.directory/tenantGovernance/policyTemplates/create | Create tenant governance policy templates |
 > | microsoft.directory/tenantGovernance/policyTemplates/delete | Delete tenant governance policy templates |
-> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read standard properties of tenant governance policy templates |
-> | microsoft.directory/tenantGovernance/relatedTenants/standard/read | Read standard properties of tenant governance related tenants |
-> | microsoft.directory/tenantGovernance/relationships/allProperties/update | Update all properties of tenant governance relationships |
+> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read tenant governance policy templates |
+> | microsoft.directory/tenantGovernance/relatedTenants/standard/read | Read data about related tenants discovered by Microsoft Entra Tenant Governance service |
+> | microsoft.directory/tenantGovernance/relationships/allProperties/update | Update the status of governance relationships |
 > | microsoft.directory/tenantGovernance/relationships/create | Create tenant governance relationships |
-> | microsoft.directory/tenantGovernance/relationships/standard/read | Read standard properties of tenant governance relationships |
+> | microsoft.directory/tenantGovernance/relationships/standard/read | Read tenant governance relationships |
 > | microsoft.directory/tenantGovernance/requests/create | Create tenant governance requests |
-> | microsoft.directory/tenantGovernance/requests/standard/read | Read standard properties of tenant governance requests |
-> | microsoft.directory/tenantGovernance/settings/standard/read | Read standard properties of tenant governance settings |
+> | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
+> | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
 

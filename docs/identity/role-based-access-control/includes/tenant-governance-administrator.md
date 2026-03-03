@@ -15,27 +15,27 @@ Assign the Tenant Governance Administrator role to users who need to do the foll
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/crossTenantAccessPolicy/basic/update | Update basic properties of cross-tenant access policies |
-> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read standard properties of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policies for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policies for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read standard properties of cross-tenant access policies for partners |
-> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read standard properties of cross-tenant access policies |
+> | microsoft.directory/crossTenantAccessPolicy/basic/update | Update basic settings of cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
 > | microsoft.directory/tenantGovernance/invitations/create | Create tenant governance invitations |
 > | microsoft.directory/tenantGovernance/invitations/delete | Delete tenant governance invitations |
-> | microsoft.directory/tenantGovernance/invitations/standard/read | Read standard properties of tenant governance invitations |
-> | microsoft.directory/tenantGovernance/policyTemplates/allProperties/update | Update all properties of tenant governance policy templates |
+> | microsoft.directory/tenantGovernance/invitations/standard/read | Read tenant governance invitations |
+> | microsoft.directory/tenantGovernance/policyTemplates/allProperties/update | Update tenant governance policy templates |
 > | microsoft.directory/tenantGovernance/policyTemplates/create | Create tenant governance policy templates |
 > | microsoft.directory/tenantGovernance/policyTemplates/delete | Delete tenant governance policy templates |
-> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read standard properties of tenant governance policy templates |
-> | microsoft.directory/tenantGovernance/relatedTenants/refresh | Refresh tenant governance related tenants |
-> | microsoft.directory/tenantGovernance/relatedTenants/standard/read | Read standard properties of tenant governance related tenants |
-> | microsoft.directory/tenantGovernance/relationships/allProperties/update | Update all properties of tenant governance relationships |
+> | microsoft.directory/tenantGovernance/policyTemplates/standard/read | Read tenant governance policy templates |
+> | microsoft.directory/tenantGovernance/relatedTenants/refresh | Trigger a data refresh about related tenants discovered by Microsoft Entra Tenant Governance service |
+> | microsoft.directory/tenantGovernance/relatedTenants/standard/read | Read data about related tenants discovered by Microsoft Entra Tenant Governance service |
+> | microsoft.directory/tenantGovernance/relationships/allProperties/update | Update the status of governance relationships |
 > | microsoft.directory/tenantGovernance/relationships/create | Create tenant governance relationships |
-> | microsoft.directory/tenantGovernance/relationships/standard/read | Read standard properties of tenant governance relationships |
-> | microsoft.directory/tenantGovernance/requests/allProperties/update | Update all properties of tenant governance requests |
+> | microsoft.directory/tenantGovernance/relationships/standard/read | Read tenant governance relationships |
+> | microsoft.directory/tenantGovernance/requests/allProperties/update | Update the status of tenant governance requests |
 > | microsoft.directory/tenantGovernance/requests/create | Create tenant governance requests |
-> | microsoft.directory/tenantGovernance/requests/standard/read | Read standard properties of tenant governance requests |
-> | microsoft.directory/tenantGovernance/settings/allProperties/update | Update all properties of tenant governance settings |
-> | microsoft.directory/tenantGovernance/settings/standard/read | Read standard properties of tenant governance settings |
+> | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
+> | microsoft.directory/tenantGovernance/settings/allProperties/update | Manage Microsoft Entra Tenant Governance settings |
+> | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
 
