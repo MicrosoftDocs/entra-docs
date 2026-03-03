@@ -23,7 +23,7 @@ Historically, AI agents would rely upon tools to interact with various applicati
 
 ![Diagram of the relationship of Microsoft Entra Agent ID objects in a single tenant.](./media/agent-id-governance-overview/agent-identity-objects-single-tenant.png)
 
-For a multi-tenant-capable agent, an agent identity blueprint principal can be brought into the tenant with resources so it can create agent identities in that tenant, similar to how a multi-tenant application can have a service principal in each tenant.
+For a multitenant-capable agent, an agent identity blueprint principal can be brought into the tenant with resources so it can create agent identities in that tenant, similar to how a multitenant application can have a service principal in each tenant.
 
 ![Diagram of the relationship of Microsoft Entra Agent ID objects in multiple tenants.](./media/agent-id-governance-overview/agent-identity-objects-multiple-tenant.png)
 
