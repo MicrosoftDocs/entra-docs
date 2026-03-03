@@ -20,7 +20,7 @@ Domain Services integrates with Microsoft Entra ID, which acts as the source of 
 
 Take a look at our short video to learn more about Microsoft Entra Domain Services.
 
-> [!VIDEO https://videoencodingpublic-hgeaeyeba8gycee3.b01.azurefd.net/public-0a092182-e2de-4538-a6b4-adfcacf1cc54/combined_video_1001_1729741341074_1920x1080.mp4]
+> [!VIDEO 0a092182-e2de-4538-a6b4-adfcacf1cc54]
 
 <a name='how-does-azure-ad-ds-work'></a>
 
