@@ -13,13 +13,17 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 In today's digital workplace, users depend on multiple authentication methods to access their organizational resources. However, situations arise where users lose access to all their authentication methods—their primary device is lost, and backup codes are unavailable. In such scenarios, traditional self-service password reset (SSPR) isn't sufficient because it relies on users having access to at least one registered authentication method. This challenge is particularly problematic for passwordless users who have no fallback self-service options and must contact their helpdesk, undergo secure identity verification processes, and receive initial credentials from IT staff to re-provision their lost authentication methods and set up replacement devices.
 
-Microsoft Entra ID Account Recovery addresses these critical scenarios by enabling users to regain access to their accounts through a robust identity verification process. Unlike password reset, which assumes users retain some form of authentication method, account recovery focuses on re-establishing trust in the user's identity when they've lost access to all authentication mechanisms.
+Microsoft Entra ID account recovery addresses these critical scenarios by enabling users to regain access to their accounts through a robust identity verification process. Unlike password reset, which assumes users retain some form of authentication method, account recovery focuses on re-establishing trust in the user's identity when they've lost access to all authentication mechanisms.
 
 Account recovery represents a paradigm shift from simple credential reset to comprehensive user identity verification and user re-onboarding. It leverages advanced identity verification technologies, including Microsoft Entra Verified ID, to ensure that the person requesting account recovery is indeed the legitimate account owner. This approach not only maintains security while providing users with a path to regain access during total lockout scenarios, but also significantly reduces security risks by removing human judgment from the verification process. Traditional helpdesk-led recovery methods are vulnerable to social engineering attacks where bad actors can manipulate support staff into illegitimately recovering accounts, but account recovery's identity proofing eliminates this attack vector entirely.
 
 ## What is account recovery
 
-Microsoft Entra ID Account Recovery is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
+Microsoft Entra ID account recovery is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
+
+### Video: How to set up Microsoft Entra ID account recovery
+
+> [!VIDEO https://www.youtube.com/watch?v=iU-zJIGFEYQ]
 
 ### Key characteristics of account recovery
 

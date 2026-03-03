@@ -12,6 +12,10 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organization's configured provider.
 
+## Video: Recover your work or school account in Microsoft Entra ID
+
+> [!VIDEO https://www.youtube.com/watch?v=5ivST2bw7uQ]
+
 ## User steps
 
 1. Start by attempting to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
