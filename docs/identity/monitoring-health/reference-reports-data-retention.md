@@ -68,7 +68,7 @@ In the [Microsoft Entra External ID Basic plan](https://azure-int.microsoft.com/
 **No**, you can't. Azure stores up to seven days of activity data for a free version. When you switch from a free to a premium version, you can only see up to 7 days of data.
 
 > [!NOTE]
-> Log retention changes are not retroactive. When upgrading from Microsoft Entra ID Free to P1 or P2, only data still within the free retention period (up to seven days) is available. Data that has already expired cannot be recovered unless it was previously archived.
+> Log retention changes aren't retroactive. When you upgrade from Microsoft Entra ID Free to P1 or P2, only data still within the free retention period (up to seven days) is available. Data that has already expired can't be recovered unless it was previously archived.
 
 ## Next steps
 
