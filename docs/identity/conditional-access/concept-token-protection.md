@@ -4,7 +4,7 @@ description: Protect your resources with token protection in Conditional Access 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 08/20/2025
+ms.date: 03/03/2026
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange
@@ -200,15 +200,14 @@ AADNonInteractiveUserSignInLogs
 | project Id,ConditionalAccessPolicies, Status,UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
-| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
 //Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
 | mv-expand todynamic(ConditionalAccessPolicies) 
 | where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]' 
 | where ConditionalAccessPolicies.result !="reportOnlyNotApplied" and ConditionalAccessPolicies.result !="notApplied" 
 | extend SessionNotSatisfyResult = ConditionalAccessPolicies["sessionControlsNotSatisfied"] 
-| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'SignInTokenProtection', 'Block','Allow')
-| summarize by Id,UserPrincipalName, AppDisplayName, Result 
+| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'Binding', 'Block','Allow')
+| summarize by Id,UserPrincipalName, AppDisplayName, Result
 | summarize Requests = count(), Users = dcount(UserPrincipalName), Block = countif(Result == "Block"), Allow = countif(Result == "Allow"), BlockedUsers = dcountif(UserPrincipalName, Result == "Block") by AppDisplayName 
 | extend PctAllowed = round(100.0 * Allow/(Allow+Block), 2) 
 | sort by Requests desc 
@@ -230,15 +229,14 @@ AADNonInteractiveUserSignInLogs
 | project Id,ConditionalAccessPolicies, UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
-| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
 //Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
 | mv-expand todynamic(ConditionalAccessPolicies) 
 | where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]'
 | where ConditionalAccessPolicies.result !="reportOnlyNotApplied" and ConditionalAccessPolicies.result !="notApplied" 
 | extend SessionNotSatisfyResult = ConditionalAccessPolicies.sessionControlsNotSatisfied 
-| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'SignInTokenProtection', 'Block','Allow')
-| summarize by Id, UserPrincipalName, AppDisplayName, ResourceDisplayName,Result  
+| extend Result = case (SessionNotSatisfyResult contains 'SignInTokenProtection' or SessionNotSatisfyResult contains 'Binding', 'Block','Allow')
+| summarize by Id, UserPrincipalName, AppDisplayName, ResourceDisplayName,Result
 | summarize Requests = count(),Block = countif(Result == "Block"), Allow = countif(Result == "Allow") by UserPrincipalName, AppDisplayName,ResourceDisplayName 
 | extend PctAllowed = round(100.0 * Allow/(Allow+Block), 2) 
 | sort by UserPrincipalName asc   
