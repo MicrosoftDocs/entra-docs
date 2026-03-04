@@ -4,14 +4,14 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 03/04/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Windows
-<!--- Grab from word doc--->
+
 This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Windows platform.
 
-Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
+For an overview of Token Protection and supported platforms, see [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md). We recommend reviewing the overview documentation before using this deployment guide.
 
 ## Prerequisites
 
@@ -24,21 +24,25 @@ Before enforcing the policy, ensure users are running supported and up-to-date c
 ### Applications
 
 Token Protection can be applied to the following applications:
-<!--- More to add here --->
+
+- Exchange PowerShell module
+- Microsoft 365 Copilot
+- Microsoft Edge (support for sign-in to Edge profile only)*
+- Microsoft Graph PowerShell with [EnableLoginByWAM](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support) option
+- Microsoft Loop
 - Microsoft Teams
-- Word, Excel, PowerPoint
+- Microsoft To Do
 - OneNote
 - OneDrive
+- Outlook
 - Power BI desktop
-- Exchange PowerShell module
-- Microsoft Graph PowerShell with [EnableLoginByWAM](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support) option
-- Windows App
-- Visual Studio when using the 'Windows authentication broker' Sign-in option
-- Microsoft Edge
-- Microsoft To Do
-- Outlook <!-- Confirm if it's Microsoft Outlook --->
-- Microsoft Loop
 - PowerQuery extension for Excel (only available for users on [Current Channel](/microsoft-365-apps/updates/overview-update-channels#current-channel-overview))
+- Visual Studio Code
+- Visual Studio when using the 'Windows authentication broker' Sign-in option
+- Windows App
+- Word, Excel, PowerPoint
+
+*Token Protection currently supports native applications only. Browser-based applications are not supported.
 
 ### Resources
 
@@ -264,6 +268,7 @@ AADNonInteractiveUserSignInLogs
 | where bindingStatusCode == 1003 
 | summarize count() by UserPrincipalName 
 ```
+</details>
 
 ## End user experience
 

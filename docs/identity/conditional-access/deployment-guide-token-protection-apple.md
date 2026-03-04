@@ -4,7 +4,7 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 03/04/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Apple Platforms (Preview)
@@ -30,10 +30,9 @@ Token Protection can be applied to the following applications.
 | Application | iOS/iPadOS | macOS |
 |---|---|---|
 | Intune Company Portal | ✅ | ✅ |
-| Microsoft 365 Copilot |  | ✅ |
 | Microsoft Authenticator | ✅ |  |
-| Microsoft Edge | ✅ | ✅ |
-| Microsoft Loop | ✅ | ✅ |
+| Microsoft Edge (support for sign-in to Edge profile only)* | ✅ | ✅ |
+| Microsoft Loop | ✅ |   |
 | Microsoft OneNote | ✅ | ✅ |
 | Microsoft SharePoint | ✅ |  |
 | Microsoft Teams | ✅ | ✅ |
@@ -42,6 +41,8 @@ Token Protection can be applied to the following applications.
 | Outlook | ✅ | ✅ |
 | Visual Studio Code |  | ✅ |
 | Word, Excel, PowerPoint | ✅ | ✅ |
+
+*Token Protection currently supports native applications only. Browser-based applications are not supported.
 
 ### Supported Resources
 
@@ -53,8 +54,8 @@ Token Protection on Apple platforms can be used to protect the following resourc
 
 ### Known Limitations
 
-- Token Protection currently requires the Microsoft Enterprise single-sign-on (SSO) plug-in, which requires  Microsoft Device Management (MDM). *Unmanaged iOS and macOS devices aren't supported at this time.* 
-- *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing these apps when the policy is enforced. 
+- Token Protection currently requires the Microsoft Enterprise single-sign-on (SSO) plug-in, which requires Mobile Device Management (MDM). *Unmanaged iOS and macOS devices aren't supported at this time.* 
+- *Apple's native Mail and Calendar apps don't support Token Protection.* Users will be blocked from accessing resources protected by Token Protection when the policy is enforced.
 - In report-only mode, requests that don't use hardware-backed device registration appear as noncompliant, even if the user is eligible for an upgrade to hardware-backed device registration. Use sign-in logs and status codes to assess true readiness. See the [Review readiness with logs and metrics](#review-readiness-with-logs-and-metrics) section.
 - The **Token Protection – Sign-in Session** column in sign-in logs shows all requests without hardware-backed device identity as "Unbound." These logs include requests from users who are eligible to upgrade their registration.
 - [External users](../../external-id/what-is-b2b.md) who meet the token protection device registration requirements in their home tenant are supported. Users who don't meet these requirements will see an error message with no clear indication of the root cause.
@@ -77,7 +78,7 @@ The high-level steps to enable Token Protection on Apple platforms are as follow
 Complete the following steps for *each* platform you're deploying to. These steps must be completed *before* users register their devices. 
 
 > [!NOTE]
-> Users who registered devices before these steps were completed will be prompted to upgrade their device registration to hardware-backed when the policy is enforced: see the [Upgrade Existing Device Registrations]() section.
+> Users who registered their devices before these steps were completed will be prompted to enter their credentials the first time they access a resource protected by the Token Protection policy. Once they complete authentication successfully, their device registration is automatically upgraded to hardware-backed storage. For more information, see **[Upgrade device registration](#upgrade-device-registration)**.
 
 ### [iOS and iPadOS](#tab/ios-and-ipados)
 
@@ -177,13 +178,13 @@ To identify which users you can apply the policy to, refer to the following stat
 
 | Status Code | Description | Action Required |
 |---|---|---|
-| 1002 | Unbound - device isn't registered with Microsoft Entra ID | User must register device |
-| 1003 | Unbound - device not registered with secure credentials (legacy registration) | User must perform one-time registration upgrade |
-| 1004 | Unbound - device registration isn't hardware-backed | User must perform one-time registration upgrade |
-| 1005 | Unbound - unspecified reason | Varies |
+| 1002 | Unbound - Request is unbound due to the lack of Microsoft Entra ID device state | User must register device |
+| 1003 | Unbound - Device not registered with secure credentials (legacy registration) | User must perform one-time registration upgrade |
+| 1004 | Unbound - Device registration isn't hardware-backed | User must perform one-time registration upgrade |
+| 1005 | Unbound - Unspecified reason | Varies |
 | 1006 | Unbound - OS version isn't supported | User must upgrade OS |
-| 1007 | Unbound - not hardware-backed; signed-in user isn't the registered device owner | User must re-register, or registered owner must perform upgrade |
-| 1008 | Unbound - client doesn't use an identity broker | The request is unbound because the client isn't integrated with the platform broker or broker app isn't installed on the device. |
+| 1007 | Unbound - Not hardware-backed; signed-in user isn't the registered device owner | User must re-register, or registered owner must perform upgrade |
+| 1008 | Unbound - Client doesn't use an identity broker | Request is unbound because the client isn't integrated with the platform broker or broker app isn't installed on the device. |
 
 To identify requests that are compliant or upgradeable with user action, filter for:
 
@@ -213,11 +214,10 @@ The following sample Log Analytics query searches the non-interactive sign-in lo
 AADNonInteractiveUserSignInLogs
 // Adjust the time range below
 | where TimeGenerated > ago(7d)
-| project Id, ConditionalAccessPolicies, Status, UserPrincipalName, AppDisplayName, ResourceDisplayName
+| project Id, ConditionalAccessPolicies, Status, UserPrincipalName, AppDisplayName, ResourceDisplayName, TokenProtectionStatusDetails
 | where ConditionalAccessPolicies != "[]"
 | where ResourceDisplayName == "Office 365 Exchange Online"
     or ResourceDisplayName == "Office 365 SharePoint Online"
-    or ResourceDisplayName == "Microsoft Teams Services"
 // Add UserPrincipalName if you want to filter to a specific user
 // | where UserPrincipalName == "<user_principal_name>"
 | mv-expand todynamic(ConditionalAccessPolicies)
@@ -229,14 +229,25 @@ AADNonInteractiveUserSignInLogs
 | extend Result = case(
     SessionNotSatisfyResult contains 'SignInTokenProtection'
         or SessionNotSatisfyResult contains 'Binding', 'Block', 'Allow')
-| summarize by Id, UserPrincipalName, AppDisplayName, Result
+| extend parsedBindingDetails = parse_json(TokenProtectionStatusDetails)
+| extend bindingStatusCode = tostring(parsedBindingDetails["signInSessionStatusCode"])
+| extend IsSelfRemediable = Result == "Block"
+    and (bindingStatusCode == "1003" or bindingStatusCode == "1004")
+| summarize by Id, UserPrincipalName, AppDisplayName, Result, IsSelfRemediable
 | summarize Requests = count(),
     Users = dcount(UserPrincipalName),
-    Block = countif(Result == "Block"),
     Allow = countif(Result == "Allow"),
-    BlockedUsers = dcountif(UserPrincipalName, Result == "Block")
+    Block = countif(Result == "Block"),
+    BlockSelfRemediable = countif(IsSelfRemediable == true),
+    BlockedUsers = dcountif(UserPrincipalName, Result == "Block"),
+    BlockedUsersSelfRemediable = dcountif(UserPrincipalName, IsSelfRemediable == true)
     by AppDisplayName
 | extend PctAllowed = round(100.0 * Allow / (Allow + Block), 2)
+| extend PctEnforceable = round(100.0 * (Allow + BlockSelfRemediable) / (Allow + Block), 2)
+| project AppDisplayName, Requests, Users, Allow, Block,
+    BlockSelfRemediable,
+    BlockedUsers, BlockedUsersSelfRemediable,
+    PctAllowed, PctEnforceable
 | sort by Requests desc
 ```
 </details>
@@ -255,11 +266,10 @@ The following query searches the non-interactive sign-in logs for the last seven
 AADNonInteractiveUserSignInLogs
 // Adjust the time range below
 | where TimeGenerated > ago(7d)
-| project Id, ConditionalAccessPolicies, UserPrincipalName, AppDisplayName, ResourceDisplayName
+| project Id, ConditionalAccessPolicies, UserPrincipalName, AppDisplayName, ResourceDisplayName, TokenProtectionStatusDetails
 | where ConditionalAccessPolicies != "[]"
 | where ResourceDisplayName == "Office 365 Exchange Online"
     or ResourceDisplayName == "Office 365 SharePoint Online"
-    or ResourceDisplayName == "Microsoft Teams Services"
 // Add UserPrincipalName if you want to filter to a specific user
 // | where UserPrincipalName == "<user_principal_name>"
 | mv-expand todynamic(ConditionalAccessPolicies)
@@ -271,12 +281,21 @@ AADNonInteractiveUserSignInLogs
 | extend Result = case(
     SessionNotSatisfyResult contains 'SignInTokenProtection'
         or SessionNotSatisfyResult contains 'Binding', 'Block', 'Allow')
-| summarize by Id, UserPrincipalName, AppDisplayName, ResourceDisplayName, Result
+| extend parsedBindingDetails = parse_json(TokenProtectionStatusDetails)
+| extend bindingStatusCode = tostring(parsedBindingDetails["signInSessionStatusCode"])
+| extend IsSelfRemediable = Result == "Block"
+    and (bindingStatusCode == "1003" or bindingStatusCode == "1004")
+| summarize by Id, UserPrincipalName, AppDisplayName, ResourceDisplayName, Result, IsSelfRemediable
 | summarize Requests = count(),
+    Allow = countif(Result == "Allow"),
     Block = countif(Result == "Block"),
-    Allow = countif(Result == "Allow")
+    BlockSelfRemediable = countif(IsSelfRemediable == true)
     by UserPrincipalName, AppDisplayName, ResourceDisplayName
 | extend PctAllowed = round(100.0 * Allow / (Allow + Block), 2)
+| extend PctEnforceable = round(100.0 * (Allow + BlockSelfRemediable) / (Allow + Block), 2)
+| project UserPrincipalName, AppDisplayName, ResourceDisplayName,
+    Requests, Allow, Block, BlockSelfRemediable,
+    PctAllowed, PctEnforceable
 | sort by UserPrincipalName asc
 ```
 </details>
@@ -319,11 +338,9 @@ There are some end user experiences to be aware of when deploying Token Protecti
 
 Users on devices that were registered to Microsoft Entra ID before Token Protection policy was enforced will be prompted to reauthenticate once policy is enforced. They'll need to sign in again to access resources.
 
-### Sign-in experience
-
-When the Token Protection policy is enabled, users who haven't registered or enrolled their device will see the following screen if the policy is applied and the access token expired:
-
 :::image type="content" source="media/deployment-guide-token-protection-apple/token-protection-device-registration-apple.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
+
+### Unsupported applications
 
 When the Token Protection policy is enabled, users who aren't using a supported application will see the following screen after authenticating:
 
