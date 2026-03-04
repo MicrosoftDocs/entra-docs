@@ -2,7 +2,7 @@
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass (TAP).
 ms.topic: how-to
-ms.date: 02/16/2026
+ms.date: 03/04/2026
 ms.author: justinha
 author: tilarso
 ms.reviewer: tilarso
@@ -150,17 +150,16 @@ When using a Temporary Access Pass (TAP) to support device enrollment and passwo
 Users with a TAP can navigate the setup process on Windows 10 and 11 to perform device join operations and configure Windows Hello for Business. TAP usage for setting up Windows Hello for Business varies based on the devices joined state. 
 
 For devices that are joined to Microsoft Entra ID: 
-- During the domain-join setup process, users can authenticate with a TAP (no password required) to join the device and register Windows Hello for Business.
+- During the Microsoft Entra join setup process, users can authenticate with a TAP (no password required) to join the device and register Windows Hello for Business.
 - On already-joined devices, users must first authenticate with another method such as a password, smartcard, or FIDO2 key, before using TAP to set up Windows Hello for Business. 
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
 
 > [!NOTE]
-> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
-
-> [!NOTE]
-> For federated domains where federatedIdpMfaBehavior is set to enforceMfaByFederatedIdp, users will not be prompted for TAP to satisfy multifactor authentication (MFA) to set up Windows Hello for Business. Instead, they are redirected to the federated Identity Provider (IdP) for multifactor authentication (MFA).
+> For federated domains, the **FederatedIdpMfaBehavior** setting changes the behavior when MFA is required:
+> - If set to **enforceMfaByFederatedIdp**, the user is redirected to the federated identity provider (IdP) for MFA and isn't prompted for a TAP to set up Windows Hello for Business.
+> - If set to **acceptIfMfaDoneByFederatedIdp**, the user sees a TAP prompt in Microsoft Entra ID during MFA for Windows Hello for Business provisioning.
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
@@ -186,7 +185,7 @@ An expired or deleted TAP can’t be used for interactive or non-interactive aut
 
 Users need to reauthenticate with different authentication methods after the TAP is expired or deleted.
 
-The token lifetime (session token, refresh token, access token, and so on) obtained by using a TAP sign-in is limited to the TAP lifetime. When a TAP expires, it leads to the expiration of the associated token.
+Tokens (session tokens, refresh tokens, access tokens, and so on) issued during a TAP sign-in have their maximum lifetime capped at the TAP expiration time at the moment of issuance. However, TAP expiration doesn't retroactively invalidate sessions that are already established. Session token lifetime is governed by [Conditional Access session controls](/entra/identity/conditional-access/concept-session-lifetime), so a user who signs in with a TAP could retain access longer than the TAP lifetime depending on the Conditional Access configuration. To limit how long access lasts after a TAP sign-in, configure the [sign-in frequency](/entra/identity/conditional-access/howto-conditional-access-session-lifetime#sign-in-frequency) policy.
 
 ## Delete an expired Temporary Access Pass
 
