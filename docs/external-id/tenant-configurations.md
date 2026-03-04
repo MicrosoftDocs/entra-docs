@@ -23,7 +23,7 @@ Each tenant configuration represents a different scenario for working with users
 
 :::image type="content" source="media/tenant-configurations/tenant-configurations.png" alt-text="Diagram that shows External ID tenant configurations." lightbox="media/tenant-configurations/tenant-configurations.png":::
 
-## Workforce tenant
+## Workforce tenants
 
 A workforce tenant represents a single organization. You use it to manage your employees, business apps, and other internal resources. If you've worked with Microsoft Entra ID, you're already familiar with a workforce tenant. It's the standard tenant that's automatically created when your organization signs up for a Microsoft cloud service subscription, such as Microsoft Azure, Microsoft Intune, or Microsoft 365.
 
@@ -31,7 +31,7 @@ In a workforce tenant, the External ID feature [B2B collaboration](what-is-b2b.m
 
 You can create additional workforce tenants in either the Microsoft Entra admin center or the Azure portal.
 
-## External tenant
+## External tenants
 
 When you want to use External ID to add customer identity and access management (CIAM) to your apps, you create a new tenant in an external configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for your consumer and business customer scenarios.
 

@@ -74,6 +74,8 @@ Microsoft Entra workforce tenants must be linked to an Azure subscription for pr
 
 After you complete these steps, your Azure subscription is billed based on your Azure direct or Enterprise Agreement details, if applicable.
 
+<a name='link-an-external-tenant-to-a-subscription'></a>
+
 ## Steps to link an external tenant to a subscription
 
 Depending on how you created your external tenant, it might already be linked to a subscription. To find out, follow these steps:
@@ -122,7 +124,7 @@ If no subscriptions are available on the **Link a subscription** pane, here are 
 
 ### Can I change the ownership of a subscription?
 
-You can't change the ownership of a subscription to a Microsoft Entra external tenant. External tenants don't have subscription management capabilities. External tenants must be linked to subscriptions, which are owned by Microsoft Entra workforce tenants.
+You can't change the ownership of a subscription to a Microsoft Entra external tenant. External tenants don't have subscription management capabilities. External tenants must be linked to subscriptions that Microsoft Entra workforce tenants own.
 
 ## Related content
 

@@ -72,7 +72,7 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 ### Authentication methods available in External ID
 
-You can use some authentication methods as the primary factor when users sign in to an application, such username and password. Other authentication methods are available only as a secondary factor. The following table outlines when you an use an authentication method during sign-in, self-service sign-up, self-service password reset, and MFA in External ID.
+You can use some authentication methods as the primary factor when users sign in to an application, such username and password. Other authentication methods are available only as a secondary factor. The following table outlines when you can use an authentication method during sign-in, self-service sign-up, self-service password reset, and MFA in External ID.
 
 | Method | Sign-in | Sign-up | Password reset | MFA |
 | ------ | ------- | ------- | -------------- | --- |
@@ -190,7 +190,7 @@ The following table compares the features for terms-of-use policies in each type
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Conditional Access policies | See the [Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md). | Not available. |
-| Self-service sign-up | Not available. | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms-of-use policies on the sign-up page. You can cusomize the hyperlink to support various languages. |
+| Self-service sign-up | Not available. | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms-of-use policies on the sign-up page. You can customize the hyperlink to support various languages. |
 | Sign-in page | You can add links to the lower-right corner for privacy information by using [company branding](~/fundamentals/how-to-customize-branding.md). | [Same as workforce](how-to-customize-branding-customers.md#to-customize-the-logo-privacy-link-and-terms-of-use). |
 
 ## Account management
@@ -200,7 +200,7 @@ The following table compares the features for user management in each type of te
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Types of accounts | <ul><li>Internal members, such as employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> Invited users (preview), with or without an admin role. </li></ul> All users in an external tenant have [default permissions](reference-user-permissions.md) unless they're assigned an [admin role](how-to-manage-admin-accounts.md). |
-| Manage user profile info | <ul><li>Mange users programmatically and by [using the admin center](~/fundamentals/how-to-manage-user-profile-info.md).</li><li>Manage guest users across tenants with [Cross-tenant synchronization](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview).</li></ul> | Same as workforce, except cross-tenant synchronization isn't available. |
+| Manage user profile info | <ul><li>Manage users programmatically and by [using the admin center](~/fundamentals/how-to-manage-user-profile-info.md).</li><li>Manage guest users across tenants with [Cross-tenant synchronization](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview).</li></ul> | Same as workforce, except cross-tenant synchronization isn't available. |
 | Reset a user's password | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.md) if the user forgets the password, is locked out of a device, or never received a password. | Same as workforce. |
 | Restore or remove a recently deleted user | After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties. | Same as workforce. |
 | Disable accounts | Prevent the new user from signing in. | Same as workforce. |
