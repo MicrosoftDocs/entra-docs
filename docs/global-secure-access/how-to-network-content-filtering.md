@@ -80,13 +80,13 @@ To configure a file policy in Global Secure Access, complete the following steps
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **File policies**.
-    <!-- SCREENSHOT NEEDED: Screenshot of the File policies page showing the + Create Policy button -->
+    :::image type="content" source="media/how-to-network-content-filtering/file-policies-create.png" alt-text="Screenshot of the File policies page in the Microsoft Entra admin center showing the Create policy button." lightbox="media/how-to-network-content-filtering/file-policies-create.png":::
 1. Select **+ Create Policy**. Pick the appropriate options.
 1. On the **Basics** tab: 
     1. Enter the policy **Name**. 
     1. Enter the policy **Description**.
     1. Select **Next**.
-    <!-- SCREENSHOT NEEDED: Screenshot of the Basics tab showing the Name and Description fields for a new file policy -->
+    :::image type="content" source="media/how-to-network-content-filtering/file-policy-basics-tab.png" alt-text="Screenshot of the Basics tab for a new file policy showing the Policy name and Description fields." lightbox="media/how-to-network-content-filtering/file-policy-basics-tab.png":::
 1. On the **Rules** tab:  
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
@@ -95,12 +95,12 @@ To configure a file policy in Global Secure Access, complete the following steps
         - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
-        <!-- SCREENSHOT NEEDED: Screenshot of the Matching conditions section showing the Activities and File types dropdowns -->
+        :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add File Rule page showing the Matching conditions section with Activities set to Download and Upload, and the Content types dropdown expanded with file type options." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
     1. Select **+ Add destination** and choose an option for the destination.
-        <!-- SCREENSHOT NEEDED: Screenshot of the Add destination dialog showing destination options -->
+        :::image type="content" source="media/how-to-network-content-filtering/file-rule-destinations.png" alt-text="Screenshot of the Add File Rule page showing the Destinations section and the Select web categories panel with category options." lightbox="media/how-to-network-content-filtering/file-rule-destinations.png":::
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
-    <!-- SCREENSHOT NEEDED: Screenshot of the Review tab showing a summary of the file policy settings before creation -->
+    :::image type="content" source="media/how-to-network-content-filtering/file-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the file policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/file-policy-review-tab.png":::
 1. Select **Create** to create the policy.
 
 > [!IMPORTANT]
