@@ -159,6 +159,8 @@ If you selected the **Scan with Purview** action in your file policy, you must c
 > [!NOTE]
 > If you don't see **Data loss prevention** under **Settings**, your account might not have the required permissions or your tenant might not have the required licensing. You need a role such as **DLP Compliance Management** or **Information Protection Admin**, and a Microsoft 365 E5/A5 subscription or a Microsoft Purview DLP add-on. For more information, see [Permissions in the Microsoft Purview portal](/purview/purview-permissions).
 
+For detailed steps on SASE provider integration, see [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI -- SASE provider integration](/purview/dlp-create-policy-ai-network-data-security#sase-provider-integration).
+
 ### Create a DLP policy for network data security
 
 1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
