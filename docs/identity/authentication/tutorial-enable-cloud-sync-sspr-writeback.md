@@ -9,7 +9,7 @@ ms.reviewer: tilarso
 # Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment
 
 > [!NOTE]
-> Self-service password reset isn't available in Microsoft Azure operated by 21Vianet.
+> Self-service password reset writeback with cloud sync isn't supported in Microsoft Azure operated by 21Vianet. Admins can deploy SSPR writeback with [Microsoft Entra Connect sync](tutorial-enable-sspr-writeback.md) instead.
 
 Microsoft Entra Connect cloud sync can synchronize Microsoft Entra password changes in real time between users in disconnected on-premises Active Directory Domain Services (AD DS) domains. Microsoft Entra Connect cloud sync can run side-by-side with [Microsoft Entra Connect](tutorial-enable-sspr-writeback.md) at the domain level to simplify password writeback for additional scenarios, such as users who are in disconnected domains because of a company split or merge. You can configure each service in different domains to target different sets of users depending on their needs. Microsoft Entra Connect cloud sync uses the lightweight Microsoft Entra cloud provisioning agent to simplify the setup for self-service password reset (SSPR) writeback and provide a secure way to send password changes in the cloud back to an on-premises directory. 
 
