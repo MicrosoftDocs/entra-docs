@@ -1,6 +1,6 @@
 ---
 title: Configure Global Relay Identity Sync for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Global Relay Identity Sync.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Global Relay Identity Sync.
 
 
 author: jeevansd
@@ -15,7 +15,7 @@ ms.author: jeedes
 
 # Configure Global Relay Identity Sync for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Global Relay Identity Sync and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to Global Relay Identity Sync using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Global Relay Identity Sync and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to Global Relay Identity Sync using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -184,7 +184,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
