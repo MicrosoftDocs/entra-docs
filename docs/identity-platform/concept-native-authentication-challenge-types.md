@@ -33,7 +33,7 @@ The following table contains the supported challenge type values:
 
 New values are added when native authentication supports new authentication methods.
 
-## Challenge type values for native authentication
+## Challenge type values for native authentication flows
 
 The following table summarizes the challenge type values an app should use for the various authentication flows:
 
