@@ -24,7 +24,7 @@ Microsoft Entra Cloud sync can synchronize Microsoft Entra password changes in r
 
 ## Deployment steps
 
-1. [Configure Microsoft Entra Cloud sync service account permissions](#configure-azure-ad-cloud-sync-service-account-permissions)
+1. [Configure Microsoft Entra Cloud sync service account permissions](#configure-microsoft-entra-cloud-sync-service-account-permissions)
 1. [Enable password writeback in Microsoft Entra Connect cloud sync](#enable-password-writeback-in-sspr)
 1. [Enable password writeback for SSPR](#enable-password-writeback-in-sspr)
  
