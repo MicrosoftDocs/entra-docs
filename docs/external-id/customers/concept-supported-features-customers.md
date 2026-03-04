@@ -113,9 +113,9 @@ The following table compares the features for application authorization in each 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Role-based access control (RBAC) | You can define [application roles](../../identity-platform/custom-rbac-for-developers.md#app-roles) for your application and assign those roles to users and groups. Microsoft Entra ID includes the user roles in the security token. Your application can then make authorization decisions based on the values in the security token. | Same as workforce. [Learn more about using role-based access control for applications in an external tenant](how-to-use-app-roles-customers.md). For available features, see [Groups and application roles support](./reference-group-app-roles-support.md). |
-| Security groups | You can use [security groups](../../identity-platform/custom-rbac-for-developers.md#groups) to implement RBAC in your applications, where the memberships of the user in specific groups are interpreted as their role memberships. Microsoft Entra ID includes user group membership in the security token. Your application can then make authorization decisions based on the values in the security token. | Same as workforce. The [group optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID. |
+| Security groups | You can use [security groups](../../identity-platform/custom-rbac-for-developers.md#groups) to implement RBAC in your applications, where the memberships of users in specific groups are interpreted as their role memberships. Microsoft Entra ID includes user group membership in the security token. Your application can then make authorization decisions based on the values in the security token. | Same as workforce. The [group optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID. |
 | Attribute-based access control (ABAC) | You can configure the app to include user attributes in the access token. Your application can then make authorization decisions based on the values in the security token. For more information, see [Token customization](#token-customization). | Same as workforce. |
-| Require user assignment | When user assignment is required, only the users you assign to the application (either through direct user assignment or based on group membership) can sign in. For more information, see [Manage user and group assignments to an application](../../identity-platform/howto-restrict-your-app-to-a-set-of-users.md) | Same as workforce. For details, see [Groups and application roles support](./reference-group-app-roles-support.md). |
+| Require user assignment | When user assignment is required, only the users you assign to the application (either through direct user assignment or based on group membership) can sign in. For more information, see [Manage user and group assignments to an application](../../identity-platform/howto-restrict-your-app-to-a-set-of-users.md). | Same as workforce. For details, see [Groups and application roles support](./reference-group-app-roles-support.md). |
 
 ## Enterprise applications
 
@@ -158,7 +158,7 @@ The following table compares the features for OAuth 2.0 and OpenID Connect autho
 
 ### Authority URL in OpenID Connect and OAuth2 flows
 
-The authority URL is a URL that indicates a directory that the Microsoft Authentication Library (MSAL) can request tokens from. For apps in external tenants, always use the following format: `<tenant-name>.ciamlogin.com`.
+The authority URL indicates a directory that the Microsoft Authentication Library (MSAL) can request tokens from. For apps in external tenants, always use the following format: `<tenant-name>.ciamlogin.com`.
 
 The following JSON shows an example of a .NET application `appsettings.json` file with an authority URL:
 
@@ -173,7 +173,7 @@ The following JSON shows an example of a .NET application `appsettings.json` fil
 
 ## Conditional Access
 
-The following table compares the features for Conditional Access in each type of tenant.
+The following table compares the features for Microsoft Entra Conditional Access in each type of tenant.
 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
@@ -190,7 +190,7 @@ The following table compares the features for terms-of-use policies in each type
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Conditional Access policies | See the [Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md). | Not available. |
-| Self-service sign-up | Not available. | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms of use policies on the sign-up page. The hyperlink can be customized to support various languages. |
+| Self-service sign-up | Not available. | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms-of-use policies on the sign-up page. You can cusomize the hyperlink to support various languages. |
 | Sign-in page | You can add links to the lower-right corner for privacy information by using [company branding](~/fundamentals/how-to-customize-branding.md). | [Same as workforce](how-to-customize-branding-customers.md#to-customize-the-logo-privacy-link-and-terms-of-use). |
 
 ## Account management
@@ -199,11 +199,11 @@ The following table compares the features for user management in each type of te
 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
-| Types of accounts | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> Invited users (preview), with or without an admin role. </li></ul> All users in an external tenant have [default permissions](reference-user-permissions.md) unless they're assigned an [admin role](how-to-manage-admin-accounts.md). |
-| Manage user profile info | <ul><li>Mange users programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.md).</li><li>Manage guest users across tenants with [Cross-tenant synchronization](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview).</li></ul> | Same as workforce, except cross-tenant synchronization isn't available. |
-| Reset a user's password | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.md) if the password is forgotten, if the user is locked out of a device, or if the user never received a password. | Same as workforce. |
+| Types of accounts | <ul><li>Internal members, such as employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> Invited users (preview), with or without an admin role. </li></ul> All users in an external tenant have [default permissions](reference-user-permissions.md) unless they're assigned an [admin role](how-to-manage-admin-accounts.md). |
+| Manage user profile info | <ul><li>Mange users programmatically and by [using the admin center](~/fundamentals/how-to-manage-user-profile-info.md).</li><li>Manage guest users across tenants with [Cross-tenant synchronization](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview).</li></ul> | Same as workforce, except cross-tenant synchronization isn't available. |
+| Reset a user's password | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.md) if the user forgets the password, is locked out of a device, or never received a password. | Same as workforce. |
 | Restore or remove a recently deleted user | After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties. | Same as workforce. |
-| Disable accounts | Prevent the new user from being able to sign in. | Same as workforce. |
+| Disable accounts | Prevent the new user from signing in. | Same as workforce. |
 
 ## Password protection
 
@@ -211,7 +211,7 @@ The following table compares the features for password protection in each type o
 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
-| Smart lockout | [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors that try to guess your users' passwords or use brute-force methods to get in. | Same as workforce. |
+| Smart lockout | [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) helps lock out bad actors who try to guess your users' passwords or use brute-force methods to get in. | Same as workforce. |
 | Global banned passwords | The [global banned passwords list](~/identity/authentication/concept-password-ban-bad.md#global-banned-password-list) automatically blocks commonly used weak or compromised passwords based on analysis of Microsoft Entra security data. | Same as workforce. |
 | Custom banned passwords | Use the [custom banned passwords list](../../identity/authentication/tutorial-configure-custom-password-protection.md) to add specific strings to evaluate and block during password creation and reset. | Same as workforce. |
 
@@ -223,22 +223,24 @@ The following table compares the features for token customization in each type o
 | ------- | ---------------- | --------------- |
 | Claims mapping | [Customize claims](~/identity-platform/jwt-claims-customization.md) issued in the JSON web token (JWT) for enterprise applications. | Same as workforce. Optional claims must be configured through [Attributes & Claims](how-to-add-attributes-to-token.md). |
 | Claims transformation | [Apply a transformation to a user attribute](~/identity-platform/jwt-claims-customization.md) issued in the JWT for enterprise applications. | Same as workforce. |
-| Custom claims provider | [Custom authentication extension](~/identity-platform/custom-extension-overview.md) that calls an external REST API to fetch claims from external systems. | Same as workforce. [Learn more](../../identity-platform/custom-claims-provider-overview.md). |
+| Custom claims provider | Use a [custom authentication extension](~/identity-platform/custom-extension-overview.md) that calls an external REST API to fetch claims from external systems. | Same as workforce. [Learn more](../../identity-platform/custom-claims-provider-overview.md). |
 | Security groups | [Configure group optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims). | [Configure group optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims), limited to the group object ID. |
 | Token lifetimes | [Specify the lifetime](../../identity-platform/configurable-token-lifetimes.md) of security tokens issued by Microsoft Entra ID. | Same as workforce. |
 | Session and token revocation | An administrator can [invalidate all the refresh tokens and session](/graph/api/user-revokesigninsessions) for a user. | Same as workforce. |
 
 ## Single sign-on
 
-[Single sign-on (SSO)](../../identity-platform/msal-js-sso.md) provides a more seamless experience by reducing the number of times a user is asked for credentials. Users enter their credentials once, and the established session can be reused by other applications on the same device and web browser without further prompting. The following table compares the features available for SSO in each type of tenant.
+[Single sign-on (SSO)](../../identity-platform/msal-js-sso.md) provides a more seamless experience by reducing the number of times a user is asked for credentials. Users enter their credentials once. Other applications can reuse the established session on the same device and web browser without further prompting.
+
+The following table compares the features for SSO in each type of tenant.
 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Types of application registration | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul><br>Enterprise applications offer [more options](../../identity/enterprise-apps/plan-sso-deployment.md), like password-based, linked, and header-based registration. | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul> |
-| Domain name | When a user authenticates, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser. | When a user authenticates, a session cookie is set on the Microsoft Entra External ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure that SSO functions correctly, use a single URL domain. |
+| Domain name | When a user is authenticated, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser. | When a user is authenticated, a session cookie is set on the Microsoft Entra External ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure that SSO functions correctly, use a single URL domain. |
 | Stay signed in | You can turn on or turn off the option to [stay signed in](~/fundamentals/how-to-manage-stay-signed-in-prompt.yml). | Same as workforce. |
 | User provisioning | Use [automatic user provisioning](/entra/architecture/sync-scim) with System for Cross-domain Identity Management (SCIM) to sync user accounts between Microsoft Entra External ID and supported apps. This approach keeps user data up to date automatically.<br><br> User provisioning supports differential queries. These queries sync only the changes since the last update. This behavior improves performance and reduces system load. | Same as workforce. |
-| Session invalidation | Scenarios where SSO might be invalidated, which requires reauthentication: <ul><li>Session expiry.</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional Access policy, such as a multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions).</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials by using the `login=prompt` query string parameter in OpenID Connect and the `ForceAuthn` attribute in the SAML request. </li></ul> | Same as workforce. |
+| Session invalidation | Scenarios where SSO might be invalidated, which requires reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache</li><li>Conditional Access policy, such as a multifactor authentication requirement</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity</li></ul><br>The application specifies in the authorization request to prompt the user for their credentials by using the `login=prompt` query string parameter in OpenID Connect and the `ForceAuthn` attribute in the SAML request. | Same as workforce. |
 | Conditional Access | Check the [Conditional Access](#conditional-access) section. | Check the [Conditional Access](#conditional-access) section. |
 | Microsoft Entra native authentication | Not available | [Native authentication](concept-native-authentication.md) doesn't support SSO. |
 | Sign-out | When a [SAML](../../identity-platform/single-sign-out-saml-protocol.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#send-a-sign-out-request) application directs the user to the logout endpoint, Microsoft Entra ID removes and invalidates the user's session from the browser. | Same as workforce. |
@@ -246,7 +248,7 @@ The following table compares the features for token customization in each type o
 
 ## Integrated security solutions
 
-Microsoft Entra External ID supports integrated security features and partner solutions to help protect identities across the lifecycle. These capabilities include protection against distributed Denial-of-Service (DDoS) attacks, prevention of sign-up fraud, and unified monitoring.
+Microsoft Entra External ID supports integrated security features and partner solutions to help protect identities across the lifecycle. These capabilities include protection against distributed denial-of-service (DDoS) attacks, prevention of sign-up fraud, and unified monitoring.
 
 You can enable these solutions directly in External ID and access partner integrations through the [Microsoft Security Store](https://securitystore.microsoft.com/). This approach allows organizations to deploy trusted security tools quickly without complex setup.
 
@@ -258,13 +260,13 @@ You can enable these solutions directly in External ID and access partner integr
 
 ### Akamai and Cloudflare
 
-[Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) and [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) provide DDoS protection, bot mitigation, and WAF capabilities. These capabilities help defend applications against malicious traffic, abusive automation, and common web vulnerabilities such as SQL injection, cross‑site scripting (XSS), and API‑based attacks.
+[Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) and [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) provide DDoS protection, bot mitigation, and WAF capabilities. These capabilities help defend applications against malicious traffic, abusive automation, and common web vulnerabilities such as SQL injection, cross‑site scripting, and API‑based attacks.
 
 When you integrate either service with Microsoft Entra External ID, you can apply these security controls in front of your customer-facing identity flows. This action improves resilience and reduces exposure to credential stuffing and other identity‑targeted threats.
 
 ## Activity logs and reports
 
-The table below compares the features for activity logs and reports across various types of tenants.
+The following table compares the features for activity logs and reports across various types of tenants.
 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
