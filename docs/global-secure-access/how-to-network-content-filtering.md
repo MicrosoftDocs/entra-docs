@@ -146,8 +146,7 @@ If you selected the **Scan with Purview** action in your file policy, you must c
 
 ### Prerequisites for Purview integration
 
-- A valid Microsoft Purview license with DLP capabilities.
-- Microsoft Purview pay-as-you-go billing configured for your tenant. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
+- Microsoft Purview pay-as-you-go billing configured for your tenant. For network data security DLP scenarios, the pay-as-you-go subscription is all you need. If you use other DLP functionality, per-seat licensing is required. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
 - The Global Secure Access integration enabled in the Microsoft Purview portal.
 
 ### Enable the Global Secure Access integration in Purview
