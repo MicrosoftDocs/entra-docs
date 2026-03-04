@@ -79,7 +79,7 @@ For details, see [Workforce and external tenant configurations in Microsoft Entr
 
 The following table compares the scenarios that you can enable with External ID.
 
-| | External ID in workforce tenants | External ID in external tenants |
+| Scenario | External ID in workforce tenants | External ID in external tenants |
 | ---- | --- | --- |
 | Primary scenario | Allow your workforce to collaborate with business guests. Let guests use their preferred identities to sign in to resources in your Microsoft Entra organization. External ID provides access to Microsoft applications or your own applications, including SaaS apps or custom-developed apps. <br><br> *Example:* Invite a guest to sign in to your Microsoft apps or become a guest member in Teams. | Publish apps to external consumers and business customers by using External ID for identity experiences. External ID provides identity and access management for modern SaaS or custom-developed apps (not Microsoft apps). <br><br> *Example:* Create a customized sign-in experience for users of your consumer mobile app and monitor app usage. |
 | Intended for | Collaborating with business partners from external organizations like suppliers, partners, and vendors. These users might or might not have Microsoft Entra ID or managed IT. | Consumers and business customers of your app. These users are managed in a Microsoft Entra tenant that's configured for external apps and users. |
