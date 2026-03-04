@@ -150,17 +150,16 @@ When using a Temporary Access Pass (TAP) to support device enrollment and passwo
 Users with a TAP can navigate the setup process on Windows 10 and 11 to perform device join operations and configure Windows Hello for Business. TAP usage for setting up Windows Hello for Business varies based on the devices joined state. 
 
 For devices that are joined to Microsoft Entra ID: 
-- During the domain-join setup process, users can authenticate with a TAP (no password required) to join the device and register Windows Hello for Business.
+- During the Microsoft Entra join setup process, users can authenticate with a TAP (no password required) to join the device and register Windows Hello for Business.
 - On already-joined devices, users must first authenticate with another method such as a password, smartcard, or FIDO2 key, before using TAP to set up Windows Hello for Business. 
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
 
 > [!NOTE]
-> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
-
-> [!NOTE]
-> For federated domains where federatedIdpMfaBehavior is set to enforceMfaByFederatedIdp, users will not be prompted for TAP to satisfy multifactor authentication (MFA) to set up Windows Hello for Business. Instead, they are redirected to the federated Identity Provider (IdP) for multifactor authentication (MFA).
+> For federated domains, the **FederatedIdpMfaBehavior** setting changes the behavior when MFA is required:
+> - If set to **enforceMfaByFederatedIdp**, the user is redirected to the federated identity provider (IdP) for MFA and isn't prompted for a TAP to set up Windows Hello for Business.
+> - If set to **acceptIfMfaDoneByFederatedIdp**, the user sees a TAP prompt in Microsoft Entra ID during MFA for Windows Hello for Business provisioning.
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
