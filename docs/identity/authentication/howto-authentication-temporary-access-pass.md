@@ -2,7 +2,7 @@
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass (TAP).
 ms.topic: how-to
-ms.date: 02/16/2026
+ms.date: 03/04/2026
 ms.author: justinha
 author: tilarso
 ms.reviewer: tilarso
@@ -185,7 +185,7 @@ An expired or deleted TAP can’t be used for interactive or non-interactive aut
 
 Users need to reauthenticate with different authentication methods after the TAP is expired or deleted.
 
-Tokens (session tokens, refresh tokens, access tokens, and so on) issued during a TAP sign-in have their maximum lifetime capped at the TAP expiration time at the moment of issuance. However, TAP expiration doesn't retroactively invalidate sessions that are already established. Session token lifetime is governed by [Conditional Access session controls](~/identity/conditional-access/concept-session-lifetime.md), so a user who signs in with a TAP could retain access longer than the TAP lifetime depending on the Conditional Access configuration. To limit how long access lasts after a TAP sign-in, configure the [sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md#sign-in-frequency) policy.
+Tokens (session tokens, refresh tokens, access tokens, and so on) issued during a TAP sign-in have their maximum lifetime capped at the TAP expiration time at the moment of issuance. However, TAP expiration doesn't retroactively invalidate sessions that are already established. Session token lifetime is governed by [Conditional Access session controls](/entra/identity/conditional-access/concept-session-lifetime), so a user who signs in with a TAP could retain access longer than the TAP lifetime depending on the Conditional Access configuration. To limit how long access lasts after a TAP sign-in, configure the [sign-in frequency](/entra/identity/conditional-access/howto-conditional-access-session-lifetime#sign-in-frequency) policy.
 
 ## Delete an expired Temporary Access Pass
 
