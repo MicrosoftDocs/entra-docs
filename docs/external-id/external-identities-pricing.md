@@ -22,7 +22,7 @@ MAU billing helps reduce your costs by offering a free tier and flexible, predic
 
 The MAU billing model for External ID applies to all guest users. Guest users include:
 
-- External guests for B2B collaboration in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These users sign in with *external* credentials. Their `UserType` property is set to `Guest`.
+- External guests for business-to-business (B2B) collaboration in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These users sign in with *external* credentials. Their `UserType` property is set to `Guest`.
 
    > [!NOTE]
    > If you own and operate multiple tenants, your member users can authenticate across your tenants without being counted in the MAU total. For B2B collaboration, the MAU billing model applies only to external users who have a `UserType` value of `Guest`. It doesn't apply to users who originate from within the organization and have a `UserType` value of `Member`.
@@ -36,11 +36,11 @@ The MAU billing model for External ID applies to all guest users. Guest users in
   
   MAU billing applies to all users in an external tenant regardless of their `UserType` setting.
 
-For more info about the difference between internal and external guests, see [Understand and manage the properties of B2B guest users](user-properties.md).
+For more info about the differences between internal and external guests, see [Understand and manage the properties of B2B guest users](user-properties.md).
 
 ## External ID pricing
 
-External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offer is free for the first 50,000 MAU.
+External ID consists of a core offer and premium add-ons. The core offer is free for the first 50,000 MAU.
 
 For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
 
@@ -57,7 +57,7 @@ Microsoft Entra workforce tenants must be linked to an Azure subscription for pr
 
 1. Select the directory that you want to link:
 
-   1. On the Microsoft Entra admin center toolbar, select the **Settings** icon.
+   1. On the toolbar, select the **Settings** icon.
    1. On the **Directories + subscriptions** pane, find your workforce tenant in the **Directory name** list. Then select **Switch**.
 
 1. Go to **Entra ID** > **External Identities** > **Overview**.
@@ -84,7 +84,7 @@ Depending on how you created your external tenant, it might already be linked to
 
 1. Make sure your external tenant is selected:
 
-   1. On the Microsoft Entra admin center toolbar, select the **Settings** icon.
+   1. On the toolbar, select the **Settings** icon.
    1. On the **Directories + subscriptions** pane, find your external tenant in the **Directory name** list. Then select **Switch**.
 
 1. Select **Home** and find the **Billing** section. Then take one of these actions:

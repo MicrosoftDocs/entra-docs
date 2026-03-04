@@ -27,7 +27,7 @@ Each tenant configuration represents a different scenario for working with users
 
 A workforce tenant represents a single organization. You use it to manage your employees, business apps, and other internal resources. If you've worked with Microsoft Entra ID, you're already familiar with a workforce tenant. It's the standard tenant that's automatically created when your organization signs up for a Microsoft cloud service subscription, such as Microsoft Azure, Microsoft Intune, or Microsoft 365.
 
-In a workforce tenant, the External ID feature [B2B collaboration](what-is-b2b.md) lets your employees collaborate with external business partners and guests.
+In a workforce tenant, the [business-to-business (B2B) collaboration](what-is-b2b.md) feature in External ID lets your employees collaborate with external business partners and guests.
 
 You can create additional workforce tenants in either the Microsoft Entra admin center or the Azure portal.
 
@@ -39,11 +39,11 @@ The external tenant is where you register your apps, create sign-up and sign-in 
 
 ### Creation of an external tenant
 
-If you plan to use External ID for apps for consumers or business customers, the first resource that you need to create is a new tenant with an external tenant configuration.
+If you plan to use External ID for apps for consumers or business customers, the first resource that you need to create is a new tenant with an external configuration.
 
 You can create an external tenant in a couple of ways:
 
-- If you already have an Azure subscription, you can [create a tenant](customers/how-to-create-customer-tenant-portal.md) in the Microsoft Entra admin center. When you create a new tenant, choose the external configuration.
+- If you already have an Azure subscription, you can [create a tenant](customers/how-to-create-customer-tenant-portal.md) in the Microsoft Entra admin center. Choose the external configuration.
 
   You can't create external tenants via the Azure portal. The portal supports creation of workforce tenants only.
 
