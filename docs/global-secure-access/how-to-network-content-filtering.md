@@ -174,11 +174,7 @@ For detailed steps on SASE provider integration, see [Use Network Data Security 
     1. On the **Adaptive app scopes** tab, choose the app categories you want to protect against (for example, **All unmanaged AI apps**).
     1. Select **Add**.
 1. Select **Next**.
-1. On the **Choose where to enforce the policy** page, ensure **Network** is enabled, then select **Next**.
-
-    > [!NOTE]
-    > You can only select **Network** when pay-as-you-go billing is set up. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
-
+1. On the **Choose where to enforce the policy** page, ensure **Network** is enabled, then select **Next**. You can only select **Network** when pay-as-you-go billing is set up. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
 1. Select **Create or customize advanced DLP rules** and select **Next**.
 1. Select **+ Create rule** and configure the rule:
     1. Enter a **Name** and optional description.
@@ -189,11 +185,11 @@ For detailed steps on SASE provider integration, see [Use Network Data Security 
     1. Configure **Incident reports** and alert settings as needed.
     1. Select **Save**.
 1. Review the rule, ensure its status is **On**, and select **Next**.
-1. On the **Policy mode** page, choose **Turn the policy on immediately** (or run in simulation mode first to test).
+1. On the **Policy mode** page, choose **Turn the policy on immediately** or run in simulation mode first to test.
 1. Select **Next**, review the policy, and select **Submit**.
 
 > [!NOTE]
-> Microsoft Entra Global Secure Access supports file activities only. Text-based activities in the DLP policy apply to other integrated SASE solutions but not to Global Secure Access.
+> Global Secure Access supports file activities only. Text-based activities in the DLP policy apply to other integrated SASE solutions but not to Global Secure Access.
 
 For a detailed walkthrough with example configurations, see [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI](/purview/dlp-create-policy-ai-network-data-security).
 
