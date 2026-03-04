@@ -152,11 +152,12 @@ If you selected the **Scan with Purview** action in your file policy, you must c
 ### Enable the Global Secure Access integration in Purview
 
 1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
-1. Select **Settings** (gear icon) > **Data loss prevention** > **Integrations**.
+1. Select **Settings** (gear icon in the upper-right corner) > **Data loss prevention** > **Integrations**.
 1. Locate the **Microsoft Entra Internet Access** integration and select **Get started**.
 1. Complete the integration steps to connect Global Secure Access with Purview.
 
-<!-- SCREENSHOT NEEDED: Screenshot of the Purview portal Data loss prevention Integrations page showing the Microsoft Entra Internet Access integration -->
+> [!NOTE]
+> If you don't see **Data loss prevention** under **Settings**, your account might not have the required permissions or your tenant might not have the required licensing. You need a role such as **DLP Compliance Management** or **Information Protection Admin**, and a Microsoft 365 E5/A5 subscription or a Microsoft Purview DLP add-on. For more information, see [Permissions in the Microsoft Purview portal](/purview/purview-permissions).
 
 ### Create a DLP policy for network data security
 
