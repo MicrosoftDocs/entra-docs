@@ -2,11 +2,12 @@
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 03/04/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: sumeetmittal
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to configure Global Secure Access settings so that I can enforce network content filtering policies.
 
@@ -79,11 +80,13 @@ To configure a file policy in Global Secure Access, complete the following steps
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **File policies**.
+    <!-- SCREENSHOT NEEDED: Screenshot of the File policies page showing the + Create Policy button -->
 1. Select **+ Create Policy**. Pick the appropriate options.
 1. On the **Basics** tab: 
     1. Enter the policy **Name**. 
     1. Enter the policy **Description**.
     1. Select **Next**.
+    <!-- SCREENSHOT NEEDED: Screenshot of the Basics tab showing the Name and Description fields for a new file policy -->
 1. On the **Rules** tab:  
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
@@ -92,13 +95,16 @@ To configure a file policy in Global Secure Access, complete the following steps
         - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
+        <!-- SCREENSHOT NEEDED: Screenshot of the Matching conditions section showing the Activities and File types dropdowns -->
     1. Select **+ Add destination** and choose an option for the destination.
+        <!-- SCREENSHOT NEEDED: Screenshot of the Add destination dialog showing destination options -->
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
+    <!-- SCREENSHOT NEEDED: Screenshot of the Review tab showing a summary of the file policy settings before creation -->
 1. Select **Create** to create the policy.
 
-> [!NOTE]
-> If you choose the **Scan with Purview** action (preview), ensure you have configured a corresponding data policy through Microsoft Purview.
+> [!IMPORTANT]
+> If you select the **Scan with Purview** action in a file policy rule, you must also configure a corresponding data loss prevention (DLP) policy in the Microsoft Purview portal. The file policy in Global Secure Access routes files to Purview for content inspection, but Purview must have a DLP policy configured to classify and act on the content. See [Configure a Purview DLP policy for network data security](#configure-a-purview-dlp-policy-for-network-data-security) for step-by-step guidance.
 
 ### Link the file policy to a security profile
 
@@ -130,6 +136,65 @@ For more information, see [Create and link a Conditional Access policy](how-to
 
 The file policy is successfully configured. 
 
+## Configure a Purview DLP policy for network data security
+
+If you selected the **Scan with Purview** action in your file policy, you must configure a corresponding data loss prevention (DLP) policy in Microsoft Purview. The DLP policy defines how Purview classifies and acts on files that Global Secure Access routes for inspection.
+
+> [!IMPORTANT]
+> The **Scan with Purview** integration for Global Secure Access is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+### Prerequisites for Purview integration
+
+- A valid Microsoft Purview license with DLP capabilities.
+- Microsoft Purview pay-as-you-go billing configured for your tenant. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
+- The Global Secure Access integration enabled in the Microsoft Purview portal.
+
+### Enable the Global Secure Access integration in Purview
+
+1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
+1. Select **Settings** (gear icon) > **Data loss prevention** > **Integrations**.
+1. Locate the **Microsoft Entra Internet Access** integration and select **Get started**.
+1. Complete the integration steps to connect Global Secure Access with Purview.
+
+<!-- SCREENSHOT NEEDED: Screenshot of the Purview portal Data loss prevention Integrations page showing the Microsoft Entra Internet Access integration -->
+
+### Create a DLP policy for network data security
+
+1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
+1. Select **Data loss prevention** > **Policies** > **+ Create policy**.
+1. Select **Inline web traffic**.
+1. Select **Custom** from the **Categories** list and then select **Custom policy** from the **Regulations** list.
+1. Select **Next**.
+1. Enter a policy name and description, then select **Next**.
+1. Configure the cloud apps to monitor:
+    1. Select **+ Add cloud apps**.
+    1. On the **Adaptive app scopes** tab, choose the app categories you want to protect against (for example, **All unmanaged AI apps**).
+    1. Select **Add**.
+1. Select **Next**.
+1. On the **Choose where to enforce the policy** page, ensure **Network** is enabled, then select **Next**.
+
+    > [!NOTE]
+    > You can only select **Network** when pay-as-you-go billing is set up. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
+
+1. Select **Create or customize advanced DLP rules** and select **Next**.
+1. Select **+ Create rule** and configure the rule:
+    1. Enter a **Name** and optional description.
+    1. Under **Conditions**, select **+ Add condition** > **Content contains**.
+    1. Add the **sensitive information types** or **sensitivity labels** that match your organization's data protection requirements.
+    1. Under **Actions**, select **+ Add an action** > **Restrict browser and network activities**.
+    1. Select **File uploaded to or shared with cloud or AI apps** and set the action to **Audit** or **Block** as appropriate.
+    1. Configure **Incident reports** and alert settings as needed.
+    1. Select **Save**.
+1. Review the rule, ensure its status is **On**, and select **Next**.
+1. On the **Policy mode** page, choose **Turn the policy on immediately** (or run in simulation mode first to test).
+1. Select **Next**, review the policy, and select **Submit**.
+
+> [!NOTE]
+> Microsoft Entra Global Secure Access supports file activities only. Text-based activities in the DLP policy apply to other integrated SASE solutions but not to Global Secure Access.
+
+For a detailed walkthrough with example configurations, see [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI](/purview/dlp-create-policy-ai-network-data-security).
+
 ## Test the file policy
 Test the configuration by attempting to upload or download files that match the file policy conditions. Verify that the policy settings block or allow the actions.
 
@@ -157,6 +222,7 @@ To view traffic logs:
 ## Related content
 
 - [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn)
+- [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI](/purview/dlp-create-policy-ai-network-data-security)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)
