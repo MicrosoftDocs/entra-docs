@@ -13,7 +13,7 @@ This guide covers the steps required to deploy and enforce Token Protection for 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
 
 > [!IMPORTANT]
-> Apple's native Mail and Calendar apps don't support Token Protection. Users relying on these applications will be blocked when the policy is enforced. Communicate this behavior to affected users before deployment.
+> Apple's native Mail and Calendar apps don't support Token Protection. Users will be blocked from accessing resources protected by Token Protection when the policy is enforced. Communicate this behavior to affected users before deployment.
 
 ## Prerequisites
 

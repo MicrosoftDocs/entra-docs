@@ -46,7 +46,7 @@ Token Protection can be applied to the following applications:
 
 ### Resources
 
-Token Protection on Apple platforms can be used to protect the following resources:
+Token Protection on Windows platforms can be used to protect the following resources:
 
 - Exchange Online
 - SharePoint Online
