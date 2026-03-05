@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenantname>.peoplecart.com/SignIn.aspx`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Peoplecart Client support team](https://peoplecart.com/ContactUs.aspx) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact the Peoplecart Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -94,11 +94,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Peoplecart SSO
 
-To configure single sign-on on **Peoplecart** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Peoplecart support team](https://peoplecart.com/ContactUs.aspx). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Peoplecart** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to the Peoplecart support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Peoplecart test user
 
-In this section, you create a user called Britta Simon in Peoplecart. Work with [Peoplecart support team](https://peoplecart.com/ContactUs.aspx) to add the users in the Peoplecart platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Peoplecart. Work with the Peoplecart support team to add the users in the Peoplecart platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
