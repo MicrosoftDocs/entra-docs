@@ -13,12 +13,12 @@ The Recovery History page in Microsoft Entra Backup and Recovery provides visibi
 
 Recovery history includes:
 
-- The final status of the recovery (Completed or Failed)
+- The final status of the recovery
 - The backup point used for each recovery
 - The start and completion time of the recovery
 - The number of objects and links modified
 
-Recovery history is retained for a limited time and is intended for recent operational review and troubleshooting. Recovery history data is available for up to 5 days.
+Recovery history is intended for recent operational review and troubleshooting. Recovery history data is retained for up to 5 days after the recovery completion time.
 
 ## Prerequisites
 
@@ -35,8 +35,8 @@ To view available recovery history in your tenant, you must be assigned at least
    The Recovery History page displays all recent recovery operations for your tenant. You can:
 
    - View the **Recovery ID** for each operation.
-   - Check the **Status** (Completed or Failed).
-   - See the backup timestamp and **Backup ID** used.
+   - Check the **Status**.
+   - See the **Backup timestamp** and **Backup ID** used.
    - Review when the recovery started and completed.
    - See how many objects and links were modified.
    - Filter or search recovery records to narrow results.
@@ -44,11 +44,22 @@ To view available recovery history in your tenant, you must be assigned at least
    :::image type="content" source="media/review-recovery-history/recovery-history-details.png" alt-text="Screenshot of the Recovery History page showing three recovery operations with Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, and Filtered by columns.":::
 
 > [!NOTE]
-> Backup and recovery history is automatically cleaned up and is only available for a limited time (currently up to 5 days).
+> Recovery history is automatically cleaned up 5 days after recovery completion time.
+
+### Recovery statuses
+
+Recovery operations move through the following statuses as changes are applied to the tenant. These statuses indicate the progress and outcome of the recovery job.
+
+- **Loading data**: The system is loading data from the selected backup to prepare for recovery. If the backup has already been used to create a difference report or a prior recovery, this step might complete quickly.
+- **In progress**: The system is applying recovery actions to restore objects from the backup state. The duration of this step depends on the number and type of changes being applied.
+- **Completed**: The recovery completed successfully, and all supported changes were applied.
+- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. You can review the failed changes to understand which items weren't fully restored and why.
+- **Failed**: The recovery couldn't be completed due to an error. Some changes might not have been applied.
+- **Canceled**: The recovery was canceled before completion.
 
 ## Review failed changes
 
-If a recovery operation partially succeeds, the **Status** column indicates "Completed with Warnings," allowing you to quickly identify issues that require attention.
+If a recovery operation partially succeeds, the **Status** column indicates "Completed with Warnings," allowing you to quickly identify objects that weren't recovered.
 
 :::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png" alt-text="Screenshot of the Failed recovery changes page showing recovery job details including Recovery job ID, Status Completed, Backup timestamp, Recovery started and completed times, and a table listing the Adele Vance user object with a Restore recovery action, one changed attribute, and Error Code 400.":::
 
@@ -64,4 +75,5 @@ Use failed recovery entries to:
 
 :::image type="content" source="media/review-recovery-history/failed-recovery-details.png" alt-text="Screenshot of the Recovery History page showing a recovery operation with Completed with Warnings status indicated by a warning triangle icon, alongside other completed recovery operations.":::
 
-Failed recovery records remain available only within the recovery history retention window. After cleanup, these records are no longer accessible.
+> [!NOTE]
+> Failed recovery records remain available within the recovery history retention window and are cleaned up 5 days after the recovery completion time.

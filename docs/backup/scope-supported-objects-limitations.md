@@ -149,9 +149,17 @@ When a backup is accessed for the first time, either through creating a differen
 
 Once data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
+### Hard-deleted objects
+
+Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
+
 ### Objects synced from on-premises
 
-Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery.
+Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from Active Directory Domain Services (AD DS). For certain object types, such as groups, the source of authority can be moved from AD DS to the cloud, making all Microsoft Entra Backup and Recovery functionality available for those converted objects. Backup and recovery of objects managed in AD DS should be handled using an alternative solution.
+
+### Broader recoverability
+
+Microsoft Entra Backup and Recovery should be used as part of a broader approach to recoverability that helps your organization be more resilient. To minimize the occurrence and impact of malicious and accidental directory data loss, follow [recoverability best practices in Microsoft Entra ID](/entra/architecture/recover-from-deletions), including establishment of preventative operational security measures, regular documentation of known good state using Microsoft Graph APIs, and preparatory processes needed to recover from deletion and misconfiguration.
 
 ### Dynamic groups
 

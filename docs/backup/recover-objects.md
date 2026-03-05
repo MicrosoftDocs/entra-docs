@@ -43,6 +43,9 @@ Use this method when you already created a difference report and reviewed the ch
 
    :::image type="content" source="media/recover-objects/recover-single-object.png" alt-text="Screenshot of the View changed attributes panel for a user object, with a confirmation dialog asking to recover the specific object.":::
 
+> [!NOTE]
+> Difference reports are a point-in-time comparison. If objects are modified in the tenant after the report is created, those changes aren't reflected in the report. When you recover from a difference report, recovery is applied to the tenant's most current state, which might result in updates beyond what is shown in the report.
+
 ## Recover directly from a backup
 
 While creating a difference report is recommended to preview changes, you can also recover directly from a backup without first creating a difference report.
@@ -69,6 +72,9 @@ While creating a difference report is recommended to preview changes, you can al
 
 1. Select **Recover** to start the recovery job.
 
+> [!WARNING]
+> Recovery actions are applied directly to your tenant and can't be automatically undone. Review changes in a difference report before starting recovery. To return objects to a pre-recovery state, you must manually reverse the changes recorded in audit logs.
+
 ## Cancel a recovery
 
 You can cancel a recovery job while it's running. Any recovery actions taken before cancelation remain applied.
@@ -79,12 +85,8 @@ You can cancel a recovery job while it's running. Any recovery actions taken bef
 
    :::image type="content" source="media/recover-objects/cancel-recovery-job.png" alt-text="Screenshot of the Recovery History page showing completed and in-progress recovery jobs, with the Cancel button visible in the toolbar.":::
 
-> [!WARNING]
-> Recovery actions are applied directly to your tenant and can't be automatically undone. Review changes in a difference report before starting recovery. To return objects to a pre-recovery state, you must manually reverse the changes recorded in audit logs.
-
 > [!NOTE]
 > - Hard-deleted objects can't be recovered. Use Protected Actions to prevent unwanted hard deletions in your tenant.
-> - Dynamic group memberships might continue to update after a recovery completes.
 
 ## Related content
 

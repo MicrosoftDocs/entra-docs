@@ -22,11 +22,12 @@ Key details:
 - You can create multiple difference reports from the same backup, but only one report can run at a time.
 - Difference reports are retained for up to five days after completion.
 
-Create a difference report before starting recovery so you can review and understand the changes in your tenant.
+> [!TIP]
+> Create a difference report before starting recovery so you can review and understand the changes in your tenant.
 
 ## Prerequisites
 
-To create or review difference reports, you must have the **Entra Backup Reader** role or higher assigned.
+To review difference reports, you must have the **Entra Backup Reader** role assigned. To review and create difference reports, you must have the **Entra Backup Administrator** role assigned.
 
 ## Scope a difference report
 
@@ -74,6 +75,16 @@ You can cancel a difference report while it's in progress. Canceled reports don'
 
    :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png" alt-text="Screenshot of the Difference Reports page showing one report in progress and two completed reports, with the Cancel button visible in the toolbar.":::
 
+## Difference report statuses
+
+Difference reports move through the following statuses as they are created and processed. These statuses help you understand what stage the report is in and what to expect next.
+
+- **Loading data**: The system is loading data from the selected backup so it can be compared with the current tenant state. If the backup has already been used to create a difference report or a prior recovery, this step might complete quickly.
+- **In progress**: The system is calculating differences between the backup and the current tenant state. The duration of this step depends on the number of objects and the scope of the report.
+- **Completed**: The difference report has finished processing and is ready for review.
+- **Failed**: The difference report couldn't be generated due to an error.
+- **Canceled**: The difference report was canceled before completion.
+
 ## Review a difference report
 
 1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, the backup used for comparison (including its ID, timestamp, and availability), the scoping criteria, creation and completion times, and the number of objects and links included in the report.
@@ -98,7 +109,7 @@ You can cancel a difference report while it's in progress. Canceled reports don'
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-changed-links.png" alt-text="Screenshot of the View changed links panel for a group object, showing group membership changes that would be reverted by recovery.":::
 
-   - **Recovery action**—The action that would be applied if the object is recovered. Possible values include **Update** (revert changed attributes on an existing object), **Restore** (restore a soft-deleted object), and **Soft delete** (soft-delete an object that was created after the backup).
+   - **Recovery action**—The action that would be applied if the object is recovered. Possible values include **Update** (revert changed attributes and/or links on an existing object), **Restore** (restore a soft-deleted object), and **Soft delete** (soft-delete an object that was created after the backup).
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-recovery-action.png" alt-text="Screenshot of the difference report detail page with the Recovery Action column highlighted, showing Update and Restore actions for each object.":::
 

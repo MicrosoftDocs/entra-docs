@@ -18,6 +18,8 @@ Microsoft Entra Backup and Recovery takes backups automatically. Only supported 
 - Conditional access policies
 - Named location policies
 - Authentication method policies
+- Authorization policies
+- Organization
 
 For a full list of supported attributes, see [Supported objects and attributes](scope-supported-objects-limitations.md).
 
@@ -92,7 +94,7 @@ Entra Backup and Recovery doesn't create new objects or hard-delete objects from
 > [!WARNING]
 > - Hard-deleted objects can't be recovered. Configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to prevent unwanted hard deletions.
 > - On-premises synchronized objects can't be recovered through Entra Backup, because the source of authority is on-premises Active Directory. Recover these objects in on-premises Active Directory instead. Changes to synced objects still appear in difference reports.
-> - Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants aren't supported.
+> - Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants and B2C tenants aren't supported.
 
 ## Related content
 
