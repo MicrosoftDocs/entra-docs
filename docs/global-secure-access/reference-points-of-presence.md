@@ -53,6 +53,7 @@ The table lists the deployment status for the EMEA region.
 | France South            | Marseille, France            | ✅ | ✅ |
 | France Central          | Paris, France                | ✅ | ✅ |
 | Israel Central          | Tel Aviv, Israel             | ✅ | ✅ |
+| Austria East            | Vienna, Austria              | ✅ |     |
 | Poland Central          | Warsaw, Poland               | ✅ | ✅ |
 | Switzerland North       | Zurich, Switzerland          | ✅ | ✅ |
 

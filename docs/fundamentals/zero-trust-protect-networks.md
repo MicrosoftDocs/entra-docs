@@ -2,10 +2,8 @@
 title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 02/11/2026
+ms.date: 03/02/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -55,6 +53,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Threat intelligence filtering protects internet traffic
 [!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
 
+### File transfer policies are configured to prevent data exfiltration
+[!INCLUDE [25413](../includes/secure-recommendations/25413.md)]
+
 ### AI Gateway protects enterprise generative AI applications from prompt injection attacks
 [!INCLUDE [25415](../includes/secure-recommendations/25415.md)]
 
@@ -73,8 +74,8 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
 
-### Source IP restoration is enabled
-[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
+### Global Secure Access signaling for Conditional Access is enabled
+[!INCLUDE [25380](../includes/secure-recommendations/25380.md)]
 
 ### Network traffic is routed through Global Secure Access for security policy enforcement
 [!INCLUDE [25381](../includes/secure-recommendations/25381.md)]
@@ -85,8 +86,17 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Private network connectors are active and healthy to maintain Zero Trust access to internal resources
 [!INCLUDE [25391](../includes/secure-recommendations/25391.md)]
 
+### Private network connectors are running the latest version
+[!INCLUDE [25392](../includes/secure-recommendations/25392.md)]
+
+### At least two Private Access connectors are active and healthy per connector group
+[!INCLUDE [25466](../includes/secure-recommendations/25466.md)]
+
 ### Private DNS is configured for internal name resolution
 [!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
+
+### DNS traffic for internal domains is routed through Private Access
+[!INCLUDE [25400](../includes/secure-recommendations/25400.md)]
 
 ### Intelligent Local Access is enabled and configured
 [!INCLUDE [25405](../includes/secure-recommendations/25405.md)]
@@ -102,6 +112,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access
 [!INCLUDE [25398](../includes/secure-recommendations/25398.md)]
+
+### Private Access sensors are enforcing strong authentication policies on domain controllers
+[!INCLUDE [25403](../includes/secure-recommendations/25403.md)]
 
 ### Quick Access has user or group assignments
 [!INCLUDE [25480](../includes/secure-recommendations/25480.md)]

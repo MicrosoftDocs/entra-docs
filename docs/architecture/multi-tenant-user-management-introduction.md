@@ -1,13 +1,9 @@
 ---
 title: Configuring multitenant user management in Microsoft Entra ID
 description: Learn about the different patterns used to configure user access across Microsoft Entra tenants with guest accounts
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 04/19/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Multitenant user management introduction

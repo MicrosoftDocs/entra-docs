@@ -2,11 +2,8 @@
 title:  Agent users in Microsoft Entra Agent ID
 description: This article explains the concept of agent users, how they function within Microsoft Entra ID, and their relationship with agent identities.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
 ms.topic: concept-article
 
 #customer intent: As a developer or IT administrator, I want to understand agent users and their capabilities so that I can determine when to create them and how to manage agents that need to act as digital workers in my organization.

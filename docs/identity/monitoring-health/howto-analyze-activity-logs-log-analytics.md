@@ -1,13 +1,8 @@
 ---
 title: Analyze activity logs using Log Analytics
 description: Learn how to analyze audit, sign-in, and provisioning logs Microsoft Entra ID using Log Analytics queries.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 11/08/2024
-ms.author: sarahlipsey
+ms.date: 02/27/2026
 ms.reviewer: egreenberg
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to integrate Microsoft Entra activity logs with Azure Monitor logs so that I can analyze the logs with Log Analytics.
@@ -132,6 +127,49 @@ AADProvisioningLogs
 | where tostring(SourceIdentity.identityType) == "Group"
 | project tostring(ServicePrincipal.Id), tostring(ServicePrincipal.Name), ModifiedProperties, JobId, Id, CycleId, ChangeId, Action, SourceIdentity.identityType, SourceIdentity.details, TargetIdentity.identityType, TargetIdentity.details, ProvisioningSteps
 | take 100
+```
+
+## Multiple sign-in records in Log Analytics
+
+When you analyze Microsoft Entra ID sign-in logs, you might notice that Log Analytics shows multiple records for a single user sign-in, while the Microsoft Entra ID sign-in logs view displays only one. This behavior is expected.
+
+### Why multiple records appear
+
+During an interactive sign-in, a user might generate several requests that all share the same correlation ID. For example:
+
+1. The user tries to sign in and is prompted for multifactor authentication (MFA).
+1. The first MFA attempt fails.
+1. The user retries MFA and succeeds.
+
+In the Microsoft Entra ID sign-in logs, these related requests are merged into a single sign-in event. The portal aggregates all activity with the same correlation ID and reports the final outcome, so the sign-in appears as successful.
+
+Every request is sent individually, which means Log Analytics shows:
+
+- The intermediate failure entries.
+- The final successful entry.
+
+All entries share the same correlation ID.
+
+### Interpret these logs
+
+Because Log Analytics displays each request, it might seem like there are duplicates. However, these entries are distinct steps of a single sign-in flow.
+
+To interpret these events correctly:
+
+1. Group all records by correlation ID.
+1. Use the final status for that correlation ID as the effective result.
+1. Optionally, merge records in KQL to create an aggregated view similar to the Microsoft Entra admin center.
+
+The following example shows how to merge records by correlation ID:
+
+```kusto
+SigninLogs
+| summarize
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated),
+    FinalStatus = arg_max(TimeGenerated, ResultType, ConditionalAccessStatus),
+    Count = count()
+    by CorrelationId, UserPrincipalName
 ```
 
 ## Related content

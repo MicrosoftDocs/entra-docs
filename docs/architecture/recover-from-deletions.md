@@ -1,15 +1,11 @@
 ---
 title: Recover from deletions in Microsoft Entra ID
 description: Understand the difference between soft and hard deletions and how to recover or recreate objects in Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 11/03/2025
-ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 # Recover from deletions
 

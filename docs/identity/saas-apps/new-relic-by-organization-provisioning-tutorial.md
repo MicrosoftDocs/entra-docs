@@ -3,10 +3,6 @@ title: Configure New Relic by Organization for automatic user provisioning with 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to New Relic by Organization.
 
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
