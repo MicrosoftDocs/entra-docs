@@ -66,7 +66,7 @@ When two users in the source tenant have the same mail, and they both need to be
 
 - B2B users are unable to manage certain Microsoft 365 services in remote tenants (such as Exchange Online), as there's no directory picker.
 - To learn about Azure Virtual Desktop support for B2B users, see [Prerequisites for Azure Virtual Desktop](/azure/virtual-desktop/prerequisites?tabs=portal).
-- For the latest status on Power BI support for external member users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite)
+- For the latest status on Power BI support for external member users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b)
 ::: zone-end
 
 ## Authorization 
