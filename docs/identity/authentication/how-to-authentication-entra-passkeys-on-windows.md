@@ -1,7 +1,7 @@
 ---
 title: Enable Microsoft Entra passkeys on Windows devices (preview)
 description: Explains Microsoft Entra passkeys on Windows devices and how admins can enable them for work or school accounts for phishing-resistant multifactor authentication.
-#customer intent: As an administrator, I want to enable Microsoft Entra passkeys can users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
+#customer intent: As an administrator, I want to enable Microsoft Entra passkeys so users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
 author: hanki71
 ms.author: justinha
 ms.date: 02/18/2026
@@ -38,7 +38,7 @@ Windows Hello acts as a secure local credential container on Windows devices. Th
 
 Microsoft Entra passkeys on Windows allow passkeys (FIDO2) to be created and stored inside this Windows Hello container and used for authentication to Microsoft Entra ID.
 
-This behavior is also applicable when the device is governed by Windows Hello for Business policies configured through Microsoft Intune. However, passkeys (FIDO2) are distinct from the Windows Hello for Business credentials that may be automatically registered during device registration to Microsoft Entra ID.
+This behavior also applies when the device is governed by Windows Hello for Business policies configured through Microsoft Intune. However, passkeys (FIDO2) are distinct from the Windows Hello for Business credentials that may be automatically registered during device registration to Microsoft Entra ID.
 
 ## Supported Windows Hello passkey authenticators (AAGUIDs)
 
@@ -46,9 +46,9 @@ During public preview, Windows Hello passkeys are identified and controlled usin
 
 | Windows Hello authenticator | AAGUID | Description |
 |----|----|----|
-| Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 | Private key stored in a hardware based TPM. |
+| Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 | Private key stored in a hardware-based TPM. |
 | Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 | Virtualization-based Security (VBS) uses hardware virtualization and the Windows hypervisor to store private keys in the host machine's TPM. |
-| Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 | Private key stored in a software based TPM. |
+| Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 | Private key stored in a software-based TPM. |
 
 These AAGUIDs represent Windows Hello‑backed passkey providers and are used in passkey profiles to allow or block registration.
 
@@ -64,7 +64,7 @@ Although both features use Windows Hello, Microsoft Entra passkeys on Windows an
 - Windows Hello for Business enables device sign‑in using facial recognition, fingerprint, or PIN protected by Windows Hello.
 - Windows Hello for Business provides single sign‑on (SSO) to Microsoft Entra–integrated resources after device sign‑in.
 - Windows Hello for Business is primarily a device‑bound sign‑in method linked to device trust.
-- Registration and authentication are not controlled by the Entra Authentication Methods Passkey (FIDO2) policy.
+- Registration and authentication are not controlled by the Microsoft Entra Authentication Methods Passkey (FIDO2) policy.
 
 ### Microsoft Entra passkeys on Windows
 
@@ -73,7 +73,7 @@ Although both features use Windows Hello, Microsoft Entra passkeys on Windows an
 - Users can register multiple passkeys for multiple Microsoft Entra accounts on the same device.
 - Registration and authentication are controlled by using Microsoft Entra Authentication Methods Passkey (FIDO2) policy.
 
-In the majority of cases, if a user has Windows Hello for Business credential, Microsoft Entra prevents them from also registering a passkey (FIDO2) for the same account in the same Windows Hello container to avoid user confusion.
+In the majority of cases, if a user has a Windows Hello for Business credential, Microsoft Entra prevents them from also registering a passkey (FIDO2) for the same account in the same Windows Hello container to avoid user confusion.
 
 | Feature | Microsoft Entra passkey on Windows | Windows Hello for Business |
 |---|---|---|
@@ -90,18 +90,18 @@ Many organizations use Windows Hello for Business for managed devices, and use M
 
 Use Microsoft Entra passkeys on Windows when:
 
-- You want passkeys (FIDO2) stored locally on Windows
-- Users sign in from unregistered, personal, or shared devices
-- Users access multiple Microsoft Entra accounts from a single PC
-- You want authentication governed by passkey profiles
-- You need a standards-based, phishing-resistant sign-in method without device join
+- You want passkeys (FIDO2) stored locally on Windows.
+- Users sign in from unregistered, personal, or shared devices.
+- Users access multiple Microsoft Entra accounts from a single PC.
+- You want authentication governed by passkey profiles.
+- You need a standards-based, phishing-resistant sign-in method without device join.
 
 Use Windows Hello for Business when:
 
-- You manage corporate owned, Entra joined or registered devices
-- You want automatic credential provisioning during device onboarding
-- You require tight coupling between device identity and authentication
-- You rely on existing Windows Hello for Business lifecycle and policy controls
+- You manage corporate-owned, Entra joined or registered devices.
+- You want automatic credential provisioning during device onboarding.
+- You require tight coupling between device identity and authentication.
+- You rely on existing Windows Hello for Business lifecycle and policy controls.
 
 ## Attestation support
 
@@ -118,7 +118,7 @@ To enable registration, all of the following prerequisites and configuration req
 ### Prerequisites
 
 - Windows 10 or Windows 11
-- Device must be capable of Windows Hello
+- Device must support Windows Hello
 
 ### Required configuration
 
