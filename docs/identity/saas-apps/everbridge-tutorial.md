@@ -28,6 +28,7 @@ The scenario outlined in this article assumes that you already have the followin
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * EverBridge supports IDP-initiated SSO.
+* EverBridge supports SP-initiated SSO.
 
 ## Add EverBridge from the Gallery
 
@@ -71,37 +72,41 @@ Follow these steps to enable Microsoft Entra SSO.
     >[!NOTE]
 	>Configure the application either as the manager portal *or* as the member portal on both the Azure portal and the EverBridge portal.
 
-4. To configure the **EverBridge** application as the **EverBridge manager portal**, in the **Basic SAML Configuration** section, follow these steps:
+5. To configure the **EverBridge** application as the **EverBridge manager portal**, in the **Basic SAML Configuration** section, follow these steps:
 
     a. In the **Identifier** box, enter a URL that follows the pattern.
     `https://sso.everbridge.net/<API_Name>`
 
     b. In the **Reply URL** box, enter a URL that follows the pattern.
-    `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
+    * If you are configuring an account level SSO, use
+      `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
+
+    * If you are configuring an org level SSO, use
+      `https://manager.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Reply URL values. To get these values, contact the [EverBridge support team](mailto:support@everbridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in Everbridge Manager Portal
 
-5. To configure the **EverBridge** application as the **EverBridge member portal**, in the **Basic SAML Configuration** section, follow these steps:
+6. To configure the **EverBridge** application as the **EverBridge member portal**, in the **Basic SAML Configuration** section, follow these steps:
 
-  * If you want to configure the application in IDP-initiated mode, follow these steps:
+    * If you want to configure the application in IDP-initiated mode, follow these steps:
 
-    a. In the **Identifier** box, enter a URL that follows the pattern `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
+       a. In the **Identifier** box, enter a URL that follows the pattern `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
 
-    b. In the **Reply URL** box, enter a URL that follows the pattern `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
+       b. In the **Reply URL** box, enter a URL that follows the pattern `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
    * If you want to configure the application in SP-initiated mode, select **Set additional URLs** and follow this step:
 
      a. In the **Sign on URL** box, enter a URL that follows the pattern `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
      > [!NOTE]
-     > These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign on URL values. To get these values, contact the [EverBridge support team](mailto:support@everbridge.com). You also can refer to the patterns shown in the **Basic SAML Configuration** section.
+     > The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in Everbridge Manager Portal
 
-6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML**. Save it on your computer.
+7. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML**. Save it on your computer.
 
 	![Certificate download link](common/metadataxml.png)
 
-7. In the **Set up EverBridge** section, copy the URLs you need for your requirements:
+8. In the **Set up EverBridge** section, copy the URLs you need for your requirements:
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -113,33 +118,35 @@ Follow these steps to enable Microsoft Entra SSO.
 
 To configure SSO on **EverBridge** as an **EverBridge manager portal** application, follow these steps.
  
-1. In a different web browser window, sign in to EverBridge as an administrator.
+1. In a different web browser window, sign in to EverBridge Manager Portal as an account or org administrator.
 
-1. In the menu on the top, select the **Settings** tab. Under **Security**, select **Single Sign-On for Manager Portal**.
+1. From the menu on the left, select the **Settings** menu. Under **Security**, select **Single Sign-On for Manager Portal**.
    
-     ![Configure single sign-on](./media/everbridge-tutorial/settings.png)
+     ![Configure single sign-on](./media/everbridge-tutorial/sso-settings.png)
    
-     a. In the **Name** box, enter the name of the identifier provider. An example is your company name.
+     a. In the **Name** box, enter the name of this setting. An example is your company name.
    
-     b. In the **API Name** box, enter the name of the API.
+     b. In the **API Name** box, enter the name of the API. This is the unique identifier for your SSO configuration.
    
-     c. Select **Choose File** to upload the metadata file that you downloaded.
-   
-     d. For **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
-   
-     e. In the **Identity Provider Login URL** box, paste the **Login URL** value that you copied.
-   
-     f. For **Service Provider initiated Request Binding**, select **HTTP Redirect**.
+     c. Pick the **Identity Provider** from the dropdown list. If not found, choose "Other" and provide the name.
 
-     g. Select **Save**.
+     d. Choose the **Service Provider Certificate** you would like to use. The certificate of 3072 bit length is recommended. 
+   
+     e. Click **Upload** to upload the metadata file that you downloaded from your IDP.
+   
+     f. For **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
+   
+     g. In the **Identity Provider Login URL** box, paste the **Login URL** value that you copied.
+   
+     h. For **Service Provider initiated Request Binding**, select **HTTP Redirect**.
 
-## Configure EverBridge as EverBridge member portal SSO
+     i. Click **Save**.
 
-To configure single sign-on on **EverBridge** as an **EverBridge member portal**, send the downloaded **Federation Metadata XML** to the [EverBridge support team](mailto:support@everbridge.com). They set this setting to have the SAML SSO connection set properly on both sides.
+
 
 ### Create EverBridge test user
 
-In this section, you create the test user Britta Simon in EverBridge. To add users in the EverBridge platform, work with the [EverBridge support team](mailto:support@everbridge.com). Users must be created and activated in EverBridge before you use single sign-on. 
+Create a test user in EverBridge. Ensure the "SSO User ID" field of the user matches the user's identifier in your IDP. 
 
 ## Test SSO
 
