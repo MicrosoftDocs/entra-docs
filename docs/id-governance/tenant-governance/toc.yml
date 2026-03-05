@@ -15,7 +15,7 @@
     - name: Related tenants
       href: related-tenants.md
     - name: Signals and metrics
-      href: signals-and-metrics.md
+      href: signals-metrics.md
   - name: Governance relationships
     items:
     - name: Governance relationships

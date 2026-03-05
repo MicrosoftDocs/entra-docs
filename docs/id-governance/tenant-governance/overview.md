@@ -10,7 +10,7 @@ ms.date: 03/05/2026
 
 # What is Microsoft Entra tenant governance?
 
-[!INCLUDE [entra-id-governance-license.md](~/includes/entra-id-governance-license.md)]
+[!INCLUDE [entra-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 Microsoft Entra tenant governance helps organizations discover, manage, and govern tenants across their environment with centralized policies and cross-tenant delegated administration.
 
