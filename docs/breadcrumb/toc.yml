@@ -20,7 +20,7 @@ items:
     - name: Architecture
       tocHref: /entra/architecture/
       topicHref: /entra/architecture/
-    - name: Backup and Recovery
+    - name: Microsoft Entra Backup and Recovery
       tocHref: /entra/backup/
       topicHref: /entra/backup/
     - name: Global Secure Access

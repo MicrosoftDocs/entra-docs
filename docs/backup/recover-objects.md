@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Recover objects using Microsoft Entra Backup (Preview)
 
-Recovery restores supported objects to a previous known-good state using Entra backups. Recovery includes the restoration, soft-deletion, and editing of objects and attributes supported by Entra Backup and Recovery.
+Recovery restores supported objects to a previous known-good state using Microsoft Entra Backup and Recovery. Recovery includes the restoration, soft-deletion, and editing of objects and attributes supported by the service.
 
 Key details:
 
