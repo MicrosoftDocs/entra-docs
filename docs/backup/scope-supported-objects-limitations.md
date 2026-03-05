@@ -1,7 +1,7 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup
 description: Learn which Microsoft Entra object types and properties are supported for backup and recovery, and understand current limitations.
-ms.date: 03/02/2026
+ms.date: 03/05/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
@@ -39,6 +39,7 @@ Recovery for user objects supports the following properties:
 - `Mobile`
 - `OtherMail`
 - `PasswordPolicies`
+- `PerUserMfaState`
 - `PhysicalDeliveryOfficeName`
 - `PostalCode`
 - `PreferredDataLocation`
@@ -49,6 +50,11 @@ Recovery for user objects supports the following properties:
 - `TelephoneNumber`
 - `UsageLocation`
 - `UserPrincipalName`
+
+> [!NOTE]
+> Manager and sponsor changes aren't in scope.
+
+For reference, you can view the full set of user properties in the [Microsoft Graph user resource type](/graph/api/resources/user?view=graph-rest-1.0#properties).
 
 ## Group
 
@@ -68,15 +74,17 @@ Recovery for group objects supports the following properties:
 - `Theme`
 
 > [!NOTE]
-> Group ownership changes aren't in scope.
+> Group ownership changes aren't in scope. Dynamic groups can be restored or soft-deleted during recovery, but dynamic group rule and membership changes aren't in scope.
+
+For reference, you can view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group?view=graph-rest-1.0#properties).
 
 ## Conditional access policy
 
-All properties of conditional access policies are in scope.
+All properties of conditional access policies are in scope. View all conditional access policy properties in the [Microsoft Graph conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0#properties).
 
 ## Named location policy
 
-All properties of named location policies are in scope.
+All properties of named location policies are in scope. View all named location policy properties in the [Microsoft Graph namedLocation resource type](/graph/api/resources/namedlocation?view=graph-rest-1.0#properties).
 
 ## Authorization policy
 
@@ -88,7 +96,9 @@ Recovery for authorization policy objects supports the following properties:
 - `allowedToUseSSPR`
 - `PermissionGrantPolicyIdsAssignedToDefaultUserRole`
 
-## Authentication method policy
+For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy?view=graph-rest-1.0#properties).
+
+## Authentication methods policy
 
 Recovery supports the following authentication method policies:
 
@@ -101,7 +111,9 @@ Recovery supports the following authentication method policies:
 - Temporary Access Pass
 - Certificate-based authentication
 
-## Application objects
+For reference, you can view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration?view=graph-rest-1.0).
+
+## Application
 
 Recovery for **application** objects supports the following properties:
 
@@ -116,8 +128,18 @@ Recovery for **application** objects supports the following properties:
 - `IsDeviceOnlyAuthSupported`
 - `ServiceManagementReference`
 - `RequiredResourceAccess`
+- `NativeAuthenticationApisEnabled`
+- `SignInAudience`
+- `GroupMembershipClaims`
+- `OptionalClaims`
+- `IsDisabled`
+- `AddIns`
+- `ServicePrincipalLockConfiguration`
+- `AppInformationalUrl`
 
-## Service principal objects
+For reference, you can view the full set of application properties in the [Microsoft Graph application resource type](/graph/api/resources/application?view=graph-rest-1.0#properties).
+
+## Service principal
 
 Recovery for **service principal** objects supports the following properties:
 
@@ -131,13 +153,44 @@ Recovery for **service principal** objects supports the following properties:
 - `PreferredTokenSigningKeyThumbprint`
 - `ServicePrincipalTag`
 - `ServicePrincipalType`
+- `PreferredSingleSignOnMode`
+- `PublisherName`
+- `SamlSingleSignOnSettings`
+- `ServicePrincipalName`
 
-## Company (tenant) object
+For reference, you can view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal?view=graph-rest-1.0#properties).
 
-Recovery for the **company** object supports the following properties:
+## Organization
 
-- `StrongAuthenticationDetails`
-- `StrongAuthenticationPolicy`
+Recovery for the organization object supports the following properties:
+
+**Tenant-level per-user MFA settings:**
+
+- StrongAuthenticationDetails
+  - `availableMFAMethods`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-available-mfa-methods.png" alt-text="Screenshot showing the availableMFAMethods property under StrongAuthenticationDetails.":::
+
+  - `IsApplicationPasswordBlocked`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-app-password-blocked.png" alt-text="Screenshot showing the IsApplicationPasswordBlocked property under StrongAuthenticationDetails.":::
+
+  - `IsRememberDevicesEnabled`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-enabled.png" alt-text="Screenshot showing the IsRememberDevicesEnabled property under StrongAuthenticationDetails.":::
+
+  - `rememberDevicesDurationInDays`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-duration.png" alt-text="Screenshot showing the rememberDevicesDurationInDays property under StrongAuthenticationDetails.":::
+
+- StrongAuthenticationPolicy
+  - `enabled`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-auth-policy-enabled.png" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
+
+  - `ipAllowList`
+
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-auth-policy-ip-allowlist.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
 
 ## Limitations
 
@@ -153,14 +206,10 @@ Once data loading is complete, the operation moves into processing. For differen
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
 
-### Objects synced from on-premises
+### Objects managed in AD DS
 
 Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from Active Directory Domain Services (AD DS). For certain object types, such as groups, the source of authority can be moved from AD DS to the cloud, making all Microsoft Entra Backup and Recovery functionality available for those converted objects. Backup and recovery of objects managed in AD DS should be handled using an alternative solution.
 
 ### Broader recoverability
 
 Microsoft Entra Backup and Recovery should be used as part of a broader approach to recoverability that helps your organization be more resilient. To minimize the occurrence and impact of malicious and accidental directory data loss, follow [recoverability best practices in Microsoft Entra ID](/entra/architecture/recover-from-deletions), including establishment of preventative operational security measures, regular documentation of known good state using Microsoft Graph APIs, and preparatory processes needed to recover from deletion and misconfiguration.
-
-### Dynamic groups
-
-If your recovery scope includes dynamic groups, changes to dynamic membership rules are recovered, but membership itself is reevaluated by the dynamic group engine after recovery completes.
