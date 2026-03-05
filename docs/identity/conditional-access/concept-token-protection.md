@@ -56,7 +56,7 @@ On Windows, enforcement is also supported for:
 **Apple (Preview)**:
 - macOS 14.0 or later. Requires the Microsoft Enterprise single sign-on (SSO) plug-in. Alternatively, you can also use Platform SSO. Only MDM-managed devices are supported.
 - iOS / iPadOS 16.0 or later. Requires the Microsoft Enterprise SSO plug-in. Only MDM-managed devices are supported.
-- For detailed steps on how to setup, see [Enabling Microsoft Enterprise SSO plug-in](../../identity-platform/apple-sso-plugin.md) and configuring [Platform SSO for macOS](/intune/intune-service/configuration/platform-sso-macos).
+- For detailed steps on how to set up, see [Enabling Microsoft Enterprise SSO plug-in](../../identity-platform/apple-sso-plugin.md) and configuring [Platform SSO for macOS](/intune/intune-service/configuration/platform-sso-macos).
 
 ## Deployment
 

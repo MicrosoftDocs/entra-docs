@@ -142,7 +142,7 @@ reauthorization.
 Deploy Defender XDR workloads to alert on suspicious or anomalous behaviors surrounding token theft.
 
 - Use [Defender for Office 365](https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365) to detect and block malicious emails, links, and files
-- Use Microsoft Defender for Cloud Apps [connectors](/defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps), Microsoft 365 Defender raises AiTM-related alerts in multiple scenarios. For Entra ID customers using Microsoft Edge, attempts by attackers to replay session cookies to access cloud applications are detected by Defender for Cloud Apps connectors for [Office 365](/defender-cloud-apps/connect-office-365) and [Azure](/defender-cloud-apps/connect-azure). 
+- Use Microsoft Defender for Cloud Apps [connectors](/defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps), Microsoft Defender XDR raises AiTM-related alerts in multiple scenarios. For Entra ID customers using Microsoft Edge, attempts by attackers to replay session cookies to access cloud applications are detected by Defender for Cloud Apps connectors for [Office 365](/defender-cloud-apps/connect-office-365) and [Azure](/defender-cloud-apps/connect-azure). 
 
 Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defender for Endpoint can raise these alerts:
 

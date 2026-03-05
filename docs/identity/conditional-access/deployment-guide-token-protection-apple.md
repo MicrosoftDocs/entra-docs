@@ -103,7 +103,7 @@ Complete the following steps for *each* platform you're deploying to. These step
 
 ## Configure the report-only mode policy
 
-Before enforcing the policy, deploy it in report-only mode to assess the affect and identify noncompliant sign-in sessions.
+Before enforcing the policy, deploy it in report-only mode to assess the effect and identify noncompliant sign-in sessions.
 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1.	Browse to **Protection** > **Conditional Access** > **Policies**.
