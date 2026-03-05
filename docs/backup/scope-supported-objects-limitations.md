@@ -190,7 +190,7 @@ Recovery for the organization object supports the following properties:
 
   - `ipAllowList`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-allowlist.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-allowed-list.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
 
 ## Limitations
 
