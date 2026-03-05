@@ -1,5 +1,5 @@
 ---
-title: Supported objects and recoverable properties
+title: Supported objects and recoverable properties in Microsoft Entra Backup
 description: Learn which Microsoft Entra object types and properties are supported for backup and recovery, and understand current limitations.
 ms.date: 03/02/2026
 ms.service: entra-id

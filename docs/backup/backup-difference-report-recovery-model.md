@@ -1,5 +1,5 @@
 ---
-title: Backup, difference report, and recovery model
+title: Backup, difference report, and recovery model in Microsoft Entra Backup
 description: Understand how Microsoft Entra Backup creates backups, generates difference reports, and recovers tenant objects to a previous state.
 ms.date: 03/02/2026
 ms.service: entra-id
