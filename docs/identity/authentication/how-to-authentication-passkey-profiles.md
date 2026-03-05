@@ -19,14 +19,14 @@ Passkey profiles enable granular group-based configurations for passkey FIDO2 au
 
 A passkey profile is a named set of policy rules that governs how users in targeted groups can register and authenticate with passkeys (FIDO2). Profiles support advanced controls such as:
 
-- Enforce attestation: Enabled, Disabled
-- Target types: Device-bound, Synced
-- Target specific authenticators: Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
+| Option | Configuration |
+|--------|---------------|
+| Enforce attestation | Enabled, Disabled |
+| Target types | Device-bound, Synced |
+| Target specific authenticators | Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid). |
 
 ## Before you begin
 
-- Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
-- Users need an authenticator that supports Microsoft Entra ID's attestation requirements. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 - If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 - Policy size limit:
@@ -37,6 +37,8 @@ A passkey profile is a named set of policy rules that governs how users in targe
     - Target with 5 applied passkey profiles: 0.4 KB
     - Passkey profile with no AAGUIDs: 0.4 KB
     - Passkey profile with 10 AAGUIDs: 0.3 KB
+- Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
+- Users need an authenticator that supports Microsoft Entra ID's attestation requirements. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
 ## Enable passkey profiles 
 
@@ -48,9 +50,6 @@ A passkey profile is a named set of policy rules that governs how users in targe
 1. Select **Passkey (FIDO2)**.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
-
-   >[!NOTE]
-   >Previous **Passkey (FIDO2)** policy settings are automatically transferred to the **Default passkey profile**. Previous user targets are also automatically transferred to **Enable and target**.
 
 1. Select the **Default passkey profile**. 
 
@@ -66,9 +65,11 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. On the **Configure** tab, click **+ Add passkey profile**.
 
+1. Fill out the profile details.
+
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
-1. Fill out the profile details. The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+   The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
    Enforce attestation | No (default) | Yes
    --------------------|-----|----
