@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Access User Management](media/alexishr-provisioning-tutorial/login.png)
 
-1. Once on the Access token page, fill in the **Name** and **Description** textbox and select **Save**.A pop-up window appears with the token in it.Copy and save the token. This value is entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
+1. Once on the Access token page, fill in the **Name** and **Description** textbox and select **Save**.A pop-up window appears with the token in it. Copy and save the token. This value is entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
 
 	![Access tokens](media/alexishr-provisioning-tutorial/token.png)
 
