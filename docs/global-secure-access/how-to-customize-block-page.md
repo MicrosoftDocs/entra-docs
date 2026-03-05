@@ -9,7 +9,7 @@ ms.reviewer: kenwith
 ai-usage: ai-assisted
 ---
 
-# How to customize Global Secure Access block page (preview)
+# How to customize Global Secure Access block page
 
 Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 
@@ -35,7 +35,7 @@ The custom block page empowers you to customize the default body of the page fro
 ![Screenshot showing the preview experience in the admin portal](media/how-to-customize-block-page/custom-block-preview.png)
 
 > [!NOTE]
-> A known transient issue in public preview could result in the configuration failing. While the Microsoft team works on a fix, the current mitigation is to reconfigure the custom block page and try again.
+> A known transient issue could result in the configuration failing. The current mitigation is to reconfigure the custom block page and try again.
 
 ## Verify the block page
 
@@ -49,7 +49,7 @@ The custom block page empowers you to customize the default body of the page fro
 - The Custom body message is limited to 1024 Unicode (utf-8) characters.
 - Changes to a custom block page might take a few minutes to propagate to active sessions.
 - Custom block pages appear for TLS inspected traffic only.
-- A known transient issue in public preview could result in the configuration failing. While Microsoft team works on a fix, the current mitigation is to reconfigure the custom block page and try again.
+- A known transient issue could result in the configuration failing. The current mitigation is to reconfigure the custom block page and try again.
 - Ensure any contact information you publish complies with your organization's privacy policies.
 
 ## Next steps
