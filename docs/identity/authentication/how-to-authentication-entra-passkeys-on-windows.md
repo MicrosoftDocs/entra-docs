@@ -44,11 +44,11 @@ This behavior is also applicable when the device is governed by Windows Hello fo
 
 During public preview, Windows Hello passkeys are identified and controlled using the following Authenticator Attestation GUIDs (AAGUIDs). These AAGUIDs must be explicitly allowed in a passkey profile to enable registration.
 
-| Windows Hello authenticator | AAGUID |
-|----|----|
-| Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 |
-| Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 |
-| Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 |
+| Windows Hello authenticator | AAGUID | Description |
+|----|----|----|
+| Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 | Private key stored in a hardware based TPM. |
+| Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 | Virtualization-based Security (VBS) uses hardware virtualization and the Windows hypervisor to store private keys in the host machine's TPM. |
+| Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 | Private key stored in a software based TPM. |
 
 These AAGUIDs represent Windows Hello‑backed passkey providers and are used in passkey profiles to allow or block registration.
 
