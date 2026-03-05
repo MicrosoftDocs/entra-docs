@@ -159,8 +159,6 @@ Monitor Conditional Access enforcement of token protection before and after enfo
 
 Use Microsoft Entra sign-in log to verify the outcome of a token protection enforcement policy in report only mode or in enabled mode. 
 
-:::image type="content" source="media/deployment-guide-token-protection-windows/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/deployment-guide-token-protection-windows/sign-in-log-sample.png":::
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Select a specific request to determine if the policy is applied or not.
