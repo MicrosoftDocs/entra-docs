@@ -131,7 +131,7 @@ To enable registration, all of the following prerequisites and configuration req
 >[!NOTE]
 >During public preview, passkey registration in Windows Hello is blocked unless the Windows Hello AAGUIDs are explicitly allowed in a passkey profile. For General Availability, you won’t be required to explicitly allow Windows Hello AAGUIDs.
 
-**FAQ**
+## FAQ
 
 **Question**: Do Microsoft Entra passkeys on Windows replace Windows Hello for Business?
 
