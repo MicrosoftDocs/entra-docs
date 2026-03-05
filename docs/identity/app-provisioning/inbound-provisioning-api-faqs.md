@@ -98,7 +98,7 @@ Refer to the tutorial [Extend API-driven provisioning to sync custom attributes]
 
 You may have a scenario where you want to send all users to the API endpoint, but only include certain users in the provisioning flow and exclude the rest.
 
-You can achieve this using the **Scoping filter**. In the provisioning app configuration, you can define a source object scope and exclude certain users from processing either using an "inclusion rule" (for example, only process users where department EQUALS **Sales**) or an "exclusion rule" (for example, exclude users belonging to Sales, department NOT EQUALS **Sales**).
+You can achieve this using a **scoping filter**. In the provisioning app configuration, you can define scoping filter rules to exclude certain users from processing either using an "inclusion rule" (for example, only process users where department EQUALS **Sales**) or an "exclusion rule" (for example, exclude users belonging to Sales, department NOT EQUALS **Sales**).
  
  See [Scoping users or groups to be provisioned with scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
 

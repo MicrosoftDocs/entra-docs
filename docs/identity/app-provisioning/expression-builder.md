@@ -17,7 +17,7 @@ For reference on building expressions, see [Reference for writing expressions fo
 
 ## Finding the expression builder
 
-In application provisioning, you use expressions for attribute mappings. You access Express Builder on the attribute-mapping page by selecting **Show advanced options** and then select **Expression builder**.
+In application provisioning, you use expressions for attribute mappings. You access Expression Builder on the attribute mapping page by selecting the **Advanced Options** dropdown and then selecting **Expression builder**.
 
 :::image type="content" source="media/expression-builder/accessing-expression-builder.png" alt-text="The checkbox to show advanced settings is selected and a link is shown that says expression builder" lightbox="media/expression-builder/accessing-expression-builder.png":::
 

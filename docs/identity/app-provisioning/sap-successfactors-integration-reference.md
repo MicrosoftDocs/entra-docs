@@ -144,9 +144,8 @@ When Microsoft Entra provisioning service queries SuccessFactors, it retrieves a
 
 To retrieve more attributes, follow the steps listed:
     
-1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **attribute-mapping page**.
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**. 
+1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **Attribute Mapping** page.
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
 
    > [!NOTE] 
    > If the **Edit attribute list for SuccessFactors** option doesn't show in the Microsoft Entra admin center, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
@@ -260,8 +259,8 @@ If you're running into any of these issues or prefer mapping employment status t
 
 Use the steps to update your mapping to retrieve these codes. 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Under **Show advanced options**, click on **Edit SuccessFactors attribute list**. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Under the **Advanced Options** dropdown, select **Edit target User attributes**. 
 1. Find the attribute `emplStatus` and update the JSONPath to `$.employmentNav.results[0].jobInfoNav.results[0].emplStatusNav.externalCode`. The update makes the connector retrieve the employment status codes in the table. 
 1. Save the changes. 
 1. In the attribute mapping blade, update the expression mapping for the account status flag. 
@@ -289,9 +288,8 @@ If your HR process uses Option 2, then Employee Central adds a new *EmpEmploymen
 
 You can handle both scenarios so that the new employment data shows up when a conversion or rehire occurs. Bulk update the provisioning app schema using the steps listed:  
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor. 
 
    >![Screenshot shows the Review your schema here link that opens the schema editor.](media/sap-successfactors-integration-reference/review-schema.png#lightbox)
 
@@ -319,9 +317,8 @@ Using the JSONPath root of `$.employmentNav.results[0]` or `$.employmentNav.resu
 
 This section describes how you can update the JSONPath settings to definitely retrieve the current active employment record of the user. It also handles worker conversion and rehiring scenarios. 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor. 
 1. Click on the **Download** link to save a copy of the schema before editing. 
 1. In the schema editor, press Ctrl-H key to open the find-replace control.
 1. Perform the following find replace operations. Ensure there's no leading or trailing space when performing the find-replace operations. If you're using `[-1:]` index instead of `[0]`, then update the *string-to-find* field accordingly. 
@@ -334,7 +331,7 @@ This section describes how you can update the JSONPath settings to definitely re
 
 1. Save the schema.
 1. The above process updates all JSONPath expressions. 
-1. For prehire processing to work, the JSONPath associated with `startDate` attribute must use either `[0]` or `[-1:]` index. Under **Show advanced options**, click on **Edit SuccessFactors attribute list**. Find the attribute `startDate` and set it to the value `$.employmentNav.results[-1:].startDate`
+1. For prehire processing to work, the JSONPath associated with `startDate` attribute must use either `[0]` or `[-1:]` index. Under the **Advanced Options** dropdown, select **Edit target User attributes**. Find the attribute `startDate` and set it to the value `$.employmentNav.results[-1:].startDate`
 1. Save the schema.
 1. To ensure that terminations are processed as expected, you can use one of the following settings in the attribute mapping section.
  
@@ -356,9 +353,8 @@ When a user in Employee Central is processed for global assignment, SuccessFacto
 
 To fetch attributes belonging to the standard assignment and global assignment user profile, use the steps listed: 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor.   
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor.   
 1. Click on the **Download** link to save a copy of the schema before editing.   
 1. In the schema editor, press Ctrl-H key to open the find-replace control.
 1. In the find text box, copy, and paste the value `$.employmentNav.results[0]`
@@ -368,10 +364,9 @@ To fetch attributes belonging to the standard assignment and global assignment u
 1. The above process updates all JSONPath expressions as follows: 
    * Old JSONPath: `$.employmentNav.results[0].jobInfoNav.results[0].departmentNav.name_localized`
    * New JSONPath: `$.employmentNav.results[?(@.assignmentClass == 'ST')].jobInfoNav.results[0].departmentNav.name_localized`
-1. Reload the attribute-mapping blade of the app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**.
-1. Add new attributes to fetch global assignment data. For example: if you want to fetch the department name associated with a global assignment profile, you can add the attribute *globalAssignmentDepartment* with the JSONPath expression set to `$.employmentNav.results[?(@.assignmentClass == 'GA')].jobInfoNav.results[0].departmentNav.name_localized`. 
+1. Reload the attribute mapping page of the app. 
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
+1. Add new attributes to fetch global assignment data.For example: if you want to fetch the department name associated with a global assignment profile, you can add the attribute *globalAssignmentDepartment* with the JSONPath expression set to `$.employmentNav.results[?(@.assignmentClass == 'GA')].jobInfoNav.results[0].departmentNav.name_localized`. 
 1. You can now either flow both department values to Active Directory attributes or selectively flow a value using expression mapping. Example: the expression sets the value of AD *department* attribute to *globalAssignmentDepartment* if present, else it sets the value to *department* associated with standard assignment. 
    * `IIF(IsPresent([globalAssignmentDepartment]),[globalAssignmentDepartment],[department])`
 
@@ -385,10 +380,9 @@ To fetch attributes belonging to the standard assignment and global assignment u
 When a user in Employee Central has concurrent/multiple jobs, there are two *EmpEmployment* and *User* entities with *assignmentClass* set to "ST". 
 To fetch attributes belonging to both jobs, use the steps listed: 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**.
-1. Let's say you want to pull the department associated with job 1 and job 2. The predefined attribute *department* already fetches the value of department for the first job. You can define a new attribute called *secondJobDepartment* and set the JSONPath expression to `$.employmentNav.results[1].jobInfoNav.results[0].departmentNav.name_localized`
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
+1. Let's say you want to pull the department associated with job 1 and job 2.The predefined attribute *department* already fetches the value of department for the first job. You can define a new attribute called *secondJobDepartment* and set the JSONPath expression to `$.employmentNav.results[1].jobInfoNav.results[0].departmentNav.name_localized`
 1. You can now either flow both department values to Active Directory attributes or selectively flow a value using expression mapping. 
 1. Save the mapping. 
 1. Test the configuration using [provision on demand](provision-on-demand.md). 
@@ -411,11 +405,11 @@ Inbound user provisioning from SAP SuccessFactors to on premises Active Director
 The default behavior of the provisioning service is to process prehires in the Onboarding module. 
 
 If you want to exclude processing of prehires in the Onboarding module, update your provisioning job configuration as follows: 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app.
-1. Under show advanced options, edit the SuccessFactors attribute list to add a new attribute called `userStatus`.
+1. Open the attribute mapping page of your SuccessFactors provisioning app.
+1. Under the **Advanced Options** dropdown, select **Edit target User attributes** to add a new attribute called `userStatus`.
 1. Set the JSONPath API expression for this attribute as: `$.employmentNav.results[0].userNav.status`
-1. Save the schema to return back to the attribute mapping blade. 
-1. Edit the Source Object scope to apply a scoping filter `userStatus NOT EQUALS`
+1. Save the schema to return back to the attribute mapping page. 
+1. Select **Scoping filters** and apply a scoping filter `userStatus NOT EQUALS`.
 1. Save the mapping and validate that the scoping filter works using provisioning on demand. 
 
 > [!NOTE]
