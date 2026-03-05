@@ -1,0 +1,77 @@
+- name: Microsoft Entra tenant governance documentation
+  href: index.yml
+
+- name: Overview
+  expanded: true
+  items:
+  - name: What is tenant governance?
+    href: overview.md
+
+- name: Concepts
+  expanded: true
+  items:
+  - name: Tenant discovery
+    items:
+    - name: Related tenants
+      href: related-tenants.md
+    - name: Signals and metrics
+      href: signals-and-metrics.md
+  - name: Governance relationships
+    items:
+    - name: Governance relationships
+      href: governance-relationships.md
+    - name: Governance policy templates
+      href: governance-policy-templates.md
+    - name: Cross-tenant delegated administration
+      href: cross-tenant-delegated-administration.md
+  - name: Configuration management
+    items:
+    - name: Configuration management
+      href: configuration-management.md
+  - name: Secure tenant creation
+    items:
+    - name: Billing asset
+      href: billing-asset.md
+    - name: Tenant creation settings
+      href: tenant-creation-settings.md
+
+- name: How-to guides
+  expanded: true
+  items:
+  - name: Tenant discovery
+    items:
+    - name: Enable tenant discovery
+      href: how-to-enable-tenant-discovery.md
+    - name: How to interpret discovery data
+      href: how-to-interpret-discovery-data.md
+  - name: Governance relationships
+    items:
+    - name: Set up a governance relationship
+      href: how-to-setup-governance-relationship.md
+    - name: Use delegated administration and monitor governing tenant activity
+      href: how-to-delegated-administration.md
+    - name: Update a governance relationship
+      href: how-to-update-governance-relationship.md
+    - name: Terminate a governance relationship
+      href: how-to-terminate-governance-relationship.md
+  - name: Configuration management
+    items:
+    - name: Author a configuration baseline
+      href: how-to-author-configuration-baseline.md
+    - name: Setup permissions for tenant monitoring
+      href: how-to-setup-permissions-tenant-monitoring.md
+    - name: Create a monitor
+      href: how-to-create-monitor.md
+    - name: See monitor results and configuration drifts
+      href: how-to-see-monitor-results.md
+    - name: Update or delete a monitor
+      href: how-to-update-delete-monitor.md
+  - name: Secure tenant creation
+    items:
+    - name: Create a tenant
+      href: how-to-create-tenant.md
+
+- name: Reference
+  items:
+  - name: FAQ
+    href: faq.yml

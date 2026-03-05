@@ -27,8 +27,10 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Tenant discovery
-            url: tenant-discovery.md
+          - text: Related tenants
+            url: related-tenants.md
+          - text: Signals and metrics
+            url: signals-and-metrics.md
           - text: Governance relationships
             url: governance-relationships.md
           - text: Governance policy templates
@@ -37,8 +39,6 @@ landingContent:
             url: cross-tenant-delegated-administration.md
           - text: Configuration management
             url: configuration-management.md
-          - text: Secure tenant creation
-            url: secure-tenant-creation.md
 
   # Card
   - title: How-to guides
@@ -51,20 +51,10 @@ landingContent:
             url: how-to-setup-governance-relationship.md
           - text: Use delegated administration and monitor activity
             url: how-to-delegated-administration.md
-          - text: Create a tenant securely
-            url: how-to-create-tenant-securely.md
-
-  # Card
-  - title: Get started
-    linkLists:
-      - linkListType: quickstart
-        links:
-          - text: Get started with tenant governance
-            url: quickstart-get-started.md
-      - linkListType: deploy
-        links:
-          - text: End-to-end deployment guide
-            url: deployment-guide.md
+          - text: Author a configuration baseline
+            url: how-to-author-configuration-baseline.md
+          - text: Create a tenant
+            url: how-to-create-tenant.md
 
   # Card
   - title: Reference

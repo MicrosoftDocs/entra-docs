@@ -1,0 +1,18 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently asked questions for Microsoft Entra tenant governance
+  description: Find answers to common questions about Microsoft Entra tenant governance, including tenant discovery, governance relationships, and configuration management.
+  author: barclayn
+  ms.author: barclay
+  ms.service: entra-id-governance
+  ms.topic: faq
+  ms.date: 03/05/2026
+title: Frequently asked questions for tenant governance
+summary: |
+  This article answers frequently asked questions about Microsoft Entra tenant governance.
+sections:
+  - name: General
+    questions:
+      - question: What is Microsoft Entra tenant governance?
+        answer: |
+          Microsoft Entra tenant governance helps organizations discover, manage, and govern tenants across their environment with centralized policies and cross-tenant delegated administration.
