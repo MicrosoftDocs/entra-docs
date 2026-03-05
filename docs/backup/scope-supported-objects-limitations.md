@@ -54,7 +54,7 @@ Recovery for user objects supports the following properties:
 > [!NOTE]
 > Manager and sponsor changes aren't in scope.
 
-For reference, you can view the full set of user properties in the [Microsoft Graph user resource type](/graph/api/resources/user?view=graph-rest-1.0#properties).
+For reference, you can view the full set of user properties in the [Microsoft Graph user resource type](/graph/api/resources/user#properties).
 
 ## Group
 
@@ -76,15 +76,15 @@ Recovery for group objects supports the following properties:
 > [!NOTE]
 > Group ownership changes aren't in scope. Dynamic groups can be restored or soft-deleted during recovery, but dynamic group rule and membership changes aren't in scope.
 
-For reference, you can view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group?view=graph-rest-1.0#properties).
+For reference, you can view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group#properties).
 
 ## Conditional access policy
 
-All properties of conditional access policies are in scope. View all conditional access policy properties in the [Microsoft Graph conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-1.0#properties).
+All properties of conditional access policies are in scope. View all conditional access policy properties in the [Microsoft Graph conditionalAccessPolicy resource type](/graph/api/resources/conditionalaccesspolicy#properties).
 
 ## Named location policy
 
-All properties of named location policies are in scope. View all named location policy properties in the [Microsoft Graph namedLocation resource type](/graph/api/resources/namedlocation?view=graph-rest-1.0#properties).
+All properties of named location policies are in scope. View all named location policy properties in the [Microsoft Graph namedLocation resource type](/graph/api/resources/namedlocation#properties).
 
 ## Authorization policy
 
@@ -96,7 +96,7 @@ Recovery for authorization policy objects supports the following properties:
 - `allowedToUseSSPR`
 - `PermissionGrantPolicyIdsAssignedToDefaultUserRole`
 
-For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy?view=graph-rest-1.0#properties).
+For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy#properties).
 
 ## Authentication methods policy
 
@@ -111,7 +111,7 @@ Recovery supports the following authentication method policies:
 - Temporary Access Pass
 - Certificate-based authentication
 
-For reference, you can view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration?view=graph-rest-1.0).
+For reference, you can view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration).
 
 ## Application
 
@@ -137,7 +137,7 @@ Recovery for **application** objects supports the following properties:
 - `ServicePrincipalLockConfiguration`
 - `AppInformationalUrl`
 
-For reference, you can view the full set of application properties in the [Microsoft Graph application resource type](/graph/api/resources/application?view=graph-rest-1.0#properties).
+For reference, you can view the full set of application properties in the [Microsoft Graph application resource type](/graph/api/resources/application#properties).
 
 ## Service principal
 
@@ -158,7 +158,7 @@ Recovery for **service principal** objects supports the following properties:
 - `SamlSingleSignOnSettings`
 - `ServicePrincipalName`
 
-For reference, you can view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal?view=graph-rest-1.0#properties).
+For reference, you can view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal#properties).
 
 ## Organization
 
@@ -186,11 +186,11 @@ Recovery for the organization object supports the following properties:
 - StrongAuthenticationPolicy
   - `enabled`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-auth-policy-enabled.png" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-enabled.png" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
 
   - `ipAllowList`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-auth-policy-ip-allowlist.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-ip-allowlist.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
 
 ## Limitations
 
