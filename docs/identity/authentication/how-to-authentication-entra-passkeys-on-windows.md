@@ -120,13 +120,24 @@ To enable registration, all of the following prerequisites and configuration req
 
 ## FAQ
 
+**Question**: What is the use case for Microsoft Entra passkeys on Windows?
+
+**Answer**: Use Microsoft Entra passkeys on Windows when:
+
+- You want passkeys (FIDO2) stored locally on Windows.
+- Users access multiple Microsoft Entra accounts from a single PC.
+- You want standards-based, phishing-resistant sign-in to Microsoft Entra on unregistered, personal, or shared devices.
+
 **Question**: Do Microsoft Entra passkeys on Windows replace Windows Hello for Business?
 
-**Answer**: No. Microsoft Entra passkeys on Windows don't replace Windows Hello for Business. Windows Hello for Business remains the recommended solution for corporate managed, Microsoft Entra joined or registered devices. Microsoft Entra passkeys on Windows complement Windows Hello for Business by enabling passkeys (FIDO2) on Windows in scenarios where devices are not joined or registered in Microsoft Entra ID.
+**Answer**: No. Microsoft Entra passkeys on Windows don't replace Windows Hello for Business. Windows Hello for Business remains the recommended solution for signing into corporate managed, Microsoft Entra joined or registered devices. Microsoft Entra passkeys on Windows complement Windows Hello for Business by enabling passkeys (FIDO2) on Windows in scenarios where devices are not joined or registered. Microsoft Entra passkeys on Windows don't support device sign-in.
+
+> [!NOTE]
+> Users can't register a passkey on Windows if a Windows Hello for Business credential already exists for the same account and container. This block may not apply once the user exceeds 50 total platform credentials.
 
 **Question**: Are Microsoft Entra passkeys synced?
 
-**Answer**: No. Microsoft Entra passkeys on Windows are device-bound and stored in the local Windows Hello container. They aren't synced across devices. Each device requires a separate passkey registration for each work or school account.
+**Answer**: No. Microsoft Entra passkeys on Windows are device-bound and stored in the local Windows Hello container. They aren't synced across devices. Each device requires a separate passkey registration for each Microsoft Entra account.
 
 ## Related content
 
