@@ -1,11 +1,8 @@
 ---
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 04/30/2025
-ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
 ---

@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/02/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bonusly so that I can streamline the user management process and ensure that users have the appropriate access to Bonusly.
@@ -78,9 +78,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningTab.png" alt-text="Screenshot of the Bonusly - Provisioning tab. Under Manage, Provisioning is highlighted." border="false":::
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningCredentials.png" alt-text="Screenshot showing a Provisioning Mode list box, with Automatic selected and highlighted." border="false":::
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 5. Under the **Admin Credentials** section, input the **Secret Token** of your Bonusly account as described in Step 6.
 
@@ -104,35 +104,25 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/TestConnection.png" alt-text="Screenshot of the Admin Credentials section. The Text connection button is highlighted." border="false":::
 
-9. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.	
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/EmailNotification.png" alt-text="Screenshot showing an empty Notification email box. An option is visible that's labeled Send an email notification when a failure occurs." border="false":::
+1. Select **Properties** in the **Overview** page. 
 
-10. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-11. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Bonusly**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 12. Review the user attributes that are synchronized from Microsoft Entra ID to Bonusly in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Bonusly for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding Bonusly attributes, and the matching status." border="false":::
 
-13. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-14. To enable the Microsoft Entra provisioning service for Bonusly, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningStatus.png" alt-text="Screenshot of the Settings section. The Provisioning status toggle is set to Off." border="false":::
-
-15. Define the users and/or groups that you would like to provision to Bonusly by choosing the desired values in **Scope** in the **Settings** section.
-
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/ScopeSync.png" alt-text="Screenshot showing the Scope list box. Sync only assigned users and groups is selected in the box." border="false":::
-
-16. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Bonusly.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Additional resources
 

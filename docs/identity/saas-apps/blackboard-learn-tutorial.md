@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Blackboard Learn Client support team](https://www.blackboard.com/support/index.aspx) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Blackboard Learn Client support team](https://www.blackboard.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Blackboard Learn SSO
 
-To configure single sign-on on **Blackboard Learn** side, follow the [link](https://help.blackboard.com/Learn/Administrator/SaaS/Authentication/Implement_Authentication/SAML_Authentication_Provider_Type). If you're facing any problem while configuring, contact [Blackboard Learn support team](https://www.blackboard.com/support/index.aspx).
+To configure single sign-on on **Blackboard Learn** side, follow the [link](https://help.blackboard.com/Learn/Administrator/SaaS/Authentication/Implement_Authentication/SAML_Authentication_Provider_Type). If you're facing any problem while configuring, contact [Blackboard Learn support team](https://www.blackboard.com/support).
 
 
 ### Create Blackboard Learn test user
