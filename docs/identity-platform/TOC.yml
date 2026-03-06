@@ -202,6 +202,10 @@
                     href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
                   - name: Support web fallback
                     href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
+                  - name: Register strong authentication method
+                    href: tutorial-native-authentication-single-page-app-react-register-strong-method.md
+                  - name: Enable MFA
+                    href: tutorial-native-authentication-single-page-app-react-enable-mfa.md
         - name: Angular
           items:
             - name: Browser-delegated authentication
@@ -222,6 +226,10 @@
                 href: tutorial-native-authentication-single-page-app-angular-reset-password.md
               - name: Support web fallback
                 href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
+              - name: Register strong authentication method
+                href: tutorial-native-authentication-single-page-app-angular-register-strong-method.md
+              - name: Enable MFA
+                href: tutorial-native-authentication-single-page-app-angular-enable-mfa.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
