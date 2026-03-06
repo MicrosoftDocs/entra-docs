@@ -1068,7 +1068,7 @@ Content-Type: application/json
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to complete MFA.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
-|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. Surported values: *email, sms*. |
+|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. Supported values: *email, sms*. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
 
@@ -1638,7 +1638,7 @@ To use this API, the app uses the endpoint shown in the following table:
 |`/resetpassword/v1.0/continue`| Validates the challenge issued by the `/resetpassword/v1.0/challenge` endpoint, then either returns a *continuation token* for the `/resetpassword/v1.0/submit` endpoint, or issues another challenge to the user.  |
 |`/resetpassword/v1.0/submit`| Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
 |`/resetpassword/v1.0/poll_completion`|  The app can use the *continuation token* issued by the `/resetpassword/v1.0/submit` endpoint to check the status of the password reset request. |
-|`oauth2/v2.0/token`| If password reset is successfull, the app can use the continuation token it obtains from the `/resetpassword/v1.0/poll_completion` endpoint to obtain security tokens from the `oauth2/v2.0/token` endpoint. |
+|`oauth2/v2.0/token`| If password reset is successful, the app can use the continuation token it obtains from the `/resetpassword/v1.0/poll_completion` endpoint to obtain security tokens from the `oauth2/v2.0/token` endpoint. |
 
 ### Self-service password reset challenge types
 
