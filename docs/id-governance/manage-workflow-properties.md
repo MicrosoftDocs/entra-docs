@@ -1,9 +1,6 @@
 ---
 title: Manage workflow properties
 description: This article guides a user to editing a workflow's properties using Lifecycle Workflows.
-author: OWinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024

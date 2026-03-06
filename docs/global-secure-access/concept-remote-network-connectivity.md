@@ -1,11 +1,8 @@
 ---
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
-author: kenwith
-ms.author: kenwith
 ms.topic: concept-article
-ms.date: 09/02/2025
-ms.service: global-secure-access
+ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 
@@ -38,6 +35,21 @@ To connect a remote network to Global Secure Access, you set up an Internet Prot
 
 Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
+
+## Supported traffic forwarding profiles
+
+Remote networks support different traffic forwarding profiles for acquiring traffic. Traffic forwarding profiles control which traffic is routed through Global Secure Access. Security profiles (such as the baseline profile) control what policies are applied to that acquired traffic.
+
+| Traffic forwarding profile | Global Secure Access client | Remote network |
+|---|---|---|
+| **Microsoft traffic** | ✅ Supported | ✅ Supported |
+| **Internet Access** | ✅ Supported | ✅ Supported |
+| **Private Access** | ✅ Supported | ❌ Not supported |
+
+> [!IMPORTANT]
+> The **Microsoft traffic** and **Internet Access** traffic forwarding profiles can be assigned to remote networks. The **Private Access** traffic forwarding profile requires the Global Secure Access client installed on end-user devices. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md) and [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
+
+Once traffic is acquired through a forwarding profile, you apply security policies to it using security profiles. The [baseline security profile](how-to-apply-security-policies-remote-network.md) enforces policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware security profiles linked to Conditional Access policies require the Global Secure Access client.
  
 ## Why remote network connectivity is important for you? 
 Maintaining security of a corporate network is increasingly difficult in a world of remote work and distributed teams. Security Service Edge (SSE) promises a world of security where customers can access their corporate resources from anywhere in the world without needing to back haul their traffic to headquarters.

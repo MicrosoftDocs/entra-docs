@@ -1,15 +1,8 @@
 ---
 title: Require Terms of Use at sign-in to Microsoft Admin Portals
 description: How to require terms of use acceptance before access to selected cloud apps is granted with Microsoft Entra Conditional Access.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: 
 ---
 # Require terms of use to be accepted before accessing Microsoft Admin Portals
@@ -49,7 +42,7 @@ This section shows how to create the required Conditional Access policy.
    1. Select **Grant access**.
    1. Select the terms of use you created previously and choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

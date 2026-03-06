@@ -1,12 +1,8 @@
 ---
 title: Self-service password reset deep dive
 description: How does self-service password reset work
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---

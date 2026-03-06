@@ -1,10 +1,6 @@
 ---
 title: Tutorial - Issue a Microsoft Entra Verified ID credential for directory based claims 
 description: In this tutorial, you learn how to issue verifiable credentials, from directory based claims, by using a sample app.
-ms.service: entra-verified-id
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
 ms.topic: tutorial
 ms.date: 01/31/2025
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.

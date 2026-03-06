@@ -1,15 +1,8 @@
 ---
 title: Require compliant, hybrid joined devices, or MFA
 description: Create a custom Conditional Access policy to require compliant, hybrid joined devices, or multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
@@ -51,7 +44,7 @@ The following steps help create a Conditional Access policy to require multifact
    1. **For multiple controls** select **Require one of the selected controls**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

@@ -3,7 +3,6 @@ title: "Global Secure Access: Advanced Threat Protection"
 description: "Learn how to protect your organization with Global Secure Access Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) policies powered by Netskope."
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: how-to   
 ms.date: 11/07/2025
 ms.reviewer: abhijeetsinha
@@ -376,6 +375,6 @@ Learn more about Netskope Threat Protection in these articles:
 
 ## Related content
 
-- [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](concept-netskope-coexistence.md)
+- [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](how-to-netskope-coexistence.md)
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)   
 - [Create a custom Data Loss Prevention profile](how-to-full-data-loss-protection.md)

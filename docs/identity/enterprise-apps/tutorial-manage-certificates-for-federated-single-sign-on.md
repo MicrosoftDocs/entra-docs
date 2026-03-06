@@ -1,13 +1,8 @@
 ---
 title: 'Tutorial: Manage federation certificates'
 description: In this tutorial, you learn how to customize the expiration date for your federation certificates, and how to renew certificates that are set to expire soon.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 04/30/2025
-ms.author: jomondi
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, sfi-image-nochange

@@ -1,15 +1,8 @@
 ---
 title: Conditional Access - Block access
 description: Create a custom Conditional Access policy to Block access.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/26/2026
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: calebb, lhuangnorth
 ---
 # Block access example policy
@@ -48,7 +41,7 @@ The first policy blocks access to all apps except for Microsoft 365 applications
    1. Under **Client apps**, set **Configure** to **Yes**, and select **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -65,7 +58,7 @@ The following policy is created to require multifactor authentication or a compl
    1. Ensure **Require one of the selected controls** is selected.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

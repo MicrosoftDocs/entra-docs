@@ -2,15 +2,8 @@
 title: Filter for devices as a condition in Conditional Access policy
 description: Use filter for devices in Conditional Access to enhance security posture.
 
-ms.service: entra-id
-ms.subservice: conditional-access
-
 ms.topic: how-to
 ms.date: 05/19/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices
@@ -62,7 +55,7 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and select **Select**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and **Require device to be marked as compliant**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **On**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 Policy 2: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block.
 
@@ -84,7 +77,7 @@ Policy 2: All users with an administrator role, accessing the Windows Azure Serv
    1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **On**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 > [!WARNING]
 > Policies that require compliant devices may prompt users on Mac, iOS, and Android to select a device certificate during policy evaluation, even though device compliance is not enforced. These prompts may repeat until the device is made compliant.

@@ -58,7 +58,9 @@ items:
       - name: Akamai
         href: how-to-configure-akamai-integration.md
     - name: Fraud protection integration
-      href: how-to-integrate-fraud-protection.md             
+      href: how-to-integrate-fraud-protection.md
+    - name: Native authentication fraud protection for SMS MFA
+      href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
 - name: Authentication
   expanded: false
   items:
@@ -107,7 +109,7 @@ items:
                   - name: Prepare your app
                     href: /entra/identity-platform/tutorial-single-page-apps-angular-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Sign in users
-                    href: /entra/identity-platform/tutorial-single-page-apps-sign-in-users-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-sign-in-users-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Extract user data and test app
                     href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: React
@@ -142,6 +144,10 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Support web fallback
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Register strong authentication method
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Enable MFA
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -152,6 +158,10 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant 
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Register strong authentication method
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Enable MFA
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js
@@ -249,6 +259,14 @@ items:
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Auto-sign in after sign-up
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Self-service password reset
                   href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
@@ -266,6 +284,14 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Auto-sign in after sign-up
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Self-service password reset
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback

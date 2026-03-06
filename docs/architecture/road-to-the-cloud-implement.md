@@ -2,14 +2,10 @@
 title: Road to the cloud - Implement a cloud-first approach when moving identity and access management from Active Directory Domain Services (AD DS) to Microsoft Entra ID
 description: Implement a cloud-first approach as part of planning your migration of IAM from Active Directory Domain Services (AD DS) to Microsoft Entra ID.
 documentationCenter: ''
-author: janicericketts
-manager: martinco
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/30/2025
-ms.author: jricketts
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Implement a cloud-first approach
 

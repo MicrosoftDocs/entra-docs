@@ -1,11 +1,8 @@
 ---
 title: Enable Compliant Network Check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
 ms.reviewer: smistry
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -83,7 +80,13 @@ The compliant network Conditional Access policy can be used to protect your Micr
 > * Internet resources with Global Secure Access 
 > * Microsoft apps with Global Secure Access 
 > * All private resources with Global Secure Access 
-> * ZTNA Policy Service 
+> * ZTNA Policy Service
+
+### Mobile app support
+
+The Global Secure Access mobile app is part of the Defender app. Exclusions are required to ensure the Defender client isn't blocked from accessing the resources it needs. To exclude Defender resources from Conditional Access policies, see [Microsoft Defender mobile app exclusion from Conditional Access policies](/defender-endpoint/mobile-resources-defender-endpoint#microsoft-defender-mobile-app-exclusion-from-conditional-access-ca-policies).
+
+For more information, see [Mobile resources for Microsoft Defender for Endpoint](/defender-endpoint/mobile-resources-defender-endpoint).
 
 ### User exclusions
 

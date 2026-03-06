@@ -1,12 +1,9 @@
 ---
 title: Microsoft Entra ID Governance licensing for guest users 
 description: Learn how Microsoft Entra ID is licensed for guest users.
-author: owinfreyatl
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 02/03/2026
-ms.author: owinfrey
+ms.date: 03/02/2026
 ms.reviewer: jercon
 ---
 
@@ -22,7 +19,7 @@ Under the guest billing model, guests are identified by a userType of **Guest** 
 
 ## Billable governance features
 
-Guest users are only billed when they actively use features that are exclusive to Microsoft Entra ID Governance. Features included with Microsoft Entra P2 aren't billed. Additionally, if a guest doesn't take any active governance-related action during a month, such as in cases where access was auto-assigned in a prior month, they won't be billed for that month.
+Guest users are only billed when they actively use features that are exclusive to Microsoft Entra ID Governance. Microsoft Entra P2 features are not billed, and linking an Azure subscription is not required or enforced for P2 actions. Additionally, if a guest doesn't take any active governance-related action during a month, such as in cases where access was auto-assigned in a prior month, they won't be billed for that month.
 
 You can identify actions that will be billed to the Microsoft Entra ID Governance for guests add-on by looking at your audit logs. Specifically, each billable action has these properties included:
 
@@ -57,7 +54,7 @@ Governance guest billing only applies for users with a userType of **guest**, so
 
 If these users are brought in with a userType of **guest** they accrue to the meter, however you can avoid being charged by setting up
 or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest won't accrue to the
-billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide).
+billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide&preserve-view=true).
 
 ## Billing examples
 
@@ -91,9 +88,9 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 **April**:
 
-- From the second group of 200 guest users in March, 150 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
+- From the second group of 200 guest users in March, all 200 guests receive an auto-assigned access package that grants access to an app and have the same inactive user access review that was run in March, repeated in April.
 
-- Billing: For April, Fabrikam is billed for 150 users and they aren't charged for the access package auto-assignment action, since these 150 guests have already been charged for April.
+- Billing: For April, Fabrikam is billed for 200 users. Although these users had both an inactive access review and an access‑package auto‑assignment in April, each guest is charged only once for the month.
 
 ### Scenario 3: Access Reviews for inactive users and user-to-group affiliation 
 
@@ -179,7 +176,6 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 - You won't be able to create new workflows if the workflow scope includes guest users: 
     - The configured rule includes `userType=Guest`
 - You won't be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
-
 
 
 ## Related content

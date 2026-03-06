@@ -1,14 +1,9 @@
 ---
 title: What are risk detections?
 description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
-
 ms.service: entra-id-protection
-
-ms.topic: article
+ms.topic: reference
 ms.date: 01/07/2026
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: cokoopma
 ---
 

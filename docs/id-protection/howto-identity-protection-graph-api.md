@@ -2,16 +2,11 @@
 title: Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection
 description: Query Microsoft Graph risk detections and associated information from Microsoft Entra ID
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 05/27/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: chuqiaoshi
 ---
-# Microsoft Entra ID Protection and the Microsoft Graph PowerShell 
+# Microsoft Entra ID Protection and the Microsoft Graph PowerShell SDK
 
 Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft Entra ID Protection](./overview-identity-protection.md) APIs. This article shows you how to use the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started) to manage risky users with PowerShell. Organizations that want to query the Microsoft Graph APIs directly can use the article, [Tutorial: Identify and remediate risks using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) to begin that journey.
 
@@ -22,7 +17,7 @@ To use the PowerShell commands in this article, you need the following prerequis
 - Microsoft Graph PowerShell SDK is installed.
     - For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role.
-- `IdentityRiskEvent.Read.All`, `IdentityRiskyUser.ReadWrite.All` Or `IdentityRiskyUser.ReadWrite.All` delegated permissions are required.
+- `IdentityRiskEvent.Read.All` and `IdentityRiskyUser.ReadWrite.All` delegated permissions are required.
     - To set the permissions to `IdentityRiskEvent.Read.All` and `IdentityRiskyUser.ReadWrite.All`, run:
 
    ```powershell

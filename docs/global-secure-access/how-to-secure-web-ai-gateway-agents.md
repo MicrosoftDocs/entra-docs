@@ -3,7 +3,6 @@ title: "Configure Secure Web and AI Gateway for Microsoft Copilot Studio agents"
 description: "Learn how to configure Secure Web and AI Gateway for Microsoft Copilot Studio agents using Global Secure Access."
 author: garrodonnell
 ms.author: godonnell
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/03/2025
 ai-usage: ai-assisted
@@ -37,7 +36,7 @@ To enable network controls for Copilot Studio agents, you must first enable traf
 
 
 > [!NOTE]
-> After enabling GSA for Agents in a given environment or environment group, you need to create or update any existing custom connectors for them to route traffic through Global Secure Access.
+> After enabling Global Secure Access for Agents in the environment or environment group, any existing Copilot Studio custom connector must be edited and saved to ensure its traffic is routed through Global Secure Access. Custom connectors created afterward automatically use this configuration.
 
 ## Create security policies for Copilot Studio agents
 

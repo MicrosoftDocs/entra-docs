@@ -1,12 +1,9 @@
 ---
 title: Build resilience by using Continuous Access Evaluation in Microsoft Entra ID
 description: A guide for architects and IT administrators on using CAE
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience by using Continuous Access Evaluation
 

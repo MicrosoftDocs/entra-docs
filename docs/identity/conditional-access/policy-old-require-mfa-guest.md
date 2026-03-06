@@ -1,15 +1,8 @@
 ---
 title: Require MFA for guest users with Conditional Access
 description: Create a custom Conditional Access policy requiring guest users perform multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for guest access
@@ -34,7 +27,7 @@ Require guest users perform multifactor authentication when accessing your organ
    1. Under **Exclude**, select any applications that don't require multifactor authentication.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

@@ -1,13 +1,8 @@
 ---
 title: Filter for applications in Conditional Access policy
 description: Discover how to use Conditional Access filters for applications to streamline policy management and enhance security in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 07/22/2025
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: calebb, oanae
 ms.custom:
   - subject-rbac-steps
@@ -79,7 +74,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
    1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

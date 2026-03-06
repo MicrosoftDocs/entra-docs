@@ -1,13 +1,8 @@
 ---
 title: Require MFA for device registration
 description: Improve visibility and enforce more granular control over the device registration process though Conditional Access.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---
@@ -35,7 +30,7 @@ Use the [Conditional Access user action](concept-conditional-access-cloud-apps.m
    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

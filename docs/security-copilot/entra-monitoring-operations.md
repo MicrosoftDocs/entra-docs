@@ -1,9 +1,6 @@
 ---
 title: Understand monitoring with Microsoft Security Copilot
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to monitor sign-in activities, audit logs, provisioning logs, health alerts, and service level agreements.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

@@ -3,10 +3,8 @@ title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
 manager: dougeby
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 02/03/2026
+ms.date: 03/05/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -18,6 +16,145 @@ ms.collection: M365-identity-device-management
 This article includes information about the releases and change announcements across the Microsoft Entra family of products that are older than six months (up to 18 months). If you're looking for more current information, see [Microsoft Entra releases and announcements](./whats-new.md).
 
 For a more dynamic experience, you can now find the archive information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
+
+---
+
+## July 2025
+
+### General Availability - Microsoft Entra External ID: Custom 3rd party email OTP provider
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management   
+**Product capability:** 3rd Party Integration 
+
+Use a 3rd Party Email OTP Provider to customize the Email OTP notifications for sign-in and sign-up flows for Microsoft Entra External ID. A new "Custom Email OTP Provider" Custom Authentication Extension allows you to use Azure Communication Service (ACS) or a 3rd party provider, such as SendGrid, to maintain branding consistency through your end user authentication experiences. For more information, see: [Configure a custom email provider for one time passcode send events](../identity-platform/custom-extension-email-otp-get-started.md).
+
+---
+
+
+### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
+
+**Type:** New feature  
+**Service category:** Microsoft Entra Connect   
+**Product capability:** Microsoft Entra Connect 
+
+The Application-Based Authentication (ABA) feature is now the default authentication method for Microsoft Entra Connect. It enables Microsoft Entra Connect to securely authenticate with Microsoft Entra ID without relying on a locally stored password. This feature uses a Microsoft Entra ID application identity and Oauth 2.0 client credential flow to authenticate with Microsoft Entra ID.  Microsoft Entra Connect automatically creates a single-tenant third-party application in the customer’s Entra ID tenant, registers a certificate as the application’s credential, and grants the required permissions for directory synchronization. 
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra Admin Center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change.
+
+---
+
+### General Availability – Security Copilot in Microsoft Entra 
+
+**Type:** New feature  
+**Service category:** Copilot   
+**Product capability:** Identity Security & Protection 
+
+You can now interact with Copilot in Microsoft Entra to investigate threats, manage the identity lifecycle of employees and guests, and take action quickly across users, apps, and access. All of this works through natural language, without writing custom queries or scripts. For more information, see: [Copilot in Microsoft Entra](../security-copilot/security-copilot-in-entra.md).
+
+---
+
+### General Availability - Conditional Access Optimization Agent in Microsoft Entra
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+
+Conditional Access Optimization Agent in Microsoft Entra monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md).
+
+---
+
+### General Availability - Conditional Access Agent Supports Disabling Agent Creation of Report-Only Policies
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+
+The Conditional Access Optimization Agent now supports a new setting that allows admins to configure if the agent can or cannot create report-only mode policies autonomously. If turned off, the agent will only create policies upon admin approval. For more information, see: [Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md).
+
+---
+
+### General Availability - New Lifecycle Workflows task to revoke refresh tokens
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+
+Customers can now configure a Lifecycle Workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
+
+---
+
+### General Availability - Audit administrator events in Microsoft Entra Connect Sync
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Microsoft Entra Connect  
+
+The Admin Audit Logging feature enables organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators or Hybrid Administrators. It captures actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or Synchronization Rules Editor—including changes to synchronization rules, authentication settings (such as enabling or disabling features), and Federation settings. These events are logged in a dedicated Microsoft Entra Connect Sync audit log channel within the Windows Event Viewer, providing greater visibility into identity infrastructure changes. This feature supports troubleshooting, operational accountability, and regulatory compliance.   
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on the Microsoft Entra Admin Center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change. 
+
+---
+
+### General Availability - Bicep templates for Microsoft Graph resources
+
+**Type:** New feature  
+**Service category:** MS Graph  
+**Product capability:** Developer Experience  
+
+Bicep templates for Microsoft Graph resources allows you to author, deploy and manage a limited set of Microsoft Graph resources (mostly Microsoft Entra ID resources) using Bicep template files, alongside Azure resources.  
+- Azure customers can use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, using Infrastructure-as-Code (IaC) and DevOps practices.  
+- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Microsoft Entra resources.  
+
+For more information, see: [Bicep templates for Microsoft Graph](/graph/templates/bicep/overview-bicep-templates-for-graph).
+
+---
+
+### General Availability - Conditional Access What If API
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Access Control  
+
+The Conditional access What If API can be used to programmatically test the impact of policies on user and workload identity sign-ins.
+
+---
+
+### General Availability - Enterprise App SSO via pre-integrated gallery app or customer SAML apps
+
+**Type:** Changed feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** SSO  
+
+Enterprise apps SSO & User Provisioning SAML-based single sign-on (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
+
+- [Add an enterprise application](../external-id/customers/how-to-add-enterprise-application.md)
+- [Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
+- [Supported features on external tenant](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
+
+---
+
+### Public Preview - Convert Source of Authority of synced Active Directory groups to the cloud
+
+**Type:** New feature  
+**Service category:** Group Management  
+**Product capability:** Microsoft Entra Connect and Microsoft Entra Cloud Sync
+
+The Source of Authority (SOA) at the object level allows administrators to convert specific groups synced from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects, which are no longer synced from AD and act as if originally created in the cloud. This feature supports a gradual migration process, decreasing dependencies on AD while aiming to minimize user and operational impact. Both Entra Connect Sync and Cloud Sync recognize the SOA switch for these objects. Additionally, administrators can govern Kerberos-based applications associated with AD security groups from the cloud using Microsoft Entra Governance by including these SOA-converted security groups for Group Provision to AD. The option to switch the SOA of synced groups from AD to Microsoft Entra ID is currently available in Public Preview. For more information, see: [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](../identity/hybrid/concept-source-of-authority-overview.md).
+
+---
+
+### General Availability - Restricted Management Administrative Units
+
+**Type:** New feature  
+**Service category:** RBAC  
+**Product capability:** AuthZ/Access Delegation  
+
+Restricted management administrative units enable you to easily restrict access to users, groups, or devices to the specific users or applications you specify. Tenant-level administrators (including Global Administrators) can't modify members of restricted management administrative units unless they're explicitly assigned a role scoped to the administrative unit. This makes it easy to lock down a set of sensitive groups or user accounts in your tenant without having to remove tenant-level role assignments. For more information, see: [Restricted management administrative units in Microsoft Entra ID](../identity/role-based-access-control/admin-units-restricted-management.md).
 
 ---
 
@@ -1537,7 +1674,7 @@ Customers who use this preview feature in Connect Sync should [switch their conf
 
 Customers who use Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this guide: [supported sync scenarios comparison](../identity/hybrid/common-scenarios.md).
 
 ---
 
@@ -1925,7 +2062,7 @@ For more information about how to better secure your organization by using autom
 
 In February 2024, we added the following 10 new applications in our App gallery with Federation support:
 
-[Crosswise](../identity/saas-apps/presswise-tutorial.md), [Stonebranch Universal Automation Center (SaaS Cloud)](../identity/saas-apps/stonebranch-universal-automation-center-saas-cloud-tutorial.md), [ProductPlan](../identity/saas-apps/productplan-tutorial.md), [Bigtincan for Outlook](https://www.bigtincan.com/content/), [Blinktime](https://www.blinktime.io/), [Stargo](http://www.stargo.co/), [Garage Hive BC v2](https://garagehive.co.uk/), [Avochato](https://www.avochato.com/), [Luscii](https://vitals.luscii.com/), [LEVR](https://levr.work/), [XM Discover](../identity/saas-apps/xm-discover-tutorial.md), [Sailsdock](https://www.sailsdock.no/), [Mercado Electronic SAML](../identity/saas-apps/mercado-eletronico-saml-tutorial.md), [Moveworks](../identity/saas-apps/moveworks-tutorial.md), [Silbo](https://app.ambuliz.com/), [Alation Data Catalog](../identity/saas-apps/alation-data-catalog-tutorial.md), [Papirfly SSO](../identity/saas-apps/papirfly-sso-tutorial.md), [Secure Cloud User Integration](https://opentextcybersecurity.com/), [AlbertStudio](https://sandbox.albertinvent.com/), [Automatic Email Manager](https://www.automatic-email-manager.com/?utm_source=azuregallery), [Streamboxy](https://en.streamboxy.com/), [NewHotel PMS](http://www.newhotelcloud.com/), [Ving Room](https://www.letsving.com/), [Trevanna Tracks](../identity/saas-apps/trevanna-tracks-tutorial.md), [Alteryx Server](../identity/saas-apps/alteryx-server-tutorial.md), [RICOH Smart Integration](https://www.ricoh.com/), [Genius](), [Othership Workplace Scheduler](), [GitHub Enterprise Managed User - ghe.com](../identity/saas-apps/github-enterprise-managed-user-tutorial.md), [Freightender SSO for TRP (Tender Response Platform)](../identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md), [BeWhere Portal (UPS Access)](http://www.bewhere.com/), [Flexiroute](https://www.flexiroute.net/), [SEEDL](https://www.seedlgroup.com/), [Isolocity](https://www.isolocity.com/), [SpotDraft](../identity/saas-apps/spotdraft-tutorial.md), [Blinq](../identity/saas-apps/blinq-tutorial.md), [Cisco Phone OBTJ](https://www.cisco.com/), [Applitools Eyes](../identity/saas-apps/applitools-eyes-tutorial.md).
+[Crosswise](../identity/saas-apps/presswise-tutorial.md), [Stonebranch Universal Automation Center (SaaS Cloud)](../identity/saas-apps/stonebranch-universal-automation-center-saas-cloud-tutorial.md), [ProductPlan](../identity/saas-apps/productplan-tutorial.md), [Bigtincan for Outlook](https://www.bigtincan.com/content/), Blinktime, Stargo, [Garage Hive BC v2](https://garagehive.co.uk/), [Avochato](https://www.avochato.com/), [Luscii](https://vitals.luscii.com/), [LEVR](https://levr.work/), [XM Discover](../identity/saas-apps/xm-discover-tutorial.md), Sailsdock, [Mercado Electronic SAML](../identity/saas-apps/mercado-eletronico-saml-tutorial.md), [Moveworks](../identity/saas-apps/moveworks-tutorial.md), [Silbo](https://app.ambuliz.com/), [Alation Data Catalog](../identity/saas-apps/alation-data-catalog-tutorial.md), [Papirfly SSO](../identity/saas-apps/papirfly-sso-tutorial.md), [Secure Cloud User Integration](https://opentextcybersecurity.com/), [AlbertStudio](https://sandbox.albertinvent.com/), [Automatic Email Manager](https://www.automatic-email-manager.com/?utm_source=azuregallery), [Streamboxy](https://en.streamboxy.com/), [NewHotel PMS](http://www.newhotelcloud.com/), [Ving Room](https://www.letsving.com/), [Trevanna Tracks](../identity/saas-apps/trevanna-tracks-tutorial.md), [Alteryx Server](../identity/saas-apps/alteryx-server-tutorial.md), [RICOH Smart Integration](https://www.ricoh.com/), [Genius](), [Othership Workplace Scheduler](), [GitHub Enterprise Managed User - ghe.com](../identity/saas-apps/github-enterprise-managed-user-tutorial.md), [Freightender SSO for TRP (Tender Response Platform)](../identity/saas-apps/freightender-sso-for-trp-tender-response-platform-tutorial.md), [BeWhere Portal (UPS Access)](http://www.bewhere.com/), [Flexiroute](https://www.flexiroute.net/), [SEEDL](https://www.seedlgroup.com/), [Isolocity](https://www.isolocity.com/), [SpotDraft](../identity/saas-apps/spotdraft-tutorial.md), [Blinq](../identity/saas-apps/blinq-tutorial.md), [Cisco Phone OBTJ](https://www.cisco.com/), [Applitools Eyes](../identity/saas-apps/applitools-eyes-tutorial.md).
 
 You can also find the documentation of all the applications from here https://aka.ms/AppsTutorial.
 
@@ -2071,7 +2208,7 @@ Customers who use this preview feature in Connect Sync should [switch their conf
 
 Customers who provision Microsoft 365 groups to AD can continue using GWB V1 for this capability.  
 
-Customers can evaluate moving exclusively to Cloud Sync by using this wizard: https://aka.ms/EvaluateSyncOptions
+Customers can evaluate moving exclusively to Cloud Sync by using this guide: [supported sync scenarios comparison](../identity/hybrid/common-scenarios.md).
 
 ---
 

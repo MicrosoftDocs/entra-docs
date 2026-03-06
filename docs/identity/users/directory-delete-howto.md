@@ -1,13 +1,8 @@
 ---
 title: Delete a Microsoft Entra tenant
 description: Learn how to prepare a Microsoft Entra tenant, including a self-service tenant, for deletion.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: addimitu
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
@@ -124,7 +119,7 @@ Use the following PowerShell code to remove those applications:
 
 3. Create or use a managed administrative account from the tenant that you want to delete. For example: `newAdmin@tenanttodelete.onmicrosoft.com`.
 
-4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph`
+4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph -Scopes "Application.ReadWrite.All"`
 
    >[!WARNING]
    > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
@@ -145,7 +140,7 @@ Use the following PowerShell code to remove those applications:
 6. Run the following command to remove any enterprise apps that you can't delete:
 
    ```powershell
-   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ObjectId $_.Id }
+   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
    ```
 
 7. Run the following command to remove applications and service principals:

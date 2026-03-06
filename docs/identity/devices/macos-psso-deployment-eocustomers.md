@@ -1,14 +1,11 @@
 ---
 title: Configuring macOS Platform SSO (PSSO) to meet NIST SP 800-63 and EO 14028 Requirements
 description: How to deploy macOS Platform Single Sign On (PSSO) to meet NIST SP 800-63 and EO 14028 Requirements.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 05/01/2025
 ms.author: godonnell
 ms.reviewer: jploegert
 author: garrodonnell
-manager: dougeby
 
 #Customer intent: As an IT Admin for a US Government Agency, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order (EO) 14028 requirements.
 ---

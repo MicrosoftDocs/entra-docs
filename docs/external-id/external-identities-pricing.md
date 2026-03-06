@@ -2,7 +2,7 @@
 title: External ID pricing
 description: Learn about the pricing structure for Microsoft Entra External ID. Understand the monthly active users (MAU) billing model, core offering, and premium add-ons. Link your tenant to an Azure subscription for proper billing and feature access.
 ms.topic: concept-article
-ms.date: 05/19/2025
+ms.date: 02/24/2026
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.
@@ -35,9 +35,7 @@ MAU billing helps you reduce costs by offering a free tier and flexible, predict
 
 ## External ID pricing
 
-External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU.
-
-For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+External ID consists of a core offer and premium add-ons. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
 
 > [!NOTE]
 >

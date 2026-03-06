@@ -4,7 +4,6 @@ description: Learn how to authenticate autonomous agents with Microsoft Entra ID
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
