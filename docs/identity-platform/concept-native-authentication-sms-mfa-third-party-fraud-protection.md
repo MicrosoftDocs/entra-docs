@@ -18,8 +18,6 @@ This article explains the fraud risks associated with native authentication, the
 
 ## Prerequisites
 
-Before you integrate third‑party fraud protection with native authentication and SMS‑based MFA, make sure that the following requirements are met:
-
 - Your native application integrates with a third‑party fraud protection provider to securely evaluate risk signals before issuing an SMS one‑time passcode (OTP).
 - You deploy a customer‑managed web application firewall (WAF) to enforce fraud decisions and to support any increase in SMS throttling limits.
 - You enable [regional opt‑in for SMS‑based MFA in supported geographies by using Microsoft Graph](../external-id/customers/how-to-region-code-opt-in.md).
@@ -36,7 +34,7 @@ Microsoft Entra External ID provides baseline fraud protections for native authe
 Native authentication applications that use SMS‑based MFA remain exposed to extra risks, including:
 
 - **International Revenue Share Fraud (IRSF)** which occurs when attackers artificially inflate SMS traffic to premium‑rate international destinations in order to extract revenue through telecom termination and revenue‑sharing mechanisms.
-- **Account takeover (ATO)** which occurs when attackers use automated, scripted techniques to initiate sign‑in attempts with valid‑looking credentials, causing the system to issue SMS verification challenges as if the activity were legitimate.
+- **Account takeover (ATO)**  is a common attack pattern in which attackers use automated, scripted techniques to attempt sign‑ins with compromised or valid‑looking credentials. Although ATO is not specific to SMS or MFA, in environments where SMS verification is enabled these attempts can result in SMS challenges being issued as if the activity were legitimate.
 
 In browser‑delegated authentication flows, Microsoft Entra External ID mitigates these risks by using rich device telemetry and CAPTCHA challenges. Native authentication applications don't use the Microsoft‑hosted, browser‑delegated sign‑in experience, so the risk profiling doesn't benefit from rich device telemetry. Because of this, native authentication scenarios that use SMS by default are less protected by extensive risk profiling than browser-delegated flows. Customers are therefore recommended to set up extra risk detection and protection using third party providers.
 
@@ -55,7 +53,7 @@ The third-party fraud protection provider evaluates risk before an SMS MFA chall
 | Component | Notes | 
 | --- |  --- |
 | **Native applications**   | The native application integrates a third-party fraud detection SDK. The applications collect limited, privacy‑preserving device and behavioral signals using the third‑party provider’s tooling and associate those signals with the current authentication session|
-|  **Third‑party fraud protection provider**  |  The third‑party fraud provider evaluates the signals collected from the native application and determines the risk level of the authentication attempt. Based on the evaluation, one of the following outcomes occurs:<br> - **Low or acceptable risk**: The authentication flow proceeds, and the SMS one-time passcode (OTP) is issued. <br> - **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.<br> - **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent. <br> You can use third‑party fraud providers such as [Human security](https://www.humansecurity.com/) and [Prove](https://www.prove.com/). |
+|  **Third‑party fraud protection provider**  |  The third‑party fraud provider evaluates the signals collected from the native application and determines the risk level of the authentication attempt. Based on the evaluation, one of the following outcomes occurs:<br> - **Low or acceptable risk**: The authentication flow proceeds, and Microsoft Entra External ID is triggered to issue the SMS one-time passcode (OTP). <br> - **High risk requiring extra verification**: Device possession is verified before allowing the flow to continue.<br> - **High risk with failed evaluation**: The sign-in attempt is blocked immediately, and no SMS challenge is sent. <br> You can use third‑party fraud providers such as [Human security](https://www.humansecurity.com/) and [Prove](https://www.prove.com/). |
 |  **Web application firewall (WAF)**  |  The WAF is a customer‑managed enforcement layer that sits in front of Microsoft Entra External ID endpoints. The WAF consumes the fraud decision from the third‑party provider and enforces it consistently. Microsoft doesn't configure or operate the WAF; its behavior, including fail‑open or fail‑closed policies, is owned by the customer.|
 |  **Microsoft Entra External ID**   |  Microsoft Entra External ID processes only those requests that have passed upstream fraud checks. It doesn't receive raw device telemetry or third‑party risk scores. It issues SMS OTPs only after upstream approval and relies on its built‑in controls, such as throttling, regional restrictions, and phone number reputation signals to provide protection. |
 
