@@ -26,7 +26,7 @@ By using Microsoft Entra passkeys on Windows:
 - Users can register passkeys (FIDO2) in the local Windows Hello container.
 - Devices don't need to be joined or registered to Microsoft Entra to use a local Windows passkey.
 - A single Windows PC can store multiple passkeys for multiple Microsoft Entra accounts.
-- Passkeys (FIDO2) registered in Windows Hello participate in Microsoft Entra passkey (FIDO2) policies and passkey profiles.
+- Passkeys (FIDO2) registered in Windows Hello are governed by Microsoft Entra passkey (FIDO2) policies and passkey profiles.
 
 ## How Microsoft Entra passkeys on Windows work
 
@@ -50,7 +50,7 @@ During public preview, Windows Hello passkeys are identified and controlled usin
 | Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 | Virtualization-based Security (VBS) uses hardware virtualization and the Windows hypervisor to store private keys in the host machine's TPM. |
 | Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 | Private key stored in a software-based TPM. |
 
-These AAGUIDs represent Windows Hello‑backed passkey providers and are used in passkey profiles to allow or block registration.
+These AAGUIDs represent Windows Hello passkey providers and are used in passkey profiles to allow or block registration.
 
 ## How Microsoft Entra passkeys on Windows compare with Windows Hello for Business
 
@@ -72,8 +72,10 @@ Although both features use Windows Hello, Microsoft Entra passkeys on Windows an
 - They can be registered without device join or registration.
 - Users can register multiple passkeys for multiple Microsoft Entra accounts on the same device.
 - Registration and authentication are controlled by using Microsoft Entra Authentication Methods Passkey (FIDO2) policy.
+- Cannot be used for device sign-in.
 
-In the majority of cases, if a user has a Windows Hello for Business credential, Microsoft Entra prevents them from also registering a passkey (FIDO2) for the same account in the same Windows Hello container to avoid user confusion.
+>[!NOTE]
+>If you're on an Entra joined or Entra registered device, setting up Windows Hello may automatically register a Windows Hello for Business credential for the device's linked account. If you then attempt to register a passkey on Windows for that same account, registration will fail because the WHFB credential already exists. On retry, you'll see an error indicating the passkey is already registered.
 
 | Feature | Microsoft Entra passkey on Windows | Windows Hello for Business |
 |---|---|---|
@@ -83,25 +85,6 @@ In the majority of cases, if a user has a Windows Hello for Business credential,
 | Passkey type | Device-bound | Device-bound |
 | Credential binding | Bound to the device and stored in the local Windows Hello container. Users can register multiple passkeys for multiple work or school accounts on the same device. | Primarily a device‑bound sign‑in method linked to device trust. The credential is tied only to the work or school account used to register the device. |
 | Management | Microsoft Entra ID Authentication methods policy | Microsoft Intune<br>Group Policy |
-
-### Use cases
-
-Many organizations use Windows Hello for Business for managed devices, and use Microsoft Entra passkeys on Windows to cover personal or unmanaged scenarios.
-
-Use Microsoft Entra passkeys on Windows when:
-
-- You want passkeys (FIDO2) stored locally on Windows.
-- Users sign in from unregistered, personal, or shared devices.
-- Users access multiple Microsoft Entra accounts from a single PC.
-- You want authentication governed by passkey profiles.
-- You need a standards-based, phishing-resistant sign-in method without device join.
-
-Use Windows Hello for Business when:
-
-- You manage corporate-owned, Entra joined or registered devices.
-- You want automatic credential provisioning during device onboarding.
-- You require tight coupling between device identity and authentication.
-- You rely on existing Windows Hello for Business lifecycle and policy controls.
 
 ## Attestation support
 
