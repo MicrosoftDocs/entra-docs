@@ -259,7 +259,7 @@ Also referred to as Adversary in the Middle, this high precision detection is tr
 
 ### Leaked credentials 
 
-This risk detection indicates that a user's valid credentials appeared in a known credential breach. Microsoft operates a large-scale credential scanning pipeline that continuously monitors dark web forums, breach dump repositories, paste sites, law enforcement seizure data, and other sources through partnerships with the Microsoft Threat Intelligence Center (MSTIC), Microsoft Digital Crimes Unit (DCU), and industry partners. When discovered credentials match a user's current valid password hash, the user is flagged with **high** risk because the detection represents confirmed credential exposure. 
+This risk detection indicates that a user's valid credentials appeared in a known credential breach. Microsoft operates a large-scale credential scanning pipeline that continuously monitors dark web forums, breach dump repositories, paste sites, law enforcement seizure data, and other sources through partnerships with the Microsoft Threat Intelligence Center (MSTIC), Microsoft Digital Crimes Unit (DCU), and industry partners. When discovered credentials are found, the service validates the actual credential material against your tenant's current valid password hashes. A detection is only emitted when a confirmed match is found. This detection is always as **high** risk because it represents verified credential exposure, not a heuristic signal. A cloud-based password reset through Microsoft Entra remediates the user risk for this detection. 
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
