@@ -3,7 +3,7 @@ title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.reviewer: katabish
+ms.reviewer: sumitp
 ms.custom: it-pro, sfi-ga-nochange
 ---
 # Managing custom domain names in your Microsoft Entra ID
