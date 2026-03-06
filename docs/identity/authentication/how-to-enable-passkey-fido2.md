@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 10/27/2025
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
+# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkey sign-in for end users.
 ---
 # Enable passkeys (FIDO2) for your organization
 
@@ -45,7 +45,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ## Enable passkey (FIDO2) authentication method 
 
 >[!NOTE]
->If you would like to configure different passkey (FIDO2) settings for different groups of users, see [How to enable passkey profiles (preview) in Microsoft Entra ID](how-to-authentication-passkey-profiles.md).
+>If you would like to configure different passkey (FIDO2) settings for different groups of users, see [How to enable passkey profiles in Microsoft Entra ID](how-to-authentication-passkey-profiles.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Policies**.

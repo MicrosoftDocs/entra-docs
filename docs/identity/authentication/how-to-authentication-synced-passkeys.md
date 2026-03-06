@@ -11,7 +11,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to enable synced passkeys (FIDO2) in Microsoft Entra ID 
 
-Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. Microsoft Entra ID supports synced passkeys. Synced passkeys are stored in platform or with other passkey providers such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden, and made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
+Passkeys (FIDO2) are a strong, phishing-resistant alternative to passwords. Microsoft Entra ID supports synced passkeys. Synced passkeys are stored on the platform or with other passkey providers such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden, and made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
 
 ## What are synced versus device-bound passkeys?
 
@@ -26,7 +26,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   - Google Password Manager
 
 >[!NOTE]
->- Treat synced passkeys as phishing resistant credentials but with the same security posture as other unattested authenticators. For high assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
+>- Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. For high assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
 
 ## Requirements
 
@@ -37,14 +37,14 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   Passkey provider | Windows | macOS | iOS | Android
   -----------------|---------|-------|-----|--------
   Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+| Natively built in. iOS 16+| N/A 
-  Google Password Manager | Built in to Chrome | Built in to Chrome | Built in to Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
-  Other passkey providers (such as 1Password, Bitwarden) | Check for browser extension | Check for browser extension | Check for app. iOS 17+ | Check for app. Android 14+ 
+  Google Password Manager | Built into Chrome | Built into Chrome | Built into Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
+  Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+ 
 
 
 ## Enable synced passkeys
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
-1. Make sure you opted-in to the Passkey profiles.
+1. Make sure you opted in to passkey profiles.
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Select **Passkey (FIDO2)** > **Configure**.
 1. Add a profile or edit an existing profile.
@@ -52,8 +52,8 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png" alt-text="Screenshot that shows how to enable synced passkeys."lightbox="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png":::
 
->[!Note] 
->If you disable synced passkeys for a given passkey profile, targeted users can't sign-in with a synced passkey even if they already registered one.
+>[!NOTE] 
+>If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.
 
 ## Related content
 

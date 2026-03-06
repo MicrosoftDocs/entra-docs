@@ -10,10 +10,10 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # How to enable passkey (FIDO2) profiles in Microsoft Entra ID 
 
-Passkey profiles enable granular group-based configurations for passkey FIDO2 authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
+Passkey profiles enable granular group-based configurations for passkey (FIDO2) authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
 
->[!Note] 
->An Authentication Policy Administrator needs to configure a passkey profile to enable synced passkeys. For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md).
+>[!NOTE] 
+>An Authentication Policy Administratorneeds to configure a passkey profile to enable synced passkeys. For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md).
 
 ## What are passkey profiles?
 
@@ -30,7 +30,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 - If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 - Policy size limit:
-  - The Authentication methods policy supports a size limit of 20KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
+  - The Authentication methods policy supports a size limit of 20 KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
   - Reference sizes:
     - Base passkey policy without changes: 1.44 KB
     - Target with 1 applied passkey profile: 0.23 KB
@@ -43,7 +43,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 ## Enable passkey profiles 
 
 >[!NOTE]
->Upon enabling passkey profiles, your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile** are supported. Support for more passkey profiles is in development.
+>Upon enabling passkey profiles, your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile**, are supported. Support for more passkey profiles is in development.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
@@ -63,7 +63,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 ## Create a new passkey profile
 
-1. On the **Configure** tab, click **+ Add passkey profile**.
+1. On the **Configure** tab, select **+ Add passkey profile**.
 
 1. Fill out the profile details.
 
@@ -98,15 +98,15 @@ A passkey profile is a named set of policy rules that governs how users in targe
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
 
    >[!NOTE]
-   >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey is allowed if it fully satisfies the requirement of one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
+   >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if it fully satisfies the requirement of one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
 
 ## Delete a passkey profile
 
 1. Select **Configure**.
 1. Select the trash can to the right of the passkey profile you want to delete, and select **Save**.
 
-   >[!Note] 
-   >You can delete a profile only if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
+   >[!NOTE] 
+   >You can delete a profile onlyif it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
@@ -132,10 +132,10 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 ###  Special consideration for high-privileged accounts
 
-Passkey profile | Target groups | Passkey types | Attestation enforcement | Key Restrictions
+Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
 ----------------|---------------|---------------|-------------------------|-----------------
 All device-bound passkeys (attestation enforced) | IT admins<br>Executives<br>Engineering | Device-bound | Enabled | Disabled
-All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced |  Disabled |  Disabled 
+All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced | Disabled | Disabled
 
 
 ### Targeted rollout of passkeys in Microsoft Authenticator 
