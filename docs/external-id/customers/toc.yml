@@ -58,7 +58,9 @@ items:
       - name: Akamai
         href: how-to-configure-akamai-integration.md
     - name: Fraud protection integration
-      href: how-to-integrate-fraud-protection.md             
+      href: how-to-integrate-fraud-protection.md
+    - name: Native authentication fraud protection for SMS MFA
+      href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
 - name: Authentication
   expanded: false
   items:
