@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 A difference report compares the current state of your tenant with a selected backup and highlights what changed.
 
-Difference reports show objects that were **created, modified, or soft-deleted** after the selected backup was taken, along with details about:
+Difference reports show objects that were **created, modified, soft-deleted or restored** after the selected backup was taken, along with details about:
 
 - Changed attributes—properties of the object whose values differ between the backup and the current tenant state.
 - Changed links—changes to the object's relationships with other objects, such as group membership.
@@ -27,7 +27,7 @@ Key details:
 
 ## Prerequisites
 
-To review difference reports, you must have the **Entra Backup Reader** role assigned. To review and create difference reports, you must have the **Entra Backup Administrator** role assigned.
+To review difference reports, you must have at least the **Entra Backup Reader** role assigned. To review and create difference reports, you must have the **Entra Backup Administrator** role assigned.
 
 ## Scope a difference report
 
@@ -35,7 +35,7 @@ When you create a difference report, you can scope it to control which objects a
 
 - **All supported objects**—Includes all supported object types in the tenant.
 - **By object type**—Includes only selected object types.
-- **By object ID**—Includes only specific objects by their object IDs. You can specify up to 100 object IDs across supported object types.
+- **By object ID**—Includes only specific objects by their object IDs with their object types specified. You can specify up to 100 object IDs across supported object types.
 
 Scoping is applied at report creation time and can't be changed after the report is created.
 
@@ -91,7 +91,7 @@ Difference reports move through the following statuses as they are created and p
 
    :::image type="content" source="media/create-review-difference-reports/difference-reports-list.png" alt-text="Screenshot of the Difference Reports list page showing report statuses, backup timestamps, and filtering details for three difference reports.":::
 
-1. Select a completed difference report to open its details.
+1. Select a completed difference report to view its details.
 
    :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png" alt-text="Screenshot of the Difference Reports list page showing three completed reports with available backups, including details on calculated objects and links.":::
 
