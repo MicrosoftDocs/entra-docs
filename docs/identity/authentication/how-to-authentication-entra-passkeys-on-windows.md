@@ -96,8 +96,6 @@ In the Authentication methods policy in the Microsoft Entra admin center, ensure
 
 During public preview, if a tenant allows Microsoft Entra passkeys on Windows and a user registers a passkey, it appears in the user's list of usable authentication methods. If the tenant later removes the Windows Hello AAGUIDs from the allow list, the registered passkey remains on the usable authentication methods list instead of moving to the non-usable methods list. This issue will be fixed for General Availability.
 
-:::image type="content" source="media/how-to-authentication-entra-passkeys-on-windows/known-issue-usable-method.png" alt-text="Screenshot that shows a registered passkey still listed as a usable authentication method after the tenant removes it from the allow list.":::
-
 ## How to configure passkeys on Windows
 
 During public preview, Microsoft Entra passkeys on Windows require an Authentication Policy Administrator to explicitly opt in.
