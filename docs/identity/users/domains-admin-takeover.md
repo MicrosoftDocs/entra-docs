@@ -3,7 +3,7 @@ title: Admin takeover of an unmanaged directory
 description: How to take over a Domain name DNS domain name in an unmanaged Microsoft Entra organization (shadow tenant).
 ms.topic: how-to
 ms.date: 01/06/2025
-ms.reviewer: sumitp
+ms.reviewer: katabish
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # Take over an unmanaged directory as administrator in Microsoft Entra ID

@@ -3,7 +3,7 @@ title: Scenarios, limitations, and known issues using groups to manage licensing
 description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.reviewer: sumitp
+ms.reviewer: katabish
 ms.custom: sfi-image-nochange
 ---
 

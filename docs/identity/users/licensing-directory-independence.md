@@ -4,7 +4,7 @@ description: Understanding the data independence of your Microsoft Entra organiz
 ms.topic: how-to
 ms.date: 12/16/2024
 ms.custom: it-pro, sfi-ga-nochange
-ms.reviewer: sumitp
+ms.reviewer: katabish
 ---
 
 # Understand how multiple Microsoft Entra tenant organizations interact

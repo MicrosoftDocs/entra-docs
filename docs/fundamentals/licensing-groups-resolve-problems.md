@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.reviewer: sumitp
+ms.reviewer: katabish
 ms.custom: it-pro
 ---
 
