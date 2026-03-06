@@ -33,7 +33,7 @@ Changes for users and groups synchronized from on-premises Active Directory appe
 
 The first time you create a difference report, you might experience a delay as snapshot data transfers before the difference calculation starts. You can check the progress of report generation in the **Difference Reports** section.
 
-The second time you create a difference report against the same snapshot, the data transfer step isn't needed, so the report finishes faster.
+The second time you create a difference report against the same snapshot, the data loading step isn't needed, so the report finishes faster.
 
 <!-- The following table is a placeholder. Time estimates to be confirmed by the feature team.
 
