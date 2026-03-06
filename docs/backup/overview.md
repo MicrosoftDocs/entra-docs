@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Microsoft Entra Backup and Recovery overview (Preview)
 
-Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that enables you to quickly recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, conditional access policies, named locations, authentication method policies, and authorization policy. Agent ID is also supported because it's comprised of user and service principal objects with distinct roles and characteristics.
+Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that enables you to quickly recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, conditional access policies, named locations, authentication method policies, and partial authorization policy. Agent ID is also supported because it's comprised of user and service principal objects with distinct types and characteristics.
 
 ## How backups work
 
