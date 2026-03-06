@@ -1,11 +1,8 @@
 ---
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 01/06/2025
-ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: sfi-image-nochange
 ---
