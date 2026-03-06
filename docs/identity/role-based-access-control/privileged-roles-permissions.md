@@ -1,8 +1,6 @@
 ---
 title: Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID
 description: Privileged roles and permissions in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: concept-article
