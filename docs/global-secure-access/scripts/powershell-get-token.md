@@ -31,7 +31,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 ```powershell
 # This sample script lets you obtain the Auth Token that you can use for registering the Entra private network connector through Marketplace.
 #
-# Version 1.1
+# Version 1.2
 #
 # This script requires following 
 #    - PowerShell 5.1 (x64) or beyond
@@ -51,6 +51,7 @@ Set-ExecutionPolicy UnRestricted -Force
 
 # The script will use a temp folder on C Drive. First it will remove the folder and create a new folder to ensure its empty.
 $tempPath = "C:\temp"
+$tokenPath = "C:\token.txt"
 
 # Check if the folder exists
 if (Test-Path -Path $tempPath) {
@@ -60,7 +61,6 @@ if (Test-Path -Path $tempPath) {
 
 # Creating C:\temp folder
 New-Item -ItemType Directory -Path $tempPath -Force | Out-Null
-New-Item -ItemType File -Path C:\token.txt -Force | Out-Null
 
 # Copy Required Dlls 
 Write-Host "Downloading Entra Private Network Connector Installer..."
@@ -123,41 +123,57 @@ if (Test-Path -Path $folderPath) {
         
         $accessToken = $token
 
-        Set-Content -Path C:\token.txt -Value "$accessToken"
+        New-Item -ItemType File -Path $tokenPath -Force | Out-Null
+        Set-Content -Path $tokenPath -Value "$accessToken"
         
-        Write-Host "Token successfully acquired and saved to C:\token.txt"
+        Write-Host "Token successfully acquired and saved to $tokenPath"
+
+        # Set the prompt path to C: 
+        Set-Location -Path "C:\"
+
+        # Uninstall the Connector from your machine.
+        # You can do so programmatically (below) or manually by double clicking C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe and choose Uninstall. 
+        # Note that if the Connector service is not uninstalled properly, next iteration can fail on this machine.
+        Write-Host "Uninstalling connector..."
+        Start-Process -FilePath "$tempPath\MicrosoftEntraPrivateNetworkConnectorInstaller.exe" -ArgumentList "/uninstall", "/quiet" -Wait
+
+        # Wait 60 seconds
+        Write-Host "Waiting for uninstallation to complete..."
+        Start-Sleep -Seconds 60
+
+        # Delete the related files
+        Write-Host "Cleaning up files..."
+        if (Test-Path -Path $tempPath) {
+            try {
+                Remove-Item -Path $tempPath -Recurse -Force
+            } catch {
+                Write-Warning "Could not fully remove '$tempPath': $_"
+            }
+        }
+        if (Test-Path -Path "C:\Program Files\Microsoft Entra private network connector") {
+            try {
+                Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse -Force
+            } catch {
+                Write-Warning "Could not fully remove 'Microsoft Entra private network connector' folder: $_"
+            }
+        }
+        if (Test-Path -Path "C:\Program Files\Microsoft Entra private network connector updater") {
+            try {
+                Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse -Force
+            } catch {
+                Write-Warning "Could not fully remove 'Microsoft Entra private network connector updater' folder: $_"
+            }
+        }
+
+        Write-Output "Access Token that you acquired is available in $tokenPath."
+        Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
+
     }
     else {
-        Write-Output "Error: Authentication result, token or tenant id returned with null."
+        Write-Error "Authentication failed: result, access token, or tenant ID was null. No token has been saved. Please re-run the script and complete the interactive login."
+        Set-Location -Path "C:\"
+        return
     }
-
-    # Set the prompt path to C: 
-    Set-Location -Path "C:\"
-
-    # Uninstall the Connector from your machine.
-    # You can do so programmatically (below) or manually by double clicking C:\temp\MicrosoftEntraPrivateNetworkConnectorInstaller.exe and choose Uninstall. 
-    # Note that if the Connector service is not uninstalled properly, next iteration can fail on this machine.
-    Write-Host "Uninstalling connector..."
-    Start-Process -FilePath "$tempPath\MicrosoftEntraPrivateNetworkConnectorInstaller.exe" -ArgumentList "/uninstall", "/quiet" -Wait
-
-    # Wait 60 seconds
-    Write-Host "Waiting for uninstallation to complete..."
-    Start-Sleep -Seconds 60
-
-    # Delete the related files
-    Write-Host "Cleaning up files..."
-    if (Test-Path -Path $tempPath) {
-        Remove-Item -Path $tempPath -Recurse -Force -ErrorAction SilentlyContinue
-    }
-    if (Test-Path -Path "C:\Program Files\Microsoft Entra private network connector") {
-        Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector" -Recurse -Force -ErrorAction SilentlyContinue
-    }
-    if (Test-Path -Path "C:\Program Files\Microsoft Entra private network connector updater") {
-        Remove-Item -Path "C:\Program Files\Microsoft Entra private network connector updater" -Recurse -Force -ErrorAction SilentlyContinue
-    }
-
-    Write-Output "Access Token that you acquired is available in C:\token.txt."
-    Write-Output "Please ensure no additional spaces are introduced when copying token to marketplace input form. Introducing spaces can change the token and can cause failures"
 
 } else {
     Write-Host "The required module is not made available at path: $folderPath"
