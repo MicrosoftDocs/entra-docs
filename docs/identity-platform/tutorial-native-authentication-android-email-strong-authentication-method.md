@@ -14,7 +14,7 @@ ms.custom:
 #Customer intent: As a developer, I want to register an email one-time passcode as a strong authentication method for MFA-enabled users in an Android app using native authentication, so users can complete MFA when no strong authentication method is registered.
 ---
 
-# Tutorial: Add Email strong authentication method registration to your Android app
+# Tutorial: Add email strong authentication method registration to your Android app
 
 This tutorial demonstrates how to implement Email strong authentication method registration into your Android app using native authentication. At least one strong authentication is mandatory for multifactor authentication (MFA) enabled users. Currently, we only support Email and SMS one-time passcode as strong authentication method.
 
