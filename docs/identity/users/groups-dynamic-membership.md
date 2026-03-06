@@ -28,12 +28,14 @@ Also keep these limitations in mind:
 
 ### Security consideration: Evaluate attribute write permissions before using them in dynamic group rules
 
-When you create a dynamic membership rule, you effectively delegate control of that group's membership to anyone who can modify the attributes referenced in the rule. Before selecting an attribute for a dynamic group rule, verify that only authorized administrators can update its value. This is especially important for:
+When you create a dynamic membership rule, the security of that group's membership depends on who can modify the attributes referenced in the rule. Before selecting an attribute, review the write permissions for that attribute—both in Microsoft Entra ID and in any connected source directories.
+
+This is especially important for:
 
 - **Attributes synced from on-premises Active Directory.** Some on-premises attributes might be configured with permissions that allow users to modify their own values (SELF write).
 - **Groups used for access control.** If a dynamic group controls access to sensitive resources, applications, or Conditional Access policies, the security of that access is only as strong as the write controls on the attributes in the rule.
 
-As a best practice, audit the write permissions for any attribute you plan to use in a dynamic membership rule, both in Microsoft Entra ID and at the source (such as on-premises Active Directory). Restrict self-service write access to attributes used in security-sensitive groups.
+As a best practice, audit the write permissions for all entity types and their attributes you plan to use in a dynamic membership rule, both in Microsoft Entra ID and at the source (such as on-premises Active Directory). Restrict self-service write access to attributes used in security-sensitive groups.
 
 > [!NOTE]
 > Role-assignable groups already prevent this risk by requiring assigned (not dynamic) membership.
