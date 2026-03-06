@@ -39,8 +39,7 @@ The second time you create a difference report against the same snapshot, the da
 
 | Tenant size | Estimated time for first difference report |
 |---|---|
-| 1-5,000 objects | TBD |
-| 5,000-50,000 objects | TBD |
+| 1-50,000 objects | TBD |
 | 50,000-300,000 objects | TBD |
 | 300,000-1,000,000 objects | TBD |
 | More than 1,000,000 objects | TBD |
@@ -64,8 +63,7 @@ Time needed to complete recovery depends on the number of changes to recover.
 
 | Changed objects | Estimated time for recovery |
 |---|---|
-| 1-5,000 changes | TBD |
-| 5,000-50,000 changes | TBD |
+| 1-50,000 changes | TBD |
 | 50,000-300,000 changes | TBD |
 | 300,000-1,000,000 changes | TBD |
 | More than 1,000,000 changes | TBD |
