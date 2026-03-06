@@ -65,7 +65,7 @@ This diagram shows how a native application integrates third‑party fraud prote
 
 In native authentication flows that use SMS‑based MFA, the application evaluates fraud risk before Microsoft Entra External ID sends an SMS one‑time passcode (OTP). The native app initializes a third‑party fraud protection SDK early in the sign‑in process using provider‑specific mechanisms.
 
-Microsoft Entra External ID drives the authentication state and determines when MFA is required. When SMS MFA is triggered, the native app performs a real‑time risk evaluation through the third‑party provider. As part of this evaluation, the app retrieves the user’s registered phone number from Microsoft Graph to validates it with the fraud provider to assess reputation and abuse signals.
+Microsoft Entra External ID drives the authentication state and determines when MFA is required. When SMS MFA is triggered, the native app performs a real‑time risk evaluation through the third‑party provider. As part of this evaluation, the app retrieves the user’s registered phone number from Microsoft Graph to validate it with the fraud provider to assess reputation and abuse signals.
 
 A customer‑managed web application firewall (WAF) enforces the fraud decision returned by the third‑party provider. If the provider allows the request, the WAF forwards it to Microsoft Entra External ID, which issues the SMS OTP and completes authentication after the user submits the code. If Microsoft detects high risk for the SMS challenge, the service blocks the request. The sign-in attempt stops, and Microsoft doesn’t send an SMS. If the provider requires additional verification, the app completes the provider‑specific challenge before allowing the flow to continue.
 
