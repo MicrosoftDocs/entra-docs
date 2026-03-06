@@ -95,7 +95,7 @@ To investigate a Microsoft Entra threat intelligence risk detection, follow thes
 
 - Detection was triggered by a real-time rule
    1. Validate that no other users in your directory are targets of the same attack. This information can be found using the TI_RI_#### number assigned to the rule.
-   1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
+   1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence research. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
 
 ### Atypical travel detections
 
@@ -134,6 +134,8 @@ This detection indicates the user doesn't commonly use the browser or activity w
 - If you confirm the user *does* use the IP address in the scope of their duties, confirm the sign-in as safe.
 
 ### Password spray detections
+
+A password spray detection means Microsoft observed an attacker conducting a spray attack and achieving a successful credential validation against a user in your tenant. The spray attack might have targeted users across many tenants — the detection fires only in tenants where a successful password match was confirmed. Unsuccessful spray attempts don't generate a detection.
 
 - If you confirm that the activity was *not* performed by a legitimate user:
    1. Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation.
