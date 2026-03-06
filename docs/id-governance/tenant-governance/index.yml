@@ -30,7 +30,7 @@ landingContent:
           - text: Related tenants
             url: related-tenants.md
           - text: Signals and metrics
-            url: signals-and-metrics.md
+            url: signals-metrics.md
           - text: Governance relationships
             url: governance-relationships.md
           - text: Governance policy templates
