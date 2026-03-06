@@ -149,9 +149,15 @@ For further investigation of password spray risk detections, see the article [Pa
 
 ### Leaked credentials detections
 
+Leaked credentials detections are always high risk because they represent confirmed credential exposure. When this detection fires, investigate right away.
+
 If this detection identified a leaked credential for a user:
-1. Confirm the user as compromised, and invoke a password reset if not already performed by self-remediation.
-1. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+
+1. **Assess the scope of exposure.** Review the user's risk history and sign-in logs to determine if the leaked credential was used for unauthorized access. Look for correlated sign-in risk events such as sign-ins from unfamiliar locations, anonymous IP addresses, or atypical travel.
+1. **Check if the password was already changed.** Verify whether the user changed their password after the date the leak was detected. If the password was changed, the risk might already be self-remediated. If not, confirm the user as compromised and initiate a password reset.
+1. **Block access if an attacker is active.** If sign-in logs show unauthorized access, or if an attacker has the ability to reset the password or perform MFA, block the user, reset the password, and revoke all refresh tokens.
+1. **Review for lateral movement.** Check the user's recent activity for signs of privilege escalation, new app registrations, mailbox rule changes, or access to sensitive resources that might indicate post-compromise activity.
+1. **Verify connected accounts.** If the user reuses passwords across services, consider the credential compromised beyond your tenant. Advise the user to change passwords on other services where they use the same credential.
 
 ## Mitigate future risks
 

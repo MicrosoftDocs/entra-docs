@@ -259,10 +259,11 @@ Also referred to as Adversary in the Middle, this high precision detection is tr
 
 ### Leaked credentials 
 
-This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [FAQs](id-protection-faq.yml). 
+This risk detection indicates that a user's valid credentials appeared in a known credential breach. Microsoft operates a large-scale credential scanning pipeline that continuously monitors dark web forums, breach dump repositories, paste sites, law enforcement seizure data, and other sources through partnerships with the Microsoft Threat Intelligence Center (MSTIC), Microsoft Digital Crimes Unit (DCU), and industry partners. When discovered credentials match a user's current valid password hash, the user is flagged with **high** risk because the detection represents confirmed credential exposure. 
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
+- Requires [password hash synchronization (PHS)](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md)
 - [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#leaked-credentials-detections)
 
 ### Microsoft Entra threat intelligence (user) 
