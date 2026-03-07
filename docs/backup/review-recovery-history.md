@@ -18,21 +18,21 @@ Recovery history includes:
 - The start and completion time of the recovery
 - The number of objects and links modified
 
-Recovery history is intended for recent operational review and troubleshooting. Recovery history data is retained for up to 5 days after the recovery completion time.
+Recovery history is intended for recent operational review and troubleshooting. Recovery history data is retained for the duration of its backup data.
 
 ## Prerequisites
 
-To view available recovery history in your tenant, you must be assigned at least the **Entra Backup Reader** role.
+To view available recovery history in your tenant, you must sign in with at least the **Entra Backup Reader** role.
 
 ## Review recovery history
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least **Entra Backup Reader**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least **Entra Backup Reader** role.
 
 1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
 
    :::image type="content" source="media/review-recovery-history/recovery-history-page.png" alt-text="Screenshot of the Backup and recovery Recovery History (Preview) page showing two recovery operations with columns for Recovery ID, Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, Filtered by, and Backup.":::
 
-   The Recovery History page displays all recent recovery operations for your tenant. You can:
+   The Recovery History page displays all recent recovery operations in your tenant. You can:
 
    - View the **Recovery ID** for each operation.
    - Check the **Status**.
@@ -51,9 +51,9 @@ To view available recovery history in your tenant, you must be assigned at least
 Recovery operations move through the following statuses as changes are applied to the tenant. These statuses indicate the progress and outcome of the recovery job.
 
 - **Loading data**: The system is loading data from the selected backup to prepare for recovery. If the backup has already been used to create a difference report or a prior recovery, this step might complete quickly.
-- **In progress**: The system is applying recovery actions to restore objects from the backup state. The duration of this step depends on the number and type of changes being applied.
+- **In progress**: The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.
 - **Completed**: The recovery completed successfully, and all supported changes were applied.
-- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. You can review the failed changes to understand which items weren't fully restored and why.
+- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. You can review the failed changes to understand which objects weren't restored and why.
 - **Failed**: The recovery couldn't be completed due to an error. Some changes might not have been applied.
 - **Canceled**: The recovery was canceled before completion.
 
@@ -76,4 +76,4 @@ Use failed recovery entries to:
 :::image type="content" source="media/review-recovery-history/failed-recovery-details.png" alt-text="Screenshot of the Recovery History page showing a recovery operation with Completed with Warnings status indicated by a warning triangle icon, alongside other completed recovery operations.":::
 
 > [!NOTE]
-> Failed recovery records remain available within the recovery history retention window and are cleaned up 5 days after the recovery completion time.
+> Failed recovery records remain available within the recovery history as long as the backup is available.
