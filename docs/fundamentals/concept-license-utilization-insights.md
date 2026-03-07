@@ -16,16 +16,13 @@ This view gives you a clearer understanding of your license footprint, the value
 
 ## Prerequisites
 
-[!INCLUDE [entra-license-utilization-roles](~/../docs/includes/entra-license-utilization-roles.md)]
-
 <!-- TODO: Confirm the least privileged role required with PM (Jade DSouza).
      Sarah Lipsey tested with License Administrator and couldn't access the page.
-     Replace the include above with the confirmed role, or use inline text:
+     Update the role listed below once confirmed. -->
 
-     To access the license utilization insights page, you need one of the following roles:
-     - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
-     - [TBD - least privileged role]
--->
+To access the license utilization insights page, you need one of the following roles:
+
+- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
 
 ## Access the license utilization insights page
 
