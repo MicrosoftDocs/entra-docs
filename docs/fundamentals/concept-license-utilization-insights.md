@@ -19,13 +19,11 @@ This view gives you a clearer understanding of your license footprint, the value
 [!INCLUDE [entra-p1-license.md](../includes/entra-p1-license.md)]
 
 <!-- TODO: Confirm the least privileged role with PM (Jade DSouza).
-     Sarah Lipsey tested with License Administrator and couldn't access the page.
-     Update the role below once confirmed. -->
+     Currently matching the pattern from concept-usage-insights-report.md.
+     Update once confirmed. -->
 
-- The least privileged role to access this page is being confirmed. As a [best practice](/entra/identity/role-based-access-control/delegate-by-task), use the least privileged role for the type of access needed.
-
-> [!NOTE]
-> Using [least privileged roles](/entra/identity/role-based-access-control/delegate-by-task) is recommended as a security best practice. Global Administrator is a highly privileged role that should be limited to scenarios where a less-privileged role can't be used.
+- The least privileged role is [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
+    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) can also access this page.
 
 ## Access the license utilization insights page
 
