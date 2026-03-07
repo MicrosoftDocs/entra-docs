@@ -31,9 +31,9 @@ The Microsoft Entra private network connector requires a server running Windows 
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 > [!IMPORTANT]
-> When using the connector to access web applications published via Microsoft Entra application proxy, HTTP/2 must be disabled on the server hosting the Microsoft Entra private network connector running on Windows Server 2019 or later. This configuration change isn't required when using the connector only with Global Secure Access Private Access.
+> When using the connector to access web applications published via Microsoft Entra application proxy, `HTTP/2` must be disabled on the server hosting the Microsoft Entra private network connector running on Windows Server 2019 or later. This configuration change isn't required when using the connector only with Global Secure Access Private Access.
 >
-> Disable `HTTP2` protocol support in `WinHttp` for web applications published via Microsoft Entra application proxy to work properly. HTTP/2 is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables HTTP/2 on Windows Server 2019 and later. This is a machine-wide registry key.
+> Disable `HTTP2` protocol support in `WinHttp` for web applications published via Microsoft Entra application proxy to work properly. `HTTP/2` is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables `HTTP/2` on Windows Server 2019 and later. This is a machine-wide registry key.
 >
 > ```
 > Windows Registry Editor Version 5.00
