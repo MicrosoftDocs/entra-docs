@@ -16,13 +16,16 @@ This view gives you a clearer understanding of your license footprint, the value
 
 ## Prerequisites
 
-<!-- TODO: Confirm the least privileged role required with PM (Jade DSouza).
+[!INCLUDE [entra-p1-license.md](../includes/entra-p1-license.md)]
+
+<!-- TODO: Confirm the least privileged role with PM (Jade DSouza).
      Sarah Lipsey tested with License Administrator and couldn't access the page.
-     Update the role listed below once confirmed. -->
+     Update the role below once confirmed. -->
 
-To access the license utilization insights page, you need one of the following roles:
+- The least privileged role to access this page is being confirmed. As a [best practice](/entra/identity/role-based-access-control/delegate-by-task), use the least privileged role for the type of access needed.
 
-- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator)
+> [!NOTE]
+> Using [least privileged roles](/entra/identity/role-based-access-control/delegate-by-task) is recommended as a security best practice. Global Administrator is a highly privileged role that should be limited to scenarios where a less-privileged role can't be used.
 
 ## Access the license utilization insights page
 
