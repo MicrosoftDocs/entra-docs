@@ -33,6 +33,9 @@ This view gives you a clearer understanding of your license footprint, the value
 <!-- TODO: Confirm navigation path with PM. The public preview blog post showed this under
      "Usage & Insights" blade, but the March 2026 demo showed it under "Billing > Licenses". -->
 
+<!-- SCREENSHOT: Overview of the Licenses page showing the navigation path and the full page layout.
+     Suggested filename: license-utilization-overview.png -->
+
 ## License entitlements
 
 The license entitlements section shows how many licenses you've purchased for the current month. Entitlements are calculated by looking at all Microsoft Entra products you've purchased, including:
@@ -47,6 +50,9 @@ The license entitlements section shows how many licenses you've purchased for th
 
 The entitlement count reflects the total number of licenses across all products that include each tier of Entra ID functionality.
 
+<!-- SCREENSHOT: License entitlements section showing the product list and calculated entitlement count.
+     Suggested filename: license-entitlements-section.png -->
+
 ## Feature usage metrics
 
 The license utilization insights page uses a single representative metric (hero metric) for each license tier to measure usage. This approach simplifies the view by focusing on the most meaningful indicator of paid feature adoption.
@@ -55,9 +61,15 @@ The license utilization insights page uses a single representative metric (hero 
 
 For P1 licenses, the hero metric is **Conditional Access users** — the number of unique users who signed in through at least one Conditional Access policy during the measurement period.
 
+<!-- SCREENSHOT: P1 usage section showing Conditional Access users metric with the usage bar.
+     Suggested filename: license-utilization-p1-usage.png -->
+
 ### Entra ID P2 usage
 
 For P2 licenses, the hero metric is **Risk-based Conditional Access users** — the number of unique users who signed in through at least one risk-based Conditional Access policy during the measurement period.
+
+<!-- SCREENSHOT: P2 usage section showing Risk-based Conditional Access users metric with the usage bar.
+     Suggested filename: license-utilization-p2-usage.png -->
 
 ### Active and guest user differentiation
 
@@ -70,6 +82,10 @@ The license utilization insights page displays a usage bar that compares your cu
 - **Within entitlement** — The bar shows your usage in one color, indicating you're using fewer licenses than you've purchased.
 - **Over entitlement** — If usage exceeds your entitlement, the bar extends beyond the entitlement boundary, providing a visual indicator that you might need more licenses.
 
+<!-- SCREENSHOT: Side-by-side or annotated view showing the usage bar in both states:
+     within entitlement (green/blue bar) and over entitlement (bar extending past boundary).
+     Suggested filename: license-utilization-usage-bar.png -->
+
 ## Usage trends
 
 You can review usage trends over the past six months to understand how your license consumption changes over time. This historical view helps you:
@@ -77,6 +93,9 @@ You can review usage trends over the past six months to understand how your lice
 - Identify growth patterns in feature adoption.
 - Plan for future license purchases.
 - Spot seasonal or project-driven usage spikes.
+
+<!-- SCREENSHOT: Usage trends chart showing the 6-month historical view.
+     Suggested filename: license-utilization-trends.png -->
 
 ## Related content
 
