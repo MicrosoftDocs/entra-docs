@@ -119,14 +119,14 @@ Use the following PowerShell code to remove those applications:
 
 3. Create or use a managed administrative account from the tenant that you want to delete. For example: `newAdmin@tenanttodelete.onmicrosoft.com`.
 
-4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph -Scopes "Application.ReadWrite.All"`
+4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All"`
 
    >[!WARNING]
    > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
    >
    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
-5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
+5. Run the following commands to set the tenant context. The `Connect-AzAccount` command authenticates to the Az PowerShell module, which is separate from the Microsoft Graph connection established in step 4. Both connections are needed for the remaining steps.
 
    ```powershell
    Clear-AzContext -Scope CurrentUser
