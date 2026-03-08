@@ -40,6 +40,16 @@ Furthermore, changes have been made to better adjust the risk detections to pass
 
 ---
 
+### Public preview - Lifecycle Workflows task now supports setting Access Package assignments expiration
+
+**Type:** New feature      
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance  
+
+Customers can now configure the remove all access packages task in Lifecycle Workflows to automatically expire access packages assignments after a specified number of days when employees leave the organization. For more information, see: [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user).
+
+---
+
 ## July 2025
 
 ### General Availability - Microsoft Entra External ID: Custom 3rd party email OTP provider

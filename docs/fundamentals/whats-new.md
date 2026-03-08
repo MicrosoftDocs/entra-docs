@@ -1178,16 +1178,6 @@ For more information, see: [How to customize Global Secure Access block page (pr
 
 ## August 2025
 
-### Public preview - Lifecycle Workflows task now supports setting Access Package assignments expiration
-
-**Type:** New feature      
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance  
-
-Customers can now configure the remove all access packages task in Lifecycle Workflows to automatically expire access packages assignments after a specified number of days when employees leave the organization. For more information, see: [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user).
-
----
-
 ### Plan for change - New end user homepage in My Account
 
 **Type:** New feature      
