@@ -126,7 +126,7 @@ Use the following PowerShell code to remove those applications:
    >
    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
-5. Run the following commands to set the tenant context. The `Connect-AzAccount` command authenticates to the Az PowerShell module, which is separate from the Microsoft Graph connection established in step 4. Both connections are needed for the remaining steps.
+5. Run the following commands to set the tenant context. The `Connect-AzAccount` command authenticates to the Az PowerShell module, which is separate from the Microsoft Graph connection established in step 4. Both connections are needed for the remaining steps. **Don't skip these steps or you risk deleting enterprise apps from the wrong tenant.**
 
    ```powershell
    Clear-AzContext -Scope CurrentUser
