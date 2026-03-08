@@ -1,16 +1,10 @@
 ---
 title: 'Microsoft Entra Connect: Version release history archive'
 description: This article lists all archived releases of Microsoft Entra Connect and Azure AD Sync
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 # Microsoft Entra Connect: Version release history archive
 
@@ -181,7 +175,7 @@ We fixed a bug in the sync errors compression utility that wasn't handling surro
 - Added a new federation management task called "View federation configuration" that displays the current AD FS settings. (Because of this addition, AD FS settings have been removed from the "Review your solution" page.)
 
 ### Fixed issues
-- Resolved sync error issue for the scenario where a user object taking over its corresponding contact object has a self-reference (e.g. user is their own manager).
+- Resolved sync error issue for the scenario where a user object taking over its corresponding contact object has a self-reference (such as user is their own manager).
 - Help pop-ups now show on keyboard focus.
 - For Auto upgrade, if any conflicting app is running from 6 hours, kill it and continue with upgrade.
 - Limit the number of attributes a customer can select to 100 per object when selecting directory extensions. This limit will prevent the error from occurring during export as Azure has a maximum of 100 extension attributes per object.

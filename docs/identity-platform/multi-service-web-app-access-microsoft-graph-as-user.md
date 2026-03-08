@@ -1,17 +1,15 @@
 ---
 title: Tutorial - Web app accesses Microsoft Graph as the user
 description: In this tutorial, you learn how to access data in Microsoft Graph from a web app for a signed-in user.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: azureday1
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.custom:
 ms.date: 09/15/2023
-ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: app-service
-ms.subservice: web-apps
+ms.service: identity-platform
+ms.subservice:
 ms.topic: tutorial
-services: microsoft-graph, app-service-web
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
 ---
 
@@ -23,7 +21,7 @@ Learn how to access Microsoft Graph from a web app running on Azure App Service.
 
 You want to add access to Microsoft Graph from your web app and perform some action as the signed-in user. This section describes how to grant delegated permissions to the web app and get the signed-in user's profile information from Microsoft Entra ID.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -64,7 +62,7 @@ The Azure Resource Explorer is now opened with your web app selected in the reso
 
 In the left browser, drill down to **config** > **authsettingsV2**.
 
-In the **authsettingsV2** view, select **Edit**. Find the **login** section of **identityProviders** -> **azureActiveDirectory** and add the following **loginParameters** settings: `"loginParameters":[ "response_type=code id_token","scope=openid offline_access profile https://graph.microsoft.com/User.Read" ]` .
+In the **authsettingsV2** view, select **Edit**. Find the **login** section of **identityProviders** > **azureActiveDirectory** and add the following **loginParameters** settings: `"loginParameters":[ "response_type=code id_token","scope=openid offline_access profile https://graph.microsoft.com/User.Read" ]` .
 
 ```json
 "identityProviders": {
@@ -97,7 +95,7 @@ Get your existing 'config/authsettingsv2’ settings and save to a local *authse
 az rest --method GET --url '/subscriptions/{SUBSCRIPTION_ID}/resourceGroups/{RESOURCE_GROUP}/providers/Microsoft.Web/sites/{WEBAPP_NAME}/config/authsettingsv2/list?api-version=2020-06-01' > authsettings.json
 ```
 
-Open the authsettings.json file using your preferred text editor. Find the **login** section of **identityProviders** -> **azureActiveDirectory** and add the following **loginParameters** settings: `"loginParameters":[ "response_type=code id_token","scope=openid offline_access profile https://graph.microsoft.com/User.Read" ]` .
+Open the authsettings.json file using your preferred text editor. Find the **login** section of **identityProviders** > **azureActiveDirectory** and add the following **loginParameters** settings: `"loginParameters":[ "response_type=code id_token","scope=openid offline_access profile https://graph.microsoft.com/User.Read" ]` .
 
 ```json
 "identityProviders": {
@@ -306,8 +304,6 @@ public class IndexModel : PageModel
 
 Using a custom **AuthProvider** class that encapsulates authentication logic, the web app gets the user's access token from the incoming requests header. The **AuthProvider** instance detects that the web app is hosted on App Service and gets the access token from the App Service authentication/authorization module. The access token is then passed down to the Microsoft Graph SDK client to make an authenticated request to the `/me` endpoint.
 
-To see this code as part of a sample application, see *graphController.js* in the [sample on GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/tree/main/2-WebApp-graphapi-on-behalf).
-
 > [!NOTE]
 > The App Service authentication/authorization is designed for more basic authentication scenarios. Later, when your web app needs to handle more complex scenarios, you can disable the App Service authentication/authorization module and the **AuthProvider** instance in the sample will fallback to use [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node), which is the recommended library for adding authentication/authorization to Node.js applications.
 
@@ -332,7 +328,7 @@ exports.getProfilePage = async(req, res, next) => {
 }
 ```
 
-To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). The code for this is located in [utils/graphHelper.js](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/blob/main/2-WebApp-graphapi-on-behalf/utils/graphHelper.js):
+To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). 
 
 ```nodejs
 const graph = require('@microsoft/microsoft-graph-client');

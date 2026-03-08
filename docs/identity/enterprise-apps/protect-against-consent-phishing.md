@@ -2,15 +2,9 @@
 title: Protect against consent phishing
 description: Learn ways of mitigating against application-based consent phishing attacks using Microsoft Entra ID.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: concept-article
 ms.date: 12/11/2023
 ms.custom: template-concept, enterprise-apps-article
-ms.author: jomondi
 ms.reviewer: tilarso
 
 #Customer intent: As an IT administrator responsible for securing cloud services, I want to understand what consent phishing is and how to mitigate it, so that I can protect my organization's data and prevent unauthorized access to cloud applications.
@@ -64,8 +58,9 @@ Administrators should be in control of application use by providing the right in
   - Investigate and hunt for consent phishing attacks by following the guidance on [advanced hunting with Microsoft 365 Defender](/microsoft-365/security/defender/advanced-hunting-overview).
 - Allow access to trusted applications that meet certain criteria and protect against those applications that don't:
   - [Configure user consent settings](./configure-user-consent.md?tabs=azure-portal) to allow users to only consent to applications that meet certain criteria. Such applications include applications developed by your organization or from verified publishers and only for low risk permissions you select.
-  - Use applications that are publisher verified. [Publisher verification](~/identity-platform/publisher-verification-overview.md) helps administrators and users understand the authenticity of application developers through a Microsoft supported vetting process. Even if an application does have a verified publisher, it's still important to review the consent prompt to understand and evaluate the request. For example, reviewing the permissions being requested to ensure they align with the scenario the app is requesting them to enable, other app and publisher details on the consent prompt, etc.
+  - Use applications that are publisher verified. [Publisher verification](~/identity-platform/publisher-verification-overview.md) helps administrators and users understand the authenticity of application developers through a Microsoft supported vetting process. Even if an application does have a verified publisher, it's still important to review the consent prompt to understand and evaluate the request. For example, reviewing the permissions being requested to ensure they align with the scenario the app is requesting them to enable, other app and publisher details on the consent prompt, and so on.
   - Create proactive [application governance](/defender-cloud-apps/app-governance-manage-app-governance) policies to monitor third-party application behavior on the Microsoft 365 platform to address common suspicious application behaviors.
+  - With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights from your Microsoft Entra data. This helps you identify and understand risks related to applications or workload identities. Learn more about how to [Assess application risks using Microsoft Security Copilot in Microsoft Entra](/entra/fundamentals/copilot-security-entra-investigate-risky-apps).
 
 ## Next steps
 

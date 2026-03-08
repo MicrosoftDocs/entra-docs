@@ -1,13 +1,10 @@
 ---
 title: Use Azure Front Door to provide geo-acceleration in Microsoft Entra application proxy.
 description: Optimize performance for global connectivity scenarios using Azure Front Door for geo-acceleration with Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/26/2024
-ms.author: kenwith
+ms.date: 05/01/2025
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Using Azure Front Door for geo-acceleration in Microsoft Entra application proxy

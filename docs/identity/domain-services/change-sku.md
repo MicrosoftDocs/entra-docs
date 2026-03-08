@@ -1,14 +1,8 @@
 ---
 title: Change the SKU for a Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to the SKU tier for a Microsoft Entra Domain Services managed domain if your business requirements change
-author: justinha
-manager: amycolannino
-
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.author: justinha
+ms.date: 01/21/2025
 #Customer intent: As an identity administrator, I want to change the SKU for my Microsoft Entra Domain Services managed domain to use different features as my business requirements change.
 ---
 
@@ -25,7 +19,7 @@ This article shows you how to change the SKU for an existing Domain Services man
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

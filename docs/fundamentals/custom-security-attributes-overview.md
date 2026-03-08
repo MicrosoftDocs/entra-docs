@@ -2,12 +2,9 @@
 title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
 ms.author: rolyon
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 05/14/2024
+ms.topic: concept-article
+ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
 ---
 
@@ -37,6 +34,7 @@ Custom security attributes **aren't** supported in the following areas:
 
 - [Microsoft Entra Domain Services](/entra/identity/domain-services/overview)
 - [Security Assertion Markup Language (SAML) token claims](~/identity-platform/saml-claims-customization.md)
+- [JSON Web Token claims](/entra/identity-platform/security-tokens)
 
 ## Features of custom security attributes
 
@@ -186,7 +184,7 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 
 You can manage custom security attributes programmatically using Microsoft Graph API. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
 
-You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph API for custom security attributes.
+You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to more easily try the Microsoft Graph API for custom security attributes.
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
 
@@ -199,3 +197,4 @@ You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-e
 - [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md)
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
 - [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md)
+- [Provision custom security attributes from HR sources (preview)](~/identity/app-provisioning/provision-custom-security-attributes.md)

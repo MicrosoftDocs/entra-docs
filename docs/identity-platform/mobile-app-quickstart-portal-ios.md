@@ -3,11 +3,11 @@ title: "Quickstart: Add sign in with Microsoft to an iOS or macOS app"
 description: In this quickstart, learn how an iOS or macOS app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
 ROBOTS: NOINDEX
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, "languages:iOS", mode-api
+ms.custom:
 ms.date: 02/15/2022
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -32,7 +32,7 @@ ms.topic: concept-article
 > 
 > ## Prerequisites
 > 
-> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > * XCode 10+
 > * iOS 10+
 > * macOS 10.12+
@@ -201,7 +201,7 @@ ms.topic: concept-article
 > * When MFA or other Conditional Access policies are required
 > 
 > ```swift
-> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParamaters!)
+> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParameters!)
 > self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* Add your handling logic */}
 > ```
 > 

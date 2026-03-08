@@ -1,14 +1,8 @@
 ---
 title: Plan an automatic user provisioning deployment for Microsoft Entra ID
 description: Guidance for planning and executing automatic user provisioning in Microsoft Entra ID
-
-author: jenniferf-skc
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-provisioning
-ms.topic: conceptual
-ms.date: 05/06/2024
-ms.author: jfields
+ms.topic: how-to
+ms.date: 03/04/2025
 ms.reviewer: arvinh
 ---
 
@@ -65,7 +59,7 @@ This article uses the following terms:
 | Resources| Link and Description |
 | - | - |
 | On-demand webinars| [Manage your Enterprise Applications with Microsoft Entra ID](https://info.microsoft.com/CO-AZUREPLAT-WBNR-FY18-03Mar-06-ManageYourEnterpriseApplicationsOption1-MCW0004438_02OnDemandRegistration-ForminBody.html)<br>‎Learn how Microsoft Entra ID can help you achieve SSO to your enterprise SaaS applications and best practices for controlling access. |
-| Videos| [What is user provisioning in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) <br> [How to deploy user provisioning in Active Azure Directory?](https://youtu.be/pKzyts6kfrw) <br> [Integrating Salesforce with Microsoft Entra ID: How to automate User Provisioning](https://youtu.be/MAy8s5WSe3A) 
+| Videos| [What is user provisioning in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) <br> [How to deploy user provisioning in Active Azure Directory?](https://youtu.be/pKzyts6kfrw) <br> [Integrating Salesforce with Microsoft Entra ID: How to automate User Provisioning](https://youtu.be/MAy8s5WSe3A) |
 | Online courses| SkillUp Online:  [Managing Identities](https://skillup.online/courses/course-v1:Microsoft+AZ-100.5+2018_T3/) <br> Learn how to integrate Microsoft Entra ID with many SaaS applications and to secure user access to those applications. |
 | Books| [Modern Authentication with Microsoft Entra ID for Web Applications (Developer Reference) 1st Edition](https://www.amazon.com/Authentication-Directory-Applications-Developer-Reference/dp/0735696942/ref=sr_1_fkmr0_1?keywords=Azure+multifactor+authentication&qid=1550168894&s=gateway&sr=8-1-fkmr0).  <br> ‎This is an authoritative, deep-dive guide to building Active Directory authentication solutions for these new environments. |
 | Tutorials| See the [list of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). |
@@ -141,7 +135,7 @@ A pilot allows you to test with a small group before deploying a capability for 
 
 In your first wave, target IT, usability, and other appropriate users who can test and provide feedback. Use this feedback to further develop the communications and instructions you send to your users, and to give insights into the types of issues your support staff may see.
 
-Widen the rollout to larger groups of users by increasing the scope of the group(s) targeted. Increasing the scope of the group(s) is done through [dynamic group membership](~/identity/users/groups-dynamic-membership.md), or by manually adding users to the targeted group(s).
+Widen the rollout to larger groups of users by increasing the scope of the group(s) targeted. Increasing the scope of the group(s) is done through [dynamic membership groups](~/identity/users/groups-dynamic-membership.md) or by manually adding users to the targeted group(s).
 
 ## Plan application connections and administration
 
@@ -292,7 +286,7 @@ We recommend that you assume ownership of and consume these reports on a cadence
 
 Refer to the following links to troubleshoot any issues that may turn up during provisioning:
 
-* [Problem configuring user provisioning to a Microsoft Entra Gallery application](~/identity/app-provisioning/application-provisioning-config-problem.md)
+* [Problem configuring user provisioning to a Microsoft Entra Gallery application](troubleshoot.md)
 
 * [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
 

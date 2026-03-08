@@ -1,13 +1,9 @@
 ---
 title: Use custom security attributes to scope a workflow
 description: Learn how to use custom security attribute to configure the scope of a workflow with lifecycle workflows.
-author: owinfreyATL
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/08/2024
-ms.author: owinfrey
+ms.date: 08/13/2024
 ms.reviewer: krbain
 
 #CustomerIntent: As an administrator, I want to be able to use custom security attributes of a user as part of the scope of a workflow so that I have greater control over which users specific workflows will run for.
@@ -32,7 +28,7 @@ Workflows can be created with, or edited, to include a custom security attribute
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. On the Workflows page, select the workflow that you want to use a custom security attribute as part of the scope for.
 
@@ -56,7 +52,7 @@ After you scoped a workflow using a custom security attribute, you can view this
 
 1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1.  On the workflows page, select **Audit Logs**.
     > [!TIP]
@@ -65,7 +61,7 @@ After you scoped a workflow using a custom security attribute, you can view this
 
 1. On the version information page, under **Configure**, you should see the custom security attribute as the rule.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/custom-attribute-scope.png" alt-text="Screenshot of custom security attribute as scope.":::
-1. Depending on your roles determines if you can see the full details of the custom security attributes being used. If you attempt to view custom security attribute information while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set, you'll see that the information is hidden.
+1. Depending on your roles determines if you can see the full details of the custom security attributes being used. If you attempt to view custom security attribute information while not having the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles set, you see that the information is hidden.
     :::image type="content" source="media/manage-workflow-custom-security-attribute/attribute-information-hidden.png" alt-text="Screenshot of hidden attribute information.":::
 
 > [!NOTE]

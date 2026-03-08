@@ -1,8 +1,8 @@
 ---
-author: barclayn
-ms.author: barclayn
 ms.date: 04/24/2024
 ms.topic: include
+ms.custom:
+  - devx-track-arm-template
 ---
 
 In this article, using the Azure Resource Manager deployment template, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
@@ -10,7 +10,7 @@ In this article, using the Azure Resource Manager deployment template, you learn
 ## Prerequisites
 
 - If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Azure Resource Manager templates
 
@@ -210,7 +210,7 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
    **Microsoft.Compute/virtualMachines API version 2018-06-01**
 
-   To remove a single user-assigned managed identity from a VM, remove it from the `useraAssignedIdentities` dictionary.
+   To remove a single user-assigned managed identity from a VM, remove it from the `userAssignedIdentities` dictionary.
 
    If you have a system-assigned managed identity, keep it in the `type` value under the `identity` value.
 

@@ -1,17 +1,9 @@
 ---
-title: Create an external tenant
-description: Learn how to create an external tenant in the  Microsoft Entra admin center. 
- 
-author: csmulligan
-manager: celestedg
-ms.service: entra-external-id
- 
-ms.subservice: customers
+title: Create an External Tenant
+description: Create an external tenant to get started with Microsoft Entra External ID as your customer identity and access management (CIAM) service.
 ms.topic: how-to
-ms.date: 02/02/2024
-ms.author: cmulligan
-ms.custom: it-pro
-
+ms.date: 11/06/2025
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to create an external tenant in the  Microsoft Entra admin center. 
 ---
 
@@ -29,7 +21,7 @@ In this article, you learn how to:
 
 ## Prerequisites
 
-- An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
+- An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" target="_blank">free account</a> before you begin.
 - An Azure account that's been assigned at least the [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator) role scoped to the subscription or to a resource group within the subscription.
 
 
@@ -37,12 +29,12 @@ In this article, you learn how to:
 ## Create a new external tenant  
 
 1. Sign in to your organization's [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator). 
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
+1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
 1. Select **Create**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::
 
-1. Select **Customer**, and then **Continue**. 
+1. Select **External**, and then **Continue**. 
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
@@ -56,7 +48,11 @@ In this article, you learn how to:
 
     - Type your desired **Domain Name** (for example *Contosocustomers*).
 
-    - Select your desired **Location**. This selection can't be changed later.
+1. Select your desired **Country/Region**. This selection can't be changed later.
+
+    If you select a country/region that supports the Go-Local add-on, such as Australia or Japan, a **Go-Local data residency** option appears. You can elect to have your Microsoft Entra ID Core Store data and Microsoft Entra ID components and service data stored in the selected location. For more information, see [Go-Local add-on](../../fundamentals/data-residency.md#go-local-add-on).
+
+    :::image type="content" source="media/how-to-create-external-tenant-portal/go-local-add-on-option.png" alt-text="Screenshot of the Basics tab and the Go-Local data residency option.":::
 
 1. Select **Next: Add a subscription**.  
 
@@ -74,6 +70,9 @@ In this article, you learn how to:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-successfully-created.png" alt-text="Screenshot that shows the link to the new external tenant.":::
 
+> [!NOTE]
+> You can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to set up a trial or paid external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Get the external tenant details
 
 If you're not sure which directory contains your external tenant, you can find the tenant name and ID both in the Microsoft Entra admin center and in the Azure portal.
@@ -82,7 +81,7 @@ If you're not sure which directory contains your external tenant, you can find t
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/directories-subscription.png" alt-text="Screenshot of the Directories + subscriptions icon.":::
 
-1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step will bring you to the tenant's home page.
+1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step brings you to the tenant's home page.
 1. Select **Tenant overview** under **Quick navigation**. You can find the tenant **Name**, **Tenant ID** and **Primary domain** under the **Overview** tab.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-overview.png" alt-text="Screenshot of the tenant details.":::
@@ -90,6 +89,7 @@ If you're not sure which directory contains your external tenant, you can find t
 You can find the same details if you go to **Microsoft Entra ID** in the Azure portal. On the **Microsoft Entra ID** page, you can find the tenant **Name**, **Tenant ID** and **Primary domain** under **Overview** > **Basic information**.
 
 ## Related content
-- [Register an app](how-to-register-ciam-app.md)
+
+- [Register an app](/entra/identity-platform/quickstart-register-app)
 - [Create user flows](how-to-user-flow-sign-up-sign-in-customers.md)
 - [Delete an external tenant](how-to-delete-external-tenant-portal.md)

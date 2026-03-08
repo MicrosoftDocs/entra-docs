@@ -123,8 +123,6 @@
       href: /graph/api/resources/privilegedidentitymanagement-for-groups-api-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
-  - name:  Azure AD PowerShell for Graph
-    href: /powershell/azure/active-directory/install-adv2
   - name: PowerShell examples for Microsoft Entra roles
     href: /powershell/microsoftgraph/tutorial-pim
   - name: Microsoft Entra service limits

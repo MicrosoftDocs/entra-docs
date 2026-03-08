@@ -4,14 +4,14 @@ ms.service: entra-id
 ms.topic: include
 ms.date: 05/10/2024
 ms.author: barclayn
-ms.custom: Identity-Managed-Definition
+ms.custom: Identity-Managed-Definition, sfi-image-nochange
 ---
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
 1. From the Azure portal menu, select **Microsoft Entra ID**.
 
-1. Navigate to **Identity** > **Overview** > **Manage tenants**.
+1. Navigate to **Entra ID** > **Overview** > **Manage tenants**.
 
 1. Select **Create**.
 

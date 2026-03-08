@@ -2,11 +2,11 @@
 title: Custom claims provider overview
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/10/2023
-ms.reviewer: JasSuri
+ms.date: 09/16/2025
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -17,29 +17,29 @@ titleSuffix: Microsoft identity platform
 # Custom claims provider
 
 This article provides an overview to the Microsoft Entra custom claims provider.
+
 When a user authenticates to an application, a custom claims provider can be used to add  claims into the token. A custom claims provider is made up of a custom authentication extension that calls an external REST API, to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory.
 
 Key data about a user is often stored in systems external to Microsoft Entra ID. For example, secondary email, billing tier, or sensitive information. Some applications may rely on these attributes for the application to function as designed. For example, the application may block access to certain features based on a claim in the token.
 
 The following video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
 
-> [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=Z8Z3gR9fzZFzb5Bq]
 
 Use a custom claims provider for the following scenarios:
 
 - **Migration of legacy systems** - You may have legacy identity systems such as Active Directory Federation Services (AD FS) or data stores (such as LDAP directory) that hold information about users. You'd like to migrate these applications, but can't fully migrate the identity data into Microsoft Entra ID. Your apps may depend on certain information on the token, and can't be rearchitected.
 - **Integration with other data stores that can't be synced to the directory** - You may have third-party systems, or your own systems that store user data. Ideally this information could be consolidated, either through [synchronization](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md) or direct migration, in the Microsoft Entra directory. However, that isn't always feasible. The restriction may be because of data residency, regulations, or other requirements.
 
+> [!NOTE]
+>
+> A custom claims provider isn't the only way to add custom claims to a token. You can also [customize claims issued in the JSON web token (JWT) for enterprise applications](./jwt-claims-customization.md).
+
 ## Token issuance start event listener
 
 An event listener is a procedure that waits for an event to occur. The custom authentication extension uses the **token issuance start** event listener. The  event is triggered when a token is about to be issued to your application. When the event is triggered the custom authentication extension REST API is called to fetch attributes from external systems.
 
 To set up a custom claims provider, you'll need to [create a REST API with a token issuance start event](./custom-extension-tokenissuancestart-setup.md), then [configure a custom claim provider for a token issuance event](./custom-extension-tokenissuancestart-configuration.md).
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ## Authentication events trigger for Azure Functions client library for .NET
 
@@ -61,5 +61,4 @@ The authentication events trigger for Azure Functions allows you to implement a 
 ## See also
 
 - [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md) article.

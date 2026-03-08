@@ -1,12 +1,9 @@
 ---
 title: Build resilience in application access with Application Proxy
 description: A guide for architects and IT administrators on using Application Proxy for resilient access to on-premises applications
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience in application access with Application Proxy
 

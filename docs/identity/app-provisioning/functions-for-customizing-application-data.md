@@ -1,13 +1,8 @@
 ---
 title: Reference for writing expressions for attribute mappings in Microsoft Entra Application Provisioning
 description: Learn how to use expression mappings to transform attribute values into an acceptable format during automated provisioning of SaaS app objects in Microsoft Entra ID. Includes a reference list of functions.
-author: jenniferf-skc
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 05/21/2024
-ms.author: jfields
+ms.date: 01/15/2025
 ms.reviewer: arvinh
 ---
 
@@ -32,7 +27,7 @@ The syntax for Expressions for Attribute Mappings is reminiscent of Visual Basic
 
 ## List of Functions
 
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [AppRoleAssignmentsComplex](#approleassignmentscomplex) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [CDate](#cdate) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateAdd](#dateadd) &nbsp;&nbsp;&nbsp;&nbsp; [DateDiff](#datediff) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) &nbsp;&nbsp;&nbsp;&nbsp;[IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp;[InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) &nbsp;&nbsp; &nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Now](#now) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [RandomString](#randomstring) &nbsp;&nbsp;&nbsp;&nbsp; [Redact](#redact) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [AppRoleAssignmentsComplex](#approleassignmentscomplex) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [CDate](#cdate) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateAdd](#dateadd) &nbsp;&nbsp;&nbsp;&nbsp; [DateDiff](#datediff) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) &nbsp;&nbsp;&nbsp;&nbsp;[IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp;[InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Len](#len) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) &nbsp;&nbsp; &nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Now](#now) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [RandomString](#randomstring) &nbsp;&nbsp;&nbsp;&nbsp; [Redact](#redact) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
 
 ---
 ### Append
@@ -171,7 +166,7 @@ Returns the first source value that isn't NULL. If all arguments are NULL and de
 | Name | Required/ Repeating | Type | Notes |
 | --- | --- | --- | --- |
 | **source1  … sourceN** | Required | String |Required, variable-number of times. Usually name of the attribute from the source object. |
-| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string ("").
+| **defaultValue** | Optional | String | Default value to be used when all source values are NULL. Can be empty string (""). |
 
 #### Flow mail value if not NULL, otherwise flow userPrincipalName
 Example: You wish to flow the mail attribute if it's present. If it isn't, you wish to flow the value of userPrincipalName instead.
@@ -413,7 +408,7 @@ The function Guid generates a new random GUID
 
 **Example:** <br>
 `Guid()`<br>
-Sample output: "1088051a-cd4b-4288-84f8-e02042ca72bc"
+Sample output: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 
 ---
 ### IgnoreFlowIfNullOrEmpty
@@ -436,7 +431,7 @@ The above expression drops the department attribute from the provisioning flow i
 **Example 2: Don't flow an attribute if the expression mapping evaluates to empty string or null** <br>
 Let's say the SuccessFactors attribute *prefix* is mapped to the on-premises Active Directory attribute *personalTitle* using the following expression mapping: <br>
 `IgnoreFlowIfNullOrEmpty(Switch([prefix], "", "3443", "Dr.", "3444", "Prof.", "3445", "Prof. Dr."))` <br>
-The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then *Switch* returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
+The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then ** returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
 
 ---
 ### IIF
@@ -637,6 +632,50 @@ If string contains fewer characters than the number specified in numChars, a str
 Returns "Joh".
 
 ---
+### Len 
+**Function:** 
+Len(String) 
+
+**Description:** 
+The Len function returns length of the input string. If the string is null or empty, then it returns 0.  
+
+**Parameters:** 
+
+| Name | Required/Repeating | Type | Notes | 
+| --- | --- | --- | 
+| **String** | Required | String or Integer | You can pass either a string or a numeric value as input. | 
+
+**Example 1**
+
+`Len("John Doe")`, returns 8<br>
+`Len(42568)`, returns 5<br>
+`Len(42568.75)`, returns 8 <br>
+
+**Example 2** <br>
+Let’s say you have a requirement to generate an account alias using the following rules.  
+
+- The generated alias should be no longer than 10 characters.  
+- If last name length is less than or equal to 5, then use the last name and fill remaining characters with first name.  
+- Else, if last name length is greater than 5, then use first 9 characters of the last name and first character of the first name.  
+
+With the Len function, you can construct an expression mapping as shown below.  
+
+```
+IIF(Len([LastName]) <= 5,  
+
+  Left(Join ("",[LastName],[FirstName]),10),  
+  Join("", Mid([LastName],1,9), Mid([FirstName],1,1)) 
+
+)
+```
+
+**Sample input/output**
+
+- **INPUT** (FirstName): "John", (LastName): "Smith", then OUTPUT = "SmithJohn" 
+- **INPUT** (FirstName): "John", (LastName): "Parker", then OUTPUT = "ParkerJ" 
+
+---
+
 ### Mid
 **Function:** 
 Mid(source, start, length)
@@ -742,12 +781,11 @@ The NumFromDate function converts a DateTime value to Active Directory format th
 | **value** |Required | String | Date time string in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. If the date variable is in a different format, use [FormatDateTime](#formatdatetime) function to convert the date to ISO 8601 format. |
 
 **Example:**
-* Workday example 
-  Assuming you want to map the attribute *ContractEndDate* from Workday, which is in the format *2020-12-31-08:00* to *accountExpires* field in AD, here's how you can use this function and change the timezone offset to match your locale. 
+
+* Workday example: Assuming you want to map the attribute *ContractEndDate* from Workday, which is in the format *2020-12-31-08:00* to *accountExpires* field in AD, here's how you can use this function and change the timezone offset to match your locale. 
   `NumFromDate(Join("", FormatDateTime([ContractEndDate], ,"yyyy-MM-ddzzz", "yyyy-MM-dd"), " 23:59:59-08:00"))`
 
-* SuccessFactors example 
-  Assuming you want to map the attribute *endDate* from SuccessFactors, which is in the format *M/d/yyyy hh:mm:ss tt* to *accountExpires* field in AD, here's how you can use this function and change the time zone offset to match your locale.
+* SuccessFactors example: Assuming you want to map the attribute *endDate* from SuccessFactors, which is in the format *M/d/yyyy hh:mm:ss tt* to *accountExpires* field in AD, here's how you can use this function and change the time zone offset to match your locale.
   `NumFromDate(Join("",FormatDateTime([endDate], ,"M/d/yyyy hh:mm:ss tt","yyyy-MM-dd")," 23:59:59-08:00"))`
 
 
@@ -774,14 +812,14 @@ The PCase function converts the first character of each word in a string to uppe
   * *Control* characters like CRLF
   * *Format* control characters
   * *ConnectorPunctuation* characters like underscore
-  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, etc.)
-  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, etc. 
+  * *DashPunctuation* characters like dash and hyphen (including characters such En Dash, Em Dash, double hyphen, and so on)
+  * *OpenPunctuation* and *ClosePunctuation* characters that occur in pairs like parenthesis, curly bracket, angle bracket, and so on. 
   * *InitialQuotePunctuation* and *FinalQuotePunctuation* characters like single quotes, double quotes, and angular quotes. 
-  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, etc. 
-  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, etc.
-  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, etc. 
-  * *ModifierSymbol* characters like macron, accents, arrow heads, etc. 
-  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, etc. 
+  * *OtherPunctuation* characters like exclamation mark, number sign, percent sign, ampersand, asterisk, comma, full stop, colon, semi-colon, and so on. 
+  * *MathSymbol* characters like plus sign, less-than and greater-than sign, vertical line, tilde, equals sign, and so on.
+  * *CurrencySymbol* characters like dollar sign, cent sign, pound sign, euro sign, and so on. 
+  * *ModifierSymbol* characters like macron, accents, arrow heads, and so on. 
+  * *OtherSymbol* characters like copyright sign, degree sign, registered sign, and so on. 
 * If the *wordSeparators* parameter is specified, then PCase only uses the characters specified as word separators. 
 
 **Example:**
@@ -1121,6 +1159,11 @@ When **source** value matches a **key**, returns **value** for that **key**. If 
 > For the **source** parameter, do not use the nested functions IsPresent, IsNull or IsNullOrEmpty. Instead use a literal empty string as one of the key values.   
 > Example: `Switch([statusFlag], "Default Value", "true", "1", "", "0")`. In this example, if the **source** attribute `statusFlag` is empty, the Switch function returns the value 0. 
 
+> [!CAUTION] 
+> **Issue:** The provisioning service incorrectly set an attribute value to null in the target system when using a switch statement. <br>
+> **Resolution:** Use an IIF statement instead of a switch statement to prevent unexpected null values or use the IgnoreFlowIfNullOrEmpty function with the switch statement. For example, switch([companyName], "External", "Company A", "A", "Company B", "B") should be represented as IIF([companyName] = "Company A", "A", IIF([companyName] = "Company B", "B", "External")). In cases where the default value is an attribute, use an expression such as IgnoreFlowIfNullOrEmpty(switch([companyName], [companyName], "Company A", "A", "Company B", "B")). <br>
+> **Root cause:** This issue is specific to scenarios where Microsoft Entra ID is the source system and the switch statement contains a default value.
+
 **Parameters:** 
 
 | Name | Required/ Repeating | Type | Notes |
@@ -1260,7 +1303,8 @@ Add a comma between last name and first name.
 * **INPUT** (surname): "Doe"
 * **OUTPUT**:  "Doe, John"
 
-### Generate an ID for a user based on their Microsoft Entra ID object ID. Remove any letters from the ID and add 1000 at the beginning.  
+### Generate an ID for a user based on their Microsoft Entra object ID. Remove any letters from the ID and add 1000 at the beginning.
+
 This expression allows you to generate an identifier for a user that starts with 1000 and is likely to be unique.  
 
 **Expression:** 
@@ -1268,7 +1312,7 @@ Join("", 1000, Replace(ConvertToUTF8Hex([objectId]), , "[a-zA-Z_]*", , "", , ))
 
 **Sample input/output:** 
 
-* **INPUT**: "d05e47b1-3909-445a-ba5e-ca60cbc0e4b4"
+* **INPUT**: "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 * **OUTPUT**:  "100064303565343762312333930392343435612626135652636136306362633065346234"
 
 ## Related Articles

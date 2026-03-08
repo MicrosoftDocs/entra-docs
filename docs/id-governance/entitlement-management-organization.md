@@ -1,14 +1,10 @@
 ---
 title: Manage connected organizations in entitlement management
 description: Learn how to allow people outside your organization to request access packages so that you can collaborate on projects.
-author: owinfreyatl
-manager: amycolannino
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
-ms.author: owinfrey
+ms.date: 07/15/2024
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to allow users in certain partner organizations to request access packages so that our organizations can collaborate on projects.
 ---
@@ -19,14 +15,14 @@ With entitlement management, you can collaborate with people outside your organi
 
 ## What is a connected organization?
 
-A connected organization is another organization that you have a relationship with.  In order for the users in that organization to be able to access your resources, such as your SharePoint Online sites or apps, you need a representation of that organization's users in that directory.  Because in most cases the users in that organization aren't already in your Microsoft Entra directory, you can use entitlement management to bring them into your Microsoft Entra directory as needed.  
+A connected organization is another organization that you have a relationship with. In order for the users in that organization to be able to access your resources, such as your SharePoint Online sites or apps, you need a representation of that organization's users in that directory. Because in most cases the users in that organization aren't already in your Microsoft Entra directory, you can use entitlement management to bring them into your Microsoft Entra directory as needed.  
 
 If you want to provide a path for anyone to request access, and you aren't sure which organizations those new users might be from, then you can configure an [access package assignment policy for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory). In that policy, select the option of **All users (All connected organizations + any new external users)**. If the requestor is approved, and they don’t belong to a connected organization in your directory, a connected organization will automatically be created for them.
 
 If you want to only allow individuals from designated organizations to request access, then first create those connected organizations. Second, configure an [access package assignment policy for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory), select the option of **Specific connected organizations**, and select the organizations you created.
 
 
-There are four ways that entitlement management lets you specify the users that form a connected organization.  It could be:
+There are four ways that entitlement management lets you specify the users that form a connected organization. It could be:
 
 * users in another Microsoft Entra directory (from any Microsoft cloud),
 * users in another non-Microsoft directory that are configured for [SAML/WS-Fed identity provider (IdP) federation](/entra/external-id/direct-federation),
@@ -40,13 +36,13 @@ For example, suppose you work at Woodgrove Bank and you want to collaborate with
 
 In this case, you can configure two connected organizations, then one access package with one policy.
 
-1. Ensure that you have [email one-time passcode (OTP) authentication](~/external-id/one-time-passcode.md) turned on, so that  users from those domains that aren't yet part of Microsoft Entra directories who authenticate using email one-time-passcode when requesting access or later accessing your resources.  In addition, you might need to [configure your Microsoft Entra B2B external collaboration settings](entitlement-management-external-users.md?#configure-your-azure-ad-b2b-external-collaboration-settings) to allow external users access.
+1. Ensure that you have [email one-time passcode (OTP) authentication](~/external-id/one-time-passcode.md) turned on, so that  users from those domains that aren't yet part of Microsoft Entra directories who authenticate using email one-time-passcode when requesting access or later accessing your resources. In addition, you might need to [configure your Microsoft Entra B2B external collaboration settings](entitlement-management-external-users.md?#configure-your-azure-ad-b2b-external-collaboration-settings) to allow external users access.
 1. Create a connected organization for Contoso. When you specify the domain *contoso.com*, entitlement management recognizes that there's no existing Microsoft Entra tenant associated with that domain, and that users from that connected organization will be recognized if they  authenticate with an email one-time-passcode with a *contoso.com* email address domain.
-1. Create another connected organization for Graphic Design Institute.  When you specify the domain *graphicdesigninstitute.com*, entitlement management recognizes that there's a tenant associated with that domain.
+1. Create another connected organization for Graphic Design Institute. When you specify the domain *graphicdesigninstitute.com*, entitlement management recognizes that there's a tenant associated with that domain.
 1. In a catalog that allows external users to request, create an access package.
 1. In that access package, create an access package assignment policy for **users not yet in your directory**. In that policy, select the option **Specific connected organizations** and specify the two connected organizations. This allows users from each organization, with an identity source that matches one of the connected organizations, to request the access package.
 1. When external users with a user principal name that has a domain of *contoso.com* request the access package, they authenticate using email. This email domain matches the Contoso-connected organization and the user will be allowed to request the package. After they request, [how access works for external users](entitlement-management-external-users.md?#how-access-works-for-external-users) describes how the B2B user is then invited and access is assigned for the external user.
-1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.yml#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
+1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
 
 [ ![Diagram of connected organizations in example and their relationships with an assignment policy and with a tenant.](./media/entitlement-management-organization/connected-organization-example.png) ](./media/entitlement-management-organization/connected-organization-example-expanded.png#lightbox)
 
@@ -60,17 +56,16 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 For a demonstration of how to add a connected organization, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4dskS]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15a99953-2677-4a28-8432-eedd333456ac]
 
 ## View the list of connected organizations
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
-1. In the search box, you can search for a connected organization by the name of the connected organization.  However, you can't search for a domain name.
+1. In the search box, you can search for a connected organization by the name of the connected organization. However, you can't search for a domain name.
 
 ## Add a connected organization
 
@@ -78,7 +73,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select **Add connected organization**.
 
@@ -129,7 +124,7 @@ If the connected organization changes to a different domain, the organization's 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select the connected organization you want to update.
 
@@ -146,7 +141,7 @@ If you no longer have a relationship with an external Microsoft Entra directory 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select the connected organization you want to delete to open it.
 
@@ -162,7 +157,7 @@ You can also create, list, update, and delete connected organizations using Micr
 
 You can also manage connected organizations in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 1.16.0 or later.
 
-This script below illustrates using the `v1.0` profile of Graph to retrieve all the connected organizations.  Each returned connected organization contains a list  [identitySources](/graph/api/resources/identitysource) of the directories and domains of that connected organization.
+This following script illustrates using the `v1.0` profile of Graph to retrieve all the connected organizations. Each returned connected organization contains a list  [identitySources](/graph/api/resources/identitysource) of the directories and domains of that connected organization.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
@@ -189,7 +184,7 @@ There are two different states for connected organizations in entitlement manage
     
     Proposed connected organizations aren't in scope for the “all configured connected organizations” setting on any policies but can be used in policies only for policies targeting specific organizations. 
 
-Only users from configured connected organizations can request access packages that are available to users from all configured organizations. Users from proposed connected organizations have an experience as if there is no connected organization for that domain; can only see and request access packages scoped to their specific organization or scoped to any user.  If you have policies in your tenant that allow “all configured connected organizations”, ensure that you don't convert proposed connected organizations for social identity providers to configured.
+Only users from configured connected organizations can request access packages that are available to users from all configured organizations. Users from proposed connected organizations have an experience as if there's no connected organization for that domain; can only see and request access packages scoped to their specific organization or scoped to any user. If you have policies in your tenant that allow “all configured connected organizations”, ensure that you don't convert proposed connected organizations for social identity providers to configured.
 
 > [!NOTE]
 > As part of rolling out this new feature, all connected organizations created before 09/09/20 were considered **configured**. If you had an access package that allowed users from any organization to sign up, you should review your list of connected organizations that were created before that date to ensure none are miscategorized as **configured**.  In particular, social identity providers should not be indicated as **configured** if there are assignment policies which do not require approval for users from all configured connected organizations. An admin can update the **State** property as appropriate. For guidance, see [Update a connected organization](#update-a-connected-organization).

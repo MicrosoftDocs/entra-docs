@@ -1,15 +1,9 @@
 ---
 title: App visibility and control with Microsoft Defender for Cloud Apps
 description: Learn ways to identify app risk levels, stop breaches and leaks in real time, and use app connectors to take advantage of provider APIs for visibility and governance.
-
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: concept-article
 
 ms.date: 07/29/2021
-ms.author: jomondi
 ms.collection: M365-identity-device-management
 ms.reviewer: bokacevi, dacurwin
 ms.custom: not-enterprise-apps

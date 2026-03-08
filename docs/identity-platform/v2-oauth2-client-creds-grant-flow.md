@@ -2,14 +2,13 @@
 title: OAuth 2.0 client credentials flow on the Microsoft identity platform
 description: Build web applications by using the Microsoft identity platform implementation of the OAuth 2.0 authentication protocol.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/30/2026
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
@@ -17,14 +16,17 @@ ms.topic: concept-article
 
 The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. The grant specified in [RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4), sometimes called *two-legged OAuth*, can be used to access web-hosted resources by using the identity of an application. This type is commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user, and is often referred to as *daemons* or *service accounts*.
 
+> [!NOTE]
+> When you configure machine-to-machine (M2M) authentication for [Microsoft Entra External ID](/entra/external-id/external-identities-overview), you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines.
+
 In the client credentials flow, permissions are granted directly to the application itself by an administrator. When the app presents a token to a resource, the resource enforces that the app itself has authorization to perform an action since there is no user involved in the authentication. This article covers both the steps needed to: 
 
 - [Authorize an application to call an API](#application-permissions)
 - [How to get the tokens needed to call that API](#get-a-token).
 
-This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can also refer to the [sample apps that use MSAL](sample-v2-code.md). As a side note, refresh tokens will never be granted with this flow as `client_id` and `client_secret` (which would be required to obtain a refresh token) can be used to obtain an access token instead.
+This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can also refer to the [sample apps that use MSAL](sample-v2-code.md). As a side note, refresh tokens will never be granted with this flow as `client_id` and `client_` (which would be required to obtain a refresh token) can be used to obtain an access token instead.
 
-For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. _Never_ publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. 
+For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. Authentication requests using the client credentials flow pages will not be allowed. 
 
 ## Protocol diagram
 
@@ -150,7 +152,7 @@ Content-Type: application/x-www-form-urlencoded
 
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_secret=sampleCredentials
+&client_secret=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u
 &grant_type=client_credentials
 ```
 
@@ -163,7 +165,7 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=
 | --------------- | --------- | ----------- |
 |     `tenant`    |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |    `client_id`  |  Required | The application ID that's assigned to your app. You can find this information in the portal where you registered your app. |
-|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
+|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, suffixed with `.default`. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_secret` |  Required | The client secret that you generated for your app in the app registration portal. The client secret must be URL-encoded before being sent. The Basic auth pattern of instead providing credentials in the Authorization header, per [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1) is also supported. |
 |  `grant_type`   |  Required | Must be set to `client_credentials`. |
 
@@ -185,7 +187,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 | ----------------------- | --------- | ----------- |
 |         `tenant`        |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |       `client_id`       |  Required | The application (client) ID that's assigned to your app. |
-|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
+|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, suffixed with `.default`. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_assertion_type` |  Required | The value must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
 |    `client_assertion`   |  Required | An assertion (a JSON web token) that you need to create and sign with the certificate you registered as credentials for your application. Read about [certificate credentials](./certificate-credentials.md) to learn how to register your certificate and the format of the assertion.|
 |      `grant_type`       |  Required | Must be set to `client_credentials`. |
@@ -200,7 +202,8 @@ Host: login.microsoftonline.com:443
 Content-Type: application/x-www-form-urlencoded
 
 scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_id=11112222-bbbb-3333-cccc-4444dddd5555&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_id=11112222-bbbb-3333-cccc-4444dddd5555
+&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
 &grant_type=client_credentials
 ```
@@ -264,12 +267,12 @@ Now that you've acquired a token, use the token to make requests to the resource
 ```HTTP
 GET /v1.0/users HTTP/1.1
 Host: graph.microsoft.com:443
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...
 ```
 Try the following command in your terminal, ensuring to replace the token with your own.
 
 ```bash
-curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...." 'https://graph.microsoft.com/v1.0/users'
+curl -X GET -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG..." 'https://graph.microsoft.com/v1.0/users'
 ```
 
 ## Code samples and other documentation

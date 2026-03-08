@@ -2,14 +2,9 @@
 title: Microsoft Entra Connect Sync service shadow attributes
 description: Describes how shadow attributes work in Microsoft Entra Connect Sync service.
 
-author: billmath
-ms.service: entra-id
-manager: amycolannino
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
 ---
 
 

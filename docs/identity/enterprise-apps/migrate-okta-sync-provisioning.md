@@ -3,13 +3,10 @@ title: Tutorial to migrate Okta sync provisioning to Microsoft Entra Connect-bas
 description: Migrate user provisioning from Okta to Microsoft Entra ID. See how to use Microsoft Entra Connect server or Microsoft Entra cloud provisioning.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
 ms.topic: tutorial
-ms.date: 04/18/2024
+ms.date: 12/04/2024
 ms.author: gasinh
-ms.subservice: enterprise-apps
-ms.custom: kr2b-contr-experiment, not-enterprise-apps, has-azure-ad-ps-ref
-
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: I'm an IT admin using Okta for user provisioning. I want to migrate user provisioning to Microsoft Entra Connect synchronization, so I can add users into Microsoft Entra ID and Office 365.
 ---
 
@@ -24,7 +21,7 @@ In this tutorial, learn to migrate user provisioning from Okta to Microsoft Entr
 
 When you switch from Okta provisioning to Microsoft Entra ID, there are two choices. Use a Microsoft Entra Connect server or Microsoft Entra cloud provisioning. 
 
-Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync).
 
 Microsoft Entra cloud provisioning is the most familiar migration path for Okta customers who use Universal Sync or User Sync. The cloud provisioning agents are lightweight. You can install them on, or near, domain controllers like the Okta directory sync agents. Don't install them on the same server.
 
@@ -44,8 +41,13 @@ To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Admin
 
 The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run
-it in an administrative session before you run commands:
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run:
+
+ `Install-Module Microsoft.Graph -Scope CurrentUser -Repository PSGallery -Force` in an administrative session before you run the following commands:
+ 
+ ```Powershell
+ Connect-MgGraph
+ ```
 
 If you have the module, a warning might appear to update to the latest version.
 
@@ -69,16 +71,24 @@ The following command gets on-premises Microsoft Entra users and exports a list 
 
 1. Run the following command in Microsoft Graph PowerShell on an on-premises domain controller:
 
-
    ```PowerShell
-   Get-MgUser -Filter * -Properties objectGUID | Select-Object
+   Get-ADUser -Filter * -Properties objectGUID | Select-Object
    UserPrincipalName, Name, objectGUID, @{Name = 'ImmutableID';
    Expression = {
    [system.convert]::ToBase64String((GUID).tobytearray())
    } } | export-csv C:\Temp\OnPremIDs.csv
    ```
 
-2. Run a command in a Microsoft Graph PowerShell session to list the synchronized values.   
+2. Run the following command in a Microsoft Graph PowerShell session to list the synchronized values:
+
+   ```powershell
+   Get-MgUser -all $true | Where-Object {$_.dirsyncenabled -like
+   "true"} | Select-Object UserPrincipalName, @{Name = 'objectGUID';
+   Expression = {
+   [GUID][System.Convert]::FromBase64String($_.ImmutableID) } },
+   ImmutableID | export-csv C:\\temp\\AzureADSyncedIDS.csv
+   ```
+
 3. After both exports, confirm user ImmutableID values match.
 
    >[!IMPORTANT]
@@ -190,12 +200,11 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 ## Enable cloud sync agents
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
+2. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**. 
 3. Select **Configuration** profile.
 4. Select **Enable**.
 5. Return to the provisioning menu and select **Logs**.

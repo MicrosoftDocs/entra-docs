@@ -2,14 +2,9 @@
 title: What is device identity in Microsoft Entra ID?
 description: Device identities and their use cases
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: overview
-ms.date: 02/26/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
 ms.reviewer: sandeo, jogro, jploegert
 ---
 # What is a device identity?

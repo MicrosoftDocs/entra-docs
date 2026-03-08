@@ -1,15 +1,12 @@
 ---
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
-author: owinfreyATL
-manager: amycolannino
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: overview
-ms.date: 04/09/2024
-ms.author: owinfrey
+ms.topic: reference
+ms.date: 06/18/2025
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # What are access reviews?
@@ -18,7 +15,7 @@ Access reviews in Microsoft Entra ID, part of Microsoft Entra, enable organizati
 
 Here's a video that provides a quick overview of access reviews:
 
->[!VIDEO https://www.youtube.com/embed/kDRjQQ22Wkk]
+>[!VIDEO https://www.youtube.com/embed/VSl1TVITcQ8]
 
 ## Why are access reviews important?
 
@@ -33,15 +30,15 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 ## When should you use access reviews?
 
 - **Too many users in privileged roles:** It's a good idea to check how many users have administrative access, how many of them are Global Administrators, and if there are any invited guests or partners that haven't been removed after being assigned to do an administrative task. You can recertify the role assignment users in [Microsoft Entra roles](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as Global Administrators, or [Azure resources roles](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) such as User Access Administrator in the [Microsoft Entra Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md) experience.
-- **When automation is not possible:** You can create rules for dynamic membership on security groups or Microsoft 365 Groups, but what if the HR data isn't in Microsoft Entra ID or if users still need access after leaving the group to train their replacement? You can then create a review on that group to ensure those who still need access keeps access.
-- **When a group is used for a new purpose:** If you have a group that is going to be synced to Microsoft Entra ID, or if you plan to enable the application Salesforce for everyone in the Sales team group, it would be useful to ask the group owner to review the group membership before the group is used in a different risk content.
+- **When automation is not possible:** You can create rules for dynamic membership groups, security groups, or Microsoft 365 Groups, but what if the HR data isn't in Microsoft Entra ID or if users still need access after leaving the group to train their replacement? You can then create a review on that group to ensure those who still need access keeps access.
+- **When a group is used for a new purpose:** If you have a group that is going to be synced to Microsoft Entra ID, or if you plan to enable the application Salesforce for everyone in the Sales team group, it would be useful to ask the group owner to review the dynamic membership group before it's used in a different risk content.
 - **Business critical data access:** for certain resources, such as [business critical applications](identity-governance-applications-prepare.md), it might be required as part of compliance processes to ask people to regularly reconfirm and give a justification on why they need continued access.
 - **To maintain a policy's exception list:** In an ideal world, all users would follow the access policies to secure access to your organization's resources. However, sometimes there are business cases that require you to make exceptions. As the IT admin, you can manage this task, avoid oversight of policy exceptions, and provide auditors with proof that these exceptions are reviewed regularly.
 - **Ask group owners to confirm they still need guests in their groups:** Employee access might be automated with other identity and access management features such lifecycle workflows based on data from an HR source, but not invited guests. If a group gives guests access to business sensitive content, then it's the group owner's responsibility to confirm the guests still have a legitimate business need for access.
 - **Have reviews recur periodically:** You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers are notified at the start of each review. Reviewers can approve or deny access with a friendly interface and with the help of smart recommendations.
 
 >[!NOTE]
->If you are ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
+>If you're ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
 
 ## Where do you create reviews?
 
@@ -51,21 +48,27 @@ Depending on what you want to review, you either create your access review in ac
 | --- | --- | --- | --- |
 | Security group members</br>Office group members | Specified reviewers</br>Group owners</br>Self-review | access reviews</br>Microsoft Entra groups | Access panel |
 | Assigned to a connected app | Specified reviewers</br>Self-review | access reviews</br>Microsoft Entra enterprise apps | Access panel |
-| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
-| Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra Admin Center |
+| Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
+| Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |
+| Access rights from custom data resources (preview) | Managers  | access reviews | Access panel |
 
 ## License requirements
 
 [!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 
 >[!NOTE]
->Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations requires a Microsoft Entra ID Governance license.
+>Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, or an [access review of multiple resources together (preview)](catalog-access-reviews.md), requires a Microsoft Entra ID Governance license.
+
+## Access Review Agent (Preview)
+
+The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
 
 ## Next steps
 
 - [Prepare for an access review of users' access to an application](access-reviews-application-preparation.md)
 - [Create an access review of groups or applications](create-access-review.md)
 - [Create an access review of users in a Microsoft Entra administrative role](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)
+- [Create an access review to multiple resources in a catalog (preview)](catalog-access-reviews.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Complete an access review of groups or applications](complete-access-review.md)

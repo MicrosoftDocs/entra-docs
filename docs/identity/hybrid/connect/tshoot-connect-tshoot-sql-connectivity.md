@@ -1,17 +1,11 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot SQL connectivity issues'
 description: Explains how to troubleshoot SQL connectivity issues that occur with Microsoft Entra Connect.
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.custom: sfi-ropc-nochange
 ---
 
 # Troubleshoot SQL connectivity issues with Microsoft Entra Connect
@@ -123,12 +117,12 @@ Connect-ADSyncToolsSqlDatabase : Unable to connect using a TCP binding.  A netwo
 not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance 
 Specified) 
 At line:1 char:1
-+ Connect-ADSyncToolsSqlDatabase -Server NualexSQLS01.nualex.net -Insta ...
++ Connect-ADSyncToolsSqlDatabase -Server SQL01.Contoso.com -Insta ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : ConnectionError: (:) [Write-Error], WriteErrorException
     + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Connect-ADSyncToolsSqlDatabase
  
-TROUBLESHOOTING: Attempting to query the SQL Server Browser service configuration on NualexSQLS01.nualex.net. 
+TROUBLESHOOTING: Attempting to query the SQL Server Browser service configuration on SQL01.Contoso.com. 
 
 SQL browser response contained 2 instances.
 Verifying protocol bindings and port connectivity...
@@ -137,7 +131,7 @@ SQL2019         : Enabled - port 50631 is assigned and reachable through the fir
 
 WHAT TO TRY NEXT: 
 
-Each SQL instance must be bound to an explicit static TCP port and paired with an inbound firewall rule on NualexSQLS01.nualex.net to allow connection. Review the TcpStatus field for each instance and take cor
+Each SQL instance must be bound to an explicit static TCP port and paired with an inbound firewall rule on SQL01.Contoso.com to allow connection. Review the TcpStatus field for each instance and take cor
 rective action. 
 
 

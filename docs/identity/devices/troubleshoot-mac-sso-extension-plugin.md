@@ -1,19 +1,13 @@
 ---
 title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
-
-
-ms.service: entra-id
-ms.subservice: devices
-ms.custom: devx-track-linux
 ms.topic: troubleshooting
-ms.date: 07/05/2023
-
+ms.date: 02/23/2026
 ms.author: miepping
 author: ryschwa-msft
 manager: 
 ms.reviewer: 
-
+ms.custom: devx-track-linux, sfi-image-nochange
 #Customer intent: As an IT admin, I want to learn how to discover and fix issues related to the Microsoft Enterprise SSO plug-in on macOS and iOS.
 ---
 # Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
@@ -164,7 +158,7 @@ Look for events stating that there are Associated Domain failures, especially re
 
 ##### Validate TLS Inspection Configuration
 
-Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
+Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/for-it/). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
 
 :::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility." lightbox="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png":::
 
@@ -207,7 +201,20 @@ Sometimes, this command is insufficient and doesn't fully reset the cache. In th
 * Remove or move the Intune Company Portal app to the Trash, then restart your device. After the restart is complete, you can try re-install the Company Portal app. 
 * Re-enroll your device.
 
-If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting. 
+If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting.
+
+#### Make sure System Integrity Protection (SIP) is enabled
+
+The Enterprise SSO framework requires successful validation of code signing. If a machine has been explicitly opted out of [System Integrity Protection (SIP)](https://support.apple.com/en-us/102149), code signing might not work properly. If this happens, the machine will encounter sysdiagnose failures like the following error:
+
+```
+Error Domain=com.apple.AppSSO.AuthorizationError Code=-1000 "invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension" UserInfo={NSLocalizedDescription=invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension}
+```
+
+To resolve this issue, perform one of the following steps:
+
+1. Re-enable System Integrity Protection on the affected machine.
+2. If re-enabling System Integrity Protection is not possible, ensure that `sudo nvram boot-args` does not have the `amfi_get_out_of_my_way` value set to `1`. If it does, remove that value or set it to `0` to fix the issue.
 
 #### Validate SSO configuration profile on macOS device
 
@@ -467,7 +474,7 @@ Analyzing the SSO extension logs is an excellent way to troubleshoot the authent
 - Authorization Request Types
    - Native MSAL
    - Non MSAL/Browser SSO
-- Interaction with the macOS Keychain for credential retrival/storage operations
+- Interaction with the macOS Keychain for credential retrieval/storage operations
 - Correlation IDs for Microsoft Entra sign-in events
    - PRT acquisition
    - Device Registration
@@ -503,7 +510,7 @@ During the MDM configuration of the Microsoft Enterprise SSO Extension, an optio
 |**1**|**[browser_sso_interaction_enabled](~/identity-platform/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser)**|Non-MSAL or Safari browser can bootstrap a PRT   |
 |**2**|**browser_sso_disable_mfa**|(Now deprecated) During bootstrapping of the PRT credential, by default MFA is required. Notice this configuration is set to **null** which means that the default configuration is enforced|
 |**3**|**[disable_explicit_app_prompt](~/identity-platform/apple-sso-plugin.md#disable-oauth-2-application-prompts)**|Replaces **prompt=login** authentication requests from applications to reduce prompting|
-|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.micorosoft.`** can be intercepted and handled by the SSO extension broker   |
+|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.microsoft.`** can be intercepted and handled by the SSO extension broker   |
 
 > [!IMPORTANT]
 > Feature flags set to **null** means that their **default** configuration is in place. Check **[Feature Flag documentation](~/identity-platform/apple-sso-plugin.md#more-configuration-options)** for more details

@@ -1,13 +1,11 @@
 ---
 title: Using Application Gateway WAF to protect your application
 description: How to add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/26/2024
-ms.author: kenwith
+ms.date: 05/01/2025
 ms.reviewer: ashishj, besilvei
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Using Application Gateway WAF to protect your applications
@@ -69,7 +67,7 @@ An [Azure Private Domain Name System (DNS) zone][private-dns] is created with an
 
 ## Test the application
 
-After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
+After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing `https://www.fabrikam.one`. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
 
 ![Screenshot of authentication step.](./media/application-proxy-waf/sign-in-2.png)
 ![Screenshot of server response.](./media/application-proxy-waf/application-gateway-response.png)

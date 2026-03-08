@@ -3,14 +3,9 @@ title: How to manage stale devices in Microsoft Entra ID
 description: Learn how to remove stale devices from your database of registered devices in Microsoft Entra ID.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
-ms.date: 04/22/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
 ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
@@ -33,13 +28,13 @@ Stale devices in Microsoft Entra ID can interfere with the general lifecycle pol
 
 ## Detect stale devices
 
-Because a stale device is defined as a registered device that hasn't been used to access any cloud apps for a specific timeframe, detecting stale devices requires a timestamp-related property. In Microsoft Entra ID, this property is called **ApproximateLastSignInDateTime** or **activity timestamp**. If the delta between now and the value of the **activity timestamp** exceeds the timeframe you've defined for active devices, a device is considered to be stale. This **activity timestamp** is now in public preview.
+Because a stale device is defined as a registered device that hasn't been used to access any cloud apps for a specific timeframe, detecting stale devices requires a timestamp-related property. In Microsoft Entra ID, this property is called **ApproximateLastSignInDateTime** or **activity timestamp**. If the delta between now and the value of the **activity timestamp** exceeds the timeframe you've defined for active devices, a device is considered to be stale. 
 
 ## How is the value of the activity timestamp managed?  
 
 The evaluation of the activity timestamp is triggered by an authentication attempt of a device. Microsoft Entra ID evaluates the activity timestamp when:
 
-- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml) has been triggered.
+- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/policy-all-users-device-compliance.md) has been triggered.
 - Windows 10 or newer devices that are either Microsoft Entra joined or Microsoft Entra hybrid joined are active on the network. 
 - Intune managed devices have checked in to the service.
 
@@ -64,7 +59,7 @@ To efficiently cleanup stale devices in your environment, you should define a re
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.
 
-If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
+If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/reference/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
 
 ### Cleanup account
 
@@ -106,7 +101,7 @@ To clean up Microsoft Entra ID:
 > - Deleting devices in your on-premises Active Directory or Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). Read additional information on how to [remove registration on the client](faq.yml).
 > - Deleting a Windows 10 or newer device only in Microsoft Entra ID will re-synchronize the device from your on-premises using Microsoft Entra Connect but as a new object in "Pending" state. A re-registration is required on the device.
 > - Removing the device from sync scope for Windows 10 or newer /Server 2016 devices will delete the Microsoft Entra device. Adding it back to sync scope will place a new object in "Pending" state. A re-registration of the device is required.
-> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (e.g. ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
+> - If you are not using Microsoft Entra Connect for Windows 10 or newer devices to synchronize (such as ONLY using AD FS for registration), you must manage lifecycle similar to Windows 7/8 devices.
 
 <a name='azure-ad-joined-devices'></a>
 
@@ -115,7 +110,7 @@ To clean up Microsoft Entra ID:
 Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g Conditional Access). 
+> - Deleting a Microsoft Entra device does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access). 
 > - Read more on [how to unjoin on Microsoft Entra ID](faq.yml) 
 
 <a name='azure-ad-registered-devices'></a>
@@ -125,7 +120,7 @@ Disable or delete Microsoft Entra joined devices in the Microsoft Entra ID.
 Disable or delete Microsoft Entra registered devices in the Microsoft Entra ID.
 
 > [!NOTE]
-> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (e.g. Conditional Access).
+> - Deleting a Microsoft Entra registered device in Microsoft Entra ID does not remove registration on the client. It will only prevent access to resources using device as an identity (such as Conditional Access).
 > - Read more on [how to remove a registration on the client](faq.yml)
 
 ## Clean up stale devices  
@@ -206,7 +201,7 @@ When configured, BitLocker keys for Windows 10 or newer devices are stored on th
 When you delete a Microsoft Entra device that was associated with a Windows Autopilot object the following three scenarios can occur if the device will be repurposed in future:
 
 - With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device is created, but isn’t be tagged with the ZTDID.
-- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "imposter" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
+- With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "impostor" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
 
 Use the [Get-MgDeviceManagementWindowsAutopilotDeviceIdentity](/powershell/module/microsoft.graph.devicemanagement.enrollment/get-mgdevicemanagementwindowsautopilotdeviceidentity) to list of Windows Autopilot devices in your organization and compare it to the list of devices to clean up.

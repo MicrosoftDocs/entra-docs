@@ -2,15 +2,14 @@
 title: Authentication for Microsoft Entra hybrid identity solutions
 description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Enterprise Architects, and Security and IT decision makers responsible for choosing an authentication method for their Microsoft Entra hybrid identity solution in medium to large organizations.
 keywords:
-author: billmath
-ms.author: billmath
-ms.date: 11/06/2023
-manager: amycolannino
-ms.topic: article
-ms.service: entra-id
+ms.date: 04/09/2025
+ms.topic: how-to
 ms.subservice: hybrid-connect
 ---
 # Choose the right authentication method for your Microsoft Entra hybrid identity solution
+
+> [!NOTE]
+> **Scope of this article**: This article describes authentication methods for Microsoft Entra hybrid identity solutions. These authentication methods apply independently of the synchronization technology used (Microsoft Entra Connect Sync or Cloud Sync). The choice of synchronization technology does not determine or change the authentication behavior for user sign-ins.
 
 Choosing the correct authentication method is the first concern for organizations wanting to move their apps to the cloud. Don't take this decision lightly, for the following reasons:
 
@@ -40,7 +39,7 @@ Microsoft Entra ID supports the following authentication methods for hybrid iden
 ### Cloud authentication
 When you choose this authentication method, Microsoft Entra ID handles users' sign-in process. Coupled with single sign-on (SSO), users can sign in to cloud apps without having to reenter their credentials. With cloud authentication, you can choose from two options:
 
-**Microsoft Entra password hash synchronization**. The simplest way to enable authentication for on-premises directory objects in Microsoft Entra ID. Users can use the same username and password that they use on-premises without having to deploy any other infrastructure. Some premium features of Microsoft Entra ID, like Identity Protection and [Microsoft Entra Domain Services](/entra/identity/domain-services/tutorial-create-instance), require password hash synchronization, no matter which authentication method you choose.
+**Microsoft Entra password hash synchronization**. The simplest way to enable authentication for on-premises directory objects in Microsoft Entra ID. Users can use the same username and password that they use on-premises without having to deploy any other infrastructure. Some premium features of Microsoft Entra ID, like Microsoft Entra ID Protection and [Microsoft Entra Domain Services](/entra/identity/domain-services/tutorial-create-instance), require password hash synchronization, no matter which authentication method you choose.
 
 > [!NOTE]
 > Passwords are never stored in clear text or encrypted with a reversible algorithm in Microsoft Entra ID. For more information on the actual process of password hash synchronization, see [Implement password hash synchronization with Microsoft Entra Connect Sync](how-to-connect-password-hash-synchronization.md).
@@ -92,6 +91,8 @@ Details on decision questions:
 
 * **Considerations**. Currently, password hash synchronization doesn't immediately enforce changes in on-premises account states. In this situation, a user has access to cloud apps until the user account state is synchronized to Microsoft Entra ID. Organizations might want to overcome this limitation by running a new synchronization cycle after administrators do bulk updates to on-premises user account states. An example is disabling accounts.
 
+  **Understanding authentication timing**: While "authentication occurs in the cloud" refers to where Microsoft Entra ID validates credentials (comparing the provided password hash against the stored hash), the availability of password changes for sign-in depends on the synchronization timing. When a user changes their password on-premises, the new password hash must be synchronized to Microsoft Entra ID before the user can sign in with it. This synchronization process typically runs every two minutes but may vary based on configuration.
+
 > [!NOTE]
 > The password expired and account locked-out states aren't currently synced to Microsoft Entra ID with Microsoft Entra Connect. When you change a user's password and set the *user must change password at next logon* flag, the password hash will not be synced to Microsoft Entra ID with Microsoft Entra Connect until the user changes their password.
 
@@ -105,9 +106,9 @@ Refer to [implementing password hash synchronization](how-to-connect-password-ha
 
 * **User experience**. To improve users' sign-in experience, use [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid joined devices](~/identity/devices/how-to-hybrid-join.md). If you can't join your Windows devices to Microsoft Entra ID, we recommend deploying seamless SSO with password hash synchronization. Seamless SSO eliminates unnecessary prompts when users are signed in.
 
-* **Advanced scenarios**. Pass-through Authentication enforces the on-premises account policy at the time of sign-in. For example, access is denied when an on-premises user's account state is disabled, locked out, or their [password expires](how-to-connect-pta-faq.yml#what-happens-if-my-user-s-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication-) or the logon attempt falls outside the hours when the user is allowed to sign in.
+* **Advanced scenarios**. Pass-through Authentication enforces the on-premises account policy at the time of sign-in. For example, access is denied when an on-premises user's account state is disabled, locked out, or their [password expires](how-to-connect-pta-faq.yml#what-happens-if-my-user-s-password-expired-and-they-try-to-sign-in-by-using-pass-through-authentication-) or the logon attempt falls outside the hours when the user is allowed to sign in.
 
-	Organizations that require multifactor authentication with pass-through authentication must use Microsoft Entra multifactor authentication or [Conditional Access custom controls](~/identity/conditional-access/controls.md#custom-controls-preview). Those organizations can't use a third-party or on-premises multifactor authentication method that relies on federation. Advanced features require that password hash synchronization is deployed whether or not you choose pass-through authentication. An example is the leaked credentials report of Identity Protection.
+	Organizations that require multifactor authentication with pass-through authentication must use Microsoft Entra multifactor authentication or [Conditional Access custom controls](~/identity/conditional-access/controls.md#custom-controls-preview). Those organizations can't use a third-party or on-premises multifactor authentication method that relies on federation. Advanced features require that password hash synchronization is deployed whether or not you choose pass-through authentication. An example is the leaked credentials detection of Microsoft Entra ID Protection.
 
 * **Business continuity**. We recommend that you deploy two extra pass-through authentication agents. These extras are in addition to the first agent on the Microsoft Entra Connect server. This other deployment ensures high availability of authentication requests. When you have three agents deployed, one agent can still fail when another agent is down for maintenance.
 
@@ -164,7 +165,7 @@ The following diagrams outline the high-level architecture components required f
 
 |Consideration|Password hash synchronization|Pass-through Authentication|Federation with AD FS|
 |:-----|:-----|:-----|:-----|
-|Where does authentication happen?|In the cloud|In the cloud, after a secure password verification exchange with the on-premises authentication agent|On-premises|
+|Where does authentication happen?|In the cloud - password hash is synchronized and Microsoft Entra ID validates credentials|In the cloud, after a secure password verification exchange with the on-premises authentication agent|On-premises|
 |What are the on-premises server requirements beyond the provisioning system: Microsoft Entra Connect?|None|One server for each additional authentication agent|Two or more AD FS servers<br><br>Two or more WAP servers in the perimeter/DMZ network|
 |What are the requirements for on-premises Internet and networking beyond the provisioning system?|None|[Outbound Internet access](how-to-connect-pta-quick-start.md) from the servers running authentication agents|[Inbound Internet access](/windows-server/identity/ad-fs/overview/ad-fs-requirements) to WAP servers in the perimeter<br><br>Inbound network access to AD FS servers from WAP servers in the perimeter<br><br>Network load balancing|
 |Is there a TLS/SSL certificate requirement?|No|No|Yes|
@@ -174,7 +175,7 @@ The following diagrams outline the high-level architecture components required f
 |Is Windows Hello for Business supported?|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust)|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)<br><br>*Both require Windows Server 2016 Domain functional level*|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)<br><br>[Certificate trust model](/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |What are the multifactor authentication options?|[Microsoft Entra multifactor authentication](/azure/multi-factor-authentication/)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|[Microsoft Entra multifactor authentication](~/identity/authentication/index.yml)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|[Microsoft Entra multifactor authentication](~/identity/authentication/index.yml)<br><br>[Third-party MFA](/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|
 |What user account states are supported?|Disabled accounts<br>(up to 30-minute delay)|Disabled accounts<br><br>Account locked out<br><br>Account expired<br><br>Password expired<br><br>Sign-in hours|Disabled accounts<br><br>Account locked out<br><br>Account expired<br><br>Password expired<br><br>Sign-in hours|
-|What are the Conditional Access options?|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)<br><br>[AD FS claim rules](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
+|What are the Conditional Access options?|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)<br><br>[AD FS Access Control Policies](/windows-server/identity/ad-fs/operations/create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim)|
 |Is blocking legacy protocols supported?|[Yes](~/identity/conditional-access/overview.md)|[Yes](~/identity/conditional-access/overview.md)|[Yes](/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Can you customize the logo, image, and description on the sign-in pages?|[Yes, with Microsoft Entra ID P1 or P2](~/fundamentals/how-to-customize-branding.md)|[Yes, with Microsoft Entra ID P1 or P2](~/fundamentals/how-to-customize-branding.md)|[Yes](how-to-connect-fed-management.md)|
 |What advanced scenarios are supported?|[Smart password lockout](~/identity/authentication/howto-password-smart-lockout.md)<br><br>[Leaked credentials reports, with Microsoft Entra ID P2](~/id-protection/overview-identity-protection.md)|[Smart password lockout](~/identity/authentication/howto-password-smart-lockout.md)|Multisite low-latency authentication system<br><br>[AD FS extranet lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Integration with third-party identity systems](how-to-connect-fed-compatibility.md)|
@@ -195,7 +196,7 @@ Your identity system ensures your users' access to apps that you migrate and mak
 
    * Organizations that didn't previously enable password hash synchronization had to resort to untrusted external consumer email systems for communications to resolve issues. In those cases, it took them weeks to restore their on-premises identity infrastructure, before users were able to sign in to cloud-based apps again.
 
-3. **Identity protection**. One of the best ways to protect users in the cloud is Microsoft Entra ID Protection with Microsoft Entra ID P2. Microsoft continually scans the Internet for user and password lists that bad actors sell and make available on the dark web. Microsoft Entra ID can use this information to verify if any of the usernames and passwords in your organization are compromised. Therefore, it's critical to enable password hash synchronization no matter which authentication method you use, whether it's federated or pass-through authentication. Leaked credentials are presented as a report. Use this information to block or force users to change their passwords when they try to sign in with leaked passwords.
+3. **ID protection**. One of the best ways to protect users in the cloud is Microsoft Entra ID Protection with Microsoft Entra ID P2. Microsoft continually scans the Internet for user and password lists that bad actors sell and make available on the dark web. Microsoft Entra ID can use this information to verify if any of the usernames and passwords in your organization are compromised. Therefore, it's critical to enable password hash synchronization no matter which authentication method you use, whether it's federated or pass-through authentication. Leaked credentials are presented as a report. Use this information to block or force users to change their passwords when they try to sign in with leaked passwords.
 
 ## Conclusion
 
@@ -207,6 +208,6 @@ Consider each authentication method. Does the effort to deploy the solution, and
 
 In today's world, threats are present 24 hours a day and come from everywhere. Implement the correct authentication method, and it will mitigate your security risks and protect your identities.
 
-[Get started](~/fundamentals/whatis.md) with Microsoft Entra ID and deploy the right authentication solution for your organization.
+[Get started](~/fundamentals/what-is-entra.md) with Microsoft Entra ID and deploy the right authentication solution for your organization.
 
 If you're thinking about migrating from federated to cloud authentication, learn more about [changing the sign-in method](plan-connect-user-signin.md). To help you plan and implement the migration, use [these project deployment plans](~/architecture/deployment-plans.md), or consider using the new [Staged Rollout](how-to-connect-staged-rollout.md) feature to migrate federated users to using cloud authentication in a staged approach.

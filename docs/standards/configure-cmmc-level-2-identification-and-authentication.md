@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 1/3/2023
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -54,3 +54,4 @@ The following table provides a list of practice statement and objectives, and Mi
 * [Configure CMMC Level 1 controls](configure-cmmc-level-1-controls.md)
 * [Configure CMMC Level 2 Access Control (AC) controls](configure-cmmc-level-2-access-control.md)
 * [Configure CMMC Level 2 additional controls](configure-cmmc-level-2-additional-controls.md)
+

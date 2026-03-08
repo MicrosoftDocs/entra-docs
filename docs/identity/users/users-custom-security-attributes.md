@@ -1,15 +1,9 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
-ms.author: rolyon
-ms.date: 11/15/2023
+ms.date: 08/25/2024
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
@@ -22,19 +16,17 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
 ## Assign custom security attributes to a user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
 1. Make sure that you have defined custom security attributes. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity** > **Users** > **All users**.
 
 1. Find and select the user you want to assign custom security attributes to.
 
@@ -60,7 +52,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity** > **Users** > **All users**.
 
 1. Find and select the user that has a custom security attribute assignment value you want to update.
 
@@ -80,7 +72,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity** > **Users** > **All users**.
 
 1. Select **Add filter** to open the Add filter pane.
 
@@ -100,7 +92,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity** > **Users** > **All users**.
 
 1. Find and select the user that has the custom security attribute assignments you want to remove.
 
@@ -155,10 +147,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-string value to a user
@@ -202,21 +190,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         }
     }
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
-
-```powershell
-$attributes = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Baker","Cascade")
-    }
-}
-Set-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -CustomSecurityAttributes $attributes
 ```
 
 ---
@@ -264,10 +237,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-integer value to a user
@@ -313,10 +282,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a Boolean value to a user
@@ -359,10 +324,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -409,10 +370,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Update a custom security attribute assignment with a Boolean value for a user
@@ -455,10 +412,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -503,21 +456,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         }
     }
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
-
-```powershell
-$attributesUpdate = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Alpine","Baker")
-    }
-}
-Set-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ---
@@ -611,15 +549,6 @@ If there are no custom security attributes assigned to the user or if the callin
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Get-AzureADMSUser](/powershell/module/azuread/get-azureadmsuser)
-
-```powershell
-$user1 = Get-AzureADMSUser -Id dbb22700-a7de-4372-ae78-0098ee60e55e -Select CustomSecurityAttributes
-$user1.CustomSecurityAttributes
-```
-
 ---
 
 #### List all users with a custom security attribute assignment that equals a value
@@ -643,8 +572,8 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```Output
 Id                                   DisplayName CustomSecurityAttributes
 --                                   ----------- ------------------------
-4b4e8090-e9ba-4bdc-b2f0-67c3c7c59489 Jiya        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-efdf3082-64ae-495f-b051-855e2d8df969 Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Jiya        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 
 Key   : Engineering
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Datacenter@odata.type, #Collection(String)], [Datacenter, System.Object[]]}
@@ -673,7 +602,7 @@ ConsistencyLevel: eventual
     "@odata.count": 2,
     "value": [
         {
-            "id": "4b4e8090-e9ba-4bdc-b2f0-67c3c7c59489",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Jiya",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -695,7 +624,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "efdf3082-64ae-495f-b051-855e2d8df969",
+            "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
             "displayName": "Jana",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -712,10 +641,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -740,9 +665,9 @@ $userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```Output
 Id                                   DisplayName CustomSecurityAttributes
 --                                   ----------- ------------------------
-02d52406-be75-411b-b02f-29d7f38dcf62 Chandra     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-efdf3082-64ae-495f-b051-855e2d8df969 Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8 Joe         Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa Chandra     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Jana        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+33dd33dd-ee44-ff55-aa66-77bb77bb77bb Joe         Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 
 Key   : Marketing
 Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, GS36348]}
@@ -774,7 +699,7 @@ ConsistencyLevel: eventual
     "@odata.count": 3,
     "value": [
         {
-            "id": "02d52406-be75-411b-b02f-29d7f38dcf62",
+            "id": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
             "displayName": "Chandra",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -784,7 +709,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "efdf3082-64ae-495f-b051-855e2d8df969",
+            "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
             "displayName": "Jana",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -799,7 +724,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8",
+            "id": "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
             "displayName": "Joe",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -827,10 +752,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -854,11 +775,11 @@ $userAttributes | select Id,DisplayName,CustomSecurityAttributes
 ```Output
 Id                                   DisplayName              CustomSecurityAttributes
 --                                   -----------              ------------------------
-02d52406-be75-411b-b02f-29d7f38dcf62 Chandra                  Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-eaea4971-7764-4498-9aeb-776496812e75 Isabella                 Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d937580c-692c-451f-a507-6758d3bdf353 Alain                    Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8 Joe                      Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
-23ad8721-f46c-421a-9785-33b0ef474198 Dara                     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa Chandra                  Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+44ee44ee-ff55-aa66-bb77-88cc88cc88cc Isabella                 Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Alain                    Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+33dd33dd-ee44-ff55-aa66-77bb77bb77bb Joe                      Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Dara                     Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 ```
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -876,7 +797,7 @@ ConsistencyLevel: eventual
     "@odata.count": 47,
     "value": [
         {
-            "id": "02d52406-be75-411b-b02f-29d7f38dcf62",
+            "id": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
             "displayName": "Chandra",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -886,7 +807,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "eaea4971-7764-4498-9aeb-776496812e75",
+            "id": "44ee44ee-ff55-aa66-bb77-88cc88cc88cc",
             "displayName": "Isabella",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -899,7 +820,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d937580c-692c-451f-a507-6758d3bdf353",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Alain",
             "customSecurityAttributes": {
                 "Marketing": {
@@ -913,7 +834,7 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "d5a1c025-2d79-4ad3-9217-91ac3a4ed8b8",
+            "id": "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
             "displayName": "Joe",
             "customSecurityAttributes": {
                 "Engineering": {
@@ -939,17 +860,13 @@ ConsistencyLevel: eventual
             }
         },
         {
-            "id": "23ad8721-f46c-421a-9785-33b0ef474198",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "displayName": "Dara",
             "customSecurityAttributes": null
         }
     ]
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -995,10 +912,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Remove a multi-valued custom security attribute assignment from a user
@@ -1041,10 +954,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 ## Frequently asked questions
@@ -1073,9 +982,9 @@ Yes, custom security attributes can be assigned to members or guests in your ten
 
 Yes, directory synced users from an on-premises Active Directory can be assigned custom security attributes.
 
-**Are custom security attribute assignments available for dynamic membership rules?**
+**Are custom security attribute assignments available for rules for dynamic membership groups?**
 
-No, custom security attributes assigned to users are not supported for configuring dynamic membership rules.
+No, custom security attributes assigned to users are not supported for configuring rules for dynamic membership groups.
 
 **Are custom security attributes the same as the custom attributes in B2C tenants?**
 

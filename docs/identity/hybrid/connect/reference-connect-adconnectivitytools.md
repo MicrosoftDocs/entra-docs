@@ -1,12 +1,8 @@
 ---
 title: 'Microsoft Entra Connect: ADConnectivityTools PowerShell Reference'
 description: This document provides reference information for the ADConnectivityTools.psm1 PowerShell module.
-author: billmath
-manager: amycolannino
-ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.topic: reference
 
 ms.custom:
@@ -30,9 +26,7 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 ### DESCRIPTION
 
 Runs local Dns connectivity tests.
-In order to configure the Active Directory connector, Microsoft Entra Connect server must have both name resolution 
-for the forest it's attempting to connect to as well as to the domain controllers
-associated to this forest.
+In order to configure the Active Directory connector, Microsoft Entra Connect server must have both name resolution for the forest it's attempting to connect to as well as to the domain controllers associated to this forest.
 
 ### EXAMPLES
 
@@ -85,8 +79,7 @@ Accept wildcard characters: False
 #### -ReturnResultAsPSObject
 
 Returns the result of this diagnosis in the form of a PSObject.
-Not necessary during manual interaction with
-this tool.
+Not necessary during manual interaction with this tool.
 
 ```yml
 Type: SwitchParameter
@@ -174,8 +167,7 @@ Confirm-FunctionalLevel -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCrede
 
 ### DESCRIPTION
 
-Verifies that the AD forest functional level is equal or more than a given MinAdForestVersion
-(WindowsServer2003).
+Verifies that the AD forest functional level is equal or more than a given MinAdForestVersion (WindowsServer2003).
 Account (Domain\Username) and Password may be requested.
 
 ### EXAMPLES
@@ -235,8 +227,7 @@ Accept wildcard characters: False
 
 #### -RunWithCurrentlyLoggedInUserCredentials
 
-The function will use the credentials of the user that is currently logged in the computer, rather than
-requesting custom credentials from the user.
+The function will use the credentials of the user that is currently logged in the computer, rather than requesting custom credentials from the user.
 
 ```yml
 Type: SwitchParameter
@@ -271,11 +262,8 @@ Confirm-NetworkConnectivity [-DCs] <Array> [-SkipDnsPort] [-ReturnResultAsPSObje
 
 Runs local network connectivity tests.
 
-For the local networking tests, Microsoft Entra Connect must be able to communicate with the named
-domain controllers on ports 53 (DNS), 88 (Kerberos) and 389 (LDAP) Most organizations run DNS
-on their DCs, which is why this test is currently integrated.
-Port 53 should be skipped
-if another DNS server has been specified.
+For the local networking tests, Microsoft Entra Connect must be able to communicate with the named domain controllers on ports 53 (DNS), 88 (Kerberos) and 389 (LDAP) Most organizations run DNS on their DCs, which is why this test is currently integrated.
+Port 53 should be skipped if another DNS server has been specified.
 
 ### EXAMPLES
 
@@ -311,8 +299,7 @@ Accept wildcard characters: False
 
 #### -SkipDnsPort
 
-If the user is not using DNS services provided by the AD Site / Logon DC, then they may want
-to skip checking port 53.
+If the user is not using DNS services provided by the AD Site / Logon DC, then they may want to skip checking port 53.
 The user must still be able to resolve _.ldap._tcp.\<forestfqdn\>
 in order for the Active Directory Connector configuration to succeed.
 
@@ -331,8 +318,7 @@ Accept wildcard characters: False
 #### -ReturnResultAsPSObject
 
 Returns the result of this diagnosis in the form of a PSObject.
-Not necessary during manual interaction with
-this tool.
+Not necessary during manual interaction with this tool.
 
 ```yml
 Type: SwitchParameter
@@ -365,8 +351,7 @@ Confirm-TargetsAreReachable [-Forest] <String> [-DCs] <Array> [<CommonParameters
 
 ### DESCRIPTION
 
-Runs "ping" tests (whether a computer can reach a destination computer through the network
-and/or the internet)
+Runs "ping" tests (whether a computer can reach a destination computer through the network and/or the internet)
 
 ### EXAMPLES
 
@@ -443,8 +428,7 @@ Confirm-ValidDomains -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredenti
 
 ### DESCRIPTION
 
-Validate that all of the domains in the obtained Forest FQDN are reachable by attempting
-to retrieve DomainGuid and DomainDN.
+Validate that all of the domains in the obtained Forest FQDN are reachable by attempting to retrieve DomainGuid and DomainDN.
 Account (Domain\Username) and Password may be requested.
 
 ### EXAMPLES
@@ -503,8 +487,7 @@ Accept wildcard characters: False
 
 #### -RunWithCurrentlyLoggedInUserCredentials
 
-The function will use the credentials of the user that is currently logged in the computer, rather than
-requesting custom credentials from the user.
+The function will use the credentials of the user that is currently logged in the computer, rather than requesting custom credentials from the user.
 
 ```yml
 Type: SwitchParameter
@@ -538,8 +521,7 @@ Confirm-ValidEnterpriseAdminCredentials [-RunWithCurrentlyLoggedInUserCredential
 ### DESCRIPTION
 
 Searches if provided user has Enterprise Admin credentials.
-Account (Domain\Username) and Password may
-be requested.
+Account (Domain\Username) and Password may be requested.
 
 ### EXAMPLES
 
@@ -559,8 +541,7 @@ Confirm-ValidEnterpriseAdminCredentials -RunWithCurrentlyLoggedInUserCredentials
 
 #### -RunWithCurrentlyLoggedInUserCredentials
 
-The function will use the credentials of the user that is currently logged in the computer, rather than
-requesting custom credentials from the user.
+The function will use the credentials of the user that is currently logged in the computer, rather than requesting custom credentials from the user.
 
 ```yml
 Type: SwitchParameter
@@ -595,10 +576,8 @@ Get-DomainFQDNData [[-DomainFQDNDataType] <String>] [-RunWithCurrentlyLoggedInUs
 ### DESCRIPTION
 
 Attempts to obtain a domainFQDN object out of provided credentials.
-If the domainFQDN is valid,
-a DomainFQDNName or RootDomainName will be returned, depending on the user's choice.
-Account (Domain\Username)
-and Password may be requested.
+If the domainFQDN is valid, a DomainFQDNName or RootDomainName will be returned, depending on the user's choice.
+Account (Domain\Username) and Password may be requested.
 
 ### EXAMPLES
 
@@ -635,8 +614,7 @@ Accept wildcard characters: False
 
 #### -RunWithCurrentlyLoggedInUserCredentials
 
-The function will use the credentials of the user that is currently logged in the computer, rather than
-requesting custom credentials from the user.
+The function will use the credentials of the user that is currently logged in the computer, rather than requesting custom credentials from the user.
 
 ```yml
 Type: SwitchParameter
@@ -686,8 +664,7 @@ Get-ForestFQDN [-Forest] <String> [-RunWithCurrentlyLoggedInUserCredentials] [<C
 ### DESCRIPTION
 
 Attempts to obtain a ForestFQDN out of the provided credentials.
-Account (Domain\Username) and Password
-may be requested.
+Account (Domain\Username) and Password may be requested.
 
 ### EXAMPLES
 
@@ -723,8 +700,7 @@ Accept wildcard characters: False
 
 #### -RunWithCurrentlyLoggedInUserCredentials
 
-The function will use the credentials of the user that is currently logged in the computer, rather than
-requesting custom credentials from the user.
+The function will use the credentials of the user that is currently logged in the computer, rather than requesting custom credentials from the user.
 
 ```yml
 Type: SwitchParameter
@@ -789,8 +765,7 @@ Accept wildcard characters: False
 #### -AutoCreateConnectorAccount
 
 For Custom-installations:
-    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of Microsoft Entra Connect's
-    wizard.
+    Flag that is $True if the user chose "Create new AD account" on the AD Forest Account window of Microsoft Entra Connect's wizard.
 $False if the user chose "Use existing AD account".
 For Express-installations:
     The value of this variable must be $True for Express-installations.
@@ -946,8 +921,7 @@ Accept wildcard characters: False
 #### -ReturnResultAsPSObject
 
 Returns the result of this diagnosis in the form of a PSObject.
-Not necessary to specify during manual interaction with
-this tool.
+Not necessary to specify during manual interaction with this tool.
 
 ```yml
 Type: SwitchParameter
@@ -964,8 +938,7 @@ Accept wildcard characters: False
 #### -ValidCredentials
 
 Indicates if the credentials the user typed are valid.
-Not necessary to specify during manual interaction with
-this tool.
+Not necessary to specify during manual interaction with this tool.
 
 ```yml
 Type: SwitchParameter

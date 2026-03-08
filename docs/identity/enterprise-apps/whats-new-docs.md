@@ -1,53 +1,30 @@
 ---
-title: "What's new in Microsoft Entra application management"
-description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 05/03/2024
-ms.service: entra-id
-ms.subservice: enterprise-apps
+title: What's new in Microsoft Entra application management
+description: This article shows the new and updated documentation for the Microsoft Entra application management.
+ms.date: 01/16/2026
 ms.topic: whats-new
-
-ms.author: jomondi
-author: omondiatieno
-manager: CelesteDG
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---
 
-# Microsoft Entra application management: What's new
+# What's new in Microsoft Entra application management
 
-Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## April 2024
+## December 2025
 
 ### New articles
 
--  [View activity logs for application permissions](app-perms-audit-logs.md) - A new article on how to view the activity logs of what permissions are being granted for applications in your directory.
+- [Deactivate an enterprise application](deactivate-application-portal.md)
+
+## November 2025
+
+### New articles
+
+- [Manage assignment of agent identities to an application (Preview)](assign-agent-identities-to-applications.md)
+
+## October 2025
 
 ### Updated articles
 
-Reviewed the following articles to improve technical accuracy and clarity:
-
-- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md)
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md)
-- [Configure F5 BIG-IP Access Policy Manager for form-based SSO](f5-big-ip-forms-advanced.md)
-- [Tutorial: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on](f5-big-ip-header-advanced.md)
-- [Tutorial: Configure F5 BIG-IP Easy Button for header-based SSO](f5-big-ip-headers-easy-button.md)
-- [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication](f5-big-ip-kerberos-advanced.md)
-- [Tutorial: Configure F5 BIG-IP Easy Button for Kerberos single sign-on](f5-big-ip-kerberos-easy-button.md)
-- [Tutorial: Configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on](f5-big-ip-ldap-header-easybutton.md)
-- [Integrate F5 BIG-IP with Microsoft Entra ID](f5-integration.md)
-- [Tutorial: Configure F5 BIG-IP SSL-VPN for Microsoft Entra SSO](f5-passwordless-vpn.md)
-- [Create an enterprise application from a multitenant application in Microsoft Entra ID](create-service-principal-cross-tenant.md)
-- [Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization](migrate-okta-sync-provisioning.md)
-- [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Silverfort](silverfort-integration.md)
-
-## March 2024
-
-No new or updated articles.
-
-## February 2024
-
-### Updated articles
-
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
+- [Integrating Microsoft Entra ID with applications getting started guide](plan-an-application-integration.md) - Revised for technical accuracy

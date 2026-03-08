@@ -1,12 +1,12 @@
 ---
-title: Single sign-on SAML protocol
+title: Single sign-on SAML (Security Assertion Markup Language) protocol
 description: This article describes the single sign-on (SSO) SAML protocol in Microsoft Entra ID.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 04/08/2024
-ms.reviewer: jeedes
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: reference
@@ -15,7 +15,7 @@ ms.topic: reference
 
 # Single sign-on SAML protocol
 
-This article covers the SAML 2.0 authentication requests and responses that Microsoft Entra ID supports for single sign-on (SSO).
+This article covers the SAML 2.0 (Security Assertion Markup Language) authentication requests and responses that Microsoft Entra ID supports for single sign-on (SSO).
 
 The following protocol diagram describes the single sign-on sequence. The cloud service (the service provider) uses an HTTP Redirect binding to pass an `AuthnRequest` (authentication request) element to Microsoft Entra ID (the identity provider). Microsoft Entra ID then uses an HTTP post binding to post a `Response` element to the cloud service.
 
@@ -31,7 +31,7 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 ```xml
 <samlp:AuthnRequest
   xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-  ID="id6c1c178c166d486687be4aaf5e482730"
+  ID="C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w"
   Version="2.0" IssueInstant="2013-03-18T03:28:54.1839884Z"
   xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://www.contoso.com</Issuer>
@@ -43,11 +43,11 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | `ID` | Required | Microsoft Entra ID uses this attribute to populate the `InResponseTo` attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, `id6c1c178c166d486687be4aaf5e482730` is a valid ID. |
 | `Version` | Required | This parameter should be set to `2.0`. |
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
-| `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. |
+| `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. Entra ID will honor the ACS URL if it's present in the SAML Request.|
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
 | `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID attempts to authenticate the user using  the session cookie. |
 
-All other `AuthnRequest` attributes, such as `Consent`, `Destination`, `AssertionConsumerServiceIndex`, `AttributeConsumerServiceIndex`, and `ProviderName` are **ignored**.
+All other `AuthnRequest` attributes, such as `Consent`, `Destination`, and `ProviderName` are **ignored**.
 
 Microsoft Entra ID also ignores the `Conditions` element in `AuthnRequest`.
 
@@ -76,7 +76,7 @@ If `NameIDPolicy` is provided, you can include its optional `Format` attribute. 
 * `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`: Microsoft Entra ID issues the `NameID` claim as a pairwise identifier.
 * `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`: Microsoft Entra ID issues the `NameID` claim in e-mail address format.
 * `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`: This value permits Microsoft Entra ID to select the claim format. Microsoft Entra ID issues the `NameID` claim as a pairwise identifier.
-* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`: Microsoft Entra ID issues the `NameID` claim as a randomly generated value that is unique to the current SSO operation. This means that the value is temporary and can't be used to identify the authenticating user.
+* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`: Microsoft Entra ID issues the `NameID` claim as a randomly generated value that's unique to the current SSO operation. This means that the value is temporary and can't be used to identify the authenticating user.
 
 If `SPNameQualifier` is specified, Microsoft Entra ID includes the same `SPNameQualifier` in the response.
 
@@ -84,7 +84,28 @@ Microsoft Entra ID ignores the `AllowCreate` attribute.
 
 ### RequestedAuthnContext
 
-The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. Microsoft Entra ID supports `AuthnContextClassRef` values such as `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
+The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. 
+
+> [!NOTE] 
+> If the `RequestedAuthnContext` is included in the SAML request, the `Comparison` element must be set to `exact`. 
+
+Microsoft Entra ID supports following `AuthnContextClassRef` values. 
+
+| Authentication method| Authentication context class URI |
+|---|---|
+|Kerberos|urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos|
+|User name and password|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
+|PGP Public Key Infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:PGP|
+|Secure Remote Password|urn:oasis:names:tc:SAML:2.0:ac:classes:SecureRemotePassword|
+|XML Digital Signature|urn:oasis:names:tc:SAML:2.0:ac:classes:XMLDSig|
+|Simple public-key infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:SPKI|
+|Smartcard|urn:oasis:names:tc:SAML:2.0:ac:classes:Smartcard|
+|Smartcard with enclosed private key and a PIN|urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI|
+|Transport Layer Security (TLS) client|urn:oasis:names:tc:SAML:2.0:ac:classes:TLSClient|
+|Unspecified|urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified|
+|X.509 certificate|urn:oasis:names:tc:SAML:2.0:ac:classes:X509|
+|Integrated Windows authentication|urn:federation:authentication:windows|
+
 
 ### Scoping
 
@@ -107,19 +128,19 @@ A subject can instead be provided by adding a `login_hint` parameter to the HTTP
 When a requested sign-on completes successfully, Microsoft Entra ID posts a response to the cloud service. A response to a successful sign-on attempt looks like the following sample:
 
 ```xml
-<samlp:Response ID="_a4958bfd-e107-4e67-b06d-0d85ade2e76a" Version="2.0" IssueInstant="2013-03-18T07:38:15.144Z" Destination="https://contoso.com/identity/inboundsso.aspx" InResponseTo="id758d0ef385634593a77bdf7e632984b6" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
+<samlp:Response ID="_a4958bfd-e107-4e67-b06d-0d85ade2e76a" Version="2.0" IssueInstant="2013-03-18T07:38:15.144Z" Destination="https://contoso.com/identity/inboundsso.aspx" InResponseTo="C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
-  <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+  <SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
     ...
-  </ds:Signature>
+  </SignatureValue>
   <samlp:Status>
     <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
   </samlp:Status>
   <Assertion ID="_bf9c623d-cc20-407a-9a59-c2d0aee84d12" IssueInstant="2013-03-18T07:38:15.144Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
     <Issuer>https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
-    <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+    <SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
       ...
-    </ds:Signature>
+    </SignatureValue>
     <Subject>
       <NameID>Uz2Pqz1X7pxe4XLWxV9KJQ+n59d573SepSAkuYKSde8=</NameID>
       <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
@@ -138,11 +159,14 @@ When a requested sign-on completes successfully, Microsoft Entra ID posts a resp
       <Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">
         <AttributeValue>3F2504E0-4F89-11D3-9A0C-0305E82C3301</AttributeValue>
       </Attribute>
+      <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">    <AttributeValue>http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password</AttributeValue>
+        <AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</AttributeValue>
+      </Attribute>
       ...
     </AttributeStatement>
     <AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
       <AuthnContext>
-        <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+        <AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
       </AuthnContext>
     </AuthnStatement>
   </Assertion>
@@ -153,7 +177,7 @@ When a requested sign-on completes successfully, Microsoft Entra ID posts a resp
 
 The `Response` element includes the result of the authorization request. Microsoft Entra ID sets the `ID`, `Version` and `IssueInstant` values in the `Response` element. It also sets the following attributes:
 
-* `Destination`: When sign on completes successfully, this is set to the `RedirectUri` of the service provider (cloud service).
+* `Destination`: When sign-on completes successfully, this is set to the `RedirectUri` of the service provider (cloud service).
 * `InResponseTo`: This is set to the `ID` attribute of the `AuthnRequest` element that initiated the response.
 
 ### Issuer
@@ -207,14 +231,14 @@ Microsoft Entra ID signs the assertion in response to a successful sign-on. The 
 To generate this digital signature, Microsoft Entra ID uses the signing key in the `IDPSSODescriptor` element of its metadata document.
 
 ```xml
-<ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+<SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
   digital_signature_here
-</ds:Signature>
+</SignatureValue>
 ```
 
 #### Subject
 
-This specifies the principle that is the subject of the statements in the assertion. It contains a `NameID` element, which represents the authenticated user. The `NameID` value is a targeted identifier that is directed only to the service provider that is the audience for the token. It is persistent - it can be revoked, but is never reassigned. It is also opaque, in that it does not reveal anything about the user and cannot be used as an identifier for attribute queries.
+This specifies the principle that is the subject of the statements in the assertion. It contains a `NameID` element, which represents the authenticated user. The `NameID` value is a targeted identifier that is directed only to the service provider that is the audience for the token. It's persistent - it can be revoked, but is never reassigned. It's also opaque, in that it doesn't reveal anything about the user and can't be used as an identifier for attribute queries.
 
 The `Method` attribute of the `SubjectConfirmation` element is always set to `urn:oasis:names:tc:SAML:2.0:cm:bearer`.
 
@@ -241,7 +265,7 @@ This element specifies conditions that define the acceptable use of SAML asserti
 
 The `NotBefore` and `NotOnOrAfter` attributes specify the interval during which the assertion is valid.
 
-* The value of the `NotBefore` attribute is equal to or slightly (less than a second) later than the value of `IssueInstant` attribute of the `Assertion` element. Microsoft Entra ID does not account for any time difference between itself and the cloud service (service provider), and does not add any buffer to this time.
+* The value of the `NotBefore` attribute is equal to or slightly (less than a second) later than the value of `IssueInstant` attribute of the `Assertion` element. Microsoft Entra ID doesn't account for any time difference between itself and the cloud service (service provider), and doesn't add any buffer to this time.
 * The value of the `NotOnOrAfter` attribute is 70 minutes later than the value of the `NotBefore` attribute.
 
 #### Audience
@@ -254,7 +278,7 @@ This contains a URI that identifies an intended audience. Microsoft Entra ID set
 </AudienceRestriction>
 ```
 
-Like the `Issuer` value, the `Audience` value must exactly match one of the service principal names that represents the cloud service in Microsoft Entra ID. However, if the value of the `Issuer` element is not a URI value, the `Audience` value in the response is the `Issuer` value prefixed with `spn:`.
+Like the `Issuer` value, the `Audience` value must exactly match one of the service principal names that represents the cloud service in Microsoft Entra ID. However, if the value of the `Issuer` element isn't a URI value, the `Audience` value in the response is the `Issuer` value prefixed with `spn:`.
 
 #### AttributeStatement
 
@@ -285,7 +309,22 @@ This element asserts that the assertion subject was authenticated by a particula
 ```xml
 <AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
   <AuthnContext>
-    <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+    <AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
   </AuthnContext>
 </AuthnStatement>
+```
+#### authnmethodreferences
+
+This element asserts that the assertion subject was authenticated by a particular means at a particular time. This is available in the claims section for applications to consume and verify that subject has done authentication using Password or using a stronger authentication method like MFA or Passkeys. 
+
+* The `authnmethodsreferences` attribute specifies the way the user authenticated with Microsoft Entra ID.
+* The `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` claim value specifies the user has done username and password authentication with Entra ID.
+* The `http://schemas.microsoft.com/claims/multipleauthn` claim value specifies the user has done username and password and also performed multiple factor authentication resulting in MFA.
+
+```xml
+  <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">
+              <AttributeValue>http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password</AttributeValue>
+              <AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</AttributeValue>
+  </Attribute>
+
 ```

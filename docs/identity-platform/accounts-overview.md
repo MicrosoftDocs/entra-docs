@@ -2,14 +2,11 @@
 title: Microsoft identity platform accounts & tenant profiles on Android
 description: An overview of the Microsoft identity platform accounts for Android
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: devx-track-java, has-adal-ref
-ms.date: 09/14/2019
-ms.devlang: java
-ms.reviewer: shoatman
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
 #Customer intent: As an Android developer, I want to understand the concept of accounts in the Microsoft identity platform when using MSAL for Android so that I can properly manage and authenticate users across multiple organizations and systems of record.
 ---
@@ -38,7 +35,7 @@ An account in the Microsoft identity platform consists of:
   - To record that an account from one system of record (Microsoft Entra tenant A) has access to a resource in another system of record (Microsoft Entra tenant B), the account must be represented in the tenant where the resource is defined. This is done by creating a local record of the account from system A in system B.
   - This local record, that is the representation of the account, is bound to the original account.
   - MSAL exposes this local record as a `Tenant Profile`.
-  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, etc.
+  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, and so on.
 - Because an account may be present in one or more tenants, an account may have more than one profile.
 
 > [!NOTE]
@@ -76,7 +73,7 @@ The MSAL token cache stores a *single refresh token* per account. That refresh t
 
 The MSAL account ID isn't an account object ID. It isn't meant to be parsed and/or relied upon to convey anything other than uniqueness within the Microsoft identity platform.
 
-For compatibility with the Azure AD Authentication Library (ADAL), and to ease Migration from ADAL to MSAL, MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
+MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
 
 ```java
 // The following would always retrieve the same account object for tom@live.com because each identifier is valid

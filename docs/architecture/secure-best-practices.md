@@ -2,20 +2,18 @@
 title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 7/5/2022
+ms.topic: best-practice
+ms.date: 05/21/2025
 ms.author: gasinh
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
+ms.subservice: architecture
 ---
 
 # Best practices for all isolation architectures
 
 The following are design considerations for all isolation configurations. Throughout this content, there are many links. We link to content, rather than duplicate it here, so you'll always have access to the most up-to-date information.
 
-For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/concept-secure-remote-workers.md).
+For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/configure-security.md).
 
 >[!NOTE]
 >For all isolated tenants we suggest you use clear and differentiated branding to help avoid human error of working in the wrong tenant.
@@ -134,7 +132,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * All applications onboarded to isolated environments must have explicit Conditional Access policies applied as part of the onboarding process.
 
-* Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
+* Define Conditional Access policies for [security information registration](~/identity/conditional-access/policy-all-users-security-info-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 
@@ -154,7 +152,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 Below are some identity governance principles to consider across all the tenant configurations for isolation.
 
-* **No standing access** - No human identities should have standing access to perform privileged operations in isolated environments. Azure Role-based access control (RBAC) integrates with [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) (PIM). PIM provides just-in-time activation determined by security gates such as multifactor authentication, approval workflow, and limited duration.
+* **No standing access** - No human identities should have standing access to perform privileged operations in isolated environments. Azure Role-based access control (RBAC) integrates with [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM provides just-in-time activation determined by security gates such as multifactor authentication, approval workflow, and limited duration.
 
 * **Number of admins** - Organizations should define minimum and maximum number of humans holding a privileged role to mitigate business continuity risks. With too few privileged roles, there may not be enough time-zone coverage. Mitigate security risks by having as few administrators as possible, following the least-privilege principle.
 
@@ -174,7 +172,7 @@ Some approaches you can use for [using secure devices as part of your privileged
 
   * Qualification of humans with privileged roles (for example, full-time employee/vendor, clearance level, citizenship)
 
-  * Explicit incompatibility of roles (also known as separation of duties). Examples include teams with Microsoft Entra directory roles shouldn't be responsible for managing Azure Resource Manager privileged roles, etc.
+  * Explicit incompatibility of roles (also known as separation of duties). Examples include teams with Microsoft Entra directory roles shouldn't be responsible for managing Azure Resource Manager privileged roles, and so on.
 
   * Whether direct user or groups assignments are preferred for which roles.
 
@@ -184,7 +182,7 @@ Some approaches you can use for [using secure devices as part of your privileged
 
 * **Attestation** - Identities that hold privileged roles should be reviewed periodically to keep membership current and justified. [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md) integrate with Azure RBAC roles, group memberships and Microsoft Entra B2B external identities.
 
-* **Lifecycle** - Privileged operations might require access to multiple resources such as line of business applications, SaaS Applications, and Azure resource groups and subscriptions. [Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-overview.md) allows defining access packages that represent a set resource that is assigned to users as a unit, establish a validity period, approval workflows, etc.
+* **Lifecycle** - Privileged operations might require access to multiple resources such as line of business applications, SaaS Applications, and Azure resource groups and subscriptions. [Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-overview.md) allows defining access packages that represent a set resource that is assigned to users as a unit, establish a validity period, approval workflows, and so on.
 
 ## Tenant and subscription lifecycle management
 
@@ -194,7 +192,7 @@ Some approaches you can use for [using secure devices as part of your privileged
 
   * Business justification to create it. Creating a new Microsoft Entra tenant will increase complexity significantly, so it's key to ascertain if a new tenant is necessary.
 
-  * The Azure cloud in which it should be created (for example, Commercial, Government, etc.).
+  * The Azure cloud in which it should be created (for example, Commercial, Government, and so on).
 
   * Whether this is production or not production
 
@@ -204,11 +202,13 @@ Some approaches you can use for [using secure devices as part of your privileged
 
   * Training and understanding of common security requirements.
 
-* Upon approval, the Microsoft Entra tenant will be created, configured with necessary baseline controls, and onboarded in the billing plane, monitoring, etc.
+* Upon approval, the Microsoft Entra tenant will be created, configured with necessary baseline controls, and onboarded in the billing plane, monitoring, and so on.
 
 * Regular review of the Microsoft Entra tenants in the billing plane needs to be implemented to detect and discover tenant creation outside the governed process. Refer to the *Inventory and Visibility* section of this document for further details.
 
 * Azure AD B2C tenant creation can be controlled using Azure Policy. The policy executes when an Azure subscription is associated to the B2C tenant (a pre-requisite for billing). Customers can limit the creation of Azure AD B2C tenants to specific management groups.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 * There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
 
@@ -226,13 +226,13 @@ Below are some considerations when designing a governed subscription lifecycle p
 
   * Management group assignment
 
-  * Other aspects such as tagging, cross-charging, product-view usage, etc.
+  * Other aspects such as tagging, cross-charging, product-view usage, and so on.
 
 * Don't allow ad-hoc subscription creation through the portals or by other means. Instead consider managing [subscriptions programmatically using Azure Resource Manager](/azure/cost-management-billing/manage/programmatically-create-subscription) and pulling consumption and billing reports [programmatically](/rest/api/consumption/). This can help limit subscription provisioning to authorized users and enforce your policy and taxonomy goals. Guidance on following [AZOps principals](https://github.com/azure/azops/wiki/introduction) can be used to help create a practical solution.
 
 * When a subscription is provisioned, create Microsoft Entra cloud groups to hold standard Azure Resource Manager Roles needed by application teams such as Contributor, Reader and approved custom roles. This enables you to manage Azure RBAC role assignments with governed privileged access at scale.
 
-  1. Configure the groups to become eligible for Azure RBAC roles using Microsoft Entra PIM with the corresponding controls such as activation policy, access reviews, approvers, etc.
+  1. Configure the groups to become eligible for Azure RBAC roles using Microsoft Entra PIM with the corresponding controls such as activation policy, access reviews, approvers, and so on.
 
   1. Then [delegate the management of the groups](~/identity/users/groups-self-service-management.md) to solution owners.
 
@@ -242,7 +242,7 @@ Below are some considerations when designing a governed subscription lifecycle p
 
 * If your organization has pre-approved reference architectures, the subscription provisioning can be integrated with resource deployment tools such as [Azure Blueprints](/azure/governance/blueprints/overview) or [Terraform](https://www.terraform.io).
 
-* Given the tenant affinity to Azure Subscriptions, subscription provisioning should be aware of multiple identities for the same human actor (employee, partner, vendor, etc.) across multiple tenants and assign access accordingly.
+* Given the tenant affinity to Azure Subscriptions, subscription provisioning should be aware of multiple identities for the same human actor (employee, partner, vendor, and so on) across multiple tenants and assign access accordingly.
 
 ### EA and MCA roles
 
@@ -250,7 +250,7 @@ Below are some considerations when designing a governed subscription lifecycle p
 
 * The Azure EA Enterprise portal doesn't provide an audit log. To mitigate this, consider an automated governed process to provision subscriptions with the considerations described above and use dedicated EA accounts and audit the authentication logs.
 
-* [Microsoft Customer Agreement](/azure/cost-management-billing/understand/mca-overview) (MCA) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
+* [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/understand/mca-overview) roles don't integrate natively with PIM. To mitigate this, use dedicated MCA accounts and monitor usage of these accounts.
 
 ### Azure AD B2C tenants
 
@@ -306,9 +306,9 @@ The following are additional operational considerations for Microsoft Entra ID, 
 
 * Creation of Azure management group hierarchy.
 
-* Configuration of management policies for various perimeters including identity, data protection, Azure, etc.
+* Configuration of management policies for various perimeters including identity, data protection, Azure, and so on.
 
-* Deployment of security stack per agreed upon cybersecurity architecture, including diagnostic settings, SIEM onboarding, CASB onboarding, PIM onboarding, etc.
+* Deployment of security stack per agreed upon cybersecurity architecture, including diagnostic settings, SIEM onboarding, CASB onboarding, PIM onboarding, and so on.
 
 * Configuration of Microsoft Entra roles based on agreed upon delegation.
 
@@ -333,7 +333,7 @@ The following are additional operational considerations for Microsoft Entra ID, 
 
 ### Logging and monitoring
 
-**Central security log management** - Ingest logs from each environment in a [centralized way](/security/benchmark/azure/security-control-logging-monitoring), following consistent best practices across environments (for example, diagnostics settings, log retention, SIEM ingestion, etc.). [Azure Monitor](/azure/azure-monitor/overview) can be used to ingest logs from different sources such as endpoint devices, network, operating systems' security logs, etc.
+**Central security log management** - Ingest logs from each environment in a [centralized way](/security/benchmark/azure/security-control-logging-monitoring), following consistent best practices across environments (for example, diagnostics settings, log retention, SIEM ingestion, and so on). [Azure Monitor](/azure/azure-monitor/overview) can be used to ingest logs from different sources such as endpoint devices, network, operating systems' security logs, and so on.
 
 Detailed information on using automated or manual processes and tools to monitor logs as part of your security operations is available at [Microsoft Entra security operation guide](https://github.com/azure/azops/wiki/introduction).
 
@@ -461,7 +461,7 @@ The following scenarios must be explicitly monitored and investigated:
 
 Similarly, Azure Monitor can be integrated with ITSM systems through the [IT Service Management Connector](/azure/azure-monitor/alerts/itsmc-overview).
 
-**Operational practices** -  Minimize operational activities that require direct access to the environment to human identities. Instead model them as Azure Pipelines that execute common operations (for example, add capacity to a PaaS solution, run diagnostics, etc.) and model direct access to the Azure Resource Manager interfaces to "break glass" scenarios.
+**Operational practices** -  Minimize operational activities that require direct access to the environment to human identities. Instead model them as Azure Pipelines that execute common operations (for example, add capacity to a PaaS solution, run diagnostics, and so on) and model direct access to the Azure Resource Manager interfaces to "break glass" scenarios.
 
 ### Operations challenges
 

@@ -1,8 +1,8 @@
 ---
-author: barclayn
-ms.author: barclayn
 ms.date: 04/24/2024
 ms.topic: include
+ms.custom:
+  - devx-track-azurecli
 ---
 
 In this article, using the Azure CLI, you learn how to perform the following managed identities for Azure resources operations on an Azure VM:
@@ -10,7 +10,7 @@ In this article, using the Azure CLI, you learn how to perform the following man
 - Enable and disable the system-assigned managed identity on an Azure VM
 - Add and remove a user-assigned managed identity on an Azure VM
 
-If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ To create an Azure VM with the system-assigned managed identity enabled, your ac
 1. Create a VM using [az vm create](/cli/azure/vm/#az-vm-create). The following example creates a VM named *myVM* with a system-assigned managed identity, as requested by the `--assign-identity` parameter, with the specified `--role` and `--scope`. The `--admin-username` and `--admin-password` parameters specify the administrative user name and password account for virtual machine sign-in. Update these values as appropriate for your environment: 
 
    ```azurecli-interactive 
-   az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --role contributor --scope mySubscription --admin-username azureuser --admin-password myPassword12
+   az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --role contributor --scope /Subscriptions/mySubscriptionId/resourceGroups/myResourceGroup --admin-username azureuser --admin-password myPassword12
    ```
 
 ### Enable system-assigned managed identity on an existing Azure VM
@@ -102,8 +102,8 @@ To assign a user-assigned identity to a VM during its creation, your account nee
    ```json
    {
        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-       "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<myUserAssignedIdentity>/credentials?tid=5678&oid=9012&aid=00001111-aaaa-2222-bbbb-3333cccc4444",
-       "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
+       "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<myUserAssignedIdentity>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+       "id": "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
        "location": "westcentralus",
        "name": "<USER ASSIGNED IDENTITY NAME>",
        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
@@ -127,7 +127,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 1. Create a user-assigned identity using [az identity create](/cli/azure/identity#az-identity-create).  The `-g` parameter specifies the resource group where the user-assigned identity is created, and the `-n` parameter specifies its name. Be sure to replace the `<RESOURCE GROUP>` and `<USER ASSIGNED IDENTITY NAME>` parameter values with your own values:
 
    > [!IMPORTANT]
-   > Creating user-assigned managed identities with special characters (i.e. underscore) in the name is not currently supported. Please use alphanumeric characters. Check back for updates.  For more information, see [FAQs and known issues](~/identity/managed-identities-azure-resources/known-issues.md)
+   > Creating user-assigned managed identities with special characters (that is, underscore) in the name is not currently supported. Please use alphanumeric characters. Check back for updates.  For more information, see [FAQs and known issues](~/identity/managed-identities-azure-resources/known-issues.md)
 
    ```azurecli-interactive
    az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
@@ -138,8 +138,8 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
    ```json
    {
      "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-     "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=00001111-aaaa-2222-bbbb-3333cccc4444",
-     "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
+     "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+     "id": "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
      "location": "westcentralus",
      "name": "<USER ASSIGNED IDENTITY NAME>",
      "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",

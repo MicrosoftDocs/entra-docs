@@ -2,14 +2,8 @@
 
 title: Microsoft Entra External ID overview
 description: Microsoft Entra External ID allows you to collaborate with or publish apps to people outside your organization. Compare solutions for External ID, including Microsoft Entra B2B collaboration, Microsoft Entra B2B collaboration, and Azure AD B2C.
-
- 
-ms.service: entra-external-id
 ms.topic: overview
-ms.date: 04/29/2024
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.date: 01/30/2026
 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer creating apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID, so that I can securely manage my customers' identity experiences and allow them to use their own credentials to sign in.
@@ -78,7 +72,7 @@ The following table compares the scenarios you can enable with External ID.
 
 |   | External ID in workforce tenants |  External ID in external tenants  |
 | ---- | --- |   --- |
-| **Primary scenario**  | Allow your workforce to collaborate with business guests. Let guests use their preferred identities to sign in to resources in your Microsoft Entra organization. Provides access to Microsoft applications or your own applications (SaaS apps, custom-developed apps, etc.). <br><br> *Example:* Invite a guest to sign in to your Microsoft apps or become a guest member in Teams. |  Publish apps to external consumers and business customers using External ID for identity experiences. Provides identity and access management for modern SaaS or custom-developed applications (not first-party Microsoft apps). <br><br> *Example:* Create a customized sign-in experience for users of your consumer mobile app and monitor app usage. |
+| **Primary scenario**  | Allow your workforce to collaborate with business guests. Let guests use their preferred identities to sign in to resources in your Microsoft Entra organization. Provides access to Microsoft applications or your own applications (SaaS apps, custom-developed apps, and so on). <br><br> *Example:* Invite a guest to sign in to your Microsoft apps or become a guest member in Teams. |  Publish apps to external consumers and business customers using External ID for identity experiences. Provides identity and access management for modern SaaS or custom-developed applications (not first-party Microsoft apps). <br><br> *Example:* Create a customized sign-in experience for users of your consumer mobile app and monitor app usage. |
 | **Intended for**  | Collaborating with business partners from external organizations like suppliers, partners, vendors. These users might or might not have Microsoft Entra ID or managed IT.   |   Consumers and business customers of your app. These users are managed in a Microsoft Entra tenant that is configured for external apps and users. |
 | **User management**  | B2B collaboration users are managed in the same workforce tenant as employees but are typically annotated as guest users. Guest users can be managed the same way as employees, added to the same groups, and so on. [Cross-tenant access settings](cross-tenant-access-overview.md) can be used to determine which users have access to B2B collaboration.   |   App users are managed in an external tenant that you create for consumers of your application. Users in an external tenant have different [default permissions](customers/reference-user-permissions.md) than users in a workforce tenant. They're managed in the external tenant, separate from the organization's employee directory. |
 | **Single sign-on (SSO)**  | SSO to all Microsoft Entra connected apps is supported. For example, you can provide access to Microsoft 365 or on-premises apps, and to other SaaS apps such as Salesforce or Workday.  | SSO to apps registered in the external tenant is supported. SSO to Microsoft 365 or to other Microsoft SaaS apps isn't supported. |
@@ -106,9 +100,11 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users (MAU). Learn more about [External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/) and [billing setup for B2B](external-identities-pricing.md).  
+Licensing and billing are based on monthly active users (MAU). Learn more about the [billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
 ### Azure Active Directory B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 Azure Active Directory B2C (Azure AD B2C) is Microsoft's legacy solution for customer identity and access management. Azure AD B2C includes a separate consumer-based directory that you manage in the Azure portal through the Azure AD B2C service. Each Azure AD B2C tenant is separate and distinct from other Microsoft Entra ID and Azure AD B2C tenants. The Azure AD B2C portal experience is similar to Microsoft Entra ID, but there are key differences, such as the ability to customize your user journeys using the Identity Experience Framework.
 
@@ -120,19 +116,22 @@ For more information about how an Azure AD B2C tenant differs from a Microsoft E
 
 As an inviting organization, you might not know ahead of time who the individual external collaborators are who need access to your resources. You need a way for users from partner companies to sign themselves up with policies that you control. To enable users from other organizations to request access, you can use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to configure policies that [manage access for external users](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users). Upon approval, these users will be provisioned with guest accounts and assigned to groups, apps, and SharePoint Online sites.
 
-<a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
-
-### Microsoft Entra Microsoft Graph API for B2B collaboration
-
-Microsoft Graph APIs are available for creating and managing External ID features.
-
-- **Cross-tenant access settings API**: The [Microsoft Graph cross-tenant access API](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) lets you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using the API, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The API also allows you to accept MFA and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
-
-- **B2B collaboration invitation manager**: The [Microsoft Graph invitation manager API](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post?tabs=http) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
-
 ### Conditional Access
 
-Organizations can enforce Conditional Access policies for external B2B collaboration and B2B direct connect users in the same way that they're enabled for full-time employees and members of the organization. For Microsoft Entra cross-tenant scenarios, if your Conditional Access policies require MFA or device compliance, you can now trust MFA and device compliance claims from an external user's home organization. When trust settings are enabled, during authentication, Microsoft Entra ID checks a user's credentials for an MFA claim or a device ID to determine if the policies were already met. If so, the external user is granted seamless sign-on to your shared resource. Otherwise, an MFA or device challenge is initiated in the user's home tenant. Learn more about the [authentication flow and Conditional Access for external users](authentication-conditional-access.md).
+Organizations can use Conditional Access policies to enhance their security by applying the appropriate access controls, such as MFA, to external users.
+
+#### Conditional Access and MFA in external tenants
+
+In external tenants, organizations can enforce MFA for customers by creating a Microsoft Entra Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
+
+- **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. 
+- **SMS-based authentication**: SMS is available as a second factor authentication method for MFA for users in external tenants. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook, are prompted for second verification using SMS.
+
+Learn more about [authentication methods in external tenants](customers/concept-multifactor-authentication-customers.md).
+
+#### Conditional Access for B2B collaboration and B2B direct connect
+
+In a workforce tenant, organizations can enforce Conditional Access policies for external B2B collaboration and B2B direct connect users in the same way that they're enabled for full-time employees and members of the organization. For Microsoft Entra cross-tenant scenarios, if your Conditional Access policies require MFA or device compliance, you can now trust MFA and device compliance claims from an external user's home organization. When trust settings are enabled, during authentication, Microsoft Entra ID checks a user's credentials for an MFA claim or a device ID to determine if the policies were already met. If so, the external user is granted seamless sign-on to your shared resource. Otherwise, an MFA or device challenge is initiated in the user's home tenant. Learn more about the [authentication flow and Conditional Access for external users in workforce tenants](authentication-conditional-access.md).
 
 ### Multitenant applications
 
@@ -148,9 +147,26 @@ The [cross-tenant synchronization](../identity/multi-tenant-organizations/cross-
 
 To learn more about multitenant organizations and cross-tenant synchronization, see the [multitenant organizations documentation](../identity/multi-tenant-organizations/index.yml) and the [feature comparison](../identity/multi-tenant-organizations/overview.md#compare-multitenant-capabilities).
 
-## Next steps
+## Microsoft Graph APIs
+
+All External ID features are also supported for automation through Microsoft Graph APIs except those listed in the next section. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+
+### Capabilities not supported in Microsoft Graph
+
+|  External ID feature |  Supported in  |  Automation workarounds  |
+| ---- | --- | --- |
+| [Identify organizations that you belong to](leave-the-organization.md#what-organizations-do-i-belong-to) | Workforce tenants | [Tenants - List Azure Resource Manager API](/rest/api/resources/tenants/list). For Teams shared channels and B2B direct connect, use [Get tenantReferences](/graph/api/outboundshareduserprofile-list-tenants) Microsoft Graph API. |
+
+<a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
+
+### Microsoft Entra Microsoft Graph API for B2B collaboration
+
+- **Cross-tenant access settings APIs**: The [cross-tenant access APIs in Microsoft Graph](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true) let you programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal. Using these APIs, you can set up policies for inbound and outbound collaboration. For example, you can allow or block features for everyone by default and limit access to specific organizations, groups, users, and applications. The APIs also allow you to accept multifactor authentication (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
+
+- **B2B collaboration invitation manager**: The [invitation manager API in Microsoft Graph](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
+
+## Related content
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
-- [About Azure AD B2C](/azure/active-directory-b2c/overview)
 - [About Microsoft Entra multitenant organizations](../identity/multi-tenant-organizations/overview.md)

@@ -1,16 +1,10 @@
 ---
 title: Self-service password reset deep dive
 description: How does self-service password reset work
-
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 05/10/2024
-
-ms.author: justinha
-author: justinha
-manager: amycolannino
+ms.topic: concept-article
+ms.date: 03/04/2025
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # How it works: Microsoft Entra self-service password reset
 
@@ -23,7 +17,7 @@ Microsoft Entra self-service password reset (SSPR) gives users the ability to ch
 
 ## How does the password reset process work?
 
-A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra ID platform considers the following factors:
+A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). Also to highlight SSPR for Administrators isn't enabled on the tenant by default as SSPR is only for the end users.  They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra platform considers the following factors:
 
 * How should the page be localized?
 * Is the user account valid?
@@ -84,9 +78,12 @@ When you don't require registration, users aren't prompted during sign-in, but t
 
 ## Reconfirm authentication information
 
-To make sure that authentication methods are correct when they're needed to reset or change their password, you can require users confirm their info registered information after a certain period of time. This option is only available if you enable the **Require users to register when signing in** option.
+You can require users to confirm their authentication information after a certain period of time. This option is only available if you enable the **Require users to register when signing in** option.
 
-Valid values to prompt a user to confirm their registered methods are from *0* to *730* days. Setting this value to *0* means that users are never asked to confirm their authentication information. When using the combined registration experience users will be required to confirm their identity before reconfirming their information.
+Valid values to prompt a user to confirm their authentication information are from *0* to *730* days. Setting this value to *0* means that users are never asked to confirm their authentication information. Users need to sign in before they can reconfirm their information.
+
+> [!NOTE]
+> If SSPR requires more than one authentication method, a user who deletes a method isn't required to confirm their authentication information until they reach the **Number of days before users are asked to re-confirm their authentication information**.
 
 ## Authentication methods
 
@@ -94,12 +91,12 @@ When a user is enabled for SSPR, they must register at least one authentication 
 
 The following authentication methods are available for SSPR:
 
-* Mobile app notification
-* Mobile app code
-* Email
-* Mobile phone
-* Office phone (available only for tenants with paid subscriptions)
-* Security questions
+* [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app)
+* [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
+* [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
+* [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)
+* [Voice call](concept-authentication-phone-options.md)
+* Email OTP
 
 Users can only reset their password if they register an authentication method that the administrator has enabled.
 
@@ -214,6 +211,8 @@ Password reset and change are fully supported on all business-to-business (B2B) 
 * **B2B users**: Any new B2B users created by using the new [Microsoft Entra B2B capabilities](~/external-id/what-is-b2b.md) can also reset their passwords with the email they registered during the invite process.
 
 To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If the user defined an alternate email or authentication email, password reset works as expected.
+
+ 
 
 > [!NOTE]
 > Microsoft accounts that are granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, can't use Microsoft Entra SSPR. For more information, see [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).

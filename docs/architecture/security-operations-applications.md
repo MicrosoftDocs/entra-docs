@@ -1,13 +1,10 @@
 ---
 title: Microsoft Entra security operations for applications
 description: Learn how to monitor and alert on applications to identify security threats.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 09/06/2022
-ms.author: jricketts
+ms.custom: sfi-ropc-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra security operations guide for applications
@@ -79,7 +76,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies, including device state. Use the workbook to view a summary, and identify the effects over a time period. You can use the workbook to investigate the sign-ins of a specific user.
 
@@ -146,7 +143,7 @@ After you set up Azure Key Vault, [enable logging](/azure/key-vault/general/howt
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent to application| Low| Microsoft Entra audit logs| Activity: Consent to application / ConsentContext.IsAdminConsent = false| Look for: high profile or highly privileged accounts, app requests high-risk permissions, apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Hunting%20Queries/AuditLogs/ConsentToApplicationDiscovery.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 The act of consenting to an application isn't malicious. However, investigate new end-user consent grants looking for suspicious applications. You can [restrict user consent operations](/azure/security/fundamentals/steps-secure-identity).
 
@@ -162,7 +159,7 @@ For more information on consent operations, see the following resources:
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 |-|-|-|-|-|
-| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, etc.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| End-user consent stopped due to risk-based consent| Medium| Microsoft Entra audit logs| Core Directory / ApplicationManagement / Consent to application<br> Failure status reason = Microsoft.online.Security.userConsent<br>BlockedForRiskyAppsExceptions| Monitor and analyze any time consent is stopped due to risk. Look for: high profile or highly privileged accounts, app requests high-risk permissions, or apps with suspicious names, for example generic, misspelled, and so on.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/End-userconsentstoppedduetorisk-basedconsent.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 ## Application authentication flows
 
@@ -218,7 +215,7 @@ Alert when these changes are detected outside approved change management procedu
 
 * Azure Key Vault security overview and security guidance - [Azure Key Vault security overview](/azure/key-vault/general/security-features)
 
-* Solorgate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
+* Solorigate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
 
 * OAuth attack detection guidance - [Unusual addition of credentials to an OAuth app](/defender-cloud-apps/investigate-anomaly-alerts)
 

@@ -8,13 +8,13 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 05/01/2023
+ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
 # Meet authorization requirements of memorandum 22-09
 
-This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) [M 22-09 Memorandum for the Heads of Executive Departments and Agencies](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf).
+This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles. Instructions and guidance are based on US Office of Management and Budget (OMB) [M-22-09 Memorandum for the Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf).
 
 The memo requirements are enforcement types in multifactor authentication policies, and controls for devices, roles, attributes, and privileged access management.
 
@@ -24,8 +24,8 @@ A memorandum 22-09 requirement is at least one device-based signal for authoriza
 
 | Signal| Signal retrieval |
 | - | - |
-| Device is managed| Integration with Intune or another mobile device management (MDM) solution supporting integration. 
-Microsoft Entra hybrid joined| Active Directory manages the device, and it qualifies. 
+| Device is managed| Integration with Intune or another mobile device management (MDM) solution supporting integration. |
+| Microsoft Entra hybrid joined| Active Directory manages the device, and it qualifies. |
 | Device is compliant| Integration with Intune or another MDM solution supporting the integration. See, [Create a compliance policy in Microsoft Intune](/mem/intune/protect/device-compliance-get-started). |
 | Threat signals| Microsoft Defender for Endpoint and other endpoint detection and response (EDR) tools have Microsoft Entra ID and Intune integrations that send threat signals to deny access. Threat signals support the compliant status signal. |
 | Cross-tenant access policies (public preview)| Trust device signals from devices in other organizations. |
@@ -46,7 +46,7 @@ Attribute-based access control (ABAC) uses metadata assigned to a user or resour
 
 ### Attributes assigned to users
 
-Use attributes assigned to users, stored in Microsoft Entra ID, to create user authorizations. Users are automatically assigned to dynamic groups based on a rule set you define during group creation. Rules add or remove a user from the group based on rule evaluation against the user and their attributes. We recommend you maintain attributes and don't set static attributes on creation day.
+Use attributes assigned to users, stored in Microsoft Entra ID, to create user authorizations. Users are automatically assigned to dynamic membership groups based on a rule set you define during group creation. Rules add or remove a user from the group based on rule evaluation against the user and their attributes. We recommend you maintain attributes and don't set static attributes on creation day.
 
 Learn more: [Create or update a dynamic group in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
 
@@ -56,7 +56,7 @@ With Microsoft Entra ID, you can integrate authorization to the data. See the fo
 
 Data sources can be Microsoft Office files like Word, Excel, or SharePoint sites mapped to authentication. Use authentication assigned to data in applications. This approach requires integration with the application code and for developers to adopt the capability. Use authentication integration with Microsoft Defender for Cloud Apps to control actions taken on data through session controls. 
 
-Combine dynamic groups with authentication context to control user access mappings between the data and the user attributes. 
+Combine dynamic membership groups with authentication context to control user access mappings between the data and the user attributes. 
 
 Learn more:
 

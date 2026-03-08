@@ -1,13 +1,9 @@
 ---
 title: Increase the resilience of authentication and authorization in daemon applications you develop
 description: Learn to increase authentication and authorization resiliency in daemon application using the Microsoft identity platform
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
-author: jricketts
-ms.author: jricketts
-manager: martinco
 ms.date: 03/03/2023
+ms.subservice: architecture
 ---
 
 # Increase the resilience of authentication and authorization in daemon applications you develop
@@ -50,6 +46,8 @@ Learn more:
 If you don't use MSAL for authentication and authorization, there are best practices for caching and storing tokens. MSAL implements and follows these best practices.
 
 An application acquires tokens from an identity provider (IdP) to authorize the application to call protected APIs. When your app receives tokens, the response with the tokens contains an `expires\_in` property that tells the application how long to cache, and reuse, the token. Ensure applications use the `expires\_in` property to determine token lifespan. Confirm application don't attempt to decode an API access token. Using the cached token prevents unnecessary traffic between an app and Microsoft identity platform. Users are signed in to your application for the token's lifetime.
+
+The [Microsoft Entra ID backup authentication system](backup-authentication-system.md) provides resilience to applications that use supported protocols and flows. For more information on the application requirements to benefit from backup authentication, see [application requirements for the backup authentication system](backup-authentication-system-apps.md).
 
 ## HTTP 429 and 5xx error codes
 

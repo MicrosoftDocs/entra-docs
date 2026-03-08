@@ -4,6 +4,7 @@ ms.service: entra-id
 ms.topic: include
 ms.date: 12/22/2022
 ms.author: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 <a name='retrieve-the-ids-of-the-users-in-azure-ad'></a>

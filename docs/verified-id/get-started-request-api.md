@@ -2,13 +2,8 @@
 title: Call the Request Service REST API
 description: Learn how to issue and verify by using the Request Service REST API.
 documentationCenter: ''
-author: barclayn
-manager: amycolannino
-ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 06/16/2022
-ms.author: barclayn
+ms.date: 12/13/2024
 
 #Customer intent: As an administrator, I'm trying to learn how to use the Request Service API and integrate it into my business application.
 ---
@@ -306,9 +301,9 @@ Authorization: Bearer  <token>
 
 Issuance request using the `idTokenHint` attestation flow:
 
-```JSON
+```json
 {
-    "includeQRCode": false,
+    "authority": "did:web:verifiedid.contoso.com",
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -316,7 +311,6 @@ Issuance request using the `idTokenHint` attestation flow:
             "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
         }
     },
-    "authority": "did:web:verifiedid.contoso.com",
     "registration": {
         "clientName": "Verifiable Credential Expert Sample"
     },
@@ -337,8 +331,9 @@ Issuance request using the `idTokenHint` attestation flow:
 
 Issuance request using the `idTokenHint` attestation flow that [sets the expiry date](issuance-request-api.md#issuance-request-payload):
 
-```JSON
-    "includeQRCode": false,
+```json
+{
+    "authority": "did:web:verifiedid.contoso.com",
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -346,7 +341,6 @@ Issuance request using the `idTokenHint` attestation flow that [sets the expiry 
             "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
         }
     },
-    "authority": "did:web:verifiedid.contoso.com",
     "registration": {
         "clientName": "Verifiable Credential Expert Sample"
     },
@@ -388,9 +382,9 @@ Authorization: Bearer  <token>
 
 Presentation request for a credential with a certain type and issuer:
 
-```JSON
+```json
 {
-  "includeQRCode": true,
+  "authority": "did:web:verifiedid.contoso.com",
   "callback": {
     "url": "https://contoso.com/api/verifier/presentationCallback",
     "state": "92d076dd-450a-4247-aa5b-d2e75a1a5d58",
@@ -398,7 +392,6 @@ Presentation request for a credential with a certain type and issuer:
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Veritable Credential Expert Verifier"
   },
@@ -425,10 +418,9 @@ Presentation request for a credential with a certain type and issuer:
 
 Presentation request with [claims constraints](presentation-request-api.md#constraints-type):
 
-```JSON
+```json
 {
   "authority": "did:web:verifiedid.contoso.com",
-  "includeQRCode": false,
   "includeReceipt": false,
   "registration": {
     "clientName": "Contoso Job Application Center",
@@ -468,12 +460,11 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt is not supported then.
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt isn't supported then.
 
-```JSON
+```json
 {
   "authority": "did:web:verifiedid.contoso.com",
-  "includeQRCode": false,
   "includeReceipt": false,
   "registration": {
     "clientName": "Contoso Job Application Center",

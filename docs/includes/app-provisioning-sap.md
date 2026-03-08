@@ -1,4 +1,4 @@
-The following video provides an overview of on-premises provisioning.
+The following video provides an overview of on-premises provisioning using the provisioning agent.
 
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
 
@@ -10,8 +10,8 @@ The following video provides an overview of on-premises provisioning.
 > - Keep user attributes synchronized between Microsoft Entra ID and SAP ECC.
 
 ## Out of scope
-* Other object types including local activity groups, roles, and profiles are not supported. Use the Microsoft Identity Manager if these objects are required. 
-* Password operations are not supported. Use the Microsoft Identity Manager if password management is required.
+* Provisioning other object types including local activity groups, roles, and profiles are not supported. Group membership provisioning is possible by [provisioning users and groups through SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) instead of the provisioning agent.
+* Password operations are not supported. Use the Microsoft Identity Manager to synchronize passwords from AD to SAP ECC if password management is required.
 
 ## Prerequisites for provisioning to SAP ECC with NetWeaver AS ABAP 7.51
 
@@ -60,13 +60,13 @@ If you have already downloaded the provisioning agent and configured it for anot
  
 ## 2. Expose the necessary SAP APIs
 
-Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
+Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Deploy SAP NetWeaver AS ABAP 7.51](~/id-governance/scenarios/deploy-sap-netweaver.md) document walks through how you can expose the necessary APIs.
 
 ## 3. Create a web services connector template
 
 If you are not migrating from an existing Web Services Connector in MIM, then you will need to create a web services connector template for the ECMA host. If you already have a web services connector template from MIM, then continue at the next section.
 
-You can use the [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) guide `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
+You can use the [Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host](~/id-governance/scenarios/sap-template.md) document as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
 
 ## 4. Configure the On-premises ECMA app
 
@@ -127,8 +127,8 @@ To connect the Microsoft Entra provisioning agent with SAP ECC, follow these ste
      |Property|Description|
      |-----|-----|
      |Web Service Project |Your SAP ECC template name, `sapecc`.|
-     |Host|SAP ECC SOAP endpoint host name, e.g. `vhcalnplci.dummy.nodomain`|
-     |Port|SAP ECC SOAP endpoint port, e.g. `8000`|
+     |Host|SAP ECC SOAP endpoint host name, such as `vhcalnplci.dummy.nodomain`|
+     |Port|SAP ECC SOAP endpoint port, such as `8000`|
 
 
 1. On the **Capabilities** page, fill in the boxes with the values specified in the table below and select **Next**.
@@ -290,7 +290,7 @@ You'll use the Microsoft Entra admin center to configure the mapping between the
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign out and sign in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 
 If there are existing users in the SAP ECC, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
@@ -341,6 +341,6 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 
 ## Troubleshooting provisioning errors
 
-If an error is shown, then select **View provisioning logs**. Look in the log for a row in which the Status is **Failure**, and select on that row.
+If an error is shown, then select **View provisioning logs**. Look in the log for a row in which the Status is **Failure**, and select that row.
 
 For more information, change to the **Troubleshooting & Recommendations** tab.  

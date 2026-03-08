@@ -15,3 +15,6 @@ items:
   - name: Fundamentals
     tocHref: /entra/identity/enterprise-apps/
     topicHref: /entra/fundamentals
+  - name: Fundamentals
+    tocHref: /security-copilot/
+    topicHref: /entra/fundamentals

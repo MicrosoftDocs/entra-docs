@@ -1,13 +1,10 @@
 ---
 title: Create an access review of an access package in entitlement management
 description: Learn how to set up an access review in a policy for entitlement management access packages in Microsoft Entra ID part of Microsoft Entra.
-author: owinfreyatl
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 04/09/2024
-ms.author: owinfrey
+ms.date: 06/18/2025
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Create an access review of an access package in entitlement management
@@ -16,25 +13,17 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 ## Prerequisites
 
-To enable reviews of access packages, you must meet the prerequisites for creating an access package:
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
-> [!NOTE]
-> Following least privilege access, we recommend using the Identity Governance Administrator, catalog owner, or Access package manager role.
-
-For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Create an access review of an access package
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You can enable access reviews when [creating a new access package](entitlement-management-access-package-create.md) or [editing an existing access package assignment policy](entitlement-management-access-package-lifecycle-policy.md) policy. If you have multiple policies, for different communities of users to request access, you can have independent access review schedules for each policy. Follow these steps to enable access reviews of an access package's assignments:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 
-1. Browse to **Identity governance** > **Access reviews** > **Access package**.
+1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
 1. To create a new access policy, select **New access** package.
 
@@ -44,7 +33,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. In the **Expiration** section, set Access package assignments expires to **On date**, **Number of days**, **Number of hours**, or **Never**.
 
-    For **On date**, select an expiration date in the future.
+    For **On date**, select an expiration date in the future. 
 
     For **Number of days**, specify a number between 0 and 3660 days.
 
@@ -72,10 +61,9 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. Specify the date the reviews start next to **Starting on**.
 
-1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**.
-This setting determines how often access reviews occurs.
+1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**. This setting determines how often access reviews occur.
 
-1. Set the **Duration** to define how many days each review of the recurring series will be open for input from reviewers. For example, you might schedule an annual review that starts on January 1 and is open for review for 30 days so that reviewers have until the end of the month to respond.
+1. Set the **Duration** to define how many days each review of the recurring series is open for input from reviewers. For example, you might schedule an annual review that starts on January 1 and is open for review for 30 days so that reviewers have until the end of the month to respond.
 
 1. Next to **Reviewers**, select **Self-review** if you want users to perform their own access review or select **Specific reviewer(s)** if you want to designate a reviewer. You can also select **Manager** if you want to designate the reviewer’s manager to be the reviewer. If you select this option, you need to add a **fallback** to forward the review to in case the manager can't be found in the system.
 
@@ -108,7 +96,10 @@ This setting determines how often access reviews occurs.
         - **approve** the review if the user has signed-in at least once during the last 30 days. 
         - **deny** the review if the user hasn't signed-in during the last 30 days.
     1. If you want the reviewer to share their reasons for their approval decision, select **Require reviewer justification**. Their justification is visible to other reviewers and the requestor.
-
+    1. **Access Review Agent (Preview)**: Select this checkbox to allow reviewers to complete the access review in Microsoft Teams with natural language, insights, and recommendations.
+        > [!NOTE]
+        > This setting is only available for review configurations currently supported by the Access Review Agent and additional setup steps are required. For more information, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
+    
 1. Select **Review + Create** or select **next** if you're creating a new access package. Select **Update** if you're editing an access package, at the bottom of the page.
 
 ## View the status of the access review
@@ -136,6 +127,9 @@ You can designate reviewers, or users can review their access themselves. By def
 The email includes instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
+
+> [!NOTE]
+> While the review cycle is open, reviewers can always change their access review decisions. At the midpoint of your access review, even if the reviewer has previously made a decision, a reminder email is still sent to reviewers notifying them that the access review cycle is still open.
 
 ## Next steps
 

@@ -1,15 +1,11 @@
 ---
 title: Limitations in multitenant organizations
 description: Learn about the limitations when you work with multitenant organizations in Microsoft Entra ID.
-author: rolyon
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 05/16/2024
-ms.author: rolyon
+ms.date: 11/21/2025
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # Limitations in multitenant organizations
@@ -24,8 +20,8 @@ The limitations described in this article have the following scope.
 | --- | --- |
 | In scope | - Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in new Microsoft Teams, with reciprocally provisioned B2B members<br/>- Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in Microsoft Viva Engage, with centrally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center limitations related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization limitations related to Microsoft 365 |
-| Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
+| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Multitenant organizations is available within GCC, GCC-H, and DOD clouds. However, the multitenant organizations tenants can ONLY have tenants which are within the same cloud. Cross-cloud multitenant organizations isn't supported. |
 
 ## Create or join a multitenant organization using the Microsoft 365 admin center
 
@@ -80,11 +76,11 @@ The limitations described in this article have the following scope.
 
 - As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provisioning other users as B2B members.
 
-- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information), assuming the property isn't recurringly synchronized.
+- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information), assuming the property isn't recurringly synchronized.
 
 ## B2B guests or B2B members managed using cross-tenant synchronization
 
-- If cross-tenant synchronization is used to recurringly synchronize the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) property, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
+- If cross-tenant synchronization is used to recurringly synchronize the [userType](../../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) property, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
 - You might want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
@@ -92,7 +88,7 @@ The limitations described in this article have the following scope.
 
 ## Global address list managed in the host tenant
 
-- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) privileges in Graph Explorer or Microsoft Graph PowerShell.
+- The [showInAddressList](/graph/api/resources/user#properties) property of a B2B user can be updated with [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) privileges in Microsoft Graph Explorer or Microsoft Graph PowerShell.
 
 - Updating the [showInAddressList](/graph/api/resources/user#properties) property on the user object will also update the hide recipients from address lists setting in Microsoft Exchange Online.
 
@@ -109,11 +105,11 @@ The limitations described in this article have the following scope.
 
 ## Microsoft apps
 
-- In [SharePoint OneDrive](/sharepoint/) user interfaces, when sharing a file with *People in Fabrikam*, the current user interfaces might be counterintuitive, because B2B members in Fabrikam from Contoso count towards *People in Fabrikam*.
+- In [SharePoint OneDrive](/sharepoint/) user interfaces, when sharing a file with *People in Fabrikam*, the current user interfaces might be counterintuitive, because B2B members in Fabrikam from Contoso count toward *People in Fabrikam*.
 
 - In Microsoft 365 admin center, [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), Microsoft OneNote, and Microsoft Planner, B2B member users might not be supported.
 
-- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
+- In [Microsoft Power BI](/fabric/enterprise/powerbi/service-admin-entra-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
 
 - In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users might have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
 
@@ -123,17 +119,13 @@ The limitations described in this article have the following scope.
 
 ## B2B users or B2B members
 
-- The promotion of B2B guests to B2B members represents a strategic decision by multitenant organizations to consider B2B members as trusted users of the organization. Review the [default permissions](../../fundamentals/users-default-permissions.md) for B2B members.
-
-- To promote B2B guests to B2B members, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) if the property isn't recurringly synchronized.
-
-- As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provision others users as B2B members. To achieve this, you might want to establish two cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). By moving a user from one configuration's scope to the other, you can easily control who will be a B2B guest or a B2B member in the target tenant.
-
 - As part of a multitenant organization, [reset redemption for an already redeemed B2B user](../../external-id/reset-redemption-status.md) is currently disabled.
 
 - The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users hasn't been tested in source of authority conflicts and isn't supported.
+
+- Signed-in users are able to read basic attributes of a multitenant organization, and of the multitenant organization member tenants, without being assigned roles, such as [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) or [Global Reader](../role-based-access-control/permissions-reference.md#global-reader).
 
 ## Cross-tenant synchronization deprovisioning
 
@@ -141,6 +133,7 @@ The limitations described in this article have the following scope.
 
 - Currently, [SkipOutOfScopeDeletions](../app-provisioning/skip-out-of-scope-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
 
-## Next steps
+## Related content
 
 - [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq)

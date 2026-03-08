@@ -1,12 +1,12 @@
 ---
 title: Single and multitenant apps in Microsoft Entra ID
 description: Learn about the features and differences between single-tenant and multitenant apps in Microsoft Entra ID.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.custom:
-ms.date: 04/26/2024
-ms.reviewer: justhu
+ms.date: 03/13/2025
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Tenancy in Microsoft Entra ID
 
-Microsoft Entra ID organizes objects like users and apps into groups called _tenants_. Tenants allow an administrator to set policies on the users within the organization and the apps that the organization owns to meet their security and operational policies.
+Microsoft Entra ID organizes objects like users and apps into groups called *tenants*. Tenants allow an administrator to set policies on the users within the organization and the apps that the organization owns to meet their security and operational policies.
 
 ## Who can sign in to your app?
 
@@ -28,7 +28,7 @@ When you register an application, you can configure it to be single-tenant or mu
 
 | Audience | Single/multi-tenant | Who can sign in |
 | -------- | ------------------- | --------------- |
-| Accounts in this directory only | Single tenant | All user and guest accounts in your directory can use your application or API.<br>Use this option if your target audience is internal to your organization. |
+| Accounts in this directory only | Single tenant | All user and guest accounts in your directory can use your application or API.<br>Use this option if your target audience is internal to your organization. <br> Use if building an app registration for a third party that instructs you to build your own app registration for their app. |
 | Accounts in any Microsoft Entra directory | Multitenant | All users and guests with a work or school account from Microsoft can use your application or API. This includes schools and businesses that use Microsoft 365.<br>Use this option if your target audience is business or educational customers. |
 | Accounts in any Microsoft Entra directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com) | Multitenant | All users with a work or school, or personal Microsoft account can use your application or API. It includes schools and businesses that use Microsoft 365 as well as personal accounts that are used to sign in to services like Xbox and Skype.<br>Use this option to target the widest set of Microsoft accounts. |
 
@@ -39,6 +39,12 @@ Building great multitenant apps can be challenging because of the number of diff
 - Test your app in a tenant that has configured [Conditional Access policies](v2-conditional-access-dev-guide.md).
 - Follow the principle of least user access to ensure that your app only requests permissions it actually needs.
 - Provide appropriate names and descriptions for any permissions you expose as part of your app. This helps users and admins know what they're agreeing to when they attempt to use your app's APIs. For more information, see the best practices section in the [permissions guide](./permissions-consent-overview.md).
+
+> [!NOTE]
+> Multitenant applications can be deployed to the same national cloud instances, but not across [Azure National Clouds](./authentication-national-cloud.md).
+> Examples:
+> - A multitenant application created in a commercial tenant can be added to other commercial tenants.
+> - A multitenant application created in an Azure Government tenant can be added to other Azure Government tenants.
 
 ## Next steps
 

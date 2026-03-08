@@ -1,15 +1,10 @@
 ---
 title: 'Group writeback with Microsoft Entra Cloud Sync'
 description: This article describes the new feature in Cloud Sync to provision and writeback groups to on-premises AD.
-author: billmath
-manager: amycolannino
-ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
-
 ---
 
 # Group writeback with Microsoft Entra Cloud Sync
@@ -21,10 +16,7 @@ With the release of provisioning agent [1.1.1370.0](cloud-sync/reference-version
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
 
-## Watch the group writeback video
-For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
 
-> [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
 
 
 
@@ -50,10 +42,11 @@ For more information see [Migrate Microsoft Entra Connect Sync group writeback V
 
 **Scenario:**  Manage on-premises applications with Active Directory groups that are provisioned from and managed in the cloud. Microsoft Entra Cloud Sync allows you to fully govern application assignments in AD while taking advantage of Microsoft Entra ID Governance features to control and remediate any access related requests. 
 
-For more information see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance ](cloud-sync/govern-on-premises-groups.md).
+For more information see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](cloud-sync/govern-on-premises-groups.md).
 
 
 ## Next steps
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](cloud-sync/govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](cloud-sync/migrate-group-writeback.md)
+- [Scoping filter and attribute mapping - Microsoft Entra ID to Active Directory](cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md)

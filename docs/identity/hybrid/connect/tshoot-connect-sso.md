@@ -1,17 +1,12 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Seamless Single Sign-On'
 description: This topic describes how to troubleshoot Microsoft Entra seamless single sign-on
-
-author: billmath
 ms.reviewer: swkrish
-manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Microsoft Entra seamless single sign-on
@@ -37,7 +32,7 @@ This article helps you find troubleshooting information about common problems re
 
 ## Check status of feature
 
-Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
+Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Entra ID** > **Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
 
 ![Screenshot of the Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/tshoot-connect-sso/sso10.png)
 
@@ -51,7 +46,7 @@ If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you
 
 ![Screenshot of the Microsoft Entra admin center: Sign-ins report.](media/tshoot-connect-sso/sso9.png)
 
-Browse to **Identity** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
+Browse to **Entra ID** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
 
 |Sign-in error code|Sign-in failure reason|Resolution
 | --- | --- | ---
@@ -73,7 +68,7 @@ Use the following checklist to troubleshoot Seamless SSO problems:
 - Ensure that the Seamless SSO feature is enabled in Microsoft Entra Connect. If you can't enable the feature (for example, due to a blocked port), ensure that you have all the [prerequisites](how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites) in place.
 - If you have enabled both [Microsoft Entra join](~/identity/devices/overview.md) and Seamless SSO on your tenant, ensure that the issue is not with Microsoft Entra join. SSO from Microsoft Entra join takes precedence over Seamless SSO if the device is both registered with Microsoft Entra ID and domain-joined. With SSO from Microsoft Entra join the user sees a sign-in tile that says "Connected to Windows".
 - Ensure that the Microsoft Entra URL (`https://autologon.microsoftazuread-sso.com`) is part of the user's Intranet zone settings.
-- Ensure that the corporate device is joined to the Active Directory domain. The device _doesn't_ need to be [Microsoft Entra joined](~/identity/devices/overview.md) for Seamless SSO to work.
+- Ensure that the corporate device is joined to the Active Directory domain. The device *doesn't* need to be [Microsoft Entra joined](~/identity/devices/overview.md) for Seamless SSO to work.
 - Ensure that the user is logged on to the device through an Active Directory domain account.
 - Ensure that the user's account is from an Active Directory forest where Seamless SSO has been set up.
 - Ensure that the device is connected to the corporate network.
@@ -109,7 +104,7 @@ If troubleshooting didn't help, you can manually reset the feature on your tenan
 
 ### Step 2: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
-1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator or hybrid identity administrator credentials.
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator credentials.
 2. Call `Get-AzureADSSOStatus`. This command provides you with the list of Active Directory forests (look at the "Domains" list) on which this feature has been enabled.
 
 ### Step 3: Disable Seamless SSO for each Active Directory forest where you've set up the feature

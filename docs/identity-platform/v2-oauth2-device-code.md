@@ -2,14 +2,14 @@
 title: OAuth 2.0 device authorization grant 
 description: Sign in users without a browser. Build embedded and browser-less authentication flows using the device authorization grant.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer integrating OAuth 2.0 into my application, I want to understand how to implement the device authorization grant flow, so that users can sign in to input-constrained devices and obtain access tokens and refresh tokens for accessing secured web APIs.
 ---
 

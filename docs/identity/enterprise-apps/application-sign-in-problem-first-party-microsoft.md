@@ -2,14 +2,8 @@
 title: Problems signing in to a Microsoft application
 description: Troubleshoot common problems faced when signing in to first-party Microsoft Applications using Microsoft Entra ID (like Microsoft 365).
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: troubleshooting
 ms.date: 09/07/2023
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
@@ -19,7 +13,7 @@ ms.custom: enterprise-apps
 
 # Problems signing in to a Microsoft application
 
-Microsoft Applications (like Exchange, SharePoint, Yammer, etc.) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
+Microsoft Applications (like Exchange, SharePoint, Yammer, and so on) are assigned and managed a bit differently than third-party SaaS applications or other applications you integrate with Microsoft Entra ID for single sign-on.
 
 There are three main ways that a user can get access to a Microsoft-published application.
 
@@ -61,7 +55,7 @@ Following are some common issues folks run into when their users can't sign in t
 
   - Make sure **multifactor authentication** isn't blocking user access. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
-  - Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
+  - Make sure a **Conditional Access policy** or **legacy Identity Protection** policy isn't blocking user access. [Check a specific Conditional Access policy](#problems-with-conditional-access-policies) or [Check a specific application’s Conditional Access policy](#check-a-specific-applications-conditional-access-policy) or [Disable a specific Conditional Access policy](#disable-a-specific-conditional-access-policy)
 
   - Make sure that a user’s **authentication contact info** is up to date to allow multifactor authentication or Conditional Access policies to be enforced. [Check a user’s multifactor authentication status](#check-a-users-multifactor-authentication-status) or [Check a user’s authentication contact info](#check-a-users-authentication-contact-info)
 
@@ -107,7 +101,6 @@ Application access can be blocked due to a problem with a user that is assigned 
 
 - [Assign a user a license](#assign-a-user-a-license)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 <a name='check-if-a-user-account-exists-in-azure-active-directory'></a>
 
@@ -116,7 +109,7 @@ Application access can be blocked due to a problem with a user that is assigned 
 To check if a user’s account is present, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. **Search** for the user you're interested in and select the row with the user's details.
 
@@ -127,7 +120,7 @@ To check if a user’s account is present, follow these steps:
 To check a user’s account status, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 1. Select **Profile**.
 1. Under **Settings** ensure that **Block sign in** is set to **No**.
@@ -137,12 +130,12 @@ To check a user’s account status, follow these steps:
 To reset a user’s password, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 1. Select the **Reset password** button at the top of the user pane.
 1. Select the **Reset password** button on the **Reset password** pane that appears.
 1. Copy the **temporary password** or **enter a new password** for the user.
-1. Communicate this new password to the user, they be required to change this password during their next sign-in to Microsoft Entra ID.
+1. Communicate this new password to the user. They might be required to change this password during their next sign-in to Microsoft Entra ID.
 
 ### Enable self-service password reset
 
@@ -157,7 +150,7 @@ To enable self-service password reset, follow the deployment steps in the follow
 To check a user’s multifactor authentication status, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. Select the **multifactor authentication** button at the top of the pane.
 
@@ -171,10 +164,10 @@ To check a user’s multifactor authentication status, follow these steps:
 
 ### Check a user’s authentication contact info
 
-To check a user’s authentication contact info used for multifactor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
+To check a user’s authentication contact info used for multifactor authentication, Conditional Access, and Password Reset, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
 1. Select **Profile**.
@@ -188,7 +181,7 @@ To check a user’s authentication contact info used for multifactor authenticat
 To check a user’s group memberships, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
 1. Select **Groups** to see which groups the user is a member of.
@@ -198,7 +191,7 @@ To check a user’s group memberships, follow these steps:
 To check a user’s assigned licenses, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
 1. Select **Licenses** to see which licenses the user currently has assigned.
@@ -208,7 +201,7 @@ To check a user’s assigned licenses, follow these steps:
 To assign a license to a user, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. **Search** for the user you're interested in and select the row with the user's details.
 
 1. Select **Licenses** to see which licenses the user currently has assigned.
@@ -240,7 +233,7 @@ Application access can be blocked due to a problem with a group that is assigned
 To check a group’s membership, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All Groups**.
+1. Browse to **Entra ID** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 1. Select **Members** to review the list of users assigned to this group.
 
@@ -249,7 +242,7 @@ To check a group’s membership, follow these steps:
 To check a dynamic group’s membership criteria, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All Groups**.
+1. Browse to **Entra ID** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
 1. Select **Dynamic membership rules.**
@@ -261,7 +254,7 @@ To check a dynamic group’s membership criteria, follow these steps:
 To check a group’s assigned licenses, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All Groups**.
+1. Browse to **Entra ID** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
 1. Select **Licenses** to see which licenses the group currently has assigned.
@@ -271,7 +264,7 @@ To check a group’s assigned licenses, follow these steps:
 To reprocess a group’s assigned licenses, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All Groups**.
+1. Browse to **Entra ID** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
 1. Select **Licenses** to see which licenses the group currently has assigned.
@@ -288,7 +281,7 @@ To reprocess a group’s assigned licenses, follow these steps:
 To assign a license to a group, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [groups administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All Groups**.
+1. Browse to **Entra ID** > **Groups** > **All Groups**.
 1. Search for the group you're interested in and select the row with the group's details.
 
 1. Select **Licenses** to see which licenses the group currently has assigned.
@@ -312,8 +305,8 @@ To assign a license to a group, follow these steps:
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Select the **Conditional Access** navigation item.
 
@@ -331,7 +324,7 @@ To check or validate a single Conditional Access policy:
 To check or validate a single application’s currently configured Conditional Access policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for the application you're interested in, or the user is attempting to sign in to by application display name or application ID.
 
 1. Select the **Conditional Access** navigation item.
@@ -349,8 +342,8 @@ To check or validate a single application’s currently configured Conditional A
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **Conditional Access** navigation item.
 1. Select the policy you're interested in inspecting.
 1. Disable the policy by setting the **Enable policy** toggle to **No** and select the **Save** button.

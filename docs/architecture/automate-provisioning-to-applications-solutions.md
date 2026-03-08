@@ -1,16 +1,10 @@
 ---
 title: Solutions to automate identity provisioning to applications
 description: Learn to design solutions to automatically provision identities based on various scenarios.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/29/2022
-ms.author: jricketts
-ms.custom:
-  - it-pro
-  - kr2b-contr-experiment
+ms.custom: it-pro, kr2b-contr-experiment, sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Solutions

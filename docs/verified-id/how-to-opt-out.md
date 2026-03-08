@@ -2,14 +2,9 @@
 title: Opt out of Microsoft Entra Verified ID
 description: Learn how to opt out of Microsoft Entra Verified ID.
 documentationCenter: ''
-author: barclayn
-manager: amycolannino
-ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 06/02/2022
-ms.author: barclayn
-
+ms.date: 01/21/2025
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I'm looking for information to help me disable my Microsoft Entra Verified ID environment.
 ---
 
@@ -42,7 +37,7 @@ All verifiable credentials already issued continue to exist. For the ION trust s
 
 ## Opt out from Microsoft Entra Verified ID
 
-1. From the Azure portal, search for verifiable credentials.
+1. From the **Azure portal**, search for verifiable credentials.
 1. Select **Organization Settings** on the leftmost menu.
 1. In the section **Reset your organization**, select **Delete all credentials and reset service**.
 

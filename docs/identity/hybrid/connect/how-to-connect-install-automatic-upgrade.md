@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect: Automatic upgrade'
 description: This topic describes the built-in automatic upgrade feature in Microsoft Entra Connect Sync.
 
-author: billmath
-manager: amycolannino
-
 ms.assetid: 6b395e8f-fa3c-4e55-be54-392dd303c472
-ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
 ---
 # Microsoft Entra Connect: Automatic upgrade
 Microsoft Entra Connect automatic upgrade is a feature that regularly checks for newer versions of Microsoft Entra Connect. If your server is enabled for automatic upgrade and a newer version is available, it performs an automatic upgrade to the newer version.
@@ -58,6 +51,7 @@ Automatic upgrade will not be eligible to proceed if any of the following condit
 
 | Result Message | Description |
 | --- | --- |
+|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.
 |UpgradeNotSupportedCustomizedSyncRules|There are custom synchronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation isn't an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You aren't using a SQL Server Express LocalDB database.|
@@ -75,7 +69,7 @@ If you think something isn't right, then first run `Get-ADSyncAutoUpgrade` to en
 
 If the state is suspended, you can use the `Get-ADSyncAutoUpgrade -Detail` to view the reason. The suspension reason can contain any string value but it usually contains the string value of the UpgradeResult, that is, `UpgradeNotSupportedNonLocalDbInstall` or `UpgradeAbortedAdSyncExeInUse`. A compound value may also be returned, such as `UpgradeFailedRollbackSuccess-GetPasswordHashSyncStateFailed`.
 
-It's also possible to get a result that isn't an UpgradeResult, that is, _AADHealthEndpointNotDefined_ or _DirSyncInPlaceUpgradeNonLocalDb_.
+It's also possible to get a result that isn't an UpgradeResult, that is, *AADHealthEndpointNotDefined* or *DirSyncInPlaceUpgradeNonLocalDb*.
 
 Then, make sure you allow the required URLs in your proxy or firewall. Automatic update is using Microsoft Entra Connect Health as described in the [overview](#overview). If you use a proxy, make sure Health is configured to use a [proxy server](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). Also test the [Health connectivity](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) to Microsoft Entra ID.
 

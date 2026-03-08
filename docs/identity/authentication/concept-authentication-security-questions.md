@@ -1,21 +1,22 @@
 ---
 title: Security questions authentication method
 description: Learn about using security questions in Microsoft Entra ID to help improve and secure sign-in events
-
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 09/13/2023
-
-ms.author: justinha
-author: justinha
-manager: amycolannino
-
+ms.topic: concept-article
+ms.date: 02/18/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
+# Uses details from securing Entra include file entra-docs-pr\docs\includes\secure-recommendations\22072.md for important box.
 ---
 # Authentication methods in Microsoft Entra ID - security questions
 
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
+
+> [!WARNING]
+> **Security questions will be retired for Self‑Service Password Reset (SSPR) in March 2027.** After that date, users will no longer be able to reset passwords using security questions. Ensure users are set up with [supported authentication methods](tutorial-enable-sspr.md#select-authentication-methods-and-registration-options) in the Authentication methods policy.
+>
+> This feature is being deprecated due to security risks and low reliability. Security questions are often guessable or susceptible to social engineering, increasing the risk of account takeover during SSPR. Stronger verification methods improve security and reduce reset failures and support escalations.
+>
+> Prepare in advance to avoid user lockouts, helpdesk escalations, and failed password reset experiences once enforcement begins in March 2027.
 
 When users register for SSPR, they're prompted to choose the authentication methods to use. If they choose to use security questions, they pick from a set of questions to prompt for and then provide their own answers.
 
@@ -24,7 +25,7 @@ When users register for SSPR, they're prompted to choose the authentication meth
 > [!NOTE]
 > Security questions are stored privately and securely on a user object in the directory and can only be answered by users during registration. There's no way for an administrator to read or modify a user's questions or answers.
 
-Security questions can be less secure than other methods because some people might know the answers to another user's questions. If you use security questions with SSPR, it's recommended to use them in conjunction with another method. A user can be prompted to use the Microsoft Authenticator App or phone authentication to verify their identity during the SSPR process, and choose security questions only if they don't have their phone or registered device with them.
+Security questions can be less secure than other methods because some people might know the answers to another user's questions. If you use security questions with SSPR, it's recommended to use them in along with another method. A user can be prompted to use the Microsoft Authenticator App or phone authentication to verify their identity during the SSPR process, and choose security questions only if they don't have their phone or registered device with them.
 
 ## Predefined questions
 
@@ -70,7 +71,7 @@ The following predefined security questions are available for use as a verificat
 
 For additional flexibility, you can define your own custom security questions. The maximum length of a custom security question is 200 characters.
 
-Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions.
+Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions. 
 
 ## Security question requirements
 

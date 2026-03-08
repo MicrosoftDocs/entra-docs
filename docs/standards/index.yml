@@ -54,11 +54,11 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Achieve NIST AAL 1
+          - text: Configure NIST AAL 1
             url: nist-authenticator-assurance-level-1.md
-          - text: Achieve NIST AAL 2
+          - text: Configure NIST AAL 2
             url: nist-authenticator-assurance-level-2.md
-          - text: Achieve NIST AAL 3
+          - text: Configure NIST AAL 3
             url:  nist-authenticator-assurance-level-3.md
 
   # Card
@@ -88,7 +88,7 @@ landingContent:
             url: memo-22-09-other-areas-zero-trust.md
             
   # Card
-  - title: Achieve CMMC compliance
+  - title: Microsoft Entra ID and CMMC compliance
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -104,7 +104,7 @@ landingContent:
             url: configure-cmmc-level-2-additional-controls.md
             
   # Card
-  - title: Achieve HIPAA compliance
+  - title: Microsoft Entra ID and HIPAA compliance
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -116,15 +116,24 @@ landingContent:
             url: hipaa-other-controls.md
  
   # Card
-  - title: Achieve HITRUST compliance
+  - title: Microsoft Entra ID and HITRUST compliance
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Configure HITRUST controls
-            url: hipaa-hitrust-controls.md       
+            url: hipaa-hitrust-controls.md
+
+  # Card
+  - title: Microsoft Entra and DORA act
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure Microsoft Entra for DORA requirements 
+            url: /../compliance/dora/dora-entra
+
   
   # Card
-  - title: Achieve PCI-DSS compliance
+  - title: Microsoft Entra ID and PCI-DSS compliance
     linkLists:
       - linkListType: how-to-guide
         links:

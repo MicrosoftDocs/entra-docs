@@ -1,15 +1,10 @@
 ---
 title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Microsoft Entra ID to Active Directory - Configuration
@@ -47,8 +42,13 @@ To configure provisioning, follow these steps.
   |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
 
 ## Scope provisioning to specific groups
-You can scope the agent to synchronize all or specific security groups. You can configure groups and organizational units within a configuration. 
- 
+You can scope the agent to synchronize all or specific security groups. 
+
+For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
+
+
+You can configure groups and organizational units within a configuration. 
+
  1. On the **Getting started** configuration screen. Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-2.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/config-2.png":::
@@ -72,10 +72,15 @@ You can scope the agent to synchronize all or specific security groups. You can 
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
- 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
+ 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
  4. Once your scoping filters are configured, click **Save**.
  5. After saving, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
  :::image type="content" source="media/how-to-configure/new-ux-configure-16.png" alt-text="Screenshot of the nudge for scoping filters." lightbox="media/how-to-configure/new-ux-configure-16.png":::
+
+ ### Scope provisioning to specific groups using directory extensions
+ For more advanced scoping and filtering, you can configure the use of directory extensions.  For an overview of directory extensions see [Directory extensions for provisioning Microsoft Entra ID to Active Directory](custom-attribute-mapping-entra-to-active-directory.md)
+
+For a step-by-step tutorial on how to extend the schema and then use the directory extension attribute with cloud sync provisioning to AD, see [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
 
 ## Attribute mapping
 Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID. 
@@ -172,3 +177,4 @@ To delete a configuration, follow these steps.
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Scoping filter and attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md)

@@ -1,6 +1,4 @@
 ---
-author: barclayn
-ms.author: barclayn
 ms.date: 04/24/2024
 ms.topic: include
 ---
@@ -19,8 +17,8 @@ Azure supports multiple programming platforms through a series of [Azure SDKs](h
 | --- | ------ | 
 | .NET   | [Manage resource from a VM enabled with managed identities for Azure resources enabled](https://github.com/Azure-Samples/aad-dotnet-manage-resources-from-vm-with-msi) |
 | Java   | [Manage storage from a VM enabled with managed identities for Azure resources](https://github.com/Azure-Samples/compute-java-manage-resources-from-vm-with-msi-in-aad-group)|
-| Node.js| [Create a VM with system-assigned managed identity enabled](https://azure.microsoft.com/resources/samples/compute-node-msi-vm/) |
-| Python | [Create a VM with system-assigned managed identity enabled](https://azure.microsoft.com/resources/samples/compute-python-msi-vm/) |
+| Node.js| [Create a VM with system-assigned managed identity enabled](https://github.com/Azure-Samples/compute-node-msi-vm) |
+| Python | [Create a VM with system-assigned managed identity enabled](https://github.com/Azure-Samples/compute-python-msi-vm) |
 | Ruby   | [Create Azure VM with a system-assigned identity enabled](https://github.com/Azure-Samples/compute-ruby-msi-vm/) |
 
 ## Next steps

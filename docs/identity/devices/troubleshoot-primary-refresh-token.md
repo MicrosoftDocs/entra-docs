@@ -3,10 +3,8 @@ title: Troubleshoot primary refresh token issues on Windows devices
 description: Troubleshoot primary refresh token issues during authentication through Microsoft Entra credentials on Microsoft Entra joined Windows devices.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 8/1/2023
+ms.date: 02/23/2026
 
 ms.author: gudlapreethi
 author: GudlaPreethi
@@ -15,7 +13,7 @@ ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---
 # Troubleshoot primary refresh token issues on Windows devices
 
-This article discusses how to troubleshoot issues that involve the [primary refresh token](./concept-primary-refresh-token.md) (PRT) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
+This article discusses how to troubleshoot issues that involve the [primary refresh token (PRT)](./concept-primary-refresh-token.md) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
 
 <!-- docutune:ignore AAD -->
 
@@ -220,7 +218,7 @@ The UPN for the user isn't in the expected format. The UPN value varies accordin
 
 ##### Solution
 
-- Set the UPN of the user to an internet-style sign-in name, based on internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
+- Set the UPN of the user to an internet-style sign-in name, based on internet standard RFC 822. To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
 
   To view Event IDs in the Microsoft Entra analytic logs, refer to the [Method 2: Use Event Viewer to examine Microsoft Entra analytic and operational logs][view-event-ids] section.
 
@@ -324,7 +322,7 @@ You can find a full list and description of server error codes in [Microsoft Ent
 
 ##### Solution
 
-Re-register the device based on the device join type. For instructions, see [I disabled or deleted my device. But the local state on the device says it's still registered. What should I do?](./faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-still-registered--what-should-i-do).
+Re-register the device based on the device join type. For instructions, see [I disabled or deleted my device. But the local state on the device says it's still registered. What should I do?](./faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-registered--what-should-i-do).
 </details>
 
 <details>
@@ -409,7 +407,7 @@ Common general network-related issues.
 
 #### Regular logs
 
-1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory. If it's necessary, review the usage instructions in [KB&nbsp;4487175](https://aka.ms/howto-authscripts).
+1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory.
 1. Open an administrative PowerShell session, and change the current directory to the directory in which you saved the Auth scripts.
 1. To begin the error tracing session, enter the following command:
 
@@ -432,7 +430,7 @@ Common general network-related issues.
 
 #### Time travel traces
 
-The following procedure describes how to capture traces by using the [Time Travel Debugging](/windows-hardware/drivers/debugger/time-travel-debugging-overview) (TTD) feature.
+The following procedure describes how to capture traces by using the [Time Travel Debugging (TTD)](/windows-hardware/drivers/debugger/time-travel-debugging-overview) feature.
 
 > [!WARNING]  
 > Time travel traces contain personal data. In addition, Local Security Authority Subsystem Service (LSASS or *lsass.exe*) traces contain extremely sensitive information. When you handle these traces, make sure that you use best practices for the storage and sharing of this type of information.

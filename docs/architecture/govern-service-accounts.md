@@ -1,15 +1,10 @@
 ---
 title: Governing Microsoft Entra service accounts
 description: Principles and procedures for managing the lifecycle of service accounts in Microsoft Entra ID.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/09/2023
-ms.author: jricketts
-ms.reviewer: ajburnle
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Governing Microsoft Entra service accounts
@@ -52,7 +47,7 @@ We recommend the following practices for service account privileges.
 - Don't assign built-in roles to service accounts
   - See, [`oAuth2PermissionGrant` resource type](/graph/api/resources/oauth2permissiongrant)
 - The service principal is assigned a privileged role
-  - [Create and assign a custom role in Microsoft Entra ID](~/identity/role-based-access-control/custom-create.yml)
+  - [Create a custom role in Microsoft Entra ID](../identity/role-based-access-control/custom-create.md)
 - Don't include service accounts as members of any groups with elevated permissions
   - See, [Get-MgDirectoryRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember):
 

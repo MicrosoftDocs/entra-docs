@@ -3,14 +3,11 @@ title: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on
 description: Learn to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra SSO for header-based authentication.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT administrator, I want to configure F5 BIG-IP Access Policy Manager for header-based single sign-on, so that I can implement secure hybrid access with single sign-on to header-based applications using F5 BIG-IP advanced configuration.
 ---
 
@@ -61,7 +58,7 @@ The following diagram illustrates the user flow with Microsoft Entra ID, BIG-IP,
 For the scenario you need:
 
 * An Azure subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
@@ -87,14 +84,13 @@ The following instructions are an advanced configuration method, a flexible way 
 
 ## Add F5 BIG-IP from the Microsoft Entra gallery
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To implement SHA, the first step is to set up a SAML federation trust between BIG-IP APM and Microsoft Entra ID. The trust establishes the integration for BIG-IP to hand off preauthentication and Conditional Access to Microsoft Entra ID, before granting access to the published service.
 
 Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 3. On the top ribbon, select **+ New application**.
 4. In the gallery, search for **F5**.
 5. Select **F5 BIG-IP APM Microsoft Entra ID integration**.
@@ -121,7 +117,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 
 9. For **Logout URI** enter the BIG-IP APM Single Logout (SLO) endpoint, prepended by the service host header. The SLO URI ensures user BIG-IP APM sessions end after Microsoft Entra sign-out. For example, `https://mytravel.contoso.com/saml/sp/profile/redirect/slr`
 
-   ![Screenshot of Basic SAML Configuration input for Identifier, Reply URL, Sign on URL, etc.](./media/f5-big-ip-header-advanced/basic-saml-configuration.png)
+   ![Screenshot of Basic SAML Configuration input for Identifier, Reply URL, Sign on URL, and so on.](./media/f5-big-ip-header-advanced/basic-saml-configuration.png)
 
    >[!Note]
    >From Traffic Management operating system (TMOS) v16 onward, the SAML SLO endpoint changed to `/saml/sp/profile/redirect/slo`.
@@ -145,15 +141,13 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 20. Close the view.
 21. Observe the **User Attributes & Claims** section properties. Microsoft Entra ID issues users properties for BIG-IP APM authentication and SSO to the back-end application.
 
-   ![Screenshot of User Attributes and Claims information such as surname, email address, identity, etc.](./media/f5-big-ip-header-advanced/user-attributes-claims.png)
+   ![Screenshot of User Attributes and Claims information such as surname, email address, identity, and so on.](./media/f5-big-ip-header-advanced/user-attributes-claims.png)
 
    > [!NOTE]
    > Add other claims the BIG-IP published application expects as headers. More defined claims are issued if they're in Microsoft Entra ID. Define directory memberships and user objects in Microsoft Entra ID before claims can be issued. See, [Configure group claims for applications by using Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 
 22. In the **SAML Signing Certificate** section, select **Download**. 
 23. The **Federation Metadata XML** file is saved on your computer.
-
-   ![Screenshot of the Download link for Federation Metadata XML on the SAML Signing Certificate dialog.](./media/f5-big-ip-header-advanced/saml-signing-certificate.png)
 
 SAML signing certificates created by Microsoft Entra ID have a lifespan of three years.
 
@@ -395,8 +389,6 @@ Perform the following test as a user.
 2. Authenticate to Microsoft Entra ID.
 3. A redirection occurs to the BIG-IP virtual server for the app and signed in with SSO.
 4. The injected header output appears by the header-based application.
-
-   ![Screenshot of Server Variables, such as UPN, Employee ID, and Group Authorization.](./media/f5-big-ip-header-advanced/mytravel-example.png)
 
 For increased security, block direct access to the application, enforcing a path through the BIG-IP.
 

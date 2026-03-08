@@ -1,16 +1,13 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra ID Protection documentation
-summary: Learn how to use Microsoft Entra ID Protection to identify and address identity risks in your organization
+summary: Learn how to use Microsoft Entra ID Protection to identify and address identity risks in your organization.
 
 metadata:
   title: Microsoft Entra ID Protection documentation
-  description: Learn how to use Microsoft Entra ID Protection to identify and address identity risks in your organization
-  ms.service: entra-id-protection
+  description: Learn how to use Microsoft Entra ID Protection to identify and address identity risks in your organization.
   ms.topic: landing-page
-  author: MicrosoftGuyJFlo
-  ms.author: joflore
-  ms.date: 06/20/2023
+  ms.date: 03/07/2025
   
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new

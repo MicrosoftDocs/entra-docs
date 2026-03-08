@@ -2,13 +2,11 @@
 title: Transition to governed collaboration with Microsoft Entra B2B collaboration
 description: Move to governed collaboration with Microsoft Entra B2B collaboration by using controls, tools, and settings.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/22/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
+ms.subservice: architecture
 ---
 
 # Transition to governed collaboration with Microsoft Entra B2B collaboration

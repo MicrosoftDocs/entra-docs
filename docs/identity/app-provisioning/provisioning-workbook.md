@@ -1,14 +1,9 @@
 ---
 title: Provisioning insights workbook
 description: This article describes the Azure Monitor workbook for provisioning.
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
-ms.topic: conceptual
-ms.date: 05/24/2024
-ms.subservice: hybrid
-ms.author: billmath
+ms.topic: concept-article
+ms.date: 04/09/2025
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -16,7 +11,7 @@ ms.author: billmath
 # Provisioning insights workbook
 The Provisioning workbook provides a flexible canvas for data analysis. This workbook brings together all of the provisioning logs from various sources and allows you to gain insight, in a single area.  The workbook allows you to create rich visual reports within the Azure portal. To learn more, see [Microsoft Entra Workbooks overview](../monitoring-health/overview-workbooks.md).
 
-This workbook is intended for Hybrid Identity Admins who use provisioning to sync users from various data sources to various data repositories.  It allows admins to gain insights into sync status and details.
+This workbook is intended for Hybrid Identity Administrators who use provisioning to sync users from various data sources to various data repositories.  It allows admins to gain insights into sync status and details.
 
 This workbook:
 

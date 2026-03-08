@@ -18,16 +18,16 @@ The authentication process begins when a claimant asserts its control of one of 
 
 |NIST authenticator type| Microsoft Entra authentication method|
 | - | - |
-|Memorized secret <br> (something you know)|  Password: Cloud accounts, federated, password hash sync, passthrough authentication|
+|Memorized secret <br> (something you know)|  Password <br> QR Code (PIN)|
 |Look-up secret <br> (something you have)| None|
-|Single-factor out-of-band <br>(something you have)| Microsoft Authenticator App (Push Notification) <br> Phone (SMS): Not recommended |
-Multi-factor Out-of-band <br> (something you have + something you know/are) | Microsoft Authenticator App (Passwordless) |
-|Single-factor one-time password (OTP) <br> (something you have)| Microsoft Authenticator App (OTP) <br> Single-factor Hardware/Software OTP<sup>1</sup>|
+|Single-factor out-of-band <br>(something you have)| Microsoft Authenticator app (Push Notification) <br> Microsoft Authenticator Lite (Push Notification) <br> Phone (SMS): Not recommended |
+| Multi-factor Out-of-band <br> (something you have + something you know/are) | Microsoft Authenticator app (Phone Sign-In) |
+|Single-factor one-time password (OTP) <br> (something you have)| Microsoft Authenticator app (OTP) <br> Microsoft Authenticator Lite (OTP) <br> Single-factor hardware/software OTP<sup>1</sup>|
 |Multi-factor OTP <br> (something you have + something you know/are)| Treated as single-factor OTP| 
-|Single-factor crypto software <br> (something you have)|Single-factor software certificate <br> Microsoft Entra joined <sup>2</sup> with software TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with software TPM  <br> Compliant mobile device |
-|Single-factor crypto hardware <br> (something you have) | Microsoft Entra joined <sup>2</sup> with hardware TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with hardware TPM|
-|Multi-factor crypto software <br> (something you have + something you know/are) | Multi-factor Software Certificate (PIN Protected) <br> Windows Hello for Business with software TPM |
-|Multi-factor crypto hardware <br> (something you have + something you know/are) |Hardware protected certificate (smartcard/security key/TPM) <br> Windows Hello for Business with hardware TPM <br> FIDO 2 security key <br> Platform credentials for macOS|
+|Single-factor crypto software <br> (something you have)|Single-factor software certificate <br> Microsoft Entra joined <sup>2</sup> with software TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with software TPM  <br> Compliant mobile device<sup>2</sup> |
+|Single-factor crypto hardware <br> (something you have) | Single-factor hardware protected certificate <br> Microsoft Entra joined <sup>2</sup> with hardware TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with hardware TPM|
+|Multi-factor crypto software <br> (something you have + something you know/are) | Multi-factor software certificate <br> Windows Hello for Business with software TPM |
+|Multi-factor crypto hardware <br> (something you have + something you know/are) | Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator|
 
 <sup>1</sup> 30-second or 60-second OATH-TOTP SHA-1 token
 

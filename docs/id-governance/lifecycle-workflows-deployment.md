@@ -1,13 +1,10 @@
 ---
 title: Plan a Lifecycle Workflow deployment
 description: Planning guide for a successful Lifecycle Workflow deployment.
-author: owinfreyATL
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 10/12/2023
-ms.author: owinfrey
+ms.date: 12/10/2024
+ms.custom: sfi-image-nochange
 ---
 
 # Plan a Lifecycle Workflow deployment
@@ -21,7 +18,7 @@ ms.author: owinfrey
 - **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows
 - **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps
 
-Lifecycle Workflows are an [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
+Lifecycle Workflows are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
 
  - Which users should have access to which resources?
  - What are those users doing with that access?
@@ -113,7 +110,7 @@ The following table provides information that you need to be aware of as you cre
 
 |Item|Description|
 |-----|-----|
-|Workflows|50 workflow limit per tenant|
+|Workflows|100 workflow limit per tenant|
 |Number of custom tasks|limit of 25 per workflow|
 |Value range for offsetInDays|Between -180 and 180 days|
 |Workflow execution schedule|Default every 3 hours - can be set to run anywhere from 1 to 24 hours|

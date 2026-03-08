@@ -1,29 +1,20 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Activate Azure resource roles in PIM
   description: Learn how to activate your Azure resource roles in Microsoft Entra Privileged Identity Management (PIM).
-  author: barclayn
-  ms.author: barclayn
-  manager: amycolannino
   ms.reviewer: rianakarim
-  ms.date: 02/06/2024
-  ms.service: entra-id-governance
-  ms.subservice: privileged-identity-management
+  ms.date: 06/27/2025
   ms.topic: how-to
   ms.custom:
     - pim
     - ge-structured-content-pilot
-
+    - sfi-image-nochange
 title: |
   Activate my Azure resource roles in Privileged Identity Management
 introduction: |
   Use Microsoft Entra Privileged Identity Management (PIM), to allow eligible role members for Azure resources to schedule activation for a future date and time. They can also select a specific activation duration within the maximum (configured by administrators).
 
   This article is for members who need to activate their Azure resource role in Privileged Identity Management.
-
-  >[!NOTE]
-  >As of March 2023, you may now activate your assignments and view your access directly from blades outside of PIM in the Azure portal. Read more [here](pim-resource-roles-activate-your-roles.yml#activate-with-azure-portal).
 
   >[!IMPORTANT]
   >When a role is activated, Microsoft Entra PIM temporarily adds active assignment for the role. Microsoft Entra PIM creates active assignment (assigns user to a role) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes the active assignment within seconds as well.
@@ -33,8 +24,6 @@ procedureSection:
   - title: |
       Activate a role
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       When you need to take on an Azure resource role, you can request activation by using the **My roles** navigation option in Privileged Identity Management.
 
       >[!NOTE]
@@ -42,13 +31,14 @@ procedureSection:
 
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
+        Browse to **Identity Governance** > **Privileged Identity Management** > **My roles**.
 
           [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png#lightbox)
       - |
-        Select **Azure resource roles** to see a list of your eligible Azure resource roles.
+        Select **Azure resources** to see a list of your eligible Azure resource roles.
 
           ![Screenshot of my roles - Azure resource roles page.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
       - |
@@ -66,9 +56,20 @@ procedureSection:
 
           ![Screenshot of screen to provide security verification such as a PIN code.](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
       - |
-        If you want to specify a reduced scope, select **Scope** to open the Resource filter pane.
+         It's a best practice to only request access to the resources you need. If you want to specify a reduced scope.
 
-          It's a best practice to only request access to the resources you need. On the Resource filter pane, you can specify the resource groups or resources that you need access to.
+          1. Go to the **Scope** tab.
+          2. Click **Select scope** to select the scope.
+          
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/activate-billing-reader-select-scope.png" alt-text="Screenshot of the Scope tab in the Activate - Billing Reader pane, showing the 'Select scope' button and a management group listed under Selected resources. This helps users identify where to click to begin scoping their activation request.":::
+
+          3. Use the dropdown provided to scope the search to a specific resource.
+          4. The reduced scoped resources are shown in **Selected resources** before activation and should be selected from the grid provided. The dropdown selection does not define the reduced scope.
+
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/active-billing-reader-set-scope.png" alt-text="Screenshot showing the process of setting the scope for activation, with a management group selected in the grid. This image demonstrates how to confirm the correct resource is selected before proceeding with activation.":::
+
+          >[!NOTE]
+          >If your eligibility is at the management group level, the dropdown will show all direct child resources (management group and subscription). You can select either a management group or subscription from the grid shown, or further scope down the search by selecting the appropriate management group or subscription.
 
           ![Screenshot of activate - Resource filter pane to specify scope.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
       - |
@@ -81,19 +82,19 @@ procedureSection:
           >[!NOTE]
           >If the [role requires approval](pim-resource-roles-approval-workflow.md) to activate, a notification will appear in the upper right corner of your browser informing you the request is pending approval.
   - title: |
-      Activate a role with ARM API
+      Activate a role with Azure Resource Manager API
     summary: |
-      Privileged Identity Management supports Azure Resource Manager (ARM) API commands to manage Azure resource roles, as documented in the [PIM ARM API reference](/rest/api/authorization/role-eligibility-schedule-requests). For the permissions required to use the PIM API, see [Understand the Privileged Identity Management APIs](pim-apis.md).
+      Privileged Identity Management supports Azure Resource Manager API commands to manage Azure resource roles, as documented in the [PIM ARM API reference](/rest/api/authorization/role-eligibility-schedule-requests). For the permissions required to use the PIM API, see [Understand the Privileged Identity Management APIs](pim-apis.md).
 
       To activate an eligible Azure role assignment and gain activated access, use the [Role Assignment Schedule Requests - Create REST API](/rest/api/authorization/role-assignment-schedule-requests/create?tabs=HTTP) to create a new request and specify the security principal, role definition, requestType = SelfActivate and scope. To call this API, you must have an eligible role assignment on the scope. 
 
-      Use a GUID tool to generate a unique identifier that will be used for the role assignment identifier. The identifier has the format: 00000000-0000-0000-0000-000000000000. 
+      Use a GUID tool to generate a unique identifier for the role assignment identifier. The identifier has the format: 00000000-0000-0000-0000-000000000000. 
 
-      Replace {roleAssignmentScheduleRequestName} in the below PUT request with the GUID identifier of the role assignment. 
+      Replace {roleAssignmentScheduleRequestName} in the PUT request with the GUID identifier of the role assignment. 
 
-      For more details on managing eligible roles for Azure resources, see this [PIM ARM API tutorial](/rest/api/authorization/privileged-role-assignment-rest-sample?source=docs#activate-an-eligible-role-assignment). 
+      For more information about eligible roles for Azure resources management, see [PIM ARM API tutorial](/rest/api/authorization/privileged-role-assignment-rest-sample?source=docs#activate-an-eligible-role-assignment). 
 
-      The following is a sample HTTP request to activate an eligible assignment for an Azure role.
+      This is a sample HTTP request to activate an eligible assignment for an Azure role.
 
       ### Request
 
@@ -197,7 +198,7 @@ procedureSection:
   - title: |
       Cancel a pending request
     summary: |
-      If you do not require activation of a role that requires approval, you can cancel a pending request at any time.
+      If you don't require activation of a role that requires approval, you can cancel a pending request at any time.
     steps: 
       - |
         Open Microsoft Entra Privileged Identity Management.
@@ -212,11 +213,11 @@ procedureSection:
   - title: |
       Deactivate a role assignment
     summary: |
-      When a role assignment is activated, you'll see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
+      When a role assignment is activated, you see a **Deactivate** option in the PIM portal for the role assignment. Also, you can't deactivate a role assignment within five minutes after activation.
 
       ## Activate with Azure portal
 
-      Privileged Identity Management role activation has been integrated into the Billing and Access Control (AD) extensions within the Azure portal. Shortcuts to Subscriptions (billing) and Access Control (AD) allow you to activate PIM roles directly from these blades.
+      Privileged Identity Management role activation is integrated into the Billing and Access Control (AD) extensions within the Azure portal. Shortcuts to Subscriptions (billing) and Access Control (AD) allow you to activate PIM roles directly from these blades.
 
       From the Subscriptions blade, select “View eligible subscriptions” in the horizontal command menu to check your eligible, active, and expired assignments. From there, you can activate an eligible assignment in the same pane.
 

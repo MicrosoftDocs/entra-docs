@@ -2,7 +2,6 @@
 title: include file
 description: include file
 author: amsliu
-manager: amycolannino
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/31/2023

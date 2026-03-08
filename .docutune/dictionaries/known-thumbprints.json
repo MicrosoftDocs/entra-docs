@@ -1,0 +1,6 @@
+// DO NOT EDIT: JSON file with empty string used as lookup for thumbprint dictionary functionality. No thumbprints should be added to this file.
+// Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-Thumbprints.ps1 workflow.
+{
+  "" : ""
+}
+  

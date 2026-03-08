@@ -1,15 +1,13 @@
 ---
-title: Tenant configurations and External ID
-description: Learn about the different ways you can configure a Microsoft Entra tenant based on your External ID scenarios. Compare the workforce and external tenant configurations.
- 
-author: msmimart
-manager: celestedg
+title: Tenant configurations
+description: Learn about tenant configurations in Microsoft Entra External ID. Understand the differences between workforce and external tenants, and how to configure them for your organization's needs.
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
-ms.topic: conceptual
-ms.date: 04/29/2024
-ms.author: mimart
+ms.subservice: external
+ms.topic: concept-article
+ms.date: 05/20/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
@@ -39,8 +37,6 @@ When you want to use External ID to add customer identity and access management 
 
 The external tenant is where you'll register your apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
 
-[!INCLUDE [preview-alert](customers/includes/preview-alert/preview-alert-ciam.md)]
-
 ## When do I need to create an external tenant?
 
 If you plan to use External ID for apps for consumers or business customers, the first resource you need to create is a new tenant with an external tenant configuration.
@@ -51,10 +47,9 @@ You can create external tenants in a couple of ways:
 
 - If you don't already have a Microsoft Entra tenant and want to try out External ID features in an external tenant, we recommend using the get started experience to start a free trial.
 
-When you create a tenant, you can set your correct geographic location and your domain name.
+When you create a tenant,  you can set your correct geographic location and domain name. If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
 
-> [!NOTE]
-> If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](./includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## How workforce and external tenants compare
 

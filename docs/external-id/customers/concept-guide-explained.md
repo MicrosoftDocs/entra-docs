@@ -1,15 +1,8 @@
 ---
 title: Get started guide features
 description: Learn about the features you set up with the get started guide. 
-
-author: csmulligan
-manager: celestedg
-ms.service: entra-external-id
-
-ms.subservice: customers
 ms.topic: concept-article
-ms.date:  04/24/2024
-ms.author: cmulligan
+ms.date:  02/06/2025
 ms.custom: it-pro
 
 #Customer intent: As an it admin, I want to know about the functions I set up with the get started guide so that I can understand the value of the features and how to use them.
@@ -28,9 +21,7 @@ The get started guide set up the below features for you automatically. This arti
 
 :::image type="content" source="media/concept-guide-explained/trial-creation.png" alt-text="Flowchart that shows the trial tenant creation step in the guide.":::
 
-An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md). 
-
-If you don’t have an Azure subscription, you can sign up for a [free trial](quickstart-trial-setup.md#sign-up-to-your-external-tenant-free-trial). The trial gives you access to a tenant for 30 days. During the free trial period, you have access to all product features, with few exceptions. For more information, see the [Start a free trial without Azure subscription](quickstart-trial-setup.md). 
+An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. If you have an Azure subscription, you can create your new tenant in the Microsoft Entra admin center by following [these steps](how-to-create-external-tenant-portal.md).
 
 ## App registration
 
@@ -38,7 +29,7 @@ If you don’t have an Azure subscription, you can sign up for a [free trial](qu
 
 To enable your application to sign in with Microsoft Entra External ID, you need to register your app with Microsoft Entra External ID. The get started guide creates this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
 
-If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](how-to-register-ciam-app.md#choose-your-app-type).
+If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](/entra/identity-platform/quickstart-register-app).
 
 ## User flow
 
@@ -67,8 +58,8 @@ The get started guide allowed you to preview the sign-in experience with your fi
  
 To find the user you created during the guide setup, you can go to the [admin center](https://entra.microsoft.com/) and look for the user in the users list. You can find the user in the users list as a [customer user](how-to-manage-customer-accounts.md) and also manage your own account as a [tenant admin](how-to-manage-admin-accounts.md). If you’d like to see data on user activity and engagement for registered applications in your tenant, you can use the [Application user activity dashboards](how-to-user-insights.md).
 
-The guide set up the authentication method for your customer users; you choose between email and password, or one-time passcode sign-in. 
-You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook and Google.
+The guide set up the authentication method for your customer users; you choose between email and password, or one-time passcode sign-in.
+You can also manually configure other options for authenticating users of your applications, including enabling sign-in with social accounts like Facebook, Google, Apple, or using a custom OpenID Connect identity provider.
 For more information on how to configure these options, visit the [Authentication methods and identity providers](concept-authentication-methods-customers.md) page. You can also [enable self-service password reset](how-to-enable-password-reset-customers.md) for your customers. 
 
 ## App samples

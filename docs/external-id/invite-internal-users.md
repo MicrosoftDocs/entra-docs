@@ -1,18 +1,10 @@
 ---
 title: Invite internal users to B2B collaboration
 description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can change to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials or sign-in. Use either PowerShell or the Microsoft Graph invitation API.
-
- 
-ms.service: entra-external-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 05/20/2024
-
-ms.author: cmulligan
-author: csmulligan
-manager: CelesteDG
-
+ms.date: 02/25/2025
 ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 ---
 
@@ -20,10 +12,9 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-Before the availability of Microsoft Entra B2B collaboration, organizations could collaborate with distributors, suppliers, vendors, and other guest users by setting up internal credentials for them. If you have internal guest users like these, you can invite them to use B2B collaboration instead. These B2B guest users will be able to sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
+Before the availability of Microsoft Entra B2B collaboration, organizations could collaborate with distributors, suppliers, vendors, and other guest users by setting up internal credentials for them. If you have internal guest users like these, you can invite them to use B2B collaboration instead. These B2B guest users are able to sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 
-
-Sending an invitation to an existing internal account lets you retain that user’s object ID, UPN, group memberships, and app assignments. You don’t need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
+Sending an invitation to an existing internal account lets you retain that user’s object ID, User Principal Name (UPN), group memberships, and app assignments. You don’t need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
 
 ## Things to consider
 
@@ -33,7 +24,7 @@ Sending an invitation to an existing internal account lets you retain that user�
 
 - **Teams**: When the user accesses Teams using their external credentials, their tenant won't be available initially in the Teams tenant picker. The user can access Teams using a URL that contains the tenant context, for example: `https://teams.microsoft.com/?tenantId=<TenantId>`. After that, the tenant will become available in the Teams tenant picker.
 
-- **On-premises synced users**: For user accounts that are synced between on-premises and the cloud, the on-premises directory remains the source of authority after they’re invited to use B2B collaboration. Any changes you make to the on-premises account will sync to the cloud account, including disabling or deleting the account. Therefore, you can’t prevent the user from signing into their on-premises account while retaining their cloud account by simply deleting the on-premises account. Instead, you can set the on-premises account password to a random GUID or other unknown value.
+- **On-premises synced users**: For user accounts that are synced between on-premises and the cloud, the on-premises directory remains the source of authority after they’re invited to use B2B collaboration. Any changes you make to the on-premises account will sync to the cloud account, including disabling or deleting the account. Therefore, you can’t prevent the user from signing into their on-premises account while retaining their cloud account by deleting the on-premises account. Instead, you can set the on-premises account password to a random GUID or other unknown value.
 
 > [!NOTE]
 > In Microsoft Entra Connect Sync, there’s a default rule that writes the onPremisesUserPrincipalName attribute to the user object. Because the presence of this attribute can prevent a user from signing in using external credentials, we block internal-to-external conversions for user objects with this attribute. If you’re using Microsoft Entra Connect and you want to be able to invite internal users to B2B collaboration, you'll need to [modify the default rule](~/identity/hybrid/connect/how-to-connect-sync-change-the-configuration.md) so the onPremisesUserPrincipalName attribute isn’t written to the user object.
@@ -49,17 +40,15 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 ## Use the Microsoft Entra admin center to send a B2B invitation
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Entra ID** > **Users**.
 1. Find the user in the list or use the search box. Then select the user.
 1. In the **Overview** tab, under **My Feed**, select **Convert to external user**. 
 
     :::image type="content" source="media/invite-internal-users/manage-b2b-collaboration-link.png" alt-text="Screenshot of user profile Overview tab with B2B collaboration card.":::
 
    > [!NOTE] 
-   > If the card says “Resend this B2B user's invitation or reset their redemption status.” the user has already been invited to use external credentials for B2B collaboration.
+   > If the card says "Resend this B2B user's invitation or reset their redemption status." the user has already been invited to use external credentials for B2B collaboration.
 
 1. Add an external email address and select **Send**. 
 
@@ -76,8 +65,9 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
-Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
-New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+$msGraphUser = Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
+New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```
 
 ## Use the invitation API to send a B2B invitation
@@ -111,7 +101,8 @@ ContentType: application/json
 ```
 
 The response to the API is the same response you get when you invite a new guest user to the directory.
-## Next steps
+
+## Related content
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Customize invitations using API](customize-invitation-api.md)

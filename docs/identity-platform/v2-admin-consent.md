@@ -1,9 +1,9 @@
 ---
 title: Microsoft identity platform admin consent protocols
 description: A description of authorization in the Microsoft identity platform, including scopes, permissions, and consent.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: OwenRichards1
+manager: pmwongera
+ms.author: owenrichards
 ms.custom:
 ms.date: 11/08/2023
 ms.reviewer: ludwignick
@@ -73,7 +73,7 @@ http://localhost/myapp/permissions
 http://localhost/myapp/permissions
         ?admin_consent=True
         &error=consent_required
-        &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
+        &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+0000aaaa-11bb-cccc-dd22-eeeeee333333%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
         &state=12345
 ```
 

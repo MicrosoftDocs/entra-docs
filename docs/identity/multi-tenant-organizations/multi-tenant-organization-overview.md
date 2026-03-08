@@ -1,15 +1,11 @@
 ---
 title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
-author: rolyon
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/16/2024
-ms.author: rolyon
+ms.date: 05/27/2025
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # What is a multitenant organization in Microsoft Entra ID?
@@ -114,7 +110,7 @@ To facilitate the management of a multitenant organization, any given multitenan
 
 | Tenant state | Description |
 | --- | --- |
-| Pending | A pending tenant has yet to join a multitenant organization. While listed in an administrator’s view of the multitenant organization, a pending tenant isn't yet part of the multitenant organization, and as such is hidden from an end user’s view of a multitenant organization. |
+| Pending | A pending tenant has yet to join a multitenant organization. While listed in an administrator's view of the multitenant organization, a pending tenant isn't yet part of the multitenant organization, and as such is hidden from an end user's view of a multitenant organization. |
 | Active | Following the addition of pending tenants to the multitenant organization, pending tenants need to join the multitenant organization to turn their state from pending to active. Joined tenants typically start in the member role. Any member tenant has the privilege to leave the multitenant organization. |
 
 ## Cross-tenant access settings
@@ -123,7 +119,7 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access partner configurations
 
-    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
+    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner).
 
 - Cross-tenant access identity synchronization
 
@@ -138,6 +134,7 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
+- A multitenant organization is not allowed between a Cloud Solution Provider (CSP) and their customer tenants.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
 - Any active tenant may leave a multitenant organization by removing themselves from it.

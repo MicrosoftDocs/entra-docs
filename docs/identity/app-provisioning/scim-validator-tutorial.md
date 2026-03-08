@@ -1,15 +1,11 @@
 ---
 title: Tutorial - Test your SCIM endpoint for compatibility with the Microsoft Entra provisioning service.
 description: This tutorial describes how to use the Microsoft Entra SCIM Validator to validate that your provisioning server is compatible with the Azure SCIM client.
-author: kenwith
-ms.author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/15/2023
-ms.custom: template-tutorial
+ms.date: 10/06/2025
+ms.custom: template-tutorial, sfi-image-nochange
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 
@@ -26,7 +22,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A SCIM endpoint that conforms to the SCIM 2.0 standard and meets the provision service requirements. To learn more, see [Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](use-scim-to-provision-users-and-groups.md).
 
 
@@ -72,6 +68,87 @@ Finally, you need to test and validate your endpoint.
 
     :::image type="content" source="./media/scim-validator-tutorial/scim-validator-results.png" alt-text="Screenshot of SCIM Validator results page." lightbox="./media/scim-validator-tutorial/scim-validator-results.png":::
 
+### Note validations performed by SCIM Validator
+
+**Create New User**
+- POST /Users – Creates a new user with a complete JSON payload.
+    - Endpoint returns HTTP 201
+    - POST response contains created user ID
+- GET /Users?filter={joiningProperty} eq "value" – Verifies creation by filtering on the joining property.
+    - GET returns created user
+    - Returned values from GET match the passed values from the POST request (varies based on endpoint)
+- DELETE /Users - Cleans Up Test User.	
+    -Only called if hard delete is supported
+    
+**Create Duplicate User**	
+- POST /Users – Attempts to create a user using an identical payload (with the same unique/joining attribute) to an existing user.
+    - Return HTTP 201 on first create request
+    - Return HTTP 409 on second create request
+
+**Add Attributes**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Uses a JSON Patch document (with the add operation) to insert additional non-required attributes.
+- GET /Users?filter={joiningProperty} eq "value" – Retrieves the user to verify the added attributes.
+    - User is returned
+    - Inserted attributes are now present on the user
+    
+**Replace User Attributes**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Sends a JSON Patch document (using the replace operation) to update one or more attributes.
+- GET /Users?filter={joiningProperty} eq "value" – Verifies that the updated attributes are correctly applied.
+    - User is returned
+    - Updated attributes are present on the user
+    
+**Update Joining Property**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Updates the joining property (e.g., userName) via a JSON Patch document.
+- GET /Users?filter={joiningProperty} eq "newValue" – Confirms the joining property has been updated.	
+    - Joining property is updated on user
+
+**Update Active Attribute to False**
+- POST /Users/ - Creates a resource based on the schema
+    - HTTP 2xx success
+    - Disabled user should be returned on GET request
+- PATCH /Users/{id} – Issues a JSON Patch document that sets the "active" attribute to false.
+    - HTTP 2xx success
+- GET /Users?filter={joiningProperty} eq "value" – Retrieves the user to confirm the active attribute is now false.	
+    - Returned user record should have ACTIVE=FALSE"
+
+**Create New Group**
+- POST /Groups – Creates a new group with a complete JSON payload.
+    - Endpoint returns HTTP 201
+    - POST response contains created group ID
+- GET /Group?filter={joiningProperty} eq "value" – Verifies creation by filtering on the joining property.
+    - GET returns created group
+    - Returned values from GET match the passed values from the POST request (varies based on endpoint)
+- DELETE /Groups - Cleans Up Test User.	
+    - Only called if hard delete is supported
+
+**Create Duplicate Group**	
+- POST /Groups – Attempts to create a group using an identical payload (with the same unique/joining attribute) to an existing group.
+    - Return HTTP 201 on first create request
+    - Return HTTP 409 on second create request
+
+**Update Group Attributes**
+- POST /Groups - Creates a new group resource to update attributes on
+    - POST Returns HTTP 2xx
+- PATCH /Groups/{id} – Sends a JSON Patch document using the replace operation to update one or more attributes of an existing group (excluding members).
+    - PATCH returns success (HTTP 2xx)
+- GET /Groups?filter={joiningProperty} eq "value" – Confirms that the group’s attributes have been updated correctly.
+    - GET returns patched group
+    - Attributes on returned group match changed attributes on PATCH request
+
+**Create a New Group Resource**
+- POST /Groups - Creates a new group resource to add member to
+    - POST Returns HTTP 2xx
+- POST /Users – Creates a new user resource to be used as a group member.
+    - POST Returns HTTP 2xx
+- PATCH /Groups/{id} – Adds the newly created user’s identifier to the group using a JSON Patch document.
+    - PATCH Returns success
+
 ## Using Expressions on SCIM Validator
 The SCIM Validator supports using expressions to generate desired values for attributes.
 
@@ -94,46 +171,6 @@ The table below lists the available expressions
    |generateAlphaNumericWithSpecialCharacters {Count of Characters}|Generate a random string with a mix of alphabets, numbers, and a special character, based on the specified count of characters|{%generateAlphaNumericWithSpecialCharacters 8%}TEST|D385N05’TEST|
 
 You can add values before or after the expressions to achieve the desired outcome for example, when you add **{% generateRandomString 6 %}@contoso.com** into a value field of the userName attribute, it will generate a new userName value with every test while retaining the contoso.com domain. 
-   
-## Use Postman to test endpoints (optional)
-
-In addition to using the SCIM Validator tool, you can also use Postman to validate an endpoint. This example provides a set of tests in Postman. The example validates create, read, update, and delete (CRUD) operations. The operations are validated on users and groups, filtering, updates to group membership, and disabling users.
-
-The endpoints are in the `{host}/scim/` directory, and you can use standard HTTP requests to interact with them. To modify the `/scim/` route, see *ControllerConstant.cs* in **AzureADProvisioningSCIMreference** > **ScimReferenceApi** > **Controllers**.
-
-> [!NOTE]
-> You can only use HTTP endpoints for local tests. The Microsoft Entra provisioning service requires that your endpoint support HTTPS.
-
-1. Download [Postman](https://www.postman.com/downloads/) and start the application.
-1. Copy and paste this link into Postman to import the test collection: `https://aka.ms/ProvisioningPostman`.
-
-    ![Screenshot that shows importing the test collection in Postman.](media/scim-validator-tutorial/postman-collection.png)
-
-1. Create a test environment that has these variables:
-
-   |Environment|Variable|Value|
-   |-|-|-|
-   |Run the project locally by using IIS Express|||
-   ||**Server**|`localhost`|
-   ||**Port**|`:44359` *(don't forget the **`:`**)*|
-   ||**Api**|`scim`|
-   |Run the project locally by using Kestrel|||
-   ||**Server**|`localhost`|
-   ||**Port**|`:5001` *(don't forget the **`:`**)*|
-   ||**Api**|`scim`|
-   |Host the endpoint in Azure|||
-   ||**Server**|*(input your SCIM URL)*|
-   ||**Port**|*(leave blank)*|
-   ||**Api**|`scim`|
-
-1. Use **Get Key** from the Postman collection to send a **GET** request to the token endpoint and retrieve a security token to be stored in the **token** variable for subsequent requests.
-
-   ![Screenshot that shows the Postman Get Key folder.](media/scim-validator-tutorial/postman-get-key.png)
-
-   > [!NOTE]
-   > To make a SCIM endpoint secure, you need a security token before you connect. The tutorial uses the `{host}/scim/token` endpoint to generate a self-signed token.
-
-That's it! You can now run the **Postman** collection to test the SCIM endpoint functionality.
 
 ## Clean up resources
 

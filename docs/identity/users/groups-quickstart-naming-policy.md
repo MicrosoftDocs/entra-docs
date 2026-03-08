@@ -1,14 +1,8 @@
 ---
 title: Group naming policy quickstart
 description: Explains how to add new users or delete existing users in Microsoft Entra ID
-
-author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
-ms.date: 11/15/2023
-ms.author: barclayn
+ms.date: 12/16/2024
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management
@@ -17,13 +11,13 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Naming policy for groups in Microsoft Entra ID
 
-In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you will set up naming policy in your Microsoft Entra organization for user-created Microsoft 365 groups, to help you sort and search your groups. For example, you could use the naming policy to:
+In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you set up naming policy in your Microsoft Entra organization for user-created Microsoft 365 groups, to help you sort and search your groups. For example, you could use the naming policy to:
 
 * Communicate the function of a group, membership, geographic region, or who created the group.
 * Help categorize groups in the address book.
 * Block specific words from being used in group names and aliases.
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Configure the group naming policy
 
@@ -50,7 +44,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 1. Upload the new list of custom blocked words by selecting the file icon.
 1. Select **Save** for your changes to the policy to go into effect.
 
-That's it. You've set your naming policy and added your custom blocked words.
+That's it. You finished setting up your naming policy and added your custom blocked words.
 
 ## Clean up resources
 

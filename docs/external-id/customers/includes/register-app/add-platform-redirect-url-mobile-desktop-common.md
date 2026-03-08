@@ -1,11 +1,8 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: customers
 ms.topic: include
 ms.date: 05/05/2023
 ms.author: kengaderdus
-ms.manager: mwongerapk
 ---
 
 To specify your app type to your app registration, follow these steps:

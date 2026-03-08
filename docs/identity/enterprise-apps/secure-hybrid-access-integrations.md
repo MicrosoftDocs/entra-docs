@@ -4,8 +4,6 @@ description: Help customers discover and migrate SaaS applications into Microsof
 
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/19/2023
@@ -70,7 +68,7 @@ You can use one of the following SAML approaches:
   *  [Making your application multi-tenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
 * **Alternate SAML approach**: Customers can create an OIDC application registration in their Microsoft Entra tenant and set the URIs, endpoints, and permissions
 
-Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you repare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
+Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you prepare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
 
 > [!NOTE]
 > Before applications are used for IT administrator or user SSO, the customer IT administrator must consent to the application in their tenant. See, [Grant tenant-wide admin consent to an application](./grant-admin-consent.md).
@@ -113,7 +111,7 @@ The following diagram illustrates the user authentication flow:
 
 ### Users sign in to the applications
 
-When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OICD. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
+When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OIDC. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
 
 The following diagram shows user authentication flow:
 
@@ -183,7 +181,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.salesforce.com"
@@ -229,7 +227,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -292,7 +290,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -554,7 +552,7 @@ Get `AppRole` instances the application might have associated with it. It's comm
 Authorization: Required with a valid Bearer token
 Method:GET
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 ```
 
 From Microsoft Entra ID, get the user or group object ID that you want to assign to the application. Take the app role ID from the previous API call and submit it with the patch body on the service principal:
@@ -564,7 +562,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "principalId":"{Principal Object ID of User -or- Group}",
     "resourceId":"{Service Principal Object ID}",

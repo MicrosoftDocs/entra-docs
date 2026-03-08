@@ -1,11 +1,6 @@
 ---
-author: csmulligan
-ms.service: entra-external-id
-ms.subservice: customers
 ms.topic: include
 ms.date: 09/06/2023
-ms.author: cmulligan
-ms.manager: celestedg
 ---
 
 ## Find the Application (client) ID

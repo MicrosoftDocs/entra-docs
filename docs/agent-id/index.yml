@@ -1,0 +1,120 @@
+### YamlMime:Hub
+title: Microsoft Entra Agent ID documentation
+summary: Secure and govern AI agents at enterprise scale with Microsoft Entra Agent ID and the Microsoft agent identity platform. Create agent identities, apply Zero Trust controls, and manage agent access to your organization's resources.
+brand: azure
+
+metadata:
+  title: Microsoft Entra Agent ID documentation
+  description: Build, secure, and manage agent identities with Microsoft Entra Agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
+  ms.service: identity-platform
+  ms.topic: hub-page
+  author: shlipsey3
+  ms.author: sarahlipsey
+  ms.date: 02/22/2026
+
+highlightedContent:
+  items:
+    - title: What is Microsoft Entra Agent ID?
+      itemType: overview
+      url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+    - title: Microsoft agent identity platform for developers
+      itemType: overview
+      url: ./identity-platform/what-is-agent-id-platform.md 
+    - title: What is an agent identity?
+      url: ./identity-platform/what-is-agent-id.md
+      itemType: overview
+    - title: Create an agent identity
+      url: ./identity-platform/create-delete-agent-identities.md
+      itemType: how-to-guide
+
+additionalContent:
+  # Supports up to 4 subsections
+  sections:
+    ## Section 1: Microsoft Entra Agent ID ######################
+    - title: Microsoft Entra Agent ID
+      summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, and governance policies for agent identities and access management.
+      items:
+        ## CARD 1 ######################
+        - title: Manage agents
+          links:
+            - text: What is Microsoft Entra Agent ID?
+              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+            - text: Owners, sponsors, and managers
+              url: ./identity-platform/agent-owners-sponsors-managers.md
+            - text: Manage agents in the end user experience
+              url: ./identity-platform/manage-agent.md
+
+        
+        ## CARD 2 ######################
+        - title: Agent governance and lifecycles
+          links:
+            - text: Identity Governance for agents
+              url: ../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+            - text: Agent identity lifecycle management
+              url: ../id-governance/agent-sponsor-tasks.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+
+        ## CARD 3 ######################
+        - title: Protect agent access to resources
+          links:
+            - text: Conditional Access for agents
+              url: ../identity/conditional-access/agent-id.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json         
+            - text: Identity Protection for agents
+              url: ../id-protection/concept-risky-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+            - text: Network controls for agents
+              url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+            
+    ## Section 2: Microsoft agent identity platform ######################
+    - title: Microsoft agent identity platform for developers
+      summary: The platform that enables you to create and manage agent identities.
+      items:
+        ## CARD 1 ######################
+        - title: Learn about key concepts
+          links:        
+            - text: What is an agent identity blueprint?
+              url: ./identity-platform/agent-blueprint.md
+            - text: What is an agent identity?
+              url: ./identity-platform/agent-identities.md
+            - text: What are agent users?
+              url: ./identity-platform/agent-users.md
+
+        ## CARD 2 ######################
+        - title: Build with the Microsoft agent identity platform
+          links:
+            - text: Create an agent identity blueprint
+              url: ./identity-platform/create-blueprint.md
+            - text: Create an agent identity
+              url: ./identity-platform/create-delete-agent-identities.md  
+            - text: Configure Microsoft Entra SDK for agent identities
+              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md
+
+        ## CARD 3 ######################
+        - title: Authenticate and call APIs
+          links:
+            - text: Request tokens for autonomous agents
+              url: ./identity-platform/autonomous-agent-request-tokens.md
+            - text: Call Microsoft Graph from an agent
+              url: ./identity-platform/call-api-microsoft-graph.md
+            - text: Grant app permissions to an autonomous agent
+              url: ./identity-platform/autonomous-agent-request-authorization-entra-admin.md
+   
+
+    ## Section 3: Learn more ######################
+    - title: Learn more
+      summary: Explore SDK references, API documentation, and code samples to build and manage agent identities.
+      items:
+        ## CARD 1 ######################
+        - title: Technical references
+          links:
+            - text: SDK Reference
+              url:  /entra/msidweb/agent-id-sdk/overview
+            - text: Microsoft Graph API reference
+              url: /graph/api/overview 
+            - text: OAuth protocols for Agent identities
+              url: ./identity-platform/agent-oauth-protocols.md
+        ## CARD 2 ######################
+        - title: Related content
+          links:
+            - text: Security for AI
+              url: /security/security-for-ai/
+            - text: Security Copilot + Microsoft Entra
+              url: /entra/security-copilot/security-copilot-in-entra        
