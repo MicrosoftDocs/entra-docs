@@ -30,15 +30,15 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 ## Requirements
 
-- Your organization must be enrolled in [Passkey profiles](how-to-authentication-passkey-profiles.md).
-- Microsoft Entra ID tenant with permissions to manage authentication methods.
-- The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user is signing in. 
+- Your organization must have [Passkey profiles](how-to-authentication-passkey-profiles.md) enabled.
+- A Microsoft Entra ID tenant with permissions to manage authentication methods.
+- The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
 
   Passkey provider | Windows | macOS | iOS | Android
   -----------------|---------|-------|-----|--------
-  Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+| Natively built in. iOS 16+| N/A 
+  Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+ | Natively built in. iOS 16+ | N/A
   Google Password Manager | Built into Chrome | Built into Chrome | Built into Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
-  Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+ 
+  Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
 
 
 ## Enable synced passkeys
@@ -48,7 +48,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Select **Passkey (FIDO2)** > **Configure**.
 1. Add a profile or edit an existing profile.
-1. Under **Target type**, select **Synced** and save the profile. 
+1. Under **Target type**, select **Synced**, and then save the profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png" alt-text="Screenshot that shows how to enable synced passkeys." lightbox="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png":::
 
