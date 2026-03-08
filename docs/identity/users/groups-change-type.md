@@ -4,7 +4,7 @@ description: Learn how to convert existing membership groups from static to dyna
 ms.topic: how-to
 ms.date: 07/10/2025
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Change static groups to dynamic membership groups in Microsoft Entra ID
