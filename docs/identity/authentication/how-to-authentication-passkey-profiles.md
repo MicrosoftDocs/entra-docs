@@ -1,8 +1,8 @@
 ---
-title: How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID 
+title: How to enable passkey (FIDO2) profiles in Microsoft Entra ID
 description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 12/05/2025
+ms.date: 03/08/2026
 author: hanki71
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
@@ -12,8 +12,8 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 Passkey profiles enable granular group-based configurations for passkey (FIDO2) authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
 
->[!NOTE] 
->An Authentication Policy Administratorneeds to configure a passkey profile to enable synced passkeys. For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md).
+> [!NOTE]
+> An Authentication Policy Administrator needs to configure a passkey profile to enable synced passkeys. For more information, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-synced-passkeys.md).
 
 ## What are passkey profiles?
 
@@ -42,22 +42,22 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 ## Enable passkey profiles 
 
->[!NOTE]
->Upon enabling passkey profiles, your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile**, are supported. Support for more passkey profiles is in development.
+> [!NOTE]
+> When you enable passkey profiles, your global passkey (FIDO2) policy settings automatically transfer to a **Default passkey profile**. Up to three passkey profiles, including the **Default passkey profile**, are supported. Support for more passkey profiles is in development.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Select **Passkey (FIDO2)**.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles." lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
 
 1. Select the **Default passkey profile**. 
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
    
    For **Target Types**, select the types of passkeys that you want to allow.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
 1. Select **Save**.
 
@@ -65,9 +65,9 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. On the **Configure** tab, select **+ Add passkey profile**.
 
-1. Fill out the profile details.
+1. Fill in the profile details.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
    The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
@@ -83,32 +83,32 @@ A passkey profile is a named set of policy rules that governs how users in targe
    Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
    Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys.<br>If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
-1.	Select **Save**.
+1. Select **Save**.
 
 
 ## Apply a passkey profile to a targeted group
 
 1. Select **Enable and Target**.
-1. Select **Add target** and select either **All users** or **Select targets** to select groups. 
+1. Select **Add target**, and then choose **All users** or **Select targets** to choose specific groups.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/add-target.png" alt-text="Screenshot that shows how to add a target for a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/add-target.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/add-target.png" alt-text="Screenshot that shows how to add a target for a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/add-target.png":::
 
-1. Select which passkey profiles you want assigned to a specific target.
+1. Select the passkey profiles that you want to assign to a specific target.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
 
-   >[!NOTE]
-   >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if it fully satisfies the requirement of one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
+   > [!NOTE]
+   > A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if the passkey fully satisfies the requirements of at least one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
 
 ## Delete a passkey profile
 
 1. Select **Configure**.
-1. Select the trash can to the right of the passkey profile you want to delete, and select **Save**.
+1. Select the delete icon next to the passkey profile that you want to delete, and then select **Save**.
 
-   >[!NOTE] 
-   >You can delete a profile onlyif it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
+   > [!NOTE]
+   > You can delete a profile only if it's not assigned to a group of users in **Enable and target**. If the delete icon is unavailable, first remove any targets that are assigned that profile.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
 ## Disable passkey profiles
 
@@ -118,7 +118,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 > * Revert your passkey policy to the configuration of your default passkey profile, including its user targets
 > * Disable support for synced passkeys
 > 
-> Ensure that no administrators will be locked out of their accounts due to these changes.
+> Make sure that these changes don't lock administrators out of their accounts.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
@@ -127,10 +127,10 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 ## Examples of use cases for passkey profiles
 
->[!NOTE] 
->If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
+> [!NOTE]
+> If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 
-###  Special consideration for high-privileged accounts
+### Special consideration for high-privileged accounts
 
 Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
 ----------------|---------------|---------------|-------------------------|-----------------
@@ -143,7 +143,7 @@ All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced | Disab
 Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
 ----------------|---------------|---------------|-------------------------|-----------------
 All device-bound passkeys (excluding Microsoft Authenticator) | All users | Device-bound | Enabled | Enabled<br>- Behavior: Block<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android 
-Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
+Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>- Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
 
 
 ## Related content
