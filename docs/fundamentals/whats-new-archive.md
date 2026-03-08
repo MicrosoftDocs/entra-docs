@@ -50,6 +50,16 @@ Customers can now configure the remove all access packages task in Lifecycle Wor
 
 ---
 
+### Plan for change - New end user homepage in My Account
+
+**Type:** New feature      
+**Service category:** My Profile/Account     
+**Product capability:** End User Experiences  
+
+By the end of September 2025, the homepage at https://myaccount.microsoft.com will be updated to provide a more task-focused experience. Users will see pending actions like renewing expiring groups, approving access package requests, and setting up MFA directly on the homepage. Quick links to apps, groups, access packages, and sign-in details will be easier to find and use. This change is designed to streamline account management and help users stay on top of access and security tasks.
+
+---
+
 ## July 2025
 
 ### General Availability - Microsoft Entra External ID: Custom 3rd party email OTP provider

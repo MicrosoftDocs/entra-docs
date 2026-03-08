@@ -1178,16 +1178,6 @@ For more information, see: [How to customize Global Secure Access block page (pr
 
 ## August 2025
 
-### Plan for change - New end user homepage in My Account
-
-**Type:** New feature      
-**Service category:** My Profile/Account     
-**Product capability:** End User Experiences  
-
-By the end of September 2025, the homepage at https://myaccount.microsoft.com will be updated to provide a more task-focused experience. Users will see pending actions like renewing expiring groups, approving access package requests, and setting up MFA directly on the homepage. Quick links to apps, groups, access packages, and sign-in details will be easier to find and use. This change is designed to streamline account management and help users stay on top of access and security tasks.
-
----
-
 ### Plan for change  - Requestors can view who their access package approvers are in My Access
 
 **Type:** New feature  
