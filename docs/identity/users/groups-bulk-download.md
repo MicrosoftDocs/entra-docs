@@ -1,13 +1,8 @@
 ---
 title: Download a list of groups in the Azure portal
 description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
@@ -32,11 +27,27 @@ To download all groups in your organization:
 
     :::image type="content" source="media/bulk-operations/download-filename-dialog.png" alt-text="Screenshot of the Download groups dialog prompting for a filename before starting the bulk operation.":::
 
-4. Select the **Click here to view the status of each operation** link to navigate to the **Bulk operations** blade.
+4. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download groups submission successful. Click on the title for more information."
 
-    :::image type="content" source="media/bulk-operations/success-notification.png" alt-text="Screenshot of a success notification confirming the bulk groups download was submitted with a link to view status.":::
+5. Select the **Success!** notification title to open the job details, then select the filename to download the CSV file. A **Download successful** notification confirms when the file has been downloaded.
 
-5. Select the filename to download the CSV file containing all groups with the specified columns.
+> [!TIP]
+> You can also select **Click here to view the status of each operation** in the download dialog to navigate directly to the **Bulk operation results** page, where you can monitor all pending and completed bulk operations.
+
+### Downloaded CSV file format
+
+The downloaded CSV file contains information about each group, including:
+
+| Column | Description |
+|--------|-------------|
+| Object ID | The unique identifier (GUID) of the group |
+| Display name | The display name of the group |
+| Mail | The email address associated with the group (if applicable) |
+| Group type | Security or Microsoft 365 |
+| Membership type | Assigned or Dynamic |
+
+> [!TIP]
+> You can use the downloaded CSV file to get object IDs that you need for other bulk operations, such as adding members to groups.
 
 ## Download filtered groups
 
@@ -54,7 +65,7 @@ If you experience errors, you can download and view the results file on the **Bu
 
 ## Check download status
 
-You can see the status of all your pending bulk requests on the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 :::image type="content" source="./media/groups-bulk-download/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page." lightbox="./media/groups-bulk-download/bulk-center.png":::
 

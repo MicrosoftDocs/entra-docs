@@ -2,17 +2,9 @@
 title: Configure Freight Audit for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Freight Audit.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: jomondi
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 04/19/2024
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freight Audit so that I can control who has access to Freight Audit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

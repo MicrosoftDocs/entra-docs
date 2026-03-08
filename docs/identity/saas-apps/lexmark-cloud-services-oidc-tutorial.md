@@ -2,15 +2,10 @@
 title: Configure Lexmark Cloud Services (OIDC) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Lexmark Cloud Services (OIDC).
 services: active-directory
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: jomondi
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 10/03/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lexmark Cloud Services (OIDC) so that I can control who has access to Lexmark Cloud Services (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -54,7 +49,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  
     1. Select **Go to application**.
  
-        [![Screenshot of showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
+        [![Screenshot of showing the identity configuration.](media/lexmark-oidc-tutorial/go-to-application.png)](media/lexmark-oidc-tutorial/go-to-application.png#lightbox)
  
     1. Copy **Application (client) ID**. You'll use it later in the Lexmark Cloud Services (OIDC) SSO configuration.
  
@@ -64,20 +59,12 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  
         ![Screenshot of showing the endpoints on tab.](common/endpoints.png)
  
-1. Navigate to **Authentication** tab on the left menu and perform the following steps:
- 
-    1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value, which you have copied from Lexmark Cloud Services (OIDC) side.
- 
-        [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
- 
-    1. Select **Configure** button.
- 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
  
     1. Go to **Client secrets** tab and select **+New client secret**.
     1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
  
-        [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
+        [![Screenshot of showing the client secrets value.](media/lexmark-oidc-tutorial/client-secret.png)](media/lexmark-oidc-tutorial/client-secret.png#lightbox)
  
     1. Once you add a client secret, **Value** is generated. Copy the value. You'll use it later in the Lexmark Cloud Services (OIDC) SSO configuration.
  
@@ -106,7 +93,6 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
-   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, select the **Assign** button.
  
 ## Configure Lexmark Cloud Services (OIDC) SSO
@@ -133,6 +119,7 @@ To complete the steps in this section, ensure you have the Organization Administ
 
 > [!NOTE]
 > The Domains field allows Lexmark Cloud Services to automatically establish a new user account after the user logs in. Listing each organization's domain is not required. If no domain is set, then the new users must be manually added to the organization before they log in.
+
 8. Select **Configure Authentication Provider**.
 ![Screenshot of Configure Authentication Provider.](media/lexmark-oidc-tutorial/configure-authentication-provider.png)
 
@@ -140,6 +127,8 @@ To complete the steps in this section, ensure you have the Organization Administ
 > Once authentication configuration is completed, you will receive an email on configuration status. In case of configuration failure, contact your Lexmark representative.
 
 9. The relying party redirect URIs for US and EU regions. (To be used in the Microsoft Entra Authentication Configuration)
+    - US region: `https://lexmarkb2c.b2clogin.com/lexmarkb2c.onmicrosoft.com/oauth2/authresp`
+    - EU region: `https://lexmarkb2ceu.b2clogin.com/lexmarkb2ceu.onmicrosoft.com/oauth2/authresp`
 
 > [!NOTE] 
 > Select ID Tokens in Implicit grant and hybrid flows under Entra Authentication Configuration

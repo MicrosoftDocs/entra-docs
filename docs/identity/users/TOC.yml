@@ -72,6 +72,8 @@
       href: clean-up-unmanaged-accounts.md 
     - name: Clean up stale guest accounts
       href: clean-up-stale-guest-accounts.md
+    - name: Get signed-in user identity
+      href: how-to-get-signed-in-identity.md
     - name: Dynamic groups and guests   
       href: ~/external-id/use-dynamic-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Organization (tenant)
@@ -179,7 +181,7 @@
 - name: Reference
   items:
   - name: Microsoft Graph API  
-    href: /graph/api/resources/azure-ad-overview
+    href: /graph/api/resources/identity-network-access-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
   - name: Microsoft Entra service limits

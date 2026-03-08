@@ -2,9 +2,6 @@
 title: Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
 ms.date: 11/05/2025
@@ -83,7 +80,7 @@ With a catalog created, you can add custom data provided resources to it by doin
 1. Select **Create**. 
 
 
-You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Get Access Review Object and Instance ID
 
@@ -138,7 +135,7 @@ When uploading CSVs to be included in the access data, the following parameters 
 |PermissionType     |   Indicates the category of permission.      |
 
 
-You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
+You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta&preserve-view=true).
 
 ## Active review state
 
@@ -150,7 +147,7 @@ At the **Active** stage:
 ## Applying stage
 
 
-In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http) API call:
+In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
 GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq 'Deny' and resourceId eq '<custom data provided resource ID>')
@@ -158,7 +155,7 @@ GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definition
 
 For each decision item: 
 
-Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http) API call:
+Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
 PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}

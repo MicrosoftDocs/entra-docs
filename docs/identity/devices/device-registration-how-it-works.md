@@ -1,13 +1,8 @@
 ---
 title: How Microsoft Entra device registration works
 description: Microsoft Entra device registration flows for managed and federated domains.
-ms.service: entra-id
-ms.subservice: devices
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/27/2025
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: 
 ms.custom: sfi-image-nochange
 ---

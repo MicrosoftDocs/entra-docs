@@ -1,14 +1,9 @@
 ---
 title: Identity Risk Management Agent Settings
 description: Learn how to configure the settings for the Identity Risk Management Agent in Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 
 ms.topic: concept-article
 ms.date: 10/20/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 

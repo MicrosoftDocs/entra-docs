@@ -1,14 +1,9 @@
 ---
 title: Passkeys (FIDO2) authentication method in Microsoft Entra ID
 description: Learn about using passkey (FIDO2) authentication in Microsoft Entra ID to help improve and secure sign-in events
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 11/10/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: kimhana
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use passkey (FIDO2) authentication in Microsoft Entra ID to improve and secure user sign-in events.
 ---
@@ -41,9 +36,9 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 - **Device-bound passkeys**: The private key is created and stored on a single physical device and never leaves it. Examples: 
   - Microsoft Authenticator 
   - FIDO2 Security keys 
-- **Synced passkeys**: The private key is stored in a passkey provider’s cloud and synced across devices signed-in to the same passkey provider account. Synced passkeys do not support attestation. Examples: 
-  - Apple iCloud Keychain 
-  - Google Password Manager 
+- **Synced passkeys**: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
+  - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
+  - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
 
 Synced passkeys offer a seamless and convenient user experience where users can use a device’s native unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learned: 
 

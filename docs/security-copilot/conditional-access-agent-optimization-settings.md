@@ -3,10 +3,9 @@ title: Microsoft Entra Conditional Access Optimization Agent settings
 description: Explore the settings available for the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot.
 ms.author: sarahlipsey
 author: shlipsey3
-manager: pmwongera
 ms.reviewer: jodah
 
-ms.date: 01/08/2026
+ms.date: 02/17/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -22,31 +21,33 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The ServiceNow integration in the Conditional Access Optimization Agent is currently in PREVIEW.
+> The ServiceNow integration and the file upload capability in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
 
 You can access the settings from two places in the Microsoft Entra admin center:
 
-- From **Agents** > **Conditional Access optimization agent** > **Settings**.
+- From **Agents** > **Conditional Access Optimization Agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings.png":::
 
-After making any changes, select the **Save** button at the bottom of the page. 
+Select the category from the left-side menu to navigate through all the settings. After making any changes, select the **Save** button at the bottom of the page.
 
 ## Trigger
 
 The agent is configured to run every 24 hours, based on when it was initially configured. You can manually run the agent at any time.
 
-## Microsoft Entra objects to monitor
+## Capabilities
 
-Use the checkboxes under **Microsoft Entra objects to monitor** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
+The **Capabilities** category includes important settings that you should review.
 
-## Agent capabilities
+- **Microsoft Entra objects to monitor**: Use the checkboxes to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
+- **Agent capabilities**: By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+- **Phased rollout**: When the agent creates a new policy in report-only mode and that policy meets the criteria for a phased rollout, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
 
-By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png" alt-text="Screenshot of the Conditional Access Optimization agent Capabilities settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png":::
 
 ## Notifications
 
@@ -76,58 +77,9 @@ At this time, the agent's communication is one direction, so you can receive not
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization-settings/agent-teams-suggestion-message.png":::
 
-## Phased rollout
+## Knowledge sources
 
-When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
-
-:::image type="content" source="media/conditional-access-agent-optimization-settings/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/phased-rollout-settings.png":::
-
-## Identity and permissions
-
-This section of the agent settings describes the identity under which the agent runs and the permissions it uses to operate. 
-
-### Identity
-
-The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md), allowing the agent to run under its own identity rather than a specific user’s identity. This capability improves security, simplifies management, and provides greater flexibility.
-
-- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-is-agent-id.md).
-- Existing installations can switch from the user context to run under an agent identity at any time. 
-  - This change doesn't impact reporting or analytics.
-  - Existing policies and recommendations remain unaffected.
-  - Customers can't switch back to user context.
-  - Admins with the Security Administrator role can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
-
-:::image type="content" source="media/conditional-access-agent-optimization-settings/identity-permissions.png" alt-text="Screenshot conditional-access-agent-optimization-settings/identity-permissions.png":::
-
-Turning on and using the Conditional Access Optimization Agent also requires Security Copilot roles. Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
-
-### Permissions
-
-The agent identity uses the following permissions to perform its tasks. These permissions are assigned automatically when you create the agent identity.
-
-- `AuditLog.Read.All`
-- `CustomSecAttributeAssignment.Read.All`
-- `DeviceManagementApps.Read.All`
-- `DeviceManagementConfiguration.Read.All`
-- `GroupMember.Read.All`
-- `LicenseAssignment.Read.All`
-- `NetworkAccess.Read.All`
-- `Policy.Create.ConditionalAccessRO`
-- `Policy.Read.All`
-- `RoleManagement.Read.Directory`
-- `User.Read.All`
-
-### ServiceNow integration (Preview)
-
-Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow change requests for each new suggestion the agent generates. This feature allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
-
-To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
-
-:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png":::
-
-When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow change request. The change request includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow change request and can automatically implement the change when the change request is approved.
-
-:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png":::
+The Conditional Access Optimization Agent can pull from two different knowledge sources to make suggestions that are tailored to your organization's unique setup.
 
 ### Custom instructions
 
@@ -155,16 +107,74 @@ For more information about how to use custom instructions, check out the followi
 
 Some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
 
-## Intune integration
+### Files (Preview)
 
-The Conditional Access Optimization Agent integrates with Microsoft Intune to monitor device compliance and application protection policies configured in Intune and identify potential gaps in Conditional Access enforcement. This proactive and automated approach ensures that Conditional Access policies remain aligned with organizational security goals and compliance requirements. The agent suggestions are the same as the other policy suggestions, except that Intune provides part of the signal to the agent.
+The Conditional Access Optimization Agent includes a mechanism to provide specific instructions about your organization. These instructions can include information such as Conditional Access policy naming conventions, unique procedures, and organizational structure so the agent suggestions are even more relevant to your environment. These uploaded files make up the knowledge base for the agent. For more information, see [Conditional Access Optimization Agent knowledge base](conditional-access-agent-optimization-knowledge-base.md).
 
-Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
+> [!IMPORTANT]
+> Your data stays within the agent and isn't used for model training.
 
-To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
+To add a file to the knowledge base:
 
-## Global Secure Access integration
+1. Browse to **Conditional Access Optimization Agent** > **Settings** > **Files**.
+1. Select the **Upload** button.
+1. Either drag and drop the file into the panel that opens or select the **Upload file** space to navigate to the file on your computer.
 
-Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion, **Turn on new policy to enforce Global Secure Access network access requirements**, helps you to align your Global Secure Access policies that include network locations and protected applications.
+The agent processes the file and analyzes it to ensure it includes the necessary information.
 
-With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources using the organization's secure Global Secure Access network before accessing corporate apps and data. Users connecting from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
+## Plugins
+
+In addition to the [Intune and Global Secure Access](conditional-access-agent-optimization.md#built-in-integrations) built-in integrations, the Conditional Access Optimization Agent also provides external integrations to streamline with your existing workflows.
+
+### ServiceNow integration (Preview)
+
+Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow change requests for each new suggestion the agent generates. This feature allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
+
+To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
+
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png":::
+
+When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow change request. The change request includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow change request and can automatically implement the change when the change request is approved.
+
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png":::
+
+## Permissions
+
+This section of the agent settings describes the identity under which the agent runs and the permissions it uses to operate.
+
+### Agent identity
+
+The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md), allowing the agent to run under its own identity rather than a specific user’s identity. This capability improves security, simplifies management, and provides greater flexibility.
+
+Select **Manage agent identity** to view the agent details in Microsoft Entra Agent ID.
+
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot of the agent settings view for permissions and identities.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
+
+- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-is-agent-id.md).
+- Existing installations can switch from the user context to run under an agent identity at any time. 
+  - This change doesn't impact reporting or analytics.
+  - Existing policies and recommendations remain unaffected.
+  - Customers can't switch back to the former user context.
+  - Admins with the Security Administrator role can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
+
+Turning on and using the Conditional Access Optimization Agent also requires Security Copilot roles. Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+
+### Agent permissions
+
+The agent identity uses the following permissions to perform its tasks. These permissions are assigned automatically when you create the agent identity.
+
+- `AuditLog.Read.All`
+- `CustomSecAttributeAssignment.Read.All`
+- `DeviceManagementApps.Read.All`
+- `DeviceManagementConfiguration.Read.All`
+- `GroupMember.Read.All`
+- `LicenseAssignment.Read.All`
+- `NetworkAccess.Read.All`
+- `Policy.Create.ConditionalAccessRO`
+- `Policy.Read.All`
+- `RoleManagement.Read.Directory`
+- `User.Read.All`
+
+## Users
+
+The Conditional Access Optimization Agent uses role-based access control to use the agent. The least-privileged role needed to use the agent is [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).

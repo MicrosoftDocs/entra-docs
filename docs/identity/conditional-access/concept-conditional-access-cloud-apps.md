@@ -1,16 +1,9 @@
 ---
 title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 01/26/2026
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
-ms.reviewer: lhuangnorth
+ms.date: 02/24/2026
+ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref
   - ai-gen-docs-bap
@@ -82,18 +75,18 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 ## Microsoft Admin Portals
 
-When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to application IDs of the following Microsoft administrative portals:
+When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific underlying resource application IDs associated with Microsoft admin portals. The app grouping doesn't include the backend services that those portals might call or depend on. To identify service dependencies of the admin portals, use the [Conditional Access audience reporting in sign-in logs](troubleshoot-conditional-access.md#audience-reporting) 
 
-- Azure portal
-- Exchange admin center
-- Microsoft 365 admin center
-- Microsoft 365 Defender portal
-- Microsoft Entra admin center
-- Microsoft Intune admin center
-- Microsoft Purview compliance portal
-- Microsoft Teams admin center
+The following applications comprise the Microsoft Admin Portals:
 
-We're continually adding more administrative portals to the list.
+- Exchange Admin Center app ID: 497effe9-df71-4043-a8bb-14cf78c4b63b
+- Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
+- Microsoft Office 365 Portal app ID: 00000006-0000-0ff1-ce00-000000000000
+- Microsoft 365 Security And Compliance Center (Protection Center) app ID: 80ccca67-54bd-44ab-8625-4b79c4dc7775
+
+The Admin Portal grouping is primarily intended for include scenarios,for a simplified way to target one or more admin portals with Conditional Access policies (for example, enforcing MFA). This grouping is leveraged in our [MFA for admins Microsoft-managed policy](managed-policies.md#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) to streamline policy creation. 
+ 
+This option is not intended to function as a bulk exclusion mechanism for all backend services associated with the underlying application IDs. 
 
 > [!NOTE]
 > Block policies that target the Microsoft Admin Portals will block end users from accessing the Microsoft 365 self-install page, as this page is currently located in the Microsoft 365 admin center. For information on alternative deployment options, see [Plan your enterprise deployment of Microsoft 365 Apps](/microsoft-365-apps/deploy/plan-microsoft-365-apps).
@@ -173,24 +166,24 @@ In user sign-in flows where client applications request only the scopes listed a
 
 In the following example, the tenant has a Conditional Access policy with the following details:
 - Targeting All users and All resources
-- Resource exclusions for a custom enterprise application and Exchange Online
+- Resource exclusions for a confidential client application and Exchange Online
 - MFA is configured as the grant control
 
 #### Example scenarios
 
 | Example scenario | User impact (before → after) | Conditional Access evaluation |
 |---|---|---|
-| A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs into Visual Studio Code desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 | A user signs in using Azure CLI, which requests only `User.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
-| A user signs in through a custom enterprise application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in through a confidential client application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 
-There is no change in behavior when an application requests a scope beyond those listed previously, as illustrated in the following examples.
+There is no change in behavior when a client application requests a scope beyond those listed previously, as illustrated in the following examples.
 
 #### Example scenarios
 
 | Example scenario | User impact | Conditional Access evaluation |
 |---|---|---|
-| A user signs in to a custom enterprise application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to a confidential client application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
 | A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (`Mail.Read`). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
 
 Most applications request scopes beyond the previously listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  
@@ -210,31 +203,43 @@ Use the following PowerShell script to list all applications in your tenant that
 
 ```powershell
 # ==============================
-# Inventory of tenant-owned apps whose delegated consent grants include ONLY
+# Inventory of apps whose delegated consent grants include ONLY
 # the OIDC scopes + specific directory scopes listed below.
+#
+# Enhancements incorporated:
+#  - Supported both PowerShell 5.1 and 7.x
+#  - Add user sign-in count (last 7 days) per app
 #
 # Output:
 #  - ServicePrincipalObjectId (oauth2PermissionGrants.clientId = SP object id)
+#  - AppId
+#  - AppDisplayName
+#  - AppOwnerOrganizationId (for classification)
 #  - Scopes (union of delegated scopes granted)
+#  - UserSigninsLast7Days (Successful + Failed)
 # ==============================
 
 $TenantId = Read-Host "Enter your Microsoft Entra tenant ID (GUID)"
 
 $BaselineScopes = @(
-  "openid","profile","email","offline_access",
-  "User.Read","User.Read.All","User.ReadBasic.All",
-  "People.Read","People.Read.All",
-  "GroupMember.Read.All","Member.Read.Hidden"
+  "openid", "profile", "email", "offline_access",
+  "User.Read", "User.Read.All", "User.ReadBasic.All",
+  "People.Read", "People.Read.All",
+  "GroupMember.Read.All", "Member.Read.Hidden"
 )
 
 Disconnect-MgGraph -ErrorAction SilentlyContinue
+
 Connect-MgGraph -TenantId $TenantId -Scopes @(
   "DelegatedPermissionGrant.Read.All",
-  "Directory.Read.All"
+  "Directory.Read.All",
+  "Reports.Read.All"
 )
 
+# ------------------------------
 # Pull oauth2PermissionGrants (paging)
-$uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope"
+# ------------------------------
+$uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope,consentType"
 $grants = @()
 while ($uri) {
   $resp = Invoke-MgGraphRequest -Method GET -Uri $uri
@@ -242,48 +247,124 @@ while ($uri) {
   $uri = $resp.'@odata.nextLink'
 }
 
-# Build baseline-only candidate set (paste-safe: no leading pipes)
-$candidates = @()
-foreach ($g in ($grants | Group-Object clientId)) {
-  $spObjectId = $g.Name
+# ------------------------------
+# Build baseline-only candidate set (Jun: HashSet per clientId)
+# ------------------------------
+$scopesByClient = @{}  # key: clientId (SP objectId), value: HashSet[string] (case-insensitive)
 
-  $scopes = $g.Group |
-    ForEach-Object { ($_.scope -split '\s+') } |
-    Where-Object { $_ -and $_.Trim() -ne "" } |
-    Sort-Object -Unique
+foreach ($g in $grants) {
+  $cid = $g.clientId.ToString().Trim()
+  if (-not $cid) { continue }
 
-  if ($scopes.Count -gt 0) {
-    $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
-    if ($outside.Count -eq 0) {
-      $candidates += [PSCustomObject]@{
-        ServicePrincipalObjectId = $spObjectId
-        Scopes = ($scopes -join " ")
-      }
+  if (-not $scopesByClient.ContainsKey($cid)) {
+    $scopesByClient[$cid] = [System.Collections.Generic.HashSet[string]]::new(
+      [System.StringComparer]::OrdinalIgnoreCase
+    )
+  }
+
+  foreach ($s in ($g.scope -split '\s+')) {
+    if ($s -and $s.Trim().Length -gt 0) {
+      [void]$scopesByClient[$cid].Add($s.Trim())
     }
   }
 }
 
-# Filter to tenant-owned apps
-$results = @()
+$candidates = foreach ($cid in $scopesByClient.Keys) {
+  $scopes = $scopesByClient[$cid]
+  if ($scopes.Count -le 0) { continue }
+
+  $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
+  if ($outside.Count -eq 0) {
+    [PSCustomObject]@{
+      ServicePrincipalObjectId = $cid
+      Scopes = ($scopes -join ' ')
+    }
+  }
+}
+
+# ------------------------------
+# Pull per-app sign-in summary for last 7 days (Graph REST via Invoke-MgGraphRequest)
+# Endpoint: GET /beta/reports/getAzureADApplicationSignInSummary(period='D7')
+# In this API output, 'id' corresponds to the appId (clientId)
+# ------------------------------
+$signInSummary = @()
+$signInUri = "https://graph.microsoft.com/beta/reports/getAzureADApplicationSignInSummary(period='D7')"
+
+while ($signInUri) {
+  $resp = Invoke-MgGraphRequest -Method GET -Uri $signInUri
+
+  if ($resp -and $resp.value) {
+    $signInSummary += $resp.value
+  }
+
+  # Paging (if present)
+  $signInUri = $resp.'@odata.nextLink'
+}
+
+# appId -> total sign-ins (7d)
+$signInCountByAppId = @{}
+foreach ($s in $signInSummary) {
+  $appId = $s.id
+  if (-not $appId) { continue }
+
+  # PS5.1-safe null handling
+  $success = 0
+  $failed  = 0
+  if ($null -ne $s.successfulSignInCount) { $success = [int]$s.successfulSignInCount }
+  if ($null -ne $s.failedSignInCount)     { $failed  = [int]$s.failedSignInCount }
+
+  $signInCountByAppId[$appId] = $success + $failed
+}
+
+$resultsTenantOwned = @()
+$resultsNotTenantOwned = @()
+
+# ------------------------------
+# Filter to tenant-owned or external apps; enrich with appId/displayName + sign-in counts
+# ------------------------------
 foreach ($c in $candidates) {
   try {
-    $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appOwnerOrganizationId"
+    $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appId,displayName,appOwnerOrganizationId"
     $sp = Invoke-MgGraphRequest -Method GET -Uri $spUri
 
-    if ($sp.appOwnerOrganizationId -eq $TenantId) {
-      $results += [PSCustomObject]@{
-        ServicePrincipalObjectId = $c.ServicePrincipalObjectId
-        Scopes = $c.Scopes
-      }
+    $signinCount7d = 0
+    if ($sp.appId -and $signInCountByAppId.ContainsKey($sp.appId)) {
+      $signinCount7d = $signInCountByAppId[$sp.appId]
     }
-  } catch {
-    # Ignore non-enumerable / non-tenant-owned service principals
+
+    $row = [PSCustomObject]@{
+      ServicePrincipalObjectId = $c.ServicePrincipalObjectId
+      AppId                   = $sp.appId
+      AppDisplayName          = $sp.displayName
+      AppOwnerOrganizationId  = $sp.appOwnerOrganizationId
+      Scopes                  = $c.Scopes
+      UserSigninsLast7Days    = $signinCount7d
+    }
+
+    if ($sp.appOwnerOrganizationId -eq $TenantId) {
+      $resultsTenantOwned += $row
+    }
+    else {
+      $resultsNotTenantOwned += $row
+    }
+  }
+  catch {
+    # Ignore non-enumerable / missing service principals
   }
 }
 
+# ------------------------------
 # Output
-$results | Sort-Object ServicePrincipalObjectId 
+# ------------------------------
+'=== Tenant-owned apps whose delegated consent grants include ONLY baseline scopes + user sign-ins (last 7 days) ==='
+$resultsTenantOwned |
+  Sort-Object UserSigninsLast7Days -Descending |
+  Format-Table -AutoSize
 
+'=== External apps whose delegated consent grants include ONLY baseline scopes + user sign-ins (last 7 days) ==='
+$resultsNotTenantOwned |
+  Sort-Object UserSigninsLast7Days -Descending |
+  Format-Table -AutoSize
 ```
 
 #### [Usage and Insights report](#tab/usage-and-insights-report)
@@ -324,7 +405,7 @@ If the [recommended baseline MFA policy without resource exclusions](policy-all-
 1. Adjust the filter to include your attribute set and definition from earlier.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 > [!NOTE]
 > Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining resource exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.

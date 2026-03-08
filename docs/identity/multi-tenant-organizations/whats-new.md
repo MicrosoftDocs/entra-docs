@@ -1,15 +1,11 @@
 ---
 title: What's new in multitenant organization documentation
 description: Learn about the new features and documentation improvements in multitenant organizations for Microsoft Entra ID.
-author: kenwith
-manager: dougeby
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 01/12/2026
-ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # What's new in multitenant organization documentation

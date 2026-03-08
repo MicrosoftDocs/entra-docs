@@ -1,11 +1,7 @@
 ---
 title: Reset a user's password
 description: Instructions about how to reset a user's password using Microsoft Entra ID.
-author: barclayn
-ms.author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 08/27/2025
 ms.reviewer: jeffsta

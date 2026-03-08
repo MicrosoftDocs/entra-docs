@@ -17,7 +17,7 @@
         - name: Tools for synchronization
           href: sync-tools.md
         - name: Choosing the right sync client
-          href: https://aka.ms/EvaluateSyncOptions
+          href: common-scenarios.md
         - name: Steps to start
           href: get-started.md
         - name: Prerequisites
@@ -137,6 +137,8 @@
           href: cloud-sync/govern-on-premises-groups.md
     - name: Migration scenarios for cloud sync
       items:
+        - name: Decision guide for migrating from Connect to Cloud Sync
+          href: cloud-sync/connect-to-cloud-sync-decision-guide.md
         - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
           href: cloud-sync/tutorial-pilot-aadc-aadccp.md
         - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync

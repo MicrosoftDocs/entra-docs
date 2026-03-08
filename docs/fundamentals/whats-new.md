@@ -6,10 +6,8 @@ manager: dougeby
 featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 10/30/2025
+ms.date: 03/05/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -22,10 +20,197 @@ This article provides information about the latest releases and change announcem
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## February 2026
+
+### General Availability - Expanded attribute support in Lifecycle Workflows attribute changes trigger
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+
+The Attribute Changes trigger in Lifecycle Workflows now supports additional attribute types, enabling broader detection of organizational changes. Previously, this trigger was limited to a set of core attributes. With this update, you can configure workflows to respond when any of the following attributes change:
+
+- Custom security attributes
+- Directory extension attributes
+- EmployeeOrgData attributes
+- On-premises attributes 1–15
+
+This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments. For more information, see: [Use Custom attribute triggers in lifecycle workflows](../id-governance/workflow-custom-triggers.md).
+
+---
+
+### General Availability - Delegated Workflow Management in Lifecycle Workflows
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope. For more information, see: [Delegated workflow management](..//id-governance/manage-delegate-workflow.md).
+
+---
+
+### General Availability - Device authorization grant flow in Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+Similar to Microsoft Entra ID (workforce tenants), Microsoft Entra External ID (external tenants) now supports device authorization grant flow, which allows users to sign in to input-constrained devices such as a smart TV, IoT device, or a printer. For more information, see [OAuth 2.0 device authorization grant](../identity-platform/v2-oauth2-device-code.md).
+
+---
+
+### General Availability - Sign-in with username/alias
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+In Microsoft Entra External ID (EEID), users who authenticate with a local email and password now can also sign in using a username (alias) as an alternate sign-in identifier. This alias can represent a customer or member ID, insurance number, frequent flyer number, or a self-chosen username. The alias can be collected from user or assigned during self-service sign-up, or assigned during user creation or user update via the Microsoft Graph API or Microsoft Entra admin center. For details, see [Sign in with alias](../external-id/customers/how-to-sign-in-alias.md).
+
+---
+
+### Upcoming change – Microsoft Entra Connect security update to block hard match for privileged roles
+
+**Type:** Plan for change  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+**What is Hard-matching in Microsoft Entra Connect Sync and Cloud Sync?**
+
+When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Microsoft Entra object by looking up the incoming object’s sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
+
+To strengthen the security posture of your Microsoft Entra ID environment, we're introducing a change that restricts certain types of hard-match operations by default.   
+
+**What’s changing**
+
+Beginning June 1 2026, Microsoft Entra ID will block any attempt by Microsoft Entra Connect Sync or Cloud Sync from hard-matching a new user object from Active Directory to an existing cloud-managed Microsoft Entra ID user object that holds [privileged roles](https://docs.azure.cn/en-us/entra/identity/role-based-access-control/permissions-reference#all-roles).
+
+**This means:**
+
+*   If a cloud managed user already has [onPremisesImmutableId (sourceAnchor)](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) set and is assigned a privileged role, Microsoft Entra Connect Sync or Cloud Sync will no longer be able to take over the Source of Authority of that user by hard-matching with an incoming user object from Active Directory.  
+    
+*   This safeguard prevents attackers from taking over privileged cloud managed users in Microsoft Entra by manipulating attributes of user objects in Active Directory. 
+    
+
+**What’s not changing**
+
+*   Hard match operations for non-privileged accounts aren't affected.  
+*   [Soft match](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md?source=recommendations#hard-match-vs-soft-match) behavior isn't affected.  
+    
+
+**Customer action required**
+
+If you encounter a hard match error after June 1, 2026, see our [documentation](../identity/hybrid/connect/tshoot-connect-sync-errors.md#existing-admin-role-conflict) for mitigation steps.
+
+---
+
+### General Availability - External Auth Methods is Generally Available
+
+**Type:** New feature  
+**Service category:** MFA  
+**Product capability:** User Authentication  
+
+We’re excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
+
+---
+
+### General Availability - Custom banned password lists supported in Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+In addition to the [global banned password lists](../identity/authentication/concept-password-ban-bad.md#global-banned-password-list) already supported, EEID admins can now add specific strings to block during password creation and reset. For more information, see [Password Protection - Custom banned password lists](../identity/authentication/concept-password-ban-bad.md#custom-banned-password-list).
+
+---
+
+### Upcoming Changes - Jailbreak Detection in Authenticator App
+
+**Type:** New feature  
+**Service category:** Microsoft Authenticator App  
+**Product capability:** Identity Security & Protection  
+
+Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Microsoft Entra credentials in the Android app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Microsoft Entra accounts in Authenticator.
+
+---
+
+### Public Preview - BYOD support for Windows client using Microsoft Entra registration
+
+**Type:** New feature  
+**Service category:** BYOD support  
+**Product capability:** Network Access  
+
+Bring Your Own Device (BYOD) support for Windows using Microsoft Entra‑registered devices is now available in public preview. Users and partners can access corporate resources from their own devices. Admins can assign the Private Application traffic profile to internal accounts, including internal guest users. For more information, see: [Bring Your Own Device (Preview)](../global-secure-access/concept-bring-your-own-device.md).
+
+---
+
+### General Availability - Custom Block pages
+
+**Type:** New feature  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+When you configure policies blocking your users from accessing a risky, NSFW, or unsanctioned sites or apps in GSA, they receive a clear HTML error message with Microsoft Entra Internet Access branding. We’ve heard from many admins that they’d like to start customizing that experience with text aligned to a company style guide, callouts to company Terms of Use documentation, hyperlinks to IT workflows, and more. 
+
+Global Secure Access now offers customized block pages for Internet Access. In the Microsoft Graph API, Admins can now:
+
+- Configure the  tenant-wide body text of the GSA block page.
+- Add hyperlinks via limited markdown to reference Terms of Use,  ServiceNow/IT ticketing services, or even MyAccess for ID Governance workflow integration. 
+
+For more information, see: [How to Customize Global Secure Access Block Page](../global-secure-access/how-to-customize-block-page.md).
+
+---
+
+### General Availability - Microsoft Entra Connect Sync now supports Windows Server 2025
+
+**Type:** New feature  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+Microsoft Entra Connect Sync now officially supports [Windows Server 2025](https://www.microsoft.com/evalcenter/download-windows-server-2025). This means you can confidently install and run Microsoft Entra Connect Sync on servers running Windows Server 2025, enabling your hybrid identity environment to take full advantage of the latest Windows Server enhancements.
+
+**What this means for you:** With this update, organizations can upgrade their identity synchronization servers to Windows Server 2025 without hesitation. Windows Server 2025 brings advanced features that improve security, performance, and flexibility, and our engineering team has thoroughly validated Microsoft Entra Connect Sync on this platform. Many customers have been eager to adopt Windows Server 2025 to leverage its enhanced security, better performance, and improved management capabilities. Now, with official support in place, you can benefit from these improvements while maintaining a reliable, fully supported hybrid identity solution.
+
+The Microsoft Entra Connect Sync .msi installation file is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details on available versions.
+
+**Consider moving to Cloud Sync:** Microsoft Entra Cloud Sync is a sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the [supported sync scenarios comparison](../identity/hybrid/common-scenarios.md) to see if Cloud Sync is the right sync client for you.
+
+---
+
+### Public Preview - New end user homepage in My Account
+
+**Type:** New feature  
+**Service category:** My Profile/Account  
+**Product capability:** End User Experiences  
+
+The homepage at https://myaccount.microsoft.com has been updated to provide a more task-focused experience. Users will see pending actions like renewing expiring groups, approving access package requests, and setting up MFA directly on the homepage. Quick links to apps, groups, access packages, and sign-in details will be easier to find and use. This change is designed to streamline account management and help users stay on top of access and security tasks.
+
+---
+
+### General Availability - Microsoft Entra Provisioning Service available in Microsoft Azure operated by 21Vianet
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Outbound to SaaS Applications  
+
+The Microsoft Entra provisioning service can be used in the 21Vianet / China cloud for the following scenarios: API-driven provisioning, Cloud Sync, Cross-tenant sync between China tenants, SCIM provisioning for the non-gallery / custom application, and on-premises app provisioning (ECMA). Specific gallery connectors such as Workday, SuccessFactors, and AWS aren't onboarded to the environment. For more information, see: [Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds](../identity/app-provisioning/known-issues.md#gallery-application-doesnt-support-provisioning-in-us-government-or-21vianet-china-clouds).
+
+---
+
+### General Availability - Revoke previously approved access package assignments in My Access
+
+**Type:** New feature  
+**Service category:** Entitlement Management  
+**Product capability:** Identity Governance  
+
+By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
+
+---
+
 
 ## January 2026
 
-### General Availability - Ability to convert Source of Authority of synced on-prem AD users to cloud users is now available 
+### General Availability - Ability to convert Source of Authority of synced on-premises AD users to cloud users is now available 
 
 **Type:** New feature  
 **Service category:** User Management  
@@ -37,7 +222,7 @@ For more information, see: [Embrace cloud-first posture: Transfer user Source o
 
 ---
 
-### General Availability - Entra ID Governance guest billing meter enforcement
+### General Availability - Microsoft Entra ID Governance guest billing meter enforcement
 
 **Type:** New feature  
 **Service category:** Entitlement Management, Lifecycle Workflows  
@@ -49,6 +234,70 @@ For more information, see: [Microsoft Entra ID Governance licensing for guest u
 
 ---
 
+### General Availability - Client Credentials in Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management     
+**Product capability:** B2B/B2C    
+
+We are pleased to announce the general availability of client credentials in Entra External ID.  The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Permissions are granted directly to the application itself by an administrator.
+
+Billing: When you configure machine-to-machine (M2M) authentication for Microsoft Entra External ID, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines. For more information, see: [Microsoft identity platform and the OAuth 2.0 client credentials flow](../identity-platform/v2-oauth2-client-creds-grant-flow.md).
+
+---
+
+### General Availability - App-based branding via Branding themes in Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+In Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. A new Live Preview feature also helps quickly visualize the changes before saving. For more information, see: [Customize the sign‑in experience for your application with branding themes in external tenants - Microsoft Entra External ID](../external-id/customers/how-to-customize-branding-themes-apps.md).
+
+---
+
+### General Availability - Service Principal creation audit logs for alerting & monitoring
+
+**Type:** New feature  
+**Service category:** Audit  
+**Product capability:** Monitoring & Reporting  
+
+New audit log properties now make it easy for admins to understand why a service principal was created and who or what triggered it. The logs now surface the provisioning mechanism, the specific SKUs or service plans that enabled just‑in‑time creation, and the home tenant of the app registration. This helps admins quickly distinguish Microsoft‑driven provisioning from tenant‑driven activity, streamlining alerting and investigations into newly created service principals. For more information, see: 
+
+- [Understand why a service principal was created in your tenant](../identity/monitoring-health/understand-service-principal-creation-with-new-audit-log-properties.md)
+- [How to download and analyze the Microsoft Entra provisioning logs](../identity/monitoring-health/howto-analyze-provisioning-logs.md)
+
+---
+
+### General Availability - Session Control Conditional Access Policies in Entra External ID
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** B2B/B2C  
+
+EEID admins can configure persistent browser session and sign‑in frequency in Conditional Access. For more information, see [Conditional Access: Manage Session Controls Effectively](../identity/conditional-access/concept-conditional-access-session.md).
+
+---
+
+### General Availability - Entra Private Access for Domain Controllers
+
+**Type:** New feature  
+**Service category:** Private Access  
+**Product capability:** Network Access  
+
+Bring MFA to on‑premises applications when accessed from on‑premises, i.e., local‑to‑local access, while safeguarding domain controllers against identity threats. Enable secure access to private apps that use domain controllers for Kerberos authentication. For more information, see: [Configure Microsoft Entra Private Access for Active Directory domain controllers](../global-secure-access/how-to-configure-domain-controllers.md).
+
+---
+
+### General Availability - Improved enforcement for *All resources* policies with resource exclusions
+
+**Type:** Changed feature  
+**Service category:** Conditional Access  
+**Product capability:** Access Control  
+
+Microsoft Entra Conditional Access is strengthening how policies that target All resources with resource exclusions are enforced in a narrow set of authentication flows. After this change, in user sign‑ins where a client application requests only [OIDC](../identity-platform/scopes-oidc.md#openid-connect-scopes) or [specific directory scopes](../identity/conditional-access/concept-conditional-access-cloud-apps.md#legacy-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion), Conditional Access policies that target All resources with one or more resource exclusions, or policies that explicitly target Azure AD Graph, will be enforced. This ensures that policies are consistently applied regardless of the scope set requested by the client application. For more information, see: [New Conditional Access behavior when an ALL resources policy has a resource exclusion](../identity/conditional-access/concept-conditional-access-cloud-apps.md#new-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion).
+
+---
 
 
 
@@ -97,7 +346,7 @@ Customer Action Required: 
     
 - Review updated hardening guidance and enable recommended flags:  
     
-- Disable [hard match takeover](https://learn.microsoft.com/powershell/module/microsoft.entra.directorymanagement/set-entradirsyncfeature?view=entra-powershell) 
+- Disable [hard match takeover](/powershell/module/microsoft.entra.directorymanagement/set-entradirsyncfeature?view=entra-powershell&preserve-view=true) 
     
 
 Additional Guidance: 
@@ -126,7 +375,7 @@ The Microsoft Entra Connect Sync .msi installation file for this change is excl
 
 ---
 
-### Public Preview of Just-in-time password migration to Microsoft Entra External ID
+### Public Preview - Just-in-time password migration to Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
@@ -154,7 +403,7 @@ Block prompt injection attacks to enterprise GenAI apps in real-time with univer
 **Service category:** B2B  
 **Product capability:** Network Access  
 
-You can now enable the B2B guest access feature for your guest users with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is a guest and offers the option to switch into the customer's tenant context. The client routes only private traffic through the customer's Global Secure Access service. For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview)](../global-secure-access/concept-b2b-guest-access.md).
+You can now enable the B2B guest access feature for your guest users with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is a guest and offers the option to switch into the customer's tenant context. The client routes only private traffic through the customer's Global Secure Access service. For more information, see: [Learn about Global Secure Access External User Access (Preview)](../global-secure-access/concept-external-user-access.md).
 
 ---
 
@@ -322,7 +571,7 @@ Managing agent identity sponsors is key for lifecycle governance and access cont
 **Service category:** Other  
 **Product capability:** Platform  
 
-Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra agent id, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
+Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
 
 ---
 
@@ -416,11 +665,11 @@ The experience is now available in Preview within the Microsoft Entra Admin Cent
     
 
 To learn more, see: 
-- [Microsoft Entra documentation](https://learn.microsoft.com/entra/) 
+- [Microsoft Entra documentation](/entra/) 
 
-- [Microsoft Entra Global Secure Access](https://learn.microsoft.com/entra/global-secure-access/) 
+- [Microsoft Entra Global Secure Access](/entra/global-secure-access/) 
 
-- [Microsoft Defender for Cloud Apps overview](https://learn.microsoft.com/defender-cloud-apps/)
+- [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/)
 
 ---
 
@@ -512,7 +761,7 @@ This public preview allows you to configure URL filtering rules to granularl
 **Service category:** MFA    
 **Product capability:** Identity Security & Protection    
 
-Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the MicrosoftEntra portal.
+Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the Microsoft Entra admin center.
 
 The legacy “*Revoke MFA session*s” action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new “*Revoke sessions*” button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
 
@@ -539,7 +788,7 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabli
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
  
-In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps](/entra/external-id/customers/how-to-customize-branding-themes-apps)
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [Customize branding themes for apps](/entra/external-id/customers/how-to-customize-branding-themes-apps).
 
 ---
 
@@ -566,7 +815,7 @@ This enhancement gives administrators greater flexibility to automate lifecycle 
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C   
 
-In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member id, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
+In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member ID, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
 
 ---
 
@@ -578,7 +827,7 @@ In Microsoft Entra External ID (EEID), users with a local email+password credent
 
 **Introduction**
 
-Starting Oct 28, 2026, all applications and scripts making calls to Microsoft Entra Privileged Identity Management (PIM) [Iteration 2](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta) (beta) APIs for Azure resources, Microsoft Entra roles and Groups will fail.
+Starting Oct 28, 2026, all applications and scripts making calls to Microsoft Entra Privileged Identity Management (PIM) [Iteration 2](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true) (beta) APIs for Azure resources, Microsoft Entra roles and Groups will fail.
 
 **How this will affect your organization**
 
@@ -595,8 +844,8 @@ We strongly recommend migrating to the **Iteration 3 (GA) APIs**, which are gene
 Learn more: 
 
 - [API concepts in Privileged Identity management - Microsoft Entra ID Governance | Microsoft Learn](../id-governance/privileged-identity-management/pim-apis.md)
-- [Privileged Identity Management iteration 2 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta)
-- [Migrate from PIM iteration 2 APIs to PIM iteration 3 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta#migrate-from-pim-iteration-2-apis-to-pim-iteration-3-apis)
+- [Privileged Identity Management iteration 2 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true)
+- [Migrate from PIM iteration 2 APIs to PIM iteration 3 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true#migrate-from-pim-iteration-2-apis-to-pim-iteration-3-apis)
 
 ---
 
@@ -717,7 +966,7 @@ For more information, see: [About Microsoft Authenticator](https://support.micro
 
 Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company’s tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and Microsoft 365 traffic to these 3rd party users.
 
-For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-b2b-guest-access.md).
+For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-external-user-access.md).
 
 ---
 
@@ -875,7 +1124,6 @@ To continue monitoring authentication library usage, customers can query sign-in
 
 For guidance, see:
 
-*   [Recommendation: Migrate from Microsoft Authentication Library to MSAL](../identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md)
 *   [Analyze a sign-in with Microsoft Graph API](/azure/azure-monitor/reference/tables/aadnoninteractiveusersigninlogs)
 
 No action is required to disable the API.
@@ -1058,295 +1306,3 @@ The new Bulk Operations in Microsoft Entra ID offer an enhanced experience for m
 **Note:** Currently, the new Bulk Operations service supports **Groups**, **Devices**, and **User Export** only. Support for additional entities, such as **Enterprise Applications**, is coming soon. For more information, see: [Bulk operations in Microsoft Entra ID (Preview)](../fundamentals/bulk-operations.md).
 
 ---
-
-
-
-##  July 2025
-
-### General Availability - Microsoft Entra External ID: Custom 3rd party email OTP provider
-
-**Type:** New feature  
-**Service category:** B2C - Consumer Identity Management   
-**Product capability:** 3rd Party Integration 
-
-Use a 3rd Party Email OTP Provider to customize the Email OTP notifications for sign-in and sign-up flows for Microsoft Entra External ID. A new "Custom Email OTP Provider" Custom Authentication Extension allows you to use Azure Communication Service (ACS) or a 3rd party provider, such as SendGrid, to maintain branding consistency through your end user authentication experiences. For more information, see: [Configure a custom email provider for one time passcode send events](../identity-platform/custom-extension-email-otp-get-started.md).
-
----
-
-
-### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
-
-**Type:** New feature  
-**Service category:** Microsoft Entra Connect   
-**Product capability:** Microsoft Entra Connect 
-
-The Application-Based Authentication (ABA) feature is now the default authentication method for Microsoft Entra Connect. It enables Microsoft Entra Connect to securely authenticate with Microsoft Entra ID without relying on a locally stored password. This feature uses a Microsoft Entra ID application identity and Oauth 2.0 client credential flow to authenticate with Microsoft Entra ID.  Microsoft Entra Connect automatically creates a single-tenant third-party application in the customer’s Entra ID tenant, registers a certificate as the application’s credential, and grants the required permissions for directory synchronization. 
-
-The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra Admin Center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
-
-Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change.
-
----
-
-### General Availability – Security Copilot in Microsoft Entra 
-
-**Type:** New feature  
-**Service category:** Copilot   
-**Product capability:** Identity Security & Protection 
-
-You can now interact with Copilot in Microsoft Entra to investigate threats, manage the identity lifecycle of employees and guests, and take action quickly across users, apps, and access. All of this works through natural language, without writing custom queries or scripts. For more information, see: [Copilot in Microsoft Entra](../security-copilot/security-copilot-in-entra.md).
-
----
-
-### General Availability - Conditional Access Optimization Agent in Microsoft Entra
-
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
-
-Conditional Access Optimization Agent in Microsoft Entra monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md).
-
----
-
-### General Availability - Conditional Access Agent Supports Disabling Agent Creation of Report-Only Policies
-
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
-
-The Conditional Access Optimization Agent now supports a new setting that allows admins to configure if the agent can or cannot create report-only mode policies autonomously. If turned off, the agent will only create policies upon admin approval. For more information, see: [Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md).
-
----
-
-### General Availability - New Lifecycle Workflows task to revoke refresh tokens
-
-**Type:** New feature  
-**Service category:** Lifecycle Workflows  
-**Product capability:** Identity Governance  
-
-Customers can now configure a Lifecycle Workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
-
----
-
-### General Availability - Audit administrator events in Microsoft Entra Connect Sync
-
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Microsoft Entra Connect  
-
-The Admin Audit Logging feature enables organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators or Hybrid Administrators. It captures actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or Synchronization Rules Editor—including changes to synchronization rules, authentication settings (such as enabling or disabling features), and Federation settings. These events are logged in a dedicated Microsoft Entra Connect Sync audit log channel within the Windows Event Viewer, providing greater visibility into identity infrastructure changes. This feature supports troubleshooting, operational accountability, and regulatory compliance.   
-
-The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on the Microsoft Entra Admin Center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
-
-Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change. 
-
----
-
-### General Availability - Bicep templates for Microsoft Graph resources
-
-**Type:** New feature  
-**Service category:** MS Graph  
-**Product capability:** Developer Experience  
-
-Bicep templates for Microsoft Graph resources allows you to author, deploy and manage a limited set of Microsoft Graph resources (mostly Microsoft Entra ID resources) using Bicep template files, alongside Azure resources.  
-- Azure customers can use familiar tools to deploy Azure resources and the Microsoft Entra resources they depend on, such as applications and service principals, using Infrastructure-as-Code (IaC) and DevOps practices.  
-- It also opens the door for existing Microsoft Entra customers to use Bicep templates and IaC practices to deploy and manage their tenant's Microsoft Entra resources.  
-
-For more information, see: [Bicep templates for Microsoft Graph](/graph/templates/bicep/overview-bicep-templates-for-graph).
-
----
-
-### General Availability - Conditional Access What If API
-
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Access Control  
-
-The Conditional access What If API can be used to programmatically test the impact of policies on user and workload identity sign-ins.
-
----
-
-### General Availability - Enterprise App SSO via pre-integrated gallery app or customer SAML apps
-
-**Type:** Changed feature  
-**Service category:** B2C - Consumer Identity Management  
-**Product capability:** SSO  
-
-Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
-
-- [Add an enterprise application](../external-id/customers/how-to-add-enterprise-application.md)
-- [Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
-- [Supported features on external tenant](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
-
----
-
-### Public Preview - Convert Source of Authority of synced Active Directory groups to the cloud
-
-**Type:** New feature  
-**Service category:** Group Management  
-**Product capability:** Microsoft Entra Connect and Microsoft Entra Cloud Sync
-
-The Source of Authority (SOA) at the object level allows administrators to convert specific groups synced from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects, which are no longer synced from AD and act as if originally created in the cloud. This feature supports a gradual migration process, decreasing dependencies on AD while aiming to minimize user and operational impact. Both Entra Connect Sync and Cloud Sync recognize the SOA switch for these objects. Additionally, administrators can govern Kerberos-based applications associated with AD security groups from the cloud using Microsoft Entra Governance by including these SOA-converted security groups for Group Provision to AD. The option to switch the SOA of synced groups from AD to Microsoft Entra ID is currently available in Public Preview. For more information, see: [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](../identity/hybrid/concept-source-of-authority-overview.md).
-
----
-
-### General Availability - Restricted Management Administrative Units
-
-**Type:** New feature  
-**Service category:** RBAC  
-**Product capability:** AuthZ/Access Delegation  
-
-Restricted management administrative units enable you to easily restrict access to users, groups, or devices to the specific users or applications you specify. Tenant-level administrators (including Global Administrators) can't modify members of restricted management administrative units unless they're explicitly assigned a role scoped to the administrative unit. This makes it easy to lock down a set of sensitive groups or user accounts in your tenant without having to remove tenant-level role assignments. For more information, see: [Restricted management administrative units in Microsoft Entra ID](../identity/role-based-access-control/admin-units-restricted-management.md).
-
----
-
-
-## June 2025
- 
-### General Availability – Update to Microsoft Entra Work or School Default Background Image 
- 
-**Type:** Changed feature  
-**Service category:** Authentications (Login)  
-**Product capability:** User Authentication  
- 
-Starting September 29, 2025, we'll be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity, and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized [Fluent](https://microsoft.design/articles/four-principles-for-the-future-of-design/) design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
-
-**What’s changing?**                                                   		           
-
-This update is solely a visual user interface refresh with no changes to functionality. This change will only affect screens where [Company Branding](how-to-customize-branding.md) doesn't apply or where users see the [default background image](https://aka.ms/entradefaultbackground). We recommend updating any documentation that contains screenshots and notifying your help desk. If you have configured a custom background image in Company Branding for your tenant, there will be no change for your users. 
-
-**Additional Details:** 
-
-1. **Tenants without a custom background configured:**  
-    a. Tenants without a custom background will see the change on every authentication screen.<br> 
-    b. To change this background and use a custom background, configure [Company Branding](how-to-customize-branding.md).
-
-1. **Tenants with a custom background configured:**  
-    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly **without** a domain hint or custom URL).<br> 
-    b. For all other screens, tenants with a custom background configured **will see no change** to their experience on all clients. 
-
-1. **Entra External ID Tenants will not see any change to their experience on all clients** 
-
-**What do you need to do?**
-
-No action is required. The update will be applied automatically starting September 29, 2025. 
- 
----
-
-
-### General Availability - API-driven provisioning in US Gov cloud
- 
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Identity Governance  
- 
-API-driven provisioning is now generally available in US Gov cloud. With this capability, customers in US Gov cloud can now ingest identity data from any authoritative source into Microsoft Entra ID and on-premises Active Directory. For more information, see: [Quickstart API-driven inbound provisioning with Graph Explorer](../identity/app-provisioning/inbound-provisioning-api-graph-explorer.md).
- 
----
-
-### Deprecated - Conditional Access Overview Monitoring Tab to Retire
- 
-**Type:** Deprecated  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
- 
-We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18 and completing by August 1. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
- 
----
- 
-### General Availability - Manage Lifecycle Workflows with Microsoft Security Copilot in Microsoft Entra
- 
-**Type:** New feature  
-**Service category:** Lifecycle Workflows  
-**Product capability:** Identity Governance  
- 
-Now customers can manage and customize Lifecycle Workflows using natural language with Microsoft Security Copilot in Microsoft Entra. Our Lifecycle Workflows (LCW) Copilot solution provides step-by-step guidance to perform key workflow configuration and execution tasks using natural language. It allows customers to quickly get rich insights to help monitor and troubleshoot workflows for compliance. For more information, see: [Manage employee lifecycle using Microsoft Security Copilot](../security-copilot/entra-lifecycle-workflows.md).
- 
----
- 
-### General Availability - Provision custom security attributes from HR sources
- 
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Identity Governance  
- 
-With this feature, customers can automatically provision "*custom security attributes*" in Microsoft Entra ID from authoritative HR sources. Supported authoritative sources: Workday, SAP SuccessFactors and any HR system integrated using API-driven provisioning. For more information, refer to: [Provision custom security attributes from HR sources](../identity/app-provisioning/provision-custom-security-attributes.md).
- 
----
- 
-### General Availability - Conditional Access audience reporting
- 
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Access Control  
- 
-Conditional Access audience reporting in the sign-in logs lets admins view all the resources evaluated by Conditional Access as part of a sign-in event. For more information, see: [Audience reporting](../identity/conditional-access/troubleshoot-conditional-access.md#audience-reporting).
- 
----
- 
-### Public Preview - Cross-tenant synchronization (cross-cloud)
- 
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Identity Governance  
- 
-Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
- 
-- Commercial -> US Gov  
-- US Gov -> Commercial  
-- Commercial -> China  
- 
-For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
- 
----
- 
-### General Availability - Conditional Access support for all Microsoft apps
- 
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
- 
-Administrators can assign a Conditional Access policy to all cloud apps from Microsoft as long as the service principal appears in their tenant. For more information, see: [Microsoft cloud applications](../identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-cloud-applications).
- 
----
- 
-### General Availability - Two-Way Forest Trusts for Microsoft Entra Domain Services
- 
-**Type:** New feature  
-**Service category:** Microsoft Entra Domain Services  
-**Product capability:** Microsoft Entra Domain Services  
- 
-Two-Way Forest Trusts for Microsoft Entra Domain Services are now generally available. This capability allows organizations to establish trust relationships between Microsoft Entra Domain Services domains and on-premises Active Directory (AD) domains. Forest trusts can now be configured in three directions: one-way outbound (as before), one-way inbound, and bi-directional, depending on organizational needs. Forest trusts can be used to enable resource access across trusted domains in hybrid environments. This capability offers more control and flexibility over how to manage your hybrid identity environment with Microsoft Entra Domain Services. Trusts require an Enterprise or Premium SKU license. For more information, see: [How trust relationships work for forests in Active Directory](../identity/domain-services/concepts-forest-trust.md).
- 
----
-
-### General Availability - Certificate Authority (CA) Trust Store
- 
-**Type:** New feature  
-**Service category:** Authentications (Login)   
-**Product capability:** User Authentication  
- 
-The new PKI-based CA Trust Store replaces the legacy flat-list model with a more robust structure and no limitations on the size or the number of CAs. It supports bulk PKI uploads, CRL updates, issuer hints, and prioritization of the new store over the legacy one. Sign-in logs now indicate which store was used, helping admins phase out legacy configurations. For more information, see: [How to configure Microsoft Entra certificate-based authentication](../identity/authentication/how-to-certificate-based-authentication.md).
- 
----
-
-### General Availability - Certificate Revocation List (CRL) Fail Safe
- 
-**Type:** New feature  
-**Service category:** Authentications (Login)   
-**Product capability:** User Authentication  
-
-CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA does not have a Certificate Revocation List (CRL) configured. This closes a critical security gap where certificates could previously be accepted without revocation validation. Admins can enable this at the tenant level and configure exceptions for specific CAs as needed. For more information, see: [Understanding CRL validation](../identity/authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas).
- 
----
-
-### Public Preview - Certificate Authority (CA) Scoping
- 
-**Type:** New feature  
-**Service category:** Authentications (Login)   
-**Product capability:** User Authentication 
- 
-CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
- 
----
-

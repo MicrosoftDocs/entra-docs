@@ -2,8 +2,6 @@
 title: Security guidance - Protect tenants and isolate production systems
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect tenants and isolate production systems.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -70,6 +68,9 @@ Even smaller organizations can protect their environments by implementing strict
 
 ### All entitlement management assignment policies that apply to external users require connected organizations 
 [!INCLUDE [21875](../includes/secure-recommendations/21875.md)]
+
+### All entitlement management assignment policies that apply to external users require approval
+[!INCLUDE [21879](../includes/secure-recommendations/21879.md)]
 
 ### All entitlement management packages that apply to guests have expirations or access reviews configured in their assignment policies
 [!INCLUDE [21929](../includes/secure-recommendations/21929.md)]
