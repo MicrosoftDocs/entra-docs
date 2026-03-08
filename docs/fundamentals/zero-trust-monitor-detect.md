@@ -2,8 +2,6 @@
 title: Security guidance - Monitor and detect cyberthreats
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to monitor and detect threats.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -62,3 +60,12 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 
 ### All Microsoft Entra recommendations are addressed
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+### Network access activity is visible to security operations for threat detection and response
+[!INCLUDE [25419](../includes/secure-recommendations/25419.md)]
+
+### Network access logs are retained for security analysis and compliance requirements
+[!INCLUDE [25420](../includes/secure-recommendations/25420.md)]
+
+### Global Secure Access deployment logs are populated and reviewed
+[!INCLUDE [25422](../includes/secure-recommendations/25422.md)]

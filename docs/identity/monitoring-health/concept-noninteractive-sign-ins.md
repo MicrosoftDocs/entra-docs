@@ -1,13 +1,8 @@
 ---
 title: Non-interactive sign-in logs
 description: Learn about the type of activity captured in the non-interactive sign-in logs in Microsoft Entra monitoring and health.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
-ms.topic: article
-ms.subservice: monitoring-health
+ms.topic: concept-article
 ms.date: 02/09/2026
-ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the non-interactive sign-in logs so I can better monitor the health of my tenant.

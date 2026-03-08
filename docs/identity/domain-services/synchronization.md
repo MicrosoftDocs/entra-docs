@@ -4,7 +4,7 @@ description: Learn how the synchronization process works between Microsoft Entra
 
 ms.assetid: 57cbf436-fc1d-4bab-b991-7d25b6e987ef
 ms.custom: has-azure-ad-ps-ref
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/19/2025
 ---
 # How objects and credentials are synchronized in a Microsoft Entra Domain Services managed domain

@@ -44,7 +44,7 @@ The following steps help create a Conditional Access policy to require multifact
    1. **For multiple controls** select **Require one of the selected controls**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

@@ -233,7 +233,7 @@ The following example demonstrates a callback payload when an error occurred:
       "message":"issuance_service_error”, 
     } 
 } 
-``` 
+```
 
 ## Next steps
 

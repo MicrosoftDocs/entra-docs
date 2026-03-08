@@ -22,7 +22,7 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Get started with Global Secure Access
-            url: how-to-get-started-with-global-secure-access.md
+            url: quickstart-access-admin-center.md
           - text: Install the Windows client
             url: how-to-install-windows-client.md
 

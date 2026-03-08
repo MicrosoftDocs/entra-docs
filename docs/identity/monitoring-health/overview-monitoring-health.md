@@ -2,13 +2,8 @@
 title: What is Microsoft Entra monitoring and health?
 description: Learn about the features and capabilities of the logs and reports in Microsoft Entra monitoring and health.
 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
-ms.subservice: monitoring-health
 ms.date: 11/07/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 ms.custom: agent-id-ignite
 

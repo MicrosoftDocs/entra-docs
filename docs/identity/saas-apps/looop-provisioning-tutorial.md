@@ -2,9 +2,6 @@
 title: Configure Looop for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Looop.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -46,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 Before configuring Looop for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from Looop.
 
-1. Sign in to your [Looop Admin Console](https://app.looop.co/#/login) and select **Account**. Under **Account Settings**,  select **Authentication**.
+1. Sign in to your Looop Admin Console and select **Account**. Under **Account Settings**,  select **Authentication**.
 
 	![Looop Admin](media/looop-provisioning-tutorial/admin.png)
 

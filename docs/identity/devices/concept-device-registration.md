@@ -2,13 +2,9 @@
 title: What are Microsoft Entra registered devices?
 description: Learn how Microsoft Entra registered devices provide your users with support for bring your own device (BYOD) or mobile device scenarios.
 
-ms.service: entra-id
-ms.subservice: devices
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ---
 

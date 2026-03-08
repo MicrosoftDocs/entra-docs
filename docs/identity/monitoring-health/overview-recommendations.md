@@ -1,13 +1,8 @@
 ---
 title: What are Microsoft Entra recommendations?
 description: Provides a general overview of Microsoft Entra recommendations so you can keep your tenant secure and healthy.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: overview
-ms.subservice: monitoring-health
 ms.date: 02/02/2026
-ms.author: sarahlipsey
 ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.

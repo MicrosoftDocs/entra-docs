@@ -2,15 +2,10 @@
 title: 'Common hybrid scenarios with Microsoft Entra ID'
 description: This article describes the common scenarios for using Microsoft Entra Cloud Sync and Microsoft Entra Connect.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: jomondi
-
 ---
 
 # Hybrid scenarios 
