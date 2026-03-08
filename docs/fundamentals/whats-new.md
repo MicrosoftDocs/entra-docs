@@ -1176,16 +1176,3 @@ For more information, see: [How to customize Global Secure Access block page (pr
 
 ---
 
-## August 2025
-
-### Public Preview - New Bulk Operations Feature
-
-**Type:** New feature  
-**Service category:** Directory Management  
-**Product capability:** End User Experiences  
-
-The new Bulk Operations in Microsoft Entra ID offer an enhanced experience for managing **Groups**, **Devices**, and **User Export**, enabling bulk actions such as create, update, and delete. This streamlined service improves performance, reduces timeouts, and removes scaling limitations especially for large tenants.  
-
-**Note:** Currently, the new Bulk Operations service supports **Groups**, **Devices**, and **User Export** only. Support for additional entities, such as **Enterprise Applications**, is coming soon. For more information, see: [Bulk operations in Microsoft Entra ID (Preview)](../fundamentals/bulk-operations.md).
-
----
