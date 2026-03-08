@@ -207,7 +207,6 @@ By end of March Microsoft Entra ID Governance approvers can now revoke access to
 
 ---
 
-
 ## January 2026
 
 ### General Availability - Ability to convert Source of Authority of synced on-premises AD users to cloud users is now available 
@@ -299,10 +298,7 @@ Microsoft Entra Conditional Access is strengthening how policies that target All
 
 ---
 
-
-
 ## December 2025
-
 
 ### General Availability - Modernizing Microsoft Entra ID auth flows with WebView2 in Windows 11
 
@@ -362,7 +358,6 @@ Request: `PATCH https://graph.microsoft.com/beta/users/<UserId>`
 
 Body:
 
-
 ```
 {
 onPremisesObjectIdentifier: null
@@ -416,7 +411,6 @@ You can now enable the B2B guest access feature for your guest users with the Gl
 Microsoft Security Copilot in Microsoft Entra now supports data exploration when prompts return datasets with more than 10 items. This feature is in preview and available for select Microsoft Entra scenarios. From the Copilot chat response, select **Open list** to access a comprehensive data grid. This allows you to explore large datasets with complete and accurate results, enabling more efficient decision-making. Each data grid displays the underlying Microsoft Graph URL, helping you verify query accuracy and build confidence in the results. For more information, see: [Microsoft Security Copilot scenarios in Microsoft Entra overview](../security-copilot/entra-security-scenarios.md).
 
 ---
-
 
 ## November 2025
 
@@ -637,7 +631,6 @@ Microsoft Entra ID now supports synced passkeys stored in native and third‑par
 
 ---
 
-
 ### Public Preview - Unified Entra App Gallery
 
 **Type:** New feature  
@@ -770,7 +763,6 @@ The legacy “*Revoke MFA session*s” action only applies to per-user MFA enfor
 Admins should update workflows and guidance to use “*Revoke sessions*” instead of “*Revoke MFA sessions*”. The “*Revoke MFA sessions*” option will be removed from the portal after this change.
 
 ---
-
 
 ### Public Preview - Delegated Workflow Management in Lifecycle Workflows
 
@@ -1186,24 +1178,6 @@ For more information, see: [How to customize Global Secure Access block page (pr
 
 ## August 2025
 
-### General Availability - Microsoft Entra ID Protection: Improved detection quality
-
-**Type:** New feature      
-**Service category:** Identity Protection     
-**Product capability:** Identity Security & Protection  
-
-Improvements have been made to Microsoft Entra ID Protection detections to increase detection quality by improving precision and reducing detection noise. This quarter’s improvements apply to the following detections:
-
-- [Anomalous token](../id-protection/concept-identity-protection-risks.md#anomalous-token-sign-in)
-- [Anonymous IP address](../id-protection/concept-identity-protection-risks.md#anonymous-ip-address)
-- [Impossible travel](../id-protection/concept-identity-protection-risks.md#impossible-travel)
-- [Password spray](../id-protection/concept-identity-protection-risks.md#password-spray)
-- [Unfamiliar sign-in properties](../id-protection/concept-identity-protection-risks.md#unfamiliar-sign-in-properties)
-
-Furthermore, changes have been made to better adjust the risk detections to passwordless scenarios.
-
----
-
 ### Public preview - Lifecycle Workflows task now supports setting Access Package assignments expiration
 
 **Type:** New feature      
@@ -1301,7 +1275,6 @@ QR code authentication in Microsoft Entra ID is now generally available, offerin
 **Product capability:** End User Experiences  
 
 The new Bulk Operations in Microsoft Entra ID offer an enhanced experience for managing **Groups**, **Devices**, and **User Export**, enabling bulk actions such as create, update, and delete. This streamlined service improves performance, reduces timeouts, and removes scaling limitations especially for large tenants.  
-
 
 **Note:** Currently, the new Bulk Operations service supports **Groups**, **Devices**, and **User Export** only. Support for additional entities, such as **Enterprise Applications**, is coming soon. For more information, see: [Bulk operations in Microsoft Entra ID (Preview)](../fundamentals/bulk-operations.md).
 
