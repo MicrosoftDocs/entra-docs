@@ -31,7 +31,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 ## Requirements
 
 - Your organization must have [Passkey profiles](how-to-authentication-passkey-profiles.md) enabled.
-- A Microsoft Entra ID tenant with permissions to manage authentication methods.
+- An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
 - The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
 
   Passkey provider | Windows | macOS | iOS | Android
