@@ -1178,16 +1178,6 @@ For more information, see: [How to customize Global Secure Access block page (pr
 
 ## August 2025
 
-### General Availability - Enabling native authentication JavaScript SDK for sign-in, sign-up and sign-out experiences in Microsoft Entra External ID.
-
-**Type:** New feature  
-**Service category:** B2C - Consumer Identity Management  
-**Product capability:** Developer Experience  
-
-Build sign-in, sign-up, and sign-out experiences for single page applications in Microsoft Entra External ID with the new native authentication [JavaScript SDK](../identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in.md).
-
----
-
 ### General Availability - QR + PIN Simple Auth method for FLW
 
 **Type:** New feature  
