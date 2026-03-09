@@ -27,7 +27,7 @@ When you add a Microsoft Entra ID identity provider to your user flow's sign-in 
 
 ## Register the external tenant in your Microsoft Entra ID tenant
 
-To federate users from your Microsoft Entra ID tenant, first register the external tenant as an application in the Microsoft Entra ID tenant that acts as the identity provider. For general steps, see [Register an application](/entra/identity-platform/quickstart-register-app).
+To federate users from your Microsoft Entra ID tenant, first register the external tenant as an application in the Microsoft Entra ID tenant that acts as the identity provider. 
 
 When you register the application, use the following federation-specific settings:
 
@@ -38,11 +38,15 @@ When you register the application, use the following federation-specific setting
 
    `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
 
-   Replace `<tenant-subdomain>` and `<tenant-ID>` with the values from your external tenant.
+   Replace `<tenant-subdomain>` and `<tenant-ID>` with the values from your external tenant. If your external tenant uses a custom domain, add the redirect URI with the custom domain as well, for example:
+
+   `https://<tenant-subdomain>.ciamlogin.com/<custom-domain>/federation/oauth2`
+
+For step by step guidance, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
 After the app is registered, complete the following configuration:
 
-1. Add a [client secret](/entra/identity-platform/how-to-add-credentials) and record the secret value (not the secret ID). You need this value when you configure the identity provider in your external tenant.
+1. Add a [client secret](/entra/identity-platform/how-to-add-credentials&tabs=client-secret) and record the secret value (not the secret ID). You need this value when you configure the identity provider in your external tenant.
 1. Under **Token configuration**, add the optional claims you want the identity provider to send.
 1. Under **API permissions**, add Microsoft Graph [delegated permissions](/entra/identity-platform/howto-update-permissions): `email`, `openid`, `profile`, and `User.Read`. Then grant admin consent for the identity provider tenant.
 1. Under **Overview**, record the **Application (client) ID** and **Directory (tenant) ID**. You need these values to configure federation in the external tenant.
@@ -62,35 +66,11 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 | **Scope** | `openid profile` |
 | **Response type** | `code` |
 
-### Use private_key_jwt authentication (recommended)
-
-For improved security, Microsoft recommends using `private_key_jwt` instead of a client secret. With `private_key_jwt`, the external tenant authenticates to the identity provider's token endpoint by sending a signed JWT client assertion instead of a client secret. The private key never leaves your environment.
-
-To use `private_key_jwt`:
-
-1. In the Microsoft Entra ID tenant, go to the app registration you created for federation.
-1. Select **Certificates & secrets** > **Certificates** > **Upload certificate**. Upload a public key certificate and record the key ID (`kid`).
-1. Go to **Manifest** and ensure the app accepts `private_key_jwt` as a token endpoint authentication method.
-1. Verify that the identity provider's OIDC discovery document exposes a `jwks_uri` that returns a JWKS containing the signing keys.
-1. When you configure the custom OIDC identity provider in the external tenant, select `private_key_jwt` for **Client Authentication** instead of `client_secret`.
-
-The signed JWT client assertion includes the following claims:
-
-| Claim | Value |
-|-------|-------|
-| `iss` | Application (client) ID |
-| `sub` | Application (client) ID |
-| `aud` | Identity provider token endpoint URL |
-| `exp` | Short lifetime expiration |
-| `jti` | Unique identifier |
-
-The JWT header includes `alg` (for example RS256), `typ=JWT`, and the `kid` of the signing key.
-
 ## Add the identity provider to a user flow
 
 After you set up the identity provider, add it to a user flow so it appears on the sign-in page. Follow the steps in [Add OIDC identity provider to a user flow](how-to-custom-oidc-federation-customers.md#add-oidc-identity-provider-to-a-user-flow), selecting the Microsoft Entra ID OIDC identity provider you configured.
 
-When configuring the user flow, under **User attributes**, select the attributes you want to collect during sign-up, for example **Display Name**, **Given Name**, and **Surname**.
+When configuring the user flow, under **User attributes**, select the attributes you want to collect during sign-up, for example **Display Name**, **Given Name**, and **Surname**. Configure [claims mapping](reference-oidc-claims-mapping-customers.md) as needed so the identity provider's subject, email, and profile attributes map to the local account attributes in the external tenant.
 
 ## Test the user flow
 
