@@ -73,7 +73,7 @@ To create a catalog:
 1. If you want to allow users in external directories from connected organizations to be able to request access packages in this catalog, set **Enabled for external users** to **Yes**. The access packages must also have a policy allowing users from connected organizations to request. If the access packages in this catalog are intended only for users already in the directory, then set **Enabled for external users** to **No**.
 
     > [!NOTE]
-    > This setting controls whether external users can **request** access packages through self-service. Administrators can [directly assign](entitlement-management-access-package-assignments.md) external users to access packages regardless of this setting.
+    > This setting controls whether external users can **request** access packages through self-service. This setting isn't required for administrators to [directly assign](entitlement-management-access-package-assignments.md) external users to an access package, which is controlled by the access package's policy.
 
     ![Screenshot that shows the New catalog pane.](./media/entitlement-management-shared/new-catalog.png)
 
