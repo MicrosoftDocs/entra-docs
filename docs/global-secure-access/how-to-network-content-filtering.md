@@ -2,7 +2,7 @@
 title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 03/06/2026
+ms.date: 03/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: ZaherButt
@@ -24,6 +24,9 @@ The network content filtering solution brings together Microsoft Purview's data 
 
 This article explains how to create a file policy to filter internet traffic flowing through Global Secure Access.
 
+> [!NOTE]
+> Basic file policy detects the file MIME type and enforces the **Allow** or **Block** action in Global Secure Access. Microsoft Purview is only involved when you choose **Scan with Purview**.
+
 > [!IMPORTANT]
 > The **Scan with Purview** action in file policies is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -37,7 +40,7 @@ Network content filtering supports the following key scenarios and outcomes for 
     - Microsoft Purview sensitivity labels
     - Sensitive content in the file
     - The user's risk level
-- You can generate Data Loss Prevention (DLP) admin alerts for rule matches.
+- When you use **Scan with Purview**, you can generate Data Loss Prevention (DLP) admin alerts for rule matches.
 
 > [!IMPORTANT]
 > Network content filtering supports only files over HTTP/1.1. It doesn't support network content filtering for text.
@@ -99,7 +102,9 @@ To configure a file policy in Global Secure Access, complete the following steps
     1. For **Matching conditions**, select the appropriate **Activities** and **Content types**.
         :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add File Rule page showing the Matching conditions section with Activities set to Download and Upload, and the Content types dropdown expanded with file type options." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
     1. Select **+ Add destination** and configure the destinations.
-        :::image type="content" source="media/how-to-network-content-filtering/file-rule-destinations.png" alt-text="Screenshot of the Add File Rule page showing the Destinations section and the Select web categories panel with category options." lightbox="media/how-to-network-content-filtering/file-rule-destinations.png":::
+        - For an application-specific control, add the exact upload URLs and related FQDNs that the app uses instead of broad categories.
+        - Use browser developer tools or network traffic analysis to identify the endpoints used during file upload.
+        :::image type="content" source="media/how-to-network-content-filtering/file-rule-destinations.png" alt-text="Screenshot of the Add File Rule page showing the Destinations section and the destination selection panel." lightbox="media/how-to-network-content-filtering/file-rule-destinations.png":::
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
     :::image type="content" source="media/how-to-network-content-filtering/file-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the file policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/file-policy-review-tab.png":::
@@ -204,7 +209,7 @@ This example walks through an end-to-end test scenario that blocks a PDF file co
 
 #### Step 1: Configure the file policy destinations
 
-When you create or edit your file policy rule, add the following destinations to match ChatGPT file upload traffic:
+When you create or edit your file policy rule, don't add only `chatgpt.com`. Add the specific URLs and FQDNs that match ChatGPT file upload traffic:
 
 - `https://chatgpt.com/backend-api/files` (add as URL)
 - `https://chatgpt.com/backend-api/files/process_upload_stream` (add as URL)
@@ -238,6 +243,7 @@ For more information about Purview DLP policies for network traffic, see [Learn 
 1. In ChatGPT, attempt to upload the test PDF file.
 1. Verify that the upload is blocked. ChatGPT displays an error message because Global Secure Access prevented the file transfer.
 1. To confirm the block, check the traffic logs in the Microsoft Entra admin center under **Global Secure Access** > **Monitor** > **Traffic logs**.
+1. If you use **Scan with Purview**, also review the matching alert or activity details in Microsoft Purview. For more information, see [Get started with the data loss prevention Alerts dashboard](/purview/dlp-alerts-dashboard-get-started) and [Get started with activity explorer](/purview/data-classification-activity-explorer).
 
 ## Known limitations
 
@@ -250,14 +256,29 @@ For more information about Purview DLP policies for network traffic, see [Learn 
 
 ## Monitoring and logging
 
+### Review Global Secure Access traffic logs
+
 To view traffic logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Select **Global Secure Access** > **Monitor** > **Traffic logs**.
+
+### Review Microsoft Purview investigation data
+
+If you use **Scan with Purview**, review the corresponding investigation data in Microsoft Purview:
+
+1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
+1. To review DLP alerts and their associated events, go to **Data loss prevention** > **Alerts**. For more information, see [Get started with the data loss prevention Alerts dashboard](/purview/dlp-alerts-dashboard-get-started).
+1. To investigate matching activities, open **Activity explorer** and filter for **Network DLP activities** or the policy, user, or app you want to review. For more information, see [Get started with activity explorer](/purview/data-classification-activity-explorer).
+
+> [!NOTE]
+> Purview alerts and Activity explorer apply when you use **Scan with Purview**. Basic file policy enforcement stays within Global Secure Access.
 
 ## Related content
 
 - [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn)
 - [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI](/purview/dlp-create-policy-ai-network-data-security)
+- [Get started with the data loss prevention Alerts dashboard](/purview/dlp-alerts-dashboard-get-started)
+- [Get started with activity explorer](/purview/data-classification-activity-explorer)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)
