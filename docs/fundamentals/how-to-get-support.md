@@ -102,7 +102,7 @@ Online support requests can be created from several places in the admin center:
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs).
 - **Support is available online and by phone for Microsoft paid and trial subscriptions**
     - Support is provided for global technical, presales, billing, and subscription issues.
-    - Phone support and online billing support are available in additional languages.
+    - Phone support and online billing support are available in more languages.
 - Explore the [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario.
 - Microsoft customers can create and manage support requests in the Azure portal and the Microsoft Entra admin center.
 
