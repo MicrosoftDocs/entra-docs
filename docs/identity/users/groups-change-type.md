@@ -1,13 +1,8 @@
 ---
 title: Change Static Groups to Dynamic Membership Groups
 description: Learn how to convert existing membership groups from static to dynamic by using either the Azure portal or PowerShell cmdlets.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 07/10/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
@@ -47,11 +42,11 @@ Creating dynamic membership groups eliminates the management overhead of adding 
 
    1. For **Membership type**, select **Dynamic User**. In the dialog that explains the changes to the dynamic membership groups, select **Yes** to continue.
 
-      :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="Screenshot of selecting a membership type of dynamic user.":::
+      :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="Screenshot of selecting a membership type of dynamic user." lightbox="./media/groups-change-type/select-group-to-convert.png":::
   
    1. Select **Add dynamic query**, and then provide the rule.
   
-      :::image type="content" source="./media/groups-change-type/enter-rule.png" alt-text="Screenshot of entering a rule for a dynamic group.":::
+      :::image type="content" source="./media/groups-change-type/enter-rule.png" alt-text="Screenshot of entering a rule for a dynamic group." lightbox="./media/groups-change-type/enter-rule.png":::
   
 1. After you create the rule, select **Add query**.
 

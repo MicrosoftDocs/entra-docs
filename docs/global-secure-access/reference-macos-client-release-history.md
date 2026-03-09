@@ -1,12 +1,10 @@
 ---
 title: Global Secure Access Client for macOS Release Notes
 description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
-ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/25/2025
+ms.date: 02/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 
 
@@ -22,6 +20,15 @@ You can download the current version of the Global Secure Access client from the
 1. Select the **macOS** tab.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.25111702
+Released for download on February 5, 2026.
+### Functional changes
+- Supports Intelligent Local Access (preview).
+- Supports contacting Private DNS only when the Private Access channel is active.
+### Other changes
+- Memory management improvements
+- Miscellaneous bug fixes and improvements.
 
 ## Version 1.1.25090800
 Released for download on November 24, 2025.
@@ -47,7 +54,7 @@ Released for download on July 29, 2025.
 - First version in general availability.
 - Bug fix: Provides better support for large forwarding profiles.
 - Supports log collection with a script.
-- Increases client's log file size to allow for more comprehensive logging.
+- Increases the client's log file size to allow for more comprehensive logging.
 ### Other changes
 - Bug fix: Implements a workaround for Dynamic Host Configuration Protocol (DHCP) failures seen in macOS 15.4 and later because of a change in macOS.
 - Bug fix: Avoids repeated, unnecessary certificate signing requests.

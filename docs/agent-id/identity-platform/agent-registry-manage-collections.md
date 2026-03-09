@@ -3,9 +3,7 @@ title: Manage Collections in Microsoft Entra Agent Registry
 description: Learn how to navigate, create, and manage agent collections in Microsoft Entra Agent Registry.
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera
 ms.date: 11/07/2025
-ms.service: entra-id
 ms.topic: how-to
 ms.reviewer: jadedsouza
 #customer intent: As an IT administrator, I want to create and manage agent collections so that I can organize my agents into logical groups and apply consistent policies across them.

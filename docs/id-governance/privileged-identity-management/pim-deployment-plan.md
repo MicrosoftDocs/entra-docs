@@ -1,13 +1,8 @@
 ---
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
-ms.subservice: privileged-identity-management
 ms.topic: how-to
 ms.date: 04/30/2025
-ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
 ---
@@ -68,7 +63,7 @@ You can assign the following to these roles or groups:
 You assign users the role with the [least privileges necessary to perform their tasks](~/identity/role-based-access-control/delegate-by-task.md). This practice minimizes the number of Global Administrators and instead uses specific administrator roles for certain scenarios.
 
 > [!NOTE] 
-> Microsoft has few Global Administrators. Learn more at [how Microsoft uses Privileged Identity Management](https://www.microsoft.com/itshowcase/Article/Content/887/Using-Azure-AD-Privileged-Identity-Management-for-elevated-access).
+> Microsoft has few Global Administrators. Learn more at [how Microsoft uses Privileged Identity Management](https://www.microsoft.com/insidetrack/blog/improving-security-by-protecting-elevated-privilege-accounts-at-microsoft/).
 
 ### Type of assignments 
 

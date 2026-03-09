@@ -2,12 +2,8 @@
 metadata:
   title: Microsoft Entra application proxy frequently asked questions
   description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.
-  author: kenwith
-  ms.service: entra-id
-  ms.subservice: app-proxy
   ms.topic: faq
   ms.date: 12/29/2025
-  ms.author: kenwith
   ms.reviewer: ashishj
   ai-usage: ai-assisted
 title: Microsoft Entra application proxy frequently asked questions
@@ -80,6 +76,14 @@ sections:
 
   - name: Application configuration
     questions:
+      - question: |
+         Do I need to manage or rotate client secrets when deploying Application Proxy apps?
+        answer: |
+              No. Application Proxy apps no longer rely on client secrets (CWAP_AuthSecret). For apps using Microsoft Entra ID preauthentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, doesn't expire, and requires no manual rotation or maintenance.
+              Applications configured with passthrough preauthentication or those using access tokens don't require Federated Identity Credentials.
+              You can safely ignore any existing CWAP secrets in the app registration and remove old or expired secrets.
+              For more information, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
+
       - question: |
          Can I use the domain suffixes `[tenant name].onmicrosoft.com` or `[tenant name].mail.onmicrosoft.com` in the external URL?
         answer: |

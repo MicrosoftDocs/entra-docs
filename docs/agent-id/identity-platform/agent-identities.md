@@ -3,8 +3,6 @@ title: Overview of agent identities in Microsoft Entra
 description: Learn about agent identities in Microsoft Entra ID, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -22,9 +20,7 @@ Agent identities can be used to:
 - Receive incoming access tokens issued by Microsoft Entra ID. The audience of the access token is the agent identity.
 - Request user tokens from Microsoft Entra ID for an authenticated user. The subject of the token is a user, while the actor is the agent identity.
 
-## Prerequisites
-
-[Agent identity blueprints](agent-blueprint.md)
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
 ## Anatomy of an agent identity
 

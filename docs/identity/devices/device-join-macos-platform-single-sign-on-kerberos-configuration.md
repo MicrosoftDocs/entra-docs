@@ -1,8 +1,6 @@
 ---
 title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO
 description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2024
 ms.author: cwerner
@@ -227,7 +225,7 @@ Save the configuration using a text editor with the *mobileconfig* file extensio
 
 ## Intune configuration steps
 
-If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#Kerberos SSO MDM profile configuration for on-premises Active Directory) about replacing **contoso.com** values with the proper values for your organization.
+If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [Previous instructions](#kerberos-sso-mdm-profile-configuration-for-microsoft-entra-id-cloud-kerberos) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Devices** > **Configuration** > **Create** > **New policy**.

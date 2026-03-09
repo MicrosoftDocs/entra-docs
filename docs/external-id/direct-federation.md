@@ -1,12 +1,8 @@
 ---
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/07/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
@@ -22,6 +18,10 @@ Your Microsoft Entra tenant can be directly federated with external organization
 
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
 - A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
+
+> [!NOTE]
+> The Issuer value for the IdP must be a valid URI following RFC 3986 format (e.g., https://testdev.example.com or http://www.example.com/exk10l6w90DHM0yi). Single-word or non-URI values (e.g., testdev) are not supported and will be rejected by the portal.
+This aligns with Microsoft Entra ID's secure identifier patterns, as documented in [Restrictions on identifier URIs](~/identity-platform/identifier-uri-restrictions.md). For SAML IdPs, the Issuer must uniquely identify the provider as a URI, per SAML 2.0 standards and [Entra validation rules](~/identity/hybrid/connect/how-to-connect-fed-saml-idp.md#required-attributes).
 
 ## How to configure SAML/WS-Fed IdP federation
 

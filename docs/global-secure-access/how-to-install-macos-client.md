@@ -1,12 +1,10 @@
 ---
 title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
-ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/30/2025
+ms.date: 02/21/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization’s network traffic is protected.
@@ -44,7 +42,24 @@ Use the following command for silent installation.
 
 The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components with mobile device management.
 
+### Deploy with Microsoft Intune
+To deploy the Global Secure Access client .pkg through Microsoft Intune as a managed app:
+
+1. Download the GlobalSecureAccessClient.pkg file from the Microsoft Entra admin center.
+1. In the [Microsoft Intune admin center](https://intune.microsoft.com), select **Apps** > **All Apps** > **Create**.
+1. In the **Select app type** pane, under **Other** app types, select **macOS app (PKG)** and select **Select**.
+1. On the **App package file** tab, select **Select app package file**, browse to the GlobalSecureAccessClient.pkg file, and select **OK**.
+1. On the **App information** tab, fill in the required details and select **Next**.
+1. On the **Requirements** tab, set the minimum operating system to **macOS 13.0** and select **Next**.
+1. On the **Detection rules** tab, review the **Included apps** list to verify the Global Secure Access client app is detected correctly and select **Next**.
+1. On the **Assignments** tab, assign the app to the appropriate device or user groups and select **Next**.
+1. Review the configuration and select **Create**.
+
 ### Allow system extensions through mobile device management (MDM)
+
+> [!IMPORTANT]
+> Previous versions of these instructions referenced the deprecated **Extensions** profile type. If your organization previously deployed system extensions using the **Extensions** profile, migrate to the **Allowed System Extensions** setting in the **Settings catalog** as described in the following steps.
+
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.

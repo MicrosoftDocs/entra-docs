@@ -1,13 +1,9 @@
 ---
 title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
 ms.date: 08/13/2025
 ai-usage: ai-assisted
-ms.service: global-secure-access
 ms.custom: sfi-ga-nochange
 ---
 
@@ -66,5 +62,5 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 
 ## Next steps
-- [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
+- [Get started with Global Secure Access](quickstart-access-admin-center.md)
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)

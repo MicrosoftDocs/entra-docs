@@ -3,8 +3,6 @@ title: "Microsoft Entra Ignite 2025: Key Announcements and Updates"
 description: Get the latest Microsoft Entra release notes, including updates on authentication, governance, and AI-powered identity protection for modern enterprises.
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 11/10/2025
 ms.author: joflore

@@ -2,7 +2,6 @@
 title: Microsoft Entra External ID deployment guide for security operations
 description: Learn about edge protection, domains, subscriptions, consumer app security, and fraud tactics in security operations for Microsoft Entra External ID.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 11/11/2025

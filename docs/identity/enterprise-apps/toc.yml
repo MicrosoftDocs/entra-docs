@@ -291,8 +291,8 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
-      - name: Deactivate an enterprise application
-        href: deactivate-application-portal.md
+      - name: Deactivate an app registration
+        href: deactivate-app-registration.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application

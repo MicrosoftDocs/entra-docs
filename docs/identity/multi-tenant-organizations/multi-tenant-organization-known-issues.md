@@ -1,15 +1,11 @@
 ---
 title: Limitations in multitenant organizations
 description: Learn about the limitations when you work with multitenant organizations in Microsoft Entra ID.
-author: kenwith
-manager: dougeby
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
 ms.date: 11/21/2025
-ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # Limitations in multitenant organizations

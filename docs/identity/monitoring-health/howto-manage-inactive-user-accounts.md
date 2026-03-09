@@ -1,13 +1,8 @@
 ---
 title: How to manage inactive user accounts
 description: Learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete using the Microsoft Entra admin center and Microsoft Graph.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 02/21/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete.

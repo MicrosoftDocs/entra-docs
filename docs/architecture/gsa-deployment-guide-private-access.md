@@ -2,12 +2,9 @@
 title: Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access
 description: Learn how to deploy Microsoft Global Secure Access for Microsoft Entra Private Access
 customer intent: As a Microsoft Partner, I want to deploy Microsoft Entra Private Access as a Proof of Concept in my production or test environment.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/06/2025
-ms.author: jricketts
 ---
 # Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access
 

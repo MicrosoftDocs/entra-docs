@@ -1,14 +1,10 @@
 ---
 title: Emergency rotation of the AD FS certificates
 description: This article explains how to revoke and update AD FS certificates immediately.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 09/18/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ---
 
 # Emergency rotation of the AD FS certificates

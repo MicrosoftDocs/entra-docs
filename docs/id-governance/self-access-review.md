@@ -1,14 +1,10 @@
 ---
 title: Review your access to resources in access reviews
 description: Learn how to review your own access to resources in access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 ---
 
