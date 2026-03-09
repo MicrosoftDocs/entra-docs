@@ -229,13 +229,7 @@ Body
 
 ### Create a new group in an administrative unit
 
-To create a new group directly in an administrative unit, use the following request. To add an existing group instead, see [Add groups to an administrative unit](#add-groups-to-an-administrative-unit) earlier in this article.
-
-> [!TIP]
-> As an alternative, you can first create the group using `POST https://graph.microsoft.com/v1.0/groups` and then add it to the administrative unit using the `$ref` endpoint shown in the [Add groups to an administrative unit](#add-groups-to-an-administrative-unit) section.
-
-> [!NOTE]
-> If the administrative unit is a restricted management administrative unit (`isMemberManagementRestricted=true`), only nonunified groups that are security-enabled, not mail-enabled, and not on-premises sync-enabled are supported.
+To create a new group directly in an administrative unit, use the following request. To add an existing group instead, see **Add groups to an administrative unit** earlier in this article.
 
 Request
 
