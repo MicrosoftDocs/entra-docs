@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 Microsoft Entra ID simplifies how enterprises manage access to groups and applications in Microsoft Entra ID and other Microsoft web services with a feature called access reviews. This article covers how a designated reviewer performs an access review for members of a group or users with access to an application. If you want to review access to an access package, read [Review access of an access package in entitlement management](entitlement-management-access-reviews-review-access.md).
 
 > [!NOTE]
-> Access reviews can't currently be delegated to another reviewer. If you're looking to delegate **access package approval requests** (not access reviews) to someone else, see [Delegate approvals in My Access](delegate-approvals-my-access.md).
+> If you're looking to delegate **access package approval requests** to someone else, see [Delegate approvals in My Access](delegate-approvals-my-access.md).
 
 You can review access to groups and applications via the [My Access portal](https://myaccess.microsoft.com/) or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of group and application reviews, if the agent cannot yet help you with your assigned reviews it will guide you to the My Access portal.
 
