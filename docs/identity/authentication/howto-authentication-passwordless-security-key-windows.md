@@ -38,6 +38,8 @@ The following scenarios aren't supported:
 - When signing in or unlocking a Windows device using a security keythat contains multiple Microsoft Entra accounts, the device defaults to the last account added to the key. However, WebAuthn allows users to select the specific account they wish to use for authentication.
 - Unlocking a device running Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
 
+### Device sign-in and unlock
+
 ## Prepare devices
 
 Microsoft Entra joined devices must run Windows 10 version 1909 or higher.
