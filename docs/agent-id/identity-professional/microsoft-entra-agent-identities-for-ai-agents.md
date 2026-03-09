@@ -2,12 +2,8 @@
 title: What is Microsoft Entra Agent ID?
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra Agent ID extends comprehensive security capabilities to agents with conditional access, identity protection, identity governance, and network security controls designed specifically for agent scenarios.
-author: SHERMANOUKO
-ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/10/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
 ms.topic: concept-article
 ms.reviewer: kylemar
 
@@ -16,19 +12,17 @@ ms.reviewer: kylemar
 
 # What is Microsoft Entra Agent ID?
 
-[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
-
 As assistive and autonomous agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra Agent ID extends the comprehensive security capabilities of Microsoft Entra to agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra Agent ID and the [Microsoft agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
 
 This article explains how Microsoft Entra Agent ID extends security capabilities to agents through conditional access policies, identity protection, identity governance, network-level controls, and the agent identity platform.
 
 :::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
 
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-## Conditional access for agents
+## Conditional Access for agents
 
-Conditional access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
+Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
 
 - Enforcing adaptive access control policies for all agent patterns across assistive, autonomous, and agent user types.
 - Using real-time signals such as agent identities risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
@@ -36,19 +30,19 @@ Conditional access enables organizations to define and enforce adaptive policies
 
 For more information, see [Conditional Access](/entra/identity/conditional-access/agent-id).
 
-## Identity governance for agents
+## ID Governance for agents
 
-Microsoft Entra Agent ID brings agent IDs into similar identity governance processes as users, enabling them to be managed at scale. You can establish controls for agent access lifecycle using features such as entitlement management access packages.
+Microsoft Entra Agent ID brings agent identities into similar identity governance processes as users, enabling them to be managed at scale. You can establish controls for agent access lifecycle using features such as entitlement management access packages.
 
-- Govern agent IDs at scale, from deployment to expiration.
+- Govern agent identities at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent ID, preventing orphaned agent IDs.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
 
 For more information, see [identity governance for agents](/entra/id-governance/agent-id-governance-overview).
 
-## Identity protection for agents
+## ID Protection for agents
 
-Identity protection detects and blocks threats by flagging anomalous activities involving agents. Risk signals are used to enforce risk-based access policies and inform agent discoverability.
+Microsoft Entra ID Protection detects and blocks threats by flagging anomalous activities involving agents. Risk signals are used to enforce risk-based access policies and inform agent discoverability.
 
 - Detect agent identity risk derived from user risk and based on agents' own actions, including unusual or unauthorized activities.
 - Provide risk signals to conditional access to enforce risk-based policies and session management controls.
@@ -75,3 +69,7 @@ The Microsoft Entra Agent identity platform enables you to assign identities to 
 - Log and monitor agent activity for compliance.​
 
 For more information, see [Microsoft Entra Agent Identity Platform](../identity-platform/what-is-agent-id-platform.md)
+
+## How to get started
+
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]

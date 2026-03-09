@@ -1,15 +1,8 @@
 ---
 title: Conditional Access - Authentication strength for external users
 description: Create a custom Conditional Access policy with authentication strength to require specific multifactor authentication (MFA) methods for external users.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: inbarc
 ---
 # Require multifactor authentication strength for external users
@@ -64,7 +57,7 @@ Use the following steps to create a Conditional Access policy that applies an au
    1. Select **Require authentication strength**, then select the appropriate built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

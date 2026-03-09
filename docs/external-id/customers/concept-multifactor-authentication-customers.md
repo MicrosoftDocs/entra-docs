@@ -1,13 +1,6 @@
 ---
 title: MFA in external tenants
 description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-
-ms.subservice: external
 
 ms.topic: concept-article
 ms.date: 11/20/2024
@@ -60,7 +53,7 @@ When email one-time passcode is enabled for MFA, the user signs in with their pr
 
 ## SMS-based authentication
 
-SMS is available at additional cost for second-factor verification in external tenants. Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants.
+SMS is available at an additional cost for second-factor verification and for self-service password reset in external tenants. It isn't currently supported for first-factor authentication.
 
 When SMS is enabled for MFA, users sign in with their primary method and are prompted to verify their identity with a code sent via text. They enter their phone number and receive an SMS with the verification code.
 

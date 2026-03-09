@@ -3,8 +3,6 @@ title: Plan your Microsoft Entra device deployment
 description: Choose the Microsoft Entra device integration strategies that meet your organizational needs.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/25/2024
 ms.author: gasinh

@@ -1,13 +1,6 @@
 ---
 title: Custom authentication extensions
 description: Learn how to use custom authentication extensions in Microsoft Entra External ID. Integrate with external systems, add custom logic to authentication flows, and enhance user experiences.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/10/2025
 ms.custom: it-pro

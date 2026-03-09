@@ -2,13 +2,9 @@
 title: Agent user impersonation protocol
 description: Learn how agent identities operate with user context through agent users using the agent user impersonation protocol with OAuth 2.0 token exchange.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 10/30/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing agent user scenarios, I want to understand the agent user impersonation protocol so that I can enable agents to operate with user context and delegated permissions.
 ---

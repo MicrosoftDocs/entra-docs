@@ -2,14 +2,8 @@
 title: Troubleshoot SAML-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app configured for SAML-based single sign-on.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: troubleshooting
 ms.date: 09/07/2023
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
 

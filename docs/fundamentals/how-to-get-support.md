@@ -3,10 +3,13 @@ title: Find help and get support for Microsoft Entra
 description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra.
 author: shlipsey3
 manager: pmwongera
-ms.service: entra
 ms.topic: troubleshooting
+<<<<<<< entra-support-assistant
 ms.subservice: fundamentals
 ms.date: 03/09/2026
+=======
+ms.date: 05/23/2025
+>>>>>>> main
 ms.author: sarahlipsey
 ms.reviewer: tychusnyanga
 ---

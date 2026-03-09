@@ -2,14 +2,9 @@
 title: Troubleshoot Enterprise State Roaming in Microsoft Entra ID
 description: Provides answers to some questions IT administrators might have about settings and app data sync.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID

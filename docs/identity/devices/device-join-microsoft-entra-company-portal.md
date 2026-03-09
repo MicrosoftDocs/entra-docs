@@ -1,8 +1,6 @@
 ---
 title: Join a Mac device with Microsoft Entra ID using Company Portal
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
 ms.author: cwerner
@@ -59,6 +57,16 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 ## Platform SSO registration
 
 Now that the device is in compliance with Company Portal, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen following successful completion of [Intune MDM and Microsoft Entra Join using Company Portal](#intune-mdm-and-microsoft-entra-join-using-company-portal). Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
+
+> [!TIP]
+> If the **Registration Required** popup doesn't appear or disappears before you can interact with it:
+>
+> - **Wait approximately 10 minutes** — the popup automatically reappears after a failed or missed registration attempt.
+> - **Sign out and sign back in** to your Mac — this retriggers the registration notification.
+> - **Repair the registration** (macOS 14+) — go to **Settings** > **Users & Groups** > **Network Account Server** > **Edit** > **Repair** to restart the registration flow.
+> - If you closed the SSO authentication prompt during registration, signing out and back in restores the notification.
+>
+> For more troubleshooting steps, see [Platform SSO known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md).
 
 ### [Secure Enclave](#tab/secure-enclave)
 

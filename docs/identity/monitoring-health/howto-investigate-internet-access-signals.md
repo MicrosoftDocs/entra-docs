@@ -2,10 +2,7 @@
 title: How to investigate the internet applications blocked by Entra Internet Access policy
 description: Learn how to monitor and investigate scenarios where internet applications are blocked by Microsoft Entra Internet Access policies, using Microsoft Entra Health monitoring tools.
 author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca

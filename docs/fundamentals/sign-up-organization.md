@@ -1,13 +1,9 @@
 ---
 title: Sign Up for Microsoft Entra ID
 description: Discover how to sign up for Microsoft Entra ID and Azure. Start using enterprise cloud services today.
-author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/15/2025
-ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 # Sign up for Microsoft Entra ID

@@ -3,8 +3,6 @@ title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
 author: shlipsey3
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 12/16/2025
 ms.author: sarahlipsey
@@ -37,7 +35,10 @@ The following CSS styles become the default body and link styles for the whole p
 
 ## Microsoft Entra CSS selectors
 
-Use the following CSS selectors to configure the details of the sign-in experience. 
+Use the following CSS selectors to configure the details of the sign-in experience.
+
+>[!Note]
+>To customize internal navigation links, use the new custom CSS selector: `.ext-link`.
 
 - `.ext-background-image` - Container that includes the background image in the default lightbox template
 - `.ext-header` - Header at the top of the container
@@ -54,6 +55,9 @@ Use the following CSS selectors to configure the details of the sign-in experien
    :::image type="content" source="media/reference-company-branding-css-template/sign-in-box-title.png" alt-text="Screenshot of the sign-in box, with the portion of the box that is styled with the .ext-sign-in-box selector.":::
 
 - `.ext-subtitle` - Subtitle text
+
+- Styles for links:
+    - `.ext-link` - Internal navigation links
 
 - Styles for primary buttons:
     - `.ext-button.ext-primary` - Primary button default style

@@ -886,6 +886,8 @@
         href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
+      - name: EcoOnline Info Exchange
+        href: ecoonline-info-tutorial.md
       - name: eCornell
         href: ecornell-tutorial.md
       - name: E-days
@@ -1041,7 +1043,7 @@
         href: field-id-tutorial.md
       - name: Fidelity PlanViewer
         href: fidelity-planviewer-tutorial.md
-      - name: Fieldglass
+      - name: SAP Fieldglass
         href: fieldglass-tutorial.md
       - name: FigBytes
         href: figbytes-tutorial.md
@@ -1726,7 +1728,7 @@
       - name: Lexmark cloud services
         href: lexmark-cloud-services-tutorial.md
       - name: Lexmark cloud services oidc
-        href: lexmark-cloud-services-oidc-tutorial.md      
+        href: lexmark-cloud-services-oidc-tutorial.md
       - name: M-Files
         href: m-files-tutorial.md
       - name: Mail Luck!
@@ -3598,6 +3600,10 @@
         href: lawvu-provisioning-tutorial.md
       - name: LDAP directory
         href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: Lexmark Cloud Services (SAML) 
+        href: lexmark-cloud-services-provisioning-saml-tutorial.md
+      - name: Lexmark Cloud Services (OIDC)
+        href: lexmark-cloud-services-provisioning-oidc-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
