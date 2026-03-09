@@ -35,10 +35,11 @@ The following scenarios aren't supported:
 - S/MIME using a security key.
 - *Run as* using a security key.
 - Signing in to a server using a security key.
+### Device sign-in and unlock
+
+- OOBE sign-in with a passkey is supported. You can use Web sign-in to unlock a Windows device. For more information, see [Use Web Sign-In To Enable Passwordless Sign-In In Windows](/windows/security/identity-protection/web-sign-in).
 - When signing in or unlocking a Windows device using a security keythat contains multiple Microsoft Entra accounts, the device defaults to the last account added to the key. However, WebAuthn allows users to select the specific account they wish to use for authentication.
 - Unlocking a device running Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
-
-### Device sign-in and unlock
 
 ## Prepare devices
 
