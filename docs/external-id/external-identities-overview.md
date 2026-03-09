@@ -21,14 +21,14 @@ These scenarios fall within the scope of External ID:
 
 - If you're an organization or a developer who creates consumer apps, use External ID to quickly add authentication and customer identity and access management (CIAM) to your application. Register your app, create customized sign-in experiences, and manage your app users in a Microsoft Entra tenant in an *external* configuration. This tenant is separate from your employees and organizational resources.
 
-- If you want to enable your employees to collaborate with business partners and guests, use External ID for business-to-business (B2B) collaboration. Allow secure access to your enterprise apps through invitation or self-service sign-up. Determine the level of access that guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a *workforce* configuration.
+- If you want to enable your employees to collaborate with business partners and guests, use B2B collaboration in External ID. Allow secure access to your enterprise apps through invitation or self-service sign-up. Determine the level of access that guests have to the Microsoft Entra tenant that contains your employees and organizational resources, which is a tenant in a *workforce* configuration.
 
 External ID is a flexible solution for both:
 
 - Consumer-oriented app developers who need authentication and CIAM
 - Businesses that seek secure B2B collaboration
 
-## App access for consumers and business customers
+## Secure your apps for consumers and business customers
 
 Organizations and developers can use [External ID in an external tenant](customers/overview-customers-ciam.md) as their CIAM solution when publishing their apps to consumers and business customers.
 
@@ -46,7 +46,7 @@ With External ID, customers can sign in by using an identity that they already h
 
 For details, see the [overview of Microsoft Entra External ID in external tenants](customers/overview-customers-ciam.md).
 
-## Collaboration with business guests
+## Collaborate with business guests
 
 [External ID B2B collaboration](what-is-b2b.md) allows your workforce to collaborate with external business partners. You can invite anyone to sign in to your Microsoft Entra organization by using their own credentials so they can access the apps and resources that you want to share with them. 
 
@@ -64,7 +64,7 @@ A user object is created for business guests in the same directory that you use 
 
 You can use [cross-tenant access settings](cross-tenant-access-overview.md) to manage collaboration with other Microsoft Entra organizations and across Microsoft Azure clouds. For collaboration with non-Microsoft Entra external users and organizations, use [external collaboration settings](external-collaboration-settings-configure.md).
 
-## Workforce vs. external tenants
+## What are workforce and external tenants?
 
 A *tenant* is a dedicated and trusted instance of Microsoft Entra ID. It contains an organization's resources, including registered apps and a directory of users. There are two ways to configure a tenant, depending on how the organization intends to use the tenant and the resources that you want to manage:
 
@@ -75,7 +75,7 @@ For details, see [Workforce and external tenant configurations in Microsoft Entr
 
 <a name='comparing-external-identities-feature-sets'></a>
 
-## Comparison of External ID feature sets
+## Comparing External ID feature sets
 
 The following table compares the scenarios that you can enable with External ID.
 
@@ -111,7 +111,7 @@ You use [cross-tenant access settings](cross-tenant-access-settings-b2b-collabor
 
 For details about the resources, files, and applications that are available to users of B2B direct connect via the Teams shared channel, refer to [Chat, teams, channels, and apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
-Licensing and billing are based on monthly active users. [Learn more about the billing model for Microsoft Entra External ID](external-identities-pricing.md).  
+Licensing and billing are based on monthly active users (MAU). [Learn more about the billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
 ### Azure Active Directory B2C
 
@@ -166,7 +166,9 @@ To learn more about multitenant organizations and cross-tenant synchronization, 
 
 ## Microsoft Graph APIs
 
-All External ID features are also supported for automation through Microsoft Graph APIs, except the feature that the following table describes. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+All External ID features are also supported for automation through Microsoft Graph APIs, except the feature listed in the next section. For more information, see [Manage Microsoft Entra identity and network access by using Microsoft Graph](/graph/api/resources/identity-network-access-overview).
+
+### Capabilities not supported in Microsoft Graph
 
 | External ID feature | Supported in | Automation workarounds |
 | ---- | --- | --- |
@@ -174,7 +176,7 @@ All External ID features are also supported for automation through Microsoft Gra
 
 <a name='azure-ad-microsoft-graph-api-for-b2b-collaboration'></a>
 
-These Microsoft Graph APIs are available for Microsoft Entra B2B collaboration:
+### Microsoft Graph API for B2B collaboration
 
 - [Cross-tenant access APIs](/graph/api/resources/crosstenantaccesspolicy-overview?view=graph-rest-beta&preserve-view=true). Programmatically create the same B2B collaboration and B2B direct connect policies that are configurable in the Azure portal.
 

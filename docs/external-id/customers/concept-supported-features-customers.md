@@ -12,7 +12,7 @@ ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 
 There are two ways to configure a Microsoft Entra tenant, depending on how an organization intends to use the tenant and the resources that you want to manage:
 
-- A *workforce* tenant configuration is for your employees, internal business apps, and other organizational resources. A workforce tenant uses the business-to-business (B2B) collaboration feature in Microsoft Entra External ID for collaboration with external business partners and guests.
+- A *workforce* tenant configuration is for your employees, internal business apps, and other organizational resources. A workforce tenant uses B2B collaboration in Microsoft Entra External ID for collaboration with external business partners and guests.
 - An *external* tenant configuration is exclusively for External ID scenarios where you want to publish apps to consumers or business customers.
 
 This article gives a detailed comparison of the features and capabilities in workforce and external tenants. For more information about these tenants, see [Workforce and external tenant configurations in Microsoft Entra External ID](../tenant-configurations.md).
