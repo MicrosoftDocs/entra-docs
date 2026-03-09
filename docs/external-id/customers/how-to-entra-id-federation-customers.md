@@ -3,7 +3,8 @@ title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
 ms.date: 03/09/2026
-ms.reviewer: brozbab
+ms.author: godonnell
+author: garrodonnell
 ms.custom: it-pro
 ai-usage: ai-assisted
 
@@ -61,32 +62,19 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 | **Scope** | `openid profile` |
 | **Response type** | `code` |
 
-### Use private_key_jwt authentication (optional)
+### Use private_key_jwt authentication (recommended)
 
-Instead of a client secret, you can use `private_key_jwt` to authenticate with the identity provider's token endpoint. With this method, the external tenant signs a JWT client assertion with a private key, and the identity provider validates it using the corresponding public key.
+For improved security, Microsoft recommends using `private_key_jwt` instead of a client secret. With `private_key_jwt`, the external tenant authenticates to the identity provider's token endpoint by sending a signed JWT client assertion instead of a client secret. The private key never leaves your environment.
 
-#### Step 1: Generate and register a key pair
+To use `private_key_jwt`:
 
-1. Generate an asymmetric key pair (RSA, for example RS256).
-1. In the Microsoft Entra ID tenant (the identity provider), go to the app registration you created for federation.
-1. Select **Certificates & secrets** > **Certificates** > **Upload certificate**. Upload the public key certificate.
-1. Record the key ID (`kid`) associated with the uploaded certificate.
+1. In the Microsoft Entra ID tenant, go to the app registration you created for federation.
+1. Select **Certificates & secrets** > **Certificates** > **Upload certificate**. Upload a public key certificate and record the key ID (`kid`).
+1. Go to **Manifest** and ensure the app accepts `private_key_jwt` as a token endpoint authentication method.
+1. Verify that the identity provider's OIDC discovery document exposes a `jwks_uri` that returns a JWKS containing the signing keys.
+1. When you configure the custom OIDC identity provider in the external tenant, select `private_key_jwt` for **Client Authentication** instead of `client_secret`.
 
-#### Step 2: Configure the identity provider app for private_key_jwt
-
-1. In the identity provider's app registration, go to **Manifest**.
-1. Ensure the app accepts `private_key_jwt` as a token endpoint authentication method.
-1. Verify that the identity provider's OIDC discovery document exposes a `jwks_uri` that returns a JSON Web Key Set (JWKS) containing the signing keys used for token validation. The JWKS should include keys with `kid`, `kty`, `use=sig`, `alg` (for example RS256), and the appropriate RSA parameters.
-
-#### Step 3: Configure the external tenant to use private_key_jwt
-
-When you configure the custom OIDC identity provider in your external tenant (as described earlier in [Configure the identity provider in the external tenant](#configure-the-identity-provider-in-the-external-tenant)), select the following option instead of `client_secret`:
-
-   - **Client Authentication**: Select `private_key_jwt`.
-
-The public key must be provided in the identity provider's OIDC metadata (well-known endpoint), retrievable via the `jwks_uri` property.
-
-When the external tenant authenticates to the identity provider's token endpoint, it sends a signed JWT client assertion instead of a client secret. The assertion includes the following claims:
+The signed JWT client assertion includes the following claims:
 
 | Claim | Value |
 |-------|-------|
@@ -97,15 +85,6 @@ When the external tenant authenticates to the identity provider's token endpoint
 | `jti` | Unique identifier |
 
 The JWT header includes `alg` (for example RS256), `typ=JWT`, and the `kid` of the signing key.
-
-#### Validate the configuration
-
-Verify that:
-
-- The identity provider's OIDC discovery document exposes a valid `jwks_uri`.
-- The JWKS contains keys with `kid`, `kty`, `use=sig`, `alg`, and the appropriate key parameters.
-- The identity provider's token endpoint accepts `client_assertion_type` and `client_assertion` parameters instead of a client secret.
-- The external tenant can successfully exchange authorization codes for tokens using the `private_key_jwt` flow.
 
 ## Add the identity provider to a user flow
 
