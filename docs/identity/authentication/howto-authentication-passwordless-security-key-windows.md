@@ -29,7 +29,7 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 
 The following scenarios aren't supported:
 
-- Signing in or unlocking a Windows device with a passkey in Microsoft Authenticator.
+- Unlocking a Windows device with a passkey in Microsoft Authenticator.
 - Windows Server Active Directory Domain Services (AD DS) domain-joined (on-premises only devices) deployment.
 - Scenarios, such as RDP, VDI, and Citrix, that use a security key other than [webauthn redirection](/azure/virtual-desktop/authentication).
 - S/MIME using a security key.
