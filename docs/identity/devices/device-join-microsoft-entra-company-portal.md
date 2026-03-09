@@ -63,6 +63,7 @@ Now that the device is in compliance with Company Portal, you need to register y
 >
 > - **Wait approximately 10 minutes** — the popup automatically reappears after a failed or missed registration attempt.
 > - **Sign out and sign back in** to your Mac — this retriggers the registration notification.
+> - **Repair the registration** (macOS 14+) — go to **Settings** > **Users & Groups** > **Network Account Server** > **Edit** > **Repair** to restart the registration flow.
 > - If you closed the SSO authentication prompt during registration, signing out and back in restores the notification.
 >
 > For more troubleshooting steps, see [Platform SSO known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md).
