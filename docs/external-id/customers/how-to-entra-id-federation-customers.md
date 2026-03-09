@@ -46,7 +46,7 @@ For step by step guidance, see [Register an application](/entra/identity-platfor
 
 After the app is registered, complete the following configuration:
 
-1. Add a [client secret](/entra/identity-platform/how-to-add-credentials.md?&tabs=client-secret) and record the secret value (not the secret ID). You need this value when you configure the identity provider in your external tenant.
+1. Add a [client secret](/entra/identity-platform/how-to-add-credentials?tabs=client-secret) and record the secret value (not the secret ID). You need this value when you configure the identity provider in your external tenant.
 1. Under **Token configuration**, add the optional claims you want the identity provider to send.
 1. Under **API permissions**, add Microsoft Graph [delegated permissions](/entra/identity-platform/howto-update-permissions): `email`, `openid`, `profile`, and `User.Read`. Then grant admin consent for the identity provider tenant.
 1. Under **Overview**, record the **Application (client) ID** and **Directory (tenant) ID**. You need these values to configure federation in the external tenant.
