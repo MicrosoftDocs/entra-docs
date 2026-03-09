@@ -2,7 +2,7 @@
 title: Protect Enterprise Generative AI apps with Prompt Shield (preview)
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield."
 ms.topic: how-to
-ms.date: 02/24/2025
+ms.date: 03/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -85,7 +85,7 @@ After you create the Prompt Shield prompt policy, link it to a new or existing s
 
 To create a Conditional Access policy:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access**.
+1. Browse to **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name for your policy.
 1. Select **Users** to specify the users or groups that the policy applies to.
@@ -100,7 +100,7 @@ For more information, see [Create a Conditional Access policy targeting Global S
 The following sections list more details about the AI models that work with Prompt Shield.
 
 ### Top supported generative AI models
-Prompt Shield is preconfigured with custom extractors for the following models: ChatGPT, Claude, Cohere, Deepseek, Gemini, Grok, Meta AI, Mistral, Perplexity, Pi, and Qwen.
+Prompt Shield is preconfigured with custom extractors for the following models: ChatGPT, Claude, Cohere, Deepseek, Gemini (API-based JSON requests only), Grok, Meta AI, Mistral, Perplexity, Pi, and Qwen.
 
 ### Custom model support
 You can protect any custom JSON-based LLM or GenAI app by configuring a custom type model with a URL and JSON path.
@@ -113,7 +113,7 @@ You can protect any custom JSON-based LLM or GenAI app by configuring a custom t
 ## Known limitations
 
 - Prompt Shield currently supports only text prompts. It doesn't support files.
-- Prompt Shield supports only JSON-based generative AI apps. It doesn't support apps that use URL-based encoding, like Gemini.
+- Prompt Shield supports only JSON-based generative AI apps. It doesn't support apps that use URL-based encoding. For example, Gemini's web app uses URL-based encoding and isn't supported, but Gemini API-based JSON requests are supported through the preconfigured extractor.
 - Prompt Shield supports prompts up to 10,000 characters. Anything longer is truncated.
 
 ## Related content
