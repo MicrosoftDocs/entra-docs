@@ -3,7 +3,6 @@ title: Create a Microsoft Entra developer tenant
 description: Learn how to create a developer tenant for testing Microsoft Entra Verified ID.
 ms.topic: how-to
 ms.date: 03/09/2026
-ms.reviewer: jebley
 ai-usage: ai-assisted
 # Customer intent: As a developer, I want to learn how to create a developer Microsoft Entra account so I can test verifiable credentials.
 ---
