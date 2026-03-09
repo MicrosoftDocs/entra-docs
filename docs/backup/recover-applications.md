@@ -1,4 +1,3 @@
-<!-- source: Recovery Process for Applications that have been accidentally or maliciously edited or deleted v2.docx -->
 ---
 title: Recover application secrets using Microsoft Entra Backup
 description: Learn how to recover application secrets and credentials after accidental or malicious changes using Microsoft Entra Backup and Recovery
@@ -12,11 +11,11 @@ This article describes the steps to restore application secrets that were impact
 
 ## Preparing for recovery
 
-As part of your disaster recovery plan for applications, review your current processes for managing application secrets and secret rotation. Using best practices for managing application secrets eases recovery from accidental or malicious edits. This article assumes you're using Azure Key Vault or another secure solution for managing your application secrets. For more information, see [Best practices for protecting secrets](https://learn.microsoft.com/azure/security/fundamentals/secrets-best-practices).
+As part of your disaster recovery plan for applications, review your current processes for managing application secrets and secret rotation. Using best practices for managing application secrets eases recovery from accidental or malicious edits. This article assumes you're using Azure Key Vault or another secure solution for managing your application secrets. For more information, see [Best practices for protecting secrets](/azure/security/fundamentals/secrets-best-practices).
 
 There are currently properties on applications beyond application secrets that aren't included in Entra Backup and Recovery. Review the [Appendix](#application-and-service-principal-properties-not-supported-by-entra-backup-and-recovery) for properties that might need to be saved and manually reapplied to fully recover an application from accidental edits.
 
-If your application is hard-deleted, it can't be recovered using Entra Backup and Recovery and needs to be recreated. An application is hard-deleted after being in the soft-deleted state for 30 days, or when the hard-delete API is called directly. It's recommended to limit the ability to hard-delete objects to only highly privileged admins via a [protected action](https://learn.microsoft.com/entra/identity/role-based-access-control/protected-actions-overview#deletion-of-directory-objects), to prevent the early deletion of an application. It's also recommended to maintain a record of all registered applications and any customized settings in case you need to recreate the application. For more information about application deletion, see [Deletion and recovery of applications FAQ](https://learn.microsoft.com/entra/identity/enterprise-apps/delete-recover-faq).
+If your application is hard-deleted, it can't be recovered using Entra Backup and Recovery and needs to be recreated. An application is hard-deleted after being in the soft-deleted state for 30 days, or when the hard-delete API is called directly. It's recommended to limit the ability to hard-delete objects to only highly privileged admins via a [protected action](/entra/identity/role-based-access-control/protected-actions-overview#deletion-of-directory-objects), to prevent the early deletion of an application. It's also recommended to maintain a record of all registered applications and any customized settings in case you need to recreate the application. For more information about application deletion, see [Deletion and recovery of applications FAQ](/entra/identity/enterprise-apps/delete-recover-faq).
 
 It's recommended that you document and validate the recovery steps needed for your application, service principals, and application secrets using a nonproduction environment or test application to ensure you understand the processes needed to restore the application and its secrets after an edit or soft-deletion.
 
@@ -136,6 +135,6 @@ Using Entra Backup and Recovery, recover the applications and service principals
 
 We recommend reviewing key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 
-1. The [claims policy](https://learn.microsoft.com/entra/identity-platform/reference-claims-customization) and [home realm discovery policy](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-authentication-for-federated-users-portal?pivots=ms-powershell#create-an-hrd-policy-using-microsoft-graph-powershell) attached to the application can't be restored. You might have to configure the policies again.
+1. The [claims policy](/entra/identity-platform/reference-claims-customization) and [home realm discovery policy](/entra/identity/enterprise-apps/configure-authentication-for-federated-users-portal?pivots=ms-powershell#create-an-hrd-policy-using-microsoft-graph-powershell) attached to the application can't be restored. You might have to configure the policies again.
 1. If there are any managed identities attached to the application, they aren't restored.
 1. If you configured the application for Application Proxy, the application proxy configuration can't be restored. You need to use endpoints under **onPremisesPublishing** to recreate the Application Proxy settings.

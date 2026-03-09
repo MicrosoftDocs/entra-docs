@@ -1,4 +1,3 @@
-<!-- source: Recovering user secrets after accidental or malicious changes.docx -->
 ---
 title: Recover user authentication methods using Microsoft Entra Backup
 description: Learn how to recover user authentication methods after accidental or malicious changes using Microsoft Entra Backup and Recovery
@@ -29,12 +28,12 @@ Before recovery is needed, organizations should establish clear controls and red
 
 **Recommended practices:**
 
-- **Require MFA for all users.** Use [Conditional Access](https://learn.microsoft.com/entra/identity/conditional-access/overview), [authentication strengths](https://learn.microsoft.com/entra/identity/authentication/concept-authentication-strengths), or [Identity Protection policies](https://learn.microsoft.com/entra/id-protection/overview-identity-protection) to ensure users authenticate with strong methods rather than relying solely on passwords.
-- **Require multiple authentication methods per user.** While Microsoft Entra ID doesn't currently enforce a strict "two-method minimum," organizations should encourage users to register at least two strong methods to prevent lockouts if one method is lost or deleted. This can be reinforced through authentication strengths, [SSPR policies that require multiple methods](https://learn.microsoft.com/entra/identity/authentication/tutorial-enable-sspr#select-authentication-methods-and-registration-options), and operational checks (for example, periodic reporting using [Microsoft Graph reporting APIs](https://learn.microsoft.com/graph/api/resources/userregistrationdetails?view=graph-rest-1.0)).
-- **Favor phishing-resistant methods.** Encourage users to register FIDO2 security keys, passkeys, or Windows Hello for Business to strengthen resilience against account compromise. Microsoft's [guidance](https://learn.microsoft.com/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication) is to use synced passkeys for most end users and device-bound passkeys for higher-assurance roles.
-- **Restrict authentication method management via Entra RBAC.** Limit management of authentication methods to [Authentication Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or [Privileged Authentication Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator), assigned only to trusted, least-privileged users and elevated through [Privileged Identity Management](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure) (PIM). For helpdesk scenarios, use Authentication Administrator, which allows support staff to reset or remove authentication methods for standard users while preventing changes to privileged accounts.
-- **Protect user authentication-method registration with Conditional Access.** [Require](https://learn.microsoft.com/entra/identity/conditional-access/policy-all-users-security-info-registration) strong sign-in (for example, compliant devices or trusted networks) when users access the Security info registration portal.
-- **Use protected actions for destructive operations.** Limit the ability to permanently delete users to highly privileged administrators via [protected actions](https://learn.microsoft.com/entra/identity/role-based-access-control/protected-actions-overview).
+- **Require MFA for all users.** Use [Conditional Access](/entra/identity/conditional-access/overview), [authentication strengths](/entra/identity/authentication/concept-authentication-strengths), or [Identity Protection policies](/entra/id-protection/overview-identity-protection) to ensure users authenticate with strong methods rather than relying solely on passwords.
+- **Require multiple authentication methods per user.** While Microsoft Entra ID doesn't currently enforce a strict "two-method minimum," organizations should encourage users to register at least two strong methods to prevent lockouts if one method is lost or deleted. This can be reinforced through authentication strengths, [SSPR policies that require multiple methods](/entra/identity/authentication/tutorial-enable-sspr#select-authentication-methods-and-registration-options), and operational checks (for example, periodic reporting using [Microsoft Graph reporting APIs](/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&preserve-view=true)).
+- **Favor phishing-resistant methods.** Encourage users to register FIDO2 security keys, passkeys, or Windows Hello for Business to strengthen resilience against account compromise. Microsoft's [guidance](/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication) is to use synced passkeys for most end users and device-bound passkeys for higher-assurance roles.
+- **Restrict authentication method management via Entra RBAC.** Limit management of authentication methods to [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator), assigned only to trusted, least-privileged users and elevated through [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) (PIM). For helpdesk scenarios, use Authentication Administrator, which allows support staff to reset or remove authentication methods for standard users while preventing changes to privileged accounts.
+- **Protect user authentication-method registration with Conditional Access.** [Require](/entra/identity/conditional-access/policy-all-users-security-info-registration) strong sign-in (for example, compliant devices or trusted networks) when users access the Security info registration portal.
+- **Use protected actions for destructive operations.** Limit the ability to permanently delete users to highly privileged administrators via [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ## Determine the nature of the change
 
@@ -99,12 +98,12 @@ Most authentication methods in Microsoft Entra ID continue to function normally 
 
 Because most authentication methods are fully usable after being restored, only two credentials typically require action:
 
-1. **Set a new password for the user.** Backup and Recovery doesn't restore passwords, so [setting a new password](https://learn.microsoft.com/entra/fundamentals/users-reset-password-azure-portal) might be needed to allow the user to sign in normally after recovery.
+1. **Set a new password for the user.** Backup and Recovery doesn't restore passwords, so [setting a new password](/entra/fundamentals/users-reset-password-azure-portal) might be needed to allow the user to sign in normally after recovery.
 
    > [!NOTE]
    > If your organization enforces passwordless authentication through authentication strengths, this step might not be required.
 
-1. **Issue a new Temporary Access Pass (TAP), if needed.** TAPs are time-bound and typically expired after restore. [Generate a new TAP](https://learn.microsoft.com/entra/identity/authentication/howto-authentication-temporary-access-pass#create-a-temporary-access-pass) if the user requires it to complete sign-in or reconfigure methods.
+1. **Issue a new Temporary Access Pass (TAP), if needed.** TAPs are time-bound and typically expired after restore. [Generate a new TAP](/entra/identity/authentication/howto-authentication-temporary-access-pass#create-a-temporary-access-pass) if the user requires it to complete sign-in or reconfigure methods.
 
 In most cases, no additional re-registration is required unless specific methods were intentionally removed during recovery.
 
@@ -136,7 +135,7 @@ Once restored, proceed with removing all authentication methods. Use the **Micro
 
 **Step 3 - Set a new password for the user**
 
-Before enrolling any new authentication methods, [set a new password for the user](https://learn.microsoft.com/entra/fundamentals/users-reset-password-azure-portal) to establish a clean, trusted credential for the recovered account. Backup and Recovery doesn't restore passwords, so issuing a new one ensures the user begins from a known, administrator-issued baseline.
+Before enrolling any new authentication methods, [set a new password for the user](/entra/fundamentals/users-reset-password-azure-portal) to establish a clean, trusted credential for the recovered account. Backup and Recovery doesn't restore passwords, so issuing a new one ensures the user begins from a known, administrator-issued baseline.
 
 Reset the password in the **Microsoft Entra admin center** or via Microsoft Graph (`POST /users/{id}/changePassword`). Require the user to set a new, strong password at their next sign-in, unless your tenant enforces passwordless-only authentication through authentication strengths.
 
@@ -147,7 +146,7 @@ Reset the password in the **Microsoft Entra admin center** or via Microsoft Grap
    - FIDO2 security keys
    - Passkeys (device-bound or cross-device)
    - Windows Hello for Business (for managed devices)
-1. **Use identity verification (recommended).** When available, organizations should consider using the Identity Verification capability released as part of [account recovery](https://learn.microsoft.com/entra/identity/authentication/concept-account-recovery-overview). Identity verification provides a higher-assurance and more secure alternative to Temporary Access Pass for re-establishing user trust before new authentication methods are enrolled.
+1. **Use identity verification (recommended).** When available, organizations should consider using the Identity Verification capability released as part of [account recovery](/entra/identity/authentication/concept-account-recovery-overview). Identity verification provides a higher-assurance and more secure alternative to Temporary Access Pass for re-establishing user trust before new authentication methods are enrolled.
 1. **If identity verification isn't available, provide a Temporary Access Pass (TAP)** to allow secure initial sign-in and method setup.
 1. **Confirm new methods appear correctly** under the user's authentication-methods list.
 
