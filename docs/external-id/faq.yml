@@ -29,7 +29,7 @@ sections:
       - question: |
           Can B2B collaboration users access Power BI content?
         answer: |
-          Yes, you can [distribute Power BI content to external guest users using B2B collaboration](/power-bi/guidance/whitepaper-azure-b2b-power-bi). To share Power BI content across Microsoft clouds, you can [use Microsoft cloud settings](cross-tenant-access-overview.md#microsoft-cloud-settings) to establish mutual B2B collaboration between your cloud and an external cloud.
+          Yes, you can [distribute Power BI content to external guest users using B2B collaboration](/fabric/enterprise/powerbi/service-admin-entra-b2b). To share Power BI content across Microsoft clouds, you can [use Microsoft cloud settings](cross-tenant-access-overview.md#microsoft-cloud-settings) to establish mutual B2B collaboration between your cloud and an external cloud.
 
       - question: |
           Is the CSV upload feature still supported?

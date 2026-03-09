@@ -198,8 +198,8 @@ foreach ($group in $groups) {
     $groupInfo | Add-Member -MemberType NoteProperty -Name "Group ID" -Value $group.Id
     $groupInfo | Add-Member -MemberType NoteProperty -Name "License Types" -Value ($group.AssignedLicenses | Select-Object -ExpandProperty SkuId)
     $groupInfo | Add-Member -MemberType NoteProperty -Name "Total User Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Measure-Object).Count
-    $groupInfo | Add-Member -MemberType NoteProperty -Name "Licensed User Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Where-Object {$_.      LicenseProcessingState -eq "ProcessingComplete"} | Measure-Object).Count
-    $groupInfo | Add-Member -MemberType NoteProperty -Name "License Error Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Where-Object {$_.LicenseProcessingState -eq "ProcessingFailed"} | Measure-Object).Count
+    $groupInfo | Add-Member -MemberType NoteProperty -Name "License Error Count" -Value (Get-MgGroupMemberWithLicenseError -GroupId $group.Id -All | Measure-Object).Count
+    $groupInfo | Add-Member -MemberType NoteProperty -Name "Licensed User Count" -Value ((Get-MgGroupMember -GroupId $group.Id -All | Measure-Object).Count - (Get-MgGroupMemberWithLicenseError -GroupId $group.Id -All | Measure-Object).Count)
     $groupInfoArray += $groupInfo
 }
 

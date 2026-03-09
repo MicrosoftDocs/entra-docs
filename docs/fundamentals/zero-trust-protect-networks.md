@@ -53,6 +53,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Threat intelligence filtering protects internet traffic
 [!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
 
+### File transfer policies are configured to prevent data exfiltration
+[!INCLUDE [25413](../includes/secure-recommendations/25413.md)]
+
 ### AI Gateway protects enterprise generative AI applications from prompt injection attacks
 [!INCLUDE [25415](../includes/secure-recommendations/25415.md)]
 
@@ -86,8 +89,14 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Private network connectors are running the latest version
 [!INCLUDE [25392](../includes/secure-recommendations/25392.md)]
 
+### At least two Private Access connectors are active and healthy per connector group
+[!INCLUDE [25466](../includes/secure-recommendations/25466.md)]
+
 ### Private DNS is configured for internal name resolution
 [!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
+
+### DNS traffic for internal domains is routed through Private Access
+[!INCLUDE [25400](../includes/secure-recommendations/25400.md)]
 
 ### Intelligent Local Access is enabled and configured
 [!INCLUDE [25405](../includes/secure-recommendations/25405.md)]

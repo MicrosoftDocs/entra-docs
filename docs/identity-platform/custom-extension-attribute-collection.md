@@ -25,7 +25,7 @@ In addition to creating a custom authentication extension for the attribute coll
 
 ## Prerequisites
 
-- To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you can sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- To use Azure services, including Azure Functions, you need an Azure subscription. If you don't have an existing Azure account, you can sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Step 1: Create a custom authentication extensions REST API (Azure Function app)

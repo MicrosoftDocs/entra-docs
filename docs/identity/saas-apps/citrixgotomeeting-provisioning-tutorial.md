@@ -3,7 +3,7 @@ title: Configure GoToMeeting for automatic user provisioning with Microsoft Entr
 description: Learn how to configure single sign-on between Microsoft Entra ID and GoToMeeting.
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/04/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoToMeeting so that I can streamline the user management process and ensure that users have the appropriate access to GoToMeeting.
@@ -42,7 +42,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 This section guides you through connecting your Microsoft Entra ID to GoToMeeting's user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in GoToMeeting based on user and group assignment in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enabled SAML-based Single Sign-On for GoToMeeting, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for GoToMeeting, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### To configure automatic user account provisioning:
 
@@ -53,30 +53,35 @@ This section guides you through connecting your Microsoft Entra ID to GoToMeetin
 
 1. Select your instance of GoToMeeting, then select the **Provisioning** tab.
 
-1. Set the **Provisioning** Mode to **Automatic**. 
+1. Set **+ New configuration**.
 
-    ![Screenshot of the Provisioning tab for GoToMeeting in Azure portal. Provisioning Mode is set to Automatic and Admin Username, Password and Test Connection are highlighted.](https://user-images.githubusercontent.com/49566142/135871050-9d63861d-7963-47e0-bbdf-0e7c947e0b41.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
+1. In the **Tenant URL** field, input your GoToMeeting Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoToMeeting. If the connection fails, ensure your GoToMeeting account has the required admin permissions and try again.
 
-1. Under the Admin Credentials section, select **Authorize** and log into GoToMeeting in pop-up windows that appears
-   
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Test Connection** to ensure Microsoft Entra ID can connect to your GoToMeeting app. If the connection fails, ensure your GoToMeeting account has Team Admin permissions and try the **"Admin Credentials"** step again.
+1. Select **Create** to create your configuration.	
 
+1. Select **Properties** in the **Overview** page. 
 
-1. Select **Save.**
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Under the Mappings section, select **Synchronize Microsoft Entra users to GoToMeeting.**
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to GoToMeeting. The attributes selected as **Matching** properties are used to match the user accounts in GoToMeeting for update operations. Select the Save button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. To enable the Microsoft Entra provisioning service for GoToMeeting, change the **Provisioning Status** to **On** in the Settings section
+1. Review the user attributes that are synchronized from Microsoft Entra ID to GoToMeeting. The attributes selected as **Matching** properties are used to match the user accounts in GoToMeeting for update operations. Select the Save button to commit any changes.
 
-1. Select **Save.**
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-It starts the initial synchronization of any users and/or groups assigned to GoToMeeting in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your GoToMeeting app.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
+
+## Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

@@ -3,10 +3,8 @@ title: Bulk operations service limitations
 description: Learn about Microsoft Entra bulk operations related to users, groups,
   and devices in the Microsoft Entra admin portal could time out and fail on large
   tenants.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 12/05/2025
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---

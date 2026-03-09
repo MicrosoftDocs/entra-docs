@@ -1,7 +1,7 @@
 ---
 title: Bulk delete users in Microsoft Entra ID
 description: Delete users in bulk in Microsoft Entra ID
-ms.date: 02/24/2026
+ms.date: 03/05/2026
 ms.topic: how-to
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
@@ -12,6 +12,9 @@ ms.reviewer: jeffsta
 Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can remove a large number of users by using a comma-separated values (CSV) file to bulk delete users.
 
 ## To bulk delete users
+
+>[!IMPORTANT]
+> We are making updates to bulk operations. While we address the issue, you may experience problems deleting users assigned to privileged roles. This problem is temporary and we are working to address it as soon as possible.
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
