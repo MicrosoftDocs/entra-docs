@@ -20,7 +20,7 @@ You can create a Microsoft Entra tenant for development and testing in either of
 - **Free Microsoft Entra tenant** — [Create a new tenant](~/identity-platform/quickstart-create-new-tenant.md) and [activate a free trial of Microsoft Entra ID P1 or P2](https://azure.microsoft.com/trial/get-started-active-directory/) in your new tenant.
 
 > [!IMPORTANT]
-> The Microsoft 365 Developer Program requires a qualifying subscription or program membership. Eligible members include Visual Studio Enterprise or Professional subscribers, ISV Success Program or Microsoft AI Cloud Partner Program participants, and Premier or Unified Support customers. For the full eligibility list, see [Who qualifies for a Microsoft 365 E5 developer subscription?](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). If you don't qualify, use the free tenant option instead.
+> The Microsoft 365 Developer Program requires a qualifying subscription or program membership. Eligible members include Visual Studio Enterprise or Professional subscribers, ISV Success Program or Microsoft AI Cloud Partner Program participants, and Premier or Unified Support customers. For more information, see the [M365 Developer Program eligibility update](https://devblogs.microsoft.com/microsoft365dev/stay-ahead-of-the-game-with-the-latest-updates-to-the-microsoft-365-developer-program/) and [Who qualifies for a Microsoft 365 E5 developer subscription?](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). If you don't qualify, use the free tenant option instead.
 
 ### Sign up for the Microsoft 365 Developer Program
 
