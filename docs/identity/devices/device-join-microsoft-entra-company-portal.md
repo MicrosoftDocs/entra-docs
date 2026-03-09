@@ -58,6 +58,15 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 
 Now that the device is in compliance with Company Portal, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen following successful completion of [Intune MDM and Microsoft Entra Join using Company Portal](#intune-mdm-and-microsoft-entra-join-using-company-portal). Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
 
+> [!TIP]
+> If the **Registration Required** popup doesn't appear or disappears before you can interact with it:
+>
+> - **Wait approximately 10 minutes** — the popup automatically reappears after a failed or missed registration attempt.
+> - **Sign out and sign back in** to your Mac — this retriggers the registration notification.
+> - If you closed the SSO authentication prompt during registration, signing out and back in restores the notification.
+>
+> For more troubleshooting steps, see [Platform SSO known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md).
+
 ### [Secure Enclave](#tab/secure-enclave)
 
 1. Navigate to the **Registration Required** popup at the top right of the screen. Hover over the popup and select **Register**. For macOS 14 Sonoma users, you see a prompt to register your device with Microsoft Entra. This prompt doesn't appear for macOS 13 Ventura.
