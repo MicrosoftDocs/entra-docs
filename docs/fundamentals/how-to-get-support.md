@@ -6,9 +6,9 @@ manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 01/20/2026
+ms.date: 03/09/2026
 ms.author: sarahlipsey
-ms.reviewer: jeffsta
+ms.reviewer: tychusnyanga
 ---
 
 # Find help and get support for Microsoft Entra

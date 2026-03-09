@@ -4,7 +4,7 @@ description: Discover how Microsoft Entra Self-Service Support uses AI and Micro
 author: shlipsey3
 ms.author: sarahlipsey
 ms.reviewer: tychusnyanga
-ms.date: 02/02/2026
+ms.date: 03/09/2026
 ms.topic: how-to
 ms.service: entra
 # customer intent: As an IT admin, I want to troubleshoot identity and access issues using the Support Assistant so that I can resolve problems quickly.
@@ -28,7 +28,7 @@ If issues remain unresolved, you can seamlessly escalate them to Microsoft suppo
 
 Self-Service Support is available to users with permissions to create and manage support tickets, such as [Helpdesk Administrator](../identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) and [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 
-For a full list of roles, see [Lease privileged role by task](../identity/role-based-access-control/delegate-by-task.md).
+For a full list of roles, see [Least privileged role by task](../identity/role-based-access-control/delegate-by-task.md).
 
 ## How to work with the Microsoft Entra Support Assistant
 
