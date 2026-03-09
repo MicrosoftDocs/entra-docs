@@ -35,8 +35,7 @@ The following scenarios aren't supported:
 - S/MIME using a security key.
 - *Run as* using a security key.
 - Signing in to a server using a security key.
-- If you're not using a security key to sign in to your device while online, you can't use it to sign in or unlock offline.
-- When signing in or unlocking a Windows device using a security key that contains multiple Microsoft Entra accounts, the device defaults to the last account added to the key. However, WebAuthn allows users to select the specific account they wish to use for authentication.
+- When signing in or unlocking a Windows device using a security keythat contains multiple Microsoft Entra accounts, the device defaults to the last account added to the key. However, WebAuthn allows users to select the specific account they wish to use for authentication.
 - Unlocking a device running Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
 
 ## Prepare devices
