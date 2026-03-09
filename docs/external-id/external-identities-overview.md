@@ -113,11 +113,11 @@ For details about the resources, files, and applications that are available to u
 
 Licensing and billing are based on monthly active users (MAU). [Learn more about the billing model for Microsoft Entra External ID](external-identities-pricing.md).  
 
-### Azure Active Directory B2C
-
-Azure Active Directory B2C (Azure AD B2C) is a legacy solution for customer identity and access management. Azure AD B2C includes a separate consumer-based directory that you manage in the Azure portal through the Azure AD B2C service. Each Azure AD B2C tenant is separate and distinct from other Microsoft Entra ID and Azure AD B2C tenants.
+### Azure Active Directory B2C (Azure AD B2C)
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
+Azure AD B2C is a legacy solution for customer identity and access management. Azure AD B2C includes a separate consumer-based directory that you manage in the Azure portal through the Azure AD B2C service. Each Azure AD B2C tenant is separate and distinct from other Microsoft Entra ID and Azure AD B2C tenants.
 
 The Azure AD B2C portal experience is similar to Microsoft Entra ID, but there are key differences. For example, you can customize your user journeys by using the Identity Experience Framework.
 
