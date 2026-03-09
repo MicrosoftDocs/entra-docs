@@ -16,15 +16,15 @@ ai-usage: ai-assisted
 
 You can create a Microsoft Entra tenant for development and testing in either of the following ways:
 
-- **Microsoft 365 Developer Program** — Join the [Microsoft 365 Developer Program](https://aka.ms/o365devprogram) to get a sandbox tenant with E5 licenses, configured users, groups, and mailboxes. An active [Visual Studio Enterprise or Professional subscription](https://learn.microsoft.com/visualstudio/subscriptions/vs-m365), or qualifying [Microsoft AI Cloud Partner Program](https://partner.microsoft.com/) membership is required.
+- **Microsoft 365 Developer Program** — Join the [Microsoft 365 Developer Program](https://aka.ms/o365devprogram) to get a sandbox tenant with E5 licenses, configured users, groups, and mailboxes. A qualifying subscription or program membership is required — see [who qualifies](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details.
 - **Free Microsoft Entra tenant** — [Create a new tenant](~/identity-platform/quickstart-create-new-tenant.md) and [activate a free trial of Microsoft Entra ID P1 or P2](https://azure.microsoft.com/trial/get-started-active-directory/) in your new tenant.
 
 > [!IMPORTANT]
-> The Microsoft 365 Developer Program changed its eligibility requirements in 2024. Free E5 developer sandboxes are no longer available without a qualifying Visual Studio subscription or partner program membership. If you don't have a qualifying subscription, use the free tenant option instead.
+> The Microsoft 365 Developer Program requires a qualifying subscription or program membership. Eligible members include Visual Studio Enterprise or Professional subscribers, ISV Success Program or Microsoft AI Cloud Partner Program participants, and Premier or Unified Support customers. For the full eligibility list, see [Who qualifies for a Microsoft 365 E5 developer subscription?](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). If you don't qualify, use the free tenant option instead.
 
 ### Sign up for the Microsoft 365 Developer Program
 
-If you have a qualifying Visual Studio subscription and decide to sign up for the Microsoft 365 Developer Program, follow these steps:
+If you have a qualifying subscription or program membership and decide to sign up for the Microsoft 365 Developer Program, follow these steps:
 
 1. On the [Microsoft 365 Developer Program](https://aka.ms/o365devprogram) page, select **Join now**.
 
