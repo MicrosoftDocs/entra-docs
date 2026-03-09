@@ -104,7 +104,6 @@ To configure a file policy in Global Secure Access, complete the following steps
     1. Select **+ Add destination** and configure the destinations.
         - For an application-specific control, add the exact upload URLs and related FQDNs that the app uses instead of broad categories.
         - Use browser developer tools or network traffic analysis to identify the endpoints used during file upload.
-        :::image type="content" source="media/how-to-network-content-filtering/file-rule-destinations.png" alt-text="Screenshot of the Add File Rule page showing the Destinations section and the destination selection panel." lightbox="media/how-to-network-content-filtering/file-rule-destinations.png":::
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
     :::image type="content" source="media/how-to-network-content-filtering/file-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the file policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/file-policy-review-tab.png":::
