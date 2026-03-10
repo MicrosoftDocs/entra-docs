@@ -12,26 +12,23 @@ ms.custom: sfi-image-nochange
 
 The license utilization insights page in the Microsoft Entra admin center helps you optimize your Microsoft Entra licenses by providing visibility into feature usage across your tenant. The page shows how many Entra ID P1, P2, and Suite licenses you own, along with usage of key features mapped to each license type. You can also review usage trends over the past six months.
 
-This view gives you a clearer understanding of your license footprint, the value you're getting from Microsoft Entra, and potential over-usage risks within your tenant.
+This perspective is an initial stride towards empowering you to comprehend your license count and the value you extract from your Entra license. It also aids in addressing any over-usage issues that might emerge in your tenants.
 
 ## Prerequisites
 
 [!INCLUDE [entra-p1-license.md](../includes/entra-p1-license.md)]
 
-<!-- TODO: Confirm the least privileged role with PM (Jade DSouza).
-     Currently matching the pattern from concept-usage-insights-report.md.
-     Update once confirmed. -->
-
+- The tenant must have a Microsoft Entra ID P1 or P2 license.
+- This feature is only available in public clouds.
 - The least privileged role is [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
-    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) can also access this page.
+    - The following roles can also access this page: [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), and [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
 
 ## Access the license utilization insights page
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Billing** > **Licenses**.
 
-<!-- TODO: Confirm navigation path with PM. The public preview blog post showed this under
-     "Usage & Insights" blade, but the March 2026 demo showed it under "Billing > Licenses". -->
+You can also navigate directly to the [License utilization](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/LicensesMenuBlade/~/LicenseUtilization) page.
 
 <!-- SCREENSHOT: Overview of the Licenses page showing the navigation path and the full page layout.
      Suggested filename: license-utilization-overview.png -->
@@ -59,14 +56,14 @@ The license utilization insights page uses a single representative metric (hero 
 
 ### Entra ID P1 usage
 
-For P1 licenses, the hero metric is **Conditional Access users** — the number of unique users who signed in through at least one Conditional Access policy during the measurement period.
+For P1 licenses, the hero metric is **Conditional Access users** — the number of unique users with at least one configured Conditional Access policy during the measurement period.
 
 <!-- SCREENSHOT: P1 usage section showing Conditional Access users metric with the usage bar.
      Suggested filename: license-utilization-p1-usage.png -->
 
 ### Entra ID P2 usage
 
-For P2 licenses, the hero metric is **Risk-based Conditional Access users** — the number of unique users who signed in through at least one risk-based Conditional Access policy during the measurement period.
+For P2 licenses, the hero metric is **Risk-based Conditional Access users** — the number of unique users with at least one configured risk-based Conditional Access policy during the measurement period.
 
 <!-- SCREENSHOT: P2 usage section showing Risk-based Conditional Access users metric with the usage bar.
      Suggested filename: license-utilization-p2-usage.png -->
