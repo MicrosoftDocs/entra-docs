@@ -2,15 +2,11 @@
 title: 'Microsoft Entra pass-through authentication - Quickstart'
 description: This article describes how to get started with Microsoft Entra pass-through authentication.
 keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 09/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 

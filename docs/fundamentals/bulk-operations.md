@@ -1,13 +1,8 @@
 ---
 title: Bulk operations in Microsoft Entra ID (Preview)
 description: Learn about the new Microsoft Entra bulk operations experience for managing users, groups, and devices.
-author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: article
 ms.date: 02/24/2026
-ms.author: barclayn
 ms.custom: it-pro
 ---
 

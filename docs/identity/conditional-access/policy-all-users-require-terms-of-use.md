@@ -42,7 +42,7 @@ This section shows how to create the required Conditional Access policy.
    1. Select **Grant access**.
    1. Select the terms of use you created previously and choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

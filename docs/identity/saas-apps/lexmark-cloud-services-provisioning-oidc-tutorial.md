@@ -2,15 +2,9 @@
 title: Configure Lexmark Cloud Services (OIDC) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Lexmark Cloud Services (OIDC).
 
-author: nguhiu
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (OIDC).
 
 ---
@@ -34,7 +28,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A SAML federated organization in Lexmark Cloud Services with Organization Administrator role.
+* An OIDC federated organization in Lexmark Cloud Services with Organization Administrator role.
 * Review the [lexmark documentation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/overview-v54808648.html?toc=2.5.0) on user provisioning.
 
 ## Step 1: Plan your provisioning deployment
@@ -42,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Adobe Identity Management (OIDC)](~/identity/app-provisioning/customize-application-attributes.md).
 
-<a name='step-2-configure-lexmark-cloud-services-saml-to-support-provisioning-with-azure-ad'></a>
+<a name='step-2-configure-lexmark-cloud-services-oidc-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Lexmark Cloud Services (OIDC) to support provisioning with Microsoft Entra ID
 
@@ -78,7 +72,7 @@ Add Lexmark Cloud Services (OIDC) from the Microsoft Entra application gallery t
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Lexmark Cloud Services (OIDC) based on user and/or group assignments in Microsoft Entra ID
 
-<a name='to-configure-automatic-user-provisioning-for-lexmark-cloud-services-saml-in-azure-ad'></a>
+<a name='to-configure-automatic-user-provisioning-for-lexmark-cloud-services-oidc-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for Lexmark Cloud Services (OIDC) in Microsoft Entra ID
 
@@ -99,9 +93,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the Tenant URL field, input your Lexmark Cloud Services (OIDC) Tenant URL and Secret Token. Select **Test Connection**  to ensure Microsoft Entra ID can connect to Lexmark Cloud Services (OIDC). If the connection fails, ensure your Lexmark Cloud Services (OIDC) account has the required permissions and try again.
+1. In the Tenant URL field, input your Lexmark Cloud Services (OIDC) Tenant URL. Select **Test Connection**  to ensure Microsoft Entra ID can connect to Lexmark Cloud Services (OIDC). If the connection fails, ensure your Lexmark Cloud Services (OIDC) account has the required permissions and try again.
     
-    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+    ![Screenshot of Provisioning test connection.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning-test-connection.png)
+
+1. In connectivity tab, paste the Tenant URL, Token endpoint, Client identifier, and Client secret which you have copied from Lexmark Cloud Services (OIDC) provisioning page and Select **Test Connection**.
+
+    ![Screenshot of Connectivity test connection.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning-connectivity.png)
 
 1. Select **Create** to create your configuration.  
 
@@ -129,9 +127,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|| 
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|| 
 
-1. Select **groups**.
+    > [!NOTE]
+    > The sensitive attributes like badge and pin are not supported for mapping.
 
-1. Review the group attributes that are synchronized from Microsoft Entra ID to Lexmark Cloud Services (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Lexmark Cloud Services (OIDC) for update operations. Select the **Save** button to commit any changes.
+    > [!NOTE]
+    > To create and map the custom attributes please follow the instructions in [this article](~/external-id/customers/how-to-define-custom-attributes.md). 
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 

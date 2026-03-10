@@ -4,12 +4,11 @@ description: Learn to plan your migration workstream of IAM from Active Director
 documentationCenter: ''
 author: justinha
 manager: dougeby
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/30/2025
 ms.author: justinha
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Transition to the cloud
 

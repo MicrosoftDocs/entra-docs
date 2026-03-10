@@ -1,12 +1,10 @@
 ---
 title: Restricted management administrative units in Microsoft Entra ID
 description: Use restricted management administrative units for more sensitive resources in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.subservice: role-based-access-control
-ms.date: 06/04/2025
+ms.date: 03/04/2026
 ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
 
@@ -91,6 +89,10 @@ Only administrators with an explicit assignment at the scope of a restricted man
 If an administrator with tenant scope attempts to modify an object in a restricted management administrative unit, they will see messages similar to the following:
 
 `This user is a member of a restricted management administrative unit. Management rights are limited to administrators scoped on that administrative unit.`
+
+`This group is a member of restricted management administrative unit. Management rights are limited to administrators scoped on that administrative unit.`
+
+For users and devices, this message appears on the **Overview** page. For groups, this message appears on the **Members** page.
 
 :::image type="content" source="./media/admin-units-restricted-management/user-restricted-message.png" alt-text="Screenshot of a message that indicates that user is a member of a restricted management administrative unit and management rights are limited." lightbox="./media/admin-units-restricted-management/user-restricted-message.png":::
 

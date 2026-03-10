@@ -1,14 +1,10 @@
 ---
 title: Microsoft Entra security operations for applications
 description: Learn how to monitor and alert on applications to identify security threats.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 09/06/2022
-ms.author: jricketts
 ms.custom: sfi-ropc-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra security operations guide for applications

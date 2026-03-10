@@ -2,13 +2,9 @@
 title: Try Microsoft Entra Suite for free
 description: Make the most of your Microsoft Entra Suite trial. Try out some of the
   key productivity and security capabilities.
-author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 04/02/2025
-ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---

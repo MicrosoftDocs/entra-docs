@@ -126,7 +126,7 @@ Use the following PowerShell code to remove those applications:
    >
    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
-5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
+5. Run the following commands to verify your tenant context with the Az PowerShell module. This step is a safety check to confirm you're connected to the correct tenant. **Don't skip these steps or you risk deleting enterprise apps from the wrong tenant.**
 
    ```powershell
    Clear-AzContext -Scope CurrentUser
@@ -137,29 +137,24 @@ Use the following PowerShell code to remove those applications:
    >[!WARNING]
    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Az PowerShell module. We recommend that you run the `Get-AzContext` command to check the connected tenant ID and `onmicrosoft.com` domain.  Do NOT skip the above steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
-6. Run the following command to remove any enterprise apps that you can't delete:
+6. Run the following command to remove service principals. Run the command multiple times until all service principals are removed, since some might fail on the first attempt due to dependencies.
 
    ```powershell
-   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
+   Get-MgServicePrincipal -All | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
    ```
 
-7. Run the following command to remove applications and service principals:
+7. If some service principals can't be deleted, disable them so they don't block tenant deletion, and then retry the removal:
 
    ```powershell
-   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
+   $ServicePrincipalUpdate = @{ "accountEnabled" = "false" }
+
+   Get-MgServicePrincipal -All | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
+   Get-MgServicePrincipal -All | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
    ```
 
-8. Run the following command to disable any blocking service principals:
+8. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), and remove any new admin account that you created in step 3.
 
-   ```powershell
-   $ServicePrincipalUpdate =@{ "accountEnabled" = "false" }
-
-   Get-MgServicePrincipal | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
-   ```
-
-9. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), and remove any new admin account that you created in step 3.
-
-10. Retry tenant deletion from the Microsoft Entra admin center.
+9. Retry tenant deletion from the Microsoft Entra admin center.
 
 ## Handle a trial subscription that blocks deletion
 
