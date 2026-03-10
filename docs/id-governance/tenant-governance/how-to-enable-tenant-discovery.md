@@ -13,37 +13,37 @@ ms.date: 03/10/2026
 
 # Enable tenant discovery
 
-Related tenants help administrators discover other Microsoft Entra tenants that have observable relationships with their tenant. These relationships are inferred from activity signals such as B2B collaboration, multitenant application consent, and shared billing accounts. A related tenant does not imply ownership or administrative control, it simply indicates an observed association across Microsoft services.
+Related tenants help administrators discover other Microsoft Entra tenants that have observable relationships with their tenant. These relationships are inferred from activity signals such as B2B collaboration, multitenant application consent, and shared billing accounts. A related tenant doesn't imply ownership or administrative control. It simply indicates an observed association across Microsoft services.
 
-Once enabled, related tenant discovery will remain enabled for your tenant provided your tenant holds the proper licensing requirements.
+Once enabled, related tenant discovery remains enabled for your tenant if your tenant holds the proper licensing requirements.
 
 ## Prerequisites
 
 Before enabling related tenants, ensure:
 
-- You have the necessary permissions to enable related tenants. User must hold either the Tenant Governance Administrator or Global Administrator Entra role.
+- You have the necessary permissions to enable related tenants. You must hold either the Tenant Governance Administrator or Global Administrator Microsoft Entra role.
 
-- Your tenant is eligible for Related Tenants with the correct license.
+- Your tenant is eligible for related tenants with the correct license.
 
-- You understand that this is not a toggle and will remain enabled.
+- You understand that this setting isn't a toggle and remains enabled after you turn it on.
 
-## Enable Related Tenants via Microsoft Entra Admin Center (UX)
+## Enable related tenants via Microsoft Entra admin center
 
 Use this option if you want to enable discovery through the admin experience rather than APIs.
 
-1. Sign in to the **Microsoft Entra admin center**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Navigate to **Tenant Governance**.
 
-1. Open **Related tenants**
+1. Open **Related tenants**.
 
 1. Review the description of enabling related tenants.
 
 1. Select **Discover related tenants**.
 
-Once enabled, Microsoft Entra begins aggregating discovery signals and surfaces related tenants in the experience. The discovery data is synthesized from existing activity and may take time to populate.
+Once enabled, Microsoft Entra begins aggregating discovery signals and surfaces related tenants in the experience. The discovery data is synthesized from existing activity and might take time to populate.
 
-## Enable Related Tenants via Microsoft Graph API
+## Enable related tenants via Microsoft Graph API
 
 Use this option for scripted or automated enablement.
 
@@ -57,20 +57,16 @@ This action enables related tenant discovery for the calling tenant.
 
 **Important Notes**
 
-- The setting defaults to false for new tenants.
+- The setting defaults to `false` for new tenants.
 
-- Once enabled, ``isRelatedTenantsEnabled`` is set to true and cannot be reverted.
+- Once enabled, `isRelatedTenantsEnabled` is set to `true` and can't be reverted.
 
 ## Next steps
 
-Once related tenants are visible, administrators can:
+Once related tenants appear, you can:
 
-- Review the **list of related tenants** surfaced by discovery.
-
-- Use the data to inform:
-
-  - Governance relationship invitations
-
-  - Tenant inventory and cleanup efforts
-
-  - Configuration management planning
+- [Review the list of related tenants](related-tenants.md) surfaced by discovery.
+- Use the data to inform governance decisions:
+  - [Set up governance relationships](how-to-setup-governance-relationship.md) with discovered tenants.
+  - Plan tenant inventory and cleanup efforts.
+  - [Learn more about tenant governance](overview.md) and configuration management planning.

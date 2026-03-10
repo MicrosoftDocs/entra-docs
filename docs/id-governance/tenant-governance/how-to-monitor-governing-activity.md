@@ -11,7 +11,7 @@ ms.date: 03/10/2026
 
 # Monitor governing tenant admin activity in the governed tenant
 
-When a governance relationship is established between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials via granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins are operating within their authorized scope.
+After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials via granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins operate within their authorized scope.
 
 This article describes how to identify, review, and monitor the activities that governing tenant administrators perform in your governed tenant.
 
@@ -45,7 +45,7 @@ Use sign-in logs to monitor when and how governing tenant administrators sign in
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Navigate to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+1. Navigate to **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 1. To filter for governing tenant admin sign-ins, select **Add filters**.
 
@@ -58,7 +58,7 @@ Use sign-in logs to monitor when and how governing tenant administrators sign in
    - **Date and time** of the sign-in.
    - **Application** the admin accessed.
    - **Status** indicating whether the sign-in succeeded or failed.
-   - **Conditional Access** policies that were evaluated or applied.
+   - **Conditional Access** policies that Microsoft Entra evaluated or applied.
 
 ## Review audit logs for governing tenant admin actions
 
@@ -66,7 +66,7 @@ Use audit logs to track the specific actions and changes that governing tenant a
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Navigate to **Entra ID** > **Monitoring & health** > **Audit logs**.
+1. Navigate to **Microsoft Entra ID** > **Monitoring & health** > **Audit logs**.
 
 1. To filter for actions performed by governing tenant admins, select **Add filters**.
 
@@ -76,12 +76,12 @@ Use audit logs to track the specific actions and changes that governing tenant a
 
 1. Review the audit entries, which include:
 
-   - **Activity** describing the action taken (for example, "Update user," "Add member to role").
+   - **Activity** describing the action the admin performed (for example, "Update user," "Add member to role").
    - **Date and time** the action occurred.
-   - **Target resource(s)** that were modified.
+   - **Target resource(s)** that the admin modified.
    - **Result** indicating whether the action succeeded or failed.
 
-1. Select an individual entry to view the full details, including the modified properties and their old and new values.
+1. Select an individual entry to view the full details, including which properties changed and their old and new values.
 
 ## Related content
 

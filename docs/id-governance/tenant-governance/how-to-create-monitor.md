@@ -13,11 +13,11 @@ ms.date: 03/10/2026
 
 # Create and update a configuration monitor
 
-This article describes how to create and update a configuration monitor in the Microsoft Entra admin center. A configuration monitor periodically evaluates your tenant configuration against a configuration baseline and records configuration drifts when the actual state differs from the desired state.
+This article describes how to create and update a configuration monitor in the [Microsoft Entra admin center](https://entra.microsoft.com). A configuration monitor periodically evaluates your tenant configuration against a configuration baseline. It records configuration drifts when the actual state differs from the desired state.
 
 ## Before you begin
 
-You must be signed in as a Global Administrator. Ensure that the required Microsoft Graph application permissions are available for the resource types included in your configuration baseline.
+Sign in as a Global Administrator. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
 
 ## Create a configuration monitor
 
@@ -25,13 +25,13 @@ Use the following steps to create a new configuration monitor. The monitor creat
 
 ### Step 1: Permissions
 
-On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. All required permissions must be granted before you can proceed.
+On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. Grant all required permissions before you proceed.
 
 Select **Next** to continue.
 
 ### Step 2: Configuration baseline
 
-On the **Configuration baseline** page, upload or edit the JSON file that defines the desired configuration state for the resources you want to monitor. This baseline is evaluated each time the monitor runs.
+On the **Configuration baseline** page, upload or edit the JSON file that defines the desired configuration state for the resources you want to monitor. The monitor evaluates this baseline each time it runs.
 
 After validating the baseline, select **Next**.
 
@@ -45,7 +45,14 @@ Select **Create monitor** to create the configuration monitor.
 
 Updating a configuration monitor uses the same wizard flow and steps as creating a monitor: **Permissions → Configuration baseline → Review**.
 
-When you update an existing configuration monitor, the monitor definition is replaced with the updated settings.
+When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
 > [!IMPORTANT]
-> When an existing monitor is changed, all previously generated monitor results and configuration drifts are automatically deleted. Results and configuration drifts are recorded again each time the updated monitor runs in the future.
+> When you change an existing monitor, the system automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
+
+## Next steps
+
+- [Author a configuration baseline](how-to-author-configuration-baseline.md)
+- [See monitor results and configuration drifts](how-to-see-monitor-results.md)
+- [Update or delete a monitor](how-to-update-delete-monitor.md)
+- [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md)

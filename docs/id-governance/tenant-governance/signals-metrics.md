@@ -15,7 +15,7 @@ ms.date: 03/10/2026
 
 Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**—tenants that have a discoverable relationship with your tenant.
 
-Discovery is powered by a small set of **well-defined discovery signals** derived from existing Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
+Discovery uses a small set of **well-defined discovery signals** derived from existing Microsoft Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
 
 This article focuses exclusively on:
 
@@ -25,7 +25,7 @@ This article focuses exclusively on:
 
 1. How metric concepts apply to each signal
 
-1. How signals and metrics should be interpreted together
+1. How to interpret signals and metrics together
 
 ## Discovery signals at a glance
 
@@ -37,13 +37,15 @@ This article focuses exclusively on:
 | Multitenant applications | **Multitenant applications** | Cross-tenant application trust and consent | State-based |
 | Shared billing accounts | **Shared billing accounts** | Financial and operational linkage between tenants | State-based |
 
-Discovery signals are **descriptive, not prescriptive**. A signal explains that a relationship exists and why but does not imply ownership or required action.
+Discovery signals are **descriptive, not prescriptive**. A signal explains that a relationship exists and why but doesn't imply ownership or required action.
 
 ## Discovery signals
 
+The following sections describe each discovery signal and its sub-signals in detail.
+
 ### B2B collaboration signals
 
-The **B2B collaboration signal** identifies tenants that participate in **cross-tenant identity interactions** with the related tenant. It is grounded in Microsoft Entra External Identities and captures both user collaboration and cross-tenant administrative activity.
+The **B2B collaboration signal** identifies tenants that participate in **cross-tenant identity interactions** with the related tenant. It builds on Microsoft Entra External Identities and captures both user collaboration and cross-tenant administrative activity.
 
 At a conceptual level, this signal answers:
 
@@ -51,7 +53,7 @@ At a conceptual level, this signal answers:
 
 This signal intentionally combines multiple identity inputs to reflect both breadth and depth of cross-tenant interaction.
 
-The B2B collaboration signal is composed of three related sub-signals:
+The B2B collaboration signal combines three related sub-signals:
 
 - B2B registration
 
@@ -69,7 +71,7 @@ B2B registration reflects the presence of **guest users or external members** fr
 
 - Indicates potential access to resources
 
-- Does not imply active usage
+- Doesn't imply active usage
 
 #### B2B sign-ins
 
@@ -88,12 +90,12 @@ B2B user sign-ins capture **authentication activity** by guest users or external
 Admin app sign-ins are a **specialized subset of B2B sign-ins** that occur when users **authenticate across tenants to predefined Microsoft Entra administrative applications.** These sign-ins usually indicate cross-tenant administrative activity, not just collaboration.
 
 **What are "admin apps"?**\
-Admin apps are a predefined set of first-party Microsoft Entra administrative surfaces. The exact set of admin apps is defined and maintained by the Tenant Discovery service and is not customer-configurable.
+Admin apps are a predefined set of first-party Microsoft Entra administrative surfaces. The Tenant Discovery service defines and maintains the exact set of admin apps. This set isn't customer-configurable.
 
 | Application |
 |---|
 | Azure Portal |
-| Entra Admin Center |
+| Microsoft Entra Admin Center |
 | Intune Admin center |
 | Exchange Admin Center |
 | Windows Admin Center |
@@ -132,7 +134,7 @@ This signal captures non-human trust relationships, which often persist longer a
 
 **Why it matters**
 
-- Applications may have broad permissions
+- Applications might have broad permissions
 
 - Trust relationships are durable
 
@@ -191,7 +193,7 @@ This distinction answers:
 | Multitenant applications | ✅ | ✅ |
 | Shared billing accounts | ❌ | ❌ |
 
-Billing relationships are configuration-based and do not fluctuate over time.
+Billing relationships are configuration-based and don't fluctuate over time.
 
 ### Inbound vs. outbound metrics
 

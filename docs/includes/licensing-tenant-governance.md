@@ -9,7 +9,7 @@ ms.author: barclayn
 ms.custom: include file
 ---
 
-The following tables show the features associated with Microsoft Entra tenant governance and their availability with each license tier.
+These tables list the Microsoft Entra tenant governance features available with each license tier.
 
 ### Configuration management
 
@@ -20,7 +20,7 @@ The following tables show the features associated with Microsoft Entra tenant go
 | Single tenant configuration - drift reporting | | ✅ | ✅ | ✅ |
 
 > [!NOTE]
-> Microsoft Entra P1 is also included in Microsoft 365 E3 and Microsoft 365 Business Premium. Microsoft Entra P2 is also included in Microsoft 365 E5. Microsoft Entra ID Governance is also included in Microsoft Entra Suite.
+> Microsoft 365 E3 and Microsoft 365 Business Premium also include Microsoft Entra P1. Microsoft 365 E5 also includes Microsoft Entra P2. Microsoft Entra Suite also includes Microsoft Entra ID Governance.
 
 ### Related tenants
 

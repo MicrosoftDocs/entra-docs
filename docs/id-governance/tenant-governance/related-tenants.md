@@ -13,9 +13,9 @@ ms.date: 03/10/2026
 
 Modern organizations rarely operate within a single Microsoft Entra tenant. Mergers, acquisitions, divestitures, geographic expansion, developer experimentation, and decentralized IT models have led to tenant sprawl — an expanding ecosystem of Microsoft Entra tenants that interact with one another in ways that are often invisible or poorly understood.
 
-Related Tenants is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions may involve tenants that are external (partners, vendors, customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
+Related Tenants is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
 
-Related Tenants isn't an authoritative inventory of tenants an organization owns. Instead, it provides situational awareness by surfacing tenant connections based on evidence already present across identity, application, and billing systems. This awareness enables organizations to understand their tenant ecosystem and decide where governance actions may be appropriate.
+Related Tenants isn't an authoritative inventory of tenants an organization owns. Instead, it provides situational awareness by surfacing tenant connections based on evidence already present across identity, application, and billing systems. This awareness enables organizations to understand their tenant ecosystem and decide where governance actions might be appropriate.
 
 At its core, Related Tenants answers the question:
 
@@ -27,7 +27,7 @@ This visibility forms the foundation for effective tenant governance, without pr
 
 A related tenant is a Microsoft Entra tenant that demonstrates a verifiable connection to another tenant based on observable discovery signals. These signals are derived from real configuration and activity data and are refreshed over time.
 
-Related tenants are discovered, not manually declared. Discovery establishes context, not intent. A related tenant may be:
+Tenant governance discovers related tenants—you don't manually declare them. Discovery establishes context, not intent. A related tenant might be:
 
 - An external partner, vendor, or customer tenant
 - A SaaS provider tenant accessed through multitenant applications
@@ -45,17 +45,17 @@ These metrics describe how tenants are connected. They don't assign qualitative 
 
 ### Visibility into both external and shadow-IT tenants
 
-Organizations often have limited visibility into tenants that exist outside formal provisioning processes. Employees may create tenants for proof-of-concept work, testing, or experimentation, while business units may engage directly with external tenants for collaboration or SaaS usage.
+Organizations often have limited visibility into tenants that exist outside formal provisioning processes. Employees might create tenants for proof-of-concept work, testing, or experimentation, while business units might engage directly with external tenants for collaboration or SaaS usage.
 
-Without discovery, these tenants remain invisible, even though they may:
+Without discovery, these tenants remain invisible, even though they might:
 
 - Exchange identities with the organization
 - Host applications used by employees
 - Be associated with shared billing or commerce relationships
 
-Related Tenants makes these interactions visible, including unsanctioned shadow-IT tenants, enabling organizations to distinguish between expected external relationships and internally created tenants that may require governance attention.
+Related Tenants makes these interactions visible, including unsanctioned shadow-IT tenants, enabling organizations to distinguish between expected external relationships and internally created tenants that might require governance attention.
 
-### Identity, application, and billing activity cross tenant boundaries
+### Cross-tenant identity, application, and billing activity
 
 Modern identity and application models are inherently cross-tenant. External collaboration, multitenant applications, and shared billing constructs introduce interactions that span tenants with different ownership models.
 
@@ -74,8 +74,8 @@ Tenant Governance depends on knowing what exists before deciding what to govern.
 By surfacing both external tenants and internally created shadow-IT tenants, Related Tenants allows administrators to:
 
 - Identify tenants that are expected and externally managed
-- Detect tenants that may fall outside organizational policy
-- Decide whether governance actions should be initiated
+- Detect tenants that might fall outside organizational policy
+- Decide whether to initiate governance actions
 
 This approach ensures governance is intentional and evidence-based rather than reactive.
 
@@ -89,13 +89,13 @@ Related Tenants represents the discovery layer of Tenant Governance:
 1. **Understanding**: Review discovery signals and activity metrics
 1. **Governance**: Decide whether governance actions are appropriate
 
-For unsanctioned or shadow-IT tenants discovered through this process, organizations can initiate governance actions using Tenant Governance capabilities, such as establishing governance relationships or applying centralized oversight. For external tenants, discovery may simply provide awareness without further action.
+For unsanctioned or shadow-IT tenants discovered through this process, organizations can initiate governance actions using Tenant Governance capabilities, such as establishing governance relationships or applying centralized oversight. For external tenants, discovery might simply provide awareness without further action.
 
 ## Discovery signals used to identify related tenants
 
 Related tenants are identified through discovery signals — observable indicators that two tenants interact in meaningful ways. Each signal is accompanied by aggregated activity metrics that describe the nature of the interaction.
 
-Metrics are presented as orders of magnitude rather than exact values and are refreshed as activity changes, providing ongoing visibility while protecting individual user privacy.
+Metrics appear as orders of magnitude rather than exact values and refresh as activity changes, providing ongoing visibility while protecting individual user privacy.
 
 ### B2B collaboration
 
@@ -112,7 +112,7 @@ Associated metrics describe inbound and outbound identity activity, enabling adm
 
 Multitenant application signals surface relationships where applications registered in one tenant are consented to or accessed by users in another tenant.
 
-These signals may reveal:
+These signals might reveal:
 
 - SaaS provider tenants
 - Internally created tenants hosting shared applications
@@ -128,7 +128,7 @@ These signals are particularly useful for identifying:
 - Organizationally affiliated tenants
 - Internally created tenants associated with centralized billing
 
-Associated metrics describe billing relationships and active capabilities, helping administrators understand financial linkages that may warrant governance action.
+Associated metrics describe billing relationships and active capabilities, helping administrators understand financial linkages that might warrant governance action.
 
 ## From discovery to governance
 
@@ -141,7 +141,7 @@ Once related tenants are discovered, organizations can:
 1. Use discovery metrics to prioritize investigation
 1. Initiate governance actions for tenants that require oversight
 
-Some related tenants may require governance, others may require monitoring, and many may require no action at all. Related Tenants enables this differentiation by providing visibility first, then enabling deliberate governance decisions.
+Some related tenants might require governance, others might require monitoring, and many might require no action at all. Related Tenants enables this differentiation by providing visibility first, then enabling deliberate governance decisions.
 
 ## Next steps
 

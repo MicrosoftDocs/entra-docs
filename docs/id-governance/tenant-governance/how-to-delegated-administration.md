@@ -19,7 +19,7 @@ This article walks you through how to sign in to a governed tenant as a delegate
 
 - An active governance relationship between the governing tenant and the governed tenant with delegated administration configured in the governance policy template. For more information, see [GDAP supported workloads](/partner-center/customers/gdap-supported-workloads).
 
-- The administrator must be a member of a security group in the governing tenant that is configured in the governance relationship.
+- The administrator must belong to a security group in the governing tenant that the governance relationship specifies.
 
 ## Sign in to a governed tenant as a delegated administrator
 
@@ -37,14 +37,14 @@ After the governance relationship is active and GDAP role assignments are in pla
 
    > [!IMPORTANT]
    > Due to privacy requirements, your user information appears differently compared to a regular user:
-   > - Your display name is shown as `user_{your user object ID in the governing tenant without dashes}`.
+   > - Your display name appears as `user_{your user object ID in the governing tenant without dashes}`.
    > - Sign-in logs and audit logs in the governed tenant show your display name as `{Governing tenant name} Technician`.
 
 ## Update delegated administration roles
 
 To add or change the roles available to delegated administrators, update the governance policy template and send a new governance request.
 
-1. In the governing tenant, update the governance policy template to add or modify the Entra built-in roles and security group assignments.
+1. In the governing tenant, update the governance policy template to add or modify the Microsoft Entra built-in roles and security group assignments.
 
    > [!NOTE]
    > Updating the template increments its version number by one.
