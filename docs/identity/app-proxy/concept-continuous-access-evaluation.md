@@ -3,7 +3,6 @@ title: Learn about Continuous Access Evaluation (CAE) for Application Proxy (pre
 description: Learn about Continuous Access Evaluation (CAE) for Application Proxy (preview)
 ms.topic: concept-article
 ms.date: 10/07/2025
-ms.subservice: entra-internet-access 
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 ---
