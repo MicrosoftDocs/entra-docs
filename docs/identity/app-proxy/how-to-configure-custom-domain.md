@@ -102,8 +102,8 @@ To publish your app through application proxy with a custom domain:
    
 1. Follow the instructions at [Manage DNS records and record sets by using the Microsoft Entra admin center](/azure/dns/dns-operations-recordsets-portal) to add a DNS record that redirects the new external URL to the *`msappproxy.net`* domain in Azure DNS. If a different DNS provider is used, contact the vendor for the instructions.
 
-       > [!IMPORTANT] 
-       > Ensure that you're properly using a CNAME record that points to the *`msappproxy.net`* domain. Don't point records to IP addresses or server DNS names since they aren't static and might affect the resiliency of the service.
+   > [!IMPORTANT] 
+   > Ensure that you're properly using a CNAME record that points to the *`msappproxy.net`* domain. Don't point records to IP addresses or server DNS names since they aren't static and might affect the resiliency of the service.
 
     > [!NOTE]
     > The CNAME record you create in this step is for the application's external URL hostname (for example, `expenses.contoso.com`), which is different from the TXT record you created during domain verification in step 6 (for example, `contoso.com`). Because these records are on different DNS names, they don't conflict with each other or with [RFC 1912](https://www.ietf.org/rfc/rfc1912.txt), which prohibits a CNAME from coexisting with other record types at the same name.
