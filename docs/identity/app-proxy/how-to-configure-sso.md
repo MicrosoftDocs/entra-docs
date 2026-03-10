@@ -17,7 +17,7 @@ To configure SSO, first make sure that your application is configured for preaut
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Entra ID** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 
 Look for the **Pre Authentication** field, and make sure that it's set.
 
@@ -36,7 +36,7 @@ Configure the specific type of single sign-on. The sign-on methods are classifie
 
 -   **SAML single sign-on:** With Security Assertion Markup Language (SAML) single sign-on, Microsoft Entra ID authenticates to the application by using the user's Microsoft Entra account. Microsoft Entra ID communicates the sign-in information to the application through a connection protocol. With SAML-based single sign-on, you can map users to specific application roles based on rules you define in your SAML claims. For information about setting up SAML single sign-on, see [SAML for single sign-on with application proxy](conceptual-sso-apps.md).
 
-To find these options, go to your application in **Enterprise applications**, and open the **Single sign-on** page on the left menu. If your application was created in the old portal, you might not see all these options.
+To find these options, go to your application in **Enterprise apps**, and open the **Single sign-on** page on the left menu. If your application was created in the old portal, you might not see all these options.
 
 On this page, you also see one more sign-on option: **Linked Sign-On**. Application proxy supports this option. However, this option doesn't add single sign-on to the application. That said, the application might already have single sign-on implemented using another service such as Active Directory Federation Services.
 
