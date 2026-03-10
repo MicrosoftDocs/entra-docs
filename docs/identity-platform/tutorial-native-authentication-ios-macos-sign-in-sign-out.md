@@ -195,7 +195,6 @@ MSAL disables refresh token return by default. To request a refresh token, set `
 
 ```swift
 let parameters = MSALNativeAuthGetAccessTokenParameters()
-parameters.scopes = ["openid", "profile", "offline_access"]
 parameters.returnRefreshToken = true
 
 result.getAccessToken(parameters: parameters, delegate: self)
