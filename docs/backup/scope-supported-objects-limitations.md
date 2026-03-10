@@ -141,7 +141,7 @@ For reference, you can view the full set of application properties in the [Micro
 
 ## Service principal
 
-Recovery for **service principal** objects supports the following properties:
+### Recovery for **service principal** objects supports the following properties:
 
 - `AccountEnabled`
 - `AlternativeNames`
@@ -159,6 +159,18 @@ Recovery for **service principal** objects supports the following properties:
 - `ServicePrincipalName`
 
 For reference, you can view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal#properties).
+
+### OAuth2 (delegated) permission grant
+
+OAuth2 permission grant represents the delegated permissions that have been granted to an application's service principal. Delegated permission grants can be created as a result of a user consenting an application's request to access an API, or created directly. All properties of oAuth2 permission grant are in scope. View all oAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties)
+
+OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of OAuth2 permission grant as well. 
+
+### App role assignment
+
+App role assignment is used to record when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
+
+App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of app role assignment as well. 
 
 ## Organization
 
