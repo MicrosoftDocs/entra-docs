@@ -1,6 +1,6 @@
 ---
 title: Enable tenant discovery
-description: Learn how to enable tenant discovery in Microsoft Entra tenant governance to identify related tenants across your organization.
+description: Learn how to enable tenant discovery in Microsoft Entra tenant governance to identify related tenants across your organization
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -49,9 +49,7 @@ Use this option for scripted or automated enablement.
 **Endpoint**
 
 ```http
-```http
 POST /directory/tenantGovernance/settings/enableRelatedTenants
-```
 ```
 
 This action enables related tenant discovery for the calling tenant.

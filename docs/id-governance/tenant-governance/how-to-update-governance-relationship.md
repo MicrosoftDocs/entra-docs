@@ -1,6 +1,6 @@
 ---
 title: Update a governance relationship
-description: Learn how to update an existing governance relationship in Microsoft Entra tenant governance.
+description: Learn how to update an existing governance relationship between a governing and governed tenant in Microsoft Entra tenant governance
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -19,9 +19,9 @@ This article describes how to update an existing governance relationship between
 
 - You must have access to the governance policy template that was used to create the existing relationship. If the policy template has been deleted, you will need to create a new relationship.
 
-- Review role requirements in [Tenant governance roles](https://aka.ms/TenantGovernance/Roles).
+- Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](https://aka.ms/TenantGovernance/Licensing).
+- Review license requirements for sending governance requests in [Tenant governance licensing](billing-asset.md).
 
 ## Update the governance policy template
 Before you can update a governance relationship, you must first modify the governance policy template that was used to establish the existing relationship. When you update the template, its version number automatically increments by one.
@@ -39,7 +39,6 @@ Before you can update a governance relationship, you must first modify the gover
 1. Save the updated governance policy template. The version number of the template increments by one.
 
 > [!NOTE]
-
 > Updating the governance policy template does not automatically update the governance relationship. The tenant admins must complete the governance request and approval process described in the following sections for the policy template changes to take effect.
 
 ## Send a new governance request with the updated template

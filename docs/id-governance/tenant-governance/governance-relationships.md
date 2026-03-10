@@ -1,6 +1,6 @@
 ---
 title: Governance relationships in tenant governance
-description: Learn about governance relationships and how they enable centralized management of tenants in Microsoft Entra tenant governance.
+description: Learn about governance relationships and how they enable centralized management of tenants in Microsoft Entra tenant governance
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -14,13 +14,13 @@ ms.date: 03/10/2026
 
 A governance relationship is a directional connection established between two Microsoft Entra tenants, where one tenant (the *governing* tenant) governs another tenant (the *governed* tenant). These relationships enable organizations to securely manage multiple tenants at scale from a central location.
 
-Governance relationships enable three key scenarios:
+Governance relationships enable four key scenarios:
 
 | Scenario | Description |
 |---|---|
 | Cross tenant delegated administration | Use governance relationships to centralize **least-privileged administrative access** across multiple Microsoft Entra tenants. Administrators sign in using accounts from the governing tenant, eliminating the need to create and manage local or B2B administrator accounts in every governed tenant. This model is designed for organizations that operate multiple tenants but want a single administrative control plane. |
 | Multi-tenant application management | Manage custom, multi-tenant applications from the governing tenant. Governance relationships allow administrators to monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually, reducing operational overhead and configuration drift. |
-| Tenant configuration management | If you've configured cross-tenant delegated administration in your governance relationship, you can leverage this administrative access to ensure that the tenant is configured to meet your organization's security and compliance objects on an ongoing basis. |
+| Tenant configuration management | If you've configured cross-tenant delegated administration in your governance relationship, you can leverage this administrative access to ensure that the tenant is configured to meet your organization's security and compliance objectives on an ongoing basis. |
 | Secure tenant creation | When a new add-on tenant is created from an existing tenant, a governance relationship is automatically established between the parent tenant and the new tenant using a default governance policy template. This ensures that newly created tenants are immediately brought under centralized administration and governance controls, reducing the risk of unmanaged or misconfigured tenants. |
 
 ## Relationship handshake

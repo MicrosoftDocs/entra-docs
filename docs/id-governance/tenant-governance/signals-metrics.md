@@ -1,6 +1,6 @@
 ---
 title: Signals and metrics for tenant discovery
-description: Learn about the signals and metrics used in Microsoft Entra tenant governance to identify and evaluate related tenants.
+description: Learn about the signals and metrics used in Microsoft Entra tenant governance to identify and evaluate related tenants
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -12,9 +12,9 @@ ms.date: 03/10/2026
 
 # Signals and metrics for tenant discovery
 
-Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants** -- tenants that have a discoverable relationship with your tenant.
+Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**—tenants that have a discoverable relationship with your tenant.
 
-Discovery is powered by a small set of **well‑defined discovery signals** derived from existing Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
+Discovery is powered by a small set of **well-defined discovery signals** derived from existing Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
 
 This article focuses exclusively on:
 
@@ -26,29 +26,29 @@ This article focuses exclusively on:
 
 1. How signals and metrics should be interpreted together
 
-## Discovery Signals at a Glance
+## Discovery signals at a glance
 
 | Type | Discovery Signal | What it Represents | Nature |
 |---|---|---|---|
-| B2B collaboration | **B2B registration** | Guest users cross-tenant | State‑based |
+| B2B collaboration | **B2B registration** | Guest users cross-tenant | State-based |
 | B2B collaboration | **B2B sign-ins** | Cross-tenant sign-in activity | Activity-based |
 | B2B collaboration | **Admin app sign-ins** | Cross-tenant sign-in activity across predefined admin applications | Activity-based |
-| Multitenant applications | **Multitenant applications** | Cross‑tenant application trust and consent | State‑based |
-| Shared billing accounts | **Shared billing accounts** | Financial and operational linkage between tenants | State‑based |
+| Multitenant applications | **Multitenant applications** | Cross-tenant application trust and consent | State-based |
+| Shared billing accounts | **Shared billing accounts** | Financial and operational linkage between tenants | State-based |
 
 Discovery signals are **descriptive, not prescriptive**. A signal explains that a relationship exists and why but does not imply ownership or required action.
 
-## Discovery Signals
+## Discovery signals
 
-### B2B Collaboration Signals
+### B2B collaboration signals
 
-The **B2B collaboration signal** identifies tenants that participate in **cross‑tenant identity interactions** with the related tenant. It is grounded in Microsoft Entra External Identities and captures both user collaboration and cross‑tenant administrative activity.
+The **B2B collaboration signal** identifies tenants that participate in **cross-tenant identity interactions** with the related tenant. It is grounded in Microsoft Entra External Identities and captures both user collaboration and cross-tenant administrative activity.
 
 At a conceptual level, this signal answers:
 
 > *Are identities from one tenant authenticating into or collaborating with another tenant?*
 
-This signal intentionally combines multiple identity inputs to reflect both breadth and depth of cross‑tenant interaction.
+This signal intentionally combines multiple identity inputs to reflect both breadth and depth of cross-tenant interaction.
 
 The B2B collaboration signal is composed of three related sub-signals:
 
@@ -58,9 +58,9 @@ The B2B collaboration signal is composed of three related sub-signals:
 
 - Admin app sign-ins
 
-#### B2B Registration
+#### B2B registration
 
-B2B registration reflects the presence of **guest users or external members** from one tenant registered in another tenant. This is often the first observable indicator of cross‑tenant collaboration.
+B2B registration reflects the presence of **guest users or external members** from one tenant registered in another tenant. This is often the first observable indicator of cross-tenant collaboration.
 
 **Why it matters**
 
@@ -70,9 +70,9 @@ B2B registration reflects the presence of **guest users or external members** fr
 
 - Does not imply active usage
 
-#### B2B Sign‑Ins
+#### B2B sign-ins
 
-B2B user sign‑ins capture **authentication activity** by guest users or external members across tenants. Unlike registration, sign‑ins indicate active collaboration.
+B2B user sign-ins capture **authentication activity** by guest users or external members across tenants. Unlike registration, sign-ins indicate active collaboration.
 
 **Why it matters**
 
@@ -82,12 +82,12 @@ B2B user sign‑ins capture **authentication activity** by guest users or extern
 
 - Helps assess the operational relevance of a tenant relationship
 
-#### Admin App Sign‑Ins
+#### Admin app sign-ins
 
-Admin app sign‑ins are a **specialized subset of B2B sign‑ins** that occur when users **authenticate across tenants to predefined Microsoft Entra administrative applications.** These sign‑ins usually indicate cross‑tenant administrative activity, not just collaboration.
+Admin app sign-ins are a **specialized subset of B2B sign-ins** that occur when users **authenticate across tenants to predefined Microsoft Entra administrative applications.** These sign-ins usually indicate cross-tenant administrative activity, not just collaboration.
 
 **What are "admin apps"?**\
-Admin apps are a predefined set of first‑party Microsoft Entra administrative surfaces. The exact set of admin apps is defined and maintained by the Tenant Discovery service and is not customer‑configurable.
+Admin apps are a predefined set of first-party Microsoft Entra administrative surfaces. The exact set of admin apps is defined and maintained by the Tenant Discovery service and is not customer-configurable.
 
 | Application |
 |---|
@@ -109,25 +109,25 @@ Admin apps are a predefined set of first‑party Microsoft Entra administrative 
 
 - Often correlates with higher governance relevance
 
-#### How the B2B Components Work Together
+#### How the B2B components work together
 
 | Observation | Interpretation |
 |---|---|
 | Registration only | Trust established, activity unclear |
-| User sign‑ins present | Active collaboration |
-| Admin app sign‑ins present | Administrative coupling and elevated impact |
+| User sign-ins present | Active collaboration |
+| Admin app sign-ins present | Administrative coupling and elevated impact |
 
-Together, these inputs provide layered context without exposing user‑level data.
+Together, these inputs provide layered context without exposing user-level data.
 
-### Multitenant Application Signal
+### Multitenant application signal
 
-The **multitenant application signal** identifies tenants that have established **application‑level trust relationships** with the related tenant through multitenant application registrations and cross-tenant consent and instantiation.
+The **multitenant application signal** identifies tenants that have established **application-level trust relationships** with the related tenant through multitenant application registrations and cross-tenant consent and instantiation.
 
 At a conceptual level, this signal answers:
 
 *Are applications registered in one tenant trusted and instantiated in another tenant?*
 
-This signal captures non‑human trust relationships, which often persist longer and are harder to audit than user collaboration.
+This signal captures non-human trust relationships, which often persist longer and are harder to audit than user collaboration.
 
 **Why it matters**
 
@@ -137,7 +137,7 @@ This signal captures non‑human trust relationships, which often persist longer
 
 - Risk can exist even without active user collaboration
 
-### Shared Billing Accounts Signal
+### Shared billing accounts signal
 
 The **billing signal** identifies tenants that are connected through the underlying concept of **primary and associated billing tenants** in Azure MCA enterprise billing accounts.
 
@@ -155,9 +155,9 @@ At this time, EA/legacy commerce constructs are not supported. You must have an 
 
 - Often correlates with centrally funded environments
 
-- High‑confidence input for prioritization
+- High-confidence input for prioritization
 
-## Metrics Concepts
+## Metrics concepts
 
 Metrics provide additional context for discovery signals. They help administrators understand:
 
@@ -169,9 +169,9 @@ Metrics provide additional context for discovery signals. They help administrato
 
 Not all metric concepts apply to all signals.
 
-### Initial vs. Recent Metrics
+### Initial vs. recent metrics
 
-For activity‑based signals, Tenant Discovery distinguishes between **initial** and **recent** metrics.
+For activity-based signals, Tenant Discovery distinguishes between **initial** and **recent** metrics.
 
 | Metric | Meaning |
 |---|---|
@@ -190,9 +190,9 @@ This distinction answers:
 | Multitenant applications | ✅ | ✅ |
 | Shared billing accounts | ❌ | ❌ |
 
-Billing relationships are configuration‑based and do not fluctuate over time.
+Billing relationships are configuration-based and do not fluctuate over time.
 
-### Inbound vs. Outbound Metrics
+### Inbound vs. outbound metrics
 
 Inbound and outbound metrics describe the **direction of interaction**.
 
@@ -233,7 +233,7 @@ Aggregations answer:
 
 Recent metrics are only updated when activity crosses into a new order of magnitude.
 
-**Example (B2B sign‑ins)**
+**Example (B2B sign-ins)**
 
 - Initial detection: 50 users → returned value 10
 
@@ -247,19 +247,19 @@ Recent metrics are only updated when activity crosses into a new order of magnit
 | Multitenant applications | ✅ |
 | Shared billing accounts | ✅ |
 
-Billing is presence‑based rather than activity‑based.
+Billing is presence-based rather than activity-based.
 
-### Signal-Metric Mapping Summary
+### Signal-metric mapping summary
 
 | Metric Concept | B2B | Multitenant Apps | Billing |
 |---|---|---|---|
 | Initial vs recent | ✅ | ✅ | ❌ |
 | Inbound vs outbound | ✅ | ✅ | ❌ |
 | Aggregated counts | ✅ | ✅ | ✅ |
-| Activity‑based | ✅ | ✅ | ❌ |
-| Configuration‑based | ❌ | ❌ | ✅ |
+| Activity-based | ✅ | ✅ | ❌ |
+| Configuration-based | ❌ | ❌ | ✅ |
 
-Signals explain ***why*** tenants are related while metrics explain ***how*, *how much*, and *how recently*.** Both are intentionally non‑prescriptive. They inform investigation and prioritization without enforcing governance actions.
+Signals explain ***why*** tenants are related while metrics explain ***how*, *how much*, and *how recently*.** Both are intentionally non-prescriptive. They inform investigation and prioritization without enforcing governance actions.
 
 ## Related content
 

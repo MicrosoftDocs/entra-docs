@@ -1,6 +1,6 @@
 ---
 title: Billing asset in secure tenant creation
-description: Learn about billing assets and how they relate to secure tenant creation in Microsoft Entra tenant governance.
+description: Learn which Microsoft Entra tenant governance features are available with each license tier, including P1, P2, and ID Governance
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance

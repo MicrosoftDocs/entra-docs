@@ -1,6 +1,6 @@
 ---
 title: Set up a governance relationship
-description: Learn how to set up a governance relationship between tenants in Microsoft Entra tenant governance.
+description: Learn how to set up a governance relationship between a governing and governed tenant using the handshake process in Microsoft Entra
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -17,9 +17,9 @@ Governance relationships enable centralized, cross-tenant administration and mul
 You can establish a governance relationship between any two Microsoft Entra tenants using the three-step handshake process, and two-step handshake if tenants meet certain criteria. This article walks you through both options.
 
 ## Prerequisites
-- Review role requirements in [Tenant governance roles](https://aka.ms/TenantGovernance/Roles).
+- Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](https://aka.ms/TenantGovernance/Licensing).
+- Review license requirements for sending governance requests in [Tenant governance licensing](billing-asset.md).
 
 - A governance policy template must be created in the governing tenant before initiating the handshake process.
 
@@ -58,7 +58,6 @@ An administrator in the governing tenant must enable governance invitations to r
 1. Send a governance invitation to the future governing tenant. The future governing tenant receives an email notification that an invitation has been received.
 
 > [!NOTE]
-
 > Governance invitations are valid for 30 days.
 
 ### Step 3: Send a governance request from the governing tenant
@@ -71,7 +70,6 @@ An administrator in the governing tenant must enable governance invitations to r
 1. Send a governance request to the governed tenant, selecting the appropriate governance policy template. The future governed tenant receives an email notification that a request is pending.
 
 > [!NOTE]
-
 > Governance requests are valid for 14 days.
 
 ### Step 4: Accept the governance request in the governed tenant
@@ -98,7 +96,6 @@ Use the two-step handshake when either of the following conditions is met:
 1. Send a governance request to the governed tenant, selecting the appropriate governance policy template.
 
 > [!NOTE]
-
 > Governance requests are valid for 14 days.
 
 ### Step 2: Accept the governance request in the governed tenant
