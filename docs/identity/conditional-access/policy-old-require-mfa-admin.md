@@ -2,10 +2,13 @@
 title: Require MFA for administrators with Conditional Access
 description: Create a custom Conditional Access policy to require administrators to perform multifactor authentication.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/10/2026
 ms.reviewer: lhuangnorth
 ---
 # Require MFA for administrators
+
+> [!WARNING]
+> This article describes a legacy Conditional Access policy that uses the basic **Require multifactor authentication** grant control. Microsoft now recommends using **phishing-resistant multifactor authentication** for administrator accounts. For updated guidance, see [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
 
 Accounts that are assigned administrative rights are targeted by attackers. Requiring multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 
