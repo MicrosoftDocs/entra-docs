@@ -8,7 +8,7 @@ ms.reviewer: lhuangnorth
 # Require MFA for administrators
 
 > [!WARNING]
-> This article describes a legacy Conditional Access policy that uses the basic **Require multifactor authentication** grant control. Microsoft now recommends using **phishing-resistant multifactor authentication** for administrator accounts. For updated guidance, see [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
+> This article describes a Conditional Access policy that uses the **Require multifactor authentication** grant control. For stronger protection against phishing attacks, consider using **authentication strength** to require phishing-resistant MFA methods instead. For more information, see [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
 
 Accounts that are assigned administrative rights are targeted by attackers. Requiring multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 

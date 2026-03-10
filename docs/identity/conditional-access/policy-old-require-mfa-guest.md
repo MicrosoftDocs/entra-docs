@@ -8,7 +8,7 @@ ms.reviewer: lhuangnorth
 # Require multifactor authentication for guest access
 
 > [!WARNING]
-> This article describes a legacy Conditional Access policy that uses the basic **Require multifactor authentication** grant control. Microsoft now recommends using **authentication strength** policies for external users, which allow you to specify the exact MFA methods required. For updated guidance, see [Require multifactor authentication strength for external users](policy-guests-mfa-strength.md).
+> This article describes a Conditional Access policy that uses the **Require multifactor authentication** grant control. For external users who authenticate with Microsoft Entra ID, consider using **authentication strength** policies to specify which MFA methods are accepted. For more information, see [Require multifactor authentication strength for external users](policy-guests-mfa-strength.md). Authentication strength policies don't apply to email one-time passcode, SAML/WS-Fed, or Google federation users — for those scenarios, continue using the **Require multifactor authentication** grant control.
 
 Require guest users perform multifactor authentication when accessing your organization's resources. Some organizations might be ready to move to stronger authentication methods for their guest users. These organizations might choose to implement a policy like the one described in the article [Require multifactor authentication strength for external users](policy-guests-mfa-strength.md).
 
