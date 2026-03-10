@@ -21,7 +21,7 @@ This article describes how to update an existing governance relationship between
 
 - Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](billing-asset.md).
+- Review license requirements for sending governance requests in [Tenant governance licensing](licensing.md).
 
 ## Update the governance policy template
 Before you can update a governance relationship, you must first modify the governance policy template that was used to establish the existing relationship. When you update the template, its version number automatically increments by one.

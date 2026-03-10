@@ -19,7 +19,7 @@ You can establish a governance relationship between any two Microsoft Entra tena
 ## Prerequisites
 - Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](billing-asset.md).
+- Review license requirements for sending governance requests in [Tenant governance licensing](licensing.md).
 
 - A governance policy template must be created in the governing tenant before initiating the handshake process.
 

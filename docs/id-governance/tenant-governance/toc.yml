@@ -30,8 +30,8 @@
       href: configuration-management.md
   - name: Secure tenant creation
     items:
-    - name: Billing asset
-      href: billing-asset.md
+    - name: Licensing
+      href: licensing.md
     - name: Tenant creation settings
       href: tenant-creation-settings.md
 
