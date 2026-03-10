@@ -163,7 +163,7 @@ The steps to deploy your application proxy are covered in the [tutorial for addi
 
 Publishing applications assumes that you satisfied all the prerequisites and that you have several connectors showing as registered and active in the application proxy page.
 
-You can also publish applications by using [PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/overview).
+You can also publish applications by using [PowerShell](/powershell/microsoftgraph/overview).
 
 Best practices to follow when publishing an application:
 
