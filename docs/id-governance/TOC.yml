@@ -411,7 +411,7 @@
           href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
-        - name: Simulate workflow execution using the What-if tool (Preview)
+        - name: Workflow What-if tool (Preview)
           href: simulate-workflow-execution.md  
         - name: Customize emails
           href: customize-workflow-email.md
