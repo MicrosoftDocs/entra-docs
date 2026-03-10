@@ -1,5 +1,6 @@
 ---
 title: See monitor results and configuration drifts
+titleSuffix: Microsoft Entra ID Governance
 description: Learn how to view monitor results and detect configuration drifts in Microsoft Entra tenant governance.
 author: barclayn
 ms.author: barclayn

@@ -1,5 +1,6 @@
 ---
 title: Interpret tenant discovery data
+titleSuffix: Microsoft Entra ID Governance
 description: Learn how to interpret discovery data and signals in Microsoft Entra tenant governance.
 author: barclayn
 ms.author: barclayn

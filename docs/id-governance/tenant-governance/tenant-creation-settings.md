@@ -1,5 +1,6 @@
 ---
 title: Tenant creation settings
+titleSuffix: Microsoft Entra ID Governance
 description: Learn about tenant creation settings and how to control who can create new tenants in Microsoft Entra.
 author: barclayn
 ms.author: barclayn
