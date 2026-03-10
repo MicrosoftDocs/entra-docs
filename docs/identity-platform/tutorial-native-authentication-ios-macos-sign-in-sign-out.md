@@ -179,9 +179,9 @@ To sign in a user, you need to:
 
     ```
 
-## Access a refresh token (advanced scenarios)
+## Access a refresh token
 
-In advanced scenarios such as companion device support (for example, Apple Watch), your app might need a trusted component to refresh access tokens independently.
+In scenarios such as companion device support (for example, Apple Watch), your app might need a trusted component to refresh access tokens independently.
 
 By default, MSAL manages refresh tokens internally and doesn’t return them to application code. When your scenario requires it, you can **explicitly request** a refresh token after sign‑in.
 
@@ -223,9 +223,7 @@ When you enable refresh token access, follow these guidelines:
 - Handle token rotation by discarding older refresh tokens.
 - Remove refresh tokens from all devices when the user signs out.
 
-> [!Note]
->
-> Refresh token access isn’t supported in brokered authentication scenarios.
+Refresh token access isn’t supported in brokered authentication scenarios, such as when an app uses Microsoft Authenticator as the authentication broker.
 
 ### Handle sign-in errors
 
