@@ -85,7 +85,7 @@ items:
       - name: Privileged Identity Management
         tocHref: /entra/id-governance/privileged-identity-management/
         topicHref: /entra/id-governance/privileged-identity-management/
-      - name: Tenant governance
+      - name: Tenant Governance
         tocHref: /entra/id-governance/tenant-governance/
         topicHref: /entra/id-governance/tenant-governance/
     - name: Microsoft Entra ID Protection
