@@ -162,7 +162,7 @@ For reference, you can view the full set of service principal properties in the 
 
 ### OAuth2 (delegated) permission grant
 
-OAuth2 permission grant represents the delegated permissions that have been granted to an application's service principal. Delegated permission grants can be created as a result of a user consenting an application's request to access an API, or created directly. All properties of oAuth2 permission grant are in scope. View all oAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties)
+OAuth2 permission grant represents the delegated permissions that have been granted to an application's service principal. Delegated permission grants can be created as a result of a user consenting an application's request to access an API, or granted by an administrator on behalf of all users. Permission grants created by an admin on behalf of all users is in scope. These permission grants can be identified as "consentType" = "AllPrincipals" and "principalId" = null. Permission grant created as a result of user consent is currently not supported. View oAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties)
 
 OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of OAuth2 permission grant as well. 
 
