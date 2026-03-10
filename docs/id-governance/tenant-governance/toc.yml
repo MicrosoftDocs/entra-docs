@@ -48,8 +48,10 @@
     items:
     - name: Set up a governance relationship
       href: how-to-setup-governance-relationship.md
-    - name: Use delegated administration and monitor governing tenant activity
+    - name: Use delegated administration
       href: how-to-delegated-administration.md
+    - name: Monitor governing tenant admin activity
+      href: how-to-monitor-governing-activity.md
     - name: Update a governance relationship
       href: how-to-update-governance-relationship.md
     - name: Terminate a governance relationship
