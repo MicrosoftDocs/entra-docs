@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. To learn more about application proxy, see [What is application proxy?](overview-what-is-app-proxy.md). This tutorial prepares your environment for use with application proxy. After your environment is ready, use the Microsoft Entra admin center to add an on-premises application to your tenant.
 
-:::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Application proxy overview diagram" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
+:::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Application proxy overview diagram." lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 
 In this tutorial, you:
 - Install and verify the connector on your Windows server, and register it with application proxy.
