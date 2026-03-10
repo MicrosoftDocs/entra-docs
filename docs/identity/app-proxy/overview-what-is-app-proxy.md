@@ -164,7 +164,7 @@ The following diagram illustrates, in general, how Microsoft Entra authenticatio
 1. The application server responds, and the connector sends the response back to the application proxy service.
 1. The application proxy service delivers the response to the user.
 
-All communications occur over Transport Layer Security (TLS), and they always originate from the connector to the application proxy service.The connector uses a client certificate to authenticate to the application proxy service for all calls. The only exception to the connection security is the initial setup step where the client certificate is established.
+All communications occur over Transport Layer Security (TLS), and they always originate from the connector to the application proxy service. The connector uses a client certificate to authenticate to the application proxy service for all calls. The only exception to the connection security is the initial setup step where the client certificate is established.
 
 For more information, see [Security considerations for accessing apps remotely with Microsoft Entra application proxy](./application-proxy-security.md#under-the-hood).
 
