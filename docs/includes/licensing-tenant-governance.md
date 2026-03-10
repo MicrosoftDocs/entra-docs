@@ -15,8 +15,8 @@ These tables list the Microsoft Entra tenant governance features available with 
 
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
-| Single tenant configuration - monitoring | | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ An additional 10 resources per day per license |
-| Single tenant configuration - snapshots | | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ An additional 50 resources per month per license |
+| Single tenant configuration - monitoring | | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ 10 extra resources per day per license |
+| Single tenant configuration - snapshots | | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ 50 extra resources per month per license |
 | Single tenant configuration - drift reporting | | ✅ | ✅ | ✅ |
 
 > [!NOTE]
