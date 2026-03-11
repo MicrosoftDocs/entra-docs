@@ -49,6 +49,8 @@ items:
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: AI-guided setup
         href: agent-id-ai-guided-setup.md
+      - name: Agent ID setup instructions
+        href: agent-id-setup-instructions.md
     - name: Agent ID administration
       items:
         - name: View agent identities
