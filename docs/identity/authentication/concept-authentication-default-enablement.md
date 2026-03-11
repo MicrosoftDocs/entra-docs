@@ -2,7 +2,7 @@
 title: Protecting authentication methods in Microsoft Entra ID
 description: Learn about authentication features that can be enabled by default in Microsoft Entra ID
 ms.topic: concept-article
-ms.date: 04/29/2025
+ms.date: 03/11/2026
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
@@ -45,16 +45,27 @@ The following table lists each setting that can be set to Microsoft managed and 
 
 | Setting                                                                                         | Configuration |
 |-------------------------------------------------------------------------------------------------|---------------|
-| [Registration campaign](how-to-mfa-registration-campaign.md)                                    | Enabled for text message and voice call users |
+| [Registration campaign](how-to-mfa-registration-campaign.md)                                    | Enabled       |
 | [Location in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)           | Disabled      |
 | [Application name in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)   | Disabled      |
 | [System-preferred authentication](concept-system-preferred-multifactor-authentication.md)        | Enabled       |
 | [Authenticator Lite](how-to-mfa-authenticator-lite.md)                                          | Enabled       |  
 | [Report suspicious activity](howto-mfa-mfasettings.md#report-suspicious-activity)               | Disabled      |
 
+### Microsoft managed registration campaign
+
+When the registration campaign is set to **Microsoft managed**, Microsoft determines the optimal campaign configuration for your tenant based on best practices. The following behavior applies:
+
+- **Authentication method**: Microsoft selects the targeted authentication method. For tenants that have passkey (FIDO2) enabled and an active Microsoft managed registration campaign, Microsoft may automatically update the campaign to target passkeys instead of Microsoft Authenticator.
+- **Snooze duration and limits**: When **Microsoft managed** is selected, snooze duration and limited number of snoozes are set automatically and can't be configured by the admin.
+- **Include and exclude targets**: Admins can still configure which users and groups are included in or excluded from the campaign.
+
+> [!NOTE]
+> If the Microsoft managed settings don't meet your organization's needs, you can switch the registration campaign state to **Enabled** to configure all settings manually, or **Disabled** to turn off the campaign. For more information about how to configure a registration campaign, see [How to run a registration campaign](how-to-mfa-registration-campaign.md).
+
 As threat vectors change, Microsoft Entra ID can announce default protection for a **Microsoft managed** setting in [release notes](~/fundamentals/whats-new.md) and on commonly read forums like [Tech Community](https://techcommunity.microsoft.com/). 
 
-For more information, see our blog post [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752) which discusses moving away from using text message and voice calls. This change leads to default enablement for the registration campaign to help users set up Authenticator for modern authentication.
+For more information, see our blog post [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752) which discusses moving away from using text message and voice calls. Microsoft managed registration campaigns help users set up modern authentication methods, including Microsoft Authenticator and passkeys.
 
 ## Next steps
 
