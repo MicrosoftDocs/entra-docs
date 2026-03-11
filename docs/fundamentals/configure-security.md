@@ -117,7 +117,10 @@ Protect your network perimeter.
 | [Web content filtering uses category-based rules](zero-trust-protect-networks.md#web-content-filtering-uses-category-based-rules) | Microsoft Entra ID P1 |
 | [Web content filtering policies are linked to security profiles](zero-trust-protect-networks.md#web-content-filtering-policies-are-linked-to-security-profiles) | Microsoft Entra ID P1 |
 | [Web content filtering integrates with Conditional Access](zero-trust-protect-networks.md#web-content-filtering-integrates-with-conditional-access) | Microsoft Entra Internet Access |
+| [Web content filtering blocks high-risk categories](zero-trust-protect-networks.md#web-content-filtering-blocks-high-risk-categories) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [TLS inspection is enabled and correctly configured for outbound traffic](zero-trust-protect-networks.md#tls-inspection-is-enabled-and-correctly-configured-for-outbound-traffic) | Microsoft Entra ID P1 |
+| [TLS inspection bypass rules are regularly reviewed](zero-trust-protect-networks.md#tls-inspection-bypass-rules-are-regularly-reviewed) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [TLS inspection certificates have a sufficient validity period](zero-trust-protect-networks.md#tls-inspection-certificates-have-a-sufficient-validity-period) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Threat intelligence filtering protects internet traffic](zero-trust-protect-networks.md#threat-intelligence-filtering-protects-internet-traffic) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [File transfer policies are configured to prevent data exfiltration](zero-trust-protect-networks.md#file-transfer-policies-are-configured-to-prevent-data-exfiltration) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [AI Gateway protects enterprise generative AI applications from prompt injection attacks](zero-trust-protect-networks.md#ai-gateway-protects-enterprise-generative-ai-applications-from-prompt-injection-attacks) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
