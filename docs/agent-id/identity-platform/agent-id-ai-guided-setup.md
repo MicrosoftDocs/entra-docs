@@ -1,6 +1,6 @@
 ---
 title: AI-guided setup for Microsoft Entra Agent ID
-description: Use an AI coding agent to automate the onboarding process for Microsoft Entra Agent ID, including blueprint creation, credential configuration, and agent identity provisioning.
+description: Describes how to use an AI coding agent to automate the onboarding process for Microsoft Entra Agent ID, including blueprint creation, credential configuration, and agent identity provisioning.
 ms.topic: how-to
 author: arlucaID
 ms.author: arluca
