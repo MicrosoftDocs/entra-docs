@@ -5,7 +5,6 @@ ms.topic: concept-article
 ms.date: 03/07/2026
 ms.reviewer: jadedsouza
 ai-usage: ai-assisted
-ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra license utilization insights
@@ -30,8 +29,7 @@ This perspective is an initial stride towards empowering you to comprehend your 
 
 You can also navigate directly to the [License utilization](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/LicensesMenuBlade/~/LicenseUtilization) page.
 
-<!-- SCREENSHOT: Overview of the Licenses page showing the navigation path and the full page layout.
-     Suggested filename: license-utilization-overview.png -->
+:::image type="content" source="media/concept-license-utilization-insights/license-utilization-overview.png" alt-text="Screenshot of the License usage page in the Microsoft Entra admin center showing license entitlements and product usage insights." lightbox="media/concept-license-utilization-insights/license-utilization-overview.png":::
 
 ## License entitlements
 
