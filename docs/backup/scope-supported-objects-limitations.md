@@ -74,7 +74,7 @@ Recovery for group objects supports the following properties:
 - `Theme`
 
 > [!NOTE]
-> Group ownership changes aren't in scope. Dynamic groups can be restored or soft-deleted during recovery, but dynamic group rule and membership changes aren't in scope.
+> Group ownership changes aren't in scope. Dynamic groups can be restored or soft-deleted during recovery, but dynamic group rule changes aren't in scope.
 
 For reference, you can view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group#properties).
 
