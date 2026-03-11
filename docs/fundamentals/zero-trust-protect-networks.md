@@ -59,6 +59,12 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### TLS inspection certificates have a sufficient validity period
 [!INCLUDE [27002](../includes/secure-recommendations/27002.md)]
 
+### TLS inspection failure rate is below 1%
+[!INCLUDE [27003](../includes/secure-recommendations/27003.md)]
+
+### TLS inspection custom bypass rules don't duplicate system bypass destinations
+[!INCLUDE [27004](../includes/secure-recommendations/27004.md)]
+
 ### Threat intelligence filtering protects internet traffic
 [!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
 
@@ -70,6 +76,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Global Secure Access cloud firewall protects branch office internet traffic
 [!INCLUDE [25416](../includes/secure-recommendations/25416.md)]
+
+### Internet traffic is inspected across all Secure Web Gateway defense layers
+[!INCLUDE [27014](../includes/secure-recommendations/27014.md)]
 
 ### Microsoft 365 traffic is actively flowing through Global Secure Access
 [!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
