@@ -74,7 +74,7 @@ Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (R
 - If applicable, meet the various compliance requirements for listing your application in different clouds like USGov, China, Germany, France, Singapore, etc. (Required)
 
 #### Known Limitation on SCIM based user Provisioning  
-See this [article](~/identity/app-provisioning/known-issues?pivots=app-provisioning.md) for full list of known limitations in the Entra ID SCIM outbound provisioning. 
+See this [article](~/identity/app-provisioning/known-issues.md?pivots=app-provisioning) for full list of known limitations in the Entra ID SCIM outbound provisioning. 
 
 ## Create and publish documentation
 
