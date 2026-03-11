@@ -116,7 +116,7 @@ After your account is added, you can sign in to the Microsoft Application Networ
 
 ### Implementation-specific options
 
-On the application **Registration** form, select the feature that you want to enable. Select **OpenID Connect & OAuth 2.0**, **SAML 2.0/WS-Fed**, or **Password SSO(UserName & Password)** depending on the feature that your application supports.
+On the application **Registration** form, select the feature that you want to enable. Select **OpenID Connect & OAuth 2.0** or **SAML 2.0/WS-Fed** depending on the feature that your application supports.
 
 If you're implementing a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) 2.0 endpoint for user provisioning, select **User Provisioning (SCIM 2.0)**. Download the schema to provide in the onboarding request. For more information, see [Export provisioning configuration and roll back to a known good state](~/identity/app-provisioning/export-import-provisioning-configuration.md). The schema that you configured is used when testing the non-gallery application to build the gallery application.
 
