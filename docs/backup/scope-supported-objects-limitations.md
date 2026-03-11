@@ -90,11 +90,13 @@ All properties of named location policies are in scope. View all named location 
 
 Recovery for authorization policy objects supports the following properties:
 
-- `allowEmailVerifiedUsersToJoinOrganization`
-- `allowInvitesFrom`
-- `allowedToSignUpEmailBasedSubscriptions`
-- `allowedToUseSSPR`
-- `PermissionGrantPolicyIdsAssignedToDefaultUserRole`
+- `blockMsolPowerShell`
+- `guestUserRoleId`
+
+Here is a mapping of guest user role Ids with guest user permission levels: 
+- Guest users have the same access as members (Member User): a0b1b346-4d3e-4e8b-98f8-753987be4970
+- Guest users have limited access to properties and memberships of directory objects (Guest User): 10dae51f-b6af-4016-8d66-8c2a99b929b3
+- Guest uesr access is restricted to properties and memberships of their own directory objects (Restricted Guest User): 2af84b1e-32c8-42b7-82bc-daa82404023b
 
 For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy#properties).
 
@@ -171,6 +173,8 @@ OAuth2 permission grant is available as a filter for both difference report crea
 App role assignment is used to record when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
 App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of app role assignment as well. 
+
+In Entra portal, Service principals, OAuth2 permission grants and app role assignments are grouped as one filter to show all the changes that have happened to service principals. 
 
 ## Organization
 
