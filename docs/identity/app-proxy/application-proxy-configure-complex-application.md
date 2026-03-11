@@ -2,7 +2,7 @@
 title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 ---
@@ -32,8 +32,8 @@ Complex apps provide several benefits:
 
 This article shows you how to configure wildcard application publishing in your environment.
 
-## Characteristics of application segments for complex application. 
-- Application segments are only configured a wildcard application.
+## Characteristics of application segments for complex applications
+- Application segments are only configured on a wildcard application.
 - External and alternate URL should match the wildcard external and alternate URL domain of the application respectively.
 - Application segment URLs (internal and external) need to maintain uniqueness across complex applications.
 - CORS Rules (optional) can be configured per application segment.
@@ -48,7 +48,7 @@ This article shows you how to configure wildcard application publishing in your 
 - Enable application proxy and install a connector that has line of sight to your applications. See the tutorial [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md) to learn how to prepare your on-premises environment, install and register a connector, and test the connector.
 
 
-## Configure application segments for complex application. 
+## Configure application segments for complex applications
 
 > [!NOTE]
 > Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
