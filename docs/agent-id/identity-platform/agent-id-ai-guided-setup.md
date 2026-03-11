@@ -114,7 +114,7 @@ The AI agent pauses at specific points to collect input from you:
 > [!TIP]
 > The AI agent shows real values from your Microsoft Entra tenant as examples when it asks for configuration inputs. You can accept the suggestions or provide your own values.
 
-### Step 5: Verify in the Entra admin center
+### Step 5: Verify in the Microsoft Entra admin center
 
 After the setup completes, the AI agent provides instructions on how to verify the resources:
 
@@ -253,9 +253,9 @@ Please start from Step 1 in the setup instructions and work through each step in
 
 The most common causes of 403 errors:
 
-1. **Permission propagation delay** — Wait 1–2 minutes after admin consent and retry.
-2. **Azure CLI token contamination** — If you previously used `az` commands in the same session, the cached token may contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
-3. **Missing admin consent** — Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
+- **Permission propagation delay** — Wait 1–2 minutes after admin consent and retry.
+- **Azure CLI token contamination** — If you previously used `az` commands in the same session, the cached token may contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
+- **Missing admin consent** — Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
 ### Blueprint creation succeeds but returns a standard application
 
