@@ -12,8 +12,9 @@ ms.reviewer: shlipsey3
 
 # Agent ID Setup Instructions
 
-> This file is used by an AI coding agent (such as GitHub Copilot in VS Code Agent mode) to automate onboarding to Microsoft Entra Agent ID.
-> Attach this file in Copilot Chat and prompt: `Follow the steps in #file:agent-id-setup-instructions.md`
+This file is used by an AI coding agent (such as GitHub Copilot in VS Code Agent mode) to automate onboarding to Microsoft Entra Agent ID.
+
+Attach this file in Copilot Chat and use the following prompt: `Follow the steps in #file:agent-id-setup-instructions.md`
 
 ---
 
