@@ -29,7 +29,7 @@ Microsoft Entra Backup and Recovery builds on soft deletion to provide a compreh
 
 ### How backup works
 
-Microsoft Entra continuously records changes to supported directory objects. To learn what objects support soft deletion, see [Recover from deletions in Microsoft Entra ID](/entra/architecture/recover-from-deletions#properties-maintained-with-soft-delete). These backups are Microsoft-managed and don't require customers to export or manage their own copies. Backups capture object state over time, enabling recovery to a known good point.
+Microsoft Entra continuously records changes to supported directory objects. If an object is soft deleted, backup captures this change and will restore this object if this backup is used. To learn what objects support soft deletion, see [Recover from deletions in Microsoft Entra ID](/entra/architecture/recover-from-deletions#properties-maintained-with-soft-delete). These backups are Microsoft-managed and don't require customers to export or manage their own copies. Backups capture object state over time, enabling recovery to a known good point.
 
 ### How recovery works
 
@@ -59,7 +59,7 @@ Understanding the difference between soft deletion and hard deletion is critical
 
 If an object is **hard deleted**, it's permanently removed and **can't be recovered**. The only option is to create a new object, which results in a new object ID and loss of prior configuration and relationships.
 
-Microsoft Entra Backup and Recovery **doesn't support recovery of hard-deleted objects**. Preventing accidental or malicious hard deletion is therefore a critical part of a defense-in-depth strategy. For more information, see [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview).
+Microsoft Entra Backup and Recovery **doesn't support recovery of hard-deleted objects**. Organizations can use capabilities such as Microsoft Entra Conditional Access to add an additional layer of protection for sensitive permissions, including hard deletion of directory objects. For more information, see [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ### Why soft deletion matters
 
@@ -70,7 +70,7 @@ Soft deletion is essential to building a resilient identity system because it:
 - Reduces downtime and operational risk
 - Forms the foundation for reliable backup and recovery
 
-By combining soft deletion with Microsoft-managed backups, Microsoft Entra ensures that recoverable objects can be restored safely and predictably—without permanently deleting customer data during recovery.
+When combined, Microsoft Entra Backup and Recovery along with soft deletion functionality enables organizations to recover from supported unintended or malicious attribute change and deletion events, without permanently deleting data during recovery.
 
 ## Next steps
 
