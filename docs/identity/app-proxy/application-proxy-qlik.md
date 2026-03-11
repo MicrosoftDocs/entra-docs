@@ -1,8 +1,8 @@
 ---
 title: Microsoft Entra application proxy and Qlik Sense
-description:  Integrate Microsoft Entra application proxy with Qlik Sense.
+description: Integrate Microsoft Entra application proxy with Qlik Sense.
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
@@ -29,7 +29,7 @@ Publish your application in Microsoft Entra. For a more detailed walkthrough of 
    - **Internal URL**: This application should have an internal URL that is the Qlik Sense URL itself. For example, `https//demo.qlikemm.com:4244`. 
    - **Pre-authentication method**: Microsoft Entra ID (recommended but not required).
 1. Select **Add** at the bottom of the page. Your application is added, and the quick start menu opens. 
-2. In the quick start menu, select **Assign a user for testing**, and add at least one user to the application. Make sure this test account has access to the on premises application. 
+2. In the quick start menu, select **Assign a user for testing**, and add at least one user to the application. Make sure this test account has access to the on-premises application. 
 3. Select **Assign** to save the test user assignment. 
 4. (Optional) On the app management page, select single sign-on. Choose **Kerberos Constrained Delegation** from the drop-down menu, and fill out the required fields based on your Qlik Sense configuration. Select **Save**. 
 
@@ -44,7 +44,7 @@ Follow the same steps as for Application #1, with the following exceptions:
 Your application is now ready to test. Access the external URL you used to publish Qlik Sense in Application #1, and sign in as a user assigned to both applications.  
 
 ## References
-For more information about publishing Qlik Sense with application proxy, see following the Qlik Community Articles: 
+For more information about publishing Qlik Sense with application proxy, see the following Qlik Community Articles: 
 - [Microsoft Entra ID with integrated Windows authentication using a Kerberos Constrained Delegation with Qlik Sense](https://community.qlik.com/docs/DOC-20183)
 - [Qlik Sense integration with Microsoft Entra application proxy](https://community.qlik.com/t5/Technology-Partners-Ecosystem/Azure-AD-Application-Proxy/ta-p/1528396)
 
