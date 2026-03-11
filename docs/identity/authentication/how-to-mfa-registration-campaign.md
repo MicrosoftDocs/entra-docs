@@ -102,7 +102,16 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    - Select **Microsoft managed** to enable the registration campaign with Microsoft-recommended defaults. When **Microsoft managed** is selected, snooze duration and limited number of snoozes are set automatically and can't be configured. You can still configure include/exclude targets. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 
    > [!NOTE]
-   > When the state is set to **Microsoft managed**, Microsoft determines the optimal campaign settings based on best practices for your tenant. For tenants with an active Microsoft managed registration campaign, the authentication method may be updated to passkey automatically. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
+   > When the state is set to **Microsoft managed**, Microsoft determines the optimal campaign settings based on best practices for your tenant. For tenants with passkey (FIDO2) enabled and an active Microsoft managed registration campaign, the following changes may occur after passkey profile automatic migration:
+   >
+   > - **Targeted authentication method** changes from Microsoft Authenticator to passkeys (FIDO2).
+   > - **Days allowed to snooze** changes to 1 day. This setting is no longer configurable.
+   > - **Limited number of snoozes** changes to Disabled (unlimited snoozes). This setting is no longer configurable.
+   > - **User targeting** changes from voice call or text message users to all multifactor authentication (MFA) capable users.
+   >
+   > These changes apply to tenants where passkey profiles allow both device-bound and synced passkeys, attestation enforcement isn't enabled, and AAGUID-specific key restrictions aren't configured. Once the changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
+   >
+   > If you want synced passkeys enabled but don't want the registration campaign to target passkeys, you can switch the state to **Enabled** and continue targeting Microsoft Authenticator, or set the state to **Disabled**. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
 
    If the registration campaign state is set to **Enabled**, you can configure the experience for end users by using **Limited number of snoozes**:
    - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register the targeted authentication method.
