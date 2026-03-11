@@ -19,9 +19,9 @@ ms.reviewer: shlipsey3
 
 ## IMPORTANT: Read before executing
 
-- Execute each step **sequentially** — do not skip ahead.
+- Execute each step **sequentially** and don't skip ahead.
 - **Always include `OData-Version: 4.0`** in any Microsoft Graph request that uses `@odata.type`.
-- All Agent ID APIs are under the `/beta` endpoint — never use `/v1.0` for Agent ID operations.
+- All Agent ID APIs are under the `/beta` endpoint. Never use `/v1.0` for Agent ID operations.
 - **Do not use Azure CLI tokens** (`az account get-access-token`) to call Agent ID APIs. Azure CLI tokens contain `Directory.AccessAsUser.All`, which is explicitly rejected by Agent ID APIs (403 Forbidden).
 - After granting admin consent, permissions may take **30–120 seconds** to propagate. Implement retry with backoff on 403 errors.
 
@@ -56,8 +56,8 @@ Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force
 ### 1.3 Verify Entra roles
 
 Ask the user which role they have:
-- **Agent ID Developer** — can create blueprints and agent identities.
-- **Agent ID Administrator** — full administrative access.
+- **Agent ID Developer** can create blueprints and agent identities.
+- **Agent ID Administrator** has full administrative access.
 
 They also need **Privileged Role Administrator** if granting application permissions, or **Cloud Application Administrator** / **Application Administrator** for delegated permissions.
 
@@ -75,7 +75,7 @@ Run in terminal:
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.AddRemoveCreds.All", "AgentIdentityBlueprint.ReadWrite.All", "AgentIdentityBlueprintPrincipal.Create", "User.Read"
 ```
 
-The user will be prompted to sign in and consent to the required permissions in a browser window.
+The user is prompted to sign in and consent to the required permissions in a browser window.
 
 ### 2.2 Verify connection
 
@@ -95,7 +95,7 @@ Run in terminal:
 Select-MgProfile -Name beta
 ```
 
-If `Select-MgProfile` is not available (newer SDK versions), the beta module handles this automatically. Verify by confirming the module loaded is `Microsoft.Graph.Beta.*`.
+If `Select-MgProfile` isn't available (newer SDK versions), the beta module handles the profile automatically. Verify by confirming the module loaded is `Microsoft.Graph.Beta.*`.
 
 ### 2.4 Get the current user's ID (for sponsor assignment)
 
@@ -107,7 +107,7 @@ $currentUser.id
 $currentUser.displayName
 ```
 
-Record the user's object ID — this will be used as the **sponsor** for the blueprint.
+Record the user's object ID, which will be used as the **sponsor** for the blueprint.
 
 ---
 
@@ -116,7 +116,7 @@ Record the user's object ID — this will be used as the **sponsor** for the blu
 ### 3.1 Collect configuration values
 
 Ask the user for:
-- **Display name** for the blueprint (e.g., "Contoso Budget Agent Blueprint")
+- **Display name** for the blueprint (for example, "Contoso Budget Agent Blueprint")
 
 Suggest defaults:
 - **Sponsor**: The currently signed-in user (from Step 2.4)
@@ -161,7 +161,7 @@ $blueprint | Select-Object displayName, appId, id
 
 ### 3.4 Verify the blueprint principal exists
 
-**CRITICAL:** Creating a blueprint does NOT auto-create its service principal (blueprint principal). Without the principal, all agent identity creation FAILS.
+**CRITICAL:** Creating a blueprint does NOT autocreate its service principal (blueprint principal). Without the principal, all agent identity creation FAILS.
 
 Check if it exists:
 
@@ -197,7 +197,7 @@ Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/beta/applic
 
 **Key details:**
 - The `subject` is the managed identity's **principalId** (object ID), NOT the client ID.
-- The `audiences` must be `["api://AzureADTokenExchange"]` — NOT your API audience.
+- The `audiences` must be `["api://AzureADTokenExchange"]`, NOT your API audience.
 - Federated credentials go on the **blueprint**, not on individual agent identities.
 - For agent identity blueprints, you may need to use the path: `/applications/{id}/microsoft.graph.agentIdentityBlueprint/federatedIdentityCredentials`
 
@@ -290,7 +290,7 @@ If this fails with a conflict (409), the principal already exists — that's fin
 Ask the user: "Would you like to create one or more agent identities now?"
 
 If yes, ask for:
-- **Display name** for the agent identity (e.g., "budget-agent-1")
+- **Display name** for the agent identity (for example, "budget-agent-1")
 - **Number of identities** to create
 
 For each agent identity, run:
@@ -352,6 +352,6 @@ If any step fails, consult this section:
 | `400: Blueprint Principal does not exist` | Blueprint principal not created | Run Step 6. |
 | `PropertyNotCompatibleWithAgentIdentity` | Trying to add credentials to an agent identity instead of blueprint | Add credentials to the blueprint, not the agent identity. |
 | Credential lifetime policy error | Secret `endDateTime` exceeds org policy | Reduce `endDateTime` to align with policy. |
-| `409 Conflict` on service principal creation | Principal already exists | Safe to ignore — resource already exists. |
+| `409 Conflict` on service principal creation | Principal already exists | Safe to ignore since resource already exists. |
 | `@odata.type` silently ignored | Missing `OData-Version: 4.0` header | Add `OData-Version: 4.0` to ALL Agent ID API requests. |
 
