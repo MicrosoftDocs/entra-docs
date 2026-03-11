@@ -1,6 +1,6 @@
 ---
-title: Agent ID Setup Instructions
-description: This file is used by an AI coding agent (such as GitHub Copilot in VS Code Agent mode) to automate onboarding to Microsoft Entra Agent ID.
+title: Microsoft Entra Agent ID setup instructions
+description: Describes how an AI coding agent (such as GitHub Copilot in VS Code Agent mode) is used to automate onboarding to Microsoft Entra Agent ID.
 author: arlucaID
 ms.author: arluca
 ms.topic: how-to
