@@ -139,7 +139,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Bug Fixes
 
-- Fixed an issue where the upgrade process could cause synchronization failures on servers where you previously modified the `miiserver.exe.config` file. The upgrade process now detects configuration file modifications and skips automatic upgrade on those servers to help prevent post-upgrade synchronization disruption.
+- Fixed a [known issue](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) where auto-upgrade could stop your Microsoft Entra Connect server unexpectedly. Auto-upgrade now detects modifications to the `miiserver.exe.config` and `miisclient.exe.config` configuration files and skips automatic upgrade on those servers. If you manually upgrade and previously modified these configuration files, you might encounter installation failures. To resolve the issue, see the [known issues section](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified).
 
 ## 2.6.1.0
 
