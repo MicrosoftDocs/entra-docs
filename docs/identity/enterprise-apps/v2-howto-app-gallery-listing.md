@@ -49,8 +49,8 @@ Here's the quick checklist for you before you submit the application request to 
 #### SCIM API Requirements:
 - Support a SCIM 2.0 user and group endpoint (Only User Provisioning is required but User and Group Provisioning both are recommended).
 - Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required).
-- Validate and test your SCIM User and/or Group Provisioning integration with [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial) and [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#getting-started) template (Required).
-- Validate your Client Credentials Grant or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial) (Required).
+- Validate and test your SCIM User and/or Group Provisioning integration with [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) and [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) template (Required).
+- Validate your Client Credentials Grant or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) (Required).
 - Support either soft delete or hard delete of users. Either one is needed, both are also supported (Required).
 - On querying a nonexistent user your SCIM server shouldn't return bad request, rather success with 0 results (Required).
 - Support Schema Discovery feature on your SCIM endpoint (Required).
@@ -74,7 +74,7 @@ Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (R
 - If applicable, meet the various compliance requirements for listing your application in different clouds like USGov, China, Germany, France, Singapore, etc. (Required)
 
 #### Known Limitation on SCIM based user Provisioning  
-See this [article](~/identity/app-provisioning/known-issues?pivots=app-provisioning) for full list of known limitations in the Entra ID SCIM outbound provisioning. 
+See this [article](~/identity/app-provisioning/known-issues?pivots=app-provisioning.md) for full list of known limitations in the Entra ID SCIM outbound provisioning. 
 
 ## Create and publish documentation
 
