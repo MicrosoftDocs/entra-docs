@@ -47,8 +47,17 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Web content filtering integrates with Conditional Access
 [!INCLUDE [25407](../includes/secure-recommendations/25407.md)]
 
+### Web content filtering blocks high-risk categories
+[!INCLUDE [27000](../includes/secure-recommendations/27000.md)]
+
 ### TLS inspection is enabled and correctly configured for outbound traffic
 [!INCLUDE [25411](../includes/secure-recommendations/25411.md)]
+
+### TLS inspection bypass rules are regularly reviewed
+[!INCLUDE [27001](../includes/secure-recommendations/27001.md)]
+
+### TLS inspection certificates have a sufficient validity period
+[!INCLUDE [27002](../includes/secure-recommendations/27002.md)]
 
 ### Threat intelligence filtering protects internet traffic
 [!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
