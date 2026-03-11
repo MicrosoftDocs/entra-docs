@@ -13,7 +13,7 @@ ms.date: 03/11/2026
 
 ## Resources
 
-A resource represents a macro configuration component that can be managed via configuration-as-code. The tenant configuration management solution support hundreds of different resources types that can be used as part of your configuration baselines. Each resource defines multiple properties that can be managed by the solution. As an example, a Conditional Access Policy in Entra Id is represented by the microsoft.entra.conditionalaccesspolicy resource in Tenant Configuration Management. That resource exposes properties such as ExcludedUsers, IncludedGroups, State, etc. that can all be defined within your configuration baseline. For a full list of resources, please refer to [Overview of Tenant Configuration Management](https://learn.microsoft.com/en-us/graph/unified-tenant-configuration-management-concept-overview).
+A resource represents a macro configuration component that can be managed via configuration-as-code. The tenant configuration management solution support hundreds of different resource types that can be used as part of your configuration baselines. Each resource defines multiple properties that can be managed by the solution. As an example, a Conditional Access Policy in Entra Id is represented by the microsoft.entra.conditionalaccesspolicy resource in Tenant Configuration Management. That resource exposes properties such as ExcludedUsers, IncludedGroups, State, etc. that can all be defined within your configuration baseline. For a full list of resources, please refer to [Overview of Tenant Configuration Management](https://learn.microsoft.com/en-us/graph/unified-tenant-configuration-management-concept-overview).
 
 ## Baselines
 
