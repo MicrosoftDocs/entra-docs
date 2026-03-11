@@ -1,18 +1,23 @@
 ---
-title: How to run a registration campaign to set up Microsoft Authenticator
-description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
+title: How to run a registration campaign to set up Microsoft Authenticator or passkey
+description: Learn how to nudge users to register Microsoft Authenticator or a passkey during sign-in by using a registration campaign in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 12/12/2025
+ms.date: 03/11/2026
 author: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
+#Customer intent: As an identity administrator, I want to encourage users to set up Microsoft Authenticator or a passkey in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
-# How to run a registration campaign to set up Microsoft Authenticator
+# How to run a registration campaign to set up Microsoft Authenticator or passkey
 
-You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app, and create targeted campaigns to move users from less secure authentication methods to Authenticator.  
+You can nudge users to set up Microsoft Authenticator or a passkey during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged, and create targeted campaigns to move users from less secure authentication methods to Authenticator or passkeys.
 
-You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone the app setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
+Registration campaigns support two authentication methods:
+
+- **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
+- **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both sync passkeys and device-bound passkeys.
+
+You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
 >[!NOTE]
 >As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is nudged to set up Authenticator. For example, if a Conditional Access policy requires security info updates can only occur on an internal network, then users won't be prompted to set up Authenticator unless they are on the internal network. 
@@ -21,10 +26,12 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 - If you want to know the number of users who registered each authentication before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
 - Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
-- Users can't have already set up the Authenticator app for push notifications on their account. 
-- Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
+- **For Authenticator campaigns**: Users can't have already set up the Authenticator app for push notifications on their account. Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
+- **For passkey campaigns**: The passkey (FIDO2) authentication method must be enabled in the Authentication methods policy. For more information, see [Enable passkeys](how-to-enable-passkey-fido2.md).
 
 ## User experience
+
+### Authenticator campaign
 
 1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
 
@@ -64,20 +71,42 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot of snooze option.":::
 
+### Passkey campaign
+
+1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA).
+
+1. If passkey is enabled for your account and you haven't already registered a passkey, you get prompted to set up a passkey.
+
+   - If you already have Microsoft Authenticator or another application that supports device-bound passkeys, you can register a device-bound passkey.
+   - If you're on a device that supports sync passkeys (for example, through Apple Keychain or Google Password Manager), you can register a sync passkey.
+
+   > [!NOTE]
+   > Users who already have a passkey registered are not nudged again.
+
+1. If you don't want to set up a passkey, you can tap **Skip for now** to snooze the prompt.
+
 ## Enable the registration campaign policy using the Microsoft Entra admin center
 
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Registration campaign** and click **Edit**.
+1. For **Authentication method**, select the method to target:
+
+   - **Microsoft Authenticator** — Nudge users to set up the Authenticator app.
+   - **Passkey** — Nudge users to register a passkey (includes both sync passkeys and device-bound passkeys).
+
 1. For **State**:
 
-   - Select **Enabled** to enable the registration campaign for all users.
-   - Select **Microsoft managed**  to enable the registration campaign only for voice call or text message users. The **Microsoft managed** setting allows Microsoft to set the default value. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
+   - Select **Enabled** to enable the registration campaign for all users. When the state is set to **Enabled**, you can configure snooze duration, limited number of snoozes, and include/exclude targets.
+   - Select **Microsoft managed** to enable the registration campaign with Microsoft-recommended defaults. When **Microsoft managed** is selected, snooze duration and limited number of snoozes are set automatically and can't be configured. You can still configure include/exclude targets. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 
-   If the registration campaign state is set to **Enabled** or **Microsoft managed**, you can configure the experience for end users by using **Limited number of snoozes**:
-   - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register Authenticator.
-   - If **Limited number of snoozes** is Disabled, users can snooze an unlimited number of times and avoid registering Authenticator.
+   > [!NOTE]
+   > When the state is set to **Microsoft managed**, Microsoft determines the optimal campaign settings based on best practices for your tenant. For tenants with an active Microsoft managed registration campaign, the authentication method may be updated to passkey automatically. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
+
+   If the registration campaign state is set to **Enabled**, you can configure the experience for end users by using **Limited number of snoozes**:
+   - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register the targeted authentication method.
+   - If **Limited number of snoozes** is Disabled, users can snooze an unlimited number of times and avoid registration.
  
    **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
 
@@ -120,7 +149,7 @@ The following table lists **authenticationMethodsRegistrationCampaign** properti
 |------|-----------------|-------------|
 |snoozeDurationInDays|Range: 0 - 14|Defines the number of days before the user is nudged again.<br>If the value is 0, the user is nudged during every MFA attempt.<br>Default: 1 day|
 |enforceRegistrationAfterAllowedSnoozes|"true"<br>"false"|Dictates whether a user is required to perform setup after 3 snoozes.<br>If true, user is required to register.<br>If false, user can snooze indefinitely.<br>Default: true|
-|state|"enabled"<br>"disabled"<br>"default"|Allows you to enable or disable the feature.<br>Default value is used when the configuration hasn't been explicitly set and will use Microsoft Entra ID default value for this setting. The default state is enabled for voice call and text message users in all tenants.<br>Change state to enabled (for all users) or disabled as needed.|
+|state|"enabled"<br>"disabled"<br>"default"|Allows you to enable or disable the feature.<br>Default value is used when the configuration hasn't been explicitly set and will use Microsoft Entra ID default value for this setting.<br>Change state to enabled (for all users) or disabled as needed.|
 |excludeTargets|N/A|Allows you to exclude different users and groups that you want omitted from the feature. If a user is in a group that is excluded and a group that is included, the user will be excluded from the feature.|
 |includeTargets|N/A|Allows you to include different users and groups that you want the feature to target.|
 
@@ -130,7 +159,7 @@ The following table lists **includeTargets** properties.
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
 | ID | A guid identifier | The ID of the user or group targeted. |
-| targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method that the user is nudged to register. The only permissible value is "microsoftAuthenticator". |
+| targetedAuthenticationMethod | "microsoftAuthenticator"<br>"fido2" | The authentication method that the user is nudged to register. Use "microsoftAuthenticator" to nudge users to set up the Authenticator app, or "fido2" to nudge users to register a passkey. |
 
 The following table lists **excludeTargets** properties.
 
@@ -143,9 +172,9 @@ The following table lists **excludeTargets** properties.
 
 Here are a few sample JSONs you can use to get started! 
 
-- Include all users 
+- Include all users and target Authenticator
   
-  If you want to include ALL users in your tenant, update the following JSON example with the relevant GUIDs of your users and groups. Then paste it in Graph Explorer and run `PATCH` on the endpoint. 
+  If you want to include ALL users in your tenant and nudge them to set up Authenticator, update the following JSON example with the relevant GUIDs of your users and groups. Then paste it in Graph Explorer and run `PATCH` on the endpoint. 
 
   ```json
   {
@@ -160,6 +189,30 @@ Here are a few sample JSONs you can use to get started!
                       "id": "all_users",
                       "targetType": "group",
                       "targetedAuthenticationMethod": "microsoftAuthenticator"
+                  }
+              ]
+          }
+      }
+  }
+  ```
+
+- Include all users and target passkey
+  
+  If you want to include ALL users in your tenant and nudge them to register a passkey, update the following JSON example. Then paste it in Graph Explorer and run `PATCH` on the endpoint. 
+
+  ```json
+  {
+  "registrationEnforcement": {
+          "authenticationMethodsRegistrationCampaign": {
+              "snoozeDurationInDays": 1,
+              "enforceRegistrationAfterAllowedSnoozes": true,
+              "state": "enabled",
+              "excludeTargets": [],
+              "includeTargets": [
+                  {
+                      "id": "all_users",
+                      "targetType": "group",
+                      "targetedAuthenticationMethod": "fido2"
                   }
               ]
           }
@@ -296,15 +349,19 @@ No. The snooze duration for the prompt is a tenant-wide setting and applies to a
 
 **Can users be nudged to set up passwordless phone sign-in?** 
 
-The feature aims to empower admins to get users set up with MFA using the Authenticator app and not passwordless phone sign-in.  
+The registration campaign feature supports nudging users to set up MFA using the Authenticator app or to register a passkey. Passwordless phone sign-in isn't a targeted method for registration campaigns.
 
 **Will a user who signs in with a 3rd party authenticator app see the nudge?** 
 
-Yes. If a user is enabled for the registration campaign and doesn't have Microsoft Authenticator set up for push notifications, the user is nudged to set up Authenticator. 
+Yes. If a user is enabled for the registration campaign and doesn't have the targeted authentication method set up (Microsoft Authenticator for push notifications, or a passkey), the user is nudged. 
 
 **Will a user who has Authenticator set up only for TOTP codes see the nudge?**
 
-Yes. If a user is enabled for the registration campaign and Authenticator app isn't set up for push notifications, the user is nudged to set up push notification with Authenticator.
+Yes. If a user is enabled for an Authenticator registration campaign and the Authenticator app isn't set up for push notifications, the user is nudged to set up push notification with Authenticator.
+
+**Will a user who already has a passkey see the nudge?**
+
+No. If a user already has a registered passkey and the registration campaign targets passkeys, the user isn't nudged again.
 
 **If a user just went through MFA registration, are they nudged in the same sign-in session?** 
 
@@ -312,7 +369,7 @@ No. To provide a good user experience, users won't be nudged to set up the Authe
 
 **Can I nudge my users to register another authentication method?** 
 
-No. The feature, for now, aims to nudge users to set up the Authenticator app only. 
+Yes. Registration campaigns support nudging users to set up Microsoft Authenticator or to register a passkey (FIDO2). Select the targeted authentication method when you configure the campaign.
 
 **Is there a way for me to hide the snooze option and force my users to setup the Authenticator app?**  
 
@@ -348,4 +405,6 @@ No, there are no such plans.
 
 ## Next steps
 
-[Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
+- [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
+- [Enable passkeys (FIDO2)](how-to-enable-passkey-fido2.md)
+- [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md)
