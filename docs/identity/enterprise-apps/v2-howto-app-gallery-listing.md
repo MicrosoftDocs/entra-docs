@@ -43,6 +43,39 @@ To publish your application in the gallery, you must first read and agree to spe
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
+### Checklist for SCIM Provisioning Apps
+Here is the quick checklist for you before you submit the application request to list your application in Microsoft Entra ID App Gallery.
+
+#### SCIM API Requirements:
+- Support a SCIM 2.0 user and group endpoint (Only User Provisioning is required but User and Group Provisioning both are recommended).
+- Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required).
+- Validate and test your SCIM User and/or Group Provisioning integration with [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial) and [Non-Gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#getting-started) template (Required).
+- Validate your Client Credentials Grant or any other supported authentication using [Non-Gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial) (Required).
+- Support either soft delete or hard delete of users. Either one is needed, both are also supported (Required).
+- On querying a non-existent user your SCIM server should not return bad request, rather success with 0 results (Required).
+- Support Schema Discovery feature on your SCIM endpoint (Required).
+- Support updating multiple group memberships with a single PATCH (Recommended).
+- Support for SCIM bulk APIs which can improve the connector performance (Recommended).
+
+#### SCIM Authentication Requirements:
+Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (Required). We are not onboarding any SCIM Provisioning application with long lived bearer tokens, basic authentication or Code Auth Grant flow.
+
+- OAuth 2.0 Client Credentials Flow (Required)
+    - Provide customers with a client_id, client_credentials, auth token endpoint and SCIM endpoint so that customers can configure this in Entra ID App.
+    - Client Secret should expire between 1 year to 3 years, and then the access token cannot be retrieved with expired credentials (Required).
+    - Provide the ability to rotate client secrets regularly. ISVs should enable smooth rotation by allowing multiple active secrets and supporting deletion of old secrets. Alternatively, customers can create new client_id and client_secret.
+    - Access Token should be only valid for 60 minutes (1 hour) to 6 hours but not less than 60 minutes (Required)
+
+#### ISV Specific Requirements
+- Establish an engineering and support point of contact to support customers post Microsoft Entra ID App Gallery onboarding and for Microsoft to reach out in future (Required)
+- Document your SCIM endpoint publicly and share the link (Required)
+- Deploy your SCIM Provisioning to at least 100 mutual customers using the Entra ID Non-Gallery approach to qualify for the Microsoft Entra ID App Gallery listing.
+- Share at least 5 customer Microsoft Entra ID Tenant IDs so that they can participate in a private preview program once the connector is ready for testing. 
+- If applicable, meet the various compliance requirements for listing your application in different clouds like USGov, China, Germany, France, Singapore etc. (Required)
+
+#### Known Limitation on SCIM based user Provisioning  
+Please see this [article](~/identity/app-provisioning/known-issues?pivots=app-provisioning) for full list of known limitations in the Entra ID SCIM outbound provisioning. 
+
 ## Create and publish documentation
 
 ### Provide app documentation for your site
