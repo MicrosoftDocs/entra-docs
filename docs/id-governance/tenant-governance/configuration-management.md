@@ -17,7 +17,7 @@ A resource represents a macro configuration component that can be managed via co
 
 ## Baselines
 
-Baselines are the JSON representation of the resulting configuration you want to monitor for a given tenant. They consist of a list of resources and their defined values for the associated properties. A baseline can contain multiple instances of a given resource type. For example, a configuration baseline could defined multiple instance of Exchange Online Transport Rules as part of its definition. To learn more about configuration baselines, please refer to [Configuration baseline](https://learn.microsoft.com/en-us/graph/api/resources/configurationbaseline?view=graph-rest-beta).
+Baselines are the JSON representation of the resulting configuration you want to monitor for a given tenant. They consist of a list of resources and their defined values for the associated properties. A baseline can contain multiple instances of a given resource type. For example, a configuration baseline could defined multiple instances of Exchange Online Transport Rules as part of its definition. To learn more about configuration baselines, please refer to [Configuration baseline](https://learn.microsoft.com/en-us/graph/api/resources/configurationbaseline?view=graph-rest-beta).
 
 ## Monitors
 
