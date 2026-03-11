@@ -2,16 +2,16 @@
 title: Microsoft Entra license utilization insights
 description: Learn how to use the license utilization insights page in the Microsoft Entra admin center to monitor license usage and entitlements.
 ms.topic: concept-article
-ms.date: 03/07/2026
+ms.date: 03/11/2026
 ms.reviewer: jadedsouza
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra license utilization insights
 
-The license utilization insights page in the Microsoft Entra admin center helps you optimize your Microsoft Entra licenses by providing visibility into feature usage across your tenant. The page shows how many Entra ID P1, P2, and Suite licenses you own, along with usage of key features mapped to each license type. You can also review usage trends over the past six months.
+The license utilization insights page in the Microsoft Entra admin center helps you optimize your Microsoft Entra licenses by providing visibility into feature usage across your tenant. The page shows how many Microsoft Entra ID P1, P2, and Suite licenses you own, along with usage of key features mapped to each license type. You can also review usage trends over the past six months.
 
-This perspective is an initial stride towards empowering you to comprehend your license count and the value you extract from your Entra license. It also aids in addressing any over-usage issues that might emerge in your tenants.
+This view gives you a clearer understanding of your license count, the value you're getting from your Microsoft Entra license, and potential over-usage within your tenant.
 
 ## Prerequisites
 
@@ -43,19 +43,19 @@ The license entitlements section shows how many licenses you've purchased for th
 - Microsoft Entra Private Access
 - Microsoft Entra Internet Access
 
-The entitlement count reflects the total number of licenses across all products that include each tier of Entra ID functionality.
+The entitlement count reflects the total number of licenses across all products that include each tier of Microsoft Entra ID functionality.
 
 
 ## Feature usage metrics
 
 The license utilization insights page uses a single representative metric (hero metric) for each license tier to measure usage. This approach simplifies the view by focusing on the most meaningful indicator of paid feature adoption.
 
-### Entra ID P1 usage
+### Microsoft Entra ID P1 usage
 
 For P1 licenses, the hero metric is **Conditional Access users** — the number of unique users with at least one configured Conditional Access policy during the measurement period.
 
 
-### Entra ID P2 usage
+### Microsoft Entra ID P2 usage
 
 For P2 licenses, the hero metric is **Risk-based Conditional Access users** — the number of unique users with at least one configured risk-based Conditional Access policy during the measurement period.
 
