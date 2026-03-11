@@ -220,10 +220,7 @@ When you enable refresh token access, follow these guidelines:
 - Store refresh tokens in encrypted, platform‑protected storage.
 - Avoid logging or exporting refresh tokens.
 - Minimize refresh token copies across devices.
-- Handle token rotation by discarding older refresh tokens.
 - Remove refresh tokens from all devices when the user signs out.
-
-Refresh token access isn’t supported in brokered authentication scenarios, such as when an app uses Microsoft Authenticator as the authentication broker.
 
 ### Handle sign-in errors
 
