@@ -37,7 +37,7 @@ Run in terminal:
 $PSVersionTable.PSVersion
 ```
 
-**Requirement:** Major version must be 7 or higher. If not, instruct the user to install PowerShell 7+ from https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell.
+**Requirement:** Major version must be 7 or higher. If not, instruct the user to install PowerShell 7+ from /powershell/scripting/install/installing-powershell.
 
 ### 1.2 Check Microsoft Graph PowerShell beta module
 
@@ -53,16 +53,7 @@ If not installed, install it:
 Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force
 ```
 
-### 1.3 Verify Frontier access
-
-Ask the user: "Do you have a Microsoft 365 Copilot license with the Frontier program enabled? (See https://adoption.microsoft.com/copilot/frontier-program/)"
-
-If unsure, instruct them to check:
-1. Sign in to the Microsoft 365 admin center (https://admin.microsoft.com/).
-2. Browse to **Copilot > Settings > User access > Copilot Frontier**.
-3. Ensure it's enabled for their users.
-
-### 1.4 Verify Entra roles
+### 1.3 Verify Entra roles
 
 Ask the user which role they have:
 - **Agent ID Developer** — can create blueprints and agent identities.
@@ -346,9 +337,7 @@ Direct the user to verify in the Microsoft Entra admin center:
 ### Next steps
 
 Instruct the user:
-- To acquire tokens using the agent identity blueprint, see: https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/create-delete-agent-identities#get-an-access-token-using-agent-identity-blueprint
-- To learn about administrative relationships (owners, sponsors, managers), see: https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-owners-sponsors-managers
-- To understand the agent service principal model, see: https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-service-principals
+- [To learn about administrative relationships (owners, sponsors, managers)](./agent-owners-sponsors-managers.md)
 
 ---
 
@@ -365,3 +354,4 @@ If any step fails, consult this section:
 | Credential lifetime policy error | Secret `endDateTime` exceeds org policy | Reduce `endDateTime` to align with policy. |
 | `409 Conflict` on service principal creation | Principal already exists | Safe to ignore — resource already exists. |
 | `@odata.type` silently ignored | Missing `OData-Version: 4.0` header | Add `OData-Version: 4.0` to ALL Agent ID API requests. |
+
