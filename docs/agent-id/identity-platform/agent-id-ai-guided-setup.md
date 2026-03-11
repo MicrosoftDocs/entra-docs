@@ -42,7 +42,7 @@ Before you begin, ensure you have the following prerequisites:
 
 - **Microsoft Entra tenant** with one of the following roles:
   - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) — to create agent identity blueprints and agent identities.
-  - [Agent ID Administrator](h/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
+  - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
 - **Additional roles for permission grants:**
   - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) — required to grant Microsoft Graph application permissions.
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) — required to grant Microsoft Graph delegated permissions.
