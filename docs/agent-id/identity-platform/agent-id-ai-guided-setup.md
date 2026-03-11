@@ -25,7 +25,7 @@ The AI-guided setup offers several advantages over the manual workflow:
 - **Automated prerequisite validation** — The AI agent validates that you have the correct Entra roles, that the Microsoft Graph beta module is installed, and that required permissions are configured with admin consent — all before making any API calls.
 - **Smart defaults and auto-detection** — The AI agent queries your tenant for existing user information and resource details, then uses those values as suggestions when collecting configuration inputs.
 - **Derived naming conventions** — You provide a single display name for your agent, and the AI agent derives all related resource names (blueprint, blueprint principal, agent identities, identifier URIs) using consistent patterns.
-- **Inline error handling** — When a command fails, the AI agent analyzes the error, suggests a fix, and retries — rather than requiring you to search through troubleshooting documentation. This is especially valuable for Agent ID-specific pitfalls like permission propagation delays and OData header requirements.
+- **Inline error handling** — When a command fails, the AI agent analyzes the error, suggests a fix, and retries — rather than requiring you to search through troubleshooting documentation. This error handling is especially valuable for Agent ID-specific pitfalls like permission propagation delays and OData header requirements.
 - **Idempotent operations** — The AI agent checks whether resources already exist before creating them, making it safe to re-run the setup if a previous attempt was interrupted.
 
 ## Prerequisites
@@ -104,7 +104,7 @@ The AI agent reads the instruction file and begins the guided setup. It creates 
 
 The AI agent pauses at specific points to collect input from you:
 
-- **Display name** — The display name for your agent identity blueprint (e.g., "Contoso Budget Agent").
+- **Display name** — The display name for your agent identity blueprint (for example, "Contoso Budget Agent").
 - **Sponsor** — The user who is accountable for the agent. Defaults to the currently signed-in user.
 - **Owner** — The user or service principal who can make technical changes to the blueprint. Optional but recommended.
 - **Credential type** — Whether to use a managed identity (recommended for production) or a client secret (for local development).
@@ -137,7 +137,7 @@ The AI-guided setup automates the following stages of the Agent ID integration:
 | Agent identities | Creates agent identity service principals under the blueprint | [Create agent identities](create-delete-agent-identities.md) |
 
 > [!NOTE]
-> The AI-guided setup doesn't replace the need to integrate Agent ID into your agent's code. You should understand how your agent will [acquire tokens](create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) and perform operations using its agent identity. The guided setup provisions the identity infrastructure your agent code will use.
+> The AI-guided setup doesn't replace the need to integrate Agent ID into your agent's code. You should understand how your agent [acquires tokens](create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) and perform operations using its agent identity. The guided setup provisions the identity infrastructure your agent code will use.
 
 ## Common pitfalls the AI-guided setup handles
 
@@ -178,7 +178,7 @@ Azure CLI tokens include the `Directory.AccessAsUser.All` delegated permission. 
 
 After granting admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30–120 seconds or more.
 
-The AI-guided setup handles this by retrying operations with exponential backoff when a 403 is received after recent permission changes. If you're scripting this manually, implement retry logic:
+The AI-guided setup handles recent permission changes by retrying operations with exponential backoff when a 403 is received. If you're scripting this manually, implement retry logic:
 
 ```powershell
 # Example: Retry with backoff after admin consent
@@ -215,7 +215,7 @@ Credentials must be configured on the **blueprint**, not on individual agent ide
 
 ### Identifier URI must be set explicitly
 
-The blueprint's `identifierUris` field is not set by default. Without it, the OAuth2 scope `api://{appId}/.default` won't resolve, and token acquisition for the agent will fail. The AI-guided setup always configures this as part of the scope setup step.
+The blueprint's `identifierUris` field isn't set by default. Without it, the OAuth2 scope `api://{appId}/.default` won't resolve, and token acquisition for the agent will fail. The AI-guided setup always configures this as part of the scope setup step.
 
 ### Federated identity credential path for blueprints
 
@@ -229,7 +229,7 @@ Using the standard `/applications/{id}/federatedIdentityCredentials` path may no
 
 ### Token issuer varies by endpoint version
 
-When validating tokens in your agent backend, be aware that:
+When validating tokens in your agent backend, be aware of the following:
 - v1.0 tokens use issuer `https://sts.windows.net/{tenant-id}/`
 - v2.0 tokens use issuer `https://login.microsoftonline.com/{tenant-id}/v2.0`
 
