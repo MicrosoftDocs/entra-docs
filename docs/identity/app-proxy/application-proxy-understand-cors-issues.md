@@ -1,8 +1,8 @@
 ---
-title: Resolve Cross-Origin Resource Sharing Issues
+title: Resolve cross-origin resource sharing issues
 description: Learn how to identify and resolve cross-origin resource sharing (CORS) issues in Microsoft Entra application proxy.
 ms.topic: troubleshooting
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
