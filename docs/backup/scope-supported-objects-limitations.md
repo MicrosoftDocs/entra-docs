@@ -214,17 +214,19 @@ Recovery for the organization object supports the following properties:
 
 Completion time for difference reports and recovery depends on **data loading** and **processing**.
 
-When a backup is accessed for the first time, either through creating a difference report or recovery, the recovery service loads the backup data, which takes a fixed amount of time regardless of your tenant size. Loaded data is reused across operations that reference the same backup. As a result, operations that reuse previously loaded data typically complete faster than those that require loading data for the first time. Creating a difference report not only helps you preview changes before recovery, but can also reduce recovery time and subsequent report creation time by eliminating repeated data loading for the same backup.
+When a backup is accessed for the first time, either through creating a difference report or recovery, the recovery service loads the backup data, which takes a fixed amount of time even when tenant size is small. Loaded data is reused across operations that reference the same backup. As a result, operations that reuse previously loaded data typically complete faster than those that require loading data for the first time. Creating a difference report not only helps you preview changes before recovery, but can also reduce recovery time and subsequent report creation time by eliminating data loading for the same backup.
 
-Once data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
+Once data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current state. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
 ### Hard-deleted objects
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
 
-### Objects managed in AD DS
+### Objects managed in on-premises Active Directory Domain Services
 
-Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from Active Directory Domain Services (AD DS). For certain object types, such as groups, the source of authority can be moved from AD DS to the cloud, making all Microsoft Entra Backup and Recovery functionality available for those converted objects. Backup and recovery of objects managed in AD DS should be handled using an alternative solution.
+Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from on-premises. For certain object types, such as users and groups, the source of authority can be moved from on-premises to the cloud, making all Microsoft Entra Backup and Recovery functionality available for those converted objects. Backup and recovery of objects managed in on-premises should be handled using an alternative solution. 
+
+When a user or groups is converted to the cloud to be Entra managded after the backup state and if that specific backup is used to recover the user or group, its source of authority will not be converted to be on-premises Active Directory. Other supported changed attributes will be recovered. 
 
 ### Broader recoverability
 
