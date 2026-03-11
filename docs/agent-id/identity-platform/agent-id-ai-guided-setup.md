@@ -5,7 +5,6 @@ ms.topic: how-to
 author: arlucaID
 ms.author: arluca
 ms.date: 03/11/2026
-ms.topic: how-to
 ms.reviewer: rolyon
 ---
 
@@ -14,9 +13,9 @@ ms.reviewer: rolyon
 > [!IMPORTANT]
 > [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-The Agent ID [developer workflow](../identity-platform/index.md) involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
+Agent ID integration involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
 
-The AI-guided setup automates this entire workflow by using an AI coding agent (such as GitHub Copilot in VS Code) to execute the steps on your behalf. Instead of navigating between multiple documentation pages and running commands manually, you provide the AI agent with a single instruction file and it walks you through the process interactively.
+This AI-guided setup automates this entire workflow by using an AI coding agent (such as GitHub Copilot in VS Code) to execute the steps on your behalf. Instead of navigating between multiple documentation pages and running commands manually, you provide the AI agent with a single instruction file and it walks you through the process interactively.
 
 ## Benefits
 
@@ -36,17 +35,17 @@ Before you begin, ensure you have the following prerequisites:
 ### Required tools
 
 - [Visual Studio Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions installed. The AI-guided setup requires an AI coding agent with terminal access.
-- [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) or later — Required for the Microsoft Graph PowerShell module.
-- [Microsoft Graph PowerShell SDK (beta)](https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation) — Install with `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`.
+- [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) or later — Required for the Microsoft Graph PowerShell module.
+- [Microsoft Graph PowerShell SDK (beta)](https://learn.microsoft.com/powershell/microsoftgraph/installation) — Install with `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`.
 
 ### Required accounts and permissions
 
 - **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) — to create agent identity blueprints and agent identities.
-  - [Agent ID Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
+  - [Agent ID Developer](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) — to create agent identity blueprints and agent identities.
+  - [Agent ID Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
 - **Additional roles for permission grants:**
-  - [Privileged Role Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) — required to grant Microsoft Graph application permissions.
-  - [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator) — required to grant Microsoft Graph delegated permissions.
+  - [Privileged Role Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) — required to grant Microsoft Graph application permissions.
+  - [Cloud Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#application-administrator) — required to grant Microsoft Graph delegated permissions.
 
 ### Required Microsoft Graph permissions
 
@@ -66,16 +65,7 @@ The client you use (PowerShell or a custom app registration) must be authorized 
 
 ## Get the setup instructions file
 
-The AI-guided setup uses an instruction file named `agent-id-setup-instructions.md`. The instruction file is maintained in the [Agent ID developer documentation repository](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/).
-
-<!-- TODO: Update with actual repository URL when published -->
-If you have the repository cloned, the file is at:
-
-```
-docs/ai-guided-setup/agent-id-setup-instructions.md
-```
-
-Please download the file directly from the link above.
+The AI-guided setup uses the instructions found here: [agent-id-setup-instructions.md](./agent-id-setup-instructions.md). 
 
 ## Run the AI-guided setup
 
