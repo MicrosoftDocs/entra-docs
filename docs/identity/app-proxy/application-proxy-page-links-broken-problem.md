@@ -1,8 +1,8 @@
 ---
-title: Broken Links in an Application
-description:  Troubleshoot problems with broken links in application proxy apps that are integrated with Microsoft Entra ID.
+title: Broken links in an application
+description: Troubleshoot problems with broken links in application proxy apps that are integrated with Microsoft Entra ID.
 ms.topic: troubleshooting
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: asteen
 ai-usage: ai-assisted
 ---
@@ -34,7 +34,7 @@ You have three options to resolve this issue. The choices are listed in increasi
 
 1. If neither of these options are feasible, there are multiple options to set up inline link translation. These options include using the Intune Managed Browser, the My Apps extension, or the link translation setting on your application.
 
-   To learn more about each of these options and how to enable them, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](application-proxy-configure-hard-coded-link-translation.md).
+   For more information about each of these options and how to enable them, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
 ## Related content
 
