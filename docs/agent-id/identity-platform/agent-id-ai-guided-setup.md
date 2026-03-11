@@ -35,17 +35,17 @@ Before you begin, ensure you have the following prerequisites:
 ### Required tools
 
 - [Visual Studio Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions installed. The AI-guided setup requires an AI coding agent with terminal access.
-- [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) or later — Required for the Microsoft Graph PowerShell module.
-- [Microsoft Graph PowerShell SDK (beta)](https://learn.microsoft.com/powershell/microsoftgraph/installation) — Install with `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`.
+- [PowerShell 7](/powershell/scripting/install/installing-powershell) or later — Required for the Microsoft Graph PowerShell module.
+- [Microsoft Graph PowerShell SDK (beta)](/powershell/microsoftgraph/installation) — Install with `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`.
 
 ### Required accounts and permissions
 
 - **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) — to create agent identity blueprints and agent identities.
-  - [Agent ID Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
+  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) — to create agent identity blueprints and agent identities.
+  - [Agent ID Administrator](h/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) — for full administrative access to Agent ID resources.
 - **Additional roles for permission grants:**
-  - [Privileged Role Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) — required to grant Microsoft Graph application permissions.
-  - [Cloud Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#application-administrator) — required to grant Microsoft Graph delegated permissions.
+  - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) — required to grant Microsoft Graph application permissions.
+  - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) — required to grant Microsoft Graph delegated permissions.
 
 ### Required Microsoft Graph permissions
 
