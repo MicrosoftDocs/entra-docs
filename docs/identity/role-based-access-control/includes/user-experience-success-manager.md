@@ -1,13 +1,9 @@
 ---
 title: User Experience Success Manager
 description: User Experience Success Manager
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Assign the User Experience Success Manager role to users who need to do the following tasks:

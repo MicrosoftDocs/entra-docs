@@ -1,14 +1,10 @@
 ---
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
-author: owinfreyatl
-manager: dougeby
 editor: HANKI
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
 ms.reviewer: hanki
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.
@@ -75,6 +71,9 @@ To create a catalog:
 1. If you want the access packages in this catalog to be available for users to request as soon as they're created, set **Enabled** to **Yes**.
 
 1. If you want to allow users in external directories from connected organizations to be able to request access packages in this catalog, set **Enabled for external users** to **Yes**. The access packages must also have a policy allowing users from connected organizations to request. If the access packages in this catalog are intended only for users already in the directory, then set **Enabled for external users** to **No**.
+
+    > [!NOTE]
+    > This setting controls whether external users can **request** access packages through self-service. This setting isn't required for administrators to [directly assign](entitlement-management-access-package-assignments.md) external users to an access package, which is controlled by the access package's policy.
 
     ![Screenshot that shows the New catalog pane.](./media/entitlement-management-shared/new-catalog.png)
 

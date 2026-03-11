@@ -1,9 +1,6 @@
 ---
 title: Troubleshoot Microsoft Entra Connect Sync application-based authentication
 description: Learn how to troubleshoot known issues with application-based authentication (ABA) in Microsoft Entra Connect Sync, including missing connectivity parameters and multiple servers using the same connector account.
-author: omondiatieno
-ms.author: jomondi
-ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: troubleshooting
 ms.date: 01/15/2025

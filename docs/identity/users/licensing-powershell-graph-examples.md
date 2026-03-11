@@ -3,13 +3,8 @@ title: PowerShell examples for group-based licensing
 description: Learn how to manage group-based licensing in Microsoft Entra ID using Microsoft PowerShell. Includes examples for assigning licenses and troubleshooting errors.
 #customer intent: As an IT admin, I want to access PowerShell examples for common group-based licensing tasks so that I can simplify license magement in my organization.
 keywords: Entra ID licensing
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 03/19/2025
-ms.author: barclayn
 ---
 
 # Group-based licensing PowerShell examples
@@ -55,7 +50,6 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ## View product licenses assigned to a group
 
 
-```powershell
 The [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet can be used to retrieve the group object and check the *AssignedLicenses* property: it lists all product licenses currently assigned to the group.
 
 ```powershell
@@ -204,8 +198,8 @@ foreach ($group in $groups) {
     $groupInfo | Add-Member -MemberType NoteProperty -Name "Group ID" -Value $group.Id
     $groupInfo | Add-Member -MemberType NoteProperty -Name "License Types" -Value ($group.AssignedLicenses | Select-Object -ExpandProperty SkuId)
     $groupInfo | Add-Member -MemberType NoteProperty -Name "Total User Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Measure-Object).Count
-    $groupInfo | Add-Member -MemberType NoteProperty -Name "Licensed User Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Where-Object {$_.      LicenseProcessingState -eq "ProcessingComplete"} | Measure-Object).Count
-    $groupInfo | Add-Member -MemberType NoteProperty -Name "License Error Count" -Value (Get-MgGroupMember -GroupId $group.Id -All | Where-Object {$_.LicenseProcessingState -eq "ProcessingFailed"} | Measure-Object).Count
+    $groupInfo | Add-Member -MemberType NoteProperty -Name "License Error Count" -Value (Get-MgGroupMemberWithLicenseError -GroupId $group.Id -All | Measure-Object).Count
+    $groupInfo | Add-Member -MemberType NoteProperty -Name "Licensed User Count" -Value ((Get-MgGroupMember -GroupId $group.Id -All | Measure-Object).Count - (Get-MgGroupMemberWithLicenseError -GroupId $group.Id -All | Measure-Object).Count)
     $groupInfoArray += $groupInfo
 }
 
@@ -231,22 +225,9 @@ foreach ($group in $groups) {
     $groupId = $group.Id
     $groupName = $group.DisplayName
 
-    # Initialize counters for total members and members with license errors
-    $totalCount = 0
-    $licenseErrorCount = 0
-
-    # Get all members of the group that have license errors
-    $members = Get-MgGroupMemberWithLicenseError -GroupId $groupId
-
-    # Process each member
-    foreach ($member in $members) {
-        $totalCount++
-
-        # If the member has a license error (indicated by a non-empty Id), increment the error count
-        if (![string]::IsNullOrEmpty($member.Id)) {
-            $licenseErrorCount++
-        }
-    }
+    # Get count of the group's members and members with license errors
+    $totalCount = (Get-MgGroupMember -GroupId $GroupId -All).count
+    $licenseErrorCount = (Get-MgGroupMemberWithLicenseError -GroupId $groupId).count
 
     # Create a custom object with the group's information and counts
     $groupInfo += [PSCustomObject]@{
@@ -507,7 +488,7 @@ Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
 
 ## Remove direct licenses for users with group licenses
 
-The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](licensing-groups-migrate-users.md).
+The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](~/fundamentals/concept-group-based-licensing.md).
 
 > [!NOTE]
 >To ensure that users don't lose access to services and data, it's important to confirm that directly assigned licenses don't provide more service functionality than the inherited licenses. It isn't currently possible to use PowerShell to determine which services are enabled through inherited licenses versus direct licenses. Therefore, the script uses a minimum level of services that are known to be inherited from groups to check and ensure that users don't experience unexpected service loss.
@@ -590,5 +571,5 @@ Write-Host "Script execution complete."
 To learn more about the feature set for license management through groups, see the following articles:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assigning licenses to a group in Microsoft Entra ID](./licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
+* [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)

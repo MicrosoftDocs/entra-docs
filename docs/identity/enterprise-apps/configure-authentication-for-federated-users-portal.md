@@ -1,13 +1,8 @@
 ---
 title: Configure sign-in auto-acceleration
 description: Learn how to force federated IdP auto-acceleration for an application using Home Realm Discovery policy.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: ludwignick
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-minus-portal-aad

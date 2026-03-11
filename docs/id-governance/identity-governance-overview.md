@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
 
@@ -105,7 +101,7 @@ Once you've started using these identity governance features, you can easily aut
 | ------- | --------------------- |
 | Creating, updating and deleting AD and Microsoft Entra user accounts automatically for employees |[Plan cloud HR to Microsoft Entra user provisioning](../identity/app-provisioning/plan-cloud-hr-provision.md)|
 | Updating the membership of a group, based on changes to the member user's attributes | [Create a dynamic group](../identity/users/groups-create-rule.md)|
-| Assigning licenses | [group-based licensing](../identity/users/licensing-groups-assign.md) |
+| Assigning licenses | [group-based licensing](../fundamentals/concept-group-based-licensing.md) |
 | Adding and removing a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes | [Configure an automatic assignment policy for an access package in entitlement management](entitlement-management-access-package-auto-assignment-policy.md)|
 | Adding and removing a user's group memberships, application roles, and SharePoint site roles, on a specific date | [Configure lifecycle settings for an access package in entitlement management](entitlement-management-access-package-lifecycle-policy.md)|
 | Running custom workflows when a user requests or receives access, or access is removed | [Trigger Logic Apps in entitlement management](entitlement-management-logic-apps-integration.md) |

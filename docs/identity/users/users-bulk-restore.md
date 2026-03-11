@@ -1,13 +1,8 @@
 ---
 title: Bulk restore deleted users in the Azure portal
 description: Restore deleted users in bulk in the Azure portal in Microsoft Entra ID
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 02/24/2026
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
@@ -26,16 +21,27 @@ Download and fill in the CSV template to help you successfully restore Microsoft
 
 The rows in a downloaded CSV template are as follows:
 
-- **Version number**: The first row containing the version number must be included in the upload CSV.
+- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. For example, `Object ID [objectId] Required`. Some older versions of the template might have slight variations.
-- **Examples row**: We have included in the template a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
+- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
+
+[!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload:
+
+```csv
+version:v1.0
+Object ID [objectId] Required
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa
+```
 
 ### Additional guidance
 
-- The first two rows of the upload template must not be removed or modified, or the upload can't be processed.
-- The required columns are listed first.
-- We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
-- We recommend that you download the latest version of the CSV template as often as possible.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
 
 ## To bulk restore users
 
@@ -56,11 +62,13 @@ The rows in a downloaded CSV template are as follows:
 1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
 1. When the restore operation completes, you see a notification that the bulk operation succeeded.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
 
 ## Check status
 
-You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 :::image type="content" source="./media/users-bulk-restore/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page.." lightbox="./media/users-bulk-restore/bulk-center.png":::
 

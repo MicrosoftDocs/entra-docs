@@ -1,12 +1,8 @@
 ---
 title: Global Secure Access points of presence and IP addresses
 description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
 ms.date: 08/28/2025
-ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
 ---
@@ -57,6 +53,7 @@ The table lists the deployment status for the EMEA region.
 | France South            | Marseille, France            | ✅ | ✅ |
 | France Central          | Paris, France                | ✅ | ✅ |
 | Israel Central          | Tel Aviv, Israel             | ✅ | ✅ |
+| Austria East            | Vienna, Austria              | ✅ |     |
 | Poland Central          | Warsaw, Poland               | ✅ | ✅ |
 | Switzerland North       | Zurich, Switzerland          | ✅ | ✅ |
 

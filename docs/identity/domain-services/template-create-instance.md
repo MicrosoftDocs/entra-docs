@@ -1,15 +1,9 @@
 ---
 title: Enable Azure DS Domain Services using a template | Microsoft Docs
 description: Learn how to configure and enable Microsoft Entra Domain Services using an Azure Resource Manager template.
-author: justinha
-manager: dougeby
-
-ms.service: entra-id
-ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
 ms.date: 02/19/2025
-ms.author: justinha
 ---
 
 # Create a Microsoft Entra Domain Services managed domain using an Azure Resource Manager template

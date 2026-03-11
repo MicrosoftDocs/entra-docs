@@ -1,13 +1,8 @@
 ---
 title: Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/27/2026
-ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
@@ -46,7 +41,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 
 ## Get started
 
-This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. Because `memberOf` isn't yet supported in the rule builder, you must enter your rule in the rule editor.
+This feature is available in the Azure portal, Microsoft Graph, and PowerShell. However, the `memberOf` attribute isn’t currently supported in the rule builder UI. To use `memberOf` in the Azure portal, you must define the rule by using the rule editor (advanced syntax).
 
 ### Create a memberOf dynamic group
 
@@ -57,6 +52,21 @@ This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. B
 1. Select **Add dynamic query**.
 1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
     1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`  
+    
+> [!NOTE]
+> Replace `'groupId'` with the **object ID of the source group** whose members you want to include in the dynamic group.
+>
+> The two examples are alternatives:
+>
+> - Use the **user** rule when creating a **Dynamic user** group.
+> - Use the **device** rule when creating a **Dynamic device** group.
+>
+> To include multiple source groups, specify multiple group object IDs. For example:
+>
+> ```text
+> user.memberof -any (group.objectId -in ['<groupObjectId1>', '<groupObjectId2>'])
+> ```
+
 1. Select **OK**.
 1. Select **Create group**.

@@ -1,15 +1,8 @@
 ---
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange
 ---
@@ -85,6 +78,13 @@ To define a named location by public IPv4 or IPv6 address ranges, provide:
 - A **Name** for the location.
 - One or more public IP ranges.
 - Optionally **Mark as trusted location**.
+
+> [!NOTE]
+> IPv6 addresses must be entered in CIDR notation. For example:
+> - Single IPv6 address: `2001:db8::1/128`
+> - IPv6 subnet range: `2001:db8:abcd:0012::/64`
+> IPv6 ranges represent a block of public addresses and follow standard IPv6 CIDR formatting.
+
 
 Named locations defined by IPv4 or IPv6 address ranges have the following limitations: 
 

@@ -1,15 +1,8 @@
 ---
 title: Require multifactor authentication for Microsoft admin portals
 description: Create a Conditional Access policy requiring multifactor authentication for admins accessing Microsoft admin portals.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for admins accessing Microsoft admin portals
@@ -41,7 +34,7 @@ Microsoft recommends you require phishing-resistant multifactor authentication o
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, **Select resources**, select **Microsoft Admin Portals**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

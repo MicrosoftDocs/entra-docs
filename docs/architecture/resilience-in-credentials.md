@@ -2,12 +2,9 @@
 title: Build resilience with credential management in Microsoft Entra ID
 description: A guide for architects
  and IT administrators on building a resilient credential strategy.
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: best-practice
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience with credential management
 

@@ -1,13 +1,8 @@
 ---
 title: Understand Microsoft Entra application proxy connectors
 description: Learn how to use Microsoft Entra application proxy connectors.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: concept-article
 ms.date: 05/01/2025
-ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---

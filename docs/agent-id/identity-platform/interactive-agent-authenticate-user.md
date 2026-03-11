@@ -2,9 +2,6 @@
 title: Authenticate users in interactive agents
 description: Learn how to authenticate users for interactive agents using Agent Identity. Concepts include token requests, validation, and extraction of user claims for authorization.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -46,11 +43,11 @@ To authenticate a user, the client app (such as a frontend or mobile app) should
     Content-Type: application/x-www-form-urlencoded
     
     client_id=<client-id>
-    grant_type=authorization_code
-    code=<authorization_code>
-    redirect_uri=<redirect_uri>
-    scope=api://<agent-blueprint-id>/access_agent
-    client_secret=<client-secret>  # Only if using a confidential client
+    &grant_type=authorization_code
+    &code=<authorization_code>
+    &redirect_uri=<redirect_uri>
+    &scope=api://<agent-blueprint-id>/access_agent
+    &client_secret=<client-secret>  # Only if using a confidential client
     ```
 
     The JSON response contains an access token that can be used to access the agent's API.

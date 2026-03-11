@@ -2,15 +2,10 @@
 title: 'Migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync| Microsoft Docs'
 description: Describes steps to migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 
@@ -26,7 +21,7 @@ Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity 
 
 |Step|Description|
 |-----|-----|
-|Choose the best sync tool|Before moving to cloud sync, you should verify that cloud sync is currently the best synchronization tool for you. You can do this task by going through the wizard [here](https://aka.ms/EvaluateSyncOptions).|
+|Choose the best sync tool|Before moving to cloud sync, you should verify that cloud sync is currently the best synchronization tool for you. You can do this task by reviewing the [supported sync scenarios comparison](../common-scenarios.md).|
 |Verify the pre-requisites for migrating|The following guidance is only for users who have installed Microsoft Entra Connect using the Express settings and aren't synchronizing devices. Also you should verify the cloud sync [pre-requisites](how-to-prerequisites.md).|
 |Back up your Microsoft Entra Connect configuration|Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can rollback. For more information, see [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md).|
 |Review the migration tutorial|To become familiar with the migration process, review the [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](tutorial-pilot-aadc-aadccp.md) tutorial. This tutorial guides you through the migration process in a sandbox environment.|

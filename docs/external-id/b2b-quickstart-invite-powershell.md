@@ -1,13 +1,8 @@
 ---
 title: 'Quickstart: Add a guest user with PowerShell'
 description: In this quickstart, you learn how to use PowerShell to send an invitation to a Microsoft Entra B2B collaboration user. You'll use the Microsoft Graph Identity Sign-ins and the Microsoft Graph Users PowerShell modules.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.date: 11/17/2025
 ms.topic: quickstart
-ms.service: entra-external-id
 ms.custom: it-pro, mode-api, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation via PowerShell, so that they can collaborate with my organization using their own work, school, or social account.
