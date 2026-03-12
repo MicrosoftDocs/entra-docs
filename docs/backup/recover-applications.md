@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/09/2026
 ---
 
-# Recover application secrets using Microsoft Entra Backup (Preview)
+# Recover application secrets using Microsoft Entra Backup and Recovery(Preview)
 
 This article describes the steps to restore application secrets that were impacted by accidental or malicious activity, in conjunction with Entra Backup and Recovery.
 
