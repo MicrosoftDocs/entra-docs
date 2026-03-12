@@ -37,6 +37,7 @@ During a recovery operation:
 
 - Microsoft Entra uses **backups** to determine the correct object state.
 - **Soft-deleted objects are restored**, not recreated.
+- Objects added since the backup was taken are **soft deleted**.
 - Object identifiers, properties, and supported relationships are preserved.
 
 > [!IMPORTANT]
