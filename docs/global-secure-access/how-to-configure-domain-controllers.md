@@ -93,7 +93,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 [![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)](media/how-to-configure-domain-controllers/connectors-and-sensors.png#lightbox)
 
 > [!IMPORTANT]
-> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. You can in-place upgrade from the sensor versions 2.1.31 and later.
+> To upgrade to the Private Access Sensor version 2.1.31, it's recommended to uninstall the previous sensor and then installing the new sensor. You can in-place upgrade from the sensor versions 2.1.31 and later.
 
 ### 7. Install sensor silently (no interactive authentication)
 
@@ -106,7 +106,7 @@ For enterprise environments deploying sensors across multiple domain controllers
 ```
 2. Register Sensor
 
-    a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser.
+    a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so it's recommended to do this on a machine with a GUI, internet access, and a browser.
 
     ```PowerShell
     # Microsoft Private Access / Global Secure Access – Token acquisition script
@@ -176,7 +176,7 @@ For enterprise environments deploying sensors across multiple domain controllers
     ```PowerShell
     .\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
     ```
-If you already have another sensor registered, you may need to run `.\CleanRegistrationCmd.bat` first.
+If you already have another sensor registered, you might need to run `.\CleanRegistrationCmd.bat` first.
 
 ### 8. Configure Private Access Sensor policy files
 
