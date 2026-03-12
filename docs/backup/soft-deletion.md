@@ -41,6 +41,7 @@ During a recovery operation:
 
 > [!IMPORTANT]
 > Microsoft never hard deletes customer objects as part of the recovery process. Recovery operations always rely on restoring soft-deleted objects or rolling objects back to a previous state.
+> During recovery, new objects added since the selected backup was taken are soft-deleted. This approach helps to reduce the risk of accidental and malicious misconfigurations following recovery. For scenarios where the soft deletion recovery action should not be taken on one or more objects, filters can be applied to control which objects are in scope of recovery.
 
 This approach avoids the risks and operational burden of object re-creation, such as:
 
