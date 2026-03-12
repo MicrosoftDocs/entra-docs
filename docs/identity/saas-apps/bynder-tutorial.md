@@ -35,16 +35,27 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 * Bynder supports **SP and IDP** initiated SSO.
 * Bynder supports **Just In Time** user provisioning.
 
-## Add Bynder from the gallery
+## Add an application for Bynder
 
-To configure the integration of Bynder into Microsoft Entra ID, you need to add Bynder from the gallery to your list of managed SaaS apps.
+To configure the integration of Bynder into Microsoft Entra ID, you can take two different approaches:
+
+1. Create a custom application for Bynder.
+2. Add Bynder app from the gallery.
+
+```
+We strongly recommend creating a custom application. Bynder now supports SCIM provisioning, which is available only
+for custom applications. Using the Bynder application from the gallery will limit the availability of this
+functionality for your integration.
+```
+
+To create a custom application, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards](/microsoft-365/admin/misc/azure-ad-setup-guides).
+
+If you do not plan to use SCIM provisioning and prefer to use the Bynder app from the gallery, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Bynder** in the search box.
-1. Select **Bynder** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the **Add from the gallery** section, type **Bynder** in the search box.
+4. Select **Bynder** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 <a name='configure-and-test-azure-ad-sso'></a>
 
