@@ -32,7 +32,7 @@ This article focuses exclusively on:
 
 ## Discovery signals at a glance
 
-| Type | Discovery Signal | What it Represents | Nature |
+| Type | Discovery signal | What it represents | Nature |
 |---|---|---|---|
 | B2B collaboration | **B2B registration** | Guest users cross-tenant | State-based |
 | B2B collaboration | **B2B sign-ins** | Cross-tenant sign-in activity | Activity-based |
@@ -44,11 +44,11 @@ Discovery signals are **descriptive, not prescriptive**. A signal explains that 
 
 ## Discovery signals
 
-The following sections describe each discovery signal and its sub-signals in detail.
+These sections describe each discovery signal and its sub-signals in detail.
 
 ### B2B collaboration signals
 
-The **B2B collaboration signal** identifies tenants that participate in **cross-tenant identity interactions** with the related tenant. It builds on Microsoft Entra External Identities and captures both user collaboration and cross-tenant administrative activity.
+The **business-to-business (B2B) collaboration signal** identifies tenants that participate in **cross-tenant identity interactions** with the related tenant. It builds on Microsoft Entra External Identities and captures both user collaboration and cross-tenant administrative activity.
 
 At a conceptual level, this signal answers:
 
@@ -153,7 +153,7 @@ At a conceptual level, this signal answers:
 
 This signal reflects organizational affiliation, not identity or application trust.
 
-At this time, EA/legacy commerce constructs are not supported. You must have an MCA enterprise billing account to discover related tenants via the billing signal.
+At this time, Enterprise Agreement (EA) and legacy commerce constructs aren't supported. You must have a Microsoft Customer Agreement (MCA) enterprise billing account to discover related tenants via the billing signal.
 
 **Why it matters**
 
@@ -186,9 +186,9 @@ For activity-based signals, Tenant Discovery distinguishes between **initial** a
 
 This distinction answers:
 
-*When was this relation discovered and is this relation still active use today?*
+*When was this relation discovered, and is this relation still in active use today?*
 
-**Signal Applicability**
+**Signal applicability**
 
 | Signal | Initial | Recent |
 |---|---|---|
@@ -211,7 +211,7 @@ This answers:
 
 *What is the directionality of trust and/or access?*
 
-**Signal Applicability**
+**Signal applicability**
 
 | Signal | Inbound / Outbound |
 |---|---|
@@ -227,7 +227,7 @@ Aggregations answer:
 
 *How significant is this relationship at a high level?*
 
-**Aggregation Behavior**
+**Aggregation behavior**
 
 | Actual Value Range | Value Returned |
 |---|---|
@@ -245,7 +245,7 @@ Recent metrics are only updated when activity crosses into a new order of magnit
 
 - Later increases to 101 users → returned value 100 and timestamp updated
 
-**Signal Applicability**
+**Signal applicability**
 
 | Signal | Aggregations |
 |---|---|

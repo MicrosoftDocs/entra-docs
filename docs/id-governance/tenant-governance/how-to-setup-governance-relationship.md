@@ -18,7 +18,7 @@ ms.date: 03/10/2026
 
 Governance relationships enable centralized, cross-tenant administration and multi-tenant application management. A governance relationship is a directional relationship between two tenants: one tenant acts as the *governing tenant*, and the other acts as the *governed tenant*.
 
-You can establish a governance relationship between any two Microsoft Entra tenants using the three-step handshake process, or the two-step handshake if tenants meet certain criteria. This article walks you through both options.
+Establish a governance relationship between any two Microsoft Entra tenants by using the three-step handshake process, or the two-step handshake if tenants meet certain criteria. This article describes both options.
 
 ## Prerequisites
 - Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
@@ -32,11 +32,11 @@ You can establish a governance relationship between any two Microsoft Entra tena
 ## Create a governance policy template
 Before you can set up a governance relationship, you must create a governance policy template in the governing tenant. The policy template defines the type of relationship and the level of access the governing tenant has over the governed tenant. Templates can be reused across distinct relationships.
 
-1. Sign in to the governing tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
-1. Navigate to Templates.
+1. Browse to **Tenant governance** > **Templates**.
 
-1. Create a new policy template and configure the following options as needed:
+1. Create a new policy template and configure these options as needed:
 
    - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
 
@@ -49,16 +49,16 @@ Use the three-step handshake when there's no pre-existing billing signal or acti
 
 Before you start the handshake, enable governance invitations in the governing tenant to receive invitations from other tenants. By default, this setting is turned off.
 
-1. Sign in to the governing tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
-1. Navigate to the tenant governance settings.
+1. Browse to **Tenant governance** > **Settings**.
 
 1. Enable the invitations setting to allow governance invitations. Disable this setting after you receive the invitation.
 
 ### Step 1: Send a governance invitation from the governed tenant
-1. Sign in to the future governed tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the future governed tenant.
 
-1. Navigate to Governing tenants > Sent invitations.
+1. Browse to **Tenant governance** > **Governing tenants** > **Sent invitations**.
 
 1. Send a governance invitation to the future governing tenant. The future governing tenant receives an email notification about the invitation.
 
@@ -66,9 +66,9 @@ Before you start the handshake, enable governance invitations in the governing t
 > Governance invitations are valid for 30 days.
 
 ### Step 2: Send a governance request from the governing tenant
-1. Sign in to the governing tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
-1. Navigate to Governed tenants > Received invitations.
+1. Browse to **Tenant governance** > **Governed tenants** > **Received invitations**.
 
 1. Review the received governance invitation.
 
@@ -78,25 +78,25 @@ Before you start the handshake, enable governance invitations in the governing t
 > Governance requests are valid for 14 days.
 
 ### Step 3: Accept the governance request in the governed tenant
-1. Sign in to the governed tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
 
-1. Navigate to Governing tenants > Received requests.
+1. Browse to **Tenant governance** > **Governing tenants** > **Received requests**.
 
 1. Select a request id to review the governance request.
 
 1. Accept the governance request to create the governance relationship. The governing tenant receives an email notification that you accepted the request and created the relationship.
 
 ## Set up a governance relationship using a two-step handshake
-Use the two-step handshake when either of the following conditions is met:
+Use the two-step handshake when either of these conditions is met:
 
 - A billing signal identifies the target tenant as a related tenant.
 
 - There's an existing, active governance relationship between the two tenants, and you're seeking to establish another relationship between them.
 
 ### Step 1: Send a governance request from the governing tenant
-1. Sign in to the governing tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
-1. Navigate to Governed tenants > Send governance request.
+1. Browse to **Tenant governance** > **Governed tenants** > **Send governance request**.
 
 1. Send a governance request to the governed tenant, selecting the appropriate governance policy template.
 
@@ -104,24 +104,24 @@ Use the two-step handshake when either of the following conditions is met:
 > Governance requests are valid for 14 days.
 
 ### Step 2: Accept the governance request in the governed tenant
-1. Sign in to the governed tenant as an administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
 
-1. Navigate to Governing tenants > Received requests.
+1. Browse to **Tenant governance** > **Governing tenants** > **Received requests**.
 
 1. Review the governance request.
 
 1. Accept the governance request to create the governance relationship.
 
 ## Verify the governance relationship
-When you successfully create a governance relationship, the system provisions these resources:
+When you successfully create a governance relationship, tenant governance provisions these resources:
 
 - A governance relationship object in both the governing and governed tenants.
 
 - In the governed tenant:
 
-  - If delegated administration is configured, the system updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
+  - If delegated administration is configured, tenant governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
 
-  - If multi-tenant application management is configured, the system creates the corresponding service principal and its permissions.
+  - If multi-tenant application management is configured, tenant governance creates the corresponding service principal and its permissions.
 
 ## Related content
 - [Update a governance relationship](how-to-update-governance-relationship.md)

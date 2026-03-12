@@ -25,7 +25,7 @@ Governance relationships enable four key scenarios:
 | Cross-tenant delegated administration | Use governance relationships to centralize **least-privileged administrative access** across multiple Microsoft Entra tenants. Administrators sign in using accounts from the governing tenant, eliminating the need to create and manage local or B2B administrator accounts in every governed tenant. This model is designed for organizations that operate multiple tenants but want a single administrative control plane. |
 | Multi-tenant application management | Manage custom, multi-tenant applications from the governing tenant. Governance relationships allow administrators to monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually, reducing operational overhead and configuration drift. |
 | Tenant configuration management | If you've configured cross-tenant delegated administration in your governance relationship, you can use this administrative access to ensure that the tenant meets your organization's security and compliance objectives on an ongoing basis. |
-| Secure tenant creation | When you create a new add-on tenant from an existing tenant, the system automatically establishes a governance relationship between the parent tenant and the new tenant by using a default governance policy template. This step immediately brings newly created tenants under centralized administration and governance controls, reducing the risk of unmanaged or misconfigured tenants. |
+| Secure tenant creation | When you create a new add-on tenant from an existing tenant, tenant governance automatically establishes a governance relationship between the parent tenant and the new tenant by using a default governance policy template. This step immediately brings newly created tenants under centralized administration and governance controls, reducing the risk of unmanaged or misconfigured tenants. |
 
 ## Relationship handshake
 
@@ -37,7 +37,7 @@ To create a new governance relationship, or update an existing one, administrato
 
 1. After the future governed tenant reviews and accepts the request, the tenants establish a governance relationship.
 
-Tenants that meet the following criteria can skip the invitation step:
+Tenants that meet these criteria can skip the invitation step:
 
 - The future governing tenant identifies the future governed tenant as a related tenant through Tenant discovery with a Shared billing account.
 
@@ -47,7 +47,7 @@ Tenants that meet the following criteria can skip the invitation step:
 
 ### Request states
 
-Governance requests progress through the following states:
+Governance requests progress through these states:
 
 | State | Description |
 |---|---|
@@ -57,17 +57,17 @@ Governance requests progress through the following states:
 
 ### Relationship states
 
-Governance relationships progress through the following states:
+Governance relationships progress through these states:
 
 | State | Description |
 |---|---|
 | Active | The relationship is established and operational. |
 | Termination requested | The governing tenant has requested to terminate the relationship. |
-| Terminated | Both tenants terminated the relationship, and the system deleted all related resources. |
+| Terminated | Both tenants terminated the relationship, and tenant governance deleted all related resources. |
 
 ## Governance models
 
-When you set up governance relationships between a pair of tenants, note the following supported models.
+When you set up governance relationships between a pair of tenants, note these supported models.
 
 | Supported? | Model type | Description |
 |---|---|---|

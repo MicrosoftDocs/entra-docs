@@ -20,11 +20,13 @@ This article describes how to create and update a configuration monitor in the [
 
 ## Before you begin
 
-Sign in as a Global Administrator. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+
+1. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
 
 ## Create a configuration monitor
 
-Use the following steps to create a new configuration monitor. The monitor creation wizard guides you through Permissions, Configuration baseline, and Review.
+Use these steps to create a new configuration monitor. The monitor creation wizard guides you through Permissions, Configuration baseline, and Review.
 
 ### Step 1: Permissions
 
@@ -36,7 +38,7 @@ Select **Next** to continue.
 
 On the **Configuration baseline** page, upload or edit the JSON file that defines the desired configuration state for the resources you want to monitor. The monitor evaluates this baseline each time it runs.
 
-After validating the baseline, select **Next**.
+After you validate the baseline, select **Next**.
 
 ### Step 3: Review
 
@@ -51,7 +53,7 @@ Updating a configuration monitor uses the same wizard flow and steps as creating
 When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
 > [!IMPORTANT]
-> When you change an existing monitor, the system automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
+> When you change an existing monitor, tenant governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
 
 ## Next steps
 

@@ -22,7 +22,7 @@ This article describes how to identify, review, and monitor the activities that 
 
 - An active governance relationship between the governing tenant and your governed tenant.
 
-- One of the following roles assigned in the governed tenant:
+- One of these roles assigned in the governed tenant:
 
   - [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader)
   - [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
@@ -46,9 +46,9 @@ When a governing tenant admin signs in to your governed tenant:
 
 Use sign-in logs to monitor when and how governing tenant administrators sign in to your governed tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Navigate to **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 
 1. To filter for governing tenant admin sign-ins, select **Add filters**.
 
@@ -67,9 +67,9 @@ Use sign-in logs to monitor when and how governing tenant administrators sign in
 
 Use audit logs to track the specific actions and changes that governing tenant administrators make in your governed tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Navigate to **Microsoft Entra ID** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 
 1. To filter for actions performed by governing tenant admins, select **Add filters**.
 

@@ -30,20 +30,20 @@ This article describes how to update an existing governance relationship between
 ## Update the governance policy template
 Before you can update a governance relationship, you must first modify the governance policy template you used to establish the existing relationship. When you update the template, its version number automatically increments by one.
 
-1. Sign in to the governing tenant as an admin.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
-1. Navigate to the governance policy template you previously used to set up the relationship.
+1. Browse to **Tenant governance** > **Templates**, and select the policy template you used to set up the relationship.
 
-1. Modify the template as needed. You can update one or more of the following configurations:
+1. Modify the template as needed. Update one or more of these configurations:
 
     - **Delegated administration roles**: Add or change the Microsoft Entra built-in roles assigned to security groups in the governing tenant. These roles determine the access level that users in those groups have when they sign in to the governed tenant.
 
-    - **Multi-tenant application management**: Add or update custom, multi-tenant applications. When you update the relationship, the system creates or updates a service principal with the corresponding permissions in the governed tenant.
+    - **Multi-tenant application management**: Add or update custom, multi-tenant applications. When you update the relationship, tenant governance creates or updates a service principal with the corresponding permissions in the governed tenant.
 
 1. Save the updated governance policy template. The version number of the template increments by one.
 
 > [!NOTE]
-> Updating the governance policy template doesn't automatically update the governance relationship. The tenant admins must complete the governance request and approval process described in the following sections for the policy template changes to take effect.
+> Updating the governance policy template doesn't automatically update the governance relationship. The tenant admins must complete the governance request and approval process described in the sections that follow for the policy template changes to take effect.
 
 ## Send a new governance request with the updated template
 After updating the governance policy template, send a new governance request from the governing tenant to the governed tenant using the updated template.
@@ -59,21 +59,21 @@ After updating the governance policy template, send a new governance request fro
 ## Accept the governance request
 An admin in the governed tenant must accept the governance request to complete the update.
 
-1. Sign in to the governed tenant as an admin.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
 
-1. Navigate to the pending governance requests.
+1. Browse to **Tenant governance** > **Received requests**.
 
 1. Review the updated governance request, including the changes in the policy template.
 
 1. Accept the governance request. The system updates the existing governance relationship with the new policy template configuration. The governing tenant receives an email confirming the accepted request and the updated governance relationship.
 
-When the governed tenant accepts the governance request, the following changes take effect:
+When the governed tenant accepts the governance request, these changes take effect:
 
-- The system updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
+- Tenant governance updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
 
-- If you updated delegated administration roles, the system updates the GDAP role assignments in the governed tenant accordingly.
+- If you updated delegated administration roles, tenant governance updates the GDAP role assignments in the governed tenant accordingly.
 
-- If you updated multi-tenant application management, the system updates the corresponding service principal and its permissions in the governed tenant.
+- If you updated multi-tenant application management, tenant governance updates the corresponding service principal and its permissions in the governed tenant.
 
 ## Related content
 - [Set up a governance relationship](how-to-setup-governance-relationship.md)

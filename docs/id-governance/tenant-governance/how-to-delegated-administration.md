@@ -16,7 +16,7 @@ ms.date: 03/10/2026
 
 Cross-tenant delegated administration enables administrators in a governing tenant to sign in to and manage governed tenants using their governing tenant credentials, without needing a local or B2B account in each governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide centralized, least-privileged, cross-tenant access.
 
-This article walks you through how to sign in to a governed tenant as a delegated administrator and manage delegated administration roles.
+This article describes how to sign in to a governed tenant as a delegated administrator and manage delegated administration roles.
 
 ## Prerequisites
 

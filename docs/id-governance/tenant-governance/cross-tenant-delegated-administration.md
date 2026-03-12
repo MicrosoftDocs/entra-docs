@@ -16,7 +16,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Cross-tenant delegated administration is a capability within Tenant governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant, without creating local or guest (B2B) accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
+Cross-tenant delegated administration is a capability within Tenant governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant, without creating local accounts or business-to-business (B2B) guest accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
 
 Before you can use cross-tenant delegated administration, you must first create a governance relationship between the governing tenant and each governed tenant. The governance relationship establishes the trust boundary and defines the delegated administration policies that control which roles and permissions are available to governing tenant administrators.
 
@@ -24,7 +24,7 @@ Cross-tenant delegated administration also gives governed tenants full visibilit
 
 ## How cross-tenant delegated administration works
 
-Cross-tenant delegated administration leverages GDAP technology, the same technology that Partner Center uses to enable partners to administer customer tenants. With this capability:
+Cross-tenant delegated administration uses GDAP technology, the same technology that Partner Center uses to enable partners to administer customer tenants. With this capability:
 
 - Administrators sign in with their governing tenant credentials to access governed tenants
 
@@ -34,11 +34,11 @@ Cross-tenant delegated administration leverages GDAP technology, the same techno
 
 - Role assignments follow the principle of least privilege
 
-When you establish a governance relationship with delegated administration configured, the system creates GDAP role assignments in the governed tenant. These role assignments allow designated users from the governing tenant to perform administrative tasks based on the roles that the governance policy template defines.
+When you establish a governance relationship with delegated administration configured, tenant governance creates GDAP role assignments in the governed tenant. These role assignments allow designated users from the governing tenant to perform administrative tasks based on the roles that the governance policy template defines.
 
 ## Key components
 
-Cross-tenant delegated administration relies on the following components.
+Cross-tenant delegated administration relies on these components.
 
 ### Governance policy template
 
@@ -50,7 +50,7 @@ The governance policy template defines which Microsoft Entra built-in roles are 
 
 Each group can have multiple role assignments, and each policy template can have multiple groups defined.
 
-## GDAP role assignments
+### GDAP role assignments
 
 GDAP role assignments are cross-tenant role assignments that allow users from the governing tenant to sign in and manage a governed tenant. The system automatically creates these assignments in the governed tenant when you establish a governance relationship with delegated administration.
 

@@ -18,7 +18,7 @@ ms.date: 03/10/2026
 
 Related tenants help administrators discover other Microsoft Entra tenants that have observable relationships with their tenant. These relationships are inferred from activity signals such as B2B collaboration, multitenant application consent, and shared billing accounts. A related tenant doesn't imply ownership or administrative control. It simply indicates an observed association across Microsoft services.
 
-Once enabled, related tenant discovery remains enabled for your tenant if your tenant holds the proper licensing requirements.
+After you enable related tenant discovery, it remains enabled for your tenant if your tenant meets the licensing requirements.
 
 ## Prerequisites
 
@@ -30,23 +30,21 @@ Before enabling related tenants, ensure:
 
 - You understand that this setting isn't a toggle and remains enabled after you turn it on.
 
-## Enable related tenants via Microsoft Entra admin center
+## Enable related tenants through the Microsoft Entra admin center
 
-Use this option if you want to enable discovery through the admin experience rather than APIs.
+Use this option to enable discovery through the admin center rather than APIs.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator).
 
-1. Navigate to **Tenant Governance**.
-
-1. Open **Related tenants**.
+1. Browse to **Tenant governance** > **Related tenants**.
 
 1. Review the description of enabling related tenants.
 
 1. Select **Discover related tenants**.
 
-Once enabled, Microsoft Entra begins aggregating discovery signals and surfaces related tenants in the experience. The discovery data is synthesized from existing activity and might take time to populate.
+After you enable the setting, Microsoft Entra begins aggregating discovery signals and surfaces related tenants in the experience. The discovery data is synthesized from existing activity and might take time to populate.
 
-## Enable related tenants via Microsoft Graph API
+## Enable related tenants through Microsoft Graph API
 
 Use this option for scripted or automated enablement.
 
@@ -58,15 +56,15 @@ POST /directory/tenantGovernance/settings/enableRelatedTenants
 
 This action enables related tenant discovery for the calling tenant.
 
-**Important Notes**
+**Important notes**
 
 - The setting defaults to `false` for new tenants.
 
-- Once enabled, `isRelatedTenantsEnabled` is set to `true` and can't be reverted.
+- After you enable the setting, `isRelatedTenantsEnabled` is set to `true` and can't be reverted.
 
 ## Next steps
 
-Once related tenants appear, you can:
+After related tenants appear, you can:
 
 - [Review the list of related tenants](related-tenants.md) surfaced by discovery.
 - Use the data to inform governance decisions:

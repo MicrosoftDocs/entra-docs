@@ -61,6 +61,6 @@ When you initiate a request to generate a snapshot, an asynchronous job collects
 The schema of generated snapshots matches the schema of configuration baselines. You can use a snapshot as-is to create monitors.
 
 > [!NOTE]
-> Snapshot jobs require that the Unified Tenant Configuration Management service principal has read permissions for the requested resource types. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
+> Snapshot jobs require that the Unified Tenant Configuration Management service principal have read permissions for the requested resource types. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
 
 To learn more about snapshot jobs, see [configurationSnapshotJob](/graph/api/resources/configurationsnapshotjob?view=graph-rest-beta&preserve-view=true).
