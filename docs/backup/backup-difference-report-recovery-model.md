@@ -17,8 +17,8 @@ Microsoft Entra Backup and Recovery takes backups automatically. Only supported 
 - Service principals
 - Conditional access policies
 - Named location policies
-- Authentication method policies
-- Authorization policies
+- Authentication method policy
+- Authorization policy
 - Organization
 
 For a full list of supported attributes, see [Supported objects and attributes](scope-supported-objects-limitations.md).
