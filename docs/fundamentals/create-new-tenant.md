@@ -28,8 +28,6 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 > - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
 > - If you're unable to create a Governed Workforce tenant, verify your billing account permissions. You must have at least Tenant Contributor permissions on at least one Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't currently supported for this scenario.
 
-[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
-
 ### To create a new tenant
 
 # [Workforce / B2C](#tab/workforce)
