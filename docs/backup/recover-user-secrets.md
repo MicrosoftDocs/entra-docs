@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/09/2026
 ---
 
-# Recover user authentication methods using Microsoft Entra Backup (Preview)
+# Recover user authentication methods using Microsoft Entra Backup and Recovery(Preview)
 
 This article outlines Microsoft's recommended approach for recovering user authentication methods ("user secrets") in Microsoft Entra ID when they were accidentally or maliciously edited or deleted.
 
