@@ -44,7 +44,7 @@ To publish your application in the gallery, you must first read and agree to spe
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
 ### Checklist for SCIM Provisioning Apps
-Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra ID App Gallery.
+Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra App Gallery.
 
 #### SCIM API Requirements:
 - Support a SCIM 2.0 user and group endpoint (Only User Provisioning is required but User and Group Provisioning both are recommended).
