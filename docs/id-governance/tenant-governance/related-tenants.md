@@ -14,7 +14,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Modern organizations rarely operate within a single Microsoft Entra tenant. Mergers, acquisitions, divestitures, geographic expansion, developer experimentation, and decentralized IT models have led to tenant sprawl — an expanding ecosystem of Microsoft Entra tenants that interact with one another in ways that are often invisible or poorly understood.
+Modern organizations rarely operate within a single Microsoft Entra tenant. Mergers, acquisitions, divestitures, geographic expansion, developer experimentation, and decentralized IT models have led to tenant sprawl, an expanding ecosystem of Microsoft Entra tenants that interact with one another in ways that are often invisible or poorly understood.
 
 Related Tenants is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
 
@@ -30,7 +30,7 @@ This visibility forms the foundation for effective tenant governance, without pr
 
 A related tenant is a Microsoft Entra tenant that demonstrates a verifiable connection to another tenant based on observable discovery signals. These signals are derived from real configuration and activity data and are refreshed over time.
 
-Tenant governance discovers related tenants—you don't manually declare them. Discovery establishes context, not intent. A related tenant might be:
+Tenant governance discovers related tenants. You don't manually declare them. Discovery establishes context, not intent. A related tenant might be:
 
 - An external partner, vendor, or customer tenant
 - A SaaS provider tenant accessed through multitenant applications
@@ -96,7 +96,7 @@ For unsanctioned or shadow-IT tenants discovered through this process, organizat
 
 ## Discovery signals used to identify related tenants
 
-Related tenants are identified through discovery signals — observable indicators that two tenants interact in meaningful ways. Each signal is accompanied by aggregated activity metrics that describe the nature of the interaction.
+Related tenants are identified through discovery signals, which are observable indicators that two tenants interact in meaningful ways. Each signal is accompanied by aggregated activity metrics that describe the nature of the interaction.
 
 Metrics appear as orders of magnitude rather than exact values and refresh as activity changes, providing ongoing visibility while protecting individual user privacy.
 

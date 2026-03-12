@@ -38,12 +38,12 @@ When you create a new add-on tenant, the system automatically establishes a [gov
 
 ### Default policy template
 
-The automatic governance relationship uses the [default governance policy template](governance-policy-templates.md)—a special template designed specifically for secure tenant creation scenarios. Unlike standard templates that use a GUID as an identifier, the default policy template has an ID of `default`. You must configure the default policy template before you can use it for secure add-on tenant creation.
+The automatic governance relationship uses the [default governance policy template](governance-policy-templates.md). This special template is designed specifically for secure tenant creation scenarios. Unlike standard templates that use a GUID as an identifier, the default policy template has an ID of `default`. You must configure the default policy template before you can use it for secure add-on tenant creation.
 
 A governance policy template serves as a blueprint for governance relationships and defines two key areas:
 
-- **Cross-tenant delegated administration roles** — Specify which Microsoft Entra built-in roles users from the governing tenant have in the governed tenant.
-- **Multi-tenant applications** — Select custom applications to create and manage across tenants.
+- **Cross-tenant delegated administration roles**: Specify which Microsoft Entra built-in roles users from the governing tenant have in the governed tenant.
+- **Multi-tenant applications**: Select custom applications to create and manage across tenants.
 
 If you want to disable the automatic formation of governance relationships, delete the contents of the default governance policy template.
 

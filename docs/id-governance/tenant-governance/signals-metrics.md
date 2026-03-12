@@ -16,7 +16,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**—tenants that have a discoverable relationship with your tenant.
+Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**, which are tenants that have a discoverable relationship with your tenant.
 
 Discovery uses a small set of **well-defined discovery signals** derived from existing Microsoft Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
 
