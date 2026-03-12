@@ -21,7 +21,7 @@ When you create a tenant using the **Governed Workforce** option in the Microsof
 
 - You must have at least **Tenant Contributor** permissions on at least one Microsoft Customer Agreement (MCA) subscription.
 - Enterprise Agreement (EA) subscriptions aren't currently supported.
-- A [governance policy template](governance-policy-templates.md) must be configured if you want the governance relationship to be automatically established during tenant creation.
+- The **default** [governance policy template](governance-policy-templates.md) must be configured in the governing tenant. The tenant creation service uses only the default template (ID: `default`). If the default template isn't defined, the secure add-on tenant creation flow won't establish a governance relationship, even if other templates exist.
 
 ## Create the tenant
 

@@ -23,7 +23,7 @@ The secure add-on tenant creation process combines governance and billing in a s
 
 1. During creation, the user selects an existing Microsoft Customer Agreement (MCA) subscription and resource group from the billing account.
 
-1. The system automatically establishes a governance relationship between the home (governing) tenant and the newly created add-on (governed) tenant by using the default governance policy template.
+1. If the default governance policy template has been configured, the system automatically establishes a governance relationship between the home (governing) tenant and the newly created add-on (governed) tenant. If the default policy template hasn't been configured, no governance relationship is established and the tenant is created without centralized governance controls.
 
 1. Microsoft generates a new billing asset called "Entra ID Free" under the selected subscription and resource group, linking it to the new tenant.
 

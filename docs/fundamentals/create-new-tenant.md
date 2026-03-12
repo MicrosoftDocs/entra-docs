@@ -38,6 +38,22 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 Use the secure add-on tenant creation flow to create a new Governed Workforce tenant. This process creates the tenant and automatically establishes a [governance relationship](~/id-governance/tenant-governance/governance-relationships.md) with your home tenant.
 
+### Define the default governance policy template
+
+In order to automatically establish governance relationships with add-on tenants, you first need to define the default governance policy template.
+
+1. Sign in to the governing tenant as an administrator.
+
+1. Navigate to Templates.
+
+1. Select the default policy template and configure the following options as needed:
+
+   - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
+
+   - **Multi-tenant application management**: Select a custom, multi-tenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
+
+### Create the tenant
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
