@@ -21,6 +21,8 @@ Verify the following prerequisites before troubleshooting:
   - **Entra Backup Reader**
   - **Entra Backup Administrator**
 
+Global Administrator has the appropriate permissions as well.
+
 If these prerequisites aren't met, operations might fail with authorization errors or empty results.
 
 ## Issue: No backups are listed
@@ -56,7 +58,7 @@ No action is required. New snapshots continue to be created automatically.
 
 1. Check whether another difference report or recovery job is currently running. Only one job can run at a time.
 1. Verify that your account has the appropriate role: **Entra Backup Reader** for preview or **Entra Backup Administrator** for recovery.
-1. Confirm that the object type you're trying to scope is supported. Only supported object types appear in the scoping filter.
+1. Confirm that the object type and object attributes you're trying to scope is supported. Only supported object types and attributes appear in the scoping filter.
 
 ## Issue: Difference report problems
 
@@ -90,7 +92,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 **If the difference report is running for a long time:**
 
 1. There's currently no estimated completion time for a running difference report.
-1. Large tenants or large change sets might take longer to process.
+1. Large tenants or large change sets take longer to process.
 1. Allow the report to continue running unless cancellation is required.
 
 **If the difference report failed:**
@@ -101,16 +103,15 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If you can't find a previous difference report:**
 
-1. Difference reports are tied to the snapshot they were created from.
-1. Navigate back to the snapshot and check the list of preview jobs associated with it.
-1. If the report is no longer listed, it might no longer be available.
+1. Difference reports are tied to the backup they were created from.
+1. If the report isn't listed, the backup the difference report was created against is no longer available.
 
 **If the difference report continues running after cancellation:**
 
 1. Cancellation is best-effort. Some processing might continue briefly after you select **Cancel**.
 1. If the job remains in a running state, wait for the state to update before starting a new report.
 
-## Issue: Recovery job problems
+## Issue: Recovery job issues
 
 ### Symptoms
 
@@ -123,7 +124,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 - The object or property shown in the difference report (for example, on-premises synced properties) isn't supported for recovery.
 - The recovery job includes a large number of objects or changes.
-- Only one difference report and recovery job can run at a time.
+- Only one difference report or recovery job can run at a time.
 - The recovery job was canceled or interrupted while changes were still being processed.
 - Some recovery actions might partially succeed before a failure or cancellation occurs.
 
@@ -141,7 +142,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 ### Possible causes
 
-- Recovery job reports older than five days are automatically cleaned up and are no longer visible.
+- Recovery job reports against backups that have expired are automatically cleaned up and are no longer visible.
 - Some links aren't supported for recovery in the current release.
 - Certain links depend on other objects or states that no longer exist.
 - The recovery job completed with warnings, indicating partial success.
@@ -150,9 +151,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If you can't find a recovery job you ran earlier:**
 
-1. Navigate to the **difference report** that was used for the recovery.
-1. View the list of **recovery jobs associated with that difference report**.
-1. If the job is no longer listed, it might no longer be available.
+1. The backup the recovery job used to recover the tenant has expired.
 
 **If not all links were recovered:**
 
@@ -167,11 +166,10 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 | Condition | Error code and message |
 |---|---|
-| Difference report queried is older than supported time (for example, 5 days) | **400 Bad Request**: Backup isn't supported for the selected timestamp as it falls outside the supported time frame. |
 | Difference report queried with an invalid snapshot ID | **404 Not Found**: This isn't a valid timestamp for recovery. The provided timestamp should be in the list of available snapshots. |
 | Job is queried with an invalid job ID | **404 Not Found** |
 | A job is started while another difference report or recovery job is still running | **409 Conflict**: A recovery job is currently in progress. Wait for it to complete before initiating a new job. |
-| Get changes while backup hasn't finished | **400 Bad Request**: Job with identifier `{key}` must have completed successfully prior to enumerating changes. |
+| Get changes while difference report hasn't finished | **400 Bad Request**: Job with identifier `{key}` must have completed successfully prior to enumerating changes. |
 | Insufficient admin role | **403 Forbidden**: Authorization has been denied for this request. Check your credentials. |
 
 ## Known limitations
@@ -190,7 +188,7 @@ Hard-deleted objects **can't** be recovered. Currently, these objects aren't inc
 
 ### On-premises synced objects
 
-Users and groups synchronized from on-premises Active Directory can't be recovered in Entra. These objects must be restored directly in the on-premises AD.
+Users and groups synchronized from on-premises Active Directory can't be recovered with Entra Backup and Recovery. These objects must be recovered directly in the on-premises AD.
 
 ### Link recovery limitations
 
