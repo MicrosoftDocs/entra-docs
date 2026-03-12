@@ -70,16 +70,14 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 
 After you set up the identity provider, add it to a user flow so it appears on the sign-in page. Follow the steps in [Add OIDC identity provider to a user flow](how-to-custom-oidc-federation-customers.md#add-oidc-identity-provider-to-a-user-flow), selecting the Microsoft Entra ID OIDC identity provider you configured.
 
-When configuring the user flow, under **User attributes**, select the attributes you want to collect during sign-up, for example **Display Name**, **Given Name**, and **Surname**. Configure [claims mapping](reference-oidc-claims-mapping-customers.md) as needed so the identity provider's subject, email, and profile attributes map to the local account attributes in the external tenant.
-
 ## Test the user flow
 
-1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow you configured.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
+1. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
 1. Select **Run user flow**.
-1. For **Response type**, select **IDToken**.
-1. For **Reply URL**, enter `https://jwt.ms`.
-1. Copy the URL under **Run user flow endpoint** and open it in a browser.
+1. In the **Run user flow** pane, for **Application**, select the application you want to test. The remaining fields, including **Reply URL** and **Response type**, are auto-populated from the application registration.
+1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
 1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
 ## Related content
