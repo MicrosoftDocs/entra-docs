@@ -1,5 +1,5 @@
 ---
-title: Set up a governance relationship
+title: Set up a governance relationship (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to set up a governance relationship between a governing and governed tenant using the handshake process in Microsoft Entra
 author: barclayn
@@ -11,7 +11,10 @@ ms.date: 03/10/2026
 
 <!-- source: How to set up a governance relationship.docx -->
 
-# Set up a governance relationship
+# Set up a governance relationship (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Governance relationships enable centralized, cross-tenant administration and multi-tenant application management. A governance relationship is a directional relationship between two tenants: one tenant acts as the *governing tenant*, and the other acts as the *governed tenant*.
 

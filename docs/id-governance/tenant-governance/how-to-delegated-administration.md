@@ -1,5 +1,5 @@
 ---
-title: Use cross-tenant delegated administration
+title: Use cross-tenant delegated administration (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to use cross-tenant delegated administration to sign in to and manage governed tenants using your governing tenant credentials
 author: barclayn
@@ -9,7 +9,10 @@ ms.topic: how-to
 ms.date: 03/10/2026
 ---
 
-# Use cross-tenant delegated administration
+# Use cross-tenant delegated administration (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Cross-tenant delegated administration enables administrators in a governing tenant to sign in to and manage governed tenants using their governing tenant credentials, without needing a local or B2B account in each governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide centralized, least-privileged, cross-tenant access.
 

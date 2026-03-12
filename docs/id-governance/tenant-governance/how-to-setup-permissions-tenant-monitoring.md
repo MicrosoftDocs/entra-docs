@@ -1,5 +1,5 @@
 ---
-title: Set up permissions for tenant monitoring
+title: Set up permissions for tenant monitoring (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to set up the required permissions for tenant monitoring in Microsoft Entra tenant governance.
 author: barclayn
@@ -9,6 +9,9 @@ ms.topic: how-to
 ms.date: 03/05/2026
 ---
 
-# Set up permissions for tenant monitoring
+# Set up permissions for tenant monitoring (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Placeholder for content.

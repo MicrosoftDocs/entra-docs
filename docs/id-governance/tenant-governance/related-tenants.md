@@ -1,5 +1,5 @@
 ---
-title: Related tenants in tenant governance
+title: Related tenants in tenant governance (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra tenant governance discovers related tenants through identity, application, and billing signals across your organization
 author: barclayn
@@ -9,7 +9,10 @@ ms.topic: concept-article
 ms.date: 03/10/2026
 ---
 
-# Related tenants in tenant governance
+# Related tenants in tenant governance (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Modern organizations rarely operate within a single Microsoft Entra tenant. Mergers, acquisitions, divestitures, geographic expansion, developer experimentation, and decentralized IT models have led to tenant sprawl — an expanding ecosystem of Microsoft Entra tenants that interact with one another in ways that are often invisible or poorly understood.
 

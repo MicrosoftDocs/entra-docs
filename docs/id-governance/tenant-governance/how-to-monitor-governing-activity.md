@@ -1,5 +1,5 @@
 ---
-title: Monitor governing tenant admin activity in a governed tenant
+title: Monitor governing tenant admin activity in a governed tenant (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to monitor and audit governing tenant administrator activity in your governed tenant using sign-in and audit logs
 author: barclayn
@@ -9,7 +9,10 @@ ms.topic: how-to
 ms.date: 03/10/2026
 ---
 
-# Monitor governing tenant admin activity in the governed tenant
+# Monitor governing tenant admin activity in the governed tenant (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials via granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins operate within their authorized scope.
 

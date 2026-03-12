@@ -1,5 +1,5 @@
 ---
-title: Configuration management in tenant governance
+title: Configuration management in tenant governance (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about configuration management capabilities in Microsoft Entra tenant governance, including baselines and drift monitoring.
 author: barclayn
@@ -9,7 +9,10 @@ ms.topic: concept-article
 ms.date: 03/11/2026
 ---
 
-# Configuration Management
+# Configuration Management (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Resources
 

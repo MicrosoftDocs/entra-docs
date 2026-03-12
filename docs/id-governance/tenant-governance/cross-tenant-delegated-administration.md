@@ -1,5 +1,5 @@
 ---
-title: Cross-tenant delegated administration
+title: Cross-tenant delegated administration (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about cross-tenant delegated administration and how it enables centralized management across tenants in Microsoft Entra
 author: barclayn
@@ -11,7 +11,10 @@ ms.date: 03/10/2026
 
 <!-- source: Cross-tenant delegated administration.docx -->
 
-# Cross-tenant delegated administration
+# Cross-tenant delegated administration (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Cross-tenant delegated administration is a capability within Tenant governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant, without creating local or guest (B2B) accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
 

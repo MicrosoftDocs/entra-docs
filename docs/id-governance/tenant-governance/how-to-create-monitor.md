@@ -1,5 +1,5 @@
 ---
-title: Create a monitor
+title: Create a monitor (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra tenant governance to track configuration drift
 author: barclayn
@@ -11,7 +11,10 @@ ms.date: 03/10/2026
 
 <!-- source: Create_and_Update_Configuration_Monitor_LearnStyle.docx -->
 
-# Create and update a configuration monitor
+# Create and update a configuration monitor (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 This article describes how to create and update a configuration monitor in the [Microsoft Entra admin center](https://entra.microsoft.com). A configuration monitor periodically evaluates your tenant configuration against a configuration baseline. It records configuration drifts when the actual state differs from the desired state.
 

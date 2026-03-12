@@ -1,5 +1,5 @@
 ---
-title: Secure add-on tenant creation
+title: Secure add-on tenant creation (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how secure add-on tenant creation automatically establishes governance relationships and billing assets for new Microsoft Entra tenants.
 author: barclayn
@@ -11,7 +11,10 @@ ms.date: 03/12/2026
 
 <!-- source: concept guide -- automatic formation of governance relationships.docx -->
 
-# Secure add-on tenant creation
+# Secure add-on tenant creation (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Secure add-on tenant creation lets you create new Microsoft Entra tenants that are governed from the start. When you create an add-on tenant from an existing tenant, the system automatically establishes a governance relationship and creates a billing asset that links the new tenant to your billing account. The feature is part of the broader [tenant governance](governance-relationships.md) capability in Microsoft Entra ID Governance.
 

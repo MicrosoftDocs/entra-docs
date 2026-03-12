@@ -1,5 +1,5 @@
 ---
-title: Update a governance relationship
+title: Update a governance relationship (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to update an existing governance relationship between a governing and governed tenant in Microsoft Entra tenant governance
 author: barclayn
@@ -11,7 +11,10 @@ ms.date: 03/10/2026
 
 <!-- source: How to update a governance relationship.docx -->
 
-# Update a governance relationship
+# Update a governance relationship (preview)
+
+> [!IMPORTANT]
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 This article describes how to update an existing governance relationship between a governing tenant and a governed tenant. You might need to update a governance relationship to add or modify delegated administration roles or multi-tenant application configurations.
 
