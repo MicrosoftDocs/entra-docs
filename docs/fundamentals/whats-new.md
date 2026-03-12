@@ -326,7 +326,7 @@ For more information, see:  
 **Service category:** Entra Connect  
 **Product capability:** Access Control  
 
-When Microsoft Entra Connect adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object’s [sourceAnchor value against the OnPremisesImmutableId attribute](../identity/hybrid/connect/how-to-connect-install-existing-tenant?source=recommendations.md#hard-match-vs-soft-match) of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match."
+When Microsoft Entra Connect adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object’s [sourceAnchor value against the OnPremisesImmutableId attribute](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match."
 
 As part of ongoing security hardening, Microsoft is going to introduce enforcement changes in Microsoft Entra Connect to mitigate the risk of account takeover via hard match abuse. Enforcement of this change will begin on **July 1, 2026**. 
 
