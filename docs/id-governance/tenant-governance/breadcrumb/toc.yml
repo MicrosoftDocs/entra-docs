@@ -7,6 +7,6 @@ items:
     tocHref: /entra/id-governance/
     topicHref: /entra/id-governance/index
     items:
-    - name: Tenant governance
+    - name: Tenant Governance
       tocHref: /entra/id-governance/tenant-governance/
       topicHref: /entra/id-governance/tenant-governance/
