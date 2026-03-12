@@ -1,14 +1,46 @@
 ---
-title: Create a tenant
+title: Create a governed workforce tenant
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to create a new Microsoft Entra tenant using the secure tenant creation workflow in tenant governance.
+description: Learn how to create a new Microsoft Entra tenant using the secure add-on tenant creation workflow in tenant governance.
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 03/12/2026
 ---
 
-# Create a tenant
+# Create a governed workforce tenant
 
-Placeholder for content.
+When you create a tenant using the **Governed Workforce** option in the Microsoft Entra admin center, the secure add-on tenant creation flow automatically:
+
+- Creates the new workforce tenant
+- Establishes a [governance relationship](governance-relationships.md) between your home tenant and the new tenant based on your [governance policy template](governance-policy-templates.md)
+- Provisions a Microsoft Entra ID Free [billing asset](signals-metrics.md) under your selected Azure subscription and resource group
+
+## Prerequisites
+
+- You must have at least **Tenant Contributor** permissions on at least one Microsoft Customer Agreement (MCA) subscription.
+- Enterprise Agreement (EA) subscriptions aren't currently supported.
+- A [governance policy template](governance-policy-templates.md) must be configured if you want the governance relationship to be automatically established during tenant creation.
+
+## Create the tenant
+
+For step-by-step instructions on creating a governed workforce tenant, see the **Governed Workforce** tab in [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md).
+
+## What happens after tenant creation
+
+After the tenant is created:
+
+1. A governance relationship is formed between your home tenant and the new tenant, using the [default governance policy template](governance-policy-templates.md).
+1. The policy template provisions resources including cross-tenant access settings, delegated administration (GDAP) assignments, and service principals.
+1. A Microsoft Entra ID Free billing asset appears in your Azure subscription under the resource group you selected.
+1. The new tenant appears in your [related tenants](related-tenants.md) inventory.
+
+To learn more about what the secure add-on tenant creation flow configures, see [Secure add-on tenant creation](tenant-creation-settings.md).
+
+## Related content
+
+- [Tenant governance overview](overview.md)
+- [Governance relationships](governance-relationships.md)
+- [Governance policy templates](governance-policy-templates.md)
+- [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
