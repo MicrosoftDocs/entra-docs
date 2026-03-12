@@ -2,7 +2,7 @@
 title: Microsoft Entra Private Network Connectors
 description: Learn how Microsoft Entra private network connectors work and how Microsoft Entra Private Access and application proxy use them.
 ms.topic: concept-article
-ms.date: 09/25/2025
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
@@ -148,7 +148,7 @@ These commands set the dynamic port range from 1025 to the maximum of 65535. The
 
 ## Specifications and sizing requirements
 
-We recommend the following specifications for each Microsoft Entra private network connector:
+The following specifications are recommended for each Microsoft Entra private network connector:
 
 - **Memory**: 8 GiB or more.
 - **CPU**: Four CPU cores or more.
