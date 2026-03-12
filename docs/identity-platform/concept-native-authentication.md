@@ -57,11 +57,11 @@ The following table compares the two authentication methods to help you decide t
 
 The following table shows the availability of features for browser-delegated and native authentication. 
 
-|   | Browser-delegated authentication | Native authentication | 
+|   | Browser-delegated authentication | Native authentication |
 | ---- | --- |  --- |
 | **Sign up and sign in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Sign up and sign in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign in with email and password can use username and password** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Sign in with email and password can use username (alias) and password** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Self-service password reset (SSPR)**  | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
