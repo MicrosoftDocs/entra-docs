@@ -69,7 +69,7 @@ Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (R
 #### ISV Specific Requirements
 - Establish an engineering and support point of contact to support customers post Microsoft Entra ID App Gallery onboarding and for Microsoft to reach out in future (Required)
 - Document your SCIM endpoint publicly and share the link (Required)
-- Deploy your SCIM Provisioning to at least 100 mutual customers using the Microsoft Entra ID non-gallery approach to qualify for the Microsoft Entra ID App Gallery listing.
+- Deploy your SCIM Provisioning to at least 100 mutual customers using the Microsoft Entra non-gallery approach to qualify for the Microsoft Entra App Gallery listing.
 - Share at least five customer Microsoft Entra ID Tenant IDs so that they can participate in a private preview program once the connector is ready for testing. 
 - If applicable, meet the various compliance requirements for listing your application in different clouds like USGov, China, Germany, France, Singapore, etc. (Required)
 
