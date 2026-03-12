@@ -2,7 +2,7 @@
 title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/12/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -129,6 +129,12 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
 > [!NOTE]
 > You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and Conditional Access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
+
+### View rule priority in the client
+
+To identify the active rule for a destination, open the Global Secure Access client and go to **Advanced Diagnostics** > **Forwarding profile**. The **Forwarding profile** tab shows the active rules in the client and includes a **Priority** column.
+
+Rules with smaller numerical priority values take precedence over rules with larger numerical values. You can also use **Policy tester** in the **Forwarding profile** tab to identify the active rule for a specific destination.
 
 ## Assign users and groups
 
