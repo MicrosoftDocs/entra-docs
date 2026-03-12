@@ -16,7 +16,7 @@ ms.date: 03/12/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Secure add-on tenant creation lets you create new Microsoft Entra tenants that are governed from the start. When you create an add-on tenant from an existing tenant, tenant governance automatically establishes a governance relationship and creates a billing asset that links the new tenant to your billing account. The feature is part of the broader [tenant governance](governance-relationships.md) capability in Microsoft Entra ID Governance.
+Secure add-on tenant creation lets you create new Microsoft Entra tenants that are governed from the start. When you create an add-on tenant from an existing tenant, Tenant Governance automatically establishes a governance relationship and creates a billing asset that links the new tenant to your billing account. The feature is part of the broader [Tenant Governance](governance-relationships.md) capability in Microsoft Entra ID Governance.
 
 ## How secure add-on tenant creation works
 
@@ -26,7 +26,7 @@ The secure add-on tenant creation process combines governance and billing in a s
 
 1. During creation, the user selects an existing Microsoft Customer Agreement (MCA) subscription and resource group from the billing account.
 
-1. If the default governance policy template has been configured, tenant governance automatically establishes a governance relationship between the home (governing) tenant and the newly created add-on (governed) tenant. If the default policy template hasn't been configured, no governance relationship is established and the tenant is created without centralized governance controls.
+1. If the default governance policy template has been configured, Tenant Governance automatically establishes a governance relationship between the home (governing) tenant and the newly created add-on (governed) tenant. If the default policy template hasn't been configured, no governance relationship is established and the tenant is created without centralized governance controls.
 
 1. Microsoft generates a new billing asset called "Microsoft Entra ID Free" under the selected subscription and resource group, linking it to the new tenant.
 
@@ -34,7 +34,7 @@ The new tenant is immediately under centralized administration with a traceable 
 
 ## Automatic formation of governance relationships
 
-When you create a new add-on tenant, tenant governance automatically establishes a [governance relationship](governance-relationships.md) between the parent tenant and the new tenant. A governance relationship is a directional connection where one tenant (the governing tenant) governs another tenant (the governed tenant). Automatic formation brings newly created tenants under centralized administration and governance controls without any extra steps.
+When you create a new add-on tenant, Tenant Governance automatically establishes a [governance relationship](governance-relationships.md) between the parent tenant and the new tenant. A governance relationship is a directional connection where one tenant (the governing tenant) governs another tenant (the governed tenant). Automatic formation brings newly created tenants under centralized administration and governance controls without any extra steps.
 
 ### Default policy template
 
@@ -49,7 +49,7 @@ If you want to disable the automatic formation of governance relationships, dele
 
 ### Resources provisioned automatically
 
-When tenant governance creates the governance relationship, it provisions these resources:
+When Tenant Governance creates the governance relationship, it provisions these resources:
 
 - A governance relationship object in both the governing and governed tenants.
 - Cross-tenant access configuration updates in the governed tenant.
@@ -58,7 +58,7 @@ When tenant governance creates the governance relationship, it provisions these 
 
 ### Policy snapshots
 
-When tenant governance creates the governance relationship, it captures and stores a policy snapshot with the relationship. The snapshot represents the roles and permissions that applied at the time of creation. Updating the default governance policy template later doesn't automatically update existing relationships. To apply permission updates to an active relationship, you must repeat the request and approval process.
+When Tenant Governance creates the governance relationship, it captures and stores a policy snapshot with the relationship. The snapshot represents the roles and permissions that applied at the time of creation. Updating the default governance policy template later doesn't automatically update existing relationships. To apply permission updates to an active relationship, you must repeat the request and approval process.
 
 ## Microsoft Entra ID Free billing asset
 
@@ -70,7 +70,7 @@ The subscription tracks all new tenants created with the same billing account, g
 
 ### Billing signal for tenant discovery
 
-The shared billing account creates a [billing signal](signals-metrics.md) that tenant governance uses for [tenant discovery](related-tenants.md). Shared billing account signals identify tenants connected through one or more shared billing accounts based on the concept of primary and associated billing tenants in Azure MCA enterprise billing accounts. The billing signal is a strong indicator of internal ownership or alignment and often correlates with centrally funded environments.
+The shared billing account creates a [billing signal](signals-metrics.md) that Tenant Governance uses for [tenant discovery](related-tenants.md). Shared billing account signals identify tenants connected through one or more shared billing accounts based on the concept of primary and associated billing tenants in Azure MCA enterprise billing accounts. The billing signal is a strong indicator of internal ownership or alignment and often correlates with centrally funded environments.
 
 ### MCA requirement
 

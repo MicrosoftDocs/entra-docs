@@ -1,7 +1,7 @@
 ---
 title: Update a governance relationship (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to update an existing governance relationship between a governing and governed tenant in Microsoft Entra tenant governance
+description: Learn how to update an existing governance relationship between a governing and governed tenant in Microsoft Entra Tenant Governance
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -38,7 +38,7 @@ Before you can update a governance relationship, you must first modify the gover
 
     - **Delegated administration roles**: Add or change the Microsoft Entra built-in roles assigned to security groups in the governing tenant. These roles determine the access level that users in those groups have when they sign in to the governed tenant.
 
-    - **Multi-tenant application management**: Add or update custom, multi-tenant applications. When you update the relationship, tenant governance creates or updates a service principal with the corresponding permissions in the governed tenant.
+    - **Multi-tenant application management**: Add or update custom, multi-tenant applications. When you update the relationship, Tenant Governance creates or updates a service principal with the corresponding permissions in the governed tenant.
 
 1. Save the updated governance policy template. The version number of the template increments by one.
 
@@ -71,9 +71,9 @@ When the governed tenant accepts the governance request, these changes take effe
 
 - Tenant governance updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
 
-- If you updated delegated administration roles, tenant governance updates the GDAP role assignments in the governed tenant accordingly.
+- If you updated delegated administration roles, Tenant Governance updates the GDAP role assignments in the governed tenant accordingly.
 
-- If you updated multi-tenant application management, tenant governance updates the corresponding service principal and its permissions in the governed tenant.
+- If you updated multi-tenant application management, Tenant Governance updates the corresponding service principal and its permissions in the governed tenant.
 
 ## Related content
 - [Set up a governance relationship](how-to-setup-governance-relationship.md)

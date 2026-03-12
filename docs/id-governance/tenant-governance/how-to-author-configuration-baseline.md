@@ -1,7 +1,7 @@
 ---
 title: Author a configuration baseline (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to author a configuration baseline for tenant monitoring in Microsoft Entra tenant governance.
+description: Learn how to author a configuration baseline for tenant monitoring in Microsoft Entra Tenant Governance.
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance

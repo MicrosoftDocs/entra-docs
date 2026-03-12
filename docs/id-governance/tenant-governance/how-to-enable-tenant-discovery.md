@@ -1,7 +1,7 @@
 ---
 title: Enable tenant discovery (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to enable tenant discovery in Microsoft Entra tenant governance to identify related tenants across your organization
+description: Learn how to enable tenant discovery in Microsoft Entra Tenant Governance to identify related tenants across your organization
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -70,4 +70,4 @@ After related tenants appear, you can:
 - Use the data to inform governance decisions:
   - [Set up governance relationships](how-to-setup-governance-relationship.md) with discovered tenants.
   - Plan tenant inventory and cleanup efforts.
-  - [Learn more about tenant governance](overview.md) and configuration management planning.
+  - [Learn more about Tenant Governance](overview.md) and configuration management planning.

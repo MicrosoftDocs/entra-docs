@@ -113,15 +113,15 @@ Use the two-step handshake when either of these conditions is met:
 1. Accept the governance request to create the governance relationship.
 
 ## Verify the governance relationship
-When you successfully create a governance relationship, tenant governance provisions these resources:
+When you successfully create a governance relationship, Tenant Governance provisions these resources:
 
 - A governance relationship object in both the governing and governed tenants.
 
 - In the governed tenant:
 
-  - If delegated administration is configured, tenant governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
+  - If delegated administration is configured, Tenant Governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
 
-  - If multi-tenant application management is configured, tenant governance creates the corresponding service principal and its permissions.
+  - If multi-tenant application management is configured, Tenant Governance creates the corresponding service principal and its permissions.
 
 ## Related content
 - [Update a governance relationship](how-to-update-governance-relationship.md)

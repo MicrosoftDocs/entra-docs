@@ -34,7 +34,7 @@ Cross-tenant delegated administration uses GDAP technology, the same technology 
 
 - Role assignments follow the principle of least privilege
 
-When you establish a governance relationship with delegated administration configured, tenant governance creates GDAP role assignments in the governed tenant. These role assignments allow designated users from the governing tenant to perform administrative tasks based on the roles that the governance policy template defines.
+When you establish a governance relationship with delegated administration configured, Tenant Governance creates GDAP role assignments in the governed tenant. These role assignments allow designated users from the governing tenant to perform administrative tasks based on the roles that the governance policy template defines.
 
 ## Key components
 

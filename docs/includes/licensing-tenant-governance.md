@@ -9,7 +9,7 @@ ms.author: barclayn
 ms.custom: include file
 ---
 
-These tables list the Microsoft Entra tenant governance features available with each license tier.
+These tables list the Microsoft Entra Tenant Governance features available with each license tier.
 
 ### Configuration management
 

@@ -1,7 +1,7 @@
 ---
-title: Related tenants in tenant governance (preview)
+title: Related tenants in Tenant Governance (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how Microsoft Entra tenant governance discovers related tenants through identity, application, and billing signals across your organization
+description: Learn how Microsoft Entra Tenant Governance discovers related tenants through identity, application, and billing signals across your organization
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -9,7 +9,7 @@ ms.topic: concept-article
 ms.date: 03/10/2026
 ---
 
-# Related tenants in tenant governance (preview)
+# Related tenants in Tenant Governance (preview)
 
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -82,7 +82,7 @@ By surfacing both external tenants and internally created shadow-IT tenants, Rel
 
 This approach ensures governance is intentional and evidence-based rather than reactive.
 
-## How related tenants fit into tenant governance
+## How related tenants fit into Tenant Governance
 
 Tenant Governance is designed to help organizations manage multiple tenants as a system, recognizing that different tenants require different levels of oversight.
 

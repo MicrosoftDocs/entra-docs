@@ -1,7 +1,7 @@
 ---
-title: Configuration management in tenant governance (preview)
+title: Configuration management in Tenant Governance (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn about configuration management capabilities in Microsoft Entra tenant governance, including baselines and drift monitoring.
+description: Learn about configuration management capabilities in Microsoft Entra Tenant Governance, including baselines and drift monitoring.
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -14,7 +14,7 @@ ms.date: 03/11/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Configuration management in Microsoft Entra tenant governance lets you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. This article explains the core concepts: resources, baselines, monitors, monitoring results, configuration drifts, and snapshot jobs.
+Configuration management in Microsoft Entra Tenant Governance lets you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. This article explains the core concepts: resources, baselines, monitors, monitoring results, configuration drifts, and snapshot jobs.
 
 ## Resources
 

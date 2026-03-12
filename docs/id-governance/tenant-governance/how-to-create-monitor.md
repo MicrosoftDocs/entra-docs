@@ -1,7 +1,7 @@
 ---
 title: Create a monitor (preview)
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra tenant governance to track configuration drift
+description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra Tenant Governance to track configuration drift
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
@@ -53,7 +53,7 @@ Updating a configuration monitor uses the same wizard flow and steps as creating
 When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
 > [!IMPORTANT]
-> When you change an existing monitor, tenant governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
+> When you change an existing monitor, Tenant Governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
 
 ## Next steps
 
