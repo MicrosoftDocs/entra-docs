@@ -10,7 +10,7 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 
 In Microsoft Entra ID, there's a password policy that defines settings like the password complexity, length, or age. There's also a policy that defines acceptable characters and length for usernames.
 
-When self-service password reset (SSPR) is used to change or reset a password in Microsoft Entra ID, the password policy is checked. If the password doesn't meet the policy requirements, the user is prompted to try again. Azure administrators have some restrictions on using SSPR that are different to regular user accounts, and there are minor exceptions for trial and free versions of Microsoft Entra ID.
+When self-service password reset (SSPR) is used to change or reset a password in Microsoft Entra ID, the password policy is checked. If the password doesn't meet the policy requirements, the user is prompted to try again. Entra administrators have some restrictions on using SSPR that are different to regular user accounts, and there are minor exceptions for trial and free versions of Microsoft Entra ID.
 
 This article describes the password policy settings and complexity requirements associated with user accounts. It also covers how to use PowerShell to check or set password expiration settings.
 
@@ -63,7 +63,7 @@ If the password didn't comply with the cloud password requirements, it isn't upd
 
 ## Administrator reset policy differences
 
-By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
+By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Entra administrator roles assigned.
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
 
@@ -71,7 +71,7 @@ The SSPR administrator policy doesn't depend upon the Authentications method pol
 
 A two-gate policy applies in the following circumstances:
 
-* All the following Azure administrator roles are affected:
+* All the following Entra administrator roles are affected:
   * Application Administrator
   * Authentication Administrator
   * Billing Administrator
