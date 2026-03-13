@@ -110,7 +110,7 @@ After copying both the access review object and access review instance object ID
 1. On the resource screen for the catalog, select the custom data access resource you created, and select **Upload custom access data**.
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
-1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
+1. On the Upload access data for custom resource screen under **Basics**, enter both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-basics.png" alt-text="Screenshot of basic information for custom data access.":::
 1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
