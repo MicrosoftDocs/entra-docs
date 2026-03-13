@@ -115,7 +115,7 @@ You can use access reviews to ensure that users who were invited for a particula
  
 ### Ask a sponsor to review a guest's access to an application
  
-You can ask a sponsor, such as the owner of an application, to review guest's need for continued access to the application.
+You can ask a sponsor, such as the owner of an application, to review a guest's need for continued access to the application.
  
 1. To create an access review for the application, select the review to include guests only. Then specify one or more users as reviewers. For more information, see [Create an access review of groups or applications](create-access-review.md).
  
