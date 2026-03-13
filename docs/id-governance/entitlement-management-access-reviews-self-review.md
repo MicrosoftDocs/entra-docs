@@ -14,7 +14,7 @@ Entitlement management simplifies how enterprises manage access to groups, appli
 
 To do an access review, you must first open the access review. Use the following procedure to find and open the access review:
 
-1. You could receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example of an email requesting a review of access: 
+1. You might receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example of an email requesting a review of access: 
     
     ![Access review self-reviewer email](./media/entitlement-management-access-reviews-review-access/self-review-reviewer-email.png)
 
