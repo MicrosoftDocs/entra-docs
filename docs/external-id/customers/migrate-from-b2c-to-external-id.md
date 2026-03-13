@@ -3,7 +3,7 @@ title: Migrate from Azure AD B2C to Microsoft Entra External ID
 description: Migrate users, credentials, and applications from Azure AD B2C to Microsoft Entra External ID using the standard migration approach.
 author: garrodonnell
 ms.author: godonnell
-ms.topic: how-to-guide
+ms.topic: how-to
 ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
@@ -84,7 +84,7 @@ Regardless of whether you preserve passwords, bulk user migration is always the 
 For step-by-step instructions, see [Migrate users](/entra/external-id/customers/how-to-migrate-users).
 
 > [!NOTE]
-> When migrating large numbers of objects, you might encounter throttling limits for Microsoft Graph. See [Service-specific throttling limits](/graph/throttling-limits-msgraph-service) and [Throttling guidance](/graph/throttling) for best practices to handle or avoid throttling.
+> When migrating large numbers of objects, you might encounter throttling limits for Microsoft Graph. See [Throttling limits](/graph/throttling-limits) and [Throttling guidance](/graph/throttling) for best practices to handle or avoid throttling.
 
 ### Password preservation
 

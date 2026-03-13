@@ -105,11 +105,11 @@ HSC is intended for tenants where a full user and credential migration would be 
 - Continue supporting legacy B2C applications alongside new or migrated apps using External ID.
 - Control the pace and scope of migration, enabling a phased transition across applications according to business needs.
 
-Before you enable HSC, confirm eligibility, review limitations, and validate key sign-in and token issuance scenarios with a small set of applications. The following sections summarize each prerequisite. For full implementation steps, see [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-hsc-mode.md).
+Before you enable HSC, confirm eligibility, review limitations, and validate key sign-in and token issuance scenarios with a small set of applications. The following sections summarize each prerequisite. For full implementation steps, see [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md).
 
 ### Confirm tenant eligibility
 
-Your tenant is eligible for HSC if it exceeds the required object quota (approximately 5 million directory objects). You can check your current usage through the Graph API `directoryObject` resource type. For more information, see [directoryObject resource type](/graph/api/resources/directoryobject?view=graph-rest-1.0).
+Your tenant is eligible for HSC if it exceeds the required object quota (approximately 5 million directory objects). You can check your current usage through the Graph API `directoryObject` resource type. For more information, see [directoryObject resource type](/graph/api/resources/directoryobject?view=graph-rest-1.0&preserve-view=true).
 
 If your tenant doesn't exceed this object quota, HSC provides no additional benefit and the standard migration approach is recommended.
 
@@ -141,4 +141,4 @@ Stage 3: All apps completely moved over to External ID and your tenant is ready 
 
 ### Configuration instructions
 
-If you've decided to use High Scale Compatibility (HSC), continue to [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-hsc-mode.md) for step-by-step instructions on enabling HSC mode for your tenant and guidance on how to configure your environment for coexistence.
+If you've decided to use High Scale Compatibility (HSC), continue to [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md) for step-by-step instructions on enabling HSC mode for your tenant and guidance on how to configure your environment for coexistence.
