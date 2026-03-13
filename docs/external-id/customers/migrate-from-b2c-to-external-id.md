@@ -152,7 +152,7 @@ In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints whil
 
 :::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png" alt-text="Diagram of Azure AD B2C migration workflow showing stages, authentication flow, and migration via Azure Functions." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png":::
 
-For step-by-step implementation instructions, see [B2C-initiated password migration](/entra/external-id/customers/how-to-migrate-users.md#stage-2-b2c-initiated-password-migration).
+For step-by-step implementation instructions, see [Credential migration via the legacy IdP](how-to-migrate-users.md#stage-2-credential-migration-via-the-legacy-idp). In a B2C-initiated migration, this pattern is implemented using Azure AD B2C custom policies that call a REST API during sign-in to validate and harvest credentials.
 
 ## Stage 4: Validate, monitor, and plan cutover
 
