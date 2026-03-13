@@ -10,7 +10,7 @@ ms.date: 10/30/2025
 
 # Catalog Access Reviews (preview)
 
-Catalog access reviews in Microsoft Entra ID Governance enables organizations to simplify how managers can review users access to multiple resource types, such as groups, applications and custom disconnected resource at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
+Catalog access reviews in Microsoft Entra ID Governance enable organizations to simplify how managers can review user access to multiple resource types, such as groups, applications, and custom disconnected resources at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
 ## License requirements
 
