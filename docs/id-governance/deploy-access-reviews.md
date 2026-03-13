@@ -210,7 +210,7 @@ To create an access review policy, you must have the following information:
 | Notification| Email is sent at the start of a review to the alias Dynamics-Pms.<p>Include an encouraging custom message to reviewers to secure their buy-in. |
 | Timeline| 48 hours from notification. |
 |Automatic actions| Remove access from any account that has no interactive sign-in within 90 days by removing the user from the Security group dynamics-access. <p>*Perform actions if not reviewed within timeline.* |
-| Manual actions| Reviewers can do removals approval prior to automated action if desired. |
+| Manual actions| Reviewers can approve removals prior to automated action if desired. |
 
 ### Automate actions based on access reviews
 
