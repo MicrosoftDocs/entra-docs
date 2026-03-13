@@ -27,7 +27,7 @@ In this article, you’ll learn how to:
 > [!IMPORTANT]
 > Don't proceed unless your tenant is eligible for HSC and you have reviewed and accepted the HSC limitations. For decision guidance, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) (in particular, **High Scale Compatibility (HSC) migration approach**).
 
-## Step 1: Request allowlisting and enable HSC mode
+## Stage 1: Request allowlisting and enable HSC mode
 
 If you meet the eligibility criteria and have reviewed the limitations, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete.
 
@@ -58,7 +58,7 @@ Then verify with:
 > [!NOTE]
 > If you need to disable HSC mode, contact Microsoft support.
 
-## Step 2: Prepare identity schema for coexistence (optional)
+## Stage 2: Prepare identity schema for coexistence (optional)
 
 During coexistence, applications might authenticate users through different identity endpoints (B2C or External ID). Preparing identity data ensures that existing users can continue to sign in without disruption and that applications receive the claims they expect.
 
@@ -69,7 +69,7 @@ You only need to complete this step before migrating applications if your tenant
 - Existing MFA enrollments
 - Applications that rely on specific token claims
 
-If you don't use any of these features, continue to Step 3.
+If you don't use any of these features, continue to Stage 3.
 
 ### Federated identities (social or enterprise IdPs)
 
@@ -105,7 +105,7 @@ You can use [custom extensions](/entra/identity-platform/custom-extension-overvi
 
 This helps avoid differences in token contents between B2C‑based and External ID‑based applications during coexistence.
 
-## Step 3: Build your first External ID application (with existing B2C users)
+## Stage 3: Build your first External ID application (with existing B2C users)
 
 Use the following steps to create and configure an application that uses External ID endpoints while continuing to use the existing Azure AD B2C user base. Native authentication is optional and applies only to apps that use the native auth APIs.
 
@@ -140,7 +140,7 @@ If an application needs to support authentication traffic for both Azure AD B2C 
 
 Some applications require lightweight logic during authentication, such as attribute validation or token enrichment. Custom authentication extensions let you invoke an external REST API at specific points in the authentication flow without building full custom policies. For more information, see [Custom authentication extensions](/entra/external-id/customers/concept-custom-extensions) and [Custom extensions overview](/entra/identity-platform/custom-extension-overview).
 
-## Step 4: Validate end-to-end scenarios
+## Stage 4: Validate end-to-end scenarios
 
 Before you roll out broadly, validate the External ID–enabled application across critical authentication scenarios.
 
@@ -160,7 +160,7 @@ Before you roll out broadly, validate the External ID–enabled application acro
 - Token claims consumed by backend APIs.
 - Sign‑in logs and error handling.
 
-## Step 5: Expand application adoption incrementally and prepare for retirement
+## Stage 5: Expand application adoption incrementally and prepare for retirement
 
 After the initial application is validated:
 - Onboard additional applications to External ID one at a time.
