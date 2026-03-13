@@ -159,6 +159,8 @@ Stage 3: All apps completely moved over to External ID and your tenant is ready 
 
 If you've decided to use High Scale Compatibility (HSC), continue to [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md) for step-by-step instructions on enabling HSC mode for your tenant and guidance on how to configure your environment for coexistence.
 
+If after reviewing the HSC limitations you'd prefer the standard approach instead, see [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md).
+
 ## Related content
 
 - [Microsoft Entra External ID overview](/entra/external-id/external-identities-overview)

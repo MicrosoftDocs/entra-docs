@@ -27,10 +27,6 @@ In this article, you’ll learn how to:
 > [!IMPORTANT]
 > Don't proceed unless your tenant is eligible for HSC and you have reviewed and accepted the HSC limitations. For decision guidance, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) (in particular, **High Scale Compatibility (HSC) migration approach**).
 
-- **Eligibility:** Confirm your tenant exceeds the high-scale quota (approximately 5 million directory objects). See [Directory quota](/azure/active-directory-b2c/tenant-management-directory-quota).
-- **Limitations:** Review the HSC limitations and unsupported features in [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) (see **High Scale Compatibility (HSC) migration approach**). If you can't accept them, use the **standard migration** approach.
-- **Coexistence model:** Review the coexistence stages in [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) so you understand how apps transition while users and credentials remain in place.
-
 ## Step 1: Request allowlisting and enable HSC mode
 
 If you meet the eligibility criteria and have reviewed the limitations, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete.
@@ -122,7 +118,7 @@ When registering an application in your External ID tenant, choose _Accounts in 
 > [!NOTE]
 > Existing Azure AD B2C app registrations can't be reused for External ID endpoints due to differences in application properties, single‑tenant requirements, and Native Authentication support, which requires dedicated app registrations.
 
-### Native authentication (optional)
+### (Optional) Native authentication 
 
 If you're using native authentication, enable it by following the guidance in [Native authentication](/entra/identity-platform/concept-native-authentication).
 
