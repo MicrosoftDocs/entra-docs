@@ -76,7 +76,7 @@ Use the following steps to find and open the access review:
 If there are multiple reviewers, the last submitted response is recorded. Consider an example where an administrator designates two reviewers – Alice and Bob. Alice opens the review first and approves access. Before the review ends, Bob opens the review and denies access. In this case, the last deny access decision gets recorded.
 
 >[!NOTE]
->If a user is denied access in the review, they aren't removed from the access package immediately. The user will be removed from the access package once the review results are applied after the review is closed. The review closes automatically at the end of the review duration or earlier if an administrator manually stops the review. 
+>If a user is denied access in the review, they aren't removed from the access package immediately. The user is removed from the access package when the review results are applied after the review is closed. The review closes automatically at the end of the review duration or earlier if an administrator manually stops the review. 
 
 ### Approve or deny access using the system-generated recommendations
 
