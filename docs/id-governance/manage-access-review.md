@@ -111,7 +111,7 @@ You can use access reviews to ensure that users who were invited for a particula
  
 3. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
  
-4. In addition to users who denied their own need for continued access, you also can remove guest users who didn't respond. You also can remove guest users who weren't selected to participate, especially if they weren't recently invited. Those users didn't accept their invitation and so didn't have access to the application. 
+4. In addition to users who denied their own need for continued access, you also can remove guest users who didn't respond or who weren't selected to participate, especially if they weren't recently invited. Those users didn't accept their invitation and so didn't have access to the application. 
  
 ### Ask a sponsor to review a guest's access to an application
  
