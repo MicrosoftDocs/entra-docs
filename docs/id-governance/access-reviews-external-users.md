@@ -73,7 +73,7 @@ For a detailed step-by-step guide, see: [Create an access review of groups and a
 
 ## Disable and delete external identities with Microsoft Entra access reviews
 
-In addition to the option of removing unwanted external identities from resources such as groups or applications, Microsoft Entra access reviews can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. Once you select **Block user from signing-in for 30 days, then remove user from the tenant**, the review stays in the “applying” state for 30 days. During this period, settings, results, reviewers, or Audit logs under the current review aren't viewable or configurable. 
+In addition to the option of removing unwanted external identities from resources such as groups or applications, Microsoft Entra access reviews can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. Once you select **Block user from signing-in for 30 days, then remove user from the tenant**, the review stays in the “applying” state for 30 days. During this period, you can't view or configure settings, results, reviewers, or audit logs under the current review. 
 
 ![upon completion settings](media/access-reviews-external-users/upon-completion-settings.png)
 
