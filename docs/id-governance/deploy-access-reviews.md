@@ -76,7 +76,7 @@ For access reviews, you'll likely include representatives from the following tea
 * **Security teams** ensure the plan meets the security requirements of your organization and enforces Zero Trust. This team:
    * Reduces risk and strengthens security
    * Enforces least privilege access to resources and applications
-   * Uses tools to see a centralized authoritative source, of who has access to what, and for how long.
+   * Uses tools to see a centralized authoritative source of who has access to what, and for how long.
 
 * **Development teams** build and maintain applications for your organization. This team:
 
