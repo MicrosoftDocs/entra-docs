@@ -100,7 +100,7 @@ For access reviews, you'll likely include representatives from the following tea
    * Requires repeatable access processes that are easy to audit and report.
 
 > [!NOTE]
-> For reviews that require manual evaluations, plan for adequate reviewers and review cycles that meet your policy and compliance needs. If review cycles are too frequent, or there are too few reviewers, quality might be lost and too many or too few people might have access. We recommend you establish clear responsibilities for the various stakeholders and departments engaged in the access reviews. All teams and individuals participating should understand their respective roles and obligations to uphold the principle of least privilege.
+> For reviews that require manual evaluations, plan for adequate reviewers and review cycles that meet your policy and compliance needs. If review cycles are too frequent, or there are too few reviewers, quality might be lost and too many or too few people might have access. Establish clear responsibilities for the various stakeholders and departments engaged in the access reviews. All teams and individuals participating should understand their respective roles and obligations to uphold the principle of least privilege.
 
 ### Plan communications
 
