@@ -60,7 +60,7 @@ The reports provide details on a per-user basis showing the following informatio
 | OwnerUPN | Reviewer owner User Principal Name |
 | PrincipalId | ID of the principal being reviewed |
 | PrincipalName | Name of the principal being reviewed |
-| PrincipalUPN | Principal Name of the user being reviewed |
+| PrincipalUPN | User Principal Name of the user being reviewed |
 | PrincipalType | Type of the principal. Options include user, group, and service principal |
 | ReviewDate | Date of the review |
 | ReviewResult | Review results include Deny, Approve, and Not reviewed |
