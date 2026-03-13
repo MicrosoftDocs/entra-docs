@@ -65,7 +65,7 @@ Use the following steps to find and open the access review:
 
 1. If you aren't sure, you can select the **Don’t know** button.
 
-    If you make this selection, the user maintains access, and this selection goes in the audit logs. The log shows any other reviewers that you still completed the review.
+    If you make the **Don't know** selection, the user maintains access, and this selection goes in the audit logs. The log shows any other reviewers that you still completed the review.
 
 1. You could be required to provide a reason for your decision. Type in a reason and select **Submit**.
 
