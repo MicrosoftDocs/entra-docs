@@ -48,7 +48,7 @@ HSC migration might be a good choice if **all** the following are true:
 
 If your tenant meets the HSC eligibility criteria, review both approaches below before deciding — the standard approach might still be the better fit depending on your feature requirements.
 
-If you aren't eligible for HSC migration, use the **standard migration approach**. HSC exists to support tenants that exceed the high-scale quotas; if your tenant is below these quotas, HSC provides no added benefit.
+If your tenant doesn't meet the HSC eligibility criteria, use the **standard migration approach** — HSC provides no added benefit below the high-scale thresholds.
 
 ## Standard migration approach
 
@@ -57,31 +57,32 @@ The standard migration approach is recommended for most Azure AD B2C customers. 
 ### What you migrate in the standard approach
 
 In the standard approach, you migrate identities and applications to a new Microsoft Entra External ID tenant. This typically includes:
+
 1. Creating the destination tenant and configuring security, compliance, and monitoring
 1. Registering applications and configuring user flows
-1. Migrating users
+1. Migrating users data from your existing tenant
 1. Preserving passwords (if needed)
 1. Cutting over applications to External ID
 
 ### Common migration patterns
 
 - **Bulk user migration, then app cutover**: Users are migrated to External ID in advance, and applications are updated to authenticate against External ID.
-- **Bulk user migration with just-in-time (JIT) password migration**: Users exist in External ID first, while password validation/migration happens during sign-in or password reset over a time-boxed coexistence period.
-- **Azure AD B2C-initiated migration**: Applications initially continue authenticating via the legacy B2C tenant while users are progressively migrated in the background, then applications cut over to External ID.
+- **Bulk user migration with just-in-time (JIT) password migration**: Users are migrated to External ID first, then password validation/migration happens during sign-in or password reset over a time-boxed coexistence period.
+- **Azure AD B2C-initiated migration**: Applications initially continue authenticating through your legacy B2C tenant while passwords are progressively migrated in the background, then applications cut over to External ID.
 
 ### Common considerations
 
-Before you start implementation, confirm these common considerations at a high level:
-- **Custom business logic**: Identify custom policy logic, token/claim shaping, and downstream dependencies you must recreate.
-- **User experience**: Inventory sign-in UX customizations and confirm the External ID experience you’ll use.
+Before you start implementation, review the following areas at a high level:
+- **Custom business logic**: Identify custom policy logic, token/claim shaping, and downstream dependencies you need to recreate.
+- **User experience**: Inventory sign-in UX customizations and decide which External ID experience to use.
 - **Identity providers**: List social and enterprise identity providers and any federation requirements.
-- **Access controls**: Note Conditional Access and policy conditions that must be equivalent post-migration.
-- **Automation and operations**: Plan for Microsoft Graph-based lifecycle operations, monitoring, and runbooks.
+- **Access controls**: Note Conditional Access policies and conditions that must be equivalent post-migration.
+- **Automation and operations**: Plan Microsoft Graph-based lifecycle operations, monitoring, and runbooks.
 
 ### When to choose standard migration
 
-- Your tenant is below the high-scale threshold (for example, under ~5 million directory objects).
-- You don’t require side-by-side operation of Azure AD B2C and External ID at very large scale.
+- Your tenant is below the high-scale threshold.
+- You don’t require side-by-side operation of Azure AD B2C and External ID.
 - You want the broadest feature compatibility while you move identities and applications to External ID.
 
 ### Configuration instructions
@@ -103,7 +104,7 @@ HSC is intended for tenants where a full user and credential migration would be 
 - Continue supporting legacy B2C applications alongside new or migrated apps using External ID.
 - Control the pace and scope of migration, enabling a phased transition across applications according to business needs.
 
-Before you enable HSC, confirm eligibility, review limitations, and validate key sign-in and token issuance scenarios with a small set of applications. The following sections summarize each prerequisite. For full implementation steps, see [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md).
+Before you enable HSC, confirm eligibility, review limitations, and validate key sign-in and token issuance scenarios with a small set of applications. The following sections summarize each prerequisite. 
 
 ### Confirm tenant eligibility
 
@@ -114,14 +115,31 @@ If your tenant doesn't exceed this object quota, HSC provides no additional bene
 ### Review limitations and roadmap alignment
 
 > [!IMPORTANT]
-> HSC is appropriate only if you can accept the limitations that apply at very large scale. Review the limitations before enabling HSC or migrating additional applications.
+> HSC is appropriate only if you can accept limitations that apply at large scale. Review the limitations before enabling HSC or migrating additional applications.
 
-Some limitations are fundamental to operating at very large scale and exist today in Azure AD B2C. These same constraints apply when running External ID in HSC mode. For a comprehensive list, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
+Some limitations are fundamental to operating at high scale and exist today in Azure AD B2C. These same constraints apply when running External ID in HSC mode. For a comprehensive list, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
 
-Some capabilities available in External ID aren't available in HSC mode today, including advanced Conditional Access scenarios, certain federation options (Apple ID, SAML, custom OIDC), and full Microsoft Entra admin center UI support.
+#### External ID features not yet supported in HSC
+
+Some capabilities available in External ID aren't available in HSC mode today. If you're considering HSC mode, review these features carefully before making a decision.
 
 > [!NOTE]
 > Feature availability timelines might differ between External ID HSC and standard deployment modes. Always refer to the official roadmap for the latest status and rollout expectations.
+
+**Authentication and access control**
+
+- Advanced Conditional Access scenarios, including:
+  - Authentication context or step-up authentication
+  - Session-based controls
+- Application assignment via groups
+
+**Federation and ecosystem integrations**
+
+- Apple ID, SAML, and custom OIDC federation
+
+**Admin portal UI support**
+
+Full Microsoft Entra admin center UI support isn't yet available for External ID scenarios in HSC tenants. Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
 
 ### Understand how coexistence works
 
