@@ -74,7 +74,7 @@ The reports provide details on a per-user basis showing the following informatio
 | AppliedByEmailAddress | Email address of the user who applied the review result |
 | AppliedDate | Date when the review result was applied |
 | AccessRecommendation | System recommendations include Approve, Deny, and No Info |
-|SubmissionResult | Review result submission statuses include applied, and not applied. |
+| SubmissionResult | Review result submission statuses include Applied and Not Applied. |
 
 ## Next steps
 - [Review access to groups or applications](perform-access-review.md)
