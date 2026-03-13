@@ -147,7 +147,7 @@ JIT works best **when coexistence is time-boxed, not open-ended**. Bulk user mig
 
 In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints while credentials are harvested in the background. A B2C custom policy calls a REST API to validate credentials against the legacy IdP and write them to the corresponding External ID accounts. Once enough credentials have been migrated, applications cut over to External ID.
 
-For step-by-step implementation instructions, see [Migrate users](/entra/external-id/customers/how-to-migrate-users).
+For step-by-step implementation instructions, see [B2C-initiated password migration](/entra/external-id/customers/how-to-migrate-users#stage-2-b2c-initiated-password-migration).
 
 - **1:** Applications keep authenticating with the legacy IdP while users are progressively migrated into External ID using Azure Functions for credential validation and background migration.
 - **2:** Applications cut over to External ID once most users have been migrated, and External ID becomes the primary authentication service for all core user flows.
