@@ -61,6 +61,8 @@ Not all information in your legacy identity provider needs to be migrated to you
 
 Not every migration requires credential migration. If your users authenticate through social identity providers or enterprise federation, their passwords aren't stored in your directory and don't need to be migrated. You can also skip credential migration if you're moving to passwordless authentication or if you're comfortable having users reset their password via [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md).
 
+If you don't need credential migration, your user migration is complete. Return to the migrate guide to validate your environment and plan application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
+
 ## Stage 2: Prepare for credential migration
 
 If you need to preserve existing passwords, prepare user accounts for credential migration before implementing either migration approach. This setup is shared by both the JIT and legacy IdP-initiated approaches described in Stage 3.
