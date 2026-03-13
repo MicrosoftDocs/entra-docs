@@ -58,7 +58,7 @@ This article describes how to create one or more access reviews for PIM for Grou
 After you reach this step, you can follow the instructions outlined under **Next: Reviews** in the [Create an access review of groups or applications](create-access-review.md#next-reviews) article to complete your access review.
 
 > [!NOTE]
-> For access reviews of PIM for Groups (preview), when selecting the group owner as the reviewer, it's mandatory to assign at least one fallback reviewer. The review will only assign active owner(s) as the reviewer(s). Eligible owners aren't included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
+> For access reviews of PIM for Groups (preview), when selecting the group owner as the reviewer, you must assign at least one fallback reviewer. The review will only assign active owner(s) as the reviewer(s). Eligible owners aren't included. If there are no active owners when the review begins, the fallback reviewer(s) will be assigned to the review.
 
 ## Next steps
 
