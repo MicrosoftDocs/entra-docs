@@ -3,7 +3,7 @@ title: 'Access Reviews FAQs'
 description: Frequently asked questions about Access Reviews.
 ms.subservice: access-reviews
 ms.topic: faq
-ms.date: 07/14/2025
+ms.date: 03/12/2026
 ms.reviewer: jgangadhar
 ms.custom: template-tutorial
 ---
