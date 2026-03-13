@@ -4,7 +4,7 @@ description: Learn how to manage user and guest access as membership of a group 
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 07/14/2025
 ms.reviewer: mwahl
 ---
  
