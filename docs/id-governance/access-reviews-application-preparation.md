@@ -32,7 +32,7 @@ Also, while not required for reviewing access to an application, you should also
 
 ## Determine how the application is integrated with Microsoft Entra ID
 
-In order for access reviews to be used for an application, then the application must first be integrated with Microsoft Entra ID and represented in your directory. An application being integrated with Microsoft Entra ID means one of two requirements must be met:
+For access reviews to be used for an application, the application must first be integrated with Microsoft Entra ID and represented in your directory. An application being integrated with Microsoft Entra ID means one of two requirements must be met:
 
 * The application relies upon Microsoft Entra ID for federated SSO, and Microsoft Entra ID controls authentication token issuance. If Microsoft Entra ID is the only identity provider for the application, then only users who are assigned to one of the application's roles in Microsoft Entra ID are able to sign into the application. Those users that are denied by a review lose their application role assignment and can no longer get a new token to sign in to the application.
 * The application relies upon user or group lists that are provided to the application by Microsoft Entra ID. This fulfillment could be done through a provisioning protocol such as System for Cross-Domain Identity Management (SCIM), by the application querying Microsoft Entra ID via Microsoft Graph, Microsoft Entra provisioning users into the application's database or groups that are written to AD DS. Those users that are denied by a review lose their application role assignment or group membership, and when those changes are made available to the application, then the denied users will no longer have access.
