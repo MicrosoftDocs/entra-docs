@@ -8,7 +8,7 @@ ms.date: 09/06/2025
 ---
 # Review access of an access package in entitlement management
 
-Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how designated reviewers can review user assignments to access packages that grant the assigned user's access.
+Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how designated reviewers can review user assignments to access packages.
 
 You can review access package assignments via the [My Access portal](https://myaccess.microsoft.com/), or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of access package assignment reviews, if the agent can't yet help you with your assigned reviews it guides you to the My Access portal.
 
