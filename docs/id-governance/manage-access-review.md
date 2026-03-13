@@ -26,7 +26,7 @@ First, you must be assigned as at least one of the following roles:
 - Privileged Role Administrator (for reviews of role-assignable groups only)
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
 
-Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
+Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews are ready for your organization.
 
 You can have one or more users as reviewers in an access review.  
  
