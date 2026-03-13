@@ -39,7 +39,7 @@ After the SSPR portal is displayed in the required language, the user is prompte
     * If the authentication methods aren't configured, the user is advised to contact their administrator to reset their password.
   * If the policy requires two methods, check that the user has the appropriate data defined for at least two of the authentication methods enabled by the administrator policy.
     * If the authentication methods aren't configured, the user is advised to contact their administrator to reset their password.
-  * If an Azure administrator role is assigned to the user, then the strong two-gate password policy is enforced. For more information, see [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
+  * If an Entra administrator role is assigned to the user, then the strong two-gate password policy is enforced. For more information, see [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
 * Checks to see if the user's password is managed on-premises, such as if the Microsoft Entra tenant is using federated, pass-through authentication, or password hash synchronization:
   * If SSPR writeback is configured and the user's password is managed on-premises, the user is allowed to proceed to authenticate and reset their password.
   * If SSPR writeback isn't deployed and the user's password is managed on-premises, the user is asked to contact their administrator to reset their password.
