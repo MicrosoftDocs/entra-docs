@@ -62,7 +62,7 @@ ms.collection:
 
 |PCI-DSS Defined approach requirements|Microsoft Entra guidance and recommendations|
 |-|-|
-|**10.5.1** Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis.|Integrate with Azure Monitor and export the logs for long term archival. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) </br> Learn about Microsoft Entra logs data retention policy. [Microsoft Entra data retention](~/identity/monitoring-health/reference-reports-data-retention.md)|
+|**10.5.1** Retain audit log history for at least 12 months, with at least the most recent three months immediately available for analysis.|Integrate with Azure Monitor and export the logs for long term archival. [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) </br> Learn about Microsoft Entra logs data retention policy. [Microsoft Entra data retention](~/identity/monitoring-health/reference-reports-data-retention.md)|
 
 ## 10.6 Time-synchronization mechanisms support consistent time settings across all systems.
 
@@ -82,7 +82,7 @@ ms.collection:
 
 ## Next steps
 
-PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf).
+PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/).
 
 To configure Microsoft Entra ID to comply with PCI-DSS, see the following articles. 
 

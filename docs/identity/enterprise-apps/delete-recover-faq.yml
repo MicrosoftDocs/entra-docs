@@ -2,16 +2,9 @@
 metadata:
   title: Deletion and recovery of applications FAQ
   description: Find answers to frequently asked questions (FAQs) about recovering deleted apps and service principals.
-  
-  
-  ms.service: entra-id
-  ms.subservice: enterprise-apps
   ms.topic: faq
   
   ms.date: 02/21/2024
-  ms.author: jomondi
-  author: omondiatieno
-  manager: celesteDG
   ms.reviewer: sureshja
   ms.collection: M365-identity-device-management
   ms.custom: enterprise-apps

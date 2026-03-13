@@ -1,14 +1,11 @@
 ---
 title: Publish Remote Desktop with Microsoft Entra application proxy
-description: Covers how to configure application proxy with Remote Desktop Services (RDS)
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Learn how to configure application proxy with Remote Desktop Services (RDS)
 ms.topic: how-to
-ms.date: 02/27/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Publish Remote Desktop with Microsoft Entra application proxy
@@ -30,7 +27,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 - RD Gateway comes into the picture once a user launches the RDP connection. The RD Gateway handles encrypted RDP traffic coming over the internet and translates it to the on-premises server that the user is connecting to. In this scenario, the traffic the RD Gateway is receiving comes from the Microsoft Entra application proxy.
 
 >[!TIP]
->If you haven't deployed RDS before, or want more information before you begin, learn how to [seamlessly deploy RDS with Azure Resource Manager and Azure Marketplace](/windows-server/remote/remote-desktop-services/rds-in-azure).
+>For more information, see [how to seamlessly deploy RDS with Azure Resource Manager and Azure Marketplace](/windows-server/remote/remote-desktop-services/rds-in-azure).
 
 ## Requirements
 
@@ -40,7 +37,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 - When publishing RD Web, use the same internal and external Fully Qualified Domain Name (FQDN) when possible. If the internal and external Fully Qualified Domain Names (FQDNs) are different, disable Request Header Translation to avoid the client receiving invalid links.
 - If you're using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you encounter websocket errors when making a RemoteApp connection through the RD Web client.
 - If you're using RD Web on Internet Explorer, you need to enable the RDS ActiveX add-on.
-- If you're using the RD Web client, you'll need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
+- If you're using the RD Web client, you need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
 - For the Microsoft Entra pre authentication flow, users can only connect to resources published to them in the **RemoteApp and Desktops** pane. Users can't connect to a desktop using the **Connect to a remote PC** pane.
 - If you're using Windows Server 2019, you need to disable HTTP2 protocol. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
@@ -62,7 +59,7 @@ After setting up RDS and Microsoft Entra application proxy for your environment,
    >[!Note]
    >Your users are asked to authenticate once to Microsoft Entra ID and once to RD Web, but they have single sign-on to RD Gateway.
 
-1. Browse to **Identity** > **Applications** > **App registrations**. Choose your app from the list.
+1. Browse to **Entra ID** > **App registrations**. Choose your app from the list.
 1. Under **Manage**, select **Branding**.
 1. Update the **Home page URL** field to point to your RD Web endpoint (like `https://<rdhost>.com/RDWeb`).
 
@@ -91,7 +88,7 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
    >[!NOTE]
-   >The above command uses a backtick in "`nrequire".
+   >The command uses a backtick in \``nrequire`.
 
 9. To verify the modification of the custom RDP properties and view the RDP file contents that are downloaded from RDWeb for this collection, run the following command.
     ```

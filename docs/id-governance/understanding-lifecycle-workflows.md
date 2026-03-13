@@ -1,34 +1,31 @@
 ---
 title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
-author: owinfreyATL
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
-ms.date: 06/22/2023
-ms.author: owinfrey
+ms.topic: concept-article
+ms.date: 03/12/2026
+ms.custom: sfi-image-nochange
 ---
 # Understanding lifecycle workflows 
 
-The following document provides an overview of a workflow created using Lifecycle Workflows. Workflows automate tasks based on the joiner-mover-leaver(JML) cycle of lifecycle management, and split tasks for users into categories of where they fall in the lifecycle of an organization. These categories extend into templates, where they can be quickly customized to suit the needs of users in your organization. For more information, see: [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md).
+The following document provides an overview of a workflow created using Lifecycle Workflows. Workflows automate tasks based on the joiner-mover-leaver (JML) cycle of lifecycle management, and split tasks for users into categories of where they fall in the lifecycle of an organization. These categories extend into templates, where they can be quickly customized to suit the needs of users in your organization. For more information, see: [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md).
 
   [![Diagram of a lifecycle workflow.](media/understanding-lifecycle-workflows/workflow-2.png)](media/understanding-lifecycle-workflows/workflow-2.png#lightbox)
+
+> [!NOTE]
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 ## License requirements 
 
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Permissions and Roles
 
 For a full list of supported delegated and application permissions required to use Lifecycle Workflows, see: [Lifecycle workflows permissions](/graph/permissions-reference#lifecycle-workflows-permissions).
 
-For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md):
+For delegated scenarios, the admin should have at least the Lifecycle Workflows Administrator [Microsoft Entra role](../identity/role-based-access-control/permissions-reference.md):
 
-- Global administrator
-- Global reader
-- Lifecycle workflows administrator
 
 ## Limits
 
@@ -42,7 +39,7 @@ A workflow can be broken down into the following three main parts:
 |-----|-----|
 |General information|This portion of a workflow covers basic information such as display name, and a description of what the workflow does.|
 |Tasks|Tasks are the actions that are taken when a workflow is executed.|
-|Execution conditions| Defines when(trigger), and for who(scope), a scheduled workflow runs. For more information on these two parameters, see  [Trigger details](understanding-lifecycle-workflows.md#trigger-details) and [Configure Scope](understanding-lifecycle-workflows.md#configure-scope).|
+|Execution conditions| Defines when (trigger), and for who (scope), a scheduled workflow runs. For more information on these two parameters, see  [Trigger details](understanding-lifecycle-workflows.md#trigger-details) and [Scope](understanding-lifecycle-workflows.md#scope).|
 
 ## Templates
 
@@ -50,10 +47,10 @@ Creating a workflow via the Microsoft Entra admin center requires the use of a t
 
   [![Understanding workflow template diagram.](media/understanding-lifecycle-workflows/workflow-3.png)](media/understanding-lifecycle-workflows/workflow-3.png#lightbox)
 
-The template, depending on its category, will define which tasks are available to be used, and then guide you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.  
+The template, depending on its category, defines which tasks are available to be used, and then guides you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.  
 
 >[!NOTE]
->Depending on the template you select, the options that will be available may vary. The images in this document uses the [**Onboarding pre-hire employee**](lifecycle-workflow-templates.md#onboard-pre-hire-employee) template to illustrate the parts of a workflow.
+>Depending on the template you select, the options that will be available may vary. The images in this document use the [**Onboarding pre-hire employee**](lifecycle-workflow-templates.md#onboard-pre-hire-employee) template to illustrate the parts of a workflow.
 
 For more information, see [Lifecycle workflow templates.](lifecycle-workflow-templates.md)
 
@@ -69,7 +66,7 @@ In this section you learn what each section tells you, and what actions you're a
 
 ### Basic Information
 
-When you select a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick change action that you take place on the overview page, is shown immediately within this section.
+When you select a workflow, the overview provides you with a list of basic details in the **Basic Information** section. These basic details provide you with information such as the workflow category, its ID, when it was modified, and when it's scheduled to run again. This information is important in providing quick details surrounding its current usage for administrative purposes. Basic information is also live data, meaning any quick action that you take on the overview page is shown immediately within this section.
 
 Within the **Basic Information** you can view the following information:
 
@@ -91,10 +88,9 @@ The **My Feed** section of the workflow overview contains a quick peek into when
 - Next target run: The date and time of the next scheduled workflow run.
 - Total processed users: The total number of users processed by the workflow.
 - Processed users with failures: The total users processed with failed status by the workflow.
-- Failed tasks: The total number of failed
+- Failed tasks: The total number of failed tasks.
 - Number of tasks: The total number of tasks within the workflow.
 - Current version: How many new versions of the workflow have been created.
-
 
 ### Quick Action
 
@@ -116,51 +112,47 @@ After selecting a template, on the basics screen:
 
  [![Basics of a workflow.](media/understanding-lifecycle-workflows/workflow-4.png)](media/understanding-lifecycle-workflows/workflow-4.png#lightbox)
 
+## Execution conditions
+
+On the Workflow basics screen you also get to set the first detail, the trigger, for a workflow's execution conditions. The execution conditions of a workflow define when, and for who, a workflow runs. It's made up of two distinct parts known as the trigger, and the scope.
+
 ## Trigger details
 
-The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger is a combination of a time-based attribute, and an offset value.  For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days. 
+The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. 
 
-The time-based attribute can be either one of two values, which are automatically chosen based on the template in which you select during the creation of your workflow. The three values can be:
+The supported scheduled triggers are:
+- Attribute Changes
+- Group Membership change
+- Time based
+- Sign-in inactivity
 
-- employeeHireDate: If the template is a joiner workflow for an employee
-- createdDateTime: if the template is a joiner workflow designed to run either on hire or post onboarding
-- employeeLeaveDateTime: If the template is a leaver workflow for an employee
+The type of workflow you choose determines which trigger you use.
 
-The values employeeHireDate and employeeLeaveDateTime must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md)
+## Scope
 
-The offset determines how many days before or after the time-based attribute the workflow should be triggered. For example, if the attribute is employeeHireDate and offsetInDays is 7, then the workflow should trigger one week(7 days) before the employee hire date. The offsetInDays value can be as far ahead, or behind, as 180.
+The scope defines for who the scheduled workflow runs. Configuring this parameter allows you to further narrow down the users for whom the workflow is to be executed. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
 
+The scope depends on the trigger that you use.
 
-> [!NOTE]
-> The offsetInDays value in the Microsoft Entra admin center is shown as *Days from event*. When you schedule a workflow to run, this value is used as the baseline for who a workflow will run. Currently there is a 3 day window in processing scheduled workflows. For example, if you schedule a workflow to run for users who joined 7 days ago, a user who meets the execution conditions for the workflow, but joined between 7 to 10 days ago would have the workflow ran for them.
-
-## Configure scope
-
-[![Screenshot showing the rule section.](media/understanding-lifecycle-workflows/workflow-5.png)](media/understanding-lifecycle-workflows/workflow-5.png#lightbox)
-
-The scope defines for who the scheduled workflow runs. Configuring this parameter allows you to further narrow down the users for whom the workflow is to be executed.
-
-The scope is made up of the following two parts:
-
-- Scope type: Always preset as Rule based.
-- Rule: Where you can set expressions on user properties that define for whom the scheduled workflow runs. You can add extra expressions using **And, And not, Or, Or not** to create complex conditionals, and apply the workflow more granularly across your organization. Lifecycle Workflows supports a [rich set of user properties](/graph/api/resources/identitygovernance-rulebasedsubjectset#supported-user-properties-and-query-parameters) for configuring the scope.
-
-[![Extra expressions.](media/understanding-lifecycle-workflows/workflow-8.png)](media/understanding-lifecycle-workflows/workflow-8.png#lightbox)
-
->[!NOTE]
-> The rule evaluation is case-sensitive.
+- For **Attribute changes**, the trigger is rule based and triggered when the attribute you defined is changed for a user.
+- For **Group membership change**, the trigger is group-based and triggered if a user is added or removed from a specific group.
+- For **Time based attribute**, the trigger is rule based and triggered when the time value you defined is met by a user.
+- For **sign-in inactivity**, the trigger is rule-based and triggered when a user has not signed in over a specific time period.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow.](create-lifecycle-workflow.md)
 
 ## Scheduling
 
-While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column. 
+While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column.
 
-Once scheduling is enabled, the workflow is evaluated based on the interval that is set within your workflow settings(default of three hours) to determine whether or not it should run based on the execution conditions.
+Once scheduling is enabled, the workflow is evaluated based on the interval that is set within your workflow settings (default of three hours) to determine whether or not it should run based on the execution conditions.
 
  [![Workflow template schedule.](media/understanding-lifecycle-workflows/workflow-10.png)](media/understanding-lifecycle-workflows/workflow-10.png#lightbox)
 
-To view a detailed guide on scheduling a workflow, see: [Customize the schedule of workflows](customize-workflow-schedule.md).
+>[!NOTE]
+> The time based attribute trigger processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time.
+
+To view a detailed guide on  customizing the schedule of a workflow, see: [Customize the schedule of workflows](customize-workflow-schedule.md).
 
 ### On-demand scheduling
 

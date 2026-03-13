@@ -11,8 +11,7 @@
         "minAdditionsToFile" : 20,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
-            "label:develop/subsvc"
+            "label:identity-platform/svc"
         ]
     },
     "areas": [

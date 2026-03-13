@@ -24,7 +24,9 @@ items:
     - name: Govern and monitor
       href: tutorial-govern-monitor.md
     - name: Manage certificates
-      href: tutorial-manage-certificates-for-federated-single-sign-on.md 
+      href: tutorial-manage-certificates-for-federated-single-sign-on.md
+    - name: Enforce app secrets standards
+      href: tutorial-enforce-secret-standards.md
   - name: Samples
     items: 
     - name: Overview of App Management samples
@@ -60,6 +62,8 @@ items:
         href: plan-sso-deployment.md
     - name: Application security
       items:
+      - name: Migrate away from secret-based authentication
+        href: migrate-applications-from-secrets.md
       - name: App access options
         href: what-is-access-management.md
       - name: Certificate signing options
@@ -123,10 +127,14 @@ items:
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
-    - name: Single sign-on
+    - name: Configure app management policies
+      href: configure-app-management-policies.md
+    - name: Configure Single sign-on
       items:
       - name: Enable Single sign-on with SAML
         href: add-application-portal-setup-sso.md
+      - name: Enable Single sign-on with a relying party STS
+        href: add-application-portal-setup-sso-rpsts.md
       - name: Enable Linked single sign-on
         href: configure-linked-sign-on.md
       - name: Enable OpenID Connect based single sign-on
@@ -139,8 +147,6 @@ items:
         items:
         - name: Configure user consent
           href: configure-user-consent.md
-        - name: Configure group owner consent
-          href: configure-user-consent-groups.md
         - name: Configure risk-based step-up consent
           href: configure-risk-based-step-up-consent.md
         - name: Configure permission classifications
@@ -161,8 +167,12 @@ items:
           href: manage-application-permissions.md
         - name: Restore revoked permissions
           href: restore-permissions.md
+        - name: Review permission audit logs
+          href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
+      - name: Assign agent identities to applications
+        href: assign-agent-identities-to-applications.md
       - name: Assign custom security attributes
         href: custom-security-attributes-apps.md
       - name: Disable user sign-in
@@ -182,11 +192,7 @@ items:
     - name: Migrate applications
       items:
       - name: Migrate applications from AD FS to Microsoft Entra ID 
-        items:
-        - name: Use the AD FS application migration wizard
-          href: migrate-ad-fs-application-howto.md
-        - name: Use the ADFS application activity report
-          href: migrate-adfs-application-activity.md
+        href: migrate-ad-fs-application-howto.md
       - name: Migrate applications from Okta to Microsoft Entra ID
         items:
         - name: Migrate applications from Okta to Microsoft Entra ID
@@ -285,16 +291,16 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
+      - name: Deactivate an app registration
+        href: deactivate-app-registration.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application
         href: restore-application.md
   - name: Reference
     items:
-    - name: Application API - Microsoft Graph
-      href: /graph/api/resources/application?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
-    - name: Service principals API - Microsoft Graph
-      href: /graph/api/resources/serviceprincipal?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
+    - name: Microsoft Graph APIs
+      href: /graph/api/resources/applications-api-overview
     - name: Manage apps using Microsoft Graph
       href: /graph/tutorial-applications-basics?context=/entra/identity/enterprise-apps/context/manage-apps-context.json
     - name: Deletion and recovery FAQ
@@ -309,10 +315,10 @@ items:
       href: ways-users-get-assigned-to-applications.md
     - name: Methods of removing user access to an app
       href: methods-for-removing-user-access.md
+    - name: Restrict password addition to apps
+      href: block-password-addition.md
   - name: Resources
     items:
-        - name: Video learning
-          href: app-management-videos.md
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers

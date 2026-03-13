@@ -1,0 +1,18 @@
+{
+  "casing-repo-custom-terms": {
+    "terms": [
+    ]
+  },
+  "invalid-repo-custom-terms": {
+    "terms": [
+    ]
+  },
+  "formatting-repo-custom-terms": {
+    "terms": [
+    ]
+  },
+  "ignored-repo-custom-terms": {
+    "terms": [
+    ]
+  }
+}

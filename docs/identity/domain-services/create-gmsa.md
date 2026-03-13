@@ -1,15 +1,10 @@
 ---
 title: Group managed service accounts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create a group managed service account (gMSA) for use with Microsoft Entra Domain Services managed domains
-author: justinha
-manager: amycolannino
 
 ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/23/2023
-ms.author: justinha
+ms.date: 01/21/2025
 ---
 # Create a group managed service account (gMSA) in Microsoft Entra Domain Services
 
@@ -24,7 +19,7 @@ This article shows you how to create a gMSA in a managed domain using Azure Powe
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

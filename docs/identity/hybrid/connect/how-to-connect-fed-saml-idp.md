@@ -2,16 +2,11 @@
 title: 'Microsoft Entra Connect: Use a SAML 2.0 Identity Provider for Single Sign On - Azure'
 description: This document describes using a SAML 2.0 compliant Idp for single sign-on.
 
-author: billmath
-manager: amycolannino
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
 ---
 
 #  Use a SAML 2.0 Identity Provider (IdP) for Single Sign On
@@ -27,7 +22,7 @@ Microsoft supports this sign-on experience as the integration of a Microsoft clo
 > Only a limited set of clients are available in this sign-on scenario with SAML 2.0 identity providers, this includes:
 > 
 > - Web-based clients such as Outlook Web Access and SharePoint Online
-> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, etc. (the Enhanced Client Protocol end point is required to be deployed), including:
+> - Email-rich clients that use basic authentication and a supported Exchange access method such as IMAP, POP, Active Sync, MAPI, and so on. (the Enhanced Client Protocol end point is required to be deployed), including:
 >     - Microsoft Outlook 2010/Outlook 2013/Outlook 2016, Apple iPhone (various iOS versions)
 >     - Various Google Android Devices
 >     - Windows Phone 7, Windows Phone 7.8, and Windows Phone 8.0
@@ -91,32 +86,14 @@ A request and response message pair is shown for the sign-on message exchange.
 The following is a sample request message that is sent from Microsoft Entra ID to a sample SAML 2.0 identity provider. The sample SAML 2.0 identity provider is Active Directory Federation Services (AD FS) configured to use SAML-P protocol. Interoperability testing has also been completed with other SAML 2.0 identity providers.
 
 ```xml
-  <?xml version="1.0"?>
-<samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ID="_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb" Version="2.0" IssueInstant="2023-10-09T15:48:00.361Z">
-  <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer>
-  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-      <Reference URI="#_f6f7cf98-e2c8-470e-ace9-4c0dabdd36cb">
-        <Transforms>
-          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-        </Transforms>
-        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-        <DigestValue>f5c2T/UEzCMjKYp6yuscKKFojDI=</DigestValue>
-      </Reference>
-    </SignedInfo>
-    <SignatureValue>BdlWtxZE+ZvkfbD1B8wskZwiGVDDFRcnlIDrAOvvOd625vpEHpjW4j8Y3Buks+W1PLV1nC2cCRIAmPZMsxt7GLjT9AjYpgo+E5FlGQq7AezcLsKRrmxI4eVwRpy4zWthq/Gae9HGF5gajU+dE4jMd2275lk7poCHdlPXJR+EH6oikILBjWZeeWs4HAxYn7TtZ4/H2tcaz8yOQkWWlbR8ZVsUF5ZTbdtr24N9Mk4ZWooJN0jYN5nBv0LuGTlmpwjcdY9fuaBLwqlq6nUKzpDNiPXTn7BW8+EPidS/GonXzbJl18WwyaDKPre1qWtJzSuLInoYIWIcSdA+uwhETrcaew==</SignatureValue>
-    <KeyInfo>
-      <ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-        <ds:X509SKI>bwzmkdKETWhixlS99FL36FH37EI=</ds:X509SKI>
-      </ds:X509Data>
-      <KeyName>MicrosoftOnline</KeyName>
-    </KeyInfo>
-  </Signature>
-  <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
-</samlp:AuthnRequest>
+<samlp:AuthnRequest ID="_1e089e5c-a976-4881-af74-3b92c89e7e2c" Version="2.0" IssueInstant="2024-03-12T14:00:18.450Z" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
+
+```
+
+If isSignedAuthenticationRequestRequired is enabled as explained in [internaldomainfederation-update](/graph/api/internaldomainfederation-update), then the request would look like this example:
+
+```xml
+  <samlp:AuthnRequest ID="_1868c6f2-1fdd-40b9-818f-b4b44efb92c5" Version="2.0" IssueInstant="2024-03-11T16:51:17.120Z" Destination="https://fs.contoso.com/adfs/ls/" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"><Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">urn:federation:MicrosoftOnline</Issuer><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#_1868c6f2-1fdd-40b9-818f-b4b44efb92c5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=</DigestValue></Reference></SignedInfo><SignatureValue>cD2eF3gH4iJ5k...L6mN7-oP8qR9sT==</SignatureValue><KeyInfo><ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509SKI>eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</ds:X509SKI></ds:X509Data><ds:KeyName xmlns:ds="http://www.w3.org/2000/09/xmldsig#">MicrosoftOnline</ds:KeyName></KeyInfo></Signature><samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/></samlp:AuthnRequest>
 ```
 
 The following is a sample response message that is sent from the sample SAML 2.0 compliant identity provider to Microsoft Entra ID / Microsoft 365.
@@ -139,13 +116,13 @@ The following is a sample response message that is sent from the sample SAML 2.0
             <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#" />
           </ds:Transforms>
           <ds:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1" />
-          <ds:DigestValue>CBn/5YqbheaJP425c0pHva9PhNY=</ds:DigestValue>
+          <ds:DigestValue>CBn/aB1cD2eF3gH4iJ5kL6-mN7oP8qR=</ds:DigestValue>
         </ds:Reference>
       </ds:SignedInfo>
-      <ds:SignatureValue>TciWMyHW2ZODrh/2xrvp5ggmcHBFEd9vrp6DYXp+hZWJzmXMmzwmwS8KNRJKy8H7XqBsdELA1Msqi8I3TmWdnoIRfM/ZAyUppo8suMu6Zw+boE32hoQRnX9EWN/f0vH6zA/YKTzrjca6JQ8gAV1ErwvRWDpyMcwdYCiWALv9ScbkAcebOE1s1JctZ5RBXggdZWrYi72X+I4i6WgyZcIGai/rZ4v2otoWAEHS0y1yh1qT7NDPpl/McDaTGkNU6C+8VfjD78DrUXEcAfKvPgKlKrOMZnD1lCGsViimGY+LSuIdY45MLmyaa5UT4KWph6dA==</ds:SignatureValue>
+      <ds:SignatureValue>cD2eF3gH4iJ5kL6mN7-oP8qR9sT==</ds:SignatureValue>
       <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
-          <ds:X509Certificate>MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyhBREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDTE1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9ybWVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/+3ZWxd9T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEMb2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvyJOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBySx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==</ds:X509Certificate>
+          <ds:X509Certificate>eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</ds:X509Certificate>
         </ds:X509Data>
       </KeyInfo>
     </ds:Signature>
@@ -232,9 +209,10 @@ The following procedure walks you through converting an existing standard domain
    $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
    $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
    $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
-   $MyUri = "urn:uri:MySamlp2IDP" 
-   $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
-   $Protocol = "wsFed"
+   $MyUri = "urn:uri:MySamlp2IDP"
+   $idptokensigningcert = [System.Security.Cryptography.X509Certificates.X509Certificate2]("C:\temp\contosoidptokensign.cer")  
+   $MySigningCert = [system.convert]::tobase64string($idptokensigningcert.rawdata) 
+   $Protocol = "saml"
 
    New-MgDomainFederationConfiguration `
      -DomainId $Domain `
@@ -253,7 +231,7 @@ The following procedure walks you through converting an existing standard domain
      <KeyDescriptor use="signing">
        <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
         <X509Data>
-          <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
+          <X509Certificate> eF3gH4iJ5kL6mN7oP8-qR9sT0uV=</X509Certificate>
          </X509Data>
        </KeyInfo>
      </KeyDescriptor>

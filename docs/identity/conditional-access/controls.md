@@ -1,65 +1,66 @@
 ---
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
-
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 01/03/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.topic: concept-article
+ms.date: 09/12/2025
 ms.reviewer: gkinasewitz
+ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
 
-Custom controls are a preview capability of the Microsoft Entra ID. When using custom controls, your users are redirected to a compatible service to satisfy authentication requirements outside of Microsoft Entra ID. To satisfy this control, a user's browser is redirected to the external service, performs any required authentication, and is then redirected back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.
+Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!NOTE]
-> As Alex Simons mentioned in his blog post [Upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696):
+> As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808):
 >
-> ...We are planning to replace the current preview with an approach which will allow partner-provided authentication capabilities to work seamlessly with the Microsoft Entra administrator and end user experiences. Today, partner MFA solutions can only function after a password has been entered, don’t serve as MFA for step-up authentication on other key scenarios, and don’t integrate with end user or administrative credential management functions. The new implementation will allow partner-provided authentication factors to work alongside built-in factors for key scenarios including registration, usage, MFA claims, step-up authentication, reporting, and logging.
->
-> The current, limited approach will be supported in preview until the new design is completed, previews, and reaches “General Availability.” At that point, we will provide time for customers to migrate to the new implementation. Because of the limitations of the current approach, we will not onboard any new providers until the new capabilities are ready.
->
-> We are working closely with customers and providers and will communicate timeline as we get closer...
+> External authentication methods are the replacement of custom controls, and they provide several benefits over the custom controls approach.
+
+For more information, see [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
 
 ## Creating custom controls
 
-> [!IMPORTANT]
-> Custom controls can't be used with Identity Protection's automation requiring Microsoft Entra multifactor authentication, Microsoft Entra self-service password reset (SSPR), satisfying multifactor authentication claim requirements, with sign-in frequency controls, to elevate roles in Privileged Identity Manager (PIM), as part of Intune device enrollment, for cross-tenant trusts, or when joining devices to Microsoft Entra ID.
+> [!CAUTION]
+> Custom controls **can't** be used with: 
+> 
+> - Microsoft Entra ID Protection's automation requiring multifactor authentication
+> - Microsoft Entra self-service password reset (SSPR)
+> - Satisfying multifactor authentication claim requirements
+> - Sign-in frequency controls
+> - Privileged Identity Manager (PIM)
+> - Intune device enrollment
+> - Cross-tenant trusts
+> - Joining devices to Microsoft Entra ID.
 
-Custom Controls works with a limited set of approved authentication providers. To create a custom control, you should first contact the provider that you wish to utilize. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or otherwise become a part of the service, and to indicate that you wish to integrate with Conditional Access. At that point, the provider gives you a block of data in JSON format. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
+Custom controls work with a limited set of approved authentication providers. To create a custom control, first contact the provider you want to use. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or join the service, and to indicate that you want to integrate with Conditional Access. At that point, the provider gives you a block of data in JSON format. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
 
-Copy the JSON data and then paste it into the related textbox. Don't make any changes to the JSON unless you explicitly understand the change you're making. Making any change could break the connection between the provider and Microsoft and potentially lock you and your users out of your accounts.
+Copy the JSON data and paste it into the related textbox. Don't change the JSON unless you fully understand the change you're making. Changing the JSON might break the connection between the provider and Microsoft, potentially locking you and your users out of your accounts.
 
-The option to create a custom control is in the **Manage** section of the **Conditional Access** page.
+The option to create a custom control is located in the **Manage** section of the **Conditional Access** page.
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Clicking **New custom control** opens a blade with a textbox for the JSON data of your control.  
+Selecting **New custom control** opens a blade with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 
 ## Deleting custom controls
 
-To delete a custom control, you must first ensure that it isn't being used in any Conditional Access policy. Once complete:
+To delete a custom control, ensure that it isn't being used in any Conditional Access policy. After that:
 
-1. Go to the Custom controls list
-1. Select …  
+1. Go to the Custom controls list.
+1. Select … .
 1. Select **Delete**.
 
 ## Editing custom controls
 
-To edit a custom control, you must delete the current control and create a new control with the updated information.
+To edit a custom control, delete the current control and create a new one with the updated information.
 
 ## Known limitations
 
-Custom controls can't be used with Identity Protection's automation requiring Microsoft Entra multifactor authentication, Microsoft Entra self-service password reset (SSPR), satisfying multifactor authentication claim requirements, with sign-in frequency controls, to elevate roles in Privileged Identity Manager (PIM), as part of Intune device enrollment, for cross-tenant trusts, or when joining devices to Microsoft Entra ID.
+Custom controls can't be used with Microsoft Entra ID Protection's automation requiring Microsoft Entra multifactor authentication, Microsoft Entra self-service password reset (SSPR), satisfying multifactor authentication claim requirements, with sign-in frequency controls, to elevate roles in Privileged Identity Manager (PIM), as part of Intune device enrollment, for cross-tenant trusts, or when joining devices to Microsoft Entra ID.
 
-## Next steps
+## Related content
 
-- [Conditional Access common policies](concept-conditional-access-policy-common.md)
-- [Report-only mode](concept-conditional-access-report-only.md)
-- [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696)

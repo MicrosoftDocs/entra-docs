@@ -1,22 +1,14 @@
 ---
-title: Multitenant organization identity provisioning for Microsoft 365 (Preview)
+title: Multitenant organization identity provisioning for Microsoft 365
 description: Learn how multitenant organizations identity provisioning and Microsoft 365 work together.
-author: rolyon
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: multitenant-organizations
-ms.topic: conceptual
-ms.date: 09/14/2023
-ms.author: rolyon
+ms.topic: concept-article
+ms.date: 04/23/2024
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
-# Multitenant organization identity provisioning for Microsoft 365 (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Multitenant organization identity provisioning for Microsoft 365
 
 The multitenant organization capability is designed for organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant collaboration in Microsoft 365. It's built on the premise of reciprocal provisioning of B2B member users across multitenant organization tenants.
 
@@ -40,7 +32,7 @@ For people search to succeed, while scoped to local tenant boundaries, the entir
 
 :::image type="content" source="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png" alt-text="Diagram that shows users represented across multiple tenants." lightbox="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png":::
 
-Depending on your organization’s needs, the collaborating user set may contain a subset of collaborating employees, or eventually all employees.
+Depending on your organization's needs, the collaborating user set may contain a subset of collaborating employees, or eventually all employees.
 
 ## Sharing your users
 
@@ -52,17 +44,17 @@ One of the simpler ways to achieve a collaborating user set in each multitenant 
 
 :::image type="content" source="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-sync.png" alt-text="Diagram that shows users synchronized across multiple tenants." lightbox="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-sync.png":::
 
-Microsoft 365 admin center facilitates orchestration of such a collaborating user set across multitenant organization tenants. For more information, see [Synchronize users in multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs).
+Microsoft 365 admin center facilitates orchestration of such a collaborating user set across multitenant organization tenants. For more information, see [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs).
 
 Alternatively, pair-wise configuration of inbound and outbound cross-tenant synchronization can be used to orchestrate such collating user set across multitenant organization tenants. For more information, see [What is a cross-tenant synchronization](cross-tenant-synchronization-overview.md).
 
 ## B2B member users
 
-To ensure a seamless collaboration experience across the multitenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](~/external-id/user-properties.md#user-type). 
+To ensure a seamless collaboration experience across the multitenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](~/external-id/user-properties.md#user-type).
 
 | User synchronization method | Default userType property |
 | --- | --- |
-| [Synchronize users in multitenant organizations in Microsoft 365 (Preview)](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) | **Member**<br/> Remains Guest, if the B2B identity already existed as Guest |
+| [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) | **Member**<br/> Remains Guest, if the B2B identity already existed as Guest |
 | [Cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md) | **Member**<br/> Remains Guest, if the B2B identity already existed as Guest |
 
 From a security perspective, you should review the default permissions granted to B2B member users. For more information, see [Compare member and guest default permissions](~/fundamentals/users-default-permissions.md#compare-member-and-guest-default-permissions).

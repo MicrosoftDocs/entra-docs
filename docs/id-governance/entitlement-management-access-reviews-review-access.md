@@ -1,42 +1,48 @@
 ---
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
-author: owinfreyATL
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/28/2023
-ms.author: owinfrey
+ms.date: 09/06/2025
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Review access of an access package in entitlement management
 
-Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how to perform access reviews for other users that are assigned to an access package as a designated reviewer.
+Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how designated reviewers can review user assignments to access packages that grant the assigned user's access.
 
-## Prerequisites
+You can review access package assignments via the [My Access portal](https://myaccess.microsoft.com/), or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of access package assignment reviews, if the agent can't yet help you with your assigned reviews it guides you to the My Access portal.
 
-To review users' active access package assignments, the creator of a review must satisfy these prerequisites:
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator or Identity Governance administrator
+## Perform an access review using the Access Review Agent (Preview)
+The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations. To use the Access Review Agent to perform an access review, do the following:
 
-For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
+### Go directly to the Access Review Agent
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent.
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
 
->[!NOTE]
->The reviewer can be anyone the creator of a review selects (group owner, manager of user, the user themselves, or any selected user or group).
+### Use email to go to the Access Review Agent
 
+>[!IMPORTANT]
+> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+1. Look for an email from Microsoft asking you to review access.
+1. Select the **Review user access** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organizations policies. If the link opens the My Access portal the Access Review Agent hasn't been enabled for the specific review and must be completed via the My Access portal.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
 
-## Open the access review
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for manually granting, approving, and reviewing access needs.
+
+### Open the access review
 
 Use the following steps to find and open the access review:
 
-1. You may receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
+1. You could receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
     
     ![Access review reviewer email](./media/entitlement-management-access-reviews-review-access/review-access-reviewer-email.png)
 
 1. Select the **Review user access** link to open the access review. 
 
-1. If you don’t have the email, you can find your pending access reviews by navigating directly to https://myaccess.microsoft.com.  (For US Government, use `https://myaccess.microsoft.us` instead.)
+1. If you don’t have the email, you can find your pending access reviews by navigating directly to https://myaccess.microsoft.com. (For US Government, use `https://myaccess.microsoft.us` instead.)
 
 1. Select **Access reviews** on the left navigation bar to see a list of pending access reviews assigned to you.
     
@@ -46,13 +52,7 @@ Use the following steps to find and open the access review:
     
     ![Select the access review](./media/entitlement-management-access-reviews-review-access/review-access-select-access-review.png)
 
-## Perform the access review
-
-Once you open the access review, you'll see the names of users for which you need to review. There are two ways that you can approve or deny access:
-- You can manually approve or deny access for one or more users
-- You can accept the system recommendations
-
-### Manually approve or deny access for one or more users
+### Manually approve or deny access for one or more users using the My Access portal
 1. Review the list of users and determine which users need to continue to have access.
 
     ![List of users to review](./media/entitlement-management-access-reviews-review-access/review-access-list-of-users.png)
@@ -67,7 +67,7 @@ Once you open the access review, you'll see the names of users for which you nee
 
     If you make this selection, the user maintains access, and this selection goes in the audit logs. The log shows any other reviewers that you still completed the review.
 
-1. You may be required to provide a reason for your decision. Type in a reason and select **Submit**.
+1. You could be required to provide a reason for your decision. Type in a reason and select **Submit**.
 
     ![Approve or deny access](./media/entitlement-management-access-reviews-review-access/review-access-decision-approve.png)
 
@@ -76,7 +76,7 @@ Once you open the access review, you'll see the names of users for which you nee
 If there are multiple reviewers, the last submitted response is recorded. Consider an example where an administrator designates two reviewers – Alice and Bob. Alice opens the review first and approves access. Before the review ends, Bob opens the review and denies access. In this case, the last deny access decision gets recorded.
 
 >[!NOTE]
->If a user is denied access in the review, they aren't removed from the access package immediately. The user will be removed from the access package once the review results are applied after the review is closed. The review will close automatically at the end of the review duration or earlier if an administrator manually stops the review. 
+>If a user is denied access in the review, they aren't removed from the access package immediately. The user will be removed from the access package once the review results are applied after the review is closed. The review closes automatically at the end of the review duration or earlier if an administrator manually stops the review. 
 
 ### Approve or deny access using the system-generated recommendations
 

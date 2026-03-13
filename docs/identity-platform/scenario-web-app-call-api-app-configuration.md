@@ -2,25 +2,34 @@
 title: Configure a web app that calls web APIs
 description: Learn how to configure the code of a web app that calls web APIs
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
-ms.date: 05/08/2023
+ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
-ms.topic: conceptual
+ms.subservice: workforce
+ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web app that calls web APIs: Code configuration
 
-As shown in the [Web app that signs in users](scenario-web-app-sign-user-app-registration.md) scenario, the web app uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
+This article will show you how to configure the application code, and modify your web app so that it not only signs users in but also now calls web APIs. The application you create uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
 
 1. Request an authorization code. This part delegates a private dialogue with the user to the Microsoft identity platform. During that dialogue, the user signs in and consents to the use of web APIs. When the private dialogue ends successfully, the web app receives an authorization code on its redirect URI.
 1. Request an access token for the API by redeeming the authorization code.
 
-The [Web app that signs in users](scenario-web-app-sign-user-app-registration.md) scenarios covered only the first step. Here you learn how to modify your web app so that it not only signs users in but also now calls web APIs.
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+  * Application Administrator
+  * Application Developer
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 ## Microsoft libraries supporting web apps
 
@@ -36,7 +45,7 @@ Select the tab for the platform you're interested in:
 
 [!INCLUDE [web-app-client-credentials.md](./includes/web-app-client-credentials.md)]
 
-## Startup.cs
+## Modify the *Startup.cs* file
 
 Your web app needs to acquire a token for the downstream API. You specify it by adding the `.EnableTokenAcquisitionToCallDownstreamApi()` line after `.AddMicrosoftIdentityWebApp(Configuration)`. This line exposes the `IAuthorizationHeaderProvider` service that you can use in your controller and page actions. However, as you see in the following two options, it can be done more simply. You also need to choose a token cache implementation, for example `.AddInMemoryTokenCaches()`, in *Startup.cs*:
 
@@ -195,7 +204,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 1. Add the [Microsoft.Identity.Web.DownstreamApi](https://www.nuget.org/packages/Microsoft.Identity.Web.DownstreamApi) NuGet package to your project.
 1. Add `.AddDownstreamApi()` after `.EnableTokenAcquisitionToCallDownstreamApi()` in the *Startup.cs* file. `.AddDownstreamApi()` has two arguments:
-   - The name of a service (api): you use this name in your controller actions to reference the corresponding configuration
+   - The name of a service (API): you use this name in your controller actions to reference the corresponding configuration
    - a configuration section representing the parameters used to call the downstream web API.
 
 Here's the code:
@@ -255,10 +264,14 @@ Code examples in this article and the following one are extracted from the [ASP.
 
 # [Java](#tab/java)
 
+## Implement the Java code sample
+
 Code examples in this article and the following one are extracted from the [Java web application that calls Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp), a web-app sample that uses MSAL for Java.
 The sample currently lets MSAL for Java produce the authorization-code URL and handles the navigation to the authorization endpoint for the Microsoft identity platform. It's also possible to use Sprint security to sign the user in. You might want to refer to the sample for full implementation details.
 
 # [Node.js](#tab/nodejs)
+
+## Implement the Node.js code sample
 
 Code examples in this article and the following one are extracted from the [Node.js & Express.js web application that calls Microsoft Graph](https://github.com/Azure-Samples/ms-identity-node), a web app sample that uses MSAL Node.
 
@@ -268,7 +281,9 @@ The sample currently lets MSAL Node produce the authorization-code URL and handl
 
 # [Python](#tab/python)
 
-Code snippets in this article and the following are extracted from the [Python web application calling Microsoft graph](https://github.com/Azure-Samples/ms-identity-python-webapp) sample using the [identity package](https://pypi.org/project/identity/) (a wrapper around MSAL Python).
+## Implement the Python code sample
+
+Code snippets in this article and the following are extracted from the [Python web application calling Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-webapp) sample using the [identity package](https://pypi.org/project/identity/) (a wrapper around MSAL Python).
 
 The sample uses the identity package to produce the authorization-code URL and handles the navigation to the authorization endpoint for the Microsoft identity platform. You might want to refer to the sample for full implementation details.
 
@@ -292,7 +307,7 @@ The *handleRedirect* method in **AuthProvider** class processes the authorizatio
 
 # [Java](#tab/java)
 
-See [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md?tabs=java#initialization-code) to understand how the Java sample gets the authorization code. After the app receives the code, the [AuthFilter.java#L51-L56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56):
+After the app receives the authorization code, the [AuthFilter.java#L51-L56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56):
 
 1. Delegates to the `AuthHelper.processAuthenticationCodeRedirect` method in [AuthHelper.java#L67-L97](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L67-L97).
 1. Calls `getAuthResultByAuthCode`.
@@ -361,13 +376,13 @@ The `getAuthResultByAuthCode` method is defined in [AuthHelper.java#L176](https:
 
 # [Python](#tab/python)
 
-See [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md?tabs=python#initialization-code) to understand how the Python sample gets the authorization code. 
+Refer to [Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform](./tutorial-web-app-python-flask-sign-in-out.md)
 
 The Microsoft sign-in screen sends the authorization code to the `/getAToken` URL that was specified in the app registration. The `auth_response` route handles that URL, calling `auth.complete_login` to process the authorization code, and then either returning an error or redirecting to the home page.
 
 :::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="36-41":::
 
-See `app.py` for the full context of that code.
+See *app.py* for the full context of that code.
 
 ---
 
@@ -499,33 +514,33 @@ For production, you should use [a setting](https://flask-session.readthedocs.io/
 
 ---
 
-## Next steps
+## Next step
 
 At this point, when the user signs in, a token is stored in the token cache. Let's see how it's then used in other parts of the web app.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnetcore).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnetcore).
 
 # [ASP.NET](#tab/aspnet)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnet).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=aspnet).
 
 # [Java](#tab/java)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=java).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=java).
 
 # [Node.js](#tab/nodejs)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=nodejs).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=nodejs).
 
 # [Python](#tab/python)
 
-Move on to the next article in this scenario,
-[Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=python).
+> [!div class="nextstepaction"]
+> [Remove accounts from the cache on global sign out](scenario-web-app-call-api-sign-in.md?tabs=python).
 
 ---

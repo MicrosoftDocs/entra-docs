@@ -2,15 +2,11 @@
 title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
 
-author: billmath
-manager: amycolannino
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 01/16/2024
+ms.date: 02/25/2026
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Understanding errors during Microsoft Entra synchronization
@@ -45,27 +41,46 @@ This section discusses data mismatch errors.
 
 #### Description
 
-An InvalidHardMatch error occurs during synchronization when there’s an attempt to [hard match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) objects present in Microsoft Entra ID with a new incoming object that have the same sourceAnchor value, but *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled on the tenant.
+An InvalidHardMatch error occurs during synchronization when there's an attempt to [hard match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) objects present in Microsoft Entra ID with a new incoming object that have the same sourceAnchor value, but one of the following conditions prevents the hard match:
+
+* The *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled on the tenant.
+* The existing Microsoft Entra object has privileged roles assigned and contains an OnPremisesImmutableId value.
+
+This security measure prevents risky hard matches between on-premises Active Directory users and privileged cloud users.
 
 #### Example scenarios for an InvalidHardMatch error
 
 * DirSync is re-enabled on the tenant and objects with the same sourceAnchor are synchronized again, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match to occur.
 * User was excluded from sync scope and restored from Microsoft Entra ID Recycle Bin. Later, the user is re-added to sync scope and tries to take over the object already present in Microsoft Entra ID based on the same sourceAnchor value, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match from occurring.
+* A soft-deleted synced Microsoft Entra user with privileged roles assigned is blocked from hard match during restore operations to prevent security risks.
+* An on-premises Active Directory user attempts to hard match with an existing Microsoft Entra user that has administrative roles assigned and an OnPremisesImmutableId value.
 
 #### Example case
 
 1. Bob Smith is a synced user in Microsoft Entra ID from the on-premises Active Directory of contoso.com.
 1. By default, the SourceAnchor value of **"abcdefghijklmnopqrstuv=="** is calculated by Microsoft Entra Connect by using Bob Smith's **MsDs-ConsistencyGUID** attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value is the **immutableId** for Bob Smith in Microsoft Entra ID.
-1. Admin removes Bob Smith from sync scope and Entra Connect exports a deletion of the object.
+1. Admin removes Bob Smith from sync scope and Microsoft Entra Connect exports a deletion of the object.
 1. Bob Smith's object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, it’s still considered an object synchronized from on-premises Active Directory. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.
-1. Admin re-adds Bob Smith into sync scope and Entra Connect re-synchronizes the object.
+1. Admin re-adds Bob Smith into sync scope and Microsoft Entra Connect re-synchronizes the object.
 1. Normally, a hard match takes over the object present in Microsoft Entra ID based on the same SourceAnchor and switches DirSyncEnabled attribute back to 'True’, however, when *BlockCloudObjectTakeoverThroughHardMatchEnabled* is enabled, this operation isn't allowed and an InvalidHardMatch is thrown.
 
 #### Fix the InvalidHardMatch error
 
 We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
 
-If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+**For privileged user hard match conflicts:**
+
+If the InvalidHardMatch error occurs because the target Microsoft Entra object has privileged roles assigned, follow these steps:
+
+1. **Restore the user** (if soft-deleted): Restore the user object from the Microsoft Entra ID Recycle Bin.
+1. **Remove privileged roles**: Remove all administrative roles from the Microsoft Entra user object.
+1. **Verify OnPremisesImmutableId**: Ensure the OnPremisesImmutableId attribute is properly set to facilitate hard match.
+1. **Complete the hard match**: Allow Microsoft Entra Connect to perform the synchronization and complete the hard match operation.
+1. **Restore privileged roles**: After successful synchronization, reassign the administrative roles to the user.
+
+**For general hard match issues:**
+
+If you need to clear an **InvalidHardMatch** error and match the account successfully, you can enable hard match again as described in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ### InvalidSoftMatch
 
@@ -83,7 +98,7 @@ Microsoft Entra schema doesn't allow two or more objects to have the same value 
 * objectId
 * immutableId
 
-Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
+[Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
 
 This feature doesn't fix the duplication errors, so the data still needs to be fixed. But it allows provisioning of new objects that are otherwise blocked from being provisioned because of duplicated values in Microsoft Entra ID. This capability also reduces the number of synchronization errors returned to the synchronization client.
 
@@ -246,7 +261,7 @@ Ensure that the **userPrincipalName** attribute has supported characters and the
 
 ## Deletion access violation and password access violation errors
 
-Microsoft Entra ID protects cloud-only objects from being updated through Microsoft Entra Connect. While it isn't possible to update these objects through Microsoft Entra Connect, calls can be made directly to Microsoft Entra ID back-end to attempt to change cloud-only objects. When doing so, the following errors can be returned:
+Microsoft Entra ID protects cloud-only objects from being updated through Microsoft Entra Connect. While it isn't possible to update these objects through Microsoft Entra Connect, calls can be made directly to Microsoft Entra back-end to attempt to change cloud-only objects. When doing so, the following errors can be returned:
 
 * This synchronization operation, Delete, isn't valid. Contact Technical Support (Error Type 114).
 * Unable to process this update because one or more cloud-only users' credential update is included in the current request.
@@ -257,27 +272,26 @@ Microsoft Entra ID protects cloud-only objects from being updated through Micros
 
 This section discusses potential causes and solutions to resolving the error DeletingCloudOnlyObjectNotAllowed (Error Type 114).
 
-> [!WARNING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsoft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../../includes/definitions/emergency-access-accounts.md)]
 
 #### Description
 
-This is a scenario when a customer wants to migrate from hybrid to cloud-only. The admin initiates a call to Entra Connect in attempt to move users out of scope, but Entra Connect returns the error DeletingCloudOnlyObjectNotAllowed (or Error Type 114): "This synchronization operation, Delete, isn't valid. Contact Technical Support."
+This is a scenario when a customer wants to migrate from hybrid to cloud-only. The admin initiates a call to Microsoft Entra Connect in attempt to move users out of scope, but Microsoft Entra Connect returns the error DeletingCloudOnlyObjectNotAllowed (or Error Type 114): "This synchronization operation, Delete, isn't valid. Contact Technical Support."
 
 Possible causes of this error include: 
 
-- The call from Entra Connect has no UPN, a new or unique GUID, or other required information.
-- Entra Connect is trying to export data, but it has `DirSyncEnabled` set to False.
-- Entra Connect is trying to delete a restored user or other object. This is usually because a user or other object reference has been moved out of sync scope or to Lost & Found container. 
+- The call from Microsoft Entra Connect has no UPN, a new or unique GUID, or other required information.
+- Microsoft Entra Connect is trying to export data, but it has `DirSyncEnabled` set to False.
+- Microsoft Entra Connect is trying to delete a restored user or other object. This is usually because a user or other object reference has been moved out of sync scope or to Lost & Found container. 
 
 #### Possible scenarios
 
-The Entra Connect client is failing to delete users during migration from hybrid to cloud only, resulting in Error Type 114. 
+The Microsoft Entra Connect client is failing to delete users during migration from hybrid to cloud only, resulting in Error Type 114. 
 
 Potential reasons for users not to be deleted include: 
 
 - The rule created by the customer to move users out of scope is based on the `Admin` attribute. 
-- Error Type 114 is being returned during the synchronization (AAD Sync) operation, resulting in a failure to delete users.
+- Error Type 114 is being returned during the synchronization (Azure AD Sync) operation, resulting in a failure to delete users.
 - Synchronization fails for specific features, resulting in users not being deleted accordingly.
 
 #### Error example 
@@ -292,7 +306,7 @@ ErrorType 114
 ErrorCode 0x8023134a
 ErrorLiteral This synchronization operation, Delete, is not valid. Contact Technical Support. Tracking Id: 09fb1e9b-3ff7-4163-9731-581785e347e5
 ServerErrorDetail N/A
-CsObjectIdentifier {2819A5C8-BE27-EC11-A970-000D3A1B4EEE}
+CsObjectIdentifier {aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}
 Dn CN={783456306961654236304B58786A66746377643748773D3D}
 ```
 
@@ -302,10 +316,10 @@ To resolve this issue:
 
 1. Identify the problem object reference. 
 1. Use PowerShell to soft-delete the cloud account:
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` which should successfully import the account deletion.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` which should successfully import the account deletion.
 1. Confirm that the deletion was successful.
 1. Restore the user from the Recycle Bin.
-1. Run `Start-ADSyncSyncCyle -PolicyType Delta` on the server to confirm the error doesn't occur again.
+1. Run `Start-ADSyncSyncCycle -PolicyType Delta` on the server to confirm the error doesn't occur again.
 
 > [!WARNING]
 > When a user is excluded from sync scope the object becomes soft-deleted in Microsoft Entra ID and its DirSyncEnabled attribute is switched to False. This process however doesn't convert the object to cloud managed, as it still contains attributes and values synchronized from on-premises Active Directory that can't be managed in the cloud. The DirSyncEnabled value is False to indicate that it’s currently out of sync scope and is available to be matched again.

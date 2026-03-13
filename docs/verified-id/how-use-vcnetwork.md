@@ -2,13 +2,8 @@
 title: Use the Microsoft Entra Verified ID Network
 description: In this article, you learn how to use the Microsoft Entra Verified ID Network to verify credentials.
 documentationCenter: ''
-author: barclayn
-manager: amycolannino
-ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 12/06/2023
-ms.author: barclayn
+ms.date: 04/30/2025
 
 #Customer intent: As a verifiable credentials administrator, I want to configure verifying credentials from another party.
 ---
@@ -38,7 +33,7 @@ The Microsoft Entra Verified ID Network makes this process easier. Woodgrove, as
 
 ## How do I use the Microsoft Entra Verified ID Network?
 
-1. On the start page of Microsoft Entra Verified ID in the Azure portal, you have a quickstart named **Verification request**. Selecting **start** takes you to a page where you can browse the Verifiable Credentials Network.
+1. On the start page of **Microsoft Entra Verified ID** in the **Azure portal**, you have a quickstart named **Verification request**. Selecting **start** takes you to a page where you can browse the Verifiable Credentials Network.
 
     :::image type="content" source="media/how-use-vcnetwork/vcnetwork-quickstart.png" alt-text="Screenshot that shows the Verified ID Network quickstart.":::
 

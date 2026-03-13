@@ -2,16 +2,11 @@
 title: Microsoft Entra Connect Health - Diagnose duplicated attribute synchronization errors
 description: This document describes the diagnosis process of duplicated attribute synchronization errors and a potential fix of the orphaned object scenarios directly from the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-author: billmath
-manager: amycolannino
 editor: billmath
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.author: billmath
-
+ms.date: 04/09/2025
 ---
 
 # Diagnose and remediate duplicated attribute sync errors
@@ -51,7 +46,7 @@ The diagnose feature supports user objects with the following duplicated attribu
 | OnPremiseSecurityIdentifier |  AttributeValueMustBeUnique |
 
 >[!IMPORTANT]
-> To access this feature, **Global Administrator** permission, or **Contributor** permission from Azure RBAC, is required.
+> To access this feature, **Contributor** permissions from Azure RBAC, is required at minimum.
 >
 
 Follow the steps from the [Microsoft Entra admin center](https://entra.microsoft.com) to narrow down the sync error details and provide more specific solutions:
@@ -146,7 +141,7 @@ The specific settings such as [UserWriteback in Microsoft Entra Connect](./how-t
 
 
 **Q.** What permission does a user need to apply the fix?  
-**A.** **Global Administrator**, or **Contributor** from Azure RBAC, has permission to access the diagnostic and troubleshooting process.
+**A.** **Contributor** from Azure RBAC, has permissions to access the diagnostic and troubleshooting process.  This is the minimum permission you need.
 
 
 **Q.** Do I have to configure Microsoft Entra Connect or update the Microsoft Entra Connect Health agent for this feature?  

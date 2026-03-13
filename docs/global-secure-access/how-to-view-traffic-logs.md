@@ -1,23 +1,26 @@
 ---
-title: How to use Global Secure Access (preview) traffic logs
-description: Learn how to use traffic logs for Global Secure Access (preview).
-author: kenwith
-ms.author: kenwith
-manager: amycolannino
+title: Global Secure Access network traffic logs
+description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 ms.topic: how-to
-ms.date: 06/27/2023
-ms.service: global-secure-access
+ms.date: 03/13/2026
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
+#Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
 ---
 
-# How to use the Global Secure Access (preview) traffic logs
+# How to use the Global Secure Access traffic logs (preview)
 
-Monitoring the traffic for Global Secure Access (preview) is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
+Monitoring the traffic for Global Secure Access is an important activity for ensuring your tenant is configured correctly and that your users are getting the best experience possible. The Global Secure Access traffic logs (preview) provide insight into who is accessing what resources, where they're accessing them from, and what action took place.
 
 This article describes how to use the traffic logs for Global Secure Access.
 
-## How the traffic logs work
+## Prerequisites 
 
-Viewing traffic logs requires a Reports Reader role in Microsoft Entra ID. 
+- A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- A **Global Secure Access Log Reader** role in Microsoft Entra ID.
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+
+## How the traffic logs work
 
 The Global Secure Access logs provide details of your network traffic. To better understand those details and how you can analyze those details to monitor your environment, it's helpful to look at the three levels of the logs and their relationship to each other.
 
@@ -32,7 +35,7 @@ Within each log instance, you can see the connection ID and transaction ID in th
 ## How to view the traffic logs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
-1. **Global Secure Access (Preview)** > **Monitor** > **Traffic logs**.
+1. **Global Secure Access** > **Monitor** > **Traffic logs**.
 
 The top of the page displays a summary of all transactions as well as a breakdown for each type of traffic. Select the **Microsoft 365** or **Private access** buttons to filter the logs to each traffic type.
 
@@ -43,15 +46,13 @@ The top of the page displays a summary of all transactions as well as a breakdow
 
 Select any log from the list to view the details. These details provide valuable information that can be used to filter the logs for specific details or to troubleshoot a scenario. The details can be added as a column and used to filter the logs.
 
-![Screenshot of the traffic log activity details.](media/how-to-view-traffic-logs/traffic-activity-details.png)
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of Traffic log details page.":::
 
 ### Filter and column options
 
 The traffic logs can provide many details, so to start only some columns are visible. Enable and disable the columns based on the analysis or troubleshooting tasks you're performing, as the logs could be difficult to view with too many columns selected. The column and filter options align with each item in the Activity details.
 
 Select **Columns** from the top of the page to change the columns that are displayed. 
-
-![Screenshot of the traffic logs with the columns button highlighted.](media/how-to-view-traffic-logs/traffic-logs-columns-button.png)
 
 To filter the traffic logs to a specific detail, select the **Add filter** button and then enter the detail you want to filter by.
 
@@ -63,13 +64,25 @@ For example if you want to look at all the logs from a specific connection:
 
     ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
 
+## Connection logs
+
+Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
+
+A connection represents multiple transactions occurring in the last 24 hours and sharing the same flow correlation ID. While the transaction logs provide detailed information about individual transactions, connection logs offer a higher-level overview by aggregating multiple transactions. Connections are logged in real time with Active/Closed status, providing admins with near real-time traffic visibility.
+
+Currently available in preview is a new tab in the Traffic logs blade for you to view Connections:
+
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page.":::
+
+Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
+
 ### Troubleshooting scenarios
 
 The following details may be helpful for troubleshooting and analysis:
 
-- If you're interesting in the size of the traffic being sent and received, enable the **Sent Bytes** and **Received Bytes** columns. Select the column header to sort the logs by the size of the logs.
+- If you're interested in the size of the traffic being sent and received, enable the **Sent Bytes** and **Received Bytes** columns. Select the column header to sort the logs by the size of the logs.
 - If you are reviewing the network activity for a risky user, you can filter the results by user principal name and then review the sites they're accessing.
-- To look at traffic associated with specific 
+- To look for traffic to the types of websites that you want to block or allow, enable the **Web category** column.
 
 The log details provide valuable information about your network traffic. Not all details are defined in the list below, but the following details are useful for troubleshooting and analysis:
 
@@ -80,10 +93,10 @@ The log details provide valuable information about your network traffic. Not all
 
 ## Configure diagnostic settings to export logs
 
-You can export the Global Secure Access traffic logs to an endpoint for further analysis and alerting. This integration is configured in Microsoft Entra diagnostic settings.
+You can export the Global Secure Access traffic logs (preview) to an endpoint for further analysis and alerting. This integration is configured in Microsoft Entra diagnostic settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 1. Select **Add Diagnostic setting**.
 1. Give your diagnostic setting a name.
 1. Select `NetworkAccessTrafficLogs`.
@@ -93,8 +106,6 @@ You can export the Global Secure Access traffic logs to an endpoint for further 
     * **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
-
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
 
 ## Next steps
 

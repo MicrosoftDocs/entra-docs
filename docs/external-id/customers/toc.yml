@@ -1,331 +1,575 @@
-items:  
-- name: Microsoft Entra ID for customers documentation  
-  href: index.yml  
-- name: Overview  
-  expanded: true  
-  items:   
-    - name: What is Microsoft Entra ID for customers?  
-      href: overview-customers-ciam.md 
-    - name: Demo overview
-      href: overview-solutions-customers.md
-    - name: What's new in docs?
-      href: whats-new-docs.md
-- name: Quickstarts
-  expanded: true
-  items: 
-    - name: Start a free trial without an Azure subscription
-      href: quickstart-trial-setup.md 
-    - name: Create a tenant with an Azure subscription
+items:
+- name: Overview
+  expanded: false
+  items:
+    - name: Overview of External ID in external tenants
+      href: overview-customers-ciam.md
+    - name: Planning guide
+      href: concept-planning-your-solution.md
+    - name: Data residency
+      href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Frequently asked questions (FAQ)
+      href: faq-customers.md
+- name: Fundamentals
+  expanded: false
+  items:
+    - name: Create a tenant
       href: quickstart-tenant-setup.md
-    - name: Get started guide walkthrough
-      href: quickstart-get-started-guide.md
-    - name: Use the Visual Studio Code extension
-      href: visual-studio-code-extension.md
-- name: Samples
-  expanded: true
-  items: 
-    - name: Overview of CIAM samples
-      href: samples-ciam-all.md
-    - name: Explore code samples
+    - name: Register an app
+      href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Enterprise applications
+      items:
+        - name: Add an enterprise application
+          href: how-to-add-enterprise-application.md
+        - name: Register a SAML app
+          href: how-to-register-saml-app.md
+    - name: Add a sign-up and sign-in flow
+      href: how-to-user-flow-sign-up-sign-in-customers.md
+    - name: Add an application to the user flow
+      href: how-to-user-flow-add-application.md
+    - name: Test the user flow
+      href: how-to-test-user-flows.md
+    - name: Disable sign-up in a user flow
+      href: how-to-disable-sign-up-user-flow.md
+    - name: Delete an external tenant
+      href: how-to-delete-external-tenant-portal.md
+- name: Migrate to External ID
+  expanded: false
+  items:
+    - name: Migrate to External ID
+      href: migrate-to-external-id.md
+    - name: Migrate users to External ID
+      href: how-to-migrate-users.md
+    - name: How to migrate passwords
+      href: how-to-migrate-passwords-just-in-time.md
+- name: Security
+  expanded: false
+  items:
+    - name: Security fundamentals
+      href: concept-security-customers.md
+    - name: Use application roles to manage access
+      href: how-to-use-app-roles-customers.md
+    - name: Web Application Firewall partners
       items: 
-        - name: Single-page app
+      - name: Azure Web Application Firewall
+        href: tutorial-configure-external-id-web-app-firewall.md
+      - name: Cloudflare
+        href: how-to-configure-waf-integration.md
+      - name: Akamai
+        href: how-to-configure-akamai-integration.md
+    - name: Fraud protection integration
+      href: how-to-integrate-fraud-protection.md
+    - name: Native authentication fraud protection for SMS MFA
+      href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
+- name: Authentication
+  expanded: false
+  items:
+    - name: Identity providers overview
+      href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication overview
+      href: concept-multifactor-authentication-customers.md
+    - name: Multifactor authentication setup
+      href: how-to-multifactor-authentication-customers.md
+    - name: Regions requiring opt-in for SMS verification
+      href: how-to-region-code-opt-in.md
+    - name: Sign in with a username
+      href: how-to-sign-in-alias.md
+    - name: Native authentication overview
+      items:
+        - name: Native authentication overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Native authentication challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Native authentication web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Native authentication user attribute builder
+          href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Native authentication how-to guides
+      items:
+        - name: Set up local CORS
+          href: /entra/identity-platform/how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+        - name: Set up CORS in test
+          href: /entra/identity-platform/how-to-native-authentication-cors-solution-test-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Set up CORS in production
+          href: /entra/identity-platform/how-to-native-authentication-cors-solution-production-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Single-page app (SPA) tutorials
+      items: 
+        - name: Browser-delegated authentication
           items:
-            - name: JavaScript
+            - name: JavaScript 
               items:
-                - name: Sign in users
-                  href: sample-single-page-app-vanillajs-sign-in.md
-            - name: Angular
+                  - name: Create JavaScript app
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Configure app for authentication
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication
+                  - name: Sign in and sign out
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
+            - name: Angular 
               items:
-                - name: Sign in users
-                  href: sample-single-page-app-angular-sign-in.md
+                  - name: Prepare your app
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Sign in users
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-sign-in-users-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Extract user data and test app
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: React
               items:
-                - name: Sign in users
-                  href: sample-single-page-app-react-sign-in.md
-        - name: Web app
+                  - name: Create React app
+                    href: /entra/identity-platform/tutorial-single-page-app-react-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Configure app for authentication
+                    href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
+                  - name: Sign in and sign out
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
+        - name: Native authentication
           items:
-            - name: Node.js
+            - name: React
               items:
-                - name: Sign in users
-                  href: sample-web-app-node-sign-in.md
-                - name: Sign in users and call an API
-                  href: sample-web-app-node-sign-in-call-api.md
-            - name: ASP.NET
+                - name: Use APIs
+                  items:
+                    - name: Sign up
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Set up local CORS
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Sign in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Reset password
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Use SDK
+                  items:
+                    - name: Sign up
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Sign in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Reset password
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Support web fallback
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Register strong authentication method
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Enable MFA
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Angular
               items:
-                - name: Sign in users
-                  href: sample-web-app-dotnet-sign-in.md
-        - name: Browserless app
-          items: 
-          - name: Node.js - sign in users
-            href: sample-browserless-app-node-sign-in.md
-          - name: .NET - sign in users
-            href: sample-browserless-app-dotnet-sign-in.md
-        - name: Daemon, service
-          items:
-            - name: Node.js - call an API
-              href: sample-daemon-node-call-api.md
-              displayName: client credentials grant
-            - name: .NET - call an API
-              href: sample-daemon-dotnet-call-api.md
-        - name: Desktop app
-          items:
-            - name: Electron - sign in users
-              href: how-to-desktop-app-electron-sample-sign-in.md
-            - name: .NET MAUI - sign in users
-              href: how-to-desktop-app-maui-sample-sign-in.md
-            - name: .NET WPF - sign in users
-              href: sample-desktop-wpf-dotnet-sign-in.md
-        - name: Mobile app
-          items:
-            - name: Android (.NET MAUI) - sign in users
-              href: how-to-mobile-app-maui-sample-sign-in.md
-        - name: Command-line interface (CLI) app
-          items:
-            - name: Node.js - sign in users
-              href: sample-cli-app-node-sign-in-users.md
-- name: Tutorials
-  expanded: true
-  items:  
-    - name: Single-page app (SPA)
-      items: 
-        - name: JavaScript 
-          items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-vanillajs-prepare-tenant.md
-              - name: Create JavaScript app
-                href: tutorial-single-page-app-vanillajs-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-vanillajs-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-vanillajs-sign-in-sign-out.md
-        - name: React
-          items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-              - name: Create React app
-                href: tutorial-single-page-app-react-sign-in-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-react-sign-in-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-react-sign-in-sign-out.md
-    - name: Web app
+                - name: Sign up
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Sign in
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Reset password
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant 
+                - name: Support web fallback
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Register strong authentication method
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Enable MFA
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+    - name: Web app tutorials
       items: 
         - name: Node/Express.js
           items:
-                - name: Prepare tenant 
-                  href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                - name: Create Nodejs app 
-                  href: tutorial-web-app-node-sign-in-prepare-app.md
-                - name: Add sign-in and sign-out
-                  href: tutorial-web-app-node-sign-in-sign-out.md
-        - name: ASP.NET
+            - name: Set up Nodejs app
+              href: /entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Add sign in and sign out
+              href: /entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Call Microsoft Graph API
+              href: /entra/identity-platform/tutorial-web-app-node-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+        - name: ASP.NET Core
           items:
-              - name: Prepare tenant
-                href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET app
-                href: tutorial-web-app-dotnet-sign-in-prepare-app.md
-              - name: Sign in and sign out
-                href: tutorial-web-app-dotnet-sign-in-sign-out.md
-    - name: Web API
+              - name: Prepare your app
+                href: /entra/identity-platform/tutorial-web-app-dotnet-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Add authentication elements
+                href: /entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Test your application
+                href: /entra/identity-platform/tutorial-web-app-dotnet-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+        - name: Python Flask
+          items:
+              - name: Add sign in and sign out
+                href: /entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Call Microsoft Graph API
+                href: /entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+    - name: Web API tutorials
       items: 
-        - name: Protect ASP.NET API
+        - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
-              href: tutorial-protect-web-api-dotnet-core-build-app.md
+              href: /entra/identity-platform/tutorial-web-api-dotnet-core-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Test protected API 
-              href: tutorial-protect-web-api-dotnet-core-test-api.md
-    - name: Browserless app
-      items: 
-        - name: Node.js
-          items:
-            - name: Overview
-              href: how-to-browserless-app-node-sign-in-overview.md
-            - name: Prepare tenant 
-              href: how-to-browserless-app-node-sign-in-prepare-tenant.md
-            - name: Create Node.js Browserless app 
-              href: how-to-browserless-app-node-sign-in-prepare-app.md
-            - name: Add sign-in and sign-out
-              href: how-to-browserless-app-node-sign-in-sign-out.md
-        - name: .NET​
-          items:
-            - name: Prepare tenant 
-              href: tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md
-            - name: Sign in user 
-              href: tutorial-browserless-app-dotnet-sign-in-build-app.md
-    - name: Daemon, service
+              href: /entra/identity-platform/tutorial-web-api-dotnet-core-call-protected-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+    - name: Daemon, service tutorials
       items: 
         - name: Node.js
           items:                
-            - name: Prepare tenant
-              href: tutorial-daemon-node-call-api-prepare-tenant.md
-              displayName: client credentials flow 
             - name: Acquire access token and call API
-              href: tutorial-daemon-node-call-api-build-app.md
-        - name: .NET
-          items:
-            - name: Prepare tenant
-              href: tutorial-daemon-dotnet-call-api-prepare-tenant.md
-            - name: Acquire access token and call API
-              href: tutorial-daemon-dotnet-call-api-build-app.md 
-    - name: Desktop app
+              href: /entra/identity-platform/tutorial-daemon-node-call-api-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+        - name: .NET acquire access token and call API
+          href: /entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Desktop app tutorials
       items:
         - name: .NET MAUI
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
             - name: Create .NET MAUI app
-              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
-              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Use role-based access control
-              href: tutorial-desktop-maui-role-based-access-control.md
+              href: /entra/identity-platform/tutorial-desktop-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET WPF
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md
             - name: Sign in and sign out
-              href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
+              href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               displayName: Windows Presentation Form
-    - name: Mobile
-      items: 
-      - name: .NET MAUI
-        items:
-        - name: Prepare tenant
-          href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
-        - name: Create .NET MAUI app
-          href: tutorial-mobile-app-maui-sign-in-prepare-app.md
-        - name: Sign in and sign out
-          href: tutorial-mobile-app-maui-sign-in-sign-out.md
-        - name: Use role-based access control
-          href: tutorial-mobile-maui-role-based-access-control.md
-    - name: Command-line interface (CLI) app
+    - name: Mobile tutorials
+      items:
+        - name: Browser-delegated authentication
+          items:
+            - name: .NET MAUI
+              items:
+                - name: Create .NET MAUI app
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign in and sign out
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Use role-based access control
+                  href: /entra/identity-platform/tutorial-mobile-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Android
+              items:
+                - name: Prepare app
+                  href: /entra/identity-platform/tutorial-mobile-app-android-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign in users
+                  href: /entra/identity-platform/tutorial-mobile-app-android-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Call an API
+                  href: /entra/identity-platform/tutorial-mobile-app-android-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: iOS
+              items:
+                - name: Prepare app
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+                - name: Sign in users
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+                - name: Call an API
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+        - name: Native authentication tutorials
+          items:
+            - name: Android (Kotlin)
+              items:
+                - name: Prepare Android app
+                  href: /entra/identity-platform/tutorial-native-authentication-prepare-android-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign up
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Sign in and sign out
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Auto-sign in after sign-up
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Self-service password reset
+                  href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Support web fallback
+                  href: /entra/identity-platform/tutorial-native-authentication-android-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Call an API
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  displayName: multiple access token 
+            - name: iOS/macOS (Swift)
+              items:
+                - name: Prepare iOS/macOS app
+                  href: /entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign up
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign in and sign out
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Auto-sign in after sign-up
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Self-service password reset
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Support web fallback
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Call an API
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Command-line interface (CLI) app tutorials
       items:
         - name: Node.js
           items:
-            - name: Prepare tenant
-              href: tutorial-cli-app-node-sign-in-prepare-tenant.md
             - name: Create Node.js CLI app
-              href: tutorial-cli-app-node-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Sign in users
-              href: tutorial-cli-app-node-sign-in-sign-out.md
-- name: Concepts
-  items: 
-    - name: Planning for customer identity and access
-      href: concept-planning-your-solution.md
-    - name: Supported features in customer tenants
-      href: concept-supported-features-customers.md
-    - name: Authentication methods and identity providers
-      href: concept-authentication-methods-customers.md
-    - name: Customizing the sign-in look and feel
-      href: concept-branding-customers.md
-    - name: Add your own business logic
-      href: concept-custom-extensions.md
-    - name: Security and governance
-      href: concept-security-customers.md
-- name: How-to guides
-  expanded: true
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Use Azure App Service built-in authentication
+      href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+- name: Tenant management
+  expanded: false
   items:
-    - name: Authenticate and authorize
-      items:
-      - name: Create a customer tenant
-        href: how-to-create-customer-tenant-portal.md
-      - name: Register an app
-        href: how-to-register-ciam-app.md
-      - name: Add a sign-up and sign-in flow
-        href: how-to-user-flow-sign-up-sign-in-customers.md
-        displayName: disable sign-up, disable sign up 
-      - name: Add an application to the user flow
-        href: how-to-user-flow-add-application.md
-      - name: Test the user flow
-        href: how-to-test-user-flows.md
-      - name: Enable password reset
-        href: how-to-enable-password-reset-customers.md
-      - name: Configure identity providers
-        items:
-          - name: Google federation
-            href: how-to-google-federation-customers.md
-          - name: Facebook federation
-            href: how-to-facebook-federation-customers.md
-      - name: Use application roles to manage access
-        href: how-to-use-app-roles-customers.md
-        displayName: rbac, roles claim, groups claim
-      - name: Integrate apps 
-        items:
-          - name: Web app
-            items:
-              - name: Node.js
-                items:
-                  - name: Call API
-                    items:
-                      - name: Prepare tenant 
-                        href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
-                      - name: Create Node.js client web app 
-                        href: how-to-web-app-node-sign-in-call-api-prepare-app.md
-                      - name: Acquire access token
-                        href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
-                      - name: Call API 
-                        href: how-to-web-app-node-sign-in-call-api-call-api.md
-                  - name: Use client certificate
-                    href: how-to-web-app-node-use-certificate.md 
-                  - name: Use role-based access control
-                    href: how-to-web-app-role-based-access-control.md 
-                    displayName: rbac, roles, roles claim, groups claim
-    - name: Customize
-      items:
-        - name: Customize branding
-          items:
-            - name: Default branding
-              href: how-to-customize-branding-customers.md
-            - name: Language-specific branding
-              href: how-to-customize-languages-customers.md
-        - name: Customize attribute collection
-          items:
-            - name: Collect user attributes during sign-up
-              href: how-to-define-custom-attributes.md
-            - name: Add attributes to the token
-              href: how-to-add-attributes-to-token.md
-        - name: Add claims from external systems
-          items:
-           - name: About custom authentication extensions
-             href: ~/identity-platform/custom-extension-overview.md?context=/azure/active-directory/external-identities/customers/context/customers-context
-           - name: Configure a custom claims provider token issuance event
-             href: ~/identity-platform/custom-extension-get-started.md?context=/azure/active-directory/external-identities/customers/context/customers-context
-           - name: Troubleshoot your custom claims provider API
-             href: ~/identity-platform/custom-extension-troubleshoot.md?context=/azure/active-directory/external-identities/customers/context/customers-context
-    - name: Secure
-      items:
-      - name: Multifactor authentication
-        href: how-to-multifactor-authentication-customers.md
-      - name: Identity Protection
-        href: how-to-identity-protection-customers.md
+    - name: External tenant setup details
+      href: how-to-create-external-tenant-portal.md
+    - name: Get started guide walkthrough
+      href: quickstart-get-started-guide.md
+    - name: Get started guide features explained
+      href: concept-guide-explained.md
     - name: Manage users
       items:
         - name: Manage admin accounts
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
+    - name: Enable password reset
+      href: how-to-enable-password-reset-customers.md
+    - name: Monitor and troubleshoot
+      items:
         - name: User activity insights
           href: how-to-user-insights.md
-    - name: Troubleshoot
-      items:
+        - name: Sign-up logs
+          href: /entra/identity/monitoring-health/concept-sign-ups?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Azure Monitor
+          href: how-to-azure-monitor.md
         - name: Known issues
-          href: troubleshooting-known-issues.md
+          href: troubleshooting-known-issues.md   
     - name: Management APIs
       items:
-        - name: Microsoft Graph
-          href: microsoft-graph-operations.md
         - name: Tenant management operations
-          href: azure-rest-api-operations-tenant-management.md 
+          href: azure-rest-api-operations-tenant-management.md          
+- name: Customization
+  expanded: false
+  items:
+    - name: Customize branding
+      items:
+      - name: Default branding
+        items:
+        - name: Default branding
+          href: how-to-customize-branding-customers.md
+        - name: Language-specific branding
+          href: how-to-customize-languages-customers.md
+      - name: Branding themes
+        href: how-to-customize-branding-themes-apps.md
+    - name: Customize attribute collection
+      items:
+        - name: Collect custom user attributes during sign-up
+          href: how-to-define-custom-attributes.md 
+          displayName: custom attributes
+        - name: Add attributes to the token
+          href: how-to-add-attributes-to-token.md
+    - name: Use custom URL domains
+      href: how-to-custom-url-domain.md
+    - name: Configure optional claims
+      href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
+- name: Identity providers
+  expanded: false
+  items:
+    - name: Configure identity providers
+      items:
+        - name: Google federation
+          href: how-to-google-federation-customers.md
+        - name: Facebook federation
+          href: how-to-facebook-federation-customers.md
+        - name: Apple federation
+          href: how-to-apple-federation-customers.md
+    - name: OIDC federation
+      items:
+        - name: Custom OIDC federation
+          href: how-to-custom-oidc-federation-customers.md
+        - name: Microsoft account federation
+          href: how-to-microsoft-accounts-federation-customers.md
+        - name: Azure AD B2C federation
+          href: how-to-b2c-federation-customers.md
+    - name: SAML/WS-Fed IdP federation
+      items:
+        - name: SAML/WS-Fed federation overview
+          href: ../direct-federation-overview.md
+        - name: Configure SAML/WS-Fed IdP federation
+          href: ../direct-federation.md
+        - name: Self-service sign-up for federated users
+          href: how-to-saml-ws-federation-self-service-sign-up.md
+    - name: Integrate apps 
+      items:
+        - name: Web app
+          items:
+            - name: Node.js
+              items:
+                - name:  Edit profile with MFA
+                  items:
+                    - name: Set up app 
+                      href: /entra/identity-platform/how-to-web-app-node-edit-profile-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                      displayName: Conditional Access, CA 
+                    - name: Update profile
+                      href: /entra/identity-platform/how-to-web-app-node-edit-profile-update-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                      displayName: protect, multifactor authentication, MFA            
+                - name: Call API
+                  items:
+                    - name: Prepare tenant 
+                      href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                    - name: Create Node.js client web app 
+                      href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                    - name: Acquire access token
+                      href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                    - name: Call API 
+                      href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Use client certificate
+                  href: /entra/identity-platform/how-to-web-app-node-use-certificate?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Use role-based access control
+                  href: /entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  displayName: rbac, roles, roles claim, groups claim
+- name: Extensions
+  expanded: false
+  items:
+    - name: Use the Visual Studio Code extension
+      href: visual-studio-code-extension.md
+    - name: Use the Visual Studio Connected Service
+      href: visual-studio-connected-service.md
+    - name: User profile attributes
+      href: concept-user-attributes.md
+    - name: Adding your own business logic
+      href: concept-custom-extensions.md
+    - name: Custom authentication extensions
+      items:
+        - name: Custom claims provider
+          items:
+            - name: Create REST API for token issuance event
+              href: ~/identity-platform/custom-extension-tokenissuancestart-setup.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Configure a custom claims provider token issuance event
+              href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Custom claims provider reference
+              href: ~/identity-platform/custom-claims-provider-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Attribute collection
+          items: 
+            - name: Create attribute collection start and submit events
+              href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: OnAttributeCollectionStart event reference
+              href: ~/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: OnAttributeCollectionSubmit event reference
+              href: ~/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Custom email provider
+          items:             
+            - name: Configure a custom email provider for one time code send events
+              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: On email OTP send event reference
+              href: ~/identity-platform/custom-extension-email-otp-send-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json                  
+        - name: Troubleshoot your custom authentication extension
+          href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+- name: Code samples
+  expanded: false
+  items:
+  - name: List of guides for samples
+    href: samples-ciam-all.md
+  - name: Single-page app
+    items:
+      - name: Browser-delegated authentication
+        items:
+          - name: Sign in users
+            href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Native authentication
+        items:
+          - name: Use APIs
+            items:
+            - name: Sign in users
+              href: /entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+          - name: Use SDK
+            items:
+              - name: Sign in users in a React SPA
+                href: /entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+  - name: Web app
+    items:
+      - name: Sign in users
+        href: /entra/identity-platform/quickstart-web-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Call an API
+        href: /entra/identity-platform/quickstart-web-app-node-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Edit profile
+        href: /entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+  - name: Daemon, service app
+    items: 
+      - name: Call a web API
+        href: /entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external 
+  - name: Desktop app
+    items:
+      - name: Electron - sign in users
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: .NET MAUI - sign in users
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: .NET WPF - sign in users
+        href: /entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+  - name: Mobile app
+    items:
+        - name: Browser-delegated authentication
+          items:
+              - name: Android (.NET MAUI) - sign in users
+                href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+              - name: Android (Kotlin)
+                items:
+                  - name: Sign in users
+                    href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+                  - name: Sign in users and call an API
+                    href: /entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+              - name: iOS (Swift)
+                items:
+                  - name: Sign in users
+                    href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+                  - name: Sign in users and call an API
+                    href: /entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+        - name: Native authentication
+          items:
+            - name: Android (Kotlin)
+              items:
+                - name: Sign in users
+                  href: /entra/identity-platform/quickstart-native-authentication-android-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign in users and call an API
+                  href: /entra/identity-platform/quickstart-native-authentication-android-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: /entra/identity-platform/quickstart-native-authentication-macos-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: iOS (Swift)
+              items:
+                - name: Sign in users
+                  href: /entra/identity-platform/quickstart-native-authentication-ios-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Sign in users and call an API
+                  href: /entra/identity-platform/quickstart-native-authentication-ios-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+  - name: Command-line interface (CLI) app
+    items:
+      - name: Node.js - sign in users
+        href: /entra/identity-platform/quickstart-cli-app-node-sign-in-users?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+  - name: Web API
+    items:
+      - name: ASP.NET Core - Call a protected web API
+        href: /entra/identity-platform/quickstart-web-api-dotnet-protect-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=aspnet-core
 - name: Reference
   items:
+    - name: Training, demos, and videos
+      href: reference-training-videos.md
     - name: Default user permissions
       href: reference-user-permissions.md
+    - name: Service limits and restrictions
+      href: reference-service-limits.md
     - name: Group and application roles support
       href: reference-group-app-roles-support.md
+    - name: Data residency
+      href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
-      href: /entra/fundamentals/reference-company-branding-css-template
-    - name: Help and support options
-      href: ~/identity-platform/developer-support-help-options.md?context=/entra/external-id/customers/context/customers-context
+      href: ~/fundamentals/reference-company-branding-css-template.md
+    - name: OIDC claims mapping
+      href: reference-oidc-claims-mapping-customers.md
+    - name: Native authentication
+      items:
+        - name: API reference
+          href: /entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          displayName: Native authentication, Native authentication API, native auth                
+        - name: SDK reference
+          items: 
+           - name: MSAL iOS and macOS
+             href: https://azuread.github.io/microsoft-authentication-library-for-objc/
+           - name: MSAL Android
+             href: https://javadoc.io/doc/com.microsoft.identity.client/msal
     - name: MSAL references 
       items:
         - name: MSAL.NET
@@ -344,7 +588,3 @@ items:
             href: /javascript/api/@azure/msal-react/
           - name: MSAL-node
             href: /javascript/api/@azure/msal-node/
-- name: Resources
-  items:
-    - name: Frequently asked questions (FAQ)
-      href: faq-customers.md

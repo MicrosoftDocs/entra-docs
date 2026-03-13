@@ -2,21 +2,21 @@
 title: Don't send your middle-tier OBO token to any non-audience party
 description: Include file warning that access tokens acquired by the middle-tier shouldn't be sent to any party except that which is identified by the audience claim.
 
-author: iambmelt
-manager: CelesteDG
+author: OwenRichards1
+manager: pmwongera
 
 ms.service: identity-platform
 
 
 ms.topic: include
 ms.date: 12/7/2021
-ms.author: brianmel
-ms.reviewer: brianmel
+ms.author: owenrichards
+ms.reviewer: 
 ms.custom: 
 ---
 
 > [!WARNING]
-> **DO NOT** send access tokens that were issued to the middle tier to any other party. Access tokens issued to the middle tier are intended for use _only_ by that middle tier.
+> **DO NOT** send access tokens that were issued to the middle tier to anywhere except the intended audience for the token. Access tokens issued to the middle tier are intended for use *only* by that middle tier to communicate with the intended audience endpoint.
 >
 > Security risks of relaying access tokens from a middle-tier resource to a client (instead of the client getting the access tokens themselves) include:
 >

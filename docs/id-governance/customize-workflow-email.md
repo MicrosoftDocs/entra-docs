@@ -1,13 +1,9 @@
 ---
 title: Customize emails sent from workflow tasks
 description: Get a step-by-step guide for customizing emails that you send by using tasks within lifecycle workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/22/2023
+ms.date: 03/12/2026
 ms.custom: template-how-to
 ---
 
@@ -17,50 +13,68 @@ Lifecycle workflows provide several tasks that send email notifications. You can
 
 Email tasks allow for the customization of:
 
-- Additional recipients
+- Recipients
 - Sender domain
 - Organizational branding
 - Subject
 - Message body
 - Email language
 
-When you're customizing the subject or message body, we recommend that you also enable the custom sender domain and organizational branding. Otherwise, your email will contain an additional security disclaimer.
+When you're customizing the subject or message body, we recommend that you also enable the custom sender domain and organizational branding. Otherwise, your email contains an additional security disclaimer.
 
 For more information on these customizable parameters, see [Common email task parameters](lifecycle-workflow-tasks.md#common-email-task-parameters).
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Customize email by using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 When you're customizing an email sent via lifecycle workflows, you can choose to customize either a new task or an existing task. You do these customizations the same way whether the task is new or existing, but the following steps walk you through updating an existing task. To customize emails sent from tasks within workflows by using the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
-1. Select the workflow that contain the email tasks you want to customize.
+1. Select the workflow that contains the email tasks you want to customize.
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
-1. On the pane for the specific task, you can include email recipients outside the default audience.
+1. On the pane for the specific task under **Basics**, you can edit the task name or description, along with configuring which recipient or recipients you want to send the email to outside the default audience. You can set the To recipient to the user, their manager, their sponsor, or specific users, and Cc additional users as needed. If the user is the recipient, you can select which of their available email addresses to use from the mail, otherMails, directoryExtensions, or custom security attributes fields.
 
+   :::image type="content" source="media/customize-workflow-email/email-recipient-list-new.png" alt-text="Screenshot of the recipient list for an email customization task.":::
+   
+    :::image type="content" source="media/customize-workflow-email/email-recipient-address-property.png" alt-text="Screenshot of the recipient list property for an email customization task.":::
+
+   > [!NOTE]
+    > CC recipients are only available if the recipient is the user themselves or their manager. If there are multiple CC recipients, they're copied on the single individual email.
 1. Select the **Email Customization** tab.
 
 1. Enter a custom subject, a message body, and the email language translation option that will be used to translate the message body of the email. 
 
-   If you stay with the default templates and don't customize the subject and body of the email, the text will be automatically translated into the recipient's preferred language. If you select an email language, the determination based on the recipient's preferred language will be overridden. If you specify a custom subject or body, it won't be translated.
+   If you stay with the default templates and don't customize the subject and body of the email, the text is automatically translated into the recipient's preferred language. If you select an email language, the determination based on the recipient's preferred language is overridden. If you specify a custom subject or body, it won't be translated.
 
    :::image type="content" source="media/customize-workflow-email/customize-workflow-email-example.png" alt-text="Screenshot of an example of a customized email from a workflow.":::
 
 1. Select **Save** to capture your changes in the customized email.
 
-## Format attributes within customized emails
+## Customize email text
 
-To further personalize customized emails, you can take advantage of dynamic attributes. By placing dynamic attributes in specific attributes, you can specifically call out values such as a user's name, their generated Temporary Access Pass, or even their manager's email.
+Emails sent by workflows can have their text customized to personalize, or stress specific points within, them. Workflow text can currently be customized in the following ways:
+
+- **Bold**: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
+- **Italics**: Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
+- **Underlined**: Text within emails can be underlined by placing the desired text within `<u></u>` brackets.
+- **Links**: Hyperlinks can be added to text by placing the desired link within `<a href=> </a>` brackets.
+
+    > [!NOTE]
+    > Hyperlinks must start with either *http* or *https*.
+
+
+### Format attributes within customized emails
+
+To further personalize customized emails, you can take advantage of dynamic attributes. By placing dynamic attributes in your emails, you can specifically call out values such as a user's name, their generated Temporary Access Pass, or even their manager's email.
 
 To use dynamic attributes within your customized emails, you must follow formatting rules. The proper format is:
 
@@ -70,7 +84,7 @@ The following screenshot is an example of the proper format for dynamic attribut
 
 :::image type="content" source="media/customize-workflow-email/workflow-dynamic-attribute-example.png" alt-text="Screenshot of an example of dynamic attributes within a customized email.":::
 
-When you're typing a dynamic attribute, the email is written the following way:
+When you're typing a dynamic attribute, the email is written in the following way:
 
 ```html
 Welcome to the team, {{userGivenName}}
@@ -91,8 +105,8 @@ You can customize emails that you send via lifecycle workflows to have your own 
 
 To enable these features, you need the following prerequisites:
 
-- A verified domain. To add a custom domain, see [Managing custom domain names in Microsoft Entra ID](~/identity/users/domains-manage.md).
-- Custom branding set within Microsoft Entra ID if you want to use your custom branding in emails. To set organizational branding within your Azure tenant, see [Configure your company branding](~/fundamentals/how-to-customize-branding.md).
+- A verified domain. To add a custom domain, see [Managing custom domain names in Microsoft Entra ID](../identity/users/domains-manage.md).
+- Custom branding set within Microsoft Entra ID if you want to use your custom branding in emails. To set organizational branding within your Azure tenant, see [Configure your company branding](../fundamentals/how-to-customize-branding.md).
 
 > [!NOTE]
 > For compliance with the [RFC for sending and receiving email](https://www.ietf.org/rfc/rfc2142.txt), we recommend using a domain that has the appropriate DNS records to facilitate email validation, like SPF, DKIM, DMARC, and MX. [Learn more about Exchange Online email routing](/exchange/mail-flow-best-practices/mail-flow-best-practices).

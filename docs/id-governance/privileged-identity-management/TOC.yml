@@ -44,9 +44,9 @@
   - name: Activate
     items:
     - name: Microsoft Entra roles
-      href: pim-how-to-activate-role.md
+      href: pim-how-to-activate-role.yml
     - name: Azure roles
-      href: pim-resource-roles-activate-your-roles.md
+      href: pim-resource-roles-activate-your-roles.yml
     - name: Groups
       href: groups-activate-roles.md 
   - name: Approve
@@ -123,8 +123,6 @@
       href: /graph/api/resources/privilegedidentitymanagement-for-groups-api-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
-  - name:  Azure AD PowerShell for Graph
-    href: /powershell/azure/active-directory/install-adv2
   - name: PowerShell examples for Microsoft Entra roles
     href: /powershell/microsoftgraph/tutorial-pim
   - name: Microsoft Entra service limits

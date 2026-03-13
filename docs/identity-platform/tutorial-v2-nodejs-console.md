@@ -2,17 +2,19 @@
 title: "Tutorial: Call Microsoft Graph in a Node.js console daemon app"
 description: In this tutorial, you build a console daemon app for calling Microsoft Graph.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: devx-track-js
-ms.date: 12/12/2021
+ms.date: 04/09/2024
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to build a Node.js console daemon app that calls the Microsoft Graph API using its own identity, and learn how to authenticate and make requests to the API in my own applications.
 ---
 
 # Tutorial: Call the Microsoft Graph API in a Node.js console daemon app
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 In this tutorial, you build a console daemon app that calls Microsoft Graph API using its own identity. The daemon app you build uses the [Microsoft Authentication Library (MSAL) for Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node).
 
@@ -117,9 +119,9 @@ At the end of the tutorial, your project's file and directory structure should l
 ```
 NodeDaemonApp/
 ├── bin
-│   ├── auth.js
-│   ├── fetch.js
-│   ├── index.js
+│   ├── auth.js
+│   ├── fetch.js
+│   ├── index.js
 ├── package.json
 └── .env
 ```
@@ -276,7 +278,7 @@ request made to web API at: Fri Jan 22 2021 09:31:52 GMT-0800 (Pacific Standard 
             preferredLanguage: 'en-US',
             surname: 'Vance',
             userPrincipalName: 'AdeleV@msaltestingjs.onmicrosoft.com',
-            id: 'a6a218a5-f5ae-462a-acd3-581af4bcca00'
+            id: '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
         }
     ]
 }
@@ -294,4 +296,4 @@ The scope to request for a client credential flow is the name of the resource fo
 If you'd like to dive deeper into Node.js daemon application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application](scenario-daemon-overview.md)
+> [Scenario: Daemon application](scenario-daemon-app-configuration.md)

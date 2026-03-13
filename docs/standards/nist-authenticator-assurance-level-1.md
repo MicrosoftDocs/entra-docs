@@ -29,16 +29,16 @@ To achieve AAL1, you can use any NIST single-factor or multifactor [permitted au
 
 |Microsoft Entra authentication method|NIST authenticator type |
 | - | - |
-|Password |Memorized Secret |
+|Password <br> QR Code (PIN) |Memorized Secret |
 |Phone (SMS): Not recommended | Single-factor out-of-band |
-|Microsoft Authenticator App (Passwordless)|Multi-factor out-of-band |
+|Microsoft Authenticator app (Phone Sign-In)|Multi-factor out-of-band |
 |Single-factor software certificate | Single-factor crypto software |
-|Multi-factor Software Certificate (PIN Protected) <br> Windows Hello for Business with software TPM <br> | Multi-factor crypto software | 
-|Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key <br> Windows Hello for Business with hardware TPM <br> | Multi-factor crypto hardware
+|Multi-factor software certificate <br> Windows Hello for Business with software TPM <br> | Multi-factor crypto software | 
+|Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator| Multi-factor crypto hardware |
 
 
 > [!TIP]
-> We recommend you select at a minimum phishing resistant AAL2 authneticators. Select AAL3 authenticators as necessary for business reasons, industry standards, or compliance requirements.
+> We recommend you select at a minimum phishing resistant AAL2 authenticators. Select AAL3 authenticators as necessary for business reasons, industry standards, or compliance requirements.
 
 ## FIPS 140 validation
 

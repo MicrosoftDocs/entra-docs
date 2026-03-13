@@ -1,21 +1,17 @@
 ---
 title: Workflow Versioning
 description: An article discussing Lifecycle workflow versioning and history
-author: owinfreyATL
-ms.author: owinfrey
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
-ms.date: 05/31/2023
-ms.custom: template-concept
+ms.topic: concept-article
+ms.date: 03/12/2026
+ms.custom: template-concept, sfi-image-nochange
 ---
 
 # Lifecycle Workflows Versioning
 
 
 
-Workflows created using Lifecycle Workflows can be updated as needed to satisfy organizational requirements in terms of auditing the lifecycle of users in your organization. To manage updates in workflows, Lifecycle Workflows introduce the concept of workflow versioning. Workflow versions are new versions of existing workflows, triggered by updating execution conditions or its tasks. Workflow versions can change the actions or even scope of an existing workflow.  Understanding how workflow versioning is handled during the workflow update process allows you to strategically set up workflows so that workflows tasks, and conditions, are always relevant for users processed by a workflow.
+Workflows created using Lifecycle Workflows can be updated as needed to satisfy organizational requirements in terms of auditing the lifecycle of users in your organization. To manage updates in workflows, Lifecycle Workflows introduce the concept of workflow versioning. Workflow versions are new versions of existing workflows, triggered by updating execution conditions or their tasks. Workflow versions can change the actions or even scope of an existing workflow.  Understanding how workflow versioning is handled during the workflow update process allows you to strategically set up workflows so that workflows tasks, and conditions, are always relevant for users processed by a workflow.
 
 
 ## Versioning benefits
@@ -27,7 +23,7 @@ Versioning with Lifecycle Workflows provides many benefits over the alternative 
 
 ## Workflow properties and versions
 
-While updates to workflows can trigger the creation of a new version, this isn't always the case. There are parameters of workflows known as basic properties, that 's changeable without creating a new version of the workflow. The list of these parameters are as follows:
+While updates to workflows can trigger the creation of a new version, this isn't always the case. There are parameters of workflows known as basic properties, that's changeable without creating a new version of the workflow. The list of these parameters is as follows:
 
 - displayName     
 - description    
@@ -42,7 +38,7 @@ You'll find these corresponding parameters in the Microsoft Entra admin center u
 
 For a step by step guide on updating these properties using both the Microsoft Entra admin center and the API via Microsoft Graph, see: [Manage workflow properties](manage-workflow-properties.md).
 
-Properties that will trigger the creation of a new version are as follows:
+Properties that trigger the creation of a new version are as follows:
 
 - tasks     
 - executionConditions     
@@ -52,7 +48,7 @@ Properties that will trigger the creation of a new version are as follows:
 While new versions of these workflows are made as soon as you make the updates in the Microsoft Entra admin center, creating a new version of a workflow using the API with Microsoft Graph requires running the createNewVersion method. For a step by step guide for updating either tasks, or execution conditions, see: [Manage Workflow Versions](manage-workflow-tasks.md).
 
 > [!NOTE]
-> If the workflow is on-demand, the configure information associated with execution conditions will not be present.
+> If the workflow is on-demand, the configure information associated with execution conditions isn't present.
 
 ## What details are contained in workflow version history
 
@@ -63,7 +59,7 @@ Details contained in version information as shown in the Microsoft Entra admin c
 :::image type="content" source="media/lifecycle-workflow-versioning/workflow-version-information.png" alt-text="Screenshot of workflow versioning information.":::
 
 
-Detailed **Version information** are as follows:
+Detailed **Version information** is as follows:
 
 
 |parameter  |description  |

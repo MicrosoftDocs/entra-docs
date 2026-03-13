@@ -1,24 +1,20 @@
 ---
 title: PowerShell sample - Move Microsoft Entra application proxy apps to another group
 description: Microsoft Entra application proxy PowerShell example used to move all applications currently assigned to a connector group to a different connector group.
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom:
 ms.topic: sample
-ms.date: 02/27/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Move all Microsoft Entra application proxy apps assigned to a connector group to another connector group
 
 The PowerShell script example moves all Microsoft Entra application proxy applications currently assigned to a connector group to a different connector group.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
@@ -37,8 +33,8 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    Required Microsoft Entra role at least Application Administrator
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 

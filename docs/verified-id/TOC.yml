@@ -18,17 +18,19 @@
     href: verifiable-credentials-configure-issuer.md
   - name: Verify a verifiable credential
     href: verifiable-credentials-configure-verifier.md
-  - name: Using FaceCheck
+  - name: Using Face Check
     href: using-facecheck.md
-  - name: LinkedIn employment verification
-    href: linkedin-employment-verification.md
   - name: Using Verified ID with Entitlement Management
     href: ~/id-governance/entitlement-management-verified-id-settings.md
 - name: Concepts
   expanded: true
   items:
+  - name: Face Check pricing
+    href: verified-id-pricing.md
   - name: OpenID Connect protocol details
     href: issuer-openid.md
+  - name: Account recovery
+    href: ~/identity/authentication/concept-account-recovery-overview.md
   - name: Plan and design 
     items:
     - name: Architecture planning overview
@@ -70,30 +72,22 @@
     href: how-to-dnsbind.md
   - name: Rotate signing keys
     href: how-to-rotate-keys.md
+  - name: Upgrade signing key
+    href: signing-key-upgrade.md
   - name: Opt out of Verified ID service
     href: how-to-opt-out.md
   - name: Using the Authenticator
     href: using-authenticator.md
-  - name: Using the Wallet Library
-    href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
-  - name: Partner gallery
+  - name: Verified ID partner ecosystem
     items:
     - name: IDV partners
-      items:
-      - name: IDV partner network
-        href: partner-gallery.md
-      - name: Au10tix
-        href: howto-verifiable-credentials-partner-au10tix.md
-      - name: IDEMIA
-        href: idemia.md
-      - name: LexisNexis
-        href: howto-verifiable-credentials-partner-lexisnexis.md
-      - name: Vu
-        href: partner-vu.md
+      href: idv-partners.md
     - name: Services partners
       href: services-partners.md
+    - name: Integration guidance
+      href: integration-guidance.md
 - name: Samples
   expanded: true
   items:
@@ -125,12 +119,10 @@
     href: how-to-create-a-free-developer-account.md
   - name: Industry working group for all things Decentralized ID (DID)
     href: https://identity.foundation
-  - name: Microsoft DID whitepaper
-    href: https://aka.ms/didwhitepaper
   - name: DID marketing Overview
     href: https://aka.ms/didexplained
   - name: Decentralized identity blog
-    href: https://techcommunity.microsoft.com/t5/tag/decentralized%20identity/tg-p
+    href: https://techcommunity.microsoft.com/tag/decentralized-identities
   - name: Video overview of decentralized identities
     href: https://www.youtube.com/watch?v=Whc9Im-U0Wg
 

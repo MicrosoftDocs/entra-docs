@@ -1,14 +1,8 @@
 ---
 title: Group expiration policy quickstart
 description: Expiration for Microsoft 365 groups
-
-author: barclayn
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: users
 ms.topic: quickstart
-ms.date: 11/15/2023
-ms.author: barclayn
+ms.date: 01/15/2025
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management
@@ -22,24 +16,23 @@ Expiration policy is simple:
 
 - Groups with user activities are automatically renewed as the expiration nears
 - Group owners are notified to renew an expiring group
-- A group that is not renewed is deleted
+- A group that isn't renewed is deleted
 - A deleted Microsoft 365 group can be restored within 30 days by a group owner or by a Microsoft Entra administrator
 
 > [!NOTE]
 > Microsoft Entra ID, part of Microsoft Entra, uses intelligence to automatically renew groups based on whether they have been in recent use. This renewal decision is based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, Yammer, and others.
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisite
 
- The least-privileged role required to set up group expiration is User administrator in the organization.
+ The least-privileged role required to set up group expiration is User Administrator in the organization.
 
 ## Turn on user creation for groups
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Groups** > **All groups** and then select **General**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Browse to **Entra ID** > **Groups** > **All groups** and then select **General**.
   
    :::image type="content" source="./media/groups-quickstart-expiration/self-service-settings.png" alt-text="Screenshot of the Self-service group settings page.":::
 
@@ -50,7 +43,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 ## Set group expiration
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All groups** > **Expiration** to open the expiration settings.
+1. Browse to **Entra ID** > **Groups** > **All groups** > **Expiration** to open the expiration settings.
   
    :::image type="content" source="./media/groups-quickstart-expiration/expiration-settings.png" alt-text="Screenshot of the Expiration settings page for group.":::
 
@@ -68,13 +61,13 @@ That's it! In this quickstart, you successfully set the expiration policy for th
 
 ### To remove the expiration policy
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Browse to **Identity** > **Groups** > **All groups** > **Expiration**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Browse to **Entra ID** > **Groups** > **All groups** > **Expiration**.
 1. Set **Enable expiration for these Microsoft 365 groups** to **None**.
 
 ### To turn off user creation for groups
 
-1. Browse to **Identity** > **Groups** > **Group settings** >  **General**. 
+1. Browse to **Entra ID** > **Groups** > **Group settings** > **General**. 
 1. Set **Users can create Microsoft 365 groups in Azure portals** to **No**.
 
 ## Next steps

@@ -1,21 +1,15 @@
 ---
 title: Use Azure custom roles in PIM
 description: Learn how to use Azure custom roles in Microsoft Entra Privileged Identity Management (PIM).
-
-author: barclayn
-manager: amycolannino
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
-ms.author: barclayn
+ms.date: 12/16/2024
 ms.reviewer: shaunliu
-
+ms.custom: sfi-image-nochange
 ---
 
 # Use Azure custom roles in Privileged Identity Management
 
-You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, if your organization hired several contract associates to help develop an application that will run in an Azure subscription.
+You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, if your organization hires several contractors to help develop an application that runs in an Azure subscription.
 
 As a resource administrator, you want employees to be eligible for access without requiring approval. However, all contract associates must be approved when they request access to the organization's resources.
 
@@ -34,7 +28,7 @@ When you create custom role, include a descriptive name so you can easily rememb
 
 After the role is created in your Microsoft Entra organization, go to the **Privileged Identity Management - Azure resources** page in the Azure portal. Select the resource that the role applies to.
 
-![The "Privileged Identity Management - Azure resources" pane](media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png)
+:::image type="content" source="media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png" alt-text="Screenshot of Privileged Identity Management resources pane.":::
 
 [Configure Privileged Identity Management role settings](pim-resource-roles-configure-role-settings.md) that should apply to these members of the role.
 

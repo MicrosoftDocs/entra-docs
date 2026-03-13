@@ -3,11 +3,10 @@ title: Microsoft Entra operations reference guide
 description: This operations reference guide describes the checks and actions you should take to secure and maintain identity and access management, authentication, governance, and operations
 author: martincoetzer
 manager: travisgr
-ms.service: entra
-ms.topic: conceptual
-ms.subservice: architecture
+ms.topic: best-practice
 ms.date: 08/17/2022
 ms.author: martinco
+ms.subservice: architecture
 ---
 
 # Microsoft Entra operations reference guide

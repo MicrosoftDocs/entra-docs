@@ -10,17 +10,19 @@ ms.author: billmath
 ---
 
 ## Steps to enable Single Sign-on
-Cloud provisioning works with Single Sign-on.  Currently there is not an option to enable SSO when the agent is installed, however you can use the steps below to enable SSO and use it. 
+Cloud provisioning works with Single Sign-on (SSO). Currently there isn't an option to enable SSO when the agent is installed, however you can use the following steps to enable SSO and use it. 
 
 <a name='step-1-download-and-extract-azure-ad-connect-files'></a>
 
 ### Step 1: Download and extract Microsoft Entra Connect files
-1.  First, download the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
-2.  Open a command prompt using Administrative privileges and navigate to the msi you just downloaded.
-3.  Run the following:  `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
-4. Change filepath and extractfolder to match your file path and the name of your extraction folder.  The contents should now be in the extraction folder.
+1. First, download the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
+2. Open a command prompt using Administrative privileges and navigate to the msi you downloaded.
+3. Run the following command:  `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
+4. Change filepath and `extractfolder` to match your file path and the name of your extraction folder. The contents should now be in the extraction folder.
 
 ### Step 2: Import the Seamless SSO PowerShell module
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
 2. Browse to the `Microsoft Azure Active Directory Connect` folder which should be in the extraction folder from Step 1.
@@ -28,7 +30,7 @@ Cloud provisioning works with Single Sign-on.  Currently there is not an option 
 
 ### Step 3: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
-1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's global administrator credentials.
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter the credentials of a [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator).
 2. Call `Get-AzureADSSOStatus`. This command provides you with the list of Active Directory forests (look at the "Domains" list) on which this feature has been enabled.
 
 ### Step 4: Enable Seamless SSO for each Active Directory forest

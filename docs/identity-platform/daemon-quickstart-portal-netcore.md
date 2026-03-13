@@ -3,14 +3,14 @@ title: "Quickstart: Get token & call Microsoft Graph in a console app"
 description: In this quickstart, you learn how a .NET sample app can use the client credentials flow to get a token and call Microsoft Graph.
 ROBOTS: NOINDEX
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
-ms.date: 08/22/2022
+ms.custom:
+ms.date: 09/24/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn how my .NET app can get an access token and call an API that's protected by the Microsoft identity platform by using the client credentials flow.
 ---
 
@@ -19,7 +19,7 @@ ms.topic: conceptual
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 > 
-> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-console-app-netcore-acquire-token.md)
+> > [Quickstart: Acquire a token and call Microsoft Graph in a .NET console app](quickstart-daemon-dotnet-acquire-token.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -56,16 +56,7 @@ ms.topic: conceptual
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
 > > > `Enter_the_Supported_Account_Info_Here`
-> 
-> #### Step 3: Admin consent
-> 
-> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a Global Administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
-> 
-> ##### Global tenant administrator
-> 
-> If you're a Global Administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
-> > [!div id="apipermissionspage"]
-> > [Go to the API Permissions page]()
+>
 > 
 > ##### Standard user
 > 
@@ -79,11 +70,8 @@ ms.topic: conceptual
 > 
 > #### Step 4: Run the application
 > 
-> If you're using Visual Studio or Visual Studio for Mac, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
+> If you're using Visual Studio, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
 >
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-> 
 > ```dotnetcli
 > cd {ProjectFolder}\1-Call-MSGraph\daemon-console
 > dotnet run
@@ -160,4 +148,4 @@ ms.topic: conceptual
 > To learn more about daemon applications, see the scenario overview:
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-overview.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-configuration.md)

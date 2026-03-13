@@ -1,23 +1,18 @@
 ---
-title: PowerShell sample - Export secrets and certificates for enterprise apps in Microsoft Entra tenant.
+title: 'PowerShell sample: Export secrets and certificates for enterprise apps'
 description: PowerShell example that exports all secrets and certificates for the specified enterprise apps in your Microsoft Entra tenant.
-
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
 
 ms.custom:
 ms.topic: sample
-ms.date: 01/15/2024
-ms.author: jomondi
+ms.date: 01/23/2025
 ms.reviewer: mifarca
 ---
 
-# Export secrets and certificates for enterprise apps
-This PowerShell script example exports all secrets, certificates and owners for the specified enterprise apps from your directory into a CSV file.
+# PowerShell sample: Export secrets and certificates for enterprise apps
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+This PowerShell script example exports all secrets, certificates, and owners for the specified enterprise apps from your directory into a CSV file.
+
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
 This sample requires the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) SDK module.
 
@@ -161,6 +156,8 @@ foreach ($EnterpriseApp in $EnterpriseApps) {
             'Certificate End Date'   = $EndDate
             'Owner'                  = $Username
             'Owner_ObjectID'         = $OwnerID
+            'Secret Start Date'      = $Null
+            'Secret End Date'        = $Null
         }
     }
 }
@@ -172,7 +169,7 @@ $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
 
 ## Script explanation
 
-The script can be used directly without any modifications. The admin will be asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
+The script can be used directly without any modifications. The admin is asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
 
 The "Add-Member" command is responsible for creating the columns in the CSV file.
 You can modify the "$Path" variable directly in PowerShell, with a CSV file path, in case you'd prefer the export to be non-interactive.

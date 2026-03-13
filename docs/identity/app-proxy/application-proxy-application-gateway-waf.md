@@ -1,20 +1,18 @@
 ---
-title: Using Application Gateway WAF to protect your application
+title: Use Application Gateway WAF to protect your application
 description: How to add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/26/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj, besilvei
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
-# Using Application Gateway WAF to protect your applications
+# Use Application Gateway WAF to protect your applications
 
 Add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
 
-To learn more about Web Application Firewall, see  [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
+For more information about Web Application Firewall, see [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
 
 ## Deployment steps
 
@@ -59,7 +57,7 @@ A backend setting determines how requests reach the backend pool servers.
  
 Both connector VMs, the Application Gateway, and the backend servers are deployed in the same virtual network in Azure. The setup also applies to applications and connectors deployed on-premises. 
 
-For a detailed guide on how to add your application to application proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the application proxy connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
+For a detailed guide on how to add your application to application proxy in Microsoft Entra ID, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID][appproxy-add-app]. For more information about performance considerations concerning the private network connectors, see [Optimize traffic flow with Microsoft Entra application proxy][appproxy-optimize]. 
  
 ![Screenshot of application proxy configuration.](./media/application-proxy-waf/application-proxy-configuration.png)
 
@@ -69,7 +67,7 @@ An [Azure Private Domain Name System (DNS) zone][private-dns] is created with an
 
 ## Test the application
 
-After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
+After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing `https://www.fabrikam.one`. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
 
 ![Screenshot of authentication step.](./media/application-proxy-waf/sign-in-2.png)
 ![Screenshot of server response.](./media/application-proxy-waf/application-gateway-response.png)

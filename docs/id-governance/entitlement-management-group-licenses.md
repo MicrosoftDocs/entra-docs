@@ -1,24 +1,20 @@
 ---
 title: Manage the lifecycle of group-based licenses in Microsoft Entra ID
 description: This step-by-step tutorial shows how to create an access package for managing group-based licenses in entitlement management.
-author: owinfreyATL
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 05/25/2023
-ms.author: owinfrey
+ms.date: 07/15/2024
 #Customer intent: As an IT admin, I want step-by-step instructions for creating an access package for managing the lifecycle of group-based licenses.
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
  
-With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/identity/users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
+With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/fundamentals/concept-group-based-licensing.md). You can make the management of these groups even easier by using entitlement management: 
 
 * Configure periodic access reviews to ensure only authorized users that need the licenses are in the group. 
 * Allow other users to request membership to the group.
 
-In this tutorial, you play the role of an IT administrator for Woodgrove Bank. You're asked to create an access package so employees in your organization can easily gain access to Office licenses. (You should already have a group that manages your [Office licenses](~/identity/users/licensing-groups-assign.md).) You want to be able to review these group members every year. You also want to allow new employees to request Office licenses, pending manager approval.
+In this tutorial, you play the role of an IT administrator for Woodgrove Bank. You're asked to create an access package so employees in your organization can easily gain access to Office licenses. (You should already have a group that manages your [Office licenses](~/fundamentals/concept-group-based-licensing.md).) You want to be able to review these group members every year. You also want to allow new employees to request Office licenses, pending manager approval.
  
 To use entitlement management, you must have one of these licenses:
 
@@ -26,13 +22,13 @@ To use entitlement management, you must have one of these licenses:
 - Enterprise Mobility + Security (EMS) E5
 
 For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
+
 ## Step 1: Configure basics for your access package
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, User Administrator, Catalog Owner, or Access Package Manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page Select **New access package**.
 
@@ -44,7 +40,7 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. Select **Next: Resource roles** to go to the **Resource roles** tab.
 
-1. On this tab, you select the resources and the resource role to include in the access package. In this scenario, select **Groups and Teams** and search for your group that has assigned [Office licenses](~/identity/users/licensing-groups-assign.md).
+1. On this tab, you select the resources and the resource role to include in the access package. In this scenario, select **Groups and Teams** and search for your group that has assigned [Office licenses](~/fundamentals/concept-group-based-licensing.md).
 
 1. In the **Role** list, select **Member**.
 
@@ -91,7 +87,7 @@ For more information, see [License requirements](entitlement-management-overview
     1. Under **Require access reviews**, select **Yes**.
     1. You can leave **Starting on** set to the current date. This date is when the access review starts. After you create an access review, you can't update its start date.
     1. Under **Review frequency**, select **Annually**, because the review occurs once per year. The **Review frequency** box is where you determine how often the access review runs.
-    1. Specify a **Duration (in days)**.  The duration box is where you indicate how many days each occurrence of the access review series runs.
+    1. Specify a **Duration (in days)**. The duration box is where you indicate how many days each occurrence of the access review series runs.
     1. Under **Reviewers**, select **Manager**.
 
 ## Step 6: Review and create your access package
@@ -102,17 +98,16 @@ For more information, see [License requirements](entitlement-management-overview
 
 1. When you're happy with your configuration, select **Create**. After a moment, you should see a notification stating that the access package is created.
 
-1. After the access package is created, you'll see the **Overview** page for the package. You'll find the **My Access portal link** here. Copy the link and share it with your team so your team members can request the access package to be assigned licenses for Office.
+1. After the access package is created, you'll see the **Overview** page for the package. You find the **My Access portal link** here. Copy the link and share it with your team so your team members can request the access package to be assigned licenses for Office.
 
 ## Step 7: Clean up resources
 
-In this step, you can delete the Office Licenses access package. 
-
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, or Access Package Manager
+In this step, you delete the Office Licenses access package. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Open the **Office Licenses** access package. 
 

@@ -1,15 +1,10 @@
 ---
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
-
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 12/15/2025
 ms.reviewer: chmutali
+ai-usage: ai-assisted
 ---
 
 # How Microsoft Entra provisioning integrates with SAP SuccessFactors 
@@ -22,17 +17,15 @@ ms.reviewer: chmutali
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
 
+Microsoft Entra also supports single-sign on to SuccessFactors. For more information, see [Microsoft Entra single sign-on (SSO) integration with SuccessFactors](~/identity/saas-apps/successfactors-tutorial.md).
+
 ## Establishing connectivity 
 Microsoft Entra provisioning service uses basic authentication to connect to Employee Central OData API endpoints. When setting up the SuccessFactors provisioning app, use the *Tenant URL* parameter in the *Admin Credentials* section to configure the [API data center URL](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/d599f15995d348a1b45ba5603e2aba9b/af2b8d5437494b12be88fe374eba75b6.html). 
 
 To further secure the connectivity between Microsoft Entra provisioning service and SuccessFactors, add the Microsoft Entra IP ranges in the SuccessFactors IP allowlist:
 
-1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud 
-1. Open the file and search for tag **Microsoft Entra ID** 
-
-   >[!div class="mx-imgBorder"] 
-   >![Microsoft Entra IP range](media/sap-successfactors-integration-reference/azure-entra-ip-range.png)
-
+1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud.
+1. Open the file and search for tag `AzureActiveDirectory`.
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address restriction list.
 1. Translate the CIDR values to IP ranges.  
 1. Log in to SuccessFactors admin portal to add IP ranges to the allowlist. Refer to SAP [support note 2253200](https://userapps.support.sap.com/sap/support/knowledge/2253200). You can now [enter IP ranges](https://answers.sap.com/questions/12882263/whitelisting-sap-cloud-platform-ip-address-range-i.html) in this tool. 
@@ -87,7 +80,7 @@ Based on the attribute-mapping, during full sync Microsoft Entra provisioning se
 
 For each SuccessFactors user, the provisioning service looks for an account in the target (Microsoft Entra ID / on-premises Active Directory) using the matching attribute defined in the mapping. For example: if *personIdExternal* maps to *employeeId* and is set as the matching attribute, then the provisioning service uses the *personIdExternal* value to search for the user with *employeeId* filter. If a user match is found, then it updates the target attributes. If no match is found, then it creates a new entry in the target. 
 
-To validate the data returned by your OData API endpoint for a specific `personIdExternal`, update the `SuccessFactorsAPIEndpoint` in the API query with your API data center server URL and use a tool like [Postman](https://www.postman.com/downloads/) to invoke the query. If the "in" filter doesn't work, you can try the "eq" filter. 
+To validate the data returned by your OData API endpoint for a specific `personIdExternal`, update the `SuccessFactorsAPIEndpoint` in the API query with your API data center server URL and use a tool like cURL or Graph Explorer to invoke the query. If the "in" filter doesn't work, you can try the "eq" filter. 
 
 ```
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson?$format=json&
@@ -105,7 +98,7 @@ employmentNav/jobInfoNav/employmentTypeNav,employmentNav/jobInfoNav/employeeClas
 
 After full sync, Microsoft Entra provisioning service maintains `LastExecutionTimestamp` and uses it to create delta queries for retrieving incremental changes. The timestamp attributes present in each SuccessFactors entity, such as `lastModifiedDateTime`, `startDate`, `endDate`, and `latestTerminationDate`, are evaluated to see if the change falls between the `LastExecutionTimestamp` and `CurrentExecutionTime`. If yes, then the entry change is considered to be effective and processed for sync. 
 
-Here's the OData API request template that Microsoft Entra ID uses to query SuccessFactors for incremental changes. You can update the variables `SuccessFactorsAPIEndpoint`, `LastExecutionTimestamp` and `CurrentExecutionTime` in the request template use a tool like [Postman](https://www.postman.com/downloads/) to check what data is returned. Alternatively, you can also retrieve the actual request payload from SuccessFactors by [enabling OData API Audit logs](#enabling-odata-api-audit-logs-in-successfactors). 
+Here's the OData API request template that Microsoft Entra ID uses to query SuccessFactors for incremental changes. You can update the variables `SuccessFactorsAPIEndpoint`, `LastExecutionTimestamp` and `CurrentExecutionTime` in the request template use a tool like cURL or Graph Explorer to check what data is returned. Alternatively, you can also retrieve the actual request payload from SuccessFactors by [enabling OData API Audit logs](#enabling-odata-api-audit-logs-in-successfactors). 
 
 ```
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson/$count?$format=json&$filter=(personEmpTerminationInfoNav/activeEmploymentsCount ne null) and
@@ -129,13 +122,13 @@ This section explains how the SAP SuccessFactors connector processes pre-hire re
 Let's say there is a pre-hire with employeeId "1234" in SuccessFactors Employee Central with start date on 1-June-2023. Let's further assume that this pre-hire record was first created either in Employee Central or in the Onboarding module on 15-May-2023. When the provisioning service first observes this record on 15-May-2023 (either as part of full sync or incremental sync), this record is still in pre-hire state. Due to this, SuccessFactors does not send the provisioning service all attributes (example: userNav/username) associated with the user. Only bare minimum data about the user such as `companyName`, `personIdExternal`, `firstname`, `lastname` and `startDate` is available. To process pre-hires successfully, the following pre-requisites must be met: 
 
 1) The `personIdExternal` attribute must be set as the primary matching identifier (joining property). If you configure a different attribute (example: userName) as the joining property then the provisioning service will not be able to retrieve the pre-hire information. 
-2) The `startDate` attribute must be available and it's JSONPath must be set to either `$.employmentNav.results[0].startDate` or `$.employmentNav.results[-1:].startDate`.
+2) The `startDate` attribute must be available and its JSONPath must be set to either `$.employmentNav.results[0].startDate` or `$.employmentNav.results[-1:].startDate`.
 3) The pre-hire record must be in one of the following states in Employee Central: 'active' (t), 'inactive' (f), or 'active_external_suite' (e). For details about these states refer to the [SAP support note 2736579](https://launchpad.support.sap.com/#/notes/0002736579).
 
 > [!NOTE] 
 > For a  pre-hire who has no history with the organization, both the [0] and [-1:] index will work for `startDate`. For a pre-hire who is a re-hire or conversion, we cannot deterministically tell the order and this may cause certain rehire/converted workers to get processed on their actual start date. This is a known limitation in the connector.
 
-During full sync or incremental sync or on-demand provisioning, when the provisioning service encounters a pre-hire record, it sends the following OData query to SuccessFactors with "asOfDate" filter set to the startDate of the user (e.g., asOfDate=2023-06-01). 
+During full sync or incremental sync or on-demand provisioning, when the provisioning service encounters a pre-hire record, it sends the following OData query to SuccessFactors with "asOfDate" filter set to the startDate of the user (such as asOfDate=2023-06-01). 
 
 ``` 
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson?$format=json&$
@@ -151,7 +144,7 @@ When Microsoft Entra provisioning service queries SuccessFactors, it retrieves a
 
 To retrieve more attributes, follow the steps listed:
     
-1. Browse to **Enterprise Applications** -> **SuccessFactors App** -> **Provisioning** -> **Edit Provisioning** -> **attribute-mapping page**.
+1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **attribute-mapping page**.
 1. Scroll down and click **Show advanced options**.
 1. Click on **Edit attribute list for SuccessFactors**. 
 
@@ -174,16 +167,29 @@ JSONPath is a query language for JSON that is similar to XPath for XML. Like XPa
 By using JSONPath transformation, you can customize the behavior of the Microsoft Entra provisioning app to retrieve custom attributes and handle scenarios such as rehiring, worker conversion and global assignment. 
 
 This section covers how you can customize the provisioning app for the following HR scenarios: 
-* [Retrieving more attributes](#retrieving-more-attributes)
-* [Retrieving custom attributes](#retrieving-custom-attributes)
-* [Mapping employment status to account status](#mapping-employment-status-to-account-status)
-* [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
-* [Retrieving current active employment record](#retrieving-current-active-employment-record)
-* [Handling global assignment scenario](#handling-global-assignment-scenario)
-* [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
-* [Retrieving position details](#retrieving-position-details)
-* [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
-* [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+- [How Microsoft Entra provisioning integrates with SAP SuccessFactors](#how-microsoft-entra-provisioning-integrates-with-sap-successfactors)
+  - [Establishing connectivity](#establishing-connectivity)
+  - [Supported entities](#supported-entities)
+  - [How full sync works](#how-full-sync-works)
+  - [How incremental sync works](#how-incremental-sync-works)
+  - [How pre-hire processing works](#how-pre-hire-processing-works)
+  - [Reading attribute data](#reading-attribute-data)
+  - [Handling different HR scenarios](#handling-different-hr-scenarios)
+    - [Retrieving more attributes](#retrieving-more-attributes)
+    - [Retrieving custom attributes](#retrieving-custom-attributes)
+    - [Mapping employment status to account status](#mapping-employment-status-to-account-status)
+    - [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
+    - [Retrieving current active employment record](#retrieving-current-active-employment-record)
+    - [Handling global assignment scenario](#handling-global-assignment-scenario)
+    - [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
+    - [Retrieving position details](#retrieving-position-details)
+    - [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
+    - [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+  - [Writeback scenarios](#writeback-scenarios)
+    - [Supported scenarios for phone and email write-back](#supported-scenarios-for-phone-and-email-write-back)
+    - [Enabling writeback with UserID](#enabling-writeback-with-userid)
+    - [Unsupported scenarios for phone and email write-back](#unsupported-scenarios-for-phone-and-email-write-back)
+  - [Next steps](#next-steps)
 
 ### Retrieving more attributes
 
@@ -238,7 +244,7 @@ Extending this scenario:
 ### Mapping employment status to account status
 
 By default, the Microsoft Entra SuccessFactors connector uses the `activeEmploymentsCount` field of the `PersonEmpTerminationInfo` object to set account status. You may encounter one of the following issues with this attribute. 
-1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. The issue is documented in [knowledge base article 3047486](https://launchpad.support.sap.com/#/notes/3047486). 
+1. There's a known issue where the connector may disable the account of a terminated worker one day prior to the termination on the last day of work. 
 1. If the `PersonEmpTerminationInfo` object gets set to null, during termination, then AD account disabling doesn't work because the provisioning engine filters out records where the `personEmpTerminationInfoNav` object is set to null.
 
 If you're running into any of these issues or prefer mapping employment status to account status, you can update the mapping to expand the `emplStatus` field and use the employment status code present in the field `emplStatus.externalCode`. Based on [SAP support note 2505526](https://launchpad.support.sap.com/#/notes/2505526), here's a list of employment status codes that you can retrieve in the provisioning app. 
@@ -412,20 +418,24 @@ If you want to exclude processing of prehires in the Onboarding module, update y
 1. Edit the Source Object scope to apply a scoping filter `userStatus NOT EQUALS`
 1. Save the mapping and validate that the scoping filter works using provisioning on demand. 
 
+> [!NOTE]
+> The connector currently doesn't support retrieving Onboarding users who are in an inactive_external_suite state. These user states occur when new hires initially begin onboarding but later rescind their offer, requiring the cancellation of the onboarding process. There is no workaround for this scenario; it requires out-of-band handling to deactivate users whose onboarding is cancelled.
+
 ### Enabling OData API Audit logs in SuccessFactors
-The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like [Postman](https://www.postman.com/downloads/), set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
+The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like cURL or Graph Explorer, set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
 
 ## Writeback scenarios
 This section covers different write-back scenarios. It recommends configuration approaches based on how email and phone number is set up in SuccessFactors.
 
-### Supported scenarios for phone and email write-back 
+### Supported scenarios for phone and email write-back
+
 | \# | Scenario requirement | Email primary <br> flag value | Business phone <br> primary flag value | Cell phone <br> primary flag value | Business phone <br> mapping | Cell phone <br> mapping |
 |--|--|--|--|--|--|--|
-| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | \[Not Set\] | \[Not Set\] | 
+| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | [Not Set] | [Not Set] | 
 | 2 | * In SuccessFactors, business email and business phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone. | true | true | false | telephoneNumber | mobile | 
 | 3 | * In SuccessFactors, business email and cell phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone | true | false | true |  telephoneNumber | mobile | 
 | 4 | * In SuccessFactors business email is primary. <br> * In Microsoft Entra ID, check if work telephone number is present, if present, then check if mobile number is also present. Mark work telephone number as primary only if mobile number isn't present. | true | Use expression mapping: `IIF(IsPresent([telephoneNumber]), IIF(IsPresent([mobile]),"false", "true"), "false")` | Use expression mapping: `IIF(IsPresent([mobile]),"false", "true")` | telephoneNumber | mobile | 
-| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | \[Not Set\] | 
+| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | [Not Set] | 
 
 * If there's no mapping for phone number in the write-back attribute-mapping, then only email is included in the write-back.
 * During new hire onboarding in Employee Central, business email and phone number may not be available. If setting business email and business phone as primary is mandatory during onboarding, you can set a dummy value for business phone and email during new hire creation. After some time, the write-back app updates the value.
@@ -462,7 +472,8 @@ Usually the *personIdExternal* attribute value in SuccessFactors matches the *us
 ### Unsupported scenarios for phone and email write-back
 * In Employee Central, during onboarding personal email and personal phone is set as primary. The write-back app can't switch this setting and set business email and business phone as primary.
 * In Employee Central, business phone is set as primary. The write-back app can't change this and set cell phone as primary.
-* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used. 
+* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used.
+* The SuccessFactors provisioning connectors, including the write-back connector, are not supported in Microsoft tenants operated by 21Vianet (China).
 
 ## Next steps
 * [Learn how to configure SuccessFactors to Active Directory provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)

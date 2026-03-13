@@ -1,21 +1,16 @@
 ---
 title: Tutorial - Configure Microsoft Entra Verified ID verifier
 description: In this tutorial, you learn how to configure your tenant to verify credentials.
-ms.service: entra-verified-id
-
-author: barclayn
-manager: amycolannino
-ms.author: barclayn
 ms.topic: tutorial
-ms.date: 08/16/2022
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Configure Microsoft Entra Verified ID verifier
 
   
-In [Issue Microsoft Entra Verified ID credentials from an application](verifiable-credentials-configure-issuer.md), you learn how to issue and verify credentials by using the same Microsoft Entra tenant. In a real-world scenario, where the issuer and verifier are separate organizations, the verifier uses *their own* Microsoft Entra tenant to perform the verification of the credential that was issued by the other organization. In this tutorial, you go over the steps needed to present and verify your first verifiable credential: a verified credential expert card.
+In [Issue Microsoft Entra Verified ID credentials from an application](verifiable-credentials-configure-issuer.md), you learn how to issue and verify credentials by using the same Microsoft Entra tenant. In a real-world scenario, where the issuer and verifier are separate organizations, the verifier uses *their own* Microsoft Entra tenant to perform the verification of the credential that issued by the other organization. In this tutorial, you go over the steps needed to present and verify your first verifiable credential: a verified credential expert card.
 
 As a verifier, you unlock privileges to subjects that possess verified credential expert cards. In this tutorial, you run a sample application from your local computer that asks you to present a verified credential expert card, and then verifies it.
 
@@ -34,7 +29,7 @@ In this article, you learn how to:
 - If you want to clone the repository that hosts the sample app, install [Git](https://git-scm.com/downloads).
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
-- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
+- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cant-use-ngrok-what-do-i-do).
 - A mobile device with the latest version of Microsoft Authenticator.
 
 ## Gather tenant details to set up your sample application
@@ -47,7 +42,7 @@ Now that you've set up your Microsoft Entra Verified ID service, you're going to
 
 The following screenshot demonstrates how to copy the required values:
 
-![Screenshot that demonstrates how to copy the required values from Microsoft Entra Verified ID.](media/verifiable-credentials-configure-verifier/tenant-settings.png)
+:::image type="content" source="media/verifiable-credentials-configure-verifier/tenant-settings.png" alt-text="Screenshot that demonstrates how to copy the required values from Microsoft Entra Verified ID.":::
 
 ## Download the sample code
 
@@ -61,7 +56,7 @@ git clone git@github.com:Azure-Samples/active-directory-verifiable-credentials-d
 
 Create a client secret for the registered application you created. The sample application uses the client secret to prove its identity when it requests tokens.
 
-1. In Microsoft Entra ID, go to **App registrations**.
+1. In **Microsoft Entra ID**, go to **App registrations**.
 
 1. Select the **verifiable-credentials-app** application you created earlier.
 
@@ -69,7 +64,7 @@ Create a client secret for the registered application you created. The sample ap
 
 1. Copy the **Application (client) ID** value, and store it for later. 
 
-    ![Screenshot that shows how to get the app ID.](media/verifiable-credentials-configure-verifier/get-app-id.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/get-app-id.png" alt-text="Screenshot that shows how to get the app ID.":::
 
 1. In **App registration details**, from the main menu, under **Manage**, select **Certificates & secrets**.
 
@@ -109,13 +104,13 @@ The following JSON demonstrates a complete *appsettings.json* file:
     "Endpoint": "https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/",
     "VCServiceScope": "3db474b9-6a0c-4840-96ac-1fceb342124f/.default",
     "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "12345678-0000-0000-0000-000000000000",
-    "ClientId": "33333333-0000-0000-0000-000000000000",
-    "ClientSecret": "123456789012345678901234567890",
+    "TenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "ClientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+    "ClientSecret": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "CertificateName": "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]",
     "DidAuthority": "did:web:...your-decentralized-identifier...",
     "CredentialType": "VerifiedCredentialExpert",
-    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/VerifiedCredentialExpert"
+    "CredentialManifest":  "https://verifiedid.did.msidentity.com/v1.0/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/VerifiedCredentialExpert"
   }
 }
 ```
@@ -143,42 +138,42 @@ Now you are ready to present and verify your first verified credential expert ca
 
 1. Open the HTTPS URL generated by ngrok.
 
-    ![Screenshot showing how to get the ngrok public URL.](media/verifiable-credentials-configure-verifier/run-ngrok.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/run-ngrok.png" alt-text="Screenshot showing how to get the ngrok public URL.":::
 
 1. From the web browser, select **Verify Credential**.
 
-    ![Screenshot showing how to verify credential from the sample app.](media/verifiable-credentials-configure-verifier/verify-credential.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/verify-credential.png" alt-text="Screenshot showing how to verify credential from the sample app.":::
 
-1. Using Authenticator, scan the QR code, or scan it directly from your mobile camera.
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
 1. When you see the warning message, *This app or website may be risky*, select **Advanced**. You are seeing this warning because your domain isn't verified. For this tutorial, you can skip the domain registration.  
 
-    ![Screenshot showing how to choose advanced on the risky authenticator app warning.](media/verifiable-credentials-configure-verifier/at-risk.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/at-risk.png" alt-text="Screenshot showing how to choose advanced on the risky authenticator app warning.":::
     
 
 1. At the risky website warning, select **Proceed anyways (unsafe)**.  
  
-    ![Screenshot showing how to proceed with the risky warning.](media/verifiable-credentials-configure-verifier/proceed-anyway.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/proceed-anyway.png" alt-text="Screenshot showing how to proceed with the risky warning.":::
 
 1. Approve the request by selecting **Allow**.
 
-    ![Screenshot showing how to approve the presentation request.](media/verifiable-credentials-configure-verifier/approve-presentation-request.jpg)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/approve-presentation-request.jpg" alt-text="Screenshot showing how to approve the presentation request.":::
 
 1. After you approve the request, you can see that the request has been approved. You can also check the log. To see the log, select the verifiable credential.
 
-    ![Screenshot showing a verified credential expert card.](media/verifiable-credentials-configure-verifier/verifable-credential-info.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/verifable-credential-info.png" alt-text="Screenshot showing a verified credential expert card.":::
 
 1. Then select **Recent Activity**.  
 
-    ![Screenshot showing the recent activity button that takes you to the credential history.](media/verifiable-credentials-configure-verifier/verifable-credential-history.jpg)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/verifable-credential-history.jpg" alt-text="Screenshot showing the recent activity button that takes you to the credential history.":::
 
 1. **Recent Activity** shows you the recent activities of your verifiable credential.
 
-    ![Screenshot showing the history of the verifiable credential.](media/verifiable-credentials-configure-issuer/verify-credential-history.jpg)
+    :::image type="content" source="media/verifiable-credentials-configure-issuer/verify-credential-history.jpg" alt-text="Screenshot showing the history of the verifiable credential.":::
 
 1. Go back to the sample app. It shows you that the presentation of the verifiable credentials was received.
 
-    ![Screenshot showing that the presentation of the verifiable credentials was received.](media/verifiable-credentials-configure-verifier/presentation-received.png)
+    :::image type="content" source="media/verifiable-credentials-configure-verifier/presentation-received.png" alt-text="Screenshot showing that the presentation of the verifiable credentials was received.":::
 
 ## Next steps
 

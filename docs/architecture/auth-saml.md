@@ -1,15 +1,9 @@
 ---
 title: SAML authentication with Microsoft Entra ID
 description: Architectural guidance on achieving SAML authentication with Microsoft Entra ID
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/26/2024
-ms.author: jricketts
-ms.reviewer: ajburnle
+ms.subservice: architecture
 ---
 
 # SAML authentication with Microsoft Entra ID

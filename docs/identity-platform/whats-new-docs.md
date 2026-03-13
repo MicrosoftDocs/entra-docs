@@ -2,10 +2,9 @@
 title: "What's new in the Microsoft identity platform docs"
 description: "New and updated articles in the Microsoft identity platform documentation."
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 03/01/2024
+ms.date: 01/10/2026
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,27 +15,19 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## February
+## December 2025
 
 ### Updated articles
 
-- [Custom authentication extensions for attribute collection start and submit events (preview)](custom-extension-attribute-collection.md) - Adding custom authentication extensions: Split issuer
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Adding custom authentication extensions: Split issuer
-- [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
-- [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
+- [Tutorial: Set up an ASP.NET Core web app that authenticates users](tutorial-web-app-dotnet-prepare-app.md) - The update improved content clarity.
+- [Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform](tutorial-web-app-python-flask-sign-in-out.md) - The update improved content clarity.
 
-## January 2024
+## November 2025
 
 ### New articles
 
-- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
+- [Content Security Policy overview for Microsoft Entra ID](content-security-policy.md)
 
-### Updated articles
+## October 2025
 
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
-
-## December 2023
-
-No new or updated articles.
+We did not publish any updates this month.

@@ -1,13 +1,9 @@
 ---
 title: Manage workflow properties
 description: This article guides a user to editing a workflow's properties using Lifecycle Workflows.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: amycolannino
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 03/12/2026
 ms.custom: template-how-to
 ---
 
@@ -20,8 +16,9 @@ Managing workflows can be accomplished in one of two ways:
 You can update the following basic information without creating a new workflow.
    - display name
    - description
+   - [Administrative Unit Scope](manage-delegate-workflow.md)
    - whether or not it's enabled
-   - Whether or not workflow schedule is enabled
+   - whether or not workflow schedule is enabled
    - task name
    - task description
 
@@ -33,21 +30,21 @@ If done via the Microsoft Entra admin center, the new version is created automat
 
 To edit the properties of a workflow using the Microsoft Entra admin center, you do the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
 1. Here you see a list of all of your current workflows. Select the workflow that you want to edit.
     
     :::image type="content" source="media/manage-workflow-properties/manage-list.png" alt-text="Screenshot of the workflow list.":::
 
-6. To change the display name or description, select **Properties**.
+6. To change the display name, description, or the Administrative unit scope, select **Properties**.
 
     :::image type="content" source="media/manage-workflow-properties/manage-properties.png" alt-text="Screenshot of the basic properties screen.":::
 
-7. Update the display name or description how you want. 
+7. Update the desired properties. 
 > [!NOTE]
-> Display names can not be the same as other existing workflows. They must have their own unique name.
+> Display names cannot be the same as other existing workflows. They must have their own unique name.
 
 8. Select **save**.
 
@@ -64,4 +61,4 @@ To update a workflow via API using Microsoft Graph, see: [Update workflow](/grap
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Check status of a workflows](check-status-workflow.md)
+- [Check status of a workflow](check-status-workflow.md)

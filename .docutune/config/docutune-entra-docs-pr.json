@@ -7,17 +7,33 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [
-    "docs/identity/role-based-access-control/"
-  ],
-  "Exclude": [
-    "docs/architecture/"
+  "Exclude": [],
+  "RemoveTermSets": [
+    "*au-administrative-unit*",
+    "*guest-user*",
+    "*microsoft-brands-microsoft*",
+    "*right-click*",
+    "*and-then-click*",
+    "*had-had*",
+    "*single-backtick*",
+    "*incorrect-backtick-spacing*",
+    "*-caution-*",
+    "*cloudsimple*",
+    "*-crm-*",
+    "*-crud-*",
+    "*-mdm-*",
+    "*-mvc-*",
+    "*-mvp-*",
+    "*september-october-november*",
+    "product-azure-app-service",
+    "invalid-product-microsoft-visual-studio-vs",
+    "casing-prefixes-0026"
   ],
   "PreloadTOCFiles": [
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
-    "Bundle-Standard.txt",
+    "Bundle-EverGreen.txt",
     "Bundle-Cloud.txt"
   ],
   "ApplyPolicies": []

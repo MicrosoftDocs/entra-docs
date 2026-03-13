@@ -1,22 +1,17 @@
 ---
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: amycolannino
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/23/2023
-ms.author: justinha
+ms.date: 03/14/2025
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Harden a Microsoft Entra Domain Services managed domain
 
-By default, Microsoft Entra Domain Services enables the use of ciphers such as NTLM v1 and TLS v1. These ciphers may be required for some legacy applications, but are considered weak and can be disabled if you don't need them. If you have on-premises hybrid connectivity using Microsoft Entra Connect, you can also disable the synchronization of NTLM password hashes.
+By default, Microsoft Entra Domain Services enables the use of ciphers such as NTLM v1 and TLS v1. These ciphers may be required for some legacy applications, but are considered weak and should be disabled if you don't need them. If you have on-premises hybrid connectivity using Microsoft Entra Connect, you can also disable the synchronization of NTLM password hashes.
 
-This article shows you how to harden a managed domain by using setting setting such as: 
+This article shows you how to harden a managed domain by using settings such as: 
 
 - Disable NTLM v1 and TLS v1 ciphers
 - Disable NTLM password hash synchronization
@@ -30,7 +25,7 @@ This article shows you how to harden a managed domain by using setting setting s
 To complete this article, you need the following resources:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
@@ -88,18 +83,20 @@ Next, define *DomainSecuritySettings* to configure the following security option
 1. Disable NTLM v1 support.
 2. Disable the synchronization of NTLM password hashes from your on-premises AD.
 3. Disable TLS v1.
+4. Disable Kerberos RC4 Encryption.
+5. Enable Kerberos Armoring.
 
 > [!IMPORTANT]
 > Users and service accounts can't perform LDAP simple binds if you disable NTLM password hash synchronization in the Domain Services managed domain. If you need to perform LDAP simple binds, don't set the *"SyncNtlmPasswords"="Disabled";* security configuration option in the following command.
 
 ```powershell
-$securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled";"KerberosRc4Encryption"="Disabled";"KerberosArmoring"="Disabled"}}
+$securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled";"KerberosRc4Encryption"="Disabled";"KerberosArmoring"="Enabled"}}
 ```
 
 Finally, apply the defined security settings to the managed domain using the [Set-AzResource][Set-AzResource] cmdlet. Specify the Domain Services resource from the first step, and the security settings from the previous step.
 
 ```powershell
-Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion “2021-03-01” -Verbose -Force
+Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion "2021-03-01" -Verbose -Force
 ```
 
 It takes a few moments for the security settings to be applied to the managed domain.

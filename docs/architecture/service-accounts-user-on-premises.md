@@ -1,14 +1,9 @@
 ---
 title: Secure user-based service accounts in Active Directory
 description: Learn how to locate, assess, and mitigate security issues for user-based service accounts
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/09/2023
-ms.author: jricketts
-ms.reviewer: ajburnle
+ms.subservice: architecture
 ---
 
 # Secure user-based service accounts in Active Directory

@@ -1,14 +1,10 @@
 ---
 title: Network topology considerations for Microsoft Entra application proxy
-description: Covers network topology considerations when using Microsoft Entra application proxy.
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/27/2024
-ms.author: kenwith
+description: Learn about network topology considerations when using Microsoft Entra application proxy.
+ms.topic: how-to
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Optimize traffic flow with Microsoft Entra application proxy
@@ -20,8 +16,8 @@ Learn how to optimize traffic flow and network topology considerations when usin
 When an application is published through Microsoft Entra application proxy, traffic from the users to the applications flows through three connections:
 
 1. The user connects to the Microsoft Entra application proxy service public endpoint on Azure
-1. The application proxy connector connects to the application proxy service (outbound)
-1. The application proxy connector connects to the target application
+1. The private network connector connects to the application proxy service (outbound)
+1. The private network connector connects to the target application
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-three-hops.png" alt-text="Diagram showing traffic flow from user to target application." lightbox="./media/application-proxy-network-topology/application-proxy-three-hops.png":::
 
@@ -29,18 +25,18 @@ When an application is published through Microsoft Entra application proxy, traf
 
 When you sign up for a Microsoft Entra tenant, the region of your tenant is set with the region you choose. The **default** application proxy cloud service instances use the same, or closest, region as your Microsoft Entra tenant.
 
-For example, if your Microsoft Entra tenant's region is the United Kingdom, all your application proxy connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
+For example, if your Microsoft Entra tenant's region is the United Kingdom, all your private network connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
 
-If you have connectors installed in regions different from your default region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. Once a region is specified for a connector group, it connects to application proxy cloud services in the designated region.
+If you have connectors installed in regions different from your default region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. After a region is specified for a connector group, it connects to application proxy cloud services in the designated region.
 
-In order to optimize the traffic flow and reduce latency to a connector group, assign the connector group to the closest region. To assign a region:
+To optimize the traffic flow and reduce latency to a connector group, assign the connector group to the closest region. To assign a region:
 
 > [!IMPORTANT]
 > Connectors must be using at least version 1.5.1975.0 to use this capability.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **New Connector Group** and provide a **Name** for the connector group.
 1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors and then select **Save**.
 
@@ -73,9 +69,9 @@ When setting up the application proxy service, ask the following questions:
 - Where is the application proxy instance located?
 - Do you already have a dedicated network connection to Microsoft data centers set up, like Azure ExpressRoute or a similar VPN?
 
-The connector must communicate with both Microsoft Entra and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
+The connector must communicate with both Microsoft Entra ID and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
 
-- Confirm "line of site" between the connector and the data center for Kerberos Constrained Delegation (KCD). Additionally, the connector server needs to be domain joined.
+- Confirm "line of sight" between the connector and the data center for Kerberos Constrained Delegation (KCD). Additionally, the connector server needs to be domain joined.
 - Install the connector as close to the application as possible.
 
 ### General approach to minimize latency
@@ -88,13 +84,13 @@ Consider using a dedicated VPN or ExpressRoute link between Microsoft and your c
 
 ## Focus your optimization strategy
 
-There's little that you can do to control the connection between your users and the application proxy service. Users access your apps from a home network, a coffee shop, or a different region. Instead, you can optimize the connections from the application proxy service to the application proxy connectors to the apps. Consider incorporating the following patterns in your environment.
+There's little that you can do to control the connection between your users and the application proxy service. Users access your apps from a home network, a coffee shop, or a different region. Instead, you can optimize the connections from the application proxy service to the private network connectors to the apps. Consider incorporating the following patterns in your environment.
 
 ### Pattern 1: Put the connector close to the application
 
 Place the connector close to the target application in the customer network. This configuration minimizes step 3 in the topography diagram, because the connector and application are close.
 
-If your connector needs a line of sight to the domain controller, then this pattern is advantageous. Most of our customers use this pattern, because it works well for most scenarios. This pattern can also be combined with pattern 2 to optimize traffic between the service and the connector.
+If your connector needs a line of sight to the domain controller, then this pattern is advantageous. Most customers use this pattern, because it works well for most scenarios. This pattern can also be combined with pattern 2 to optimize traffic between the service and the connector.
 
 ### Pattern 2: Take advantage of ExpressRoute with Microsoft peering
 
@@ -118,13 +114,13 @@ Additionally, consider organizing your connectors using [connector groups](appli
 
 ## Diagrams for common use cases
 
-In this section, we walk through a few common scenarios. Assume that the Microsoft Entra tenant (and therefore proxy service endpoint) is located in the United States (US). The considerations discussed in these use cases also apply to other regions around the globe.
+In this section, this section covers a few common scenarios. Assume that the Microsoft Entra tenant (and therefore proxy service endpoint) is located in the United States (US). The considerations discussed in these use cases also apply to other regions around the globe.
 
-For these scenarios, we call each connection a "hop" and number them for easier discussion:
+For these scenarios, each connection is called a "hop" and number them for easier discussion:
 
 - **Hop 1**: User to the application proxy service
-- **Hop 2**: application proxy service to the application proxy connector
-- **Hop 3**: application proxy connector to the target application 
+- **Hop 2**: application proxy service to the private network connector
+- **Hop 3**: private network connector to the target application 
 
 ### Use case 1
 
@@ -166,7 +162,7 @@ If the ExpressRoute link is using Microsoft peering, the traffic between the pro
 
 Place the connector in the Azure datacenter that is connected to the corporate network through ExpressRoute private peering.
 
-The connector can be placed in the Azure datacenter. Since the connector still has a line of sight to the application and the datacenter through the private network, hop 3 remains optimized. In addition, hop 2 is optimized further.
+The connector can be placed in the Azure datacenter. Because the connector still has a line of sight to the application and the datacenter through the private network, hop 3 remains optimized. In addition, hop 2 is optimized further.
 
 :::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern4.png" alt-text="Connector in Azure datacenter, ExpressRoute between connector and app" lightbox="./media/application-proxy-network-topology/application-proxy-pattern4.png":::
 
@@ -191,6 +187,6 @@ You can also consider using one other variant in this situation. If most users i
 ## Next steps
 
 - [Enable application proxy](application-proxy-add-on-premises-application.md)
-- [Enable single-sign on](how-to-configure-sso-with-kcd.md)
-- [Enable Conditional Access](./application-proxy-integrate-with-sharepoint-server.md)
+- [Enable single sign-on](how-to-configure-sso-with-kcd.md)
+- [Integrate with SharePoint (Kerberos)](./application-proxy-integrate-with-sharepoint-server.md)
 - [Troubleshoot issues you're having with application proxy](application-proxy-troubleshoot.md)

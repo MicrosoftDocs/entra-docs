@@ -2,14 +2,14 @@
 title: Issues on Internet Explorer (MSAL.js)
 description: Use the Microsoft Authentication Library for JavaScript (MSAL.js) with Internet Explorer browser.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 12/01/2021
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about issues with MSAL.js library so I can decide if this platform meets my application development needs and requirements.
 ---
 
@@ -38,7 +38,7 @@ Deploying your application to production (for instance in Azure Web apps) normal
 
 ### Running locally
 
-To debug your application locally, temporarily disable Internet Explorer's _Protected Mode_ during your debugging session.
+To debug your application locally, temporarily disable Internet Explorer's *Protected Mode* during your debugging session.
 
   1. In Internet Explorer, select **Tools** > **Internet Options** > **Security** tab > **Internet** zone.
   1. Clear the **Enable Protected Mode (requires restarting Internet Explorer)** checkbox.

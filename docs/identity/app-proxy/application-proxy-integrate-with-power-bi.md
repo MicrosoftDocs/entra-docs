@@ -1,15 +1,11 @@
 ---
 title: Enable remote access to Power BI with Microsoft Entra application proxy
-description: Covers the basics about how to integrate an on-premises Power BI with Microsoft Entra application proxy.
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Learn how to integrate an on-premises Power BI with Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 02/06/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
+ai-usage: ai-assisted
 ---
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
@@ -20,18 +16,18 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 - Deploy Reporting Services in your environment.
 - Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
-- When possible, use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
+- When possible, use the same internal and external domains for Power BI. For more information about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
-For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). The application proxy connector uses KCD to obtain a Windows token for a user, even if the user isn't signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
+For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). The private network connector uses KCD to obtain a Windows token for a user, even if the user isn't signed into Windows directly. For more information about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
 
 There isn’t much to configure on the Reporting Services side. A valid Service Principal Name (SPN) is required for proper Kerberos authentication to occur. Enable the Reporting Services server for `Negotiate` authentication.
 
 ### Configure the Service Principal Name (SPN)
 
 The SPN is a unique identifier for a service that uses Kerberos authentication. A proper HTTP SPN is required for the report server. For information on how to configure the proper Service Principal Name (SPN) for your report server, see [Register a Service Principal Name (SPN) for a Report Server](/sql/reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server).
-Verify the SPN was added by running the `Setspn` command with the `-L` option. To learn more about the command, see [Setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx).
+Verify the SPN was added by running the `Setspn` command with the `-L` option. For more information about the command, see [Setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx).
 
 ### Enable Negotiate authentication
 
@@ -48,7 +44,7 @@ To enable a report server to use Kerberos authentication, configure the Authenti
 For more information, see [Modify a Reporting Services Configuration File](/sql/reporting-services/report-server/modify-a-reporting-services-configuration-file-rsreportserver-config) and [Configure Windows Authentication on a Report Server](/sql/reporting-services/security/configure-windows-authentication-on-the-report-server).
 
 ### Ensure the connector is trusted for delegation to the SPN added to the Reporting Services application pool account
-Configure KCD so that the Microsoft Entra application proxy service can delegate user identities to the Reporting Services application pool account. Configure the application proxy connector to retrieve Kerberos tickets for Microsoft Entra ID authenticated users. The server passes the context to the Reporting Services application.
+Configure KCD so that the Microsoft Entra application proxy service can delegate user identities to the Reporting Services application pool account. Configure the private network connector to retrieve Kerberos tickets for Microsoft Entra ID authenticated users. The server passes the context to the Reporting Services application.
 
 To configure KCD, repeat the following steps for each connector machine:
 
@@ -112,7 +108,7 @@ Configure the Application Registration that was automatically created in step 2.
    - `msauth://com.microsoft.powerbim/izba1HXNWrSmQ7ZvMXgqeZPtNEU%3D`
 
    > [!IMPORTANT]
-   > The redirect URIs must be added for the application to work correctly. If you are configuring the app for both Power BI Mobile iOS and Android, add the redirect URI of type Public Client (Mobile & Desktop) to the list of redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
+   > The redirect URIs must be added for the application to work correctly. If you're configuring the app for both Power BI Mobile iOS and Android, add the redirect URI of type Public Client (Mobile & Desktop) to the list of redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
 
 ## Step 4: Connect from the Power BI Mobile App
 
@@ -128,7 +124,7 @@ Configure the Application Registration that was automatically created in step 2.
 
 You can use Microsoft Intune to manage the client apps that your company's workforce uses. Intune provides capabilities such as data encryption and access requirements. Enable the Power BI mobile application with the Intune policy.
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the application configured in Step 3 when registering your native client application.
 1. On the application’s page, select **API Permissions**.
 1. Select **Add a permission**.
@@ -139,9 +135,9 @@ You can use Microsoft Intune to manage the client apps that your company's workf
 
 ## Troubleshooting
 
-If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the timeout setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end timeout to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
+If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the time-out setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end time-out to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
 
-Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
+Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on-premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
 
 ## Next steps
 

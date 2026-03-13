@@ -1,15 +1,10 @@
 ---
 title: include file
 description: include file for confidential client scenario landing pages (daemon, web app, web API)
-
 author: OwenRichards1
-manager: CelesteDG
-
+manager: pmwongera
 ms.service: identity-platform
-
 ms.topic: include
-ms.tgt_pltfrm: na
-
 ms.date: 08/14/2020
 ms.author: owenrichards
 ms.reviewer: jmprieur
@@ -25,8 +20,8 @@ You can add credentials to your client app's registration by using the [Azure po
 
 To add credentials to your confidential client application's app registration, follow the steps in [Quickstart: Register an application with the Microsoft identity platform](../../quickstart-register-app.md) for the type of credential you want to add:
 
-* [Add a client secret](../../quickstart-register-app.md#add-a-client-secret)
-* [Add a certificate](../../quickstart-register-app.md#add-a-certificate)
+* [Add a client secret](../../quickstart-register-app.md?tabs=client-secret)
+* [Add a certificate](../../quickstart-register-app.md?tabs=certificate)
 
 ### Add client credentials by using PowerShell
 

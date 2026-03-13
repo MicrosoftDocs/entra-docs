@@ -1,16 +1,10 @@
 ---
 title: 'Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest'
 description: Learn how to set up a hybrid identity environment by using pass-through authentication to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 09/29/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Use pass-through authentication for hybrid identity in a single Active Directory forest
@@ -34,10 +28,10 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- A computer with [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed. We suggest that you install Hyper-V on a [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) or [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) computer.
-- An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+- A computer with [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed. We suggest that you install Hyper-V on a [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) or [Windows Server 2025](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) computer.
+- An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 - An [external network adapter](/virtualization/hyper-v-on-windows/quick-start/connect-to-network), so the virtual machine can connect to the internet.
-- A copy of Windows Server 2016.
+- A copy of Windows Server 2025 or Windows Server 2022.
 - A [custom domain](~/fundamentals/add-custom-domain.md) that can be verified.
 
 > [!NOTE]
@@ -196,7 +190,7 @@ Next, create a test user account. Create this account in your on-premises Active
 
 ## Create a Microsoft Entra tenant
 
-If you dont have one, follow the steps in the article [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md) to create a new tenant.
+If you don't have one, follow the steps in the article [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md) to create a new tenant.
 
 <a name='create-a-hybrid-identity-administrator-in-azure-ad'></a>
 
@@ -207,7 +201,7 @@ The next task is to create a Hybrid Identity Administrator account. This account
 To create the Hybrid Identity Administrator account:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Users** > **All users**
+1. Browse to **Entra ID** > **Users**
 1. Select **New user** > **Create new user**.
 1. In the **Create new user** pane, enter a **Display name** and a **User principal name** for the new user. You're creating your Hybrid Identity Administrator account for the tenant. You can show and copy the temporary password.
    1. Under **Assignments**, select **Add role**, and select **Hybrid Identity Administrator**. 
@@ -221,7 +215,7 @@ Now that you have a tenant and a Hybrid Identity Administrator account, add your
 To add a custom domain name to a directory:
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Settings** > **Domain names**.
+1. Browse to **Entra ID** > **Domain names**.
 1. Select **Add custom domain**.
 
    :::image type="content" source="media/tutorial-passthrough-authentication/custom1.png" alt-text="Screenshot that shows the Add custom domain button highlighted.":::
@@ -249,7 +243,6 @@ Now it's time to download and install Microsoft Entra Connect. After it's instal
 1. In **Install required components**, select **Install**.
 1. In **User sign-in**, select **Pass-through authentication** and **Enable single sign-on**, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-passthrough-authentication/pta1.png" alt-text="Screenshot that shows where to select Pass-through authentication.":::
 1. In **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account you created earlier, and then select **Next**.
 1. In **Connect your directories**, select **Add directory**. Then select **Create new AD account** and enter the contoso\Administrator username and password. Select **OK**.
 1. Select **Next**.
@@ -270,7 +263,7 @@ Now you'll verify that the users in your on-premises Active Directory tenant hav
 To verify that the users are synced:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Users** > **All users**
+1. Browse to **Entra ID** > **Users**
 1. Verify that the new users appear in your tenant.
 
    :::image type="content" source="media/tutorial-passthrough-authentication/sync1.png" alt-text="Screenshot that shows verifying that users were synced in Microsoft Entra ID.":::

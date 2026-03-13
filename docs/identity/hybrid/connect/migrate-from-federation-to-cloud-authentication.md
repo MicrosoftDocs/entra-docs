@@ -1,21 +1,15 @@
 ---
 title: Migrate from federation to cloud authentication in Microsoft Entra ID
 description: This article has information about moving your hybrid identity environment from federation to cloud authentication
-
-
-ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: conceptual
-ms.date: 11/06/2023
-ms.author: billmath
+ms.topic: upgrade-and-migration-article
+ms.date: 04/09/2025
 author: gargi-sinha
-manager: amycolannino
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Migrate from federation to cloud authentication  
 
-In this article, you learn how to deploy cloud user authentication with either Microsoft Entra ID [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
+In this article, you learn how to deploy cloud user authentication with either Microsoft Entra [Password hash synchronization (PHS)](whatis-phs.md) or [Pass-through authentication (PTA)](how-to-connect-pta.md). While we present the use case for moving from [Active Directory Federation Services (AD FS)](whatis-fed.md) to cloud authentication methods, the guidance substantially applies to other on premises systems as well.
 
 Before you continue, we suggest that you review our guide on [choosing the right authentication method](choose-ad-authn.md) and compare methods most suitable for your organization.
 
@@ -23,13 +17,11 @@ We recommend using PHS for cloud authentication.
 
 ## Staged rollout
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
-Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
+Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
 
 Refer to the staged rollout implementation plan to understand the [supported](how-to-connect-staged-rollout.md#supported-scenarios) and [unsupported scenarios](how-to-connect-staged-rollout.md#unsupported-scenarios). We recommend using staged rollout to test before cutting over domains.
-
-To learn how to configure staged rollout, see the [staged rollout interactive guide](https://mslearn.cloudguides.com/guides/Test%20migration%20to%20cloud%20authentication%20using%20staged%20rollout%20in%20Azure%20AD) migration to cloud authentication using staged rollout in Microsoft Entra ID).
 
 ## Migration process flow
 
@@ -54,7 +46,7 @@ Install [Microsoft Entra Connect](https://www.microsoft.com/download/details.asp
 To find your current federation settings, run [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true).
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainID yourdomain.com
+Get-MgDomainFederationConfiguration -DomainID yourdomain.com
 ```
 
 Verify any settings that might have been customized for your federation design and deployment documentation. Specifically, look for customizations in **PreferredAuthenticationProtocol**, **federatedIdpMfaBehavior**, **SupportsMfa** (if **federatedIdpMfaBehavior** isn't set), and **PromptLoginBehavior**.
@@ -124,7 +116,7 @@ Evaluate if you're currently using Conditional Access for authentication, or if 
 
 Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](~/identity/conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
 
-**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 ### Plan support for MFA
 
@@ -163,9 +155,9 @@ This section includes prework before you switch your sign-in method and convert 
 
 Create groups for staged rollout and also for Conditional Access policies if you decide to add them.
 
-We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.md), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
+We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](/entra/fundamentals/how-to-manage-groups), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
-The members in a group are automatically enabled for staged rollout. Nested and dynamic groups aren't supported for staged rollout.
+The members in a group are automatically enabled for staged rollout. Nested and dynamic membership groups aren't supported for staged rollout.
 
 ### Prework for SSO
 
@@ -300,8 +292,6 @@ For most customers, two or three authentication agents are sufficient to provide
 
 4. Run the authentication agent installation. During installation, you must enter the credentials of a Global Administrator account.
 
-    ![Microsoft Entra Connect Authentication Agent](media/deploy-cloud-user-authentication/install-azure-ad-connect-installation-agent.png)
-
 5. When the authentication agent is installed, you can return to the PTA health page to check the status of the more agents.
 
 #### Option B
@@ -332,7 +322,7 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
 
     ![Pass-through authentication settings](media/deploy-cloud-user-authentication/pass-through-authentication-settings.png)
 
-   If the authentication agent isn't active, complete these [troubleshooting steps](tshoot-connect-pass-through-authentication.md) before you continue with the domain conversion process in the next step. You risk causing an authentication outage if you convert your domains before you validate that your PTA agents are successfully installed and that their status is **Active** in the [Microsoft Entra admin center](https://entra.microsoft.com).
+   If the authentication agent isn't active, complete these [troubleshooting steps](tshoot-connect-pass-through-authentication.md) before you continue with the domain conversion process in the next step. You risk causing an authentication outage if you convert your domains before you validate that your PTA agents are successfully installed and that their status is **Active** in the [Microsoft Entra admin center](https://entra.microsoft.com). 
 
 3. [Deploy more authentication agents](#deploy-more-authentication-agents-for-pta).
 
@@ -362,6 +352,8 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
     ```powershell
     Get-MgDomain -DomainId yourdomain.com
     ```
+To ensure that Microsoft Entra Connect recognizes pass-through authentication as enabled after converting your domain to managed authentication, update the sign-in method settings in Microsoft Entra Connect to reflect the changes. Refer to [Microsoft Entra pass-through authentication documentation](how-to-connect-pta.md) for additional details. 
+
 ## Complete your migration
 
 Complete the following tasks to verify the sign-up method and to finish the conversion process.
@@ -423,7 +415,7 @@ Migration requires assessing how the application is configured on-premises, and 
 
 > [!VIDEO https://www.youtube.com/embed/D0M-N-RQw0I]
 
-If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or Oauth protocol, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md).
+If you plan to keep using AD FS with on-premises & SaaS Applications using SAML / WS-FED or OAuth protocols, you'll use both AD FS and Microsoft Entra ID after you convert the domains for user authentication. In this case, you can protect your on-premises applications and resources with Secure Hybrid Access (SHA) through [Microsoft Entra application proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or one of [Microsoft Entra ID partner integrations](~/identity/enterprise-apps/secure-hybrid-access.md). Using Application Proxy or one of our partners can provide secure remote access to your on-premises applications. Users benefit by easily connecting to their applications from any device after a [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-sso.md). For more information, see [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md).
 
 You can move SaaS applications that are currently federated with ADFS to Microsoft Entra ID. Reconfigure to authenticate with Microsoft Entra ID either via a built-in connector from the [Azure App gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps), or by [registering the application in Microsoft Entra ID](~/identity-platform/quickstart-register-app.md).
 

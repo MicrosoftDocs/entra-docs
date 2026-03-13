@@ -1,14 +1,10 @@
 ---
 title: Control external access to resources in Microsoft Entra ID with sensitivity labels
 description: Use sensitivity labels as a part of your overall security plan for external access
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/23/2023
-ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
+ms.subservice: architecture
 ---
 
 # Control external access to resources in Microsoft Entra ID with sensitivity labels
@@ -41,11 +37,10 @@ Sensitivity labels on containers can restrict access to the container, but conte
 
 Team members who need to create sensitivity labels require permissions to:
 
-- Microsoft 365 Defender portal,
-- Microsoft Purview compliance portal, or
-- [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center?view=o365-worldwide&preserve-view=true)
+- Microsoft 365 Defender portal or
+- [Microsoft Purview portal](/purview/purview-portal?view=o365-worldwide&preserve-view=true)
 
-By default, tenant Global Administrators have access to admin centers and can provide access, without granting tenant Admin permissions. For this delegated limited admin access, add users to the following role groups:
+By default, [Global Administrators](../identity/role-based-access-control/permissions-reference.md#global-administrator) have access to admin centers and can provide access, without granting tenant Admin permissions. For this delegated limited admin access, add users to the following role groups:
 
 - Compliance Data Administrator,
 - Compliance Administrator, or

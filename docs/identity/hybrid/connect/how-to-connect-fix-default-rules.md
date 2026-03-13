@@ -2,15 +2,11 @@
 title: 'How to fix modified default rules - Microsoft Entra Connect'
 description: Learn how to fix modified default rules that come with Microsoft Entra Connect.
 
-author: billmath
-manager: amycolannino
 ms.reviewer: darora10
-ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
 ---
 
 # Fix modified default rules in Microsoft Entra Connect

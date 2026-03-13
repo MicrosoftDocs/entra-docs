@@ -1,14 +1,10 @@
 ---
 title: 'What is password hash synchronization with Microsoft Entra ID?'
 description: Describes password hash synchronization.
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # What is password hash synchronization with Microsoft Entra ID?
@@ -33,7 +29,7 @@ Optionally, you can set up password hash synchronization as a backup if you deci
 
 To use password hash synchronization in your environment, you need to:
 
-* Install Microsoft Entra Connect.  
+* Install the Microsoft Entra Cloud Sync agent.  
 * Configure directory synchronization between your on-premises Active Directory instance and your Microsoft Entra instance.
 * Enable password hash synchronization.
 

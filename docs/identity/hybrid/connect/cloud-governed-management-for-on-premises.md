@@ -1,16 +1,11 @@
 ---
 title: 'Microsoft Entra Cloud Governed Management for On-Premises Workloads - Azure'
 description: This topic describes cloud governed management for on-premises workloads.
-
-author: billmath
-manager: amycolannino
-ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
-ms.date: 11/06/2023
+ms.topic: concept-article
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # How Microsoft Entra ID Delivers Cloud Governed Management for On-Premises Workloads
@@ -56,7 +51,7 @@ Microsoft Entra ID improves the management for an organization's on-premises Act
 
 For many organizations, the first step in managing access from the cloud for on-premises AD-integrated web and remote desktop-based applications is to deploy the [application proxy](/entra/identity/app-proxy) in front of those applications to provide secure remote access.
 
-After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/require-tou.md) before being able to access an application.
+After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/policy-all-users-require-terms-of-use.md) before being able to access an application.
 
 ![Application proxy architecture](media/cloud-governed-management-for-on-premises/image2.png)
 
@@ -64,9 +59,7 @@ After a single sign-on to Microsoft Entra ID, users can access both cloud and on
 
 Identity governance helps organizations achieve a balance between *productivity* --- how quickly can a person have access to the resources they need, such as when they join the organization? --- and *security* --- how should their access change over time, such as when that person's employment status changes? Identity lifecycle management is the foundation for identity governance, and effective governance at scale requires modernizing the identity lifecycle management infrastructure for applications.
 
-For many organizations, identity lifecycle for employees is tied to the representation of that user in a human capital management (HCM) system. For organizations using Workday as their HCM system, Microsoft Entra ID can ensure user accounts in AD are [automatically provisioned and deprovisioned for workers in Workday](~/identity/saas-apps/workday-inbound-tutorial.md). Doing so leads to improved user productivity through automation of birthright accounts and manages risk by ensuring application access is automatically updated when a user changes roles or leaves the organization. The Workday-driven user provisioning [deployment plan](https://aka.ms/WorkdayDeploymentPlan) is a step-by-step guide that walks organizations through the best practices implementation of Workday to Active Directory User Provisioning solution in a five-step process.
-
-Microsoft Entra ID P1 or P2 also includes Microsoft Identity Manager, which can import records from other on-premises HCM systems, including SAP, Oracle eBusiness, and Oracle PeopleSoft.
+For many organizations, identity lifecycle for employees is tied to the representation of that user in a human capital management (HCM) system. For organizations using Workday as their HCM system, Microsoft Entra ID can ensure user accounts in AD are [automatically provisioned and deprovisioned for workers in Workday](~/identity/saas-apps/workday-inbound-tutorial.md). Doing so leads to improved user productivity through automation of birthright accounts and manages risk by ensuring application access is automatically updated when a user changes roles or leaves the organization. The Workday-driven user provisioning [deployment plan](https://aka.ms/WorkdayDeploymentPlan) is a step-by-step guide that walks organizations through the best practices implementation of Workday to Active Directory User Provisioning solution in a five-step process. Organizations can also use [SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), [SAP HCM](~/identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md) , [Oracle HCM](~/identity/saas-apps/oracle-hcm-provisioning-tutorial.md), [Rippling HCM](~/identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md), [Darwinbox](~/identity/saas-apps/darwinbox-entra-integration-tutorial.md), or [other HCM systems](~/identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
 Business-to-business collaboration increasingly requires granting access to people outside your organization. [Microsoft Entra B2B](~/external-id/index.yml) collaboration enables organizations to securely share their applications and services with guest users and external partners while maintaining control over their own corporate data.
 
@@ -104,7 +97,7 @@ Organizations need a process to manage access that is scalable. Users continue t
 
 Typically, IT delegates access approval decisions to business decision makers. Furthermore, IT can involve the users themselves. For example, users that access confidential customer data in a company's marketing application in Europe need to know the company's policies. Guest users also may be unaware of the handling requirements for data in an organization to which they've been invited.
 
-Organizations can automate the access lifecycle process through technologies such as [dynamic groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
+Organizations can automate the access lifecycle process through technologies such as [dynamic membership groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
 ## Future directions
 

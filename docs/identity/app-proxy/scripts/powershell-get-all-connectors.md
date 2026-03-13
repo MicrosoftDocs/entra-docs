@@ -1,31 +1,27 @@
 ---
-title: PowerShell sample - List all Microsoft Entra application proxy connector groups
-description: PowerShell example that lists all Microsoft Entra application proxy connector groups and connectors in your directory.
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
+title: PowerShell sample - List all Microsoft Entra private network connector groups
+description: PowerShell example that lists all Microsoft Entra private network connector groups and connectors in your directory.
 ms.custom: 
 ms.topic: sample
-ms.date: 02/27/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
-# Get all application proxy connector groups and connectors in the directory
+# Get all private network connector groups and connectors in the directory
 
-The PowerShell script example lists all Microsoft Entra application proxy connector groups and connectors in your directory.
+The PowerShell script example lists all Microsoft Entra private network connector groups and connectors in your directory.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
-Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
+This sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
 ## Sample script
 
 ```powershell
-# This sample script gets all Microsoft Entra application proxy connector groups with the included connectors.
+# This sample script gets all Microsoft Entra private network connector groups with the included connectors.
 #
 # Version 1.0
 #
@@ -35,8 +31,8 @@ Thie sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mi
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    Required Microsoft Entra role at least Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 
@@ -44,7 +40,7 @@ Import-Module Microsoft.Graph.Beta.Applications
 
 Connect-MgGraph -Scope Directory.Read.All -NoWelcome
 
-Write-Host "Reading Microsoft Entra application proxy connector groups. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
+Write-Host "Reading Microsoft Entra private network connector groups. This operation might take longer..." -BackgroundColor "Black" -ForegroundColor "Green"
 
 $aadapConnectorGroups= Get-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId "applicationProxy" -Top 100000 
 
@@ -71,7 +67,7 @@ foreach ($item in $aadapConnectorGroups) {
 }  
 
 Write-Host ("")
-Write-Host ("Number of Microsoft Entra application proxy connector Groups: $CountOfConnectorGroups")
+Write-Host ("Number of Microsoft Entra private network connector Groups: $CountOfConnectorGroups")
 Write-Host ("")
 Write-Host ("Finished.") -BackgroundColor "Black" -ForegroundColor "Green"
 Write-Host "To disconnect from Microsoft Graph, please use the Disconnect-MgGraph cmdlet."

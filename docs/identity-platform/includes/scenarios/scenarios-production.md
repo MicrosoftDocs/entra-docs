@@ -1,16 +1,10 @@
 ---
 title: include file
 description: include file
-
 author: OwenRichards1
-manager: CelesteDG
-editor: ''
-
+manager: pmwongera
 ms.service: identity-platform
-
 ms.topic: include
-ms.tgt_pltfrm: na
-
 ms.date: 05/07/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur
@@ -28,7 +22,7 @@ To help in debugging and authentication failure troubleshooting scenarios, the M
         - [Logging in MSAL.js](../../msal-logging-js.md)
     :::column-end:::
     :::column:::
-        - [Logging in MSAL for iOS/macOS](../../msal-logging-ios.md)
+        - [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios)
         - [Logging in MSAL for Java](/entra/msal/java/advanced/msal-logging-java)
         - [Logging in MSAL for Python](/entra/msal/python/advanced/msal-logging-python)
     :::column-end:::

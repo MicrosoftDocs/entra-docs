@@ -1,0 +1,49 @@
+### YamlMime:FAQ
+metadata:
+  title: Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
+  description: This document describes frequently asked questions for cloud sync.
+  author: omondiatieno
+  manager: mwongerapk
+  ms.service: entra-id
+  ms.topic: faq
+  ms.date: 12/17/2024
+  ms.subservice: hybrid-cloud-sync
+  ms.author: jomondi
+  
+title: Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
+summary: |
+  Read about frequently asked questions for provisioning to Active Directory with Microsoft Entra Cloud Sync.
+
+sections:
+  - name: Provisioning groups to Active Directory
+    questions:
+      - question: |
+          Does Group Provision to AD in Microsoft Entra Cloud Sync work side-by-side with other Microsoft Entra Connect Sync capabilities?
+        answer: |
+          Yes, You can use Microsoft Entra Cloud Sync solely for Security Group Provisioning to AD while simultaneously using Connect Sync for syncing AD to Microsoft Entra ID. Any cloud security group that includes users synchronized from AD via Microsoft Entra Connect Sync can be provisioned to Active Directory using Microsoft Entra Cloud Sync and Group Provisioning to AD. 
+          
+          For instance, if there are two users (User A and User B) who are Active Directory Domain Services users and have been synchronized with Microsoft Entra Connect Sync to Microsoft Entra ID, you can create a cloud security group in Microsoft Entra ID called SecurityGroup A. This group can then be provisioned back to AD DS using [Microsoft Entra Cloud Sync - Group Provisioning to Active Directory](../group-writeback-cloud-sync.md).
+      - question:
+          I have Microsoft 365 groups that I provision to AD using Group Writeback feature in Microsoft Entra Connect Sync. Will that continue to work?
+        answer:   
+          Yes, when you uninstall or disable Group Writeback V2 from your Connect Sync configuration, it defaults to Group Writeback V1. This default supports the ability to write back all Microsoft 365 groups in Microsoft Entra ID.
+      - question:
+          What if I want to disable Group Writeback V1 as well?
+        answer:  
+          When you disable Group Writeback V1, the next full sync deletes all the groups that are written by Microsoft Entra Connect Sync to AD. Cloud Security Groups provisioned using Microsoft Entra Cloud Sync won’t be impacted by this operation.
+      - question:
+          Can I continue to use the "Group writeback" field through MS Graph and Microsoft Entra admin center for setting groups in scope for provisioning to AD using Microsoft Entra Cloud Sync?
+        answer:
+          No, this field isn't currently used for determining the scope of groups being provisioned to AD using Cloud Sync. You have to use the Microsoft Entra Cloud Sync configuration experience in the portal to set scope. For more information, see [Using directory extensions with group provisioning to Active Directory](.//tutorial-directory-extension-group-provisioning.md).
+      - question:
+          If I am following the steps outlined in Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync, will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
+        answer:
+          No, following the migration steps for moving from group writeback V2 to Microsoft Entra cloud sync will not affect synchronization between AD and Microsoft Entra ID.
+
+additionalContent: |
+
+  ## Next steps 
+  
+  - [What is provisioning?](../what-is-provisioning.md)
+  - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
+          

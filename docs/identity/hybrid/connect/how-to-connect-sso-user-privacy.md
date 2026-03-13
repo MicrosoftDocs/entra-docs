@@ -3,20 +3,15 @@ title: 'User Privacy and Microsoft Entra seamless single sign-on'
 description: This article deals with Microsoft Entra seamless SSO and GDPR compliance.
 
 keywords: what is Azure AD Connect, GDPR, required components for Azure AD, SSO, Single Sign-on
-author: billmath
-manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
 ---
 # User Privacy and Microsoft Entra seamless single sign-on
 
-[!INCLUDE [Privacy](~/../azure-docs-pr/includes/gdpr-intro-sentence.md)]
+[!INCLUDE [Privacy](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
 ## Overview
 

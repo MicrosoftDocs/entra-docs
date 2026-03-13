@@ -1,15 +1,11 @@
 ---
 title: PowerShell sample - List extended info for Microsoft Entra application proxy apps
 description: PowerShell example that lists all Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), and authentication type (ExternalAuthenticationType).
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/27/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Get all application proxy apps and list extended information
@@ -18,9 +14,9 @@ The PowerShell script example lists information about all Microsoft Entra applic
 
 Changing the value of the `$ssoMode` variable enables a filtered output by SSO mode. Further details are documented in the script.
 
-[!INCLUDE [quickstarts-free-trial-note](~/../azure-docs-pr/includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az](~/../azure-docs-pr/includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](~/includes/azure-docs-pr/updated-for-az.md)]
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
@@ -37,7 +33,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer
+#    Required Microsoft Entra role at least Application Administrator or Application Developer
 
 $ssoMode = "All"
 

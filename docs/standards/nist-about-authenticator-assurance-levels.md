@@ -49,7 +49,7 @@ While NIST doesn't require verifier impersonation (credential phishing) resistan
 As you evaluate the needed NIST AAL for your organization, consider whether your entire organization must meet NIST standards. If there are specific user groups and resources that can be segregated, you can apply NIST AAL configurations to those user groups and resources. 
 
 > [!TIP]
-> We recommend you meet at least AAL2. If necessary, meet AAL3 for business reasons, industry standards, or compliance requirements.
+> We recommend you meet at least AAL2 + phishing resistance. If necessary, meet AAL3 for business reasons, industry standards, or compliance requirements.
 
 ## Security controls, privacy controls, records retention policy
 

@@ -1,17 +1,13 @@
 ---
 title: Claims-aware apps - Microsoft Entra application proxy
 description: How to publish on-premises ASP.NET applications that accept Active Directory Federation Services claims for secure remote access by your users.
-author: kenwith
-manager: amycolannino
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/26/2024
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
-# Working with claims-aware apps in application proxy
+# Work with claims-aware apps in application proxy
 [Claims-aware apps](/previous-versions/windows/desktop/legacy/bb736227(v=vs.85)) perform a redirection to the Security Token Service (STS). The STS requests credentials from the user in exchange for a token and then redirects the user to the application. There are a few ways to enable application proxy to work with these redirects. Use this article to configure your deployment for claims-aware apps. 
 
 ## Prerequisites
@@ -19,7 +15,7 @@ The STS that the claims-aware app redirects to must be available outside of your
 
 ## Publish your application
 
-1. Publish your application according to the instructions described in [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+1. Publish your application according to the instructions in [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 2. Navigate to the application page in the portal and select **Single sign-on**.
 3. If you chose **Microsoft Entra ID** as your **Preauthentication Method**, select **Microsoft Entra single sign-on disabled** as your **Internal Authentication Method**. If you chose **Passthrough** as your **Preauthentication Method**, you don't need to change anything.
 

@@ -1,8 +1,7 @@
 ---
 author: barclayn
 ms.author: barclayn
-ms.date: 03/04/2024
-manager: amycolannino
+ms.date: 01/31/2025
 ms.service: entra-id
 ms.topic: include
 ---

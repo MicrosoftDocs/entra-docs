@@ -2,14 +2,13 @@
 title: Microsoft identity platform token exchange scenario with SAML and OIDC/OAuth in Microsoft Entra ID
 description: Learn about common token exchange scenarios when working with SAML and OIDC/OAuth in Microsoft Entra ID.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: has-adal-ref
-ms.date: 12/08/2020
+ms.date: 05/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: conceptual
+ms.topic: how-to
 #Customer intent:As a developer working with a SAML app that needs to call the Graph API, I want to understand how to add OIDC/OAuth functionality to my app, so that I can authenticate and use the Graph API seamlessly.
 ---
 

@@ -7,13 +7,8 @@ summary: Microsoft Entra ID provides user management services so that you can as
 metadata:
   title: Microsoft Entra users, groups, licenses, and domains documentation
   description: Learn how to use groups, domain names, and licenses to manage user authentication in your Microsoft Entra organization.
-  ms.service: entra-id
-  ms.subservice: users
-  manager: amycolannino
   ms.topic: landing-page
-  ms.date: 04/18/2021
-  author: barclayn
-  ms.author: barclayn
+  ms.date: 01/15/2025
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -45,7 +40,7 @@ landingContent:
           - text: Set expiration policy for groups
             url: groups-quickstart-expiration.md
           - text: Assign licenses to users
-            url: ~/fundamentals/license-users-groups.md?context=/azure/active-directory/enterprise-users/context/ugr-context
+            url: ~/fundamentals/license-users-groups.yml?context=/azure/active-directory/enterprise-users/context/ugr-context
 
   # Card
   - title: Manage Microsoft Entra domain names

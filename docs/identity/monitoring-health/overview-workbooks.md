@@ -1,22 +1,17 @@
 ---
-
 title: What are Microsoft Entra workbooks?
 description: Learn how to create and work with Microsoft Entra workbooks, for identity monitoring, alerts, and data visualization.
 
-author: shlipsey3
-manager: amycolannino
-ms.service: entra-id
 ms.topic: overview
-ms.subservice: monitoring-health
-ms.date: 10/03/2023
-ms.author: sarahlipsey
+ms.date: 02/25/2025
 ms.reviewer: tspring
+
 # Customer intent: As a Microsoft Entra administrator, I want a visualization tool that I can customize for my tenant.
 ---
 
 # What are Microsoft Entra workbooks?
 
-As an IT admin, you need may need to see your Microsoft Entra tenant data as a visual representation that enables you to understand how your identity management environment is doing. This article gives you an overview of how you can use Azure Workbooks for Microsoft Entra ID to analyze your Microsoft Entra tenant data.
+As an IT admin, you might need to see your Microsoft Entra tenant data as a visual representation that enables you to understand how your identity management environment is doing. This article gives you an overview of how you can use Azure Workbooks for Microsoft Entra ID to analyze your Microsoft Entra tenant data.
 
 With Azure Workbooks for Microsoft Entra ID, you can:
 
@@ -47,7 +42,7 @@ Because of the ability to customize workbooks, they can benefit many types of us
 
 - **Reporting admin**: Someone who is responsible for creating reports on top of the available data and workbook templates
 - **Tenant admins**: People who use the available reports to get insight and take action.
-- **Workbook template builder**: Someone who “graduates” from the role of reporting admin by turning a workbook into a template for others with similar needs to use as a basis for creating their own workbooks.
+- **Workbook template builder**: Someone who "graduates" from the role of reporting admin by turning a workbook into a template for others with similar needs to use as a basis for creating their own workbooks.
 
 ## Public workbook templates
 
@@ -61,7 +56,7 @@ Public workbook templates are built, updated, and deprecated to reflect the need
 - [Sensitive Operations Report](workbook-sensitive-operations-report.md)
 - [Sign-ins using legacy authentication](workbook-legacy-authentication.md)
 
-## Next steps
+## Related content
 
 - Learn [how to use Azure Workbooks for Microsoft Entra ID](./howto-use-workbooks.md)
 - [Create your own workbook](/azure/azure-monitor/visualize/workbooks-create-workbook)
