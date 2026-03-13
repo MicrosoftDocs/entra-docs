@@ -19,8 +19,7 @@ If you're an Azure AD B2C customer and haven't yet reviewed the available option
 In this article, you’ll learn how to:
 - Prepare your destination External ID tenant and baseline security
 - Register applications and configure user flows
-- Choose a user and password migration strategy (bulk, JIT, or hybrid)
-- Migrate users and handle password preservation requirements
+- Migrate users and preserve passwords (if needed)
 - Validate, monitor, and plan application cutover
 
 ## Prerequisites
@@ -35,9 +34,8 @@ This article assumes you’ve already chosen the **standard migration approach**
 
 At this stage, the remaining decisions are closely tied to configuration and cutover planning. The choices you make here affect user experience, operational complexity, and how quickly you can retire Azure AD B2C.
 
-- **Password preservation:** Do users need to keep their current passwords, or can you move to password reset, passwordless, or social sign-in?
-- **Migration mechanics:** Will you use bulk migration only, just-in-time (JIT) password migration, or a hybrid approach?
-- **Coexistence window:** If you use JIT, how long will coexistence run, and how will you handle users who never sign in during that period?
+- **Password preservation:** Decide whether users need to keep their current passwords, or whether you can move to password reset, passwordless, or social sign-in. See [Password preservation](#password-preservation) for guidance.
+- **Coexistence window:** If you use JIT password migration, how long will coexistence run, and how will you handle users who never sign in during that period?
 - **Application cutover order:** Which apps move first (lowest risk/highest value), and how will you validate tokens/claims before moving the next app?
 
 The following stages walk through the implementation end to end.
@@ -75,7 +73,7 @@ Complete these steps before you migrate any production user data.
 
 ## Stage 3: Configure user and password migration
 
-In this stage, you migrate users from Azure AD B2C to External ID and decide how credentials are handled during the transition (bulk, JIT, or hybrid).
+In this stage, you migrate users from Azure AD B2C to External ID and decide how credentials are handled during the transition.
 
 These decisions determine whether you run a short coexistence period and how you sequence application cutover.
 
@@ -90,7 +88,7 @@ For step-by-step instructions, see [Migrate users](/entra/external-id/customers/
 
 ### Password preservation
 
-Decide whether you need to preserve existing passwords. Not every migration requires password preservation — if you don’t need it, users can reset their password after migration using [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md), or you can move to passwordless or social sign-in options.
+Decide whether you need to preserve existing passwords. Not every migration requires password preservation — if you don't need it, users can reset their password after migration using [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md), or you can move to passwordless or social sign-in options.
 
 You typically **don’t** need password preservation if:
 - Users authenticate using **social identity providers** (for example, Google or Facebook).
@@ -99,13 +97,13 @@ You typically **don’t** need password preservation if:
 - Regulatory requirements mandate renewing user consent. In this case, you can obtain consent through outbound email communications followed by a user-initiated password reset.
 - You have access to **plain-text passwords** and can set them directly via Microsoft Graph during bulk user migration.
 
-If you don’t need password preservation, you can skip directly to [Stage 4: Validate, monitor, and plan cutover](#stage-4-validate-monitor-and-plan-cutover).
+If you don't need password preservation, you can skip directly to [Stage 4: Validate, monitor, and plan cutover](#stage-4-validate-monitor-and-plan-cutover).
 
 If you **do** need to preserve passwords, choose one of the following approaches based on where applications authenticate during the migration.
 
 Use the following decision tree to determine the remaining password-preservation and cutover steps.
 
-![][image_RNyoKyplygrDdlbgnUOH6A==]
+:::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-password-migration-decision-tree.png" alt-text="Diagram of Azure AD B2C migration decision tree showing password preservation and application cutover options." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-password-migration-decision-tree.png":::
 
 #### Just-in-Time (JIT) password migration (External ID-initiated)
 
@@ -117,8 +115,8 @@ This diagram provides a deeper view of the standard migration path, combining bu
 - **2:** Applications transition to External ID while passwords are migrated via JIT, with the legacy IdP validating credentials for migration.
 - **3:** The legacy IdP is shut down once all users and credentials have been fully moved, leaving External ID as the sole authentication system.
 
-![][image_4YSchXbQ0v9zeAJHZEEsSA==]
 
+:::image type="content" source="media/migrate-from-b2c-to-external-id/external-id-jit-migration-workflow-diagram.png" alt-text="Diagram of a three-stage user migration workflow showing legacy IdP, bulk migration, password sync, and cutover to external ID." lightbox="media/migrate-from-b2c-to-external-id/external-id-jit-migration-workflow-diagram.png":::
 **Considerations when using JIT password migration**
 
 Just-in-time (JIT) password migration introduces a coexistence period between Azure AD B2C and Microsoft Entra External ID. Customers should plan for the following considerations:
@@ -161,12 +159,12 @@ JIT works best **when coexistence is time-boxed, not open-ended**. Bulk user mig
 
 In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints while credentials are harvested in the background. A B2C custom policy calls a REST API to validate credentials against the legacy IdP and write them to the corresponding External ID accounts. Once enough credentials have been migrated, applications cut over to External ID.
 
-This is the approach referred to as "seamless migration" in [Migrate users](/entra/external-id/customers/how-to-migrate-users).
+For step-by-step implementation instructions, see [Migrate users](/entra/external-id/customers/how-to-migrate-users).
 
 - **1:** Applications keep authenticating with the legacy IdP while users are progressively migrated into External ID using Azure Functions for credential validation and background migration.
 - **2:** Applications cut over to External ID once most users have been migrated, and External ID becomes the primary authentication service for all core user flows.
 
-![][image_BSJj0l8mn9e0/DDbzyaTug==]
+:::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png" alt-text="Diagram of Azure AD B2C migration workflow showing stages, authentication flow, and migration via Azure Functions." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png":::
 
 ## Stage 4: Validate, monitor, and plan cutover
 

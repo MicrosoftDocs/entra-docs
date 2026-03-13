@@ -35,7 +35,7 @@ In this article, you’ll learn how to:
 
 If you meet the eligibility criteria and have reviewed the limitations, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete.
 
-Once your tenant is allow-listed for HSC mode, you can turn on HSC mode by calling the following Microsoft Graph API (use an admin account with at least AuthenticationFlowsReadWrite permissions):
+Once your tenant is allow-listed for HSC mode, you can turn on HSC mode by calling the following Microsoft Graph API. The calling account needs the [`Policy.ReadWrite.AuthenticationFlows`](/graph/permissions-reference#policyreadwriteauthenticationflows) permission:
 
 **POST**: `https://graph.microsoft.com/beta/policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration`  
 **Body**: `{}`
@@ -46,7 +46,18 @@ Then verify with:
 
 **Response:**
 
-![][image_GiJ6nuZorQfYnF3AfWOrtQ==]
+```json
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration/$entity",
+    "id": "externalIdHybridModeConfiguration",
+    "externalIdHybridMode": "enabled",
+    "status": "succeeded",
+    "statusDetail": "External Id Hybrid Mode migration is complete.",
+    "createdDateTime": "2025-01-01T00:00:00Z",
+    "lastActionDateTime": "2025-01-01T00:00:00Z",
+    "error": null
+}
+```
 
 > [!NOTE]
 > If you need to disable HSC mode, contact Microsoft support.
