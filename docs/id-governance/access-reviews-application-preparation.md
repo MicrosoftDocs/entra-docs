@@ -125,7 +125,7 @@ Once you've identified the resources, the application and optionally one or more
 1. If your application is integrated with pattern B, use the same [guide](create-access-review.md) to create additional access reviews for each of the groups.
 
    > [!NOTE]
-   > If you create an access review and enable review decision helpers, then the decision helper will vary depending upon the resource being reviewed. If the resource is an application, recommendations are based on the 30-day interval period depending on when the user last signed in to the application. If the resource is a group, then the recommendations are based on the interval when the user last signed into to any application in the tenant, not just the application using those groups.
+   > If you create an access review and enable review decision helpers, then the decision helper will vary depending upon the resource being reviewed. If the resource is an application, recommendations are based on the 30-day interval period depending on when the user last signed in to the application. If the resource is a group, then the recommendations are based on the interval when the user last signed in to any application in the tenant, not just the application using those groups.
 
 1. When the access reviews start, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review membership in the groups or access to the application](perform-access-review.md).
 
