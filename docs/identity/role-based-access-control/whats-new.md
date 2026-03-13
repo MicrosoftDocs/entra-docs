@@ -2,13 +2,19 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 ms.topic: whats-new
-ms.date: 12/23/2025
+ms.date: 03/19/2026
 
 ---
 
 # What's new in Microsoft Entra RBAC documentation
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
+
+## 2026
+
+| Date | Area | Description |
+| --- | --- | --- |
+| March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
 
 ## 2025
 
