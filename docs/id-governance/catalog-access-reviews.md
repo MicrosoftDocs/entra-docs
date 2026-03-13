@@ -41,7 +41,7 @@ For more information on creating a catalog and adding resources, see [Create and
 
 ## Create a catalog access review
 
-Once you add resources to a catalog, you can then create a catalog access review so that managers can then review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
+Once you add resources to a catalog, you can create a catalog access review so that managers can review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
