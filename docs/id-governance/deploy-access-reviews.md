@@ -127,7 +127,7 @@ After you select **Start review**, reviewers will be directed to the [My Access 
 
 ### Plan a pilot
 
-We encourage customers to initially pilot access reviews with a small group and target noncritical resources. Piloting can help you adjust processes and communications as needed. It can help you increase users' and reviewers' ability to meet security and compliance requirements.
+Consider initially piloting access reviews with a small group and target noncritical resources. Piloting can help you adjust processes and communications as needed. It can help you increase users' and reviewers' ability to meet security and compliance requirements.
 
 In your pilot, we recommend that you:
 
