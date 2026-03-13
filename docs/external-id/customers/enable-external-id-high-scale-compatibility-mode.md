@@ -118,7 +118,7 @@ When registering an application in your External ID tenant, choose _Accounts in 
 > [!NOTE]
 > Existing Azure AD B2C app registrations can't be reused for External ID endpoints due to differences in application properties, single‑tenant requirements, and Native Authentication support, which requires dedicated app registrations.
 
-### (Optional) Native authentication 
+### (Optional) Native authentication
 
 If you're using native authentication, enable it by following the guidance in [Native authentication](/entra/identity-platform/concept-native-authentication).
 

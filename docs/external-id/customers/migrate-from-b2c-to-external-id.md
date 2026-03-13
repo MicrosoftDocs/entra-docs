@@ -8,7 +8,7 @@ ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
-# Migrate from Azure AD B2C to Microsoft Entra External ID
+# Migrate from Azure AD B2C to External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -155,7 +155,7 @@ Without this, Azure AD B2C can’t be fully retired.
 
 JIT works best **when coexistence is time-boxed, not open-ended**. Bulk user migration is always a prerequisite, and identity state synchronization becomes the dominant risk as JIT runs longer.
 
-#### Azure AD B2C initiated migration
+#### Azure AD B2C-initiated migration
 
 In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints while credentials are harvested in the background. A B2C custom policy calls a REST API to validate credentials against the legacy IdP and write them to the corresponding External ID accounts. Once enough credentials have been migrated, applications cut over to External ID.
 
