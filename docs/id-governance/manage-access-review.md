@@ -4,7 +4,7 @@ description: Learn how to manage user and guest access as membership of a group 
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ---
  
@@ -26,7 +26,7 @@ First, you must be assigned as at least one of the following roles:
 - Privileged Role Administrator (for reviews of role-assignable groups only)
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
 
-Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
+Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews are ready for your organization.
 
 You can have one or more users as reviewers in an access review.  
  
@@ -40,7 +40,7 @@ You can have one or more users as reviewers in an access review.
  
 5. When the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review access to groups or applications](self-access-review.md).
  
-6. If the reviewers hasn't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
+6. If the reviewers haven't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
  
 7. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
  
@@ -63,7 +63,7 @@ You can review either:
  - A group in Microsoft Entra ID that has one or more guests as members.
  - An application connected to Microsoft Entra ID that has one or more guest users assigned to it. 
  
-When reviewing guest user access to Microsoft 365 groups, you can either create a review for each group individually, or turn on automatic, recurring access reviews of guest users across all Microsoft 365 groups. The following video provides more information on recurring access reviews of guest users: 
+When reviewing guest user access to Microsoft 365 groups, you can either create a review for each group individually or turn on automatic, recurring access reviews of guest users across all Microsoft 365 groups. The following video provides more information on recurring access reviews of guest users: 
  
 > [!VIDEO https://www.youtube.com/embed/3D2_YW2DwQ8]
  
@@ -111,11 +111,11 @@ You can use access reviews to ensure that users who were invited for a particula
  
 3. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
  
-4. In addition to users who denied their own need for continued access, you also can remove guest users who didn't respond. You also can remove guest users who weren't selected to participate, especially if they weren't recently invited. Those users didn't accept their invitation and so didn't have access to the application. 
+4. In addition to users who denied their own need for continued access, you also can remove guest users who didn't respond or who weren't selected to participate, especially if they weren't recently invited. Those users didn't accept their invitation and so didn't have access to the application. 
  
 ### Ask a sponsor to review a guest's access to an application
  
-You can ask a sponsor, such as the owner of an application, to review guest's need for continued access to the application.
+You can ask a sponsor, such as the owner of an application, to review a guest's need for continued access to the application.
  
 1. To create an access review for the application, select the review to include guests only. Then specify one or more users as reviewers. For more information, see [Create an access review of groups or applications](create-access-review.md).
  
