@@ -20,7 +20,7 @@ For more information, see [License requirements](access-reviews-overview.md#lice
 
 ## Inactive user recommendations
 
-A user is considered 'inactive' if they haven't signed into the tenant within the last 30 days. This behavior is adjusted for reviews of application assignments, which checks each user's last activity in the app as opposed to the entire tenant. When inactive user recommendations are enabled for an access review, the last sign-in date for each user is evaluated once the review starts, and any user that has not signed-in within 30 days are given a recommended action of Deny. Additionally, when these decision helpers are enabled, reviewers are able to see the last sign-in date for all users being reviewed. This sign-in date, and the resulting recommendation, is determined when the review begins and isn't updated while the review is in-progress.
+A user is considered 'inactive' if they haven't signed into the tenant within the last 30 days. This behavior is adjusted for reviews of application assignments, which check each user's last activity in the app as opposed to the entire tenant. When inactive user recommendations are enabled for an access review, the last sign-in date for each user is evaluated once the review starts, and any user that has not signed-in within 30 days are given a recommended action of Deny. Additionally, when these decision helpers are enabled, reviewers are able to see the last sign-in date for all users being reviewed. This sign-in date, and the resulting recommendation, is determined when the review begins and isn't updated while the review is in-progress.
 
 ## User-to-Group Affiliation
 
