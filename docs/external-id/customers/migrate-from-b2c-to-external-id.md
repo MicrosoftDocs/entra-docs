@@ -139,20 +139,20 @@ Users who never sign in during the coexistence period won’t migrate automatica
 - Final bulk migration for remaining users.
 - Clear cutover criteria and timelines.
 
-Without this, Azure AD B2C can’t be fully retired.
-
 JIT works best **when coexistence is time-boxed, not open-ended**. Bulk user migration is always a prerequisite, and identity state synchronization becomes the dominant risk as JIT runs longer.
+
+For step-by-step implementation instructions, see [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md).
 
 #### Azure AD B2C-initiated migration
 
 In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints while credentials are harvested in the background. A B2C custom policy calls a REST API to validate credentials against the legacy IdP and write them to the corresponding External ID accounts. Once enough credentials have been migrated, applications cut over to External ID.
 
-For step-by-step implementation instructions, see [B2C-initiated password migration](/entra/external-id/customers/how-to-migrate-users#stage-2-b2c-initiated-password-migration).
-
 - **1:** Applications keep authenticating with the legacy IdP while users are progressively migrated into External ID using Azure Functions for credential validation and background migration.
 - **2:** Applications cut over to External ID once most users have been migrated, and External ID becomes the primary authentication service for all core user flows.
 
 :::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png" alt-text="Diagram of Azure AD B2C migration workflow showing stages, authentication flow, and migration via Azure Functions." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png":::
+
+For step-by-step implementation instructions, see [B2C-initiated password migration](/entra/external-id/customers/how-to-migrate-users#stage-2-b2c-initiated-password-migration).
 
 ## Stage 4: Validate, monitor, and plan cutover
 
