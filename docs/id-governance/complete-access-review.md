@@ -71,7 +71,7 @@ To see the status and stage of a multi-stage access review:
  
 1. Select **Results** on the left nav menu under **Current**.
 
-1. Once you are on the results page, under **Status** it tells you which stage the multi-stage review is in. The next stage of the review won't become active until the duration specified during the access review setup passes. 
+1. On the results page, under **Status**, you can see which stage the multi-stage review is in. The next stage of the review won't become active until the duration specified during the access review setup passes. 
 
 1. If a decision is made, but the review duration for this stage hasn't expired yet, you can select **Stop current stage** button on the results page. This will trigger the next stage of review.
 
