@@ -35,7 +35,7 @@ If you're in the middle of reviews, you can go directly to the Access Review Age
 > There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access.
-1. Select the **Start review** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organizations policies. If the link opens the My Access portal the Access Review Agent has not been enabled for the specific review and must be completed via the My Access portal.
+1. Select the **Start review** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organization's policies. If the link opens the My Access portal the Access Review Agent has not been enabled for the specific review and must be completed via the My Access portal.
 1. Select **Add** or **Open** to access the conversation with the Access Review Agent
 1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
 
