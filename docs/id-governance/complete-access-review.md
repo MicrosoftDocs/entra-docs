@@ -4,7 +4,7 @@ description: Learn how to complete an access review of group members or applicat
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
