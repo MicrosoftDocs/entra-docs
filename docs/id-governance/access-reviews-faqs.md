@@ -42,7 +42,7 @@ There are several scenarios where the system is unable to apply review outcomes,
 
 
 - **Reviewing members of a synced on-premises Windows Server Active Directory group**: If the group is synced from on-premises Windows Server Active Directory, the group can't be managed in Microsoft Entra ID and therefore membership can't be changed.
--**Reviewing a resource (role, group, or application) with nested groups assigned**: For users who have membership through a nested group, we won't remove their membership from the nested group, and therefore they retain access to the resource being reviewed.
+-**Reviewing a resource (role, group, or application) with nested groups assigned**: For users who have membership through a nested group, the system doesn't remove their membership from the nested group, and therefore they retain access to the resource being reviewed.
 - **User not found**: A user not being found, or other similar errors, can also result in an apply result not being completed.
 - **Reviewing the members of mail enabled group**: The group can't be managed in Microsoft Entra ID, so membership can't be changed.
 - **The Application uses group assignment**: Reviewing an Application that uses group assignment won't remove the members of those groups, so they retain the existing access from the group relationship for the application assignment.  
