@@ -10,7 +10,7 @@ ms.custom: template-tutorial
 
 # Access reviews - FAQs
 
-In this article, you find questions to commonly asked questions about [access reviews](access-reviews-overview.md). Check back to this page frequently as changes happen often, and answers are continually being added.
+In this article, you find answers to commonly asked questions about [access reviews](access-reviews-overview.md). Check back to this page frequently as changes happen often, and answers are continually being added.
 
 ## Frequently asked questions
 
