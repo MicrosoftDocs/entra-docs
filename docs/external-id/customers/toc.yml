@@ -48,7 +48,7 @@ items:
           href: migrate-from-b2c-to-external-id.md
         - name: High Scale Compatibility (HSC)
           href: enable-external-id-high-scale-compatibility-mode.md
-    - name: Migrate users
+    - name: Migrate users and credentials
       href: how-to-migrate-users.md
     - name: Migrate passwords (JIT)
       href: how-to-migrate-passwords-just-in-time.md

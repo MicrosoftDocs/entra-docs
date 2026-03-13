@@ -59,22 +59,11 @@ This stage typically includes:
 
 Complete these steps before you migrate any production user data.
 
-## Stage 3: Configure user and password migration
+## Stage 3: Migrate users and credentials
 
-In this stage, you migrate users from Azure AD B2C to External ID and decide how credentials are handled during the transition.
+In this stage, you decide how users and credentials move from Azure AD B2C to External ID. Bulk user migration is always required — regardless of whether you preserve passwords. The key decision is whether you need to preserve existing passwords, and if so, which approach to use.
 
-These decisions determine whether you run a short coexistence period and how you sequence application cutover.
-
-### User migration
-
-Regardless of whether you preserve passwords, bulk user migration is always the first step. Migrate user accounts from Azure AD B2C to External ID using Microsoft Graph before you cut over applications or begin password migration. This establishes user identities in the destination tenant and is a prerequisite for every credential strategy.
-
-For step-by-step instructions, see [Migrate users](/entra/external-id/customers/how-to-migrate-users).
-
-> [!NOTE]
-> When migrating large numbers of objects, you might encounter throttling limits for Microsoft Graph. See [Throttling limits](/graph/throttling-limits) and [Throttling guidance](/graph/throttling) for best practices to handle or avoid throttling.
-
-### Password preservation
+### Do you need to preserve passwords?
 
 Decide whether you need to preserve existing passwords. Not every migration requires password preservation — if you don't need it, users can reset their password after migration using [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md), or you can move to passwordless or social sign-in options.
 
@@ -85,9 +74,11 @@ You typically **don’t** need password preservation if:
 - Regulatory requirements mandate renewing user consent. In this case, you can obtain consent through outbound email communications followed by a user-initiated password reset.
 - You have access to **plain-text passwords** and can set them directly via Microsoft Graph during bulk user migration.
 
-If you don't need password preservation, you can skip directly to [Stage 4: Validate, monitor, and plan cutover](#stage-4-validate-monitor-and-plan-cutover).
+If you don't need password preservation, complete Stage 1 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-1-migrate-user-data) and skip directly to [Stage 4: Validate, monitor, and plan cutover](#stage-4-validate-monitor-and-plan-cutover).
 
-If you **do** need to preserve passwords, choose one of the following approaches based on where applications authenticate during the migration.
+### Choose a password preservation approach
+
+If you need to preserve passwords, choose an approach based on where applications authenticate during the migration.
 
 Use the following decision tree to determine the remaining password-preservation and cutover steps.
 
@@ -152,7 +143,17 @@ In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints whil
 
 :::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png" alt-text="Diagram of Azure AD B2C migration workflow showing stages, authentication flow, and migration via Azure Functions." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png":::
 
-For step-by-step implementation instructions, see [Credential migration via the legacy IdP](how-to-migrate-users.md#stage-2-credential-migration-via-the-legacy-idp). In a B2C-initiated migration, this pattern is implemented using Azure AD B2C custom policies that call a REST API during sign-in to validate and harvest credentials.
+For step-by-step implementation instructions, see [Migrate users and credentials — Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting). In a B2C-initiated migration, this pattern is implemented using Azure AD B2C custom policies that call a REST API during sign-in to validate and harvest credentials.
+
+### Implementation steps
+
+Once you've decided on your approach, complete the following in order:
+
+1. **Migrate user data** — Complete Stage 1 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-1-migrate-user-data).
+1. **Prepare for credential migration** (if preserving passwords) — Complete Stage 2 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-2-prepare-for-credential-migration) to set up the migration extension property and flagged user accounts.
+1. **Implement your chosen approach:**
+   - **JIT** — [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
+   - **B2C-initiated** — [Migrate users and credentials — Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting), implemented using Azure AD B2C custom policies
 
 ## Stage 4: Validate, monitor, and plan cutover
 
@@ -181,7 +182,7 @@ Ongoing monitoring enables proactive issue resolution, data-driven optimization,
 
 - [Microsoft Entra External ID](/entra/external-id/)
 - [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
-- [Migrate users](how-to-migrate-users.md)
+- [Migrate users and credentials](how-to-migrate-users.md)
 - [MSAL overview](/azure/active-directory/develop/msal-overview)
 - [Microsoft Entra External ID Q&A](/answers/tags/438/entra-external-id)
 - [External authentication and access control](/entra/architecture/deployment-external-authentication-access-control)
