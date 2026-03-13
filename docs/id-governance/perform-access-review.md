@@ -16,7 +16,7 @@ Microsoft Entra ID simplifies how enterprises manage access to groups and applic
 > [!NOTE]
 > If you're looking to delegate **access package approval requests** to someone else, see [Delegate approvals in My Access](delegate-approvals-my-access.md).
 
-You can review access to groups and applications via the [My Access portal](https://myaccess.microsoft.com/) or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of group and application reviews, if the agent cannot yet help you with your assigned reviews it will guide you to the My Access portal.
+You can review access to groups and applications via the [My Access portal](https://myaccess.microsoft.com/) or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and doesn't yet support all types of group and application reviews. If the Agent can't yet help you with your assigned reviews, it guides you to the My Access portal.
 
 ## Perform an access review using the Access Review Agent (Preview)
 The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations.
