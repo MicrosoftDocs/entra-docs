@@ -19,8 +19,8 @@ New customers evaluating Microsoft Entra External ID at scale should refer to [P
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 In this article, you’ll learn how to:
-- Confirm prerequisites for enabling HSC mode
-- Enable HSC mode by using Microsoft Graph
+- Confirm prerequisites and enable HSC mode by using Microsoft Graph
+- Prepare identity schema for coexistence
 - Onboard and validate your first applications on External ID endpoints
 - Roll out additional applications and prepare for Azure AD B2C retirement
 
@@ -58,7 +58,7 @@ Then verify with:
 > [!NOTE]
 > If you need to disable HSC mode, contact Microsoft support.
 
-## Stage 2: Prepare identity schema for coexistence (optional)
+## Stage 2: Review identity schema for coexistence
 
 During coexistence, applications might authenticate users through different identity endpoints (B2C or External ID). Preparing identity data ensures that existing users can continue to sign in without disruption and that applications receive the claims they expect.
 

@@ -17,9 +17,9 @@ Decide which migration approach is right for your Azure AD B2C tenant before you
 In this article, you’ll learn how to:
 - Compare the available migration approaches (standard and High Scale Compatibility)
 - Understand the key decision points and eligibility criteria
-- Review a stage-by-stage view of how migration and coexistence work
+- Review HSC limitations and feature availability
+- Review a stage-by-stage view of how coexistence works
 - Find links to configuration instructions for your chosen approach
-- Identify what to validate before migrating additional applications
 
 ## Choose a migration approach
 

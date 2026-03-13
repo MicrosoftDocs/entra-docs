@@ -17,28 +17,14 @@ Migrate your users, credentials, and applications from Azure AD B2C to Microsoft
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 In this article, you’ll learn how to:
+- Assess your current Azure AD B2C implementation
 - Prepare your destination External ID tenant and baseline security
-- Register applications and configure user flows
 - Migrate users and preserve passwords (if needed)
 - Validate, monitor, and plan application cutover
 
 ## Prerequisites
 
 This article assumes you’ve already chosen the **standard migration approach**. If you still need to decide between approaches (standard vs HSC), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
-
-- An inventory of your Azure AD B2C applications, user flows, identity providers, and token/claim requirements
-- Admin access to the destination External ID tenant and the ability to call Microsoft Graph for bulk operations
-- A test plan and non-production environment to validate sign-in flows and application cutover
-
-## Implementation decisions (standard migration)
-
-At this stage, the remaining decisions are closely tied to configuration and cutover planning. The choices you make here affect user experience, operational complexity, and how quickly you can retire Azure AD B2C.
-
-- **Password preservation:** Decide whether users need to keep their current passwords, or whether you can move to password reset, passwordless, or social sign-in. See [Password preservation](#password-preservation) for guidance.
-- **Coexistence window:** If you use JIT password migration, how long will coexistence run, and how will you handle users who never sign in during that period?
-- **Application cutover order:** Which apps move first (lowest risk/highest value), and how will you validate tokens/claims before moving the next app?
-
-The following stages walk through the implementation end to end.
 
 ## Stage 1: Assess your current Azure AD B2C implementation
 
