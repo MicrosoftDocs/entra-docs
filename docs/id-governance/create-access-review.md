@@ -268,7 +268,7 @@ Use the following instructions to create an access review on a team with shared 
     > - If you set **Select reviewers** to **Users review their own access** or **Managers of users**, B2B direct connect users and Teams won't be able to review their own access in your tenant. The owner of the Team under review gets an email that asks the owner to review the B2B direct connect user and Teams.
     > - If you select **Managers of users**, a selected fallback reviewer reviews any user without a manager in the home tenant. This includes B2B direct connect users and Teams without a manager.
 
-1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see our [Create a single-stage access review](#create-a-single-stage-access-review).
+1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see [Create a single-stage access review](#create-a-single-stage-access-review).
 
 ## Allow group owners to create and manage access reviews of their groups
 
