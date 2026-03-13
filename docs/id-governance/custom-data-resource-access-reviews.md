@@ -6,7 +6,7 @@ ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
 ms.date: 11/05/2025
 
-#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews..
+#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews.
 ---
 
 # Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
