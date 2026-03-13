@@ -118,7 +118,7 @@ In some organizations, guests might not be aware of their group memberships.
 
 ![Screenshot showing page to create access review.](media/manage-guest-access-with-access-reviews/new-access-review.png)
 
-To do so, select **Auto apply results to resource** as this will automatically remove the user from the resource. **If reviewer don't respond** should be set to **Remove access** and **Action to apply on denied guest users** should also be set to **Block from signing in for 30 days then remove user from the tenant**.
+To do so, select **Auto apply results to resource** as this will automatically remove the user from the resource. **If reviewer don't respond** should be set to **Remove access**, and **Action to apply on denied guest users** should also be set to **Block from signing in for 30 days then remove user from the tenant**.
 
 This will immediately block sign in to the guest user account and then automatically delete their Microsoft Entra B2B account after 30 days.
 
