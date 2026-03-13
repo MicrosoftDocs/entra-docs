@@ -53,7 +53,7 @@ Once you add resources to a catalog, you can create a catalog access review so t
 
 1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
-1. On the **Reviewers and schedule** tab, Choose reviewers. Currently, managers of the users are the primary reviewers.
+1. On the **Reviewers and schedule** tab, choose reviewers. Currently, managers of the users are the primary reviewers.
 
 1. Optionally, you can configure [multi-stage reviews](using-multi-stage-reviews.md), where the resource owners (group or application owners) serve as secondary reviewers.
 
