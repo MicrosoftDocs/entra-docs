@@ -4,7 +4,7 @@ description: Using access reviews, you can control group membership and applicat
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: reference
-ms.date: 07/14/2025
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
 ---
