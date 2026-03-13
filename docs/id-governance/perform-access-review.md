@@ -31,7 +31,7 @@ If you're in the middle of reviews, you can go directly to the Access Review Age
 
 ### Use email to go to the Access Review Agent
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access.
@@ -44,7 +44,7 @@ The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly porta
 
 ### Use email to go to My Access
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. Here's an example email message:
