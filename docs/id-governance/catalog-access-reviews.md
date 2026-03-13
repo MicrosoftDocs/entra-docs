@@ -49,7 +49,7 @@ Once you add resources to a catalog, you can create a catalog access review so t
 
 1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog** to select the **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
-1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
+1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
 1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
 
