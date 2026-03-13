@@ -41,7 +41,7 @@ This article describes how to create one or more access reviews for PIM for Grou
      ![Screenshot that shows selecting Teams + Groups.](./media/create-access-review/create-pim-review.png)
 
 > [!NOTE]  
-> When a PIM for Groups is selected, the users under review for the group includes all eligible users and active users in that group. 
+> When a PIM for Groups is selected, the users under review for the group include all eligible users and active users in that group. 
 
 6. Now you can select a scope for the review. Your options are:
     - **Guest users only**: This option limits the access review to only the Microsoft Entra B2B guest users in your directory.
