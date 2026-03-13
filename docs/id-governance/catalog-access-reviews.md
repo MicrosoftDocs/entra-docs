@@ -71,7 +71,7 @@ If you have added custom data provided resources to the catalog, then you must u
 
 When the catalog access review is created, managers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the My Access portal where they can view their direct report's access to all resources in the catalog.
 
-To complete a catalog access review, you'd do the following steps:
+To complete a catalog access review, follow these steps:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the manager of the users you want to complete the catalog access review for. 
 
