@@ -27,7 +27,7 @@ These updates will instead be captured in the next instance of the review if it'
 
 When a reviewer completes an access review, it means they submit their decisions. However, changes to access aren't applied until the review reaches its scheduled end date.
 
-If the review is set to **auto-apply**, the system applies the decisions shortly after the end date. **If auto-apply is not enabled**, an administrator must manually apply the results. You can confirm whether auto-apply is enabled in the review’s configuration settings.
+If the review is set to **auto-apply**, the system applies the decisions shortly after the end date. **If auto-apply isn't enabled**, you must manually apply the results. You can confirm whether auto-apply is enabled in the review’s configuration settings.
 
 > [!NOTE]
 > Even if a reviewer completes their review early, for example on day 1 of a 10-day review, access changes still won’t take effect until the end of the review period.
