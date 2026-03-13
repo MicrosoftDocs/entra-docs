@@ -101,7 +101,7 @@ After creating the catalog access review, but before uploading your custom data,
 
 ## Upload custom data
 
-After copying both the Access review object, and access review instance object, IDs note that the status of the access review shows as **Initializing**.
+After copying both the access review object and access review instance object IDs, note that the status of the access review shows as **Initializing**.
     :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 
 
