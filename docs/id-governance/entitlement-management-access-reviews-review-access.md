@@ -36,7 +36,7 @@ The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly porta
 
 Use the following steps to find and open the access review:
 
-1. You could receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
+1. You might receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
     
     ![Access review reviewer email](./media/entitlement-management-access-reviews-review-access/review-access-reviewer-email.png)
 
