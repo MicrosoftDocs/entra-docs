@@ -22,7 +22,7 @@ You also can easily ensure that guest users have appropriate access. You can ask
 
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
 
-For more information, [License requirements](access-reviews-overview.md#license-requirements).
+For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
 ## Create and perform an access review for guests
 
