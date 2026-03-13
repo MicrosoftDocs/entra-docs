@@ -71,7 +71,7 @@ You can also view your pending access reviews by using your browser to open **My
     If you want to change your response, reopen the **Access reviews** page and update your response. You can change your response at any time until the access review has ended.
 
     > [!NOTE]
-    > If you indicated that you no longer need access, you aren't removed immediately. You're removed when the review has ended or when an administrator stops the review.
+    > If you indicated that you no longer need access, the system doesn't remove you immediately. You're removed when the review has ended or when an administrator stops the review.
 
 ## Next steps
 
