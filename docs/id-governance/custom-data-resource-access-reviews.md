@@ -191,7 +191,7 @@ As reviewers take actions, the review progresses through several states:
 |-------------|-----------|----------------|
 | Upload custom data | During *Initializing* | Within two hours. |
 | Review decisions | During *Active* | Until the review end date. |
-| Apply decisions | During *Applying* | 30 days and review remain in applying status until all decisions are marked as applied.|
+| Apply decisions | During *Applying* | 30 days and review remains in applying status until all decisions are marked as applied.|
 
 
 
