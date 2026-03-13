@@ -4,7 +4,7 @@ description: Manage guest users as members of a group or assigned to an applicat
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ---
 
