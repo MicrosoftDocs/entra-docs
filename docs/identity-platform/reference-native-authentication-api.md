@@ -248,7 +248,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `oob password redirect` for email with password authentication method.|
+| `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-up-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `oob password redirect` for email with password authentication method.|
 |`continuation_token`| Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 
 #### Success response
@@ -512,7 +512,7 @@ If the request is successful, but no attributes were configured in Microsoft Ent
 
 ##### User attributes required
 
-This response requests the app to submit values for *name*, *age, and *phone* attributes.
+This response requests the app to submit values for *name*, *age*, and *phone* attributes.
 
 ```http
 HTTP/1.1 400 Bad Request
@@ -665,7 +665,7 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 Content-Type: application/x-www-form-urlencoded
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
-&attributes={"displayName": "{given_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "postaCode": "{postal_code}"}
+&attributes={"displayName": "{given_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "postalCode": "{postal_code}"}
 &continuation_token=AQABAAEAAAAtn...
 ```
 
@@ -1194,7 +1194,7 @@ Content-Type: application/json
           "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",   
           "challenge_type": "oob",   
           "challenge_channel": "sms",   
-          "login_hint": "+1********6   
+          "login_hint": "+1********6"
         }
     ]
 }
@@ -1776,7 +1776,7 @@ Here's an example (we present the example request in multiple lines for readabil
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
-client_id=client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=uY29tL2F1dGhlbnRpY... 
 ```
