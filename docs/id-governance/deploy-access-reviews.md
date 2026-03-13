@@ -11,7 +11,7 @@ ms.custom: sfi-ga-nochange
 
 # Plan a Microsoft Entra access reviews deployment
 
-[Microsoft Entra access reviews](access-reviews-overview.md) help your organization keep the Enterprise more secure by managing its [resource access lifecycle](identity-governance-overview.md). With access reviews, you can:
+[Microsoft Entra access reviews](access-reviews-overview.md) help your organization keep the enterprise more secure by managing its [resource access lifecycle](identity-governance-overview.md). With access reviews, you can:
 
 * Schedule regular reviews or do ad-hoc reviews to discover who has access to specific resources, such as applications and groups.
 * Track reviews for insights, compliance, or policy reasons.
