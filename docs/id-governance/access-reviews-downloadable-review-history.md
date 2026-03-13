@@ -72,7 +72,7 @@ The reports provide details on a per-user basis showing the following informatio
 | AppliedByName | Name of the user who applied the review result |
 | AppliedByUPN | User Principal Name of the user who applied the review result|
 | AppliedByEmailAddress | Email address of the user who applied the review result |
-| AppliedDate | Date when the review result were applied |
+| AppliedDate | Date when the review result was applied |
 | AccessRecommendation | System recommendations include Approve, Deny, and No Info |
 |SubmissionResult | Review result submission statuses include applied, and not applied. |
 
