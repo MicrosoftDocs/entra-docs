@@ -25,7 +25,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
-1. To create a new access package, select **New access** package.
+1. To create a new access package, select **New access package**.
 
 1. To edit an existing access policy, in the left menu, select **Access packages** and open the access package you want to edit. Then, in the left menu, select **Policies**, and select the policy that has the lifecycle settings you want to edit.
 
