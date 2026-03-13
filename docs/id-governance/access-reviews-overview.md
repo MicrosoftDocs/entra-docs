@@ -42,7 +42,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 
 ## Where do you create reviews?
 
-Depending on what you want to review, you either create your access review in access reviews, Microsoft Entra enterprise apps, PIM, or entitlement management.
+Depending on what you want to review, you create your access review in access reviews, Microsoft Entra enterprise apps, PIM, or entitlement management.
 
 | Access rights of users | Reviewers can be | Review created in | Reviewer experience |
 | --- | --- | --- | --- |
