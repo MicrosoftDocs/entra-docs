@@ -4,7 +4,7 @@ ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
 ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
-ms.date: 11/05/2025
+ms.date: 07/14/2025
 
 #CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews.
 ---
