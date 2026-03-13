@@ -13,7 +13,7 @@ ms.date: 11/05/2025
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
-This capability enables you to run user Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
+This capability enables you to run user Access Reviews (UARs) across both Microsoft Entra-connected and custom resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
 
 ## License requirements
 
