@@ -3,7 +3,7 @@ title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 07/14/2025
 ---
 
 # Create and manage downloadable access review history report in Microsoft Entra access reviews
