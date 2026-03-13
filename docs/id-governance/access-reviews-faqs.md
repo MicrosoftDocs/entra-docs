@@ -50,7 +50,7 @@ There are several scenarios where the system is unable to apply review outcomes,
 ### Why don’t new group owners appear as reviewers during an ongoing group access review?
 
 When a group or team access review starts, only the group owners at the time the review begins are assigned as reviewers.
-If group ownership changes during the review like for example, new owners are added or existing ones are removed, those changes don't affect the current instance. The original reviewers remain unchanged. However, for recurring reviews, any updates to group ownership will be reflected in the next review instance.
+If group ownership changes during the review, for example, new owners are added or existing ones are removed, those changes don't affect the current instance. The original reviewers remain unchanged. However, for recurring reviews, any updates to group ownership will be reflected in the next review instance.
 
 ### How can I see which reviewers were notified for an access review?
 
