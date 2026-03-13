@@ -164,7 +164,7 @@ Before you move to production and decommission Azure AD B2C apps, validate end-t
 - Validate token issuance and custom claims.
 - Test application and API integrations.
 - Verify custom authentication extensions.
-- Test JIT provisioning and native authentication.
+- Test password provisioning and native authentication.
 - Conduct performance and load tests.
 - Ensure security policies and user data integrity.
 
