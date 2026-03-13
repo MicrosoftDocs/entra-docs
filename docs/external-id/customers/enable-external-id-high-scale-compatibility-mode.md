@@ -24,8 +24,9 @@ In this article, you’ll learn how to:
 - Onboard and validate your first applications on External ID endpoints
 - Roll out additional applications and prepare for Azure AD B2C retirement
 
-> [!IMPORTANT]
-> Don't proceed unless your tenant is eligible for HSC and you have reviewed and accepted the HSC limitations. For decision guidance, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) (in particular, **High Scale Compatibility (HSC) migration approach**).
+## Prerequisites
+
+This article assumes you've already chosen the **High Scale Compatibility (HSC) migration approach**. If you still need to decide between approaches (standard vs HSC), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 ## Stage 1: Request allowlisting and enable HSC mode
 

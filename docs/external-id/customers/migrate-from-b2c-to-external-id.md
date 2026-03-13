@@ -12,7 +12,9 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Migrate your users, credentials, and applications from Azure AD B2C to Microsoft Entra External ID using the standard migration approach. This article focuses on migration scenarios where identities already exist in Azure AD B2C and must be transitioned with minimal disruption. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
+Migrate your users, credentials, and applications from Azure AD B2C to Microsoft Entra External ID using the standard migration approach. This article focuses on migration scenarios where identities already exist in Azure AD B2C and must be transitioned with minimal disruption.
+
+New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
 
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
@@ -25,7 +27,9 @@ In this article, you’ll learn how to:
 ## Prerequisites
 
 This article assumes you’ve already chosen the **standard migration approach**. If you still need to decide between approaches (standard vs HSC), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
-
+- An inventory of your Azure AD B2C applications, user flows, identity providers, and token/claim requirements
+- Admin access to the destination External ID tenant and the ability to call Microsoft Graph for bulk operations
+- A test plan and non-production environment to validate sign-in flows and application cutover
 ## Stage 1: Assess your current Azure AD B2C implementation
 
 Inventory what you have today so you can recreate equivalent behavior in External ID: applications, user flows, identity providers, token/claim requirements, and any custom business logic.
