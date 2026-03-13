@@ -71,7 +71,7 @@ For access reviews, you'll likely include representatives from the following tea
    * Reviews privileged access to infrastructure and apps, including Microsoft 365 and Microsoft Entra ID.
    * Schedules and runs access reviews on groups that are used to maintain exception lists or IT pilot projects to maintain up-to-date access lists.
    * Ensures that programmatic (scripted) access to resources through service principals is governed and reviewed.
-   * Automate processes like user onboarding and offboarding, access requests, and access certifications.
+   * Automates processes like user onboarding and offboarding, access requests, and access certifications.
  
 * **Security teams** ensure the plan meets the security requirements of your organization and enforces Zero Trust. This team:
    * Reduces risk and strengthens security
