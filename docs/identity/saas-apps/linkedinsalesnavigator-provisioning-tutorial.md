@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: ArvindHarinder1
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/12/2026
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Sales Navigator so that I can streamline the user management process and ensure that users have the appropriate access to LinkedIn Sales Navigator.
@@ -83,9 +83,13 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 1. If you have already configured LinkedIn Sales Navigator for single sign-on, search for your instance of LinkedIn Sales Navigator using the search field. Otherwise, select **Add** and search for **LinkedIn Sales Navigator** in the application gallery. Select LinkedIn Sales Navigator from the search results, and add it to your list of applications.
 
-1. Select your instance of LinkedIn Sales Navigator, then select the **Provisioning** tab.
+1. Select your instance of LinkedIn Sales Navigator, select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**.
+	![Provisioning tab](common/provisioning.png)
+
+1. Set **+ New configuration**.
+
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. Fill in the following fields under **Admin Credentials** :
 
@@ -95,21 +99,31 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
     * You should see a success notification on the upper-right side of your portal.
 
-1. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Save**.
+1. Select **Create** to create your configuration.	
 
-1. In the **Attribute Mappings** section, review the user and group attributes that's synchronized from Microsoft Entra ID to LinkedIn Sales Navigator. The attributes selected as **Matching** properties are used to match the user accounts and groups in LinkedIn Sales Navigator for update operations. Select the Save button to commit any changes.
+1. Select **Properties** in the **Overview** page. 
+
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user and group attributes that's synchronized from Microsoft Entra ID to LinkedIn Sales Navigator. The attributes selected as **Matching** properties are used to match the user accounts and groups in LinkedIn Sales Navigator for update operations. Select the Save button to commit any changes.
 
     ![Screenshot shows Mappings, including Attribute Mappings.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
 
-1. To enable the Microsoft Entra provisioning service for LinkedIn Sales Navigator, change the **Provisioning Status** to **On** in the **Settings** section
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Select **Save**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-This starts the initial synchronization of any users and/or groups assigned to LinkedIn Sales Navigator in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your LinkedIn Sales Navigator app.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+## Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional Resources
 
