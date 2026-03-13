@@ -12,15 +12,13 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing users and credentials in place.
-
-New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
+Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing users and credentials in place. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
 
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 In this article, you’ll learn how to:
-- Confirm prerequisites and enable HSC mode by using Microsoft Graph
-- Prepare identity schema for coexistence
+- Enable HSC mode by using Microsoft Graph
+- Review identity schema for coexistence
 - Onboard and validate your first applications on External ID endpoints
 - Roll out additional applications and prepare for Azure AD B2C retirement
 
@@ -131,11 +129,10 @@ Next, create an External ID user flow and associate it with your application. Yo
 
 External ID supports custom authentication domains (for example, `login.contoso.com`) to maintain branding and consistency. [Custom URL domains](/entra/external-id/customers/concept-custom-url-domain) are implemented using a reverse proxy such as Azure Front Door, which routes traffic from the custom domain to the underlying External ID endpoints.
 
-**Important routing considerations**
-
-When using Azure Front Door, routing rules must be clearly defined to ensure authentication traffic is sent to the correct identity platform. Azure Front Door routes requests based on hostnames and paths, and each custom domain is associated with a specific backend origin.
-
-If an application needs to support authentication traffic for both Azure AD B2C and Microsoft Entra External ID at the same time, sharing the same custom authentication domain isn't recommended. Because [Azure Front Door routing methods](/azure/frontdoor/routing-methods) can route a custom domain to only one origin at a time, this scenario typically requires a separate custom domain for External ID endpoints (for example, `login.contoso.com` for B2C and `login-ext.contoso.com` for External ID) to avoid routing conflicts and unintended traffic mixing.
+> [!IMPORTANT]
+> When using Azure Front Door, routing rules must be clearly defined to ensure authentication traffic is sent to the correct identity platform. Azure Front Door routes requests based on hostnames and paths, and each custom domain is associated with a specific backend origin.
+>
+> If an application needs to support authentication traffic for both Azure AD B2C and Microsoft Entra External ID at the same time, sharing the same custom authentication domain isn't recommended. Because [Azure Front Door routing methods](/azure/frontdoor/routing-methods) can route a custom domain to only one origin at a time, this scenario typically requires a separate custom domain for External ID endpoints (for example, `login.contoso.com` for B2C and `login-ext.contoso.com` for External ID) to avoid routing conflicts and unintended traffic mixing.
 
 ### (Optional) Add custom authentication extensions
 
