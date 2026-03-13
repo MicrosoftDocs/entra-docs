@@ -24,7 +24,7 @@ A user is considered 'inactive' if they haven't signed into the tenant within th
 
 ## User-to-Group Affiliation
 
-Making the review experience easier and more accurate empowers IT admins and reviewers to make more informed decisions. This Machine Learning based recommendation opens the journey to automate access reviews, which enable intelligent automation, and reduces access rights attestation fatigue.
+An easier and more accurate review experience empowers IT admins and reviewers to make more informed decisions. This Machine Learning based recommendation opens the journey to automate access reviews, which enable intelligent automation, and reduces access rights attestation fatigue.
 
 User-to-Group Affiliation in an organization’s chart is defined as two or more users who share similar characteristics in an organization's reporting structure.
 
