@@ -28,7 +28,7 @@ An easier and more accurate review experience empowers IT admins and reviewers t
 
 User-to-Group Affiliation is defined as two or more users who share similar characteristics in an organization's reporting structure.
 
-This recommendation detects user affiliation with other users within the group, based on organization's reporting-structure similarity. The recommendation relies on a scoring mechanism, which is calculated by computing the user’s average distance with the remaining users in the group. Users who are distant from all the other group members based on their organization's chart, are considered to have "low affiliation" within the group.
+This recommendation detects user affiliation with other users within the group, based on organization's reporting-structure similarity. The recommendation relies on a scoring mechanism, which is calculated by computing the user’s average distance from the remaining users in the group. Users who are distant from all the other group members based on their organization's chart, are considered to have "low affiliation" within the group.
 
 If the creator of the access review enables the decision helper, reviewers can receive User-to-Group Affiliation recommendations for group access reviews.
 
