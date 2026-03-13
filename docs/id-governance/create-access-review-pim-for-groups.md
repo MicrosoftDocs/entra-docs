@@ -4,7 +4,7 @@ description: Learn how to create an access review of PIM for Groups in Microsoft
 editor: markwahl-msft
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 09/05/2025
+ms.date: 07/14/2025
 ms.reviewer: jgangadhar
 ---
  
