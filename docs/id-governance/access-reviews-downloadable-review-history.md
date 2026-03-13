@@ -30,7 +30,7 @@ Review history and request review history are available for any user if they're 
 
     ![Access Reviews - Access Review History Report - Create](./media/access-reviews-downloadable-review-history/create-review-history.png)
 
-1. Then select **create** to create an Access Review History Report.
+1. Then select **Create** to create an Access Review History Report.
 
 ## How to download review history reports
 
