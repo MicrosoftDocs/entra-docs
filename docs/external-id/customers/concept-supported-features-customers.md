@@ -2,7 +2,7 @@
 title: External Tenant Features
 description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.topic: concept-article
-ms.date: 11/17/2025
+ms.date: 03/13/2026
 
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
@@ -83,6 +83,7 @@ Some authentication methods can be used as the primary factor when users sign in
 | [Facebook federation](./how-to-facebook-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 | [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 | Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Microsoft Entra ID federation](./how-to-entra-id-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 | [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 | [SAML/WS-Fed federation](../direct-federation.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: ||
 

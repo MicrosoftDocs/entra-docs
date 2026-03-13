@@ -2,9 +2,9 @@
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
 ms.topic: concept-article
-ms.date: 10/07/2025
+ms.date: 03/13/2026
 ms.custom: it-pro, seo-july-2024
-#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
+#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, Microsoft Entra ID, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity providers for external tenants
@@ -14,7 +14,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, a Microsoft Entra ID tenant, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -87,6 +87,12 @@ By setting up federation with Apple, you can allow users to sign in to your appl
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
+## Microsoft Entra ID federation
+
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
+
+Learn how to [add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md).
+
 ## Custom OIDC identity provider
 
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
@@ -141,5 +147,6 @@ The following Microsoft Graph API operations are supported for managing identity
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add federation with SAML/WS-Fed identity providers](../direct-federation.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
