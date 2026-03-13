@@ -3,7 +3,7 @@ title: Self-review of an access package in entitlement management
 description: Learn how to review user access of entitlement management access packages in access reviews.
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 07/14/2025
 #Customer intent: As a user, I want to complete an access review of my active assignments myself.
 ---
 # Self-review of an access package in entitlement management
