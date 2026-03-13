@@ -33,7 +33,7 @@ This recommendation detects user affiliation with other users within the group, 
 If the creator of the access review enables the decision helper, reviewers can receive User-to-Group Affiliation recommendations for group access reviews.
 
 > [!NOTE]
-> This feature is only available for users in your directory. A user should have a manager attribute and should be a part of an organizational hierarchy for the User-to-group Affiliation to work.
+> This feature is only available for users in your directory. A user should have a manager attribute and should be a part of an organizational hierarchy for the User-to-Group Affiliation to work.
 >
 >Groups with more than 600 users aren't supported.
 
