@@ -71,7 +71,7 @@ With a catalog created, you can add custom data provided resources to it by doin
 
 1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog**, and select **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
-1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
+1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
 1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
 
