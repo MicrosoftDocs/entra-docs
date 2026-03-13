@@ -10,7 +10,7 @@ ms.reviewer: jgangadhar
  
 # Create an access review of PIM for Groups in Microsoft Entra ID (preview)
 
-This article describes how to create one or more access reviews for PIM for Groups, which will include the active members of the group and the eligible members. Reviews can be performed on both active members of the group, who are active at the time the review is created, and the eligible members of the group.
+This article describes how to create one or more access reviews for PIM for Groups, including the active and eligible members of the group. Reviews can be performed on both active members of the group, who are active at the time the review is created, and the eligible members of the group.
 
 ## Prerequisites
 
