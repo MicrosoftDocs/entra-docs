@@ -51,7 +51,7 @@ Once you add resources to a catalog, you can create a catalog access review so t
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
-1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
+1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
 1. On the **Reviewers and schedule** tab, Choose reviewers. Currently, managers of the users are the primary reviewers.
 
