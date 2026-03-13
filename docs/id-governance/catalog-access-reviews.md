@@ -20,7 +20,7 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 
 ## Add resources to catalog
 
-To enable access reviews across multiple resources in a single reviewer experience, you must first add those resources to a catalog. Groups, Applications and custom data provided resources are currently the three resources that can be reviewed by catalog. To add resources to a catalog:
+To enable access reviews across multiple resources in a single reviewer experience, you must first add those resources to a catalog. Groups, applications, and custom data provided resources are currently the three resources that can be reviewed through a catalog. To add resources to a catalog:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or catalog creator, and as the owner or administrator of the resources.
