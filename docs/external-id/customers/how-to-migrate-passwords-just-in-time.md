@@ -1,5 +1,5 @@
 ---
-title: Just-In-Time Password Migration to Microsoft Entra External ID
+title: Just-in-time password migration to Microsoft Entra External ID
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
 ai-usage: ai-assisted
 author: garrodonnell
@@ -9,9 +9,13 @@ ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
-# Just-In-Time Password Migration to Microsoft Entra External ID
+# Just-in-time password migration to Microsoft Entra External ID
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you're a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
+
+If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 > [!NOTE]
 > If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate them. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
@@ -1080,6 +1084,8 @@ Deploy JIT migration components in a secure identity subscription with limited R
 
 ## Next steps
 
+- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Choose between the standard and HSC migration approaches.
+- [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – End-to-end guide for the standard migration approach.
 - [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
 - [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
