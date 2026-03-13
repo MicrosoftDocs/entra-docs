@@ -48,44 +48,44 @@ If you're reviewing access to an application, then before you create the review,
 
 1. Browse to **ID Governance** > **Access Reviews**.
 
-3. Select **New access review** to create a new access review.
+1. Select **New access review** to create a new access review.
 
     ![Screenshot that shows the Access reviews pane in Identity Governance.](./media/create-access-review/access-reviews.png)
 
 1. On the Access reviews template screen, select **Review access to a resource type**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 
-4. In the **Select what to review** box, select which resource you want to review.
+1. In the **Select what to review** box, select which resource you want to review.
 
     ![Screenshot that shows creating an access review.](./media/create-access-review/select-what-review.png)
 
-5. If you selected **Teams + Groups**, you have two options:
+1. If you selected **Teams + Groups**, you have two options:
 
    - **All Microsoft 365 groups with guest users**: Select this option if you want to create recurring reviews on all your guest users across all your Microsoft Teams and Microsoft 365 groups in your organization. Dynamic groups and role-assignable groups aren't included. You can also choose to exclude individual groups by selecting **Select group(s) to exclude**.
    - **Select Teams + groups**: Select this option if you want to specify a finite set of teams or groups to review. A list of groups to choose from appears on the right.
 
      ![Screenshot that shows selecting Teams + Groups.](./media/create-access-review/teams-groups.png)
 
-6. If you selected **Applications**, select one or more applications.
+1. If you selected **Applications**, select one or more applications.
 
    ![Screenshot that shows the interface that appears if you selected applications instead of groups.](./media/create-access-review/select-application-detailed.png)
 
 > [!NOTE]
 > Selecting multiple groups or applications results in the creation of multiple access reviews. For example, if you select five groups to review, the result is five separate access reviews.
 
-8. Now you can select a scope for the review. Your options are:
+1. Now you can select a scope for the review. Your options are:
     - **Guest users only**: This option limits the access review to only the Microsoft Entra B2B guest users in your directory.
     - **Everyone**: This option scopes the access review to all user objects associated with the resource.
 
     > [!NOTE]  
     > If you selected **All Microsoft 365 groups with guest users**, your only option is to review **Guest users only**.
 
-9. Or if you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, those who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive**  with many days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
+1. Or if you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, those who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive**  with many days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
 
     > [!NOTE]  
     > Recently created users aren't affected when configuring the inactivity time. The Access Review checks if a user has been created in the time frame configured and disregard users who haven’t existed for at least that amount of time. For example, if you set the inactivity time as 90 days and a guest user was created or invited less than 90 days ago, the guest user won't be in scope of the Access Review. This ensures that a user can sign in at least once before being removed.
 
-10. Select **Next: Reviews**.
+1. Select **Next: Reviews**.
 
 ### Next: Reviews
  
