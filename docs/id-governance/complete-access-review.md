@@ -27,7 +27,7 @@ For more information, see: [License requirements](access-reviews-overview.md#lic
 ## View the status of an access review
  
 
-Do the following steps to track the progress of access reviews as they're completed.
+Follow these steps to track the progress of access reviews as they complete.
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
