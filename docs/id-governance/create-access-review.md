@@ -89,7 +89,7 @@ If you're reviewing access to an application, then before you create the review,
 
 ### Next: Reviews
  
-1. You can create a single-stage or multi-stage review. For a single stage review, continue here. To create a multi-stage access review, follow the steps in [Create a multi-stage access review](#create-a-multi-stage-access-review)
+1. You can create a single-stage or multi-stage review. For a single stage review, continue here. To create a multi-stage access review, follow the steps in [Create a multi-stage access review](#create-a-multi-stage-access-review).
 
 1. In the **Specify reviewers** section, in the **Select reviewers** box, select either one or more people to make decisions in the access reviews. You can choose from:
 
