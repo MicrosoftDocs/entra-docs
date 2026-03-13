@@ -40,6 +40,12 @@ items:
   items:
     - name: Migrate to External ID
       href: migrate-to-external-id.md
+    - name: Plan your migration from Azure AD B2C
+      href: plan-your-migration-from-b2c-to-external-id.md
+    - name: Migrate from Azure AD B2C (standard)
+      href: migrate-from-b2c-to-external-id.md
+    - name: Enable High Scale Compatibility (HSC) mode
+      href: enable-external-id-high-scale-compatibility-mode.md
     - name: Migrate users to External ID
       href: how-to-migrate-users.md
     - name: How to migrate passwords

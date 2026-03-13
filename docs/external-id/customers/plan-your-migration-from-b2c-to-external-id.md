@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Decide which migration approach is right for your Azure AD B2C tenant before you begin implementation. This article helps you choose between the standard migration and High Scale Compatibility (HSC), understand the key decision points, and find the right next step. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
+Decide which migration approach is right for your Azure AD B2C tenant before you begin implementation. This article helps you choose between the standard migration and High Scale Compatibility (HSC), understand the key decision points, and find the right next step. This article is for existing customers of Azure AD B2C who are planning to migrate, new customers evaluating Microsoft Entra External ID should refer to [Planning your solution](concept-planning-your-solution.md).
 
 In this article, you’ll learn how to:
 - Compare the available migration approaches (standard and High Scale Compatibility)
@@ -23,18 +23,14 @@ In this article, you’ll learn how to:
 
 ## Choose a migration approach
 
-Choosing a migration approach is an early decision when moving from Azure AD B2C to Microsoft Entra External ID. Use the following criteria and decision diagram to determine whether the standard approach is appropriate or whether you should consider High Scale Compatibility (HSC).
+Your first decision is which migration approach to use. Most customers should use the standard approach. High Scale Compatibility (HSC) is only relevant if your tenant exceeds specific scale thresholds and you can accept its functional limitations.
 
-At a high level, there are two approaches:
-
-**The standard migration approach** – Recommended for most customers.
-
-**High Scale Compatibility (HSC) migration** – A specialized approach for very large Azure AD B2C tenants over 5 million user, group, or application objects with scale-driven constraints.
+- **Standard migration** — Recommended for most customers. You migrate users and credentials to a new External ID tenant and cut over applications.
+- **High Scale Compatibility (HSC)** — For very large Azure AD B2C tenants with over 5 million directory objects. You keep existing users and credentials in place and migrate applications in phases.
 
 ### Determine whether High Scale Compatibility (HSC) migration applies
 
 Use the following decision tree to check whether HSC applies to your tenant.
-
 
 :::image type="content" source="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png" alt-text="Diagram of a migration decision tree for Azure AD B2C showing steps for HSC and standard migration approaches." lightbox="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png":::HSC migration might apply if **all** the following are true:
 
@@ -142,3 +138,10 @@ Stage 3: All apps completely moved over to External ID and your tenant is ready 
 ### Configuration instructions
 
 If you've decided to use High Scale Compatibility (HSC), continue to [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md) for step-by-step instructions on enabling HSC mode for your tenant and guidance on how to configure your environment for coexistence.
+
+## Related content
+
+- [Microsoft Entra External ID overview](/entra/external-id/external-identities-overview)
+- [Supported features in External ID](concept-supported-features-customers.md)
+- [Planning your solution](concept-planning-your-solution.md)
+- [Service limits and restrictions](reference-service-limits.md)
