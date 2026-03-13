@@ -51,7 +51,7 @@ Follow these steps to track the progress of access reviews as they complete.
    
     ![review guest access across Microsoft 365 groups](./media/complete-access-review/review-guest-access-across-365-groups.png)
  
-    Select on a group to see the progress of the review on that group, also to Stop, Reset, Apply, and Delete.
+    Select a group to see the progress of the review on that group, also to Stop, Reset, Apply, and Delete.
  
    ![review guest access across Microsoft 365 groups in detail](./media/complete-access-review/progress-group-review.png)
  
