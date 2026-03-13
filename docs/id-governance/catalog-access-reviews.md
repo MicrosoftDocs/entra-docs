@@ -3,7 +3,7 @@ title: Catalog Access Reviews (Preview)
 description: This article describes what Catalog Access Reviews are, how to create one, and how to complete a review for one.
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 07/14/2025
+ms.date: 03/12/2026
 
 #CustomerIntent: As an ID administrator, I want to create catalog access reviews so that I can set up access reviews for multiple resources within a catalog at once.
 ---
