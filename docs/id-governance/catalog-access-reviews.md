@@ -83,7 +83,7 @@ To complete a catalog access review, follow these steps:
 
 1. Select **Submit** to record your decisions.
 
-On the review end date, all decisions, excluding custom disconnected resources, are automatically applied. 
+On the review end date, all decisions, except those for custom disconnected resources, are automatically applied. 
 
 ## Related content
 
