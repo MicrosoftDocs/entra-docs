@@ -20,7 +20,7 @@ While there's no direct "**Stop**" button for a series, you can edit the series 
 
 ### Do access reviews reflect real-time changes to users or access during the review period?
 
-No. Access reviews capture a snapshot of access at the start of each review instance. Any changes made to user assignments, group membership, or reviewer configuration after the review begins isn't reflected in that instance.
+No. Access reviews capture a snapshot of access at the start of each review instance. Any changes made to user assignments, group membership, or reviewer configuration after the review begins aren't reflected in that instance.
 These updates will instead be captured in the next instance of the review if it's a recurring review. At the start of each recurrence, the system reevaluates and retrieves the latest information about users, resources, and reviewers.
 
 ### I completed an access review but don’t see any changes yet. Why?
