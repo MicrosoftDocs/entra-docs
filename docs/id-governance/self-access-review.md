@@ -44,7 +44,7 @@ You can also view your pending access reviews by using your browser to open **My
 1. Under **Groups and Apps**, you can see:
 
     - **Name**: The name of the access review.
-    - **Due**: The due date for the review. After this date, denied users could be removed from the group or app being reviewed.
+    - **Due**: The due date for the review. After this date, denied users might be removed from the group or app being reviewed.
     - **Resource**: The name of the resource under review.
     - **Progress**: The number of users reviewed out of the total number of users who are part of this access review.
 
