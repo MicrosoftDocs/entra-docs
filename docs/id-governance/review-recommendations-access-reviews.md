@@ -41,7 +41,7 @@ The following image has an example of an organization's reporting structure in a
 
 :::image type="content" source="media/review-recommendations-group-access-reviews/org-chart-example.png" alt-text="Screenshot of an org example chart for access reviews." lightbox="media/review-recommendations-group-access-reviews/org-chart-example.png":::
 
-Based on the reporting structure in the example image, users who are statistically significant amount of distance away from other users within the group, would get a "*Deny*" recommendation by the system if the User-to-Group Affiliation recommendation was selected by the reviewer for group access reviews. 
+Based on the reporting structure in the example image, users who are a statistically significant distance away from other users within the group, would get a "*Deny*" recommendation by the system if the User-to-Group Affiliation recommendation was selected by the reviewer for group access reviews. 
 
 For example, Phil who works within the Personal care division is in a group with Debby, Irwin, and Emily who all work within the Cosmetics division. The group is called *Fresh Skin*. If an Access Review for the group Fresh Skin is performed, based on the reporting structure and distance away from the other group members, Phil would be considered to have low affiliation. The system creates a **Deny** recommendation in the group access review.
 
