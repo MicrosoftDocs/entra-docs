@@ -31,7 +31,7 @@ To do an access review, you must first open the access review. Use the following
 
 Once you open the access review, you can see your access. Use the following procedure to do the access review:
 
-1. Decide whether you still need access to the access package. For example, the project you're working on isn't complete, so you still need access to continue working on the project.
+1. Decide whether you still need access to the access package. For example, if the project you're working on isn't complete, you still need access to continue working on it.
 
 1. Select **Yes** to keep your access or select **No** to remove your access.
     >[!NOTE]
