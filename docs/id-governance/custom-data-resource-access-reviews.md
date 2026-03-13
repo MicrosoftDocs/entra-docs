@@ -73,7 +73,7 @@ With a catalog created, you can add custom data provided resources to it by doin
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
-1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
+1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
 1. On the **Reviewers and schedule** tab, select reviewers you want to conduct access reviews. Currently only single stage reviews where the managers of the users who the access reviews are for can be set as reviewers.
 
