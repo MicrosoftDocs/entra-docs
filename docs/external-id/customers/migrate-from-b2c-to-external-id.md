@@ -160,7 +160,7 @@ For step-by-step implementation instructions, see [B2C-initiated password migrat
 
 Before you move to production and decommission Azure AD B2C apps, validate end-to-end user journeys and integrations:
 - Test all authentication flows (sign-up, sign-in, password reset, MFA).
-- Validate token issuance and custom claims (<https://jwt.ms/>).
+- Validate token issuance and custom claims.
 - Test application and API integrations.
 - Verify custom authentication extensions.
 - Test JIT provisioning and native authentication.
