@@ -1005,7 +1005,11 @@ External ID uses the shared Microsoft Entra user model, which includes on-premis
 
 Deploy JIT migration components in a secure identity subscription with limited RBAC. Tightly control administrative access to prevent unauthorized changes to customer-hosted authentication logic. This separation helps protect the authentication flow and user accounts from compromise.
 
-## Next steps
+## Complete validation and cutover
+
+After you complete JIT password migration setup and testing, return to the migrate guide to validate end-to-end authentication flows and plan your application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
+
+## Related content
 
 - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Choose between the standard and HSC migration approaches.
 - [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – End-to-end guide for the standard migration approach.

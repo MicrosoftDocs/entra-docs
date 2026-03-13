@@ -185,6 +185,10 @@ Stop harvesting credentials and migrate applications to authenticate with Extern
 > [!NOTE]
 > If you're using this approach, it's important to protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold.
 
+## Complete validation and cutover
+
+After you complete user and credential migration, return to the migrate guide to validate end-to-end authentication flows and plan your application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
+
 ## Related content
 
 - [Migrate to External ID](migrate-to-external-id.md) – Overview of migrating from any legacy CIAM solution.
