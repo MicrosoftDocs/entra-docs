@@ -38,7 +38,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 - **Have reviews recur periodically:** You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers are notified at the start of each review. Reviewers can approve or deny access with a friendly interface and with the help of smart recommendations.
 
 >[!NOTE]
->If you're ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
+>If you're ready to try access reviews, take a look at [Create an access review of groups or applications](create-access-review.md).
 
 ## Where do you create reviews?
 
