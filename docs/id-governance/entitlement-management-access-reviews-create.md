@@ -124,7 +124,7 @@ After the start date, an access review will be listed in the **Access reviews** 
 ## Access reviews email notifications
 You can designate reviewers, or users can review their access themselves. By default, Microsoft Entra ID will send an email to reviewers or self-reviewers shortly after the review starts.
 
-The email includes instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
+The email includes instructions on how to review access to access packages. If the review is for users to review their own access, show them the instructions on how to perform a self-review of their access packages.
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
 
