@@ -30,9 +30,11 @@ Your first decision is which migration approach to use. Most customers should us
 
 ### Determine whether High Scale Compatibility (HSC) migration applies
 
-Use the following decision tree to check whether HSC applies to your tenant.
+Use the following decision tree to check whether your tenant is eligible for HSC mode.
 
-:::image type="content" source="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png" alt-text="Diagram of a migration decision tree for Azure AD B2C showing steps for HSC and standard migration approaches." lightbox="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png":::HSC migration might apply if **all** the following are true:
+:::image type="content" source="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png" alt-text="Diagram of a migration decision tree for Azure AD B2C showing steps for HSC and standard migration approaches." lightbox="media/plan-your-migration-from-b2c-to-external-id/b2c-migration-decision-process-large-tenant.png":::
+
+HSC migration might be a good choice if **all** the following are true:
 
 - You are an existing Azure AD B2C customer.
 - Your tenant contains approximately 5 million or more directory objects (users, groups, and applications).
@@ -44,7 +46,7 @@ Use the following decision tree to check whether HSC applies to your tenant.
 |---|---|
 | **Best for**: Most tenants<br>**Typical trigger**: Below high-scale thresholds<br>**Identity approach**: Plan to migrate users (and, where required, credentials) as part of moving to External ID<br>**Coexistence**: Not designed for long-running side-by-side operation at very large scale<br>**Feature coverage**: Broadest compatibility | **Best for**: Very large Azure AD B2C tenants<br>**Typical trigger**: ~5 million+ directory objects and scale-driven constraints<br>**Identity approach**: Keep existing users and credentials in place while migrating applications in phases<br>**Coexistence**: Azure AD B2C and External ID run side by side in the same tenant and might require schema updates<br>**Feature coverage**: Some External ID features aren’t available yet in HSC mode—review limitations carefully |
 
-If you're eligible for HSC migration, review both the **standard migration approach** and **High Scale Compatibility (HSC) migration approach** sections before choosing an approach.
+If your tenant meets the HSC eligibility criteria, review both approaches below before deciding — the standard approach might still be the better fit depending on your feature requirements.
 
 If you aren't eligible for HSC migration, use the **standard migration approach**. HSC exists to support tenants that exceed the high-scale quotas; if your tenant is below these quotas, HSC provides no added benefit.
 
