@@ -47,7 +47,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. To allow users to extend their assignments, set **Allow users to extend access** to **Yes**.
 
-    If extensions are allowed in the policy, the user receives an email 14 days and also one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
+    If extensions are allowed in the policy, the user receives an email 14 days and one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
 
     If a user's access is extended, they won't be able to request the access package after the specified extension date (date set in the time zone of the user who created the policy).
 
