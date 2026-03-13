@@ -43,7 +43,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
     
     ![Access package - Lifecycle Expiration settings](./media/entitlement-management-access-reviews/expiration.png)
 
-1. Select Show advanced expiration settings to show other settings.
+1. Select **Show advanced expiration settings** to show other settings.
 
 1. To allow user to extend their assignments, set **Allow users to extend access** to **Yes**.
 
