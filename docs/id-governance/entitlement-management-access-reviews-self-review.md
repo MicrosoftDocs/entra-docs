@@ -20,7 +20,7 @@ To do an access review, you must first open the access review. Use the following
 
 1. Select the **Review access** link.
 
-1. You can also go directly to https://myaccess.microsoft.com to find your pending access reviews if you don't receive an email. (For US Government, use `https://myaccess.microsoft.us` instead.)
+1. You can also go directly to https://myaccess.microsoft.com to find your pending access reviews if you don't receive an email. (For US Government, use https://myaccess.microsoft.us instead.)
 
 1. Select **Access reviews** on the left navigation bar to see a list of pending access reviews assigned to you.
 
