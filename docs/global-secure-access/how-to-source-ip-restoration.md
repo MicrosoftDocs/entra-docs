@@ -2,22 +2,22 @@
 title: Enable Source IP Restoration with Global Secure Access
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.topic: how-to
-ms.date: 09/30/2025
+ms.date: 03/13/2026
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # Source IP Restoration
-Use of cloud-based network proxy and SSE solutions abstracts the original source IP of the user from the service to which the user is connecting. Instead, the service will detect the user's IP address to be the egress address of the cloud-based network proxy. While this helps with privacy-related concerns in consumer scenarios, not having the original source IP information makes it difficult to achieve enterprise security goals. For example, without an actual client egress IP address, applying Entra ID Conditional Access policies based on organization's well-known IP addresses is not possible, and audit logs will not reflect accurate location information.
+Use of cloud-based network proxy and SSE solutions abstracts the original source IP of the user from the service to which the user is connecting. Instead, the service will detect the user's IP address to be the egress address of the cloud-based network proxy. While this helps with privacy-related concerns in consumer scenarios, not having the original source IP information makes it difficult to achieve enterprise security goals. For example, without an actual client egress IP address, applying Microsoft Entra ID Conditional Access policies based on organization's well-known IP addresses is not possible, and audit logs will not reflect accurate location information.
 
-Source IP Restoration is part of the Adaptive Access feature of Microsoft Entra Internet Access for Microsoft Services. Source IP Restoration detects and securely communicates the original egress IP address of the end user to Entra ID and Microsoft Graph, bringing the following benefits to the organization:
+Source IP Restoration is part of the Adaptive Access feature of Microsoft Entra Internet Access for Microsoft Services. Source IP Restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to the organization:
 
 - Continue to enforce IP-based location policies in [Microsoft Entra ID Conditional Access](/azure/active-directory/conditional-access/overview).
 - Improve accuracy of risk detection in [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks).
 - Elevate your threat detection and response with accurate source IP recorded in [Microsoft Entra sign-in logs](/azure/active-directory/reports-monitoring/concept-all-sign-ins) and in [Microsoft Entra audit logs](/entra/identity/monitoring-health/concept-audit-logs).
 
 > [!NOTE]
-> To achieve source IP restoration for non-Microsoft apps, you must also configure Conditional Access policies and ensure traffic flows through a compliant network. To learn more, see [Enable compliant network check with Conditional Access](/entra/global-secure-access/how-to-compliant-network#protect-your-resources-behind-the-compliant-network).
+> To achieve source IP restoration for non-Microsoft apps, you must also configure Conditional Access policies and ensure traffic flows through a compliant network. For more information, see [Enable compliant network check with Conditional Access](/entra/global-secure-access/how-to-compliant-network#protect-your-resources-behind-the-compliant-network).
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ To enable the required setting to allow source IP restoration, an administrator 
 1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive Access**.
 1. Select the toggle to **Enable Global Secure Access signaling in Conditional Access**.
 
-This functionality allows Entra ID and Microsoft Graph to receive the public egress source IP address of the user.
+This functionality allows Microsoft Entra ID and Microsoft Graph to receive the public egress source IP address of the user.
 
 :::image type="content" source="media/how-to-source-ip-restoration/toggle-enable-signaling-in-conditional-access.png" alt-text="Screenshot showing the toggle to enable signaling in Conditional Access.":::
 
