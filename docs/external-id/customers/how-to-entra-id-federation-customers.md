@@ -80,6 +80,76 @@ After you set up the identity provider, add it to a user flow so it appears on t
 1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
 1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
+## Known limitations
+
+- Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users get stuck in a Microsoft Entra ID MFA registration flow and can't complete sign-in. This limitation applies only for External ID to Entra ID federation and doesn't affect other external identity provider federations.
+
+## Frequently asked questions
+
+**I get an error: "No email address was obtained from the external OIDC identity provider." How do I fix it?**
+
+The email claim is required for External ID federation scenarios. Make sure the `email` claim is included in the application's **Token configuration** in the Microsoft Entra ID tenant used as the external identity provider.
+
+**I configured Microsoft Entra ID as my federated identity provider, but it doesn't appear on the sign-in page. What should I check?**
+
+Verify that the issuer URI and well-known OpenID configuration endpoint are correctly configured. An incorrect issuer or discovery endpoint prevents the identity provider from appearing during sign-in. Also check that:
+
+- The Microsoft Entra ID tenant is fully configured as a custom OIDC identity provider.
+- Required redirect URIs, issuer values, and scopes are present and correct.
+- The identity provider is added to the user flow, not just to the tenant.
+- Configuration changes have fully propagated. Re-saving or recreating the user flow after configuration changes often resolves this issue.
+
+**What does the error `AADSTS500208: The domain is not a valid login domain for the account type` mean?**
+
+This error indicates that sign-in failed because the account type isn't permitted to use the login URL or tenant being accessed. Verify that the correct sign-in endpoint is being used and that the account has access to the target tenant.
+
+**What does error `40015` mean when using a custom OIDC identity provider?**
+
+Error `40015` means that authentication at the external identity provider succeeded, but External ID rejected the response because the custom OIDC identity provider configuration or returned tokens couldn't be validated. Common causes include:
+
+- The issuer URI doesn't exactly match the issuer value in the identity provider's discovery document.
+- Authorization, token, or JWKS endpoints are incorrect or unreachable.
+- Required attributes (such as subject or email) aren't returned by the identity provider.
+
+**How is adding Microsoft Entra ID as a custom OIDC federation different from inviting users as B2B guests?**
+
+With Microsoft Entra ID federation:
+
+- User authentication always occurs in the home Microsoft Entra ID tenant.
+- Workforce Conditional Access and MFA policies are enforced.
+- External ID doesn't collect or manage passwords.
+- Users are created as federated users, not traditional B2B guest accounts.
+
+This approach avoids mixed-branding experiences and reduces the administrative overhead associated with guest lifecycle management.
+
+**Do Microsoft Entra ID Conditional Access and MFA policies apply?**
+
+Yes. Because all authentication occurs in the user's home Microsoft Entra ID tenant, the following are enforced exactly as they are for native Microsoft Entra ID sign-ins:
+
+- Conditional Access policies
+- MFA requirements
+- Device-based and risk-based controls
+
+**Why do I see a domain confirmation dialog when using domain_hint?**
+
+When `domain_hint` is used, a domain confirmation dialog appears to ensure the user is intentionally signing in to the correct organization and to protect against unauthorized or unexpected redirection. This security check can't be suppressed today, even when the redirect is expected.
+
+**Can users be automatically redirected based on their email domain?**
+
+There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in.
+
+**Can I hide other identity provider buttons and show only Microsoft Entra ID?**
+
+Not at this time. The ability to hide identity provider buttons or enforce domain-based routing without user choice isn't currently supported.
+
+**Are ID tokens returned as opaque values?**
+
+No. Microsoft Entra ID issues standard signed JWT tokens. ID tokens are readable and conform to OpenID Connect specifications.
+
+**Can I use multiple Microsoft Entra ID tenants with a single external tenant?**
+
+Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OIDC identity providers and expose them within External ID user flows.
+
 ## Related content
 
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
