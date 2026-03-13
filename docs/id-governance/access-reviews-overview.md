@@ -24,7 +24,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 - As new employees join, how do you ensure they have the access they need to be productive?
 - As people move teams or leave the company, how do you make sure that their old access is removed?
 - Excessive access rights can lead to compromises.
-- Excessive access right can also lead audit findings as they indicate a lack of control over access.
+- Excessive access rights can also lead to audit findings as they indicate a lack of control over access.
 - You have to proactively engage with resource owners to ensure they regularly review who has access to their resources.
 
 ## When should you use access reviews?
