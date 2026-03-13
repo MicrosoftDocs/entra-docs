@@ -63,7 +63,7 @@ You can review either:
  - A group in Microsoft Entra ID that has one or more guests as members.
  - An application connected to Microsoft Entra ID that has one or more guest users assigned to it. 
  
-When reviewing guest user access to Microsoft 365 groups, you can either create a review for each group individually, or turn on automatic, recurring access reviews of guest users across all Microsoft 365 groups. The following video provides more information on recurring access reviews of guest users: 
+When reviewing guest user access to Microsoft 365 groups, you can either create a review for each group individually or turn on automatic, recurring access reviews of guest users across all Microsoft 365 groups. The following video provides more information on recurring access reviews of guest users: 
  
 > [!VIDEO https://www.youtube.com/embed/3D2_YW2DwQ8]
  
