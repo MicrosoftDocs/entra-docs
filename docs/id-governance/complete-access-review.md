@@ -81,7 +81,7 @@ To view the results for a review, select the **Results** page. To view just a us
  
 ![Retrieve results for an access review](./media/complete-access-review/retrieve-results.png) 
  
-To view the results of a completed instance of an access review that is recurring, select **Review history**, then select the specific instance from the list of completed access review instances, based on the instance's start and end date. The results of this instance can be obtained from the **Results** page. Recurring access reviews allow you to have a constant picture of access to resources that might need to be updated more often than one-time access reviews.
+To view the results of a completed instance of an access review that is recurring, select **Review history**, then select the specific instance from the list of completed access review instances, based on the instance's start and end date. The results of this instance can be obtained from the **Results** page. Recurring access reviews provide a continuous view of access to resources that might need to be updated more often than one-time access reviews.
  
 To retrieve the results of an access review, both in-progress or completed, select the **Download** button. The resulting CSV file can be viewed in Excel or in other programs that open UTF-8 encoded CSV files.
 
