@@ -57,7 +57,7 @@ Follow these steps to track the progress of access reviews as they complete.
  
 1. If you want to stop an access review before it reaches the scheduled end date, select the **Stop** button.
  
-    When you stop a review, reviewers will no longer be able to give responses. You can't restart a review after it's stopped.
+    When you stop a review, reviewers can no longer provide responses. You can't restart a review after it's stopped.
     > [!NOTE]
     > The Stop option is only available for a specific review instance, not for the entire recurring review series.
     To stop a recurring review series, you can edit the series and update the **End** option to the desired date when you want the series to stop. This change prevents any future review instances from being created beyond the updated end date.
