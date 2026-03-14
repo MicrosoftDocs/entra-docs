@@ -70,6 +70,24 @@ The agent works for your reviewers by automatically gathering insights and gener
 
 ---
 
+### General Availability - Cross-tenant synchronization (cross-cloud)
+
+**Type:** New feature    
+**Service category:** Provisioning        
+**Product capability:** Collaboration    
+
+Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
+
+*   Commercial -> US Gov
+*   US Gov -> Commercial
+*   Commercial -> China
+
+For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
