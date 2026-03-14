@@ -88,6 +88,26 @@ For more information, see: [Configure cross-tenant synchronization](../identity
 
 ---
 
+### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Plan for change    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Microsoft Entra Connect    
+
+As part of ongoing security hardening, Microsoft has deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Microsoft Entra Connect.
+
+Microsoft Entra Connect now uses this first party application to synchronize between Active Directory and Microsoft Entra ID. Customers are required to upgrade to version **2.5.79.0** or later by **September 2026**. 
+
+We auto-upgrade customers where supported. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details on available versions.
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
