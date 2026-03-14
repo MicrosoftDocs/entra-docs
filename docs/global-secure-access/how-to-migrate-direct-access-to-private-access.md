@@ -73,15 +73,15 @@ Before you begin removal, verify that DirectAccess is currently active on the de
 
 **DirectAccess client UX** — Go to **Settings** > **Network & internet** > **DirectAccess**. The status shows **Workplace Connection: Connected**.
 
-:::image type="content" source="media/how-to-migrate-directaccess-to-private-access/directaccess-connection-status.png" alt-text="Screenshot that shows Windows Settings with the DirectAccess page displaying Workplace Connection status as Connected." lightbox="media/how-to-migrate-directaccess-to-private-access/directaccess-connection-status.png":::
+:::image type="content" source="media/how-to-migrate-direct-access-to-private-access/direct-access-connection-status.png" alt-text="Screenshot that shows Windows Settings with the DirectAccess page displaying Workplace Connection status as Connected." lightbox="media/how-to-migrate-direct-access-to-private-access/direct-access-connection-status.png":::
 
 **IP-HTTPS tunnel adapter** — Open a command prompt and run `ipconfig`. A **Tunnel adapter Microsoft IP-HTTPS Platform Interface** entry confirms that the DirectAccess IPv6 transition tunnel is active.
 
-:::image type="content" source="media/how-to-migrate-directaccess-to-private-access/tunnel-adapter.png" alt-text="Screenshot that shows the command prompt with activity in the IP-HTTPS tunnel adapter." lightbox="media/how-to-migrate-directaccess-to-private-access/tunnel-adapter.png":::
+:::image type="content" source="media/how-to-migrate-direct-access-to-private-access/tunnel-adapter.png" alt-text="Screenshot that shows the command prompt with activity in the IP-HTTPS tunnel adapter." lightbox="media/how-to-migrate-direct-access-to-private-access/tunnel-adapter.png":::
 
 **NRPT policies** — Open PowerShell and run `Get-DnsClientNrptPolicy`. DirectAccess-related NRPT entries (such as `DirectAccess-NLS.*` namespaces) confirm that DirectAccess DNS policies are applied.
 
-:::image type="content" source="media/how-to-migrate-directaccess-to-private-access/get-client-policy.png" alt-text="Screenshot that shows the PowerShell output of Get-DnsClientNrptPolicy with DirectAccess-related entries." lightbox="media/how-to-migrate-directaccess-to-private-access/get-client-policy.png":::
+:::image type="content" source="media/how-to-migrate-direct-access-to-private-access/get-client-policy.png" alt-text="Screenshot that shows the PowerShell output of Get-DnsClientNrptPolicy with DirectAccess-related entries." lightbox="media/how-to-migrate-direct-access-to-private-access/get-client-policy.png":::
 
 ### Remove DirectAccess from pilot devices
 
@@ -89,7 +89,7 @@ Complete the following steps on pilot devices only:
 
 1. **Remove the computer account from the DirectAccess security group.** Open **Group Policy Management**, locate the **DirectAccess Client Settings** GPO, and remove the pilot computer from the security filtering group (for example, `DirectAccess Computers`).
 
-   :::image type="content" source="media/how-to-migrate-directaccess-to-private-access/client-settings.png" alt-text="Screenshot that shows the Group Policy Management console with the DirectAccess Client Settings GPO and its security filtering configuration." lightbox="media/how-to-migrate-directaccess-to-private-access/client-settings.png":::
+   :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/client-settings.png" alt-text="Screenshot that shows the Group Policy Management console with the DirectAccess Client Settings GPO and its security filtering configuration." lightbox="media/how-to-migrate-direct-access-to-private-access/client-settings.png":::
 
 1. **Ensure group membership changes replicate** to all domain controllers.
 
@@ -127,7 +127,7 @@ When you remove DirectAccess, enable Private Access for the pilot user.
 
 1. Verify the Global Secure Access client shows **Connected** status in the system tray.
 
-   :::image type="content" source="media/how-to-migrate-directaccess-to-private-access/taskbar-client.png" alt-text="Screenshot that shows the Global Secure Access client icon in the Windows system tray indicating a connected status." lightbox="media/how-to-migrate-directaccess-to-private-access/taskbar-client.png":::
+   :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/taskbar-client.png" alt-text="Screenshot that shows the Global Secure Access client icon in the Windows system tray indicating a connected status." lightbox="media/how-to-migrate-direct-access-to-private-access/taskbar-client.png":::
 
 ### Expected behavior
 
