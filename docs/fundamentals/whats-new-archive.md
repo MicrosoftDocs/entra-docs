@@ -170,6 +170,26 @@ For more information, see: [Manage inactive users using Lifecycle Workflows (Pre
 
 ---
 
+### Retirement - Microsoft Authentication Library to MSAL Recommendations API
+
+**Type:** Deprecated    
+**Service category:** Other    
+**Product capability:** Developer Experience    
+
+We’re retiring the **ADAL to MSAL Recommendations API** on **December 15, 2025**.
+
+To continue monitoring authentication library usage, customers can query sign-in logs manually via **Microsoft Graph API**. The relevant data is available in the `authenticationProcessingDetails` field under the key `"Azure AD App Authentication Library"`.
+
+For guidance, see:
+
+*   [Analyze a sign-in with Microsoft Graph API](/azure/azure-monitor/reference/tables/aadnoninteractiveusersigninlogs)
+
+No action is required to disable the API.
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
