@@ -14,19 +14,18 @@ ms.reviewer: buzaher
 
 # Migrate from DirectAccess to Microsoft Entra Private Access
 
-[!INCLUDE [applies-to-entra-id](../includes/applies-to-entra-id.md)]
-
-DirectAccess provided organizations with seamless remote connectivity to internal resources without traditional VPN connections. However, DirectAccess relies on IPv6 transition technologies (IP-HTTPS, Teredo, ISATAP, 6to4), requires domain-joined Windows Enterprise clients, and provides full network-level access once connected. These architectural constraints don't align with modern hybrid and cloud-first environments where organizations need identity-aware, per-application access across diverse device types. Microsoft Entra Private Access is a cloud-based [Zero Trust Network Access (ZTNA)](/entra/architecture/zero-trust) solution that replaces the need for legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors) to provide conditional, per-app access to private resources without exposing your network to inbound connections. Migrating from DirectAccess to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
+DirectAccess provides organizations with seamless remote connectivity to internal resources without traditional VPN connections. However, DirectAccess relies on IPv6 transition technologies (IP-HTTPS, Teredo, ISATAP, 6to4), requires domain-joined Windows Enterprise clients, and provides full network-level access once connected. These architectural constraints don't align with modern hybrid and cloud-first environments where organizations need identity-aware, per-application access across diverse device types. Microsoft Entra Private Access is a cloud-based Zero Trust Network Access (ZTNA) solution that replaces the need for legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors) to provide conditional, per-app access to private resources without exposing your network to inbound connections. Migrating from DirectAccess to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
 
 ### Technical incompatibilities between DirectAccess and Private Access
 
 DirectAccess and Microsoft Entra Private Access can't coexist on the same device. When both are active, you might experience the following problems:
 
-- **Device tunnel conflict** — DirectAccess establishes a device tunnel at boot that takes precedence and prevents Private Access traffic from flowing.
-- **NRPT rule conflicts** — Both solutions use Name Resolution Policy Table (NRPT) rules. Conflicting entries cause unpredictable DNS resolution behavior.
-- **IPv6 transition technology interference** — The IP-HTTPS tunnel adapter that DirectAccess creates can interfere with Private Access network routing.
+- **Device tunnel conflict**: DirectAccess establishes a device tunnel at boot that takes precedence and prevents Private Access traffic from flowing.
+- **NRPT rule conflicts**: Both solutions use Name Resolution Policy Table (NRPT) rules. Conflicting entries cause unpredictable DNS resolution behavior.
+- **IPv6 transition technology interference**: The IP-HTTPS tunnel adapter that DirectAccess creates can interfere with Private Access network routing.
 
-To ensure a successful migration, you must **fully remove** DirectAccess from each device before you enable Private Access traffic forwarding.
+> [!IMPORTANT]
+> To ensure a successful migration, you must **fully remove** DirectAccess from each device before you enable Private Access traffic forwarding.
 
 ## Prerequisites
 
