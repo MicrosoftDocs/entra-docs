@@ -139,6 +139,23 @@ For more information, see: [Delegate approvals in My Access](../id-governance/de
 
 ---
 
+### Public Preview - Reprocess failed users and workflows in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle Workflows now supports reprocessing of your workflows to help organizations streamline the reprocessing of workflows when errors or failures are discovered. This feature includes the ability to reprocess previous runs of workflows including failed runs or just runs that you might want to process again. Customers can choose from the following options to fit their needs:
+
+- Select specific workflow run to be reprocessed
+- Select which users from the workflow run to be reprocessed. For example either failed users, or all users from the run
+
+For more information, see: [Reprocess workflows](../id-governance/reprocess-workflow.md)
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
