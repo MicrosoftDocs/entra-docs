@@ -32,7 +32,8 @@ The traditional sharing model has several drawbacks:
 To configure shared accounts, you need the following resources and roles:
 
 * An Enterprise Mobility Suite (EMS) or Microsoft Entra ID P1 or P2 license plan for each user who accesses shared accounts. For more information, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-* A user account with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role. The [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role also works.
+* A user account with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role to configure SSO and assign users. The [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role also works.
+* At least the [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) role to create security groups. If your tenant allows users to create security groups, this role isn't required.
 * An application that supports password-based single sign-on (SSO).
 * The [My Apps Secure Sign-in Extension](https://microsoftedge.microsoft.com/addons/detail/my-apps-secure-signin-ex/gaaceiggkkiffbfdpmfapegoiohkiipl) installed in end-user browsers (Microsoft Edge or Chrome) for accessing password-based SSO apps.
 
@@ -83,7 +84,7 @@ Microsoft Entra ID parses the HTML of the sign-in page for username and password
 
 ### Step 3: Create a security group
 
-Create a security group for each set of users who share the same application credentials.
+Create a security group for each set of users who share the same application credentials. Creating groups requires at least the [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) role, unless your tenant allows users to create security groups.
 
 1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select **New group**.
