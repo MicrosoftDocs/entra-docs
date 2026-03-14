@@ -108,6 +108,20 @@ Check our [version history page](../identity/hybrid/connect/reference-connect-ve
 
 ---
 
+### Public Preview - App management policies portal experience
+
+**Type:** New feature    
+**Service category:** Enterprise Apps    
+**Product capability:** Directory    
+
+App management policies allow administrators to improve the security of their organization by setting rules on how applications in their organization can be configured. They can use them to block insecure configurations like password credentials. These policies have been available through the Microsoft Graph API, but can now also be configured using the Microsoft Entra admin center, under the Enterprise applications experience.
+
+Learn more about [how to configure app management policies](https://aka.ms/app-mgmt-policy-ux-docs).
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
