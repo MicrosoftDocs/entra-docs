@@ -972,13 +972,3 @@ Guest access support for Global Secure Access (GSA) using W365 and AVD is now in
 For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-external-user-access.md).
 
 ---
-
-### Public Preview - Global Secure Access Internet profile support for iOS client
-
-**Type:** New feature    
-**Service category:** Internet Access    
-**Product capability:** Network Access    
-
-Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported. On iOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
-
----
