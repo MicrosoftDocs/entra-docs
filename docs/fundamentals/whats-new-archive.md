@@ -122,6 +122,23 @@ Learn more about [how to configure app management policies](https://aka.ms/app-m
 
 ---
 
+### Public Preview - Delegate approvals in My Access
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+Users can now delegate their access package approvals in My Access. Approvers can assign another individual to respond to access package approval requests on their behalf. The original approvers can still respond to their approvals during the delegation period.  
+
+> [!NOTE]
+> This feature currently applies only to access package approvals and will be expanded to support access reviews in November 2025.  
+  
+For more information, see: [Delegate approvals in My Access](../id-governance/delegate-approvals-my-access.md).
+
+---
+
+---
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
