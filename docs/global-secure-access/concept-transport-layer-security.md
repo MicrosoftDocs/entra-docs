@@ -11,7 +11,7 @@ ms.date: 05/28/2025
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
 ---
-# What is Transport Layer Security Inspection?
+# What is Transport Layer Security inspection?
 The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. While TLS secures legitimate traffic, malicious traffic like malware and data leakage attacks can still hide behind encryption. The Microsoft Entra Internet Access TLS inspection capability provides visibility into encrypted traffic by making content available for enhanced protection, such as malware detection, data loss prevention, prompt inspection, and other advanced security controls. This article gives an overview of the TLS inspection process.
 
 ## The TLS inspection process
