@@ -3,7 +3,7 @@ title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 search.appverid: MET150
 ms.topic: reference
-ms.date: 02/24/2026
+ms.date: 03/16/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -131,7 +131,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
-> | [Teams External Collaboration Administrator](#teams-external-collaboration-administrator) | Manage external collaboration policies and settings for Teams, including configuring external domains and controlling which groups and users can interact with the organization. | 2fe872fb-daa8-4afc-8f6c-53c4565cfef4 |
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
@@ -586,10 +585,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Teams Devices Administrator
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
-
-## Teams External Collaboration Administrator
-
-[!INCLUDE [teams-external-collaboration-administrator](includes/teams-external-collaboration-administrator.md)]
 
 ## Teams Reader
 
