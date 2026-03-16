@@ -29,9 +29,9 @@ Partners can enable the external user access feature with the Global Secure Acce
 
 ### Prerequisites
 To enable external user access with the Global Secure Access client, you must have:
-- External users(guest or member) configured in the resource tenant. For more information, see the following articles:
+- External users (guest or member) configured in the resource tenant. For more information, see the following articles:
     - [Quickstart: Add a external user and send an invitation](../external-id/b2b-quickstart-add-guest-users-portal.md)
-    - [Understand and manage the properties of external user users](../external-id/user-properties.md)
+    - [Understand and manage the properties of external users](../external-id/user-properties.md)
 - The Global Secure Access client installed and running on the device connected to the home tenant. To install the Global Secure Access client, see [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).   
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
@@ -94,9 +94,11 @@ A: Yes, you can use a windows device which is registered to Entra for switching 
 ## Known limitations
 - External user access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
-- When Access Control is allowed on cross tenant settings for Global Secure Access, access isn't allowed because Global Secure Access controls these applications.
+- On the resource tenant, inbound access settings to private application is not allowed on cross tenant settings.
 - When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant.
 - External user access in the resource tenant will fail if compliant network policies are enforced for private applications. External users must be excluded from these policies.
+- When the client is already connected and the user is added to a new external tenant, the new tenant does not appear in the client UI. The client must be disabled and re-enabled for the new tenant to be shown.
+- On the resource tenant, if the Private Access traffic profile is assigned after the client is connected, the client must be disabled and re-enabled for private traffic to take effect.
 
 ## Enable external user access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide external user access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.

@@ -3,7 +3,7 @@ title: Onboard external users with entitlement management
 description: Learn how to simplify approving access to applications and resources for onboarding external users to your organization.
 editor: markwahl-msft
 ms.subservice: entitlement-management
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/07/2025
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to simplify onboarding external users to resources using access governance features.

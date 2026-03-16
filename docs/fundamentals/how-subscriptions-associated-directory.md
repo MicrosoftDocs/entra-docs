@@ -1,11 +1,7 @@
 ---
 title: Add an existing Azure subscription to your tenant
 description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
-author: barclayn
-ms.author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 04/02/2025
 ms.reviewer: jeffsta
@@ -15,11 +11,11 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 # Associate or add an Azure subscription to your Microsoft Entra tenant
 
 
-All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant may be trusted by multiple subscriptions.
+All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant might be trusted by multiple subscriptions.
 
 [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)] However, when an owner of a subscription joins their subscription to an existing tenant, the owner isn't assigned to the Global Administrator role.
 
-While users may only have a single authentication *home* directory, users may participate as guests in multiple directories. You can see both the home and guest directories for each user in Microsoft Entra ID.
+While users might only have a single authentication *home* directory, users might participate as guests in multiple directories. You can see both the home and guest directories for each user in Microsoft Entra ID.
 
 :::image type="content" source="media/how-subscriptions-associated-directory/trust-relationship.png" alt-text="Screenshot that shows the trust relationship between Azure subscriptions and Microsoft Entra directories.":::
 
@@ -49,27 +45,27 @@ Before you can associate or add your subscription, do the following steps:
 
 To associate an existing subscription with your Microsoft Entra ID, follow these steps:
 
-1. Sign to the [Azure portal](https://portal.azure.com) with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment for the subscription.
+1. Sign in to the [Azure portal](https://portal.azure.com) with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment for the subscription.
 
-2. Browse to **Subscriptions**.
+1. Browse to **Subscriptions**.
 
-3. Select the name of the subscription you want to use.
+1. Select the name of the subscription you want to use.
 
-4. Select **Change directory**.
+1. Select **Change directory**.
 
-  :::image type="content" source="media/how-subscriptions-associated-directory/change-directory-in-azure-subscriptions.png" alt-text="Screenshot that shows the Subscriptions page, with the Change directory option highlighted.":::
+    :::image type="content" source="media/how-subscriptions-associated-directory/change-directory-in-azure-subscriptions.png" alt-text="Screenshot that shows the Subscriptions page, with the Change directory option highlighted.":::
 
-5. Review any warnings that appear, and then select **Change**.
+1. Review any warnings that appear, and then select **Change**.
 
-  :::image type="content" source="media/how-subscriptions-associated-directory/edit-directory-ui.png" alt-text="Screenshot that shows the Change the directory page with a sample directory and the Change button highlighted.":::
+    :::image type="content" source="media/how-subscriptions-associated-directory/edit-directory-ui.png" alt-text="Screenshot that shows the Change the directory page with a sample directory and the Change button highlighted.":::
 
-  After the directory is changed for the subscription, you'll get a success message.
+    After the directory is changed for the subscription, you'll get a success message.
 
-6. Select **Switch directories** on the subscription page to go to your new directory.
+1. Select **Switch directories** on the subscription page to go to your new directory.
 
-  :::image type="content" source="media/how-subscriptions-associated-directory/directory-switcher.png" alt-text="Screenshot that shows the Directory switcher page with sample information.":::
+    :::image type="content" source="media/how-subscriptions-associated-directory/directory-switcher.png" alt-text="Screenshot that shows the Directory switcher page with sample information.":::
 
-  It can take several hours for everything to show up properly. If it seems to be taking too long, check the **Global subscription filter**. Make sure the moved subscription isn't hidden. You may need to sign out of the Azure portal and sign back in to see the new directory.
+    It can take several hours for everything to show up properly. If it seems to be taking too long, check the **Global subscription filter**. Make sure the moved subscription isn't hidden. You might need to sign out of the Azure portal and sign back in to see the new directory.
 
 Changing the subscription directory is a service-level operation, so it doesn't affect subscription billing ownership. To delete the original directory, you must transfer the subscription billing ownership to a new Account Admin. To learn more about transferring billing ownership, see [Transfer ownership of an Azure subscription to another account](/azure/cost-management-billing/manage/billing-subscription-transfer).
 
@@ -79,11 +75,11 @@ After you associate a subscription with a different directory, you might need to
 
 1. If you have any key vaults, you must change the key vault tenant ID. For more information, see [Change a key vault tenant ID after a subscription move](/azure/key-vault/general/move-subscription).
 
-2. If you used system-assigned Managed Identities for resources, you must re-enable these identities. If you used user-assigned Managed Identities, you must re-create these identities. After re-enabling or recreating the Managed Identities, you must re-establish the permissions assigned to those identities. For more information, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).
+1. If you used system-assigned Managed Identities for resources, you must re-enable these identities. If you used user-assigned Managed Identities, you must re-create these identities. After re-enabling or recreating the Managed Identities, you must re-establish the permissions assigned to those identities. For more information, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).
 
-3. If you've registered an Azure Stack using this subscription, you must re-register. For more information, see [Register Azure Stack Hub with Azure](/azure-stack/operator/azure-stack-registration).
+1. If you've registered an Azure Stack using this subscription, you must re-register. For more information, see [Register Azure Stack Hub with Azure](/azure-stack/operator/azure-stack-registration).
 
-4. For more information, see [Transfer an Azure subscription to a different Microsoft Entra directory](/azure/role-based-access-control/transfer-subscription).
+For more information, see [Transfer an Azure subscription to a different Microsoft Entra directory](/azure/role-based-access-control/transfer-subscription).
 
 ## Related content
 

@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect: Upgrade from a previous version'
 description: Explains the different methods to upgrade to the latest release of Microsoft Entra Connect, including an in-place upgrade and a swing migration.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
-ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 09/17/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect: Upgrade from a previous version to the latest
 
@@ -159,8 +152,9 @@ However, if this isn't possible, the following in-place OS upgrades are supporte
 
 |Initial OS|Supported in-place upgrade OS|
 |-----|-----|
-|Windows Server 2016|Windows Server 2022|
-|Windows Server 2019|Windows Server 2022|
+|Windows Server 2016|Windows Server 2025|
+|Windows Server 2019|Windows Server 2025|
+|Windows Server 2022|Windows Server 2025|
 
 ## Troubleshooting
 The following section contains troubleshooting and information that you can use if you encounter an issue upgrading Microsoft Entra Connect.

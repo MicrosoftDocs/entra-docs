@@ -2,14 +2,10 @@
 title: Road to the cloud - Establish a footprint for moving identity and access management from Active Directory to Microsoft Entra ID
 description: Establish a Microsoft Entra footprint as part of planning your migration of IAM from Active Directory to Microsoft Entra ID.
 documentationCenter: ''
-author: janicericketts
-manager: martinco
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/27/2023
-ms.author: jricketts
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Establish a Microsoft Entra footprint
 

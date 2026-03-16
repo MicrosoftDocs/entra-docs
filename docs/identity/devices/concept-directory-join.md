@@ -2,13 +2,9 @@
 title: What is a Microsoft Entra joined device?
 description: Microsoft Entra joined devices can help you to manage devices accessing resources in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ---
 

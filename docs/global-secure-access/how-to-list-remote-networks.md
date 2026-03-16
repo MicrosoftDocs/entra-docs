@@ -2,7 +2,7 @@
 title: How to list remote networks for Global Secure Access
 description: Learn how to list remote networks for Global Secure Access.
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 

@@ -1,13 +1,8 @@
 ---
 title: 'Tutorial: Manage federation certificates'
 description: In this tutorial, you learn how to customize the expiration date for your federation certificates, and how to renew certificates that are set to expire soon.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 04/30/2025
-ms.author: jomondi
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, sfi-image-nochange
@@ -29,6 +24,7 @@ In this tutorial, an administrator of the application learns how to:
 > * Customize the expiration dates for certificates
 > * Add email notification address for certificate expiration dates
 > * Renew certificates
+> * Guidance and best practices for ISVs on rotating certificates
 
 ## Prerequisites
 
@@ -128,6 +124,19 @@ If a certificate is about to expire, you can renew it using a procedure that res
 1. Sign in to the application to make sure that the certificate works correctly.
 
 If your app lacks certificate expiration validation and the certificate matches both Microsoft Entra ID and your app, it remains accessible. This condition is true even if the certificate is expired. Ensure your application can validate certificate expiration.
+
+## Guidance and best practices for ISVs on rotating certificates
+This section will outline best practices independent software vendors (ISV’s) can adopt to enable automated certificate rollover when SAML certificates are near expiry and when applications federated with Microsoft Entra ID. SAML certificates in Entra ID are used for signing assertions in federated single sign-on (SSO). These certificates expire (typically every 1-3 years) and rotation requires a Customer and SaaS ISV coordination to update a mutual certificate in both systems without downtime. Industry trends are shortening certificate lifetimes, manual rollover processes increasingly create operational burden and risk service disruption — especially in large organizations with many SAML enterprise applications.
+
+At a high level, the recommended rollover model relies on customers generating (or uploading) a new signing certificate in Microsoft Entra ID, and the SAML application automatically discovering it via the application’s federation metadata endpoint. The application should download metadata on a regular cadence, add newly discovered certificates as a secondary signing certificate while the new key is still inactive, and then seamlessly promote it to primary after the customer activates it in Microsoft Entra ID. Once the new certificate is in use, the old certificate can be safely removed from both Microsoft Entra ID and the application, completing the rotation without downtime. 
+
+To enable this automation, ISVs should do the following:
+1. Support ingestion of Microsoft Entra ID federation metadata using the per-tenant, per-application metadata URL 
+2. Expose certificate lifecycle management through APIs (list/read, add/remove, and primary/secondary promotion). 
+
+Microsoft recommends ISVs support multiple signing certificates (primary and secondary) to avoid downtime, monitor metadata at least every 24 hours, apply least-privilege access for certificate management, and optionally notify administrators when new certificates are detected. On the customer side, automated operations are still required to monitor certificate expiration, create or upload replacement certificates, activate the new certificate in Microsoft Entra ID, coordinate the application’s primary-certificate update via API or through UI and remove retired certificates. Customers should also secure private key material (for example, PFX files) and any third-party credentials used by automation. 
+
+With industry standards reducing the maximum lifetime of certificates, manual certificate rollover will become untenable, especially for large organizations with many SAML enterprise applications.
 
 ## Related content
 

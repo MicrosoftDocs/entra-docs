@@ -2,13 +2,9 @@
 title: Device identity and desktop virtualization
 description: Learn how VDI and Microsoft Entra device identities can be used together
 
-ms.service: entra-id
-ms.subservice: devices
-ms.topic: article
-ms.date: 06/27/2025
+ms.topic: concept-article
+ms.date: 03/04/2026
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization
@@ -45,28 +41,31 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 
 | Device identity type | Identity infrastructure | Windows devices | VDI platform version | Supported |
 | --- | --- | --- | --- | --- |
-| Microsoft Entra hybrid joined | Federated<sup>3</sup> | Windows current | Persistent | Yes |
-|   |   | Windows current | Non-persistent | Yes<sup>5</sup> |
-|   | Managed<sup>4</sup> | Windows current | Persistent | Yes |
-|   |   | Windows current | Non-persistent | Limited<sup>6</sup> |
-| Microsoft Entra joined | Federated | Windows current | Persistent | Limited<sup>8</sup> |
+| Microsoft Entra hybrid joined | Federated<sup>1</sup> | Windows current | Persistent | Yes |
+|   |   | Windows current | Non-persistent | Yes<sup>2</sup> |
+|   | Managed<sup>3</sup> | Windows current | Persistent | Yes |
+|   |   | Windows current | Non-persistent | Limited<sup>4</sup> |
+| Microsoft Entra joined | Federated | Windows current | Persistent | Limited |
 |   |   |   | Non-persistent | No |
-|   | Managed | Windows current | Persistent | Limited<sup>8</sup> |
+|   | Managed | Windows current | Persistent | Limited<sup>5</sup> |
 |   |   |   | Non-persistent | No |
 | Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-persistent | Not Applicable |
 
 > [!IMPORTANT]
 > When deploying a VDI farm (persistent or non-persistent), customers should take into consideration [Entra device operation throttling limits](/graph/throttling-limits#identity-and-access-device-operation-service-limits). Microsoft recommends device registration requests to be staged at the rate of 500 requests per every 2 minutes and 30 seconds interval. Failure to stage such requests can lead to throttling errors resulting in device registration failures and longer delays for device registration to succeed.
 
-<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [federated device registration flow](device-registration-how-it-works.md#microsoft-entra-joined-in-federated-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
+<sup>1</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [federated device registration flow](device-registration-how-it-works.md#microsoft-entra-joined-in-federated-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
-<sup>4</sup> A **Managed** identity infrastructure environment represents an environment with Microsoft Entra ID as the identity provider deployed with either [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
+<sup>2</sup> **Non-Persistence support for Windows current** requires other consideration as documented in the guidance section. This scenario requires Windows 10 1803 or newer, Windows Server 2019, or Windows Server (Semi-annual channel) starting with version 1803.
 
-<sup>5</sup> **Non-Persistence support for Windows current** requires other consideration as documented in the guidance section. This scenario requires Windows 10 1803 or newer, Windows Server 2019, or Windows Server (Semi-annual channel) starting version 1803
+<sup>3</sup> A **Managed** identity infrastructure environment represents an environment with Microsoft Entra ID as the identity provider deployed with either [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
 
-<sup>6</sup> **Non-Persistence support for Windows current** in a Managed identity infrastructure environment is only available with Citrix [on-premises customer managed](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/machine-identities/hybrid-azure-active-directory-joined) and [Cloud service managed](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-identities/hybrid-azure-active-directory-joined). For any support related queries, contact [Citrix support](https://www.citrix.com/support/) directly.
+<sup>4</sup> **Non-Persistence support for Windows current** in a Managed identity infrastructure environment is only available with following vendors:
 
-<sup>8</sup> **Microsoft Entra join support** is available with [Azure Virtual Desktop](/azure/virtual-desktop/), [Windows 365](https://www.microsoft.com/windows-365), and [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html#launch-entra-id). For any support related queries with Amazon WorkSpaces and Microsoft Entra integration, contact [Amazon support](https://aws.amazon.com/contact-us/) directly.
+  - [Omnissa Horizon 8 on-premises customer managed](https://docs.omnissa.com/bundle/Horizon8InstallUpgrade/page/SupportforAzureActiveDirectory.html) and [Horizon Cloud Service managed environments](https://docs.omnissa.com/bundle/UsingManagingHorizonCloud/page/CreateaPool.html). For any support related queries, contact [Omnissa support](https://kb.omnissa.com/s/article/6000005) directly.
+  - Citrix [on-premises customer managed](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/machine-identities/hybrid-azure-active-directory-joined) and [Cloud service managed](https://docs.citrix.com/en-us/citrix-daas/install-configure/machine-identities/hybrid-azure-active-directory-joined). For any support related queries, contact [Citrix support](https://www.citrix.com/support/) directly.
+
+<sup>5</sup> **Microsoft Entra join support** is available with [Azure Virtual Desktop](/azure/virtual-desktop/), [Windows 365](https://www.microsoft.com/windows-365), and [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html#launch-entra-id). For any support related queries with Amazon WorkSpaces and Microsoft Entra integration, contact [Amazon support](https://aws.amazon.com/contact-us/) directly.
 
 ## Microsoft's guidance
 

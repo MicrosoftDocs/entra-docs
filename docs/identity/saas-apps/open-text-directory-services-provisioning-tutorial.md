@@ -3,10 +3,8 @@ title: Configure OpenText Directory Services for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to OpenText Directory Services.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/12/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OpenText Directory Services so that I can streamline the user management process and ensure that users have the appropriate access to OpenText Directory Services.
@@ -24,6 +22,9 @@ This article describes the steps you need to perform in both OpenText Directory 
 > * Keep user attributes synchronized between Microsoft Entra ID and OpenText Directory Services
 > * Provision groups and group memberships in OpenText Directory Services
 > * [Single sign-on](./directory-services-tutorial.md) to OpenText Directory Services (recommended)
+
+> [!NOTE]
+> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Prerequisites
 
@@ -108,9 +109,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+      ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 5. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL
    * Non-specific tenant URL : {OTDS URL}/scim/{partitionName}
@@ -118,15 +119,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 6. Enter the Secret Token retrieved from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
 
-      ![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to OpenText Directory Services**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OpenText Directory Services for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the OpenText Directory Services API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -155,7 +158,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference| 
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to OpenText Directory Services**.
+10. Select **Groups**.
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in OpenText Directory Services for update operations. Select the **Save** button to commit any changes.
 
@@ -165,21 +168,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for OpenText Directory Services, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to OpenText Directory Services by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

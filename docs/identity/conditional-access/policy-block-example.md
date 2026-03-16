@@ -41,7 +41,7 @@ The first policy blocks access to all apps except for Microsoft 365 applications
    1. Under **Client apps**, set **Configure** to **Yes**, and select **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -58,7 +58,7 @@ The following policy is created to require multifactor authentication or a compl
    1. Ensure **Require one of the selected controls** is selected.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

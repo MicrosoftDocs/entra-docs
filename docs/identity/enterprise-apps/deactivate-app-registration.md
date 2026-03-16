@@ -1,13 +1,8 @@
 ---
 title: Deactivate an app registration
 description: Learn how to deactivate an app registration in Microsoft Entra ID to prevent token issuance while preserving application configuration.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 2/4/2026
-ms.author: jomondi
 ms.reviewer: ariels
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #Customer intent: As an IT admin, I want to immediately stop a suspicious or unused application from accessing resources in my organization while keeping all its settings intact so I can investigate potential security issues and easily restore access if needed.

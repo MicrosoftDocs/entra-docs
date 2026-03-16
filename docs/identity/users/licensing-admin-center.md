@@ -3,14 +3,8 @@ title: Assign licenses to a group using the Microsoft 365 admin center
 description: How to assign licenses to groups using the Microsoft 365 admin center
 
 keywords: Azure AD licensing
-author: barclayn
-manager: pmwongera
-
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: barclayn
 ---
 
 # Assign licenses to users by group membership using the Microsoft 365 admin center
@@ -69,5 +63,5 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 To learn more about the feature set for license assignment using groups, see the following articles:
 
 - [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
-- [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
+- [Identifying and resolving license problems for a group in Microsoft Entra ID](~/fundamentals/licensing-groups-resolve-problems.md)
 - [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](licensing-group-advanced.md)

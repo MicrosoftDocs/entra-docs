@@ -28,7 +28,7 @@ Organizations can choose to update their policies using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -61,7 +61,7 @@ Organizations can choose to deploy this policy using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

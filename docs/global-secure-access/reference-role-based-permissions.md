@@ -2,7 +2,7 @@
 title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 ms.topic: reference
-ms.date: 08/13/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange
 ---
@@ -14,7 +14,7 @@ Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage
 This article details the built-in Microsoft Entra roles you can assign for managing Global Secure Access.
 
 > [!IMPORTANT]
-> It's highly recommended to use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
+> It's highly recommended to use the least privileged role required to administer the service. For more information about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). For more information about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
 
 ### Security Administrator 
 
@@ -62,5 +62,5 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 
 ## Next steps
-- [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
+- [Get started with Global Secure Access](quickstart-access-admin-center.md)
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)

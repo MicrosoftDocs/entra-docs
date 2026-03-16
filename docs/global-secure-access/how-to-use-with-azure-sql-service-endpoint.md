@@ -2,7 +2,7 @@
 title: How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
 description: Learn how to access Azure SQL with a service endpoint using Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/12/2026
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -51,7 +51,7 @@ To set the policy to `proxy`:
 ## Validate the configuration
 Ensure connectivity to the SQL server works from the connector machine. The connector is deployed on the service endpoint subnet. 
 
-Check connectivity to the SQL server from outside the service endpoint subnet. Computers that don't the Global Secure Access client installed should fail. Computers that have the Global Secure Access client installed should succeed.
+Check connectivity to the SQL server from outside the service endpoint subnet. Computers that don't have the Global Secure Access client installed should fail. Computers that have the Global Secure Access client installed should succeed.
 
 ## Next steps
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)

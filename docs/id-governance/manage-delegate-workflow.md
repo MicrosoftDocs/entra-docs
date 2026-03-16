@@ -1,15 +1,15 @@
 ---
-title: Delegated Workflow Management (Preview)
+title: Delegated Workflow Management 
 description: This article informs a user about delegating management of workflows using Lifecycle workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to 
-ms.date: 07/31/2025
+ms.date: 03/12/2026
 
 #CustomerIntent: As a Lifecycle Workflow administrator, I want to delegate management of specific lifecycle workflows so that workflow management is more granular.
 ---
 
 
-# Delegated workflow management (preview)
+# Delegated workflow management
 
 Workflows by default, unless specified during creation, are managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows grow and change to meet the needs of members of your organization, so does the need to limit who can manage them. With delegated workflow management, you can scope management of workflows using [Administrative Units](../identity/role-based-access-control/administrative-units.md). When scoped, specific admins are only granted access to manage specific workflows. Scoping allows for greater security within your environment by following Microsoft's least privileged access guidelines by only giving access to specifically what's needed.
 
@@ -90,7 +90,7 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. On the workflow overview page, select **Administration Scope**.
     > [!TIP]
-    > You can also select the **Administration scope (Preview)** card on the overview page to get to the administration scope page.
+    > You can also select the **Administration scope** card on the overview page to get to the administration scope page.
 1. On the administration scope page, select **Assign Administration scope**.
 
 1. From the administration scope pane, you can see the list of all administrative units in your tenant. 
@@ -104,8 +104,8 @@ With the role set for admins over the administrative unit, you must edit the wor
 To assign Lifecycle workflow admins to an administrative unit scope via API, you must have the following information:
 
 - Lifecycle Workflow admin role ID: 59d46f88-662b-457b-bceb-5c3809e5908f
-- User ID for user you want to assign the scope
-- ID of Admin Unit you want to assign
+- User ID for the user you want to assign the scope to
+- ID of the administrative unit you want to assign
 
 With this information, you can make the following API call:
 
@@ -159,7 +159,7 @@ To edit the administrative scopes of a workflow via API using Microsoft Graph, s
 
 ## View the administrative scopes of a workflow using Microsoft Graph
 
-To view the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-get).
+To view the administrative scopes of a workflow via API using Microsoft Graph, see: [Get workflow](/graph/api/identitygovernance-workflow-get).
 
 ## Remove the administrative scopes of a workflow using Microsoft Graph
 
@@ -168,4 +168,4 @@ To remove the administrative scopes of a workflow via API using Microsoft Graph,
 ## Next steps
 
 - [Manage workflow properties](manage-workflow-properties.md)
-- [Check status of a workflows](check-status-workflow.md)
+- [Check status of a workflow](check-status-workflow.md)

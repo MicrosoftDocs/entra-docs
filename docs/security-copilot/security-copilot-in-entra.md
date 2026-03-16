@@ -1,9 +1,6 @@
 ---
 title: Security Copilot in Microsoft Entra
 description: Use Security Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
