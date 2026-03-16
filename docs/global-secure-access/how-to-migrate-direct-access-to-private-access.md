@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/16/2026
 ms.reviewer: buzaher
 
 #customer intent: As a security administrator, I want to migrate from DirectAccess to Microsoft Entra Private Access so that I can provide secure, identity-aware access to private resources without the limitations of legacy VPN solutions.
@@ -14,7 +14,9 @@ ms.reviewer: buzaher
 
 # Migrate from DirectAccess to Microsoft Entra Private Access
 
-DirectAccess provides organizations with seamless remote connectivity to internal resources without traditional VPN connections. However, DirectAccess relies on IPv6 transition technologies (IP-HTTPS, Teredo, ISATAP, 6to4), requires domain-joined Windows Enterprise clients, and provides full network-level access once connected. These architectural constraints don't align with modern hybrid and cloud-first environments where organizations need identity-aware, per-application access across diverse device types. Microsoft Entra Private Access is a cloud-based Zero Trust Network Access (ZTNA) solution that replaces the need for legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors) to provide conditional, per-app access to private resources without exposing your network to inbound connections. Migrating from DirectAccess to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
+DirectAccess provides remote connectivity to internal resources but relies on IPv6 transition technologies, requires domain-joined Windows Enterprise clients, and grants full network-level access once connected. However, these architectural constraints don't meet the needs of modern hybrid and cloud-first environments.
+
+Microsoft Entra Private Access is a cloud-based, Zero Trust Network Access (ZTNA) solution that replaces legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors), to deliver conditional, per-app access to private resources without exposing your network to inbound connections. Migrating to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
 
 ### Technical incompatibilities between DirectAccess and Private Access
 
@@ -31,7 +33,7 @@ DirectAccess and Microsoft Entra Private Access can't coexist on the same device
 
 Before you begin the migration, ensure the following requirements are met:
 
-- Microsoft Entra Private Access is enabled in your tenant. Your pilot user is descoped from Private Access [user assignment](/entra/global-secure-access/how-to-manage-users-groups-assignment) initially.
+- Microsoft Entra Private Access is enabled in your tenant. Descope the pilot user from Private Access [user assignment](/entra/global-secure-access/how-to-manage-users-groups-assignment) for the initial setup.
 - Private Access connectivity is configured by using [Quick Access](/entra/global-secure-access/how-to-configure-quick-access) or [per-app access](/entra/global-secure-access/how-to-configure-per-app-access).
 - [Private DNS](/entra/global-secure-access/concept-private-name-resolution) and name resolution for internal resources is configured as required.
 
@@ -48,7 +50,7 @@ To avoid tunnel conflicts and partial connectivity failures, break the migration
 
 You can [deploy the Global Secure Access client](/entra/global-secure-access/how-to-install-windows-client) to your pilot device before removing DirectAccess.
 
-- Deploy the Global Secure Access client with a Mobile Device Management (MDM) solution, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management).
+- Deploy the Global Secure Access client by using a Mobile Device Management (MDM) solution, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management).
 - Don't assign the Private Access traffic forwarding profile yet. Instead, follow the steps in [How to assign users and groups to traffic forwarding profiles](/entra/global-secure-access/how-to-manage-users-groups-assignment#change-existing-user-and-group-assignments) to change the default **Assign to all users** setting to a new group.
 
 ### Expected behavior
@@ -60,7 +62,7 @@ You can [deploy the Global Secure Access client](/entra/global-secure-access/how
 | Private Access traffic | No traffic is forwarded |
 
 > [!NOTE]
-> This phase is safe and doesn't impact existing DirectAccess connectivity.
+> Phase 1 doesn't affect existing DirectAccess connectivity.
 
 ## Phase 2: Remove DirectAccess from pilot devices
 
@@ -68,17 +70,20 @@ Before you enable Private Access, you must **fully remove** DirectAccess. Partia
 
 ### Verify DirectAccess is active
 
-Before you begin removal, verify that DirectAccess is currently active on the device. The following indicators confirm DirectAccess is enabled:
+Before you begin removal, verify that DirectAccess is currently active on the device. To verify, check the following indicators:
 
-**DirectAccess client UX** — Go to **Settings** > **Network & internet** > **DirectAccess**. The status shows **Workplace Connection: Connected**.
+#### Network & internet status 
+Go to **Settings** > **Network & internet** > **DirectAccess**. The status shows **Workplace Connection: Connected**.
 
 :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/direct-access-connection-status.png" alt-text="Screenshot that shows Windows Settings with the DirectAccess page displaying Workplace Connection status as Connected." lightbox="media/how-to-migrate-direct-access-to-private-access/direct-access-connection-status.png":::
 
-**IP-HTTPS tunnel adapter** — Open a command prompt and run `ipconfig`. A **Tunnel adapter Microsoft IP-HTTPS Platform Interface** entry confirms that the DirectAccess IPv6 transition tunnel is active.
+#### IP-HTTPS tunnel adapter
+In Command Prompt, run `ipconfig`. A **Tunnel adapter Microsoft IP-HTTPS Platform Interface** entry confirms that the DirectAccess IPv6 transition tunnel is active.
 
 :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/tunnel-adapter.png" alt-text="Screenshot that shows the command prompt with activity in the IP-HTTPS tunnel adapter." lightbox="media/how-to-migrate-direct-access-to-private-access/tunnel-adapter.png":::
 
-**NRPT policies** — Open PowerShell and run `Get-DnsClientNrptPolicy`. DirectAccess-related NRPT entries (such as `DirectAccess-NLS.*` namespaces) confirm that DirectAccess DNS policies are applied.
+#### NRPT policies
+Open PowerShell and run `Get-DnsClientNrptPolicy`. DirectAccess-related NRPT entries, such as `DirectAccess-NLS.*` namespaces, confirm that DirectAccess DNS policies are in place.
 
 :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/get-client-policy.png" alt-text="Screenshot that shows the PowerShell output of Get-DnsClientNrptPolicy with DirectAccess-related entries." lightbox="media/how-to-migrate-direct-access-to-private-access/get-client-policy.png":::
 
@@ -86,20 +91,23 @@ Before you begin removal, verify that DirectAccess is currently active on the de
 
 Complete the following steps on pilot devices only:
 
-1. **Remove the computer account from the DirectAccess security group.** Open **Group Policy Management**, locate the **DirectAccess Client Settings** GPO, and remove the pilot computer from the security filtering group (for example, `DirectAccess Computers`).
+1. Remove the computer account from the DirectAccess security group.
+    1. Open **Group Policy Management**. 
+    1. Locate the **DirectAccess Client Settings** Group Policy Object (GPO). 
+    1. Remove the pilot computer from the security filtering group (for example, `DirectAccess Computers`).
 
    :::image type="content" source="media/how-to-migrate-direct-access-to-private-access/client-settings.png" alt-text="Screenshot that shows the Group Policy Management console with the DirectAccess Client Settings GPO and its security filtering configuration." lightbox="media/how-to-migrate-direct-access-to-private-access/client-settings.png":::
 
-1. **Ensure group membership changes replicate** to all domain controllers.
+1. Ensure group membership changes replicate to all domain controllers.
 
-1. **Update Group Policy and reboot.** On the client device, run the following commands:
+1. On the client device, open PowerShell and run:
 
    ```powershell
    gpupdate /force
    shutdown /r /t 0
    ```
 
-1. **Perform two reboots** to fully clear the DirectAccess state.
+1. To fully clear the DirectAccess state, restart the client device twice.
 
 ### Validate DirectAccess removal
 
@@ -108,15 +116,18 @@ Complete the following steps on pilot devices only:
 
 After the second reboot, confirm the following conditions:
 
-- **No DirectAccess NRPT entries exist.** Run the following command and verify no DirectAccess-related entries are returned:
+- No DirectAccess NRPT entries exist.
+    - Run the following command and verify no DirectAccess-related entries are returned:
+    
+      ```powershell
+      Get-DnsClientNrptPolicy
+      ```
 
-  ```powershell
-  Get-DnsClientNrptPolicy
-  ```
+- No IP-HTTPS adapter exists. 
+    - Run `ipconfig` and verify that the **Tunnel adapter Microsoft IP-HTTPS Platform Interface** entry is gone.
 
-- **No IP-HTTPS adapter exists.** Run `ipconfig` and verify that the **Tunnel adapter Microsoft IP-HTTPS Platform Interface** entry is gone.
-
-- **No DirectAccess UI state.** Go to **Settings** > **Network & internet** and verify that the **DirectAccess** option no longer appears.
+- No DirectAccess UI state. 
+    - Go to **Settings** > **Network & internet** and verify that the **DirectAccess** option no longer appears.
 
 ## Phase 3: Enable Private Access traffic forwarding
 
@@ -142,8 +153,7 @@ When you remove DirectAccess, enable Private Access for the pilot user.
 Repeat **Phase 2** and **Phase 3** for more user and device groups.
 
 - Don't remove DirectAccess globally until all devices are migrated.
-- Validate each group before expanding to the next.
-- This approach minimizes risk and prevents remote access outages.
+- Validate each group before expanding to the next. This approach minimizes risk and prevents remote access outages.
 
 > [!CAUTION]
 > Don't decommission DirectAccess server infrastructure until you confirm that all users can access required resources through Microsoft Entra Private Access.
