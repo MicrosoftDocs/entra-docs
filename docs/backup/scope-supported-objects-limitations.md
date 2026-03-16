@@ -174,15 +174,14 @@ OAuth2 permission grant represents the delegated permissions granted to an appli
 
 Permission grants created as a result of user consent aren't supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
-OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of OAuth2 permission grant as well.
+In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to the target service principals.
+
 
 ### App role assignment
 
 An app role assignment records when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
-App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of app role assignment as well.
-
-In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to service principals.
+In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to the target service principals.
 
 ## Organization
 
