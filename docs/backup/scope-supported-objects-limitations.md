@@ -96,10 +96,10 @@ Recovery for authorization policy objects supports these properties:
 - `blockMsolPowerShell`
 - `guestUserRoleId`
 
-Here is a mapping of guest user role Ids with guest user permission levels: 
+Here's a mapping of guest user role IDs with guest user permission levels:
 - Guest users have the same access as members (Member User): a0b1b346-4d3e-4e8b-98f8-753987be4970
 - Guest users have limited access to properties and memberships of directory objects (Guest User): 10dae51f-b6af-4016-8d66-8c2a99b929b3
-- Guest uesr access is restricted to properties and memberships of their own directory objects (Restricted Guest User): 2af84b1e-32c8-42b7-82bc-daa82404023b
+- Guest user access is restricted to properties and memberships of their own directory objects (Restricted Guest User): 2af84b1e-32c8-42b7-82bc-daa82404023b
 
 For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy#properties).
 
@@ -107,11 +107,11 @@ For reference, you can view the full set of authorization policy properties in t
 
 Recovery supports these authentication method policies:
 
-- Email OTP
+- Email one-time password (OTP)
 - FIDO2 passkey
 - Authenticator app
 - Voice call
-- SMS OTP
+- SMS
 - Third-party software OATH
 - Temporary Access Pass
 - Certificate-based authentication
@@ -167,17 +167,17 @@ For reference, you can view the full set of service principal properties in the 
 
 ### OAuth2 (delegated) permission grant
 
-OAuth2 permission grant represents the delegated permissions that have been granted to an application's service principal. Delegated permission grants can be created as a result of a user consenting an application's request to access an API, or granted by an administrator on behalf of all users. Permission grants created by an admin on behalf of all users is in scope. These permission grants can be identified as "consentType" = "AllPrincipals" and "principalId" = null. Permission grant created as a result of user consent is currently not supported. View oAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties)
+OAuth2 permission grant represents the delegated permissions granted to an application's service principal. Delegated permission grants can be created when a user consents to an application's request to access an API, or granted by an administrator on behalf of all users. Permission grants created by an admin on behalf of all users are in scope. These permission grants can be identified as "consentType" = "AllPrincipals" and "principalId" = null. Permission grants created as a result of user consent aren't currently supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
-OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of OAuth2 permission grant as well. 
+OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of OAuth2 permission grant as well.
 
 ### App role assignment
 
 App role assignment is used to record when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
-App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. If you need to view all the changes for Service principals, please apply the filter of app role assignment as well. 
+App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of app role assignment as well.
 
-In Entra portal, Service principals, OAuth2 permission grants and app role assignments are grouped as one filter to show all the changes that have happened to service principals. 
+In the Entra portal, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to service principals.
 
 ## Organization
 
@@ -217,9 +217,9 @@ Recovery for the organization object supports these properties:
 
 Completion time for difference reports and recovery depends on **data loading** and **processing**.
 
-When a backup is accessed for the first time, either through creating a difference report or recovery, the recovery service loads the backup data, which takes a fixed amount of time even when tenant size is small. Loaded data is reused across operations that reference the same backup. As a result, operations that reuse previously loaded data typically complete faster than those that require loading data for the first time. Creating a difference report not only helps you preview changes before recovery, but can also reduce recovery time and subsequent report creation time by eliminating data loading for the same backup.
+The first time a backup is accessed through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. Loaded data is reused across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
 
-After data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
+After data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
 ### Hard-deleted objects
 
@@ -227,10 +227,14 @@ Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation 
 
 ### Objects managed in on-premises Active Directory Domain Services
 
-Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from on-premises. For certain object types, such as users and groups, the source of authority can be moved from on-premises to the cloud, making all Microsoft Entra Backup and Recovery functionality available for those converted objects. Backup and recovery of objects managed in on-premises should be handled using an alternative solution. 
+Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from on-premises. For certain object types, such as users and groups, you can move the source of authority from on-premises to the cloud. After conversion, all Backup and Recovery functionality is available for those objects. Back up and recover objects managed on-premises by using an alternative solution.
 
-When a user or groups is converted to the cloud to be Entra managded after the backup state and if that specific backup is used to recover the user or group, its source of authority will not be converted to be on-premises Active Directory. Other supported changed attributes will be recovered. 
+If a user or group is converted to cloud-managed after the backup was taken, recovering from that backup doesn't revert the source of authority to on-premises Active Directory. Other supported changed attributes are recovered.
 
 ### Broader recoverability
 
-Microsoft Entra Backup and Recovery should be used as part of a broader approach to recoverability that helps your organization be more resilient. To minimize the occurrence and impact of malicious and accidental directory data loss, follow [recoverability best practices in Microsoft Entra ID](/entra/architecture/recover-from-deletions), including establishment of preventative operational security measures, regular documentation of known good state using Microsoft Graph APIs, and preparatory processes needed to recover from deletion and misconfiguration.
+Microsoft Entra Backup and Recovery should be used as part of a broader approach to recoverability that helps your organization be more resilient. To reduce the risk of malicious and accidental directory data loss, follow [recoverability best practices in Microsoft Entra ID](/entra/architecture/recover-from-deletions). These practices include:
+
+- Establishing preventative operational security measures
+- Regularly documenting the known good state by using Microsoft Graph APIs
+- Preparing processes to recover from deletion and misconfiguration
