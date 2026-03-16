@@ -36,14 +36,14 @@ Follow these steps:
 
 1. Select the user that needs the reset, then select **Reset password**.
 
-  The **Alain Charon - Profile** page appears with the **Reset password** option.
+   The **Alain Charon - Profile** page appears with the **Reset password** option.
 
-:::image type="content" source="media/users-reset-password-azure-portal/user-profile-reset-password-link.png" alt-text="Screenshot of the User's profile page, with Reset password option highlighted." lightbox="media/users-reset-password-azure-portal/user-profile-reset-password-link.png":::
+   :::image type="content" source="media/users-reset-password-azure-portal/user-profile-reset-password-link.png" alt-text="Screenshot of the User's profile page, with Reset password option highlighted." lightbox="media/users-reset-password-azure-portal/user-profile-reset-password-link.png":::
 
 1. In the **Reset password** page, select **Reset password**.
 
-> [!NOTE]
-> When you're using Microsoft Entra ID, Microsoft Entra ID autogenerates a temporary password for the user. When using Active Directory on-premises, you create the password for the user.
+   > [!NOTE]
+   > When you're using Microsoft Entra ID, Microsoft Entra ID autogenerates a temporary password for the user. When using Active Directory on-premises, you create the password for the user.
 
 1. Copy the password and give it to the user. The user must change the password during the next sign-in process.
 
