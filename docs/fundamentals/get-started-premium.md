@@ -13,7 +13,7 @@ ms.collection: M365-identity-device-management
 
 You can purchase and associate Microsoft Entra ID P1 or P2 editions with your Azure subscription. If you need to create a new Azure subscription, you also need to [activate your licensing plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access). For information about obtaining a free trial, see [Microsoft Entra ID P2 Trial](https://signup.microsoft.com/get-started/signup?products=FAF849AB-BD30-42B2-856C-8F1EDC230CE9).
 
-Before you sign up for Active Directory Premium 1 or Premium 2, you must first determine which of your existing subscription or plan to use:
+Before you sign up for Microsoft Entra ID P1 or P2, you must first determine which existing subscription or plan to use:
 
 - Through your existing Azure or Microsoft 365 subscription.
 - Through your Enterprise Mobility + Security licensing plan.
@@ -21,7 +21,7 @@ Before you sign up for Active Directory Premium 1 or Premium 2, you must first d
 
 ## Sign up options
 
-When you sign up using your Azure subscription with previously purchased and activated Microsoft Entra ID licenses, automatically activates the licenses in the same directory. If that's not the case, you must still [activate your license plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access).
+When you sign up using your Azure subscription with previously purchased and activated Microsoft Entra ID licenses, the system automatically activates the licenses in the same directory. If that's not the case, you must still [activate your license plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access).
 
 ### Sign up using your existing Azure or Microsoft 365 subscription
 
@@ -33,11 +33,11 @@ Enterprise Mobility + Security is a suite, comprised of Microsoft Entra ID P1 or
 
 For more information about Microsoft Enterprise Mobility + Security, see [Enterprise Mobility + Security web site](https://www.microsoft.com/cloud-platform/enterprise-mobility-security).
 
-- Join the [Microsoft 365 Developer](https://developer.microsoft.com/microsoft-365/dev-program) program and if qualified get a free renewable Microsoft 365 E5 instant sandbox.
+- Join the [Microsoft 365 Developer](https://developer.microsoft.com/microsoft-365/dev-program) program and, if qualified, get a free renewable Microsoft 365 E5 instant sandbox.
 
-- Purchase [Enterprise Mobility + Security E5 licenses](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1)
+- Purchase [Enterprise Mobility + Security E5 licenses](https://signup.microsoft.com/Signup?OfferId=e6de2192-536a-4dc3-afdc-9e2602b6c790&ali=1).
 
-- Purchase [Enterprise Mobility + Security E3 licenses](https://signup.microsoft.com/Signup?OfferId=4BBA281F-95E8-4136-8B0F-037D6062F54C&ali=1)
+- Purchase [Enterprise Mobility + Security E3 licenses](https://signup.microsoft.com/Signup?OfferId=4BBA281F-95E8-4136-8B0F-037D6062F54C&ali=1).
 
 ### Sign up using your Microsoft Volume Licensing plan
 
@@ -60,7 +60,7 @@ If you signed up using a new Microsoft Entra ID license plan, you must activate 
    :::image type="content" source="media/get-started-premium/MOLSEmail.png" alt-text="Screenshot of confirmation email with sign in and sign up links.":::
 
 1. Select **Sign in** or **Sign up**.
-   - **Sign in.** Choose this option if you have an existing tenant, and then sign in using your existing administrator account. You must be a Global Administrator on the tenant where the licenses are being activated.
+   - **Sign in.** Choose this option if you have an existing tenant, and then sign in using your existing administrator account. You must be a Global Administrator on the tenant where you're activating the licenses.
 
    - **Sign up.** Choose this option if you want to open the **Create Account Profile** page and create a new Microsoft Entra tenant for your licensing plan.
 
@@ -81,7 +81,7 @@ After your purchased licenses are provisioned in your directory, you'll receive 
 
 ### To activate your Microsoft Entra ID access
 
-1. Open the **Welcome email**, and then select **Sign In**.
+1. Open the **Welcome email**, and then select **Sign in**.
 
 2. After successfully signing in, you'll go through two-step verification using a mobile device.
 
