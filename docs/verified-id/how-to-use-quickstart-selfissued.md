@@ -26,7 +26,7 @@ On the **Create a new credential** page, enter the JSON code for the display and
 
 ## Sample JSON display definitions
 
-The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as separator. 
+The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as a separator. 
 
 ```json
 {
@@ -105,11 +105,11 @@ During issuance, Authenticator prompts you to enter values for the specified cla
 
 To configure your sample code to issue and verify your custom credential, you need:
 
-- Your tenant's issuer decentralized identifier (DID)
-- The credential type
-- The manifest URL to your credential 
+- Your tenant's issuer decentralized identifier (DID).
+- The credential type.
+- The manifest URL to your credential.
 
-The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. Then you have access to a text box with a JSON payload for the Request Service API. Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
+The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. Then you have access to a text box with a JSON payload for the Request Service API.Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-config-sample-2.png" alt-text="Screenshot of the quickstart custom credential issue.":::
 
