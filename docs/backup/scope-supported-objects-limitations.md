@@ -34,7 +34,7 @@ Recovery for user objects supports these properties:
 - `EmployeeLeaveDate`
 - `EmployeeOrgData`
 - `EmployeeType`
-- `FacsimileTelephoneNumber`
+- `FaxNumber`
 - `GivenName`
 - `JobTitle`
 - `Mail`
@@ -53,6 +53,7 @@ Recovery for user objects supports these properties:
 - `TelephoneNumber`
 - `UsageLocation`
 - `UserPrincipalName`
+- `UserType`
 
 > [!NOTE]
 > Manager and sponsor changes aren't in scope.
