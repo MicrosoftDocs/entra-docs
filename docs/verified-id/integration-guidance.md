@@ -21,13 +21,13 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
 
 1. Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
     > [!NOTE]
-    > For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer to the [Admin API](admin-api.md) section of the docs for creating authorities. 
+    > For a multitenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer to the [Admin API](admin-api.md) section of the docs for creating authorities. 
 
 1. Set up a credential definition that defines what type of credentials you'll issue from the service – [Custom Credential](credential-design.md). Based on the scenario, select between ID token (for Open ID connect attestations from providers) or ID token hint (ISVs to use REST APIs to get the required attestations), self issued (user provided input), presentation or multiple attestations.
 
 1. Make sure to publish the credential in the Verified ID network if this credential is for general purpose consumption. If this credential was created for a specific customer, then skip this step. To publish the credential in the Verified ID network, select **Issue a credential** option under Manage and then select **Publish credential to Verified ID network** checkbox. You could also use [Admin APIs](admin-api.md) to set **“availableInVcDirectory"** to true for the credential.
 
-1. The IDV must configure an offer or customer jumpstart URL for the user journey and integrate it in customer’s relying party application. Refer *step 5* in the diagram as an example.
+1. The IDV must configure an offer or customer jumpstart URL for the user journey and integrate it in customer’s relying party application. Refer to *step 5* in the diagram as an example.
 
 1. The end user starts the journey on the relying party application – in the example above, Contoso’s onboarding portal asks the user to prove their identity. If the user already has the required Verified ID for onboarding, they'll follow steps 1 through 4 in the diagram. If the user doesn’t have the required Verified ID, user has to launch the IDV offer URL from onboarding application to initiate the identity verification process. 
     The IDV and customer relying party need to build this redirection model. The IDV needs to identify that the user is coming to the IDV portal from a registered organization and isn't a SPAM request. The relying party needs to generate a “one-time” use URL with a JWT token, for example: `https://idvpartner.com/contoso/?token=jwt_token`
