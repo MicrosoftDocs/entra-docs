@@ -14,14 +14,14 @@ ai-usage: ai-assisted
 
 A difference report compares the current state of your tenant with a selected backup and highlights what changed.
 
-Difference reports show objects that were **created, modified, soft-deleted or restored** after the selected backup was taken, along with details about:
+Difference reports show objects that were **created, modified, soft-deleted, or restored** after the selected backup was taken, along with details about:
 
 - Changed attributes: Properties of the object whose values differ between the backup and the current tenant state.
 - Changed links: Changes to the object's relationships with other objects, such as group membership.
 
 Key details:
 
-- A difference report ID identifies the comparison/preview job.
+- A difference report ID identifies the comparison job.
 - Create multiple difference reports from the same backup, but only one report can run at a time.
 - Difference reports are retained for up to five days after completion.
 
@@ -30,23 +30,23 @@ Key details:
 
 ## Prerequisites
 
-To review difference reports, you must have at least the **Entra Backup Reader** role assigned. To review and create difference reports, you must have the **Entra Backup Administrator** role assigned.
+You need at least the **Microsoft Entra Backup Reader** role to review difference reports. To review and create difference reports, you need the **Microsoft Entra Backup Administrator** role.
 
 ## Scope a difference report
 
-When you create a difference report, you can scope it to control which objects are included in the comparison:
+When you create a difference report, scope it to control which objects are included in the comparison:
 
 - **All supported objects**: Includes all supported object types in the tenant.
 - **By object type**: Includes only selected object types.
-- **By object ID**: Includes only specific objects by their object IDs with their object types specified. You can specify up to 100 object IDs across supported object types.
+- **By object ID**: Includes only specific objects by their object IDs with their object types specified. Specify up to 100 object IDs across supported object types.
 
-Scoping is applied at report creation time and can't be changed after the report is created.
+You set the scope when you create the report. You can't change it afterward.
 
 ## Create a difference report
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Administrator**.
 
-1. Go to **Backup and recovery** > **Backups**. Select the desired backup from the list and select **Create difference report**.
+1. Go to **Backup and recovery** > **Backups**. Select a backup from the list, and then select **Create difference report**.
 
    :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png" alt-text="Screenshot of the Backups page in the Microsoft Entra admin center showing a list of available backups with a Create difference report button in the toolbar.":::
 
@@ -60,7 +60,7 @@ Scoping is applied at report creation time and can't be changed after the report
 
      :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-types.png" alt-text="Screenshot of the Create difference report dialog with the Include only certain types of objects option selected and Users, Groups chosen in the object type dropdown.":::
 
-   - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. You can enter up to 100 object IDs across different object types.
+   - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. Enter up to 100 object IDs across different object types.
 
      :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by their ID option selected, showing a list of object IDs including Users, Groups, and Named Location Policies.":::
 
@@ -70,7 +70,7 @@ Scoping is applied at report creation time and can't be changed after the report
 
 ## Cancel a difference report
 
-Cancel a difference report while it's in progress. Canceled reports don't display partial results. Canceling is useful if the report was initiated by mistake.
+Cancel a difference report while it's in progress. Canceled reports don't display partial results. Canceling is useful if you started the report by mistake.
 
 1. Go to **Backup and recovery** > **Difference reports**.
 
@@ -78,19 +78,21 @@ Cancel a difference report while it's in progress. Canceled reports don't displa
 
    :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png" alt-text="Screenshot of the Difference Reports page showing one report in progress and two completed reports, with the Cancel button visible in the toolbar.":::
 
-## Difference report statuses
+## Check difference report statuses
 
-Difference reports move through these statuses as they're created and processed. These statuses help you understand what stage the report is in and what to expect next.
+Difference reports move through these statuses as they're created and processed:
 
-- **Loading data**: The system is loading data from the selected backup so it can be compared with the current tenant state. If the backup has already been used to create a difference report or a prior recovery, this step might complete fast.
-- **In progress**: The system is calculating differences between the backup and the current tenant state. The duration of this step depends on the number of objects and the scope of the report.
-- **Completed**: The difference report has finished processing and is ready for review.
-- **Failed**: The difference report couldn't be generated due to an error.
-- **Canceled**: The difference report was canceled before completion.
+| Status | Description |
+|---|---|
+| **Loading data** | The system loads data from the selected backup for comparison with the current tenant state. If you previously used the backup for a difference report or recovery, this step might finish quickly. |
+| **In progress** | The system calculates differences between the backup and the current tenant state. Duration depends on the number of objects and the scope of the report. |
+| **Completed** | The difference report finished processing and is ready for review. |
+| **Failed** | The difference report couldn't be generated because of an error. |
+| **Canceled** | The difference report was canceled before completion. |
 
 ## Review a difference report
 
-1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, the backup used for comparison (including its ID, timestamp, and availability), the scoping criteria, creation and completion times, and the number of objects and links included in the report.
+1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, backup details (ID, timestamp, and availability), and scoping criteria. It also shows creation and completion times, and the number of objects and links in the report.
 
    :::image type="content" source="media/create-review-difference-reports/difference-reports-list.png" alt-text="Screenshot of the Difference Reports list page showing report statuses, backup timestamps, and filtering details for three difference reports.":::
 
@@ -98,7 +100,7 @@ Difference reports move through these statuses as they're created and processed.
 
    :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png" alt-text="Screenshot of the Difference Reports list page showing three completed reports with available backups, including details on calculated objects and links.":::
 
-1. Review the difference report content. The report lists each object that changed, along with the recovery action that would be applied.
+1. Review the difference report content. The report lists each object that changed, along with the recovery action that applies during recovery.
 
    :::image type="content" source="media/create-review-difference-reports/difference-report-detail-objects.png" alt-text="Screenshot of a completed difference report detail page showing a list of user objects with their recovery actions, changed attributes, and changed links.":::
 
@@ -112,12 +114,16 @@ Difference reports move through these statuses as they're created and processed.
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-changed-links.png" alt-text="Screenshot of the View changed links panel for a group object, showing group membership changes that would be reverted by recovery.":::
 
-   - **Recovery action**: The action that would be applied if the object is recovered. Possible values include **Update** (revert changed attributes and/or links on an existing object), **Restore** (restore a soft-deleted object), and **Soft delete** (soft-delete an object that was created after the backup).
+   - **Recovery action**: The action that applies when the object is recovered. Possible values:
+
+       - **Update**: Revert changed attributes, links, or both on an existing object.
+       - **Restore**: Restore a soft-deleted object.
+       - **Soft delete**: Soft-delete an object that was created after the backup.
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-recovery-action.png" alt-text="Screenshot of the difference report detail page with the Recovery Action column highlighted, showing Update and Restore actions for each object.":::
 
 > [!NOTE]
-> Hard-deleted objects and read-only properties don't appear in difference reports. Objects synced from on-premises can appear in difference reports but aren't recoverable.
+> Hard-deleted objects and read-only properties don't appear in difference reports. Objects synced from on-premises directories can appear in difference reports but aren't recoverable.
 
 ## Related content
 

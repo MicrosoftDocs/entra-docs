@@ -10,7 +10,7 @@ ms.date: 03/09/2026
 > [!IMPORTANT]
 > Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-This article describes the steps to restore application secrets that were impacted by accidental or malicious activity, in conjunction with Microsoft Entra Backup and Recovery.
+This article describes how to restore application secrets after accidental or malicious changes, using Microsoft Entra Backup and Recovery.
 
 ## Prepare for recovery
 
@@ -18,31 +18,33 @@ As part of your disaster recovery plan for applications, review your current pro
 
 Some properties on applications beyond application secrets aren't included in Backup and Recovery. Review the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery) for properties that might need to be saved and manually reapplied to fully recover an application from accidental edits.
 
-If your application is hard-deleted, it can't be recovered using Backup and Recovery and needs to be recreated. An application is hard-deleted after being in the soft-deleted state for 30 days, or when the hard-delete API is called directly. Limit the ability to hard-delete objects to only highly privileged admins by using a [protected action](/entra/identity/role-based-access-control/protected-actions-overview#deletion-of-directory-objects), to prevent the early deletion of an application. Maintain a record of all registered applications and any customized settings in case you need to recreate the application. For more information about application deletion, see [Deletion and recovery of applications FAQ](/entra/identity/enterprise-apps/delete-recover-faq).
+If your application is hard-deleted, you can't recover it using Backup and Recovery, and you need to recreate it. An application is hard-deleted after being in the soft-deleted state for 30 days, or when the hard-delete API is called directly.
 
-Document and validate the recovery steps needed for your application, service principals, and application secrets using a nonproduction environment or test application to ensure you understand the processes needed to restore the application and its secrets after an edit or soft-deletion.
+Limit the ability to hard-delete objects to only highly privileged admins by using a [protected action](/entra/identity/role-based-access-control/protected-actions-overview#deletion-of-directory-objects), to prevent the early deletion of an application. Maintain a record of all registered applications and any customized settings in case you need to recreate the application. For more information about application deletion, see [Deletion and recovery of applications FAQ](/entra/identity/enterprise-apps/delete-recover-faq).
 
-In this article, the steps cover recovering from an application that was accidentally or maliciously changed. In cases where it can't be determined if a change was malicious, Microsoft recommends that you assume the change was malicious as part of a Zero Trust environment. In the case of malicious changes, it's important to contain threats and evict bad actors as part of your recovery plan. Those steps aren't outlined in this article.
+Document and validate the recovery steps needed for your application, service principals, and application secrets. Use a nonproduction environment or test application to ensure you understand the processes needed to restore the application and its secrets after an edit or soft-deletion.
+
+In this article, the steps cover recovering from an application that was accidentally or maliciously changed. If you can't determine whether a change was malicious, assume it was. This approach aligns with Zero Trust principles. In the case of malicious changes, it's important to contain threats and evict bad actors as part of your recovery plan. Those steps aren't outlined in this article.
 
 ## Determine the cause of the changes and what was impacted
 
-The first step is to determine if the changes made to applications were accidental or malicious. Accidental changes are often the result of automation, scripts, and direct administrative actions that were performed in error. Malicious changes are those changes that occur due to the activities of a bad actor. If it's not possible to determine the source of the changes, assume that the changes are malicious.
+The first step is to determine if the changes made to applications were accidental or malicious. Accidental changes often result from automation, scripts, and direct administrative actions performed by mistake. Malicious changes are changes caused by a bad actor. If it's not possible to determine the source of the changes, assume that the changes are malicious.
 
-After you determine the cause of the changes, validate whether the secrets for applications were impacted. Changes to application secrets can be found in the audit log by looking for events that indicate the application secret was changed or updated.
+After you determine the cause of the changes, validate whether the secrets for applications were impacted. Find changes to application secrets in the audit log. Look for events that indicate the application secret was changed or updated.
 
 <!-- TODO: [REVIEW NEEDED] The original source noted a bug fix for audit log events is in progress. Verify the correct audit log event names to reference here. -->
 
-Depending on the nature of the change and if secrets were impacted determines the best path for recovery for your applications. Any time an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
+The nature of the change and whether secrets were impacted determine the best path for recovery for your applications. Any time an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
 
 ## Recover accidental changes when secrets weren't impacted
 
 This includes scenarios where the application was edited or soft-deleted, but the secrets on the application weren't edited.
 
-Using Backup and Recovery, recover the application and service principals to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If the application was deleted, secrets are restored to the state they were in when the application was deleted.
+Using Backup and Recovery, recover the application and service principals to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If you deleted the application, the recovery restores secrets to their state at the time of deletion.
 
 If your team uses Azure Key Vault, validate your secrets are functioning correctly using these steps:
 
-1. Open the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Go to your Azure Key Vault service.
 1. Find the Key Vault that you configured with this application.
 1. Browse to **Secrets** and select the secret to see the current version.
@@ -66,10 +68,9 @@ Using Backup and Recovery, recover the applications and service principals to a 
 
 If your team uses Azure Key Vault, you need to roll the secret for your application. Follow the steps in [Recover applications due to a malicious change](#recover-applications-due-to-a-malicious-change) to roll the secret.
 
-If your team uses another product for backing up your secrets, you can recover your secrets using your own process. Since the Application Object ID is unchanged, you should be able to use your standard process for verifying or rolling secrets to update the application.
+If your team uses another product for backing up your secrets, you can recover your secrets using your own process. Because the Application Object ID is unchanged, you should be able to use your standard process for verifying or rolling secrets to update the application.
 
-> [!NOTE]
-> You might need to review properties on the application that aren't supported by Backup and Recovery to fully restore the application to a previous state. See the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery) for addressing unsupported properties.
+You might need to review properties on the application that aren't supported by Backup and Recovery to fully restore the application to a previous state. For unsupported properties, see the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery).
 
 ## Recover applications due to a malicious change
 
@@ -79,7 +80,7 @@ If your team uses Azure Key Vault, you can roll the secrets using these steps.
 
 **Create a new secret for your application:**
 
-1. Open the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Go to your application in **Application registrations**.
 1. Go to **Certificates & secrets** to create a new secret.
 
@@ -91,7 +92,7 @@ If your team uses Azure Key Vault, you can roll the secrets using these steps.
 
 **Add a new version of the secret in Key Vault to manage your new secret:**
 
-1. Open the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Go to your Azure Key Vault service.
 1. Find the Key Vault that you configured with this application.
 1. Browse to **Secrets** and select the secret to see the current version.
@@ -107,20 +108,19 @@ If your team uses Azure Key Vault, you can roll the secrets using these steps.
 
    :::image type="content" source="./media/recover-applications/key-vault-new-secret-identifier.png" alt-text="The Azure Key Vault secret version detail page with the Secret Identifier URL highlighted for copying to the application." lightbox="./media/recover-applications/key-vault-new-secret-identifier.png":::
 
-If your team uses another product for backing up your secrets, roll the secrets using your own process. Since the Application Object ID is unchanged, you should be able to use your standard process for rolling secrets to update the impacted applications.
+If your team uses another product for backing up your secrets, roll the secrets using your own process. Because the Application Object ID is unchanged, you should be able to use your standard process for rolling secrets to update the impacted applications.
 
 At this point, the application should be able to function using the rolled secrets.
 
-> [!NOTE]
-> You might need to review properties on the application that aren't supported by Backup and Recovery to fully restore the application to a previous state. See the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery) for addressing unsupported properties.
+You might need to review properties on the application that aren't supported by Backup and Recovery to fully restore the application to a previous state. For unsupported properties, see the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery).
 
-## If the application was hard-deleted and not recoverable
+## Recover from a hard-deleted application
 
-If your application was hard-deleted, it can't be recovered by Backup and Recovery. Since you need to recreate the application, you can't reuse any stored secrets.
+If your application was hard-deleted, Backup and Recovery can't recover it. Because you need to recreate the application, you can't reuse any stored secrets.
 
 If you use Azure Key Vault, you should point it to the new application and new secrets:
 
-1. Open the [Azure portal](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Go to your Azure Key Vault service.
 1. Find the Key Vault that you configured with this application.
 1. Browse to **Secrets** and select the secret to see the current version.
@@ -128,7 +128,7 @@ If you use Azure Key Vault, you should point it to the new application and new s
 1. Go back to the previous version of this secret and disable it.
 1. Copy the new **Secret Identifier** value and update it in your application as needed.
 
-For other solutions, you either need to generate and apply a new secret to your application, or update the Object ID in your secret management system and then readd the secret to the newly created application.
+For other solutions, you either need to generate and apply a new secret to your application, or update the Object ID in your secret management system and then re-add the secret to the newly created application.
 
 ## Appendix
 
@@ -138,6 +138,6 @@ Using Backup and Recovery, recover the applications and service principals to a 
 
 Review key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 
-1. The [claims policy](/entra/identity-platform/reference-claims-customization) and [home realm discovery policy](/entra/identity/enterprise-apps/configure-authentication-for-federated-users-portal?pivots=ms-powershell#create-an-hrd-policy-using-microsoft-graph-powershell) attached to the application can't be restored. You might have to configure the policies again.
-1. If managed identities are attached to the application, they aren't restored.
-1. If you configured the application for Application Proxy, the application proxy configuration can't be restored. You need to use endpoints under **onPremisesPublishing** to recreate the Application Proxy settings.
+- The [claims policy](/entra/identity-platform/reference-claims-customization) and [home realm discovery policy](/entra/identity/enterprise-apps/configure-authentication-for-federated-users-portal?pivots=ms-powershell#create-an-hrd-policy-using-microsoft-graph-powershell) attached to the application can't be restored. You might have to configure the policies again.
+- If managed identities are attached to the application, they aren't restored.
+- If you configured the application for Application Proxy, the application proxy configuration can't be restored. You need to use endpoints under **onPremisesPublishing** to recreate the Application Proxy settings.

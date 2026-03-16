@@ -57,7 +57,7 @@ Recovery for user objects supports these properties:
 > [!NOTE]
 > Manager and sponsor changes aren't in scope.
 
-For reference, you can view the full set of user properties in the [Microsoft Graph user resource type](/graph/api/resources/user#properties).
+For reference, view the full set of user properties in the [Microsoft Graph user resource type](/graph/api/resources/user#properties).
 
 ## Group
 
@@ -79,7 +79,7 @@ Recovery for group objects supports these properties:
 > [!NOTE]
 > Group ownership changes aren't in scope. Dynamic groups can be restored or soft-deleted during recovery, but dynamic group rule changes aren't in scope.
 
-For reference, you can view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group#properties).
+For reference, view the full set of group properties in the [Microsoft Graph group resource type](/graph/api/resources/group#properties).
 
 ## Conditional access policy
 
@@ -97,11 +97,14 @@ Recovery for authorization policy objects supports these properties:
 - `guestUserRoleId`
 
 Here's a mapping of guest user role IDs with guest user permission levels:
-- Guest users have the same access as members (Member User): a0b1b346-4d3e-4e8b-98f8-753987be4970
-- Guest users have limited access to properties and memberships of directory objects (Guest User): 10dae51f-b6af-4016-8d66-8c2a99b929b3
-- Guest user access is restricted to properties and memberships of their own directory objects (Restricted Guest User): 2af84b1e-32c8-42b7-82bc-daa82404023b
 
-For reference, you can view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy#properties).
+| Permission level | Description | Role ID |
+|---|---|---|
+| Member User | Guest users have the same access as members | `a0b1b346-4d3e-4e8b-98f8-753987be4970` |
+| Guest User | Guest users have limited access to properties and memberships of directory objects | `10dae51f-b6af-4016-8d66-8c2a99b929b3` |
+| Restricted Guest User | Guest user access is restricted to properties and memberships of their own directory objects | `2af84b1e-32c8-42b7-82bc-daa82404023b` |
+
+For reference, view the full set of authorization policy properties in the [Microsoft Graph authorizationPolicy resource type](/graph/api/resources/authorizationpolicy#properties).
 
 ## Authentication methods policy
 
@@ -116,7 +119,7 @@ Recovery supports these authentication method policies:
 - Temporary Access Pass
 - Certificate-based authentication
 
-For reference, you can view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration).
+For reference, view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration).
 
 ## Application
 
@@ -142,7 +145,7 @@ Recovery for **application** objects supports these properties:
 - `ServicePrincipalLockConfiguration`
 - `AppInformationalUrl`
 
-For reference, you can view the full set of application properties in the [Microsoft Graph application resource type](/graph/api/resources/application#properties).
+For reference, view the full set of application properties in the [Microsoft Graph application resource type](/graph/api/resources/application#properties).
 
 ## Service principal
 
@@ -163,29 +166,31 @@ Recovery for **service principal** objects supports these properties:
 - `SamlSingleSignOnSettings`
 - `ServicePrincipalName`
 
-For reference, you can view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal#properties).
+For reference, view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal#properties).
 
 ### OAuth2 (delegated) permission grant
 
-OAuth2 permission grant represents the delegated permissions granted to an application's service principal. Delegated permission grants can be created when a user consents to an application's request to access an API, or granted by an administrator on behalf of all users. Permission grants created by an admin on behalf of all users are in scope. These permission grants can be identified as "consentType" = "AllPrincipals" and "principalId" = null. Permission grants created as a result of user consent aren't currently supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
+OAuth2 permission grant represents the delegated permissions granted to an application's service principal. An administrator can create delegated permission grants when a user consents to an application's request to access an API, or an administrator can grant them on behalf of all users. Permission grants that an admin creates on behalf of all users are in scope. You can identify these permission grants by `consentType` = `AllPrincipals` and `principalId` = `null`.
+
+Permission grants created as a result of user consent aren't supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
 OAuth2 permission grant is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of OAuth2 permission grant as well.
 
 ### App role assignment
 
-App role assignment is used to record when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
+An app role assignment records when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
 App role assignment is available as a filter for both difference report creation and recovery jobs to allow more granular recovery. To view all the changes for service principals, apply the filter of app role assignment as well.
 
-In the Entra portal, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to service principals.
+In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to service principals.
 
 ## Organization
 
 Recovery for the organization object supports these properties:
 
-**Tenant-level per-user MFA settings:**
+**Tenant-level per-user multifactor authentication (MFA) settings:**
 
-- StrongAuthenticationDetails
+- `StrongAuthenticationDetails`
   - `availableMFAMethods`
 
     :::image type="content" source="media/scope-supported-objects-limitations/organization-available-mfa-methods.png" alt-text="Screenshot showing the availableMFAMethods property under StrongAuthenticationDetails.":::
@@ -202,7 +207,7 @@ Recovery for the organization object supports these properties:
 
     :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-duration.png" alt-text="Screenshot showing the rememberDevicesDurationInDays property under StrongAuthenticationDetails.":::
 
-- StrongAuthenticationPolicy
+- `StrongAuthenticationPolicy`
   - `enabled`
 
     :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-enabled.png" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
@@ -217,7 +222,7 @@ Recovery for the organization object supports these properties:
 
 Completion time for difference reports and recovery depends on **data loading** and **processing**.
 
-The first time a backup is accessed through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. Loaded data is reused across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
+The first time you access a backup through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. The service reuses loaded data across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
 
 After data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 

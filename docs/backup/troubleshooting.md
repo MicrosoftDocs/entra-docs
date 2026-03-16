@@ -20,11 +20,11 @@ Verify these prerequisites before troubleshooting:
 
 - Your tenant is a **workforce tenant** (External ID and B2C tenants aren't supported).
 - Your tenant has **Microsoft Entra ID P1 or P2** licenses.
-- You're signed in with an account that has the appropriate **Entra Backup role**:
-  - **Entra Backup Reader**
-  - **Entra Backup Administrator**
+- You're signed in with an account that has the appropriate **Microsoft Entra Backup role**:
+  - **Microsoft Entra Backup Reader**
+  - **Microsoft Entra Backup Administrator**
 
-Global Administrator has the appropriate permissions as well.
+The **Global Administrator** role also has the required permissions.
 
 If these prerequisites aren't met, operations might fail with authorization errors or empty results.
 
@@ -37,11 +37,11 @@ If these prerequisites aren't met, operations might fail with authorization erro
 
 ### Possible causes
 
-During service initialization, tenant onboarding, or transient backend conditions, the oldest snapshot might age out earlier, temporarily resulting in fewer than five visible days of backups. This condition doesn't indicate data loss or a backup failure.
+The oldest snapshot might age out earlier during service initialization, tenant onboarding, or transient backend conditions, temporarily resulting in fewer than five visible days of backups. This condition doesn't indicate data loss or a backup failure.
 
 ### Resolution
 
-No action is required. New snapshots continue to be created automatically.
+No action is required. The service continues to create new snapshots automatically.
 
 ## Issue: Can't start a difference report or recovery job
 
@@ -54,14 +54,14 @@ No action is required. New snapshots continue to be created automatically.
 ### Possible causes
 
 - Another difference report or recovery job is already running.
-- The signed-in user doesn't have the required Entra Backup role.
+- The signed-in user doesn't have the required Microsoft Entra Backup role.
 - The selected object type isn't supported for backup and recovery in the current release.
 
 ### Resolution
 
 1. Check whether another difference report or recovery job is running. Only one job can run at a time.
-1. Verify that your account has the appropriate role: **Entra Backup Reader** for preview or **Entra Backup Administrator** for recovery.
-1. Confirm that the object type and object attributes you're trying to scope is supported. Only supported object types and attributes appear in the scoping filter.
+1. Verify that your account has the appropriate role: **Microsoft Entra Backup Reader** for difference reports or **Microsoft Entra Backup Administrator** for recovery.
+1. Confirm that the object type and object attributes you're trying to scope are supported. Only supported object types and attributes appear in the scoping filter.
 
 ## Issue: Difference report problems
 
@@ -94,9 +94,9 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If the difference report is running for a long time:**
 
-1. No estimated completion time is available for a running difference report.
-1. Large tenants or large change sets might take longer to process.
-1. Allow the report to continue running unless cancellation is required.
+No estimated completion time is available for a running difference report. Large tenants or large change sets might take longer to process.
+
+- Allow the report to continue running unless cancellation is required.
 
 **If the difference report failed:**
 
@@ -106,9 +106,10 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If you can't find a previous difference report:**
 
-1. Difference reports are tied to the backup they were created from.
-1. Browse to the backup and check the list of preview jobs associated with it.
-1. If the report isn't listed, the backup the difference report was created against might no longer be available.
+Difference reports are tied to the backup they were created from.
+
+1. Browse to the backup and check the list of difference report jobs associated with it.
+1. If the report isn't listed, the backup that the difference report was based on might no longer be available.
 
 **If the difference report continues running after cancellation:**
 
@@ -146,7 +147,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 ### Possible causes
 
-- Recovery job reports against backups that have expired are automatically cleaned up and are no longer visible.
+- The service automatically removes recovery job reports when the associated backup expires.
 - Some links aren't supported for recovery in the current release.
 - Certain links depend on other objects or states that no longer exist.
 - The recovery job completed with warnings, indicating partial success.
@@ -157,7 +158,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 1. Browse to the **difference report** that was used for the recovery.
 1. View the list of **recovery jobs associated with that difference report**.
-1. If the job is no longer listed, the backup the recovery job used to recover the tenant might have expired.
+1. If the job is no longer listed, the backup that the recovery job used might have expired.
 
 **If not all links were recovered:**
 
@@ -182,11 +183,11 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 ### Partial property coverage
 
-Backup and recovery **don't** cover all properties of supported objects. This limitation includes read-only properties, system-generated properties, and properties that rely on specialized business logic. Refer to the [supported properties list](scope-supported-objects-limitations.md) for details. Support for more properties is being expanded over time.
+Backup and recovery **don't** cover all properties of supported objects. This limitation includes read-only properties, system-generated properties, and properties that rely on specialized business logic. See the [supported properties list](scope-supported-objects-limitations.md) for details. Microsoft is expanding support for more properties over time.
 
 ### Tenant support scope
 
-Microsoft Entra Backup and Recovery is supported for workforce tenants only. External ID and B2C tenants aren't supported at this time.
+Microsoft Entra Backup and Recovery is supported for workforce tenants only. External ID and B2C tenants aren't supported.
 
 ### Hard-deleted objects
 
@@ -194,7 +195,7 @@ Hard-deleted objects **can't** be recovered. These objects aren't included in th
 
 ### On-premises synced objects
 
-Users and groups synchronized from on-premises Active Directory can't be recovered with Entra Backup and Recovery. These objects must be recovered directly in the on-premises AD.
+Users and groups synchronized from on-premises Active Directory can't be recovered with Microsoft Entra Backup and Recovery. These objects must be recovered directly in the on-premises Active Directory environment.
 
 ### Link recovery limitations
 

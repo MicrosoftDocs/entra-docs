@@ -12,23 +12,25 @@ ai-usage: ai-assisted
 > [!IMPORTANT]
 > Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
+This article describes how to view available backups for your tenant in Microsoft Entra Backup and Recovery.
+
 Microsoft Entra backups provide a point-in-time snapshot of supported tenant objects and their attributes. Backups help administrators review changes and recover from accidental or unwanted modifications.
 
 Key characteristics of Backup and Recovery:
 
-- **One backup per day**: A single backup is automatically created each day for your tenant.
+- **One backup per day**: Microsoft Entra automatically creates one backup each day for your tenant.
 - **Retained for five days**: Each backup is available for up to five days from its timestamp.
 - **Non-editable**: Backups can't be modified or deleted.
 
 ## Prerequisites
 
-To view available backups in your tenant, you must have the **Entra Backup Reader** role or higher assigned.
+To view available backups in your tenant, you must have the **Microsoft Entra Backup Reader** role or a higher-privileged role.
 
 ## View backups
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Reader**.
 
-1. In the left navigation pane, select **Backup and recovery**. The **Overview** page shows high-level information about the feature, alerts, and recent activity.
+1. Browse to **Backup and recovery**. The **Overview** page shows feature highlights, alerts, and recent activity.
 
    :::image type="content" source="media/view-available-backups/backup-recovery-overview.png" alt-text="Screenshot of the Backup and recovery Overview page in the Microsoft Entra admin center, showing feature highlights and alerts.":::
 
@@ -36,7 +38,7 @@ To view available backups in your tenant, you must have the **Entra Backup Reade
 
    :::image type="content" source="media/view-available-backups/backups-list.png" alt-text="Screenshot of the Backups page showing a list of five available backups with their timestamps and backup IDs.":::
 
-From the **Backups** page, you can select a backup to [create a difference report](create-review-difference-reports.md) or [start a recovery](recover-objects.md).
+From the **Backups** page, select a backup to [create a difference report](create-review-difference-reports.md) or [start a recovery](recover-objects.md).
 
 ## Related content
 
