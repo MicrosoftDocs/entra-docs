@@ -113,7 +113,7 @@ Add the Microsoft repository.
 	# Key for RHEL 10 packages
 	sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
 
-   sudo dnf install -y dnf-plugins-core
+    sudo dnf install -y dnf-plugins-core
 
 	# for rhel 8 and 9
 	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
