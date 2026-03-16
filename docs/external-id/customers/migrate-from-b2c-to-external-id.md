@@ -26,7 +26,7 @@ In this article, you’ll learn how to:
 
 ## Prerequisites
 
-This article assumes you’ve already chosen the **standard migration approach**. If you still need to decide between approaches (standard vs HSC), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
+This article assumes you've already chosen the **standard migration approach**. If you still need to decide between approaches (standard vs. HSC mode), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 ## Stage 1: Assess your current Azure AD B2C implementation
 
@@ -61,11 +61,11 @@ Complete these steps before you migrate any production user data.
 
 ## Stage 3: Migrate users and credentials
 
-In this stage, you decide how users and credentials move from Azure AD B2C to External ID. Bulk user migration is always required — regardless of whether you preserve passwords. The key decision is whether you need to preserve existing passwords, and if so, which approach to use.
+In this stage, you decide how users and credentials move from Azure AD B2C to External ID. Bulk user migration is always required, regardless of whether you preserve passwords. The key decision is whether you need to preserve existing passwords, and if so, which approach to use.
 
 ### Do you need to preserve passwords?
 
-Decide whether you need to preserve existing passwords. Not every migration requires password preservation — if you don't need it, users can reset their password after migration using [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md), or you can move to passwordless or social sign-in options.
+Decide whether you need to preserve existing passwords. Not every migration requires password preservation. If you don't need it, users can reset their password after migration using [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md), or you can move to passwordless or social sign-in options.
 
 You typically **don’t** need password preservation if:
 - Users authenticate using **social identity providers** (for example, Google or Facebook).
@@ -143,17 +143,21 @@ In the B2C-initiated pattern, applications remain on Azure AD B2C endpoints whil
 
 :::image type="content" source="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png" alt-text="Diagram of Azure AD B2C migration workflow showing stages, authentication flow, and migration via Azure Functions." lightbox="media/migrate-from-b2c-to-external-id/azure-ad-b2c-migration-workflow-diagram.png":::
 
-For step-by-step implementation instructions, see [Migrate users and credentials — Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting). In a B2C-initiated migration, this pattern is implemented using Azure AD B2C custom policies that call a REST API during sign-in to validate and harvest credentials.
+For step-by-step implementation instructions, see [Migrate users and credentials: Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting). In a B2C-initiated migration, this pattern is implemented using Azure AD B2C custom policies that call a REST API during sign-in to validate and harvest credentials.
 
 ### Implementation steps
 
 Once you've decided on your approach, complete the following in order:
 
-1. **Migrate user data** — Complete Stage 1 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-1-migrate-user-data).
-1. **Prepare for credential migration** (if preserving passwords) — Complete Stage 2 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-2-prepare-for-credential-migration) to set up the migration extension property and flagged user accounts.
+1. **Migrate user data.** Complete Stage 1 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-1-migrate-user-data).
+
+   > [!TIP]
+   > When migrating large numbers of user objects, you might encounter Microsoft Graph throttling limits. See [Throttling limits](/graph/throttling-limits) and [Throttling guidance](/graph/throttling) for best practices.
+
+1. **Prepare for credential migration** (if preserving passwords). Complete Stage 2 in [Migrate users and credentials to External ID](how-to-migrate-users.md#stage-2-prepare-for-credential-migration) to set up the migration extension property and flagged user accounts.
 1. **Implement your chosen approach:**
-   - **JIT** — [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
-   - **B2C-initiated** — [Migrate users and credentials — Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting), implemented using Azure AD B2C custom policies
+   - **JIT.** [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
+   - **B2C-initiated.** [Migrate users and credentials: Legacy IdP-initiated credential harvesting](how-to-migrate-users.md#legacy-idp-initiated-credential-harvesting), implemented using Azure AD B2C custom policies
 
 ## Stage 4: Validate, monitor, and plan cutover
 
@@ -167,6 +171,9 @@ Before you move to production and decommission Azure AD B2C apps, validate end-t
 - Test password provisioning and native authentication.
 - Conduct performance and load tests.
 - Ensure security policies and user data integrity.
+
+> [!TIP]
+> If your migration includes MFA with phone-based verification (SMS or voice), be aware of telephony throttling limits that apply per IP address, phone number, and tenant. For current limits, see [Telephony throttling limits](reference-service-limits.md#telephony-throttling-limits).
 
 See [Test user flows](how-to-test-user-flows.md), [Samples](samples-ciam-all.md), and [Custom extension attribute collection](~/identity-platform/custom-extension-attribute-collection.md) for guidance.
 

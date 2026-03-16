@@ -24,7 +24,7 @@ In this article, you’ll learn how to:
 
 ## Prerequisites
 
-This article assumes you've already chosen the **High Scale Compatibility (HSC) migration approach**. If you still need to decide between approaches (standard vs HSC), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
+This article assumes you've already chosen the **High Scale Compatibility (HSC) mode migration approach**. If you still need to decide between approaches (standard vs. HSC mode), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 ## Stage 1: Request allowlisting and enable HSC mode
 
@@ -76,6 +76,20 @@ Federated users might fail to sign in after applications move to External ID if 
 
 Review attributes for any users who sign in with Google or Facebook and verify that the `accountEnabled` property on user objects is set to `true`.
 
+The following example finds federated users where `accountEnabled` is `false` and updates them:
+
+```powershell
+# Find federated users with accountEnabled set to false
+$disabledUsers = Get-MgUser -Filter "accountEnabled eq false" -All | Where-Object {
+    $_.Identities | Where-Object { $_.SignInType -eq 'federated' }
+}
+
+# Update each user to set accountEnabled to true
+foreach ($user in $disabledUsers) {
+    Update-MgUser -UserId $user.Id -AccountEnabled:$true
+}
+```
+
 This ensures federated users can authenticate successfully once applications move to External ID endpoints.
 
 ### Users with existing MFA enrollment
@@ -83,6 +97,28 @@ This ensures federated users can authenticate successfully once applications mov
 Review MFA enrollment data if users previously enrolled in MFA through Azure AD B2C. Without schema alignment, these users might be prompted to re-register or fail MFA challenges in External ID.
 
 Review users with existing MFA methods like phone or SMS OTP and verify that strong authentication is enabled and a preferred MFA method is selected.
+
+The following example checks for users who have phone-based MFA methods registered and verifies their strong authentication configuration:
+
+```powershell
+# Get users with phone authentication methods registered
+$usersWithPhone = Get-MgUser -All | ForEach-Object {
+    $methods = Get-MgUserAuthenticationPhoneMethod -UserId $_.Id
+    if ($methods) {
+        [PSCustomObject]@{
+            UserId      = $_.Id
+            DisplayName = $_.DisplayName
+            PhoneNumber = $methods.PhoneNumber
+            PhoneType   = $methods.PhoneType
+        }
+    }
+}
+
+$usersWithPhone | Format-Table DisplayName, PhoneNumber, PhoneType
+```
+
+> [!NOTE]
+> For detailed guidance on managing authentication methods, see [Manage user authentication methods](/graph/api/resources/authenticationmethods-overview?view=graph-rest-1.0&preserve-view=true).
 
 This allows External ID applications to honor existing MFA enrollment and prevents users from being unexpectedly prompted to re‑register MFA.
 
@@ -169,6 +205,6 @@ After the initial application is validated:
 
 ## Related content
 
-- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Decide whether HSC or the standard approach is right for your tenant.
-- [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – Follow the standard approach implementation steps (for tenants that aren't using HSC).
+- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Decide whether HSC mode or the standard approach is right for your tenant.
+- [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – Follow the standard approach implementation steps (for tenants that aren't using HSC mode).
 - [B2C HSC native auth configuration sample](https://github.com/alvesfabi/b2c-hsc-native-auth-configuration) – Sample configuration for native authentication in HSC mode.
