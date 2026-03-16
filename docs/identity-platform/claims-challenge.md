@@ -14,11 +14,11 @@ ms.topic: how-to
 
 # Claims challenges, claims requests and client capabilities
 
-A *claims challenge* is a response sent from an API indicating that an access token sent by a client application has insufficient claims. This can be because the token doesn't satisfy the Conditional Access policies set for that API, or the access token has been revoked.
+A *claims challenge* is a response sent from an API indicating that an access token sent by a client application has insufficient claims. This can be because the token doesn't satisfy Conditional Access auth context values for that API, or the user's session has been revoked.
 
 A *claims request* is made by the client application to redirect the user back to the identity provider to retrieve a new token with claims that satisfy the other requirements that weren't met.
 
-Applications that use enhanced security features like [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/blog/identity/granular-conditional-access-for-sensitive-data-and-actions/1751775) must be prepared to handle claims challenges.
+Clients of APIs that use enhanced security features like [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/blog/identity/granular-conditional-access-for-sensitive-data-and-actions/1751775) must be prepared to handle claims challenges.
 
 Your application receives claims challenges from popular services like [Microsoft Graph](/graph/overview) only if it declares its [client capabilities](#client-capabilities) in its calls to the service.
 
