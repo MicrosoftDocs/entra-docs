@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
+title: Tutorial - Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.topic: tutorial
 ms.date: 04/30/2025
@@ -7,7 +7,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
 
-# Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
+# Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. Face Check protects user privacy by sharing only the match results and not any sensitive identity data, while allowing organizations to be sure the person claiming an identity is really them.
 
@@ -17,55 +17,55 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
 
-- Make sure Microsoft Entra Verified ID is [setup in your tenant](verifiable-credentials-configure-tenant-quick.md) before using Face Check.
+- Make sure Microsoft Entra Verified ID is [set up in your tenant](verifiable-credentials-configure-tenant-quick.md) before using Face Check.
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
 - Make sure the user setting up Face Check has [Contributor role for the Azure subscription](/azure/role-based-access-control/built-in-roles/general#contributor)
 
-## Setting up Face Check with Microsoft Entra Verified ID
+## Set up Face Check with Microsoft Entra Verified ID
 
 The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses, you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-### Setting up Face Check with Microsoft Entra Verified ID in the Admin Center
-1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
+### Set up Face Check with Microsoft Entra Verified ID in the Admin Center
+1. In the Verified ID overview page, scroll down to the new Add-ons section and **Enable** the Face Check add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of Microsoft Entra Verified ID overview page showing Face Check add-on in Add-ons section with Enable button.":::
+    :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of Microsoft Entra Verified ID overview page showing Face Check add-on in Add-ons section with Enable button.":::
 
-2. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+1. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select **Validate**. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 
-:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot of Face Check subscription linking dialog showing dropdown menus for Subscription, Resource group, and Resource location with Validate button.":::
+    :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot of Face Check subscription linking dialog showing dropdown menus for Subscription, Resource group, and Resource location with Validate button.":::
 
-3. Once validated you can `Enable` the add-on.
+1. Once validated, you can **Enable** the add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of Face Check add-on configuration showing successful validation with Enable button to activate the service.":::
+    :::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of Face Check add-on configuration showing successful validation with Enable button to activate the service.":::
 
 Now you can start using Face Check in your enterprise applications.
 
-### Setting up Face Check with Microsoft Entra Verified ID using the Azure Resource Manager (ARM) Rest API
+### Set up Face Check with Microsoft Entra Verified ID using the Azure Resource Manager (ARM) Rest API
 
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
+To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly.
 
-1. Run the following command in PowerShell
-```http
-az login --tenant  <tenant ID>
-```
-1. Select the subscription that you want to enable Face Check billing on
+1. Run the following command in PowerShell.
+    ```http
+    az login --tenant  <tenant ID>
+    ```
+1. Select the subscription that you want to enable Face Check billing on.
 
-1. Run the following command
-```http
-az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
-```
-- replace `<subscription-id>` with your subscription ID
-- replace `<resource-group-name>` with your resource group name
-- replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](admin-api.md#get-authority) call from the Admin API. 
-- replace `<rp-location>` using one of the following two values:
-  - For EU tenants, use `northeurope`
-  - For Non-EU use `westus2`
+1. Run the following command.
+    ```http
+    az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
+    ```
+    - replace `<subscription-id>` with your subscription ID
+    - replace `<resource-group-name>` with your resource group name
+    - replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](admin-api.md#get-authority) call from the Admin API. 
+    - replace `<rp-location>` using one of the following two values:
+      - For EU tenants, use `northeurope`
+      - For Non-EU use `westus2`
 
 The Face Check Add-on is now enabled in your tenant.
 
@@ -77,14 +77,14 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
-When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
+When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You can review the results on the Test app.
 
->[!NOTE]
-> MyAccount uses the Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
+> [!NOTE]
+> MyAccount uses the Microsoft Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
 
 ## Get started with Face Check using Request Service API
 
-Apps can use [Request Service API](get-started-request-api.md?tabs=http%2Cissuancerequest%2Cfacecheck#presentation-request-example) to create request for users to perform a Face Check against a `VerifiedEmployee` credential, State Issued Government ID or a custom digital credential with a trusted photo. For example, a help desk service can request a Face Check against a `VerifiedEmployee` credential to verify the identity quickly and securely to enable a wide variety of self-service scenarios including activating a Passkey or resetting a password. To reduce compliance risk, apps receive a confidence score for match against the photo from the desired credential, without gaining access to liveness data. 
+Apps can use [Request Service API](get-started-request-api.md?tabs=http%2Cissuancerequest%2Cfacecheck#presentation-request-example) to create request for users to perform a Face Check against a `VerifiedEmployee` credential, State Issued Government ID, or a custom digital credential with a trusted photo. For example, a help desk service can request a Face Check against a `VerifiedEmployee` credential to verify the identity quickly and securely to enable a wide variety of self-service scenarios including activating a Passkey or resetting a password. To reduce compliance risk, apps receive a confidence score for match against the photo from the desired credential, without gaining access to liveness data. 
 
 ### Issuing a Verified ID credential with a photo
 
@@ -111,8 +111,8 @@ When setting the actual claim value of the photo, it should be in format `UrlEnc
 } 
 ```
 
->[!NOTE]
-> When issuing a custom credential with a photo, it is the apps responsibility to provide the JPEG to be used and encode it. 
+> [!NOTE]
+> When issuing a custom credential with a photo, it's the app's responsibility to provide the JPEG to be used and encode it. 
 
 ### Presentation requests including Face Check
 
@@ -139,7 +139,7 @@ The claim containing the photo must be named and you might optionally specify yo
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data in the response when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data in the response when a Face Check was performed successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
@@ -238,7 +238,7 @@ Face Check with Microsoft Entra Verified ID uses Azure AI Vision Face API livene
 When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
 
 Data isn't stored by or kept by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system, the confidence score is the probability percentage answer for a query to the system. For this scenario, the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
-Data and privacy for Azure AI Services can be found [here](/legal/cognitive-services/face/data-privacy-security).
+For more information, see [Data and privacy for Azure AI Services](/legal/cognitive-services/face/data-privacy-security).
 
 ### How much does Face Check cost?
 For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
@@ -255,7 +255,7 @@ No subscription exists. In the Link a subscription pane, you can create a subscr
 ## Frequently asked questions for Face Check Developers 
 ### Does Face Check Require MS Authenticator?
 
-Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. More info [here](using-wallet-library.md)
+Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. For more information, see [Using the Wallet Library](using-wallet-library.md).
 
 ### What is the confidence percentage match and what does confidence mean?
 
@@ -265,7 +265,7 @@ Learn more about [Azure Face API](/legal/cognitive-services/face/characteristics
 
 ### What is Azure AI Vision Face API?
 
-Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Microsoft Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. More information can be [here](/azure/ai-services/computer-vision/overview-identity).
+Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision Face API offers services for face detection, face recognition, face match, and liveness check. Microsoft Entra Verified ID uses face detection, face match, and face liveness check services when performing the FaceCheck. For more information, see [Azure AI Vision Face API](/azure/ai-services/computer-vision/overview-identity).
 
 ### How fair is Azure AI Vision Face API?
 
@@ -284,7 +284,7 @@ Face Check compares a user’s live selfie to the photo associated with your Ver
 Images used during Face Check aren't stored long term.
 During a Face Check request, a selfie is captured from the user’s mobile device. This image is then passed to Verified ID which uses it to invoke Azure Face API AI services. Once done processing, the selfie image is discarded and not saved on any device or service. Microsoft Authenticator, Verified ID, and Azure AI services will NOT store or keep this data. Furthermore, the captured selfie image isn't shared with the verifier application either. The verifier application only receives a confidence score of the resulting match.
 
-Data and privacy for Azure AI services can be found [here](/legal/cognitive-services/face/data-privacy-security).
+For more information, see [Data and privacy for Azure AI services](/legal/cognitive-services/face/data-privacy-security).
  
 ### Does the Face Check with Microsoft Entra Verified ID verification happen in the wallet, or on the cloud?
 
@@ -294,9 +294,9 @@ The Verified ID service executes the verification process in the cloud, not on t
 
 The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is 1 MB. Note that having a larger image doesn't guarantee a better result. A good smaller photo is better than a large bad one.
 
-More information on how to improve the photo processing accuracy can be found [here](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy)
+For more information on how to improve the photo processing accuracy, see [Face API characteristics and limitations](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy).
 
-More information on verifiable credentials sizing limits can be found [here](verifiable-credentials-faq.md)
+For more information on verifiable credentials sizing limits, see [Verified ID FAQ](verifiable-credentials-faq.md).
 
 ## Next steps
 
