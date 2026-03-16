@@ -259,7 +259,7 @@ Then follow these steps to retry onboarding the custom attribute in the **Custom
 
 Upon successful onboarding, Domain Services back fills synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
 
-## AADDS122: Group policy object conflict detected
+## AADDS122: Group policy object conflict detected (private preview)
 
 ### Alert message
 
