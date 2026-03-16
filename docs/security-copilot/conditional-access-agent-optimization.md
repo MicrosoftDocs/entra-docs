@@ -112,7 +112,7 @@ When the agent overview page loads, any suggestions appear in the **Recent sugge
 The agent includes several powerful settings to expand the capabilities while making them unique to your organization. The following capabilities can be configured from the **Settings** tab. For more information, see [Conditional Access Optimization Agent settings](conditional-access-agent-optimization-settings.md).
 
 - Allow agent to run automatically, every 24-hours
-- Enable [activity-based runs](conditional-access-agent-optimization-settings.md#trigger) to trigger the agent when relevant tenant changes occur (Preview)
+- Enable [activity-based runs](conditional-access-agent-optimization-settings.md) to trigger the agent when relevant tenant changes occur (Preview)
 - Set the agent to check for changes to users and applications
 - Allow the agent to create policies in report-only mode
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
