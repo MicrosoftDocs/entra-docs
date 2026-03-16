@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/12/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OpenText Directory Services so that I can streamline the user management process and ensure that users have the appropriate access to OpenText Directory Services.
@@ -22,6 +22,9 @@ This article describes the steps you need to perform in both OpenText Directory 
 > * Keep user attributes synchronized between Microsoft Entra ID and OpenText Directory Services
 > * Provision groups and group memberships in OpenText Directory Services
 > * [Single sign-on](./directory-services-tutorial.md) to OpenText Directory Services (recommended)
+
+> [!NOTE]
+> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Prerequisites
 
@@ -90,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 5. Set the **Provisioning Mode** to **Automatic**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+      ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 6. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL.
    * Non-specific tenant URL : {OTDS URL}/scim/{partitionName}
@@ -105,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
 9. Select **Save**.
 
@@ -160,9 +163,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 17. When you're ready to provision, select **Save**.
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
