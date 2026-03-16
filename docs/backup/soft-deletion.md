@@ -79,5 +79,5 @@ When combined with soft deletion, Microsoft Entra Backup and Recovery enables or
 
 ## Next steps
 
-- Learn how to recover deleted objects or restore modified objects to a previous state using Microsoft Entra Backup and Recovery: <!-- TODO: Add doc link -->
+- Learn how to recover deleted objects or restore modified objects to a previous state using Microsoft Entra Backup and Recovery: [Recover objects](recover-objects.md)
 - Understand how to reduce the risk of permanent data loss: [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview)

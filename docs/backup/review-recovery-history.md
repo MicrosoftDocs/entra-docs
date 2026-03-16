@@ -29,7 +29,7 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 ## Review recovery history
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Entra Backup Reader](~/identity/role-based-access-control/permissions-reference.md#entra-backup-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an **Entra Backup Reader**.
 
 1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
 
