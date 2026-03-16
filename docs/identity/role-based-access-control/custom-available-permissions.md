@@ -2,7 +2,7 @@
 title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
 ms.topic: how-to
-ms.date: 03/30/2025
+ms.date: 03/16/2026
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
