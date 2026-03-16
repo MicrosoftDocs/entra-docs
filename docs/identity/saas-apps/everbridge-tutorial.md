@@ -139,7 +139,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
      d. Choose the **Service Provider Certificate** you would like to use. The certificate of 3072 bit length is recommended. 
    
-     e. Click **Upload** to upload the metadata file that you downloaded from your IDP.
+     e. Select **Upload** to upload the metadata file that you downloaded from your IDP.
    
      f. For **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
    
