@@ -135,7 +135,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
    
      b. In the **API Name** box, enter the name of the API. This is the unique identifier for your SSO configuration.
    
-     c. Pick the **Identity Provider** from the dropdown list. If not found, choose "Other" and provide the name.
+     c. Select the **Identity Provider** from the dropdown list. If not found, choose "Other" and provide the name.
 
      d. Choose the **Service Provider Certificate** you would like to use. The certificate of 3072 bit length is recommended. 
    
