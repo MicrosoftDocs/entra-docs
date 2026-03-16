@@ -1,13 +1,8 @@
 ---
 title: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: sfi-image-nochange
 ---
@@ -48,7 +43,7 @@ You can assign the attribute on-premises and sync it with Microsoft Entra ID, or
 > [!WARNING]
 > Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group is re-evaluated. Users who no longer match the new rule are removed (users who still match the new rule aren't affected during this process). Those users have their licenses removed during the process which could result in loss of service, or in some cases, loss of data.
 >
-> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
+> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](~/fundamentals/licensing-groups-resolve-problems.md).
 
 ## Multiple groups and multiple licenses
 
@@ -208,7 +203,5 @@ If you use group-based licensing, it's a good idea to familiarize yourself with 
 To learn more about other scenarios for license management through group-based licensing, see:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assigning licenses to a group in Microsoft Entra ID](licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
+* [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)

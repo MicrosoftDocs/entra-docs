@@ -2,14 +2,9 @@
 title: What is a Microsoft Entra hybrid joined device?
 description: Learn how device identity management can help you to manage devices that are accessing resources in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 

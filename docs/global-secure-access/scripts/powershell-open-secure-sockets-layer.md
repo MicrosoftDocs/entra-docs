@@ -3,7 +3,6 @@ title: PowerShell Sample - Create a TLS Certificate Using OpenSSL
 description: Use this PowerShell script to generate and sign Transport Layer Security (TLS) certificates using OpenSSL in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 09/09/2025
 ms.reviewer: teresayao

@@ -1,15 +1,8 @@
 ---
 title: Migrate approved client app to application protection policy in Conditional Access 
 description: The approved client app control is going away. Migrate to App protection policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 01/12/2026
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access
@@ -35,7 +28,7 @@ Organizations can choose to update their policies using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -68,7 +61,7 @@ Organizations can choose to deploy this policy using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

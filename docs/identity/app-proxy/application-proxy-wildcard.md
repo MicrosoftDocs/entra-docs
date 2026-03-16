@@ -1,12 +1,8 @@
 ---
 title: Wildcard applications in Microsoft Entra application proxy
 description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: harshja
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
@@ -18,7 +14,7 @@ In Microsoft Entra ID, configuring a large number of on-premises applications ca
 
 - Simplified administrative overhead
 - Reduced number of potential configuration errors
-- Secure access more resources
+- Secure access to more resources
 
 This article provides you with the information you need to configure wildcard application publishing in your environment.
 
@@ -30,7 +26,7 @@ You can create a wildcard (*) application if you have a group of applications wi
 - The single sign-on (SSO) method
 - The access protocol (http, https)
 
-You can publish applications with wildcards if both, the internal and external URLs are in the following format:
+You can publish applications with wildcards if both the internal and external URLs are in the following format:
 
 > http(s)://*.\<domain\>
 
@@ -64,7 +60,7 @@ When using custom domains, you need to create a DNS entry with a CNAME record fo
 Confirm you configured your CNAME correctly, you can use [nslookup](/windows-server/administration/windows-commands/nslookup) on one of the target endpoints, for example, `expenses.adventure-works.com`. Your response should include the already mentioned alias (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
 ### Using connector groups assigned to an application proxy cloud service region other than the default region
-If you have connectors installed in regions different from your default tenant region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more, see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
+If you have connectors installed in regions different from your default tenant region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. For more information, see [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
  
 If the connector group assigned to the wildcard application uses a **different region than your default region**, you need to update the CNAME record to point to a regional specific external URL. Use the following table to determine the relevant URL:
 
@@ -190,5 +186,5 @@ If you have multiple applications published for finance and you have `finance.ad
 
 ## Next steps
 
-- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
-- To learn more about **Publishing applications**, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
+- For more information about custom domains, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
+- For more information about publishing applications, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)

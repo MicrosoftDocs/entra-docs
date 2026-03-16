@@ -4,9 +4,7 @@ description: Learn the core concepts of identity and access management (IAM), in
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/31/2025
 ms.reviewer: null
 ms.custom:

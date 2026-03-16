@@ -1,15 +1,8 @@
 ---
 title: Block unsupported platforms with Conditional Access
 description: Create a custom Conditional Access policy blocking unsupported platforms.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Block unknown or unsupported device platform
@@ -42,7 +35,7 @@ The [device platform condition](concept-conditional-access-conditions.md#device-
    1. Select, **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

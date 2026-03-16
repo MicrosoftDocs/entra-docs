@@ -1,14 +1,9 @@
 ---
 title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
-author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 08/15/2025
-ms.author: barclayn
-
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?

@@ -1,14 +1,9 @@
 ---
 title: Risk detection types and levels
 description: Learn about risk detections and risk levels, including the difference between real-time and offline detections. 
-
 ms.service: entra-id-protection
-
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/16/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: cokoopma
 
 ---

@@ -1,13 +1,8 @@
 ---
 title: System-preferred multifactor authentication (MFA)
 description: Learn how to use system-preferred multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 03/19/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.date: 02/27/2026
 ms.reviewer: msft-poulomi
 
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.
@@ -103,11 +98,14 @@ Content-Type: application/json
 
 ### How does system-preferred MFA determine the most secure method?
 
-When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Due to known issues with certificate-based authentication (CBA) and system-preferred MFA, we moved CBA to the bottom of the list. Click the link for more information about each method.
+When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Users can always cancel and choose a different available sign in method if needed. If your organization has Conditional Access policies that require specific authentication methods, those policies will continue to take priority over the system preferred MFA order. Click the link for more information about each method.
+
+>[!IMPORTANT]
+>Certificate Based Authentication (CBA) was previously placed last in the system preferred MFA order due to known issues with CBA and system preferred MFA. Now that those issues are resolved, starting March 18th, 2026, Certificate-based authentication(CBA) will move to the third position in the authentication order. Once the rollout is complete, we will update the ordering of methods in the documentation.
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
 1. [Passkey (FIDO2)](concept-authentication-passwordless.md#passkeys-fido2)
-1. [External authentication methods](how-to-authentication-external-method-manage.md)
+1. [External MFA](how-to-authentication-external-method-manage.md)
 1. [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md)
 1. [Time-based one-time password (TOTP)](concept-authentication-oath-tokens.md)<sup>1</sup>
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>

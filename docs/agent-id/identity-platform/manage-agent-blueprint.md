@@ -2,11 +2,8 @@
 title: Manage Agent Blueprints in Microsoft Entra Admin Center
 titleSuffix: Microsoft Entra Agent ID
 description: This article explains how to manage agent blueprints and registry-only agents using the Microsoft Entra Admin Center.
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.service: entra-id
 ms.topic: how-to
 
 #customer intent: As an IT administrator, I want to manage agent identity blueprints through the Microsoft Entra admin center so that I can monitor their status, configure permissions, and maintain proper governance oversight.

@@ -1,11 +1,8 @@
 ---
 title: Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access
 description: Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access.
-author: kenwith    
-ms.author: kenwith
 ms.topic: concept-article
-ms.date: 09/25/2025
-ms.service: global-secure-access
+ms.date: 03/12/2026
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
@@ -19,7 +16,7 @@ The Global Secure Access client uses a lightweight filter (LWF) driver to acquir
 
 ## Available clients
 
-You install the client on a device, such as computer or phone, and then use Global Secure Access settings in the Microsoft Entra admin center to secure the device. Clients are currently available for Windows, Android, macOS, and iOS. To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). To learn how to install the Android client, see [Global Secure Access client for Android](./how-to-install-android-client.md). To learn how to install the macOS client, see [Global Secure Access client for macOS](how-to-install-macos-client.md). To learn how to install the iOS client, see [Global Secure Access client for iOS](how-to-install-ios-client.md).
+You install the client on a device, such as computer or phone, and then use Global Secure Access settings in the Microsoft Entra admin center to secure the device. Clients are currently available for Windows, Android, macOS, and iOS. For more information about installing the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). For more information about installing the Android client, see [Global Secure Access client for Android](./how-to-install-android-client.md). For more information about installing the macOS client, see [Global Secure Access client for macOS](how-to-install-macos-client.md). For more information about installing the iOS client, see [Global Secure Access client for iOS](how-to-install-ios-client.md).
 
 ## Related content
 

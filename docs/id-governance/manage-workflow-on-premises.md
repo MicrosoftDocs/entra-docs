@@ -1,12 +1,9 @@
 ---
 title: Manage users synchronized from Active Directory Domain Services with workflows
 description: A how to article on how to edit a user account related task to run for users synchronized from Active Directory Domain Services (AD DS) with Lifecycle workflows.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/27/2024
+ms.date: 03/12/2026
 ms.subservice: lifecycle-workflows
 ms.custom: template-how-to, sfi-image-nochange
 #CustomerIntent: As an administrator, I want to be able to edit user account tasks in workflows so that they will run for users synchronized from Active Directory Domain Services.
@@ -24,7 +21,7 @@ While most Lifecycle workflow tasks can manage users synchronized from Active Di
 
 ## Configure a user account task to manage users synchronized from Active Directory Domain Services using the Microsoft Entra admin center
 
-Account related tasks within workflows can be quickly edited to apply to users synchronized from Active Directory Domain Services. To edit a task in such way using the Microsoft Entra admin center, you do the following steps:
+Account related tasks within workflows can be quickly edited to apply to users synchronized from Active Directory Domain Services. To edit a task in such a way using the Microsoft Entra admin center, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -46,6 +43,6 @@ To manage user tasks to be compatible with users synchronized from Active Direct
 
 ## Next steps
 
-- [Check status of a workflows](check-status-workflow.md)
+- [Check status of a workflow](check-status-workflow.md)
 - [Customize workflow schedule](customize-workflow-schedule.md)
 

@@ -1,13 +1,10 @@
 ---
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
-author: owinfreyATL
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ---
 
@@ -25,7 +22,7 @@ You also can easily ensure that guest users have appropriate access. You can ask
 
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
 
-For more information, [License requirements](access-reviews-overview.md#license-requirements).
+For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
 ## Create and perform an access review for guests
 
@@ -90,7 +87,7 @@ You can use access reviews to ensure that users who were invited for a particula
 
 ### Ask an authorized user to review a guest's access to an application
 
-You can ask an authorized user, such as the owner of an application, to review guest's need for continued access to the application.
+You can ask an authorized user, such as the owner of an application, to review a guest's need for continued access to the application.
 
 1. To create an access review for the application, select the review to include guests only. Then specify one or more users as reviewers. For more information, see [Create an access review of groups or applications](create-access-review.md).
 
@@ -107,9 +104,13 @@ In some organizations, guests might not be aware of their group memberships.
 
 1. Create a security group in Microsoft Entra ID with the guests as members, if a suitable group doesn't already exist. For example, you can create a group with a manually maintained membership of guests. Or, you can create a dynamic group with a name such as "Guests of Contoso" for users in the Contoso tenant who have the UserType attribute value of Guest. For efficiency, ensure the group is predominately guests - don't select a group that has member users, as member users don't need to be reviewed. Also, keep in mind that a guest user who is a member of the group can see the other members of the group.
 
+> [!NOTE]
+> Guest users who are members of Microsoft Entra groups can see other members of the same group when viewing **My profile > Groups I’m in**. This behavior is independent of access reviews. If your organization wants to prevent guest users from seeing other guest accounts, you can update **Guest user access restrictions** in Microsoft Entra ID. For example, you can restrict guests to view only their own profile information.
+> To configure this setting, go to **Entra ID > External Identities > External collaboration settings**, and adjust the **Guest user access restrictions** accordingly.
+
 2. To create an access review for that group, select the reviewers to be the members themselves. For more information, see [Create an access review of groups or applications](create-access-review.md).
 
-3. Ask each guest to review their own membership. By default, each guest who accepted an invitation receives an email from Microsoft Entra ID with a link to the access review in your organization's access panel. Microsoft Entra ID has instructions for guests on how to [review access to groups or applications](perform-access-review.md). Those guests who didn't accept their invite appears in the review results as "Not Notified".
+3. Ask each guest to review their own membership. By default, each guest who accepted an invitation receives an email from Microsoft Entra ID with a link to the access review in your organization's access panel. Microsoft Entra ID has instructions for guests on how to [review access to groups or applications](perform-access-review.md). Those guests who didn't accept their invite appear in the review results as "Not Notified".
 
 4. After the reviewers give input, stop the access review. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
 
@@ -117,7 +118,7 @@ In some organizations, guests might not be aware of their group memberships.
 
 ![Screenshot showing page to create access review.](media/manage-guest-access-with-access-reviews/new-access-review.png)
 
-To do so, select **Auto apply results to resource** as this will automatically remove the user from the resource. **If reviewer don't respond** should be set to **Remove access** and **Action to apply on denied guest users** should also be set to **Block from signing in for 30 days then remove user from the tenant**.
+To do so, select **Auto apply results to resource** as this will automatically remove the user from the resource. **If reviewers don't respond** should be set to **Remove access**, and **Action to apply on denied guest users** should also be set to **Block from signing in for 30 days then remove user from the tenant**.
 
 This will immediately block sign in to the guest user account and then automatically delete their Microsoft Entra B2B account after 30 days.
 

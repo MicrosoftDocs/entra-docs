@@ -1,12 +1,8 @@
 ---
 title: Remove personal data - Microsoft Entra application proxy
-description:  Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: harshja
 ai-usage: ai-assisted
 ---
@@ -24,7 +20,7 @@ It's possible for application proxy to write personal data to the following log 
 
 ## Remove personal data from Windows event logs
 
-For information on how to configure data retention for the Windows event logs, see [Settings for event logs](https://technet.microsoft.com/library/cc952132.aspx). To learn about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
+For information on how to configure data retention for the Windows event logs, see [Settings for event logs](https://technet.microsoft.com/library/cc952132.aspx). For more information about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 

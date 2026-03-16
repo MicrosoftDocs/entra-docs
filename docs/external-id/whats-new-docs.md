@@ -2,11 +2,7 @@
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
 ms.date: 02/03/2026
-ms.service: entra-external-id
 ms.topic: whats-new
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---

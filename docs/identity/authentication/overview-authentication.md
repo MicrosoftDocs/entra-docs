@@ -1,15 +1,8 @@
 ---
 title: Microsoft Entra Authentication Overview
 description: Learn about the authentication methods and security features for user sign-ins with Microsoft Entra ID.
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: overview
 ms.date: 11/10/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: sranjit
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand how Microsoft Entra ID makes it convenient to improve user sign-in security.

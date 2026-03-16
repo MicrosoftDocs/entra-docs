@@ -1,23 +1,19 @@
 ---
 title: PowerShell sample - Recover from Global Secure Access break glass scenario
 description: PowerShell examples that re-enable any Conditional Access policies that were disabled in a break glass scenario. 
-author: kenwith
-ms.service: global-secure-access
 ms.topic: sample
-ms.date: 02/21/2025
-ms.author: kenwith
-ms.reviewer: frankgomulka
+ms.date: 03/16/2026
 ---
 
 # Restore compliant network requirement after a break glass operation
 
 After an outage is resolved, you need to make a fast and accurate recovery from a [break glass](./powershell-break-glass.md) operation.
 
-Below you can view a script that can help you quickly regain the security value of [Global Secure Access](../overview-what-is-global-secure-access.md) and [Compliant Network](../how-to-compliant-network.md) for your users.
+The following script helps you quickly regain the security value of [Global Secure Access](../overview-what-is-global-secure-access.md) and [Compliant Network](../how-to-compliant-network.md) for your users.
 
 ## Implement break glass recovery
 
-The PowerShell script enables any forwarding profiles and any Conditional Access policies using the compliant network condition that were disabled in the [break glass](./powershell-break-glass.md) script. 
+The PowerShell script enables all forwarding profiles and Conditional Access policies using the compliant network condition that were disabled in the [break glass](./powershell-break-glass.md) script. 
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 

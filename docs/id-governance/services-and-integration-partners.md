@@ -4,7 +4,7 @@ description: Learn about partners who can help with deployment and integration o
 author: markwahl-msft
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: partner-tools
 ms.date: 6/12/2023
 ms.author: mwahl
 ms.reviewer: mwahl

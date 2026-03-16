@@ -2,21 +2,18 @@
 title: Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
-ms.date: 11/05/2025
+ms.date: 03/12/2026
 
-#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews..
+#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews.
 ---
 
 # Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
-This capability enables you to run user Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
+This capability enables you to run user Access Reviews (UARs) across both Microsoft Entra-connected and custom resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
 
 ## License requirements
 
@@ -74,16 +71,16 @@ With a catalog created, you can add custom data provided resources to it by doin
 
 1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog**, and select **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
-1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
+1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
-1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
+1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
 1. On the **Reviewers and schedule** tab, select reviewers you want to conduct access reviews. Currently only single stage reviews where the managers of the users who the access reviews are for can be set as reviewers.
 
 1. Select **Create**. 
 
 
-You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Get Access Review Object and Instance ID
 
@@ -104,7 +101,7 @@ After creating the catalog access review, but before uploading your custom data,
 
 ## Upload custom data
 
-After copying both the Access review object, and access review instance object, IDs note that the status of the access review shows as **Initializing**.
+After copying both the access review object and access review instance object IDs, note that the status of the access review shows as **Initializing**.
     :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 
 
@@ -113,7 +110,7 @@ After copying both the Access review object, and access review instance object, 
 1. On the resource screen for the catalog, select the custom data access resource you created, and select **Upload custom access data**.
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
-1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
+1. On the Upload access data for custom resource screen under **Basics**, enter both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-basics.png" alt-text="Screenshot of basic information for custom data access.":::
 1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
@@ -138,7 +135,7 @@ When uploading CSVs to be included in the access data, the following parameters 
 |PermissionType     |   Indicates the category of permission.      |
 
 
-You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
+You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta&preserve-view=true).
 
 ## Active review state
 
@@ -150,7 +147,7 @@ At the **Active** stage:
 ## Applying stage
 
 
-In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http) API call:
+In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
 GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq 'Deny' and resourceId eq '<custom data provided resource ID>')
@@ -158,7 +155,7 @@ GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definition
 
 For each decision item: 
 
-Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http) API call:
+Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http&preserve-view=true) API call:
 
 ``` http
 PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
@@ -194,7 +191,7 @@ As reviewers take actions, the review progresses through several states:
 |-------------|-----------|----------------|
 | Upload custom data | During *Initializing* | Within two hours. |
 | Review decisions | During *Active* | Until the review end date. |
-| Apply decisions | During *Applying* | 30 days and review remain in applying status until all decisions are marked as applied.|
+| Apply decisions | During *Applying* | 30 days and review remains in applying status until all decisions are marked as applied.|
 
 
 

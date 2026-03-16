@@ -1,13 +1,8 @@
 ---
 title: Download a list of users in the Azure portal (Preview)
 description: Download user records in bulk in the Azure admin center in Microsoft Entra ID.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
 ms.date: 08/19/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: krbain
 ---

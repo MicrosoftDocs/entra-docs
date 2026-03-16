@@ -2,16 +2,9 @@
 title: Configure Rackspace SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Rackspace SSO.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Rackspace SSO so that I can control who has access to Rackspace SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure Rackspace SSO for Single sign-on with Microsoft Entra ID
@@ -103,7 +96,7 @@ This file is uploaded to Rackspace to populate required Identity Federation conf
 
 To configure single sign-on on **Rackspace SSO** side:
 
-1. See the documentation at [Add an Identity Provider to the Control Panel](https://developer.rackspace.com/docs/rackspace-federation/gettingstarted/add-idp-cp/)
+1. See the documentation at [Add an Identity Provider to the Control Panel](https://docs.rackspace.com/docs/rackspace-identity-federation-user-guide)
 1. It will lead you through the steps to:
     1. Create a new Identity Provider.
     1. Specify an email domain that users will use to identify your company when signing in.
@@ -113,7 +106,7 @@ This will correctly configure the basic SSO settings needed for Azure and Racksp
 
 ### Set up Attribute Mapping in the Rackspace control panel
 
-Rackspace uses an **Attribute Mapping Policy** to assign Rackspace roles and groups to your single sign-on users. The **Attribute Mapping Policy** translates Microsoft Entra SAML claims into the user configuration fields Rackspace requires. More documentation can be found in the Rackspace [Attribute Mapping Basics documentation](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/). Some considerations:
+Rackspace uses an **Attribute Mapping Policy** to assign Rackspace roles and groups to your single sign-on users. The **Attribute Mapping Policy** translates Microsoft Entra SAML claims into the user configuration fields Rackspace requires. More documentation can be found in the Rackspace [Attribute Mapping Basics documentation](https://docs.rackspace.com/docs/id-federation-map-policies-permissions-cloud). Some considerations:
 
 * If you want to assign varying levels of Rackspace access using Microsoft Entra groups, you need to enable the Groups claim in the Azure **Rackspace SSO** Single Sign-on settings. The **Attribute Mapping Policy** will then be used to match those groups to desired Rackspace roles and groups:
 
@@ -152,7 +145,7 @@ mapping:
 > [!TIP]
 > Ensure that you use a text editor that validates YAML syntax when editing your policy file.
 
-See the Rackspace [Attribute Mapping Basics documentation](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/) for more examples.
+See the Rackspace [Attribute Mapping Basics documentation](https://docs.rackspace.com/docs/id-federation-map-policies-permissions-cloud) for more examples.
 
 ## Test SSO
 

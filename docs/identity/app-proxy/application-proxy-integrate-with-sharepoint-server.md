@@ -1,12 +1,8 @@
 ---
 title: Enable remote access to SharePoint - Microsoft Entra application proxy
-description: Covers the basics about how to integrate on-premises SharePoint Server with Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Learn how to integrate on-premises SharePoint Server with Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 12/12/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
@@ -80,7 +76,7 @@ You must configure the SharePoint web application with Kerberos and the appropri
     1. Start the **SharePoint Management Shell** and run the script.
 
        ```powershell
-       # This script creates a web application and configures the Default zone with the internal/external URL needed to work with Azure AD application proxy
+       # This script creates a web application and configures the Default zone with the internal/external URL needed to work with Microsoft Entra application proxy
        # Edit variables below to fit your environment. Note that the managed account must exist and it must be a domain account
        $internalUrl = "https://sharepoint"
        $externalUrl = "https://spsites-demo1984.msappproxy.net/"
@@ -102,7 +98,7 @@ You must configure the SharePoint web application with Kerberos and the appropri
     1. Start the SharePoint Management Shell and run the following script.
 
        ```powershell
-       # This script extends an existing web application to Internet zone with the internal/external URL needed to work with Azure AD application proxy
+       # This script extends an existing web application to Internet zone with the internal/external URL needed to work with Microsoft Entra application proxy
        # Edit variables below to fit your environment
        $webAppUrl = "http://spsites/"
        $internalUrl = "https://sharepoint"
@@ -140,7 +136,7 @@ Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), you must s
 1. Run the following script to generate a self-signed certificate and add it to the computer's `MY store`.
 
    ```powershell
-   # Replace "SharePoint" with the actual hostname of the Internal URL of your Azure AD proxy application
+   # Replace "SharePoint" with the actual hostname of the Internal URL of your Microsoft Entra proxy application
    New-SelfSignedCertificate -DnsName "SharePoint" -CertStoreLocation "cert:\LocalMachine\My"
    ```
 

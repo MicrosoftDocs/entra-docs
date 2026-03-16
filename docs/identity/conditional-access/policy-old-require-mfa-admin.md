@@ -1,18 +1,14 @@
 ---
 title: Require MFA for administrators with Conditional Access
 description: Create a custom Conditional Access policy to require administrators to perform multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: dougeby
+ms.date: 03/10/2026
 ms.reviewer: lhuangnorth
 ---
 # Require MFA for administrators
+
+> [!WARNING]
+> This article describes a Conditional Access policy that uses the **Require multifactor authentication** grant control. For stronger protection against phishing attacks, consider using **authentication strength** to require phishing-resistant MFA methods instead. For more information, see [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
 
 Accounts that are assigned administrative rights are targeted by attackers. Requiring multifactor authentication (MFA) on those accounts is an easy way to reduce the risk of those accounts being compromised.
 
@@ -45,7 +41,7 @@ The following steps help create a Conditional Access policy to require those ass
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

@@ -1,12 +1,8 @@
 ---
 title: Approve activation requests for group members and owners
 description: Learn how to approve activation requests for group members and owners in Microsoft Entra Privileged Identity Management (PIM).
-author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 04/30/2025
-ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
 ---
@@ -24,7 +20,7 @@ Follow the steps in this article to approve or deny requests for group membershi
 
 As a delegated approver, you receive an email notification when an Azure resource role request is pending your approval. You can view pending requests in Privileged Identity Management.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who has been set as an approver.
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests** > **Groups**.
 
@@ -33,6 +29,9 @@ As a delegated approver, you receive an email notification when an Azure resourc
     :::image type="content" source="media/pim-for-groups/pim-group-9.png" alt-text="Screenshot that shows requests for role activations." lightbox="media/pim-for-groups/pim-group-9.png":::
 
 ## Approve requests
+
+>[!NOTE]
+>Approvers are not able to approve their own role activation requests. Additionally, service principals are not allowed to approve requests.
 
 1. Find and select the request that you want to approve and select **Approve**.
 

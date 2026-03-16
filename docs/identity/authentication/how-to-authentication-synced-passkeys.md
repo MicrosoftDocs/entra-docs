@@ -1,13 +1,9 @@
 ---
 title: How to Enable Synced Passkeys (FIDO2) in Microsoft Entra ID (Preview)
 description: Learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/31/2025
-ms.author: justinha
 author: hanki71
-manager: dougeby
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.

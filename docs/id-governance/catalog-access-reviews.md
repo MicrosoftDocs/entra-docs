@@ -1,19 +1,16 @@
 ---
 title: Catalog Access Reviews (Preview)
 description: This article describes what Catalog Access Reviews are, how to create one, and how to complete a review for one.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 10/30/2025
+ms.date: 03/12/2026
 
-#CustomerIntent: As an ID administrator, I want to create catalog access reviews so that set up access reviews for multiple resources within a catalog at once.
+#CustomerIntent: As an ID administrator, I want to create catalog access reviews so that I can set up access reviews for multiple resources within a catalog at once.
 ---
 
 # Catalog Access Reviews (preview)
 
-Catalog access reviews in Microsoft Entra ID Governance enables organizations to simplify how managers can review users access to multiple resource types, such as groups, applications and custom disconnected resource at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
+Catalog access reviews in Microsoft Entra ID Governance enable organizations to simplify how managers can review user access to multiple resource types, such as groups, applications, and custom disconnected resources at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
 ## License requirements
 
@@ -23,7 +20,7 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 
 ## Add resources to catalog
 
-To enable access reviews across multiple resources in a single reviewer experience, you must first add those resources to a catalog. Groups, Applications and custom data provided resources are currently the three resources that can be reviewed by catalog. To add resources to a catalog:
+To enable access reviews across multiple resources in a single reviewer experience, you must first add those resources to a catalog. Groups, applications, and custom data provided resources are currently the three resources that can be reviewed through a catalog. To add resources to a catalog:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or catalog creator, and as the owner or administrator of the resources.
@@ -44,7 +41,7 @@ For more information on creating a catalog and adding resources, see [Create and
 
 ## Create a catalog access review
 
-Once you add resources to a catalog, you can then create a catalog access review so that managers can then review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
+Once you add resources to a catalog, you can create a catalog access review so that managers can review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -52,11 +49,11 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog** to select the **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
-1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
+1. Enter [basic information](create-access-review.md) about the workflow and select **Next**. 
 
-1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
+1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
-1. On the **Reviewers and schedule** tab, Choose reviewers. Currently, managers of the users are the primary reviewers.
+1. On the **Reviewers and schedule** tab, choose reviewers. Currently, managers of the users are the primary reviewers.
 
 1. Optionally, you can configure [multi-stage reviews](using-multi-stage-reviews.md), where the resource owners (group or application owners) serve as secondary reviewers.
 
@@ -64,7 +61,7 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. Select **Create** to finalize the access review. 
 
-You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
 ## Upload data from custom data resources
 
@@ -74,7 +71,7 @@ If you have added custom data provided resources to the catalog, then you must u
 
 When the catalog access review is created, managers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the My Access portal where they can view their direct report's access to all resources in the catalog.
 
-To complete a catalog access review, you'd do the following steps:
+To complete a catalog access review, follow these steps:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the manager of the users you want to complete the catalog access review for. 
 
@@ -86,7 +83,7 @@ To complete a catalog access review, you'd do the following steps:
 
 1. Select **Submit** to record your decisions.
 
-On the review end date, all decisions, excluding custom disconnected resources, are automatically applied. 
+On the review end date, all decisions, except those for custom disconnected resources, are automatically applied. 
 
 ## Related content
 

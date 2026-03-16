@@ -1,12 +1,9 @@
 ---
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
-author: owinfreyATL
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
@@ -14,7 +11,7 @@ ms.custom: sfi-ga-nochange
 
 # Plan a Microsoft Entra access reviews deployment
 
-[Microsoft Entra access reviews](access-reviews-overview.md) help your organization keep the Enterprise more secure by managing its [resource access lifecycle](identity-governance-overview.md). With access reviews, you can:
+[Microsoft Entra access reviews](access-reviews-overview.md) help your organization keep the enterprise more secure by managing its [resource access lifecycle](identity-governance-overview.md). With access reviews, you can:
 
 * Schedule regular reviews or do ad-hoc reviews to discover who has access to specific resources, such as applications and groups.
 * Track reviews for insights, compliance, or policy reasons.
@@ -74,12 +71,12 @@ For access reviews, you'll likely include representatives from the following tea
    * Reviews privileged access to infrastructure and apps, including Microsoft 365 and Microsoft Entra ID.
    * Schedules and runs access reviews on groups that are used to maintain exception lists or IT pilot projects to maintain up-to-date access lists.
    * Ensures that programmatic (scripted) access to resources through service principals is governed and reviewed.
-   * Automate processes like user onboarding and offboarding, access requests, and access certifications.
+   * Automates processes like user onboarding and offboarding, access requests, and access certifications.
  
 * **Security teams** ensure the plan meets the security requirements of your organization and enforces Zero Trust. This team:
    * Reduces risk and strengthens security
    * Enforces least privilege access to resources and applications
-   * Uses tools to see a centralized authoritative source, of who has access to what, and for how long.
+   * Uses tools to see a centralized authoritative source of who has access to what, and for how long.
 
 * **Development teams** build and maintain applications for your organization. This team:
 
@@ -103,7 +100,7 @@ For access reviews, you'll likely include representatives from the following tea
    * Requires repeatable access processes that are easy to audit and report.
 
 > [!NOTE]
-> For reviews that require manual evaluations, plan for adequate reviewers and review cycles that meet your policy and compliance needs. If review cycles are too frequent, or there are too few reviewers, quality might be lost and too many or too few people might have access. We recommend you establish clear responsibilities for the various stakeholders and departments engaged in the access reviews. All teams and individuals participating should understand their respective roles and obligations to uphold the principle of least privilege.
+> For reviews that require manual evaluations, plan for adequate reviewers and review cycles that meet your policy and compliance needs. If review cycles are too frequent, or there are too few reviewers, quality might be lost and too many or too few people might have access. Establish clear responsibilities for the various stakeholders and departments engaged in the access reviews. All teams and individuals participating should understand their respective roles and obligations to uphold the principle of least privilege.
 
 ### Plan communications
 
@@ -130,9 +127,9 @@ After you select **Start review**, reviewers will be directed to the [My Access 
 
 ### Plan a pilot
 
-We encourage customers to initially pilot access reviews with a small group and target noncritical resources. Piloting can help you adjust processes and communications as needed. It can help you increase users' and reviewers' ability to meet security and compliance requirements.
+Consider initially piloting access reviews with a small group and target noncritical resources. Piloting can help you adjust processes and communications as needed. It can help you increase users' and reviewers' ability to meet security and compliance requirements.
 
-In your pilot, we recommend that you:
+In your pilot, follow these recommendations:
 
 * Start with reviews where the results aren't automatically applied, and you can control the implications.
 * Ensure all users have valid email addresses listed in Microsoft Entra ID. Confirm that they receive email communication to take the appropriate action.
@@ -213,7 +210,7 @@ To create an access review policy, you must have the following information:
 | Notification| Email is sent at the start of a review to the alias Dynamics-Pms.<p>Include an encouraging custom message to reviewers to secure their buy-in. |
 | Timeline| 48 hours from notification. |
 |Automatic actions| Remove access from any account that has no interactive sign-in within 90 days by removing the user from the Security group dynamics-access. <p>*Perform actions if not reviewed within timeline.* |
-| Manual actions| Reviewers can do removals approval prior to automated action if desired. |
+| Manual actions| Reviewers can approve removals prior to automated action if desired. |
 
 ### Automate actions based on access reviews
 

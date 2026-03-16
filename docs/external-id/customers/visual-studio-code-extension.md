@@ -1,11 +1,6 @@
 ---
 title: Visual Studio Code extension for External ID
 description: Learn how to use the Microsoft Entra External ID extension for Visual Studio Code. Use the application samples provided to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: quickstart
 ms.date: 09/16/2024
 ms.custom: it-pro, sfi-image-nochange
