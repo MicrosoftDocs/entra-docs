@@ -3,7 +3,7 @@ title: Configure MindTickle for automatic user provisioning with Microsoft Entra
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to MindTickle.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/16/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Mindtickle so that I can streamline the user management process and ensure that users have the appropriate access to Mindtickle.
@@ -82,43 +82,41 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 5. Under the **Admin Credentials** section, input `https://admin.mindtickle.com/scim` in **Tenant URL**. Input the **JWT token** value retrieved earlier In Secret Token textbox, enter the **JWT token** value which was given by MindTickle support team. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your MindTickle account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.	
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to MindTickle**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to MindTickle in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MindTickle for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="media/mindtickle-provisioning-tutorial/userattribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and MindTickle attributes and the matching precedence." border="false":::
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for MindTickle, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to MindTickle by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. For more information on how long it will take for users and/or groups to provision, see [How long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users). 
 
 You can use the **Current Status** section to monitor progress and follow links to your provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on MindTickle. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+
+## Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 
