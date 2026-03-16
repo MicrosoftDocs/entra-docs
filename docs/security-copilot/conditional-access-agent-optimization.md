@@ -16,12 +16,12 @@ ms.collection: msec-ai-copilot
 ---
 # Microsoft Entra Conditional Access Optimization Agent
 
-The Conditional Access optimization agent helps you ensure all users, applications, and agent identities are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
+The Conditional Access Optimization Agent helps you ensure all users, applications, and agent identities are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
 
-The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
+The Conditional Access Optimization Agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 > [!IMPORTANT]
-> The following features of the Conditional Access optimization agent are currently in PREVIEW: ServiceNow integration, deep analysis MFA gap analysis, least-privileged access recommendations for agent identities, insights dashboard, and activity-based runs.
+> The ServiceNow integration, file upload capability, and activity-based runs in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -119,7 +119,7 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
 - Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions
-- View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track posture improvements driven by the agent (Preview)
+- View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track Zero Trust security posture improvements driven by the agent (Preview)
 
 ## Built in integrations
 

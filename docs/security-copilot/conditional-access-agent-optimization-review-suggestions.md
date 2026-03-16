@@ -20,7 +20,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The following features of the Conditional Access optimization agent are currently in PREVIEW: ServiceNow integration, deep analysis MFA gap analysis, and least-privileged access recommendations for agent identities.
+> The ServiceNow integration, multifactor authentication (MFA) gap analysis, and least-privileged access suggestions for agent identities in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -118,10 +118,10 @@ Deep analysis includes an MFA gap analysis that scans all enabled Conditional Ac
 
 **Known limitations:**
 
-- **MFA gaps only**: Device compliance, legacy authentication blocking, and other controls aren't evaluated yet.
+- **MFA gaps only**: Device compliance, legacy authentication blocking, and other controls aren't currently evaluated.
 - **Report-only policies**: Report-only policies don't count as coverage. If a tenant's only MFA policy is in report-only mode, the agent flags those users as uncovered.
 - **Large tenants**: If the agent finds more than 100 uncovered users, it shows a prioritized sample along with the total count.
-- **Repetitive recommendations**: A user might appear in both a deep analysis recommendation and a standard recommendation to add new users to existing MFA policies.
+- **Repetitive suggestion**: A user might appear in both a deep analysis suggestion and a standard suggestion to add new users to existing MFA policies.
 
 ### Microsoft Teams agent suggestion notifications
 
