@@ -4,7 +4,7 @@ description: Learn about the Security Copilot for Microsoft Entra optimization a
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-ms.date: 12/11/2025
+ms.date: 03/16/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -38,6 +38,15 @@ The **Agent summary** at the top of the Conditional Access optimization agent pa
 - **Security compute units consumed**: The total number of SCUs consumed by the agent in the last 30 days. 
 
 The values in the agent summary reflect the activity after suggestions are applied. If you run the agent and don't apply any suggestions, the values in the agent summary won't change.
+
+## Insights dashboard (Preview)
+
+The Conditional Access Optimization Agent includes an insights dashboard that quantifies posture improvements driven by the agent. The dashboard is designed so administrators can communicate progress to leadership and demonstrate the value of Zero Trust investments without building custom reports.
+
+The insights dashboard provides the following metrics:
+
+- **Objects with improved coverage**: Users, applications, or agent identities identified with critical policy gaps who gained coverage for at least one missing control in the past 30 days.
+- **Objects missing coverage**: Users, applications, or agent identities currently missing coverage from one or more critical policies.
 
 ## Audit logs 
 

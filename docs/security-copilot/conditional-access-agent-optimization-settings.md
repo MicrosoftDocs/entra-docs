@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 02/17/2026
+ms.date: 03/16/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -21,7 +21,7 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The ServiceNow integration and the file upload capability in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The following features of the Conditional Access optimization agent are currently in PREVIEW: ServiceNow integration, file upload capability, and activity-based runs.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
@@ -38,6 +38,15 @@ Select the category from the left-side menu to navigate through all the settings
 ## Trigger
 
 The agent is configured to run every 24 hours, based on when it was initially configured. You can manually run the agent at any time.
+
+### Activity-based runs (Preview)
+
+In addition to the daily scheduled run, the agent can trigger runs based on activity signals. When relevant changes occur in your tenant, such as an enabled Conditional Access policy being introduced or edited, the agent initiates a run. Activity-based runs don't replace the daily scheduled run, which always occurs.
+
+To prevent excessive runs, activity-based triggers occur no more than once every six hours.
+
+- For new tenants, activity-based runs are enabled by default and can be turned off in the agent settings.
+- For existing tenants, activity-based runs are opt-in and can be enabled in the agent settings.
 
 ## Capabilities
 
