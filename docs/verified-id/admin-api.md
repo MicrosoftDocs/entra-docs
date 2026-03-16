@@ -732,7 +732,7 @@ Content-type: application/json
 
 ### Synchronize with DID Document
 
-After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When the process completes, the synchronizeWithDidDocument tells the system to start using the new key for signing.
+After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-you-register-your-decentralized-id) to reflect the update. When the process completes, the synchronizeWithDidDocument tells the system to start using the new key for signing.
 
 #### HTTP request
 
