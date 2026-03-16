@@ -9,11 +9,14 @@ ai-usage: ai-assisted
 
 # Soft deletion in Microsoft Entra Backup and Recovery (Preview)
 
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
 Soft deletion is a foundational data protection capability in Microsoft Entra that helps organizations recover from accidental or malicious deletions. Instead of immediately and permanently removing an object, soft deletion places the object into a recoverable state for a limited retention period. During this time, the object can be restored with its properties and relationships intact.
 
 Soft deletion is a core building block of Microsoft Entra Backup and Recovery, enabling reliable recovery without recreating objects or reconfiguring access models. For an overview of deletion and recovery concepts, see [Recover from deletions](/entra/architecture/recover-from-deletions).
 
-This article explains what soft deletion is, how it relates to backup and recovery, and what recovery can—and can't—do.
+This article explains what soft deletion is, how it relates to backup and recovery, and what recovery can, and can't, do.
 
 ## What is soft deletion?
 
@@ -72,7 +75,7 @@ Soft deletion is essential to building a resilient identity system because it:
 - Reduces downtime and operational risk
 - Forms the foundation for reliable backup and recovery
 
-When combined, Microsoft Entra Backup and Recovery along with soft deletion functionality enables organizations to recover from supported unintended or malicious attribute change and deletion events, without permanently deleting data during recovery.
+When combined with soft deletion, Microsoft Entra Backup and Recovery enables organizations to recover from supported unintended or malicious attribute change and deletion events, without permanently deleting customer data during recovery.
 
 ## Next steps
 

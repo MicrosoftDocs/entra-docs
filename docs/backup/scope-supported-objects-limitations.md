@@ -1,13 +1,16 @@
 ---
-title: Supported objects and recoverable properties in Microsoft Entra Backup
-description: Learn which Microsoft Entra object types and properties are supported for backup and recovery, and understand current limitations.
+title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
+description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported for backup and recovery, and understand current limitations.
 ms.date: 03/05/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Supported objects and recoverable properties in Microsoft Entra Backup (Preview)
+# Supported objects and recoverable properties in Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra Backup and Recovery supports recovery for a defined set of tenant object types and selected properties on those objects.
 
@@ -16,7 +19,7 @@ Microsoft Entra Backup and Recovery supports recovery for a defined set of tenan
 
 ## User
 
-Recovery for user objects supports the following properties:
+Recovery for user objects supports these properties:
 
 - `AccountEnabled`
 - `AgeGroup`
@@ -58,7 +61,7 @@ For reference, you can view the full set of user properties in the [Microsoft Gr
 
 ## Group
 
-Recovery for group objects supports the following properties:
+Recovery for group objects supports these properties:
 
 - `Classification`
 - `Description`
@@ -88,7 +91,7 @@ All properties of named location policies are in scope. View all named location 
 
 ## Authorization policy
 
-Recovery for authorization policy objects supports the following properties:
+Recovery for authorization policy objects supports these properties:
 
 - `blockMsolPowerShell`
 - `guestUserRoleId`
@@ -102,7 +105,7 @@ For reference, you can view the full set of authorization policy properties in t
 
 ## Authentication methods policy
 
-Recovery supports the following authentication method policies:
+Recovery supports these authentication method policies:
 
 - Email OTP
 - FIDO2 passkey
@@ -117,7 +120,7 @@ For reference, you can view the full set of authentication methods policy proper
 
 ## Application
 
-Recovery for **application** objects supports the following properties:
+Recovery for **application** objects supports these properties:
 
 - `DisplayName`
 - `Description`
@@ -143,7 +146,7 @@ For reference, you can view the full set of application properties in the [Micro
 
 ## Service principal
 
-### Recovery for **service principal** objects supports the following properties:
+Recovery for **service principal** objects supports these properties:
 
 - `AccountEnabled`
 - `AlternativeNames`
@@ -178,7 +181,7 @@ In Entra portal, Service principals, OAuth2 permission grants and app role assig
 
 ## Organization
 
-Recovery for the organization object supports the following properties:
+Recovery for the organization object supports these properties:
 
 **Tenant-level per-user MFA settings:**
 
@@ -216,7 +219,7 @@ Completion time for difference reports and recovery depends on **data loading** 
 
 When a backup is accessed for the first time, either through creating a difference report or recovery, the recovery service loads the backup data, which takes a fixed amount of time even when tenant size is small. Loaded data is reused across operations that reference the same backup. As a result, operations that reuse previously loaded data typically complete faster than those that require loading data for the first time. Creating a difference report not only helps you preview changes before recovery, but can also reduce recovery time and subsequent report creation time by eliminating data loading for the same backup.
 
-Once data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current state. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
+After data loading is complete, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
 ### Hard-deleted objects
 

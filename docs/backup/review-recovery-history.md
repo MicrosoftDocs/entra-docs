@@ -1,5 +1,5 @@
 ---
-title: Review recovery history in Microsoft Entra Backup
+title: Review recovery history in Microsoft Entra Backup and Recovery
 description: Learn how to review recovery operations performed in your tenant using the Recovery History page in Microsoft Entra Backup and Recovery.
 ms.date: 03/02/2026
 ms.service: entra-id
@@ -8,6 +8,9 @@ ai-usage: ai-assisted
 ---
 
 # Review recovery history in Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 The Recovery History page in Microsoft Entra Backup and Recovery provides visibility into recovery operations performed in your tenant. This page helps administrators understand what was recovered, when the recovery occurred, and whether the operation completed successfully or failed.
 
@@ -26,7 +29,7 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 ## Review recovery history
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least **Entra Backup Reader** role.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Entra Backup Reader](~/identity/role-based-access-control/permissions-reference.md#entra-backup-reader).
 
 1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
 
@@ -48,18 +51,18 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 ### Recovery statuses
 
-Recovery operations move through the following statuses as changes are applied to the tenant. These statuses indicate the progress and outcome of the recovery job.
+Recovery operations move through these statuses as changes are applied to the tenant. These statuses indicate the progress and outcome of the recovery job.
 
-- **Loading data**: The system is loading data from the selected backup to prepare for recovery. If the backup has already been used to create a difference report or a prior recovery, this step might complete quickly.
+- **Loading data**: The system is loading data from the selected backup to prepare for recovery. If the backup has already been used to create a difference report or a prior recovery, this step might complete fast.
 - **In progress**: The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.
 - **Completed**: The recovery completed successfully, and all supported changes were applied.
-- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. You can review the failed changes to understand which objects weren't restored and why.
+- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. Review the failed changes to understand which objects weren't restored and why.
 - **Failed**: The recovery couldn't be completed due to an error. Some changes might not have been applied.
 - **Canceled**: The recovery was canceled before completion.
 
 ## Review failed changes
 
-If a recovery operation partially succeeds, the **Status** column indicates "Completed with Warnings," allowing you to quickly identify objects that weren't recovered.
+If a recovery operation partially succeeds, the **Status** column indicates "Completed with Warnings," allowing you to identify objects that weren't recovered.
 
 :::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png" alt-text="Screenshot of the Failed recovery changes page showing recovery job details including Recovery job ID, Status Completed, Backup timestamp, Recovery started and completed times, and a table listing the Adele Vance user object with a Restore recovery action, one changed attribute, and Error Code 400.":::
 

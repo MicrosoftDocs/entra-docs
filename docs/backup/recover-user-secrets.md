@@ -1,11 +1,14 @@
 ---
-title: Recover user authentication methods using Microsoft Entra Backup
+title: Recover user authentication methods using Microsoft Entra Backup and Recovery
 description: Learn how to recover user authentication methods after accidental or malicious changes using Microsoft Entra Backup and Recovery
 ms.topic: how-to
 ms.date: 03/09/2026
 ---
 
-# Recover user authentication methods using Microsoft Entra Backup and Recovery(Preview)
+# Recover user authentication methods using Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 This article outlines Microsoft's recommended approach for recovering user authentication methods ("user secrets") in Microsoft Entra ID when they were accidentally or maliciously edited or deleted.
 
@@ -13,9 +16,9 @@ This article outlines Microsoft's recommended approach for recovering user authe
 
 Authentication methods are a critical component of user identity security. Disruption or compromise can result in account lockouts or unauthorized access.
 
-Using Entra Backup and Recovery, administrators can restore user objects and associated authentication data to a previous state. In cases where authentication methods can't or shouldn't be restored, administrators should remove untrusted entries and have users securely re-register new authentication methods.
+Using Microsoft Entra Backup and Recovery, administrators can restore user objects and associated authentication data to a previous state. In cases where authentication methods can't or shouldn't be restored, administrators should remove untrusted entries and have users securely re-register new authentication methods.
 
-The following sections provide step-by-step guidance for two common recovery scenarios:
+These sections provide step-by-step guidance for two common recovery scenarios:
 
 - **Accidental changes or deletion** - Cases where a user's authentication methods or account were unintentionally modified or removed, such as through admin error or automation.
 - **Malicious changes or deletion** - Cases where authentication methods or the user object itself might have been intentionally altered or deleted by a bad actor, requiring a Zero Trust recovery approach.
@@ -31,9 +34,9 @@ Before recovery is needed, organizations should establish clear controls and red
 - **Require MFA for all users.** Use [Conditional Access](/entra/identity/conditional-access/overview), [authentication strengths](/entra/identity/authentication/concept-authentication-strengths), or [Identity Protection policies](/entra/id-protection/overview-identity-protection) to ensure users authenticate with strong methods rather than relying solely on passwords.
 - **Require multiple authentication methods per user.** While Microsoft Entra ID doesn't currently enforce a strict "two-method minimum," organizations should encourage users to register at least two strong methods to prevent lockouts if one method is lost or deleted. This can be reinforced through authentication strengths, [SSPR policies that require multiple methods](/entra/identity/authentication/tutorial-enable-sspr#select-authentication-methods-and-registration-options), and operational checks (for example, periodic reporting using [Microsoft Graph reporting APIs](/graph/api/resources/userregistrationdetails?view=graph-rest-1.0&preserve-view=true)).
 - **Favor phishing-resistant methods.** Encourage users to register FIDO2 security keys, passkeys, or Windows Hello for Business to strengthen resilience against account compromise. Microsoft's [guidance](/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication) is to use synced passkeys for most end users and device-bound passkeys for higher-assurance roles.
-- **Restrict authentication method management via Entra RBAC.** Limit management of authentication methods to [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator), assigned only to trusted, least-privileged users and elevated through [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) (PIM). For helpdesk scenarios, use Authentication Administrator, which allows support staff to reset or remove authentication methods for standard users while preventing changes to privileged accounts.
+- **Restrict authentication method management through Entra RBAC.** Limit management of authentication methods to [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator), assigned only to trusted, least-privileged users and elevated through [Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-configure) (PIM). For helpdesk scenarios, use Authentication Administrator, which allows support staff to reset or remove authentication methods for standard users while preventing changes to privileged accounts.
 - **Protect user authentication-method registration with Conditional Access.** [Require](/entra/identity/conditional-access/policy-all-users-security-info-registration) strong sign-in (for example, compliant devices or trusted networks) when users access the Security info registration portal.
-- **Use protected actions for destructive operations.** Limit the ability to permanently delete users to highly privileged administrators via [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
+- **Use protected actions for destructive operations.** Limit the ability to permanently delete users to highly privileged administrators by using [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ## Determine the nature of the change
 
@@ -50,7 +53,7 @@ If the cause is unclear, **default to treating the incident as malicious** in li
 
 ### Accidental changes or deletions
 
-If a user's authentication methods or account were unintentionally changed or deleted, Entra Backup and Recovery can be used to restore them to a prior state.
+If a user's authentication methods or account were unintentionally changed or deleted, Backup and Recovery can be used to restore them to a prior state.
 
 **Step 1 - Review audit logs**
 
@@ -62,7 +65,7 @@ Begin by confirming what was changed and when.
 
 **Step 2 - Recover the user to a previous state**
 
-Use Entra Backup and Recovery to restore the user to a point in time before the accidental change occurred.
+Use Backup and Recovery to restore the user to a point in time before the accidental change occurred.
 
 If the user was **soft-deleted**, restoring them reinstates their attributes, group memberships, licenses, and assignments. This helps ensure that MFA, SSPR, and authentication method policies continue to apply as before.
 
@@ -128,16 +131,16 @@ Look for activities such as:
 
 Before removing authentication methods, ensure the user object exists:
 
-- **If the user account was maliciously deleted but is still recoverable**, use Entra Backup and Recovery to restore the user to a point in time before the deletion occurred.
+- **If the user account was maliciously deleted but is still recoverable**, use Backup and Recovery to restore the user to a point in time before the deletion occurred.
 - **If the user was hard-deleted and is no longer available in Backup and Recovery**, recreate the user manually. In this case, no authentication methods exist to delete, and all methods need to be newly registered as part of recovery.
 
-Once restored, proceed with removing all authentication methods. Use the **Microsoft Entra admin center** > **Users** > **{Select user}** > **Authentication methods** page or Microsoft Graph (`/users/{id}/authentication/methods`) to delete all existing authentication methods for the user. Microsoft's guidance is not to reuse authentication methods that might have been involved in malicious activity, even if Backup and Recovery can revert them.
+After you restore the user, proceed with removing all authentication methods. Use the **Microsoft Entra admin center** > **Users** > **{Select user}** > **Authentication methods** page or Microsoft Graph (`/users/{id}/authentication/methods`) to delete all existing authentication methods for the user. Microsoft's guidance is not to reuse authentication methods that might have been involved in malicious activity, even if Backup and Recovery can revert them.
 
 **Step 3 - Set a new password for the user**
 
 Before enrolling any new authentication methods, [set a new password for the user](/entra/fundamentals/users-reset-password-azure-portal) to establish a clean, trusted credential for the recovered account. Backup and Recovery doesn't restore passwords, so issuing a new one ensures the user begins from a known, administrator-issued baseline.
 
-Reset the password in the **Microsoft Entra admin center** or via Microsoft Graph (`POST /users/{id}/changePassword`). Require the user to set a new, strong password at their next sign-in, unless your tenant enforces passwordless-only authentication through authentication strengths.
+Reset the password in the **Microsoft Entra admin center** or through Microsoft Graph (`POST /users/{id}/changePassword`). Require the user to set a new, strong password at their next sign-in, unless your tenant enforces passwordless-only authentication through authentication strengths.
 
 **Step 4 - Re-register new authentication methods**
 
@@ -156,5 +159,5 @@ After completing recovery under any scenario:
 
 - Have the user perform a test sign-in to confirm that restored or re-registered methods function correctly.
 - Verify that MFA, SSPR, and Conditional Access policies apply as expected.
-- Review the prevention and readiness recommendations outlined earlier in this article, such as limiting admin access via Entra RBAC and protecting registration through Conditional Access, to ensure those controls are implemented where possible.
+- Review the prevention and readiness recommendations outlined earlier in this article, such as limiting admin access through Entra RBAC and protecting registration through Conditional Access, to ensure those controls are implemented where possible.
 - Document the recovery outcome and any lessons learned to improve future response.

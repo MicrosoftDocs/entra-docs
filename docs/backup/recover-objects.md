@@ -1,20 +1,23 @@
 ---
-title: Recover objects using Microsoft Entra Backup
-description: Learn how to recover objects to a previous state using backups in Microsoft Entra, including recovery from difference reports and directly from backups.
+title: Recover objects using Microsoft Entra Backup and Recovery
+description: Learn how to recover objects to a previous state using Microsoft Entra Backup and Recovery, including recovery from difference reports and directly from backups.
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Recover objects using Microsoft Entra Backup (Preview)
+# Recover objects using Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Recovery restores supported objects to a previously known‑good state using Microsoft Entra Backup and Recovery. It includes restoring, soft‑deleting, and updating supported objects and attributes.
 
 Key details:
 
 - A recovery ID identifies the recovery job.
-- You can run one recovery at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
+- Only one recovery runs at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
 - Recovery details are retained in **Recovery History** for the duration of the backup.
 - Recovery actions are recorded and can be reviewed in audit logs.
 
@@ -56,17 +59,17 @@ While creating a difference report is recommended to preview changes, you can al
 
    :::image type="content" source="media/recover-objects/recover-backup-select.png" alt-text="Screenshot of the Backups page with a backup selected and the Recover backup button visible in the toolbar.":::
 
-1. (Optional) Apply scoping filters to limit the objects included in recovery. Choose one of the following options:
+1. (Optional) Apply scoping filters to limit the objects included in recovery. Choose one of these options:
 
-   - **Recover all objects in their previous state**—recovers all supported objects in the tenant.
+   - **Recover all objects in their previous state**: Recovers all supported objects in the tenant.
 
      :::image type="content" source="media/recover-objects/recover-backup-all-objects.png" alt-text="Screenshot of the Recover backup dialog with the Recover all objects in their previous state option selected and the cursor on the Recover button.":::
 
-   - **Recover only certain types of objects**—limits recovery to selected object types, such as Users or Conditional Access Policies.
+   - **Recover only certain types of objects**: Limits recovery to selected object types, such as Users or Conditional Access Policies.
 
      :::image type="content" source="media/recover-objects/recover-backup-object-types.png" alt-text="Screenshot of the Recover backup dialog with the Recover only certain types of objects option selected, showing Users and Conditional Access Policies in the object type dropdown.":::
 
-   - **Recover only specific objects by their ID**—limits recovery to specific objects by their object IDs. You can enter up to 100 object IDs across different object types.
+   - **Recover only specific objects by their ID**: Limits recovery to specific objects by their object IDs. You can enter up to 100 object IDs across different object types.
 
      :::image type="content" source="media/recover-objects/recover-backup-object-ids.png" alt-text="Screenshot of the Recover backup dialog with the Recover only specific objects by their ID option selected, showing a list with User and Group object IDs.":::
 
@@ -77,7 +80,7 @@ While creating a difference report is recommended to preview changes, you can al
 
 ## Cancel a recovery
 
-You can cancel a recovery job while it's running. Any recovery actions taken before cancelation remain applied.
+Cancel a recovery job while it's running. Any recovery actions taken before cancelation remain applied.
 
 1. Go to **Backup and recovery** > **Recovery History**.
 

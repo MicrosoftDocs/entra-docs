@@ -1,21 +1,24 @@
 ---
-title: View available backups in Microsoft Entra Backup
-description: Learn how to view available backups for your tenant in Microsoft Entra Backup, including backup frequency, retention, and next steps.
+title: View available backups in Microsoft Entra Backup and Recovery
+description: Learn how to view available backups for your tenant in Microsoft Entra Backup and Recovery, including backup frequency, retention, and next steps.
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# View available backups in Microsoft Entra Backup (Preview)
+# View available backups in Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra backups provide a point-in-time snapshot of supported tenant objects and their attributes. Backups help administrators review changes and recover from accidental or unwanted modifications.
 
-Key characteristics of Entra backups:
+Key characteristics of Backup and Recovery:
 
-- **One backup per day**—A single backup is automatically created each day for your tenant.
-- **Retained for five days**—Each backup is available for up to five days from its timestamp.
-- **Non-editable**—Backups can't be modified or deleted.
+- **One backup per day**: A single backup is automatically created each day for your tenant.
+- **Retained for five days**: Each backup is available for up to five days from its timestamp.
+- **Non-editable**: Backups can't be modified or deleted.
 
 ## Prerequisites
 

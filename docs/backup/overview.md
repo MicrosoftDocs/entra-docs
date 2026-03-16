@@ -9,7 +9,10 @@ ai-usage: ai-assisted
 
 # Microsoft Entra Backup and Recovery overview (Preview)
 
-Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that enables you to quickly recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, conditional access policies, named locations, authentication method policies, and partial authorization policy. Agent ID is also supported because it's comprised of user and service principal objects with distinct types and characteristics.
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
+Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that enables you to recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, conditional access policies, named locations, authentication method policies, and partial authorization policy. Agent ID is also supported because it's comprised of user and service principal objects with distinct types and characteristics.
 
 ## How backups work
 
@@ -31,7 +34,7 @@ Microsoft Entra Backup and Recovery allows you to:
 
 ## Get started
 
-To get started, navigate to the [Microsoft Entra admin center](https://entra.microsoft.com) and select **Backup and recovery** in the left navigation pane. The following pages are available:
+To get started, browse to the [Microsoft Entra admin center](https://entra.microsoft.com) and select **Backup and recovery** in the left navigation pane. These pages are available:
 
 - **Overview (Preview)**: View a summary of the backup and recovery feature.
 - **Backups (Preview)**: Browse available backup snapshots from the last five days.
@@ -40,11 +43,11 @@ To get started, navigate to the [Microsoft Entra admin center](https://entra.mic
 
 ## Prerequisites
 
-To use Microsoft Entra Backup and Recovery, your tenant must meet the following requirements:
+To use Microsoft Entra Backup and Recovery, your tenant must meet these requirements:
 
 - The tenant is a **workforce tenant**. External ID and B2C tenants aren't supported.
 - The tenant has **Microsoft Entra ID P1 or P2** licenses.
-- You're signed in with one of the following roles:
+- You're signed in with one of these roles:
   - **Entra Backup Reader**: Can view backups, view comparisons of changed objects between the snapshot state and the current state, and review recovery history.
   - **Entra Backup Administrator**: Has all the permissions of Entra Backup Reader, plus can initiate difference reports and trigger recovery for changed objects. All the permissions of Entra Backup Administrator are included in the Global Administrator role.
 

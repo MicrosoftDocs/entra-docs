@@ -9,11 +9,14 @@ ai-usage: ai-assisted
 
 # Troubleshoot Microsoft Entra Backup and Recovery (Preview)
 
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
 This article helps you diagnose and resolve common issues when using Microsoft Entra Backup and Recovery, including backup access, difference report jobs, and recovery jobs.
 
 ## Before you begin
 
-Verify the following prerequisites before troubleshooting:
+Verify these prerequisites before troubleshooting:
 
 - Your tenant is a **workforce tenant** (External ID and B2C tenants aren't supported).
 - Your tenant has **Microsoft Entra ID P1 or P2** licenses.
@@ -56,7 +59,7 @@ No action is required. New snapshots continue to be created automatically.
 
 ### Resolution
 
-1. Check whether another difference report or recovery job is currently running. Only one job can run at a time.
+1. Check whether another difference report or recovery job is running. Only one job can run at a time.
 1. Verify that your account has the appropriate role: **Entra Backup Reader** for preview or **Entra Backup Administrator** for recovery.
 1. Confirm that the object type and object attributes you're trying to scope is supported. Only supported object types and attributes appear in the scoping filter.
 
@@ -91,8 +94,8 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If the difference report is running for a long time:**
 
-1. There's currently no estimated completion time for a running difference report.
-1. Large tenants or large change sets take longer to process.
+1. No estimated completion time is available for a running difference report.
+1. Large tenants or large change sets might take longer to process.
 1. Allow the report to continue running unless cancellation is required.
 
 **If the difference report failed:**
@@ -104,7 +107,8 @@ This section helps troubleshoot common issues related to difference reports, inc
 **If you can't find a previous difference report:**
 
 1. Difference reports are tied to the backup they were created from.
-1. If the report isn't listed, the backup the difference report was created against is no longer available.
+1. Browse to the backup and check the list of preview jobs associated with it.
+1. If the report isn't listed, the backup the difference report was created against might no longer be available.
 
 **If the difference report continues running after cancellation:**
 
@@ -151,7 +155,9 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If you can't find a recovery job you ran earlier:**
 
-1. The backup the recovery job used to recover the tenant has expired.
+1. Browse to the **difference report** that was used for the recovery.
+1. View the list of **recovery jobs associated with that difference report**.
+1. If the job is no longer listed, the backup the recovery job used to recover the tenant might have expired.
 
 **If not all links were recovered:**
 
@@ -180,11 +186,11 @@ Backup and recovery **don't** cover all properties of supported objects. This li
 
 ### Tenant support scope
 
-Entra Backup and Recovery is supported for workforce tenants only. External ID and B2C tenants aren't supported at this time.
+Microsoft Entra Backup and Recovery is supported for workforce tenants only. External ID and B2C tenants aren't supported at this time.
 
 ### Hard-deleted objects
 
-Hard-deleted objects **can't** be recovered. Currently, these objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, consider configuring [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
+Hard-deleted objects **can't** be recovered. These objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, consider configuring [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ### On-premises synced objects
 
@@ -192,4 +198,4 @@ Users and groups synchronized from on-premises Active Directory can't be recover
 
 ### Link recovery limitations
 
-Only static group membership links are supported for recovery. Group owner links, user manager relationships, and sponsor links aren't currently supported.
+Only static group membership links are supported for recovery. Group owner links, user manager relationships, and sponsor links aren't supported.

@@ -1,25 +1,28 @@
 ---
-title: Create and review difference reports in Microsoft Entra Backup
-description: Learn how to create and review difference reports to compare the current state of your tenant with a selected backup in Microsoft Entra.
+title: Create and review difference reports in Microsoft Entra Backup and Recovery
+description: Learn how to create and review difference reports to compare the current state of your tenant with a selected backup in Microsoft Entra Backup and Recovery.
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Create and review difference reports in Microsoft Entra Backup (Preview)
+# Create and review difference reports in Microsoft Entra Backup and Recovery (Preview)
+
+> [!IMPORTANT]
+> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 A difference report compares the current state of your tenant with a selected backup and highlights what changed.
 
 Difference reports show objects that were **created, modified, soft-deleted or restored** after the selected backup was taken, along with details about:
 
-- Changed attributes—properties of the object whose values differ between the backup and the current tenant state.
-- Changed links—changes to the object's relationships with other objects, such as group membership.
+- Changed attributes: Properties of the object whose values differ between the backup and the current tenant state.
+- Changed links: Changes to the object's relationships with other objects, such as group membership.
 
 Key details:
 
 - A difference report ID identifies the comparison/preview job.
-- You can create multiple difference reports from the same backup, but only one report can run at a time.
+- Create multiple difference reports from the same backup, but only one report can run at a time.
 - Difference reports are retained for up to five days after completion.
 
 > [!TIP]
@@ -33,9 +36,9 @@ To review difference reports, you must have at least the **Entra Backup Reader**
 
 When you create a difference report, you can scope it to control which objects are included in the comparison:
 
-- **All supported objects**—Includes all supported object types in the tenant.
-- **By object type**—Includes only selected object types.
-- **By object ID**—Includes only specific objects by their object IDs with their object types specified. You can specify up to 100 object IDs across supported object types.
+- **All supported objects**: Includes all supported object types in the tenant.
+- **By object type**: Includes only selected object types.
+- **By object ID**: Includes only specific objects by their object IDs with their object types specified. You can specify up to 100 object IDs across supported object types.
 
 Scoping is applied at report creation time and can't be changed after the report is created.
 
@@ -47,17 +50,17 @@ Scoping is applied at report creation time and can't be changed after the report
 
    :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png" alt-text="Screenshot of the Backups page in the Microsoft Entra admin center showing a list of available backups with a Create difference report button in the toolbar.":::
 
-1. (Optional) Apply filters to limit the scope of objects included in the report. Choose one of the following options:
+1. (Optional) Apply filters to limit the scope of objects included in the report. Choose one of these options:
 
-   - **Include all objects in their previous state**—compares all supported objects in the tenant.
+   - **Include all objects in their previous state**: Compares all supported objects in the tenant.
 
      :::image type="content" source="media/create-review-difference-reports/create-difference-report-all-objects.png" alt-text="Screenshot of the Create difference report dialog with the Include all objects in their previous state option selected.":::
 
-   - **Include only certain types of objects**—limits the report to selected object types, such as Users and Groups.
+   - **Include only certain types of objects**: Limits the report to selected object types, such as Users and Groups.
 
      :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-types.png" alt-text="Screenshot of the Create difference report dialog with the Include only certain types of objects option selected and Users, Groups chosen in the object type dropdown.":::
 
-   - **Include only specific objects by their ID**—limits the report to specific objects by their object IDs. You can enter up to 100 object IDs across different object types.
+   - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. You can enter up to 100 object IDs across different object types.
 
      :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by their ID option selected, showing a list of object IDs including Users, Groups, and Named Location Policies.":::
 
@@ -67,7 +70,7 @@ Scoping is applied at report creation time and can't be changed after the report
 
 ## Cancel a difference report
 
-You can cancel a difference report while it's in progress. Canceled reports don't display partial results. Canceling is useful if the report was initiated by mistake.
+Cancel a difference report while it's in progress. Canceled reports don't display partial results. Canceling is useful if the report was initiated by mistake.
 
 1. Go to **Backup and recovery** > **Difference reports**.
 
@@ -77,9 +80,9 @@ You can cancel a difference report while it's in progress. Canceled reports don'
 
 ## Difference report statuses
 
-Difference reports move through the following statuses as they are created and processed. These statuses help you understand what stage the report is in and what to expect next.
+Difference reports move through these statuses as they're created and processed. These statuses help you understand what stage the report is in and what to expect next.
 
-- **Loading data**: The system is loading data from the selected backup so it can be compared with the current tenant state. If the backup has already been used to create a difference report or a prior recovery, this step might complete quickly.
+- **Loading data**: The system is loading data from the selected backup so it can be compared with the current tenant state. If the backup has already been used to create a difference report or a prior recovery, this step might complete fast.
 - **In progress**: The system is calculating differences between the backup and the current tenant state. The duration of this step depends on the number of objects and the scope of the report.
 - **Completed**: The difference report has finished processing and is ready for review.
 - **Failed**: The difference report couldn't be generated due to an error.
@@ -99,17 +102,17 @@ Difference reports move through the following statuses as they are created and p
 
    :::image type="content" source="media/create-review-difference-reports/difference-report-detail-objects.png" alt-text="Screenshot of a completed difference report detail page showing a list of user objects with their recovery actions, changed attributes, and changed links.":::
 
-   The report includes the following information for each object:
+   The report includes this information for each object:
 
-   - **Changed attributes**—Select the count in the **Changed Attributes** column to view the attribute differences. The **Report value** column shows the value captured when the difference report was created. The **Backup value** column shows the value as captured in the selected backup.
+   - **Changed attributes**: Select the count in the **Changed Attributes** column to view the attribute differences. The **Report value** column shows the value captured when the difference report was created. The **Backup value** column shows the value as captured in the selected backup.
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-changed-attributes.png" alt-text="Screenshot of the View changed attributes panel for a user object, showing attribute differences between the current state and backup for accountEnabled, city, and department.":::
 
-   - **Changed links**—Select the count in the **Changed Links** column to view the relationship differences. The **Report state** column shows the relationship as captured when the difference report was created. The **Backup state** column shows the relationship as captured in the selected backup. The **Recovery action** column indicates the action taken to restore the backup state.
+   - **Changed links**: Select the count in the **Changed Links** column to view the relationship differences. The **Report state** column shows the relationship as captured when the difference report was created. The **Backup state** column shows the relationship as captured in the selected backup. The **Recovery action** column indicates the action taken to restore the backup state.
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-changed-links.png" alt-text="Screenshot of the View changed links panel for a group object, showing group membership changes that would be reverted by recovery.":::
 
-   - **Recovery action**—The action that would be applied if the object is recovered. Possible values include **Update** (revert changed attributes and/or links on an existing object), **Restore** (restore a soft-deleted object), and **Soft delete** (soft-delete an object that was created after the backup).
+   - **Recovery action**: The action that would be applied if the object is recovered. Possible values include **Update** (revert changed attributes and/or links on an existing object), **Restore** (restore a soft-deleted object), and **Soft delete** (soft-delete an object that was created after the backup).
 
      :::image type="content" source="media/create-review-difference-reports/difference-report-recovery-action.png" alt-text="Screenshot of the difference report detail page with the Recovery Action column highlighted, showing Update and Restore actions for each object.":::
 
