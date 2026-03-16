@@ -78,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for OpenText Directory Services in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-2. Browse to **Entra ID** > **Enterprise apps**
+2. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -94,16 +94,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-6. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL
+6. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL.
    * Non-specific tenant URL : {OTDS URL}/scim/{partitionName}
    * Specific tenant URL :  {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
 
 7. Select 'OAuth2 Client Credentials Grant' as the Authentication Method.
-   Enter the Client ID and Client Secret retrieved from Step 2.
-   Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services.
-   If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
+   1. Enter the Client ID and Client Secret retrieved from Step 2.
+   1. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services.
+   1. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
 
-      ![Token](media/open-text-directory-services-provisioning-tutorial/oauth2-entra-config.png)
+      ![Screenshot of Token.](media/open-text-directory-services-provisioning-tutorial/oauth2-entra-config.png)
 
 8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
