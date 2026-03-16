@@ -18,7 +18,7 @@ Key details:
 
 - A recovery ID identifies the recovery job.
 - Only one recovery runs at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
-- **Recovery History** retains recovery details for the duration of the backup.
+- **Recovery History** retains recovery details for 5 days after recovery completion date.
 - Audit logs record all recovery actions.
 
 ## Prerequisites
