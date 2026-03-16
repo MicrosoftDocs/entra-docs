@@ -61,11 +61,8 @@ Here's the quick checklist for you before you submit the application request to 
 Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (Required). We aren't onboarding any SCIM Provisioning application with long lived bearer tokens, basic authentication, or Code Auth Grant flow.
 
 - OAuth 2.0 Client Credentials Flow (Required)
-<<<<<<< HEAD
+
     - Provide customers with a client_id, client_secret, auth token endpoint, and SCIM endpoint so that customers can configure this information in Microsoft Entra ID App.
-=======
-    - Provide customers with a client_id, client_credentials, auth token endpoint, and SCIM endpoint so that customers can configure this information in the Microsoft Entra app.
->>>>>>> 92c66c90924b8c1e0038eb3f654fc851f73399de
     - Client Secret should expire between one year to three years, and then the access token can't be retrieved with expired credentials (Required).
     - Provide the ability to rotate client secrets regularly. ISVs should enable smooth rotation by allowing multiple active secrets and supporting deletion of old secrets. Alternatively, customers can create new client_id and client_secret.
     - Access Token should be only valid for 60 minutes (1 hour) to 6 hours but not less than 60 minutes (Required)
