@@ -33,15 +33,15 @@ If these prerequisites aren't met, operations might fail with authorization erro
 ### Symptoms
 
 - Fewer than five days of backups are visible, instead of the expected five days.
-- Two or more backups appear to have the same timestamp in the snapshot list.
+- Two or more backups appear to have the same timestamp in the backup list.
 
 ### Possible causes
 
-The oldest snapshot might age out earlier during service initialization, tenant onboarding, or transient backend conditions, temporarily resulting in fewer than five visible days of backups. This condition doesn't indicate data loss or a backup failure.
+The oldest backup might age out earlier during service initialization, tenant onboarding, or transient backend conditions, temporarily resulting in fewer than five visible days of backups. This condition doesn't indicate data loss or a backup failure.
 
 ### Resolution
 
-No action is required. The service continues to create new snapshots automatically.
+No action is required. The service continues to create new backups automatically.
 
 ## Issue: Can't start a difference report or recovery job
 
@@ -78,7 +78,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 ### Possible causes
 
 - The object or property isn't supported for preview in the current release.
-- The object didn't change between the snapshot state and the current state.
+- The object didn't change between the backup state and the current state.
 - The difference report is processing a large number of objects or changes.
 - Only one difference report or recovery job can run at a time.
 - The report was canceled or failed before completion.
@@ -89,7 +89,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 **If expected changes are missing:**
 
 1. Confirm that the object type and properties are supported for the current release.
-1. Verify that the object changed after the snapshot was taken.
+1. Verify that the object changed after the backup was taken.
 1. Hard-deleted objects and unsupported properties aren't included.
 
 **If the difference report is running for a long time:**
@@ -173,7 +173,7 @@ Difference reports are tied to the backup they were created from.
 
 | Condition | Error code and message |
 |---|---|
-| Difference report queried with an invalid snapshot ID | **404 Not Found**: This isn't a valid timestamp for recovery. The provided timestamp should be in the list of available snapshots. |
+| Difference report queried with an invalid backup ID | **404 Not Found**: This isn't a valid timestamp for recovery. The provided timestamp should be in the list of available backups. |
 | Job is queried with an invalid job ID | **404 Not Found** |
 | A job is started while another difference report or recovery job is still running | **409 Conflict**: A recovery job is currently in progress. Wait for it to complete before initiating a new job. |
 | Get changes while difference report hasn't finished | **400 Bad Request**: Job with identifier `{key}` must have completed successfully prior to enumerating changes. |

@@ -25,12 +25,12 @@ Microsoft creates backups automatically and makes them available to administrato
 Microsoft Entra Backup and Recovery lets you:
 
 - **View available backups**: See a list of backups available in your Microsoft Entra tenant.
-- **Create difference reports**: Before recovering objects to a previous state, compare the current state of your tenant with a snapshot state by initiating a difference report.
+- **Create difference reports**: Before recovering objects to a previous state, compare the current state of your tenant with a backup by creating a difference report.
 - **Recover objects**: Choose to recover all objects or select objects by object type or object ID.
 - **Review recovery history**: View completed and in-progress recovery operations for your tenant.
 
 > [!TIP]
-> To ensure you recover to the right snapshot, always run a difference report, review the changes, and then decide what to recover. The time to recover mostly depends on the number of changes in the recovery job.
+> To ensure you recover to the right backup, always run a difference report, review the changes, and then decide what to recover. The time to recover mostly depends on the number of changes in the recovery job.
 
 ## Get started
 
@@ -45,10 +45,10 @@ To get started, browse to the [Microsoft Entra admin center](https://entra.micro
 
 To use Microsoft Entra Backup and Recovery, your tenant must meet these requirements:
 
-- The tenant is a **workforce tenant**. External ID and B2C tenants aren't supported.
+- The tenant is a **workforce tenant**. External ID and Azure AD B2C tenants aren't supported.
 - The tenant has **Microsoft Entra ID P1 or P2** licenses.
 - You're signed in with one of these roles:
-  - **Microsoft Entra Backup Reader**: Can view backups, view comparisons of changed objects between the snapshot state and the current state, and review recovery history.
+  - **Microsoft Entra Backup Reader**: Can view backups, view comparisons of changed objects between the backup state and the current state, and review recovery history.
   - **Microsoft Entra Backup Administrator**: Has all the permissions of Microsoft Entra Backup Reader, plus can initiate difference reports and trigger recovery for changed objects. All the permissions of Microsoft Entra Backup Administrator are included in the Global Administrator role.
 
 ## Hybrid identity and broader recoverability

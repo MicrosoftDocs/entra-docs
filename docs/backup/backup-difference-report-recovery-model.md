@@ -28,15 +28,15 @@ For a full list of supported attributes, see [Supported objects and attributes](
 
 ## Difference reports
 
-Create a difference report to compare the current state of your tenant with a backup snapshot. Only changed objects appear in the report. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
+Create a difference report to compare the current state of your tenant with a backup. Only changed objects appear in the report. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
 
 Changes for users and groups synchronized from on-premises Active Directory appear in the difference report to help you track changed objects. However, you can't recover on-premises synced objects through Backup and Recovery, because the source of authority for these objects is on-premises Active Directory.
 
 ### First-time difference report generation
 
-The first time you create a difference report, you might experience a delay as snapshot data transfers before the difference calculation starts. Check the progress of report generation in the **Difference Reports** section.
+The first time you create a difference report, you might experience a delay as backup data loads before the difference calculation starts. Check the progress of report generation in the **Difference Reports** section.
 
-The second time you create a difference report against the same snapshot, the report doesn't need the data loading step, so it finishes faster.
+The second time you create a difference report against the same backup, the report doesn't need the data loading step, so it finishes faster.
 
 <!-- The following table is a placeholder. Time estimates to be confirmed by the feature team.
 
@@ -50,7 +50,7 @@ The second time you create a difference report against the same snapshot, the re
 -->
 
 > [!NOTE]
-> Time estimates vary based on concurrent network activities and resource availability.
+> Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
 
 ## Recovery
 
@@ -73,7 +73,7 @@ Time needed to complete recovery depends on the number of changes to recover.
 
 -->
 
-Time estimates vary based on concurrent network activities and resource availability.
+Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
 
 > [!IMPORTANT]
 > Only one job can run at a time, including difference reports and recovery jobs. For example, if a difference report is running in your tenant, you can't start a recovery job. Wait until the current job finishes before starting a new one.
@@ -96,7 +96,7 @@ Backup and Recovery doesn't create new objects or hard-delete objects from your 
 
 On-premises synchronized objects can't be recovered through Backup and Recovery, because the source of authority is on-premises Active Directory. Recover these objects in on-premises Active Directory instead. Changes to synced objects still appear in difference reports.
 
-Microsoft Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants aren't supported.
+Microsoft Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants and Azure AD B2C tenants aren't supported.
 
 ## Related content
 

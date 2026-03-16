@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 This article describes how to view available backups for your tenant in Microsoft Entra Backup and Recovery.
 
-Microsoft Entra backups provide a point-in-time snapshot of supported tenant objects and their attributes. Backups help administrators review changes and recover from accidental or unwanted modifications.
+Microsoft Entra backups provide a point-in-time view of supported tenant objects and their attributes. Backups help administrators review changes and recover from accidental or unwanted modifications.
 
 Key characteristics of Backup and Recovery:
 
