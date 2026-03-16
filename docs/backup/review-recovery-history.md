@@ -21,7 +21,7 @@ Recovery history includes:
 - The start and completion time of the recovery.
 - The number of objects and links modified.
 
-Use recovery history for recent operational review and troubleshooting. The system retains recovery history data for the duration of the corresponding backup data.
+Use recovery history for recent operational review and troubleshooting. Recovery history data is retained for up to 5 days after the recovery completion time.
 
 ## Prerequisites
 
