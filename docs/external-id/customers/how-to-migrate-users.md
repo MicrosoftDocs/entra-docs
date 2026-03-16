@@ -4,8 +4,9 @@ description: Learn how to migrate users and credentials from any legacy identity
  
 author: garrodonnell   
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/16/2026
 ms.author: godonnell
+ai-usage: ai-assisted
 ---
 
 # Migrate users and credentials to Microsoft Entra External ID
