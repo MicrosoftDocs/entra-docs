@@ -38,7 +38,7 @@ To conduct this Security Copilot in Entra PoC, ensure the following prerequisite
 * To enable the PoC, assign a cloud user one of the following roles:  
   * Global Administrator 
   * Security Administrator 
-  * Billing Administrator 
+  * Billing Administrator
 
    > [!NOTE]
    > For agent-specific prerequisites, refer to [Microsoft Entra Conditional Access Optimization Agent documentation](/entra/security-copilot/conditional-access-agent-optimization).  
@@ -58,7 +58,7 @@ The following table has key scenarios, and the capabilities Security Copilot in 
 
 |Scenario|Capabilities|
 |---|---|
-|Microsoft Entra ID|[Tenants](/entra/security-copilot/entra-id-scenarios)</br>[Users](/entra/security-copilot/entra-id-scenarios)</br>[Groups](/entra/security-copilot/entra-id-scenarios))</br>[Domains](/entra/security-copilot/entra-id-scenarios)</br>[Licenses](/entra/security-copilot/entra-id-scenarios)</br>[Sign-in logs](/entra/security-copilot/entra-id-scenarios)</br>[Audit logs](/entra/security-copilot/entra-id-scenarios)</br>[Provisioning logs](/entra/security-copilot/entra-id-scenarios)</br>[Recommendations](/entra/security-copilot/entra-id-scenarios)</br>[Health monitoring alerts](/entra/security-copilot/entra-id-scenarios)</br>[Service-level agreements](/entra/security-copilot/entra-id-scenarios)</br>[Roles and administrators](/entra/security-copilot/entra-id-scenarios)</br>[Devices](/entra/security-copilot/entra-id-scenarios)</br>[Conditional Access](/entra/security-copilot/entra-id-scenarios)</br>[Authentication](/entra/security-copilot/entra-id-scenarios)|
+|Microsoft Entra ID|[Tenants](/entra/security-copilot/entra-id-scenarios)</br>[Users](/entra/security-copilot/entra-id-scenarios)</br>[Groups](/entra/security-copilot/entra-id-scenarios)</br>[Domains](/entra/security-copilot/entra-id-scenarios)</br>[Licenses](/entra/security-copilot/entra-id-scenarios)</br>[Sign-in logs](/entra/security-copilot/entra-id-scenarios)</br>[Audit logs](/entra/security-copilot/entra-id-scenarios)</br>[Provisioning logs](/entra/security-copilot/entra-id-scenarios)</br>[Recommendations](/entra/security-copilot/entra-id-scenarios)</br>[Health monitoring alerts](/entra/security-copilot/entra-id-scenarios)</br>[Service-level agreements](/entra/security-copilot/entra-id-scenarios)</br>[Roles and administrators](/entra/security-copilot/entra-id-scenarios)</br>[Devices](/entra/security-copilot/entra-id-scenarios)</br>[Conditional Access](/entra/security-copilot/entra-id-scenarios)</br>[Authentication](/entra/security-copilot/entra-id-scenarios)|
 |Microsoft Entra ID Protection|[Risky users](/entra/security-copilot/entra-id-protection-scenarios)</br>[Application risk](/entra/security-copilot/entra-id-protection-scenarios)|
 |Microsoft Entra ID Governance|[Access reviews](/entra/security-copilot/entra-id-governance-scenarios)</br>[Entitlement management](/entra/security-copilot/entra-id-governance-scenarios)</br>[Privileged Identity Management (PIM)](/entra/security-copilot/entra-id-governance-scenarios)</br>[PIM write access](/entra/security-copilot/entra-id-governance-scenarios)</br>[Lifecycle workflows](/entra/security-copilot/entra-id-governance-scenarios)|
 |Microsoft Entra Internet Access</br>Microsoft Entra Private Access|[Global secure access](/entra/security-copilot/entra-internet-access-private-access-scenarios)|
@@ -106,20 +106,20 @@ The following scenarios relate to user authentication, multifactor authenticatio
 2. Navigate to **Sign-in logs**, then open the **Copilot prompt bar**. 
 3. Identify sign-in failure patterns.
 4. To understand failures in the tenant, run the following prompt.
-* *What are the top-five reasons for sign-in failures, in the last 24 hours?*
+  * *What are the top-five reasons for sign-in failures, in the last 24 hours?*
 5. Security Copilot in Entra returns failure reasons, affected users, and associated conditions, such as Conditional Access. 
 6. Investigate an event using RequestID. 
 7. Select an event from the results. 
-* *Tell me more about request ID \<RequestID>*
+  * *Tell me more about request ID \<RequestID>*
 8. Use the response to understand failure cause, authentication method, device state, and applied policies. 
 9. Assess the effect of device compliance(optional branch) If device posture is relevant, use the following prompt.
-* *Which users signed in on noncompliant devices in the last 24 hours?*
+  * *Which users signed in on noncompliant devices in the last 24 hours?*
 10. Review returned RequestIDs to validate a specific sign‑in.
 11. Use the RequestID to retrieve event context, without manual log filtering. 
-* *Show sign-in details for request ID \<RequestID>*
+  * *Show sign-in details for request ID \<RequestID>*
 12. Identify MFA gaps in the tenant.  
 13. Identify users without MFA protection. 
-* *Which users in the tenant aren’t registered for MFA?*
+  * *Which users in the tenant aren’t registered for MFA?*
 14. Inspect authentication methods for a specific user for targeted investigation. 
 
 **Success criteria**
