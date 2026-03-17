@@ -76,7 +76,7 @@ To configure single sign-on on **BIS** side, you need a **Client Security Admin*
 
 1. Sign in to BIS.
 2. Navigate to Company Settings and open the Integrations page.
-3. Under the SSO section, click **Initiate SSO** button.
+3. Under the SSO section, select the **Initiate SSO** button.
 4. Copy the Sign-on URL, Entity ID, and Reply URL.
 
 ### Create BIS test user if necessary
