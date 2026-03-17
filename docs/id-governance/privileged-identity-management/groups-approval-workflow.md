@@ -11,7 +11,7 @@ ms.custom: pim, sfi-image-nochange
 
 With Privileged Identity Management (PIM) and Microsoft Entra ID, you can configure activation of group membership and ownership to require approval. You can also choose users or groups from your Microsoft Entra organization as delegated approvers.
 
-We recommend that you select two or more approvers for each group. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, the eligible user must resubmit a new request. The 24-hour approval time window isn't configurable.
+Select two or more approvers for each group. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, the eligible user must resubmit a new request. The 24-hour approval time window isn't configurable.
 
 Follow the steps in this article to approve or deny requests for group membership or ownership.
 
@@ -30,8 +30,8 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
 ## Approve requests
 
->[!NOTE]
->Approvers are not able to approve their own role activation requests. Additionally, service principals are not allowed to approve requests.
+> [!NOTE]
+> Approvers can't approve their own role activation requests. Additionally, service principals aren't allowed to approve requests.
 
 1. Find and select the request that you want to approve and select **Approve**.
 
