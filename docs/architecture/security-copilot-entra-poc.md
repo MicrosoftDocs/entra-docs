@@ -2,9 +2,9 @@
 title: Microsoft Security Copilot in Microsoft Entra proof-of-concept guide
 description: Learn to harness AI-powered insights and automation and demonstrate the value of Security Copilot in Entra in your environment.
 author: gargi-sinha
-ms.author: gargi-sinha
-ms.topic: 
-ms.reviewer:
+ms.author: gasinh
+ms.topic: best-practice
+ms.reviewer: martinco
 ms.date: 03/13/2026
 
 #customer intent: As an administrator I want a structured approach to accelerate testing and value realization for Security Copilot in Entra
@@ -55,7 +55,7 @@ The following table has key scenarios, and the capabilities Security Copilot in 
 
 |Scenario|Capabilities|
 |---|---|
-|Microsoft Entra ID|[Tenants](/entra/security-copilot/entra-id-scenarios)</br>[Users](/entra/security-copilot/entra-id-scenarios)</br>[Groups]((/entra/security-copilot/entra-id-scenarios))</br>[Domains](/entra/security-copilot/entra-id-scenarios)</br>[Licenses](/entra/security-copilot/entra-id-scenarios)</br>[Sign-in logs](/entra/security-copilot/entra-id-scenarios)</br>[Audit logs](/entra/security-copilot/entra-id-scenarios)</br>[Provisioning logs](/entra/security-copilot/entra-id-scenarios)</br>[Recommendations](/entra/security-copilot/entra-id-scenarios)</br>[Health monitoring alerts](/entra/security-copilot/entra-id-scenarios)</br>[Service-level agreements](/entra/security-copilot/entra-id-scenarios)</br>[Roles and administrators](/entra/security-copilot/entra-id-scenarios)</br>[Devices](/entra/security-copilot/entra-id-scenarios)</br>[Conditional Access](/entra/security-copilot/entra-id-scenarios)</br>[Authentication](/entra/security-copilot/entra-id-scenarios)|
+|Microsoft Entra ID|[Tenants](/entra/security-copilot/entra-id-scenarios)</br>[Users](/entra/security-copilot/entra-id-scenarios)</br>[Groups](/entra/security-copilot/entra-id-scenarios))</br>[Domains](/entra/security-copilot/entra-id-scenarios)</br>[Licenses](/entra/security-copilot/entra-id-scenarios)</br>[Sign-in logs](/entra/security-copilot/entra-id-scenarios)</br>[Audit logs](/entra/security-copilot/entra-id-scenarios)</br>[Provisioning logs](/entra/security-copilot/entra-id-scenarios)</br>[Recommendations](/entra/security-copilot/entra-id-scenarios)</br>[Health monitoring alerts](/entra/security-copilot/entra-id-scenarios)</br>[Service-level agreements](/entra/security-copilot/entra-id-scenarios)</br>[Roles and administrators](/entra/security-copilot/entra-id-scenarios)</br>[Devices](/entra/security-copilot/entra-id-scenarios)</br>[Conditional Access](/entra/security-copilot/entra-id-scenarios)</br>[Authentication](/entra/security-copilot/entra-id-scenarios)|
 |Microsoft Entra ID Protection|[Risky users](/entra/security-copilot/entra-id-protection-scenarios)</br>[Application risk](/entra/security-copilot/entra-id-protection-scenarios)|
 |Microsoft Entra ID Governance|[Access reviews](/entra/security-copilot/entra-id-governance-scenarios)</br>[Entitlement management](/entra/security-copilot/entra-id-governance-scenarios)</br>[Privileged Identity Management (PIM)](/entra/security-copilot/entra-id-governance-scenarios)</br>[PIM write access](/entra/security-copilot/entra-id-governance-scenarios)</br>[Lifecycle workflows](/entra/security-copilot/entra-id-governance-scenarios)|
 |Microsoft Entra Internet Access</br>Microsoft Entra Private Access|[Global secure access](/entra/security-copilot/entra-internet-access-private-access-scenarios)|
@@ -74,9 +74,9 @@ If your subscription doesn’t include Security Copilot in Entra, proceed to the
 
 A Security Copilot in Entra PoC begins with your organization’s unique security challenges and objectives. In the [Microsoft Entra admin center](https://entra.microsoft.com/), select **Copilot**. Prompts appear to get you started. You can explore these prompts or enter your prompt in the chat box. You can view the graph query used to derive results. 
 
-   ![Screenshot of the Microsoft Entra admin center](./media/bogusfilename/admin-center.png)
+   ![Screenshot of the Microsoft Entra admin center](./media/security-copilot-entra-poc/admin-center.png)
 
-   ![Screenshot of Copilot topic history](./media/bogusfilename/method-open-list.png)
+   ![Screenshot of Copilot topic history](./media/security-copilot-entra-poc/method-open-list.png)
 
 ### Persona functions
 
@@ -226,24 +226,24 @@ Find out more about [Conditional Access Optimization Agent prerequisites](/entra
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Security Administrator. 
 2. On the home page, from the agent notification card, select **Go to agents**, or select **Agents** from the left navigation menu.
 
-   ![Screenshot of agents options in the admin center.](./media/bogusfilename/agents-options.png)
+   ![Screenshot of agents options in the admin center.](./media/security-copilot-entra-poc/agents-options.png)
 
 3. Under Conditional Access Optimization agents, select **View details**.
 
-   ![Screenshot of the View details option.](./media/bogusfilename/view-details.png)
+   ![Screenshot of the View details option.](./media/security-copilot-entra-poc/view-details.png)
 
 4. Select **Start agent**.
 
    > [!NOTE]
    > Avoid using an account with a role activated by Privileged Identity Management (PIM).
 
-   ![Screenshot of the Start agent option.](./media/bogusfilename/start-agent.png)
+   ![Screenshot of the Start agent option.](./media/security-copilot-entra-poc/start-agent.png)
 
 5. Next to the agent activity summary is the **Agent activity map**. See agent outcomes in a workflow chart.  
 6. Review the suggestions and note how scenarios align to agent logic. 
 7. Apply or dismiss the recommendation.
 
-   ![Screenshot of the Review suggestion options.](./media/bogusfilename/review-suggestion.png)
+   ![Screenshot of the Review suggestion options.](./media/security-copilot-entra-poc/review-suggestion.png)
 
 8. To update or consolidate policies, apply one-click remediation, or mark the suggestion as **Reviewed**.
 9. Select **Remediation** to update or consolidate policies. 
@@ -326,5 +326,5 @@ Long-term actions (30–90 days)
 5. Automate repetitive identity processes. 
 6. Enable Security Copilot in Entra usage across other security domains. 
 
-### Feedback
+### Share your feedback
 Share your feedback on the PoC in the [Security Copilot in Entra PoC feedback form](https://forms.office.com/r/d53HwkFz8s).
