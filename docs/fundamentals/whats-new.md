@@ -7,7 +7,7 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 03/12/2026
+ms.date: 03/17/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -19,6 +19,18 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+
+## March 2026
+
+### General Availability - Authentication Extensibility Password Administrator role
+
+**Type:** New feature
+**Service category:** Role-Based Access Control
+**Product capability:** Microsoft Entra Built-in Roles
+
+The [Authentication Extensibility Password Administrator](../identity/role-based-access-control/permissions-reference.md#authentication-extensibility-password-administrator) role is the least-privileged role that enables you to trigger password submit events for custom authentication extensions, making it easier to migrate user passwords from external identity systems to Microsoft Entra External ID.
+
+---
 
 ## February 2026
 
@@ -77,11 +89,11 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 
 **What is Hard-matching in Microsoft Entra Connect Sync and Cloud Sync?**
 
-When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Microsoft Entra object by looking up the incoming object’s sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
+When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Microsoft Entra object by looking up the incoming object's sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
 
 To strengthen the security posture of your Microsoft Entra ID environment, we're introducing a change that restricts certain types of hard-match operations by default.   
 
-**What’s changing**
+**What's changing**
 
 Beginning June 1 2026, Microsoft Entra ID will block any attempt by Microsoft Entra Connect Sync or Cloud Sync from hard-matching a new user object from Active Directory to an existing cloud-managed Microsoft Entra ID user object that holds [privileged roles](https://docs.azure.cn/en-us/entra/identity/role-based-access-control/permissions-reference#all-roles).
 
@@ -92,7 +104,7 @@ Beginning June 1 2026, Microsoft Entra ID will block any attempt by Microsoft 
 *   This safeguard prevents attackers from taking over privileged cloud managed users in Microsoft Entra by manipulating attributes of user objects in Active Directory. 
     
 
-**What’s not changing**
+**What's not changing**
 
 *   Hard match operations for non-privileged accounts aren't affected.  
 *   [Soft match](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md?source=recommendations#hard-match-vs-soft-match) behavior isn't affected.  
@@ -110,7 +122,7 @@ If you encounter a hard match error after June 1, 2026, see our [documentatio
 **Service category:** MFA  
 **Product capability:** User Authentication  
 
-We’re excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
+We're excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
 
 ---
 
@@ -150,7 +162,7 @@ Bring Your Own Device (BYOD) support for Windows using Microsoft Entra‑registe
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-When you configure policies blocking your users from accessing a risky, NSFW, or unsanctioned sites or apps in GSA, they receive a clear HTML error message with Microsoft Entra Internet Access branding. We’ve heard from many admins that they’d like to start customizing that experience with text aligned to a company style guide, callouts to company Terms of Use documentation, hyperlinks to IT workflows, and more. 
+When you configure policies blocking your users from accessing a risky, NSFW, or unsanctioned sites or apps in GSA, they receive a clear HTML error message with Microsoft Entra Internet Access branding. We've heard from many admins that they'd like to start customizing that experience with text aligned to a company style guide, callouts to company Terms of Use documentation, hyperlinks to IT workflows, and more. 
 
 Global Secure Access now offers customized block pages for Internet Access. In the Microsoft Graph API, Admins can now:
 
@@ -203,7 +215,7 @@ The Microsoft Entra provisioning service can be used in the 21Vianet / China clo
 **Service category:** Entitlement Management  
 **Product capability:** Identity Governance  
 
-By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
+By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor's access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
 
 ---
 
@@ -215,7 +227,7 @@ By end of March Microsoft Entra ID Governance approvers can now revoke access to
 **Service category:** User Management  
 **Product capability:** Microsoft Entra Cloud Sync
 
-We’re pleased to announce the general availability of object-level Source of Authority (SOA) switching for Microsoft Entra ID. With this feature, administrators can transition individual users from being synced with Active Directory (AD) to becoming cloud-managed accounts within Microsoft Entra ID. These users are no longer tied to AD sync and behave like native cloud users, giving you greater flexibility and control. This capability enables organizations to gradually reduce dependence on AD and simplify migration to the cloud, all while minimizing disruption for users and daily operations. Both Microsoft Entra Connect Sync and Cloud Sync fully support this SOA switch, ensuring a smooth transition process.
+We're pleased to announce the general availability of object-level Source of Authority (SOA) switching for Microsoft Entra ID. With this feature, administrators can transition individual users from being synced with Active Directory (AD) to becoming cloud-managed accounts within Microsoft Entra ID. These users are no longer tied to AD sync and behave like native cloud users, giving you greater flexibility and control. This capability enables organizations to gradually reduce dependence on AD and simplify migration to the cloud, all while minimizing disruption for users and daily operations. Both Microsoft Entra Connect Sync and Cloud Sync fully support this SOA switch, ensuring a smooth transition process.
 
 For more information, see: [Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud](../identity/hybrid/user-source-of-authority-overview.md).
 
@@ -227,7 +239,7 @@ For more information, see: [Embrace cloud-first posture: Transfer user Source o
 **Service category:** Entitlement Management, Lifecycle Workflows  
 **Product capability:** Entitlement Management, Lifecycle Workflows
 
-Enforcement for the Microsoft Entra ID Governance guest billing meter is now in effect for Entitlement Management and Lifecycle Workflows (Access Reviews will be enforced later in CY26 Q1). To keep using Entra ID Governance premium features for guest users in workforce tenants, you must link a valid Azure subscription to activate the Microsoft Entra ID Governance for guests add-on. If a subscription isn’t linked, creation or updates of new guest-scoped governance configurations will be restricted (for example, certain access package policies, access reviews, and lifecycle workflows), and guest-specific governance actions may fail until billing is configured.
+Enforcement for the Microsoft Entra ID Governance guest billing meter is now in effect for Entitlement Management and Lifecycle Workflows (Access Reviews will be enforced later in CY26 Q1). To keep using Entra ID Governance premium features for guest users in workforce tenants, you must link a valid Azure subscription to activate the Microsoft Entra ID Governance for guests add-on. If a subscription isn't linked, creation or updates of new guest-scoped governance configurations will be restricted (for example, certain access package policies, access reviews, and lifecycle workflows), and guest-specific governance actions may fail until billing is configured.
 
 For more information, see: [Microsoft Entra ID Governance licensing for guest users](../id-governance/microsoft-entra-id-governance-licensing-for-guest-users.md).
 
@@ -241,7 +253,7 @@ For more information, see: [Microsoft Entra ID Governance licensing for guest u
 
 We are pleased to announce the general availability of client credentials in Entra External ID.  The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Permissions are granted directly to the application itself by an administrator.
 
-Billing: When you configure machine-to-machine (M2M) authentication for Microsoft Entra External ID, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines. For more information, see: [Microsoft identity platform and the OAuth 2.0 client credentials flow](../identity-platform/v2-oauth2-client-creds-grant-flow.md).
+Billing: When you configure machine-to-machine (M2M) authentication for Microsoft Entra External ID, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization's premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines. For more information, see: [Microsoft identity platform and the OAuth 2.0 client credentials flow](../identity-platform/v2-oauth2-client-creds-grant-flow.md).
 
 ---
 
@@ -306,13 +318,13 @@ Microsoft Entra Conditional Access is strengthening how policies that target All
 **Service category:** Authentications (Logins)  
 **Product capability:** SSO  
 
-Windows has many user experiences that uses webview’s to gather web information to present web information to users that looks like native content. One of the common scenarios for this is for authentication flows, where a user is prompted for their username and provides credentials. 
+Windows has many user experiences that uses webview's to gather web information to present web information to users that looks like native content. One of the common scenarios for this is for authentication flows, where a user is prompted for their username and provides credentials. 
 
 Microsoft Entra ID app sign-in through Web Account Manager (WAM) now has the option to be powered by WebView2, the Chromium-based web control, starting with [KB5072033 (OS Builds 26200.7462 and 26100.7462) or later](https://support.microsoft.com/topic/december-9-2025-kb5072033-os-builds-26200-7462-and-26100-7462-0c1a4334-19ba-406d-bb1e-88fcffc87b79). This release marks a significant step forward in delivering a secure, modern, and consistent sign-in experience across apps and services.  
 
 WebView2 will become the default framework for WAM authentication in an expected future Windows release, with the EdgeHTML WebView being deprecated. Therefore, we encourage users to deploy now and participate in the opt-in process, enable this experience in their environments, and make any necessary adjustments — such as updating proxy rules or modifying code in services involved in the sign in process. Contact Customer Support Services if you'd like to provide feedback.
 
-Moving to WebView2 is more than a technical upgrade, it’s a strategic investment in secure, user-friendly identity experiences. We’re committed to evolving Microsoft Entra ID to meet the needs of modern organizations and developers.  
+Moving to WebView2 is more than a technical upgrade, it's a strategic investment in secure, user-friendly identity experiences. We're committed to evolving Microsoft Entra ID to meet the needs of modern organizations and developers.  
   
 For more information, see:  
 
@@ -326,12 +338,12 @@ For more information, see:  
 **Service category:** Entra Connect  
 **Product capability:** Access Control  
 
-When Microsoft Entra Connect adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object’s [sourceAnchor value against the OnPremisesImmutableId attribute](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match."
+When Microsoft Entra Connect adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object's [sourceAnchor value against the OnPremisesImmutableId attribute](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match."
 
 As part of ongoing security hardening, Microsoft is going to introduce enforcement changes in Microsoft Entra Connect to mitigate the risk of account takeover via hard match abuse. Enforcement of this change will begin on **July 1, 2026**. 
 
 
-**What’s Changing:**
+**What's Changing:**
 
 - Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been set on a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
 - [Audit logs](../identity/monitoring-health/reference-audit-activities.md#core-directory) have been enhanced to capture changes to OnPremisesObjectIdentifier and DirSyncEnabled, enabling better visibility into synchronization behavior.
@@ -366,7 +378,7 @@ onPremisesObjectIdentifier: null
 ```
 
 Required permissions:
-- Delegated or application permission: “**User.OnPremisesSync.ReadWrite.All**”
+- Delegated or application permission: "**User.OnPremisesSync.ReadWrite.All**"
 - The caller must also have one of the following roles: **Global Administrator** or **Hybrid Identity Administrator**
 > [!NOTE]
 > The API only allows clearing OnPremisesObjectIdentifier (setting it to null). Attempts to set it to any other value are blocked.
@@ -374,8 +386,8 @@ Required permissions:
 
 **Additional Guidance:**
 
-- If enforcement blocks an operation, the following error message will be returned: “*Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.*”
-- Use audit logs to identify affected objects. Look for “*Update user*” events where OnPremisesObjectIdentifier was modified. These users may require remediation before enforcement begins.
+- If enforcement blocks an operation, the following error message will be returned: "*Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.*"
+- Use audit logs to identify affected objects. Look for "*Update user*" events where OnPremisesObjectIdentifier was modified. These users may require remediation before enforcement begins.
 
 The Microsoft Entra Connect Sync .msi installation file is exclusively available on Microsoft Entra admin center under[Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).  Check our [version history page](/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
 
@@ -451,7 +463,7 @@ Microsoft Entra ID Account Recovery is an advanced authentication recovery mecha
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-We’re expanding Microsoft Entra External ID to **Australia** and **Japan** with **Go‑Local add‑on** that keeps External ID data **stored and processed in location**. This premium add‑on is selectable when you create a new External ID tenant and is designed for organizations with strict **data residency** requirements. A small set of centralized platform services remains global (e.g., some MFA/RBAC functions), with no change to security or compliance posture. **Get started:** Create a new tenant in **Australia** or **Japan** and opt in to the add‑on or contact your Microsoft representative to discuss options for your existing environment. For more information, see: [Microsoft Entra ID and data residency](data-residency.md)
+We're expanding Microsoft Entra External ID to **Australia** and **Japan** with **Go‑Local add‑on** that keeps External ID data **stored and processed in location**. This premium add‑on is selectable when you create a new External ID tenant and is designed for organizations with strict **data residency** requirements. A small set of centralized platform services remains global (e.g., some MFA/RBAC functions), with no change to security or compliance posture. **Get started:** Create a new tenant in **Australia** or **Japan** and opt in to the add‑on or contact your Microsoft representative to discuss options for your existing environment. For more information, see: [Microsoft Entra ID and data residency](data-residency.md)
 
 ---
 
@@ -546,7 +558,7 @@ Soft deletion for cloud security groups introduces a safety mechanism that allow
 **Service category:** Other  
 **Product capability:** End User Experiences  
 
-The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/identity-platform/manage-agent.md).
+The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you're responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/identity-platform/manage-agent.md).
 
 ---
 
@@ -596,7 +608,7 @@ This capability enables organizations to manage access reviews for applications 
 **Service category:** Access Reviews  
 **Product capability:** Identity Governance  
 
-User centric access reviews (UAR) provide a user‑centric review model that lets reviewers view a user’s access across multiple resources in a catalog in one unified view, streamlining the process of ensuring the right access at the right time. Resources include Entra groups, and both connected and disconnected (BYOD) applications, providing customers with a consolidated, holistic review experience.  For more information, see: [Catalog Access Reviews (Preview)](../id-governance/catalog-access-reviews.md).
+User centric access reviews (UAR) provide a user‑centric review model that lets reviewers view a user's access across multiple resources in a catalog in one unified view, streamlining the process of ensuring the right access at the right time. Resources include Entra groups, and both connected and disconnected (BYOD) applications, providing customers with a consolidated, holistic review experience.  For more information, see: [Catalog Access Reviews (Preview)](../id-governance/catalog-access-reviews.md).
 
 ---
 
@@ -652,7 +664,7 @@ Microsoft is enhancing Global Secure Access (GSA) with Integrated App Risk Insig
 
 This new capability unifies Global Secure Access and the Microsoft Entra App Gallery—which now includes applications and risk scores from Microsoft Defender for Cloud Apps—into one unified, risk-aware experience. It allows organizations to discover, assess, and protect all their applications directly within the Microsoft Entra Admin Center. 
 
-With this integration, organizations can evaluate app risk in real time and enforce access policies based on that risk. Admins can view each app’s risk score, compliance data, and configuration (SSO and provisioning) in the Entra App Gallery, while GSA applies Conditional Access and session controls based on the app’s risk level. 
+With this integration, organizations can evaluate app risk in real time and enforce access policies based on that risk. Admins can view each app's risk score, compliance data, and configuration (SSO and provisioning) in the Entra App Gallery, while GSA applies Conditional Access and session controls based on the app's risk level. 
 
 What Customers Can Do: 
 
@@ -715,11 +727,11 @@ Remote Network Connectivity enables secure, _clientless_ access to Microsoft 365
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyber attacks. Global Secure Access combines Entra Internet Access protections with Netskope's Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) capabilities to deliver real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform. Microsoft’s SSE solution adopts an open platform approach, enabling integration with third-party companies, with Netskope being the first. For more information, see: [Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention](../global-secure-access/concept-netskope-integration.md).
+In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyber attacks. Global Secure Access combines Entra Internet Access protections with Netskope's Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) capabilities to deliver real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform. Microsoft's SSE solution adopts an open platform approach, enabling integration with third-party companies, with Netskope being the first. For more information, see: [Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention](../global-secure-access/concept-netskope-integration.md).
 
 ---
 
-### Public Preview - Entitlement Management Introduces Additional Approval Flows for Risky Users’ Access Package Requests Based on IRM and IDP Risk Signals
+### Public Preview - Entitlement Management Introduces Additional Approval Flows for Risky Users' Access Package Requests Based on IRM and IDP Risk Signals
 
 **Type:** Changed feature  
 **Service category:** Entitlement Management  
@@ -765,13 +777,13 @@ This public preview allows you to configure URL filtering rules to granularl
 **Service category:** MFA    
 **Product capability:** Identity Security & Protection    
 
-Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the Microsoft Entra admin center.
+Starting February 2026, we are replacing the current "*Revoke multifactor authentication sessions*" button with the "*Revoke sessions*" button in the Microsoft Entra admin center.
 
-The legacy “*Revoke MFA session*s” action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new “*Revoke sessions*” button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
+The legacy "*Revoke MFA session*s" action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new "*Revoke sessions*" button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
 
 **Action required**
 
-Admins should update workflows and guidance to use “*Revoke sessions*” instead of “*Revoke MFA sessions*”. The “*Revoke MFA sessions*” option will be removed from the portal after this change.
+Admins should update workflows and guidance to use "*Revoke sessions*" instead of "*Revoke MFA sessions*". The "*Revoke MFA sessions*" option will be removed from the portal after this change.
 
 ---
 
@@ -858,7 +870,7 @@ Learn more: 
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-We’re thrilled to announce the **Public Preview of soft delete and restore for Conditional Access (CA) policies and Named Locations** in Microsoft Entra. This new capability extends our proven soft delete model to critical security configurations across **Microsoft Graph APIs (in beta) and the Microsoft Entra Admin Center**, helping admins recover from accidental or malicious deletions quickly and strengthen overall security posture.
+We're thrilled to announce the **Public Preview of soft delete and restore for Conditional Access (CA) policies and Named Locations** in Microsoft Entra. This new capability extends our proven soft delete model to critical security configurations across **Microsoft Graph APIs (in beta) and the Microsoft Entra Admin Center**, helping admins recover from accidental or malicious deletions quickly and strengthen overall security posture.
 
 With this feature, admins can:
 
@@ -878,7 +890,7 @@ Soft delete has already been proven at scale across Microsoft Entra (7M+ objects
 
 In My Access, Microsoft Entra ID Governance users can see a curated list of suggested access packages in My Access. This capability allows users to quickly view the most relevant access packages for them based off their peers' access packages and previous assignments without scrolling through all their available access packages.
 
-The suggested access packages list is created by finding people related to the user (manager, direct reports, organization, team members) and recommending access packages based on what the users’ peers have. The user is also suggested access packages that were previously assigned to them.
+The suggested access packages list is created by finding people related to the user (manager, direct reports, organization, team members) and recommending access packages based on what the users' peers have. The user is also suggested access packages that were previously assigned to them.
 
 We recommend admins turn on the peer-based insights for suggested access packages via this setting. For more information, see: [Suggested access packages in My Access](../id-governance/entitlement-management-suggested-access-packages.md)
 
@@ -890,7 +902,7 @@ We recommend admins turn on the peer-based insights for suggested access package
 **Service category:** User Management    
 **Product capability:** User Management    
 
-External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account and access to resources isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
+External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user's account and access to resources isn't disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
 
 The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well.
 
@@ -906,7 +918,7 @@ The external to internal user conversion feature includes the ability to convert
 
 We're introducing new, granular permissions for the UserAuthenticationMethod APIs in Microsoft Entra ID. This update enables organizations to apply the principle of least privilege when managing authentication methods, supporting both security and operational efficiency.
 
-**What’s New?**
+**What's New?**
 
 - **New per-method permissions:** Fine-grained permissions for each authentication method (for example, Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
 - **Read-only policy permission:** A new permission allows read-only access to authentication method policies, improving role separation and auditability.
@@ -967,7 +979,7 @@ For more information, see: [About Microsoft Authenticator](https://support.micro
 **Service category:** B2B    
 **Product capability:** Network Access    
 
-Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company’s tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and Microsoft 365 traffic to these 3rd party users.
+Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company's tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and Microsoft 365 traffic to these 3rd party users.
 
 For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-external-user-access.md).
 
