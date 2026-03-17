@@ -240,8 +240,6 @@ After an interactive agent validates the user's token, it can request access tok
 - Exchange it for a new access token for a downstream API like Microsoft Graph.
 - Use that new token to access protected resources on behalf of the original user.
 
-The libraries handle a two-step token exchange on your behalf. For protocol details, see [OBO protocol details](#obo-protocol-details) later in this article.
-
 ### [Microsoft Identity Web](#tab/identity-web-tokens)
 
 The `Microsoft.Identity.Web` library simplifies the OBO implementation by handling token exchange automatically, so you don't have to manually implement the flow by following the protocol.
@@ -277,9 +275,6 @@ The `Microsoft.Identity.Web` library simplifies the OBO implementation by handli
     
     app.Run();
     ```
-
-    > [!NOTE]
-    > `AddInMemoryTokenCaches()` is suitable for development and testing. For production environments, use a distributed token cache such as Redis or SQL Server to ensure tokens persist across app restarts and scale across instances.
 
 1. In the agent API, exchange the incoming access token for a new access token for the agent identity. `Microsoft.Identity.Web` validates the incoming access token and handles the on-behalf-of token exchange:
 
