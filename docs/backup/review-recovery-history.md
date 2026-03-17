@@ -1,6 +1,6 @@
 ---
 title: Review recovery history in Microsoft Entra Backup and Recovery
-description: Learn how to review recovery operations performed in your tenant using the Recovery History page in Microsoft Entra Backup and Recovery.
+description: Learn how to review recovery operations performed in your tenant using the Recovery History page in Microsoft Entra Backup and Recovery
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to

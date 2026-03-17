@@ -1,6 +1,6 @@
 ---
 title: View available backups in Microsoft Entra Backup and Recovery
-description: Learn how to view available backups for your tenant in Microsoft Entra Backup and Recovery, including backup frequency, retention, and next steps.
+description: Learn how to view available backups for your tenant in Microsoft Entra Backup and Recovery, including backup frequency, retention, and next steps
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to

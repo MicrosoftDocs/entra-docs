@@ -1,8 +1,9 @@
 ---
 title: Recover application secrets using Microsoft Entra Backup and Recovery
 description: Learn how to recover application secrets and credentials after accidental or malicious changes using Microsoft Entra Backup and Recovery
-ms.topic: how-to
 ms.date: 03/09/2026
+ms.service: entra-id
+ms.topic: how-to
 ---
 
 # Recover application secrets using Microsoft Entra Backup and Recovery (Preview)
@@ -32,7 +33,6 @@ The first step is to determine if the changes made to applications were accident
 
 After you determine the cause of the changes, validate whether the secrets for applications were impacted. Find changes to application secrets in the audit log. Look for events that indicate the application secret was changed or updated.
 
-<!-- TODO: [REVIEW NEEDED] The original source noted a bug fix for audit log events is in progress. Verify the correct audit log event names to reference here. -->
 
 The nature of the change and whether secrets were impacted determine the best path for recovery for your applications. Any time an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
 

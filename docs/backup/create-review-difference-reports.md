@@ -1,6 +1,6 @@
 ---
 title: Create and review difference reports in Microsoft Entra Backup and Recovery
-description: Learn how to create and review difference reports to compare the current state of your tenant with a selected backup in Microsoft Entra Backup and Recovery.
+description: Learn how to create and review difference reports to compare your tenant with a backup in Microsoft Entra Backup and Recovery
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to

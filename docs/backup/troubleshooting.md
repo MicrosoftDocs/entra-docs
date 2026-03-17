@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot Microsoft Entra Backup and Recovery
-description: Diagnose and resolve common issues when using Microsoft Entra Backup and Recovery, including backup access, difference report jobs, and recovery jobs.
+description: Diagnose and resolve common issues with Microsoft Entra Backup and Recovery, including backup access, difference reports, and recovery jobs
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: troubleshooting
@@ -30,6 +30,8 @@ If these prerequisites aren't met, operations might fail with authorization erro
 
 ## Issue: No backups are listed
 
+This issue occurs when the backup list shows fewer backups than expected or displays duplicate timestamps.
+
 ### Symptoms
 
 - Fewer than five days of backups are visible, instead of the expected five days.
@@ -44,6 +46,8 @@ The oldest backup might age out earlier during service initialization, tenant on
 No action is required. The service continues to create new backups automatically.
 
 ## Issue: Can't start a difference report or recovery job
+
+This issue occurs when a difference report or recovery job fails to start because of a conflict, authorization failure, or unsupported object type.
 
 ### Symptoms
 
@@ -118,6 +122,8 @@ Difference reports are tied to the backup they were created from.
 
 ## Issue: Recovery job issues
 
+This issue occurs when a recovery job doesn't recover expected objects, runs longer than expected, or completes with warnings.
+
 ### Symptoms
 
 - The recovery job didn't recover an object that appeared in the difference report.
@@ -139,6 +145,8 @@ Difference reports are tied to the backup they were created from.
 1. Retry recovery with a narrower scope, focusing on supported cloud-only objects.
 
 ## Issue: Can't find a recovery job, or not all links were recovered
+
+This issue occurs when a previously completed recovery job is no longer visible or when only some links were recovered.
 
 ### Symptoms
 
@@ -180,6 +188,8 @@ Difference reports are tied to the backup they were created from.
 | Insufficient admin role | **403 Forbidden**: Authorization has been denied for this request. Check your credentials. |
 
 ## Known limitations
+
+The following known limitations apply to Microsoft Entra Backup and Recovery during public preview.
 
 ### Partial property coverage
 

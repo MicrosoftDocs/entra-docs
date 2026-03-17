@@ -1,6 +1,6 @@
 ---
 title: Soft deletion in Microsoft Entra Backup and Recovery
-description: Learn what soft deletion is, how it relates to Microsoft Entra Backup and Recovery, and what recovery can and can't do.
+description: Learn what soft deletion is, how it relates to Microsoft Entra Backup and Recovery, and what recovery can and can't do
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: concept-article

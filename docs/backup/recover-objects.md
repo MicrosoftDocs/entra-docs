@@ -1,6 +1,6 @@
 ---
 title: Recover objects using Microsoft Entra Backup and Recovery
-description: Learn how to recover objects to a previous state using Microsoft Entra Backup and Recovery, including recovery from difference reports and directly from backups.
+description: Learn how to recover objects to a previous state using Microsoft Entra Backup and Recovery from difference reports or backups
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: how-to

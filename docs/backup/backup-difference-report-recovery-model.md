@@ -1,6 +1,6 @@
 ---
 title: Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery
-description: Understand how Microsoft Entra Backup and Recovery creates backups, generates difference reports, and recovers tenant objects to a previous state.
+description: Understand how Microsoft Entra Backup and Recovery creates backups, generates difference reports, and recovers tenant objects to a previous state
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: concept-article
@@ -38,16 +38,6 @@ The first time you create a difference report, you might experience a delay as b
 
 The second time you create a difference report against the same backup, the report doesn't need the data loading step, so it finishes faster.
 
-<!-- The following table is a placeholder. Time estimates to be confirmed by the feature team.
-
-| Tenant size | Estimated time for first difference report |
-|---|---|
-| 1-50,000 objects | TBD |
-| 50,000-300,000 objects | TBD |
-| 300,000-1,000,000 objects | TBD |
-| More than 1,000,000 objects | TBD |
-
--->
 
 > [!NOTE]
 > Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
@@ -62,16 +52,6 @@ When you recover your tenant, apply filters to control which objects to recover:
 
 Time needed to complete recovery depends on the number of changes to recover.
 
-<!-- The following table is a placeholder. Time estimates to be confirmed by the feature team.
-
-| Changed objects | Estimated time for recovery |
-|---|---|
-| 1-50,000 changes | TBD |
-| 50,000-300,000 changes | TBD |
-| 300,000-1,000,000 changes | TBD |
-| More than 1,000,000 changes | TBD |
-
--->
 
 Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
 

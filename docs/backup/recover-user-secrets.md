@@ -1,8 +1,9 @@
 ---
 title: Recover user authentication methods using Microsoft Entra Backup and Recovery
 description: Learn how to recover user authentication methods after accidental or malicious changes using Microsoft Entra Backup and Recovery
-ms.topic: how-to
 ms.date: 03/09/2026
+ms.service: entra-id
+ms.topic: how-to
 ---
 
 # Recover user authentication methods using Microsoft Entra Backup and Recovery (Preview)

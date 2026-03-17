@@ -1,6 +1,6 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
-description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported for backup and recovery, and understand current limitations.
+description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported, and understand current limitations
 ms.date: 03/05/2026
 ms.service: entra-id
 ms.topic: concept-article
@@ -217,6 +217,8 @@ Recovery for the organization object supports these properties:
     :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-allowed-list.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
 
 ## Limitations
+
+Consider the following limitations when you use Microsoft Entra Backup and Recovery.
 
 ### Job completion time
 

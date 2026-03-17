@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra Backup and Recovery overview
-description: Learn how Microsoft Entra Backup and Recovery helps you recover from malicious attacks or accidental changes by reverting tenant objects to a previous state.
+description: Learn how Microsoft Entra Backup and Recovery helps you recover from malicious attacks or accidental changes to tenant objects
 ms.date: 03/02/2026
 ms.service: entra-id
 ms.topic: overview
