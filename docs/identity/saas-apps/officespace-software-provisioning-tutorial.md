@@ -3,7 +3,7 @@ title: Configure OfficeSpace Software for automatic user provisioning with Micro
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to OfficeSpace Software.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/17/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OfficeSpace Software so that I can streamline the user management process and ensure that users have the appropriate access to OfficeSpace Software.
@@ -98,43 +98,37 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://<subdomain>.officespacesoftware.com/api/scim/v2/` URL format in **Tenant URL**. For example `https://contoso.officespacesoftware.com/api/scim/v2/`. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your OfficeSpace Software Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to OfficeSpace Software**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to OfficeSpace Software in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OfficeSpace Software for update operations. Select the **Save** button to commit any changes.
 
 	![OfficeSpace Software User Attributes](media/officespace-software-provisioning-tutorial/userattributes.png)
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-12. To enable the Microsoft Entra provisioning service for OfficeSpace Software, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-13. Define the users and/or groups that you would like to provision to OfficeSpace Software by choosing the desired values in **Scope** in the **Settings** section.
+## Monitor your deployment
 
-	![Provisioning Scope](common/provisioning-scope.png)
-
-14. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on OfficeSpace Software.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 
