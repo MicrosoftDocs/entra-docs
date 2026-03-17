@@ -20,9 +20,9 @@ Governance relationships enable centralized, cross-tenant administration and mul
 Establish a governance relationship between any two Microsoft Entra tenants by using the three-step handshake process, or the two-step handshake if tenants meet certain criteria. This article describes both options.
 
 ## Prerequisites
-- Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
+- You need the **Tenant Governance Administrator** role.
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](licensing.md).
+- Review license requirements for sending governance requests in [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
 
 - You must create a governance policy template in the governing tenant before you initiate the handshake process.
 
@@ -31,7 +31,7 @@ Establish a governance relationship between any two Microsoft Entra tenants by u
 ## Create a governance policy template
 Before you can set up a governance relationship, you must create a governance policy template in the governing tenant. The policy template defines the type of relationship and the level of access the governing tenant has over the governed tenant. Reuse templates across distinct relationships.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant governance** > **Templates**.
 
@@ -48,14 +48,14 @@ Use the three-step handshake when there's no pre-existing billing signal or acti
 
 Before you start the handshake, enable governance invitations in the governing tenant to receive invitations from other tenants. By default, this setting is turned off.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant governance** > **Settings**.
 
 1. Enable the invitations setting to allow governance invitations. Disable this setting after you receive the invitation.
 
 ### Step 1: Send a governance invitation from the governed tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the future governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the future governed tenant.
 
 1. Browse to **Tenant governance** > **Governing tenants** > **Sent invitations**.
 
@@ -65,7 +65,7 @@ Before you start the handshake, enable governance invitations in the governing t
 > Governance invitations are valid for 30 days.
 
 ### Step 2: Send a governance request from the governing tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant governance** > **Governed tenants** > **Received invitations**.
 
@@ -77,7 +77,7 @@ Before you start the handshake, enable governance invitations in the governing t
 > Governance requests are valid for 14 days.
 
 ### Step 3: Accept the governance request in the governed tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governed tenant.
 
 1. Browse to **Tenant governance** > **Governing tenants** > **Received requests**.
 
@@ -93,7 +93,7 @@ Use the two-step handshake when either of these conditions is met:
 - There's an existing, active governance relationship between the two tenants, and you're seeking to establish another relationship between them.
 
 ### Step 1: Send a governance request from the governing tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant governance** > **Governed tenants** > **Send governance request**.
 
@@ -103,7 +103,7 @@ Use the two-step handshake when either of these conditions is met:
 > Governance requests are valid for 14 days.
 
 ### Step 2: Accept the governance request in the governed tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governed tenant.
 
 1. Browse to **Tenant governance** > **Governing tenants** > **Received requests**.
 

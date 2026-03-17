@@ -21,7 +21,7 @@ Each phase builds on the previous one. Complete the phases in order, but skip op
 
 Before you begin, confirm that your environment meets these requirements:
 
-- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Licensing for Microsoft Entra Tenant Governance](licensing.md).
+- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
 - An account with the Tenant Governance Administrator or Global Administrator role.
 - For configuration management: an account with the Global Administrator or Privileged Role Administrator role.
 - For secure tenant creation: at least Tenant Contributor permissions on a Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't supported.
@@ -243,5 +243,5 @@ For more information, see [Create a governed workforce tenant](how-to-create-ten
 - [Governance policy templates](governance-policy-templates.md)
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)
 - [Configuration management](configuration-management.md)
-- [Licensing for Microsoft Entra Tenant Governance](licensing.md)
+- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview)
 - [Frequently asked questions](faq.md)

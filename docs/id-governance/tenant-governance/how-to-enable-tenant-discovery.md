@@ -33,7 +33,7 @@ Before you enable related tenants, make sure:
 
 Use this option to enable discovery through the admin center rather than APIs.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator**.
 
 1. Browse to **Tenant Governance** > **Related tenants**.
 

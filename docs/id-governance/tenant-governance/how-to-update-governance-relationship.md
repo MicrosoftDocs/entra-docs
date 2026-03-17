@@ -22,14 +22,14 @@ This article describes how to update an existing governance relationship between
 
 - You must have access to the governance policy template you used to create the existing relationship. If you deleted the policy template, you need to create a new relationship.
 
-- Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
+- You need the **Tenant Governance Administrator** role.
 
-- Review license requirements for sending governance requests in [Tenant governance licensing](licensing.md).
+- Review license requirements for sending governance requests in [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
 
 ## Update the governance policy template
 Before you can update a governance relationship, you must first modify the governance policy template you used to establish the existing relationship. When you update the template, its version number automatically increments by one.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant Governance** > **Templates**, and select the policy template you used to set up the relationship.
 
@@ -58,7 +58,7 @@ After updating the governance policy template, send a new governance request fro
 ## Accept the governance request
 An admin in the governed tenant must accept the governance request to complete the update.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governed tenant.
 
 1. Browse to **Tenant Governance** > **Received requests**.
 

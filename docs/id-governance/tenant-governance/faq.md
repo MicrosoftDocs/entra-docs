@@ -21,7 +21,7 @@ Yes, a set of Microsoft Graph APIs is available to manage Tenant Governance. For
 
 ## Are licenses required to use Tenant Governance?
 
-Tenant Governance offers free, basic, and premium capabilities. For a comprehensive list of license requirements per capability, see [Licensing for Microsoft Entra Tenant Governance](licensing.md).
+Tenant Governance offers free, basic, and premium capabilities. For a comprehensive list of license requirements per capability, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
 
 ## How does Microsoft Entra Tenant Governance compare to the multitenant organization feature?
 
@@ -121,5 +121,5 @@ Yes. Although multi-tier governance relationships aren't supported, an exception
 - [Related tenants](related-tenants.md)
 - [Governance relationships](governance-relationships.md)
 - [Configuration management](configuration-management.md)
-- [Licensing for Microsoft Entra Tenant Governance](licensing.md)
+- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview)
 - [Deploy Microsoft Entra Tenant Governance end to end](deployment-guide.md)

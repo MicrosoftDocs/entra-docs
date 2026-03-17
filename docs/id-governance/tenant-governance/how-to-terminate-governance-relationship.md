@@ -27,13 +27,13 @@ Terminate a governance relationship in two ways, depending on whether the govern
 ## Prerequisites
 - You must have an active governance relationship between two tenants.
 
-- Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
+- You need the **Tenant Governance Administrator** role.
 
 ## Terminate a relationship: Governing tenant initiation
 The governing tenant can request to terminate a governance relationship. This process requires confirmation from the governed tenant before Tenant Governance removes the relationship and its resources.
 
 ### Initiate termination as the governing tenant
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governing tenant.
 
 1. Browse to **Tenant governance** > **Governed tenants**.
 
@@ -50,7 +50,7 @@ The governing tenant can request to terminate a governance relationship. This pr
 ### Confirm termination as the governed tenant
 When the governing tenant initiates termination, the governed tenant must confirm the request to complete the process.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governed tenant.
 
 1. Browse to **Tenant governance** > **Governing tenants**.
 
@@ -65,7 +65,7 @@ When the governing tenant initiates termination, the governed tenant must confir
 ## Directly terminate a relationship: Governed tenant
 As the governed tenant, directly terminate a governance relationship without requiring approval from the governing tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Tenant Governance Administrator** in the governed tenant.
 
 1. Browse to **Tenant governance** > **Governing tenants**.
 
