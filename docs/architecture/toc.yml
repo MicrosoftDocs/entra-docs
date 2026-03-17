@@ -340,7 +340,7 @@ items:
   - name: AI for Security
     items:
     - name: Security Copilot for Entra PoC
-      href: security-copilot-entra-poc.md
+      href: security-copilot-entra-proof-of-concept.md
   - name: Secure for AI
     items: 
     - name: Secure Generative AI 
