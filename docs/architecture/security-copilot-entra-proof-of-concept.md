@@ -40,8 +40,7 @@ To conduct this Security Copilot in Entra PoC, ensure the following prerequisite
   * Security Administrator 
   * Billing Administrator
 
-   > [!NOTE]
-   > For agent-specific prerequisites, refer to [Microsoft Entra Conditional Access Optimization Agent documentation](/entra/security-copilot/conditional-access-agent-optimization).  
+Learn more about agent-specific prerequisites in [Conditional Access Optimization Agent documentation](/entra/security-copilot/conditional-access-agent-optimization).  
 
 ## Overview of scenarios
 
