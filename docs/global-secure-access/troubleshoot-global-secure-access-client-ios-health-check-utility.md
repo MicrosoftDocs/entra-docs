@@ -36,7 +36,7 @@ When the **X** symbol appears, the state is unhealthy and troubleshooting is rec
    > [!NOTE]
    > If attempts fail to fix the results, contact [Microsoft Support](/services-hub/unified/support/contact-support). 
 
-## Health check: device compliance
+## Device compliant
 
 Your organization might use [Microsoft Intune](/intune/intune-service/fundamentals/what-is-intune) to define device compliance policies, and [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) policies to enforce the requirement to use Global Secure Access applications. If so, devices will fail this test if they don't meet compliance criteria. 
 
@@ -45,9 +45,9 @@ To remediate device compliant errors:
 1. Go to **Settings**.
 2. Select **General**.
 3. Select **VPN & Device Management**.
-4. Confirm the user is signed into the correct work account on the device. 
-5. Update the device operating (OS) system to the current version.
-6. On the device, review failed compliance rules, for instance OS version, passcode, jailbreak detection, etc.  
+4. Confirm the user is signed into the correct work or school account on the device. 
+5. Update the device operating system (OS) to the current version.
+6. On the device, review failed compliance rules, such as OS version, passcode, and jailbreak detection.  
 
 ### Enrolled devices
 
@@ -60,13 +60,14 @@ In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm t
   * See the following steps for more
 
 1. On the client device, open the **Company Portal** app.
-2. Ensure the device status is **Compliant**. 
+2. Ensure the device status is **Compliant**. See the following steps [to resolve compliance issues](/intune/intune-service/user-help/check-device-access-windows-cpapp.
 
    > [!NOTE]
    > After changes are made, it can take up to 30 minutes for the status to update. 
 
 3. When health check tests indicate a healthy state, attempt to connect to the resource.
 4. After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender.
+5. Restart the device.
 
    ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
 
@@ -96,7 +97,7 @@ Manual proxy on iOS interferes with Global Secure Access traffic routing. For in
 1. On the device, go to **Settings**, select **Wi-Fi**. 
 2. Next to the active network, select the **info** icon (**i**). 
 3. Scroll down to HTTP Proxy, and select **Configure Proxy**. 
-4. Select **Off** or **Automatic**, if required by the environment for proxy autoconfiguration (PAC).
+4. Select **Off**. If required by the environment for proxy autoconfiguration (PAC), select **Automatic**.
 
    ![Screenshot of Configure Proxy dialog.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/configure-proxy.png)
 
@@ -105,13 +106,13 @@ Manual proxy on iOS interferes with Global Secure Access traffic routing. For in
 
 On Apple Platform Deployment, you can learn more about [VPN Proxy device management settings for Apple devices](https://support.apple.com/guide/deployment/vpn-proxy-settings-depb78836926/web).
 
-### NaaS policy: running policy service
+### NaaS policy: policy service running
 
 If the Global Secure Access policy service isn't running or didn't initialize on the iOS device, the health check fails. To troubleshoot this error: 
 
 1. On the client device, in Microsoft Defender, navigate to **Global Secure Access**.
 2. Confirm the service is **Enabled**.
-3. Confirm the user is signed in to the  work or school account.
+3. Confirm the user is signed in to the work or school account.
 
 To ensure the VPN is disabled:
 
@@ -134,13 +135,11 @@ To ensure the VPN is disabled:
 
 ## Diagnostic URLs in the forwarding profile
 
-The following test checks that the configuration contains a URL to probe service health, for channels activated in the forwarding profile.
+This test checks that the configuration contains a URL to probe service health, for channels activated in the forwarding profile.
 
 ### Break-glass mode disabled
 
 Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In this mode, traffic profiles in the Global Secure Access portal are unchecked, and the Global Secure Access client isn't expected to tunnel any traffic. 
-
-**Enable traffic**
 
 Enable the client to acquire traffic and tunnel traffic to the Global Secure Access service.
 
@@ -154,7 +153,7 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
    ![Screenshot of profile options for traffic, private access, and internet access.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/profile-options.png)
 
    > [!NOTE]
-   >  In addition to health check status indicators, iOS devices can return a generic **Something went wrong** error, for device registration problems. To resolve, update the device to the latest version of iOS. Then, navigate to **Microsoft Defender**, then **Global Secure Access**. Toggle the Global Secure Access client **Off** then **On**.
+   >  In addition to health check status indicators, iOS devices can return a generic **Something went wrong** error, for device registration problems. To resolve, update the device to the latest version of iOS. Then, navigate to **Microsoft Defender**, then **Global Secure Access**. Toggle the Global Secure Access client **Off** then **On**. Restart the device.
 
    ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
 
