@@ -15,9 +15,7 @@ ai-usage: ai-assisted
 
 # Discover and deploy agents and solutions in Microsoft Entra
 
-[Security Store](/security/store/what-is-security-store) in the Microsoft Entra admin center offers various agents and solutions that help you perform identity and access management tasks efficiently. These agents and solutions include [Microsoft Security Copilot agents](/copilot/security/agents-overview) published by Microsoft and partners. They integrate with Microsoft Entra and carry out various identity operations tasks, such as conditional access optimization, access reviews, and risk management.
-
-In addition to agents, Security Store provides solutions that integrate with Microsoft Entra products like [Verified ID](/entra/verified-id/) and [External ID](/entra/external-id/). These solutions are non-agentic and deliver capabilities such as advanced fraud prevention and WAF and bot defense directly into your identity workflows.
+[Security Store](/security/store/what-is-security-store) in the Microsoft Entra admin center offers agents and integrated solutions that can help you perform identity and access management tasks efficiently. These offerings include [Microsoft Security Copilot agents](/copilot/security/agents-overview) published by Microsoft and approved partners. Security Store also provides non-agentic solutions that integrate with Microsoft Entra products and can deliver capabilities such as advanced fraud prevention directly into your identity workflows.
 
 This article explains how to discover and deploy AI agents and solutions in Microsoft Entra.
 
@@ -35,19 +33,18 @@ To purchase and deploy agents and solutions from Security Store, you need:
 
 Security Store is embedded in the Microsoft Entra admin center, so you can discover and deploy agents and solutions without leaving your identity management workflow.
 
-To discover and deploy agents and solutions:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a []().
 1. Browse to **Security Store**.
-1. Browse or search for the agent or solution you want to deploy. Use the **All** and **Agent** tabs to filter results.
+1. Browse or search for the agent or solution you want to deploy.
+    - Use the **All** and **Agent** tabs to filter results.
 1. Select the agent or solution to view its details, including capabilities, requirements, and setup instructions.
 1. To purchase and deploy the agent or solution:
-
-    - Select **Get agent** or **Get solution** to begin the deployment process if you have sufficient permissions. For more information, see [Prerequisites](#prerequisites).
+    - Select **Get agent** or **Get solution** to begin the deployment process if you have sufficient permissions.
     - Select **Copy link** to copy the details page URL and share it with a security administrator, if you don't have permissions to deploy agents or solutions.
     - For partner-published agents, complete the purchase and deploy on the [Security Store website](https://securitystore.microsoft.com/), as described in the [Microsoft Security Store documentation](/security/store/get-agents-in-security-store).
 
-        You can manage centralized purchases for partner-published agents through public offers, or through private offers, as described in [How to purchase SaaS solutions (private offers)](/security/store/how-to-purchase-saas-solutions-private-offers).
+    > [!TIP]
+    > You can manage centralized purchases for partner-published agents through public offers, or through private offers, as described in [How to purchase SaaS solutions (private offers)](/security/store/how-to-purchase-saas-solutions-private-offers).
 
 1. After purchasing an agent, select **Security Copilot** > **Agents**, find your agent in the **Ready for setup** section, and then select **Set up** to begin agent setup.
 
