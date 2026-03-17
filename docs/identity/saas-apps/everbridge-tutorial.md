@@ -77,9 +77,8 @@ Follow these steps to enable Microsoft Entra SSO.
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
     >[!NOTE]
-	>Configure the application either as the manager portal *or* as the member portal on both the Azure portal and the EverBridge portal.
-
-	> The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in Everbridge Manager Portal.
+	> Configure the application either as the manager portal *or* as the member portal on both the Azure portal and the EverBridge portal.
+	> The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in EverBridge Manager Portal.
 
     a. In the **Identifier** box, enter a URL that follows the pattern.
     `https://sso.everbridge.net/<API_Name>`
@@ -88,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     * If you are configuring an account level SSO, use
       `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
-    * If you are configuring an org level SSO, use
+    * If you are configuring an organization level SSO, use
       `https://manager.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
 	> [!NOTE]
@@ -129,7 +128,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
 1. From the menu on the left, select the **Settings** menu. Under **Security**, select **Single Sign-On for Manager Portal**.
    
-     ![Configure single sign-on](./media/everbridge-tutorial/sso-settings.png)
+     ![Screenshot showing how to configure single sign-on.](./media/everbridge-tutorial/sso-settings.png)
    
      a. In the **Name** box, enter the name of this setting. An example is your company name.
    
