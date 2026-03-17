@@ -11,7 +11,7 @@ ms.date: 03/17/2026
 ---
 # Microsoft Security Copilot in Microsoft Entra proof-of-concept guide
 
-Use the Microsoft Security Copilot in Microsoft Entra (Security Copilot in Entra) proof-of-concept (PoC) guide to harness artificial intelligence (AI)-powered insights and automation and demonstrate the value of Security Copilot in Entra in your environment through pre-defined scenarios. The guide illustrates a structured approach to accelerate testing and value realization.  
+Use the Microsoft Security Copilot in Microsoft Entra (Security Copilot in Entra) proof-of-concept (PoC) guide to harness artificial intelligence (AI)-powered insights and automation. Demonstrate the value of Security Copilot in Entra in your environment through predefined scenarios. The guide illustrates a structured approach to accelerate testing and value realization.  
 
    > [!IMPORTANT]
    > This guide assumes your organization runs the PoC in an environment with the needed user data.
@@ -30,12 +30,12 @@ Understanding the core concepts of Security Copilot in Entra is the first step t
 
 ## PoC prerequisites
 
-To conduct this Security Copilot in Entra PoC, ensurethe following prerequisites are met. 
+To conduct this Security Copilot in Entra PoC, ensure the following prerequisites are met. 
 
 * An enabled Microsoft Entra tenant with Microsoft Entra ID P1, P2, or a trial license  
   * [Create an account for free](https://signup.azure.com/)  
-* Additional licenses are needed for Microsoft Entra Suite scenarios
-* To enable the PoC, a assign a cloud user one of the following roles:  
+* More licenses are needed for Microsoft Entra Suite scenarios
+* To enable the PoC, assign a cloud user one of the following roles:  
   * Global Administrator 
   * Security Administrator 
   * Billing Administrator 
@@ -64,14 +64,14 @@ The following table has key scenarios, and the capabilities Security Copilot in 
 |Microsoft Entra Internet Access</br>Microsoft Entra Private Access|[Global secure access](/entra/security-copilot/entra-internet-access-private-access-scenarios)|
 
    > [!NOTE]
-   > Security Copilot in Entra uses on-behalf-of (OBO) authentication, provided by OAuth 2.0. This is an authentication flow from delegation in OAuth. When a Security Operations user issues a prompt, Security Copilot in Entra passes the user identity and permissions through the request chain. This prevents the user from gaining permissions to resources for which they shouldn’t have access. For more information about OBO authentication, see [Microsoft identity platform and OAuth2.0 on-behalf-of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow). 
+   > Security Copilot in Entra uses on-behalf-of (OBO) authentication, provided by OAuth 2.0, an authentication flow from delegation in OAuth. When a Security Operations user issues a prompt, Security Copilot in Entra passes the user identity and permissions through the request chain. This action prevents the user from gaining permissions to resources for which they shouldn’t have access. For more information about OBO authentication, see [Microsoft identity platform and OAuth2.0 on-behalf-of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow). 
    
 
 ## Set up Security Copilot in Entra
 
 Security Copilot in Entra is included in the Microsoft 365 E5 subscription. E5 customers receive zero-click activation, meaning Security Copilot in Entra is provisioned and ready to use, when enabled. No further action is needed. 
 
-If your subscription doesn’t include Security Copilot in Entra, proceed to the instructions to [onboard Security Copilot](/copilot/security/get-started-security-copilot). If you aren’t an E5 customer, a minimum of 1 Security Compute Unit (SCU) is needed. We recommend 15-20 SCUs. 
+If your subscription doesn’t include Security Copilot in Entra, proceed to the instructions to [onboard Security Copilot](/copilot/security/get-started-security-copilot). If you aren’t an E5 customer, a minimum of one Security Compute Unit (SCU) is needed. We recommend 15-20 SCUs. 
 
 ### Identify use cases
 
@@ -87,14 +87,14 @@ The following table has suggested prompts, based on persona function.
 
 |Persona|Scenario|Suggested prompt|
 |---|---|---|
-|Helpdesk Administrator|Investigate users blocked from sign-in, due to a risk event. Help Desk is on the call, with the user, to resolve the issue. |I'm investigating a user email **julie-b@contoso** blocked due to high risk. Help me understand why this user is blocked. Also, let me know if other users are blocked, due to the same situation, within the last 24 hours. |
-|Security operations center (SOC) team member|Investigate a spike of password resets from a country/region, or department to determine trends or patterns. |I'm seeing a trend from an IP address that's high risk for multiple users. Review all user applications in the United States to determine if there’s a pattern of applications, services, or groups. |
+|Helpdesk Administrator|Investigate users blocked from sign-in, due to a risk event. To resolve the issue, Help Desk is on the call, with the user. |I'm investigating a user email **julie-b@contoso** blocked due to high risk. Help me understand why this user is blocked. Also, let me know if other users are blocked, due to the same situation, within the last 24 hours. |
+|Security operations center (SOC) team member|Investigate a spike of password resets from a country/region, or department: determine trends or patterns. |I'm seeing a trend from an IP address that's high risk for multiple users. Review all user applications in the United States to determine if there’s a pattern of applications, services, or groups. |
 |Identity administrator|Investigate the potential effects of a new Conditional Access policy|Show me the signins and the Conditional Access policies that apply. List users without registered multifactor authentication (MFA). Show me sign-in logs from unmanaged devices for the past 14 days|
 |Tenant administrator|Guest management|Show me the guest users in the tenant|
 
 ## PoC scenarios: Microsoft Entra ID
 
-The following scenarios relate to user authentication, mulitfactor authentication (MFA), and audit log investigations.
+The following scenarios relate to user authentication, multifactor authentication (MFA), and audit log investigations.
 
 ### User authentication and multifactor authentication 
 
@@ -113,7 +113,7 @@ The following scenarios relate to user authentication, mulitfactor authenticatio
 * *Tell me more about request ID \<RequestID>*
 8. Use the response to understand failure cause, authentication method, device state, and applied policies. 
 9. Assess the effect of device compliance(optional branch) If device posture is relevant, use the following prompt.
-* *Which users signed in on non-compliant devices in the last 24 hours?*
+* *Which users signed in on noncompliant devices in the last 24 hours?*
 10. Review returned RequestIDs to validate a specific sign‑in.
 11. Use the RequestID to retrieve event context, without manual log filtering. 
 * *Show sign-in details for request ID \<RequestID>*
@@ -159,8 +159,8 @@ The following scenarios relate to user authentication, mulitfactor authenticatio
 |---|---|
 |Efficiency|Reduce time to investigate audit changes by ≥50%, compared to manual portal navigation, log exports, or filtering events individually. |
 |Coverage|Identify relevant audit activities, including new Conditional Access policies, modifications, exports, and changes to service principals, in a Security Copilot in Entra interaction. |
-|Actionability|Analysts can go from high‑level summaries, for instancepolicy changes or exports,to event‑level details without writing KQL or switching screens. |
-|Insight quality|Security Copilot in Entra delivers natural‑language explanations of changes , who initiated them, when, in addition to context.|
+|Actionability|Analysts can go from high‑level summaries, for instance policy changes or exports, to event‑level details without writing KQL or switching screens. |
+|Insight quality|Security Copilot in Entra delivers natural‑language explanations of changes, who initiated them, when, in addition to context.|
 |Security posture|Detect potentially risky or unexpected administrative changes, such as unapproved exports, or unowned Service Principals to help with remediation or escalation. |
 
 Learn more about [Microsoft Entra ID scenarios](/entra/security-copilot/entra-id-scenarios).
@@ -286,7 +286,7 @@ Use this section to translate your PoC findings into measurable outcomes that re
 Short-term actions (0–30 days) 
 
 1. Establish owners and enable Privileged Identity Management (PIM) for agent role owners 
-2. Create end-user communication for changes that affects theuser experience. 
+2. Create end-user communication for changes that affects the user experience. 
 3. Set up and/or confirm data retention for agent log and metrics.  
 4. Apply Conditional Access optimization agent recommendations: 
 
