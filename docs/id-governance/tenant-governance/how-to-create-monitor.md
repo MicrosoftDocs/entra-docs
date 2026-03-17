@@ -25,7 +25,7 @@ This article describes how to create and update a configuration monitor in the [
 1. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
 
 > [!TIP]
-> Although you can author a configuration baseline directly in the wizard, in most scenarios it's easiest to prepare the baseline before you start monitor creation. One approach is to copy the baseline from an existing monitor. To learn more, see [Author a configuration baseline](how-to-author-configuration-baseline.md).
+> Although you can author a configuration baseline directly in the wizard, in most scenarios it's easiest to prepare the baseline before you start monitor creation. One approach is to copy the baseline from an existing monitor. To learn more, see [Configuration management](configuration-management.md).
 
 ## Create a configuration monitor
 
@@ -67,7 +67,7 @@ When you update an existing configuration monitor, the updated settings replace 
 
 ## Next steps
 
-- [Author a configuration baseline](how-to-author-configuration-baseline.md)
+- [Configuration management](configuration-management.md)
 - [See monitor results and configuration drifts](how-to-see-monitor-results.md)
 - [Update or delete a monitor](how-to-update-delete-monitor.md)
 - [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md)

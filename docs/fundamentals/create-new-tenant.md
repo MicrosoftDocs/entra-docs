@@ -81,7 +81,7 @@ In order to automatically establish governance relationships with add-on tenants
 
 Your new tenant is created with the domain contoso.onmicrosoft.com. If you defined a governance policy template, a tenant governance relationship is automatically formed between your home tenant and your newly created tenant. Your billing account now shows a Microsoft Entra ID Free billing asset linked to your newly created tenant under the selected subscription and resource group.
 
-To learn more about governance relationships and policy templates, see [Secure add-on tenant creation](~/id-governance/tenant-governance/tenant-creation-settings.md).
+To learn more about governance relationships and policy templates, see [Governance relationships](~/id-governance/tenant-governance/governance-relationships.md) and [Governance policy templates](~/id-governance/tenant-governance/governance-policy-templates.md).
 
 ---
 

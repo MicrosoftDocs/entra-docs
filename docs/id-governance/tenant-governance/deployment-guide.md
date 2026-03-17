@@ -81,7 +81,7 @@ If you plan to use the secure add-on tenant creation feature, configure a defaul
 1. Create or update a policy template with the ID `default`.
 1. Configure the delegated administration roles and applications for new tenants.
 
-If no default template exists, new tenants created through the secure add-on flow don't automatically get a governance relationship. For more information, see [Secure add-on tenant creation settings](tenant-creation-settings.md).
+If no default template exists, new tenants created through the secure add-on flow don't automatically get a governance relationship. For more information, see [Create a governed tenant](how-to-create-tenant.md).
 
 ## Phase 3: Set up governance relationships
 
@@ -193,7 +193,7 @@ A configuration baseline is a JSON representation of the desired tenant configur
 
 Each baseline can include up to 200 resource instances. The overall daily limit is 800 resource instances across all monitors.
 
-For more information, see [Author a configuration baseline](how-to-author-configuration-baseline.md).
+For more information, see [Configuration management](configuration-management.md).
 
 ### Create a monitor
 

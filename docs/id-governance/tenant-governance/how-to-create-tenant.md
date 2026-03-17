@@ -37,7 +37,7 @@ After the system creates the tenant:
 1. A Microsoft Entra ID Free billing asset appears in your Azure subscription under the resource group you selected.
 1. The new tenant appears in your [related tenants](related-tenants.md) inventory.
 
-To learn more about what the secure add-on tenant creation flow configures, see [Secure add-on tenant creation](tenant-creation-settings.md).
+To learn more about governance relationships and policy templates, see [Governance relationships](governance-relationships.md) and [Governance policy templates](governance-policy-templates.md).
 
 ## Related content
 

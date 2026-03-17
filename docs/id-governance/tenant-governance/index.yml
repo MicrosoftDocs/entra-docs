@@ -52,8 +52,8 @@ landingContent:
             url: how-to-setup-governance-relationship.md
           - text: Use delegated administration and monitor activity
             url: how-to-delegated-administration.md
-          - text: Author a configuration baseline
-            url: how-to-author-configuration-baseline.md
+          - text: Configuration management
+            url: configuration-management.md
           - text: Create a tenant
             url: how-to-create-tenant.md
 
