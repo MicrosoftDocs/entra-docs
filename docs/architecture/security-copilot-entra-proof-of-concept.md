@@ -4,7 +4,7 @@ description: Learn to harness AI-powered insights and automation and demonstrate
 author: gargi-sinha
 ms.author: gasinh
 ms.topic: best-practice
-ms.reviewer: martinco
+ms.reviewer: gasinh
 ms.date: 03/17/2026
 
 #customer intent: As an administrator I want a structured approach to accelerate testing and value realization for Security Copilot in Entra
