@@ -4,23 +4,22 @@ description: include file
 author: barclayn
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 03/10/2026
+ms.date: 03/17/2026
 ms.author: barclayn
 ms.custom: include file
 ---
 
-These tables list the Microsoft Entra Tenant Governance features available with each license tier.
+The following table shows what features associated with Tenant Governance are available with each license.
+
+> [!NOTE]
+> Microsoft Entra P1 is also included in Microsoft 365 E3 and Microsoft 365 Business Premium. Microsoft Entra P2 is also included in Microsoft 365 E5. Microsoft Entra ID Governance is also included in Microsoft Entra Suite and Microsoft 365 E7.
 
 ### Configuration management
 
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
-| Single tenant configuration - monitoring | | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ 10 extra resources per day per license |
-| Single tenant configuration - snapshots | | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ 50 extra resources per month per license |
-| Single tenant configuration - drift reporting | | ✅ | ✅ | ✅ |
-
-> [!NOTE]
-> Microsoft 365 E3 and Microsoft 365 Business Premium also include Microsoft Entra P1. Microsoft 365 E5 also includes Microsoft Entra P2. Microsoft Entra Suite also includes Microsoft Entra ID Governance.
+| Single tenant configuration monitoring and drift reporting | | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day |
+| Single tenant configuration snapshots | | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs |
 
 ### Related tenants
 
