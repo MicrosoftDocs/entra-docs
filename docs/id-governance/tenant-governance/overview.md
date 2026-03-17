@@ -10,8 +10,7 @@ ms.date: 03/05/2026
 
 # What is Microsoft Entra Tenant Governance? (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 [!INCLUDE [entra-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 

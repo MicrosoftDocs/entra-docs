@@ -10,8 +10,7 @@ ms.date: 03/05/2026
 
 # Set up permissions for tenant monitoring (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 This article describes how to manage the permissions that the configuration management service needs to access resources identified in a monitor. An administrator must assign these permissions manually. Two types of permissions can be managed in the Microsoft Entra admin center: application permissions and Microsoft Entra roles.
 

@@ -9,7 +9,7 @@ metadata:
   ms.date: 03/17/2026
 title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
 summary: |
-  [!INCLUDE [public-preview-disclaimer](~/includes/public-preview-disclaimer.md)]
+  [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
   This article answers frequently asked questions about Microsoft Entra Tenant Governance.
 

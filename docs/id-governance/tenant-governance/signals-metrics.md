@@ -12,8 +12,7 @@ ms.date: 03/10/2026
 
 # Signals and metrics for tenant discovery (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 **Tenant discovery** is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**, which are tenants that have a discoverable relationship with your tenant.
 

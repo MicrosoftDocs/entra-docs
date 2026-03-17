@@ -10,8 +10,7 @@ ms.date: 03/17/2026
 
 # Deploy Microsoft Entra Tenant Governance end to end (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 This article describes how to deploy Microsoft Entra Tenant Governance across your organization. The deployment follows five phases: verifying prerequisites, discovering related tenants, establishing governance relationships, implementing delegated administration, and setting up configuration monitoring.
 
@@ -244,4 +243,4 @@ For more information, see [Create a governed workforce tenant](how-to-create-ten
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)
 - [Configuration management](configuration-management.md)
 - [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview)
-- [Frequently asked questions](faq.md)
+- [Frequently asked questions](faq.yml)

@@ -12,8 +12,7 @@ ms.date: 03/10/2026
 
 # Enable tenant discovery (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 Related tenants help administrators discover other Microsoft Entra tenants that have observable relationships with their tenant. Microsoft Entra infers these relationships from activity signals such as B2B collaboration, multitenant application consent, and shared billing accounts. A related tenant doesn't imply ownership or administrative control. It indicates an observed association across Microsoft services.
 

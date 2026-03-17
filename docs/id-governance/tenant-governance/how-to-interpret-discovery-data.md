@@ -10,8 +10,7 @@ ms.date: 03/05/2026
 
 # Interpret tenant discovery data (preview)
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 This article helps administrators and security teams analyze related tenants discovered through Microsoft Entra Tenant Governance. It explains how to interpret related tenant signals and metrics to decide when to:
 
