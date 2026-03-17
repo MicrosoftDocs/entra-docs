@@ -7,9 +7,7 @@ ms.reviewer: krbain
 ms.custom: it-pro
 
 ---
-# Sharing accounts with Microsoft Entra ID
-
-## Overview
+# Share accounts with Microsoft Entra ID
 
 In Microsoft Entra ID, part of Microsoft Entra, sometimes organizations need to use a single username and password for multiple people, which often happens in the following cases:
 
@@ -21,7 +19,7 @@ Traditionally, these accounts are shared by distributing the credentials (userna
 The traditional sharing model has several drawbacks:
 
 * Enabling access to new applications requires you to distribute credentials to everyone that needs access.
-* Each shared application might require its own unique set of shared credentials, requiring users to remember multiple sets of credentials. When users have to remember many credentials, the risk increases that they resort to risky practices. (for example, writing down passwords).
+* Each shared application might require its own unique set of shared credentials, requiring users to remember multiple sets of credentials. When users have to remember many credentials, the risk increases that they resort to risky practices (for example, writing down passwords).
 * You can't tell who has access to an application.
 * You can't tell who *accessed* an application.
 * When you want to remove access to an application, you have to update the credentials and redistribute them to everyone that needs access to that application.
@@ -32,7 +30,7 @@ The traditional sharing model has several drawbacks:
 
 Microsoft Entra ID provides a new approach to using shared accounts that eliminates these drawbacks.
 
-The Microsoft Entra administrator configures which applications a user can access by using the Access Panel and choosing the type of single sign-on best suited for that application. One of those types, *password-based single-sign on*, lets Microsoft Entra ID act as a kind of "broker" during the sign-on process for that app.
+The Microsoft Entra administrator configures which applications a user can access by using the Access Panel and choosing the type of single sign-on best suited for that application. One of those types, *password-based single sign-on*, lets Microsoft Entra ID act as a kind of "broker" during the sign-in process for that app.
 
 Users sign in once with their organizational account. This account is the same one they regularly use to access their desktop or email. They can discover and access only those applications that they're assigned to. With shared accounts, this list of applications can include any number of shared credentials. The end-user doesn't need to remember or write down the various accounts they might be using.
 
@@ -42,16 +40,16 @@ Microsoft Entra ID supports shared accounts for any Enterprise Mobility Suite (E
 
 Microsoft Entra features that enable account sharing include:
 
-* [Password single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#single-sign-on-options)
-* Password single sign-on agent
-* [Group assignment](groups-self-service-management.md)
-* Custom Password apps
-* [App usage dashboard/reports](~/identity/authentication/howto-sspr-reporting.md)
-* End-user access portals
-* [App proxy](/entra/identity/app-proxy)
-* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
+* [Password single sign-on](~/identity/enterprise-apps/plan-sso-deployment.md#single-sign-on-options).
+* Password single sign-on agent.
+* [Group assignment](groups-self-service-management.md).
+* Custom Password apps.
+* [App usage dashboard/reports](~/identity/authentication/howto-sspr-reporting.md).
+* End-user access portals.
+* [App proxy](/entra/identity/app-proxy).
+* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory).
 
-## Sharing an account
+## Share an account
 
 To use Microsoft Entra ID to share an account, you need to:
 
@@ -64,5 +62,5 @@ You can also make your shared account more secure with multifactor authenticatio
 ## Next steps
 
 * [Application Management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
-* [Protecting apps with Conditional Access](/azure/active-directory-b2c/overview)
+* [Protecting apps with Conditional Access](~/identity/conditional-access/overview.md)
 * [Self-service group management/SSAA](groups-self-service-management.md)
