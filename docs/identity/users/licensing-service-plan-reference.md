@@ -13,7 +13,9 @@ ms.collection: M365-identity-device-management
 
 # Product names and service plan identifiers for licensing
 
-When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) or the [Microsoft 365 admin center](https://admin.microsoft.com), you see product names that look something like *Office 365 E3*. When you use PowerShell v1.0 cmdlets, the same product is identified using a specific but less friendly name: *ENTERPRISEPACK*. When using PowerShell v2.0 cmdlets or [Microsoft Graph](/graph/api/resources/subscribedsku), the same product is identified using a GUID value: *6fd2c87f-b296-42f0-b197-1e91e994b900*. The following table lists the most commonly used Microsoft online service products and provides their various ID values. These tables are for reference purposes in Microsoft Entra ID, part of Microsoft Entra, and are accurate only as of the date when this article was last updated. Microsoft will continue to make periodic updates to this document. 
+When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) or the [Microsoft 365 admin center](https://admin.microsoft.com), you see product names that look something like *Office 365 E3*. When you use PowerShell v1.0 cmdlets, the same product is identified using a specific but less friendly name: *ENTERPRISEPACK*. When using PowerShell v2.0 cmdlets or [Microsoft Graph](/graph/api/resources/subscribedsku), the same product is identified using a GUID value: *6fd2c87f-b296-42f0-b197-1e91e994b900*.
+
+The following table lists the most commonly used Microsoft online service products and provides their various ID values. These tables are for reference purposes in Microsoft Entra ID, part of Microsoft Entra, and are accurate only as of the date when this article was last updated. Microsoft will continue to make periodic updates to this document. 
 
 - **Product name**: Used in management portals
 - **String ID**: Used by PowerShell v1.0 cmdlets when performing operations on licenses or by the **skuPartNumber** property of the **subscribedSku** Microsoft Graph API
@@ -21,9 +23,9 @@ When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Mic
 - **Service plans included**: A list of service plans in the product that correspond to the string ID and GUID
 - **Service plans included (friendly names)**: A list of service plans (friendly names) in the product that correspond to the string ID and GUID
 
->[!NOTE]
->This information was last updated on October 29, 2025.<br/>You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
-><br/>
+> [!NOTE]
+> This information was last updated on October 29, 2025.
+> You can also download a CSV version of this table [here](https://download.microsoft.com/download/e/3/e/e3e9faf2-f28b-490a-9ada-c6089a1fc5b0/Product%20names%20and%20service%20plan%20identifiers%20for%20licensing.csv).
 
 | Product name | String ID | GUID | Service plans included | Service plans included (friendly names) |
 | --- | --- | --- |--- | --- |
@@ -653,8 +655,8 @@ This section lists the most common service plans that are mutually exclusive, gr
 
 ### Service: *Microsoft Entra ID*
 
->[!NOTE]
->All service plans related to Microsoft Entra ID can now be assigned together, to the same user. This simplifies certain license management scenarios, such as moving users from Microsoft Entra Basic to Microsoft Entra ID P1.
+> [!NOTE]
+> All service plans related to Microsoft Entra ID can now be assigned together, to the same user. This simplifies certain license management scenarios, such as moving users from Microsoft Entra Basic to Microsoft Entra ID P1.
 
 ### Service: *Dynamics CRM*
 
