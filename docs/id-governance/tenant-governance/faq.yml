@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
   title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
-  description: Find answers to common questions about Microsoft Entra Tenant Governance, including related tenants, governance relationships, configuration management, and secure tenant creation.
+  description: Find answers to common questions about Microsoft Entra Tenant Governance, including discovery, governance relationships, and monitoring
   author: barclayn
   ms.author: barclayn
   ms.service: entra-id-governance

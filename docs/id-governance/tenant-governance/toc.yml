@@ -58,8 +58,6 @@
     items:
     - name: Set up permissions
       href: how-to-setup-permissions-tenant-monitoring.md
-    - name: Author a configuration baseline
-      href: how-to-author-configuration-baseline.md
     - name: Create or update a monitor
       href: how-to-create-monitor.md
     - name: Update or delete a monitor

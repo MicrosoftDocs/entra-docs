@@ -43,6 +43,8 @@ Tenants that meet these criteria can skip the invitation step:
 
 ## Relationship lifecycle
 
+A governance relationship moves through several states from creation to termination. The following sections describe the states for both requests and established relationships.
+
 ### Request states
 
 Governance requests progress through these states:

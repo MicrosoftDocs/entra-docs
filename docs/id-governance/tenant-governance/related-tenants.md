@@ -44,6 +44,8 @@ These metrics describe how tenants are connected. They don't assign qualitative 
 
 ## Why related tenants matter
 
+Related tenants provide value in several key areas, from surfacing unsanctioned tenants to enabling informed governance decisions.
+
 ### Visibility into both external and shadow-IT tenants
 
 Organizations often have limited visibility into tenants that exist outside formal provisioning processes. Employees might create tenants for proof-of-concept work, testing, or experimentation, while business units might engage directly with external tenants for collaboration or SaaS usage.

@@ -1,6 +1,6 @@
 ---
 title: Update or delete a monitor (preview)
-description: Learn how to update or delete a configuration monitor in Microsoft Entra Tenant Governance.
+description: Learn how to update or delete a configuration monitor in Microsoft Entra Tenant Governance when baselines or requirements change
 author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
