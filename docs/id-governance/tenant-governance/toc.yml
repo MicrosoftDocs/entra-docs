@@ -6,11 +6,13 @@
   items:
   - name: What is tenant governance?
     href: overview.md
+  - name: Deployment guide
+    href: deployment-guide.md
 
 - name: Concepts
   expanded: true
   items:
-  - name: Tenant discovery
+  - name: Related tenants
     items:
     - name: Related tenants
       href: related-tenants.md
@@ -28,17 +30,11 @@
     items:
     - name: Configuration management
       href: configuration-management.md
-  - name: Secure tenant creation
-    items:
-    - name: Licensing
-      href: licensing.md
-    - name: Tenant creation settings
-      href: tenant-creation-settings.md
 
 - name: How-to guides
   expanded: true
   items:
-  - name: Tenant discovery
+  - name: Related tenants
     items:
     - name: Enable tenant discovery
       href: how-to-enable-tenant-discovery.md
@@ -68,12 +64,8 @@
       href: how-to-see-monitor-results.md
     - name: Update or delete a monitor
       href: how-to-update-delete-monitor.md
-  - name: Secure tenant creation
-    items:
-    - name: Create a tenant
-      href: how-to-create-tenant.md
 
 - name: Reference
   items:
   - name: FAQ
-    href: faq.yml
+    href: faq.md

@@ -22,7 +22,12 @@ This article describes how to create and update a configuration monitor in the [
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
+1. Verify that your tenant has a license for Microsoft Entra Tenant Governance.
+
 1. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
+
+> [!TIP]
+> Although you can author a configuration baseline directly in the wizard, in most scenarios it's easiest to prepare the baseline before you start monitor creation. One approach is to copy the baseline from an existing monitor. To learn more, see [Author a configuration baseline](how-to-author-configuration-baseline.md).
 
 ## Create a configuration monitor
 
@@ -30,30 +35,38 @@ Use these steps to create a new configuration monitor. The monitor creation wiza
 
 ### Step 1: Permissions
 
-On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. Grant all required permissions before you proceed.
+On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. These permissions can be application permissions or Microsoft Entra roles. Add or remove permissions as needed, then grant all required permissions before you proceed.
 
 Select **Next** to continue.
 
 ### Step 2: Configuration baseline
 
-On the **Configuration baseline** page, upload or edit the JSON file that defines the desired configuration state for the resources you want to monitor. The monitor evaluates this baseline each time it runs.
+On the **Configuration baseline** page, write, paste, or upload the JSON file that defines the desired configuration state for the resources you want to monitor. The JSON includes the configuration baseline and elements that define the display name and description of the monitor. The monitor evaluates this baseline each time it runs.
 
 After you validate the baseline, select **Next**.
 
 ### Step 3: Review
 
-On the **Review** page, confirm the monitor name, description, and configuration baseline.
+On the **Review** page, confirm the monitor name, description, and configuration baseline. Verify that the resource count matches what you intend.
 
 Select **Create monitor** to create the configuration monitor.
 
 ## Update an existing configuration monitor
 
-Updating a configuration monitor uses the same wizard flow and steps as creating a monitor: **Permissions → Configuration baseline → Review**.
+To update an existing configuration monitor:
+
+1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
+1. Find the monitor you want to update and select the edit (pencil) icon next to its name.
+
+The update wizard uses the same steps as creating a monitor: **Permissions → Configuration baseline → Review**.
 
 When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
 > [!IMPORTANT]
 > When you change an existing monitor, Tenant Governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
+
+> [!NOTE]
+> After you create or update a monitor, you might need to wait up to six hours for the monitor to run. After the monitor runs, you can view monitor results and configuration drifts.
 
 ## Next steps
 

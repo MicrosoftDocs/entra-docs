@@ -67,6 +67,7 @@ This action enables related tenant discovery for the calling tenant.
 After related tenants appear, you can:
 
 - [Review the list of related tenants](related-tenants.md) surfaced by discovery.
+- [Interpret tenant discovery data](how-to-interpret-discovery-data.md) to classify and prioritize related tenants.
 - Use the data to inform governance decisions:
   - [Set up governance relationships](how-to-setup-governance-relationship.md) with discovered tenants.
   - Plan tenant inventory and cleanup efforts.

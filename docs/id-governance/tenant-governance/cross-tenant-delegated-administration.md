@@ -16,7 +16,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Cross-tenant delegated administration is a capability within Tenant governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant, without creating local accounts or business-to-business (B2B) guest accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
+Cross-tenant delegated administration is a capability within Tenant Governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant, without creating local accounts or business-to-business (B2B) guest accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
 
 Before you can use cross-tenant delegated administration, you must first create a governance relationship between the governing tenant and each governed tenant. The governance relationship establishes the trust boundary and defines the delegated administration policies that control which roles and permissions are available to governing tenant administrators.
 
@@ -72,4 +72,5 @@ Cross-tenant delegated administration provides several advantages for organizati
 
 - [Set up a governance relationship](how-to-setup-governance-relationship.md)
 - [Use delegated administration](how-to-delegated-administration.md)
+- [Monitor governing tenant admin activity](how-to-monitor-governing-activity.md)
 - [Governance policy templates](governance-policy-templates.md)

@@ -14,7 +14,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials via granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins operate within their authorized scope.
+After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials through granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins operate within their authorized scope.
 
 This article describes how to identify, review, and monitor the activities that governing tenant administrators perform in your governed tenant.
 

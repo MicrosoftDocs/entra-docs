@@ -149,5 +149,6 @@ Some related tenants might require governance; others might require monitoring; 
 ## Next steps
 
 - [Signals and metrics for tenant discovery](signals-metrics.md)
+- [Interpret tenant discovery data](how-to-interpret-discovery-data.md)
 - [Enable tenant discovery](how-to-enable-tenant-discovery.md)
 - [Governance relationships](governance-relationships.md)

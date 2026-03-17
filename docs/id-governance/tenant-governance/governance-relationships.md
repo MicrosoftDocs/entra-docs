@@ -39,7 +39,7 @@ To create a new governance relationship, or update an existing one, administrato
 
 Tenants that meet these criteria can skip the invitation step:
 
-- The future governing tenant identifies the future governed tenant as a related tenant through Tenant discovery with a Shared billing account.
+- The future governing tenant identifies the future governed tenant as a related tenant through tenant discovery with a shared billing account.
 
 - Tenants in an active governance relationship can skip the invitation step to update their relationship or create a new one.
 

@@ -69,7 +69,7 @@ An admin in the governed tenant must accept the governance request to complete t
 
 When the governed tenant accepts the governance request, these changes take effect:
 
-- Tenant governance updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
+- Tenant Governance updates the policy snapshot of the existing governance relationship to reflect the latest version of the policy template.
 
 - If you updated delegated administration roles, Tenant Governance updates the GDAP role assignments in the governed tenant accordingly.
 
