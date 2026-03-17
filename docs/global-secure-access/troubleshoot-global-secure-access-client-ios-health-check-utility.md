@@ -2,10 +2,10 @@
 title: Troubleshoot the Global Secure Access client for iOS with Health check utility
 description: Learn if a device can communicate with the Global Secure Access service and tunnel traffic, by using the health check utility.
 ms.topic: troubleshooting
-ms.author: jricketts
-author: matursca
+ms.author: matursca
+author: jricketts
 ms.reviewer: gauthamca
-ms.date: 03/16/2026
+ms.date: 03/17/2026
 
 # Customer intent: I want a single view for device compliance, local network configuration, and policy-service readiness signals that report a healthy state and traffic forwarding. 
 
@@ -65,8 +65,8 @@ In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm t
    > [!NOTE]
    > After changes are made, it can take up to 30 minutes for the status to update. 
 
-3. When health check tests indicate a healthy state, re-attempt to connect to the resource.
-4. After remediation, restart the GSA client: Toggle it **Off** and **On** in Microsoft Defender.
+3. When health check tests indicate a healthy state, attempt to connect to the resource.
+4. After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender.
 
 ### Bring-your-own-device scenarios
 
@@ -83,7 +83,7 @@ In Microsoft Defender:
 5. Confirm required traffic profiles are connected. 
 
    > [!NOTE]
-   > After remediation, restart the GSA client: Toggle it **Off** and **On** in Microsoft Defender.
+   > After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender.
 
 You can learn to [monitor results of your Intune device-compliance policies](/intune/intune-service/protect/compliance-policy-monitor).
 
@@ -94,7 +94,7 @@ Manual proxy on iOS interferes with Global Secure Access traffic routing. For in
 1. On the device, go to **Settings**, select **Wi-Fi**. 
 2. Next to the active network, select the **info** icon (**i**). 
 3. Scroll down to HTTP Proxy, and select **Configure Proxy**. 
-4. Select **Off** or **Automatic**, if required by the environment for proxy auto-configuration (PAC).
+4. Select **Off** or **Automatic**, if required by the environment for proxy autoconfiguration (PAC).
 
    ![Screenshot of Configure Proxy dialog.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/configure-proxy.png)
 
@@ -126,11 +126,11 @@ To ensure the VPN is disabled:
 11. Confirm cellular data is turned on.
 
    > [!NOTE]
-   > After remediation, restart the GSA client: Toggle it **Off** and **On** in Microsoft Defender, or you can restart the device.
+   > After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender, or you can restart the device.
 
 ## Diagnostic URLs in the forwarding profile
 
-The following test checks that the configuration contains a URL to probeservice health, for channels activated in the forwarding profile.
+The following test checks that the configuration contains a URL to probe service health, for channels activated in the forwarding profile.
 
 ### Break-glass mode disabled
 
@@ -142,10 +142,10 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference). 
 2. Browse to **Global Secure Access**
-3. Selelct **Connect**.
+3. Select **Connect**.
 4. Select **Traffic forwarding**. 
 5. Enable at least one traffic profile. 
-6. In about an hour, Global Secure Access receives the updated forwarding proile.
+6. In about an hour, Global Secure Access receives the updated forwarding proifle.
 
    ![Screenshot of profile options for traffic, private access, and internet access.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/profile-options.png)
 
@@ -154,7 +154,7 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
 
 ## Next steps
 
-* Go to [Global Secure Access documentation](s/entra/global-secure-access/) to learn about getting started, remote networks, access, monitoring, and more
+* Go to [Global Secure Access documentation](/entra/global-secure-access/) to learn about getting started, remote networks, access, monitoring, and more
 * Learn to set up and deploy the [Global Secure Access client app on iOS and iPadOS devices](/entra/global-secure-access/how-to-install-ios-client)
 * You can troubleshoot the [Global Secure Access mobile client for Android and iOS using the advanced diagnostics utility](/entra/global-secure-access/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics)
 
