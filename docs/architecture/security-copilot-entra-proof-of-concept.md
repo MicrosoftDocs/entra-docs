@@ -15,6 +15,9 @@ Use the Microsoft Security Copilot in Microsoft Entra (Security Copilot in Entra
 
    > [!IMPORTANT]
    > This guide assumes your organization runs the PoC in an environment with the needed user data.
+ 
+   > [!NOTE]
+   > Security Copilot in Entra currently supports commercial cloud tenants, **not** the US Government clouds.
 
 ## Understand the product
 
