@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 02/24/2026
+ms.date: 03/17/2026
 ms.custom: include file
 ---
 
@@ -84,11 +84,6 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/backup/preview/cancel | Cancel a Microsoft Entra backup operation to compare a backup snapshot with the current state. |
-> | microsoft.directory/backup/preview/create | Create a Microsoft Entra backup operation that allows a user to compare a backup snapshot with the current state. |
-> | microsoft.directory/backup/recovery/cancel | Cancel a Microsoft Entra recovery operation to recover the contents of a backup snapshot |
-> | microsoft.directory/backup/recovery/create | Create a Microsoft Entra recovery operation that allows a user to recover the contents of a backup snapshot. |
-> | microsoft.directory/backup/standard/read | List Microsoft Entra backups (for example, backup IDs and timestamps), view difference reports, and list recovery jobs and their associated properties. |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/bulkJobs/basic/update | Update all the bulk jobs in a directory |
 > | microsoft.directory/bulkJobs/create | Create all bulk jobs in a directory |
