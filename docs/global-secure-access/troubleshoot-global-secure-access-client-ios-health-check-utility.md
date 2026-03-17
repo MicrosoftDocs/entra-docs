@@ -68,6 +68,8 @@ In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm t
 3. When health check tests indicate a healthy state, attempt to connect to the resource.
 4. After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender.
 
+   ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
+
 ### Bring-your-own-device scenarios
 
 Use the following checklist for bring-your-own-device (BYOD).
@@ -128,6 +130,8 @@ To ensure the VPN is disabled:
    > [!NOTE]
    > After remediation, restart the Global Secure Access client: Toggle it **Off** and **On** in Microsoft Defender, or you can restart the device.
 
+   ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
+
 ## Diagnostic URLs in the forwarding profile
 
 The following test checks that the configuration contains a URL to probe service health, for channels activated in the forwarding profile.
@@ -151,6 +155,8 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
 
    > [!NOTE]
    >  In addition to health check status indicators, iOS devices can return a generic **Something went wrong** error, for device registration problems. To resolve, update the device to the latest version of iOS. Then, navigate to **Microsoft Defender**, then **Global Secure Access**. Toggle the Global Secure Access client **Off** then **On**.
+
+   ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
 
 ## Next steps
 
