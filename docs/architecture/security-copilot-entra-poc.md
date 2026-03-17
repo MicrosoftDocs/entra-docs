@@ -85,7 +85,7 @@ The following table has suggested prompts, based on persona function.
 |Persona|Scenario|Suggested prompt|
 |---|---|---|
 |Helpdesk Administrator|Investigate users blocked from sign-in, due to a risk event. Help Desk is on the call, with the user, to resolve the issue. |I'm investigating a user email **julie-b@contoso** blocked due to high risk. Help me understand why this user is blocked. Also, let me know if other users are blocked, due to the same situation, within the last 24 hours. |
-|Security operations center (SOC) team member|Investigate a spike of password resets from a country, region, or department to determine trends or patterns. |I'm seeing a trend from an IP address that's high risk for multiple users. Review all user applications in the United States to determine if there’s a pattern of applications, services, or groups. |
+|Security operations center (SOC) team member|Investigate a spike of password resets from a country/region, or department to determine trends or patterns. |I'm seeing a trend from an IP address that's high risk for multiple users. Review all user applications in the United States to determine if there’s a pattern of applications, services, or groups. |
 |Identity administrator|Investigate the potential effects of a new Conditional Access policy|Show me the signins and the Conditional Access policies that apply. List users without registered multifactor authentication (MFA). Show me sign-in logs from unmanaged devices for the past 14 days|
 |Tenant administrator|Guest management|Show me the guest users in the tenant|
 
