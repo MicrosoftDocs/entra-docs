@@ -29,6 +29,17 @@ To purchase and deploy agents and solutions from Security Store, you need:
 - [Access to a Security Copilot workspace provisioned with SCU capacity](/copilot/security/get-started-security-copilot).
 - For partner-published agents and solutions, you need the [Azure subscription contributor or owner role](/marketplace/roles-permissions).
 
+## Agents in the Security Store
+
+Security Store includes Microsoft Entra agents that automate identity and access management tasks. For a complete list of available agents, their capabilities, required permissions, and setup instructions, see [Microsoft Entra agents](entra-agents.md).
+
+## Solutions in the Security Store
+
+The following solutions are available through Security Store in the Microsoft Entra admin center.
+
+- **Verified ID solutions**: [Microsoft Entra Verified ID](/entra/verified-id/) solutions available in the Security Store provide advanced fraud prevention capabilities. These solutions integrate directly into your identity verification workflows, enabling enhanced trust and security for credential issuance and verification scenarios.
+- **External ID solutions**: [Microsoft Entra External ID](/entra/external-id/) solutions available in the Security Store deliver WAF and bot defense to strengthen your organization's edge protection. These solutions help secure customer-facing applications and protect against automated threats targeting your external identity infrastructure.
+
 ## Discover and deploy agents and solutions in the Microsoft Entra admin center
 
 Security Store is embedded in the Microsoft Entra admin center, so you can discover and deploy agents and solutions without leaving your identity management workflow.
@@ -48,31 +59,11 @@ Security Store is embedded in the Microsoft Entra admin center, so you can disco
 
 1. After purchasing an agent, select **Security Copilot** > **Agents**, find your agent in the **Ready for setup** section, and then select **Set up** to begin agent setup.
 
-    For more information on setting up, managing, and running partner-published agents, see [Manage Security Copilot agents](/copilot/security/agents-manage#set-up-for-partner-built-agents).
-
-    For more information on Microsoft Entra agents, see [Microsoft Entra agents](entra-agents.md).
-
-    After setup, the agent appears in the **Agents in use** section.
-
-## Available solutions in the Security Store
-
-The following solutions are available through Security Store in the Microsoft Entra admin center.
-
-### Verified ID solutions
-
-[Microsoft Entra Verified ID](/entra/verified-id/) solutions available in the Security Store provide advanced fraud prevention capabilities. These solutions integrate directly into your identity verification workflows, enabling enhanced trust and security for credential issuance and verification scenarios.
-
-### External ID solutions
-
-[Microsoft Entra External ID](/entra/external-id/) solutions available in the Security Store deliver WAF and bot defense to strengthen your organization's edge protection. These solutions help secure customer-facing applications and protect against automated threats targeting your external identity infrastructure.
-
-## Available agents in the Security Store
-
-Security Store includes Microsoft Entra agents that automate identity and access management tasks. For a complete list of available agents, their capabilities, required permissions, and setup instructions, see [Microsoft Entra agents](entra-agents.md).
+After setup, the agent appears in the **Agents in use** section.
 
 ## Manage and remove agents
 
-Agents deployed from Security Store are managed through [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot). To manage or remove an agent:
+Agents deployed from Security Store are managed through [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot).
 
 - To manage agent settings, go to **Security Copilot** > **Agents** and select the agent you want to configure.
 - To remove an agent, perform the removal in Security Copilot. Removing the agent in Security Copilot stops entitlement checks and billing.
@@ -83,7 +74,5 @@ For more information, see [Manage Security Copilot agents](/copilot/security/age
 ## Related content
 
 - [What is Microsoft Security Store?](/security/store/what-is-security-store)
-- [Get agents in Microsoft Security Store](/security/store/get-agents-in-security-store)
-- [Microsoft Entra agents](entra-agents.md)
 - [Security Copilot in Microsoft Entra](security-copilot-in-entra.md)
 - [Deploy AI agents in Microsoft Defender](/defender-xdr/security-copilot-agents-defender)
