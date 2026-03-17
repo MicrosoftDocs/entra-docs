@@ -60,7 +60,7 @@ Where:
 
    ```powershell
    Remove-MgServicePrincipal
-      -ServicePrincipalId bbbbbbbb-1111-2222-3333-cccccccccccc
+      -ServicePrincipalId aaaaaaaa-bbbb-cccc-1111-222222222222
 
    ```
 :::zone-end
