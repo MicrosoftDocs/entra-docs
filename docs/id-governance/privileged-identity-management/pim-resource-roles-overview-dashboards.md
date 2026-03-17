@@ -12,9 +12,9 @@ ms.custom: pim
 
 You can use a resource dashboard to perform an access review in Privileged Identity Management (PIM). The Admin View dashboard in Microsoft Entra ID, part of Microsoft Entra, has three primary components:
 
-- A graphical representation of resource role activations
-- Charts that display the distribution of role assignments by assignment type
-- A data area containing information to new role assignments
+- A graphical representation of resource role activations.
+- Charts that display the distribution of role assignments by assignment type.
+- A data area containing information about new role assignments.
 
 :::image type="content" source="media/pim-resource-roles-overview-dashboards/rbac-overview-top.png" alt-text="Screenshot of the Admin View dashboard, showing graphs and charts.":::
 
