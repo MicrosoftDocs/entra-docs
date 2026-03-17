@@ -30,6 +30,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.agentRegistry/allEntities/allProperties/read | Read all properties of Agent Registry in Microsoft Entra ID |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/applications/policies/update | Update policies of applications |

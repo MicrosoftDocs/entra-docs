@@ -29,7 +29,7 @@ PIM supports all Microsoft 365 roles in the Microsoft Entra roles and Administra
 > For information about delays activating the Microsoft Entra Joined Device Local Administrator role, see [How to manage the local administrators group on Microsoft Entra joined devices](../../identity/devices/assign-local-admin.md#manage-the-microsoft-entra-joined-device-local-administrator-role).
 
 > [!NOTE]
-> Use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview portal. For more information, see [Privileged Identity Management (PIM) for Groups](concept-pim-for-groups.md#making-group-of-users-eligible-for-microsoft-entra-role).
+> Use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview portal. For more information, see [Privileged Identity Management (PIM) for Groups](concept-pim-for-groups.md#make-a-group-of-users-eligible-for-a-microsoft-entra-role).
 
 ## Next steps
 
