@@ -29,15 +29,16 @@ This document focuses on enabling FIDO2 security key based passwordless authenti
 
 The following scenarios aren't supported:
 
-- Signing in or unlocking a Windows device with a passkey in Microsoft Authenticator.
 - Windows Server Active Directory Domain Services (AD DS) domain-joined (on-premises only devices) deployment.
 - Scenarios, such as RDP, VDI, and Citrix, that use a security key other than [webauthn redirection](/azure/virtual-desktop/authentication).
 - S/MIME using a security key.
 - *Run as* using a security key.
 - Signing in to a server using a security key.
-- If you're not using a security key to sign in to your device while online, you can't use it to sign in or unlock offline.
+### Device sign-in and unlock
+
+- OOBE sign-in with a passkey is supported. You can use Web sign-in to unlock a Windows device. For more information, see [Use Web Sign-In To Enable Passwordless Sign-In In Windows](/windows/security/identity-protection/web-sign-in).
 - When signing in or unlocking a Windows device using a security key that contains multiple Microsoft Entra accounts, the device defaults to the last account added to the key. However, WebAuthn allows users to select the specific account they wish to use for authentication.
-- Unlocking a device running Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
+- Unlocking a device requires Windows 10 version 1809. For the best experience, use Windows 10 version 1903 or higher.
 
 ## Prepare devices
 

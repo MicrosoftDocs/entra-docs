@@ -84,7 +84,7 @@ Bulk operations can only run for up to 1 hour and has limitations in large tenan
 
     :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot of pane to download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
 
-1. Specify a file name and select **Start download**.
+1. Specify a file name and select **Start bulk operation**.
 
     A CSV file that lists assignments at all scopes for all roles is downloaded.
 

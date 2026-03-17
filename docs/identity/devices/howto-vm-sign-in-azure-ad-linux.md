@@ -2,13 +2,9 @@
 title: Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 description: Learn how to sign in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---

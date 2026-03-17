@@ -1,13 +1,9 @@
 ---
-title: Sign Up for Microsoft Entra ID
+title: Sign up for Microsoft Entra ID
 description: Discover how to sign up for Microsoft Entra ID and Azure. Start using enterprise cloud services today.
-author: barclayn
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 08/15/2025
-ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 # Sign up for Microsoft Entra ID
@@ -19,7 +15,7 @@ Sign up for [Microsoft Entra ID](get-started-premium.md) or a [new Microsoft Azu
 - **Work or school account.** Use your work or school account to access enterprise cloud services like Azure, Microsoft Intune, and Microsoft 365. When you sign up for these services, Microsoft Entra ID automatically creates a cloud-based directory for your organization.
 
   > [!NOTE]
-  > We recommend that you use your work or school account if you already have access to Microsoft Entra ID. However, you should use whichever type of account is associated with your Azure subscription.
+  > Use your work or school account if you already have access to Microsoft Entra ID. However, use whichever type of account is associated with your Azure subscription.
 
 ## Related content
 

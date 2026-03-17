@@ -2,13 +2,10 @@
 title: View and manage agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Access Microsoft Entra admin center to effortlessly view and filter agent identities. Streamline tenant oversight and take charge now.
-author: SHERMANOUKO
-ms.service: entra-id
 ms.subservice: 
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: alamaral
 
 #Customer intent: As an administrator, I want to view and search for agent identity blueprints / applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
@@ -25,7 +22,7 @@ Microsoft Entra admin center provides you with a centralized interface to view a
 
 To view agent identities in your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 To manage agent identities in your Microsoft Entra tenant, you need:
 

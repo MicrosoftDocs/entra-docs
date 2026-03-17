@@ -121,7 +121,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present.
 1. Navigate to a known malicious site (for example, `entratestthreat.com` or `smartscreentestratings2.net`). Ensure that you're blocked and that the Threat Type field is nonempty in the traffic logs. Traffic logs may take up to 5 minutes to appear in the portal.
-1. If blocked by Windows Defender or Smart screen, override and access the site to test the Global Secure Access block message. You can do this by choosing "Continue to the unsafe site (not recommended)" under "More information."
+1. If blocked by Microsoft Defender or Smart screen, override and access the site to test the Global Secure Access block message. You can do this by choosing "Continue to the unsafe site (not recommended)" under "More information."
 1. To test allow-listing, create a rule in the Threat Intelligence policy to allow access to the site. Within 2 minutes, you should be able to access it. (You may need to clear your browser cache.)
 1. Evaluate the rest of the threat feed against your known threat indicators.
 

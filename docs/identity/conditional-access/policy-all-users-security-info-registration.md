@@ -49,7 +49,7 @@ The following policy applies to the selected users, who attempt to register usin
    1. Select **Require authentication strength**, then select the appropriate built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -76,7 +76,7 @@ For [guest users](~/external-id/what-is-b2b.md) who need to register for multifa
    1. Select **Block access**.
    1. Then choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

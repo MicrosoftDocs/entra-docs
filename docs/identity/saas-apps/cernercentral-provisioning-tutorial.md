@@ -3,12 +3,8 @@ title: Configure Cerner Central for automatic user provisioning in Microsoft Ent
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/03/2026
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerner Central so that I can streamline the user management process and ensure that users have the appropriate access to Cerner Central.
@@ -88,7 +84,9 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Select your instance of Cerner Central, then select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
+
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
@@ -106,19 +104,27 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
    * You should see a success notification on the upper-right side of your portal.
 
-1. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
+1. Select **Create** to create your configuration.	
 
-1. Select **Save**.
+1. Select **Properties** in the **Overview** page. 
 
-1. In the **Attribute Mappings** section, review the user and group attributes to be synchronized from Microsoft Entra ID to Cerner Central. The attributes selected as **Matching** properties are used to match the user accounts and groups in Cerner Central for update operations. Select the Save button to commit any changes.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. To enable the Microsoft Entra provisioning service for Cerner Central, change the **Provisioning Status** to **On** in the **Settings** section
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Save**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-This starts the initial synchronization of any users and/or groups assigned to Cerner Central in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Cerner Central app.
+1. Review the user and group attributes to be synchronized from Microsoft Entra ID to Cerner Central. The attributes selected as **Matching** properties are used to match the user accounts and groups in Cerner Central for update operations. Select the Save button to commit any changes.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page. 
+
+## Step 6: Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 
