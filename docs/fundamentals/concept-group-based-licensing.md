@@ -1,5 +1,5 @@
 ---
-title: What is group-based licensing
+title: What is group-based licensing?
 description: Learn about Microsoft Entra group-based licensing, including how it works,
   key features, and best practices.
 manager: pmwongera
@@ -48,7 +48,7 @@ Here are the main features of group-based licensing:
 
 ## Your feedback is welcome!
 
-If you have feedback or feature requests, share them with us using the [Microsoft Entra admin forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
+If you have feedback or feature requests, share them using the [Microsoft Entra admin forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
 ## Next steps
 

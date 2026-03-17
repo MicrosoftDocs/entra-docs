@@ -2,7 +2,7 @@
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella
 description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
 ms.topic: how-to
-ms.date: 10/06/2025
+ms.date: 03/13/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

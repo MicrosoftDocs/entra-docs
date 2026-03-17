@@ -3,14 +3,14 @@ title: 'Lifecycle workflows FAQs'
 description: Frequently asked questions about Lifecycle workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: faq
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: template-tutorial
 ---
 
 # Lifecycle workflows - FAQs
 
-In this article, you find questions to commonly asked questions about [Lifecycle Workflows](what-are-lifecycle-workflows.md). Check back to this page frequently as changes happen often, and answers are continually being added.
+In this article, you find answers to commonly asked questions about [Lifecycle Workflows](what-are-lifecycle-workflows.md). Check back to this page frequently as changes happen often, and answers are continually being added.
 
 ## Frequently asked questions
 
@@ -52,7 +52,7 @@ Lifecycle workflows checks that the user is assigned the custom security attribu
 
 ### How does Lifecycle workflows handle custom security attributes with multiple values?
 
-If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the specified in rule expressions, the user matches the scope.
+If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value specified in rule expressions, the user matches the scope.
 
 ### Why can’t I see the custom attributes listed in the attributes change trigger?
 

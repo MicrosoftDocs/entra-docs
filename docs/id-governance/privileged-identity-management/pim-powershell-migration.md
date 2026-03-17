@@ -1,5 +1,5 @@
 ---
-title: PIM PowerShell for Azure Resources Migration Guidance
+title: PIM PowerShell for Azure resources migration guidance
 description: The following documentation provides guidance for Privileged Identity Management (PIM) PowerShell migration.
 
 ms.topic: how-to
@@ -8,9 +8,8 @@ ms.reviewer: shaunliu
 ms.custom: pim, devx-track-azurepowershell
 
 ---
-# PIM PowerShell for Azure Resources Migration Guidance
+# PIM PowerShell for Azure resources migration guidance
 The following table provides guidance on using the new PowerShell cmdlets in the newer Azure PowerShell module.
-
 
 ## New cmdlets in the Azure PowerShell module
 
@@ -20,8 +19,8 @@ The following table provides guidance on using the new PowerShell cmdlets in the
 |Get-AzureADMSPrivilegedRoleDefinition|[Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition)| Get role definitions|
 |Get-AzureADMSPrivilegedRoleSetting|[Get-AzRoleManagementPolicy](/powershell/module/az.resources/get-azrolemanagementpolicy)|Get the specified role management policy for a resource scope|
 |Set-AzureADMSPrivilegedRoleSetting|[Update-AzRoleManagementPolicy](/powershell/module/az.resources/update-azrolemanagementpolicy)| Update a rule defined for a role management policy|
-|Open-AzureADMSPrivilegedRoleAssignmentRequest|[New-AzRoleAssignmentScheduleRequest](/powershell/module/az.resources/new-azroleassignmentschedulerequest)|Used for Assignment Requests</br>Create role assignment schedule request
-|Open-AzureADMSPrivilegedRoleAssignmentRequest|[New-AzRoleEligibilityScheduleRequest](/powershell/module/az.resources/new-azroleeligibilityschedulerequest)|Used for Eligibility Requests</br>Create role eligibility schedule request|
+|Open-AzureADMSPrivilegedRoleAssignmentRequest|[New-AzRoleAssignmentScheduleRequest](/powershell/module/az.resources/new-azroleassignmentschedulerequest)|Used for Assignment Requests<br>Create role assignment schedule request|
+|Open-AzureADMSPrivilegedRoleAssignmentRequest|[New-AzRoleEligibilityScheduleRequest](/powershell/module/az.resources/new-azroleeligibilityschedulerequest)|Used for Eligibility Requests<br>Create role eligibility schedule request|
 
 ## Next steps
 

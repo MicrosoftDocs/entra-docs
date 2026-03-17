@@ -2,7 +2,7 @@
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Secure Access
 description: Microsoft and Cisco’s Secure Access coexistence solution guide.
 ms.topic: how-to
-ms.date: 10/06/2025
+ms.date: 03/13/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

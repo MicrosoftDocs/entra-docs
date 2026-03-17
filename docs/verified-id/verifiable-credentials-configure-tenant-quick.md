@@ -10,17 +10,17 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Quick Microsoft Entra Verified ID setup
 
   
-Quick Verified ID setup removes several configuration steps an admin needs to complete with a single select on a **Get started** button. The quick setup  takes care of signing keys, registering your decentralized ID and verify your domain ownership. It also creates a Verified Workplace Credential for you.
+Quick Verified ID setup removes several configuration steps an admin needs to complete with a single select on a **Get started** button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you.
 
 In this tutorial, you learn how to use the quick setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
 
 Specifically, you learn how to:
 
 > [!div class="checklist"]
-> - Configure your the Verified ID service using the quick setup.
-> - Controlling how issuances of Verified Workplace Credentials in MyAccount
+> - Configure the Verified ID service using the quick setup.
+> - Control issuance of Verified Workplace Credentials in MyAccount.
 
-Watch this video to quickly set up your Microsoft Entra tenant use the verifiable credentials service.
+Watch this video to quickly set up your Microsoft Entra tenant to use the verifiable credentials service.
 
 > [!VIDEO https://www.youtube.com/embed/0LfYrRd7Qzs?si=IlSzjKQ2ltfKOAgT]
 
@@ -34,10 +34,10 @@ Watch this video to quickly set up your Microsoft Entra tenant use the verifiabl
 
 ## How Quick Verified ID setup works
 
-- A shared signing key, managed by Microsoft, is used across multiple tenants within a given region. It's no longer required to deploy Azure Key Vault.
+- Microsoft manages a shared signing key across multiple tenants within a given region. You no longer need to deploy Azure Key Vault.
 - There's a two RPS per tenant limit for issuance and verifications. 
 - Since it's a shared key, the validityInterval of issued credentials is limited to a maximum of six months.
-- The [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant is used for domain verification. It's no longer required to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
+- Verified ID uses the [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant for domain verification. You no longer need to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
 - If you have customized your [tenant's branding](~/fundamentals/how-to-customize-branding.md#before-you-begin), the VerifiedEmployee default credential picks up logo and background color from there. If you haven't or prefer other values, you can make changes after setup is complete.
 - The Decentralized identifier (DID) gets a name like `did:web:verifiedid.entra.microsoft.com:tenantid:authority-id` and the DID document is discoverable following [did:web specification](https://w3c-ccg.github.io/did-method-web/#create-register).
 
@@ -82,7 +82,7 @@ As an admin, you can either remove the option in MyAccount and create your custo
 
 ## Register an application in Microsoft Entra ID
 
-If you're planning to use custom credentials or set up your own application for issuing or verification Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the advanced setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id)
+If you're planning to use custom credentials or set up your own application for issuing or verifying Verified ID, you need to register an application and grant the appropriate permissions for it. Follow this section in the advanced setup to [register an application](verifiable-credentials-configure-tenant.md#register-an-application-in-microsoft-entra-id).
 
 ## Next steps
 
