@@ -186,7 +186,7 @@ See [Require app protection policy and an approved client app for cloud app acce
 
 ### Require password change
 
-When user risk is detected, admins can employ the user risk policy conditions to have the user securely change a password by using Microsoft Entra self-service password reset. Users can perform a self-service password reset to self-remediate. This process closes the user risk event to prevent unnecessary alerts for admins.
+When user risk is detected, admins can employ the user risk policy conditions to have the user perform a secure password change after successful authentication. This process doesn't use the self-service password reset (SSPR) flow. The user must complete multifactor authentication and then change their password to remediate the risk. This process closes the user risk event to prevent unnecessary alerts for admins.
 
 When a user is prompted to change a password, they're first required to complete multifactor authentication. Make sure all users register for multifactor authentication, so they're prepared in case risk is detected for their account.  
 

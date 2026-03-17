@@ -22,6 +22,13 @@ This article provides several options for automatically and manually remediating
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **create or edit risk-based policies**.
 - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
 
+## Terminology: password change vs. password reset
+
+This article distinguishes between two different flows:
+
+- **Password change (risk remediation)**: The user knows their current password, authenticates with multifactor authentication (MFA), and then changes their password. This is the mechanism used by risk-based Conditional Access policies, including the **Require password change** and **Require risk remediation** grant controls. This flow doesn't use self-service password reset (SSPR).
+- **Password reset (SSPR / recovery)**: The user doesn't know their password and uses self-service password reset (SSPR) or an admin-initiated reset to recover access. This flow is intended for account recovery, not risk remediation. A password reset through SSPR doesn't remediate user risk.
+
 ## How risk remediation works
 
 All active risk detections contribute to the calculation of the user's risk level, which indicates the probability that the user's account is compromised. Depending on the risk level and your tenant's configuration, you might need to investigate and address the risk. You can allow users to self-remediate their sign-in and user risks by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). If users pass the required access control, such as multifactor authentication or secure password change, then their risks are automatically remediated.
@@ -50,14 +57,17 @@ Sign-in risks that aren't remediated impact the user risk, so having risk-based 
 
 ### Self-remediation of user risk
 
-If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. A secure password change (MFA and password change) can also remediate user risk. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
+When a user risk policy with the **Require password change** grant control is configured, the user is prompted to perform a secure password change as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. The user must first complete multifactor authentication and then change their password. This process doesn't use the self-service password reset (SSPR) flow. Once the password is changed, the user risk is remediated and the user can proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
 
+> [!NOTE]
+> The risk detail value "User performed secured password reset" is a system-reported label. Despite the name, this value indicates the user completed a secure password change (MFA + password change), not a self-service password reset (SSPR) flow.
+
 #### Considerations for cloud and hybrid users
 
-- Both cloud and hybrid users can complete a secure password change with SSPR only if they can perform MFA. For users that aren't registered, this option isn't available.
+- Both cloud and hybrid users can complete a secure password change only if they can perform MFA. For users that aren't registered, this option isn't available.
 - Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
 
 ## System-based remediation 
@@ -72,7 +82,7 @@ In some cases, Microsoft Entra ID Protection can also automatically dismiss a us
 Some situations require an IT administrator to manually remediate sign-in or user risk. If you don't have risk-based policies configured, if the risk level doesn't meet the criteria for self-remediation, or if time is of the essence, you might need to take one of the following actions:
 
 - Generate a temporary password for the user.
-- Require the user to reset their password.
+- Require the user to change their password.
 - Dismiss the user's risk.
 - Confirm the user is compromised and take action to secure the account.
 - Unblock the user.
@@ -117,9 +127,9 @@ Pay attention to the following considerations when generating a temporary passwo
    - Enable [Self-service password reset](../identity/authentication/tutorial-enable-sspr.md).
    - In Active Directory, only select the option **User must change password at next logon** after you enable everything in the previous bullets.
 
-### Require a password reset
+### Require a password change
 
-You can require risky users to reset their password to remediate their risk. Because these users aren't prompted to change their password through a risk-based policy, you must contact them to reset their password. How the password is reset depends on the type of user:
+You can require risky users to change their password to remediate their risk. Because these users aren't prompted to change their password through a risk-based policy, you must contact them to change their password. How the password is changed depends on the type of user:
 
 - **Cloud users and hybrid users with Microsoft Entra-joined devices**: Perform a secure password change after a successful MFA sign-in. Users must already be registered for MFA.
 - **Hybrid users with on-premises or hybrid-joined Windows devices**: Perform a secure password change through the Ctrl-Alt-Delete screen on their Windows device.
