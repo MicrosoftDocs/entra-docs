@@ -2,11 +2,12 @@
 title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.topic: how-to
-ms.date: 08/12/2025
+ms.date: 03/17/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery for Global Secure Access
@@ -22,8 +23,11 @@ This article walks through how to use Application discovery to detect which appl
 - A Microsoft Entra tenant configured with [Quick Access](how-to-configure-quick-access.md).
 - A device configured with the Global Secure Access client ([Windows](how-to-install-windows-client.md), [macOS](how-to-install-macos-client.md), [Android](how-to-install-android-client.md), [iOS](how-to-install-ios-client.md)).
 
+> [!IMPORTANT]
+> Application discovery relies on traffic flowing through Quick Access. If Quick Access is not configured, or if no users have accessed applications through Quick Access, the **Application discovery** page displays no data. This empty state is expected behavior, not a product error. To populate the discovery table, [configure Quick Access](how-to-configure-quick-access.md) and ensure that users are actively accessing applications through it.
+
 ## Discover applications
-To view a list of all the application segments in Quick Access that users accessed via the Global Secure Access client in the last 30 days:
+To view a list of all the application segments in Quick Access that users accessed via the Global Secure Access client in the last 30 days (if the table is empty, verify that [Quick Access is configured](how-to-configure-quick-access.md) and that users have generated traffic through it):
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Application discovery**.
 :::image type="content" source="media/how-to-application-discovery/application-discovery-default-view.png" alt-text="Screenshot of Application discovery screen.":::
