@@ -1,5 +1,6 @@
 ---
 title: Create a monitor (preview)
+titleSuffix: Microsoft Entra ID Governance
 description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra Tenant Governance to track configuration drift
 author: barclayn
 ms.author: barclayn

@@ -8,6 +8,8 @@
     href: overview.md
   - name: Deployment guide
     href: deployment-guide.md
+  - name: Licensing
+    href: licensing.md
 
 - name: Concepts
   expanded: true
@@ -67,7 +69,5 @@
 
 - name: Reference
   items:
-  - name: Licensing
-    href: licensing.md
   - name: FAQ
     href: faq.yml

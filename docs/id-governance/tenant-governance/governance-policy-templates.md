@@ -1,5 +1,6 @@
 ---
 title: Governance policy templates (preview)
+titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance policy templates and how to use them to enforce consistent governance across tenants in Microsoft Entra
 author: barclayn
 ms.author: barclayn

@@ -1,5 +1,6 @@
 ---
 title: Licensing for Microsoft Entra Tenant Governance (preview)
+titleSuffix: Microsoft Entra ID Governance
 description: Learn which Microsoft Entra Tenant Governance features are available with each license tier, including P1, P2, and ID Governance
 author: barclayn
 ms.author: barclayn

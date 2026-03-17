@@ -1,5 +1,6 @@
 ---
 title: Monitor governing tenant admin activity in a governed tenant (preview)
+titleSuffix: Microsoft Entra ID Governance
 description: Learn how to monitor and audit governing tenant administrator activity in your governed tenant using sign-in and audit logs
 author: barclayn
 ms.author: barclayn

@@ -1,5 +1,6 @@
 ---
 title: Set up a governance relationship (preview)
+titleSuffix: Microsoft Entra ID Governance
 description: Learn how to set up a governance relationship between a governing and governed tenant using the handshake process in Microsoft Entra
 author: barclayn
 ms.author: barclayn
