@@ -1,6 +1,5 @@
 ---
 title: Update or delete a monitor (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to update or delete a configuration monitor in Microsoft Entra Tenant Governance.
 author: barclayn
 ms.author: barclayn
@@ -29,7 +28,7 @@ To update an existing configuration monitor:
 1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
 1. Find the monitor you want to update and select the edit (pencil) icon next to its name.
 
-The update wizard uses the same steps as creating a monitor: **Permissions → Configuration baseline → Review**.
+The update wizard uses the same steps as creating a monitor: **Permissions** → **Configuration baseline** → **Review**.
 
 When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
@@ -38,13 +37,13 @@ When you update an existing configuration monitor, the updated settings replace 
 
 ## Delete a monitor
 
-Deleting a monitor can't be undone. When you delete a monitor, all associated monitor results and configuration drifts are also immediately deleted.
+Deleting a monitor can't be undone. When you delete a monitor, Tenant Governance also immediately deletes all associated monitor results and configuration drifts.
 
 To delete a configuration monitor:
 
 1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
 1. Find the monitor you want to delete.
-1. Select the checkbox next to the monitor's name, then select the **Delete** button in the command bar. Alternatively, hover over the monitor name and select the delete icon that appears.
+1. Select the checkbox next to the monitor's name, then select **Delete** in the command bar. Alternatively, hover over the monitor name and select the delete icon that appears.
 1. In the confirmation dialog, select **Delete**.
 
 ## Related content

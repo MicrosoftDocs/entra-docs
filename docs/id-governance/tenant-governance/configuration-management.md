@@ -1,6 +1,5 @@
 ---
 title: Configuration management in Tenant Governance (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn about configuration management capabilities in Microsoft Entra Tenant Governance, including baselines and drift monitoring.
 author: barclayn
 ms.author: barclayn
@@ -33,7 +32,7 @@ For example, a configuration baseline can define multiple instances of Exchange 
 **Monitors** are core to the tenant configuration management solution. They run the processes responsible for continuously monitoring your tenants for configuration drifts. Each monitor references a JSON configuration baseline that specifies the resources to validate. The monitor definition also includes a name, description, schedule frequency, and a configuration mode that specifies the actions to perform when drifts are detected.
 
 > [!NOTE]
-> The Unified Tenant Configuration Management service principal must have read permissions for the resource types defined in the associated baselines. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
+> The Unified Tenant Configuration Management service principal must have read permissions for the resource types defined in the associated baselines. This requirement applies to both monitors and snapshot jobs. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
 
 To learn more about monitors, see [configurationMonitor](/graph/api/resources/configurationmonitor?view=graph-rest-beta&preserve-view=true).
 
@@ -47,7 +46,7 @@ To learn more about monitoring results, see [configurationMonitoringResult](/gra
 
 ## Configuration drifts
 
-When a delta exists between what a configuration baseline defines and the actual settings on a tenant, a **configuration drift** is raised. Configuration drifts are associated with a monitor and contain detailed information about the detected delta. Each drift object identifies the affected resource and lists each property whose current value differs from the baseline definition.
+When a delta exists between what a configuration baseline defines and the actual settings on a tenant, Tenant Governance reports a **configuration drift**. Configuration drifts are associated with a monitor and contain detailed information about the detected delta. Each drift object identifies the affected resource and lists each property whose current value differs from the baseline definition.
 
 After you remediate a detected drift, the next monitor execution automatically marks the configuration drift object as `fixed`. To learn more about configuration drifts, see [configurationDrift](/graph/api/resources/configurationdrift?view=graph-rest-beta&preserve-view=true).
 
@@ -58,9 +57,6 @@ When you initiate a request to generate a snapshot, an asynchronous job collects
 > [!IMPORTANT]
 > Snapshot jobs and their associated snapshots have a retention period of 7 days, after which they're deleted. Download and store generated snapshots before the retention period expires.
 
-The schema of generated snapshots matches the schema of configuration baselines. You can use a snapshot as-is to create monitors.
-
-> [!NOTE]
-> Snapshot jobs require that the Unified Tenant Configuration Management service principal have read permissions for the requested resource types. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
+The generated snapshot schema matches the schema of configuration baselines. Use a snapshot as-is to create monitors.
 
 To learn more about snapshot jobs, see [configurationSnapshotJob](/graph/api/resources/configurationsnapshotjob?view=graph-rest-beta&preserve-view=true).

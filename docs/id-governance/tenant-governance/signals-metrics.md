@@ -1,6 +1,5 @@
 ---
 title: Signals and metrics for tenant discovery (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn about the signals and metrics used in Microsoft Entra Tenant Governance to identify and evaluate related tenants
 author: barclayn
 ms.author: barclayn
@@ -16,7 +15,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Tenant Discovery is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**, which are tenants that have a discoverable relationship with your tenant.
+**Tenant discovery** is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**, which are tenants that have a discoverable relationship with your tenant.
 
 Discovery uses a small set of **well-defined discovery signals** derived from existing Microsoft Entra and Azure platform interactions. These signals explain *why* two tenants are related. **Metrics provide additional context**, such as directionality, recency, and relative scale, to help administrators interpret those relationships and prioritize governance actions.
 
@@ -93,7 +92,7 @@ B2B user sign-ins capture **authentication activity** by guest users or external
 Admin app sign-ins are a **specialized subset of B2B sign-ins** that occur when users **authenticate across tenants to predefined Microsoft Entra administrative applications.** These sign-ins usually indicate cross-tenant administrative activity, not just collaboration.
 
 **What are "admin apps"?**\
-Admin apps are a predefined set of first-party Microsoft Entra administrative surfaces. The Tenant Discovery service defines and maintains the exact set of admin apps. This set isn't customer-configurable.
+Admin apps are a predefined set of first-party Microsoft Entra administrative surfaces. The **tenant discovery** service defines and maintains the exact set of admin apps. This set isn't customer-configurable.
 
 | Application |
 |---|
@@ -177,7 +176,7 @@ Not all metric concepts apply to all signals.
 
 ### Initial vs. recent metrics
 
-For activity-based signals, Tenant Discovery distinguishes between **initial** and **recent** metrics.
+For activity-based signals, **Tenant discovery** distinguishes between **initial** and **recent** metrics.
 
 | Metric | Meaning |
 |---|---|
@@ -186,7 +185,7 @@ For activity-based signals, Tenant Discovery distinguishes between **initial** a
 
 This distinction answers:
 
-*When was this relation discovered, and is this relation still in active use today?*
+*When was this relationship discovered, and is this relationship still in active use today?*
 
 **Signal applicability**
 
@@ -221,7 +220,7 @@ This answers:
 
 ### Aggregations
 
-Tenant Discovery surfaces **aggregated metrics**, not raw counts. Values are returned as **orders of magnitude**, not exact numbers.
+**Tenant discovery** surfaces **aggregated metrics**, not raw counts. Values are returned as **orders of magnitude**, not exact numbers.
 
 Aggregations answer:
 

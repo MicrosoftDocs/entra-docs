@@ -1,6 +1,5 @@
 ---
 title: Governance relationships in Tenant Governance (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance relationships and how they enable centralized management of tenants in Microsoft Entra Tenant Governance
 author: barclayn
 ms.author: barclayn
@@ -22,14 +21,14 @@ Governance relationships enable four key scenarios:
 
 | Scenario | Description |
 |---|---|
-| Cross-tenant delegated administration | Use governance relationships to centralize **least-privileged administrative access** across multiple Microsoft Entra tenants. Administrators sign in using accounts from the governing tenant, eliminating the need to create and manage local or B2B administrator accounts in every governed tenant. This model is designed for organizations that operate multiple tenants but want a single administrative control plane. |
-| Multi-tenant application management | Manage custom, multi-tenant applications from the governing tenant. Governance relationships allow administrators to monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually, reducing operational overhead and configuration drift. |
-| Tenant configuration management | If you've configured cross-tenant delegated administration in your governance relationship, you can use this administrative access to ensure that the tenant meets your organization's security and compliance objectives on an ongoing basis. |
+| Cross-tenant delegated administration | Use governance relationships to centralize **least-privileged administrative access** across multiple Microsoft Entra tenants. Administrators sign in using accounts from the governing tenant. This approach eliminates the need to create and manage local or B2B administrator accounts in every governed tenant. |
+| Multi-tenant application management | Manage custom, multi-tenant applications from the governing tenant. Administrators can monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually. This approach reduces operational overhead and configuration drift. |
+| Tenant configuration management | If you configured cross-tenant delegated administration in your governance relationship, use this administrative access to ensure that the tenant meets your organization's security and compliance objectives on an ongoing basis. |
 | Secure tenant creation | When you create a new add-on tenant from an existing tenant, Tenant Governance automatically establishes a governance relationship between the parent tenant and the new tenant by using a default governance policy template. This step immediately brings newly created tenants under centralized administration and governance controls, reducing the risk of unmanaged or misconfigured tenants. |
 
 ## Relationship handshake
 
-To create a new governance relationship, or update an existing one, administrators from both tenants must configure and agree on the set of roles and permissions that the governing tenant has over the governed tenant. Any two Microsoft Entra tenants can create a new governance relationship through the three-step handshake:
+Any two Microsoft Entra tenants can create a new governance relationship through the three-step handshake. To create a new governance relationship, or update an existing one, administrators from both tenants must configure and agree on the roles and permissions that the governing tenant has over the governed tenant.
 
 1. The future governed tenant sends the future governing tenant a governance invitation.
 
@@ -52,7 +51,7 @@ Governance requests progress through these states:
 | State | Description |
 |---|---|
 | Pending | The governing tenant sent the request and awaits a response from the governed tenant. |
-| Accepted | The governed tenant accepted the request, resulting in the creation of a governance relationship. |
+| Accepted | The governed tenant accepted the request, creating a governance relationship. |
 | Rejected | The governed tenant rejected the request. |
 
 ### Relationship states

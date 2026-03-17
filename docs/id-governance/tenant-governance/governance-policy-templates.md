@@ -1,6 +1,5 @@
 ---
 title: Governance policy templates (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance policy templates and how to use them to enforce consistent governance across tenants in Microsoft Entra
 author: barclayn
 ms.author: barclayn
@@ -16,7 +15,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Governance policy templates are a foundational component of the Tenant Governance service, which helps organizations secure Microsoft Entra tenants at scale. Before establishing a governance relationship between tenants, you must create a governance policy template that defines the relationship behavior. These templates are reusable across distinct governance relationships, enabling consistent and scalable management of cross-tenant access.
+Governance policy templates are a foundational component of the Tenant Governance service, which helps organizations secure Microsoft Entra tenants at scale. Before establishing a governance relationship between tenants, create a governance policy template that defines the relationship behavior. These templates are reusable across distinct governance relationships, enabling consistent and scalable management of cross-tenant access.
 
 ## How governance policy templates work
 
@@ -46,7 +45,9 @@ Each group can have multiple role assignments, and each policy template can have
 
 By selecting custom, multi-tenant applications in the policy template, you enable centralized application management. When you create the governance relationship, Tenant Governance creates a service principal with the same permissions in the governed tenant.
 
-This capability allows you to manage your custom, multi-tenant applications at scale from the central governing tenant. You don't need to go into every tenant individually to monitor and maintain least privileged app access. For example, say you've built a custom line of business app called Contoso Resource Manager, responsible for monitoring, reporting, and automating resource configuration across your tenants. You can use the governance relationship to set up a service principal instance of Contoso Resource Manager across your governed tenants, with the right provisioned permissions consented. When you need to add or remove permissions, you can do so through the governance relationship instead of making changes and consenting to permissions on a per-tenant basis.
+This capability allows you to manage your custom, multi-tenant applications at scale from the central governing tenant. You don't need to go into every tenant individually to monitor and maintain least privileged app access.
+
+For example, assume you've built a custom line of business app called Contoso Resource Manager, responsible for monitoring, reporting, and automating resource configuration across your tenants. Use the governance relationship to set up a service principal instance of Contoso Resource Manager across your governed tenants, with the right provisioned permissions consented. When you need to add or remove permissions, do so through the governance relationship instead of making changes and consenting to permissions on a per-tenant basis.
 
 ## Default policy template
 
@@ -54,9 +55,9 @@ The default policy template is a special template used for secure tenant creatio
 
 The default policy template has these characteristics:
 
-- Unique identifier - Instead of a GUID, the default policy template has an ID of "default."
+- **Unique identifier**: Instead of a GUID, the default policy template has an ID of "default."
 
-- Configuration required - You must configure the default policy template before you can use it.
+- **Configuration required**: You must configure the default policy template before you can use it.
 
 ## Related content
 

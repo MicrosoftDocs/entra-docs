@@ -1,6 +1,5 @@
 ---
 title: Terminate a governance relationship (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to terminate a governance relationship between tenants in Microsoft Entra Tenant Governance and understand what resources are removed
 author: barclayn
 ms.author: barclayn
@@ -30,7 +29,7 @@ Terminate a governance relationship in two ways, depending on whether the govern
 
 - Review role requirements in [Tenant governance roles](/entra/identity/role-based-access-control/permissions-reference#tenant-governance-administrator).
 
-## Terminate a relationship - Governing tenant initiation
+## Terminate a relationship: Governing tenant initiation
 The governing tenant can request to terminate a governance relationship. This process requires confirmation from the governed tenant before Tenant Governance removes the relationship and its resources.
 
 ### Initiate termination as the governing tenant
@@ -63,8 +62,8 @@ When the governing tenant initiates termination, the governed tenant must confir
 
    Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**. Tenant Governance sends an email notification to the governing tenant that termination is complete.
 
-## Directly terminate a relationship as the governed tenant
-As the governed tenant, you can directly terminate a governance relationship without requiring approval from the governing tenant.
+## Directly terminate a relationship: Governed tenant
+As the governed tenant, directly terminate a governance relationship without requiring approval from the governing tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governed tenant.
 
@@ -85,7 +84,7 @@ When you terminate a governance relationship, Tenant Governance updates or delet
 
 - **GDAP role assignments**: Tenant Governance removes cross-tenant role assignments that allowed users from the governing tenant to sign in to and manage the governed tenant.
 
-- **Service principals**: If an admin configured multi-tenant app management, Tenant Governance removes the corresponding service principal and its permissions from the governed tenant.
+- **Service principals**: If an admin configured multi-tenant application management, Tenant Governance removes the corresponding service principal and its permissions from the governed tenant.
 
 After termination, users from the governing tenant can no longer sign in to the governed tenant with their governing tenant credentials through the governance relationship.
 

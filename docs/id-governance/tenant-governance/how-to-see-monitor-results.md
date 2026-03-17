@@ -1,6 +1,5 @@
 ---
 title: See monitor results and configuration drifts (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to view monitor results and detect configuration drifts in Microsoft Entra Tenant Governance.
 author: barclayn
 ms.author: barclayn
@@ -22,7 +21,7 @@ This article describes how to view monitor results and configuration drifts in t
 - Your tenant must have a license for Microsoft Entra Tenant Governance.
 - At least one configuration monitor must exist in your tenant and must have run at least once.
 
-## Browse to the monitors experience
+## Browse to monitors
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
@@ -43,7 +42,7 @@ The bottom of the context pane lists each drifted property along with its actual
 
 ## Address a configuration drift
 
-To fix a configuration drift, use the administration experience of your choice to update the resource to match the value defined in the monitor's configuration baseline. For example:
+To fix a configuration drift, use the administration tool of your choice to update the resource so it matches the value defined in the monitor's configuration baseline. For example:
 
 - For a conditional access policy drift, use the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 - For an Exchange transport rule drift, use Exchange Admin Center or Exchange PowerShell.

@@ -1,6 +1,5 @@
 ---
 title: Set up a governance relationship (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to set up a governance relationship between a governing and governed tenant using the handshake process in Microsoft Entra
 author: barclayn
 ms.author: barclayn
@@ -30,7 +29,7 @@ Establish a governance relationship between any two Microsoft Entra tenants by u
 - If you're using the three-step handshake, you must enable governance invitations in the governing tenant.
 
 ## Create a governance policy template
-Before you can set up a governance relationship, you must create a governance policy template in the governing tenant. The policy template defines the type of relationship and the level of access the governing tenant has over the governed tenant. Templates can be reused across distinct relationships.
+Before you can set up a governance relationship, you must create a governance policy template in the governing tenant. The policy template defines the type of relationship and the level of access the governing tenant has over the governed tenant. Reuse templates across distinct relationships.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#tenant-governance-administrator) in the governing tenant.
 
@@ -82,7 +81,7 @@ Before you start the handshake, enable governance invitations in the governing t
 
 1. Browse to **Tenant governance** > **Governing tenants** > **Received requests**.
 
-1. Select a request id to review the governance request.
+1. Select a request ID to review the governance request.
 
 1. Accept the governance request to create the governance relationship. The governing tenant receives an email notification that you accepted the request and created the relationship.
 
@@ -119,9 +118,9 @@ When you successfully create a governance relationship, Tenant Governance provis
 
 - In the governed tenant:
 
-  - If delegated administration is configured, Tenant Governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
+  - If you configured delegated administration, Tenant Governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
 
-  - If multi-tenant application management is configured, Tenant Governance creates the corresponding service principal and its permissions.
+  - If you configured multi-tenant application management, Tenant Governance creates the corresponding service principal and its permissions.
 
 ## Related content
 - [Update a governance relationship](how-to-update-governance-relationship.md)

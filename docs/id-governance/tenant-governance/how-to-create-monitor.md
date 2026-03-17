@@ -1,6 +1,5 @@
 ---
 title: Create a monitor (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra Tenant Governance to track configuration drift
 author: barclayn
 ms.author: barclayn
@@ -31,11 +30,11 @@ This article describes how to create and update a configuration monitor in the [
 
 ## Create a configuration monitor
 
-Use these steps to create a new configuration monitor. The monitor creation wizard guides you through Permissions, Configuration baseline, and Review.
+Use these steps to create a new configuration monitor. The monitor creation wizard guides you through **Permissions**, **Configuration baseline**, and **Review**.
 
 ### Step 1: Permissions
 
-On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. These permissions can be application permissions or Microsoft Entra roles. Add or remove permissions as needed, then grant all required permissions before you proceed.
+On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. Add or remove permissions as needed, then grant all required permissions before you proceed.
 
 Select **Next** to continue.
 
@@ -58,15 +57,14 @@ To update an existing configuration monitor:
 1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
 1. Find the monitor you want to update and select the edit (pencil) icon next to its name.
 
-The update wizard uses the same steps as creating a monitor: **Permissions → Configuration baseline → Review**.
+The update wizard uses the same steps as creating a monitor: **Permissions** → **Configuration baseline** → **Review**.
 
 When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
 
 > [!IMPORTANT]
 > When you change an existing monitor, Tenant Governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
-
-> [!NOTE]
-> After you create or update a monitor, you might need to wait up to six hours for the monitor to run. After the monitor runs, you can view monitor results and configuration drifts.
+>
+> After you create or update a monitor, you might need to wait up to six hours for the monitor to run. After the monitor runs, view monitor results and configuration drifts.
 
 ## Next steps
 

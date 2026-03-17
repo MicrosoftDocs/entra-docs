@@ -1,6 +1,5 @@
 ---
 title: Related tenants in Tenant Governance (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance discovers related tenants through identity, application, and billing signals across your organization
 author: barclayn
 ms.author: barclayn
@@ -14,13 +13,13 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Related Tenants is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, and customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
+The **related tenants** feature is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, and customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
 
 Modern organizations rarely operate within a single Microsoft Entra tenant. Mergers, acquisitions, divestitures, geographic expansion, developer experimentation, and decentralized IT models have led to tenant sprawl. The result is an expanding ecosystem of Microsoft Entra tenants that interact in ways that are often invisible or poorly understood.
 
-Related Tenants isn't an authoritative inventory of tenants an organization owns. Instead, it provides situational awareness by surfacing tenant connections based on evidence already present across identity, application, and billing systems. This awareness enables organizations to understand their tenant ecosystem and decide where governance actions might be appropriate.
+The related tenants feature isn't an authoritative inventory of tenants an organization owns. Instead, it provides situational awareness by surfacing tenant connections based on evidence already present across identity, application, and billing systems. This awareness enables organizations to understand their tenant ecosystem and decide where governance actions might be appropriate.
 
-At its core, Related Tenants answers the question:
+At its core, the related tenants feature answers the question:
 
 *"Which other Microsoft Entra tenants interact with mine, and what activity establishes those connections?"*
 
@@ -30,13 +29,13 @@ This visibility forms the foundation for effective Tenant Governance, without pr
 
 A related tenant is a Microsoft Entra tenant that demonstrates a verifiable connection to another tenant based on observable discovery signals. These signals are derived from real configuration and activity data and are refreshed over time.
 
-Tenant governance discovers related tenants. You don't manually declare them. Discovery establishes context, not intent. A related tenant might be:
+Tenant Governance discovers related tenants. You don't manually declare them. Discovery establishes context, not intent. A related tenant might be:
 
 - An external partner, vendor, or customer tenant
 - A software as a service (SaaS) provider tenant accessed through multitenant applications
 - An unsanctioned or shadow-IT tenant, such as one created by an employee for testing, development, or experimentation
 
-Tenant Discovery surfaces:
+**Tenant discovery** surfaces:
 
 - Which tenants are related
 - The discovery signal or signals that establish the relationship
@@ -56,13 +55,13 @@ Without discovery, these tenants remain invisible, even though they might:
 - Host applications used by employees
 - Be associated with shared billing or commerce relationships
 
-Related Tenants makes these interactions visible, including unsanctioned shadow-IT tenants, enabling organizations to distinguish between expected external relationships and internally created tenants that might require governance attention.
+The related tenants feature makes these interactions visible, including unsanctioned shadow-IT tenants, enabling organizations to distinguish between expected external relationships and internally created tenants that might require governance attention.
 
 ### Cross-tenant identity, application, and billing activity
 
 Modern identity and application models are inherently cross-tenant. External collaboration, multitenant applications, and shared billing constructs introduce interactions that span tenants with different ownership models.
 
-Related Tenants provides visibility into:
+The related tenants feature provides visibility into:
 
 - Cross-tenant identity activity
 - Application usage across tenant boundaries
@@ -72,9 +71,9 @@ This visibility allows organizations to understand where and how interactions oc
 
 ### Governance starts with awareness
 
-Tenant Governance depends on knowing what exists before deciding what to govern. Related Tenants provides the discovery layer that enables this awareness.
+Tenant Governance depends on knowing what exists before deciding what to govern. The related tenants feature provides the discovery layer that enables this awareness.
 
-By surfacing both external tenants and internally created shadow-IT tenants, Related Tenants allows administrators to:
+By surfacing both external tenants and internally created shadow-IT tenants, the related tenants feature lets administrators:
 
 - Identify tenants that are expected and externally managed
 - Detect tenants that might fall outside organizational policy
@@ -86,7 +85,7 @@ This approach ensures governance is intentional and evidence-based rather than r
 
 Tenant Governance is designed to help organizations manage multiple tenants as a system, recognizing that different tenants require different levels of oversight.
 
-Related Tenants represents the discovery layer of Tenant Governance:
+The related tenants feature represents the discovery layer of Tenant Governance:
 
 1. **Discovery**: Identify tenants that interact with your tenant
 1. **Understanding**: Review discovery signals and activity metrics
@@ -135,7 +134,7 @@ Associated metrics describe billing relationships and active capabilities, helpi
 
 ## From discovery to governance
 
-Tenant Discovery is intentionally a starting point, not an automatic enforcement mechanism.
+**Tenant discovery** is intentionally a starting point, not an automatic enforcement mechanism.
 
 Once related tenants are discovered, organizations can:
 
@@ -144,7 +143,7 @@ Once related tenants are discovered, organizations can:
 1. Use discovery metrics to prioritize investigation
 1. Initiate governance actions for tenants that require oversight
 
-Some related tenants might require governance; others might require monitoring; and many might require no action at all. Related Tenants enables this differentiation by providing visibility first, then enabling deliberate governance decisions.
+Some related tenants might require governance; others might require monitoring; and many might require no action at all. The related tenants feature enables this differentiation by providing visibility first, then enabling deliberate governance decisions.
 
 ## Next steps
 

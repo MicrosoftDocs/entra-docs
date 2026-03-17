@@ -1,6 +1,5 @@
 ---
 title: Create a governed workforce tenant (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to create a new Microsoft Entra tenant using the secure add-on tenant creation workflow in Tenant Governance.
 author: barclayn
 ms.author: barclayn
@@ -23,7 +22,7 @@ When you create a tenant using the **Governed Workforce** option in the Microsof
 ## Prerequisites
 
 - You must have at least **Tenant Contributor** permissions on at least one Microsoft Customer Agreement (MCA) subscription.
-- Enterprise Agreement (EA) subscriptions aren't currently supported.
+- Enterprise Agreement (EA) subscriptions aren't supported.
 - The **default** [governance policy template](governance-policy-templates.md) must be configured in the governing tenant. The tenant creation service uses only the default template (ID: `default`). If the default template isn't defined, the secure add-on tenant creation flow doesn't establish a governance relationship, even if other templates exist.
 
 ## Create the tenant
@@ -32,9 +31,9 @@ For step-by-step instructions on creating a governed workforce tenant, see the *
 
 ## What happens after tenant creation
 
-After the tenant is created:
+After the system creates the tenant:
 
-1. A governance relationship is formed between your home tenant and the new tenant, using the [default governance policy template](governance-policy-templates.md).
+1. A governance relationship forms between your home tenant and the new tenant, using the [default governance policy template](governance-policy-templates.md).
 1. The policy template provisions resources including cross-tenant access settings, granular delegated admin privileges (GDAP) assignments, and service principals.
 1. A Microsoft Entra ID Free billing asset appears in your Azure subscription under the resource group you selected.
 1. The new tenant appears in your [related tenants](related-tenants.md) inventory.

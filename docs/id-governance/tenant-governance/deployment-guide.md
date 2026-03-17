@@ -1,6 +1,5 @@
 ---
 title: Deploy Microsoft Entra Tenant Governance end to end (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to deploy Microsoft Entra Tenant Governance from initial setup through tenant discovery, governance relationships, delegated administration, and configuration monitoring.
 author: barclayn
 ms.author: barclayn

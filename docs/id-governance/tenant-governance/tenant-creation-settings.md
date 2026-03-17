@@ -1,6 +1,5 @@
 ---
 title: Secure add-on tenant creation (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how secure add-on tenant creation automatically establishes governance relationships and billing assets for new Microsoft Entra tenants.
 author: barclayn
 ms.author: barclayn

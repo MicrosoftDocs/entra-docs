@@ -1,6 +1,5 @@
 ---
 title: Interpret tenant discovery data (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to interpret discovery data and signals in Microsoft Entra Tenant Governance.
 author: barclayn
 ms.author: barclayn
@@ -14,7 +13,7 @@ ms.date: 03/05/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This guide helps administrators and security teams analyze related tenants discovered through Microsoft Entra Tenant Governance. It explains how to interpret related tenant signals and metrics to decide when to:
+This article helps administrators and security teams analyze related tenants discovered through Microsoft Entra Tenant Governance. It explains how to interpret related tenant signals and metrics to decide when to:
 
 - **Seek governance**: Bring a tenant under management by establishing a governance relationship.
 - **Quarantine a tenant**: Restrict interaction with an unsanctioned or risky tenant.
@@ -22,9 +21,9 @@ This guide helps administrators and security teams analyze related tenants disco
 
 Related tenants is the starting point for tenant discovery and assessment.
 
-## Background: What related tenants represents
+## Background: What the related tenants feature represents
 
-Related tenants provides situational awareness, not ownership or enforcement. A related tenant is surfaced because Microsoft Entra observed evidence of interaction across identity, application, or billing systems. This can include:
+Related tenants provides situational awareness, not ownership or enforcement. A related tenant is surfaced because Microsoft Entra observed evidence of interaction across identity, application, or billing systems. These interactions can include:
 
 - External partner or customer tenants
 - Internally created or shadow-IT tenants
@@ -36,7 +35,7 @@ Being "related" doesn't imply trust, risk, or administrative control by itself. 
 
 ## Step 1: Review the related tenants inventory
 
-After you enable tenant discovery, you can view a list of all discovered related tenants through the admin center or APIs. Each related tenant includes aggregated metrics that describe the nature and volume of interaction.
+After you enable tenant discovery, view a list of all discovered related tenants through the admin center or APIs. Each related tenant includes aggregated metrics that describe the nature and volume of interaction.
 
 Key things to look for initially:
 
@@ -57,7 +56,7 @@ Related tenants are inferred from multiple observable signals. Discovery signal 
 - **Multitenant applications**
 - **Billing or commerce relationships**
 
-A tenant related through multiple signals might be more connected to your tenant than one with a single signal. However, certain signals could matter more for organizational ties, such as a shared billing account. After you identify which signals are most important for your organization, you can filter the related tenants list to focus on those signals first.
+A tenant related through multiple signals might be more connected to your tenant than one with a single signal. However, certain signals could matter more for organizational ties, such as a shared billing account. After you identify which signals are most important for your organization, filter the related tenants list to focus on those signals first.
 
 ## Step 3: Analyze metrics trends (initial vs. recent)
 
@@ -74,7 +73,7 @@ You can sort metrics from increasing to decreasing use. Use these comparisons to
 - Is activity **growing, stable, or declining**?
 - Is interaction **one-sided or mutual**?
 
-A tenant with recent, increasing activity typically warrants closer scrutiny than one with only historical, initial signals. For example, a tenant with active B2B guest users, active administrative sign-ins, and a shared billing account represents a stronger operational relationship compared to a tenant surfaced only through historical B2B guest user presence captured at the time of discovery.
+A tenant with recent, increasing activity typically warrants closer scrutiny than one with only historical, initial signals. For example, a tenant with active B2B guest users, active administrative sign-ins, and a shared billing account represents a stronger operational relationship. Compare this to a tenant surfaced only through historical B2B guest user presence captured at the time of discovery.
 
 ## Step 4: Classify the related tenant
 
@@ -106,7 +105,7 @@ This classification helps reduce noise and focus attention elsewhere.
 **Recommended action:**
 
 - Investigate ownership (business unit, team, or developer).
-- Evaluate whether the tenant should be brought under IT management.
+- Evaluate whether IT should manage the tenant.
 - Consider establishing a [governance relationship](how-to-setup-governance-relationship.md).
 
 This approach aligns with the goal of bringing unsanctioned but legitimate tenants under governance, rather than blocking them.
@@ -123,9 +122,9 @@ This approach aligns with the goal of bringing unsanctioned but legitimate tenan
 **Recommended action:**
 
 - Use related tenants data as input to your risk assessment.
-- If risk is confirmed, consider quarantining the tenant. For more information, see [Quarantine unsanctioned tenants](/entra/fundamentals/quarantine-unsanctioned-tenants).
+- If you confirm the risk, consider quarantining the tenant. For more information, see [Quarantine unsanctioned tenants](/entra/fundamentals/quarantine-unsanctioned-tenants).
 
-The quarantine decision should be informed by related tenant signals, not made in isolation.
+Base the quarantine decision on related tenant signals, not on isolated analysis.
 
 ## Next steps
 

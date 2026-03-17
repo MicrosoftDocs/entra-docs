@@ -1,6 +1,5 @@
 ---
 title: Monitor governing tenant admin activity in a governed tenant (preview)
-titleSuffix: Microsoft Entra ID Governance
 description: Learn how to monitor and audit governing tenant administrator activity in your governed tenant using sign-in and audit logs
 author: barclayn
 ms.author: barclayn
@@ -14,7 +13,7 @@ ms.date: 03/10/2026
 > [!IMPORTANT]
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials through granular delegated admin privileges (GDAP). As a governed tenant admin, you can monitor these activities through sign-in logs and audit logs to maintain security visibility and ensure that governing tenant admins operate within their authorized scope.
+After you establish a governance relationship between a governing tenant and a governed tenant, administrators from the governing tenant can sign in to the governed tenant using their governing tenant credentials through granular delegated admin privileges (GDAP). As a governed tenant admin, monitor these activities through sign-in logs and audit logs. This monitoring helps maintain security visibility and ensures that governing tenant admins operate within their authorized scope.
 
 This article describes how to identify, review, and monitor the activities that governing tenant administrators perform in your governed tenant.
 
@@ -73,7 +72,7 @@ Use audit logs to track the specific actions and changes that governing tenant a
 
 1. To filter for actions performed by governing tenant admins, select **Add filters**.
 
-1. Select the **Initiated by (actor)** filter. This filter uses a **startsWith** match, so enter the governing tenant's name (for example, **Contoso IT**) to find entries where the actor starts with "{Governing tenant name}" and matches the "{Governing tenant name} Technician" display name format.
+1. Select the **Initiated by (actor)** filter. This filter uses a `startsWith` match. Enter the governing tenant's name (for example, **Contoso IT**) to find entries where the actor starts with the governing tenant name and matches the "{Governing tenant name} Technician" display name format.
 
 1. Select **Apply** to view the filtered results.
 
