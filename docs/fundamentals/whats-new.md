@@ -7,7 +7,7 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 03/17/2026
+ms.date: 03/12/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -19,18 +19,6 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
-
-## March 2026
-
-### General Availability - Authentication Extensibility Password Administrator role
-
-**Type:** New feature
-**Service category:** Role-Based Access Control
-**Product capability:** Microsoft Entra Built-in Roles
-
-The [Authentication Extensibility Password Administrator](../identity/role-based-access-control/permissions-reference.md#authentication-extensibility-password-administrator) role is the least-privileged role that enables you to trigger password submit events for custom authentication extensions, making it easier to migrate user passwords from external identity systems to Microsoft Entra External ID.
-
----
 
 ## February 2026
 
