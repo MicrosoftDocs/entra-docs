@@ -29,7 +29,7 @@ This view gives you a clearer understanding of your license count, the value you
 
 You can also navigate directly to the [License usage](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/LicensesMenuBlade/~/LicenseUtilization) page.
 
-:::image type="content" source="media/concept-license-utilization-insights/license-utilization-overview.png" alt-text="Screenshot of the License usage page in the Microsoft Entra admin center showing license entitlements and product usage insights." lightbox="media/concept-license-utilization-insights/license-utilization-overview.png":::
+:::image type="content" source="media/concept-license-usage-insights/license-utilization-overview.png" alt-text="Screenshot of the License usage page in the Microsoft Entra admin center showing license entitlements and product usage insights." lightbox="media/concept-license-usage-insights/license-utilization-overview.png":::
 
 ## License entitlements
 
