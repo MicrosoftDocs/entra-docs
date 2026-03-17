@@ -70,4 +70,4 @@
 - name: Reference
   items:
   - name: FAQ
-    href: faq.md
+    href: faq.yml
