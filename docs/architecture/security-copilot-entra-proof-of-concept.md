@@ -142,16 +142,16 @@ The following scenarios relate to user authentication, multifactor authenticatio
 2. Navigate to **Audit logs**. 
 3. Open the **Copilot prompt bar**. 
 4. To the Conditional Access policies in the tenant, run the following prompt.
-* *Were any new Conditional Access policies created in the last 24 hours?*
+  * *Were any new Conditional Access policies created in the last 24 hours?*
 5. Investigate modifications to Conditional Access policies.
-* *Show recently modified Conditional Access policies in the tenant.*
+  * *Show recently modified Conditional Access policies in the tenant.*
 6. Security Copilot in Entra returns a list of changed Conditional Access policies. 
 7. Observe the modified properties for changes and by whom. 
 8. See audit logs to know who exported them.
-* *Show me the audit logs for export activity in the last 24 hours.*
+  * *Show me the audit logs for export activity in the last 24 hours.*
 9. Security Copilot in Entra returns a list of log exports for the listed period. 
 10. Determine administrator visibility into Service Principals.
-*  *List all Service Principals in the tenant.*
+  *  *List all Service Principals in the tenant.*
 
 **Success criteria**
 
@@ -181,17 +181,17 @@ In the following section learn about the risk profile of a user, such as risky b
 4. Select a user from the list. 
 5. Use the Copilot Summary experience to generate a risk overview. 
 6. To generate a risk summary, run the following prompt in the **Copilot Summary**. 
-* *Summarize risky user activity for the account, including detection types, risk level, and contributing events.* 
+  * *Summarize risky user activity for the account, including detection types, risk level, and contributing events.* 
 7. If needed, use more specific prompts.
-* *Explain the detections contributing to this \<User Name or UPN> risk state.*
+  * *Explain the detections contributing to this \<User Name or UPN> risk state.*
 8. Determine the user's recent risky sign-in attempts. 
-* *What are the recent risky sign-in attempts associated with this \<User Name or UPN>?*
+  * *What are the recent risky sign-in attempts associated with this \<User Name or UPN>?*
 9. Investigate user authentication methods.
-* *What authentication methods are configured for this user?*
+  * *What authentication methods are configured for this user?*
 10. Review sign-in activity.
-* Show me sign-in activity for this user, for the last 14 days. Include locations and IP addresses for failed attempts. 
+  * Show me sign-in activity for this user, for the last 14 days. Include locations and IP addresses for failed attempts. 
 11. Examine the user's recent activity.
-* *Show audit logs for this user for the last 14 days.*
+  * *Show audit logs for this user for the last 14 days.*
 
 **Success criteria**
 
@@ -289,7 +289,6 @@ Short-term actions (0–30 days)
 2. Create end-user communication for changes that affects the user experience. 
 3. Set up and/or confirm data retention for agent log and metrics.  
 4. Apply Conditional Access optimization agent recommendations: 
-
   * Obtain and document a prioritized list of suggestions by chatting with the agent.  
   * Use the chat experience to finalize investigation and understand suggestions. 
   * Review suggestions and remediate identified gaps. 
