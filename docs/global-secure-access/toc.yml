@@ -160,6 +160,8 @@ items:
         href: how-to-configure-per-app-access.md
       - name: Configure Quick Access
         href: how-to-configure-quick-access.md
+      - name: Private Access segmentation strategies
+        href: how-to-private-access-segmentation-strategies.md
       - name: Application Discovery
         href: how-to-application-discovery.md
       - name: Configure Private Access with Privileged Identity Management (PIM)
