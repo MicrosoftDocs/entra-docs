@@ -1,13 +1,8 @@
 ---
 title: Bulk create users in the Azure portal
 description: Add users in bulk in Microsoft Entra ID
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
@@ -35,18 +30,34 @@ Download and fill in the bulk upload CSV template to help you successfully creat
 
 The rows in a downloaded CSV template are as follows:
 
-- **Version number**: The first row containing the version number must be included in the upload CSV.
+- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. For example, `Name [displayName] Required`. Some older versions of the template might have slight variations.
-- **Examples row**: We have included in the template a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
+- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
+
+[!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
 ### Additional guidance
 
-- The first two rows of the upload template must not be removed or modified, or the upload can't be processed.
-- The required columns are listed first.
-- We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
-- We recommend that you download the latest version of the CSV template as often as possible.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
+
 - Make sure to check there is no unintended whitespace before/after any field. For **User principal name**, having such whitespace would cause import failure.
 - Ensure that values in **Initial password** comply with the currently active [password policy](~/identity/authentication/concept-sspr-policy.md#username-policies).
+- Enter one user per row.
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload:
+
+```csv
+version:v1.0
+Name [displayName] Required,User name [userPrincipalName] Required,Initial password [passwordProfile] Required,Block sign in (Yes/No) [accountEnabled] Required,First name [givenName],Last name [surname],Job title [jobTitle],Department [department],Usage location [usageLocation],Street address [streetAddress],State or province [state],Country or region [country],Office [physicalDeliveryOfficeName],City [city],ZIP or postal code [postalCode],Office phone [telephoneNumber],Mobile phone [mobile]
+Alain Charon,alain@contoso.com,Password1!,No,Alain,Charon,Software Engineer,Engineering,US,,,,,,,
+Isabella Simonsen,isabella@contoso.com,Password1!,No,Isabella,Simonsen,Product Manager,Product,US,,,,,,,
+Joseph Price,joseph@contoso.com,Password1!,No,Joseph,Price,Sales Representative,Sales,US,,,,,,,
+```
+
+> [!IMPORTANT]
+> Only the first four columns are required: **Name**, **User name**, **Initial password**, and **Block sign in**. All other columns are optional and can be left empty.
 
 ## To create users in bulk
 
@@ -66,11 +77,13 @@ The rows in a downloaded CSV template are as follows:
 1. When your file passes validation, select **Submit** to start the bulk operation that imports the new users.
 1. When the import operation completes, you see a notification of the bulk operation job status.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
 
 ## Check status
 
-You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
    :::image type="content" source="./media/users-bulk-add/bulk-center.png" alt-text="Screenshot showing how to check the status of the operation in the bulk operations results page.":::
 

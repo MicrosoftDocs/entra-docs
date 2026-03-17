@@ -1,13 +1,9 @@
 ---
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
-author: owinfreyatl
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
-ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Change resource roles for an access package in entitlement management
@@ -89,7 +85,7 @@ If you want the identity who had a resource role membership to also be assigned 
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment) or [API permission (Preview)](#add-an-api-permission-preview), perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment), [API permission (Preview)](#add-an-api-permission-preview), or [SAP IAG access right (Preview)](#add-a-sap-iag-access-right-preview), perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
@@ -139,7 +135,7 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
 
 ## Add an application resource role
 
-You can have Microsoft Entra ID automatically assign identities access to a Microsoft Entra enterprise application, including SaaS applications, on-premises applications, and your organization's applications integrated with Microsoft Entra ID, when a user is assigned an access package. For applications that integrate with Microsoft Entra ID through federated single sign-on, Microsoft Entra ID issues federation tokens for identities assigned to the application.
+You can have Microsoft Entra ID automatically assign user identities access to a Microsoft Entra enterprise application, including SaaS applications, on-premises applications, and your organization's applications integrated with Microsoft Entra ID, when a user is assigned an access package. For applications that integrate with Microsoft Entra ID through federated single sign-on, Microsoft Entra ID issues federation tokens for identities assigned to the application.
 
 If your application hasn't yet been integrated with your Microsoft Entra directory, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
 
@@ -158,7 +154,7 @@ Here are some considerations when selecting an application:
 - Applications can also have groups assigned to their app roles as well. You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center can also show service principals for services that can't be selected as applications. In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package. Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
-- If your access package is for agent identities or agent users, then ensure that your application supports interactions from those identities. For more information, see [manage assignment of agent identities to an application (preview)](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
+- If your access package is for agent identities or service principals, then ensure that your application supports interactions from those identities. If the application provides APIs with OAuth permissions, add an [API permission](#add-an-api-permission-preview) to the access package, instead of adding an app role. For more information, see [manage assignment of agent identities to an application (preview)](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
 
 1. On the **Add resource roles to access package** page, select **Applications** to open the Select applications pane.
 
@@ -239,7 +235,17 @@ Prior to including API permissions in an access package, ensure that the access 
 :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
 > [!NOTE]
-> Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
+> Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta&preserve-view=true#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
+
+## Add a SAP IAG access right (Preview)
+
+Once you have [integrated with SAP IAG](entitlement-management-sap-integration.md) and added SAP IAG as a resource to a catalog, then you can select the SAP IAG access rights to include in an access package.
+
+1. In the Resource roles tab, select SAP IAG.
+
+1. In the resources table, you can select the specific business roles you want to include in the access package and select **Next**.
+    :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource." lightbox="media/entitlement-management-sap-integration/sap-resource-roles.png":::
+
 
 ## Add resource roles programmatically
 

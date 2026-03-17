@@ -1,18 +1,13 @@
 ---
 title: Understand Microsoft Entra application proxy connectors
-description: Learn how to use Microsoft Entra application proxy connectors.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Learn about Microsoft Entra private network connectors used by application proxy.
 ms.topic: concept-article
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/15/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
 
 # Understand Microsoft Entra application proxy connectors
 
-Application proxy uses the same connector as Microsoft Entra Private Access. The connector is called Microsoft Entra private network connector. To learn more about connectors, see [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md).
+Application proxy uses the same connector as Microsoft Entra Private Access, the Microsoft Entra private network connector. For more information, see [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md).
 

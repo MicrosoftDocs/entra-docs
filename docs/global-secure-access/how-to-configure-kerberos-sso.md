@@ -1,13 +1,9 @@
 ---
-title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access.
+title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access
 description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
-author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 12/9/2025
-ms.author: kenwith
+ms.date: 03/12/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
@@ -41,15 +37,15 @@ Microsoft Entra ID joined devices rely on the Active Directory domain and user i
 ## Microsoft Entra ID joined and Microsoft Entra ID hybrid joined devices – Windows Hello for Business single sign-on
 Extra configuration beyond this guide is required for Windows Hello for Business.
 
-Deployment of Hybrid Cloud Kerberos Trust with Microsoft Entra ID is recommended. Devices using cloud Kerberos trust get a TGT ticket that is used for single sign-on. To learn more about cloud Kerberos trust, see [Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#use-sso-to-sign-in-to-on-premises-resources-by-using-fido2-keys). 
+Deployment of Hybrid Cloud Kerberos Trust with Microsoft Entra ID is recommended. Devices using cloud Kerberos trust get a TGT ticket that is used for single sign-on. For more information about cloud Kerberos trust, see [Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#use-sso-to-sign-in-to-on-premises-resources-by-using-fido2-keys). 
 
-To deploy Windows Hello for Business cloud Kerberos trust with on premises Active Directory.
-1. Create the Microsoft Entra ID Kerberos server object. To learn how to create the object, see [Install the AzureADHybridAuthenticationManagement module](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
-1. Enable WHfB Cloud Trust on your devices using Intune or Group Policies. To learn how to enable WHfB, see [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune#configure-windows-hello-for-business-policy).
+To deploy Windows Hello for Business cloud Kerberos trust with on-premises Active Directory.
+1. Create the Microsoft Entra ID Kerberos server object. For more information about creating the object, see [Install the AzureADHybridAuthenticationManagement module](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
+1. Enable WHfB Cloud Trust on your devices using Intune or Group Policies. For more information about enabling WHfB, see [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune#configure-windows-hello-for-business-policy).
 
 
 ## Publish domain controllers
-Domain Controllers must be published for clients to obtain Kerberos tickets. The tickets are required for single sign-on to on premises resources.
+Domain Controllers must be published for clients to obtain Kerberos tickets. The tickets are required for single sign-on to on-premises resources.
 
 At a minimum, publish all Domain Controllers that are configured in the Active Directory site where your Private Access connectors are installed. For example, if your Private Access connectors are in your Brisbane data center, publish all the Domain Controllers in the Brisbane data center.
 
@@ -69,7 +65,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |49152-65535  |UDP/TCP   |Ephemeral ports  |
 
 > [!NOTE]
-> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). To learn more about Windows network port requirements including support for legacy versions of Windows Server, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
+> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). For more information about Windows network port requirements including support for legacy versions of Windows Server, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
@@ -82,7 +78,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 Once the enterprise application is created, browse back to the app and select **Users and Groups**. Add all users synchronized from Active Directory.
 
 ## Publish DNS suffixes
-Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources. To learn more about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
+Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on-premises resources. For more information about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
 1. Select the **Private DNS** tab and then select **Enable Private DNS**.
@@ -108,16 +104,16 @@ This diagram demonstrates how Microsoft Entra Private Access works when trying t
 ## Troubleshoot
 Microsoft Entra ID joined devices using password authentication rely on attributes being synchronized by Microsoft Entra ID Connect. Make sure the attributes `onPremisesDomainName`, `onPremisesUserPrincipalName`, and `onPremisesSamAccountName` have the right values. Use Graph Explorer and PowerShell to check the values.
 
-If these values aren't present, check your Microsoft Entra ID Connect synchronization settings and validate these attributes are being synchronized. To learn more about attribute synchronization, see [Microsoft Entra Connect Sync: Attributes synchronized to Microsoft Entra ID](../identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md).
+If these values aren't present, check your Microsoft Entra ID Connect synchronization settings and validate these attributes are being synchronized. For more information about attribute synchronization, see [Microsoft Entra Connect Sync: Attributes synchronized to Microsoft Entra ID](../identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md).
 
 If using Windows Hello for Business to sign in, run the commands from a nonelevated command prompt.
 `dsregcmd /status`
 
 Verify the attributes have `YES` as values.
  
-`PRT` should be present. To learn more about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
+`PRT` should be present. For more information about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
 
-`OnPremTgt` : *YES* indicates Entra Kerberos is correctly configured and the user has been issued a partial TGT for SSO to on premises resources. To learn more about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
+`OnPremTgt` : *YES* indicates Entra Kerberos is correctly configured and the user has been issued a partial TGT for SSO to on-premises resources. For more information about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
 
 Run the `klist` command.
 
@@ -129,7 +125,7 @@ Run the `nltest` command.
 
 `nltest /dsgetdc:contoso /keylist /kdc`
 
-Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `klist` flag.
+Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `KEYLIST` flag.
 
 ### How to avoid Kerberos Negative Caching on Windows Machines
 Kerberos is the preferred authentication method for services in Windows that verify user or host identities. Kerberos negative caching causes a delay in Kerberos tickets.

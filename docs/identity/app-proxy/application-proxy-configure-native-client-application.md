@@ -1,14 +1,9 @@
 ---
 title: Publish native client apps
-description: Covers how to enable native client apps to communicate with the Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
+description: Learn how to enable native client apps to communicate with the Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
 ms.custom: devx-track-dotnet
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
@@ -113,4 +108,4 @@ After you edit the MSAL code with these parameters, your users can authenticate 
 
 For more information about the native application flow, see [mobile](~/identity-platform/authentication-flows-app-scenarios.md#mobile-app-that-calls-a-web-api-on-behalf-of-an-interactive-user) and [desktop](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) apps in Microsoft Entra ID.
 
-Learn about setting up [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).
+For more information about setting up [single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method).

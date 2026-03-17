@@ -1,12 +1,8 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco VPNs
 description: Microsoft and Cisco VPNs coexistence solution guide.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
-ms.topic: conceptual
-ms.date: 10/06/2025
-ms.service: global-secure-access
+ms.topic: how-to
+ms.date: 03/13/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

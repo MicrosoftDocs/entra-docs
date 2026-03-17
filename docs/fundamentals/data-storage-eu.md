@@ -5,9 +5,7 @@ author: csmulligan
 manager: dougeby
 ms.author: cmulligan
 
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/07/2025
 ms.custom: it-pro, references-regions
 ms.collection: M365-identity-device-management

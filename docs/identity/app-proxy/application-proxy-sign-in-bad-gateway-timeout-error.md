@@ -1,13 +1,8 @@
 ---
 title: "Resolve a 'Corporate app can't be accessed' error"
 description: Learn how to resolve common access issues with Microsoft Entra application proxy applications.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: asteen
 ai-usage: ai-assisted
 ---
@@ -32,7 +27,7 @@ A *gateway time-out* error occurs when the service tries to reach the connector 
 
 ## "Bad gateway" errors
 
-A *bad gateway* error indicates that the connector is can't reach the back-end application. Common mistakes that cause this error are:
+A *bad gateway* error indicates that the connector can't reach the back-end application. Common mistakes that cause this error are:
 
 - A typo or mistake is in the internal URL.
 - The root of the application isn't published. An example is publishing `http://expenses/reimbursement` but trying to access `http://expenses`.
@@ -43,7 +38,7 @@ A *bad gateway* error indicates that the connector is can't reach the back-end a
 
 If you see a *forbidden* error, the user isn't assigned to the application. This error might be either in Microsoft Entra ID or on the back-end application.
 
-To learn how to assign users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
+For more information about assigning users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
 
 ## Check the application's internal URL
 

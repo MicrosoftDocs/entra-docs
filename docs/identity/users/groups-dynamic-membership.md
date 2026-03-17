@@ -1,16 +1,11 @@
 ---
 title: Manage Rules for Dynamic Membership Groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-ms.date: 12/19/2024
-ms.author: barclayn
+ms.date: 03/05/2026
 ms.reviewer: krbain
 ms.custom: it-pro
+ai-usage: ai-assisted
 ---
 
 # Manage rules for dynamic membership groups in Microsoft Entra ID
@@ -30,6 +25,20 @@ Also keep these limitations in mind:
 
 - You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
+
+### Security consideration: Evaluate attribute write permissions before using them in dynamic group rules
+
+When you create a dynamic membership rule, the security of that group's membership depends on who can modify the attributes referenced in the rule. Before selecting an attribute, review the write permissions for that attribute—both in Microsoft Entra ID and in any connected source directories.
+
+This is especially important for:
+
+- **Attributes synced from on-premises Active Directory.** Some on-premises attributes might be configured with permissions that allow users to modify their own values (SELF write).
+- **Groups used for access control.** If a dynamic group controls access to sensitive resources, applications, or Conditional Access policies, the security of that access is only as strong as the write controls on the attributes in the rule.
+
+As a best practice, audit the write permissions for all entity types and their attributes you plan to use in a dynamic membership rule, both in Microsoft Entra ID and at the source (such as on-premises Active Directory). Restrict self-service write access to attributes used in security-sensitive groups.
+
+> [!NOTE]
+> Role-assignable groups already prevent this risk by requiring assigned (not dynamic) membership.
 
 ### License requirements
 
@@ -224,7 +233,7 @@ When you specify a value within an expression, it's important to use the correct
 - Double quotation marks are optional unless the value is a string.
 - Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, because they're case sensitive.
-- When a string value contains double quotation marks, you should escape both quotation marks by using the backslash (`\`) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
+- When a string value contains double quotation marks, you should escape both quotation marks by using the backtick (\`\) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
 - You can also perform null checks by using `null` as a value; for example, `user.department -eq null`.
 
 #### Use of null values

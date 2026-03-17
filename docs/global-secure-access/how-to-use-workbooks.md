@@ -1,12 +1,8 @@
 ---
 title: How to use workbooks with Global Secure Access
 description: Workbooks provide rich, interactive reports for Global Secure Access. Learn how to integrate workbooks with log analytics for Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to learn how to use workbooks with Global Secure Access so I can better manage the solution.
@@ -15,21 +11,21 @@ ai-usage: ai-assisted
 
 # How to use workbooks with Global Secure Access
 
-Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member with access to the required Azure resources can create and edit workbooks. To learn more about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
+Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member with access to the required Azure resources can create and edit workbooks. For more information about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
 
 ## Prerequisites
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - The [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) to create, edit, and use workbooks.
-- An existing Log Analytics workspace. To learn more about Log Analytics, see [Overview of Log Analytics in Azure Monitor](/azure/azure-monitor/logs/log-analytics-overview).
+- An existing Log Analytics workspace. For more information about Log Analytics, see [Overview of Log Analytics in Azure Monitor](/azure/azure-monitor/logs/log-analytics-overview).
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 
 ## Export Global Secure Access information to Log Analytics
 
-Global Secure Access workbooks integrate with Log Analytics. This integration allows you to monitor and analyze logs effectively. To learn more about Global Secure Access log integration with Log Analytics, see [Integrate Microsoft Entra logs with Azure Monitor logs](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
+Global Secure Access workbooks integrate with Log Analytics. This integration allows you to monitor and analyze logs effectively. For more information about Global Secure Access log integration with Log Analytics, see [Integrate Microsoft Entra logs with Azure Monitor logs](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
-To learn how to send log information to Log Analytics, see [Send logs to Azure Monitor](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml#send-logs-to-azure-monitor).
+For information on how to send log information to Log Analytics, see [Send logs to Azure Monitor](../identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml#send-logs-to-azure-monitor).
 
 The Global Secure Access categories are: 
 

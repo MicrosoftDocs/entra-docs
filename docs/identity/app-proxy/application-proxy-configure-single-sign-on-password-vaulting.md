@@ -1,13 +1,8 @@
 ---
-title: Single sign-on to apps with Microsoft Entra application proxy
+title: Password vaulting for single sign-on with application proxy
 description: Turn on single sign-on for your published on-premises applications with Microsoft Entra application proxy in the Microsoft Entra admin center.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -21,7 +16,7 @@ Application proxy supports several [single sign-on modes](~/identity/enterprise-
 
 ## Prerequisites
 
-This article requires that an app is published and tested with application proxy. To learn more, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
+This article requires that an app is published and tested with application proxy. For more information, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
 
 ## Set up password vaulting for your application
 
@@ -59,9 +54,9 @@ This article requires that an app is published and tested with application proxy
 
 ## Test your app
 
-Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). Once signed in successfully, select the icon of the app. Opening the My Apps portal might trigger the installation of the My Apps Secure Sign-in browser extension. If credentials are predefined, the authentication to the app should happen automatically, otherwise you must specify the user name or password for the first time. 
+Go to the My Apps portal. Sign in with your credentials (or the credentials for a test account that you set up with access). After you sign in, select the icon of the app. Opening the My Apps portal might trigger the installation of the My Apps Secure Sign-in browser extension. If credentials are predefined, the authentication to the app happens automatically. Otherwise, you must specify the user name or password for the first time. 
 
 ## Next steps
 
-- Read about other ways to implement [Single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md)
-- Learn about [Security considerations for accessing apps remotely with Microsoft Entra application proxy](application-proxy-security.md)
+- For more information about other ways to implement [single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md)
+- [Security considerations for accessing apps remotely with Microsoft Entra application proxy](application-proxy-security.md)

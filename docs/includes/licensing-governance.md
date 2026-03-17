@@ -1,11 +1,11 @@
 ---
 title: include file
 description: include file
-author: billmath
+author: owinfreyATL
 ms.service: entra-id
 ms.topic: include
-ms.date: 08/06/2024
-ms.author: billmath
+ms.date: 12/19/2025
+ms.author: owinfrey
 ms.custom: include file
 ---
 
@@ -52,7 +52,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Applications in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-application-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - SharePoint sites in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-sharepoint-site-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
-|[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/entitlement-management-access-package-resources.md)|||| :white_check_mark: | :white_check_mark: |
+|[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/entitlement-management-sap-integration.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - API permissions in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission-preview)  - in [preview](~/id-governance/agent-id-governance-overview.md#license-requirements) as part of Microsoft Agent 365||||||
 |**EM - Approval options**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Multi-stage approvals with alternate approvers if no action is taken](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |

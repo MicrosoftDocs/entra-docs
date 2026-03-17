@@ -1,11 +1,8 @@
 ---
 title: Include file
 description: Include file
-author: omondiatieno
-ms.service: entra-id
 ms.topic: Include
 ms.date: 10/09/2025
-ms.author: jomondi
 ms.custom: Include file
 ---
 
@@ -37,7 +34,7 @@ The following prerequisites are required to implement provisioning groups to Act
  - The provisioning agent must be installed on a server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016.
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for Global Catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history.md#2280)
+ - Microsoft Entra Connect Sync with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280)
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize `AD DS:user:objectGUID` to `AAD DS:user:onPremisesObjectIdentifier`
 

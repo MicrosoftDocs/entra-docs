@@ -1,20 +1,19 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
-ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 search.appverid:  
 - MET150
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
+
+> [!NOTE]
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 ## How password hash synchronization works
 The Active Directory domain service stores passwords in the form of a hash value representation, of the actual user password. A hash value is a result of a one-way mathematical function (the *hashing algorithm*). There's no method to revert the result of a one-way function to the plain text version of a password. 
@@ -297,6 +296,9 @@ For reference, this snippet is what it should look like:
         </runtime>
     </configuration>
 ```
+
+> [!NOTE]
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 For information about security and FIPS, see [Microsoft Entra password hash sync, encryption, and FIPS compliance](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/aad-password-sync-encryption-and-fips-compliance/ba-p/243709).
 

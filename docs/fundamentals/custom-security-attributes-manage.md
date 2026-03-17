@@ -3,9 +3,6 @@ title: Manage access to custom security attributes in Microsoft Entra ID
 description: Learn how to manage access to custom security attributes in Microsoft Entra ID.
 author: rolyon
 ms.author: rolyon
-manager: femila
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 03/30/2025
 ms.collection: M365-identity-device-management

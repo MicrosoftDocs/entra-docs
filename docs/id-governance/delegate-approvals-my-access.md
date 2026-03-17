@@ -1,9 +1,6 @@
 ---
 title: Delegate Approvals in My Access (Preview)
 description: A how-to article explaining how system admins can delegate approvals using My Access
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/26/2025
 
@@ -19,7 +16,7 @@ Approval delegation in My Access allows approvers to assign another individual t
 
 ## License requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## How delegation works
 

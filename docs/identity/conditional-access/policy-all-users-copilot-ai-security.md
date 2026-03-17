@@ -1,15 +1,8 @@
 ---
 title: Conditional Access protections for Generative AI
 description: Protecting Gen AI services like Microsoft Security Copilot and Microsoft 365 Copilot with Conditional Access
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy
@@ -70,7 +63,7 @@ The following steps help create a Conditional Access policy to require all users
    1. Select **Require authentication strength**, then select the built-in **Phishing-resistant MFA** authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -104,7 +97,7 @@ The following steps help create a Conditional Access policy to require all users
    1. Select **Require device to be marked as compliant**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -134,7 +127,7 @@ The following steps help create a Conditional Access policy to require all users
       1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

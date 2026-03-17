@@ -1,13 +1,8 @@
 ---
 title: Access on-premises Application Programming Interface (API) with Microsoft Entra application proxy
 description: Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
 ms.custom: has-adal-ref, sfi-image-nochange
 ai-usage: ai-assisted
@@ -17,7 +12,7 @@ ai-usage: ai-assisted
 Business logic often lives in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
 
 > [!TIP]
-> The term "on premises" is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Now days, many self-hosted workloads run on a virtual machine in a datacenter. The terms on premises and private cloud are used interchangeably.
+> The term "on premises" is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Today, many self-hosted workloads run on a virtual machine in a datacenter. The terms on premises and private cloud are used interchangeably.
 
 This article walks you through setting up a Microsoft Entra application proxy solution for hosting a web API service that native apps can access.
 
@@ -33,7 +28,7 @@ The following diagram shows how you can use Microsoft Entra application proxy to
 
 The Microsoft Entra application proxy forms the backbone of the solution, working as a public endpoint for API access, and providing authentication and authorization. You can access your APIs from a vast array of platforms by using the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) libraries.
 
-Since Microsoft Entra application proxy authentication and authorization are built on top of Microsoft Entra ID, you can use Microsoft Entra Conditional Access to ensure only trusted devices can access APIs published through application proxy. Use Microsoft Entra join or Microsoft Entra hybrid joined for desktops, and Intune Managed for devices. You can also take advantage of Microsoft Entra ID P1 or P2 features like Microsoft Entra multifactor authentication, and the machine learning-backed security of [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
+Because Microsoft Entra application proxy authentication and authorization are built on top of Microsoft Entra ID, you can use Microsoft Entra Conditional Access to ensure only trusted devices can access APIs published through application proxy. Use Microsoft Entra join or Microsoft Entra hybrid joined for desktops, and Intune Managed for devices. You can also take advantage of Microsoft Entra ID P1 or P2 features like Microsoft Entra multifactor authentication, and the machine learning-backed security of [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 
 ## Prerequisites
 

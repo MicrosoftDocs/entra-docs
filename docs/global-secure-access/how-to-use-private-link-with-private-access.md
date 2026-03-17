@@ -1,12 +1,8 @@
 ---
 title: How to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access
 description: Learn how to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access.
-author: kenwith    
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/12/2026
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -17,7 +13,7 @@ Microsoft Entra Private Access lets you extend the security features of Azure Pr
 
 Azure Private Link lets you access Azure PaaS Services such as Azure Storage and Azure SQL Database. Azure Private Link also lets you access your Azure hosted services and partner services over a private endpoint in your virtual network. The result is that resources like virtual machines (VMs) can privately and securely communicate with Private Link resources.
 
-To learn more about Azure Private Link, see [What is Azure Private Link?](/azure/private-link/private-link-overview).
+For more information about Azure Private Link, see [What is Azure Private Link?](/azure/private-link/private-link-overview).
 
 This article shows you how to use Microsoft Entra Private Access to access an Azure Storage account behind Azure Private Link.
 

@@ -1,22 +1,18 @@
 ---
-title: Using Application Gateway WAF to protect your application
+title: Use Application Gateway WAF to protect your application
 description: How to add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj, besilvei
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
-# Using Application Gateway WAF to protect your applications
+# Use Application Gateway WAF to protect your applications
 
 Add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
 
-To learn more about Web Application Firewall, see  [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
+For more information about Web Application Firewall, see [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].
 
 ## Deployment steps
 

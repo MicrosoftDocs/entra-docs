@@ -1,12 +1,8 @@
 ---
 title: How to Manage the Private Access Profile
 description: Learn how to manage the Private Access traffic forwarding profile for Microsoft Entra Private Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -38,7 +34,7 @@ To enable the Private Access forwarding profile for your tenant, you must have:
 
 ## Private Access policies
 
-To enable the Private Access traffic forwarding profile, we recommend you first configure Quick Access. Quick Access includes the IP addresses, IP ranges, and fully qualified domain names (FQDNs) for the private resources you want to include in the policy. For more information, see [Configure Quick Access](how-to-configure-quick-access.md).
+To enable the Private Access traffic forwarding profile, it's recommended to first configure Quick Access. Quick Access includes the IP addresses, IP ranges, and fully qualified domain names (FQDNs) for the private resources you want to include in the policy. For more information, see [Configure Quick Access](how-to-configure-quick-access.md).
 
 You can also configure per-app access to your private resources by creating a Private Access app. Similar to Quick Access, you create a new Enterprise app, which can then be assigned to the Private Access traffic forwarding profile. Quick Access contains the main group of private resources you always want to route through the service. Private Access apps can be enabled and disabled as needed without impacting the FQDNs and IP addresses included in Quick Access.
 
@@ -60,7 +56,7 @@ For more information, see [Apply Conditional Access policies to Private Access a
 ## User and group assignments
 You can scope the Private Access profile to specific users and groups. The users and groups must be assigned to both the Private Access apps and the traffic forwarding profile.
 
-To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
+For more information about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 
 
