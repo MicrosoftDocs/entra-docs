@@ -48,5 +48,5 @@ landingContent:
         links:
           - text: Grant app permissions to an autonomous agent
             url: ./autonomous-agent-request-authorization-entra-admin.md
-          - text: Request authorization from user
-            url: ./interactive-agent-request-user-authorization.md
+          - text: Authenticate users and acquire tokens
+            url: ./interactive-agent-authentication-authorization-flow.md

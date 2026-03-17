@@ -3114,6 +3114,31 @@
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-authenticate-user.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-authorization.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-admin-authorization.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-tokens.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-authenticate-acquire-tokens.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
     }
   ]
 }
