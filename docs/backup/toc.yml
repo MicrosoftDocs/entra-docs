@@ -21,11 +21,14 @@ items:
     href: create-review-difference-reports.md
   - name: Recover objects
     href: recover-objects.md
+  - name: Review recovery history
+    href: review-recovery-history.md
+- name: Recovery best practices
+  expanded: true
+  items:
   - name: Recover user authentication methods
     href: recover-user-secrets.md
   - name: Recover application secrets
     href: recover-applications.md
-  - name: Review recovery history
-    href: review-recovery-history.md
-- name: Troubleshooting
-  href: troubleshooting.md
+  - name: Troubleshooting
+    href: troubleshooting.md
