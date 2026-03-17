@@ -3,7 +3,7 @@ metadata:
   title: Microsoft Entra ID Protection FAQ
   description: Frequently asked questions around Microsoft Entra ID Protection.
   ms.topic: faq
-  ms.date: 06/12/2025
+  ms.date: 03/17/2026
   ms.reviewer: etbasser
 
 title: Frequently asked questions around Microsoft Entra ID Protection
@@ -54,7 +54,7 @@ sections:
           - Microsoft Digital Crimes Unit (DCU), which disrupts cybercriminal infrastructure and recovers stolen data.
           - Industry partner intelligence sharing and collaboration with security researchers.
 
-          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. Discovered credentials are checked against your tenant's current valid password hashes using a secure hash comparison process — credentials aren't stored in plaintext, and discovered credential data is deleted shortly after processing. 
+          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. Discovered credentials are checked against your tenant's current valid password hashes using a secure hash comparison process — credentials aren't stored in plaintext, and discovered credential data is deleted shortly after processing. This detection requires [password hash synchronization (PHS)](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) for on-premises passwords.
 
       - question: |
           How does the leaked credentials detection work?

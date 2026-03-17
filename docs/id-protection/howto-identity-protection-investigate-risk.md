@@ -2,8 +2,8 @@
 title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.topic: how-to
-ms.date: 01/07/2026
-ms.reviewer: cokoopma
+ms.date: 03/17/2026
+ms.reviewer: lvandenende
 ms.custom: sfi-image-nochange
 ---
 # How to investigate risk
@@ -156,7 +156,7 @@ Leaked credentials detections are always high risk because they represent confir
 If this detection identified a leaked credential for a user:
 
 1. **Assess the scope of exposure.** Review the user's risk history and sign-in logs to determine if the leaked credential was used for unauthorized access. Look for correlated sign-in risk events such as sign-ins from unfamiliar locations, anonymous IP addresses, or atypical travel.
-1. **Check if the password was already changed.** Verify whether the user changed their password after the date the leak was detected. A cloud-based password reset through Microsoft Entra fully remediates the user risk for this detection. If the password was changed, the risk might already be self-remediated. If not, confirm the user as compromised and initiate a password reset.
+1. **Check if the password was already changed.** Verify whether the user changed their password after the date the leak was detected. A cloud-based password reset triggered by a [Microsoft Entra Conditional Access policy](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) fully remediates the user risk for this detection. If the password was changed, the risk might already be self-remediated. If not, confirm the user as compromised and initiate a password reset.
 1. **Block access if an attacker is active.** If sign-in logs show unauthorized access, or if an attacker has the ability to reset the password or perform MFA, block the user, reset the password, and revoke all refresh tokens. Revoking sessions is critical when there's evidence of active compromise.
 1. **Review for lateral movement.** Check the user's recent activity for signs of privilege escalation, new app registrations, mailbox rule changes, or access to sensitive resources that might indicate post-compromise activity.
 1. **Verify connected accounts.** If the user reuses passwords across services, consider the credential compromised beyond your tenant. Advise the user to change passwords on other services where they use the same credential.
