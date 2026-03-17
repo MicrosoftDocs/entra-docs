@@ -67,5 +67,7 @@
 
 - name: Reference
   items:
+  - name: Licensing
+    href: licensing.md
   - name: FAQ
     href: faq.yml
