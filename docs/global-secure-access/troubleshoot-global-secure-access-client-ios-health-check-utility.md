@@ -38,7 +38,7 @@ When the **X** symbol appears, the state is unhealthy and troubleshooting is rec
 
 ## Health check: device compliance
 
-If your organization uses [Microsoft Intune](/intune/intune-service/fundamentals/what-is-intune) to define device compliance policies, and [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) policies to enforce  the requirement to use Global Secure Access applications, the device will fail this test if it does not meet compliance criteria. 
+Your organization might use [Microsoft Intune](/intune/intune-service/fundamentals/what-is-intune) to define device compliance policies, and [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) policies to enforce the requirement to use Global Secure Access applications. If so, devices will fail this test if they don't meet compliance criteria. 
 
 To remediate device compliant errors:
 
@@ -145,7 +145,7 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
 3. Select **Connect**.
 4. Select **Traffic forwarding**. 
 5. Enable at least one traffic profile. 
-6. In about an hour, Global Secure Access receives the updated forwarding proifle.
+6. In about an hour, Global Secure Access receives the updated forwarding profile.
 
    ![Screenshot of profile options for traffic, private access, and internet access.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/profile-options.png)
 
