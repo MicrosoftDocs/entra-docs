@@ -10,7 +10,7 @@ ms.custom: it-pro
 
 Prior to August 2022, Microsoft Entra B2B supported self-service sign-up for email-verified users. With this feature, users create Microsoft Entra accounts, when they verify email ownership. These accounts were created in unmanaged (or viral) tenants: users created accounts with an organization domain, not under IT team management. Access persists after users leave the organization. 
 
-To learn more, see, [What is self-service sign-up for Microsoft Entra ID?](./directory-self-service-signup.md)
+To learn more, see [What is self-service sign-up for Microsoft Entra ID?](./directory-self-service-signup.md).
 
    > [!NOTE]
    > Unmanaged Microsoft Entra accounts via Microsoft Entra B2B were deprecated. As of August 2022, new B2B invitations can't be redeemed. However, invitations prior to August 2022 were redeemable with unmanaged Microsoft Entra accounts. 
@@ -28,19 +28,19 @@ Use the following guidance to remove unmanaged Microsoft Entra accounts from Mic
 
 After you run a tool, users with unmanaged Microsoft Entra accounts access the tenant, and re-redeem their invitations. However, Microsoft Entra ID prevents users from redeeming with an unmanaged Microsoft Entra account. They can redeem with another account type. Google Federation and SAML/WS-Federation aren't enabled by default. Therefore, users redeem with a Microsoft account (MSA) or email one-time password (OTP). MSA is recommended. 
 
-Learn more: [Invitation redemption flow](~/external-id/redemption-experience.md#invitation-redemption-flow)
+For more information, see [Invitation redemption flow](~/external-id/redemption-experience.md#invitation-redemption-flow).
 
 ## Overtaken tenants and domains
 
 It's possible to convert some unmanaged tenants to managed tenants. 
 
-Learn more: [Take over an unmanaged directory as administrator in Microsoft Entra ID](./domains-admin-takeover.md)
+For more information, see [Take over an unmanaged directory as administrator in Microsoft Entra ID](./domains-admin-takeover.md).
 
 Some overtaken domains might not be updated. For example, a missing DNS TXT record indicates an unmanaged state. Implications are:
 
 * For guest users from unmanaged tenants, redemption status is reset. A consent prompt appears. 
-  * Redemption occurs with same account
-* The tool might identify unmanaged users as false positives after you reset unmanaged user redemption status
+  * Redemption occurs with the same account.
+* The tool might identify unmanaged users as false positives after you reset unmanaged user redemption status.
 
 ## Reset redemption with a sample application
 
@@ -48,7 +48,7 @@ Use the sample application on [Azure-Samples/Remove-Unmanaged-Guests](https://gi
 
 ## Reset redemption using `MSIdentityTools` PowerShell module
 
-The `MSIdentityTools` PowerShell module is a collection of cmdlets and scripts, which you use in the Microsoft identity platform and Microsoft Entra ID. Use the cmdlets and scripts to augment PowerShell SDK capabilities. See, [microsoftgraph/msgraph-sdk-powershell](https://github.com/microsoftgraph/msgraph-sdk-powershell).
+The `MSIdentityTools` PowerShell module is a collection of cmdlets and scripts, which you use in the Microsoft identity platform and Microsoft Entra ID. Use the cmdlets and scripts to augment PowerShell SDK capabilities. See [microsoftgraph/msgraph-sdk-powershell](https://github.com/microsoftgraph/msgraph-sdk-powershell).
 
 Run the following cmdlets:
 
@@ -73,4 +73,4 @@ To delete unmanaged Microsoft Entra accounts, run:
 
 ## Resource
 
-The following tool returns a list of external unmanaged users, or viral users, in the tenant. </br> See, [Get-MSIdUnmanagedExternalUser](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MsIdUnmanagedExternalUser). 
+The following tool returns a list of external unmanaged users, or viral users, in the tenant. <br> See [Get-MSIdUnmanagedExternalUser](https://github.com/AzureAD/MSIdentityTools/wiki/Get-MsIdUnmanagedExternalUser). 

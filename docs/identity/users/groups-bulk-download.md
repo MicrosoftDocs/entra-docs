@@ -19,17 +19,17 @@ To download all groups in your organization:
 
     :::image type="content" source="media/bulk-operations/groups-management-page.png" alt-text="Screenshot of the Microsoft Entra admin center Groups blade showing the All groups list with column headers and actions.":::
 
-2. Select **Download groups**.
+1. Select **Download groups**.
 
     :::image type="content" source="media/bulk-operations/download-groups-button.png" alt-text="Screenshot of the Groups page with the Download groups button highlighted in the toolbar.":::
 
-3. Enter a filename and select **Start bulk operation**.
+1. Enter a filename and select **Start bulk operation**.
 
     :::image type="content" source="media/bulk-operations/download-filename-dialog.png" alt-text="Screenshot of the Download groups dialog prompting for a filename before starting the bulk operation.":::
 
-4. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download groups submission successful. Click on the title for more information."
+1. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download groups submission successful. Click on the title for more information."
 
-5. Select the **Success!** notification title to open the job details, then select the filename to download the CSV file. A **Download successful** notification confirms when the file has been downloaded.
+1. Select the **Success!** notification title to open the job details, then select the filename to download the CSV file. A **Download successful** notification confirms when the file has been downloaded.
 
 > [!TIP]
 > You can also select **Click here to view the status of each operation** in the download dialog to navigate directly to the **Bulk operation results** page, where you can monitor all pending and completed bulk operations.
@@ -54,9 +54,9 @@ The downloaded CSV file contains information about each group, including:
 To download a filtered subset of groups:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
-2. Select **Manage filters** to edit the column filters.
-3. Select **Download groups**.
-4. Follow steps 3-5 from [Bulk download groups](#bulk-download-groups).
+1. Select **Manage filters** to edit the column filters.
+1. Select **Download groups**.
+1. Follow steps 3-5 from [Bulk download groups](#bulk-download-groups).
 
 > [!NOTE]
 > When filtering groups, only the selected columns appear in the CSV file after editing filters.
