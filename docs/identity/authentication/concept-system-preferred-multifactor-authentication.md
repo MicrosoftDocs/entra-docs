@@ -1,6 +1,6 @@
 ---
 title: System-preferred multifactor authentication (MFA)
-description: Learn how system-preferred multifactor authentication and device-preferred credential evaluate available methods to prompt users with the most secure sign-in option.
+description: Learn how system-preferred multifactor authentication and device-preferred credential evaluate methods to prompt users with the most secure sign-in option.
 ms.topic: concept-article
 ms.date: 03/18/2026
 ms.reviewer: msft-poulomi
@@ -8,10 +8,10 @@ ms.custom: msecd-doc-authoring-106
 author: Justinha
 ms.author: Justinha
 
-# Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.
+# Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method so that I can improve my organization's sign-in security.
 ---
 
-# System-preferred multifactor authentication  - Authentication methods policy
+# System-preferred multifactor authentication - Authentication methods policy
 
 System-preferred multifactor authentication (MFA) prompts users to sign in by using the most secure method they registered. 
 It's an important security enhancement for users who authenticate by using telecom transports.
@@ -65,9 +65,9 @@ By default, system-preferred MFA is Microsoft managed and enabled for all users.
 
    For example, the following screenshot shows how to make system-preferred MFA explicitly enabled for only the Engineering group. 
 
-   :::image type="content" border="true" source="./media/concept-system-preferred-multifactor-authentication/enable.png" alt-text="Screenshot of how to enable Microsoft Authenticator settings for Push authentication mode.":::
+   :::image type="content" border="true" source="./media/concept-system-preferred-multifactor-authentication/enable.png" alt-text="Screenshot of the system-preferred multifactor authentication settings in the Microsoft Entra admin center, showing the feature enabled for the Engineering group.":::
 
-1. After you finish making any changes, click **Save**. 
+1. After you finish making any changes, select **Save**. 
 
 ## Enable system-preferred MFA using Graph APIs
 
@@ -94,12 +94,12 @@ System-preferred MFA can be enabled only for a single group, which can be a dyna
 
 Use the following API endpoint to enable **systemCredentialPreferences** and include or exclude groups:
 
-```
+```text
 https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy
 ```
 
->[!NOTE]
->In Graph Explorer, you need to consent to the **Policy.ReadWrite.AuthenticationMethod** permission. 
+> [!NOTE]
+> In Graph Explorer, you need to consent to the **Policy.ReadWrite.AuthenticationMethod** permission. 
 
 ### Request
 
@@ -114,7 +114,7 @@ Content-Type: application/json
         "state": "enabled",
         "excludeTargets": [
             {
-                "id": "d1411007-6fcf-4b4c-8d70-1da1857ed33c",
+                "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
                 "targetType": "group"
             }
         ],
