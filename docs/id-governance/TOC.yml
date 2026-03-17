@@ -248,12 +248,6 @@
       href: lifecycle-workflow-on-premises.md         
     - name: Workflow Insights
       href: lifecycle-workflow-insights.md        
-  - name: Licensing
-    items:
-    - name: Licensing fundamentals
-      href: licensing-fundamentals.md
-    - name: Licensing for guest users
-      href: microsoft-entra-id-governance-licensing-for-guest-users.md
 - name: How-to guides
   expanded: true
   items:
@@ -452,6 +446,10 @@
     href: governance-dashboard.md
   - name: Identity Governance service limits
     href: governance-service-limits.md  
+  - name: Licensing fundamentals
+    href: licensing-fundamentals.md
+  - name: Licensing for guest users
+    href: microsoft-entra-id-governance-licensing-for-guest-users.md
   - name: Services and integration partners
     href: services-and-integration-partners.md
   - name: Best practices for securing ID Governance
