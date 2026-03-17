@@ -3086,7 +3086,7 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "docs/identity/agent-id/identity-platform/agent-id-setup-instructions.md",
+      "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
       "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
       "redirect_document_id": false
     },
