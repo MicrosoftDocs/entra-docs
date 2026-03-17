@@ -106,20 +106,20 @@ The following scenarios relate to user authentication, multifactor authenticatio
 2. Navigate to **Sign-in logs**, then open the **Copilot prompt bar**. 
 3. Identify sign-in failure patterns.
 4. To understand failures in the tenant, run the following prompt.
-  * *What are the top-five reasons for sign-in failures, in the last 24 hours?*
+   * *What are the top-five reasons for sign-in failures, in the last 24 hours?*
 5. Security Copilot in Entra returns failure reasons, affected users, and associated conditions, such as Conditional Access. 
 6. Investigate an event using RequestID. 
 7. Select an event from the results. 
-  * *Tell me more about request ID \<RequestID>*
+   * *Tell me more about request ID \<RequestID>*
 8. Use the response to understand failure cause, authentication method, device state, and applied policies. 
 9. Assess the effect of device compliance(optional branch) If device posture is relevant, use the following prompt.
-  * *Which users signed in on noncompliant devices in the last 24 hours?*
+   * *Which users signed in on noncompliant devices in the last 24 hours?*
 10. Review returned RequestIDs to validate a specific sign‑in.
 11. Use the RequestID to retrieve event context, without manual log filtering. 
-  * *Show sign-in details for request ID \<RequestID>*
+    * *Show sign-in details for request ID \<RequestID>*
 12. Identify MFA gaps in the tenant.  
 13. Identify users without MFA protection. 
-  * *Which users in the tenant aren’t registered for MFA?*
+    * *Which users in the tenant aren’t registered for MFA?*
 14. Inspect authentication methods for a specific user for targeted investigation. 
 
 **Success criteria**
@@ -142,16 +142,16 @@ The following scenarios relate to user authentication, multifactor authenticatio
 2. Navigate to **Audit logs**. 
 3. Open the **Copilot prompt bar**. 
 4. To the Conditional Access policies in the tenant, run the following prompt.
-  * *Were any new Conditional Access policies created in the last 24 hours?*
+   * *Were any new Conditional Access policies created in the last 24 hours?*
 5. Investigate modifications to Conditional Access policies.
-  * *Show recently modified Conditional Access policies in the tenant.*
+   * *Show recently modified Conditional Access policies in the tenant.*
 6. Security Copilot in Entra returns a list of changed Conditional Access policies. 
 7. Observe the modified properties for changes and by whom. 
 8. See audit logs to know who exported them.
-  * *Show me the audit logs for export activity in the last 24 hours.*
+   * *Show me the audit logs for export activity in the last 24 hours.*
 9. Security Copilot in Entra returns a list of log exports for the listed period. 
 10. Determine administrator visibility into Service Principals.
-  *  *List all Service Principals in the tenant.*
+    *  *List all Service Principals in the tenant.*
 
 **Success criteria**
 
@@ -181,17 +181,17 @@ In the following section learn about the risk profile of a user, such as risky b
 4. Select a user from the list. 
 5. Use the Copilot Summary experience to generate a risk overview. 
 6. To generate a risk summary, run the following prompt in the **Copilot Summary**. 
-  * *Summarize risky user activity for the account, including detection types, risk level, and contributing events.* 
+   * *Summarize risky user activity for the account, including detection types, risk level, and contributing events.* 
 7. If needed, use more specific prompts.
-  * *Explain the detections contributing to this \<User Name or UPN> risk state.*
+   * *Explain the detections contributing to this \<User Name or UPN> risk state.*
 8. Determine the user's recent risky sign-in attempts. 
-  * *What are the recent risky sign-in attempts associated with this \<User Name or UPN>?*
+   * *What are the recent risky sign-in attempts associated with this \<User Name or UPN>?*
 9. Investigate user authentication methods.
-  * *What authentication methods are configured for this user?*
+   * *What authentication methods are configured for this user?*
 10. Review sign-in activity.
-  * Show me sign-in activity for this user, for the last 14 days. Include locations and IP addresses for failed attempts. 
+    * Show me sign-in activity for this user, for the last 14 days. Include locations and IP addresses for failed attempts. 
 11. Examine the user's recent activity.
-  * *Show audit logs for this user for the last 14 days.*
+    * *Show audit logs for this user for the last 14 days.*
 
 **Success criteria**
 
