@@ -111,7 +111,7 @@ The following scenarios relate to user authentication, multifactor authenticatio
 7. Select an event from the results. 
    * *Tell me more about request ID \<RequestID>*
 8. Use the response to understand failure cause, authentication method, device state, and applied policies. 
-9. Assess the effect of device compliance(optional branch) If device posture is relevant, use the following prompt.
+9. Assess the effect of device compliance (optional branch). If device posture is relevant, use the following prompt.
    * *Which users signed in on noncompliant devices in the last 24 hours?*
 10. Review returned RequestIDs to validate a specific sign‑in.
 11. Use the RequestID to retrieve event context, without manual log filtering. 
