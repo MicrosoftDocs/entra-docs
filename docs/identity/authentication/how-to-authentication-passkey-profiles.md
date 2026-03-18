@@ -50,7 +50,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 1. Select **Passkey (FIDO2)**. Select the link in the banner text to opt-in to using passkeys profiles. 
 
    > [!NOTE]
-   > After you opt in to enable passkeys, you can't opt out. 
+   > After you opt in to enable passkey profiles, you can't opt out. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles." lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
 
