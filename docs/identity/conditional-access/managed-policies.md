@@ -55,16 +55,16 @@ Microsoft-managed policies appear in the same list as all of your other Conditio
 
 You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 
-### Baseline Security Mode policies
+### Baseline security mode policies
 
-[Baseline Security Mode (BSM)](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) in the Microsoft 365 admin center bundles recommended security settings and policies for Microsoft 365 workloads. Two of these settings show up as Conditional Access policies: 
+[Baseline security mode (BSM)](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) in the Microsoft 365 admin center bundles recommended security settings and policies for Microsoft 365 workloads. Two of these settings show up as Conditional Access policies: 
 
 - Require phishing resistant authentication for admins
 - Block legacy authentication
 
-These policies are deployed in Microsoft Entra as Microsoft-managed policies, but they show up as **Baseline Security Mode** in the **Created by** column.
+These policies are deployed in Microsoft Entra as Microsoft-managed policies, but they show up as **Baseline security mode** in the **Created by** column.
 
-:::image type="content" source="media/managed-policies/baseline-security-mode-policies-list.png" alt-text="Screenshot of the Security Baseline Mode policies in the Conditional Access policies list." lightbox="media/managed-policies/baseline-security-mode-policies-list-expanded.png":::
+:::image type="content" source="media/managed-policies/baseline-security-mode-policies-list.png" alt-text="Screenshot of the Security Baseline Mode policies in the Conditional Access policies list." lightbox="media/managed-policies/baseline-security-mode-policies-list.png":::
 
 One important difference between BSM policies and Microsoft-managed policies is that the BSM policies are created by the administrator, not Microsoft.
  
@@ -73,13 +73,13 @@ One important difference between BSM policies and Microsoft-managed policies is 
 The following Microsoft-managed policies are currently available:
 
 - [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
-- [Block legacy authentication](#block-legacy-authentication) (also a Baseline Security Mode policy)
+- [Block legacy authentication](#block-legacy-authentication) (also a Baseline security mode policy)
 - [Block device code flow](#block-device-code-flow)
 - [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
 - [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
-- [Require phishing resistant authentication for admins](#require-phishing-resistant-authentication-for-admins) (Baseline Security Mode policy)
+- [Require phishing resistant authentication for admins](#require-phishing-resistant-authentication-for-admins) (Baseline security mode policy)
 
 ### Block all high risk agents from accessing all resources (Preview)
 
@@ -139,6 +139,12 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
     - This setup ensures that the policy doesn't block legitimate users and that you’re getting maximum value on your P2 licenses.
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
+
+### Require phishing resistant authentication for admins
+
+Accounts that are assigned specific privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant MFA on those accounts is an easy way to reduce the risk of those accounts being compromised. For more information on this policy, see [Require phishing resistant authentication for admins](policy-admin-phish-resistant-mfa.md).
+
+This policy is a [Baseline security mode](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) policy from Microsoft 365.
 
 ## Upgrade from security defaults
 
