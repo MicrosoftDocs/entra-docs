@@ -1,6 +1,6 @@
 ---
 title: Assign users and groups to traffic forwarding profiles
-description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access
+description: "Control which users and groups receive traffic forwarding policies, enabling gradual rollout and limiting scope during testing or deployment phases."
 ms.topic: how-to
 ms.date: 03/13/2026
 ai-usage: ai-assisted
