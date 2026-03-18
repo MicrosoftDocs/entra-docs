@@ -42,7 +42,7 @@ Conditional Access doesn't apply when:
    > [!NOTE]
    > Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creating agent identities and agent users. Agentic tasks are always performed by the agent identity.
 
-- An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public endpoint (Resource ID: a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1)`.
+- An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936)`.
 
    > [!NOTE]
    > Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph. Agentic flows are protected because Conditional Access protects token acquisition from agent identity or agent user.
