@@ -62,7 +62,7 @@ You can edit the state of a policy and what identities the policy should exclude
 - Require phishing resistant authentication for admins
 - Block legacy authentication
 
-These policies are deployed in Microsoft Entra as Microsoft-managed policies, but they show up as **Baseline security mode** in the **Created by** column.
+These policies are based on the Microsoft-managed policy framework, but they show up as **Baseline security mode** in the **Created by** column. BSM policies are managed in the Microsoft 365 admin center. For steps on how to manage these policies, see [Baseline security mode policies](/microsoft-365/baseline-security-mode/baseline-security-mode-settings#how-to-access-baseline-security-mode-settings).
 
 :::image type="content" source="media/managed-policies/baseline-security-mode-policies-list.png" alt-text="Screenshot of the Security Baseline Mode policies in the Conditional Access policies list." lightbox="media/managed-policies/baseline-security-mode-policies-list.png":::
 
