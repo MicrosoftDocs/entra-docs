@@ -64,13 +64,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-2. Select **MerchLogix** from your list of applications.
+1. Select **MerchLogix** from your list of applications.
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
@@ -78,21 +78,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Create** to create your configuration.	
+1. Select **Create** to create your configuration.
 
-1. Select **Properties** in the **Overview** page. 
+1. Select **Properties** on the **Overview** page.
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MerchLogix for update operations. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MerchLogix for update operations. Select the **Save** button to commit any changes.
 
-11. Select **Groups**.
+1. Select **Groups**.
 
-12. Review the group attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MerchLogix for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MerchLogix for update operations. Select the **Save** button to commit any changes.
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

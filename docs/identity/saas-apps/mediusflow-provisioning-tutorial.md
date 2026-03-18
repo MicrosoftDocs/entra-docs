@@ -3,7 +3,7 @@ title: Configure MediusFlow for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to MediusFlow.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/16/2026
+ms.date: 03/16/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MediusFlow so that I can streamline the user management process and ensure that users have the appropriate access to MediusFlow.
@@ -56,45 +56,45 @@ https://success.medius.com/documentation/administration_guide/manage_your_integr
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/1-auth.png" alt-text="Screenshot of the MediusFlow admin console. The MediusFlow tenant name box and the Authenticate button are highlighted in the first integration step." border="false":::
 
-2. Verify the connection with MediusFlow.
+1. Verify the connection with MediusFlow.
 
 	![Verify](./media/mediusflow-provisioning-tutorial/2-verify-connection.png)
 
-3. Provide the Microsoft Entra tenant ID.
+1. Provide the Microsoft Entra tenant ID.
 
 	![provide Tenant ID](./media/mediusflow-provisioning-tutorial/3-provide-azuread-tenantid.png)
 
    You can read more in the [FAQ](https://success.medius.com/documentation/administration_guide/user_login_and_transfer/end_to_end_support_office365/office365userintegration/#getting-azure-tenantid) on how to find it.
 
-4. Save the configuration.
+1. Save the configuration.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/4-save-config.png" alt-text="Screenshot of the MediusFlow admin console that shows the fourth integration step. The Save configuration button is highlighted." border="false":::
 
-5. Select user provisioning and select **OK**.
+1. Select user provisioning and select **OK**.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/5-select-user-provisioning.png" alt-text="Screenshot of the MediusFlow admin console that shows the fifth integration step. The Use user provisioning and Ok buttons are highlighted." border="false":::
 
-6. Select **Generate Secret Key**. Copy and save this value.This value is entered in the **Secret Token** field in the **Provisioning** tab of your MediusFLow application.
+1. Select **Generate Secret Key**. Copy and save this value.This value is entered in the **Secret Token** field in the **Provisioning** tab of your MediusFLow application.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/6-create-secret-1.png" alt-text="Screenshot of the User provisioning configuration tab in the MediusFlow admin console. The Generate secret key and Copy buttons are highlighted." border="false":::
 
-7. Select **OK**.
+1. Select **OK**.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/7-confirm-secret.png" alt-text="Screenshot of the MediusFlow admin console with a notification telling users to select Ok to generate a new secret key. The Ok button is highlighted." border="false":::
 
-8. To get the users imported with a pre-defined set of roles, companies and other general configurations in MediusFlow, you need to configure it first. Start by adding the configuration by selecting **Add new configuration**.
+1. To get the users imported with a pre-defined set of roles, companies and other general configurations in MediusFlow, you need to configure it first. Start by adding the configuration by selecting **Add new configuration**.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/8-configure-user-configuration-1.png" alt-text="Screenshot of the User provisioning configuration tab in the MediusFlow admin console. The Add new configuration button is highlighted." border="false":::
 
-9. Provide the default settings for the users. In this view, it's possible to set the default attribute. If the standard settings are ok, it's enough to provide just a valid company name. Since these configuration settings are fetched from Mediusflow, they need to be configured first. For more information see the **Prerequisites** section of this article.
+1. Provide the default settings for the users. In this view, it's possible to set the default attribute. If the standard settings are ok, it's enough to provide just a valid company name. Since these configuration settings are fetched from Mediusflow, they need to be configured first. For more information see the **Prerequisites** section of this article.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/9-configure-user-config-detail-1.png" alt-text="Screenshot of the MediusFlow Add new configuration window. Many settings are visible, including locale settings, a filter, and user roles." border="false":::
 
-10. Select **Save** to save the user configuration.
+1. Select **Save** to save the user configuration.
 
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/10-done-1.png" alt-text="Screenshot of the User provisioning configuration tab in the MediusFlow admin console. The Save button is highlighted." border="false":::
 
-11. To get the user provisioning link select **Copy SCIM Link**. Copy and save this value. This value is entered in the **Tenant URL** field in the **Provisioning** tab of your MediusFLow application.
+1. To get the user provisioning link select **Copy SCIM Link**. Copy and save this value. This value is entered in the **Tenant URL** field in the **Provisioning** tab of your MediusFLow application.
  
 	:::image type="content" source="./media/mediusflow-provisioning-tutorial/11-get-scim-link.png" alt-text="Screenshot of the User provisioning configuration tab in the MediusFlow admin console. The Copy S C I M link button is highlighted." border="false":::
 
@@ -129,25 +129,25 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret Token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to MediusFlow. If the connection fails, ensure your MediusFlow account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret Token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to MediusFlow. If the connection fails, ensure your MediusFlow account has Admin permissions and try again.
 
       ![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/mediusflow-provisioning-tutorial/provisioning.png)
 
-1. Select **Create** to create your configuration.	
+1. Select **Create** to create your configuration.
 
-1. Select **Properties** in the **Overview** page. 
+1. Select **Properties** on the **Overview** page.
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to MediusFlow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MediusFlow for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the MediusFlow API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to MediusFlow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MediusFlow for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the MediusFlow API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -170,9 +170,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText5|String|
 
 
-10. Select **Groups**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to MediusFlow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MediusFlow for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to MediusFlow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MediusFlow for update operations. Select the **Save** button to commit any changes.
 
     | Attribute | Type |
     |--|--|
