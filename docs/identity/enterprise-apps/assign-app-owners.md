@@ -51,7 +51,7 @@ $params = @{
     "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 }
 
-New-MgServicePrincipalOwnerByRef -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222' -BodyParameter $params
+New-MgServicePrincipalOwnerByRef -ServicePrincipalId '00001111-aaaa-2222-bbbb-3333cccc4444' -BodyParameter $params
 ```
 
 :::zone-end

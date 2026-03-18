@@ -81,10 +81,10 @@ Suppose you have a Conditional Access policy with the following configuration:
 
 | Example | Parameters | Result based on legacy What If evaluation | Result based on the new What If evaluation API |
 | :---: | --- | :---: | :---: |
-| 1 | UserId = “00aa00aa-bb11-cc22-dd33-44ee44ee44ee" | Applies | Does not apply |
-| 2 | UserId = “00aa00aa-bb11-cc22-dd33-44ee44ee44ee" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" | Applies | Does not apply |
-| 3 | UserId = “00aa00aa-bb11-cc22-dd33-44ee44ee44ee" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” | Applies | Does not apply |
-| 4 | UserId = “00aa00aa-bb11-cc22-dd33-44ee44ee44ee" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” <br> Sign-in Risk = “High” <br> | Applies | Applies |
+| 1 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" | Applies | Does not apply |
+| 2 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" | Applies | Does not apply |
+| 3 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” | Applies | Does not apply |
+| 4 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” <br> Sign-in Risk = “High” <br> | Applies | Applies |
 
 ## Related content
 
