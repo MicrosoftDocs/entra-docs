@@ -54,23 +54,21 @@ sections:
           - Microsoft Digital Crimes Unit (DCU), which disrupts cybercriminal infrastructure and recovers stolen data.
           - Industry partner intelligence sharing and collaboration with security researchers.
 
-          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. Discovered credentials are checked against your tenant's current valid password hashes using a secure hash comparison process — credentials aren't stored in plaintext, and discovered credential data is deleted shortly after processing. This detection requires [password hash synchronization (PHS)](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) for on-premises passwords.
-
       - question: |
           How does the leaked credentials detection work?
         answer: |
-          When new leaked credentials are discovered from any source, they're ingested into the Microsoft leaked credentials service and processed in multiple batches per day. The service receives the actual credential pair — including password material — and validates it against your tenant's current valid password hashes. This direct credential validation is what makes the detection high fidelity: a detection is only emitted when the discovered credential is confirmed to match a user's current password. Plaintext passwords aren't stored at any point, and all discovered credential data is deleted shortly after processing.
+          When new leaked credentials are discovered from any source, they're ingested into the Microsoft leaked credentials service and processed in multiple batches per day. The service receives the actual credential pair — including password material — and validates it against your tenant's current valid password hashes. This direct credential validation is what makes the detection high fidelity. A detection is only emitted when the discovered credential is confirmed to match a user's current password. Plaintext passwords aren't stored at any point, and all discovered credential data is deleted shortly after processing.
 
-          When a match is confirmed, ID Protection flags the affected user with **high** risk because the detection represents verified credential exposure, not a heuristic or probabilistic signal. Risk-based Conditional Access policies can then automatically require a secure password reset before the compromised credential can be exploited. A cloud-based password reset through Microsoft Entra fully remediates the user risk for this detection.
+          When a match is confirmed, ID Protection flags the affected user with **high** risk because the detection represents verified credential exposure, not a heuristic or probabilistic signal. Risk-based Conditional Access policies can then automatically require a secure password reset before the compromised credential can be exploited. A cloud-based password reset through Microsoft Entra fully remediates the user risk for this detection. Microsoft Defender for Identity now also surfaces leaked credentials detections for on-premises passwords. For more information, see [Accounts security posture assessments](/defender-for-identity/security-posture-assessments/accounts#change-password-for-on-premises-account-with-potentially-leaked-credentials-preview).
 
-          The leaked credentials detection requires [password hash synchronization](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to be enabled. Only credentials discovered **after** PHS is enabled are matched against your tenant — previously found credential pairs aren't retroactively checked.
+          The leaked credentials detection requires [password hash synchronization](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to be enabled. Only credentials discovered **after** PHS is enabled are matched against your tenant. Previously found credential pairs aren't retroactively checked.
 
       - question: |
           Why am I not seeing any leaked credentials?
         answer: |
           Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found **after** you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done.
 
-          To see how leaked credentials could appear in ID Protection for your tenant, try simulating leaked credentials in GitHub for Workload Identities. For more information, see [Simulate risk detections in Microsoft Entra ID Protection](howto-identity-protection-simulate-risk.md).
+          To see how leaked credentials could appear in ID Protection for your tenant, try simulating leaked credentials in GitHub for Workload Identities. For more information, see [Simulate risk detections in Microsoft Entra ID Protection](howto-identity-protection-simulate-risk.md#leaked-credentials-for-workload-identities).
 
           If you don't see any leaked credential risk events, it is because of the following reasons:
           - You don't have password hash sync enabled for your tenant.
