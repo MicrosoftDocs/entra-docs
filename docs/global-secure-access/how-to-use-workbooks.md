@@ -38,7 +38,7 @@ The Global Secure Access categories are:
 
 :::image type="content" source="media/how-to-use-workbooks/add-diagnostic-setting.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the Global Secure Access logs categories selected." lightbox="media/how-to-use-workbooks/add-diagnostic-setting.png":::
 
-## Global Secure Access workbooks
+## View Global Secure Access workbooks
 
 In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Workbooks** to view predefined workbooks. Note that you won't see the workbooks unless logging data has been captured.
 
