@@ -73,7 +73,7 @@ To configure Looop for automatic user provisioning with Microsoft Entra ID, you 
 
 	![Looop OIDC login](media/looop-provisioning-tutorial/msftlogin.png)
 
-7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Looop account.
+7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you'll be redirected to your Looop account.
 
 ## Configure automatic user provisioning to Looop 
 
