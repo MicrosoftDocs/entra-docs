@@ -2,15 +2,13 @@
 title: Sharing accounts and credentials
 description: Learn how to configure shared accounts in Microsoft Entra ID using password-based single sign-on so multiple users can securely access apps without sharing passwords directly.
 ms.topic: how-to
-ms.date: 03/14/2026
-ms.reviewer: krbain
+ms.date: 03/18/2026
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ai-usage: ai-assisted
 
 ---
-# Sharing accounts with Microsoft Entra ID
-
-## Overview
+# Share accounts with Microsoft Entra ID
 
 In Microsoft Entra ID, part of Microsoft Entra, sometimes organizations need to use a single username and password for multiple people, which often happens in the following cases:
 
@@ -35,7 +33,6 @@ To configure shared accounts, you need the following resources and roles:
 * A user account with at least the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role to configure SSO and assign users. The [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role also works.
 * At least the [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) role to create security groups. If your tenant allows users to create security groups, this role isn't required.
 * An application that supports password-based single sign-on (SSO).
-* The [My Apps Secure Sign-in Extension](https://microsoftedge.microsoft.com/addons/detail/my-apps-secure-signin-ex/gaaceiggkkiffbfdpmfapegoiohkiipl) installed in end-user browsers (Microsoft Edge or Chrome) for accessing password-based SSO apps.
 
 <a name='azure-active-directory-account-sharing'></a>
 
@@ -43,7 +40,7 @@ To configure shared accounts, you need the following resources and roles:
 
 Microsoft Entra ID provides a new approach to using shared accounts that eliminates these drawbacks.
 
-The Microsoft Entra administrator configures which applications a user can access by using the Access Panel and choosing the type of single sign-on best suited for that application. One of those types, *password-based single-sign on*, lets Microsoft Entra ID act as a kind of "broker" during the sign-on process for that app.
+The Microsoft Entra administrator configures which applications a user can access by using the Access Panel and choosing the type of single sign-on best suited for that application. One of those types, *password-based single sign-on*, lets Microsoft Entra ID act as a kind of "broker" during the sign-in process for that app.
 
 Users sign in once with their organizational account. This account is the same one they regularly use to access their desktop or email. They can discover and access only those applications that they're assigned to. With shared accounts, this list of applications can include any number of shared credentials. The end-user doesn't need to remember or write down the various accounts they might be using.
 
