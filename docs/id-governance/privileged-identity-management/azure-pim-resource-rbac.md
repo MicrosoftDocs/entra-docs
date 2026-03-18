@@ -8,7 +8,7 @@ ms.custom: sfi-image-nochange
 ---
 # View activity and audit history for Azure resource roles in Privileged Identity Management
 
-Privileged Identity Management (PIM) in Microsoft Entra ID, enables you to view activity, activations, and audit history for Azure resources roles within your organization. This includes subscriptions, resource groups, and even virtual machines. Any resource within the Microsoft Entra admin center that uses the Azure role-based access control functionality can take advantage of the security and lifecycle management capabilities in Privileged Identity Management. If you want to keep, audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
+Privileged Identity Management (PIM) in Microsoft Entra ID enables you to view activity, activations, and audit history for Azure resource roles within your organization. This includes subscriptions, resource groups, and even virtual machines. Any resource within the Microsoft Entra admin center that uses the Azure role-based access control functionality can take advantage of the security and lifecycle management capabilities in Privileged Identity Management. If you want to keep audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 
 > [!NOTE]
 > If your organization has outsourced management functions to a service provider who uses [Azure Lighthouse](/azure/lighthouse/overview), role assignments authorized by that service provider won't be shown here.
@@ -37,7 +37,7 @@ To see the actions a specific user took in various resources, view the Azure res
 
 ## Export role assignments with children
 
-You may have a compliance requirement where you must provide a complete list of role assignments to auditors. Privileged Identity Management enables you to query role assignments at a specific resource, which includes role assignments for all child resources. Previously, it was difficult for administrators to get a complete list of role assignments for a subscription and they had to export role assignments for each specific resource. Using Privileged Identity Management, you can query for all active and eligible role assignments in a subscription including role assignments for all resource groups and resources.
+You might have a compliance requirement where you must provide a complete list of role assignments to auditors. Privileged Identity Management enables you to query role assignments at a specific resource, which includes role assignments for all child resources. Previously, it was difficult for administrators to get a complete list of role assignments for a subscription and they had to export role assignments for each specific resource. Using Privileged Identity Management, you can query for all active and eligible role assignments in a subscription including role assignments for all resource groups and resources.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -105,7 +105,7 @@ My audit enables you to view your personal role activity.
 
 1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 
-1. Use the **Service** filter to display only audit events for the Privileged identity Management service. On the **Audit logs** page, you can:
+1. Use the **Service** filter to display only audit events for the Privileged Identity Management service. On the **Audit logs** page, you can:
 
     - See the reason for an audit event in the **Status reason** column.
     - See the approver in the **Initiated by (actor)** column for the "add member to role request approved" event.
@@ -114,7 +114,7 @@ My audit enables you to view your personal role activity.
 
 1. Select an audit log event to see the ticket number on the **Activity** tab of the **Details** pane.
   
-    :::image type="content" source="media/azure-pim-resource-rbac/audit-event-ticket-number.png " alt-text="Screenshot showing the ticket number for the audit event.":::
+    :::image type="content" source="media/azure-pim-resource-rbac/audit-event-ticket-number.png" alt-text="Screenshot showing the ticket number for the audit event.":::
 
 1. You can view the requester (person activating the role) on the **Targets** tab of the **Details** pane for an audit event. There are three target types for Azure resource roles:
 

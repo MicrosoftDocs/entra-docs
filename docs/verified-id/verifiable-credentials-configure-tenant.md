@@ -14,14 +14,14 @@ Advanced Verified ID setup is the classic way of setting up Verified ID where yo
 Advanced setup involves the following steps:
 
 1. **Configure Azure Key Vault**: Securely store and manage the keys used for signing and verifying credentials.
-2. **Register Decentralized ID**: Create and register your decentralized identifier (DID) to establish a trusted identity.
-3. **Verify Domain**: Ensure your domain is correctly linked to your DID, providing a trusted source for your credentials.
+1. **Register Decentralized ID**: Create and register your decentralized identifier (DID) to establish a trusted identity.
+1. **Verify Domain**: Ensure your domain is correctly linked to your DID, providing a trusted source for your credentials.
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > - Create an Azure Key Vault instance.
-> - Configure your the Verified ID service using the advanced setup.
+> - Configure the Verified ID service using the advanced setup.
 > - Register an application in Microsoft Entra ID.
 
 The following diagram illustrates the Verified ID architecture and the component you configure.
@@ -36,15 +36,15 @@ The following diagram illustrates the Verified ID architecture and the component
 
 ## Create a key vault
 
->[!NOTE]
->The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](/azure/key-vault/general/assign-access-policy) for its Permission model. There's currently a limitation if the Key Vault has Azure role-based access control
+> [!NOTE]
+> The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](/azure/key-vault/general/assign-access-policy) for its Permission model. There's currently a limitation if the Key Vault has Azure role-based access control.
 
 [Azure Key Vault](/azure/key-vault/general/basic-concepts) is a cloud service that enables the secure storage and access management of secrets and keys. The Verified ID service stores public and private keys in Azure Key Vault. These keys are used to sign and verify credentials.
 
 If you don't have an Azure Key Vault instance available, follow [these steps](/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal. The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](/azure/key-vault/general/assign-access-policy) for its Permission model instead of Azure role-based access control.
 
->[!NOTE]
->By default, the vault's creator account is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
+> [!NOTE]
+> By default, the vault's creator account is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
 
 ### Manage access to the key vault
 
@@ -64,7 +64,7 @@ To set up Verified ID, follow these steps:
 
 1. From the middle menu, select **Setup** tab and then select **Advanced Setup**.
 
-1. Select **Configure organization settings**
+1. Select **Configure organization settings**.
 
 1. Set up your organization by providing the following information:
 
@@ -72,7 +72,7 @@ To set up Verified ID, follow these steps:
 
     1. **Trusted domain**: Enter a domain name. The name you specify is added to a service endpoint in your decentralized identity (DID) document. The domain is what binds your DID to something tangible that the user might know about your business. Microsoft Authenticator and other digital wallets use this information to validate that your DID is linked to your domain. If the wallet can verify the DID, it displays a verified symbol. If the wallet can't verify the DID, it informs the user that the credential issuer is an organization it couldn't validate.
 
-        >[!IMPORTANT]
+        > [!IMPORTANT]
         > The domain can't be a redirect. Otherwise, the DID and domain can't be linked. Make sure to use HTTPS for the domain. For example: `https://did.woodgrove.com`.
         > Also ensure that the Key Vault's Permission Model is set to Vault Access Policy.
 
@@ -131,7 +131,7 @@ You can choose to grant issuance and presentation permissions separately if you 
 
 ## Register decentralized ID and verify domain ownership
 
-After Azure Key Vault is set up, and the service have a signing key, you must complete step 2 and 3 in the setup.
+After Azure Key Vault is set up, and the service has a signing key, you must complete steps 2 and 3 in the setup.
 
 :::image type="content" source="media/verifiable-credentials-configure-tenant/verifiable-credentials-getting-started-step-2-3.png" alt-text="Screenshot that shows how to set up Verifiable Credentials step 2 and 3.":::
 
@@ -139,9 +139,9 @@ After Azure Key Vault is set up, and the service have a signing key, you must co
 1. Select **Verified ID**.
 1. From the left menu, select **Overview**.
 1. From the middle menu, select **Register decentralized ID** to register your DID document, as per instructions in article [How to register your decentralized ID for did:web](how-to-register-didwebsite.md). You must complete this step before you can continue to verify your domain.
-1. From the middle menu, select **Verify domain ownership** to verify your domain, as per instructions in article [Verify domain ownership to your Decentralized Identifier (DID)](how-to-dnsbind.md)
+1. From the middle menu, select **Verify domain ownership** to verify your domain, as per instructions in article [Verify domain ownership to your Decentralized Identifier (DID)](how-to-dnsbind.md).
 
-Once that you have successfully completed the verification steps, and have green checkmarks on all three steps, you are ready to continue to the next tutorial.
+After you've successfully completed the verification steps, and have green checkmarks on all three steps, you're ready to continue to the next tutorial.
 
 ## Next steps
 

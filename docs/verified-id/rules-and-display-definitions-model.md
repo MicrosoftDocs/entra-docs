@@ -8,7 +8,7 @@ ms.date: 01/31/2025
 #Customer intent: As an administrator, I am looking for information to help me disable 
 ---
 
-# Rules and Display Definition Reference
+# Rules and display definition reference
 
   
 Rules and Display definitions are used to define a credential. You can read more about it in [How to customize your credentials](credential-design.md).
@@ -93,7 +93,7 @@ When you want the user to enter information themselves. This type is also called
 | -------- | -------- | -------- |
 | `type` | string (array) | a list of verifiable credential types this contract can issue |
 
-## Example rules definition:
+## Example rules definition
 ```json
 {
   "attestations": {
@@ -171,7 +171,7 @@ When you want the user to enter information themselves. This type is also called
 |`type`| string | the type of the claim |
 |`description` | string (optional) | the description of the claim |
 
-## Example display definition:
+## Example display definition
 ```json
 {
   "locale": "en-US",
@@ -187,8 +187,8 @@ When you want the user to enter information themselves. This type is also called
     }
   },
   "consent": {
-    "instructions": "Please click accept to add this credentials",
-    "title": "Do you want to accept the verified credential expert dentity?"
+    "instructions": "Please click accept to add this credential",
+    "title": "Do you want to accept the verified credential expert identity?"
   },
   "claims": [
     {
@@ -206,4 +206,4 @@ When you want the user to enter information themselves. This type is also called
 ```
 ## Next steps
 
-- Learn more on [how to customize your credentials](credential-design.md)
+- Learn more about [how to customize your credentials](credential-design.md).

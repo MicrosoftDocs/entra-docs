@@ -1,9 +1,9 @@
 ---
-title: Manage Rules for Dynamic Membership Groups in Microsoft Entra ID
+title: Manage rules for dynamic membership groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
 ms.topic: how-to
 ms.date: 03/05/2026
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ai-usage: ai-assisted
 ---
@@ -23,7 +23,7 @@ When the attributes of a user or a device change, the system evaluates all rules
 
 Also keep these limitations in mind:
 
-- You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
+- You can create dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
 
 ### Security consideration: Evaluate attribute write permissions before using them in dynamic group rules
@@ -82,7 +82,7 @@ user.department -eq "Sales"
 
 Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3,072 characters.
 
-### Constructing the body of a membership rule
+### Construct the body of a membership rule
 
 A membership rule that automatically populates a group with users or devices is a binary expression that results in a true or false outcome. The three parts of a simple rule are:
 
@@ -180,7 +180,7 @@ The following table lists all the supported operators and their syntax for a sin
 | `In` | `-in` |
 | `Not In` | `-notIn` |
 
-#### Using the -in and -notIn operators
+#### Use the -in and -notIn operators
 
 If you want to compare the value of a user attribute against multiple values, you can use the `-in` or `-notIn` operator. Use the bracket symbols (`[` and `]`) to begin and end the list of values.
 
@@ -190,7 +190,7 @@ In the following example, the expression evaluates to `true` if the value of `us
    user.department -in ["50001","50002","50003","50005","50006","50007","50008","50016","50020","50024","50038","50039","51100"]
 ```
 
-#### Using the -le and -ge operators
+#### Use the -le and -ge operators
 
 You can use the less than (`-le`) or greater than (`-ge`) operator when you're using the `employeeHireDate` attribute in rules for dynamic membership groups.
 
@@ -203,7 +203,7 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 
 ```
 
-#### Using the -match operator
+#### Use the -match operator
 
 You can use the `-match` operator for matching any regular expression.
 
@@ -302,7 +302,7 @@ Multi-value properties are collections of objects of the same type. You can use 
 | `assignedPlans` | Each object in the collection exposes the following string properties: `capabilityStatus`, `service`, `servicePlanId` | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled")```|
 | `proxyAddresses` | `SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (\_ -startsWith "contoso"))``` |
 
-#### Using the -any and -all operators
+#### Use the -any and -all operators
 
 You can use the following operators to apply a condition to one or all of the items in the collection:
 
@@ -335,7 +335,7 @@ The following expression selects all users who have no assigned service plan:
 user.assignedPlans -all (assignedPlan.servicePlanId -eq null)
 ```
 
-#### Using the underscore (\_) syntax
+#### Use the underscore (\_) syntax
 
 The underscore (`_`) syntax matches occurrences of a specific value in one of the multi-value string collection properties to add users or devices to a dynamic membership group. You use it with the `-any` or `-all` operator.
 
@@ -347,11 +347,13 @@ Here's an example of using the underscore in a rule to add members based on `use
 
 ### Other properties and common rules
 
+The following sections describe other common rule patterns for dynamic membership groups.
+
 #### Create a rule for direct reports
 
 You can create a group that contains all direct reports of a manager. When the manager's direct reports change in the future, the group's membership is adjusted automatically.
 
->[!NOTE]
+> [!NOTE]
 > The manager is also added to a direct reports dynamic group.
 
 You construct the direct reports rule by using the following syntax:
@@ -496,10 +498,10 @@ You can use the following device attributes.
 
 <sup>3</sup> When you use `extensionAttribute1-15` to create dynamic membership groups for devices, you need to set the value for `extensionAttribute1-15` on the device. [Learn more about how to write `extensionAttributes` on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true#example-2--write-extensionattributes-on-a-device).
 
-<sup>4</sup> When you use `systemLabels`, a read-only attribute that's used in various contexts (such as device management and sensitivity labeling) is not editable through Intune.
+<sup>4</sup> When you use `systemLabels`, a read-only attribute that's used in various contexts (such as device management and sensitivity labeling) isn't editable through Intune.
 
 ## Related content
 
 
-- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
 - [Create or update a dynamic membership group in Microsoft Entra ID](groups-create-rule.md)

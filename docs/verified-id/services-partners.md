@@ -5,13 +5,13 @@ ms.topic: how-to
 ms.date: 12/03/2025
 ---
 
-# Microsoft Entra Verified ID Services and solution partners
+# Microsoft Entra Verified ID services and solution partners
 
-Our Services and solutions partner network extends and accelerates Microsoft Entra Verified ID adoption. Service partners offer advisory, implementation, integration, and managed service capabilities that can help you build seamless end-user experiences using Verified ID.
+The services and solutions partner network extends and accelerates Microsoft Entra Verified ID adoption. Service partners offer advisory, implementation, integration, and managed service capabilities that can help you build seamless end-user experiences using Verified ID.
 
 ## Services and solution partner list
 
-You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service, and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
+Select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service, and custom business application scenarios. If you're a services or solution partner and would like to be included in Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
 
 | Partner name | Partner documentation |
 |--------------|----------------------|
@@ -35,4 +35,4 @@ You could select a partner from the list and build seamless end-user experiences
 
 ## Next steps
 
-Select a partner in the table to learn about their Microsoft Entra Verified ID services offerings, what kind of use cases were deployed and how they can support you.
+Select a partner in the table to learn about their Microsoft Entra Verified ID services offerings, what kind of use cases they've deployed, and how they can support you.

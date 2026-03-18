@@ -3,7 +3,7 @@ title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: dhruvinshah
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
