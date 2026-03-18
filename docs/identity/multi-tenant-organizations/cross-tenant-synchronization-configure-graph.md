@@ -2,8 +2,9 @@
 title: Configure cross-tenant synchronization using PowerShell or Microsoft Graph API
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
 ms.topic: how-to
-ms.date: 10/15/2024
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations

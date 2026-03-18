@@ -2,8 +2,9 @@
 title: Multitenant organization optional policy templates
 description: Learn about multitenant organization optional policy templates in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 04/23/2024
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---
