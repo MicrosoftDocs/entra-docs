@@ -1,8 +1,8 @@
 ---
 title: Assign users and groups to traffic forwarding profiles
-description: Learn how to roll out traffic forwarding profiles to users and groups with Global Secure Access
+description: "Control which users and groups receive traffic forwarding policies, enabling gradual rollout and limiting scope during testing or deployment phases."
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 # How to assign users and groups to traffic forwarding profiles
@@ -72,7 +72,7 @@ The process to change the user and group assignments for a traffic profile that'
 
 ### Automatic assignment through user attributes
 
-You can create and assign a dynamic group of users to the profile who satisfy specific criteria. To learn more about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
+You can create and assign a dynamic group of users to the profile who satisfy specific criteria. For more information about automatic assignment using user attributes, see [Create or update a dynamic group in Microsoft Entra ID](../identity/users/groups-create-rule.md).
 
 ## Assign the traffic profile to all users
 

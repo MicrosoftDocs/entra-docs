@@ -1,10 +1,8 @@
 ---
 title: Bulk operations in Microsoft Entra ID (Preview)
 description: Learn about the new Microsoft Entra bulk operations experience for managing users, groups, and devices.
-manager: pmwongera
 ms.topic: article
 ms.date: 02/24/2026
-ms.author: barclayn
 ms.custom: it-pro
 ---
 
@@ -13,7 +11,7 @@ ms.custom: it-pro
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations. The new bulk operations service doesn't support exporting hidden memberships.
+> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported (exported CSV doesn't have a localization template, but import and remove are supported). Additionally, guest users cannot initiate bulk operations. The new bulk operations service doesn't support exporting hidden memberships.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
@@ -94,8 +92,8 @@ To add multiple members to a group:
 
 6. Monitor the notification for job completion. Select the **Success!** link to view the operation status. 
 
->[!IMPORTANT]
-> If you add invalid Object IDs in the uploaded csv file, the bulk operation status shows **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
+> [!IMPORTANT]
+> If you add invalid Object IDs in the uploaded CSV file, the bulk operation status shows **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
 
 
 ## Bulk remove group members 
@@ -178,7 +176,7 @@ You can bulk export users following the steps in [Download a list of users in Mi
 
     Entries: Object Ids or UPN of members to add to the Admin Unit. Rename the file if desired, then select and upload the edited file.
 
-6. Click **Submit** after successful upload.
+6. Select **Submit** after successful upload.
 
     :::image type="content" source="Media/bulk-operations/admin-unit-submit-upload.png" alt-text="Screenshot of the bulk add members submission screen.":::
 
@@ -186,16 +184,16 @@ You can bulk export users following the steps in [Download a list of users in Mi
 
     :::image type="content" source="Media/bulk-operations/admin-unit-success-notification.png" alt-text="Screenshot of success notification for bulk add members operation.":::
 
-8. Click on 'Success' to navigate to Bulk Jobs List to view bulk job status and find the submitted job (could do this by sort by creation time), click to download.
+8. Select **Success** to navigate to the bulk jobs list. You can sort by creation time to find your job, then select it to download.
 
     :::image type="content" source="Media/bulk-operations/admin-unit-bulk-jobs-list.png" alt-text="Screenshot of the bulk jobs list showing the completed operation.":::
 
     :::image type="content" source="Media/bulk-operations/admin-unit-download-results.png" alt-text="Screenshot of downloading the bulk operation results.":::
 
 > [!NOTE]
-> Verify if the correct object ids were added to the admin unit successfully. Refresh the UX if needed to see the updated state; it takes some time to reflect especially when adding groups to Admin Unit.
+> Verify that the correct object IDs were added to the admin unit successfully. Refresh the UX if needed to see the updated state; it takes some time to reflect especially when adding groups to Admin Unit.
 >
-> If the input includes an invalid Object ID or one already assigned to this admin unit, the bulk operation status will show "Failed" instead of "Success" due to not all rows successfully processed. In the results csv, you will see the failure reason as 'The request was malformed or contains invalid parameters'. This is most likely due to the object being already assigned to this admin unit pre-operation. Other valid rows should still be processed successfully, please verify accordingly.
+> If the input includes an invalid Object ID or one already assigned to this admin unit, the bulk operation status shows "Failed" instead of "Success" due to not all rows successfully processed. In the results csv, you will see the failure reason as 'The request was malformed or contains invalid parameters'. This is most likely due to the object being already assigned to this admin unit pre-operation. Other valid rows should still be processed successfully, please verify accordingly.
 
 ## Remove users from an administrative unit in a bulk operation
 
@@ -211,7 +209,7 @@ You can bulk export users following the steps in [Download a list of users in Mi
 
 5. In the **Bulk remove members** pane, download the comma-separated values (CSV) template.
 
-6. Do not change the first row of the template, and for each row fill in objectID or UPN of the users/devices/groups that you want to remove.
+6. Don't change the first row of the template, and for each row fill in objectID or UPN of the users/devices/groups that you want to remove.
 
 7. Save your changes and upload the CSV file.
 
@@ -223,9 +221,9 @@ To download all active role assignments across all roles, including built-in and
 
 1. On the **Roles and administrators** page, select **All roles**.
 
-2. Select **the Download assignments**.
+2. Select **Download assignments**.
 
-3. Click on 'Success' to navigate to Bulk Jobs List to view bulk job status and find the submitted job (could do this by sort by creation time), click to download.
+3. Select **Success** to navigate to the bulk jobs list. You can sort by creation time to find your job, then select it to download.
 
     :::image type="content" source="Media/bulk-operations/role-assignment-bulk-jobs-list.png" alt-text="Screenshot of bulk jobs list for role assignment download.":::
 

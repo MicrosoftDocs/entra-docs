@@ -1,11 +1,8 @@
 ---
 title: Renew Microsoft Entra role assignments in PIM
 description: Learn how to extend or renew Microsoft Entra role assignments in Microsoft Entra Privileged Identity Management (PIM)
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
-ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
 ---
@@ -36,8 +33,8 @@ Users assigned to a role can extend expiring role assignments directly from the 
 
 When the assignment end date and time is within 14 days, the button to **Extend** becomes an active link in the user interface. In the following example, assume the current date is March 27.
 
->[!Note]
->For a group assigned to a role, the **Extend** link never becomes available so that a user with an inherited assignment can't extend the group assignment.
+> [!NOTE]
+> For a group assigned to a role, the **Extend** link never becomes available so that a user with an inherited assignment can't extend the group assignment.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/pim-extend-within-fourteen.png" alt-text="Screenshot showing the action column with links to Activate or Extend.":::
 
@@ -47,8 +44,8 @@ To request an extension of this role assignment, select **Extend** to open the r
 
 Enter a reason for the extension request, and then select **Extend**.
 
->[!NOTE]
->We recommend including the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
+> [!NOTE]
+> Include the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
 
 Administrators receive an email notification to review the extension request. If a request to extend has already been submitted, an Azure notification appears in the portal.
 
@@ -62,11 +59,11 @@ Go to the **Pending requests** page to view the status of your request or to can
 
 When a user or group submits a request to extend a role assignment, administrators receive an email notification that contains the details of the original assignment and the reason for the request. The notification includes a direct link to the request for the administrator to approve or deny.
 
-In addition to using following the link from email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
+In addition to following the link from the email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/extend-admin-approve-list.png" alt-text="Screenshot showing Microsoft Entra roles - Approve requests page listing requests and links to approve or deny.":::
 
-When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
+When an administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/extend-admin-approve-form.png" alt-text="Screenshot showing the Approved role assignment request with requestor reason, assignment type, start time, end time, and reason.":::
 
@@ -84,7 +81,7 @@ To extend a role assignment, browse to the role or assignment view in Privileged
 
 In the following request, an administrator extends an active assignment using Microsoft Graph API.
 
-#### HTTP request
+### HTTP request
 
 
 ````HTTP
@@ -106,7 +103,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
 }
 ````
 
-#### HTTP response
+### HTTP response
 
 ````HTTP
 {
@@ -155,7 +152,7 @@ While conceptually similar to the process for requesting an extension, the proce
 
 ### Self-renew
 
-Users who can no longer access resources can access up to 30 days of expired assignment history. To do this, they browse to **My Roles** in the left pane, and then select the **Expired roles** tab in the Microsoft Entra roles section.
+Users who can no longer access resources can access up to 30 days of expired assignment history. To do this, browse to **My Roles** in the left pane, and then select the **Expired roles** tab in the Microsoft Entra roles section.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/renew-from-myroles.png" alt-text="Screenshot showing the My roles page - Expired roles tab.":::
 
@@ -181,11 +178,11 @@ When approving a request to renew role assignment, administrators must enter a n
 
 ### Admin renew
 
-They can also renew expired role assignments from within the **Expired** roles tab of a Microsoft Entra role. To view a list of all expired role assignments, on the **Assignments** screen, select **Expired roles**.
+Administrators can also renew expired role assignments from within the **Expired** roles tab of a Microsoft Entra role. To view a list of all expired role assignments, on the **Assignments** screen, select **Expired roles**.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/renew-from-assignments-pane.png" alt-text="Screenshot of the Microsoft Entra roles - Assignments page listing expired roles with links to renew.":::
 
 ## Next steps
 
-- [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md)
+- [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](pim-approval-workflow.md)
 - [Configure Microsoft Entra role settings in Privileged Identity Management](pim-how-to-change-default-settings.md)

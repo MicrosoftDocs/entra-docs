@@ -1,9 +1,9 @@
 ---
-title: Add Your Own Traffic Manager Solution to Application Proxy
+title: Add your own Traffic Manager solution to application proxy
 description: Learn how to combine Microsoft Entra application proxy with a Traffic Manager solution.
-ms.reviewer: ashishj
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ms.custom: template-how-to
 ai-usage: ai-assisted
 ---

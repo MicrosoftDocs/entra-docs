@@ -86,9 +86,9 @@ Admins with at least the [Security Reader](~/identity/role-based-access-control/
     :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 
 - The **Coverage** tab shows a summary of applications with and without Conditional Access policy coverage over the past seven days.
-    :::image type="content" source="media/overview/conditional-access-coverage-tab.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-coverage-tab.png":::
+    :::image type="content" source="media/overview/conditional-access-coverage-tab.png" alt-text="Screenshot of the Conditional Access coverage tab showing application policy coverage." lightbox="media/overview/conditional-access-coverage-tab.png":::
 - The **Policies** page lists all of the polices in your tenant, including report-only policies and policies created by the Conditional Access Optimization Agent (if applicable). Options to filter, view "What if" scenarios, and create new policies are available here.
-    :::image type="content" source="media/overview/conditional-access-policies-list.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-policies-list.png":::
+    :::image type="content" source="media/overview/conditional-access-policies-list.png" alt-text="Screenshot of the Conditional Access policies list page." lightbox="media/overview/conditional-access-policies-list.png":::
 
 ### Conditional Access Optimization Agent
 

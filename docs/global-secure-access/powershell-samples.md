@@ -2,8 +2,8 @@
 title: PowerShell samples for Global Secure Access
 description: Use these PowerShell samples for Global Secure Access.
 ms.topic: sample
-ms.date: 02/21/2025
-ms.reviewer: sumi
+ms.date: 03/13/2026
+ms.reviewer: katabish
 ai-usage: ai-assisted
 ---
 

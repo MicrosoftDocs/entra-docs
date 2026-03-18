@@ -1,8 +1,8 @@
 ---
 title: How to use the remote network health logs
-description: Learn how to check the health of your remote networks with the Global Secure Access remote network health logs.
+description: "Access and analyze IPsec tunnel and BGP health logs for remote networks using the Microsoft Entra admin center, Microsoft Graph API, or Log Analytics."
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
