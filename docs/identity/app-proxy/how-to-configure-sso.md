@@ -1,6 +1,6 @@
 ---
 title: Understand single sign-on with an on-premises app using application proxy
-description: Learn how to configure single sign-on for on-premises apps published through Microsoft Entra application proxy.
+description: "Configure single sign-on for on-premises apps published through Microsoft Entra application proxy. Covers password-based, SAML, Kerberos, and header-based SSO options."
 ms.topic: how-to
 ms.date: 03/10/2026
 ms.reviewer: KaTabish

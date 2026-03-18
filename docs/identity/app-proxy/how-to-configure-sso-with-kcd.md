@@ -1,6 +1,6 @@
 ---
 title: Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy
-description: Learn how to provide single sign-on using Microsoft Entra application proxy.
+description: "Configure Kerberos-based SSO for on-premises applications using Kerberos Constrained Delegation (KCD) with Microsoft Entra application proxy."
 ms.topic: how-to
 ms.date: 03/11/2026
 ms.reviewer: KaTabish

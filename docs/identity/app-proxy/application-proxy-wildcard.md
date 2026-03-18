@@ -1,6 +1,6 @@
 ---
 title: Wildcard applications in Microsoft Entra application proxy
-description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
+description: "Publish and manage multiple on-premises applications at once using wildcard URL patterns in Microsoft Entra application proxy."
 ms.topic: how-to
 ms.date: 03/11/2026
 ms.reviewer: KaTabish
@@ -71,7 +71,7 @@ If the connector group assigned to the wildcard application uses a **different r
 | Europe  | `<yourAADTenantId>.eur.tenant.runtime.msappproxy.net`|
 | North America  | `<yourAADTenantId>.nam.tenant.runtime.msappproxy.net` |
 
-## Considerations
+## Wildcard application considerations
 
 Here are some considerations you should take into account for wildcard applications.
 
@@ -107,7 +107,7 @@ The wildcard application is represented with just one tile in the [MyApps panel]
 1. Follow the guidelines for [setting a homepage URL](application-proxy-configure-custom-home-page.md).
 1. Set **Show Application** to **true** on the application properties page.
 
-### Kerberos constrained delegation
+### Kerberos constrained delegation considerations
 
 For applications using [kerberos constrained delegation (KCD) as the SSO method](./how-to-configure-sso-with-kcd.md), the Service Principal Name (SPN) listed for the SSO method needs a wildcard. For example, the SPN could be: `HTTP/*.adventure-works.com`. You still need to have the individual SPNs configured on your backend servers (for example, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
 

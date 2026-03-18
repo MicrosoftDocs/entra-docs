@@ -73,7 +73,7 @@ The following core requirements must be met to configure and implement Microsoft
 
 * **Licensing**: Application proxy is available through a Microsoft Entra ID P1 or P2 subscription. Refer to the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) for a full list of licensing options and features.
 
-### Application discovery
+### Discover applications for migration
 
 Compile an inventory of all in-scope applications that are being published via application proxy by collecting the following information:
 

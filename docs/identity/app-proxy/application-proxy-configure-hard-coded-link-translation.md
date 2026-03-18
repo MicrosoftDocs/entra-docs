@@ -1,6 +1,6 @@
 ---
 title: Translate links and URLs for Microsoft Entra application proxy
-description: Learn how to redirect hard-coded links for applications published with Microsoft Entra application proxy.
+description: "Translate hard-coded internal URLs in on-premises applications published through Microsoft Entra application proxy. Covers Edge integration, browser extensions, and link translation settings."
 ms.topic: how-to
 ms.date: 03/11/2026
 ms.reviewer: KaTabish
