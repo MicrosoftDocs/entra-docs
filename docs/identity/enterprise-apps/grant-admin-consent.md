@@ -89,7 +89,7 @@ For more information on constructing the tenant-wide admin consent URL, see [Adm
 
 In this section, you grant delegated permissions to your application. Delegated permissions are permissions your application needs to access an API on behalf of a signed-in user. The permissions are defined by a resource API and granted to your enterprise application, which is the client application. This consent is granted on behalf of all users.
 
-In the following example, the resource API is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph API defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
+In the following example, the resource API is Microsoft Graph of object ID `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. The Microsoft Graph API defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically aren't subject to review or confirmation. They take effect immediately.
@@ -131,7 +131,7 @@ In the following example, the resource API is Microsoft Graph of object ID `aaaa
 
 In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you grant your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
-In the following example, you grant the Microsoft Graph application (the principal of ID `aaaaaaaa-bbbb-cccc-1111-222222222222`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `11112222-bbbb-3333-cccc-4444dddd5555`.
+In the following example, you grant the Microsoft Graph application (the principal of ID `aaaaaaaa-bbbb-cccc-1111-222222222222`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `aaaabbbb-0000-cccc-1111-dddd2222eeee`.
 
 1. Connect to Microsoft Graph PowerShell and sign in as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -170,7 +170,7 @@ In this section, you grant delegated permissions to your application. Delegated 
 
 You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-In the following example, the resource API is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
+In the following example, the resource API is Microsoft Graph of object ID `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
