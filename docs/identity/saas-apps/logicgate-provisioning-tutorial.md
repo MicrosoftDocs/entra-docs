@@ -39,7 +39,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure LogicGate to support provisioning with Microsoft Entra ID
 
-1. Login to **LogicGate** admin console.Navigate to the **Home** tab and Select **Profile** icon over top right corner.
+1. Login to **LogicGate** admin console. Navigate to the **Home** tab and Select **Profile** icon over top right corner.
 2. Navigate to **Profile** > **Access Key**.
 
  	![Profile tab](./media/logicgate-provisioning-tutorial/profile.png)
