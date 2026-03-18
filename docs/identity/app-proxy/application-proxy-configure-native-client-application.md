@@ -1,6 +1,6 @@
 ---
 title: Publish native client apps
-description: Learn how to enable native client apps to communicate with the Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
+description: "Publish native client applications through Microsoft Entra application proxy to provide secure remote access to on-premises APIs and resources."
 ms.custom: devx-track-dotnet
 ms.topic: how-to
 ms.date: 03/11/2026
