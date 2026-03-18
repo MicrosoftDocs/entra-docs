@@ -117,6 +117,7 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to create policies in report-only mode
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
+- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md)
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
 - Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions
 - View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track Zero Trust security posture improvements driven by the agent (Preview)
