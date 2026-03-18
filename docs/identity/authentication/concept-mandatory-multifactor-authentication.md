@@ -225,10 +225,6 @@ To confirm that Phase 2 mandatory MFA is enforced for your tenant:
 
    :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/phase-2-confirm.png" alt-text="Screenshot of the Multifactor authentication Phase 2 page in the Azure portal, showing that MFA enforcement began on or after February 20, 2026.":::
 
-After enforcement, a banner also appears in the [Azure portal](https://aka.ms/managemfaforazure):
-
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/enforcement-banner.png" alt-text="Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced."
-
 Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) show the application that enforced MFA as the source of the MFA requirement. 
 
 ## FAQs
