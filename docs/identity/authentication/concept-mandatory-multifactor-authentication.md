@@ -1,13 +1,13 @@
 ---
 title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
-description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
+description: Learn about mandatory multifactor authentication (MFA) enforcement for Azure, Microsoft 365, and other admin portals, and how to prepare your tenant.
 ms.topic: concept-article
 ms.date: 01/28/2026
 ms.reviewer: shahjoy
-ms.custom: sfi-ga-nochange
-# Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
+ms.custom: sfi-ga-nochange, msecd-doc-authoring-106
+# Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal so that my organization is prepared before enforcement begins.
 ---
-# Planning for mandatory multifactor authentication for Azure and other admin portals 
+# Mandatory multifactor authentication for Azure and admin portals
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
@@ -17,7 +17,7 @@ There's no change for users if your organization already enforces MFA for them, 
 
 ## Scope of enforcement 
  
-The scope of enforcement includes when enforcement is planned to occur, which applications plan to enforce MFA, applications that are out of scope, and which accounts have a mandatory MFA requirement.
+The scope of enforcement covers enforcement timing, affected applications, and account requirements.
 
 ### Enforcement phases 
 
@@ -192,8 +192,8 @@ For the best compatibility experience, ensure users in your tenant are using Azu
 - [Troubleshoot MFA errors in Azure PowerShell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
 - [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
 
->[!NOTE] 
->Users who sign in without MFA can use a [Phase 2 application](#phase-2-applications). But if they try to create, update, or delete a resource, the app returns an error that says they need to sign in with MFA and a claims challenge. Some clients use the claims challenge to prompt the user to step up and perform MFA. Other clients return only the error without an MFA prompt. A Conditional Access policy or security defaults are recommended to help users satisfy MFA before they see an error. 
+> [!NOTE] 
+> Users who sign in without MFA can use a [Phase 2 application](#phase-2-applications). But if they try to create, update, or delete a resource, the app returns an error that says they need to sign in with MFA and a claims challenge. Some clients use the claims challenge to prompt the user to step up and perform MFA. Other clients return only the error without an MFA prompt. A Conditional Access policy or security defaults are recommended to help users satisfy MFA before they see an error. 
 
 ## Request more time to prepare for Phase 1 MFA enforcement 
 
@@ -201,18 +201,18 @@ We understand that some customers may need more time to prepare for this MFA req
 
 For each tenant where they want to postpone the start date of enforcement, a Global Administrator can go to the [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure) to select a start date. 
 
->[!Caution]
+> [!CAUTION]
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
-Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. After Phase 2 enforcement begins, you can submit a request to Microsoft Help and Support to temporarily lift enforcement. The request must be done by a Global Administrator due to the security implications. 
+Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and select **Apply**. After Phase 2 enforcement begins, you can submit a request to Microsoft Help and Support to temporarily lift enforcement. The request must be done by a Global Administrator due to the security implications. 
 
->[!NOTE]
+> [!NOTE]
 > If you postponed the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
 
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone-phase-two.png" alt-text="Screenshot of how to postpone mandatory MFA for phase two."
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone-phase-two.png" alt-text="Screenshot of how to postpone mandatory MFA for phase two.":::
 
 
 ## Confirm mandatory MFA enforcement
@@ -267,7 +267,7 @@ Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
-**Answer**: Third-party MFA can be integrated directly with Microsoft Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). Microsoft Entra ID can be optionally configured with a federated identity provider. If so, the identity provider solution needs to be configured properly to send the multipleauthn claim to Microsoft Entra ID. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](how-to-mfa-expected-inbound-assertions.md). 
+**Answer**: Third-party MFA can be integrated directly with Microsoft Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). Microsoft Entra ID can be optionally configured with a federated identity provider. If so, the identity provider solution needs to be configured properly to send the `multipleauthn` claim to Microsoft Entra ID. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](how-to-mfa-expected-inbound-assertions.md). 
 
 **Question**: Will mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
@@ -307,7 +307,6 @@ Review the following topics to learn more about how to configure and deploy MFA:
 - [How to postpone enforcement for a tenant where users are unable to sign](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
 - [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md)
 - [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
-- [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
 - [Phishing-resistant MFA methods](~/identity/authentication/phishing-resistant-authentication-videos.md)
 - [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) 
