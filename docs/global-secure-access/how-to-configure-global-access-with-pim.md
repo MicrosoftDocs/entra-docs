@@ -1,6 +1,6 @@
 ---
 title: Secure private application access with Privileged Identity Management and Global Secure Access
-description: Learn how to secure highly valued private application access with Privileged Identity Management (PIM) and Global Secure Access
+description: "Add just-in-time privileged access for critical servers and applications using Privileged Identity Management (PIM) with Microsoft Entra Private Access."
 ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 03/12/2026
