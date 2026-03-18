@@ -38,7 +38,7 @@ An account used by an AI agent is referred to as an **agent identity**. Much lik
 
 - **Blueprint**. All agent identities are created from a reusable template called an agent identity blueprint. The agent identity blueprint establishes the kind of agent and records metadata shared across all agent identities of a common kind.
 
-- **Agent user (optional)**. Some agents need access to systems that strictly require a Microsoft Entra user account be used for authentication. In these cases, an agent can be given a second account, called an **agent user**. This second account is a user account in the Microsoft Entra tenant that is decorated as an AI agent. It has a different `id` than the agent identity, but a 1:1 relationship is always established between an agent identity and its agent user.
+- **Agent's user account (optional)**. Some agents need access to systems that strictly require a Microsoft Entra user account be used for authentication. In these cases, an agent can be given a second account, called an **agent's user account**. This second account is a user account in the Microsoft Entra tenant that is decorated as an AI agent. It has a different `id` than the agent identity, but a 1:1 relationship is always established between an agent identity and its agent's user account.
 
 These are the basic components of an agent identity that enable secure authentication and authorization. The full object schema of an agent identity is available in Microsoft Graph reference documentation.
 

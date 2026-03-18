@@ -52,7 +52,7 @@ You can create the underlying authorization objects directly. It's useful for si
 
 ## How to manage access through access packages
 
-Using access packages, you can enable standardized access for many AI Agents with the same access needs. The access package can include Entra roles, OAuth2 delegated and application permission grants and security group memberships. Agents can then request an access package, or a sponsor or admin can request for them, and once approved, the agent identity or agent user receives the access rights until the assignment is revoked or expires. For more information, see [access packages for agent identities](agent-access-packages.md).
+Using access packages, you can enable standardized access for many AI Agents with the same access needs. The access package can include Entra roles, OAuth2 delegated and application permission grants and security group memberships. Agents can then request an access package, or a sponsor or admin can request for them, and once approved, the agent identity or agent's user account receives the access rights until the assignment is revoked or expires. For more information, see [access packages for agent identities](agent-access-packages.md).
 
 ## Other authorization systems
 

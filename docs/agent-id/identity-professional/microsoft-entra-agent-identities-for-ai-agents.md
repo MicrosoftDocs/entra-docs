@@ -24,7 +24,7 @@ This article explains how Microsoft Entra Agent ID extends security capabilities
 
 Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
 
-- Enforcing adaptive access control policies for all agent patterns across assistive, autonomous, and agent user types.
+- Enforcing adaptive access control policies for all agent patterns across assistive, autonomous, and agent's user account types.
 - Using real-time signals such as agent identities risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
 - Deploying conditional access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 

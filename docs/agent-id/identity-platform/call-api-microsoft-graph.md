@@ -1,7 +1,7 @@
 ---
 title: Call Microsoft Graph API from an agent using .NET
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to call Microsoft Graph API from an agent using agent identities or agent users, including authentication configuration and implementation steps.
+description: Learn how to call Microsoft Graph API from an agent using agent identities or agent's user accounts, including authentication configuration and implementation steps.
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
 
 # Call a Microsoft Graph API from an agent using .NET
 
-This article explains how to call a Microsoft Graph API from an agent using agent identities or agent user.
+This article explains how to call a Microsoft Graph API from an agent using agent identities or agent's user account.
 
 [!INCLUDE [Common call API content](./includes/call-api-common-dotnet.md)]
 
@@ -102,7 +102,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
           }));
       ```
 
-    - For agent user identities, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent user by using the `WithAgentUserIdentity` method.
+    - For agent's user account identities, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account by using the `WithAgentUserIdentity` method.
 
         ```csharp
         // Get the GraphServiceClient

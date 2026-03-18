@@ -54,7 +54,7 @@ Agent identities embrace this dynamic nature while providing appropriate securit
 
 Human user identities are tied to authentication mechanisms humans use daily, such as passwords, multifactor authentication, and passkeys. Human users have data associated with them like mailboxes, teams, and organizational hierarchy.
 
-Agent identities represent software systems, not human beings. They don't use human authentication mechanisms. However, certain scenarios require agents to appear and operate as if they're human users. For these scenarios, agent identities can be paired with agent users - special Microsoft Entra user accounts that maintain a one-to-one relationship with their paired agent identity. This distinction allows organizations to provide agents with a user identity when necessary for system compatibility, while still maintaining clear separation and appropriate security policies for AI-driven operations.
+Agent identities represent software systems, not human beings. They don't use human authentication mechanisms. However, certain scenarios require agents to appear and operate as if they're human users. For these scenarios, agent identities can be paired with agent's user accounts - special Microsoft Entra user accounts that maintain a one-to-one relationship with their paired agent identity. This distinction allows organizations to provide agents with a user identity when necessary for system compatibility, while still maintaining clear separation and appropriate security policies for AI-driven operations.
 
 ## What agent identities enable
 

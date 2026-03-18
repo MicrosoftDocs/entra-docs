@@ -19,7 +19,7 @@ These tokens enable secure communication between:
 
 - Agent identity blueprints and their agent identities
 - Agent identities and resource APIs
-- Agent users and the services they interact with
+- Agent's user accounts and the services they interact with
 - Complex delegation chains involving multiple agent entities
 
 ## Token claims entity identifiers
@@ -61,18 +61,18 @@ In this scenario, tokens have the following key characteristics:
 - Enable unscoped access within granted permission boundaries. Delegated permissions aren't applied.
 - Support fully autonomous background operations
 
-### Tokens in agent user impersonation scenarios
+### Tokens in agent's user account impersonation scenarios
 
-Agent user impersonation scenarios enable agent users to operate like human users. These tokens support scenarios where agents need user-like context but with controlled, predefined identities.
+Agent's user account impersonation scenarios enable agent's user accounts to operate like human users. These tokens support scenarios where agents need user-like context but with controlled, predefined identities.
 
 In this scenario, tokens have the following key characteristics:
 
-- Use specialized agent user identities
+- Use specialized agent's user account identities
 - Maintain user-context behavior patterns
 - Include scoped delegated permissions
 - Require explicit assignment to agent identities
 
-In this scenario, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent user. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. Agent users can only be used when assigned to an agent identity and can't authenticate independently.
+In this scenario, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent's user account. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. Agent's user accounts can only be used when assigned to an agent identity and can't authenticate independently.
 
 ## Nonagentic API integration
 
@@ -112,7 +112,7 @@ Example of the validation process would be to do the following actions:
     HttpContext.User.GetParentAgentBlueprint()
     ```
 
-- Check if a token was issued for an agent user identity.
+- Check if a token was issued for an agent's user account identity.
 
     ```csharp
     HttpContext.User.IsAgentUserIdentity()

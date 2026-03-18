@@ -136,7 +136,7 @@ This article guides you on how to call Azure services from your agent. To authen
         ```
 
 
-    1. You can also acquire a token for an agent user. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent user.
+    1. You can also acquire a token for an agent's user account. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account.
 
         For object ID:
         
