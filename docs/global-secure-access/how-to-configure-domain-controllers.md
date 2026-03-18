@@ -1,6 +1,6 @@
 ---
 title: Configure Microsoft Entra Private Access for Active Directory Domain Controllers
-description: Learn how to configure Microsoft Entra Private Access for Active Directory Domain Controllers.
+description: "Enforce Conditional Access and multifactor authentication for Kerberos authentication to Active Directory Domain Controllers through Microsoft Entra Private Access."
 ms.topic: how-to
 ms.date: 03/16/2026
 ms.subservice: entra-private-access

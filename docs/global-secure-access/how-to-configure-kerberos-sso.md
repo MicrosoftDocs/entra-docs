@@ -1,6 +1,6 @@
 ---
 title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access
-description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
+description: "Enable single sign-on to on-premises resources published through Microsoft Entra Private Access using Kerberos authentication. Optionally integrate Windows Hello for Business cloud Kerberos trust."
 ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 03/12/2026
