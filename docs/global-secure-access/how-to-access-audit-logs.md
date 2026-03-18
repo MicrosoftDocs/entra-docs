@@ -2,7 +2,7 @@
 title: How to access Global Secure Access audit logs (preview)
 description: Learn how to access, archive, and analyze the audit logs for Microsoft's Security Service Edge solution.
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to view the logs specific to network access so I can better manage the solution.
@@ -44,7 +44,7 @@ You can access the audit logs from **Global Secure Access** and from **Microsoft
 
 ## Save audit logs
 
-Audit log data is only kept for 30 days by default, which may not be long enough for every organization. You may also want to integrate your logs with other services for enhanced monitoring and analysis if you need to view or query logs after 30 days.
+Audit log data is only kept for 30 days by default, which may not be long enough for every organization. You might also want to integrate your logs with other services for enhanced monitoring and analysis if you need to view or query logs after 30 days.
 
 - [Stream activity logs to an event hub](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub) to integrate with other tools, like Azure Monitor or Splunk.
 - [Export activity logs for storage](/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account).

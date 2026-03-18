@@ -11,7 +11,6 @@ ms.date: 01/30/2025
 
 # Microsoft Entra Verified ID network API
 
-  
 The Microsoft Entra Verified ID Network API enables you to search for published credentials in the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md). 
 
 > [!NOTE]
@@ -19,15 +18,15 @@ The Microsoft Entra Verified ID Network API enables you to search for published 
 
 ## Base URL
 
-The Microsoft Entra ID Verified Network API is served over HTTPS. All URLs referenced in the documentation have the following base: `https://verifiedid.did.msidentity.com`. 
+The Microsoft Entra Verified ID Network API is served over HTTPS. All URLs referenced in the documentation have the following base: `https://verifiedid.did.msidentity.com`. 
 
 ## Authentication
 
-The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. 
+The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. Grant the app registration the API Permission for `Verifiable Credentials Service Admin` and use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access` when acquiring the access token. 
 
-## Searching for issuers
+## Search for issuers
 
-This API is used to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter is used to find issuers that onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There's a maximum of 15 issuers in the response.
+Use this API to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter is used to find issuers that onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There's a maximum of 15 issuers in the response.
 
 #### HTTP request
 
@@ -42,7 +41,7 @@ This API is used to search for issuers available in the Microsoft Entra Verified
 
 #### Request parameters
 
-| Parameter | value |
+| Parameter | Value |
 | -------- | -------- |
 | filter | linkeddomainurls like Woodgrove |
 
@@ -75,9 +74,9 @@ Content-type: application/json
 ]
 ```
 
-## Searching for published credential types by an issuer
+## Search for published credential types by an issuer
 
-This API is used to search for published credential types for a specific issuer. You need to know the issuers `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There  a maximum of 100 credential types in the response.
+This API is used to search for published credential types for a specific issuer. You need to know the issuer's `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There's a maximum of 100 credential types in the response.
 
 #### HTTP request
 
@@ -92,7 +91,7 @@ This API is used to search for published credential types for a specific issuer.
 
 #### Request parameters
 
-| Parameter | value |
+| Parameter | Value |
 | -------- | -------- |
 | tenantId | TenantId obtained from the search by linked domain name |
 | issuerId | IssuerId obtained from the search by linked domain name |

@@ -1,5 +1,5 @@
 ---
-title: Create Simpler and Faster Rules for Dynamic Membership Groups
+title: Create simpler and faster rules for dynamic membership groups
 description: Learn how to optimize your membership rules to automatically populate groups.
 ms.topic: concept-article
 ms.date: 01/15/2025

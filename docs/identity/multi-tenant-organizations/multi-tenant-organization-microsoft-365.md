@@ -2,8 +2,9 @@
 title: Multitenant organization identity provisioning for Microsoft 365
 description: Learn how multitenant organizations identity provisioning and Microsoft 365 work together.
 ms.topic: concept-article
-ms.date: 04/23/2024
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---
@@ -32,7 +33,7 @@ For people search to succeed, while scoped to local tenant boundaries, the entir
 
 :::image type="content" source="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png" alt-text="Diagram that shows users represented across multiple tenants." lightbox="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png":::
 
-Depending on your organization's needs, the collaborating user set may contain a subset of collaborating employees, or eventually all employees.
+Depending on your organization's needs, the collaborating user set might contain a subset of collaborating employees, or eventually all employees.
 
 ## Sharing your users
 
@@ -59,7 +60,7 @@ To ensure a seamless collaboration experience across the multitenant organizatio
 
 From a security perspective, you should review the default permissions granted to B2B member users. For more information, see [Compare member and guest default permissions](~/fundamentals/users-default-permissions.md#compare-member-and-guest-default-permissions).
 
-To change the userType from **Guest** to **Member** (or vice versa), a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property is not recurringly synchronized.
+To change the userType from **Guest** to **Member** (or vice versa), a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings), or a target tenant administrator can [change the userType](~/fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) if the property isn't recurringly synchronized.
 
 ## Unsharing your users
 

@@ -62,11 +62,11 @@ Member object ID or user principal name [memberObjectIdOrUpn] Required
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Navigate to **Identity**.
-   >[!NOTE]
-   >Group owners can also bulk import members of groups they own.
+    > [!NOTE]
+    > Group owners can also bulk import members of groups they own.
 1. Select **Groups** > **All groups**.
 1. Open the group to which you're adding members and then select **Members**.
-1. On the **Members** page, select **bulk operations** and then choose **Import members**.
+1. On the **Members** page, select **Bulk operations** and then choose **Import members**.
 1. On the **Bulk import group members** page, select **Download** to get the CSV file template with required group member properties.
 
     :::image type="content" source="./media/groups-bulk-import-members/import-panel.png" alt-text="Screenshot that shows the Import Members command is on the profile page for the group.":::
@@ -91,7 +91,7 @@ For more information about bulk operations limitations, see [Bulk import service
 1. Navigate to **Identity** > **Users** > **Bulk operation results**.
 1. Find your bulk operation in the list. The **Status** column shows whether the operation is **In Progress**, **Succeeded**, or **Failed**.
 
-:::image type="content" source="./media/groups-bulk-import-members/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page.":::
+    :::image type="content" source="./media/groups-bulk-import-members/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page.":::
 
 For details about each line item within the bulk operation, select the values under the **# Success**, **# Failure**, or **Total Requests** columns. If failures occurred, the reasons for failure are listed.
 

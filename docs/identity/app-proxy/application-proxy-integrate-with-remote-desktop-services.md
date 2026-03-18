@@ -1,9 +1,9 @@
 ---
 title: Publish Remote Desktop with Microsoft Entra application proxy
-description: Covers how to configure application proxy with Remote Desktop Services (RDS)
+description: Learn how to configure application proxy with Remote Desktop Services (RDS)
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
@@ -37,7 +37,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 - When publishing RD Web, use the same internal and external Fully Qualified Domain Name (FQDN) when possible. If the internal and external Fully Qualified Domain Names (FQDNs) are different, disable Request Header Translation to avoid the client receiving invalid links.
 - If you're using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you encounter websocket errors when making a RemoteApp connection through the RD Web client.
 - If you're using RD Web on Internet Explorer, you need to enable the RDS ActiveX add-on.
-- If you're using the RD Web client, you'll need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
+- If you're using the RD Web client, you need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
 - For the Microsoft Entra pre authentication flow, users can only connect to resources published to them in the **RemoteApp and Desktops** pane. Users can't connect to a desktop using the **Connect to a remote PC** pane.
 - If you're using Windows Server 2019, you need to disable HTTP2 protocol. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
