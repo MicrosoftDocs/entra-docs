@@ -3,8 +3,7 @@ title: Add an on-premises application for remote access through application prox
 description: Learn how to prepare your environment for application proxy and add an on-premises application to your Microsoft Entra tenant.
 ms.topic: tutorial
 ms.date: 03/10/2026
-ms.author: ashishj
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

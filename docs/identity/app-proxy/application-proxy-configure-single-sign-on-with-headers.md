@@ -3,7 +3,7 @@ title: Header-based single sign-on (SSO) for on-premises apps with Microsoft Ent
 description: Learn how to provide single sign-on for on-premises applications that are secured with header-based authentication.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

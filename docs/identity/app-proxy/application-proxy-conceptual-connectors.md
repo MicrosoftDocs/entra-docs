@@ -3,7 +3,7 @@ title: Understand Microsoft Entra application proxy connectors
 description: Learn about Microsoft Entra private network connectors used by application proxy.
 ms.topic: concept-article
 ms.date: 03/15/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
