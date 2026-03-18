@@ -3,6 +3,7 @@ title: Plan a Microsoft Entra application proxy deployment
 description: An end-to-end guide for planning the deployment of application proxy within your organization
 ms.topic: how-to
 ms.date: 03/10/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

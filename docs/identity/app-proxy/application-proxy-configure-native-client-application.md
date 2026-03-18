@@ -4,7 +4,7 @@ description: Learn how to enable native client apps to communicate with the Micr
 ms.custom: devx-track-dotnet
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

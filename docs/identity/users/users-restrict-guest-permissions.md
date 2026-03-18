@@ -4,7 +4,7 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ---
 
 # Restrict guest access permissions in Microsoft Entra ID

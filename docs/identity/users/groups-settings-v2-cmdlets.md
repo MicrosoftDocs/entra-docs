@@ -4,7 +4,7 @@ description: This page provides PowerShell examples to help you manage your grou
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # Microsoft Entra version 2 cmdlets for group management
