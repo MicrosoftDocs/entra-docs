@@ -87,7 +87,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 	![Provisioning tab](common/provisioning.png)
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
@@ -103,9 +103,9 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 1. Select **Create** to create your configuration.	
 
-1. Select **Properties** in the **Overview** page. 
+1. Select **Properties** on the **Overview** page.
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
