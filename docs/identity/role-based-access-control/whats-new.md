@@ -15,6 +15,7 @@ This article provides information about new features and documentation improveme
 | Date | Area | Description |
 | --- | --- | --- |
 | March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
+| March 2026 | Roles | Added [Authentication Extensibility Password Administrator](permissions-reference.md#authentication-extensibility-password-administrator) role. |
 
 ## 2025
 

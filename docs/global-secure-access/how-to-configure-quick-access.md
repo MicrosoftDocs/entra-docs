@@ -2,7 +2,7 @@
 title: How to configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/18/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -33,7 +33,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 [!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
-## High level steps
+## High-level steps
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 

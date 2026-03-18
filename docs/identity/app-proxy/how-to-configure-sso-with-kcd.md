@@ -3,7 +3,7 @@ title: Kerberos Constrained Delegation for single sign-on (SSO) to your apps wit
 description: Learn how to provide single sign-on using Microsoft Entra application proxy.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---

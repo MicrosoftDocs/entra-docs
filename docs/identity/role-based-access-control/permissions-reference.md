@@ -39,6 +39,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Provisioning Reader](#attribute-provisioning-reader) | Read the provisioning configuration of all active custom security attributes for an application.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
+> | [Authentication Extensibility Password Administrator](#authentication-extensibility-password-administrator) | Trigger a password submit event for custom authentication.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 0b00bede-4072-4d22-b441-e7df02a1ef63 |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
 > | [Azure DevOps Administrator](#azure-devops-administrator) | Can manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
@@ -146,6 +147,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
 
+
 ## Agent ID Administrator
 
 [!INCLUDE [agent-id-administrator](includes/agent-id-administrator.md)]
@@ -217,6 +219,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Authentication Extensibility Administrator
 
 [!INCLUDE [authentication-extensibility-administrator](includes/authentication-extensibility-administrator.md)]
+
+## Authentication Extensibility Password Administrator
+
+[!INCLUDE [authentication-extensibility-password-administrator](includes/authentication-extensibility-password-administrator.md)]
 
 ## Authentication Policy Administrator
 

@@ -1,6 +1,6 @@
 ---
 title: How to configure Global Secure Access web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
+description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
 ms.date: 03/13/2026
 ms.subservice: entra-internet-access 

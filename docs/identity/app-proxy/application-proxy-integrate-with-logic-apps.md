@@ -3,7 +3,7 @@ title: Securely integrate Azure Logic Apps with on-premises APIs using Microsoft
 description: Microsoft Entra application proxy lets cloud-native logic apps securely access on-premises APIs to bridge your workload.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: kfriedemann
+ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
 ---

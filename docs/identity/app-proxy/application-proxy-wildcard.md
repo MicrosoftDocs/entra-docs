@@ -3,7 +3,7 @@ title: Wildcard applications in Microsoft Entra application proxy
 description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: harshja
+ms.reviewer: KaTabish
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 ---

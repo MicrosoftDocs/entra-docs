@@ -1,16 +1,18 @@
 ---
-title: Configure Nulab Pass (Backlog, Cacoo, and Typetalk) for Single sign-on with Microsoft Entra ID
-description: Learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog, Cacoo, and Typetalk).
+title: Configure Nulab Pass (Backlog and Cacoo) for Single sign-on with Microsoft Entra ID
+description: Learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog and Cacoo).
 
 ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 07/01/2024
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog, Cacoo, and Typetalk) so that I can control who has access to Nulab Pass (Backlog, Cacoo, and Typetalk), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog and Cacoo) so that I can control who has access to Nulab Pass (Backlog and Cacoo), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+
 ---
 
-# Configure Nulab Pass (Backlog, Cacoo, and Typetalk) for Single sign-on with Microsoft Entra ID
+# Configure Nulab Pass (Backlog and Cacoo) for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Nulab Pass (Backlog, Cacoo, and Typetalk) with Microsoft Entra ID. By integrating, you can:
+In this article,  you learn how to integrate Nulab Pass (Backlog and Cacoo) with Microsoft Entra ID. By integrating, you can:
 
 * Control in Microsoft Entra ID who has access to Nulab Pass in Microsoft Entra ID.
 * Enable users to be automatically signed in to Nulab Pass with their Microsoft Entra accounts.
@@ -38,7 +40,7 @@ To configure the integration of Nulab Pass into Microsoft Entra ID, add Nulab Pa
 
  [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
-<a name='configure-and-test-azure-ad-sso-for-nulab-pass-backlogcacootypetalk'></a>
+<a name='configure-and-test-azure-ad-sso-for-nulab-pass-backlogcacoo'></a>
 
 ## Configure and test Microsoft Entra SSO for Nulab Pass
 
@@ -60,7 +62,7 @@ To configure and test Microsoft Entra SSO with Nulab Pass:
 To enable Microsoft Entra SSO:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Go to **Entra ID** > **Enterprise apps** > **Nulab Pass (Backlog,Cacoo,Typetalk)** > **Single sign-on**.
+1. Go to **Entra ID** > **Enterprise apps** > **Nulab Pass (Backlog and Cacoo)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

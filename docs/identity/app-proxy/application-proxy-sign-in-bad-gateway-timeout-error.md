@@ -3,7 +3,7 @@ title: "Resolve a 'Corporate app can't be accessed' error"
 description: Learn how to resolve common access issues with Microsoft Entra application proxy applications.
 ms.topic: troubleshooting
 ms.date: 03/11/2026
-ms.reviewer: asteen
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
