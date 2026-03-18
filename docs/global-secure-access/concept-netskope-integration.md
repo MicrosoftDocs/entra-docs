@@ -288,11 +288,11 @@ This sample shows an event triggered by an ATP policy with blocked content. Chec
     "sessionId": "",
     "sourceIp": "clipped",
     "sourcePort": "00000",
-    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "tenantId": "44445555-eeee-6666-ffff-7777aaaa8888",
     "trafficType": "Internet",
     "transactionId": "55556666-ffff-7777-aaaa-8888bbbb9999",
     "transportProtocol": "TCP",
-    "userId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
+    "userId": "66667777-aaaa-8888-bbbb-9999cccc0000",
     "userPrincipalName": "user@contoso.com",
     "vendorNames": "Netskope"
 }
