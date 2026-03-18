@@ -114,7 +114,7 @@ To view and adjust the grace periods for a stage of the campaign:
 1. Select the arrow in the upper-right corner of the stage to expand the details. 
 1. Adjust the grace period by adjusting the slider or entering a number in the text box.
 
-    :::image type="content" source="media/conditional-access-agent-optimization-passkeys/passkey-campaign-grace-period.png" alt-text="Screenshot of the passkey campaign details with the target users options highlighted." lightbox="media/conditional-access-agent-optimization-passkeys/passkey-campaign-grace-period.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-passkeys/passkey-campaign-grace-period.png" alt-text="Screenshot of the passkey campaign details with the grace period options highlighted." lightbox="media/conditional-access-agent-optimization-passkeys/passkey-campaign-grace-period.png":::
 
 If a user exceeds a grace period to complete a required action, the agent doesn't continue progressing that user through the campaign. To view these users, select the aggregate user count for the relevant campaign category. The **Exceeded grace period** column indicates when a user has exceeded their grace period.
 
