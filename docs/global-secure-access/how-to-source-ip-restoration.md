@@ -40,7 +40,7 @@ To enable the required setting to allow source IP restoration, an administrator 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive Access**.
-1. Select the toggle to **Enable Global Secure Access signaling in Conditional Access**.
+1. Select the toggle to **Enable Conditional Access Signaling for Microsoft Entra ID**.
 
 By using this functionality, Microsoft Entra ID and Microsoft Graph receive the public egress source IP address of the user.
 
