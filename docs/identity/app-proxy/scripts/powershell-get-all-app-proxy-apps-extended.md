@@ -3,8 +3,9 @@ title: PowerShell sample - List extended info for Microsoft Entra application pr
 description: PowerShell example that lists all Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), and authentication type (ExternalAuthenticationType).
 ms.custom: 
 ms.topic: sample
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Get all application proxy apps and list extended information

@@ -1,5 +1,5 @@
 ---
-title: Learn about Universal Continuous Evaluation (Preview)
+title: Learn about Universal Continuous Evaluation
 description: Learn about Universal Continuous Evaluation concepts
 ms.topic: concept-article
 ms.date: 02/02/2026

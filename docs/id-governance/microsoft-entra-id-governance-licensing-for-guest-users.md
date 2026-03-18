@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 02/25/2026
+ms.date: 03/02/2026
 ms.reviewer: jercon
 ---
 
@@ -176,7 +176,6 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 - You won't be able to create new workflows if the workflow scope includes guest users: 
     - The configured rule includes `userType=Guest`
 - You won't be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
-
 
 
 ## Related content

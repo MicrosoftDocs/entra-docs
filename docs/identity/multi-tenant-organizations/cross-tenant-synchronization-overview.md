@@ -2,8 +2,9 @@
 title: What is a cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: overview
-ms.date: 06/23/2025
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---
@@ -31,7 +32,7 @@ The following diagram shows how you can use cross-tenant synchronization to enab
 ## Who should use?
 
 - Organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant application access.
-- Cross-tenant synchronization can be used across organizations, but doing so may introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements—including the European Union General Data Protection Regulation (GDPR). Microsoft does not facilitate user consent collection through Cross-tenant sync. Customers should assess whether their scenario requires user consent, data minimization, or other safeguards, and consult their legal or compliance teams before enabling cross-organization synchronization or cross-tenant synchronization across organizations. 
+- Cross-tenant synchronization can be used across organizations, but doing so might introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements—including the European Union General Data Protection Regulation (GDPR). Microsoft does not facilitate user consent collection through Cross-tenant sync. Customers should assess whether their scenario requires user consent, data minimization, or other safeguards, and consult their legal or compliance teams before enabling cross-organization synchronization or cross-tenant synchronization across organizations. 
 
 ## Benefits
 
@@ -122,7 +123,7 @@ The following table lists the required licenses depending on your scenario.
 
 **Source tenant**: Each user who is synchronized with cross-tenant synchronization must have a Microsoft Entra ID P1 license in their home/source tenant. Each user who is synchronized with cross-cloud synchronization must have a Microsoft Entra ID Governance or Microsoft Entra Suite license in their home/source tenant. For more information, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) and [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
 
-**Target tenant**: Licenses aren't required for cross-tenant synchronization or cross-cloud synchronization in the target tenant. However, depending on the features you are using in the target tenant, you might need additional licensing for those features used in the target tenant. For example, customers that have enabled External ID billing, and are provisioning external guests, may be charged according to [the billing model for Microsoft Entra External ID](../../external-id/external-identities-pricing.md).
+**Target tenant**: Licenses aren't required for cross-tenant synchronization or cross-cloud synchronization in the target tenant. However, depending on the features you're using in the target tenant, you might need additional licensing for those features used in the target tenant. For example, customers that have enabled External ID billing, and are provisioning external guests, might be charged according to [the billing model for Microsoft Entra External ID](../../external-id/external-identities-pricing.md).
 
 ## Frequently asked questions
 
@@ -267,7 +268,7 @@ Can I sync a mesh between multiple tenants?
 
 Can I use cross-tenant synchronization across organizations (outside my multitenant organization)?
 
-- For privacy reasons, cross-tenant synchronization is intended for use within an organization. We recommend using [entitlement management](~/id-governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
+- For privacy reasons, cross-tenant synchronization is intended for use within an organization. Consider using [entitlement management](~/id-governance/entitlement-management-overview.md) for inviting B2B collaboration users across organizations.
 
 Can cross-tenant synchronization be used to migrate users from one tenant to another tenant?
 
@@ -286,7 +287,7 @@ Does cross-tenant synchronization resolve any present [B2B collaboration](~/exte
 How does cross-tenant synchronization relate to [B2B direct connect](~/external-id/b2b-direct-connect-overview.md)?
 
 - B2B direct connect is the underlying identity technology required for [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels).
-- We recommend B2B collaboration for all other cross-tenant application access scenarios, including both Microsoft and non-Microsoft applications.
+- B2B collaboration is recommended for all other cross-tenant application access scenarios, including both Microsoft and non-Microsoft applications.
 - B2B direct connect and cross-tenant synchronization are designed to co-exist, and you can enable them both for broad coverage of cross-tenant scenarios.
 
 We're trying to determine the extent to which we'll need to utilize cross-tenant synchronization in our multitenant organization. Do you plan to extend support for B2B direct connect beyond Teams Connect?

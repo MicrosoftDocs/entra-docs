@@ -1,11 +1,8 @@
 ---
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 08/08/2025
-ms.author: barclayn
 ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
@@ -25,7 +22,7 @@ To open the settings for a Microsoft Entra role:
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
 
 1. On this page, you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
-        :::image type="content" source="media/pim-how-to-change-default-settings/role-settings.png" alt-text="Screenshot that shows the list of Microsoft Entra roles available in the tenant, including built-in and custom roles." lightbox="media/pim-how-to-change-default-settings/role-settings.png":::
+    :::image type="content" source="media/pim-how-to-change-default-settings/role-settings.png" alt-text="Screenshot that shows the list of Microsoft Entra roles available in the tenant, including built-in and custom roles." lightbox="media/pim-how-to-change-default-settings/role-settings.png":::
 
 1. Select the role whose settings you want to configure.
 
@@ -57,7 +54,7 @@ For example, if users sign in to the machine by using Windows Hello for Business
 
 After the user provides passwordless sign-in with Microsoft Authenticator once in this example, they can do their next activation in this session without another authentication. Passwordless sign-in with Microsoft Authenticator is already part of their token.
 
-We recommend that you enable the multifactor authentication feature of Microsoft Entra ID for all users. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
+Enable the multifactor authentication feature of Microsoft Entra ID for all users. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
 <a name='on-activation-require-azure-ad-conditional-access-authentication-context'></a>
 
@@ -74,13 +71,13 @@ To enforce this requirement, you create the Conditional Access authentication co
     See the steps at the end of this section about a situation when you might need two Conditional Access policies. One must be scoped to the authentication context and another must be scoped to the role.
 1. Configure authentication context in PIM settings for the role.
 
-   :::image type="content" source="media/pim-how-to-change-default-settings/role-settings-page.png" alt-text="Screenshot that shows the Edit role setting - Attribute Definition Administrator page." lightbox="media/pim-how-to-change-default-settings/role-settings-page.png":::
+    :::image type="content" source="media/pim-how-to-change-default-settings/role-settings-page.png" alt-text="Screenshot that shows the Edit role setting - Attribute Definition Administrator page." lightbox="media/pim-how-to-change-default-settings/role-settings-page.png":::
 
 If PIM settings have **On activation, require Microsoft Entra Conditional Access authentication context** configured, the Conditional Access policies define conditions a user must meet to satisfy the access requirements.
 
 This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access Administrators or Security Administrators, can change requirements, remove them, or block eligible users from activating the role. Security principals that can manage the Conditional Access policies should be considered highly privileged and protected accordingly.
 
-We recommend that you create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during PIM role activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](pim-how-to-change-default-settings.md#on-activation-require-multifactor-authentication) setting would be set.
+Create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during PIM role activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](pim-how-to-change-default-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 
 This backup protection mechanism is designed to solely protect from a scenario when PIM settings were updated before the Conditional Access policy was created because of a configuration mistake. This backup protection mechanism isn't triggered if the Conditional Access policy is turned off, is in report-only mode, or has an eligible user excluded from the policy.
 
@@ -108,10 +105,10 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-We recommend requiring approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrators/Global Administrators become the default approvers.
+Require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrators/Global Administrators become the default approvers.
 
 > [!IMPORTANT]
-> You will be locked out of your tenant if all of the following conditions are true:
+> You'll be locked out of your tenant if all of the following conditions are true:
 > - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
 > - Approval is required for activation.
 > - No approvers are configured.
@@ -156,8 +153,8 @@ On the **Notifications** tab on the **Role settings** page, Privileged Identity 
 - **Send emails to both default recipients and more recipients**: You can send emails to both the default recipient and another recipient. Select the default recipient checkbox and add email addresses for other recipients.
 - **Critical emails only**: For each type of email, you can select the checkbox to receive critical emails only. With this option, Privileged Identity Management continues to send emails to the specified recipients only when the email requires immediate action. For example, emails that ask users to extend their role assignment aren't triggered. Emails that require admins to approve an extension request are triggered.
 
->[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+> [!NOTE]
+> One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Manage role settings by using Microsoft Graph
 

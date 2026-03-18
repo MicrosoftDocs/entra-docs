@@ -2,8 +2,9 @@
 title: Configure multitenant organization policy templates using Microsoft Graph API
 description: Learn how to configure multitenant organization policy templates in Microsoft Entra ID using the Microsoft Graph API.
 ms.topic: how-to
-ms.date: 05/27/2025
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---

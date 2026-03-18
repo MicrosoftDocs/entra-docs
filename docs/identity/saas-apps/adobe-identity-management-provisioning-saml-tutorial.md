@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 02/25/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (SAML).
@@ -97,21 +97,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot shows the provisioning tab.](common/provisioning.png "Tab")
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-    ![Screenshot shows the provisioning tab automatic.](common/provisioning-automatic.png "Provisioning tab")
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Adobe Identity Management (SAML) Tenant URL and Secret Token retrieved earlier from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Adobe Identity Management (SAML). If the connection fails, ensure your Adobe Identity Management (SAML) account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Adobe Identity Management (SAML) Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Adobe Identity Management (SAML). If the connection fails, ensure your Adobe Identity Management (SAML) account has the required admin permissions and try again.
 
-    ![Screenshot shows the Token.](common/provisioning-testconnection-tenanturltoken.png "Token")
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-    ![Screenshot shows the Notification Email.](common/provisioning-notification-email.png "Notification Email")
+1. Select **Properties** in the **Overview** page. 
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Adobe Identity Management (SAML)**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (SAML) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Adobe Identity Management (SAML) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Adobe Identity Management (SAML) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -129,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     > [!NOTE]
     > The **eduRole** field accepts values like `Teacher or Student`, anything else is ignored.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Adobe Identity Management (SAML)**.
+10. Select **Groups**.
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (SAML) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Adobe Identity Management (SAML) for update operations. Select the **Save** button to commit any changes.
 
@@ -138,21 +140,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String|&check;|&check;
       |members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Adobe Identity Management (SAML), change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Screenshot shows the Provisioning Status Toggled On.](common/provisioning-toggle-on.png "Provisioning status")
-
-14. Define the users and/or groups that you would like to provision to Adobe Identity Management (SAML) by choosing the desired values in **Scope** in the **Settings** section.
-
-    ![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png "Provisioning Scope")
-
-15. When you're ready to provision, select **Save**.
-
-    ![Screenshot shows the Saving Provisioning Configuration.](common/provisioning-configuration-save.png "Configuration")
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

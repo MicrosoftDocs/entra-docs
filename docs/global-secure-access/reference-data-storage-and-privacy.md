@@ -2,7 +2,7 @@
 title: Microsoft Entra Private Access and Microsoft Entra Internet Access data storage and privacy
 description: Global Secure Access includes Microsoft Entra Private Access and Microsoft Entra Internet Access. This article outlines data storage and privacy information.
 ms.topic: reference
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 Frequently asked questions regarding privacy and data handling for Microsoft 365 enriched logs.
 
-We prioritize the protection of your data and understand the importance of transparency, especially when it comes to data processing and privacy. This article outlines the stringent standards that give you a comprehensive understanding of how your data is handled and the measures put in place to ensure its security.
+Global Secure Access prioritizes the protection of your data and understand the importance of transparency, especially when it comes to data processing and privacy. This article outlines the stringent standards that give you a comprehensive understanding of how your data is handled and the measures put in place to ensure its security.
 
 ## What data does Global Secure Access process?
 

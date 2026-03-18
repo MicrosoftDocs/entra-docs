@@ -1,10 +1,10 @@
 ---
 title: Introduction to Microsoft Entra Kerberos
 description: Get an overview of the Microsoft Entra Kerberos protocol.
-author: barclayn
+author: kenwith
 ms.topic: concept-article
 ms.date: 11/18/2025
-ms.author: barclayn
+ms.author: kenwith
 ms.reviewer: Vimala
 ---
 

@@ -3,26 +3,26 @@ title: Check status of a Lifecycle workflow
 description: This article guides a user on checking the status of a Lifecycle workflow
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 01/02/2025
+ms.date: 03/12/2026
 ms.custom: template-how-to, sfi-image-nochange
 ---
 
 
 # Check the status of a workflow
 
-When a workflow is created, it's important to check its status, and run history to make sure it ran properly for the users it processed both by schedule and by on-demand. To get information about the status of workflows, Lifecycle Workflows allows you to check run and user processing history. This history also gives you summaries to see how often a workflow has run, and who it ran successfully for. You're also able to check the status of both the workflow, and its tasks. Checking the status of workflows and their tasks allows you to troubleshoot potential problems that could come up during their execution.
+When a workflow is created, it's important to check its status and run history to make sure it ran properly for the users it processed both by schedule and by on-demand. To get information about the status of workflows, Lifecycle Workflows allows you to check run and user processing history. This history also gives you summaries to see how often a workflow has run, and who it ran successfully for. You're also able to check the status of both the workflow, and its tasks. Checking the status of workflows and their tasks allows you to troubleshoot potential problems that could come up during their execution.
 
 
 ## Run workflow history using the Microsoft Entra admin center
 
 
-You're able to retrieve run information of a workflow using Lifecycle Workflows. To check the runs of a workflow using the Microsoft Entra admin center, you would do the following steps:
+You're able to retrieve run information of a workflow using Lifecycle Workflows. To check the runs of a workflow using the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
-1. Select the workflow you want to run history of. 
+1. Select the workflow whose run history you want to check. 
 
 1. On the workflow overview screen, select **Workflow history**.
 
@@ -34,19 +34,19 @@ You're able to retrieve run information of a workflow using Lifecycle Workflows.
 
 ## User workflow history using the Microsoft Entra admin center
 
-To get further information than just the runs summary for a workflow, you're also able to get information about users processed by a workflow. To check the status of users a workflow has processed using the Microsoft Entra admin center, you would do the following steps:
+To get further information than just the runs summary for a workflow, you're also able to get information about users processed by a workflow. To check the status of users a workflow has processed using the Microsoft Entra admin center, follow these steps:
  
 1. In the left menu, select **Lifecycle Workflows**.
 
-1. select **Workflows**.
+1. Select **Workflows**.
 
-1. select the workflow you want to see user processing information for. 
+1. Select the workflow you want to see user processing information for. 
 
 1. On the workflow overview screen, select **Workflow history**.
     :::image type="content" source="media/check-status-workflow/workflow-history.png" alt-text="Screenshot of a workflow overview history.":::
 1. On the workflow history page, you're presented with a summary of every user processed by the workflow along with counts of successful and failed users and tasks.
     :::image type="content" source="media/check-status-workflow/workflow-history-list.png" alt-text="Screenshot of a list of workflow summaries.":::
-1. By selecting total tasks by a user you're able to see which tasks successfully completed, or are currently in progress.
+1. By selecting total tasks for a user, you can see which tasks successfully completed, or are currently in progress.
     :::image type="content" source="media/check-status-workflow/task-history-status.png" alt-text="Screenshot of workflow task history status.":::
 1. By selecting failed tasks, you're able to see which tasks failed for a specific user.
     :::image type="content" source="media/check-status-workflow/task-history-failed.png" alt-text="Screenshot of workflow failed tasks history.":::

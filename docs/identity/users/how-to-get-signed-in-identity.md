@@ -1,11 +1,6 @@
 ---
 title: Get signed in identity
 description: Get the unique identifier for the currently signed in account for Azure CLI so that you can use this identity with role-based access control in Azure to connect to various Azure services.
-author: seesharprun
-ms.author: sidandrews
-ms.reviewer: barclayn
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 04/11/2025
 zone_pivot_groups: interface-portal-cli-powershell
@@ -20,7 +15,7 @@ The current Azure CLI session could be signed in with a human identity (your acc
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ::: zone pivot="interface-cli"
 

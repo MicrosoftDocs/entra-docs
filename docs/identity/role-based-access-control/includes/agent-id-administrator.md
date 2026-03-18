@@ -2,7 +2,7 @@
 title: Agent ID Administrator
 description: Agent ID Administrator
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 03/16/2026
 ms.custom: include file, agent-id-ignite
 ---
 
@@ -66,9 +66,12 @@ Assign the Agent ID Administrator role to users who need to do the following:
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs.  |
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/delete | Permanently delete agent identity blueprints, which can no longer be restored |
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/restore | Restore soft deleted agent identity blueprints to original state |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/groups.unified/createAsOwner | Create Microsoft 365 groups, excluding role-assignable groups. Creator is added as the first owner. |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/organization/standard/read | Read basic properties on an organization |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties. |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+
