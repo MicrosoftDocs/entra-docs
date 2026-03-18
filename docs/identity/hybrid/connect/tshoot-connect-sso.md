@@ -98,7 +98,7 @@ If troubleshooting didn't help, you can manually reset the feature on your tenan
 
 ### Step 1: Import the Seamless SSO PowerShell module
 
-1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
+1. Ensure [Entra Connect](https://www.microsoft.com/en-ie/download/details.aspx?id=47594) is installed.
 2. Browse to the `%programfiles%\Microsoft Azure Active Directory Connect` folder.
 3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
 
