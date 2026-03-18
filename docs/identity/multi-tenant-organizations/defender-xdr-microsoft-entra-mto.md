@@ -2,8 +2,9 @@
 title: Secure and govern security operations center (SOC) access in a multitenant organization with Microsoft Defender for Cloud XDR and Microsoft Entra ID Governance
 description: Learn how to provide security operations analysts access to resources across tenants.
 ms.topic: overview
-ms.date: 07/03/2025
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, DevOps, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---
@@ -27,11 +28,11 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 
 **Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don't yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant. When they don't have any remaining entitlements in the target tenant, their B2B account will automatically be removed. Entitlement management can be used both within an organization and across organizations. 
 
-[Learn more](../../id-governance/entitlement-management-organization.md)
+For more information, see [entitlement management and connected organizations](../../id-governance/entitlement-management-organization.md).
 
 **Cross-tenant synchronization** allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization.
 
-[Learn more](cross-tenant-synchronization-overview.md)
+For more information, see [cross-tenant synchronization](cross-tenant-synchronization-overview.md).
 
 **Comparing entitlement management and cross-tenant synchronization**
 
@@ -50,13 +51,13 @@ You can use entitlement management and cross-tenant access policies to control a
 
 Assigning Microsoft Entra roles through entitlement management access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle. It provides a flexible request and approval process for gaining access to directory roles, app roles, and groups while also enabling automatic assignment to resources based on user attributes.
 
-[Learn more](../../id-governance/entitlement-management-overview.md)
+For more information, see [entitlement management overview](../../id-governance/entitlement-management-overview.md).
 
 **Cross-tenant access policies**
 
 External identities cross-tenant access settings manage how you collaborate with other Microsoft Entra organizations through B2B collaboration. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations.
 
-[Learn more](../../external-id/cross-tenant-access-overview.md)
+For more information, see [cross-tenant access overview](../../external-id/cross-tenant-access-overview.md).
 
 ## Deployment topologies
 
@@ -80,9 +81,9 @@ In topology 1, the source tenant configures entitlement management and cross-ten
 
 1. In the target tenant, [create access packages](../../id-governance/entitlement-management-access-package-create.md) to provide the necessary roles for investigating an incident.
 
-    We recommend one [autoassigned](../../id-governance/entitlement-management-access-package-auto-assignment-policy.md) access package to provide the Security Reader role and one request based package for the Security Operator and Security Administrator roles.
+    We recommend one [autoassigned](../../id-governance/entitlement-management-access-package-auto-assignment-policy.md) access package to provide the Security Reader role and one request-based package for the Security Operator and Security Administrator roles.
 
-Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary access packages in the source tenant. Once approved, they'll automatically be provisioned into the target tenants with the Security Reader role. They can then request additional access in any tenants where they need the Security Operator or Security Administrator roles. Once their access period is over or they're removed as part of an access review, they'll be deprovisioned from all the target tenants they don't need access to anymore.
+After you've completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary access packages in the source tenant. After approval, they'll automatically be provisioned into the target tenants with the Security Reader role. They can then request additional access in any tenants where they need the Security Operator or Security Administrator roles. When their access period is over or they're removed as part of an access review, they'll be deprovisioned from all the target tenants they don't need access to anymore.
 
 ### Topology 2
 
@@ -100,7 +101,7 @@ In topology 2 the target tenant administrator defines the access packages and re
 
 1. Users from the source tenant can now request access packages in the target tenant.
 
-Once you have completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary roles in each tenant.
+After you've completed the setup, SOC users can navigate to myaccess.microsoft.com to request time-limited access to the necessary roles in each tenant.
 
 **Topologies compared**
 
@@ -114,15 +115,15 @@ If a user needs access to several tenants at one time, topology 1 makes it easy 
 
 Actions performed by a SOC analyst in Microsoft Entra are audited in the Microsoft Entra tenant that they're working in. Organizations can maintain an audit trail of actions performed, generate alerts when specific actions are performed, and analyze actions performed by pushing audit logs into Azure Monitor.
 
-[Learn more](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
+For more information, see [integrate activity logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 Actions performed by a SOC analyst in Microsoft Defender for Cloud are also audited.
 
-[Learn more](/purview/audit-log-activities)
+For more information, see [audit log activities](/purview/audit-log-activities).
 
 **Scaling deployment with PowerShell / APIs**
 
-Every step that is configured through the user interface in Microsoft Entra has accompanying Microsoft Graph APIs and PowerShell commandlets, enabling you to deploy your desired policies/configuration across the tenants in your organization.
+Every step that is configured through the user interface in Microsoft Entra has accompanying Microsoft Graph APIs and PowerShell cmdlets, enabling you to deploy your desired policies and configuration across the tenants in your organization.
 
 | Capability | Microsoft Graph API | PowerShell |
 | -------- | :-------: | :-------: |
