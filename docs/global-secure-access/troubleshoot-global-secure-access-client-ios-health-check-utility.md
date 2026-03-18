@@ -56,11 +56,7 @@ In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm t
 * Device enrollment
   * If not, [enroll the device in Intune](/intune/intune-service/fundamentals/deployment-guide-enrollment)
 * Device compliance
-  * If not, remediate the issue
-  * See the following steps for more
-
-1. On the client device, open the **Company Portal** app.
-2. Ensure the device status is **Compliant**. See the following steps [to resolve compliance issues](/intune/intune-service/user-help/check-device-access-windows-cpapp.
+  * If not, open the **Company Portal** app on the client device and follow the steps to [remediate the issue](/intune/intune-service/user-help/check-device-access-windows-cpapp).
 
    > [!NOTE]
    > After changes are made, it can take up to 30 minutes for the status to update. 
