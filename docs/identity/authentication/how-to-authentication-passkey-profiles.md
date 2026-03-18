@@ -74,22 +74,21 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/add-passkey-profile.png" alt-text="Screenshot that shows how to add a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/add-passkey-profile.png":::
 
-   The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+   >[!WARNING]
+   >- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
+   >
+   >- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
+    
+   For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+ 
+   **Key Restriction Policy**
 
-     >[!WARNING]
-     >- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
-     >
-     >- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
-     
-   The next table describes profile target options. 
+   - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their AAGUID. You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 
-   Target | Description
-   --------|------------
-   Passkey types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
-   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys.<br>If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
+   >[!WARNING]
+   >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
 
 1. Select **Save**.
-
 
 ## Apply a passkey profile to a targeted group
 
