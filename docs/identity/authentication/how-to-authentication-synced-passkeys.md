@@ -21,12 +21,12 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   - Microsoft Authenticator (iOS)
   - Microsoft Authenticator (Android)
   - Security key
-- Synced passkeys: The private key is stored in a passkey provider’s cloud (such as Apple iCloud Keychain or Google Password Manager) and synced across the user’s devices. Examples: 
-  - Apple iCloud Keychain
-  - Google Password Manager
+- Synced passkeys: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
+  - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
+  - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
 
 > [!NOTE]
-> Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. For high-assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
+> Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. 
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Select **Passkey (FIDO2)** > **Configure**.
 1. Add a profile or edit an existing profile.
-1. Under **Target type**, select **Synced**, and then save the profile.
+1. Under **Passkey type**, select **Synced**, and then save the profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png" alt-text="Screenshot that shows how to enable synced passkeys." lightbox="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png":::
 

@@ -162,19 +162,6 @@ The following steps show how to create a custom authentication strength. It's a 
 1. Optionally, if you want to restrict a specific AAGUID, select **Advanced options** > **Add AAGUID**. Enter the AAGUID, and select **Save**.
 1. Choose **Next** and review the policy configuration.
 
-## Known issues
-
-### Security key provisioning
-
-Administrator provisioning of security keys is in preview. See [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision).
-
-### Guest users 
-
-Registration of passkey (FIDO2) credentials isn't supported for internal or external guest users, including B2B collaboration users in the resource tenant.
-
-### UPN changes
-
-If a user's UPN changes, you can no longer modify passkeys (FIDO2) to account for the change. If the user has a passkey (FIDO2), they need to sign in to [Security info](https://mysignins.microsoft.com/security-info), delete the old passkey (FIDO2), and add a new one.
 
 ## Next steps
 

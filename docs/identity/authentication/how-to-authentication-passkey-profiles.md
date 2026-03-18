@@ -22,7 +22,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 | Option | Configuration |
 |--------|---------------|
 | Enforce attestation | Enabled, Disabled |
-| Target types | Device-bound, Synced |
+| Passkey types | Device-bound, Synced |
 | Target specific authenticators | Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid). |
 
 ## Prerequisites
@@ -47,15 +47,20 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
-1. Select **Passkey (FIDO2)**.
+1. Select **Passkey (FIDO2)**. Select the link in the banner text to opt-in to using passkeys profiles. 
+
+   > [!NOTE]
+   > After you opt in to enable passkeys, you can't opt out. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to enable passkey profiles." lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
+
+1. On the **Configure** tab, set **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy. This setting is a global policy; it's not on the profile level.
 
 1. Select the **Default passkey profile**. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
    
-   For **Target Types**, select the types of passkeys that you want to allow.
+   For **Passkey types**, select the types of passkeys that you want to allow.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
@@ -71,16 +76,16 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
-   Enforce attestation | No (default) | Yes
-   --------------------|-----|----
-   Supported passkey types | Synced and device-bound | Device-bound only
-   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestation assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
-
+     >[!WARNING]
+     >- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
+     >
+     >- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
+     
    The next table describes profile target options. 
 
    Target | Description
    --------|------------
-   Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
+   Passkey types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
    Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys.<br>If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
 1. Select **Save**.
@@ -98,7 +103,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
 
    > [!NOTE]
-   > A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if the passkey fully satisfies the requirements of at least one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
+   > A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if the passkey fully satisfies the requirements of at least one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in entirely, and this takes precedence over them being in any **Included** groups.
 
 ## Delete a passkey profile
 
@@ -109,21 +114,6 @@ A passkey profile is a named set of policy rules that governs how users in targe
    > You can delete a profile only if it's not assigned to a group of users in **Enable and target**. If the delete icon is unavailable, first remove any targets that are assigned that profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
-
-## Disable passkey profiles
-
-> [!NOTE]
-> Disabling passkey profiles will:
-> * Remove all passkey profiles and their associated targets
-> * Revert your passkey policy to the configuration of your default passkey profile, including its user targets
-> * Disable support for synced passkeys
-> 
-> Make sure that these changes don't lock administrators out of their accounts.
-
-1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
-1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
-1. Select **Passkey (FIDO2)**.
-1. Disable **Passkey (FIDO2)** and select **Save**.
 
 ## Examples of use cases for passkey profiles
 
@@ -145,6 +135,19 @@ Passkey profile | Target groups | Passkey types | Attestation enforcement | Key 
 All device-bound passkeys (excluding Microsoft Authenticator) | All users | Device-bound | Enabled | Enabled<br>- Behavior: Block<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android 
 Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>- Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
 
+## Known issues
+
+### Security key provisioning
+
+Administrator provisioning of security keys is in preview. See [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision).
+
+### Guest users 
+
+Registration of passkey (FIDO2) credentials isn't supported for internal or external guest users, including B2B collaboration users in the resource tenant.
+
+### UPN changes
+
+If a user's UPN changes, you can no longer modify passkeys (FIDO2) to account for the change. If the user has a passkey (FIDO2), they need to sign in to [Security info](https://mysignins.microsoft.com/security-info), delete the old passkey (FIDO2), and add a new one.
 
 ## Related content
 
