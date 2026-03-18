@@ -81,11 +81,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The New Relic link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
@@ -93,17 +93,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       ![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/new-relic-by-organization-provisioning-tutorial/provisioning.png)
 
-1. Select **Create** to create your configuration.	
+1. Select **Create** to create your configuration.
 
-1. Select **Properties** in the **Overview** page. 
+1. Select **Properties** on the **Overview** page.
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in New Relic by Organization for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the New Relic by Organization API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in New Relic by Organization for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the New Relic by Organization API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -115,9 +115,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.formatted|String|
    |timezone|String|
 
-10. Select **Groups**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in New Relic by Organization for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in New Relic by Organization for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|

@@ -25,44 +25,40 @@ The scenario outlined in this article assumes that you already have the followin
 * An [OfficeSpace Software tenant](https://www.officespacesoftware.com/)
 * A user account in OfficeSpace Software with Admin permissions.
 
-## Assigning users to OfficeSpace Software
+## Step 1: Assigning users to OfficeSpace Software
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users and/or groups that have been assigned to an application in Microsoft Entra ID are synchronized.
 
 Before configuring and enabling automatic user provisioning, you should decide which users and/or groups in Microsoft Entra ID need access to OfficeSpace Software. Once decided, you can assign these users and/or groups to OfficeSpace Software by following the instructions here:
 * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Important tips for assigning users to OfficeSpace Software
+## Step 2: Important tips for assigning users to OfficeSpace Software
 
 * It's recommended that a single Microsoft Entra user is assigned to OfficeSpace Software to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to OfficeSpace Software, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role in Azure are excluded from provisioning.
 
-## Set up OfficeSpace Software for provisioning
+## Step 3: Set up OfficeSpace Software for provisioning
 
 1. Sign in to your OfficeSpace Software account with appropriate permissions.
 
-	2. Under the Admin accordion menu in the hamburger menu, select **Connectors**.
+1. Under the Admin accordion menu in the hamburger menu, select **Connectors**.
 
-![01 Connectors Highlighted](https://github.com/user-attachments/assets/dd66208e-1197-40b6-944c-7e204f579147)
+	![01 Connectors Highlighted](https://github.com/user-attachments/assets/dd66208e-1197-40b6-944c-7e204f579147)
 
+1. Navigate to **Directory Synchronization > SCIM**.
 
-3. Navigate to **Directory Synchronization > SCIM**.
+	![01 Entra AUP - OSS - Directory Sync - SCIM](https://github.com/user-attachments/assets/a1bf3bed-ac11-4ca1-9def-a5b16e10e40f)
 
-![01 Entra AUP - OSS - Directory Sync - SCIM](https://github.com/user-attachments/assets/a1bf3bed-ac11-4ca1-9def-a5b16e10e40f)
+1. Under SCIM, copy the **SCIM Authentication Key**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application in Microsoft Entra ID.
 
+	![02 Entra AUP - OSS - Directory Sync - SCIM Authorization Key](https://github.com/user-attachments/assets/6242be54-5223-4fab-9749-18ee3dee29a7)
 
-4. Under SCIM, copy the **SCIM Authentication Key**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application in Microsoft Entra ID.
+1. Check the **SCIM for Authentication** checkbox.
 
+1.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application.
 
-
-![02 Entra AUP - OSS - Directory Sync - SCIM Authorization Key](https://github.com/user-attachments/assets/6242be54-5223-4fab-9749-18ee3dee29a7)
-
-5. Check the **SCIM for Authentication** checkbox.
-
-3.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application.
-
-## Add OfficeSpace Software from the gallery
+## Step 4: Add OfficeSpace Software from the gallery
 
 Before configuring OfficeSpace Software for automatic user provisioning with Microsoft Entra ID, you need to add OfficeSpace Software from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
@@ -74,7 +70,7 @@ Before configuring OfficeSpace Software for automatic user provisioning with Mic
 1. Select **OfficeSpace Software** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![OfficeSpace Software in the results list](common/search-new-app.png)
 
-## Configuring automatic user provisioning to OfficeSpace Software 
+## Step 5: Configuring automatic user provisioning to OfficeSpace Software 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in OfficeSpace Software based on user and/or group assignments in Microsoft Entra ID.
 
@@ -94,11 +90,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The OfficeSpace Software link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
@@ -106,17 +102,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Create** to create your configuration.	
+1. Select **Create** to create your configuration.
 
-1. Select **Properties** in the **Overview** page. 
+1. Select **Properties** on the **Overview** page.
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to OfficeSpace Software in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OfficeSpace Software for update operations. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to OfficeSpace Software in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OfficeSpace Software for update operations. Select the **Save** button to commit any changes.
 
 	![OfficeSpace Software User Attributes](media/officespace-software-provisioning-tutorial/userattributes.png)
 
@@ -126,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-## Monitor your deployment
+## Step 6: Monitor your deployment
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
