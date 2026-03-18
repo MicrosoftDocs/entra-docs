@@ -80,7 +80,7 @@ Verify the thumbprint of the current client certificate. The certificate store c
 <?xml version="1.0" encoding="utf-8"?>
 <ConnectorTrustSettingsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <CloudProxyTrust>
-    <Thumbprint>4905CC64B2D81BBED60962ECC5DCF63F643CCD55</Thumbprint>
+    <Thumbprint>AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00</Thumbprint>
     <IsInUserStore>false</IsInUserStore>
   </CloudProxyTrust>
 </ConnectorTrustSettingsFile>
