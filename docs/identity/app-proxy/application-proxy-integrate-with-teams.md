@@ -3,7 +3,7 @@ title: Access Microsoft Entra application proxy apps in Teams
 description: Use Microsoft Entra application proxy to access your on-premises application through Microsoft Teams.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: harshja
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

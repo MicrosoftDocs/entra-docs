@@ -3,7 +3,7 @@ title: Understand single sign-on with an on-premises app using application proxy
 description: Learn how to configure single sign-on for on-premises apps published through Microsoft Entra application proxy.
 ms.topic: how-to
 ms.date: 03/10/2026
-ms.reviewer: ashishj, asteen
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

@@ -3,7 +3,7 @@ title: Group expiration policy quickstart
 description: Expiration for Microsoft 365 groups
 ms.topic: quickstart
 ms.date: 01/15/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management
 #Customer intent: As a new Microsoft Entra identity administrator, I want user-created Microsoft 365 groups in my organization to expire so I can reduce the number of unused groups.
