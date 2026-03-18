@@ -1,6 +1,6 @@
 ---
 title: Map directory extensions in cross-tenant synchronization
-description: Learn how to map directory extensions in cross-tenant synchronization using the Microsoft Entra admin center.
+description: "Map custom directory extension attributes in cross-tenant synchronization. Covers creating extensions, adding them to attribute mappings, and manual schema editing."
 ms.topic: how-to
 ms.date: 03/18/2026
 ms.custom: it-pro
