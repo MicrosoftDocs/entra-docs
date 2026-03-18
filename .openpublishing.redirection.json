@@ -3119,6 +3119,11 @@
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/global-secure-access/how-to-ai-prompt-shield.md",
+      "redirect_url": "/entra/global-secure-access/how-to-ai-prompt-injection-protection",
+      "redirect_document_id": true
     }
   ]
 }
