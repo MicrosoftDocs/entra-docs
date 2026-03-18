@@ -94,7 +94,7 @@ For more information, see: [Configure cross-tenant synchronization](../identity
 **Service category:** Microsoft Entra Connect    
 **Product capability:** Microsoft Entra Connect    
 
-As part of ongoing security hardening, Microsoft has deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 00001111-aaaa-2222-bbbb-3333cccc4444) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Microsoft Entra Connect.
+As part of ongoing security hardening, Microsoft has deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Microsoft Entra Connect.
 
 Microsoft Entra Connect now uses this first party application to synchronize between Active Directory and Microsoft Entra ID. Customers are required to upgrade to version **2.5.79.0** or later by **September 2026**. 
 
@@ -1270,7 +1270,7 @@ RBAC admins can create assignments of type eligible and timebound duration from 
 **Service category:** Provisioning    
 **Product capability:** Directory    
 
-As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Synchronization Service, a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, with Application ID `00001111-aaaa-2222-bbbb-3333cccc4444`, was provisioned in customer tenants that use Microsoft Entra Connect Sync or the Microsoft Entra Cloud Sync service. 
+As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Synchronization Service, a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, with Application ID `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016`, was provisioned in customer tenants that use Microsoft Entra Connect Sync or the Microsoft Entra Cloud Sync service. 
 
 ---
 
