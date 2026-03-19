@@ -140,7 +140,7 @@ HRD policies can be assigned to organizations and service principals, allowing m
 - If no domain hint or policies are assigned, default HRD behavior applies.  
 
 > [!NOTE]  
-> HRD policies do not work when using brokered authentication on mobile platforms and MacOS. This includes using the Microsoft Authenticator app on mobile platforms or the Company Portal app on Mac. If auto-acceleration is needed in these cases, a domain hint must be passed in the authentication request of the calling app.
+> HRD policies do not work when using brokered authentication on mobile platforms and macOS. This includes using the Microsoft Authenticator app on mobile platforms or the Company Portal app on Mac. If auto-acceleration is needed in these cases, a domain hint must be passed in the authentication request of the calling app.
 
 ## Next Steps
 
