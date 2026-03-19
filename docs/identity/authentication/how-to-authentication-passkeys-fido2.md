@@ -22,18 +22,9 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 > [!NOTE]
 > Microsoft Entra ID currently supports synced passkeys and device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
 
-## Passkey (FIDO2) Authenticator Attestation GUID (AAGUID)
+## Passkey profiles
 
-The FIDO2 specification requires each security key vendor to provide an Authenticator Attestation GUID (AAGUID) during registration. An AAGUID is a 128-bit identifier indicating the key type, such as the make and model. Passkey (FIDO2) providers on desktop and mobile devices are also expected to provide an AAGUID during registration.
-
->[!NOTE]
->The vendor must ensure that the AAGUID is identical across all substantially identical security keys or passkey (FIDO2) providers made by that vendor, and different (with high probability) from the AAGUIDs of all other types of security keys or passkey (FIDO2) providers. To ensure this, the AAGUID for a given security key model or passkey (FIDO2) provider should be randomly generated. For more information, see [Web Authentication: An API for accessing Public Key Credentials - Level 2 (w3.org)](https://w3c.github.io/webauthn/).
-
-You can work with your security key vendor to determine the AAGUID of the passkey (FIDO2), or see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](~/identity/authentication/concept-fido2-hardware-vendor.md#fido2-security-keys-eligible-for-attestation-with-microsoft-entra-id). If the passkey (FIDO2) is already registered, you can find the AAGUID by viewing the authentication method details of the passkey (FIDO2) for the user.
-
-![Screenshot of how to view the AAGUID for a passkey.](media/how-to-enable-passkey-fido2/security-key-aaguid-details.png)
-
-## What are passkey profiles?
+### What are passkey profiles?
 
 Passkey profiles enable granular group-based configurations for passkey (FIDO2) authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
 
@@ -48,7 +39,38 @@ A passkey profile is a named set of policy rules that governs how users in targe
 | Passkey types | Device-bound, Synced |
 | Target specific authenticators | Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](#passkey-fido2-authenticator-attestation-guid-aaguid). |
 
-## Passkey profile prerequisites
+### Examples of use cases for passkey profiles
+
+> [!NOTE]
+> If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
+
+#### Special consideration for high-privileged accounts
+
+Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
+----------------|---------------|---------------|-------------------------|-----------------
+All device-bound passkeys (attestation enforced) | IT admins<br>Executives<br>Engineering | Device-bound | Enabled | Disabled
+All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced | Disabled | Disabled
+
+
+#### Targeted rollout of passkeys in Microsoft Authenticator 
+
+Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
+----------------|---------------|---------------|-------------------------|-----------------
+All device-bound passkeys (excluding Microsoft Authenticator) | All users | Device-bound | Enabled | Enabled<br>- Behavior: Block<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android 
+Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>- Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
+
+### Passkey (FIDO2) Authenticator Attestation GUID (AAGUID)
+
+The FIDO2 specification requires each passkey vendor to provide an Authenticator Attestation GUID (AAGUID) during registration. An AAGUID is a 128-bit identifier indicating the key type, such as the make and model. Passkey (FIDO2) providers on desktop and mobile devices are also expected to provide an AAGUID during registration.
+
+>[!NOTE]
+>The vendor must ensure that the AAGUID is identical across all substantially identical security keys or passkey (FIDO2) providers made by that vendor, and different (with high probability) from the AAGUIDs of all other types of security keys or passkey (FIDO2) providers. To ensure this, the AAGUID for a given security key model or passkey (FIDO2) provider should be randomly generated. For more information, see [Web Authentication: An API for accessing Public Key Credentials - Level 2 (w3.org)](https://w3c.github.io/webauthn/).
+
+You can work with your passkey vendor to determine the AAGUID of the passkey (FIDO2), or see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](~/identity/authentication/concept-fido2-hardware-vendor.md#fido2-security-keys-eligible-for-attestation-with-microsoft-entra-id). If the passkey (FIDO2) is already registered, you can find the AAGUID by viewing the authentication method details of the passkey (FIDO2) for the user.
+
+![Screenshot of how to view the AAGUID for a passkey.](media/how-to-enable-passkey-fido2/security-key-aaguid-details.png)
+
+### Passkey profile prerequisites
 
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 - If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
@@ -63,7 +85,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
 - Users need an authenticator that supports Microsoft Entra ID's attestation requirements. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
-## Enable passkey profiles 
+### Enable passkey profiles 
 
 > [!NOTE]
 > When you enable passkey profiles, your global passkey (FIDO2) policy settings automatically transfer to a **Default passkey profile**. Up to three passkey profiles, including the **Default passkey profile**, are supported. Support for more passkey profiles is in development.
@@ -88,7 +110,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. Select **Save**.
 
-## Create a new passkey profile
+### Create a new passkey profile
 
 1. On the **Configure** tab, select **+ Add passkey profile**.
 
@@ -113,7 +135,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 1. Select **Save**.
 
-## Apply a passkey profile to a targeted group
+### Apply a passkey profile to a targeted group
 
 1. Select **Enable and Target**.
 1. Select **Add target**, and then choose **All users** or **Select targets** to choose specific groups.
@@ -127,7 +149,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
    > [!NOTE]
    > A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey are allowed if the passkey fully satisfies the requirements of at least one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in entirely, and this takes precedence over them being in any **Included** groups.
 
-## Delete a passkey profile
+### Delete a passkey profile
 
 1. Select **Configure**.
 1. Select the delete icon next to the passkey profile that you want to delete, and then select **Save**.
@@ -137,27 +159,9 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
-## Examples of use cases for passkey profiles
+## Passkeys (FIDO2)
 
-> [!NOTE]
-> If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
-
-### Special consideration for high-privileged accounts
-
-Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
-----------------|---------------|---------------|-------------------------|-----------------
-All device-bound passkeys (attestation enforced) | IT admins<br>Executives<br>Engineering | Device-bound | Enabled | Disabled
-All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced | Disabled | Disabled
-
-
-### Targeted rollout of passkeys in Microsoft Authenticator 
-
-Passkey profile | Target groups | Passkey types | Attestation enforcement | Key restrictions
-----------------|---------------|---------------|-------------------------|-----------------
-All device-bound passkeys (excluding Microsoft Authenticator) | All users | Device-bound | Enabled | Enabled<br>- Behavior: Block<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android 
-Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>- Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
-
-## What are synced versus device-bound passkeys?
+### What are synced versus device-bound passkeys?
 
 Passkeys are FIDO2-based credentials that provide strong, phishing-resistant authentication. Microsoft Entra ID supports two main types of passkeys:
 
@@ -172,7 +176,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 > [!NOTE]
 > Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. 
 
-## Synced passkey requirements
+### Synced passkey requirements
 
 - To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
 - An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
@@ -184,7 +188,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   Google Password Manager | Built into Chrome | Built into Chrome | Built into Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
   Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
 
-## Enable synced passkeys
+### Enable synced passkeys
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure passkey profiles are enabled.
@@ -197,14 +201,14 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 > [!NOTE]
 > If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.
 
-## Delete a passkey (FIDO2)
+### Delete a passkey (FIDO2)
 
 To remove a passkey (FIDO2) associated with a user account, delete it from the user's authentication method.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey (FIDO2) needs to be removed.
 1. Select **Authentication methods** > right-click **Passkey (device-bound)** and select **Delete**. 
 
-## Enforce passkey (FIDO2) sign-in
+### Enforce passkey (FIDO2) sign-in
 
 To make users sign in with a passkey (FIDO2) when they access a sensitive resource, you can: 
 
