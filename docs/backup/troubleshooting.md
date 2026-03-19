@@ -98,7 +98,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If the difference report is running for a long time:**
 
-No estimated completion time is available for a running difference report. Large tenants or large change sets might take longer to process.
+See the [estimated difference report generation time](backup-difference-report-recovery-model.md). Large tenants or large change sets might take longer to process.
 
 - Allow the report to continue running unless cancellation is required.
 
@@ -113,7 +113,7 @@ No estimated completion time is available for a running difference report. Large
 Difference reports are tied to the backup they were created from.
 
 1. Browse to the backup and check the list of difference report jobs associated with it.
-1. If the report isn't listed, the backup that the difference report was based on might no longer be available.
+1. If the report isn’t listed, it may no longer be available because difference reports are retained for five days after their completion date.
 
 **If the difference report continues running after cancellation:**
 
@@ -155,7 +155,7 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 ### Possible causes
 
-- The service automatically removes recovery job reports when the associated backup expires.
+- Recovery job details are automatically removed five days after the job completes.
 - Some links aren't supported for recovery in the current release.
 - Certain links depend on other objects or states that no longer exist.
 - The recovery job completed with warnings, indicating partial success.
@@ -164,9 +164,9 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 **If you can't find a recovery job you ran earlier:**
 
-1. Browse to the **difference report** that was used for the recovery.
-1. View the list of **recovery jobs associated with that difference report**.
-1. If the job is no longer listed, the backup that the recovery job used might have expired.
+1. Find the **backup timestamp** that was used for the recovery.
+1. Review **recovery history** to find **recovery jobs associated with that backup timestamp**.
+1. If the job is no longer listed, it may no longer be available because recovery jobs are retained for five days after their completion date.
 
 **If not all links were recovered:**
 
@@ -201,7 +201,7 @@ Microsoft Entra Backup and Recovery is supported for workforce tenants only. Ext
 
 ### Hard-deleted objects
 
-Hard-deleted objects **can't** be recovered. These objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, consider configuring [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
+Hard-deleted objects **cannot** be recovered. These objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, consider configuring [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ### On-premises synced objects
 
