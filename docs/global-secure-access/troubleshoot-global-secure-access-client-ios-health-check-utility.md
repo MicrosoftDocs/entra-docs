@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot the Global Secure Access client for iOS with Health check utility
+title: Troubleshoot the Global Secure Access client for mobile client with Health check utility
 description: Learn if a device can communicate with the Global Secure Access service and tunnel traffic, by using the health check utility.
 ms.topic: troubleshooting
 ms.author: matursca
@@ -11,15 +11,15 @@ ms.date: 03/17/2026
 
 ---
 
-# Troubleshoot the Global Secure Access client for iOS with Health check utility
+# Troubleshoot the Global Secure Access client for mobile  with Health check utility
 
-This article's troubleshooting guidance is for the [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) iOS client, using the health check utility in [Microsoft Defender](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description). 
+This article's troubleshooting guidance is for the [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) mobile client, using the health check utility in [Microsoft Defender](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description). 
 
 The Global Secure Access mobile client health check utility helps you understand if a device can communicate with the Global Secure Access service and tunnel traffic. The health check has a single view for device compliance, local network configuration, and policy service readiness signals. When required conditions are met, the health check utility reports a healthy state and traffic forwarding functions as expected.  
 
 ## Run the health check
 
-Review the Global Secure Access client health check on an iOS device.
+Review the Global Secure Access client health check on an iOS or Android device.
 
 1. On the device, navigate to **Microsoft Defender**. 
 2. Select **Global Secure Access**. 
@@ -53,14 +53,10 @@ To remediate device compliant errors:
 
 In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm the following criteria:
 
-* Device enrollment
+1. Device enrollment
   * If not, [enroll the device in Intune](/intune/intune-service/fundamentals/deployment-guide-enrollment)
-* Device compliance
-  * If not, remediate the issue
-  * See the following steps for more
-
-1. On the client device, open the **Company Portal** app.
-2. Ensure the device status is **Compliant**. See the following steps [to resolve compliance issues](/intune/intune-service/user-help/check-device-access-windows-cpapp.
+2. Device compliance
+  * If not, open the **Company Portal** app on the client device and follow the steps to [remediate the issue](/intune/intune-service/user-help/check-device-access-windows-cpapp).
 
    > [!NOTE]
    > After changes are made, it can take up to 30 minutes for the status to update. 
@@ -90,6 +86,16 @@ In Microsoft Defender:
 
 You can learn to [monitor results of your Intune device-compliance policies](/intune/intune-service/protect/compliance-policy-monitor).
 
+## Private DNS setting disabled
+
+Private DNS is not currently supported for Android. 
+
+In the Entra portal:
+
+1. Navigate to **Global Secure Access**.
+2. Under **Applications**, select **Quick Access**.
+3. In the **Private DNS** tab, ensure **Private DNS** is not selected.
+
 ### Manual proxy setting disabled
 
 Manual proxy on iOS interferes with Global Secure Access traffic routing. For instance, The **Manual proxy setting disabled** label in the health check is red, or set to **No**. Or you might be unable to access resources. To clear this health check error, disable the manual proxy setting. 
@@ -108,7 +114,7 @@ On Apple Platform Deployment, you can learn more about [VPN Proxy device managem
 
 ### NaaS policy: policy service running
 
-If the Global Secure Access policy service isn't running or didn't initialize on the iOS device, the health check fails. To troubleshoot this error: 
+If the Global Secure Access policy service isn't running or didn't initialize on the device, the health check fails. To troubleshoot this error: 
 
 1. On the client device, in Microsoft Defender, navigate to **Global Secure Access**.
 2. Confirm the service is **Enabled**.
@@ -116,7 +122,7 @@ If the Global Secure Access policy service isn't running or didn't initialize on
 
 To ensure the VPN is disabled:
 
-1. On the iOS device, go to **Settings**.
+1. On the device, go to **Settings**.
 2. Select **General**.
 3. Select **VPN & Device Management**.
 4. Confirm the VPN is set to **Not Connected**. 
@@ -153,7 +159,7 @@ Enable the client to acquire traffic and tunnel traffic to the Global Secure Acc
    ![Screenshot of profile options for traffic, private access, and internet access.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/profile-options.png)
 
    > [!NOTE]
-   >  In addition to health check status indicators, iOS devices can return a generic **Something went wrong** error, for device registration problems. To resolve, update the device to the latest version of iOS. Then, navigate to **Microsoft Defender**, then **Global Secure Access**. Toggle the Global Secure Access client **Off** then **On**. Restart the device.
+   >  In addition to health check status indicators, Entra can return a generic **Something went wrong** error, for device registration problems. To resolve, update the device to the latest version of the OS. Then, navigate to **Microsoft Defender**, then **Global Secure Access**. Toggle the Global Secure Access client **Off** then **On**. Restart the device.
 
    ![Screenshots of on and off options.](./media/troubleshoot-global-secure-access-client-ios-health-check-utility/on-off.png)
 

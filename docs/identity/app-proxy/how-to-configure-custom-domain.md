@@ -35,7 +35,7 @@ There are several options for setting up your Domain Name System (DNS) configura
 
 If you don't want your internal users to be directed through the application proxy, you can set up a *split-brain DNS*. A split DNS infrastructure directs name resolution based on host location. It directs internal hosts to an internal domain name server and external hosts to an external domain name server.
 
-![Split-brain DNS](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
+![Diagram showing split-brain DNS architecture with internal hosts routing to on-premises server and external hosts routing through application proxy.](./media/application-proxy-configure-custom-domain/split-brain-dns.png)
 
 
 ### Different internal and external URLs 
@@ -81,15 +81,15 @@ To publish your app through application proxy with a custom domain:
    
 1. Select **Add**.
    
-   ![Select custom domain](./media/application-proxy-configure-custom-domain/application-proxy.png)
+   ![Application proxy configuration page showing custom domain field and certificate settings.](./media/application-proxy-configure-custom-domain/application-proxy.png)
    
 1. If the domain already has a certificate, the **Certificate** field displays the certificate information. Otherwise, select the **Certificate** field.
    
-   ![Select to upload a certificate](./media/application-proxy-configure-custom-domain/certificate.png)
+   ![Certificate field with upload option in application proxy settings.](./media/application-proxy-configure-custom-domain/certificate.png)
    
 1. On the **SSL certificate** page, browse to and select your PFX certificate file. Enter the password for the certificate, and select **Upload Certificate**. For more information about certificates, see the [Certificates for custom domains](#certificates-for-custom-domains) section. If the certificate isn't valid, or there's a problem with the password, you see an error message. The [Application proxy FAQ](application-proxy-faq.yml) contains some troubleshooting steps you can try.
    
-   ![Upload Certificate](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
+   ![SSL certificate upload page with fields for certificate file selection and password.](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
    
    > [!TIP] 
    > A custom domain only needs its certificate uploaded once. After that, the uploaded certificate is applied automatically when you use the custom domain for other apps.
@@ -98,7 +98,7 @@ To publish your app through application proxy with a custom domain:
    
 1. In the information bar on the **Application proxy** page, note the CNAME entry you need to add to your DNS zone. 
    
-   ![Add CNAME DNS entry](./media/application-proxy-configure-custom-domain/dns-info.png)
+   ![Information bar displaying CNAME entry required for DNS zone configuration.](./media/application-proxy-configure-custom-domain/dns-info.png)
    
 1. Follow the instructions at [Manage DNS records and record sets by using the Microsoft Entra admin center](/azure/dns/dns-operations-recordsets-portal) to add a DNS record that redirects the new external URL to the *`msappproxy.net`* domain in Azure DNS. If a different DNS provider is used, contact the vendor for the instructions.
 
@@ -142,5 +142,5 @@ When a certificate expires, you get a warning telling you to upload another cert
 
 ## Next steps
 
-* [Enable single sign-on](how-to-configure-sso-with-kcd.md) to your published apps with Microsoft Entra authentication.
-* Enable [Conditional Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) for your published cloud apps.
+* [Enable single sign-on to your published apps](how-to-configure-sso-with-kcd.md) with Microsoft Entra authentication.
+* Enable [Conditional Access for your published cloud apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md).

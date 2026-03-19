@@ -28,7 +28,7 @@ Securely expose a web application on the internet using Microsoft Entra applicat
 - A custom domain to use for the application.
 - Application proxy subscription licenses are available in Microsoft Entra ID P1 or P2. For more information about licensing options and features, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-## Application proxy configuration
+## Configure application proxy
 
 Configure application proxy for Front Door.
 
@@ -49,7 +49,7 @@ The table shows a sample application proxy configuration. The sample scenario us
 | **External URL** | `contoso.org` | Configure a custom domain for access from the internet. |
 | **Connector group** | `North America` | To optimize performance, select the connector group in the geo location closest to the application instance.|
 
-## Azure Front Door configuration
+## Configure Azure Front Door
 
 Azure Front Door is offered in different tiers including Standard, Premium, and Classic. Select a tier based on your preference. For more information on tier comparison, see [Azure Front Door tier comparison][front-door-tier].
 
