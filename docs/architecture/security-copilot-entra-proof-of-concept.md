@@ -76,9 +76,9 @@ If your subscription doesn’t include Security Copilot in Entra, proceed to the
 
 A Security Copilot in Entra PoC begins with your organization’s unique security challenges and objectives. In the [Microsoft Entra admin center](https://entra.microsoft.com/), select **Copilot**. Prompts appear to get you started. You can explore these prompts or enter your prompt in the chat box. You can view the graph query used to derive results. 
 
-   ![Screenshot of the Microsoft Entra admin center](./media/security-copilot-entra-poc/admin-center.png)
+   ![Screenshot of the Microsoft Entra admin center.](./media/security-copilot-entra-poc/admin-center.png)
 
-   ![Screenshot of Copilot topic history](./media/security-copilot-entra-poc/method-open-list.png)
+   ![Screenshot of Copilot topic history.](./media/security-copilot-entra-poc/method-open-list.png)
 
 ### Persona functions
 
@@ -88,7 +88,7 @@ The following table has suggested prompts, based on persona function.
 |---|---|---|
 |Helpdesk Administrator|Investigate users blocked from sign-in, due to a risk event. To resolve the issue, Help Desk is on the call, with the user. |I'm investigating a user email **julie-b@contoso** blocked due to high risk. Help me understand why this user is blocked. Also, let me know if other users are blocked, due to the same situation, within the last 24 hours. |
 |Security operations center (SOC) team member|Investigate a spike of password resets from a country/region, or department: determine trends or patterns. |I'm seeing a trend from an IP address that's high risk for multiple users. Review all user applications in the United States to determine if there’s a pattern of applications, services, or groups. |
-|Identity administrator|Investigate the potential effects of a new Conditional Access policy|Show me the signins and the Conditional Access policies that apply. List users without registered multifactor authentication (MFA). Show me sign-in logs from unmanaged devices for the past 14 days|
+|Identity administrator|Investigate the potential effects of a new Conditional Access policy|Show me the sign-ins and the Conditional Access policies that apply. List users without registered multifactor authentication (MFA). Show me sign-in logs from unmanaged devices for the past 14 days|
 |Tenant administrator|Guest management|Show me the guest users in the tenant|
 
 ## PoC scenarios: Microsoft Entra ID
@@ -288,33 +288,33 @@ Short-term actions (0–30 days)
 2. Create end-user communication for changes that affects the user experience. 
 3. Set up and/or confirm data retention for agent log and metrics.  
 4. Apply Conditional Access optimization agent recommendations: 
-  * Obtain and document a prioritized list of suggestions by chatting with the agent.  
-  * Use the chat experience to finalize investigation and understand suggestions. 
-  * Review suggestions and remediate identified gaps. 
-  * For new baseline policy suggestions, use the agent phased rollout capability.  
-  * Identify groups for each phase and agree on success criteria.  
-  * Follow best practices for phased rollout.  
-  * Align this action with current change management processes. 
-  * Begin a pilot group and establish roll-back procedures. 
-  * Monitor policy rollout.  
+   * Obtain and document a prioritized list of suggestions by chatting with the agent.  
+   * Use the chat experience to finalize investigation and understand suggestions. 
+   * Review suggestions and remediate identified gaps. 
+   * For new baseline policy suggestions, use the agent phased rollout capability.  
+   * Identify groups for each phase and agree on success criteria.  
+   * Follow best practices for phased rollout.  
+   * Align this action with current change management processes. 
+   * Begin a pilot group and establish roll-back procedures. 
+   * Monitor policy rollout.  
 
-   > [!NOTE]
-   > If the sign-in success drops below 90%, the agent rolls back the policy.  
+    > [!NOTE]
+    > If the sign-in success drops below 90%, the agent rolls back the policy.  
 
 5. Apply the Risk Management agent recommendations.
 6. Use the Copilot chat experience to investigate agent recommendations.
 7. Configure and run the [agent trigger](/entra/id-protection/identity-risk-management-agent-settings) to run.
 8. Select one of the following options: 
-  * Automatic runs for detected new risky users 
-  * Continuous monitoring 
-  * Manual runs 
+   * Automatic runs for detected new risky users 
+   * Continuous monitoring 
+   * Manual runs 
 9. Configure agent scope: 
-  * Users and groups in scope 
-  * Risk levels in scope: low, medium, high 
-  * Time periods in scope: 7 days, 14 days, 30 days 
+   * Users and groups in scope 
+   * Risk levels in scope: low, medium, high 
+   * Time periods in scope: 7 days, 14 days, 30 days 
 10. Use the agent chat to configure agent memory rules. Sample prompts include: 
-  * Recommend I dismiss risk, if a user signs in from the United States between 8 AM and 9 AM PST. 
-  * Recommend I reset a password, if a user has invalid password attempts. 
+   * Recommend I dismiss risk, if a user signs in from the United States between 8 AM and 9 AM PST. 
+   * Recommend I reset a password, if a user has invalid password attempts. 
 11. Remediate higher risk users and applications identified by agent. 
 12. If Microsoft Entra ID Protection isn’t deployed, follow [how-to-guides](/entra/id-protection/how-to-deploy-identity-protection) to maximize value. 
 
