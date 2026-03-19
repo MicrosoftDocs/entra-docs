@@ -22,7 +22,7 @@ Governance relationships enable four key scenarios:
 | Scenario | Description |
 |---|---|
 | Cross-tenant delegated administration | Use governance relationships to centralize **least-privileged administrative access** across multiple Microsoft Entra tenants. Administrators sign in using accounts from the governing tenant. This approach eliminates the need to create and manage local or B2B administrator accounts in every governed tenant. |
-| Multi-tenant application management | Manage custom, multi-tenant applications from the governing tenant. Administrators can monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually. This approach reduces operational overhead and configuration drift. |
+| Multitenant application management | Manage custom, multitenant applications from the governing tenant. Administrators can monitor and maintain least-privileged application access across governed tenants without signing into each tenant individually. This approach reduces operational overhead and configuration drift. |
 | Tenant configuration management | If you configured cross-tenant delegated administration in your governance relationship, use this administrative access to ensure that the tenant meets your organization's security and compliance objectives on an ongoing basis. |
 | Secure tenant creation | When you create a new add-on tenant from an existing tenant, Tenant Governance automatically establishes a governance relationship between the parent tenant and the new tenant by using a default governance policy template. This step immediately brings newly created tenants under centralized administration and governance controls, reducing the risk of unmanaged or misconfigured tenants. |
 
@@ -78,6 +78,6 @@ When you set up governance relationships between a pair of tenants, note these s
 
 ## Related content
 
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Governance policy templates](governance-policy-templates.md)
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)

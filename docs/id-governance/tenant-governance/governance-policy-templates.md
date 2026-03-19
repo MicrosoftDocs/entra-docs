@@ -23,7 +23,7 @@ A governance policy template serves as a blueprint for governance relationships.
 
 - Cross-tenant delegated administration roles - Specify which Microsoft Entra built-in roles users from the governing tenant have in the governed tenant.
 
-- Multi-tenant applications - Select custom applications to create and manage across tenants.
+- Multitenant applications - Select custom applications to create and manage across tenants.
 
 After you create a template, you can use it to establish multiple governance relationships with different governed tenants, ensuring consistent access policies across your organization.
 
@@ -41,11 +41,11 @@ By selecting Microsoft Entra built-in roles and assigning them to a group in the
 
 Each group can have multiple role assignments, and each policy template can have multiple groups defined. When you create the governance relationship, Tenant Governance creates [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction) role assignments in the governed tenant.
 
-## Multi-tenant application configuration
+## Multitenant application configuration
 
-By selecting custom, multi-tenant applications in the policy template, you enable centralized application management. When you create the governance relationship, Tenant Governance creates a service principal with the same permissions in the governed tenant.
+By selecting custom, multitenant applications in the policy template, you enable centralized application management. When you create the governance relationship, Tenant Governance creates a service principal with the same permissions in the governed tenant.
 
-This capability allows you to manage your custom, multi-tenant applications at scale from the central governing tenant. You don't need to go into every tenant individually to monitor and maintain least privileged app access.
+This capability allows you to manage your custom, multitenant applications at scale from the central governing tenant. You don't need to go into every tenant individually to monitor and maintain least privileged app access.
 
 For example, assume you've built a custom line of business app called Contoso Resource Manager, responsible for monitoring, reporting, and automating resource configuration across your tenants. Use the governance relationship to set up a service principal instance of Contoso Resource Manager across your governed tenants, with the right provisioned permissions consented. When you need to add or remove permissions, do so through the governance relationship instead of making changes and consenting to permissions on a per-tenant basis.
 
@@ -62,5 +62,5 @@ The default policy template has these characteristics:
 ## Related content
 
 - [Governance relationships](governance-relationships.md)
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)

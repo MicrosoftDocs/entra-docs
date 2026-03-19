@@ -106,7 +106,7 @@ This classification helps reduce noise and focus attention elsewhere.
 
 - Investigate ownership (business unit, team, or developer).
 - Evaluate whether IT should manage the tenant.
-- Consider establishing a [governance relationship](how-to-setup-governance-relationship.md).
+- Consider establishing a [governance relationship](how-to-set-up-governance-relationship.md).
 
 This approach aligns with the goal of bringing unsanctioned but legitimate tenants under governance, rather than blocking them.
 
@@ -131,4 +131,4 @@ Base the quarantine decision on related tenant signals, not on isolated analysis
 - [Related tenants in Tenant Governance](related-tenants.md)
 - [Signals and metrics for tenant discovery](signals-metrics.md)
 - [Enable tenant discovery](how-to-enable-tenant-discovery.md)
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)

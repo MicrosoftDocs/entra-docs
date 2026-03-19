@@ -53,5 +53,5 @@ Alternatively, if the actual state of the resource is acceptable, update the con
 
 - [Create a monitor](how-to-create-monitor.md)
 - [Update or delete a monitor](how-to-update-delete-monitor.md)
-- [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md)
+- [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md)
 - [Configuration management](configuration-management.md)

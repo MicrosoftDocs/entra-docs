@@ -53,7 +53,7 @@ In order to automatically establish governance relationships with add-on tenants
 
    - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
 
-   - **Multi-tenant application management**: Select a custom, multi-tenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
+   - **Multitenant application management**: Select a custom, multitenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
 
 ### Create the tenant
 

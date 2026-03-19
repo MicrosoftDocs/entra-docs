@@ -69,7 +69,7 @@ Before you establish governance relationships, create one or more governance pol
 1. Configure the template:
 
    - **Cross-tenant delegated administration**: Select the Microsoft Entra built-in roles to assign, and specify the security groups in the governing tenant that receive those roles.
-   - **Multi-tenant applications** (optional): Select custom applications to provision in governed tenants.
+   - **Multitenant applications** (optional): Select custom applications to provision in governed tenants.
 
 1. Save the template.
 
@@ -135,9 +135,9 @@ After the governed tenant accepts the request, verify that these resources are p
 - A governance relationship object in both tenants
 - Cross-tenant access settings updates
 - GDAP role assignments (if delegated administration is configured)
-- Service principals for multi-tenant applications (if application management is configured)
+- Service principals for multitenant applications (if application management is configured)
 
-For complete setup instructions, see [Set up a governance relationship](how-to-setup-governance-relationship.md).
+For complete setup instructions, see [Set up a governance relationship](how-to-set-up-governance-relationship.md).
 
 ## Phase 4: Implement cross-tenant delegated administration
 
@@ -182,7 +182,7 @@ The configuration management service requires explicit permissions to read tenan
 1. On the **Entra roles** tab, assign any required roles (for example, Teams Reader for Teams resources).
 1. For Exchange, Security, and Compliance resources, assign permissions in the respective service admin centers.
 
-For detailed instructions, see [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md).
+For detailed instructions, see [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md).
 
 ### Author a configuration baseline
 

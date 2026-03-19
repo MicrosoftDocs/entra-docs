@@ -27,7 +27,7 @@ Key features:
 
 - Automatically detect tenants that are related to your tenant based on one or more discovery signals.
 - The B2B discovery signal identifies and measures inbound and outbound B2B access, B2B registration, and B2B administrative access between your tenant and other tenants.
-- The multi-tenant application discovery signal identifies tenants with registered multi-tenant applications that have permissions in your tenant, or tenants to which your registered multi-tenant applications have access.
+- The multitenant application discovery signal identifies tenants with registered multitenant applications that have permissions in your tenant, or tenants to which your registered multitenant applications have access.
 - The billing discovery signal identifies tenants that share billing accounts with you, where either your tenant or the related tenant is an associated billing tenant for the billing account.
 - View initial and recent metrics about the volume of relationships between your tenant and related tenants.
 - Filter and sort the list of related tenants based on discovery signal findings to focus on tenants with particular types of risk that your organization prioritizes.
@@ -70,7 +70,7 @@ Key features:
 
 - Define a governance policy template to automatically create a governance relationship between your tenant and new tenants created by your users.
 - Control which users can create new add-on tenants by assigning or limiting access to commerce billing accounts in your tenant.
-- Use the Entra asset in your commerce billing account to streamline recovery of administrative access to an add-on tenant, such as when the last administrator of that tenant leaves your organization, or when a threat actor compromises the add-on tenant.
+- Use the Microsoft Entra asset in your commerce billing account to streamline recovery of administrative access to an add-on tenant, such as when the last administrator of that tenant leaves your organization, or when a threat actor compromises the add-on tenant.
 - Use the commerce API or the Microsoft Entra admin center to create a new add-on tenant.
 
 Learn more about [creating a governed tenant](how-to-create-tenant.md).
@@ -83,11 +83,11 @@ To begin using Tenant Governance features, sign in to the [Microsoft Entra admin
 
 Tenant Governance is available at two service levels: Tenant Governance Basic and Tenant Governance Premium. To see which Tenant Governance features are available at each service level, see [Microsoft Entra licensing](~/fundamentals/licensing.md).
 
-Tenant configuration management APIs are generally available. Other Tenant Governance experiences are in public preview. All Tenant Governance capabilities are supported by Microsoft Customer Support for use in production environments.
+Tenant configuration management APIs are generally available. Other Tenant Governance experiences are in preview. All Tenant Governance capabilities are supported by Microsoft Customer Support for use in production environments.
 
 ## Next steps
 
 - [Related tenants](related-tenants.md)
 - [Enable tenant discovery](how-to-enable-tenant-discovery.md)
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Deploy Tenant Governance](deployment-guide.md)

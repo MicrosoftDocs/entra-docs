@@ -71,4 +71,4 @@ When you update an existing configuration monitor, the updated settings replace 
 - [Configuration management](configuration-management.md)
 - [See monitor results and configuration drifts](how-to-see-monitor-results.md)
 - [Update or delete a monitor](how-to-update-delete-monitor.md)
-- [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md)
+- [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md)

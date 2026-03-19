@@ -68,6 +68,6 @@ After related tenants appear, take any of these actions:
 - [Review the list of related tenants](related-tenants.md) surfaced by discovery.
 - [Interpret tenant discovery data](how-to-interpret-discovery-data.md) to classify and prioritize related tenants.
 - Use the data to inform governance decisions:
-  - [Set up governance relationships](how-to-setup-governance-relationship.md) with discovered tenants.
+  - [Set up governance relationships](how-to-set-up-governance-relationship.md) with discovered tenants.
   - Plan tenant inventory and cleanup efforts.
   - [Learn more about Tenant Governance](overview.md) and configuration management planning.

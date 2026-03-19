@@ -15,7 +15,7 @@ ms.date: 03/10/2026
 
 [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
-Governance relationships enable centralized, cross-tenant administration and multi-tenant application management. A governance relationship is a directional relationship between two tenants: one tenant acts as the *governing tenant*, and the other acts as the *governed tenant*.
+Governance relationships enable centralized, cross-tenant administration and multitenant application management. A governance relationship is a directional relationship between two tenants: one tenant acts as the *governing tenant*, and the other acts as the *governed tenant*.
 
 Establish a governance relationship between any two Microsoft Entra tenants by using the three-step handshake process, or the two-step handshake if tenants meet certain criteria. This article describes both options.
 
@@ -37,12 +37,12 @@ Before you can set up a governance relationship, you must create a governance po
 
 1. Create a new policy template and configure these options as needed:
 
-   - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
+    - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
 
-   - **Multi-tenant application management**: Select a custom, multi-tenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
+    - **Multitenant application management**: Select a custom, multitenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
 
 ## Set up a governance relationship using a three-step handshake
-Use the three-step handshake when there's no pre-existing billing signal or active relationship between the two tenants.
+Use the three-step handshake when there's no preexisting billing signal or active relationship between the two tenants.
 
 ### Enable governance invitations in the governing tenant
 
@@ -118,9 +118,9 @@ When you successfully create a governance relationship, Tenant Governance provis
 
 - In the governed tenant:
 
-  - If you configured delegated administration, Tenant Governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
+    - If you configured delegated administration, Tenant Governance updates the partner-specific configuration for cross-tenant access and creates cross-tenant role assignments.
 
-  - If you configured multi-tenant application management, Tenant Governance creates the corresponding service principal and its permissions.
+    - If you configured multitenant application management, Tenant Governance creates the corresponding service principal and its permissions.
 
 ## Related content
 - [Update a governance relationship](how-to-update-governance-relationship.md)

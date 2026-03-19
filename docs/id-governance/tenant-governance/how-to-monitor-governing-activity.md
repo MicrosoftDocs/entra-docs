@@ -88,7 +88,7 @@ Use audit logs to track the specific actions and changes that governing tenant a
 ## Related content
 
 - [Use cross-tenant delegated administration](how-to-delegated-administration.md)
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Governance policy templates](governance-policy-templates.md)
 - [What are Microsoft Entra sign-in logs?](/entra/identity/monitoring-health/concept-sign-ins)
 - [What are Microsoft Entra audit logs?](/entra/identity/monitoring-health/concept-audit-logs)

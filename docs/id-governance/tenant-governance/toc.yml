@@ -45,7 +45,7 @@
   - name: Governance relationships
     items:
     - name: Set up a governance relationship
-      href: how-to-setup-governance-relationship.md
+      href: how-to-set-up-governance-relationship.md
     - name: Update a governance relationship
       href: how-to-update-governance-relationship.md
     - name: Terminate a governance relationship
@@ -59,7 +59,7 @@
   - name: Configuration management
     items:
     - name: Set up permissions
-      href: how-to-setup-permissions-tenant-monitoring.md
+      href: how-to-set-up-permissions-tenant-monitoring.md
     - name: Create or update a monitor
       href: how-to-create-monitor.md
     - name: Update or delete a monitor

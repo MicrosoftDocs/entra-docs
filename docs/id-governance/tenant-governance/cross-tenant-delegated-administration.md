@@ -69,7 +69,7 @@ Cross-tenant delegated administration provides several advantages for organizati
 
 ## Related content
 
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Use delegated administration](how-to-delegated-administration.md)
 - [Monitor governing tenant admin activity](how-to-monitor-governing-activity.md)
 - [Governance policy templates](governance-policy-templates.md)

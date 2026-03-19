@@ -25,14 +25,14 @@ The following table shows what features associated with Tenant Governance are av
 
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
-| Discover related tenants through B2B collaboration, multi-tenant apps, and shared billing accounts | | | | ✅ |
+| Discover related tenants through B2B collaboration, multitenant apps, and shared billing accounts | | | | ✅ |
 
 ### Governance relationships
 
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
 | Governance relationship with cross-tenant granular delegated admin privileges (GDAP) | | ✅ | ✅ | ✅ |
-| Governance relationship with custom multi-tenant app injection | | | | ✅ |
+| Governance relationship with custom multitenant app injection | | | | ✅ |
 
 ### Secure tenant creation
 

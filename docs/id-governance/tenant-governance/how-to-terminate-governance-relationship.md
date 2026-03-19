@@ -41,11 +41,11 @@ The governing tenant can request to terminate a governance relationship. This pr
 
 1. Select **Terminate governance**.
 
-   The relationship status changes to **Termination requested**. Tenant Governance sends an email notification to the governed tenant about the termination request.
+    The relationship status changes to **Termination requested**. Tenant Governance sends an email notification to the governed tenant about the termination request.
 
 1. Wait for the governed tenant to confirm the termination.
 
-   When the governed tenant confirms, Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**.
+    When the governed tenant confirms, Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**.
 
 ### Confirm termination as the governed tenant
 When the governing tenant initiates termination, the governed tenant must confirm the request to complete the process.
@@ -60,7 +60,7 @@ When the governing tenant initiates termination, the governed tenant must confir
 
 1. Select **Confirm termination**.
 
-   Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**. Tenant Governance sends an email notification to the governing tenant that termination is complete.
+    Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**. Tenant Governance sends an email notification to the governing tenant that termination is complete.
 
 ## Directly terminate a relationship: Governed tenant
 As the governed tenant, directly terminate a governance relationship without requiring approval from the governing tenant.
@@ -75,7 +75,7 @@ As the governed tenant, directly terminate a governance relationship without req
 
 1. Review the details of the relationship, then confirm termination.
 
-   Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**. Tenant Governance sends an email notification to the governing tenant that the relationship is terminated.
+    Tenant Governance deletes all relationship-related resources from the governed tenant, and the relationship status changes to **Terminated**. Tenant Governance sends an email notification to the governing tenant that the relationship is terminated.
 
 ## What happens when you terminate a governance relationship
 When you terminate a governance relationship, Tenant Governance updates or deletes these resources from the governed tenant:
@@ -84,11 +84,11 @@ When you terminate a governance relationship, Tenant Governance updates or delet
 
 - **GDAP role assignments**: Tenant Governance removes cross-tenant role assignments that allowed users from the governing tenant to sign in to and manage the governed tenant.
 
-- **Service principals**: If an admin configured multi-tenant application management, Tenant Governance removes the corresponding service principal and its permissions from the governed tenant.
+- **Service principals**: If an admin configured multitenant application management, Tenant Governance removes the corresponding service principal and its permissions from the governed tenant.
 
 After termination, users from the governing tenant can no longer sign in to the governed tenant with their governing tenant credentials through the governance relationship.
 
 ## Related content
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 
 - [Update a governance relationship](how-to-update-governance-relationship.md)

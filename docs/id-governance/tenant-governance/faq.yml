@@ -55,7 +55,7 @@ sections:
       - question: |
           How does Tenant Governance relate to B2B capabilities?
         answer: |
-          Some customers use B2B accounts for multi-tenant administration. This approach requires roles to be assigned per B2B user in every tenant. Granular delegated admin privileges (GDAP) don't replace B2B collaboration features. However, for multi-tenant administration needs, assigning and maintaining least-privileged permissions is often easier with GDAP accounts in governance relationships.
+          Some customers use B2B accounts for multitenant administration. This approach requires roles to be assigned per B2B user in every tenant. Granular delegated admin privileges (GDAP) don't replace B2B collaboration features. However, for multitenant administration needs, assigning and maintaining least-privileged permissions is often easier with GDAP accounts in governance relationships.
 
   - name: Governance relationships
     questions:

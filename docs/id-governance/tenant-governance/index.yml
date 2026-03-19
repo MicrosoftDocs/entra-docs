@@ -49,7 +49,7 @@ landingContent:
           - text: Enable tenant discovery
             url: how-to-enable-tenant-discovery.md
           - text: Set up a governance relationship
-            url: how-to-setup-governance-relationship.md
+            url: how-to-set-up-governance-relationship.md
           - text: Use delegated administration and monitor activity
             url: how-to-delegated-administration.md
           - text: Configuration management

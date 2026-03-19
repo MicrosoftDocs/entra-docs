@@ -15,7 +15,7 @@ ms.date: 03/10/2026
 
 [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
-This article describes how to update an existing governance relationship between a governing tenant and a governed tenant. You might need to update a governance relationship to add or modify delegated administration roles or multi-tenant application configurations.
+This article describes how to update an existing governance relationship between a governing tenant and a governed tenant. You might need to update a governance relationship to add or modify delegated administration roles or multitenant application configurations.
 
 ## Prerequisites
 - You must have an active governance relationship between a governing tenant and a governed tenant.
@@ -35,9 +35,9 @@ Before you can update a governance relationship, you must first modify the gover
 
 1. Modify the template as needed. Update one or more of these configurations:
 
-    - **Delegated administration roles**: Add or change the Microsoft Entra built-in roles assigned to security groups in the governing tenant. These roles determine the access level that users in those groups have when they sign in to the governed tenant.
+    - **Delegated administration roles**: Add or change the Microsoft Entra built-in roles assigned to security groups in the governing tenant. These roles determine the access level that users in those groups have when they sign in to the governed tenant.
 
-    - **Multi-tenant application management**: Add or update custom, multi-tenant applications. When you update the relationship, Tenant Governance creates or updates a service principal with the corresponding permissions in the governed tenant.
+    - **Multitenant application management**: Add or update custom, multitenant applications. When you update the relationship, Tenant Governance creates or updates a service principal with the corresponding permissions in the governed tenant.
 
 1. Save the updated governance policy template. The version number of the template increments by one.
 
@@ -72,10 +72,10 @@ When the governed tenant accepts the governance request, these changes take effe
 
 - If you updated delegated administration roles, Tenant Governance updates the GDAP role assignments in the governed tenant accordingly.
 
-- If you updated multi-tenant application management, Tenant Governance updates the corresponding service principal and its permissions in the governed tenant.
+- If you updated multitenant application management, Tenant Governance updates the corresponding service principal and its permissions in the governed tenant.
 
 ## Related content
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 
 - [Terminate a governance relationship](how-to-terminate-governance-relationship.md)
 

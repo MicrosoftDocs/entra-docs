@@ -37,7 +37,7 @@ The permission type you assign depends on the services you need to monitor:
 
 To manage application permissions that the configuration management service uses to access resources:
 
-1. Select the **Application permissions** tab at the top of the page.
+- Select the **Application permissions** tab at the top of the page.
 
 ### Add application permissions
 
@@ -54,7 +54,7 @@ To manage application permissions that the configuration management service uses
 
 To manage Microsoft Entra roles assigned to the configuration management service:
 
-1. Select the **Entra roles** tab at the top of the page.
+- Select the **Entra roles** tab at the top of the page.
 
 ### Add a Microsoft Entra role
 

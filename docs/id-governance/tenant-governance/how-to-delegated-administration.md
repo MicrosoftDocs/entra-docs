@@ -58,6 +58,6 @@ To add or change the roles available to delegated administrators, update the gov
 ## Related content
 
 - [Monitor governing tenant admin activity](how-to-monitor-governing-activity.md)
-- [Set up a governance relationship](how-to-setup-governance-relationship.md)
+- [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Governance policy templates](governance-policy-templates.md)
 - [Terminate a governance relationship](how-to-terminate-governance-relationship.md)

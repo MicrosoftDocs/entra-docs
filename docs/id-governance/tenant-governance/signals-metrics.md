@@ -21,13 +21,13 @@ Discovery uses a small set of **well-defined discovery signals** derived from ex
 
 This article focuses exclusively on:
 
-1. Discovery signals and what they represent
+- Discovery signals and what they represent
 
-1. How each signal is composed
+- How each signal is composed
 
-1. How metric concepts apply to each signal
+- How metric concepts apply to each signal
 
-1. How to interpret signals and metrics together
+- How to interpret signals and metrics together
 
 ## Discovery signals at a glance
 
@@ -51,7 +51,7 @@ The **business-to-business (B2B) collaboration signal** identifies tenants that 
 
 At a conceptual level, this signal answers:
 
-> *Are identities from one tenant authenticating into or collaborating with another tenant?*
+*Are identities from one tenant authenticating into or collaborating with another tenant?*
 
 This signal intentionally combines multiple identity inputs to reflect both breadth and depth of cross-tenant interaction.
 
@@ -96,7 +96,7 @@ Admin apps are a predefined set of first-party Microsoft Entra administrative su
 
 | Application |
 |---|
-| Azure Portal |
+| Azure portal |
 | Microsoft Entra Admin Center |
 | Intune Admin center |
 | Exchange Admin Center |

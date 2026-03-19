@@ -50,5 +50,5 @@ To delete a configuration monitor:
 
 - [Create a monitor](how-to-create-monitor.md)
 - [See monitor results and configuration drifts](how-to-see-monitor-results.md)
-- [Set up permissions for tenant monitoring](how-to-setup-permissions-tenant-monitoring.md)
+- [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md)
 - [Configuration management](configuration-management.md)
