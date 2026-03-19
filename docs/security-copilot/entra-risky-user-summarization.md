@@ -22,7 +22,7 @@ Respond to identity threats quickly:
 This article describes how to access the risky user summary capability of Microsoft Entra ID Protection and Copilot in Microsoft Entra. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
 
 > [!NOTE]
-> If the [Identity Risk Management Agent](/entra/id-protection/identity-risk-management-agent-get-started) is enabled in your tenant, you will see a separate risky user summary in thie view. 
+> If the [Identity Risk Management Agent](/entra/id-protection/identity-risk-management-agent-get-started) is enabled in your tenant, you will see a separate risky user summary in this view. 
 
 ## Prerequisites
 
