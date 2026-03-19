@@ -80,47 +80,6 @@ With these new APIs, organizations can build their own clients to provision pass
 
 :::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
-## Enable passkeys (FIDO2) using Microsoft Graph API
-
-In addition to using the Microsoft Entra admin center, you can also enable passkeys (FIDO2) by using the Microsoft Graph API. To enable passkeys (FIDO2), you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
-
-To configure the policy using Graph Explorer:
-
-1. Sign in to [Graph Explorer](https://aka.ms/ge) and consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions.
-
-1. Retrieve the Authentication methods policy: 
-
-   ```json
-   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
-   ```
-
-1. To disable attestation enforcement and enforce key restrictions to only allow the AAGUID for RSA DS100 for example, perform a PATCH operation using the following request body:
-
-   ```json
-   PATCH https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
-   
-   Request Body:
-   {
-       "@odata.type": "#microsoft.graph.fido2AuthenticationMethodConfiguration",
-       "isAttestationEnforced": false,
-       "keyRestrictions": {
-           "isEnforced": true,
-           "enforcementType": "allow",
-           "aaGuids": [
-               "7e3f3d30-3557-4442-bdae-139312178b39",
-   
-               <insert previous AAGUIDs here to keep them stored in policy>
-           ]
-       }
-   }
-   ```
-
-1. Make sure that the passkey (FIDO2) policy is updated properly.
-
-   ```json
-   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
-   ```
-
 ## Delete a passkey (FIDO2)
 
 To remove a passkey (FIDO2) associated with a user account, delete it from the user's authentication method.
