@@ -85,7 +85,8 @@ A passkey profile is a named set of policy rules that governs how users in targe
    - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their AAGUID. You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 
    >[!WARNING]
-   >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
+   >- Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
+   >- Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**.
 
 1. Select **Save**.
 
