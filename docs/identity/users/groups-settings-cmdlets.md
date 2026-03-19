@@ -3,7 +3,7 @@ title: Configure group settings using PowerShell
 description: How to manage the settings for groups using Microsoft Entra cmdlets
 ms.topic: how-to
 ms.date: 06/05/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---

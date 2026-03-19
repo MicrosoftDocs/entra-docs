@@ -3,7 +3,7 @@ title: Fix problems with dynamic membership groups
 description: Troubleshooting tips for dynamic membership groups in Microsoft Entra ID
 ms.topic: troubleshooting
 ms.date: 01/15/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 

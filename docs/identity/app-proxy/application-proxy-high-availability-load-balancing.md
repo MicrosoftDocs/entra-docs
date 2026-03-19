@@ -3,7 +3,7 @@ title: High availability and load balancing in Microsoft Entra application proxy
 description: How traffic distribution works with your application proxy deployment. Includes tips for how to optimize connector performance and use load balancing for back-end servers.
 ms.topic: concept-article
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

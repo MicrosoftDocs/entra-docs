@@ -3,7 +3,7 @@ title: Group naming policy quickstart
 description: Explains how to add new users or delete existing users in Microsoft Entra ID
 ms.topic: quickstart
 ms.date: 12/16/2024
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, mode-other
 ms.collection: M365-identity-device-management
 #Customer intent: As a Microsoft Entra identity administrator, I want to enforce naming policy on self-service groups, to help me sort and search in my Microsoft Entra organization’s user-created groups.

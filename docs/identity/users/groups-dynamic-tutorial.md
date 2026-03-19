@@ -3,7 +3,7 @@ title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
 ms.topic: tutorial
 ms.date: 01/31/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, I want to automatically add or remove users, so I don't have to manually do it."
