@@ -18,11 +18,11 @@ This article describes the steps necessary to use the Microsoft Entra applicatio
 
 The following diagram shows a traditional way to publish on-premises APIs for access from Azure Logic Apps. This approach requires opening incoming Transmission Control Protocol (TCP) ports 80 and/or 443 to the API service.
 
-![Diagram that shows Logic App to API direct connection.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-direct.png)
+![Logic App to API direct connection.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-direct.png)
 
 The following diagram shows how you can use Microsoft Entra application proxy to securely publish APIs for use with Logic Apps (or other Azure Cloud services) without opening any incoming ports:
 
-![Diagram that shows Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
+![Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
 
 The Microsoft Entra application proxy and associated connector facilitate secure authorization and integration to your on-premises services without more configurations to your network security infrastructure.  
 
@@ -56,7 +56,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. Select the **API permissions** menu item from the navigation pane.
 
-    ![Screenshot of the Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
+    ![the Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
 
     1. Select the **Add a permission** button.
 
@@ -70,11 +70,11 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     3. Verify the configured permission appears.
 
-        ![Screenshot of the Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
+        ![the Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
 
 1. Select the **Certificates & secrets** menu item from the navigation pane.
 
-    ![Screenshot of the Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
+    ![the Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
 
     1. Select the **Client secrets** tab item.
 
@@ -98,7 +98,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 3. Add a new step and select the **HTTP** operation.
 
-    ![Screenshot of the Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
+    ![the Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
 
     1. *Method*: Select the desired HTTP method to be sent to the internal API.
 

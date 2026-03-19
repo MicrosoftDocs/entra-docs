@@ -149,7 +149,7 @@ By publishing the wildcard application, you can now access your three applicatio
 
 The configuration implements the following structure:
 
-![Shows the structure implemented by the example configuration](./media/application-proxy-wildcard/05.png)
+![Diagram showing finance.adventure-works.com with specific URLs routing through application proxy.](./media/application-proxy-wildcard/05.png)
 
 | Color | Description |
 | ---   | ---         |
@@ -178,7 +178,7 @@ Following the [documented steps](application-proxy-add-on-premises-application.m
 
 This configuration implements the following scenario:
 
-![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
+![Diagram of wildcard application routing with three applications sharing a single external URL pattern.](./media/application-proxy-wildcard/09.png)
 
 The URL `finance.adventure-works.com` is specific. The URL `*.adventure-works.com` isn't specific. The more specific URL takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. Only finance employees are able to access `finance.adventure-works.com`.
 

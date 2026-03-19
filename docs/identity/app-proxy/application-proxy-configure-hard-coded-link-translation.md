@@ -127,7 +127,7 @@ Getting started with link translation is as easy as clicking a button:
 1. Select the app you want to manage.
 1. Turn **Translate URLs in application body** to **Yes**.
 
-   ![Select Yes to translate URLs in application body](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png)
+   ![Application proxy settings page with Translate URLs in Application Body set to Yes.](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png)
 4. Select **Save** to apply your changes.
 
 Now, when your users access this application, the proxy scans for internal URLs that are published through application proxy on your tenant.
