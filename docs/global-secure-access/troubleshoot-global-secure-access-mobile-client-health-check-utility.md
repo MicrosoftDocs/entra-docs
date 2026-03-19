@@ -11,7 +11,7 @@ ms.date: 03/19/2026
 
 ---
 
-# Troubleshoot the Global Secure Access mobile client with Health check utility
+# Troubleshoot the Global Secure Access mobile client with Health check utility 
 
 This article's troubleshooting guidance is for the [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) iOS client, using the health check utility in [Microsoft Defender](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-defender-service-description). 
 
