@@ -1,15 +1,15 @@
 ---
-title: How to enable synced passkeys (FIDO2) in Microsoft Entra ID
-description: Learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
+title: How to enable passkeys (FIDO2) in Microsoft Entra ID
+description: Learn how to enable passkeys (FIDO2) in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/08/2026
 author: hanki71
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
+# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkeys (FIDO2) in Microsoft Entra ID.
 ---
 
-# How to enable synced passkeys (FIDO2) in Microsoft Entra ID 
+# How to enable passkeys (FIDO2) in Microsoft Entra ID 
 
 Passkeys (FIDO2) are a strong, phishing-resistant alternative to passwords. Microsoft Entra ID supports synced passkeys. Synced passkeys are stored on the platform or with other passkey providers, such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden, and are made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
 
@@ -53,6 +53,34 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 > [!NOTE]
 > If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.
+
+## Delete a passkey (FIDO2)
+
+To remove a passkey (FIDO2) associated with a user account, delete it from the user's authentication method.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey (FIDO2) needs to be removed.
+1. Select **Authentication methods** > right-click **Passkey (device-bound)** and select **Delete**. 
+
+## Enforce passkey (FIDO2) sign-in
+
+To make users sign in with a passkey (FIDO2) when they access a sensitive resource, you can: 
+
+- Use a built-in phishing-resistant authentication strength 
+
+  Or
+  
+- Create a custom authentication strength
+
+The following steps show how to create a custom authentication strength. It's a Conditional Access policy that allows passkey (FIDO2) sign-in for only a specific security key model or passkey (FIDO2) provider. For a list of FIDO2 providers, see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor).
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
+1. Select **New authentication strength**.
+1. Provide a **Name** for your new authentication strength.
+1. Optionally provide a **Description**.
+1. Select **Passkeys (FIDO2)**.
+1. Optionally, if you want to restrict a specific AAGUID, select **Advanced options** > **Add AAGUID**. Enter the AAGUID, and select **Save**.
+1. Choose **Next** and review the policy configuration.
 
 ## Related content
 
