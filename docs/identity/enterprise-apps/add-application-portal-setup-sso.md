@@ -32,7 +32,7 @@ To configure SSO, you need:
 - Completion of the steps in [Quickstart: Create and assign a user account](add-application-portal-assign-users.md).
 
 > [!NOTE]
-> SAML SSO is only configurable on single tenant applications or gallery applications. Multi-tenant applications will show SAML sso configurations greyed out.
+> SAML SSO is only configurable on single tenant applications or gallery applications. Multi-tenant applications will show SAML SSO configurations greyed out.
 
 ## Enable single sign-on
 
