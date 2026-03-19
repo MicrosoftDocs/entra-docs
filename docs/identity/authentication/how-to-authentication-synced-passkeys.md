@@ -50,7 +50,6 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 1. Add a profile or edit an existing profile.
 1. Under **Passkey type**, select **Synced**, and then save the profile.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png" alt-text="Screenshot that shows how to enable synced passkeys." lightbox="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png":::
 
 > [!NOTE]
 > If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.

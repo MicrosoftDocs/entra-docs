@@ -62,7 +62,6 @@ A passkey profile is a named set of policy rules that governs how users in targe
    
    For **Passkey types**, select the types of passkeys that you want to allow.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile." lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
 1. Select **Save**.
 
