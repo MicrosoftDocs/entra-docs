@@ -53,9 +53,9 @@ To remediate device compliant errors:
 
 In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm the following criteria:
 
-1. Device enrollment
-  * If not, [enroll the device in Intune](/intune/intune-service/fundamentals/deployment-guide-enrollment)
-2. Device compliance
+* Device enrollment
+  * If not, [enroll the device in Intune](/intune/intune-service/fundamentals/deployment-guide-enrollment).
+* Device compliance
   * If not, open the **Company Portal** app on the client device and follow the steps to [remediate the issue](/intune/intune-service/user-help/check-device-access-windows-cpapp).
 
    > [!NOTE]
