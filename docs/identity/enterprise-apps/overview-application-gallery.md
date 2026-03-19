@@ -84,7 +84,7 @@ A collection of featured applications is listed by default when you open the Mic
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
 > [!NOTE]
-> Linked Sign-on gallery applications will have a greyed out 'Create' button. The Linked Sign-on URL is provided to be used in the create your own application option.
+> Linked Sign-on gallery applications will have a grayed out 'Create' button. The Linked Sign-on URL is provided to be used in the create your own application option.
 
 ## Create your own application
 
