@@ -2,14 +2,8 @@
 title: Overview of admin consent workflow
 description: Learn how to manage the admin consent workflow, email notifications and audit logs related to consent requests.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: concept-article
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
@@ -43,7 +37,7 @@ When you configure the admin consent workflow, your end users can request for co
 
 When an administrator responds to a request, the user receives an email alert informing them that the request is processed.
 
-When the user submits a consent request, the request shows up in the admin consent request page in the Microsoft Entra admin center. Administrators and designated reviewers sign in to [view and act on the new requests](review-admin-consent-requests.md). Reviewers only see consent requests that were created after they were designated as reviewers. Requests show up in the following two tabs in the admin consent requests pane:
+When the user submits a consent request, the request shows up in the admin consent request page in the Microsoft Entra admin center. Administrators and designated reviewers sign in to [view and act on the new requests](review-admin-consent-requests.md). Reviewers can see and act on all pending admin consent requests in the tenant, including requests that were created before they were designated as reviewers. Any request that is still pending remains visible to newly assigned reviewers, allowing them to review and take action on existing requests based on their assigned permissions. Requests show up in the following two tabs in the admin consent requests pane:
 
 - My pending: This tab shows any active requests that have the signed-in user designated as a reviewer. Although reviewers can block or deny requests, only people with the correct RBAC permissions to consent to the requested permissions can do so.
 - All(Preview): All requests, active or expired, that exist in the tenant.

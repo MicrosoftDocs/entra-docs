@@ -2,16 +2,9 @@
 title: Configure SpectrumU for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SpectrumU.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SpectrumU so that I can control who has access to SpectrumU, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -107,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure SpectrumU SSO
 
-To configure single sign-on on **SpectrumU** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [SpectrumU support team](https://enterprise.spectrum.com/support.html). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **SpectrumU** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to SpectrumU support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create SpectrumU test user
 

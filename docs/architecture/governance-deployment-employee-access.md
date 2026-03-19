@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Governance deployment guide to assign employee access
 description: Learn how to assign employee access to resources in Microsoft Entra ID Governance.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 04/17/2025

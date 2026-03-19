@@ -1,14 +1,9 @@
 ---
 title: Configure E Sales Manager Remix for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and E Sales Manager Remix.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 # Configure E Sales Manager Remix for Single sign-on with Microsoft Entra ID

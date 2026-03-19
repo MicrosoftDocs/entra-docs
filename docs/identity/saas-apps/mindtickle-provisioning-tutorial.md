@@ -2,9 +2,6 @@
 title: Configure MindTickle for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to MindTickle.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -25,7 +22,7 @@ The objective of this article is to demonstrate the steps to be performed in Min
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A MindTickle tenant](https://www.mindtickle.com/)
+* A MindTickle tenant.
 * A user account in MindTickle with Admin permissions.
 
 ## Assigning users to MindTickle

@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 08/30/2025
+ms.date: 11/18/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
@@ -39,7 +39,7 @@ During password reset flow, this app, collects the user's username (email), a on
 
 1. Create *reset-password/components/InitialForm.tsx* file, then paste the code from [reset-password/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
 
-1. Create *reset-password/components/CodeForm.tsx* file, then paste the code from [reset-password/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/CodeForm.tsx). This component displays a form that collects the one-time passcode that the user receives in their email inbox. 
+1. Create *reset-password/components/CodeForm.tsx* file, then paste the code from [reset-password/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). This component displays a form that collects the one-time passcode that the user receives in their email inbox. 
 
 1. Create *reset-password/components/NewPasswordForm.tsx* file, then paste the code from [reset-password/components/NewPasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/NewPasswordForm.tsx). This component displays a form that collects a user's new password. 
 

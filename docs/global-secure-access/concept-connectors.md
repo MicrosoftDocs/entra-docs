@@ -1,12 +1,8 @@
 ---
 title: Microsoft Entra Private Network Connectors
 description: Learn how Microsoft Entra private network connectors work and how Microsoft Entra Private Access and application proxy use them.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: concept-article
-ms.date: 09/25/2025
-ms.service: global-secure-access
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
@@ -51,7 +47,7 @@ Learn more in [Microsoft Entra private network connector groups](concept-connect
 
 The service routes new requests to an available connector. If a connector is temporarily unavailable, it doesn't receive traffic.
 
-Connectors are stateless and store no configuration data on the machine. They store only the settings for connecting to the service and the authentication certificate. When they connect to the service, they pull the required configuration data and refresh it every few minutes.
+Connectors are stateless and store no configuration data on the machine. They store only the settings for connecting to the service and the authentication certificate. When they connect to the service, they pull the required configuration data and refresh it every few minutes. To learn more about maintenance on connectors, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md).
 
 ### Connector status
 
@@ -152,7 +148,7 @@ These commands set the dynamic port range from 1025 to the maximum of 65535. The
 
 ## Specifications and sizing requirements
 
-We recommend the following specifications for each Microsoft Entra private network connector:
+The following specifications are recommended for each Microsoft Entra private network connector:
 
 - **Memory**: 8 GiB or more.
 - **CPU**: Four CPU cores or more.

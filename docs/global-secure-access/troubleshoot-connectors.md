@@ -1,12 +1,8 @@
 ---
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
-author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 10/17/2025
-ms.author: kenwith
+ms.date: 03/13/2026
 ms.reviewer: ashishj,dhruvinshah
 ai-usage: ai-assisted
 ---
@@ -26,7 +22,7 @@ When the installation of a connector fails, the root cause is usually one of the
 > [!NOTE]
 > The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
 
-## Use the Connector Diagnostics tool to identity connector installation and network problems
+## Use the Connector Diagnostics tool to identify connector installation and network problems
 
 The connector diagnostics tool is an exe command-line application that is included in the connector package. This tool is designed to diagnose common connector setup and runtime errors to identify installation or network problems. Currently, the tool supports the following checks:
 
@@ -78,7 +74,7 @@ Sample User Interface Output (Starting version 1.5.4522.0):
 
 **To verify the client certificate:**
 
-Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\microsoft\Microsoft AAD private network connector\Config\TrustSettings.xml`.
+Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\Microsoft\Microsoft Entra Private Network Connector\Config\TrustSettings.xml`.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -117,7 +113,7 @@ Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
 Register-MicrosoftEntraPrivateNetworkConnector
 ```
 
-To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
+For more information about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 
@@ -161,9 +157,9 @@ This flowchart walks you through the steps for debugging some of the more common
 
 | Step | Action | Description |
 |---------|---------|---------|
-|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).|
+|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. For more information about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).|
 |2 | Install the connector and assign a group | If you don't have a connector installed, see [configure connectors](how-to-configure-connectors.md).<br></br> If the connector isn't assigned to a group, see [Assign the connector to a group](concept-connector-groups.md).<br></br>If the application isn't assigned to a connector group, see [Assign the application to a connector group](concept-connector-groups.md#assignment-of-applications-to-your-connector-groups).|
-|3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports are configured correctly. To learn more, see [configure connectors](how-to-configure-connectors.md).|
+|3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports are configured correctly. For more information, see [configure connectors](how-to-configure-connectors.md).|
 |4 | Configure the domains and ports | [Configure connectors](how-to-configure-connectors.md) for the connector. Certain ports must be open and URLs that your server must be able to access. For more information, see [configure connectors](how-to-configure-connectors.md). |
 |5 | Check if a back-end proxy is in use | Check to see if the connectors are using back-end proxy servers or bypassing them. For details, see [Troubleshoot connector proxy problems and service connectivity issues](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md). |
 |6 | Update the connector and updater settings with the back-end proxy information | If a back-end proxy is in use, make sure the connector is using the same proxy. For details about troubleshooting and configuring connectors to work with proxy servers, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md). |
@@ -233,7 +229,7 @@ Yes. To provide the best-in-class encryption to our customers, the application p
     
 **Can I place a forward proxy device between the connector server(s) and the back-end application server?**
 
-This scenario is supported starting from the connector version 1.5.1526.0 for Microsoft Entra application proxy, but isn't supported for Microsoft Entra Private Access. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md) for information about this support for App Proxy.
+This scenario is supported for both Microsoft Entra application proxy and Microsoft Entra Private Access. For application proxy, support starts from connector version 1.5.1526.0. For Private Access, support starts from connector version 1.5.3890.0. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md) for configuration details.
     
 **Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 

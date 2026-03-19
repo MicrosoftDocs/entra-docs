@@ -1,9 +1,6 @@
 ---
-author: csmulligan
-ms.service: entra
 ms.topic: include
 ms.date: 05/20/2025
-ms.author: cmulligan
 ---
 
 > [!IMPORTANT]

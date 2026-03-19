@@ -1,13 +1,8 @@
 ---
 title: Security alerts for Microsoft Entra roles in PIM
-description: Configure security alerts for Microsoft Entra roles Privileged Identity Management.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
+description: Configure security alerts for Microsoft Entra roles in Privileged Identity Management.
 ms.topic: how-to
-ms.subservice: privileged-identity-management
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
@@ -15,8 +10,8 @@ ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 
 Privileged Identity Management (PIM) generates alerts when there's suspicious or unsafe activity in your organization in Microsoft Entra ID. When an alert is triggered, it shows up on the Privileged Identity Management dashboard. Select the alert to see a report that lists the users or roles that triggered the alert.
 
->[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+> [!NOTE]
+> One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 :::image type="content" source="./media/pim-how-to-configure-security-alerts/view-alerts.png" alt-text="Screenshot that shows the alerts page with a list of alerts and their severity.":::
 
@@ -26,13 +21,13 @@ Privileged Identity Management (PIM) generates alerts when there's suspicious or
 
 ## Security alerts
 
-This section lists all the security alerts for Microsoft Entra roles, along with how to fix and how to prevent. Severity has the following meaning:
+This section lists all the security alerts for Microsoft Entra roles, along with how to fix them and how to prevent them. Severity has the following meaning:
 
 - **High**: Requires immediate action because of a policy violation.
 - **Medium**: Doesn't require immediate action but signals a potential policy violation.
 - **Low**: Doesn't require immediate action but suggests a preferable policy change.
 
->[!NOTE]
+> [!NOTE]
 > Only the following roles are able to read PIM security alerts for Microsoft Entra roles: **Global Administrator**, **Privileged Role Administrator**, **Global Reader**, **Security Administrator**, and **Security Reader**.
 
 ### Administrators aren't using their privileged roles
@@ -77,7 +72,7 @@ Severity: **Medium**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | This alert is no longer triggered based on the last password change date of for an account. This alert is for accounts in a privileged role that haven't signed in during the past *n* days, where *n* is many days that is configurable between 1-365 days. These accounts might be service or shared accounts that aren't being maintained and are vulnerable to attackers. |
+| **Why do I get this alert?** | This alert is no longer triggered based on the last password change date of for an account. This alert is for accounts in a privileged role that haven't signed in during the past *n* days, where *n* is a configurable number of days between 1 and 365. These accounts might be service or shared accounts that aren't being maintained and are vulnerable to attackers. |
 | **How to fix?** | Review the accounts in the list. If they no longer need access, remove them from their privileged roles. |
 | **Prevention** | Ensure that accounts that are shared are rotating strong passwords when there's a change in the users that know the password. </br>Regularly review accounts with privileged roles using [access reviews](./pim-create-roles-and-resource-roles-review.md) and remove role assignments that are no longer needed. |
 | **In-portal mitigation action** | Removes the account from their privileged role. |
@@ -89,13 +84,13 @@ Severity: **High**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | Privileged role assignments made outside of Privileged Identity Management aren't properly monitored and may indicate an active attack. |
+| **Why do I get this alert?** | Privileged role assignments made outside of Privileged Identity Management aren't properly monitored and might indicate an active attack. |
 | **How to fix?** | Review the users in the list and remove them from privileged roles assigned outside of Privileged Identity Management. You can also enable or disable both the alert and its accompanying email notification in the alert settings. |
 | **Prevention** | Investigate where users are being assigned privileged roles outside of Privileged Identity Management and prohibit future assignments from there. |
 | **In-portal mitigation action** | Removes the user from their privileged role. |
 
->[!NOTE]
-> PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings) For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
+> [!NOTE]
+> PIM sends email notifications for the **Role assigned outside of PIM** alert when the alert is enabled from [alert settings](#customize-security-alert-settings). For Microsoft Entra roles in PIM, emails are sent to **Privileged Role Administrators**, **Security Administrators**, and **Global Administrators** that have enabled Privileged Identity Management. For Azure resources in PIM, emails are sent to **Owners** and **User Access Administrators**.
 
 ### There are too many Global Administrators
 
@@ -109,7 +104,7 @@ Severity: **Low**
 | **In-portal mitigation action** | Removes the account from their privileged role. |
 | **Trigger** | Triggered if two different criteria are met, and you can configure both of them. First, you need to reach a certain threshold of Global Administrator role assignments. Second, a certain percentage of your total role assignments must be Global Administrators. If you only meet one of these measurements, the alert doesn't appear. |
 | **Minimum number of Global Administrators** | This setting specifies the number of Global Administrator role assignments, from 2 to 100, that you consider to be too few for your Microsoft Entra organization. |
-| **Percentage of Global Administrators** | This setting specifies the minimum percentage of administrators who are Global Administrators, from 0% to 100%, below which you do not want your Microsoft Entra organization to dip. |
+| **Percentage of Global Administrators** | This setting specifies the minimum percentage of administrators who are Global Administrators, from 0% to 100%, below which you don't want your Microsoft Entra organization to dip. |
 
 ### Roles are being activated too frequently
 
@@ -122,7 +117,7 @@ Severity: **Low**
 | **Prevention** | Ensure that the [activation duration](pim-how-to-change-default-settings.md) for privileged roles is set long enough for users to perform their tasks.</br>[Require multifactor authentication](pim-how-to-change-default-settings.md) for privileged roles that have accounts shared by multiple administrators. |
 | **In-portal mitigation action** | N/A |
 | **Trigger** | Triggered if a user activates the same privileged role multiple times within a specified period. You can configure both the time period and the number of activations. |
-| **Activation renewal timeframe** | This setting specifies in days, hours, minutes, and second the time period you want to use to track suspicious renewals. |
+| **Activation renewal timeframe** | This setting specifies in days, hours, minutes, and seconds the time period you want to use to track suspicious renewals. |
 | **Number of activation renewals** | This setting specifies the number of activations, from 2 to 100, at which you would like to be notified, within the timeframe you chose. You can change this setting by moving the slider, or typing a number in the text box. |
 
 ## Customize security alert settings

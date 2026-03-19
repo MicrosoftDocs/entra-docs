@@ -1,13 +1,9 @@
 ---
 title: Use Microsoft Entra application proxy with a Network Device Enrollment Service (NDES) server
-description: Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
+description: "Secure NDES certificate enrollment for mobile devices using Microsoft Entra application proxy. Includes connector setup and certificate request validation."
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
@@ -53,7 +49,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
    
     **Internal Url**: Enter the internal URL/FQDN of your NDES server on which you installed the connector.
 
-    **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of pre authentication. The protocol used for certificate requests, Simple Certificate Enrollment Protocol (SCEP), doesn't provide such option.
+    **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of preauthentication. The protocol used for certificate requests, Simple Certificate Enrollment Protocol (SCEP), doesn't provide such option.
 
     Copy the provided **External URL** to your clipboard.
 1. Select **+Add** to save your application.

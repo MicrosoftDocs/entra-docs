@@ -42,11 +42,15 @@ items:
     href: ./scripts/powershell-active-directory-certificate-service.md
   - name: Create a TLS certificate using OpenSSL
     href: ./scripts/powershell-open-secure-sockets-layer.md
+  - name: Install the Windows client as a proof of concept
+    href: ./scripts/powershell-windows-client-install-proof-of-concept.md
 - name: Concepts
   expanded: true
   items: 
   - name: Global Secure Access clients
     href: concept-clients.md
+  - name: Bring Your Own Device (BYOD) (Preview)
+    href: concept-bring-your-own-device.md
   - name: Private network connector
     href: concept-connectors.md
   - name: Private network connector groups
@@ -59,10 +63,8 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
-  - name: Continuous Access Evaluation for Application Proxy
-    href: concept-continuous-access-evaluation.md
-  - name: B2B Guest Access
-    href: concept-b2b-guest-access.md
+  - name: External user access
+    href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides
@@ -79,7 +81,7 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
-      - name: EDR/antivirus coexistence with Global Secure Access client
+      - name: Configure antivirus-client coexistence
         href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
@@ -102,6 +104,8 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
+      - name: Apply security policies to remote network traffic
+        href: how-to-apply-security-policies-remote-network.md
       - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
@@ -222,6 +226,8 @@ items:
         href: how-to-export-connector-logs.md
       - name: Microsoft Sentinel integration
         href: how-to-sentinel-integration.md  
+      - name: Global Secure Access alerts
+        href: concept-alerts.md
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
@@ -238,16 +244,23 @@ items:
   - name: Troubleshoot
     expanded: false
     items:
+      - name: Troubleshoot the Global Secure Access client
+        expanded: false
+        items:
+          - name: "Troubleshoot the Windows client: Advanced diagnostics"
+            href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
+          - name: "Troubleshoot the Windows client: Health check tab"
+            href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+          - name: "Troubleshoot the Windows client: Disabled by your organization"
+            href: troubleshoot-global-secure-access-client-disabled.md
+          - name: "Troubleshoot the macOS client: Health check tab"
+            href: troubleshoot-global-secure-access-client-macos-health-check.md
+          - name: "Troubleshoot the Global Secure Access client for iOS: Health check utility"  
+            href: troubleshoot-global-secure-access-client-ios-health-check-utility.md
+          - name: "Troubleshoot the Global Secure Access mobile client: Advanced diagnostics"
+            href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md
       - name: Troubleshoot connectors
-        href: troubleshoot-connectors.md
-      - name: "Troubleshoot the Global Secure Access client for Windows: Advanced diagnostics"
-        href: troubleshoot-global-secure-access-client-advanced-diagnostics.md    
-      - name: "Troubleshoot the Global Secure Access client: Health check tab"
-        href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
-      - name: "Troubleshoot the Global Secure Access client: Disabled by your organization"
-        href: troubleshoot-global-secure-access-client-disabled.md
-      - name: "Troubleshoot the Global Secure Access mobile client: Advanced diagnostics"
-        href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md           
+        href: troubleshoot-connectors.md       
       - name: Troubleshoot application access
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"

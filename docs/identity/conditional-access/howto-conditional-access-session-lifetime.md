@@ -1,13 +1,8 @@
 ---
 title: Adaptive Session Lifetime Policies for Conditional Access
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 09/02/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: inbarc
 ms.custom:
   - ai-gen-docs-bap
@@ -65,6 +60,9 @@ To ensure your policy works as expected, test it before rolling it out into prod
    1. Select a value from dropdown.
 1. Save your policy.
 
+> [!NOTE]
+> Session lifetime settings, including sign-in frequency and persistent browser sessions, determine how often users must reauthenticate and whether sessions persist across browser restarts. Shorter lifetimes enhance security for high-risk apps, while longer ones improve convenience for trusted or managed devices.
+
 ### Policy 3: Sign-in frequency control every time risky user
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
@@ -88,7 +86,7 @@ To ensure your policy works as expected, test it before rolling it out into prod
    1. Ensure **Every time** is selected.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 After confirming your settings using [report-only mode](howto-conditional-access-insights-reporting.md), move the **Enable policy** toggle from **Report-only** to **On**.
 

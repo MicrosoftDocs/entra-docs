@@ -1,13 +1,8 @@
 ---
 title: Learn about the sign-in log activity details
 description: Learn about the information available on each of the tabs on the Microsoft Entra sign-in log activity details.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
-ms.subservice: monitoring-health
-ms.date: 07/01/2025
-ms.author: sarahlipsey
+ms.date: 03/04/2026
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand the parts of a sign-in log so I can troubleshoot sign-in issues.
@@ -160,7 +155,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
 
 - **Multifactor authentication:** When a user signs in with MFA, several separate MFA events are actually taking place. For example, if a user enters the wrong validation code or doesn't respond in time, more MFA events are sent to reflect the latest status of the sign-in attempt. These sign-in events appear as one line item in the Microsoft Entra sign-in logs. That same sign-in event in Azure Monitor, however, appears as multiple line items. These events all have the same `correlationId`.
 
-- **Authentication requirement:** Shows the authentication requirement requested by the resource provider for the sign-in to succeed. This value commonly reflects the authentication stage reached during the sign-in.
+- **Authentication requirement:** Commonly shows the authentication requirement requested by the resource provider for the sign-in to succeed. This value commonly reflects the authentication stage reached during the sign-in, but there are some special cases such as:
   - A subsequent sign-in attempt after the failure where primary authentication is successful and MFA is required, the value is `multiFactorAuthentication`.
   - There are some edge cases where this field doesn't reflect the authentication reached during the sign-in. For example, if the requirement is already fulfilled from a previous MFA claim the resource provider doesn't ask to enforce it. 
   - For sign-in attempts where MFA is required but primary authentication failed, value is `singleFactorAuthentication` because the attempt wasn't evaluated by Conditional Access to require MFA.
@@ -190,6 +185,6 @@ The following scenarios are important to consider when you're reviewing sign-in 
   
 - **TimeGenerated and CreatedDateTime:**
   - If you're sending sign-in logs to a Log Analytics workspace, you might notice two different timestamps for the same sign-in event.
-  - The `TimeGenerated` field in Log Analytics is the time the sign-in event was received and published by Log Analytics.
-  - The `CreatedDateTime` field is the actual date and time of the sign-in event.
+  - The `TimeGenerated` field is the time when the sign‑in event record was ingested and stored in Log Analytics. It reflects when the log was processed and made available in the workspace.
+  - The `CreatedDateTime` field is the timestamp when the authentication event occurred and the sign‑in was processed by Microsoft Entra ID. It isn't the timestamp of the sign‑in event itself.
   - The difference between the two timestamps is caused by the time it takes for the sign-in event to be processed and sent to Log Analytics.

@@ -1,13 +1,9 @@
 ---
 title: Plan a Lifecycle Workflow deployment
 description: Planning guide for a successful Lifecycle Workflow deployment.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -19,8 +15,8 @@ ms.custom: sfi-image-nochange
 - **Centralize** your workflow process so you can easily create and manage workflows all in one location.
 - **Troubleshoot** workflow scenarios with the Workflow history and Audit logs with minimal effort.
 - **Manage** user lifecycle at scale.  As your organization grows, the need for other resources to manage user lifecycles is lowered.
-- **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows
-- **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps
+- **Reduce** or remove manual tasks that were done in the past with automated Lifecycle Workflows.
+- **Apply** logic apps to extend workflows for more complex scenarios using your existing Logic apps.
 
 Lifecycle Workflows are a [Microsoft Entra ID Governance](identity-governance-overview.md) capability. The other capabilities are [entitlement management](entitlement-management-overview.md), [access reviews](access-reviews-overview.md),[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), and [terms of use](~/identity/conditional-access/terms-of-use.md). Together, they help you address these questions:
 
@@ -50,13 +46,13 @@ For Lifecycle Workflows, you'll likely include representatives from the followin
 
 - **IT administration** manages your IT infrastructure and administers your cloud investments and software as a service (SaaS) apps. This team:
 
-   * Reviews Lifecycle Workflows to infrastructure and apps, including Microsoft 365 and Microsoft Entra ID.
+   * Reviews Lifecycle Workflows for infrastructure and apps, including Microsoft 365 and Microsoft Entra ID.
    * Schedules and runs Lifecycle Workflows on users.
    * Ensures that programmatic Lifecycle Workflows, via GRAPH or extensibility, are governed and reviewed.
 
 
 - **Security Owner**	ensures that the plan meets the security requirements of your organization.  This team:
-    - Ensure Lifecycle Workflows meet organizational security policies
+    - Ensures Lifecycle Workflows meet organizational security policies
 
  - **Compliance manager** ensures that the organization follows internal policy and complies with regulations. This team:
 
@@ -93,7 +89,7 @@ This section introduces Lifecycle Workflow concepts you should know before you p
 
 ## Prerequisites to deploying Lifecycle Workflows
 
-The following information is important information about your organization and the technologies that need to be in place before deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
+The following is important information about your organization and the technologies that need to be in place before deploying Lifecycle Workflows.  Ensure that you can answer yes to each of the items before attempting to deploy Lifecycle Workflows.
 
 |Item|Description|Documentation|
 |-----|-----|-----|
@@ -164,7 +160,7 @@ For more information on the built-in templates, see [Lifecycle Workflow template
 ## Determine the execution conditions
 Now that you've determined your scenarios, you need to look at what users in your organization the scenarios apply to.
 
-An Execution condition is the part of a workflow that defines the scope of **who** and the trigger of **when** a workflow will be performed.
+An Execution condition is the part of a workflow that defines the scope of **who** and the trigger of **when** a workflow is performed.
 
 The scope determines who the workflow runs against.  This is defined by a rule that will filter users based on a condition.  For example, the rule, `"rule": "(department eq 'sales')"` runs the task only on users who are members of the sales department.
 
@@ -188,13 +184,13 @@ Not all of these attributes are populated by default so you should verify with y
 ### Time information 
 The following is some important information regarding time zones that you should be aware of when designing workflows.
 - Workday and SAP SF will always send the time in Coordinated Universal Time or UTC.
--  if you're in a single time zone it's recommended that you hardcode the time portion to something that works for you.  An example would be 5am for new hire scenarios and 10pm for last day of work scenarios.
-- It's recommended, that if you're using temporary access pass (TAP), that you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who could be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
+- If you're in a single time zone, it's recommended that you hardcode the time portion to something that works for you.  An example would be 5am for new hire scenarios and 10pm for last day of work scenarios.
+- It's recommended that if you're using temporary access pass (TAP), you set the maximum lifetime to 24 hours.  Doing this will help ensure that the TAP hasn't expired after being sent to an employee who could be in a different timezone.  For more information, see [Configure Temporary Access Pass in Microsoft Entra ID to register Passwordless authentication methods.](~/identity/authentication/howto-authentication-temporary-access-pass.md#enable-the-temporary-access-pass-policy)
 
 For more information, see [How to synchronize attributes for Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md).
 
 ## Review the tasks
-Now that we've determined the scenario and the who and when, you should consider whether the predefined tasks are sufficient or are you going to need extra tasks.  The following table has a list of the predefined tasks that are currently in the portal.  Use this table to determine if you want to add more tasks.
+Now that you've determined the scenario and the who and when, you should consider whether the predefined tasks are sufficient or if you need extra tasks.  The following table has a list of the predefined tasks that are currently in the portal.  Use this table to determine if you want to add more tasks.
 
 |Task|Description|Relevant Scenarios|
 |-----|-----|-----|
@@ -283,7 +279,7 @@ You can also get more information from the audit logs.  These logs can be access
 |Create the workflow in the portal|Use the predefined template for new hire in the portal.|
 |Enable and test the workflow| Use the on-demand feature to test the workflow on one user.|
 |Review the test results|Review the test results and ensure the Lifecycle Workflow is working as intended.|
-|Roll out the workflow to a broader audience|Communicate with stakeholders, letting them know that is going live and that HR will no longer need to send an email to the hiring manager.
+|Roll out the workflow to a broader audience|Communicate with stakeholders, letting them know that it's going live and that HR will no longer need to send an email to the hiring manager.
 
 ## Next steps
 

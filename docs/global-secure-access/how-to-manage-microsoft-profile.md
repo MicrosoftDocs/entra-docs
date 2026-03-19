@@ -1,12 +1,8 @@
 ---
 title: How to Enable and Manage the Microsoft Profile
-description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
+description: "Enable the Microsoft traffic forwarding profile to route traffic to Microsoft 365 services including Exchange Online, SharePoint, and OneDrive through Global Secure Access."
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
@@ -99,7 +95,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 1. Select a remote network from the list and select **Add**.
 
 ## User and group assignments
-You can scope the Microsoft profile to specific users and groups instead of applying the traffic profile to all users. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
+You can scope the Microsoft profile to specific users and groups instead of applying the traffic profile to all users. For more information about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 
 ## Next steps

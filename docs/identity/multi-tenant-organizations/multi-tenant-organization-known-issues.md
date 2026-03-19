@@ -1,20 +1,17 @@
 ---
 title: Limitations in multitenant organizations
 description: Learn about the limitations when you work with multitenant organizations in Microsoft Entra ID.
-author: kenwith
-manager: dougeby
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 07/05/2024
-ms.author: kenwith
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
+ms.subservice: multitenant-organizations
 ---
 
 # Limitations in multitenant organizations
 
-This article describes limitations to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). We watch UserVoice closely so that we can improve the service.
+This article describes limitations to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). UserVoice is closely monitored to improve the service.
 
 ## Scope
 
@@ -25,7 +22,7 @@ The limitations described in this article have the following scope.
 | In scope | - Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in new Microsoft Teams, with reciprocally provisioned B2B members<br/>- Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in Microsoft Viva Engage, with centrally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center limitations related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization limitations related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Multitenant organizations is available within GCC, GCC-H, and DOD clouds. However, the multitenant organizations tenants can ONLY have tenants which are within the same cloud. Cross-cloud multitenant organizations isn't supported. |
 
 ## Create or join a multitenant organization using the Microsoft 365 admin center
 
@@ -56,19 +53,19 @@ The limitations described in this article have the following scope.
 
 ## Cross-tenant synchronization in Microsoft Entra admin center
 
-- For enterprise organizations with complex identity configurations, we recommend you use cross-tenant synchronization in Microsoft Entra admin center.
+- For enterprise organizations with complex identity configurations, use cross-tenant synchronization in Microsoft Entra admin center.
 
 - By default, new B2B users are provisioned as B2B members, while existing B2B guests remain B2B guests. You can opt to convert B2B guests into B2B members by setting [**Apply this mapping** to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
 - By default, `showInAddressList` is synchronized into a target tenant as true. You might adjust this attribute mapping to match your organizations' needs.
 
-- The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
+- The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects isn't currently supported.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users isn't currently supported.
 
 ## Synchronize users in Microsoft 365 admin center
 
-- For smaller multitenant organizations, we recommend using Microsoft 365 admin center to [synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
+- For smaller multitenant organizations, consider using Microsoft 365 admin center to [synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
 
 - To share users, Microsoft 365 admin center creates multiple cross-tenant synchronization jobs, one per target tenant, keeping the same user scope for all jobs.
 
@@ -105,7 +102,7 @@ The limitations described in this article have the following scope.
 ## Global address list managed using cross-tenant synchronization
 
 - If cross-tenant synchronization is used to synchronize the property, [showInAddressList](/graph/api/resources/user#properties) in a source tenant **can** be used to control address list visibility in a target tenant.
-- On the other hand, [hide recipient from address lists](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) in the source tenant **cannot** be used to affect address list visibility in a target tenant.
+- On the other hand, [hide recipient from address lists](/exchange/address-books/address-lists/manage-address-lists#hide-recipients-from-address-lists) in the source tenant **can't** be used to affect address list visibility in a target tenant.
 
 ## Microsoft apps
 
@@ -113,19 +110,19 @@ The limitations described in this article have the following scope.
 
 - In Microsoft 365 admin center, [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), Microsoft OneNote, and Microsoft Planner, B2B member users might not be supported.
 
-- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
+- In [Microsoft Power BI](/fabric/enterprise/powerbi/service-admin-entra-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
 
 - In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users might have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
 
-- In Microsoft Purview, multitenant organization capabilities aren't yet supported. Learn more about existing functionalities for [external users and labeled content](/purview/sensitivity-labels-office-apps#support-for-external-users-and-labeled-content) and about [external collaboration using sensitivity labels](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/secure-external-collaboration-using-sensitivity-labels/ba-p/1680498).
+- In Microsoft Purview, multitenant organization capabilities aren't yet supported. For more information, see existing functionalities for [external users and labeled content](/purview/sensitivity-labels-office-apps#support-for-external-users-and-labeled-content) and [external collaboration using sensitivity labels](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/secure-external-collaboration-using-sensitivity-labels/ba-p/1680498).
 
-- In Microsoft Intune, multitenant organization capabilities aren't yet supported. Learn more about existing functionalities to [trust compliant device claims from external organizations](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+- In Microsoft Intune, multitenant organization capabilities aren't yet supported. For more information, see existing functionalities to [trust compliant device claims from external organizations](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
 ## B2B users or B2B members
 
 - As part of a multitenant organization, [reset redemption for an already redeemed B2B user](../../external-id/reset-redemption-status.md) is currently disabled.
 
-- The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects is currently not supported.
+- The at-scale provisioning of B2B users might collide with contact objects. The handling or conversion of contact objects isn't currently supported.
 
 - Using cross-tenant synchronization to target hybrid identities that have been converted to B2B users hasn't been tested in source of authority conflicts and isn't supported.
 
@@ -137,6 +134,7 @@ The limitations described in this article have the following scope.
 
 - Currently, [SkipOutOfScopeDeletions](../app-provisioning/skip-out-of-scope-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
 
-## Next steps
+## Related content
 
 - [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq)

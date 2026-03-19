@@ -1,13 +1,9 @@
 ---
 title: Introduction to Microsoft Global Secure Access Proof-of-Concept Guidance
 description: Learn how to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
 ms.topic: concept-article
 ms.date: 01/22/2025
-ms.author: jricketts
-
 #customer intent: As a Microsoft partner, I want to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Private Access, Microsoft Entra Internet Access, and the Microsoft traffic profile in my production or test environment.
 ---
 

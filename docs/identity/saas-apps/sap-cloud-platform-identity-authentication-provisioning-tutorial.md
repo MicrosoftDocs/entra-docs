@@ -2,9 +2,6 @@
 title: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to SAP Cloud Identity Services.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/27/2024
 ms.author: jeedes
@@ -25,6 +22,11 @@ This article demonstrates the steps for configuring provisioning from Microsoft 
 > * Support for group provisioning and deprovisioning to SAP Cloud Identity Services
 > * Support for custom extension attributes
 > * Support for the [OAuth 2.0 Client Credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md)
+
+> [!IMPORTANT]
+> If [integrating with SAP IAG](../../id-governance/entitlement-management-sap-integration.md), map Microsoft Entra ObjectId to username by selecting *EDIT* in the username line and set the Source and Target attribute as:
+> - Source Attribute: objectId
+> - Target Attribute: userName
 
 ## Prerequisites
 
@@ -70,9 +72,14 @@ This is done in the Provisioning tab of your SAP Cloud Identity Services applica
 
 ## Add SAP Cloud Identity Services from the gallery
 
-Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
+Before configuring Microsoft Entra ID to have automatic user provisioning into SAP Cloud Identity Services, you need to add SAP Cloud Identity Services from the Microsoft Entra application gallery to your tenant's list of enterprise applications. You can do this step in the Microsoft Entra admin center, or via the Graph API.
 
-If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at the next section.
+If SAP Cloud Identity Services is already configured for single-sign on from Microsoft Entra using SAML, and an application is already present in your Microsoft Entra list of enterprise applications, then continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services).
+
+> [!NOTE]
+> If you have previously configured an application registration for OpenID Connect integration, then you will not be able to configure provisioning for that application registration. Instead, create a separate enterprise application for provisioning.
+
+### Adding SAP Cloud Identity Services using the Microsoft Entra admin center
 
 **To add SAP Cloud Identity Services from the Microsoft Entra application gallery using the Microsoft Entra admin center, perform the following steps:**
 
@@ -80,6 +87,48 @@ If SAP Cloud Identity Services is already configured for single-sign on from Mic
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. To add the app from the gallery, type **SAP Cloud Identity Services** in the search box.
 1. Select **SAP Cloud Identity Services** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. Continue at [the next section](#configure-automatic-user-provisioning-to-sap-cloud-identity-services) to configure provisioning.
+
+### Adding SAP Cloud Identity Services using Microsoft Graph
+
+You can create an application and service principal [via the Graph API](~/identity/app-provisioning/application-provisioning-configuration-api.md).
+
+First, retrieve the gallery application template identifier for `SAP Cloud Identity Services`.
+
+```msgraph-interactive
+GET https://graph.microsoft.com/v1.0/applicationTemplates?$filter=displayName eq 'SAP Cloud Identity Services'
+```
+
+Extract the `id` of the application template from the response. Then, create the gallery application and service principal.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/v1.0/applicationTemplates/{applicationTemplateId}/instantiate
+Content-type: application/json
+
+{
+  "displayName": "SAP Cloud Identity Services"
+}
+```
+The response will contain the new application and service principal objects.
+
+Next, retrieve the template for provisioning configuration, using the `id` of the service principal just created.
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/templates
+```
+
+To enable provisioning, you'll need to create a job. Use the following request to create a provisioning job. Use the `id` from the previous step as the `templateId` when specifying the template to be used for the job.
+
+```msgraph-interactive
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
+Content-type: application/json
+
+{
+    "templateId": "sapcloudidentityservices"
+}
+```
+
+As described in the next section, you can then further configure the [provisioning job and template schema](/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&preserve-view=true) associated with the service principal. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisioning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 
 ## Configure automatic user provisioning to SAP Cloud Identity Services
 
@@ -250,8 +299,8 @@ In the provisioning mapping, the attributes selected as **Matching** properties 
    foreach ($u in $existingSapUsers) {
     $id = $u.id
     if (($null -eq $id) -or ($id.length -eq 0)) {
-        write-error "Exported CSV file doesn't contain the id attribute of SAP Cloud Identity Services users."
-        throw "id attribute not available, re-export"
+        write-error "Exported CSV file doesn't contain the ID attribute of SAP Cloud Identity Services users."
+        throw "ID attribute not available, re-export"
         return
     }
     $count++
@@ -377,7 +426,7 @@ As users that are in assigned to the application are updated in Microsoft Entra 
 If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services in Microsoft Entra ID, to add or remove assignments as people join the organization, or leave or change roles.
 
 * You can [perform a one-time or recurring access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md).
-* You can [create an entitlement management access package for this application](~/id-governance/entitlement-management-access-package-create-app.md). You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+* You can [create an entitlement management access package for this application](~/id-governance/entitlement-management-access-package-create-app.md). You can have policies for users to be assigned access, either when they request, [by an administrator](../../id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
 
 ## Update an SAP Cloud Identity Services application to use the SAP Cloud Identity Services SCIM 2.0 endpoint
 
@@ -405,7 +454,7 @@ Completing the below steps will allow customers that were already previously usi
 GET https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/
 ```
 
-1. Taking the "id" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the id value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
+1. Taking the "ID" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the ID value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
 
 ```
 DELETE https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/[job-id]

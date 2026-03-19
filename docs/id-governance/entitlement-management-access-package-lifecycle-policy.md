@@ -1,13 +1,9 @@
 ---
 title: Change lifecycle settings for an access package in entitlement management
 description: Learn how to change requestor information & lifecycle settings for an access package in entitlement management.
-author: owinfreyatl
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
-ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include requestor information to screen requestors and get requestors the resources they need to perform their job.
 ---
 # Change lifecycle settings for an access package in entitlement management
@@ -17,7 +13,7 @@ As an access package manager, you can change the lifecycle settings for assignme
 This article describes how to change the lifecycle settings for an existing access package assignment policy.
 
 ## Open requestor information
-To ensure users have the right access to an access package, custom questions can be configured to ask users requesting access to certain access packages. Configuration options include: localization, required/optional, and text/multiple choice answer formats. Requestors  see the questions when they request the package and approvers see the answers to the questions to help them make their decision. Use the following steps to configure questions in an access package:
+To ensure identities have the right access to an access package, custom questions can be configured to ask identities requesting access to certain access packages. Configuration options include: localization, required/optional, and text/multiple choice answer formats. Requestors  see the questions when they request the package and approvers see the answers to the questions to help them make their decision. Use the following steps to configure questions in an access package:
 
 ## Open lifecycle settings
 

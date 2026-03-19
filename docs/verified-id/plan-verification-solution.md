@@ -2,12 +2,8 @@
 title: Plan your Microsoft Entra Verified ID verification solution 
 description: Learn foundational information to plan and design your verification solution.
 documentationCenter: ''
-author: barclayn
-manager: martinco
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/16/2024
-ms.author: barclayn
 ms.custom: references_regions
 ---
 
@@ -17,7 +13,7 @@ ms.custom: references_regions
 
 Microsoft’s Microsoft Entra Verified ID (Microsoft Entra VC) service enables you to trust proofs of user identity without expanding your trust boundary. With Microsoft Entra VC, you create accounts or federate with another identity provider. When a solution implements a verification exchange using verifiable credentials, it enables applications to request credentials that aren't bound to a specific domain. This approach makes it easier to request and verify credentials at scale.
 
-If you haven’t already, we suggest you review the [Microsoft Entra Verified ID architecture overview](introduction-to-verifiable-credentials-architecture.md). You also want to review [Plan your Microsoft Entra Verified ID issuance solution](plan-issuance-solution.md).
+If you haven’t already, review the [Microsoft Entra Verified ID architecture overview](introduction-to-verifiable-credentials-architecture.md). Also review [Plan your Microsoft Entra Verified ID issuance solution](plan-issuance-solution.md).
 
 ## Scope of guidance
 
@@ -25,7 +21,7 @@ This content covers the technical aspects of planning for a verifiable credentia
 
 Supporting technologies that aren't specific to verification solutions are out of scope. For example, websites are used in a verifiable credential verification solution but planning a website deployment isn't covered in detail.
 
-As you plan your verification solution, you must consider what business capability is being added or modified. You must also consider what IT capabilities can be reused, and what capabilities must be added to create the solution. Also consider what training is needed for the people involved in the business process and the people that support the end users and staff of the solution. These articles aren't covered in this content. We recommend reviewing the [Microsoft Azure Well-Architected Framework](/azure/well-architected/) for information covering these articles.
+As you plan your verification solution, you must consider what business capability is being added or modified. You must also consider what IT capabilities can be reused, and what capabilities must be added to create the solution. Also consider what training is needed for the people involved in the business process and the people that support the end users and staff of the solution. These topics aren't covered in this content. For more information, review the [Microsoft Azure Well-Architected Framework](/azure/well-architected/).
 
 ## Components of the solution
 
@@ -49,7 +45,7 @@ The service requires a Microsoft Entra tenant that provides an Identity and Acce
 
 :::image type="content" source="./media/plan-verification-solution/plan-verification-solution-key-vault.png" alt-text="Diagram of the components of a verification solution with Azure Key Vault highlighted.":::
 
-The Azure Key Vault service stores your verifier keys, which are generated when you enable the Microsoft Entra Verified ID issuance service. The keys are used to provide message security. Each verifier has a single key set used for signing, updating, and recovering VCs. Verified ID uses this key set each time you service a verification request. Microsoft key set currently uses Elliptic Curve Cryptography (ECC) [SECP256k1](https://en.bitcoin.it/wiki/Secp256k1). We're exploring other cryptographic signature schemas that are adopted by the broader DID community.
+The Azure Key Vault service stores your verifier keys, which are generated when you enable the Microsoft Entra Verified ID issuance service. The keys are used to provide message security. Each verifier has a single key set used for signing, updating, and recovering VCs. Verified ID uses this key set each time you service a verification request. Microsoft key set currently uses Elliptic Curve Cryptography (ECC) [SECP256k1](https://en.bitcoin.it/wiki/Secp256k1). Other cryptographic signature schemas adopted by the broader DID community are also being evaluated.
 
 ### Request Service API
 
@@ -57,7 +53,7 @@ The Azure Key Vault service stores your verifier keys, which are generated when 
 
 Application programming interfaces (APIs) provide developers a method to abstract interactions between components of the solution to execute verification operations. 
 
-### Trust System 
+### Trust system
 
 :::image type="content" source="./media/plan-verification-solution/plan-verification-solution-ion.png" alt-text="Diagram of the components of a verification solution with the trust system highlighted.":::
 
@@ -84,7 +80,7 @@ You can create new logic or use existing logic that is specific to the relying p
 
 ## Scenario-specific designs
 
-The following are examples of designs to satisfy specific use cases. The first is for account onboarding, used to reduce the time, cost, and risk associated with onboarding new employees. The second is for account recovery, which enables an end user to recover or unlock their account using a self-service mechanism. The third is for accessing high-value applications and resources, specifically for business-to-business use cases where access is given to people that work for other companies. 
+The following are examples of designs to satisfy specific use cases. The first is for account onboarding, used to reduce the time, cost, and risk associated with onboarding new employees. The second is for account recovery, which enables an end user to recover or unlock their account using a self-service mechanism. The third is for accessing high-value applications and resources, specifically for business-to-business use cases where access is given to people who work for other companies. 
 
 ### Account onboarding
 
@@ -104,13 +100,13 @@ Verifiable credentials can be used to enable faster onboarding by replacing some
 
 * Employee identities, which in centralized identity systems are already onboarded through human resources (HR) systems. In this case, the identity verification might be integrated as part of existing stages of HR workflows. 
 
-#### Design Considerations
+#### Design considerations
 
 * **Issuer**: Account onboarding is a good fit for an external identity-proofing service as the issuer of the VCs. Examples of checks for onboarding include: liveness check, government-issued document validation, address, or phone number confirmation, and so on.
 
-* **Storing VC Attributes**: Where possible don't store attributes from VCs in your app-specific store. Be especially careful with personal data. If specific flows within your applications require this information, consider asking for the VC to retrieve the claims on demand. 
+* **Storing VC attributes**: Where possible don't store attributes from VCs in your app-specific store. Be especially careful with personal data. If specific flows within your applications require this information, consider asking for the VC to retrieve the claims on demand. 
 
-* **VC Attribute correlation with back-end systems**: When defining the attributes of the VC with the issuer, establish a mechanism to correlate information in the back-end system after the user presents the VC. The mechanism typically uses a time-bound, unique identifier in the context of your RP in combination with the claims you receive. Some examples:
+* **VC attribute correlation with back-end systems**: When defining the attributes of the VC with the issuer, establish a mechanism to correlate information in the back-end system after the user presents the VC. The mechanism typically uses a time-bound, unique identifier in the context of your RP in combination with the claims you receive. Some examples:
 
    * **New employee**: When the HR workflow reaches the point where identity proofing is required, the RP can generate a link with a time-bound unique identifier. The RP then sends it to the candidate’s email address on the HR system. This unique identifier should be sufficient to correlate information such as firstName, lastName from the VC verification request to the HR record or underlying data. The attributes in the VC can be used to complete user attributes in the HR system, or to validate accuracy of user attributes about the employee.
 
@@ -138,19 +134,19 @@ Verifiable credentials can be used as other proof to access to sensitive applica
 
 **User access authorization logic** is application's logic layer that authorizes user access. It is enhanced to consume the user attributes inside the VC to make authorization decisions. 
 
-**Other backend services and dependencies**: Represents the rest of the logic of the application, which typically is unchanged by the inclusion of identity proofing through VCs.
+**Other back-end services and dependencies**: Represents the rest of the logic of the application, which typically is unchanged by the inclusion of identity proofing through VCs.
 
-#### Design Considerations
+#### Design considerations
 
 * **Goal**: The goal of the scenario determines what kind of credential and issuer is needed. Typical scenarios include:
 
-   * **Authorization**: In this scenario, the user presents the VC to make an authorization decision. VCs designed for proof of completion of a training or holding a specific certification, are a good fit for this scenario. The VC attributes should contain fine-grained information conducive to authorization decisions and auditing. For example, the VC is used to certify the individual is trained and can access sensitive financial apps. The app logic can check the department claim for fine-grained authorization, and use the employee ID for audit purposes. 
+   * **Authorization**: In this scenario, the user presents the VC to make an authorization decision.VCs designed for proof of completion of a training or holding a specific certification, are a good fit for this scenario. The VC attributes should contain fine-grained information conducive to authorization decisions and auditing. For example, the VC is used to certify the individual is trained and can access sensitive financial apps. The app logic can check the department claim for fine-grained authorization, and use the employee ID for audit purposes. 
 
    * **Confirmation of identity verification**: In this scenario, the goal is to confirm that the same person who initially onboarded is indeed the one attempting to access the high-value application. A credential from an identity verification issuer would be a good fit. The application logic should validate that the attributes from the VC align with the user who logged in the application. 
 
-* **Check Revocation**: When using VCs to access sensitive resources, it's common to check the status of the VC with the original issuer and deny access for revoked VCs. When working with the issuers, ensure that revocation is explicitly discussed as part of the design of your scenario. 
+* **Check revocation**: When using VCs to access sensitive resources, it's common to check the status of the VC with the original issuer and deny access for revoked VCs. When working with the issuers, ensure that revocation is explicitly discussed as part of the design of your scenario. 
 
-* **User Experience**: When using VCs to access sensitive resources, there are two patterns you can consider. 
+* **User experience**: When using VCs to access sensitive resources, there are two patterns you can consider.
 
    * **Step-up authentication**: users start the session with the application with existing authentication mechanisms. Users must present a VC for specific high-value operations within the application such as approvals of business workflows. This is a good fit for scenarios where such high-value operations are easy to identify and update within the application flows.
 
@@ -170,9 +166,9 @@ The decentralized nature of verifiable credentials enables this scenario without
 
 **User access authorization logic**: Logic layer in the application that authorizes user access and is enhanced to consume the user attributes inside the VC to make authorization decisions.
 
-**Other backend services and dependencies**: Represents the rest of the logic of the application, which typically is unchanged by the inclusion of identity proofing through VCs.
+**Other back-end services and dependencies**: Represents the rest of the logic of the application, which typically is unchanged by the inclusion of identity proofing through VCs.
 
-#### Design Considerations
+#### Design considerations
 
 * **Goal**: The goal of the scenario determines what kind of credential and issuer is needed. Typical scenarios include:
 
@@ -180,9 +176,9 @@ The decentralized nature of verifiable credentials enables this scenario without
 
    * **Authorization**: Based on the application requirements, the applications might consume the VC attributes for fine-grained authorization decisions and auditing. For example, if an e-commerce website offers discounts to employees of the organizations in a particular location, they can validate discount eligibility based on the country/region claim in the VC (if present).
 
-* **Check Revocation**: When using VCs to access sensitive resources, it's common to check the status of the VC with the original issuer and deny access for revoked VCs. When working with the issuers, ensure that revocation is explicitly discussed as part of the design of your scenario. 
+* **Check revocation**: When using VCs to access sensitive resources, it's common to check the status of the VC with the original issuer and deny access for revoked VCs. When working with the issuers, ensure that revocation is explicitly discussed as part of the design of your scenario. 
 
-* **User Experience**: Users can present a VC as part of initiating the session with the application. Typically, applications also provide an alternative method to start the session to accommodate cases where users don’t have VCs. 
+* **User experience**: Users can present a VC as part of initiating the session with the application.Typically, applications also provide an alternative method to start the session to accommodate cases where users don’t have VCs. 
 
 
 ### Account recovery
@@ -190,11 +186,11 @@ The decentralized nature of verifiable credentials enables this scenario without
 Verifiable credentials can be used as an approach to account recovery. For example, when a user needs to recover their account, they might access a website that requires them to present a VC and initiate a Microsoft Entra credential reset by calling MS Graph APIs as shown in the following diagram.
 
 > [!NOTE]
-> While the scenario we describe in this section is specific to recover Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
+> While the scenario described in this section is specific to recovering Microsoft Entra accounts, this approach can also be used to recover accounts in other systems.
 
 :::image type="content" source="media/plan-verification-solution/plan-verification-solution-account-recovery.png" alt-text="Diagram of the components of a verification solution showing the account recovery scenario.":::
 
-#### Other Elements
+#### Other elements
 
 **Account portal**: Web front end that orchestrates the API calls for VC presentation and validation. This orchestration can include Microsoft Graph calls to recover accounts in Microsoft Entra ID.
 
@@ -206,9 +202,9 @@ Verifiable credentials can be used as an approach to account recovery. For examp
 
 #### Design considerations
 
-**VC Attribute correlation with Microsoft Entra ID**: When defining the attributes of the VC in collaboration with the issuer, make sure you agree on claims that identify the user. For example, if identity verification provider (IDV) verifies the identity prior to onboarding employees, ensure that the issued VC includes claims that can be matched against internal systems. Such claims might be a phone number, address, or date of birth. The RP can ask for information not found in the VC as part of this process, such as the last four digits of their social security number (SSN).
+**VC attribute correlation with Microsoft Entra ID**: When defining the attributes of the VC in collaboration with the issuer, make sure you agree on claims that identify the user. For example, if identity verification provider (IDV) verifies the identity prior to onboarding employees, ensure that the issued VC includes claims that can be matched against internal systems. Such claims might be a phone number, address, or date of birth. The RP can ask for information not found in the VC as part of this process, such as the last four digits of their social security number (SSN).
 
-**Role of VCs with Existing Microsoft Entra Credential Reset Capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user has lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
+**Role of VCs with existing Microsoft Entra credential reset capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user has lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
 
 Similarly, you can use a VC to generate a temporary access pass that allows users to reset their MFA authentication methods without a password. 
 
@@ -242,7 +238,7 @@ The following are IAM considerations when incorporating VCs to relying parties. 
 
    * If it's relevant, add the proper handling of exceptions in your application.
 
-### User Profiles
+### User profiles
 
 You can use information in presented VCs to build a user profile. If you want to consume attributes to build a profile, consider the following items.
 
@@ -274,13 +270,13 @@ The following items provide areas to consider when planning for performance:
 
    * Each verification of a VC requires one Key Vault signature operation.
 
-   * You can't control throttling; however, we recommend you read [Azure Key Vault throttling guidance](/azure/key-vault/general/overview-throttling) so that you understand how throttling might impact performance. 
+   * You can't control throttling; however, review the [Azure Key Vault throttling guidance](/azure/key-vault/general/overview-throttling) to understand how throttling might affect performance.
 
 ## Plan for reliability
 
-To best plan for high availability and disaster recovery, we suggest the following items:
+To best plan for high availability and disaster recovery, consider the following items:
 
-* Microsoft Entra Verified ID service is deployed in the West Europe, North Europe, West US 2, and West Central US, Australia and Japan Azure regions. Consider deploying your supporting web servers and supporting applications in one of those regions, specifically in the ones from which you expect most of your validation traffic to originate. 
+* Microsoft Entra Verified ID service is deployed in the West Europe, North Europe, West US 2, and West Central US, Australia, and Japan Azure regions. Consider deploying your supporting web servers and supporting applications in one of those regions, specifically in the ones from which you expect most of your validation traffic to originate. 
 
 * Review and incorporate best practices from [Azure Key Vault availability and redundancy](/azure/key-vault/general/disaster-recovery-guidance) as you design for your availability and redundancy goals.
 
@@ -304,11 +300,11 @@ As you're designing for security, consider the following:
 
    * Use domains that are meaningful to end users.
 
-* Mitigate distributed denial of service (DDOS) and Key Vault resource throttling risks. Every VC presentation request generates Key Vault signing operations that accrue towards service limits. We recommend protecting traffic by incorporating alternative authentication or captcha before generating issuance requests.
+* Mitigate distributed denial of service (DDOS) and Key Vault resource throttling risks. Every VC presentation request generates Key Vault signing operations that accrue towards service limits. Protect traffic by incorporating alternative authentication or captcha before generating issuance requests.
 
 ## Plan for operations
 
-As you plan for operations, we recommend plan that you capture each attempt of credential validation as part of your auditing. Use that information for auditing and troubleshooting. Additionally, consider generating unique transaction identifiers (IDs) that customers and support engineers can refer to if needed. 
+As you plan for operations, capture each attempt of credential validation as part of auditing. Use that information for auditing and troubleshooting. Additionally, consider generating unique transaction identifiers (IDs) that customers and support engineers can refer to if needed. 
 
 As part of your operational planning, consider monitoring the following:
 

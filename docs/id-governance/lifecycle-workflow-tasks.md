@@ -1,13 +1,9 @@
 ---
 title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: article
-ms.date: 06/25/2025
+ms.topic: concept-article
+ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -42,7 +38,7 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 
 ## Common email task parameters
 
-Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who are the recipients of the email:
+Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who the recipients of the email are:
 
 :::image type="content" source="media/lifecycle-workflow-task/email-tasks-basics.png" alt-text="Screenshot of basics email task customization.":::
 
@@ -338,7 +334,7 @@ For Microsoft Graph, the parameters for the **Request user access package assign
 |displayName     |  Request user access package assignment (Customizable by user)        |
 |description     |  Request user assignment to selected access package (Customizable by user)       |
 |taskDefinitionId     |   c1ec1e76-f374-4375-aaa6-0bb6bd4c60be      |
-|arguments     |  Argument contains two name parameter that is the "assignmentPolicyId," and "accessPackageId".    |
+|arguments     |  Argument contains two name parameters: "assignmentPolicyId" and "accessPackageId".    |
 
 Example of usage within the workflow:
 
@@ -664,7 +660,7 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 ```
 
-### Remove User from Teams
+### Remove User from selected Teams
 
 Allows a user to be removed from one or multiple static teams. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-user-team-task.png" alt-text="Screenshot of Workflows task: remove user from teams.":::
@@ -766,7 +762,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name, description, and whether or not access package assignments are removed immediately, or after a certain number of days  for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:
@@ -905,19 +901,19 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 }
 ```
 
-### Send email to manager about sponsorship transfer
+### Send email to manager about sponsorship changes (Preview)
 
 Allows an email to be sent to the manager of an employee that has moved or left. This email notifies the manager that the employee, who moved or left, was the sponsor of one or more agent IDs. This allows the manager to decide if the agent ID should have a different employee as their sponsor.
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/send-email-manager-sponsor-change.png" alt-text="Screenshot of the send email to manager about sponsorship transfer task.":::
 
-
-For Microsoft Graph, the parameters for the **Send email to manager about sponsorship transfer** task are as follows:
+For Microsoft Graph, the parameters for the **Send email to manager about sponsorship changes** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to manager about sponsorship transfer       |
+|displayName     |  Send email to manager about sponsorship changes (Preview)     |
 |description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
 |taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
 
@@ -953,19 +949,19 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email to co-sponsors about sponsor changes
+### Send email to co-sponsors about sponsor changes (Preview)
 
 Allows an email to be sent to co-sponsors of an agent ID when a user, who was also a sponsor of the agent ID, has moved or left. This notifies cosponsors of changes happening to sponsorship of their agent ID.
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
-
+:::image type="content" source="media/lifecycle-workflow-task/send-cosponsors-email.png" alt-text="Send email to cosponsors about a change.":::
 
 For Microsoft Graph, the parameters for the **Send email to co-sponsors about sponsor changes** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to co-sponsors about sponsor changes   |
+|displayName     |  Send email to co-sponsors about sponsor changes (Preview)  |
 |description     |  Notify co-sponsors about agent identity sponsorship changes.       |
 |taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
 

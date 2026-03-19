@@ -1,14 +1,9 @@
 ---
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/23/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
-ms.reviewer: jupetter
+ms.date: 02/27/2026
+ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
@@ -170,6 +165,9 @@ To configure your own caller ID number, complete the following steps:
 > When Microsoft Entra multifactor authentication calls are placed through the public telephone network, sometimes the calls are routed through a carrier that doesn't support caller ID. Because of this, caller ID isn't guaranteed, even though Microsoft Entra multifactor authentication always sends it. This applies both to phone calls and text messages provided by Microsoft Entra multifactor authentication. If you need to validate that a text message is from Microsoft Entra multifactor authentication, see [What short codes are used for sending messages?](multi-factor-authentication-faq.yml#what-short-codes-are-used-for-sending-text-messages-to-my-users-).
 
 ### Custom voice messages
+
+> [!NOTE]
+> Custom voice messages in Microsoft Entra voice call authentication will be retired on February 28, 2026. After retirement, all voice call greetings will use standard recordings from Microsoft by default.
 
 You can use your own recordings or greetings for Microsoft Entra multifactor authentication. These messages can be used in addition to the default Microsoft recordings or to replace them.
 
@@ -360,7 +358,7 @@ To enable or disable verification methods, complete the following steps:
  The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or less.
 
 > [!IMPORTANT]
-> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.yml).
+> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke sessions](howto-mfa-userdevicesettings.yml).
 >
 > The revoke action revokes the trusted status from all devices, and the user is required to perform multifactor authentication again. You can also instruct your users to restore the original MFA status on their own devices as noted in [Manage your settings for multifactor authentication](https://support.microsoft.com/account-billing/change-your-two-step-verification-method-and-settings-c801d5ad-e0fc-4711-94d5-33ad5d4630f7#turn-on-two-factor-verification-prompts-on-a-trusted-device).
 
