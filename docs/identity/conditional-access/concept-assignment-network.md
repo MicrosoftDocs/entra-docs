@@ -1,15 +1,8 @@
 ---
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
-
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange
 ---
@@ -86,6 +79,13 @@ To define a named location by public IPv4 or IPv6 address ranges, provide:
 - One or more public IP ranges.
 - Optionally **Mark as trusted location**.
 
+> [!NOTE]
+> IPv6 addresses must be entered in CIDR notation. For example:
+> - Single IPv6 address: `2001:db8::1/128`
+> - IPv6 subnet range: `2001:db8:abcd:0012::/64`
+> IPv6 ranges represent a block of public addresses and follow standard IPv6 CIDR formatting.
+
+
 Named locations defined by IPv4 or IPv6 address ranges have the following limitations: 
 
 - No more than 195 named locations.
@@ -128,7 +128,7 @@ To use **Determine location by GPS coordinates**, users need the Microsoft Authe
 - The country code returned depends on the device platform API: For example one platform might report US for Puerto Rico, while another reports PR.
 
 > [!NOTE]
-> A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
+> A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, not sharing this information may result in a block.
 
 GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
 

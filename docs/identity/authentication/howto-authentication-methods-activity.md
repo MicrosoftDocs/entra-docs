@@ -1,13 +1,9 @@
 ---
 title: Authentication Methods Activity
 description: Overview of the authentication methods that users register to sign in and reset passwords.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/22/2025
-ms.author: justinha
 author: sopand
-manager: dougeby
 ms.reviewer: dawoo
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---

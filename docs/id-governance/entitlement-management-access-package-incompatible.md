@@ -1,13 +1,9 @@
 ---
 title: Configure separation of duties for an access package in entitlement management
 description: Learn how to configure separation of duties enforcement for requests for an access package in entitlement management.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/23/2024
-ms.author: owinfrey
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an Identity Governance Administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
 ---
@@ -65,7 +61,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 ### Configure incompatible access packages programmatically through Graph
 
-You can configure the groups and other access packages that are incompatible with an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to add, remove, and list the incompatible groups and access packages [of an access package](/graph/api/resources/accesspackage).
+You can configure the groups and other access packages that are incompatible with an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application with the `EntitlementManagement.ReadWrite.All` application permission, or an application with a catalog role, can call the API to add, remove, and list the incompatible groups and access packages [of an access package](/graph/api/resources/accesspackage).
 
 ### Configure incompatible access packages through Microsoft PowerShell
 

@@ -2,12 +2,8 @@
 title: Create verifiable credentials for ID tokens
 description: Learn how to use a quickstart to create custom credentials for ID tokens
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/17/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me create verifiable credentials for ID tokens. 
 ---
@@ -28,7 +24,7 @@ On the **Create a new credential** page, enter the JSON code for the display and
 
 ## Sample JSON display definitions
 
-The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as separator. 
+The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as a separator. 
 
 ```json
 {
@@ -138,13 +134,13 @@ The clientId attribute is the application ID of a registered application in the 
 
 1. Select **App registrations**, select **New registration**, and then give the app a name.
 
-   If you want only accounts in your tenant to be able to sign in, keep the **Accounts in this directory only** checkbox selected. 
+    If you want only accounts in your tenant to be able to sign in, keep the **Accounts in this directory only** check box selected. 
 
 1. In **Redirect URI (optional)**, select **Public client/native (mobile & desktop)**, and then enter **vcclient://openid/**.
  
 If you want to check the claims included in the Microsoft Entra ID token, take the following steps:
 
-1. On the left pane, select **Authentication**> **Add platform** > **Web**.
+1. On the left pane, select **Authentication** > **Add platform** > **Web**.
 
 1. For **Redirect URI**, enter **https://jwt.ms**, and then select **ID Tokens (used for implicit and hybrid flows)**.
 

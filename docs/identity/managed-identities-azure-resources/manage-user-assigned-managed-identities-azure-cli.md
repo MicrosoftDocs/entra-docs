@@ -1,13 +1,8 @@
 ---
 title: Manage user-assigned managed identities using the Azure CLI
 description: Manage user-assigned managed identities using the Azure CLI.
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 09/09/2025
-ms.author: shermanouko
 ---
 
 # Manage user-assigned managed identities using the Azure CLI

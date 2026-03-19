@@ -1,15 +1,9 @@
 ---
 title: Two-way SMS no longer supported
 description: Explains how to enable another method for users who still use two-way SMS. 
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
 author: rhicock
-manager: dougeby
 ms.reviewer: dawoo
 ---
 # Two-way SMS unsupported

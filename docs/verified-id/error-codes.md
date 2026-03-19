@@ -3,12 +3,8 @@ title: API Error codes reference
 titleSuffix: Microsoft Entra Verified ID
 description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
 ---
@@ -34,7 +30,7 @@ During public preview, the Request Service API returned errors in the following 
 }
 ```
 
-This format is now changed into the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [`innererror`](#inner-error-type) object provide details on what caused the error.
+This format changed to the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [`innererror`](#inner-error-type) object provides details on what caused the error.
 
 ```json
 {
@@ -62,7 +58,7 @@ This format is now changed into the following to enable both simpler error handl
 
 ### Error type
 
-The `error` object is now matching the HTTP Status Code returned from the API Call to enable easier error handling for developers. 
+The `error` object now matches the HTTP Status Code returned from the API Call to enable easier error handling for developers. 
  
 |Property |Type |Description |
 |---------|---------|---------|
@@ -73,7 +69,7 @@ The `error` object is now matching the HTTP Status Code returned from the API Ca
 
 ### Error codes and messages
 
-The following are the possible top level `code` values that maps to the different HTTP status codes returned.
+The following are the possible top-level `code` values that map to the different HTTP status codes returned.
 
 |HTTP Status Code |code |message |
 |---------|---------|---------|
@@ -100,7 +96,7 @@ The following are the possible top level `code` values that maps to the differen
 | 431 | requestHeaderFieldsTooLarge |The request header field is too large.|
 | 500 | internalServerError |A generic error has occurred on the server.|
 | 501 | notImplemented |The server doesn't support the requested function.|
-| 502 | badGateway |bad response received from another gateway.|
+| 502 | badGateway |Bad response received from another gateway.|
 | 503 | serviceUnavailable |The server is temporarily unavailable, please try again later.|
 | 504 | gatewayTimeout |Time out received from another gateway.|
 | 507 | insufficientStorage |Unable to save data for the request.|
@@ -137,10 +133,10 @@ The inner error object contains error specific details useful to the developer t
 
 |Code|Description|
 |-|-|
-|`badOrMissingField`|returned when validation issues on the request occur. The `target` field contains the field in the request that is causing the issue.|
-|`notFound`|returned when a resource the client is requesting isn't found. The `target` field contains the resource name/ID that isn't found.|
-|`tokenError`|returned for any validation issues on tokens like JSON Web Token (JWT) and the likes. The `target` field contains the token name causing the issue, when applicable.|
-|`transientError`|returned for all the cases where the client might be able to get a successful response if they retry the request at a later stage. A common example of when this code is returned is when an HTTP 429 code is returned back|
+|`badOrMissingField`|Returned when validation issues on the request occur. The `target` field contains the field in the request that is causing the issue.|
+|`notFound`|Returned when a resource the client is requesting isn't found. The `target` field contains the resource name/ID that isn't found.|
+|`tokenError`|Returned for any validation issues on tokens like JSON Web Token (JWT) and the like. The `target` field contains the token name causing the issue, when applicable.|
+|`transientError`|Returned for all the cases where the client might be able to get a successful response if they retry the request at a later stage. A common example of when this code is returned is when an HTTP 429 code is returned.|
 
 ## Next steps
 

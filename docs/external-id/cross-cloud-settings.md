@@ -1,12 +1,8 @@
 ---
 title: Cross Cloud Settings
 description: Enable secure cross-cloud B2B collaboration between organizations in different sovereign (national) Microsoft Azure clouds by configuring Microsoft cloud settings.
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/14/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #customer intent: As an admin configuring B2B collaboration between partner organizations in different Microsoft Azure clouds, I want to enable collaboration with the partner's cloud, add the partner to my organizational settings, and configure inbound and outbound settings, so that Microsoft Entra B2B collaboration between the organizations is enabled.
@@ -102,7 +98,7 @@ You can also give cross-cloud Microsoft Entra guest users a direct link to an ap
 The following scenarios are supported when collaborating with an organization from a different Microsoft cloud:
 
 - Use B2B collaboration to invite a user in the partner tenant to access resources in your organization, including web line-of-business apps, SaaS apps, and SharePoint Online sites, documents, and files.
-- Use B2B collaboration to [share Power BI content to a user in the partner tenant](/power-bi/enterprise/service-admin-azure-ad-b2b#cross-cloud-b2b).
+- Use B2B collaboration to [share Power BI content to a user in the partner tenant](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 - Apply Conditional Access policies to the B2B collaboration user and opt to trust multifactor authentication or device claims (compliant claims and Microsoft Entra hybrid joined claims) from the user’s home tenant.
 
 > [!NOTE]

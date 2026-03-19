@@ -17,6 +17,9 @@ ms.topic: how-to
 
 Enterprise developers and software-as-a-service (SaaS) providers who have registered applications with the Microsoft identity platform may need to remove an application's registration.
 
+> [!TIP]
+> Before permanently removing an application, consider [deactivating it](~/identity/enterprise-apps/deactivate-application-portal.md) instead. Deactivation prevents token issuance while preserving the application configuration for investigation or potential reactivation, making it a less destructive alternative to deletion.
+
 In the following sections, you learn how to:
 
 - Remove an application authored by you or your organization

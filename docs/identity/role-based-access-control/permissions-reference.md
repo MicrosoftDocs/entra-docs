@@ -1,21 +1,16 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-author: rolyon
-manager: pmwongera
 search.appverid: MET150
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 11/19/2025
-ms.author: rolyon
+ms.date: 03/16/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Microsoft Entra built-in roles
 
-In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
+In Microsoft Entra ID, if another administrator or nonadministrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
 This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
@@ -44,6 +39,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Provisioning Reader](#attribute-provisioning-reader) | Read the provisioning configuration of all active custom security attributes for an application.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
+> | [Authentication Extensibility Password Administrator](#authentication-extensibility-password-administrator) | Trigger a password submit event for custom authentication.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 0b00bede-4072-4d22-b441-e7df02a1ef63 |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
 > | [Azure DevOps Administrator](#azure-devops-administrator) | Can manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
@@ -149,6 +145,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
 
+
 ## Agent ID Administrator
 
 [!INCLUDE [agent-id-administrator](includes/agent-id-administrator.md)]
@@ -220,6 +217,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Authentication Extensibility Administrator
 
 [!INCLUDE [authentication-extensibility-administrator](includes/authentication-extensibility-administrator.md)]
+
+## Authentication Extensibility Password Administrator
+
+[!INCLUDE [authentication-extensibility-password-administrator](includes/authentication-extensibility-password-administrator.md)]
 
 ## Authentication Policy Administrator
 
@@ -663,12 +664,17 @@ Not every role returned by PowerShell or Microsoft Graph API is visible in Micro
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
 | Guest User | Not shown because it can't be used | NA |
+| Microsoft 365 Support Engineer | Not shown because it shouldn't be used | [Microsoft 365 Support Engineer documentation](#microsoft-365-support-engineer) |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |
 | Restricted Guest User | Not shown because it can't be used | NA |
 | User | Not shown because it can't be used | NA |
 | Workplace Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
+
+### Microsoft 365 Support Engineer
+
+[!INCLUDE [microsoft-365-support-engineer](includes/microsoft-365-support-engineer.md)]
 
 ### Modern Commerce Administrator
 

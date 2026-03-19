@@ -2,16 +2,9 @@
 title: Configure raum]für[raum for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and raum]für[raum.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and raum]fÃ¼r[raum so that I can control who has access to raum]fÃ¼r[raum, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

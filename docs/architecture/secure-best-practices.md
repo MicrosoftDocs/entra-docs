@@ -2,20 +2,18 @@
 title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: best-practice
 ms.date: 05/21/2025
 ms.author: gasinh
 ms.custom: sfi-ga-nochange
+ms.subservice: architecture
 ---
 
 # Best practices for all isolation architectures
 
 The following are design considerations for all isolation configurations. Throughout this content, there are many links. We link to content, rather than duplicate it here, so you'll always have access to the most up-to-date information.
 
-For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/concept-secure-remote-workers.md).
+For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/configure-security.md).
 
 >[!NOTE]
 >For all isolated tenants we suggest you use clear and differentiated branding to help avoid human error of working in the wrong tenant.

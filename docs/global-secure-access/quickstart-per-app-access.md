@@ -1,12 +1,8 @@
 ---
 title: "Quickstart: Configure per-app access to private resources"
 description: Learn how to configure per-app access to private resources in Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 
 #customer intent: As an administrator, I want learn how to configure per-app access so that my users can access private resources in Global Secure Access.
@@ -15,7 +11,7 @@ ai-usage: ai-assisted
   
 # Quickstart: Configure per-app access to private resources
 
-This quickstart shows you the steps needed to configure per-app access to private resources. To learn more about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
+This quickstart shows you the steps needed to configure per-app access to private resources. For more information about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
 
 ## Prerequisites
 
