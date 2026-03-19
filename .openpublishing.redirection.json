@@ -3106,8 +3106,13 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/global-secure-access/troubleshoot-global-secure-access-client-ios-health-check-utility.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-global-secure-access-mobile-client-health-check-utility",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/global-secure-access/concept-b2b-guest-access.md",
-      "redirect_url": "/entra/global-secure-access/concept-external-user-access",
+      "redirect_url": "/entra/global-secure-access/concept-external-user-acces",
       "redirect_document_id": true
     },
     {
