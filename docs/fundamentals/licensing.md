@@ -39,6 +39,10 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
 
+## Microsoft Entra Tenant Governance (Preview)
+
+[!INCLUDE [Microsoft Entra Tenant Governance](../includes/licensing-tenant-governance.md)]
+
 ## Microsoft Entra Connect
 
 [!INCLUDE [Information about free tier services](../includes/licensing-free-license.md)]
