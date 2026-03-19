@@ -3124,6 +3124,11 @@
       "source_path": "docs/identity/authentication/how-to-authentication-synced-passkeys.md",
       "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-passkey-profiles.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
     }
   ]
 }
