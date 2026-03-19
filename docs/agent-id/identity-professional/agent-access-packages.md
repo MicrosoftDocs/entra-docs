@@ -22,11 +22,11 @@ Microsoft Entra entitlement management provides access packages as a governance 
 Before creating an access package, confirm the following prerequisites are met in your organization:
 
 1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources.
-1. The authorization necessary is one of:
+1. The authorization is one of:
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource, such as Microsoft Graph or an application, to be able to access a target resource's APIs.
    - Agents need their identity to be assigned as members of groups.
    - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents).
-2. You have an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, are added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
+2. You have or can create an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, will be added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
 
    > [!NOTE]
    > If you'll be adding OAuth API permissions or directory roles to the access package as resource roles, then the catalog will be [marked as privileged](/entra/id-governance/entitlement-management-catalog-create#What-changes-for-privileged-catalogs) when they are added to the access package.
