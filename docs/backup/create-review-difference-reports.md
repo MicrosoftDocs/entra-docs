@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 # Create and review difference reports in Microsoft Entra Backup and Recovery (Preview)
 
 > [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 A difference report compares the current state of your tenant with a selected backup and highlights what changed.
 

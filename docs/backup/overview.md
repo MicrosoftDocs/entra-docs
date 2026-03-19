@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 # Microsoft Entra Backup and Recovery overview (Preview)
 
 > [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that lets you recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and partial authorization policy. The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
 

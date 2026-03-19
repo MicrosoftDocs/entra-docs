@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 # Troubleshoot Microsoft Entra Backup and Recovery (Preview)
 
 > [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 This article helps you diagnose and resolve common issues when using Microsoft Entra Backup and Recovery, including backup access, difference report jobs, and recovery jobs.
 
@@ -189,7 +189,7 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 ## Known limitations
 
-The following known limitations apply to Microsoft Entra Backup and Recovery during public preview.
+The following known limitations apply to Microsoft Entra Backup and Recovery during preview.
 
 ### Partial property coverage
 

@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 # Soft deletion in Microsoft Entra Backup and Recovery (Preview)
 
 > [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Soft deletion is a foundational data protection capability in Microsoft Entra that helps organizations recover from accidental or malicious deletions. Instead of immediately and permanently removing an object, soft deletion places the object into a recoverable state for a limited retention period. During this time, the object can be restored with its properties and relationships intact.
 

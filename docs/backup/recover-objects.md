@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 # Recover objects using Microsoft Entra Backup and Recovery (Preview)
 
 > [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in public preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Learn how to recover objects to a previously known-good state by using Microsoft Entra Backup and Recovery. Recovery includes restoring, soft-deleting, and updating supported objects and attributes.
 
