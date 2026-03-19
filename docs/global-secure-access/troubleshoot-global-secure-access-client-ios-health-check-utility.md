@@ -53,9 +53,9 @@ To remediate device compliant errors:
 
 In the [Microsoft Intune admin center](https://intune.microsoft.com/), confirm the following criteria:
 
-* Device enrollment
+1. Device enrollment
   * If not, [enroll the device in Intune](/intune/intune-service/fundamentals/deployment-guide-enrollment)
-* Device compliance
+2. Device compliance
   * If not, open the **Company Portal** app on the client device and follow the steps to [remediate the issue](/intune/intune-service/user-help/check-device-access-windows-cpapp).
 
    > [!NOTE]
@@ -94,7 +94,7 @@ In the Entra portal:
 
 1. Navigate to **Global Secure Access**.
 2. Under **Applications**, select **Quick Access**.
-3. In the **Private DNS** tabm ensure **Private DNS** is not selected.
+3. In the **Private DNS** tab, ensure **Private DNS** is not selected.
 
 ### Manual proxy setting disabled
 
