@@ -51,36 +51,33 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 ### Recovery statuses
 
-Recovery operations move through these statuses as the system applies changes to the tenant. These statuses indicate the progress and outcome of the recovery job.
+Recovery operations move through these statuses as the system applies changes to the tenant. These statuses indicate the progress and outcome of the recovery job:
 
-- **Loading data**: The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, this step might complete fast.
-- **In progress**: The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.
-- **Completed**: The recovery completed successfully, and the system applied all supported changes.
-- **Completed with warnings**: The recovery completed, but some changes couldn't be applied. Review the failed changes to understand which objects weren't restored and why.
-- **Failed**: The recovery couldn't be completed due to an error. The system might not have applied some changes.
-- **Canceled**: The recovery was canceled before completion.
+| Status | Description |
+|---|---|
+| **Loading data** | The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, this step might complete fast. |
+| **In progress** | The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.|
+| **Completed** | The recovery completed successfully, and the system applied all supported changes.|
+| **Completed with warnings** | The recovery completed, but some changes couldn't be applied. Review the failed changes to understand which objects weren't restored and why.|
+| **Failed** | The recovery couldn't be completed due to an error. The system might not have applied some changes.|
+| **Canceled** | The recovery was canceled before completion.|
 
 ## Review failed changes
 
-If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered.
+If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered. Click on **Completed with warnings** to view the details of the changes that were not recovered.
+<!-- screeshot placeholder --> 
 
-:::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png" alt-text="Screenshot of the Failed recovery changes page showing recovery job details including Recovery job ID, Status Completed, Backup timestamp, Recovery started and completed times, and a table listing the Adele Vance user object with a Restore recovery action, one changed attribute, and Error Code 400.":::
+Select **Changed attributes** or **Changed Links** of an object to view the details of the failure. 
+<!-- screeshot placeholder --> 
 
-Select a failed recovery entry to view the details of the failure, including the error code and the changed attributes.
-
-:::image type="content" source="media/review-recovery-history/recovery-warning-details.png" alt-text="Screenshot of the View failed changed attributes flyout for a user object showing Error code 400 with conflict details, and a table comparing the current value and backup value of the deletedDateTime attribute.":::
+**Value at recovery attempt** shows the attribute value at the time the recovery was attempted. **Backup value** shows the value the recovery service attempted to restore.
+<!-- screeshot placeholder --> 
 
 Use failed recovery entries to:
+Identify which recovery operation and object didn't complete successfully.
+Confirm the backup point that was used.
+View failure details that explain why the recovery didn't succeed.
 
-- Identify which recovery operation and object didn't complete successfully.
-- Confirm the backup point that was used.
-- View failure details that explain why the recovery didn't succeed.
-
-:::image type="content" source="media/review-recovery-history/failed-recovery-entry.png" alt-text="Screenshot of the Recovery History page with the Filtered By flyout open, showing the Difference Report ID and a filtered Object ID of type User.":::
-
-Select a recovery entry to view the details, including the associated difference report and recovery status.
-
-:::image type="content" source="media/review-recovery-history/failed-recovery-details.png" alt-text="Screenshot of the Recovery History page showing a recovery operation with Completed with Warnings status indicated by a warning triangle icon, alongside other completed recovery operations.":::
 
 > [!NOTE]
-> Failed recovery records remain available within the recovery history as long as the backup is available.
+> Failed recovery records remain available for 5 days after the recovery completion date.
