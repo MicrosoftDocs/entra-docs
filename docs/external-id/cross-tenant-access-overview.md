@@ -109,11 +109,11 @@ You can now prevent your B2B guest users from using Microsoft accounts to redeem
 
 You must always have at least one fallback identity provider active. So, if you decide to disable Microsoft accounts, you need to enable the email one-time passcode option. Existing guest users who already sign in with Microsoft accounts continue to do so for future sign-ins. To apply the new settings to them, you need to [reset their redemption status](reset-redemption-status.md).
 
-### Cross-tenant synchronization setting
+### Cross-tenant synchronization settings
 
 [!INCLUDE [cross-tenant-synchronization-include](~/includes/cross-tenant-synchronization-include.md)]
 
-To configure this setting using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md).
+To configure these settings using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md).
 
 ## Tenant restrictions
 

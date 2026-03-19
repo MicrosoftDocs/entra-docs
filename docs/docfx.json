@@ -303,6 +303,8 @@
         "id-governance/*.yml": "Microsoft Entra ID Governance",
         "id-governance/privileged-identity-management/*.md": "Microsoft Entra ID Governance",
         "id-governance/privileged-identity-management/*.yml": "Microsoft Entra ID Governance",
+        "id-governance/tenant-governance/*.md": "Microsoft Entra ID Governance",
+        "id-governance/tenant-governance/*.yml": "Microsoft Entra ID Governance",
         "id-protection/*.md": "Microsoft Entra ID Protection",
         "id-protection/*.yml": "Microsoft Entra ID Protection",
         "identity/**/*.md": "Microsoft Entra ID",
