@@ -65,6 +65,62 @@ You can work with your security key vendor to determine the AAGUID of the passke
 > [!NOTE]
 > If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.
 
+## Provision FIDO2 security keys using Microsoft Graph API (preview)
+
+Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
+
+- The ability to request WebAuthn **creation Options** from Microsoft Entra ID
+- The ability to register the provisioned security key directly with Microsoft Entra ID
+
+With these new APIs, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys on behalf of a user. To simplify this process, three main steps are required. 
+
+1. **Request** creationOptions for a user: Microsoft Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
+2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert the security key and set a PIN.
+3. **Register** the provisioned credential with Microsoft Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+
+:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
+
+## Enable passkeys (FIDO2) using Microsoft Graph API
+
+In addition to using the Microsoft Entra admin center, you can also enable passkeys (FIDO2) by using the Microsoft Graph API. To enable passkeys (FIDO2), you need to update the Authentication methods policy as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
+
+To configure the policy using Graph Explorer:
+
+1. Sign in to [Graph Explorer](https://aka.ms/ge) and consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions.
+
+1. Retrieve the Authentication methods policy: 
+
+   ```json
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   ```
+
+1. To disable attestation enforcement and enforce key restrictions to only allow the AAGUID for RSA DS100 for example, perform a PATCH operation using the following request body:
+
+   ```json
+   PATCH https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   
+   Request Body:
+   {
+       "@odata.type": "#microsoft.graph.fido2AuthenticationMethodConfiguration",
+       "isAttestationEnforced": false,
+       "keyRestrictions": {
+           "isEnforced": true,
+           "enforcementType": "allow",
+           "aaGuids": [
+               "7e3f3d30-3557-4442-bdae-139312178b39",
+   
+               <insert previous AAGUIDs here to keep them stored in policy>
+           ]
+       }
+   }
+   ```
+
+1. Make sure that the passkey (FIDO2) policy is updated properly.
+
+   ```json
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   ```
+
 ## Delete a passkey (FIDO2)
 
 To remove a passkey (FIDO2) associated with a user account, delete it from the user's authentication method.
