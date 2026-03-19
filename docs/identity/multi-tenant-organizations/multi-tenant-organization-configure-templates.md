@@ -1,6 +1,6 @@
 ---
 title: Configure multitenant organization policy templates using Microsoft Graph API
-description: Learn how to configure multitenant organization policy templates in Microsoft Entra ID using the Microsoft Graph API.
+description: "Configure cross-tenant access and identity synchronization policy templates for multitenant organizations using the Microsoft Graph API. Covers automatic redemption, inbound sync, and template management."
 ms.topic: how-to
 ms.date: 03/18/2026
 ms.custom: it-pro
@@ -46,7 +46,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Disable the template for existing partners
+### Disable the partner configuration template for existing partners
 
 To apply this template only to new multitenant organization members and exclude existing partners, set the `templateApplicationLevel` parameter to new partners only.
 
@@ -69,7 +69,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Disable the template completely
+### Disable the partner configuration template completely
 
 To disable the template completely, set the `templateApplicationLevel` parameter to null.
 
@@ -92,7 +92,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Reset the template
+### Reset the partner configuration template
 
 To reset the template to its default state (decline all trust and automatic user consent), use the [multiTenantOrganizationPartnerConfigurationTemplate: resetToDefaultSettings](/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings) API.
 
@@ -121,7 +121,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Disable the template for existing partners
+### Disable the synchronization template for existing partners
 
 To apply this template only to new multitenant organization members and exclude existing partners, set the `templateApplicationLevel` parameter to new partners only.
 
@@ -138,7 +138,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Disable the template completely
+### Disable the synchronization template completely
 
 To disable the template completely, set the `templateApplicationLevel` parameter to null.
 
@@ -155,7 +155,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/template
 }
 ```
 
-### Reset the template
+### Reset the synchronization template
 
 To reset the template to its default state (decline inbound synchronization), use the [multiTenantOrganizationIdentitySyncPolicyTemplate: resetToDefaultSettings](/graph/api/multitenantorganizationidentitysyncpolicytemplate-resettodefaultsettings) API.
 

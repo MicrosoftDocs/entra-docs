@@ -1,6 +1,6 @@
 ---
 title: Publish Remote Desktop with Microsoft Entra application proxy
-description: Learn how to configure application proxy with Remote Desktop Services (RDS)
+description: "Publish Remote Desktop Services (RDS) deployments through Microsoft Entra application proxy for secure external access to remote desktops and RemoteApps."
 ms.topic: how-to
 ms.date: 03/11/2026
 ms.reviewer: KaTabish
