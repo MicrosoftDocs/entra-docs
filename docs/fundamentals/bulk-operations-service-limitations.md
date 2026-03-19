@@ -1,31 +1,29 @@
 ---
-title: Bulk operations
+title: Bulk operations service limitations
 description: Learn about Microsoft Entra bulk operations related to users, groups,
   and devices in the Microsoft Entra admin portal could time out and fail on large
   tenants.
-author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 03/05/2025
-ms.author: barclayn
+ms.date: 12/05/2025
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
-# Bulk operations
+# Bulk operations service limitations
 
 Bulk operations in Microsoft Entra ID enable you to perform actions on multiple entities, such as users, groups, and devices, at once. These actions can include creating, deleting, or updating multiple records in a single operation. Bulk operations can greatly streamline administrative tasks and improve efficiency.
 
-Bulk operations in the Microsoft Entra admin portal could time out and fail on large tenants. This limitation is a known issue due to scaling limitations. 
+Bulk operations in the Microsoft Entra admin portal could time out and fail on large tenants. This limitation is a known issue due to scaling limitations.
+
+> [!TIP]
+> A new bulk operations experience is now available in preview that provides enhanced performance and removes scaling limitations for large tenants. For more information, see [Bulk operations in Microsoft Entra ID (Preview)](bulk-operations.md).
 
 > [!NOTE]
-> When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation doesn't complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
+> When performing bulk operations, such as import or create, you might encounter a problem if the bulk operation doesn't complete within the hour. To work around this issue, split the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, you're essentially limiting the data returned by the bulk operation. 
 
 ## Bulk operations workaround
 
-A workaround for this issue is to use PowerShell to make direct Microsoft Graph API calls. For bulk download users and groups failure, we recommend using the PowerShell cmdlets `GET-MgGroup -All` and `GET-MgUser -All`.
+A workaround for this issue is to use PowerShell to make direct Microsoft Graph API calls. For bulk user and group download failures, we recommend using the PowerShell cmdlets `GET-MgGroup -All` and `GET-MgUser -All`.
 
 The following PowerShell code examples are for bulk operations related to:
 - [Users](#users)
@@ -33,6 +31,8 @@ The following PowerShell code examples are for bulk operations related to:
 - [Devices](#devices)
 
 ## Users
+
+The following sections describe limitations for user bulk operations.
 
 ### Download all users 
 
@@ -77,7 +77,7 @@ Write-Host "User data exported to $outputCsvPath"
 
 ### Create users 
 
-```azurepowershell 
+```azurepowershell
 # Import the Microsoft Graph module 
 Import-Module Microsoft.Graph 
 
@@ -116,7 +116,7 @@ Write-Host "Bulk user creation completed."
 ```
 
 > [!NOTE] 
-> Make sure your CSV file contains the necessary columns (for example; `DisplayName`, `UserPrincipalName`, and so on). Also, adjust the script to match the actual column names in your CSV file. 
+> Make sure your CSV file contains the necessary columns (for example, `DisplayName`, `UserPrincipalName`). Also, adjust the script to match the actual column names in your CSV file. 
 
 
 ### Delete users 
@@ -154,6 +154,8 @@ Write-Host "Bulk user deletion completed."
 > Make sure your CSV file contains the necessary columns (for example, `UserPrincipalName`). Also, adjust the script to match the actual column names in your CSV file. 
 
 ## Groups
+
+The following sections describe limitations for group bulk operations.
 
 ### Bulk download all groups 
 
@@ -257,7 +259,7 @@ Disconnect-MgGraph
  
 ### Remove members in bulk 
 
-```azurepowershell 
+```azurepowershell
 Import-Module Microsoft.Graph.Groups 
 
  # Authenticate to Microsoft Graph (you may need to provide your credentials) 
@@ -269,7 +271,7 @@ $members = Import-Csv -Path "C:\path\to\your\file.csv"
 # Define the Group ID 
 $groupId = "your-group-id" 
 
-# Iterate over each member and add them to the group 
+# Iterate over each member and remove them from the group
 foreach ($member in $members) { 
     try{ 
         Remove-MgGroupMemberByRef -GroupId $groupId -DirectoryObjectId $member.memberObjectId \
@@ -285,6 +287,8 @@ Disconnect-MgGraph
 ```
 
 ## Devices 
+
+The following sections describe limitations for device bulk operations.
 
 ### Bulk download all devices 
 

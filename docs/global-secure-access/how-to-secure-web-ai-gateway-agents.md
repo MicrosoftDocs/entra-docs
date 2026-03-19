@@ -3,10 +3,8 @@ title: "Configure Secure Web and AI Gateway for Microsoft Copilot Studio agents"
 description: "Learn how to configure Secure Web and AI Gateway for Microsoft Copilot Studio agents using Global Secure Access."
 author: garrodonnell
 ms.author: godonnell
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/03/2025
-manager: dougeby
 ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to configure network security controls for Microsoft Copilot Studio agents so that I can apply security policies and monitor agent traffic.
 ---
@@ -38,7 +36,7 @@ To enable network controls for Copilot Studio agents, you must first enable traf
 
 
 > [!NOTE]
-> After enabling GSA for Agents in a given environment or environment group, you need to create or update any existing custom connectors for them to route traffic through Global Secure Access.
+> After enabling Global Secure Access for Agents in the environment or environment group, any existing Copilot Studio custom connector must be edited and saved to ensure its traffic is routed through Global Secure Access. Custom connectors created afterward automatically use this configuration.
 
 ## Create security policies for Copilot Studio agents
 
@@ -82,10 +80,13 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 
 - The enforcement feature supports only the baseline profile. Network security policies apply per tenant.
 - Global Secure Access partner ecosystem integrations, such as third-party Data Loss Prevention (DLP), aren't supported.
-- Copilot Studio Bing search network transactions aren't supported.
-- Only specific Copilot Studio connectors are supported with network security controls. Refer to the Copilot Studio documentation for the list of supported connectors.
+- Copilot Studio Bing search network transactions (including knowledge from _public websites_ and _Wikipedia_) aren't supported.
+- Network requests to Dataverse and Azure SQL knowledge sources aren't supported. 
+- Network requests to the following custom tools aren't supported: prompt, agent flow, Computer Use, and child agents.
+- Network requests to Large Language Model (LLM), either for orchestration or results enhancement, aren't supported.
+- Only specific Copilot Studio connectors are supported with network security controls. Refer to the [Copilot Studio documentation](/power-platform/admin/security/secure-web-ai-gateway-agents) for the list of supported connectors.
 - Currently the Agent Name returned in the Global Secure Access traffic logs is the agent's unique *schema name*.
-- Currently the block experience for Copilot Studio agents blocked by GSA shows a *502 Bad Gateway* for HTTP Actions or a *403 Forbidden* for connectors. This is a known issue, and improvements are coming soon.
+
 
 ## Next steps
 

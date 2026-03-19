@@ -1,14 +1,9 @@
 ---
 title: View update and sign-in activities for Managed identities
 description: Step-by-step instructions for viewing the activities made to managed identities, and authentications carried out by managed identities
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/05/2024
-ms.author: shermanouko
 ms.custom: sfi-image-nochange
 ---
 

@@ -2,14 +2,10 @@
 title: Road to the cloud - Introduction to moving identity and access management from AD to Microsoft Entra ID
 description: Learn how to plan a migration of IAM from Active Directory to Microsoft Entra ID.
 documentationCenter: ''
-author: janicericketts
-manager: martinco
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/27/2023
-ms.author: jricketts
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Road to the cloud: Introduction
 

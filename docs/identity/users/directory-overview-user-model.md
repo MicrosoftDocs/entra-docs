@@ -2,14 +2,9 @@
 title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
 keywords: 
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.date: 01/31/2025
 ms.topic: overview
-ms.service: entra-id
-ms.subservice: users
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
@@ -26,7 +21,7 @@ This article introduces an administrator for Microsoft Entra ID, part of Microso
 
 You can use groups in Microsoft Entra ID to assign licenses, or deployed enterprise apps, to large numbers of users. You can also use groups to assign all administrator roles except for Microsoft Entra Global Administrator, or you can grant access to external resources, such as SaaS applications or SharePoint sites.
 
-You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and they reduce dynamic membership group management work. 
+You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and reduce dynamic membership group management work.
 
 > [!NOTE]
 > You need a Microsoft Entra ID P1 license for each unique user that is a member of one or more dynamic membership groups.
@@ -49,7 +44,7 @@ Many large organizations want options for their users to obtain sufficient permi
  **Cloud Application Administrator** | Can add and manage enterprise applications and enterprise app registrations. This role has all of the permissions of the Application Administrator, except it can't manage application proxy settings.
 **Application Developer** | Can add and update application registrations, but can't manage enterprise applications or configure an application proxy.
 
-New Microsoft Entra administrator roles are being added. Check the Azure portal or the [administrator role permission reference](~/identity/role-based-access-control/permissions-reference.md) for current available roles.
+New Microsoft Entra administrator roles continue to be added. Check the Azure portal or the [administrator role permission reference](~/identity/role-based-access-control/permissions-reference.md) for currently available roles.
 
 ## Assign app access
 

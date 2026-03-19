@@ -3,7 +3,6 @@ title: What is the Microsoft Entra Agent Registry?
 description: Learn about the Agent Registry, a centralized metadata repository that enables agent discovery, and secure communication in enterprise environments.
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera
 ms.service: entra
 ms.topic: concept-article
 ms.date: 11/07/2025

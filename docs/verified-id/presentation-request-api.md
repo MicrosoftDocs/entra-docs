@@ -1,14 +1,10 @@
 ---
 title: Specify the Request Service REST API verify request
 titleSuffix: Microsoft Entra Verified ID
-description: Learn how to start a presentation request in Verifiable Credentials
+description: Learn how to start a presentation request in Verifiable Credentials.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
 ---
@@ -29,12 +25,12 @@ The Request Service REST API presentation request supports the following HTTP me
 
 The Request Service REST API presentation request requires the following HTTP headers:
 
-| Method |Value  |
+| Name |Value  |
 |---------|---------|
 |`Authorization`| Attach the access token as a bearer token to the authorization header in an HTTP request. For example, `Authorization: Bearer <token>`.|
-|`Content-Type`| `Application/json`|
+|`Content-Type`| `application/json`|
 
-Construct an HTTP POST request to the Request Service REST API. The `tenantId` isn't needed in the URL anymore since it is present as a claim in the `access_token`.
+Construct an HTTP POST request to the Request Service REST API. The `tenantId` isn't needed in the URL anymore since it's present as a claim in the `access_token`.
 
 ```http
 https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest
@@ -86,7 +82,7 @@ The presentation request payload contains information about your verifiable cred
   "requestedCredentials": [
     {
       "type": "VerifiedCredentialExpert",
-      "purpose": "So we can see that you a veritable credentials expert",
+      "purpose": "So we can see that you are a veritable credentials expert",
       "acceptedIssuers": [
         "did:web:verifiedid.contoso.com"
       ],
@@ -106,8 +102,8 @@ The payload contains the following properties.
 |Parameter |Type  | Description |
 |---------|---------|---------|
 | `includeQRCode` |  Boolean | Optional. Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this presentation request. Possible values are `true` or `false` (default). When you set the value to `false`, use the return `url` property to render a deep link.  |
-| `includeReceipt` |  Boolean | Optional. Determines whether a receipt should be included in the response of this request. Possible values are `true` or `false` (default). The receipt contains the original payload sent from the authenticator to the Verifiable Credentials service. The receipt is useful for troubleshooting or if you have the need to ge the full details of the payload. There's otherwise no need be set this value to `true `by default. In the `OpenId Connect SIOP` request, the receipt contains the ID token from the original request. |
-| `authority` | string|  Your decentralized identifier (DID) of your verifier Microsoft Entra tenant. For more information, see [Gather tenant details to set up your sample application](verifiable-credentials-configure-verifier.md#gather-tenant-details-to-set-up-your-sample-application).|
+| `includeReceipt` |  Boolean | Optional. Determines whether a receipt should be included in the response of this request. Possible values are `true` or `false` (default). The receipt contains the original payload sent from the authenticator to the Verifiable Credentials service. The receipt is useful for troubleshooting or if you have the need to get the full details of the payload. There's otherwise no need to set this value to `true` by default. In the `OpenId Connect SIOP` request, the receipt contains the ID token from the original request. |
+| `authority` | string|  The decentralized identifier (DID) of your verifier Microsoft Entra tenant. For more information, see [Gather tenant details to set up your sample application](verifiable-credentials-configure-verifier.md#gather-tenant-details-to-set-up-your-sample-application).|
 | `registration` | [RequestRegistration](#requestregistration-type)|  Provides information about the verifier. |
 |`callback`|  [Callback](#callback-type)| Mandatory. Allows the developer to update the UI during the verifiable credential presentation process. When the user completes the process, continue the process after the results are returned to the application.|
 | `requestedCredentials` | collection| A collection of [RequestCredential](#requestcredential-type) objects.|
@@ -115,7 +111,7 @@ The payload contains the following properties.
 
 ### RequestRegistration type
 
-The `RequestRegistration` type provides information registration for the issuer. The `RequestRegistration` type contains the following properties:
+The `RequestRegistration` type provides registration information for the issuer. The `RequestRegistration` type contains the following properties:
 
 |Property |Type |Description |
 |---------|---------|---------|
@@ -134,7 +130,7 @@ The Request Service REST API generates several events to the callback endpoint. 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service throws a callback URL unreadable error. Accepted inputs IPv4, IPv6, or DNS resolvable hostname. To harden your network, see [FAQ](verifiable-credentials-faq.md#network-hardening-for-callback-events). |
+| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet, otherwise the service throws a callback URL unreadable error. Accepted inputs include IPv4, IPv6, or DNS resolvable hostnames. To harden your network, see [FAQ](verifiable-credentials-faq.md#network-hardening-for-callback-events). |
 | `state` | string| Correlates the callback event with the state passed in the original payload. |
 | `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header throws an invalid callback header error.|
 
@@ -157,7 +153,7 @@ The `Configuration.Validation` provides information about how the presented cred
 |Property |Type |Description |
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
-| `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains are accepted. |
+| `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain is validated and only verified domains are accepted. |
 | `faceCheck` |  [faceCheck](#facecheck-type) | Optional. Allows requesting a liveness check during presentation. |
 
 ### Constraints type
@@ -171,14 +167,14 @@ The `constraints` type contains a collection of claims constraints that must be 
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
 
-### faceCheck type
+### `faceCheck` type
 
 The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation succeeds if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold isn't met, the entire presentation fails.
 
 |Property |Type |Description |
 |---------|---------|---------|
 | `sourcePhotoClaimName` |  string | Mandatory. The name of the claim in the credential that contains the photo. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
-| `matchConfidenceThreshold` |  integer | Optional. The confidential threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
+| `matchConfidenceThreshold` |  integer | Optional. The confidence threshold for a successful check between the photo and the liveness data. Must be an integer between 50 and 100. The default is 70. |
 
 ## Successful response
 
@@ -206,11 +202,11 @@ When your app receives the response, the app needs to present the QR code to the
 
 ## Error response
 
-If there's an error with the request, an [error responses](error-codes.md) is returned. The app needs to handle the error appropriately.
+If there's an error with the request, an [error response](error-codes.md) is returned. The app needs to handle the error appropriately.
 
 ## Callback events
 
-The callback endpoint is called when a user scans the QR code, uses the deep link the authenticator app, or finishes the presentation process.
+The callback endpoint is called when a user scans the QR code, uses the deep link to the authenticator app, or finishes the presentation process.
 
 |Property |Type |Description |
 |---------|---------|---------|
@@ -218,8 +214,8 @@ The callback endpoint is called when a user scans the QR code, uses the deep lin
 | `requestStatus` |string |The status returned when the authenticator app retrieved the request. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li><li>`presentation_error`: There was an error in the presentation.</li></ul>    |
 | `state` |string| Returns the state value that you passed in the original payload.   |
 | `subject`|string | The verifiable credential user DID.|
-| `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential types.</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
-| `receipt`| string | Optional. The receipt contains the original payload sent from the wallet to the Verifiable Credentials service. The receipt should be used for troubleshooting/debugging only. The format in the receipt isn't fix and can change based on the wallet and version used.|
+| `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: <ul><li>The verifiable credential types.</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
+| `receipt`| string | Optional. The receipt contains the original payload sent from the wallet to the Verifiable Credentials service. The receipt should be used for troubleshooting/debugging only. The format in the receipt isn't fixed and can change based on the wallet and version used.|
 
 The following example demonstrates a callback payload when the authenticator app starts the presentation request:
 

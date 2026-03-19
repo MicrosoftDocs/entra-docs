@@ -1,14 +1,8 @@
 ---
 title: Set up self-service group management
 description: Create and manage security groups or Microsoft 365 groups in Microsoft Entra ID and request security group or Microsoft 365 group memberships.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 02/12/2025
-ms.author: barclayn
 ms.reviewer: MohitBhargava
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -63,10 +57,10 @@ When someone wants access, they request it from the [My Groups portal](https://m
     > [!NOTE]
     > This setting only restricts access of group information in **My Groups**. It doesn't restrict access to group information via other methods like Microsoft Graph API calls or the Microsoft Entra admin center.
 
-   :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/groups-settings-general.png":::
+    :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/groups-settings-general.png":::
 
-   > [!NOTE]
-   > Changes regarding the Self Service Group Management setting, are currently under review and won't take place as originally planned. A deprecation date will be announced in the future.
+    > [!NOTE]
+    > Changes regarding the Self Service Group Management setting are currently under review and won't take place as originally planned. A deprecation date will be announced in the future.
 
 1. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
 1. Set **Restrict user ability to access groups features in the Access Panel** to **No**.

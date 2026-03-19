@@ -2,7 +2,6 @@
 title: Include file
 description: Include file
 author: rolyon
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/23/2023

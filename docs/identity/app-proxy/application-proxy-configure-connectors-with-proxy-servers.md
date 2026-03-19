@@ -1,23 +1,18 @@
 ---
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
-description: Covers how to work with existing on-premises proxy servers with Microsoft Entra ID.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
+description: "Configure Microsoft Entra private network connectors with outbound proxy servers. Covers bypassing proxies, routing through proxies, and proxy placement between connectors and backend apps."
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
-ms.reviewer: ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Work with existing on-premises proxy servers
 
-Configure Microsoft Entra private network connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
+Configure Microsoft Entra private network connectors to use outbound proxy servers. This article assumes the network environment already has a proxy server.
 
-We start by looking at these main deployment scenarios:
+This article covers these main deployment scenarios:
 
 * Configure connectors to bypass your on-premises outbound proxies.
 * Configure connectors to use an outbound proxy to access Microsoft Entra application proxy.
@@ -69,7 +64,7 @@ As a result of having only outbound traffic, there's no need to configure inboun
 
 ### Step 1: Configure the connector and related services to go through the outbound proxy
 
-If WPAD is enabled in the environment and configured appropriately, the connector automatically discovers the outbound proxy server and attempt to use it. However, you can explicitly configure the connector to go through an outbound proxy.
+If WPAD is enabled in the environment and configured appropriately, the connector automatically discovers the outbound proxy server and attempts to use it. However, you can explicitly configure the connector to go through an outbound proxy.
 
 To do so, edit the `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config` file, and add the `system.net` section shown in code sample. Change `proxyserver:8080` to reflect your local proxy server name or IP address and port. The value must have the prefix `http://` even if you're using an IP address.
 
@@ -124,7 +119,7 @@ If you can't allow connectivity by Fully Qualified Domain Name (FQDN) and need t
 
 #### Proxy authentication
 
-Proxy authentication isn't currently supported. Our current recommendation is to allow the connector anonymous access to the Internet destinations.
+Proxy authentication isn't currently supported. The current recommendation is to allow the connector anonymous access to the Internet destinations.
 
 #### Proxy ports
 

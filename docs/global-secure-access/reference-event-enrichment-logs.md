@@ -1,12 +1,8 @@
 ---
 title: Event enrichment in Microsoft 365 enriched logs 
 description: Global Secure Access includes Microsoft Entra Private Access and Microsoft Entra Internet Access. This article references event enrichment in Microsoft 365 enriched logs.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
@@ -14,7 +10,7 @@ ai-usage: ai-assisted
 
 Event enrichment uses Microsoft 365 enriched logs to bring events across different workloads into sharper focus. The result is nuanced insights that are essential for improved security and improved efficiency. Events are carefully chosen and several factors are used to select them. These factors include priority ranking, relevance to security landscapes, and how useful these events are for Sentinel or Defender.
 
-In the future, our coverage of events is set to broaden, increasing the scope of the security narrative.
+In the future, event coverage is set to broaden, increasing the scope of the security narrative.
 
 ## SharePoint Online (preview)
 

@@ -1,14 +1,9 @@
 ---
-title: Troubleshoot Kerberos Constrained Delegation
+title: Troubleshoot Kerberos constrained delegation
 description: Learn how to troubleshoot a Kerberos constrained delegation (KCD) configuration in Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 05/01/2025
-ms.author: kenwith
-ms.reviewer: asteen, ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---

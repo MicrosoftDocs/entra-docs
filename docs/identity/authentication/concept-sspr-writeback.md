@@ -1,13 +1,8 @@
 ---
 title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/25/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: tilarso
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
@@ -49,7 +44,7 @@ To get started with SSPR writeback, complete either one or both of the following
 
 ## Microsoft Entra Connect and cloud sync side-by-side deployment
 
-You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync). 
 
 ## How password writeback works
 

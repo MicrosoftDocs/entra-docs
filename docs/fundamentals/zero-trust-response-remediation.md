@@ -2,8 +2,6 @@
 title: Security guidance | accelerate response and remediation
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to accelerate response and remediation.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/12/2025
 
@@ -20,7 +18,7 @@ This pillar emphasizes automated, risk-based responses that reduce manual interv
 
 ## Zero Trust security recommendations
 
-### Workload identities based on risk policies are configured
+### Workload Identities are configured with risk-based policies
 [!INCLUDE [21883](../includes/secure-recommendations/21883.md)]
 
 ### Restrict high risk sign-ins

@@ -1,13 +1,9 @@
 ---
 title: Lifecycle Workflows templates and categories
 description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: article
-ms.date: 06/25/2025
+ms.topic: concept-article
+ms.date: 03/12/2026
 ms.custom: template-concept
 ---
 
@@ -21,7 +17,7 @@ Lifecycle Workflows currently have 12 built-in templates you can use or customiz
 
 :::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
 
-The list of templates are as follows:
+The list of templates is as follows:
 
 - [Onboard pre-hire employee](lifecycle-workflow-templates.md#onboard-pre-hire-employee)
 - [Onboard new hire employee](lifecycle-workflow-templates.md#onboard-new-hire-employee)
@@ -83,7 +79,7 @@ The default specific parameters for the **Onboard new hire employee** template a
 
 ### Post-Onboarding of an employee
 
-The **Post-Onboarding of an employee** template is designed to configure tasks that will be completed after an employee's start, or creation, date.
+The **Post-Onboarding of an employee** template is designed to configure tasks that are completed after an employee's start, or creation, date.
 
 :::image type="content" source="media/lifecycle-workflow-templates/onboard-post-employee-template.png" alt-text="Screenshot of a Lifecycle Workflow post-onboard new hire template.":::
 
@@ -174,7 +170,7 @@ The default specific parameters for the **Offboard an employee** template are as
 
 ### Post-Offboarding of an employee
 
-The **Post-Offboarding of an employee** template is designed to configure tasks that will be completed after an employee's last day of work.
+The **Post-Offboarding of an employee** template is designed to configure tasks that are completed after an employee's last day of work.
 
 :::image type="content" source="media/lifecycle-workflow-templates/offboard-post-employee-template.png" alt-text="Screenshot of an offboarding an employee after last day template.":::
 
@@ -223,7 +219,7 @@ The default specific parameters for the **Employee job profile change** template
 |Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
-For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
+For a tutorial on setting up a workflow that uses the **Employee job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
 
 ### Pre-Offboard inactive users
 

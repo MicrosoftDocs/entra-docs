@@ -1,13 +1,8 @@
 ---
 title: Admin consent for LinkedIn account connections
 description: Explains how to enable or disable LinkedIn integration account connections in Microsoft apps in Microsoft Entra ID
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.author: barclayn
 ms.reviewer: beengen
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.collection: M365-identity-device-management
@@ -18,12 +13,12 @@ ms.collection: M365-identity-device-management
 You can allow users in your organization to access their LinkedIn connections within some Microsoft apps. No data is shared until users consent to connect their accounts. You can integrate your organization with Microsoft Entra ID, part of Microsoft Entra.
 
 > [!IMPORTANT]
-> The LinkedIn account connections setting is currently being rolled out to Microsoft Entra organizations. When it is rolled out to your organization, it is enabled by default.
+> The LinkedIn account connections setting is currently being rolled out to Microsoft Entra organizations. When it's rolled out to your organization, it's enabled by default.
 >
 > Exceptions:
 >
-> * The setting is not available for customers using Microsoft Cloud for US Government, Microsoft Cloud Germany, or Azure and Microsoft 365 operated by 21Vianet in China.
-> * The setting is off by default for Microsoft Entra organizations provisioned in Germany. Note that the setting is not available for customers using Microsoft Cloud Germany.
+> * The setting isn't available for customers using Microsoft Cloud for US Government, Microsoft Cloud Germany, or Azure and Microsoft 365 operated by 21Vianet in China.
+> * The setting is off by default for Microsoft Entra organizations provisioned in Germany. Note that the setting isn't available for customers using Microsoft Cloud Germany.
 > * The setting is off by default for organizations provisioned in France.
 >
 > Once LinkedIn account connections are enabled for your organization, the account connections work after users consent to apps accessing company data on their behalf. For information about the user consent setting, see [How to remove a user's access to an application](~/identity/enterprise-apps/methods-for-removing-user-access.md).
@@ -48,12 +43,12 @@ You can enable LinkedIn account connections for only the users you want to have 
 
 1. When you're done, select **Save** to save your settings.
 
-> [!Important]
-> While LinkedIn integration is not fully enabled until your users consent to connect their accounts, access to public LinkedIn profile information is available without requiring individual consent. Full integration (two-way consent and additional fields) is not enabled without each user's consent. Your users can see the available LinkedIn profile of anyone that matches the name searched, regardless of whether that match is in the same enabled group or not.
+> [!IMPORTANT]
+> While LinkedIn integration isn't fully enabled until your users consent to connect their accounts, access to public LinkedIn profile information is available without requiring individual consent. Full integration (two-way consent and additional fields) isn't enabled without each user's consent. Your users can see the available LinkedIn profile of anyone that matches the name searched, regardless of whether that match is in the same enabled group or not.
 
-### Assign selected users with a group
+### Assign selected users by using a group
 
-We replaced the 'Selected' option that specifies a list of users with the option to select a group of users so that you can enable the ability to connect LinkedIn and Microsoft accounts for a single group instead of many individual users. If you don't have LinkedIn account connections enabled for selected individual users, you don't need to do anything. If you have previously enabled LinkedIn account connections for selected individual users, you should:
+The 'Selected' option that specifies a list of users was replaced with the option to select a group of users so that you can enable the ability to connect LinkedIn and Microsoft accounts for a single group instead of many individual users. If you don't have LinkedIn account connections enabled for selected individual users, you don't need to do anything. If you have previously enabled LinkedIn account connections for selected individual users, you should:
 
 1. Get the current list of individual users.
 1. Move the currently enabled individual users to a group.
@@ -62,15 +57,15 @@ We replaced the 'Selected' option that specifies a list of users with the option
 > [!NOTE]
 > Even if you don't move your currently selected individual users to a group, they can still see LinkedIn information in Microsoft apps.
 
-### Move currently selected users to a group
+### Move selected users to a group
 
 1. Create a CSV file of the users who are selected for LinkedIn account connections.
-1. Sign into Microsoft 365 with your administrator account.
+1. Sign in to Microsoft 365 with your administrator account.
 1. Launch PowerShell.
 1. Install the Microsoft Graph PowerShell module by running `Install-Module Microsoft.Graph -Scope CurrentUser`.
 1. Run the following script:
 
-   ``` PowerShell
+    ``` PowerShell
    $groupId = "GUID of the target group"
   
    $users = Get-Content
@@ -81,8 +76,8 @@ We replaced the 'Selected' option that specifies a list of users with the option
       New-MgGroupMember -GroupId "$groupId" -DirectoryObjectId "$user" ;
       Write-Host $i Added $user ; $i++ ;
       Start-Sleep -Milliseconds 10
-   }
-   ```
+    }
+    ```
 
 To use the group from step two as the selected group in the LinkedIn account connections setting in the Azure portal, see [Enable LinkedIn account connections in the Azure portal](#enable-linkedin-account-connections-in-the-azure-portal).
 
@@ -94,10 +89,10 @@ To use the group from step two as the selected group in the LinkedIn account con
 1. Create a Group Policy Object with the following setting: **User Configuration** > **Administrative Templates** > **Microsoft Office 2016** > **Miscellaneous** > **Show LinkedIn features in Office applications**.
 1. Select **Enabled** or **Disabled**.
   
-   State | Effect
-   ------ | ------
-   **Enabled** | The **Show LinkedIn features in Office applications** setting in Office 2016 Options is enabled. Users in your organization can use LinkedIn features in their Office 2016 applications.
-   **Disabled** | The **Show LinkedIn features in Office applications** setting in Office 2016 Options is disabled and end users can't change this setting. Users in your organization can't use LinkedIn features in their Office 2016 applications.
+    State | Effect
+    ------ | ------
+    **Enabled** | The **Show LinkedIn features in Office applications** setting in Office 2016 Options is enabled. Users in your organization can use LinkedIn features in their Office 2016 applications.
+    **Disabled** | The **Show LinkedIn features in Office applications** setting in Office 2016 Options is disabled and end users can't change this setting. Users in your organization can't use LinkedIn features in their Office 2016 applications.
 
 This group policy affects only Office 2016 apps for a local computer. If users disable LinkedIn in their Office 2016 apps, they can still see LinkedIn features in Microsoft 365.
 

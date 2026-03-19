@@ -1,13 +1,9 @@
 ---
 title: Create an access review of an access package in entitlement management
 description: Learn how to set up an access review in a policy for entitlement management access packages in Microsoft Entra ID part of Microsoft Entra.
-author: owinfreyatl
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
@@ -29,7 +25,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
-1. To create a new access policy, select **New access** package.
+1. To create a new access package, select **New access package**.
 
 1. To edit an existing access policy, in the left menu, select **Access packages** and open the access package you want to edit. Then, in the left menu, select **Policies**, and select the policy that has the lifecycle settings you want to edit.
 
@@ -47,11 +43,11 @@ You can enable access reviews when [creating a new access package](entitlement-m
     
     ![Access package - Lifecycle Expiration settings](./media/entitlement-management-access-reviews/expiration.png)
 
-1. Select Show advanced expiration settings to show other settings.
+1. Select **Show advanced expiration settings** to show other settings.
 
-1. To allow user to extend their assignments, set **Allow users to extend access** to **Yes**.
+1. To allow users to extend their assignments, set **Allow users to extend access** to **Yes**.
 
-    If extensions are allowed in the policy, the user receives an email 14 days and also one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
+    If extensions are allowed in the policy, the user receives an email 14 days and one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
 
     If a user's access is extended, they won't be able to request the access package after the specified extension date (date set in the time zone of the user who created the policy).
 
@@ -128,7 +124,7 @@ After the start date, an access review will be listed in the **Access reviews** 
 ## Access reviews email notifications
 You can designate reviewers, or users can review their access themselves. By default, Microsoft Entra ID will send an email to reviewers or self-reviewers shortly after the review starts.
 
-The email includes instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
+The email includes instructions on how to review access to access packages. If the review is for users to review their own access, show them the instructions on how to perform a self-review of their access packages.
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
 

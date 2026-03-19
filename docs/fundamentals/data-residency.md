@@ -3,8 +3,6 @@ title: Microsoft Entra ID and data residency
 description: Use residency data to manage access, achieve mobility scenarios, and secure your organization.
 author: janicericketts
 manager: martinco
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 11/06/2025
 ms.author: jricketts

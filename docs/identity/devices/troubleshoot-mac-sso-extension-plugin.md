@@ -1,10 +1,8 @@
 ---
 title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 07/05/2023
+ms.date: 02/23/2026
 ms.author: miepping
 author: ryschwa-msft
 manager: 
@@ -160,7 +158,7 @@ Look for events stating that there are Associated Domain failures, especially re
 
 ##### Validate TLS Inspection Configuration
 
-Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/programs/appleseed-for-it/resources). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
+Apple provides a macOS tool for checking a number of common configuration issues called the Mac Evaluation Utility. This tool can be downloaded from [AppleSeed for IT](https://beta.apple.com/for-it/). If you have access to AppleSeed for IT then download the Mac Evaluation Utility from the Resources area. After installing the application, run an evaluation. Once the evaluation is complete, navigate to **HTTPS Interception** --> **Additional Content** --> and check the two items below:
 
 :::image type="content" source="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png" alt-text="Screenshot showing the Mac Evaluation Utility." lightbox="media/troubleshoot-mac-sso-extension-plugin/mac-evaluation-utility.png":::
 
