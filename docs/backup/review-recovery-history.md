@@ -55,7 +55,7 @@ Recovery operations move through these statuses as the system applies changes to
 
 | Status | Description |
 |---|---|
-| **Loading data** | The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, this step might complete fast. |
+| **Loading data** | The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, this step might finish quickly. |
 | **In progress** | The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.|
 | **Completed** | The recovery completed successfully, and the system applied all supported changes.|
 | **Completed with warnings** | The recovery completed, but some changes couldn't be applied. Review the failed changes to understand which objects weren't restored and why.|
