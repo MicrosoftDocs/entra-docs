@@ -230,6 +230,8 @@
         "identity/app-proxy/**/*.yml": "app-proxy",
         "identity/authentication/**/*.md": "authentication",
         "identity/authentication/**/*.yml": "authentication",
+        "identity/conditional-access/**/*.md": "conditional-access",
+        "identity/conditional-access/**/*.yml": "conditional-access",
         "identity/devices/**/*.md": "devices",
         "identity/devices/**/*.yml": "devices",
         "identity/domain-services/**/*.md": "domain-services",
