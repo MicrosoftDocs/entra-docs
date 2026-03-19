@@ -61,7 +61,7 @@ By using Cloud application analytics, you can:
 :::image type="content" source="media/overview-application-usage-analytics/application-discovery-cloud.png" alt-text="Screenshot of a list of discovered cloud applications accessed by users.":::
 
 - Use the **Generative AI apps only** toggle to identify the generative AI applications that users access, for both internet and Microsoft 365 traffic.   
-:::image type="content" source="media/overview-application-usage-analytics/application-discovery-generative-ai.png" alt-text="Screenshot of a list of discovered generative AI applications accessed by users.":::
+:::image type="content" source="media/overview-application-usage-analytics/application-discovery-generative-ai.png" alt-text="Screenshot of a list of discovered generative AI applications accessed by users." lightbox="media/overview-application-usage-analytics/application-discovery-generative-ai.png":::
 
 The links on each cloud application row open to reveal specific details about that application.
 
