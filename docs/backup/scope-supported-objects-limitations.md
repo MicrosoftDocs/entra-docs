@@ -169,20 +169,24 @@ Recovery for **service principal** objects supports these properties:
 
 For reference, view the full set of service principal properties in the [Microsoft Graph servicePrincipal resource type](/graph/api/resources/serviceprincipal#properties).
 
+Service principal recovery is the anchor for related permissions. When a service principal is recovered, Microsoft Entra Backup and Recovery also restores:
+- OAuth2 permission grants where the recovered service principal is the target object
+- App role assignments where the recovered service principal is the target object
+
 ### OAuth2 (delegated) permission grant
 
 OAuth2 permission grant represents the delegated permissions granted to an application's service principal. An administrator can create delegated permission grants when a user consents to an application's request to access an API, or an administrator can grant them on behalf of all users. Permission grants that an admin creates on behalf of all users are in scope. You can identify these permission grants by `consentType` = `AllPrincipals` and `principalId` = `null`.
 
 Permission grants created as a result of user consent aren't supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
-In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to the target service principals.
+OAuth2 permission grants aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
 
 ### App role assignment
 
 An app role assignment records when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
-In the Microsoft Entra admin center, service principals, OAuth2 permission grants, and app role assignments are grouped as one filter to show all the changes to the target service principals.
+App role assigments aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
 ## Organization
 
@@ -234,7 +238,7 @@ Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation 
 
 ### Objects managed in on-premises Active Directory Domain Services
 
-Any changes made to on-premises synced objects appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from on-premises. For certain object types, such as users and groups, you can move the source of authority from on-premises to the cloud. After conversion, all Backup and Recovery functionality is available for those objects. Back up and recover objects managed on-premises by using an alternative solution.
+Any changes made to on-premises synced objects (except group memberships) appear in difference reports, but are automatically excluded from recovery. Organizations that use hybrid identity with Microsoft Entra ID can use difference reports to identify changes to objects synchronized from on-premises. For certain object types, such as users and groups, you can move the source of authority from on-premises to the cloud. After conversion, all Backup and Recovery functionality is available for those objects. Back up and recover objects managed on-premises by using an alternative solution.
 
 If a user or group is converted to cloud-managed after the backup was taken, recovering from that backup doesn't revert the source of authority to on-premises Active Directory. Other supported changed attributes are recovered.
 
