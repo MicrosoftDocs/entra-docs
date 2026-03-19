@@ -3,7 +3,7 @@ title: Configure Harness for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Harness.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/11/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
@@ -104,13 +104,13 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 
 	![The Harness link in the applications list](common/all-applications.png)
 
-1. Select **Provisioning**.
+1. Select the **Provisioning** tab.
 
-	![The Provisioning button](common/provisioning.png)
+	![Provisioning tab](common/provisioning.png)
 
-1. In the **Provisioning Mode** drop-down list, select **Automatic**.
+1. Set **+ New configuration**.
 
-	![The "Provisioning Mode" drop-down list](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. Under **Admin Credentials**, do the following:
 
@@ -122,41 +122,37 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
     
    * Select **Test Connection** to ensure that Microsoft Entra ID can connect to Harness. If the connection fails, ensure that your Harness account has *Admin* permissions, and then try again.
 
-1. In the **Notification Email** box, enter the email address of a person or group that should receive the provisioning error notifications, and then select the **Send an email notification when a failure occurs** check box.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![The "Notification Email" box](common/provisioning-notification-email.png)
+1. Select **Create** to create your configuration.	
 
-1. Select **Save**.
+1. Select **Properties** in the **Overview** page. 
 
-1. Under **Mappings**, select **Synchronize Microsoft Entra users to Harness**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* are used to match the user accounts in Harness for update operations. Select **Save** to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Harness in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Harness for update operations. Select the **Save** button to commit any changes.
 
 	![Harness user "Attribute Mappings" pane](media/harness-provisioning-tutorial/userattributes.png)
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Harness**.
 
-1. Under **Attribute Mappings**, review the group attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* properties are used to match the groups in Harness for update operations. Select **Save** to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Harness in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Harness for update operations. Select the **Save** button to commit any changes.
 
 	![Harness group "Attribute Mappings" pane](media/harness-provisioning-tutorial/groupattributes.png)
 
-1. To configure scoping filters, see [Attribute-based application provisioning with scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Under **Settings**, to enable the Microsoft Entra provisioning service for Harness, toggle the **Provisioning Status** switch to **On**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status switch toggled to "On"](common/provisioning-toggle-on.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-1. Under **Settings**, in the **Scope** drop-down list, select how you want to sync the users or groups that you're provisioning to Harness.
+## Monitor your deployment
 
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![The provisioning Save button](common/provisioning-configuration-save.png)
-
-This operation starts the initial sync of the users or groups you're provisioning. The initial sync takes longer to perform than later ones. Syncs occur approximately every 40 minutes, as long as the Microsoft Entra provisioning service is running. To monitor progress, go to the **Synchronization Details** section. You can also follow links to a provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Harness.
-
-For more information about how to read the Microsoft Entra provisioning logs, see [Report on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

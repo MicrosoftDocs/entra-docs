@@ -15,6 +15,9 @@ Microsoft Entra Cloud Sync is a hybrid identity synchronization service that pro
 
 Cloud Sync solves common challenges organizations face with hybrid identity infrastructure by eliminating single points of failure, reducing on-premises management overhead, and enabling complex multi-forest scenarios that support organizational growth and change.
 
+> [!NOTE]
+> Cloud sync can be used for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR for on-prem identities is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud.
+
 ## Core architecture and components
 
 Cloud sync is built on a modern, cloud-first architecture with two key components:

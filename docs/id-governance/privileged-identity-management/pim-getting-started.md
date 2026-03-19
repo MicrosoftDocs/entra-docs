@@ -19,8 +19,8 @@ To use Privileged Identity Management, you must have a Microsoft Entra ID P2 or 
 ## Activation of role assignments 
  
 When a Microsoft Entra tenant has a Microsoft Entra ID P2 or Microsoft Entra ID Governance license, users with active role assignments can do the following:
-- Open the **Roles and administrators** page in Microsoft Entra ID and select a role;
-- Open the **Privileged Identity Management** page;
+- Open the **Roles and administrators** page in Microsoft Entra ID and select a role.
+- Open the **Privileged Identity Management** page.
 - Make calls to PIM using the [Microsoft Entra roles API](/graph/identity-network-access-overview/).
 
  Microsoft Entra enables PIM for the tenant in the following ways:
@@ -34,7 +34,7 @@ These behaviors are expected and shouldn't affect your workflows.
 
 ## Prepare PIM for Microsoft Entra roles
 
-Here are the tasks we recommend for you to prepare Privileged Identity Management to manage Microsoft Entra roles:
+Here are the recommended tasks to prepare Privileged Identity Management to manage Microsoft Entra roles:
 
 1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md)
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md)
@@ -42,7 +42,7 @@ Here are the tasks we recommend for you to prepare Privileged Identity Managemen
 
 ## Prepare PIM for Azure roles
 
-Here are the tasks we recommend for you to prepare Privileged Identity Management to manage Azure roles for a subscription:
+Here are the recommended tasks to prepare Privileged Identity Management to manage Azure roles for a subscription:
 
 1. [Discover Azure resources](pim-resource-roles-discover-resources.md)
 1. [Configure Azure role settings](pim-resource-roles-configure-role-settings.md)
@@ -60,10 +60,10 @@ Once Privileged Identity Management is set up, you can learn your way around.
 | **My roles**  | Displays a list of eligible and active roles assigned to you. **My roles** is where you can activate any assigned eligible roles. |
 | **My requests** | Displays your pending requests to activate eligible role assignments. |
 | **Approve requests** | Displays a list of requests to activate eligible roles by users in your directory that you can approve. |
-| **Review access** | Lists active access reviews you are assigned to complete, whether you're reviewing access for yourself or someone else. |
-| **Microsoft Entra roles** | Displays a dashboard and settings for Privileged Role Administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire organization. |
+| **Review access** | Lists active access reviews you're assigned to complete, whether you're reviewing access for yourself or someone else. |
+| **Microsoft Entra roles** | Displays a dashboard and settings for Privileged Role Administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization. |
 | **Groups** | Manage just-in-time membership in the group or just-in-time ownership of the group. Groups can be used to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM. |
-| **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled My view. The My view dashboard only displays information about the user accessing the dashboard, not the entire organization.|
+| **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization.|
 | **General settings** | Select applications that are allowed to make app-only calls to Microsoft Graph API for PIM. |
 
 ## Next steps

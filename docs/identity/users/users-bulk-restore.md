@@ -48,10 +48,10 @@ Object ID [objectId] Required
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
-1. Select **All users **Users** > **Deleted**.
+1. Select **Users** > **All users** > **Deleted**.
 1. On the **Deleted users** page, select **Bulk restore** to upload a valid CSV file of properties of the users to restore.
 
-   :::image type="content" source="./media/users-bulk-restore/bulk-restore.png" alt-text="Screenshot of selecting the bulk restore command on the Deleted users page.":::
+    :::image type="content" source="./media/users-bulk-restore/bulk-restore.png" alt-text="Screenshot of selecting the bulk restore command on the Deleted users page.":::
 
 1. Open the CSV template and add a line for each user you want to restore. The only required value is **ObjectID**. Then save the file.
 
@@ -70,15 +70,15 @@ For more information about bulk operations limitations, see [Bulk restore servic
 
 [!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
-:::image type="content" source="./media/users-bulk-restore/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page.." lightbox="./media/users-bulk-restore/bulk-center.png":::
+:::image type="content" source="./media/users-bulk-restore/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-restore/bulk-center.png":::
 
 Next, you can check to see that the users you restored exist in the Microsoft Entra organization via either Microsoft Entra ID or PowerShell.
 
-## View restored users in the Azure portal
+## View restored users in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
-1. Select **All users** Under **Manage**, select **Users**.
+1. Under **Manage**, select **Users** > **All users**.
 1. Under **Show**, select **All users** and verify that the users you restored are listed.
 
 ### View users with PowerShell

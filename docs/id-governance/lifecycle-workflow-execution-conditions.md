@@ -4,13 +4,13 @@ description: Conceptual article about Lifecycle workflows execution conditions.
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: concept-article
-ms.date: 06/25/2024
+ms.date: 03/12/2026
 ms.custom: template-concept 
 ---
 
 # Lifecycle workflows execution conditions and scheduling
 
-Workflows created using Lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if a user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and scopes, and the conditions for when a scheduled workflow runs for users.
+Workflows created using Lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually (on-demand) for specific users, or based on a schedule if a user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts: a trigger and a scope. This article describes execution conditions, the difference between the workflow triggers and scopes, and the conditions for when a scheduled workflow runs for users.
 
 ## Workflow execution conditions
 
@@ -53,7 +53,7 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 
 ### Time based attribute scope
 
-The time based attribute scope allows you to define for who the workflow runs when the time trigger is met.
+The time based attribute scope allows you to define for whom the workflow runs when the time trigger is met.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/time-based-scope.png" alt-text="Screenshot of the scope screen for time based attribute trigger.":::
 
@@ -83,7 +83,7 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 
 ### Attribute changes trigger scope
 
-The attribute changes trigger scope allows you to define for who the workflow runs when the attribute change trigger is met.
+The attribute changes trigger scope allows you to define for whom the workflow runs when the attribute change trigger is met.
 
 When setting the scope of the attribute changes trigger, the following details are defined:
 
@@ -105,11 +105,11 @@ When setting a workflow where the trigger type is **Group membership change**, t
 
 |Trigger detail  |Description  |
 |---------|---------|
-|Action    |  Describes which group membership change that triggers the execution condition. Can be **Added to group** or **Removed from group**.     |
+|Action    |  Describes which group membership change triggers the execution condition. Can be **Added to group** or **Removed from group**.     |
 
 ### Group membership change scope
 
-The group membership change scope allows you to define for who the workflow runs when the group membership change trigger is met.
+The group membership change scope allows you to define for whom the workflow runs when the group membership change trigger is met.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/group-membership-scope.png" alt-text="Screenshot of setting scope for group membership change.":::
 
@@ -118,7 +118,7 @@ When setting the scope of the group membership change trigger, the following det
 |Trigger detail  |Description  |
 |---------|---------|
 |Scope type     |  Group based.       |
-|Selected group     |  Defines the group for which the trigger action is based on.       |
+|Selected group     |  Defines the group on which the trigger action is based.       |
 
 ## Sign-in inactivity trigger
 
@@ -135,7 +135,7 @@ When setting the scope of the sign-in inactivity trigger, the following details 
 
 ### Sign-in inactivity scope
 
-The sign-in inactivity scope allows you to define for who the workflow runs when the sign-in inactivity trigger is met.
+The sign-in inactivity scope allows you to define for whom the workflow runs when the sign-in inactivity trigger is met.
 
 |Scope detail  |Description  |
 |---------|---------|
@@ -159,7 +159,7 @@ For a detailed guide on running a workflow on-demand for users, see: [Run a work
 
 ## Execution user scope
 
-After the execution conditions are set for an enabled workflow, you're able to see a list of users who currently meet it's execution conditions. This user list is made up of users who the workflow runs for the next time it executes, and is based on the last time the workflow engine evaluated users within your tenant.
+After the execution conditions are set for an enabled workflow, you're able to see a list of users who currently meet its execution conditions. This user list is made up of users who the workflow runs for the next time it executes, and is based on the last time the workflow engine evaluated users within your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/execution-user-scope.png" alt-text="Screenshot of a list of users in scope of the workflow's execution conditions.":::
 
@@ -171,7 +171,7 @@ For a detailed guide on viewing the execution user scope of a specific workflow,
 
 By design, Lifecycle workflows provide a three day catch up window to help customers process users that could have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but wasn't more than three days past the original trigger date. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
 
-The following table shows examples of Lifecycle workflow's catch up window:
+The following table shows examples of Lifecycle Workflows' catch-up window:
 
 
 |Workflow Scenario  |User Data  |Lifecycle workflow behavior  |
@@ -185,7 +185,7 @@ The following table shows examples of Lifecycle workflow's catch up window:
 
 While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column on the workflow overview page.
 
-Once scheduling is enabled, the workflow is evaluated either every three hours(by default), or by the interval you select in **workflow settings**, to determine whether or not it should run.
+Once scheduling is enabled, the workflow is evaluated either every three hours (by default), or by the interval you select in **workflow settings**, to determine whether or not it should run.
 
 > [!NOTE]
 > Once the user meets the execution conditions, and is in scope of the workflow, the Lifecycle workflow engine evaluates the user once again before the workflow starts to process them. If the user no longer meets the execution conditions of the workflow, then they won't be processed.

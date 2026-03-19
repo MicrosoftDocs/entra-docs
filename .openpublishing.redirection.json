@@ -3086,6 +3086,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
+      "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false

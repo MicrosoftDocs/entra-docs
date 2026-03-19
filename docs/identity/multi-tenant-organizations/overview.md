@@ -2,8 +2,9 @@
 title: Multitenant organization capabilities in Microsoft Entra ID
 description: Learn about the multitenant organization scenario and capabilities in Microsoft Entra ID.
 ms.topic: overview
-ms.date: 01/28/2026
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ms.subservice: multitenant-organizations
 ---
@@ -34,19 +35,19 @@ Tenants contain privileged organizational data and are securely isolated from ot
 
 ## Multitenant challenges
 
-Your organization may have recently acquired a new company, merged with another company, or restructured based on newly formed business units. If you have disparate identity management systems, it might be challenging for users in different tenants to access resources and collaborate.
+Your organization might have recently acquired a new company, merged with another company, or restructured based on newly formed business units. If you have disparate identity management systems, it might be challenging for users in different tenants to access resources and collaborate.
 
 The following diagram shows how users in other tenants might not be able to access applications across tenants in your organization.
 
 :::image type="content" source="./media/overview/multi-tenant-no-access.png" alt-text="Diagram that shows users unable to access applications across tenants." lightbox="./media/overview/multi-tenant-no-access.png":::
 
-As your organization evolves, your IT team must adapt to meet the changing needs. This often includes integrating with an existing tenant or forming a new one. Regardless of how the identity infrastructure is managed, it's critical that users have a seamless experience accessing resources and collaborating. Today, you may be using custom scripts or on-premises solutions to bring the tenants together to provide a seamless experience across tenants.
+As your organization evolves, your IT team must adapt to meet the changing needs. This often includes integrating with an existing tenant or forming a new one. Regardless of how the identity infrastructure is managed, it's critical that users have a seamless experience accessing resources and collaborating. Today, you might be using custom scripts or on-premises solutions to bring the tenants together to provide a seamless experience across tenants.
 
 ## Multitenant capabilities for multitenant organizations
 
 [Multitenant organizations in Microsoft Entra ID](multi-tenant-organization-overview.md) offers a portfolio of multitenant capabilities you can use to securely interact with users across your organization of multiple tenants and to automatically provision and manage those users across your tenants.
 
-Several of these multitenant capabilities share a common technology stack with [Microsoft Entra External ID for business guests](../../external-id/external-identities-overview.md) and [app provisioning in Microsoft Entra ID](../app-provisioning/user-provisioning.md), so you may frequently find cross references to these other areas. [Microsoft 365 for Enterprise](/microsoft-365/enterprise/plan-multi-tenant-org-overview) uses multitenant capabilities to enable or facilitate seamless multitenant collaboration experiences in Microsoft Teams and across Microsoft 365 applications.
+Several of these multitenant capabilities share a common technology stack with [Microsoft Entra External ID for business guests](../../external-id/external-identities-overview.md) and [app provisioning in Microsoft Entra ID](../app-provisioning/user-provisioning.md), so you might frequently find cross-references to these other areas. [Microsoft 365 for Enterprise](/microsoft-365/enterprise/plan-multi-tenant-org-overview) uses multitenant capabilities to enable or facilitate seamless multitenant collaboration experiences in Microsoft Teams and across Microsoft 365 applications.
 
 The following set of multitenant capabilities support the needs of multitenant organizations:
 
@@ -54,7 +55,7 @@ The following set of multitenant capabilities support the needs of multitenant o
 
 - **B2B direct connect** - Establishes a mutual, two-way trust with another Microsoft Entra tenant for seamless collaboration. B2B direct connect users aren't represented in your directory, but they're visible in Teams for collaboration in Teams shared channels.
 
-- **B2B collaboration** – Provides application access for and collaborate with external users. B2B collaboration users are represented in your directory. They're available in Microsoft Teams for collaboration, if enabled. They're also available across Microsoft 365 applications.
+- **B2B collaboration** – Enables application access for and collaboration with external users. B2B collaboration users are represented in your directory. They're available in Microsoft Teams for collaboration, if enabled. They're also available across Microsoft 365 applications.
 
 - **Cross-tenant synchronization** - Provides a synchronization service that automates creating, updating, and deleting B2B collaboration users across your organization of multiple tenants. The service can be used to scope Microsoft 365 people search in target tenants. The service is governed by cross-tenant synchronization settings under cross-tenant access settings.
 
@@ -168,8 +169,8 @@ For more information, see [What is a multitenant organization in Microsoft Entra
 
 Following the creation of a multitenant organization, Microsoft offers two methods to provision employees into neighboring multitenant organization tenants at scale.
 
-- For enterprise organizations with complex identity topologies, we recommend using [cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md). Cross-tenant synchronization is highly configurable and allows the provisioning of any multi-hub multi-spoke identity topology.
-- For smaller multitenant organizations where employees are to be provisioned into all tenants, we recommend staying in Microsoft 365 admin center to [simultaneously synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
+- For enterprise organizations with complex identity topologies, consider using [cross-tenant synchronization in Microsoft Entra ID](./cross-tenant-synchronization-overview.md). Cross-tenant synchronization is highly configurable and allows the provisioning of any multi-hub multi-spoke identity topology.
+- For smaller multitenant organizations where employees are to be provisioned into all tenants, consider staying in Microsoft 365 admin center to [simultaneously synchronize users into multiple tenants](/microsoft-365/enterprise/sync-users-multi-tenant-orgs) of your multitenant organization.
 
 If you already have your own at-scale user provisioning engine, you can enjoy the new multitenant organization benefits while continuing to use your own engine to manage the lifecycle of your employees.
 
