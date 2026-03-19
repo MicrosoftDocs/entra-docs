@@ -11,22 +11,16 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to enable passkeys (FIDO2) in Microsoft Entra ID 
 
-Passkeys (FIDO2) are a strong, phishing-resistant alternative to passwords. Microsoft Entra ID supports synced passkeys. Synced passkeys are stored on the platform or with other passkey providers, such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden, and are made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
+For enterprises that use passwords today, passkeys (FIDO2) provide a seamless way for workers to authenticate without entering a username or password. Passkeys (FIDO2) provide improved productivity for workers, and have better security.
 
-## What are synced versus device-bound passkeys?
+This article lists requirements and steps to enable passkeys in your organization. After you complete these steps, users in your organization can then register and sign in to their Microsoft Entra account using a passkey stored on a FIDO2 security key, a native or third-party passkey provider, or in Microsoft Authenticator.
 
-Passkeys are FIDO2-based credentials that provide strong, phishing-resistant authentication. Microsoft Entra ID supports two main types of passkeys:
+For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
-- Device-bound passkeys: The private key is created and stored on a single physical device and never leaves it. Examples:
-  - Microsoft Authenticator (iOS)
-  - Microsoft Authenticator (Android)
-  - Security key
-- Synced passkeys: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
-  - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
-  - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
+For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
 > [!NOTE]
-> Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. 
+> Microsoft Entra ID currently supports synced passkeys and device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
 
 ## Passkey (FIDO2) Authenticator Attestation GUID (AAGUID)
 
@@ -38,19 +32,6 @@ The FIDO2 specification requires each security key vendor to provide an Authenti
 You can work with your security key vendor to determine the AAGUID of the passkey (FIDO2), or see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](~/identity/authentication/concept-fido2-hardware-vendor.md#fido2-security-keys-eligible-for-attestation-with-microsoft-entra-id). If the passkey (FIDO2) is already registered, you can find the AAGUID by viewing the authentication method details of the passkey (FIDO2) for the user.
 
 ![Screenshot of how to view the AAGUID for a passkey.](media/how-to-enable-passkey-fido2/security-key-aaguid-details.png)
-
-## Requirements
-
-- To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
-- An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
-- The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
-
-  Passkey provider | Windows | macOS | iOS | Android
-  -----------------|---------|-------|-----|--------
-  Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+ | Natively built in. iOS 16+ | N/A
-  Google Password Manager | Built into Chrome | Built into Chrome | Built into Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
-  Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
-
 
 ## What are passkey profiles?
 
@@ -176,6 +157,33 @@ Passkey profile | Target groups | Passkey types | Attestation enforcement | Key 
 All device-bound passkeys (excluding Microsoft Authenticator) | All users | Device-bound | Enabled | Enabled<br>- Behavior: Block<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android 
 Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bound | Enabled | Enabled<br>- Behavior: Allow<br>- AAGUIDs: Microsoft Authenticator for iOS, Microsoft Authenticator for Android
 
+## What are synced versus device-bound passkeys?
+
+Passkeys are FIDO2-based credentials that provide strong, phishing-resistant authentication. Microsoft Entra ID supports two main types of passkeys:
+
+- Device-bound passkeys: The private key is created and stored on a single physical device and never leaves it. Examples:
+  - Microsoft Authenticator (iOS)
+  - Microsoft Authenticator (Android)
+  - Security key
+- Synced passkeys: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
+  - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
+  - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
+
+> [!NOTE]
+> Treat synced passkeys as phishing-resistant credentials but with the same security posture as other unattested authenticators. 
+
+## Synced passkey requirements
+
+- To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
+- An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
+- The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
+
+  Passkey provider | Windows | macOS | iOS | Android
+  -----------------|---------|-------|-----|--------
+  Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+ | Natively built in. iOS 16+ | N/A
+  Google Password Manager | Built into Chrome | Built into Chrome | Built into Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
+  Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
+
 ## Enable synced passkeys
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
@@ -188,21 +196,6 @@ Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bo
 
 > [!NOTE]
 > If you disable synced passkeys for a given passkey profile, targeted users can't sign in with a synced passkey even if they already registered one.
-
-## Provision FIDO2 security keys using Microsoft Graph API (preview)
-
-Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
-
-- The ability to request WebAuthn **creation Options** from Microsoft Entra ID
-- The ability to register the provisioned security key directly with Microsoft Entra ID
-
-With these new APIs, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys on behalf of a user. To simplify this process, three main steps are required. 
-
-1. **Request** creationOptions for a user: Microsoft Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
-2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert the security key and set a PIN.
-3. **Register** the provisioned credential with Microsoft Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
-
-:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
 ## Delete a passkey (FIDO2)
 
@@ -231,6 +224,21 @@ The following steps show how to create a custom authentication strength. It's a 
 1. Select **Passkeys (FIDO2)**.
 1. Optionally, if you want to restrict a specific AAGUID, select **Advanced options** > **Add AAGUID**. Enter the AAGUID, and select **Save**.
 1. Choose **Next** and review the policy configuration.
+
+## Provision FIDO2 security keys using Microsoft Graph API (preview)
+
+Currently in preview, administrators can use [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision). Provisioning requires the [Authentication Administrator role](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) or a client application with UserAuthenticationMethod.ReadWrite.All permission. The provisioning improvements include:
+
+- The ability to request WebAuthn **creation Options** from Microsoft Entra ID
+- The ability to register the provisioned security key directly with Microsoft Entra ID
+
+With these new APIs, organizations can build their own clients to provision passkey (FIDO2) credentials on security keys on behalf of a user. To simplify this process, three main steps are required. 
+
+1. **Request** creationOptions for a user: Microsoft Entra ID returns the necessary data for your client to provision a passkey (FIDO2) credential. This includes information such as user information, relying party ID, credential policy requirements, algorithms, registration challenge and more. 
+2. **Provision** the passkey (FIDO2) credential with the creation Options: Use the `creationOptions` and a client that supports the Client to Authenticator Protocol (CTAP) to provision the credential. During this step, you need to insert the security key and set a PIN.
+3. **Register** the provisioned credential with Microsoft Entra ID: Use the formatted output from the provisioning process to provide Microsoft Entra ID the necessary data to register the passkey (FIDO2) credential for the targeted user. 
+
+:::image type="content" border="true" source="media/how-to-enable-passkey-fido2/provision.png" alt-text="Conceptual diagram that shows the steps required to provision passkeys (FIDO2)." :::
 
 ## Known issues
 
