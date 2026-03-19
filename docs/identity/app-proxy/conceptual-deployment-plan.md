@@ -21,7 +21,7 @@ The following section provides a broad view of the key planning elements that se
 
 ### Prerequisites
 
-You need to meet the following prerequisites before beginning your implementation. You can see more information on setting up your environment, including these prerequisites, in the [tutorial](application-proxy-add-on-premises-application.md).
+You need to meet the following prerequisites before beginning your implementation. You can see more information on setting up your environment, including these prerequisites, in the [tutorial for adding an on-premises application](application-proxy-add-on-premises-application.md).
 
 * **Connectors**: Connectors are lightweight agents that you can deploy onto:
    * Physical hardware on-premises
@@ -32,7 +32,7 @@ You need to meet the following prerequisites before beginning your implementatio
 
      * Connector machines must [be enabled for Transport Layer Security (TLS) 1.2](application-proxy-add-on-premises-application.md) before installing the connectors.
 
-     * If possible, deploy connectors in the [same network](application-proxy-network-topology.md) and segment as the back-end web application servers. It's best to deploy connectors after you complete a discovery of applications.
+     * If possible, deploy connectors in the [same network and segment as the back-end web application servers](application-proxy-network-topology.md). It's best to deploy connectors after you complete a discovery of applications.
      * Each connector group should have at least two connectors to provide high availability and scale. Having three connectors is optimal for servicing a machine at any point. Review the [connector capacity table](./application-proxy-connectors.md#capacity-planning) to help decide the type of machine for the connector.
 
 * **Network access settings**: Microsoft Entra private network connectors [connect to Azure via HTTPS (Transmission Control Protocol (TCP) Port 443) and HTTP (TCP Port 80)](application-proxy-add-on-premises-application.md).
@@ -84,7 +84,7 @@ Compile an inventory of all in-scope applications that are being published via a
 | Domain membership| Web server’s fully qualified domain name (FQDN) |
 | Application location | Where the web server or farm is located in your infrastructure |
 | Internal access | The exact URL used when accessing the application internally. <br> If a farm, what type of load balancing is in use? <br> Whether the application draws content from sources other than itself.<br> Determine if the application operates over WebSockets. |
-| External access | The vendor solution that the application might already be exposed through, externally. <br> The URL you want to use for external access. If SharePoint, ensure Alternate Access Mappings are configured per [the guidance](/SharePoint/administration/configure-alternate-access-mappings). If not, you need to define external URLs. |
+| External access | The vendor solution that the application might already be exposed through, externally. <br> The URL you want to use for external access. If SharePoint, ensure Alternate Access Mappings are configured per [the SharePoint Alternate Access Mappings guidance](/SharePoint/administration/configure-alternate-access-mappings). If not, you need to define external URLs. |
 | Public certificate | If using a custom domain, procure a certificate with a corresponding subject name. If a certificate exists, note the serial number and location from where it can be obtained. |
 | Authentication type| The type of authentication supported by the application, such as Basic, Windows Integrated Authentication, forms-based, header-based, and claims. <br>If the application is configured to run under a specific domain account, note the Fully Qualified Domain Name (FQDN) of the service account.<br> If SAML-based, the identifier and reply URLs. <br> If header-based, the vendor solution and specific requirement for handling authentication type. |
 | Connector group name | The logical name for the group of connectors that are designated to provide the conduit and SSO to the backend application. |
@@ -164,7 +164,7 @@ The steps to deploy your application proxy are covered in the [tutorial for addi
 
 Publishing applications assumes that you satisfied all the prerequisites and that you have several connectors showing as registered and active in the application proxy page.
 
-You can also publish applications by using [PowerShell](/powershell/microsoftgraph/overview).
+You can also publish applications by using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview).
 
 Best practices to follow when publishing an application:
 
@@ -188,7 +188,7 @@ For scenarios where a published app links to other published apps, enable link t
 
 For example, suppose that you have three applications published through application proxy that all link to each other: Benefits, Expenses, and Travel, plus a fourth app, Feedback that isn't published through application proxy.
 
-![Diagram showing link translation.](media/app-proxy-deployment-plan/link-translation.png)
+![Diagram showing how link translation converts internal URLs to external URLs in published application content.](media/app-proxy-deployment-plan/link-translation.png)
 When link translation is enabled for the Benefits app, links to the Expenses and Travel apps are redirected to their external URLs, allowing external users to access them. However, links from Expenses and Travel back to Benefits don't work unless link translation is also enabled for those apps. The Feedback app link isn't redirected because it lacks an external URL, preventing external users from accessing it via the Benefits app. For more information, see [link translation and redirect options](application-proxy-configure-hard-coded-link-translation.md).
 
 ### Access your application
@@ -197,11 +197,11 @@ Manage access to application proxy published resources by selecting the approach
 
 The most straightforward way of assigning users access to an application is to go to **Users and Groups** from the left-hand pane of your published application and directly assigning groups or individuals.
 
-![Picture 24](media/App-proxy-deployment-plan/add-user.png)
+![Users and Groups page showing the Add user button for application access assignment.](media/App-proxy-deployment-plan/add-user.png)
 
 You can also allow users to self-service access to your application by assigning a group that they aren't currently a member of and configuring the self-serve options.
 
-![Picture 25](media/App-proxy-deployment-plan/allow-access.png)
+![Self-service application access settings dialog in application properties.](media/App-proxy-deployment-plan/allow-access.png)
 
 If enabled, users sign in to the MyApps portal to request access. They're either automatically approved and added to the self-service group or require approval from a designated approver.
 
@@ -209,7 +209,7 @@ Guest users can also be [invited to access internal applications published via a
 
 For on premises applications that are normally accessible anonymously, requiring no authentication, you might want to disable the option located in the application’s **Properties**.
 
-![Picture 26](media/App-proxy-deployment-plan/assignment-required.png)
+![Application Properties showing User assignment required toggle.](media/App-proxy-deployment-plan/assignment-required.png)
 
 
 Leaving the option set to No allows users to access the on-premises application via Microsoft Entra application proxy without permissions, so use with caution.
