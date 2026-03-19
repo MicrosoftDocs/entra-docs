@@ -217,15 +217,27 @@ Microsoft allows customers with complex environments or technical barriers to po
 
 ## Confirm mandatory MFA enforcement
 
+### Confirm Phase 1 enforcement
+
+To confirm that Phase 1 mandatory MFA is enforced for your tenant:
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure).
+1. Verify that the **Multifactor authentication (Phase 1)** page shows a banner that confirms enforcement began for your tenant.
+
+   :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/phase-1-confirm.png" alt-text="Screenshot of the Multifactor authentication Phase 1 page in the Azure portal, showing that MFA is enforced for all users in the directory.":::
+
+### Confirm Phase 2 enforcement
+
 To confirm that Phase 2 mandatory MFA is enforced for your tenant:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to [https://aka.ms/mfaforazure](https://aka.ms/mfaforazure).
+1. Browse to [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA).
 1. Verify that the **Multifactor authentication (Phase 2)** page shows a banner that confirms enforcement began for your tenant.
 
    :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/phase-2-confirm.png" alt-text="Screenshot of the Multifactor authentication Phase 2 page in the Azure portal, showing that MFA enforcement began on or after February 20, 2026.":::
 
-Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) show the application that enforced MFA as the source of the MFA requirement. 
+Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) show the application that enforced MFA as the source of the MFA requirement.
 
 ## FAQs
 
