@@ -21,7 +21,7 @@ When reviewing admin consent requests, you have several options to choose from:
 For instance, if an application is found to be non-compliant with company policies, an administrator might choose to 'Block' it. Conversely, if an application is legitimate but requires further review, the administrator may opt to 'Deny' the request temporarily while seeking more information.
 
 >[!NOTE]
->The "My Pending" tab is where actions can be taken on admin consent requests. The "All(Preview)" tab is to view the history of the admin consent request only.
+>The "My Pending" tab is where actions can be taken on admin consent requests. The "All (Preview)" tab is to view the history of the admin consent request only.
 
 ## Prerequisites
 
