@@ -193,8 +193,8 @@ Configure the worker logic to:
 1. If the risk score exceeds your threshold, modify the request to include the authentication context that triggers MFA.
 1. Forward the request to the Microsoft Entra /token endpoint.
 
-> [!NOTE]
-> Contact Microsoft if you need a code sample for the worker logic.
+> [!TIP]
+> For a complete Android SDK implementation example using WAF-based ATO protection, see the [LexisNexis Risk Solutions ATO protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-lnr-signin-ato-protection).
 
 ### Third-party provider integration
 
@@ -246,3 +246,4 @@ Now that you've integrated ATO protection with native authentication, explore th
 - [Configure custom domains for external tenants](how-to-custom-url-domain.md)
 - [Enable Microsoft Entra multifactor authentication](/entra/identity/authentication/tutorial-enable-azure-mfa)
 - [Configure Cloudflare WAF with Microsoft Entra External ID](how-to-configure-waf-integration.md)
+- [LexisNexis Risk Solutions ATO protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-lnr-signin-ato-protection)

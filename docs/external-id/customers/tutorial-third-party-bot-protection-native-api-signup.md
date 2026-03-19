@@ -161,8 +161,8 @@ When the WAF intercepts a `/start` request and determines it's from a bot, it ca
 > [!TIP]
 > To enhance bot detection accuracy, integrate your provider's SDK into your native app to collect device fingerprinting and behavioral signals. Pass these signals to the WAF through custom headers or request parameters.
 
-> [!NOTE]
-> For Android SDK implementation examples using WAF-based bot protection, contact Microsoft support for code samples and integration guidance.
+> [!TIP]
+> For a complete Android SDK implementation example using WAF-based bot protection, see the [HUMAN Security bot protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-human-signup-bot-protection).
 
 ## Next steps
 
@@ -174,3 +174,4 @@ Now that you've integrated bot protection with Native Authentication sign-up, ex
 - [Enable custom URL domains for apps in external tenants](how-to-custom-url-domain.md)
 - [Configure Cloudflare WAF with Microsoft Entra External ID](how-to-configure-waf-integration.md)
 - [HUMAN Security Enforcer API documentation](https://docs.humansecurity.com/applications/reference/request)
+- [HUMAN Security bot protection sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/feature/integrate-human-signup-bot-protection)
