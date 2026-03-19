@@ -35,7 +35,7 @@ Before creating an access package, confirm the following prerequisites are met i
 
 To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to application APIs. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.
 
-As agent identities and service principals can't be added through access packages to application roles, SAP roles, or SharePoint Online site roles, do not re-use an access package which contains any of those resource roles. Instead, create a new access package.
+As agent identities and service principals can't be added through access packages to application roles, SAP roles, or SharePoint Online site roles, you won't be able to reuse an existing access package that contains any of those resource roles. Instead, create a new access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -47,7 +47,7 @@ As agent identities and service principals can't be added through access package
 
 1. On the **Basics** tab, you give the access package a name, and description and specify which catalog to create the access package in. In the **Catalog** dropdown list, select the catalog where you want to put the access package.
 
-1. Select **Next: Resource roles**. On the **Resource roles** tab, you select the resource roles to include in the access package. Access packages for agent identities can have security group memberships, directory roles, or API permissions as resource roles. For more information, see [add a group](/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role), [add a Microsoft Entra role](/entra/id-governance/entitlement-management-access-package-resources#add-a-microsoft-entra-role-assignment), and [add an API permission](/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission-preview). Do not add application roles, SAP roles, or SharePoint Online site roles to an access package for agent identities.
+1. Select **Next: Resource roles**. On the **Resource roles** tab, you select the resource roles to include in the access package. Access packages for agent identities can have security group memberships, directory roles, or API permissions as resource roles. For more information, see [add a group](/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role), [add a Microsoft Entra role](/entra/id-governance/entitlement-management-access-package-resources#add-a-microsoft-entra-role-assignment), and [add an API permission](/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission-preview). Don't add application roles, SAP roles, or SharePoint Online site roles to an access package for agent identities.
 
     > [!TIP]
     > If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](/entra/id-governance/entitlement-management-access-package-resources) later.
@@ -75,7 +75,7 @@ In addition to using the Microsoft Entra Admin Center, you can also create an ac
 
 Agents can then be assigned access packages through three different request pathways.
 
-- The agent itself, if using a srevice principal, can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
+- The agent itself, if using a service principal, can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
 - The agent identity's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 - An administrator can [directly assign the agent identity or agent user to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
