@@ -87,7 +87,7 @@ Session persistence, also called session affinity, consistently routes every req
 
 This approach is useful for applications that rely on connector egress IP for authentication and access control lists (ACLs). It ensures continuity and reduces the need for repeated authentication or data retrieval.
 
-You can configure connector load balancing by updating the `trafficRoutingMethod` property on the app through the Microsoft Graph API. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta).
+You can configure connector load balancing by updating the `trafficRoutingMethod` property on the app through the Microsoft Graph API. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 ## Sample configurations
 
