@@ -1,22 +1,18 @@
 ---
-title: Application Usage Analytics Overview (Preview)
+title: Application Usage Analytics Overview
 description: "Gain visibility into application traffic to gain insights into app categories, risk scores, transactions, and organizational usage patterns."
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: overview
-ms.date: 12/18/2025
+ms.date: 03/19/2026
 ms.reviewer: kerenSemel
 
 #customer intent: As an IT admin, I want to analyze and visualize application use to better understand organizational usage patterns.
 ---
 <!-- The images in this article use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
 
-# What is application usage analytics? (preview)
+# What is application usage analytics?
 Application usage analytics gives IT admins actionable insights into their organization's app use by analyzing traffic patterns, data usage, and which users access the app. Admins can use these analytics to identify shadow IT, generative AI apps, and potential security or compliance risks. Usage analytics helps organizations increase visibility, improve their security posture, and optimize app use across their environment.
-
-> [!IMPORTANT]
-> The application usage analytics feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Insights and Analytics dashboard
 To access the **Insights and Analytics** dashboard:
