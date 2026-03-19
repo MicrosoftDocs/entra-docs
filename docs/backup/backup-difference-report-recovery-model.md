@@ -36,8 +36,16 @@ Changes for users and groups synchronized from on-premises Active Directory appe
 
 The first time you create a difference report, you might experience a delay as backup data loads before the difference calculation starts. Check the progress of report generation in the **Difference Reports** section.
 
+| Tenant size | Estimated data loading time for first-time report generation | 
+|---|---| 
+| 1-50,000 objects | Up to 1 hour | 
+| 50,000-300,000 objects | Up to 1 hour 30 minutes | 
+| 300,000-1,000,000 objects | Up to 2 hours | 
+| More than 1,000,000 objects | Up to 2 hours and 30 minutes | 
+
 The second time you create a difference report against the same backup, the report doesn't need the data loading step, so it finishes faster.
 
+Difference calculation depends on the changes that have happened between the backup state and the current state. For 100,000 object and/or link changes, full report generation could take approximately 45 minutes to complete.  
 
 > [!NOTE]
 > Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
@@ -50,10 +58,10 @@ When you recover your tenant, apply filters to control which objects to recover:
 - **By object ID**: Supply the object type and object ID to recover a specific object.
 - **All changes**: Recover all changed objects to the state captured in the selected backup.
 
-Time needed to complete recovery depends on the number of changes to recover.
+Recovery performance depends on the number of changes to be recovered. Recovering 500,000 changes can take up to 30 hours.
 
-
-Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
+> [!NOTE]
+> Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
 
 > [!IMPORTANT]
 > Only one job can run at a time, including difference reports and recovery jobs. For example, if a difference report is running in your tenant, you can't start a recovery job. Wait until the current job finishes before starting a new one.
