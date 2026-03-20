@@ -53,14 +53,14 @@ The details include basic information about the user and a timeline of recent ri
 
 To see risk sign-in events together with risky user events, select the **Aggregate risk signals by risky sign-ins** checkbox.
 
-## Take action on a risky user
-
-[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
-
-## Unified risk signals (Preview)
+### Unified risk signals (Preview)
 
 Microsoft Entra ID Protection now correlates signals from Microsoft Defender for Identity and other sources to provide unified risk signals for user risk detections. This preview feature enhances your risk detection capabilities by calculating a comprehensive Identity Risk Score based on multiple identity signals. This option must be enabled in [settings](id-protection-dashboard.md#unified-risk-signals-for-id-protection-user-risk-preview).
 
-You can view unified risk signals in both the standard view and agent view of the Risky user report. The report displays details for each linked account associated with a risky user, helping you understand the full scope of risk across your organization. When the Identity Risk Score reaches configured thresholds, your risk-based Conditional Access policies can automatically trigger to protect your resources.
+You can view unified risk signals in both the standard view and agent view of the Risky user report. Select a user from the list to see details for each linked account associated with a risky user, helping you understand the full scope of risk across your organization. When the Identity Risk Score reaches configured thresholds, your risk-based Conditional Access policies can automatically trigger to protect your resources.
 
 The Identity Risk Score appears within the context of a selected user from the risky user report. The score, risk summary, and links to investigate further are provided to help you understand the risk and take appropriate action. Select the **View full report in Microsoft Defender** link to see the correlated signals in Microsoft Defender for Identity and investigate the risky user further.
+
+## Take action on a risky user
+
+[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
