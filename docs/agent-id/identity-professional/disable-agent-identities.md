@@ -135,7 +135,7 @@ Content-type: application/json
 
 ### Policy 2: Block agent's user account authentication
 
-The following steps help create a conditional access policy to block issuance of access tokens requested using agent's user accounts.
+The following steps help create a conditional access policy to block issuance of access tokens requested using agents' user accounts.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.

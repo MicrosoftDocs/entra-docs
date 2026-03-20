@@ -74,7 +74,7 @@ additionalContent:
               url: ./identity-platform/agent-blueprint.md
             - text: What is an agent identity?
               url: ./identity-platform/agent-identities.md
-            - text: What are agent's user accounts?
+            - text: What are agents' user accounts?
               url: ./identity-platform/agent-users.md
 
         ## CARD 2 ######################

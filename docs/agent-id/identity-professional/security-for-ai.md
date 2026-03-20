@@ -20,7 +20,7 @@ Organizations are increasingly deploying AI agents for diverse tasks:
 
 - Autonomous agents operate independently, making decisions and taking actions without human intervention. Examples include agents that monitor network logs for security operations, manage infrastructure deployments with autoscaling, or generate and publish routine communications.
 
-- Agent's user accounts are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agent's user accounts might join teams, access documents, participate in meetings, and require mailbox and calendar access like human users.
+- Agents' user accounts are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agents' user accounts might join teams, access documents, participate in meetings, and require mailbox and calendar access like human users.
 
 These deployment models present distinct security and governance challenges.
 

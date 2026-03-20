@@ -38,7 +38,7 @@ When blueprints are added to tenants, they create a corresponding principal obje
 
 ### Agent's user account
 
-For scenarios where agents need to interact with systems that specifically require user objects, the platform provides agents' user accounts as an alternative identity type. An agent's user account is a secondary account that an AI agent uses to authenticate to various systems. These accounts are user objects in a tenant and have most properties of other users, like a manager, UPN, and photo. It makes them compatible with systems that have a hard dependency on user objects, and enable AI agents to connect to these systems. For more information, see [agent's user accounts](./agent-users.md)
+For scenarios where agents need to interact with systems that specifically require user objects, the platform provides agents' user accounts as an alternative identity type. An agent's user account is a secondary account that an AI agent uses to authenticate to various systems. These accounts are user objects in a tenant and have most properties of other users, like a manager, UPN, and photo. It makes them compatible with systems that have a hard dependency on user objects, and enable AI agents to connect to these systems. For more information, see [agents' user accounts](./agent-users.md)
 
 ## Agent registry
 
