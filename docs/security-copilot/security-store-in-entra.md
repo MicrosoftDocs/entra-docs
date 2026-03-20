@@ -44,7 +44,7 @@ The following solutions are available through Security Store in the Microsoft En
 
 Security Store is embedded in the Microsoft Entra admin center, so you can discover and deploy agents and solutions without leaving your identity management workflow.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a []().
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Security Store**.
 1. Browse or search for the agent or solution you want to deploy.
     - Use the **All** and **Agent** tabs to filter results.
