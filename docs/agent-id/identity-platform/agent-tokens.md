@@ -19,7 +19,7 @@ These tokens enable secure communication between:
 
 - Agent identity blueprints and their agent identities
 - Agent identities and resource APIs
-- Agent's user accounts and the services they interact with
+- Agents' user accounts and the services they interact with
 - Complex delegation chains involving multiple agent entities
 
 ## Token claims entity identifiers
@@ -63,7 +63,7 @@ In this scenario, tokens have the following key characteristics:
 
 ### Tokens in agent's user account impersonation scenarios
 
-Agent's user account impersonation scenarios enable agent's user accounts to operate like human users. These tokens support scenarios where agents need user-like context but with controlled, predefined identities.
+Agent's user account impersonation scenarios enable agents' user accounts to operate like human users. These tokens support scenarios where agents need user-like context but with controlled, predefined identities.
 
 In this scenario, tokens have the following key characteristics:
 
@@ -72,7 +72,7 @@ In this scenario, tokens have the following key characteristics:
 - Include scoped delegated permissions
 - Require explicit assignment to agent identities
 
-In this scenario, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent's user account. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. Agent's user accounts can only be used when assigned to an agent identity and can't authenticate independently.
+In this scenario, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent's user account. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. Agents' user accounts can only be used when assigned to an agent identity and can't authenticate independently.
 
 ## Nonagentic API integration
 

@@ -22,15 +22,15 @@ Microsoft Graph APIs support various relationships involving agent identities an
 
 **Resolution**: Use the existing APIs documented in Microsoft Graph reference docs and perform client side filtering using the `odata.type` property to filter results to Agent IDs.
 
-## Agent's user accounts
+## Agents' user accounts
 
-The following known issues and gaps relate to agent's user accounts.
+The following known issues and gaps relate to agents' user accounts.
 
-### Clean up agent's user accounts
+### Clean up agents' user accounts
 
-When an agent identity blueprint or agent identity is deleted, any agent's user accounts created using that blueprint or identity remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. 
+When an agent identity blueprint or agent identity is deleted, any agents' user accounts created using that blueprint or identity remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. 
 
-**Resolution**: Delete any orphaned agent's user accounts via Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
+**Resolution**: Delete any orphaned agents' user accounts via Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
 
 ## Roles and permissions for agent identity management
 
@@ -66,11 +66,11 @@ You can't add agent identities, agent identity blueprints, and agent identity bl
 
 **Resolution**: Use the `owners` property of Agent IDs to limit the set of users who can manage these objects.
 
-### Updating photos for agent's user accounts
+### Updating photos for agents' user accounts
 
-The *Agent ID Administrator* role can't update photos for agent's user accounts.
+The *Agent ID Administrator* role can't update photos for agents' user accounts.
 
-**Resolution**: Use the *User Administrator* role to update photos for agent's user accounts.
+**Resolution**: Use the *User Administrator* role to update photos for agents' user accounts.
 
 ## Microsoft Entra admin center
 
@@ -126,7 +126,7 @@ The following known issues and gaps relate to Microsoft Entra ID administration.
 
 ### Dynamic groups
 
-You can't add agent identities and agent's user accounts to Microsoft Entra ID groups with dynamic membership.
+You can't add agent identities and agents' user accounts to Microsoft Entra ID groups with dynamic membership.
 
 **Resolution**: Add Agent IDs to security groups with fixed membership.
 
@@ -139,9 +139,9 @@ The following known issues and gaps relate to monitoring and logs.
 Audit logs don't distinguish Agent IDs from other identities:
 
 - Operations on agent identities, agent identity blueprints, and agent identity blueprint principals are logged in the *ApplicationManagement* category.
-- Operations on agent's user accounts are logged in the *User Management* category.
+- Operations on agents' user accounts are logged in the *User Management* category.
 - Operations initiated by agent identities appear as service principals in audit logs.
-- Operations initiated by agent's user accounts appear as users in audit logs.
+- Operations initiated by agents' user accounts appear as users in audit logs.
 
 **Resolution**: Use the following workarounds to identify Agent ID-related activities in audit logs:
 
@@ -153,7 +153,7 @@ Audit logs don't distinguish Agent IDs from other identities:
 The Microsoft Graph activity logs don't distinguish Agent IDs from other identities:
 
 - Requests from agent identities are logged as applications, with the agent identity included in the *appID* column.
-- Requests from agent's user accounts are logged as users, with the `agentUser` ID in the *UserID* column.
+- Requests from agents' user accounts are logged as users, with the `agentUser` ID in the *UserID* column.
 
 **Resolution**: Join with the Microsoft Entra sign-in logs to determine the entity type.
 

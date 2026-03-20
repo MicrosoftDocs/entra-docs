@@ -1,6 +1,6 @@
 ---
 title: Agent's user account impersonation protocol
-description: Learn how agent identities operate with user context through agent's user accounts using the agent's user account impersonation protocol with OAuth 2.0 token exchange.
+description: Learn how agent identities operate with user context through agents' user accounts using the agent's user account impersonation protocol with OAuth 2.0 token exchange.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 10/30/2025
@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
 
 # Agent's user account impersonation protocol
 
-Agent's user account impersonation enables agent identities to operate with user context through agent's user accounts, combining user permissions with autonomous operation. In this scenario, an agent identity blueprint (actor 1) impersonates an agent identity (actor 2) that impersonates an agent's user account (subject) using FIC. Access is scoped to delegations assigned to the agent identity. Agent's user account can be impersonated only by a single agent identity.
+Agent's user account impersonation enables agent identities to operate with user context through agents' user accounts, combining user permissions with autonomous operation. In this scenario, an agent identity blueprint (actor 1) impersonates an agent identity (actor 2) that impersonates an agent's user account (subject) using FIC. Access is scoped to delegations assigned to the agent identity. Agent's user account can be impersonated only by a single agent identity.
 
 [!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 

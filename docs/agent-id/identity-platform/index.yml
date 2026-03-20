@@ -27,7 +27,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Agent's user accounts
+          - text: Agents' user accounts
             url: ./agent-users.md
           - text: Agent identity blueprint
             url: ./agent-blueprint.md

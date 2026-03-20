@@ -74,7 +74,7 @@ items:
           href: agent-blueprint.md
         - name: Agent identities
           href: agent-identities.md
-        - name: Agent's user accounts
+        - name: Agents' user accounts
           href: agent-users.md
         - name: Agent service principals
           href: agent-service-principals.md

@@ -78,4 +78,4 @@ Agent service principals support both application permissions (for app-only oper
 
 Agent service principals maintain distinct identities in audit logs and sign-in reports. When an agent identity performs operations, the logs show the agent identity as the acting client while indicating the relationship to the parent agent identity blueprint.
 
-Sign-in logs differentiate between agent identity blueprints, agent identities, and agent's user accounts. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agent operations.
+Sign-in logs differentiate between agent identity blueprints, agent identities, and agents' user accounts. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agent operations.
