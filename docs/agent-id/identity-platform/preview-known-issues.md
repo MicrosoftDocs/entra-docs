@@ -22,11 +22,11 @@ Microsoft Graph APIs support various relationships involving agent identities an
 
 **Resolution**: Use the existing APIs documented in Microsoft Graph reference docs and perform client side filtering using the `odata.type` property to filter results to Agent IDs.
 
-## Agents' user accounts
+## The agent's user account
 
-The following known issues and gaps relate to agents' user accounts.
+The following known issues and gaps relate to the agent's user account.
 
-### Clean up agents' user accounts
+### Clean up the agent's user account
 
 When an agent identity blueprint or agent identity is deleted, any agents' user accounts created using that blueprint or identity remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. 
 

@@ -1,6 +1,6 @@
 ---
 title: Request agent's user account tokens for autonomous agents
-description: Learn how to create agents' user accounts and authenticate using agent identities to obtain delegated access tokens for systems that require user accounts.
+description: Learn how to create an agent's user account and authenticate using agent identities to obtain delegated access tokens for systems that require user accounts.
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
@@ -9,28 +9,28 @@ ms.date: 11/10/2025
 ms.custom: agent-id-ignite
 ms.reviewer: dastrcok
 
-#customer-intent: As a developer, I want to create agents' user accounts for my autonomous agents and authenticate as those users, so that my agents can connect to systems that require user account representation while maintaining proper security controls.
+#customer-intent: As a developer, I want to create an agent's user account for my autonomous agents and authenticate as that user, so that my agents can connect to systems that require user account representation while maintaining proper security controls.
 ---
 
 # Request agent's user account tokens for autonomous agents
 
-In addition to requesting tokens using an agent identity, autonomous agents can also authenticate using an agent's user account. Agents' user accounts are a special type of user account in Microsoft Entra purpose-built for use by agents. They're most commonly used when an agent needs to connect to systems that require the existence of a user account. For instance, mailbox, teams channel, or other user-specific resources.
+In addition to requesting tokens using an agent identity, autonomous agents can also authenticate using an agent's user account. The agent's user account is a special type of user account in Microsoft Entra purpose-built for use by agents. It's most commonly used when an agent needs to connect to systems that require the existence of a user account. For instance, mailbox, teams channel, or other user-specific resources.
 
 This guide walks you through creating an agent's user account in a tenant and requesting tokens as the agent's user account. Each agent identity can only have a single associated agent's user account, and each agent's user account can only be associated with a single agent identity.
 
 ## Prerequisites
 
-- [Understand agents' user accounts in Microsoft Entra Agent ID](agent-users.md)
+- [Understand the agent's user account in Microsoft Entra Agent ID](agent-users.md)
 - A created agent identity blueprint and at least one agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
 
 ## Get authorization
 
-To create agents' user accounts, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
+To create an agent's user account, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
 
 - [Request agent authorization](./autonomous-agent-request-authorization-entra-admin.md#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
 - [Manually create an appRoleAssignment](./autonomous-agent-request-authorization-entra-admin.md#create-an-app-role-assignment-via-apis) in the tenant. Be sure to use the object ID of the agent identity blueprint principal as the `principalId` value. Don't use the ID of your agent identity blueprint.
 
-If you wish to use a different client, not the agent identity blueprint, to create agents' user accounts, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
+If you wish to use a different client, not the agent identity blueprint, to create an agent's user account, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
 
 ## Create an agent's user account
 
