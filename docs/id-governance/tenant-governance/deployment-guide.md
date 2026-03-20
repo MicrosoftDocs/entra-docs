@@ -26,11 +26,11 @@ Before you begin, confirm that your environment meets these requirements:
 - For configuration management: an account with the Global Administrator or Privileged Role Administrator role.
 - For secure tenant creation: at least Tenant Contributor permissions on a Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't supported.
 
-## Phase 1: Enable tenant discovery
+## Phase 1: Enable related tenant discovery
 
 Tenant discovery identifies other Microsoft Entra tenants that have observable relationships with your tenant. These relationships are based on signals such as B2B collaboration, multitenant application usage, and shared billing accounts. For more information about what related tenants represent, see [Related tenants](related-tenants.md).
 
-### Enable discovery
+### Enable related tenants
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Tenant Governance Administrator.
 1. Browse to **Tenant governance** > **Related tenants**.
@@ -88,7 +88,7 @@ If no default template exists, new tenants created through the secure add-on flo
 
 Governance relationships connect a governing tenant to one or more governed tenants. The process depends on whether the tenants share a billing account. For background on governance relationships, see [Governance relationships](governance-relationships.md).
 
-### Two-step handshake (tenants with shared billing)
+### Two-step handshake (related tenants with shared billing accounts)
 
 Use the two-step process when a billing signal exists between the tenants:
 
