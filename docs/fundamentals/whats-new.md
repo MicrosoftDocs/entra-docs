@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft Entra releases and announcements
 description: Learn what is new with Microsoft Entra, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
 author: owinfreyATL
@@ -110,7 +110,7 @@ If you encounter a hard match error after June 1, 2026, see our [documentatio
 **Service category:** MFA  
 **Product capability:** User Authentication  
 
-We’re excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
+We're excited to announce that external authentication methods in Microsoft Entra ID is now generally available under a new name: External Multifactor Authentication (External MFA). This capability enables organizations to meet multifactor authentication requirements while continuing to use their preferred MFA provider. Microsoft Entra ID remains the identity control plane, performing full policy evaluation and access decisions on every sign in, including real time Conditional Access enforcement and sign in risk assessment. Learn more in our [documentation](../identity/authentication/how-to-authentication-external-method-manage.md).
 
 ---
 
