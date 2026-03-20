@@ -20,7 +20,7 @@ When organizations adopt Microsoft Entra ID for application provisioning, target
 
 Account Discovery retrieves all user accounts from a target application and classifies them into three categories:
 
-- **Local accounts** — Accounts in the target application that have no matching user in Microsoft Entra ID. These accounts might belong to former employees, service accounts, or users who were provisioned through a different process.
+- **Local accounts** — Accounts in the target application that have no matching user in Microsoft Entra ID. These accounts might belong to former employees, service accounts, users who were provisioned through a different process, or accounts that didn't match due to data quality issues (for example, mismatched or outdated attribute values).
 - **Unassigned users** — Accounts that match a Microsoft Entra ID user but the user isn't assigned to the enterprise application. These users exist in your directory but don't have the required application assignment for provisioning to manage them.
 - **Assigned users** — Accounts that match a Microsoft Entra ID user who is assigned to the enterprise application. These accounts are fully managed by the provisioning service.
 
@@ -34,7 +34,7 @@ This classification gives you visibility into who has access to your application
 
 Before you can use Account Discovery, the following must be in place:
 
-- A Microsoft Entra ID P1 or P2 license. For details, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+- The [Microsoft Entra ID Governance](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance) add-on license or [Microsoft Entra Suite](https://www.microsoft.com/security/business/microsoft-entra-pricing). For details on feature availability by license, see [Microsoft Entra ID Governance licensing fundamentals](/entra/id-governance/licensing-fundamentals#features-by-license).
 - An enterprise application configured for provisioning with valid credentials and a successful test connection.
 - A **direct matching attribute mapping** configured between Microsoft Entra ID and the target application. Account Discovery uses the first matching attribute to correlate users between the two systems.
 - One of the following roles: [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
@@ -48,7 +48,7 @@ Before you can use Account Discovery, the following must be in place:
   - SAP SuccessFactors
   - API-driven provisioning apps
   - ServiceNow
-  - Exchange Web Services (EWS)
+  - Amazon Web Services (AWS)
 
 ## Supported applications
 
@@ -56,6 +56,8 @@ Account Discovery is validated for the following applications:
 
 - SAP Cloud Identity Services
 - Salesforce
+- Atlassian
+- On-premises applications (SQL, LDAP, REST, SOAP, PowerShell). For more information, see [Microsoft Entra on-premises application provisioning architecture](on-premises-application-provisioning-architecture.md).
 
 Other SCIM-based and gallery applications that support provisioning are enabled for Account Discovery but aren't formally certified. You can test Account Discovery with these applications at your discretion.
 
@@ -123,3 +125,7 @@ For more information about governing application access, see [Govern access for 
 - [Manage application unmatched users](application-provisioning-application-unmatched-users.md)
 - [Customize application attribute mappings](customize-application-attributes.md)
 - [What is provisioning with Microsoft Entra ID?](/entra/id-governance/what-is-provisioning)
+
+## For application developers
+
+For Account Discovery to work with a target application, the application must support SCIM pagination as described in [RFC 7644, Section 3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4). The provisioning service uses pagination to retrieve all user accounts from the target application during the discovery process.

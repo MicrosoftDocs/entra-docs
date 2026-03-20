@@ -85,6 +85,10 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 
 This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID Governance subscriptions. A subscription license is required with enough seats for every identity that is sourced using the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API and provisioned to either on-premises Active Directory or Microsoft Entra ID.
 
+## Account Discovery
+
+Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. This feature allows administrators to discover existing user accounts in target applications, match them to Microsoft Entra ID users, and categorize them for governance. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
+
 ### License scenarios
 
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
