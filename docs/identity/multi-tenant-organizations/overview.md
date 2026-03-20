@@ -116,7 +116,7 @@ Here are the primary benefits with using cross-tenant synchronization:
 Here are the primary constraints with using cross-tenant synchronization across multiple tenants:
 
 - Synchronized users will have the same cross-tenant Teams and Microsoft 365 experiences available to any other B2B collaboration user.
-- Doesn't synchronize groups, devices, or contacts.
+- Doesn't synchronize devices or contacts.
 
 :::image type="content" source="./media/overview/multi-tenant-cross-tenant-sync.png" alt-text="Diagram that shows using cross-tenant synchronization across tenants." lightbox="./media/overview/multi-tenant-cross-tenant-sync.png":::
 

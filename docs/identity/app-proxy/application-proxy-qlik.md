@@ -17,7 +17,7 @@ Microsoft and Qlik Sense worked together to provide remote access using Microsof
 ## Publish your applications in Microsoft Entra
 To publish Qlik Sense, publish two applications in Azure.
 
-### Application #1: 
+### Application 1: Qlik Sense Hub 
 
 Publish your application in Microsoft Entra. For a more detailed walkthrough of steps 1-8, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
 
@@ -33,7 +33,7 @@ Publish your application in Microsoft Entra. For a more detailed walkthrough of 
 3. Select **Assign** to save the test user assignment. 
 4. (Optional) On the app management page, select single sign-on. Choose **Kerberos Constrained Delegation** from the drop-down menu, and fill out the required fields based on your Qlik Sense configuration. Select **Save**. 
 
-### Application #2: 
+### Application 2: Qlik Sense virtual proxy 
 Follow the same steps as for Application #1, with the following exceptions: 
 
 **Step #5**: The Internal URL should now be the Qlik Sense URL with the authentication port used by the application. The default is **4244** for HTTPS, and **4248** for HTTP for Qlik Sense releases before April 2018. The default for Qlik Sense releases after April 2018 is **443** for HTTPS and **80** for HTTP. For example, `https//demo.qlik.com:4244`.

@@ -1,6 +1,6 @@
 ---
 title: How to Enable and Manage the Microsoft Profile
-description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
+description: "Enable the Microsoft traffic forwarding profile to route traffic to Microsoft 365 services including Exchange Online, SharePoint, and OneDrive through Global Secure Access."
 ms.topic: how-to
 ms.date: 03/13/2026
 ms.subservice: entra-internet-access

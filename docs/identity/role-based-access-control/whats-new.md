@@ -14,6 +14,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| March 2026 | Roles | Added [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator), [Tenant Governance Reader](permissions-reference.md#tenant-governance-reader), [Tenant Governance Relationship Administrator](permissions-reference.md#tenant-governance-relationship-administrator), and [Tenant Governance Relationship Reader](permissions-reference.md#tenant-governance-relationship-reader) roles. |
 | March 2026 | Roles | Added [Authentication Extensibility Password Administrator](permissions-reference.md#authentication-extensibility-password-administrator) role. |
 
 ## 2025
