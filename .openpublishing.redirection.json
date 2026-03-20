@@ -1742,7 +1742,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
-      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
       "redirect_document_id": false
     },
     {
@@ -3124,6 +3124,21 @@
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-enable-passkey-fido2.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-synced-passkeys.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-passkey-profiles.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
     }
   ]
 }
