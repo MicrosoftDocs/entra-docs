@@ -48,7 +48,7 @@ This integration involves several key components working together to provide bot
 - **Web Application Firewall (WAF):** A firewall that inspects incoming and outgoing HTTP traffic, intercepts sign-up requests, and coordinates with the third-party provider for bot detection.
 - **Third-party bot protection provider:** A third-party provider that delivers bot detection, device fingerprinting, and risk-assessment services to identify automated attacks.
 
-:::image type="content" source="media/tutorial-third-party-bot-protection-native-api-signup/native-app-signup-flow-waf.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and OTP-based MFA steps." lightbox="media/tutorial-third-party-bot-protection-native-api-signup/native-app-signup-flow-waf.png":::
+:::image type="content" source="media/tutorial-third-party-bot-protection-native-api-signup/native-app-sign-up-flow-waf.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and OTP-based MFA steps." lightbox="media/tutorial-third-party-bot-protection-native-api-signup/native-app-sign-up-flow-waf.png":::
 
 ## Configuration steps
 

@@ -57,6 +57,10 @@ items:
         href: how-to-configure-waf-integration.md
       - name: Akamai
         href: how-to-configure-akamai-integration.md
+      - name: Third-party account takeover protection with native API
+        href: tutorial-third-party-account-take-over-protection-native-api.md
+      - name: Third-party bot protection with native API sign-up
+        href: tutorial-third-party-bot-protection-native-api-signup.md
     - name: Fraud protection integration
       href: how-to-integrate-fraud-protection.md             
 - name: Authentication

@@ -53,7 +53,7 @@ This integration involves several key components working together to provide ris
 - **Conditional Access (CA) policy:** A policy that specifies which users, apps, and conditions are in scope and the controls required to grant access, triggered by authentication context.
 - **Authentication context:** A Conditional Access feature that allows applying granular policies to specific actions or scenarios rather than at the app level.
 
-:::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/native-app-signin-flow.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and MFA steps." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/native-app-signin-flow.png":::
+:::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/native-app-sign-in-flow.png" alt-text="Diagram of risk-based authentication flow showing native app, WAF, third-party provider, and MFA steps." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/native-app-sign-in-flow.png":::
 
 ## Configuration steps
 
@@ -159,7 +159,8 @@ This tutorial uses a Cloudflare WAF. The Cloudflare WAF setup instructions are p
    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/cloud-flare-workers-create-application.png" alt-text="Screenshot showing the Create application option in Cloudflare.":::
 
 1. Select **Start with Hello World**.
-    :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png" alt-text="Screenshot of Cloudflare application creation options showing GitHub, GitLab, Hello World, template, and static file upload buttons." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png":::
+
+   :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png" alt-text="Screenshot of Cloudflare application creation options showing GitHub, GitLab, Hello World, template, and static file upload buttons." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/ship-something-new-cloud-flare.png":::
 
 1. Name the worker and select **Deploy**.
     :::image type="content" source="media/tutorial-third-party-account-take-over-protection-native-api/deploy-hello-world-worker.png" alt-text="Screenshot of Cloudflare Workers deployment screen showing worker name, code preview, and Deploy button for Hello World setup." lightbox="media/tutorial-third-party-account-take-over-protection-native-api/deploy-hello-world-worker.png":::
@@ -222,7 +223,6 @@ The following flow uses the WAF as the layer to evaluate the risk for the /token
 1. The `/initiate` endpoint continues to use a `CredentialToken` as state object for the first factor authentication flow.
 
 1. The `/challenge` endpoint continues to use a `CredentialToken` as state object for the first factor authentication flow.
-1. 
 1. On `/token`, risk is evaluated in WAF layer. If the WAF layer decides to review the request with a challenge, a new `/token` call is made with the `AuthContext` configured for the MFA flow ("c3" in this example).
 
 1. The `/introspect` endpoint reads methods from `CredentialVerificationInputState` and returns them to the user.
