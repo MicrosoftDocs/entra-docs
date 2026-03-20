@@ -61,7 +61,7 @@ sections:
 
           When a match is confirmed, ID Protection flags the affected user with **high** risk because the detection represents verified credential exposure, not a heuristic or probabilistic signal. Risk-based Conditional Access policies can then automatically require a secure password reset before the compromised credential can be exploited. A cloud-based password reset through Microsoft Entra fully remediates the user risk for this detection. Microsoft Defender for Identity now also surfaces leaked credentials detections for on-premises passwords. For more information, see [Accounts security posture assessments](/defender-for-identity/security-posture-assessments/accounts#change-password-for-on-premises-account-with-potentially-leaked-credentials-preview).
 
-          The leaked credentials detection requires [password hash synchronization](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to be enabled. Only credentials discovered **after** PHS is enabled are matched against your tenant. Previously found credential pairs aren't retroactively checked.
+          The leaked credentials detection requires [password hash synchronization](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to be enabled for hybrid users. Only credentials discovered **after** PHS is enabled are matched against your tenant. Previously found credential pairs aren't retroactively checked.
 
       - question: |
           Why am I not seeing any leaked credentials?
