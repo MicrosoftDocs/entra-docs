@@ -104,7 +104,7 @@ If you encounter a hard match error after June 1, 2026, see our [documentatio
 
 ---
 
-### General Availability - External Auth Methods is Generally Available
+### General Availability - External MFA is Generally Available
 
 **Type:** New feature  
 **Service category:** MFA  
