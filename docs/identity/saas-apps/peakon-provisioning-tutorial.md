@@ -3,7 +3,7 @@ title: Configure Configure Peakon for automatic user provisioning with Microsoft
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Peakon .
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/20/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Peakon so that I can streamline the user management process and ensure that users have the appropriate access to Peakon.
@@ -49,15 +49,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Peakon Admin Console](media/Peakon-provisioning-tutorial/Peakon-admin-configuration.png)
 
-2. 	Select **Integrations**.
+1. 	Select **Integrations**.
 	
 	![Screenshot of the Configuration options with the Integrations option called out.](media/Peakon-provisioning-tutorial/Peakon-select-integration.png)
 
-3.	Enable **Employee Provisioning**.
+1.	Enable **Employee Provisioning**.
 
 	![Screenshot of the Employee Provisioning section with the Enable option called out.](media/Peakon-provisioning-tutorial/peakon05.png)
 
-4.	Copy the values for **SCIM 2.0 URL** and **OAuth Bearer Token**. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Peakon application.
+1.	Copy the values for **SCIM 2.0 URL** and **OAuth Bearer Token**. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Peakon application.
 
 	![Peakon Create Token](media/Peakon-provisioning-tutorial/peakon04.png)
 
@@ -91,41 +91,41 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Peakon  link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM 2.0 URL** and **OAuth Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to Peakon. If the connection fails, ensure your Peakon account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Peakon Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Peakon. If the connection fails, ensure your Peakon account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-7. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-8. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Peakon**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to Peakon  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Peakon  for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Peakon  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Peakon  for update operations. Select the **Save** button to commit any changes.
 
 	![Peakon User Attributes](media/Peakon-provisioning-tutorial/Peakon-user-attributes.png)
 
-12. To configure scoping filters, refer to the following instructions provided in the 		[Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-	
-	![Provisioning Scope](common/provisioning-scope.png)
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-15. When you're ready to provision, select **Save**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Peakon.
+## Monitor your deployment
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Connector limitations
 
