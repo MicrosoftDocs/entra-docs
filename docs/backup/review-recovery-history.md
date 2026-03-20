@@ -64,20 +64,23 @@ Recovery operations move through these statuses as the system applies changes to
 
 ## Review failed changes
 
-If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered. Click on **Completed with warnings** to view the details of the changes that were not recovered.
-<!-- screeshot placeholder --> 
+If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered. Select **Completed with warnings** to view the details of the changes that were not recovered.
 
-Select **Changed attributes** or **Changed Links** of an object to view the details of the failure. 
-<!-- screeshot placeholder --> 
+:::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png" alt-text="Screenshot of the Recovery History page showing four recovery operations, with the first entry displaying a Completed with Warnings status highlighted in orange, alongside columns for Recovery ID, Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, Filtered by, and Backup.":::
+
+Select **Changed Attributes** or **Changed Links** of an object to view the details of the failure.
+
+:::image type="content" source="media/review-recovery-history/failed-recovery-changes.png" alt-text="Screenshot of the Failed recovery changes page showing recovery job details including Recovery job ID, Status Completed with Warnings, Backup timestamp, Recovery started and completed times, and a table listing the TestUser 1111 user object with a Restore recovery action, one changed attribute, zero changed links, and Error Code 400.":::
 
 **Value at recovery attempt** shows the attribute value at the time the recovery was attempted. **Backup value** shows the value the recovery service attempted to restore.
-<!-- screeshot placeholder --> 
+
+:::image type="content" source="media/review-recovery-history/failed-changed-attributes.png" alt-text="Screenshot of the View failed changed attributes flyout for a user object showing Error code 400 with conflict details, and a table comparing the Value at recovery attempt and Backup value of the deletedDateTime attribute.":::
 
 Use failed recovery entries to:
-Identify which recovery operation and object didn't complete successfully.
-Confirm the backup point that was used.
-View failure details that explain why the recovery didn't succeed.
 
+- Identify which recovery operation and object didn't complete successfully.
+- Confirm the backup point that was used.
+- View failure details that explain why the recovery didn't succeed.
 
 > [!NOTE]
 > Failed recovery records remain available for 5 days after the recovery completion date.
