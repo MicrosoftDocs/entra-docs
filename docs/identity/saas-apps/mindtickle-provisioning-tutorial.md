@@ -38,11 +38,11 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to MindTickle, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup MindTickle for provisioning
+## Set up MindTickle for provisioning
 
 Before configuring MindTickle for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on MindTickle.
 
-1.	Reach out to the  [MindTickle's support team](mailto:help@mindtickle.com) to obtain the JWT token needed to configure SCIM provisioning.
+Reach out to the  [MindTickle's support team](mailto:help@mindtickle.com) to obtain the JWT token needed to configure SCIM provisioning.
 
 ## Add MindTickle from the gallery
 
