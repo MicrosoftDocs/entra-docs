@@ -48,25 +48,25 @@ You set the scope when you create the report. You can't change it afterward.
 
 1. Go to **Backup and recovery** > **Backups**. Select a backup from the list, and then select **Create difference report**.
 
-   :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png" alt-text="Screenshot of the Backups page in the Microsoft Entra admin center showing a list of available backups with a Create difference report button in the toolbar.":::
+   :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png#lightbox" alt-text="Screenshot of the Backups page showing available backups with a Create difference report button in the toolbar.":::
 
 1. (Optional) Apply filters to limit the scope of objects included in the report. Choose one of these options:
 
    - **Include all objects in their previous state**: Compares all supported objects in the tenant.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-all-objects.png" alt-text="Screenshot of the Create difference report dialog with the Include all objects in their previous state option selected.":::
+     :::image type="content" source="media/create-review-difference-reports/create-difference-report-all-objects.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include all objects in their previous state option selected.":::
 
    - **Include only certain types of objects**: Limits the report to selected object types, such as Users and Groups.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-types.png" alt-text="Screenshot of the Create difference report dialog with the Include only certain types of objects option selected and Users, Groups chosen in the object type dropdown.":::
+     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-types.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only certain types of objects option selected.":::
 
    - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. Enter up to 100 object IDs across different object types.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by their ID option selected, showing a list of object IDs including Users, Groups, and Named Location Policies.":::
+     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by ID option selected.":::
 
 1. Select **Create difference report** to start the report.
 
-   :::image type="content" source="media/create-review-difference-reports/create-difference-report-submit.png" alt-text="Screenshot of the Create difference report dialog with the cursor hovering over the Create difference report button, ready to submit the report.":::
+   :::image type="content" source="media/create-review-difference-reports/create-difference-report-submit.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the cursor hovering over the Create difference report button, ready to submit the report.":::
 
 ## Cancel a difference report
 
@@ -76,7 +76,7 @@ Cancel a difference report while it's in progress. Canceled reports don't displa
 
 1. Select the in-progress report, and then select **Cancel** in the toolbar.
 
-   :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png" alt-text="Screenshot of the Difference Reports page showing one report in progress and two completed reports, with the Cancel button visible in the toolbar.":::
+   :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png#lightbox" alt-text="Screenshot of the Difference Reports page showing one report in progress and two completed reports, with the Cancel button visible in the toolbar.":::
 
 ## Check difference report statuses
 
@@ -94,25 +94,25 @@ Difference reports move through these statuses as they're created and processed:
 
 1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, backup details (ID, timestamp, and availability), and scoping criteria. It also shows creation and completion times, and the number of objects and links in the report.
 
-   :::image type="content" source="media/create-review-difference-reports/difference-reports-list.png" alt-text="Screenshot of the Difference Reports list page showing report statuses, backup timestamps, and filtering details for three difference reports.":::
+   :::image type="content" source="media/create-review-difference-reports/difference-reports-list.png#lightbox" alt-text="Screenshot of the Difference Reports list page showing report statuses, backup timestamps, and filtering details for three difference reports.":::
 
 1. Select a completed difference report to view its details.
 
-   :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png" alt-text="Screenshot of the Difference Reports list page showing three completed reports with available backups, including details on calculated objects and links.":::
+   :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png#lightbox" alt-text="Screenshot of the Difference Reports list page showing three completed reports with backup and object details.":::
 
 1. Review the difference report content. The report lists each object that changed, along with the recovery action that applies during recovery.
 
-   :::image type="content" source="media/create-review-difference-reports/difference-report-detail-objects.png" alt-text="Screenshot of a completed difference report detail page showing a list of user objects with their recovery actions, changed attributes, and changed links.":::
+   :::image type="content" source="media/create-review-difference-reports/difference-report-detail-objects.png#lightbox" alt-text="Screenshot of a difference report detail page showing user objects with recovery actions and changed attributes.":::
 
    The report includes this information for each object:
 
    - **Changed attributes**: Select the count in the **Changed Attributes** column to view the attribute differences. The **Report value** column shows the value captured when the difference report was created. The **Backup value** column shows the value as captured in the selected backup.
 
-     :::image type="content" source="media/create-review-difference-reports/difference-report-changed-attributes.png" alt-text="Screenshot of the View changed attributes panel for a user object, showing attribute differences between the current state and backup for accountEnabled, city, and department.":::
+     :::image type="content" source="media/create-review-difference-reports/difference-report-changed-attributes.png#lightbox" alt-text="Screenshot of the View changed attributes panel showing differences between current state and backup values.":::
 
    - **Changed links**: Select the count in the **Changed Links** column to view the relationship differences. The **Report state** column shows the relationship as captured when the difference report was created. The **Backup state** column shows the relationship as captured in the selected backup. The **Recovery action** column indicates the action taken to restore the backup state.
 
-     :::image type="content" source="media/create-review-difference-reports/difference-report-changed-links.png" alt-text="Screenshot of the View changed links panel for a group object, showing group membership changes that would be reverted by recovery.":::
+     :::image type="content" source="media/create-review-difference-reports/difference-report-changed-links.png#lightbox" alt-text="Screenshot of the View changed links panel for a group object, showing group membership changes that would be reverted by recovery.":::
 
    - **Recovery action**: The action that applies when the object is recovered. Possible values:
 
@@ -120,7 +120,7 @@ Difference reports move through these statuses as they're created and processed:
        - **Restore**: Restore a soft-deleted object.
        - **Soft delete**: Soft-delete an object that was created after the backup.
 
-     :::image type="content" source="media/create-review-difference-reports/difference-report-recovery-action.png" alt-text="Screenshot of the difference report detail page with the Recovery Action column highlighted, showing Update and Restore actions for each object.":::
+     :::image type="content" source="media/create-review-difference-reports/difference-report-recovery-action.png#lightbox" alt-text="Screenshot of the difference report detail page with the Recovery Action column highlighted, showing Update and Restore actions for each object.":::
 
 > [!NOTE]
 > Hard-deleted objects and read-only properties don't appear in difference reports. Objects synced from on-premises directories can appear in difference reports but aren't recoverable.

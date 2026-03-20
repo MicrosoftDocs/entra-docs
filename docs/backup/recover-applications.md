@@ -34,7 +34,7 @@ The first step is to determine if the changes made to applications were accident
 After you determine the cause of the changes, validate whether the secrets for applications were impacted. Find changes to application secrets in the audit log. Look for events that indicate the application secret was changed or updated.
 
 
-The nature of the change and whether secrets were impacted determine the best path for recovery for your applications. Any time an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
+The nature of the change and whether secrets were impacted determine the best path for recovery for your applications. Anytime an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
 
 ## Recover accidental changes when secrets weren't impacted
 
@@ -49,15 +49,15 @@ If your team uses Azure Key Vault, validate your secrets are functioning correct
 1. Find the Key Vault that you configured with this application.
 1. Browse to **Secrets** and select the secret to see the current version.
 
-   :::image type="content" source="./media/recover-applications/key-vault-secrets-list.png" alt-text="The Azure Key Vault Secrets page showing a secret with Enabled status." lightbox="./media/recover-applications/key-vault-secrets-list.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-secrets-list.png" alt-text="Screenshot of the Azure Key Vault Secrets page showing a secret with Enabled status." lightbox="./media/recover-applications/key-vault-secrets-list.png":::
 
-   :::image type="content" source="./media/recover-applications/key-vault-secret-versions.png" alt-text="The Azure Key Vault secret versions page showing the current version enabled and an older version disabled." lightbox="./media/recover-applications/key-vault-secret-versions.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-secret-versions.png" alt-text="Screenshot of the Key Vault secret versions page with the current version enabled and an older version disabled." lightbox="./media/recover-applications/key-vault-secret-versions.png":::
 
 1. Select **Show Secret Value** and compare the first three characters of the secret with the secret value configured in your application registration in the Microsoft Entra admin center. If they match, your secrets were unaltered and continue to function as expected.
 
-   :::image type="content" source="./media/recover-applications/key-vault-secret-value-comparison.png" alt-text="The Azure Key Vault secret version detail page with the secret value revealed, highlighting the first three characters for comparison." lightbox="./media/recover-applications/key-vault-secret-value-comparison.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-secret-value-comparison.png" alt-text="Screenshot of the Key Vault secret version detail page with the secret value revealed for comparison." lightbox="./media/recover-applications/key-vault-secret-value-comparison.png":::
 
-   :::image type="content" source="./media/recover-applications/entra-app-certificates-secrets.png" alt-text="The Certificates and secrets page for an application in the Microsoft Entra admin center, showing the first three characters of the secret value for comparison with Azure Key Vault." lightbox="./media/recover-applications/entra-app-certificates-secrets.png":::
+   :::image type="content" source="./media/recover-applications/entra-app-certificates-secrets.png" alt-text="Screenshot of the Certificates and secrets page showing the secret value for comparison with Key Vault." lightbox="./media/recover-applications/entra-app-certificates-secrets.png":::
 
 > [!NOTE]
 > You might also need to review properties on the application that aren't supported by Backup and Recovery to fully restore the application to a previous state. See the [Appendix](#application-and-service-principal-properties-not-supported-by-backup-and-recovery) for addressing unsupported properties.
@@ -84,11 +84,11 @@ If your team uses Azure Key Vault, you can roll the secrets using these steps.
 1. Go to your application in **Application registrations**.
 1. Go to **Certificates & secrets** to create a new secret.
 
-   :::image type="content" source="./media/recover-applications/entra-app-add-client-secret.png" alt-text="The Add a client secret panel in the Microsoft Entra admin center with description and expiration fields." lightbox="./media/recover-applications/entra-app-add-client-secret.png":::
+   :::image type="content" source="./media/recover-applications/entra-app-add-client-secret.png" alt-text="Screenshot of the Add a client secret panel with description and expiration fields." lightbox="./media/recover-applications/entra-app-add-client-secret.png":::
 
 1. Copy the value of the secret to create a new version of the secret in Azure Key Vault.
 
-   :::image type="content" source="./media/recover-applications/entra-app-new-secret-created.png" alt-text="The Certificates and secrets page showing two client secrets, including the newly created secret with its value." lightbox="./media/recover-applications/entra-app-new-secret-created.png":::
+   :::image type="content" source="./media/recover-applications/entra-app-new-secret-created.png" alt-text="Screenshot of the Certificates and secrets page showing two client secrets including the newly created secret." lightbox="./media/recover-applications/entra-app-new-secret-created.png":::
 
 **Add a new version of the secret in Key Vault to manage your new secret:**
 
@@ -98,15 +98,15 @@ If your team uses Azure Key Vault, you can roll the secrets using these steps.
 1. Browse to **Secrets** and select the secret to see the current version.
 1. Select **New Version** and create a new secret by specifying the new secret value from your application. Make sure that it's enabled.
 
-   :::image type="content" source="./media/recover-applications/key-vault-create-secret-version.png" alt-text="The Azure Key Vault Create a secret form with the secret value field populated and the Enabled toggle set to Yes." lightbox="./media/recover-applications/key-vault-create-secret-version.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-create-secret-version.png" alt-text="Screenshot of the Key Vault Create a secret form with the secret value field populated and Enabled toggle set to Yes." lightbox="./media/recover-applications/key-vault-create-secret-version.png":::
 
 1. Go back to the previous version of this secret and disable it.
 
-   :::image type="content" source="./media/recover-applications/key-vault-disable-old-version.png" alt-text="The Azure Key Vault secret versions page showing the Disable option for an older secret version." lightbox="./media/recover-applications/key-vault-disable-old-version.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-disable-old-version.png" alt-text="Screenshot of the Key Vault secret versions page showing the Disable option for an older secret version." lightbox="./media/recover-applications/key-vault-disable-old-version.png":::
 
 1. Copy the new **Secret Identifier** value and update it in code for your application as needed.
 
-   :::image type="content" source="./media/recover-applications/key-vault-new-secret-identifier.png" alt-text="The Azure Key Vault secret version detail page with the Secret Identifier URL highlighted for copying to the application." lightbox="./media/recover-applications/key-vault-new-secret-identifier.png":::
+   :::image type="content" source="./media/recover-applications/key-vault-new-secret-identifier.png" alt-text="Screenshot of the Key Vault secret version detail page with the Secret Identifier URL highlighted for copying." lightbox="./media/recover-applications/key-vault-new-secret-identifier.png":::
 
 If your team uses another product for backing up your secrets, roll the secrets using your own process. Because the Application Object ID is unchanged, you should be able to use your standard process for rolling secrets to update the impacted applications.
 

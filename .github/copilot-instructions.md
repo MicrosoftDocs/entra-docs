@@ -54,4 +54,27 @@ Below are instructions specific to this repository. These may be updated by repo
 
 <!--- Add additional repository level instructions below. Do NOT update this line or above. --->
 
+### Entra Documentation Style Rules
+
+#### Product and Feature Naming
+- **"multitenant"** (no hyphen) in all content unless directly mirroring UI text
+- **"preexisting"** (no hyphen)
+- **"anytime"** (one word) not "any time"
+- **"changesets"** (one word) not "change sets"
+- **"Azure portal"** (lowercase "portal")
+- **"Microsoft Entra"** must always include "Microsoft" — never use "Entra" alone
+- **"preview"** not "public preview" when describing preview features
+
+#### Markdown Formatting
+- Use regular spaces for indentation — never non-breaking spaces (U+00A0 / `\xa0`)
+- Sublists under numbered steps need 4-space indentation to render correctly
+- Single-step procedures should use a bullet (`-`), not a numbered list (`1.`)
+- When a verb phrase is used in a filename (e.g., "set up"), hyphenate it: `how-to-set-up-*`
+
+#### Images
+- All images must include `#lightbox` in the source path for readability (e.g., `source="media/image.png#lightbox"`)
+- If the image already has a `lightbox="..."` attribute, do NOT also add `#lightbox` to the source
+- Alt text must start with the graphic type (e.g., "Screenshot of...") and end with a period
+- Alt text must be 40-150 characters long
+- Images must contain no personal information (email addresses, GUIDs, subscription IDs). Redact with an opaque color block matching the background or use approved fictitious identifiers
 

@@ -186,7 +186,7 @@ OAuth2 permission grants aren’t recovered independently. For difference report
 
 An app role assignment records when a user, group, or service principal is assigned an app role for an app. All properties of app role assignment are in scope. View all app role assignment details and properties in the [Microsoft Graph appRoleAssignment resource type](/graph/api/resources/approleassignment).
 
-App role assigments aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
+App role assignments aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
 ## Organization
 
@@ -197,28 +197,28 @@ Recovery for the organization object supports these properties:
 - `StrongAuthenticationDetails`
   - `availableMFAMethods`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-available-mfa-methods.png" alt-text="Screenshot showing the availableMFAMethods property under StrongAuthenticationDetails.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-available-mfa-methods.png#lightbox" alt-text="Screenshot showing the availableMFAMethods property under StrongAuthenticationDetails.":::
 
   - `IsApplicationPasswordBlocked`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-app-password-blocked.png" alt-text="Screenshot showing the IsApplicationPasswordBlocked property under StrongAuthenticationDetails.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-app-password-blocked.png#lightbox" alt-text="Screenshot showing the IsApplicationPasswordBlocked property under StrongAuthenticationDetails.":::
 
   - `IsRememberDevicesEnabled`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-enabled.png" alt-text="Screenshot showing the IsRememberDevicesEnabled property under StrongAuthenticationDetails.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-enabled.png#lightbox" alt-text="Screenshot showing the IsRememberDevicesEnabled property under StrongAuthenticationDetails.":::
 
   - `rememberDevicesDurationInDays`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-duration.png" alt-text="Screenshot showing the rememberDevicesDurationInDays property under StrongAuthenticationDetails.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-remember-devices-duration.png#lightbox" alt-text="Screenshot showing the rememberDevicesDurationInDays property under StrongAuthenticationDetails.":::
 
 - `StrongAuthenticationPolicy`
   - `enabled`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-enabled.png" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-enabled.png#lightbox" alt-text="Screenshot showing the enabled property under StrongAuthenticationPolicy.":::
 
   - `ipAllowList`
 
-    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-allowed-list.png" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
+    :::image type="content" source="media/scope-supported-objects-limitations/organization-strong-authentication-policy-allowed-list.png#lightbox" alt-text="Screenshot showing the ipAllowList property under StrongAuthenticationPolicy.":::
 
 ## Limitations
 

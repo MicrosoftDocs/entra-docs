@@ -98,7 +98,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 **If the difference report is running for a long time:**
 
-See the [estimated difference report generation time](backup-difference-report-recovery-model.md). Large tenants or large change sets might take longer to process.
+See the [estimated difference report generation time](backup-difference-report-recovery-model.md). Large tenants or large changesets might take longer to process.
 
 - Allow the report to continue running unless cancellation is required.
 

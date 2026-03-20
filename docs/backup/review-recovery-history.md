@@ -33,7 +33,7 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
 
-   :::image type="content" source="media/review-recovery-history/recovery-history-page.png" alt-text="Screenshot of the Backup and recovery Recovery History (Preview) page showing two recovery operations with columns for Recovery ID, Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, Filtered by, and Backup.":::
+   :::image type="content" source="media/review-recovery-history/recovery-history-page.png#lightbox" alt-text="Screenshot of the Recovery History page showing recovery operations with Status, Backup timestamp, Recovery started, and Modified objects columns.":::
 
    The Recovery History page displays all recent recovery operations in your tenant. From this page:
 
@@ -44,7 +44,7 @@ To view available recovery history in your tenant, you must sign in with at leas
    - See how many objects and links the recovery modified.
    - Filter or search recovery records to narrow results.
 
-   :::image type="content" source="media/review-recovery-history/recovery-history-details.png" alt-text="Screenshot of the Recovery History page showing three recovery operations with Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, and Filtered by columns.":::
+   :::image type="content" source="media/review-recovery-history/recovery-history-details.png#lightbox" alt-text="Screenshot of the Recovery History page showing multiple recovery operations with status and timestamp details.":::
 
 > [!NOTE]
 > The system automatically removes recovery history 5 days after recovery completes.
@@ -66,15 +66,15 @@ Recovery operations move through these statuses as the system applies changes to
 
 If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered. Select **Completed with warnings** to view the details of the changes that were not recovered.
 
-:::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png" alt-text="Screenshot of the Recovery History page showing four recovery operations, with the first entry displaying a Completed with Warnings status highlighted in orange, alongside columns for Recovery ID, Status, Backup timestamp, Backup ID, Recovery started, Recovery completed, Modified objects, Modified links, Filtered by, and Backup.":::
+:::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png#lightbox" alt-text="Screenshot of the Recovery History page with a Completed with Warnings entry highlighted in the Status column.":::
 
 Select **Changed Attributes** or **Changed Links** of an object to view the details of the failure.
 
-:::image type="content" source="media/review-recovery-history/failed-recovery-changes.png" alt-text="Screenshot of the Failed recovery changes page showing recovery job details including Recovery job ID, Status Completed with Warnings, Backup timestamp, Recovery started and completed times, and a table listing the TestUser 1111 user object with a Restore recovery action, one changed attribute, zero changed links, and Error Code 400.":::
+:::image type="content" source="media/review-recovery-history/failed-recovery-changes.png#lightbox" alt-text="Screenshot of the Failed recovery changes page showing recovery job details and a failed object with Error Code 400.":::
 
 **Value at recovery attempt** shows the attribute value at the time the recovery was attempted. **Backup value** shows the value the recovery service attempted to restore.
 
-:::image type="content" source="media/review-recovery-history/failed-changed-attributes.png" alt-text="Screenshot of the View failed changed attributes flyout for a user object showing Error code 400 with conflict details, and a table comparing the Value at recovery attempt and Backup value of the deletedDateTime attribute.":::
+:::image type="content" source="media/review-recovery-history/failed-changed-attributes.png#lightbox" alt-text="Screenshot of the View failed changed attributes flyout showing error details and attribute value comparison.":::
 
 Use failed recovery entries to:
 
