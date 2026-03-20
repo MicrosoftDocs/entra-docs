@@ -110,7 +110,7 @@ If you encounter a hard match error after June 1, 2026, see our [documentatio
 **Service category:** MFA  
 **Product capability:** User Authentication  
 
-We're excited to announce that external authentication methods in Microsoft Entra ID is now generally available under a new name: External Multifactor Authentication (External MFA). This capability enables organizations to meet multifactor authentication requirements while continuing to use their preferred MFA provider. Microsoft Entra ID remains the identity control plane, performing full policy evaluation and access decisions on every sign in, including real time Conditional Access enforcement and sign in risk assessment. Learn more in our [documentation](../identity/authentication/how-to-authentication-external-method-manage.md).
+We're excited to announce that external authentication methods in Microsoft Entra ID is now generally available under a new name: External Multifactor Authentication (External MFA). This capability enables organizations to meet multifactor authentication requirements while continuing to use their preferred MFA provider. Microsoft Entra ID remains the identity control plane, performing full policy evaluation and access decisions on every sign in, including real time Conditional Access enforcement and sign in risk assessment. For more information, see [How to enable external MFA](../identity/authentication/how-to-authentication-external-method-manage.md).
 
 ---
 
