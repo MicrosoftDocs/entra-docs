@@ -135,7 +135,7 @@ Recent Activity provides a summary of recent risk-related activities in your ten
 
 ## Unified risk signals for ID Protection user risk (Preview)
 
-Microsoft Entra ID Protection now provides unified risk signals for user risk detections. This feature, currently in preview, uses signals from Microsoft Defender for Identity and even non-Microsoft signals for an enhanced risk detection experience. This new identity fabric provides comprehensive signals to calculate the Identity Risk Score. When the Identity Risk Score reaches a certain threshold, risk-based Conditional Access policies can be triggered to protect your organization.
+Microsoft Entra ID Protection now provides unified risk signals for user risk detections. This feature, currently in preview, uses signals from Microsoft Defender and even non-Microsoft signals for an enhanced risk detection experience. This new identity fabric provides comprehensive signals to calculate the Identity Risk Score. When the Identity Risk Score is raised, the Microsoft Entra score is also raised using the unified risk signals, which can automatically trigger your risk-based Conditional Access policies.
 
 To configure this new capability, browse to the **Identity Protection Dashboard** > **Settings**. Select the option to either enable unified risk for all users or select users and groups. Once enabled, the Identity Risk Score and the details associated with the unified risk appear in the [Risky user report](concept-risky-user-report.md).
 
