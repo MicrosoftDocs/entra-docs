@@ -30,7 +30,7 @@ An account used by an AI agent is referred to as an **agent identity**. Much lik
 
 - **Identifier**. Each agent identity has an `id` (also known as object ID), such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. Microsoft Entra generates the `id` and uniquely identifies the account within a Microsoft Entra tenant.
 
-- **Credentials**. Agent identities don't have passwords, but have other forms of credentials they can use to authenticate.
+- **Credentials**. Agent identities don't have credentials of their own. They rely on the agent identity blueprint to acquire tokens on their behalf.
 
 - **Display name**. An agent identity's display name is surfaced in many experiences such as the Microsoft Entra admin center, Azure portal, Teams, Outlook, and more. It's the human-friendly name of an agent and can be changed.
 
@@ -46,7 +46,7 @@ These are the basic components of an agent identity that enable secure authentic
 
 Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions.
 
-Unlike human users, AI agents don't use passwords, Short Message Service (SMS), passkeys, or authenticator apps for authentication. Instead, agent identities use credentials types that are usable by software systems. These credential types include:
+Unlike human users, AI agents don't use passwords, Short Message Service (SMS), passkeys, or authenticator apps for authentication. Agent identities don't have credentials of their own — they only authenticate using federated identity credentials (tokens) issued by the agent identity blueprint. The blueprint holds credentials that it uses to acquire tokens on behalf of agent identities. These credential types on the blueprint include:
 
 - Managed identities, for AI agents that run on Azure (most secure).
 - Federated identity credentials, for AI agents that run on Kubernetes or other cloud providers.

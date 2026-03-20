@@ -1,0 +1,149 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
+  description: Find answers to common questions about Microsoft Entra Tenant Governance, including discovery, governance relationships, and monitoring
+  author: barclayn
+  ms.author: barclayn
+  ms.service: entra-id-governance
+  ms.topic: faq
+  ms.date: 03/17/2026
+title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
+summary: |
+  [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+
+  This article answers frequently asked questions about Microsoft Entra Tenant Governance.
+
+sections:
+  - name: General
+    questions:
+      - question: |
+          Can I manage Tenant Governance with Microsoft Graph APIs?
+        answer: |
+          Yes, a set of Microsoft Graph APIs is available to manage Tenant Governance. For more information, see the [Microsoft Graph API documentation](https://aka.ms/TenantGovernance/MSGraphAPI).
+
+      - question: |
+          Are licenses required to use Tenant Governance?
+        answer: |
+          Tenant Governance offers free, basic, and premium capabilities. For a comprehensive list of license requirements per capability, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
+
+      - question: |
+          How does Microsoft Entra Tenant Governance compare to the multitenant organization feature?
+        answer: |
+          Microsoft Entra Tenant Governance and the multitenant organization feature are complementary. Tenant Governance enables tenant discovery, administrative access across tenants, and configuration monitoring within a tenant. The multitenant organization feature enables end-user collaboration across Microsoft Entra tenants within Microsoft 365 services. Within an organization, the list of tenants related by governance relationships remains independent of the list of tenants within a multitenant organization.
+
+  - name: Related tenants
+    questions:
+      - question: |
+          Do I own all my related tenants?
+        answer: |
+          No. Related tenants don't imply ownership of a discovered tenant. Related tenants represent tenants that have historical or active relationships with your tenant based on discovery signals. The feature provides situational awareness by surfacing tenant connections based on evidence already present across identity, application, and billing systems. This awareness enables organizations to make informed governance decisions.
+
+      - question: |
+          What do I do if Tenant Governance shows me a related tenant that I don't recognize?
+        answer: |
+          Start by checking whether the tenant shares your Commerce billing account. A shared billing account often indicates a tenant you might need to govern. Users in that tenant might have permissions to access or modify the billing account, or might have subscriptions paid for under your billing account.
+
+          You can also review B2B collaboration signals and multitenant application usage between your tenant and the related tenant. B2B registration and sign-in patterns might reveal interactions you recognize. You might also use email scanning capabilities to detect administration emails about those other tenants. When needed, reach out to the users involved using your organization's communication tools, such as Exchange Online or Teams, to understand why the relationship exists.
+
+      - question: |
+          How can I protect my organization if an administrator of another tenant doesn't approve my governance request?
+        answer: |
+          If administrators of another tenant reject or don't respond to your governance request, run a quarantine workflow to protect your organization from actions of the related tenant. Follow the steps in [Quarantine unsanctioned tenants](/entra/fundamentals/quarantine-unsanctioned-tenants) to block users or applications in the other tenant from accessing your resources. This approach protects the security and privacy of data in your tenant.
+
+          Consider cutting off outbound B2B user access or Commerce service provisioning as a test. This action could prompt the other tenant to reconsider your request.
+
+      - question: |
+          How does Tenant Governance relate to B2B capabilities?
+        answer: |
+          Some customers use B2B accounts for multitenant administration. This approach requires roles to be assigned per B2B user in every tenant. Granular delegated admin privileges (GDAP) don't replace B2B collaboration features. However, for multitenant administration needs, assigning and maintaining least-privileged permissions is often easier with GDAP accounts in governance relationships.
+
+  - name: Governance relationships
+    questions:
+      - question: |
+          I'm a Microsoft partner in the Partner Center program. Can I use these capabilities to manage customer tenants?
+        answer: |
+          Tenant Governance relationships aren't currently supported for Microsoft partners with existing [GDAP relationships configured through Partner Center](/partner-center/customers/gdap-introduction).
+
+      - question: |
+          Can governed tenants independently terminate the relationship?
+        answer: |
+          Yes. A governed tenant can always terminate the governance relationship. Administrators in the governing tenant see that the governed tenant terminated the relationship and receive an email notification.
+
+      - question: |
+          Does Tenant Governance support multi-tier relationships?
+        answer: |
+          No. Multi-tier relationships aren't currently supported. For example, you can't set up a governance relationship where Tenant A governs Tenant B and Tenant B governs Tenant C. A tenant can't be both a governing and a governed tenant. If the system detects that a relationship setup would break this rule, API calls fail.
+
+      - question: |
+          Do governance relationships support PIM?
+        answer: |
+          Yes. Use [PIM for Groups](/entra/id-governance/privileged-identity-management/concept-pim-for-groups) so that admins activate group membership in the governing tenant before using GDAP access configured in the relationship to manage other tenants. PIM policies configured in the governed tenant and applied to a governing tenant administrator aren't supported.
+
+      - question: |
+          Does Tenant Governance support multiple relationships between tenants?
+        answer: |
+          Multiple tenants can govern a single tenant, and a single tenant can govern multiple tenants. Multiple active relationships between the same two tenants aren't supported.
+
+  - name: Configuration management
+    questions:
+      - question: |
+          What Microsoft services and resources can I monitor?
+        answer: |
+          Monitor any of over 200 resource types supported by Microsoft tenant configuration APIs. These resources span Microsoft Entra, Intune, Exchange Online, Teams, and Security & Compliance (Defender and Purview). For the full list of supported resource types, see the tenant configuration management documentation: [Entra](/graph/utcm-entra-resources), [Exchange](/graph/utcm-exchange-resources), [Intune](/graph/utcm-intune-resources), [Security and Compliance](/graph/utcm-securityandcompliance-resources), and [Teams](/graph/utcm-teams-resources).
+
+      - question: |
+          What does a configuration baseline look like, and how do you create one?
+        answer: |
+          A configuration baseline is a declarative JSON representation of the desired tenant configuration state. Author it manually, or generate a starting baseline by using Snapshot APIs to extract the tenant's current configuration and then editing it into the desired state.
+
+      - question: |
+          How often do monitors run, and can you control the monitoring frequency?
+        answer: |
+          After you create a monitor, it runs automatically on a periodic basis. The default run interval is every six hours.
+
+      - question: |
+          Are there any limits on how large a configuration baseline can be?
+        answer: |
+          A monitor baseline can include up to 200 resource instances. The overall daily limit is 800 resource instances across all monitors in a tenant.
+
+      - question: |
+          What happens if I try to monitor or snapshot more resources than allowed?
+        answer: |
+          The new monitor or snapshot job fails during creation. For example, if an existing monitor already uses the full daily quota of 800 resource instances, any attempt to create another monitor fails because it would exceed the limit.
+
+      - question: |
+          If the monitoring service detects a configuration drift, how do I fix it?
+        answer: |
+          Use the tool of your choice to update the resource configuration, such as the admin center, PowerShell, or Graph API. The next time the monitor runs, it detects that the resource matches the configuration baseline and automatically marks the drift as no longer active.
+
+      - question: |
+          Can I monitor configuration across multiple tenants using the same baseline?
+        answer: |
+          Reuse the same configuration baseline file to create monitors in different tenants. To create a monitor in multiple tenants, or to detect configuration drifts in multiple tenants, sign in to each tenant individually and perform the task in that tenant.
+
+      - question: |
+          What happens if multiple monitors define different required states for the same resource?
+        answer: |
+          Both monitors run successfully, but each independently evaluates drift against its own baseline. For example, if monitor 1 expects property A to be `true` and monitor 2 expects property A to be `false`, the monitors report different results. If the actual state is `true`, only monitor 2 reports a drift. Define a single desired state per resource to avoid conflicting baselines.
+
+  - name: Secure tenant creation
+    questions:
+      - question: |
+          Why do I need to choose a subscription when creating a tenant?
+        answer: |
+          To use the secure add-on tenant creation feature, you need owner or contributor permissions on a Microsoft Customer Agreement (MCA) subscription. The subscription you select is where the system stores the Microsoft Entra ID Free billing asset for the new tenant.
+
+      - question: |
+          What is the Microsoft Entra ID Free billing asset?
+        answer: |
+          Microsoft Entra ID Free is a free billing asset that represents your Microsoft Entra tenants within your billing account. This asset demonstrates commercial and legal ownership of the tenant. The Microsoft support team can use it to restore access or securely process sensitive requests. Each billing asset is tied directly to one Microsoft Entra tenant and doesn't expire or get removed unless the tenant is deleted by a Global Administrator. For more information, see [Microsoft Entra ID Free](/azure/cost-management-billing/manage/microsoft-entra-id-free).
+
+      - question: |
+          How are add-on tenants governed?
+        answer: |
+          When a user in your organization creates a new tenant through the secure add-on tenant creation flow in the Microsoft Entra admin center (or through APIs), the system automatically creates a governance relationship. This relationship connects the home (governing) tenant and the add-on (governed) tenant using the default governance policy template. If no default template is defined, no relationship is established.
+
+      - question: |
+          Can add-on tenants be created from governed tenants?
+        answer: |
+          Yes. Although multi-tier governance relationships aren't supported, an exception exists for new tenant creation. If your tenant is governed by another tenant, you can still create add-on tenants. Those add-on tenants are then governed by your tenant.
