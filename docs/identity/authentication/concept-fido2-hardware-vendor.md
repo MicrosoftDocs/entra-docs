@@ -230,9 +230,6 @@ VeriMark NFC+ USB-C Security Key|ee7fa1e0-9539-432f-bd43-9c2fc6d4f311|&#10060;|&
 VeroCard FIDO2 Authenticator|99ed6c29-4573-4847-816d-78ad8f1c75ef|&#10060;|&#10060;|&#10060;|&#x2705;
 VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|&#10060;|&#10060;|&#10060;|&#10060;
 VinCSS FIDO2 Fingerprint|9012593f-43e4-4461-a97a-d92777b55d74|&#x2705;|&#x2705;|&#x2705;|&#x2705;
-Windows Hello Hardware Authenticator|08987058-cadc-4b81-b6e1-30de50dcbe96|&#x2705;|&#10060;|&#10060;|&#10060;
-Windows Hello Software Authenticator|6028b017-b1d4-4c02-b4b3-afcdafc96bb2|&#x2705;|&#10060;|&#10060;|&#10060;
-Windows Hello VBS Hardware Authenticator|9ddd1817-af5a-4672-a2b9-3e3dd95000a9|&#x2705;|&#10060;|&#10060;|&#10060;
 WiSECURE AuthTron USB FIDO2 Authenticator|504d7149-4e4c-3841-4555-55445a677357|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 CCN Series with NFC|3aa78eb1-ddd8-46a8-a821-8f8ec57a7bd5|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 CCN Series with NFC (Enterprise Profile)|4fc84f16-2545-4e53-b8fc-7bf4d7282a10|&#10060;|&#x2705;|&#x2705;|&#10060;
