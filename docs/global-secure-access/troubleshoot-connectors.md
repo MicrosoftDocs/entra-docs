@@ -2,7 +2,7 @@
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
 ms.topic: troubleshooting
-ms.date: 02/24/2026
+ms.date: 03/13/2026
 ms.reviewer: ashishj,dhruvinshah
 ai-usage: ai-assisted
 ---
@@ -113,7 +113,7 @@ Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
 Register-MicrosoftEntraPrivateNetworkConnector
 ```
 
-To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
+For more information about the `Register-MicrosoftEntraPrivateNetworkConnector` command, see [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md).
 
 ## Verify admin is used to install the connector
 
@@ -157,9 +157,9 @@ This flowchart walks you through the steps for debugging some of the more common
 
 | Step | Action | Description |
 |---------|---------|---------|
-|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).|
+|1 | Find the connector group assigned to the app | You probably have a connector installed on multiple servers, in which case the connectors should be assigned to a connector group. For more information about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).|
 |2 | Install the connector and assign a group | If you don't have a connector installed, see [configure connectors](how-to-configure-connectors.md).<br></br> If the connector isn't assigned to a group, see [Assign the connector to a group](concept-connector-groups.md).<br></br>If the application isn't assigned to a connector group, see [Assign the application to a connector group](concept-connector-groups.md#assignment-of-applications-to-your-connector-groups).|
-|3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports are configured correctly. To learn more, see [configure connectors](how-to-configure-connectors.md).|
+|3 | Run a port test on the connector server | On the connector server, run a port test by using [telnet](/windows-server/administration/windows-commands/telnet) or other port testing tool to check if ports are configured correctly. For more information, see [configure connectors](how-to-configure-connectors.md).|
 |4 | Configure the domains and ports | [Configure connectors](how-to-configure-connectors.md) for the connector. Certain ports must be open and URLs that your server must be able to access. For more information, see [configure connectors](how-to-configure-connectors.md). |
 |5 | Check if a back-end proxy is in use | Check to see if the connectors are using back-end proxy servers or bypassing them. For details, see [Troubleshoot connector proxy problems and service connectivity issues](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md). |
 |6 | Update the connector and updater settings with the back-end proxy information | If a back-end proxy is in use, make sure the connector is using the same proxy. For details about troubleshooting and configuring connectors to work with proxy servers, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md). |

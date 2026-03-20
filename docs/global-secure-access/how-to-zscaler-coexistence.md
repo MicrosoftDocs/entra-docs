@@ -1,9 +1,9 @@
 ---
 title: Configure Microsoft and Zscaler for a Unified SASE Solution
-description: "Learn how to configure Microsoft and Zscaler SSE for unified SASE solutions to enhance security and connectivity in your organization."
+description: "Learn how to deploy Microsoft Global Secure Access alongside Zscaler Private Access and Internet Access. Covers four integration scenarios with step-by-step configuration, verification, and traffic testing procedures."
 #customer intent: As a network administrator, I want to configure Microsoft and Zscaler SSE for unified SASE solutions so that I can enhance security and connectivity in my organization.  
 ms.topic: how-to
-ms.date: 10/07/2025
+ms.date: 03/18/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -43,23 +43,23 @@ To configure Microsoft and Zscaler for a unified SASE solution, start by setting
 - Set up Zscaler Private Access and Internet Access
 - Configure the Global Secure Access FQDN and IP bypasses
 
-### Microsoft Global Secure Access
+### Prerequisites for Microsoft Global Secure Access
 
-To set up Microsoft Entra Global Secure Access and test all scenarios in this documentation:
+To set up Microsoft Entra Global Secure Access and test all four scenarios described in this article:
 - Enable and disable different Microsoft Global Secure Access traffic forwarding profiles for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
-- Install and configure the Microsoft Entra private network connector. To learn how to install and configure the connector, see [How to configure connectors](how-to-configure-connectors.md).
+- Install and configure the Microsoft Entra private network connector. For information on how to install and configure the connector, see [How to configure connectors](how-to-configure-connectors.md).
     > [!NOTE]
     > Private Network Connectors are required for Microsoft Entra Private Access applications.
-- Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. To learn how to configure Quick Access, see [How to configure Quick Access](how-to-configure-quick-access.md).
-- Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). For macOS, see [Global Secure Access Client for macOS](how-to-install-macos-client.md).
+- Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. For information on how to configure Quick Access, see [How to configure Quick Access](how-to-configure-quick-access.md).
+- Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). For information on how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). For macOS, see [Global Secure Access Client for macOS](how-to-install-macos-client.md).
 
-### Zscaler Private Access and Internet Access
+### Prerequisites for Zscaler Private Access and Internet Access
 
-To integrate Zscaler Private Access and Zscaler Internet Access with Microsoft Global Secure Access, make sure you complete the following prerequisites. These steps ensure smooth integration, better traffic management, and improved security.
-- Configure Zscaler Internet Access. To learn more about configuring Zscaler, see [Step-by-Step Configuration Guide for ZIA](https://help.zscaler.com/zia/step-step-configuration-guide-zia).
-- Configure Zscaler Private Access. To learn more about configuring Zscaler, see [Step-by-Step Configuration Guide for ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa).
-- Set up and configure Zscaler Client Connector forwarding profiles.  To learn more about configuring Zscaler, see [Configuring Forwarding Profiles for Zscaler Client Connector](https://help.zscaler.com/zscaler-client-connector/configuring-forwarding-profiles-zscaler-client-connector).
-- Set up and configure Zscaler Client Connector app profiles with Global Secure Access bypasses.  To learn more about configuring Zscaler, see [Configuring Zscaler Client Connector App Profiles](https://help.zscaler.com/zscaler-client-connector/configuring-zscaler-client-connector-app-profiles).
+To integrate ZscalerPrivate Access and Zscaler Internet Access with Microsoft Global Secure Access, make sure you complete the following prerequisites. These steps ensure smooth integration, better traffic management, and improved security.
+- Configure Zscaler Internet Access. For more information about configuring Zscaler, see [Step-by-Step Configuration Guide for ZIA](https://help.zscaler.com/zia/step-step-configuration-guide-zia).
+- Configure Zscaler Private Access. For more information about configuring Zscaler, see [Step-by-Step Configuration Guide for ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa).
+- Set up and configure Zscaler Client Connector forwarding profiles.  For more information about configuring Zscaler, see [Configuring Forwarding Profiles for Zscaler Client Connector](https://help.zscaler.com/zscaler-client-connector/configuring-forwarding-profiles-zscaler-client-connector).
+- Set up and configure Zscaler Client Connector app profiles with Global Secure Access bypasses.  For more information about configuring Zscaler, see [Configuring Zscaler Client Connector App Profiles](https://help.zscaler.com/zscaler-client-connector/configuring-zscaler-client-connector-app-profiles).
 
 ### Global Secure Access service FQDNs and IPs bypasses
 
@@ -76,21 +76,23 @@ These entries need to be present in the app profiles for every scenario:
 
 In this scenario, Microsoft Entra Private Access handles private application traffic, while Zscaler Internet Access manages Internet traffic. The Zscaler Private Access module is disabled in the Zscaler portal. To configure Microsoft Entra Private Access, you need to complete several steps. First, enable the forwarding profile. Next, install the Private Network Connector. After that, set up Quick Access and configure Private DNS. Finally, install the Global Secure Access client. For Zscaler Internet Access, the configuration involves creating a forwarding profile and app profile, adding bypass rules for Microsoft Entra services, and installing the Zscaler Client Connector. Finally, the configurations are verified, and traffic flow are tested to ensure proper handling of private and Internet traffic by the respective solutions.
 
-### Microsoft Entra Private Access configuration
+### Configure Microsoft Entra Private Access
 
-For this scenario you need to:
+To configure Microsoft Entra Private Access for this scenario:
 - [Enable Microsoft Entra Private Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
 - Install a [Private Network Connector](how-to-configure-connectors.md) for Microsoft Entra Private Access.
 - Configure [Quick Access and set up Private DNS](how-to-configure-quick-access.md).
 - Install and configure the [Global Secure Access client for Windows](how-to-install-windows-client.md) or [macOS](how-to-install-macos-client.md).
 
-### Zscaler Internet Access configuration
+### Configure Zscaler Internet Access
 
-Perform in the Zscaler portal:
+Complete the following steps in the Zscaler portal:
 - Set up and configure [Zscaler Internet Access](https://help.zscaler.com/zia/step-step-configuration-guide-zia).
 - Create a forwarding profile.
 - Create an app profile.
 - Install the Zscaler Client Connector
+
+#### Add a forwarding profile
 
 Add Forwarding Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**.
@@ -100,10 +102,14 @@ Add Forwarding Profile from the Client Connector Portal:
 1. Scroll down to **Forwarding profile action for ZPA**.
 1. Select **None** for all options in this section.
 
+#### Add an app profile
+
 Add App Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **App Profiles** > **Windows (or macOS)** > **Add Windows Policy (or macOS)**.
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZIA Only**.
 1. Scroll down and add the Microsoft SSE service Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) in the [Global Secure Access service FQDNs and IPs bypasses section](#global-secure-access-service-fqdns-and-ips-bypasses), to “**HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY**” field.
+
+#### Verify client configurations
 
 Go to the system tray to check that Global Secure Access and Zscaler clients are enabled.
 
@@ -117,7 +123,9 @@ Verify configurations for clients:
 > [!NOTE]
 > For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
- Test traffic flow:
+#### Test traffic flow
+
+Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
 1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`.
 1. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** > **Traffic** tab.
@@ -135,21 +143,23 @@ Verify configurations for clients:
 
 In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access. Private applications in Zscaler use the Zscaler Private Access module. Zscaler Internet Access handles Internet traffic.
 
-### Microsoft Entra Private Access configuration
+### Configure Microsoft Entra Private Access
 
-For this scenario, you need to:
+To configure Microsoft Entra Private Access for this scenario:
 - [Enable Microsoft Entra Private Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
 - Install a [Private Network Connector](how-to-configure-connectors.md) for Microsoft Entra Private Access.
 - Configure [Quick Access and set up Private DNS](how-to-configure-quick-access.md).
 - Install and configure the [Global Secure Access client for Windows](how-to-install-windows-client.md) or [macOS](how-to-install-macos-client.md).
 
-### Zscaler Private Access and Zscaler Internet Access configuration
+### Configure Zscaler Private Access and Internet Access
 
-Perform the steps in the Zscaler portal:
+Complete the following steps in the Zscaler portal:
 - Set up and configure both Zscaler Internet Access and Zscaler Private Access.
 - Create a forwarding profile.
 - Create an app profile.
 - Install the Zscaler Client Connector.
+
+#### Add a forwarding profile
 
 Add Forwarding Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**.
@@ -159,10 +169,14 @@ Add Forwarding Profile from the Client Connector Portal:
 1. Scroll down to **Forwarding profile action for ZPA**.
 1. Select Tunnel for all options in this section.
 
+#### Add an app profile
+
 Add App Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **App Profiles** > **Windows (or macOS)** > **Add Windows Policy (or macOS)**.
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZIA and ZPA**.
 1. Scroll down and add the Microsoft SSE service Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) in the [Global Secure Access service FQDNs and IPs bypasses section](#global-secure-access-service-fqdns-and-ips-bypasses), to “**HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY**” field.
+
+#### Verify client configurations
 
 Go to the system tray to check that Global Secure Access and Zscaler clients are enabled.
   
@@ -175,6 +189,8 @@ Verify configurations for clients:
 
 > [!NOTE]
 > For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
+
+#### Test traffic flow
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
@@ -196,19 +212,21 @@ Test traffic flow:
 
 In this scenario, Global Secure Access handles all Microsoft 365 traffic. Zscaler Private Access handles Private application traffic and Zscaler Internet Access handles Internet traffic.
 
-### Microsoft Entra Microsoft Access
+### Configure Microsoft Entra Microsoft Access
 
-For this scenario, you need to:
+To configure Microsoft Entra Microsoft Access for this scenario:
 - [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile).
 - Install and configure the [Global Secure Access client for Windows](how-to-install-windows-client.md) or [macOS](how-to-install-macos-client.md).
 
-### Zscaler Private Access and Zscaler Internet Access
+### Configure Zscaler Private Access and Internet Access
 
-Perform in the Zscaler portal:
+Complete the following steps in the Zscaler portal:
 - Set up and configure Zscaler Private Access.
 - Create a forwarding profile.
 - Create an app profile.
 - Install the Zscaler Client Connector.
+
+#### Add a forwarding profile
 
 Add Forwarding Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**.
@@ -218,10 +236,14 @@ Add Forwarding Profile from the Client Connector Portal:
 1. Scroll down to **Forwarding profile action for ZPA**.
 1. Select Tunnel for all options in this section.
 
+#### Add an app profile
+
 Add App Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **App Profiles** > **Windows (or macOS)** > **Add Windows Policy (or macOS)**.
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZIA and ZPA**.
 1. Scroll down and add the Microsoft SSE service Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) in the [Global Secure Access service FQDNs and IPs bypasses section](#global-secure-access-service-fqdns-and-ips-bypasses), to “**HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY**” field.
+
+#### Verify client configurations
 
 Go to the system tray to check that Global Secure Access and Zscaler clients are enabled.  
 
@@ -234,6 +256,8 @@ Verify configurations for clients:
 
 > [!NOTE]
 > For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
+
+#### Test traffic flow
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
@@ -257,7 +281,7 @@ Test traffic flow:
 
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Zscaler only captures private application traffic. Therefore, the Zscaler Internet Access module is disabled from the Zscaler portal.
 
-### Microsoft Entra Internet and Microsoft Access
+### Configure Microsoft Entra Internet and Microsoft Access
 
 For this scenario, you need to configure:
 - [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile) and [Microsoft Entra Internet Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-internet-access-profile.md#prerequisites).
@@ -270,13 +294,15 @@ Adding a custom bypass for Zscaler in Global Secure Access:
 1. Leave destination type `FQDN` and in **Destination** enter `*.prod.zpath.net`.
 1. Select **Save**.
 
-### Zscaler Private Access
+### Configure Zscaler Private Access
 
-Perform the procedure in the Zscaler portal:
+Complete the following steps in the Zscaler portal:
 - Set up and configure Zscaler Private Access.
 - Create a forwarding profile.
 - Create an app profile.
 - Install the Zscaler Client Connector.
+
+#### Add a forwarding profile
 
 Add Forwarding Profile from the Client Connector Portal:
 1. Navigate to the **Zscaler Client Connector admin portal** > **Administration** > **Forwarding Profile** > **Add Forwarding Profile**.
@@ -286,10 +312,14 @@ Add Forwarding Profile from the Client Connector Portal:
 1. Scroll down to **Forwarding profile action for ZPA**.
 1. Select Tunnel for all options in this section.
 
+#### Add an app profile
+
 Add App Profile from the Client Connector Portal:
 1. Navigate to **Zscaler Client Connector admin portal** > **App Profiles** > **Windows (or macOS)** > **Add Windows Policy (or macOS)**.
 1. Add **Name**, set **Rule Order** such as **1**, select **Enable**, select **User(s)** to apply this policy, and select the **Forwarding Profile**. For example, select **ZPA Only**.
 1. Scroll down and add the Microsoft SSE service Internet Protocol (IP) addresses and Fully Qualified Domain Names (FQDNs) in the [Global Secure Access service FQDNs and IPs bypasses section](#global-secure-access-service-fqdns-and-ips-bypasses), to “**HOSTNAME OR IP ADDRESS BYPASS FOR VPN GATEWAY**” field.
+
+#### Verify client configurations
 
 Open the system tray to check that Global Secure Access and Zscaler clients are enabled.
   
@@ -303,6 +333,8 @@ Verify configurations for clients:
 
 > [!NOTE]
 > For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
+
+#### Test traffic flow
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.

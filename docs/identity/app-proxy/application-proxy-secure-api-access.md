@@ -3,7 +3,7 @@ title: Access on-premises Application Programming Interface (API) with Microsoft
 description: Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ms.custom: has-adal-ref, sfi-image-nochange
 ai-usage: ai-assisted
 ---
@@ -20,11 +20,11 @@ This article walks you through setting up a Microsoft Entra application proxy so
 
 The following diagram shows a traditional way to publish on-premises APIs. This approach requires opening incoming ports 80 and 443.
 
-![Traditional API access](./media/application-proxy-secure-api-access/overview-publish-api-open-ports.png)
+![Diagram showing traditional API publishing architecture with incoming ports 80 and 443 open to the internet.](./media/application-proxy-secure-api-access/overview-publish-api-open-ports.png)
 
 The following diagram shows how you can use Microsoft Entra application proxy to securely publish APIs without opening any incoming ports:
 
-![Microsoft Entra application proxy API access](./media/application-proxy-secure-api-access/overview-publish-api-app-proxy.png)
+![Diagram showing Microsoft Entra application proxy architecture for secure API publishing with no incoming ports required.](./media/application-proxy-secure-api-access/overview-publish-api-app-proxy.png)
 
 The Microsoft Entra application proxy forms the backbone of the solution, working as a public endpoint for API access, and providing authentication and authorization. You can access your APIs from a vast array of platforms by using the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) libraries.
 
@@ -65,7 +65,7 @@ To publish the SecretAPI web API through application proxy:
 
    1. Select **Create**, and wait for the app to be created.
 
-   ![Add API app](./media/application-proxy-secure-api-access/3-add-api-app.png)
+   ![Enterprise application creation dialog for SecretAPI app.](./media/application-proxy-secure-api-access/3-add-api-app.png)
 
 1. On the **Enterprise applications - All applications** page, select the **SecretAPI** app.
 
@@ -73,7 +73,7 @@ To publish the SecretAPI web API through application proxy:
 
 1. You don't want APIs to be available to end users in the **MyApps** panel, so set **Visible to users** to **No** at the bottom of the **Properties** page, and then select **Save**.
 
-   ![Not visible to users](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
+   ![Properties page with Visible to users toggle set to No.](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
 
 The web API is now published through Microsoft Entra application proxy. Next, add users who can access the app.
 
@@ -85,12 +85,12 @@ The web API is now published through Microsoft Entra application proxy. Next, ad
 
 1. On the **Users and groups** page, search for and select users who can access the app, including at least yourself. After selecting all users, select **Select**.
 
-   ![Select and assign user](./media/application-proxy-secure-api-access/7-select-admin-user.png)
+   ![User selection dialog showing admin user in the assignment list.](./media/application-proxy-secure-api-access/7-select-admin-user.png)
 
 1. On the **Add Assignment** page, select **Assign**.
 
 > [!NOTE]
-> APIs that use integrated Windows authentication might require [extra steps](./how-to-configure-sso-with-kcd.md).
+> APIs that use integrated Windows authentication might require [Kerberos Constrained Delegation configuration](./how-to-configure-sso-with-kcd.md).
 
 ## Register the native app and grant access to the API
 
@@ -113,7 +113,7 @@ To register the AppProxyNativeAppSample native app:
 
    1. Select **Register**, and wait for the app to be successfully registered.
 
-      ![New application registration](./media/application-proxy-secure-api-access/8-create-reg-ga.png)
+      ![App registration form showing AppProxyNativeAppSample configuration.](./media/application-proxy-secure-api-access/8-create-reg-ga.png)
 
 The `AppProxyNativeAppSample` app is now registered in Microsoft Entra ID. Give your native app access to the `SecretAPI` web API:
 
@@ -127,7 +127,7 @@ The `AppProxyNativeAppSample` app is now registered in Microsoft Entra ID. Give 
 
 1. On the next **Request API permissions** page, select the check box next to **user_impersonation**, and then select **Add permissions**.
 
-    ![Select an A P I.](./media/application-proxy-secure-api-access/10-secretapi-added.png)
+    ![API permissions page with user_impersonation permission checkbox.](./media/application-proxy-secure-api-access/10-secretapi-added.png)
 
 1. Back on the **API permissions** page, you can select **Grant admin consent for Contoso** to prevent other users from having to individually consent to the app.
 
@@ -156,7 +156,7 @@ Configure the native app to connect to Microsoft Entra ID and call the API using
 
 After you configure the parameters, build and run the native app. When you select the **Sign In** button, the app lets you sign in, and then displays a success screen to confirm that it successfully connected to the SecretAPI.
 
-![Screenshot shows a message Secret A P I Successful and an OK button.](./media/application-proxy-secure-api-access/success.png)
+![Success message showing Secret API Successful with OK button.](./media/application-proxy-secure-api-access/success.png)
 
 ## Next steps
 - [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md)

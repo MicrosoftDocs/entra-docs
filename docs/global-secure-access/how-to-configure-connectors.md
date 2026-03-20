@@ -1,8 +1,8 @@
 ---
 title: How to configure connectors for Microsoft Entra Private Access
-description: Learn how to configure Microsoft Entra private network connectors for Microsoft Entra Private Access.
+description: "Set up private network connectors that enable outbound connections from your private network to Global Secure Access. Includes installation, connector groups, and high availability."
 ms.topic: how-to
-ms.date: 02/09/2026
+ms.date: 03/16/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -17,11 +17,11 @@ Connectors are lightweight agents that run on a server in a private network and 
 To add private resources and applications to Microsoft Entra ID, you need:
 
 * The product requires a license. To learn more about licensing, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* An Application Administrator account.
+* An account with the Application Administrator role.
 
-User identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenant. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to application proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
+Synchronize user identities from an on-premises directory or create them directly within your Microsoft Entra tenant. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to application proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
-### Windows server
+### Windows Server
 
 The Microsoft Entra private network connector requires a server running Windows Server 2016 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
 
@@ -33,7 +33,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 > [!IMPORTANT]
 > When using the connector to access web applications published via Microsoft Entra application proxy, `HTTP/2` must be disabled on the server hosting the Microsoft Entra private network connector running on Windows Server 2019 or later. This configuration change isn't required when using the connector only with Global Secure Access Private Access.
 >
-> Disable `HTTP2` protocol support in `WinHttp` for web applications published via Microsoft Entra application proxy to work properly. `HTTP/2` is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables `HTTP/2` on Windows Server 2019 and later. This is a machine-wide registry key.
+> Disable `HTTP/2` protocol support in `WinHttp` for web applications published via Microsoft Entra application proxy to work properly. `HTTP/2` is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables `HTTP/2` on Windows Server 2019 and later. This is a machine-wide registry key.
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -102,7 +102,7 @@ To enable TLS 1.2:
 1. Restart the server.
 
 > [!NOTE]
-> Microsoft is updating Azure services to use TLS certificates from a different set of Root Certificate Authorities (CAs). This change is being made because the current CA certificates do not comply with one of the CA/Browser Forum Baseline requirements. For more information, see [Azure TLS certificate changes](/azure/security/fundamentals/tls-certificate-changes).
+> Microsoft is updating Azure services to use TLS certificates from a different set of Root Certificate Authorities (CAs). This change is being made because the current CA certificates don't comply with one of the CA/Browser Forum Baseline requirements. For more information, see [Azure TLS certificate changes](/azure/security/fundamentals/tls-certificate-changes).
 
 #### Recommendations for the connector server
 
@@ -153,7 +153,7 @@ To use Private Access, install a connector on each Windows server you're using f
 > The minimum version of connector required for Private Access is **1.5.3417.0**.
 > Starting from version 1.5.3437.0, .NET version 4.7.1 or later is required for successful installation or upgrade.
 
-> [!Note]
+> [!NOTE]
 > **Deploy private network connector for your Azure, AWS, and GCP workloads from their respective marketplaces (Preview)**
 > 
 > The Private Network Connector is now available on [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview), [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc), and [GCP Marketplace](https://console.cloud.google.com/marketplace/product/ciem-entra/entraprivatenetworkconnector) (in preview), in addition to the [Microsoft Entra admin center](https://entra.microsoft.com). Marketplace offerings allow users to deploy a Windows virtual machine with a pre-installed private network connector through a simplified deployment model. The process automates installation and registration.

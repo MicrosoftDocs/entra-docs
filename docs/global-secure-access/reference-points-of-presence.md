@@ -2,7 +2,7 @@
 title: Global Secure Access points of presence and IP addresses
 description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
 ms.topic: reference
-ms.date: 08/28/2025
+ms.date: 03/13/2026
 ms.custom: references_regions
 ai-usage: ai-assisted
 ---
@@ -88,6 +88,14 @@ The table lists the deployment status for the NA region.
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
 The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The Internet Protocol (IP) addresses are listed.
+
+> [!IMPORTANT]
+> Global Secure Access doesn’t provide dedicated or static public IP addresses per individual data center or geographic location.
+>
+> The service uses Anycast networking, which dynamically routes traffic to the nearest available Microsoft point of presence.  
+> Because of this architecture, Microsoft can’t publish or guarantee fixed IP addresses per region or physical location.
+>
+> For perimeter firewall configuration, customers must allow the global Anycast IP ranges listed below. These IP ranges represent all Global Secure Access service entry points worldwide.
 
 ### FQDN and IP addresses where the Global Secure Access service receives traffic
 Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients. If you are using TLS inspection on your egress firewalls, exclude GSA traffic from TLS inspection.

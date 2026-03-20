@@ -24,30 +24,30 @@ This article explains how to use self-service sign-up to populate an organizatio
 * An **email-verified user** is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
 
 
-## How do I control self-service settings?
+## Control self-service settings
 
 Admins have two self-service controls today. They can control whether:
 
 * Users can join the tenant via email
 * Users can license themselves for applications and services
 
-### How can I control these capabilities?
+### Control these capabilities
 
-An admin can configure these capabilities using the following Microsoft Entra cmdlet Update-MgPolicyAuthorizationPolicy parameters:
+An admin can configure these capabilities using the following Microsoft Entra cmdlet `Update-MgPolicyAuthorizationPolicy` parameters:
 
-* **allowEmailVerifiedUsersToJoinOrganization** controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
-* **allowedToSignUpEmailBasedSubscriptions** controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
+* `allowEmailVerifiedUsersToJoinOrganization` controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
+* `allowedToSignUpEmailBasedSubscriptions` controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
   
-allowEmailVerifiedUsersToJoinOrganization and allowedToSignUpEmailBasedSubscriptions are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
+`allowEmailVerifiedUsersToJoinOrganization` and `allowedToSignUpEmailBasedSubscriptions` are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
 
-* You administer a tenant with a verified domain such as contoso.com
-* You use B2B collaboration from a different tenant to invite a user that doesn't already exist (userdoesnotexist@contoso.com) in the home tenant of contoso.com
-* The home tenant has the allowedToSignUpEmailBasedSubscriptions turned on
+* You administer a tenant with a verified domain such as contoso.com.
+* You use B2B collaboration from a different tenant to invite a user that doesn't already exist (userdoesnotexist@contoso.com) in the home tenant of contoso.com.
+* The home tenant has the `allowedToSignUpEmailBasedSubscriptions` turned on.
 
 If the preceding conditions are true, then a member user is created in the home tenant, and a B2B guest user is created in the inviting tenant.
 
->[!NOTE]
-> Office 365 for Education users, are currently the only ones who are added to existing managed tenants even when this toggle is enabled
+> [!NOTE]
+> Office 365 for Education users are currently the only ones who are added to existing managed tenants even when this toggle is enabled
 
 For more information on Flow and Power Apps trial sign-ups, see the following articles:
 
@@ -72,7 +72,7 @@ The following flowchart explains the different combinations for these parameters
 
 :::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign up controls.":::
 
-You can retrieve this setting's details using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
+You can retrieve this setting's details using the PowerShell cmdlet `Get-MgPolicyAuthorizationPolicy`. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization

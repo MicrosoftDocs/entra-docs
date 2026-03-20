@@ -8,9 +8,9 @@ ms.date: 01/31/2025
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
 ---
 
-# Create verifiable credentials for ID token hint
+# Create verifiable credentials for an ID token hint
 
-A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). It's the relying party application's responsibility to ensure that required claim values are passed in the request. How the claim values are gathered is up to the application. 
+A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). The relying party application is responsible for passing the required claim values in the request. The application determines how to gather the claim values. 
 
 ## Create a custom credential
 
@@ -100,9 +100,9 @@ The expected JSON for the rules definitions is the inner content of the rules at
 
 Before you can configure your sample code to issue and verify using custom credentials, you need:
 
-- Your tenant's issuer decentralized identifier (DID)
-- The credential type
-- The manifest URL to your credential 
+- Your tenant's issuer decentralized identifier (DID).
+- The credential type.
+- The manifest URL to your credential.
 
 The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. There you have access to a text box with a JSON payload for the Request Service API. Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
 
@@ -111,4 +111,4 @@ The easiest way to find this information for a custom credential is to go to you
 ## Next steps
 
 For more information, see:
-- [Rules and display definitions reference](rules-and-display-definitions-model.md)
+- [Rules and display definitions reference](rules-and-display-definitions-model.md).
