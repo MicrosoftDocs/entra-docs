@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/04/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco Webex so that I can streamline the user management process and ensure that users have the appropriate access to Cisco Webex.
@@ -77,13 +77,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     :::image type="content" source="common/provisioning.png" alt-text="Screenshot of a menu. Under Manage, Provisioning is highlighted." border="false":::
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-    :::image type="content" source="common/provisioning-automatic.png" alt-text="Screenshot of the Provisioning mode list box, with Automatic highlighted." border="false":::
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input the **Tenant URL**, and **Secret Token** of your Cisco Webex account.
+1. In the **Tenant URL** field, input your Cisco Webex Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cisco Webex. If the connection fails, ensure your Cisco Webex account has the required admin permissions and try again.
 
-    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/secrettoken1.png" alt-text="Screenshot of the Admin Credentials section. The Tenant U R L and Secret token boxes are highlighted but are empty." border="false":::
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1.  In the **Tenant URL** field, enter a value in the form of `https://api.ciscospark.com/v1/scim/[OrgId]`. To obtain `[OrgId]`, sign into your [Cisco Webex Control Hub](https://admin.webex.com/login). Select your organization name on the bottom left and copy the value from **Organization ID**. 
 
@@ -95,17 +95,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
         
         :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test1.png" alt-text="Screenshot showing a long U R L. Part of the address is indecipherable but is highlighted and labeled Bearer token." border="false":::
 
-1. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Cisco Webex. If the connection fails, ensure your Cisco Webex account has Admin permissions and try again.
+1. Select **Create** to create your configuration.	
 
-    ![Screenshot shows the Tenant URL and Token.](common/provisioning-testconnection-tenanturltoken.png)
-   
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Properties** in the **Overview** page. 
 
-    ![Screenshot shows the Notification Email.](common/provisioning-notification-email.png)
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Select **Save**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cisco Webex**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Cisco Webex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Cisco Webex for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Cisco Webex API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -118,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String|||
    |externalId|String|||
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cisco Webex**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Cisco Webex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Cisco Webex for update operations. Select the **Save** button to commit any changes.
 
@@ -130,21 +128,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Cisco Webex, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Screenshot shows the Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-1. Define the users and/or groups that you would like to provision to Cisco Webex by choosing the desired values in **Scope** in the **Settings** section.
 
-    ![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-    ![Screenshot shows to Save Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Cisco Webex.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Connector limitations
 
