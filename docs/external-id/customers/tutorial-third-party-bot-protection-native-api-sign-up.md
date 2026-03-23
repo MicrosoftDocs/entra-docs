@@ -126,11 +126,11 @@ If the WAF setup was configured properly, all requests to the external tenant /s
 
 The worker logic must be configured to:
 
-1. Extract relevant information from the sign-up request (device fingerprint, IP address, user agent, behavioral data).
-1. Send this data to your third-party bot protection provider's detection API.
-1. Evaluate the bot detection score returned by the provider.
-1. If the request is identified as a bot based on your threshold, block the request or present a challenge.
-1. If the request appears legitimate, forward it to the Microsoft Entra /start endpoint.
+- Extract relevant information from the sign-up request (device fingerprint, IP address, user agent, behavioral data).
+- Send this data to your third-party bot protection provider's detection API.
+- Evaluate the bot detection score returned by the provider.
+- If the request is identified as a bot based on your threshold, block the request or present a challenge.
+- If the request appears legitimate, forward it to the Microsoft Entra /start endpoint.
 
 #### Third-party provider integration
 
