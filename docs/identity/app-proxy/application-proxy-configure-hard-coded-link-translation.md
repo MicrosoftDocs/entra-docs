@@ -1,14 +1,9 @@
 ---
-title: Translate links and URLs for Microsoft Entra application proxy.
-description: Learn how to redirect hard coded links for applications published with Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
+title: Translate links and URLs for Microsoft Entra application proxy
+description: "Translate hard-coded internal URLs in on-premises applications published through Microsoft Entra application proxy. Covers Edge integration, browser extensions, and link translation settings."
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.author: kenwith
-ms.reviewer: ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
@@ -132,7 +127,7 @@ Getting started with link translation is as easy as clicking a button:
 1. Select the app you want to manage.
 1. Turn **Translate URLs in application body** to **Yes**.
 
-   ![Select Yes to translate URLs in application body](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png)
+   ![Application proxy settings page with Translate URLs in Application Body set to Yes.](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png)
 4. Select **Save** to apply your changes.
 
 Now, when your users access this application, the proxy scans for internal URLs that are published through application proxy on your tenant.

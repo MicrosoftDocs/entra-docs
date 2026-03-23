@@ -3,13 +3,10 @@ title: "Quickstart: Add sign in to a JavaScript SPA"
 description: Learn how to run a sample JavaScript SPA to sign in users
  
 author: kengaderdus
-manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
  
 ms.custom: devx-track-js
 ROBOTS: NOINDEX
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 06/06/2023
 ---

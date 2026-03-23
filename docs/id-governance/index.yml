@@ -4,12 +4,8 @@ title: Microsoft Entra ID Governance documentation
 summary: Microsoft Entra ID Governance helps you to protect, monitor, and audit access to critical assets while ensuring employee productivity.
 
 metadata: 
-  author: owinfreyatl
   description: "Learn how to protect, monitor, and audit access to critical assets while ensuring employee productivity."
-  manager: dougebyy
-  ms.author: owinfrey
   ms.date: 11/25/2024
-  ms.service: entra-id-governance
   ms.subservice: entitlement-management
   ms.topic: landing-page
   services: active-directory
@@ -104,6 +100,26 @@ landingContent:
           - text: Lifecycle Workflows built-in tasks
             url: lifecycle-workflow-tasks.md  
   
+  # Card
+  - title: Govern tenants across your organization (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Entra Tenant Governance?
+            url: tenant-governance/overview.md
+      - linkListType: concept
+        links:
+          - text: Related tenants
+            url: tenant-governance/related-tenants.md
+          - text: Governance relationships
+            url: tenant-governance/governance-relationships.md
+          - text: Configuration management
+            url: tenant-governance/configuration-management.md
+      - linkListType: how-to-guide
+        links:
+          - text: Deploy Tenant Governance
+            url: tenant-governance/deployment-guide.md
+
   # Card
   - title: Make users eligible for privileged roles
     linkLists:

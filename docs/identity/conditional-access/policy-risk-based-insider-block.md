@@ -1,15 +1,8 @@
 ---
 title: Block access for users with elevated insider risk
 description: Create Conditional Access policies using signals from Adaptive protection in Microsoft Purview.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: poulomib
 ---
 # Block access for users with insider risk
@@ -47,7 +40,7 @@ Most users have a normal behavior that can be tracked, when they fall outside of
       1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

@@ -1,12 +1,8 @@
 ---
 title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: how-to
-ms.date: 04/24/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -68,13 +64,13 @@ For example if you want to look at all the logs from a specific connection:
 
     ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
 
-## Connection logs
+## View connection logs
 
 Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
 
 A connection represents multiple transactions occurring in the last 24 hours and sharing the same flow correlation ID. While the transaction logs provide detailed information about individual transactions, connection logs offer a higher-level overview by aggregating multiple transactions. Connections are logged in real time with Active/Closed status, providing admins with near real-time traffic visibility.
 
-We are currently previewing a new tab in the Traffic logs blade for you to view Connections:
+Currently available in preview is a new tab in the Traffic logs blade for you to view Connections:
 
 :::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page.":::
 

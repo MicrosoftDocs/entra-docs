@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect: Understanding Declarative Provisioning'
 description: Explains the declarative provisioning configuration model in Microsoft Entra Connect.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: cfbb870d-be7d-47b3-ba01-9e78121f0067
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Understanding Declarative Provisioning
 This article explains the configuration model in Microsoft Entra Connect. The model is called Declarative Provisioning and it allows you to make a configuration change with ease. Many things described in this article are advanced and not required for most customer scenarios.

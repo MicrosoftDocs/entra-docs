@@ -1,12 +1,8 @@
 ---
 title: Cross-tenant access overview
 description: Learn how to manage cross-tenant access in Microsoft Entra External ID. Configure B2B collaboration and direct connect settings to control access and trust for external organizations.
-ms.service: entra-external-id
 ms.topic: overview
 ms.date: 03/28/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing cross-tenant access settings, I want to configure B2B collaboration and B2B direct connect with external organizations, so that I can control inbound and outbound access and manage trust settings for multifactor authentication and device claims.
@@ -113,11 +109,11 @@ You can now prevent your B2B guest users from using Microsoft accounts to redeem
 
 You must always have at least one fallback identity provider active. So, if you decide to disable Microsoft accounts, you need to enable the email one-time passcode option. Existing guest users who already sign in with Microsoft accounts continue to do so for future sign-ins. To apply the new settings to them, you need to [reset their redemption status](reset-redemption-status.md).
 
-### Cross-tenant synchronization setting
+### Cross-tenant synchronization settings
 
 [!INCLUDE [cross-tenant-synchronization-include](~/includes/cross-tenant-synchronization-include.md)]
 
-To configure this setting using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md).
+To configure these settings using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update) API. For more information, see [Configure cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md).
 
 ## Tenant restrictions
 

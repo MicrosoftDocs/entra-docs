@@ -1,13 +1,9 @@
 ---
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
-ms.author: owinfrey
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -41,7 +37,7 @@ In entitlement management, you can see who is assigned to access packages, their
 
 ## View assignments programmatically
 ### View assignments with Microsoft Graph
-You can also retrieve assignments in an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&preserve-view=true). An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs.
+You can also retrieve assignments in an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&preserve-view=true). An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs, and an application that has a role assignment in a catalog can use this API to retrieve assignments in that catalog.
 
 Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results are read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
 
@@ -98,7 +94,7 @@ In some cases, you might want to directly assign specific identities to an acces
 1. Once you select a policy, you are able to add users to select the users you want to assign this access package to, under the chosen policy.
 
     > [!NOTE]
-    > If you select a policy with questions, you can only assign one user at a time.
+    > If you select a policy with questions, you can only assign one user at a time. If the external user already exists in the directory, use the **Identities in my directory** option and select the existing user. Use the **External user** option when the user doesn't exist in the directory.
 
 1. Set the date and time you want the selected users' assignment to start and end. If an end date isn't provided, the policy's lifecycle settings are used.
 
@@ -153,7 +149,7 @@ Entitlement management also allows you to directly assign external identities to
 ## Directly assigning identities programmatically
 
 ### Assign an identity to an access package with Microsoft Graph
-You can also directly assign identities to an access package using Microsoft Graph. An identity in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
+You can also directly assign identities to an access package using Microsoft Graph. An identity in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application with the `EntitlementManagement.ReadWrite.All` application permission, or an application in a catalog role, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
 
 ### Assign a user to an access package with PowerShell
 
@@ -252,7 +248,7 @@ You can remove an assignment that a user or an administrator had previously requ
 
 ## Remove an assignment programmatically
 ### Remove an assignment with Microsoft Graph
-You can also remove an assignment of a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminRemove`, and the `assignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
+You can also remove an assignment of a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, an application with the `EntitlementManagement.ReadWrite.All` application permission, or an application in a catalog role, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminRemove`, and the `assignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
 
 ### Remove an assignment with PowerShell
 

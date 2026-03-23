@@ -2,14 +2,9 @@
 title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # Prerequisites for Microsoft Entra Cloud Sync
@@ -163,7 +158,8 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
   |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
   |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
    |`mscrl.microsoft.com:80` </br>`crl.microsoft.com:80` </br>`ocsp.msocsp.com:80` </br>`www.microsoft.com:80`| The agent uses these URLs to verify certificates.|
-   |`login.windows.net`|The agent uses these URLs during the registration process.
+   |`login.windows.net`</br> `login.live.com`|The agent uses these URLs during the registration process.
+   |`aadcdn.msauth.net`</br>`aadcdn.msftauth.net`</br>`www.msftconnecttest.com`|The agent uses these URLs during the registration process.
 
 
 
@@ -211,6 +207,9 @@ When using OU scoping filter
 - The scoping configuration has a limitation of 4 MB in character length. In a standard tested environment, this translates to approximately 50 separate Organizational Units (OUs) or Security Groups, including its required metadata, for a given configuration.
 
 - Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **can't** sync 60 separate OUs in the same configuration).
+
+>[!NOTE]
+>At this time, it isn't possible to check the scoping configuration size to determine if it is near to, reached, or exceeded the 4 MB character limit, which includes metadata. 
 
 ### Password Hash Sync
 

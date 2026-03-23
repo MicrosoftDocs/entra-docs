@@ -2,14 +2,8 @@
 title: Unexpected error when performing consent to an application
 description: This article discusses errors that can occur during the process of consenting to an application and what you can do about them.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: troubleshooting
 ms.date: 02/27/2025
-ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
@@ -84,6 +78,14 @@ These errors occur when the app a user is trying to consent to requests permissi
 Both of these messages are displayed when Microsoft determines that the consent request might be risky. Among many other factors, this error might occur if a [verified publisher](~/identity-platform/publisher-verification-overview.md) isn't added to the app registration. The first error code and message is shown to end-users when the [Admin consent workflow](configure-admin-consent-workflow.md) is disabled. The second code and message is shown to end-users when the admin consent workflow is enabled and to admins.
 
 End-users aren't able to grant consent to apps that are detected as risky. Admins are able to, but should evaluate the app carefully and proceed with caution. If the app seems suspicious upon further review, it can be reported to Microsoft from the consent screen.
+
+## User declined to consent to access the app
+
+- **AADSTS65004:** User declined to consent to access the app
+
+This error occurs during the Admin consent workflow. After a user submits an admin consent approval for an application, they are displayed another dialog box with a button "Back to app". When the user clicks the "Back to app" button, Entra ID sends an AADSTS65004 error to the redirect URI specified in the original authentication request. This is expected part of the flow for the admin consent workflow. 
+
+After the administrator review and if they approve the admin consent that was submitted, the user will need to begin a new authentication process with the application. 
 
 ## Next steps
 

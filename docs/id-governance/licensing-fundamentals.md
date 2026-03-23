@@ -4,9 +4,8 @@ description: This article describes shows the licensing requirements for Microso
 author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/26/2025
-ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals

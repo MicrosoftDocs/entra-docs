@@ -1,13 +1,9 @@
 ---
 title: Manage workflow properties
 description: This article guides a user to editing a workflow's properties using Lifecycle Workflows.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 03/12/2026
 ms.custom: template-how-to
 ---
 
@@ -22,7 +18,7 @@ You can update the following basic information without creating a new workflow.
    - description
    - [Administrative Unit Scope](manage-delegate-workflow.md)
    - whether or not it's enabled
-   - Whether or not workflow schedule is enabled
+   - whether or not workflow schedule is enabled
    - task name
    - task description
 
@@ -65,4 +61,4 @@ To update a workflow via API using Microsoft Graph, see: [Update workflow](/grap
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Check status of a workflows](check-status-workflow.md)
+- [Check status of a workflow](check-status-workflow.md)

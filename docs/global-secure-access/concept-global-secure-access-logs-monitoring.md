@@ -1,12 +1,8 @@
 ---
 title: Global Secure Access logs and monitoring
 description: Learn about the available Global Secure Access logs and monitoring options.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
-ms.topic: article
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.topic: concept-article
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
@@ -40,7 +36,7 @@ Customers use existing *Office Audit logs* for monitoring, detection, investigat
 
 For more information, see [Enriched Office 365 logs](how-to-view-enriched-logs.md).
 
-## Log Retention and Storage
+## Log retention and storage
 
 **Traffic Logs and Remote Network Health Logs:** These logs are retained within the system for 30 days. This duration allows for ample time to review and analyze recent activities and network health status.
 

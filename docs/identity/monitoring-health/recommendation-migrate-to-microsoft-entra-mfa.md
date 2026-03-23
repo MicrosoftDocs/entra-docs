@@ -1,13 +1,8 @@
 ---
 title: Recommendation to migrate to Microsoft Entra MFA
 description: Learn about the Microsoft Entra recommendation to migrate to Microsoft Entra multifactor authentication from MFA server
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 04/09/2025
-ms.author: sarahlipsey
 ms.reviewer:  jupetter
 
 # Customer intent: As an IT admin, I need to migrate from MFA Server to Microsoft Entra MFA to align with Microsoft Entra recommendations.

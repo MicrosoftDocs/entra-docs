@@ -2,14 +2,8 @@
 title: Disable user sign-in for application
 description: Learn how to prevent users from signing in to an application in Microsoft Entra ID and prevent tokens from being issued.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: it-pro, enterprise-apps, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
@@ -30,7 +24,7 @@ In this article, you learn how to prevent users from signing in to an applicatio
 
 To disable user sign-in, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: 
   - Cloud Application Administrator
   - Application Administrator

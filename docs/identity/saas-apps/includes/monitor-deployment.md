@@ -2,8 +2,6 @@
 author: omondiatieno
 ms.author: jomondi
 ms.date: 02/24/2025
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: include
 # Purpose:
 # This is used to include the content for monitoring deployment of an application in SaaS apps provisioning articles

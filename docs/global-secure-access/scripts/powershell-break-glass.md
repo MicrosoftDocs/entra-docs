@@ -1,24 +1,19 @@
 ---
 title: PowerShell sample - Disable traffic forwarding and disable Conditional Access policies using the compliant network condition in a break glass scenario
 description: PowerShell examples for use in a Microsoft Entra Internet Access break glass scenario. 
-author: kenwith
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: sample
-ms.date: 02/21/2025
-ms.author: kenwith
-ms.reviewer: frankgomulka
+ms.date: 03/16/2026
 ---
 
 # Disable traffic forwarding and Conditional Access policies using the Compliant Network condition in a break glass scenario
 
-In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling traffic forwarding profiles and disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
+In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you might want to perform a "break glass" operation: Temporarily disabling traffic forwarding profiles and disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
 
-Below you can view a sample script that can help you quickly disable traffic forwarding and switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
+The following sample script helps you quickly disable traffic forwarding and switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
 
-## List and Disable Conditional Access policies using the Compliant Network condition in a break glass scenario
+## List and disable Conditional Access policies using the Compliant Network condition in a break glass scenario
 
-The PowerShell script effectively disables any Conditional Access policies that use the Compliant Network condition. In an emergency situation, this script can be used to temporarily regain access for your users.
+The PowerShell script effectively disables any Conditional Access policies that use the Compliant Network condition. In an emergency situation, use this script to temporarily regain access for your users.
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
@@ -212,5 +207,5 @@ Write-Host "`nDisabled Forwarding Profiles have been exported to C:\BreakGlass\D
 
 ## Next steps
 
-- [Recover from Break glass scenario](./powershell-break-glass-recovery.md)
+- [Recover from a break glass scenario](./powershell-break-glass-recovery.md)
 - [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
