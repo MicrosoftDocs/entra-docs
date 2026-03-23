@@ -176,13 +176,14 @@ items:
     - name: Automate configuration using MS Graph
       href: application-provisioning-configuration-api.md
   - name: Reference
+    items: 
     - name: Provision a user with Expression Builder
       href: provision-user-with-expression-builder.md
     - name: Function reference for writing expressions for attribute mappings
       href: functions-for-customizing-application-data.md
     - name: Microsoft Entra ID SCIM API schema 
       href: entra-id-scim-api-schema-documentation.md
-    - name: Microsoft Entra ID SCIM API for 
+    - name: Microsoft Entra ID SCIM API
       href: entra-id-scim-api-reference.md
     - name: Cloud HR provisioning
       items:
