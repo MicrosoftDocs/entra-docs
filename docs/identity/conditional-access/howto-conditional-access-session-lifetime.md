@@ -96,7 +96,7 @@ Use the [What If tool](what-if-tool.md) to simulate a sign-in to the target appl
 
 ## Prompt tolerance
 
-We account for five minutes of clock skew when **every time** is selected in policy, so we don’t prompt users more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
+The system accounts for five minutes of clock skew when **every time** is selected in policy, so users aren’t prompted more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
 
 ## Known issues
 
