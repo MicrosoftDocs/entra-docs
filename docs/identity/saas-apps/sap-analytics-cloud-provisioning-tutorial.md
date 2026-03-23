@@ -5,7 +5,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: jeevansd
 manager: TeeEarls
 ms.topic: how-to
-ms.date: 10/01/2024
+ms.date: 03/23/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Analytics Cloud.
