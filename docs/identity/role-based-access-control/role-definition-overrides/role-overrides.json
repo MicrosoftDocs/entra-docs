@@ -8,7 +8,8 @@
         "typos": "(NOT HANDLED) Common typos to fix in the documentation."
     },
     "roleDisplayNames": {
-        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator"
+        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator",
+        "Customer LockBox Access Approver" : "Customer Lockbox Access Approver"
     },
     "roleDescriptions": {
         "Can manage Azure DevOps organization policy and settings.": "Can manage Azure DevOps policies and settings.",
@@ -167,6 +168,7 @@
         }
     ], 
     "typos": {
-        "’": "'"
+        "’": "'",
+        "LockBox": "Lockbox"
     }
 }

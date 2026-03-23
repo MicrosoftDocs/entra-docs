@@ -3,7 +3,7 @@ title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 search.appverid: MET150
 ms.topic: reference
-ms.date: 03/19/2026
+ms.date: 03/23/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -24,7 +24,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
 > | [Agent ID Developer](#agent-id-developer) | Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
 > | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
-> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -133,6 +133,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams External Collaboration Administrator](#teams-external-collaboration-administrator) | Manage external collaboration policies and settings for Teams, including configuring external domains and controlling which groups and users can interact with the organization. | 2fe872fb-daa8-4afc-8f6c-53c4565cfef4 |
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
@@ -599,6 +600,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Teams Devices Administrator
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
+
+## Teams External Collaboration Administrator
+
+[!INCLUDE [teams-external-collaboration-administrator](includes/teams-external-collaboration-administrator.md)]
 
 ## Teams Reader
 
