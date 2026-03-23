@@ -53,7 +53,7 @@ Here are the recommended tasks to prepare Privileged Identity Management to mana
 
 Once Privileged Identity Management is set up, you can learn your way around.
 
-:::image type="content" source="./media/pim-getting-started/pim-quickstart-tasks.png" alt-text="Screenshot showing the navigation window in Privileged Identity Management showing Tasks and Manage options." lightbox="./media/pim-getting-started/pim-quickstart-tasks.png":::
+:::image type="content" source="./media/pim-getting-started/pim-quickstart-tasks.png" alt-text="Screenshot showing the navigation window in Privileged Identity Management showing Tasks, Manage, Activity, and Troubleshooting + Support options." lightbox="./media/pim-getting-started/pim-quickstart-tasks.png":::
 
 | Menu item | Description |
 | --- | --- |
