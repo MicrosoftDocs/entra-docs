@@ -55,7 +55,7 @@ Once Privileged Identity Management is set up, you can learn your way around.
 
 :::image type="content" source="./media/pim-getting-started/pim-quickstart-tasks.png" alt-text="Screenshot showing the navigation window in Privileged Identity Management showing Tasks and Manage options." lightbox="./media/pim-getting-started/pim-quickstart-tasks.png":::
 
-| Task + Manage | Description |
+| Menu item | Description |
 | --- | --- |
 | **My roles**  | Displays a list of eligible and active roles assigned to you. **My roles** is where you can activate any assigned eligible roles. |
 | **My requests** | Displays your pending requests to activate eligible role assignments. |
@@ -64,6 +64,9 @@ Once Privileged Identity Management is set up, you can learn your way around.
 | **Microsoft Entra roles** | Displays a dashboard and settings for Privileged Role Administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization. |
 | **Groups** | Manage just-in-time membership in the group or just-in-time ownership of the group. Groups can be used to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM. |
 | **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization.|
+| **My audit history** | View your PIM audit history, including all role activations and assignments. |
+| **Troubleshoot** | Get help diagnosing and resolving common PIM issues. |
+| **New support request** | Create a support request for PIM-related issues. |
 
 ## Next steps
 
