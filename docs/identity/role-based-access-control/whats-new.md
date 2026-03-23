@@ -2,7 +2,7 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 ms.topic: whats-new
-ms.date: 03/17/2026
+ms.date: 03/19/2026
 
 ---
 
@@ -14,6 +14,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
 | March 2026 | Roles | Added [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator), [Tenant Governance Reader](permissions-reference.md#tenant-governance-reader), [Tenant Governance Relationship Administrator](permissions-reference.md#tenant-governance-relationship-administrator), and [Tenant Governance Relationship Reader](permissions-reference.md#tenant-governance-relationship-reader) roles. |
 | March 2026 | Roles | Added [Authentication Extensibility Password Administrator](permissions-reference.md#authentication-extensibility-password-administrator) role. |
 
