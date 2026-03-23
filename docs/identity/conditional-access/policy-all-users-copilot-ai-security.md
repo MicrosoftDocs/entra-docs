@@ -44,7 +44,7 @@ As an organization adopting services like Microsoft 365 Copilot and Microsoft Se
 
 ### All users of Generative AI services must complete phishing-resistant MFA
 
-The following steps help create a Conditional Access policy to require all users do multifactor authentication using the authentication strength policy.
+The following steps help create a Conditional Access policy to require all users to perform multifactor authentication using the authentication strength policy.
 
 > [!WARNING]
 > If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.

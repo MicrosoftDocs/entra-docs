@@ -41,7 +41,7 @@ Governance relationship capabilities help you set up and manage cross-tenant adm
 Key features:
 
 - Invitation, request, and approval workflows to define a governance relationship and set up cross-tenant administrative access between existing tenants.
-- Integration with the commerce discovery signal to streamline the workflow for setting up relationships between tenants that share a commerce billing account.
+- Integration with the billing discovery signal to streamline the workflow for setting up relationships between tenants that share a billing account.
 - Least-privilege cross-tenant administrative access that enables users in your governing tenant to perform administrative tasks in governed tenants, including configuration management tasks.
 - Streamlined app injection experience to provision and maintain permissions for your custom application in a governed tenant.
 - Governance policy templates to easily request the same permissions in different tenants where you need the same administrative permissions.

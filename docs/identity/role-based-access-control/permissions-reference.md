@@ -3,7 +3,7 @@ title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 search.appverid: MET150
 ms.topic: reference
-ms.date: 03/16/2026
+ms.date: 03/19/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -52,7 +52,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Compliance Administrator](#compliance-administrator) | Can read and manage compliance configuration and reports in Microsoft Entra ID and Microsoft 365. | 17315797-102d-40b4-93e0-432062caca18 |
 > | [Compliance Data Administrator](#compliance-data-administrator) | Creates and manages compliance content. | e6d1a23a-da11-4be4-9570-befc86d067a7 |
 > | [Conditional Access Administrator](#conditional-access-administrator) | Can manage Conditional Access capabilities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9 |
-> | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
+> | [Customer Lockbox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
 > | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
@@ -62,6 +62,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
+> | [Entra Backup Administrator](#entra-backup-administrator) | Manage all aspects of Microsoft Entra Backup, such as create recovery jobs and manage backup snapshots. | b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb |
+> | [Entra Backup Reader](#entra-backup-reader) | Read all aspects of Microsoft Entra Backup, such as list all preview jobs, recovery jobs, backup snapshots, and create preview jobs. | f42252d9-5400-4d7b-b9ef-cc582dbb8577 |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -274,7 +276,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [conditional-access-administrator](includes/conditional-access-administrator.md)]
 
-## Customer LockBox Access Approver
+## Customer Lockbox Access Approver
 
 [!INCLUDE [customer-lockbox-access-approver](includes/customer-lockbox-access-approver.md)]
 
@@ -313,6 +315,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Edge Administrator
 
 [!INCLUDE [edge-administrator](includes/edge-administrator.md)]
+
+## Entra Backup Administrator
+
+[!INCLUDE [entra-backup-administrator](includes/entra-backup-administrator.md)]
+
+## Entra Backup Reader
+
+[!INCLUDE [entra-backup-reader](includes/entra-backup-reader.md)]
 
 ## Exchange Administrator
 
