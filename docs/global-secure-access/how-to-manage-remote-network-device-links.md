@@ -4,7 +4,7 @@ description: Learn how to add and delete customer premises equipment device link
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 03/09/2026
+ms.date: 03/23/2026
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.
@@ -133,7 +133,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**. Device links appear in the **Links** column on the list of remote networks.
 

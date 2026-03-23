@@ -2,7 +2,7 @@
 title: Protect Enterprise Generative AI apps with Prompt Shield (preview)
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield."
 ms.topic: how-to
-ms.date: 03/09/2026
+ms.date: 03/23/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -51,7 +51,7 @@ To configure Prompt Shield for your organization, complete the following steps:
 ## Create a new prompt policy to scan prompts
 
 To create new prompt policies for Prompt Shield protection:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Prompt policies**.
 1. Select **Create policy**.
 1. On the **Basics** tab, enter a **Name** and **Description** for the policy.
@@ -85,7 +85,7 @@ After you create the Prompt Shield prompt policy, link it to a new or existing s
 
 To create a Conditional Access policy:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name for your policy.
 1. Select **Users** to specify the users or groups that the policy applies to.

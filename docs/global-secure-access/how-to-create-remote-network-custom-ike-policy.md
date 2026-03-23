@@ -4,7 +4,7 @@ description: Learn how to set up the bidirectional communication tunnel between 
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 03/09/2026
+ms.date: 03/23/2026
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a custom Internet Key Exchange (IKE) policy to set up the communication tunnel with Global Secure Access.
@@ -29,7 +29,7 @@ If you prefer to add custom IKE policy details to your remote network, you can d
 
 To create a remote network with a custom IKE policy in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 

@@ -4,8 +4,8 @@ description: "This article provides an overview of the Transport Layer Security 
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: concept-article
-ms.date: 03/09/2026
-ms.reviewer: sumeetmittal
+ms.date: 03/23/2026
+ms.reviewer: teresayao
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
@@ -62,7 +62,7 @@ TLS inspection has the following known limitations:
 - TLS inspection doesn't support HTTP/2 negotiation. Most sites automatically fall back to HTTP/1.1 and continue to work, but sites that require HTTP/2 won't load if TLS inspection is enabled. Add a custom TLS bypass rule to allow access to HTTP/2 only sites.
 - TLS inspection doesn't follow Authority Information Access (AIA) and Online Certificate Status Protocol (OCSP) links when validating destination certificates.
 
-### Mobile platform
+## Mobile platform
 - Many mobile applications implement certificate pinning, which prevents successful TLS inspection, resulting in handshake failures or loss of functionality. To reduce risk, enable TLS inspection in a test environment first and validate that critical applications are compatible. For apps that rely on certificate pinning, configure TLS inspection custom rules to bypass these destinations using domain-based or category-based rules.
 
 ## Related content
