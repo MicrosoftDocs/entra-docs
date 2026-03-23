@@ -8,7 +8,6 @@ ms.author: jfields
 ms.date: 03/23/2026
 ms.reviewer: cmmdesai
 
-#customer intent:  
 ---
 
 # SCIM support in Microsoft Entra ID
@@ -49,7 +48,7 @@ This capability is commonly used by IT administrators to automate access lifecyc
 
 ### Where to learn more
 
-- [Develop a SCIM endpoint for user provisioning](/use-scim-to-provision-users-and-groups.md)
+- [Develop a SCIM endpoint for user provisioning](use-scim-to-provision-users-and-groups.md)
 - [App specific provisioning tutorials](identity/saas-apps/tutorial-list.md)
 - [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility.md)
 
@@ -80,9 +79,9 @@ This capability is designed for **standards‑based identity lifecycle automatio
 
 ### Where to learn more
 
-- [Configure Microsoft Entra SCIM 2.0 APIs](/link-to-article)
-- [Microsoft Entra ID SCIM API endpoints](/link-to-article)
-- [Microsoft Entra ID SCIM API schema](/link-to-article)
+- [Configure Microsoft Entra SCIM 2.0 APIs](entra-id-scim-api-reference.md)
+- [Microsoft Entra ID SCIM API endpoints](entra-id-scim-api-reference.md)
+- [Microsoft Entra ID SCIM API schema](entra-id-scim-api-schema-documentation.md)
 
 ---
 
