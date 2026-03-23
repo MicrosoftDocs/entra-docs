@@ -434,6 +434,9 @@ In March 2024, Microsoft announced that Microsoft Entra ID will transition from 
 
 If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
+> [!IMPORTANT]
+> Please be aware that devices using Secure Enclave for storing device identity keys will also need to be provisioned with Enterprise SSO or [Platform SSO](https://learn.microsoft.com/en-us/intune/intune-service/configuration/platform-sso-macos) to report [device identity](https://learn.microsoft.com/en-us/entra/identity/devices/overview)   to Microsoft Entra ID.
+
 ### Using Microsoft Authentication Library (MSAL) to read registration device Information
 
 You can call this available MSAL API to read detailed device registration:
