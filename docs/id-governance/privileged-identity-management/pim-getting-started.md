@@ -2,7 +2,7 @@
 title: Start using PIM
 description: Learn how to enable and get started using Privileged Identity Management (PIM) in the Microsoft Entra admin center.
 ms.topic: how-to
-ms.date: 01/06/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
 ---
@@ -64,7 +64,6 @@ Once Privileged Identity Management is set up, you can learn your way around.
 | **Microsoft Entra roles** | Displays a dashboard and settings for Privileged Role Administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization. |
 | **Groups** | Manage just-in-time membership in the group or just-in-time ownership of the group. Groups can be used to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM. |
 | **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization.|
-| **General settings** | Select applications that are allowed to make app-only calls to Microsoft Graph API for PIM. |
 
 ## Next steps
 
