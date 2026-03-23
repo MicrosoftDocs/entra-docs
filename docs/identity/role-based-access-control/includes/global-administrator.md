@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 03/17/2026
 ms.custom: include file
 ---
 
@@ -79,6 +79,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/agentUsers/userPrincipalName/update | Update User Principal Name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/appConsent/appConsentRequests/allProperties/read | Read all properties of consent requests for applications registered with Microsoft Entra ID |
 > | microsoft.directory/applications/allProperties/allTasks | Create and delete applications, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |

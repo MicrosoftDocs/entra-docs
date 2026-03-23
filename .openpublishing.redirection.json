@@ -1742,7 +1742,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
-      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
       "redirect_document_id": false
     },
     {
@@ -3086,6 +3086,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
+      "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
@@ -3101,6 +3106,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/global-secure-access/troubleshoot-global-secure-access-client-ios-health-check-utility.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-global-secure-access-mobile-client-health-check-utility",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/global-secure-access/concept-b2b-guest-access.md",
       "redirect_url": "/entra/global-secure-access/concept-external-user-access",
       "redirect_document_id": true
@@ -3108,6 +3118,51 @@
     {
       "source_path": "docs/identity/conditional-access/policy-migration-mfa.md",
       "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-policy-common",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
+      "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-enable-passkey-fido2.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-synced-passkeys.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-passkey-profiles.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25535.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25537.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25539.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25541.md",
+      "redirect_url": "/azure/networking/security/zero-trust-application-gateway-waf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25543.md",
+      "redirect_url": "/azure/networking/security/zero-trust-front-door-waf",
       "redirect_document_id": false
     }
   ]

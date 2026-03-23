@@ -1,30 +1,30 @@
 ---
-title: Securely integrate Azure Logic Apps with on premises  APIs using Microsoft Entra application proxy
-description: Microsoft Entra application proxy lets cloud-native logic apps securely access on premises  APIs to bridge your workload.
+title: Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
+description: Microsoft Entra application proxy lets cloud-native logic apps securely access on-premises APIs to bridge your workload.
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: kfriedemann
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
 ---
-# Securely integrate Azure Logic Apps with on premises  APIs using Microsoft Entra application proxy
+# Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 
 Azure Logic Apps is a service allowing easy creation of managed workflows in a no-code environment that can integrate with various external services and systems. Workflows help automate a wide range of business processes, such as data integration, data processing, and event-driven scenarios.
-Logic Apps integrates with other public and cloud-based services. Or, utilize Logic Apps with on premises applications and services. Private network integration doesn't expose the service to the public with port forwarding or a traditional reverse proxy.
+Logic Apps integrates with other public and cloud-based services. Or, use Logic Apps with on-premises applications and services. Private network integration doesn't expose the service to the public with port forwarding or a traditional reverse proxy.
 
-This article describes the steps necessary to utilize the Microsoft Entra application proxy solution to provide secure access to a Logic App, while protecting the internal application from unwanted actors. The process and end result is similar to [Access on premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md) with special attention paid to utilizing the API from within a Logic App.
+This article describes the steps necessary to use the Microsoft Entra application proxy solution to provide secure access to a Logic App, while protecting the internal application from unwanted actors. The process and end result is similar to [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md) with special attention paid to utilizing the API from within a Logic App.
 
 ## Overview
 
-The following diagram shows a traditional way to publish on premises  APIs for access from Azure Logic Apps. This approach requires opening incoming Transmission Control Protocol (TCP) ports 80 and/or 443 to the API service.
+The following diagram shows a traditional way to publish on-premises APIs for access from Azure Logic Apps. This approach requires opening incoming Transmission Control Protocol (TCP) ports 80 and/or 443 to the API service.
 
-![Diagram that shows Logic App to API direct connection.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-direct.png)
+![Logic App to API direct connection.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-direct.png)
 
 The following diagram shows how you can use Microsoft Entra application proxy to securely publish APIs for use with Logic Apps (or other Azure Cloud services) without opening any incoming ports:
 
-![Diagram that shows Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
+![Logic App to API connection via Azure application proxy.](./media/application-proxy-integrate-with-logic-apps/azure-logic-app-to-api-connection-app-proxy.png)
 
-The Microsoft Entra application proxy and associated connector facilitate secure authorization and integration to your on premises services without more configurations to your network security infrastructure.  
+The Microsoft Entra application proxy and associated connector facilitate secure authorization and integration to your on-premises services without more configurations to your network security infrastructure.  
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ To follow this tutorial, you need:
 
 - Admin access to an Azure directory, with an account that can create and register apps
 - The *Logic App Contributor* role (or higher) in an active tenant
-- Azure private network connector deployed and an application configured as detailed in [Add an on premises  app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
+- Azure private network connector deployed and an application configured as detailed in [Add an on-premises app - application proxy in Microsoft Entra ID](./application-proxy-add-on-premises-application.md)
 
 > [!NOTE]
 > Granting a user entitlement and testing the sign-on is recommended but not required for this guide.
@@ -56,7 +56,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. Select the **API permissions** menu item from the navigation pane.
 
-    ![Screenshot of the Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
+    ![the Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
 
     1. Select the **Add a permission** button.
 
@@ -70,11 +70,11 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     3. Verify the configured permission appears.
 
-        ![Screenshot of the Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
+        ![the Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
 
 1. Select the **Certificates & secrets** menu item from the navigation pane.
 
-    ![Screenshot of the Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
+    ![the Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
 
     1. Select the **Client secrets** tab item.
 
@@ -98,7 +98,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 3. Add a new step and select the **HTTP** operation.
 
-    ![Screenshot of the Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
+    ![the Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
 
     1. *Method*: Select the desired HTTP method to be sent to the internal API.
 
@@ -137,12 +137,12 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 ## Caveats
 
-APIs that require authentication/authorization require special handling when using this method. Since Microsoft Entra ID OAuth is being used for access, the requests sent already contain an *Authorization* field that the internal API can't utilize (unless single sign-on is configured). As a workaround, some applications offer authentication or authorization that uses methods other than an *Authorization* header. For example, GitLab allows for a header titled *PRIVATE-TOKEN*, and Atlassian Jira allows for requesting a Cookie that can be used in later requests.
+APIs that require authentication/authorization require special handling when using this method. Because Microsoft Entra ID OAuth is being used for access, the requests sent already contain an *Authorization* field that the internal API can't utilize (unless single sign-on is configured). As a workaround, some applications offer authentication or authorization that uses methods other than an *Authorization* header. For example, GitLab allows for a header titled *PRIVATE-TOKEN*, and Atlassian Jira allows for requesting a Cookie that can be used in later requests.
 
 The Logic App HTTP action shows clear text values. However, store the App Registration Secret Key in Azure Key Vault for secure retrieval and use.
 
 ## See also
 
 - [Configure an application proxy application](application-proxy-add-on-premises-application.md)
-- [Access on premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md)
+- [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md)
 - [Learn about common scenarios, examples, tutorials, and walkthroughs for Azure Logic Apps](/azure/logic-apps/logic-apps-examples-and-scenarios)

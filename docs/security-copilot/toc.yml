@@ -48,6 +48,8 @@ items:
   items:
   - name: Overview of Microsoft Entra agents
     href: entra-agents.md
+  - name: Discover and deploy agents and solutions
+    href: security-store-in-entra.md
   - name: Conditional Access Optimization Agent
     items: 
     - name: Get started

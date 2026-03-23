@@ -47,7 +47,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**.
       1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types) you want to apply the policy to.

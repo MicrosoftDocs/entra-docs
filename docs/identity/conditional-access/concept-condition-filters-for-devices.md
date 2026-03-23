@@ -16,16 +16,16 @@ When administrators create Conditional Access policies, the ability to target or
 
 There are multiple scenarios that organizations can now enable using filter for devices condition. The following scenarios provide examples of how to use this new condition.
 
-- **Restrict access to privileged resources**. For this example, lets say you want to allow access to Windows Azure Service Management API from a user who:
+- **Restrict access to privileged resources**. For this example, let's say you want to allow access to Windows Azure Service Management API from a user who:
    - Is assigned a [privileged role](../role-based-access-control/permissions-reference.md).
    - Completed multifactor authentication.
    - Is on a device that is [privileged or secure admin workstations](/security/compass/privileged-access-devices) and attested as compliant.
    - For this scenario, organizations would create two Conditional Access policies:
       - Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
       - Policy 2: All users with an administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block. Learn how to [update extensionAttributes on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
-- **Block access to organization resources from devices running an unsupported Operating System**. For this example, lets say you want to block access to resources from Windows OS version older than Windows 10. For this scenario, organizations would create the following Conditional Access policy:
+- **Block access to organization resources from devices running an unsupported Operating System**. For this example, let's say you want to block access to resources from Windows OS version older than Windows 10. For this scenario, organizations would create the following Conditional Access policy:
    - All users accessing all resources, excluding those with devices where the rule expression `device.operatingSystem == 'Windows'` and `device.operatingSystemVersion startsWith '10.0'` applies, should be blocked by Access controls.
-- **Do not require multifactor authentication for specific accounts on specific devices**. For this example, lets say you want to not require multifactor authentication when using service accounts on specific devices like Teams Phones or Surface Hub devices. For this scenario, organizations would create the following two Conditional Access policies:
+- **Do not require multifactor authentication for specific accounts on specific devices**. For this example, let's say you want to not require multifactor authentication when using service accounts on specific devices like Teams Phones or Surface Hub devices. For this scenario, organizations would create the following two Conditional Access policies:
    - Policy 1: All users excluding service accounts, accessing all resources, and for Access controls, Grant access, but require multifactor authentication.
    - Policy 2: Select users and groups and include group that contains service accounts only, accessing all resources, excluding a filter for devices using rule expression device.extensionAttribute2 not equals TeamsPhoneDevice and for Access controls, Block.
 
@@ -108,7 +108,7 @@ The filter for devices API is available in Microsoft Graph v1.0 endpoint and can
 The following device attributes can be used with the filter for devices condition in Conditional Access.
 
 > [!IMPORTANT]
-> Microsoft recommends using atleast one system defined or admin configurable device property when using Filter for devices condition in Conditional Access.
+> Microsoft recommends using at least one system defined or admin configurable device property when using Filter for devices condition in Conditional Access.
 
 > [!NOTE] 
 > Microsoft Entra ID uses device authentication to evaluate device filter rules. For a device that is unregistered with Microsoft Entra ID, all device properties are considered as null values and the device attributes cannot be determined since the device does not exist in the directory. The best way to target policies for unregistered devices is by using the negative operator since the configured filter rule would apply. If you were to use a positive operator, the filter rule would only apply when a device exists in the directory and the configured rule matches the attribute on the device. 

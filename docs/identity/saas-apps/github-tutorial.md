@@ -179,6 +179,9 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the GitHub tile in the My Apps, this option redirects to GitHub Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
+> [!NOTE]
+> If a user has Global Administrator rights in Microsoft Entra ID, they can sign in through the SSO endpoint on your GitHub organization without being added as a member of the enterprise application. They can also self-join the organization without an invite.
+
 ## Related content
 
 Once you configure GitHub you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

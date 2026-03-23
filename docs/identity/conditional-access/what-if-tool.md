@@ -43,7 +43,7 @@ The following conditions are required: identity, target resource, device platfor
 
 ## Evaluation
 
-Start an evaluation by clicking **What If**. The evaluation result provides you with a report that consists of:
+Start an evaluation by selecting **What If**. The evaluation result provides you with a report that consists of:
 
 - An indicator showing whether classic policies exist in your environment.
 - Policies that apply to your user, agent, or workload identity.

@@ -17,9 +17,9 @@ The Microsoft 365 sign-in page for Microsoft Entra ID, part of Microsoft Entra, 
 ## Identification
 You can tell if the sign-in page your organization uses supports Microsoft accounts by looking at the hint text in the username field. If the hint text says "Email, phone, or Skype", the sign-in page supports Microsoft accounts.
 
-:::image type="content" source="./media/signin-account-support/ui-prompt.png" alt-text="Screenshot the difference between account sign-in pages.":::
+:::image type="content" source="./media/signin-account-support/ui-prompt.png" alt-text="Screenshot of the difference between account sign-in pages.":::
 
-[Additional sign-in options that work only for personal Microsoft accounts](https://azure.microsoft.com/updates/microsoft-account-signin-options/), but this option can't be used for signing in to work or school account resources.
+[Additional sign-in options work only for personal Microsoft accounts](https://azure.microsoft.com/updates/microsoft-account-signin-options/), and can't be used for signing in to work or school account resources.
 
 ## Next steps
 

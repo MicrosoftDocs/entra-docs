@@ -2,7 +2,7 @@
 title: Global Secure Access Web content filtering categories
 description: Global Secure Access Web content filtering categories
 ms.topic: reference
-ms.date: 02/21/2025
+ms.date: 03/13/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---

@@ -2,7 +2,7 @@
 title: Learn about Microsoft Entra Internet Access
 description: Learn about how Microsoft Entra Internet Access secures access to the Internet.
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 03/12/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -18,7 +18,7 @@ The key introductory feature for Microsoft Entra Internet Access for all apps is
 
 When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access performs security controls in two ways. For unencrypted HTTP traffic, it uses the Uniform Resource Locator (URL). For HTTPS traffic encrypted with Transport Layer Security (TLS), it uses the Server Name Indication (SNI).
 
-Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. To learn more about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
+Web content filtering is implemented using filtering policies, which are grouped into security profiles, which can be linked to Conditional Access policies. For more information about Conditional Access, see [Microsoft Entra Conditional Access](/azure/active-directory/conditional-access/).
 
 > [!NOTE]
 > While web content filtering is a core capability for any Secure Web Gateway, similar capabilities exist in other security products, such as endpoint security products like [Microsoft Defender for Endpoint](/defender-endpoint/web-content-filtering/) and firewalls like [Azure Firewall](/azure/firewall/web-categories/). Microsoft Entra Internet Access provides additional security value via identity-aware policy integration with Microsoft Entra ID, policy enforcement on the cloud edge, universal support for all device platforms, and security enhancements through Transport Layer Security (TLS) Inspection, such as higher fidelity web categorization. Internet access also simplifies traditional policy management since policies are all based on the user identity. Learn more in the [FAQ](resource-faq.yml).

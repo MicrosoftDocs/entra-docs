@@ -55,7 +55,7 @@ The following user actions cause automatic group renewal:
 - **Teams**: Visit a Teams channel.
 - **Viva Engage**: View a post within a Viva Engage community or an interactive email in Outlook.
 
-### Auditing and reporting
+### Audit and report
 
 Administrators can get a list of automatically renewed groups from the activity audit logs in Microsoft Entra ID.
 
@@ -74,11 +74,11 @@ For more information on permissions to restore a deleted group, see [Restore a d
 
 ## Set group expiration
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Identity**.
 1. Select **Groups** > **All groups**, and then select **Expiration** to open the expiration settings.
   
-   :::image type="content" source="./media/groups-lifecycle/expiration-settings.png" alt-text="Screenshot that shows expiration settings for groups.":::
+    :::image type="content" source="./media/groups-lifecycle/expiration-settings.png" alt-text="Screenshot that shows expiration settings for groups.":::
 
 1. On the **Expiration** page, you can:
 
@@ -90,12 +90,12 @@ For more information on permissions to restore a deleted group, see [Restore a d
       - **None** to restrict expiration for all groups.
     - Save your settings when you're done by selecting **Save**.
 
-> [!NOTE]
-> - When you first set up expiration, any groups that are older than the expiration interval are set to 35 days until expiration unless the group is automatically renewed or the owner renews it.
-> - When a dynamic group is deleted and restored, it's seen as a new group and repopulated according to the rule. This process can take up to 24 hours.
-> - Expiration notices for groups used in Teams appear in the Teams Owners feed.
-> - When you enable expiration for selected groups, you can add up to 500 groups to the list. If you need to add more than 500 groups, you can enable expiration for all your groups. In that scenario, the 500-group limitation doesn't apply.
->- Groups don't renew immediately when auto-renew activities occur. In the event of an activity, a flag is placed on the group to indicate it's ready for renewal when it's near expiry. If the group is near expiry, renewal occurs within 24 hours.
+    > [!NOTE]
+    > - When you first set up expiration, any groups that are older than the expiration interval are set to 35 days until expiration unless the group is automatically renewed or the owner renews it.
+    > - When a dynamic group is deleted and restored, it's seen as a new group and repopulated according to the rule. This process can take up to 24 hours.
+    > - Expiration notices for groups used in Teams appear in the Teams Owners feed.
+    > - When you enable expiration for selected groups, you can add up to 500 groups to the list. If you need to add more than 500 groups, you can enable expiration for all your groups. In that scenario, the 500-group limitation doesn't apply.
+    > - Groups don't renew immediately when auto-renew activities occur. In the event of an activity, a flag is placed on the group to indicate it's ready for renewal when it's near expiry. If the group is near expiry, renewal occurs within 24 hours.
 
 ## Email notifications
 
@@ -107,7 +107,7 @@ If groups aren't automatically renewed, email notifications like the following e
 
 From the **Renew group** notification email, group owners can directly access the group details page in the [Access Panel](https://account.activedirectory.windowsazure.com/r#/applications). There, users can get more information about the group, such as its description, when it was last renewed, when it expires, and also the ability to renew the group. The group details page now also includes links to the Microsoft 365 group resources so that the group owner can conveniently view the content and activity in their group.
 
->[!Important]
+> [!IMPORTANT]
 > If there's any problem with the notification emails and they aren't sent out or they're delayed, be assured that Microsoft never deletes a group before the last email is sent.
 
 When a group expires, the group is deleted one day after the expiration date. An email notification such as this one is sent to the Microsoft 365 group owners informing them about the expiration and subsequent deletion of their Microsoft 365 group.
@@ -139,53 +139,53 @@ Here are examples of how you can use PowerShell cmdlets to configure the expirat
 
 1. Install the Microsoft Graph PowerShell module and sign in at the PowerShell prompt.
 
-   ``` PowerShell
-   Install-Module Microsoft.Graph -Scope CurrentUser
-   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
-   ```
+    ``` PowerShell
+    Install-Module Microsoft.Graph -Scope CurrentUser
+    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+    ```
 
 1. Configure the expiration settings. Use the [New-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/new-mggrouplifecyclepolicy) cmdlet to set the lifetime for all Microsoft 365 groups in the Microsoft Entra organization to 365 days. Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
   
-   ``` PowerShell
-   New-MgGroupLifecyclePolicy -AlternateNotificationEmails emailaddress@contoso.com `
-      -GroupLifetimeInDays 365 -ManagedGroupTypes All
-   ```
+    ``` PowerShell
+    New-MgGroupLifecyclePolicy -AlternateNotificationEmails emailaddress@contoso.com `
+       -GroupLifetimeInDays 365 -ManagedGroupTypes All
+    ```
 
 1. Retrieve the existing policy by using [Get-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/get-mggrouplifecyclepolicy). This cmdlet retrieves the current Microsoft 365 group expiration settings that were configured.
   
-   ```powershell
-   Get-MgGroupLifecyclePolicy
-   ```
+    ```powershell
+    Get-MgGroupLifecyclePolicy
+    ```
 
-   In this example, you can see:
+    In this example, you can see:
 
-   - The policy ID.
-   - Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
-   - The lifetime for all Microsoft 365 groups in the Microsoft Entra organization is set to 365 days.
+    - The policy ID.
+    - Renewal notifications for Microsoft 365 groups without owners are sent to `emailaddress@contoso.com`.
+    - The lifetime for all Microsoft 365 groups in the Microsoft Entra organization is set to 365 days.
 
-   ```output
-   Id                                   AlternateNotificationEmails GroupLifetimeInDays ManagedGroupTypes
-   --                                   --------------------------- ------------------- -----------------
-   1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5 emailaddress@contoso.com    365                 All
-   ```
+    ```output
+    Id                                   AlternateNotificationEmails GroupLifetimeInDays ManagedGroupTypes
+    --                                   --------------------------- ------------------- -----------------
+    1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5 emailaddress@contoso.com    365                 All
+    ```
 
 1. Update the existing policy by using [Update-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/update-mggrouplifecyclepolicy). This cmdlet is used to update an existing policy. In the following example, the group lifetime in the existing policy is changed from 365 days to 180 days.
   
-   ```powershell
-   Update-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
-   ```
+    ```powershell
+    Update-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" -GroupLifetimeInDays 180 -AlternateNotificationEmails "emailaddress@contoso.com"
+    ```
   
 1. Add specific groups to the policy by using [Add-MgGroupToLifecyclePolicy](/powershell/module/microsoft.graph.groups/add-mggrouptolifecyclepolicy). This cmdlet adds a group to the lifecycle policy. As an example:
   
-   ```powershell
-   Add-MgGroupToLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" -GroupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
-   ```
+    ```powershell
+    Add-MgGroupToLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5" -GroupId "cffd97bd-6b91-4c4e-b553-6918a320211c"
+    ```
   
 1. Remove the existing policy by using [Remove-MgGroupLifecyclePolicy](/powershell/module/microsoft.graph.groups/remove-mggrouplifecyclepolicy). This cmdlet deletes the Microsoft 365 group expiration settings but requires the policy ID. This cmdlet disables expiration for Microsoft 365 groups.
   
-   ```powershell
-   Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
-   ```
+    ```powershell
+    Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
+    ```
   
 You can use the following cmdlets to configure the policy in more detail. For more information, see [Microsoft Graph PowerShell documentation](/powershell/microsoftgraph/).
 
@@ -202,5 +202,5 @@ You can use the following cmdlets to configure the policy in more detail. For mo
 For more information on Microsoft Entra groups, see:
 
 
-- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

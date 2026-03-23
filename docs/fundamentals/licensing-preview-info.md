@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID preview program information
-description: In this article we go over the information in effect when participating in Microsoft Entra ID preview programs.
+description: In this article, learn about the terms in effect when participating in Microsoft Entra ID preview programs.
 manager: pmwongera
 ms.topic: concept-article
 ms.date: 12/16/2024

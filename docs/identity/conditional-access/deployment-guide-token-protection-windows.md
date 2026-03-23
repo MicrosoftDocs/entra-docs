@@ -11,7 +11,7 @@ ms.reviewer: sgrandhi
 
 This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Windows platform.
 
-For an overview of Token Protection and supported platforms, see [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md). We recommend reviewing the overview documentation before using this deployment guide.
+For an overview of Token Protection and supported platforms, see [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md). Review the overview documentation before using this deployment guide.
 
 ## Prerequisites
 
@@ -99,14 +99,14 @@ This process helps assess your users' client and app compatibility for token pro
 
 ## Create a Conditional Access policy
 
-Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. We recommend piloting with a small subset to begin. 
+Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. Pilot with a small subset to begin.
 
 The following steps help you create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select the users or groups who are testing this policy.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
@@ -139,7 +139,7 @@ The following steps help you create a Conditional Access policy to require token
        1. Select **Done**.
 1. Under **Access controls** > **Session**, select **Require token protection for sign-in sessions** and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -167,7 +167,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 1. Go to the **Conditional Access** or **Report-Only** pane depending on its state and select the name of your policy requiring token protection.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
 1. To find more details about the binding state of the request, select the pane **Basic Info** and see the field **Token Protection - Sign In Session**. Possible values are: 
-   1. Bound: the request was using bound protocols. Some sign-ins might include multiple requests, and all requests must be bound to satisfy the token protection policy. Even if an individual request appears to be bound, it doesn't ensure compliance with the policy if other requests are unbound. To see all requests for a sign-in, you can filter all requests for a specific user or look by corelationid.
+   1. Bound: the request was using bound protocols. Some sign-ins might include multiple requests, and all requests must be bound to satisfy the token protection policy. Even if an individual request appears to be bound, it doesn't ensure compliance with the policy if other requests are unbound. To see all requests for a sign-in, you can filter all requests for a specific user or look by correlation ID.
    1. Unbound: the request wasn't using bound protocols. Possible `statusCodes` when request is unbound are:
       1. 1002: The request is unbound due to the lack of Microsoft Entra ID device state. 
       1. 1003: The request is unbound because the Microsoft Entra ID device state doesn't satisfy Conditional Access policy requirements for token protection. This error could be due to an unsupported device registration type, or the device wasn't registered using fresh sign-in credentials. 

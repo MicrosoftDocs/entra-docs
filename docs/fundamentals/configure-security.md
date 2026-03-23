@@ -117,11 +117,17 @@ Protect your network perimeter.
 | [Web content filtering uses category-based rules](zero-trust-protect-networks.md#web-content-filtering-uses-category-based-rules) | Microsoft Entra ID P1 |
 | [Web content filtering policies are linked to security profiles](zero-trust-protect-networks.md#web-content-filtering-policies-are-linked-to-security-profiles) | Microsoft Entra ID P1 |
 | [Web content filtering integrates with Conditional Access](zero-trust-protect-networks.md#web-content-filtering-integrates-with-conditional-access) | Microsoft Entra Internet Access |
+| [Web content filtering blocks high-risk categories](zero-trust-protect-networks.md#web-content-filtering-blocks-high-risk-categories) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [TLS inspection is enabled and correctly configured for outbound traffic](zero-trust-protect-networks.md#tls-inspection-is-enabled-and-correctly-configured-for-outbound-traffic) | Microsoft Entra ID P1 |
+| [TLS inspection bypass rules are regularly reviewed](zero-trust-protect-networks.md#tls-inspection-bypass-rules-are-regularly-reviewed) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [TLS inspection certificates have a sufficient validity period](zero-trust-protect-networks.md#tls-inspection-certificates-have-a-sufficient-validity-period) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [TLS inspection failure rate is below 1%](zero-trust-protect-networks.md#tls-inspection-failure-rate-is-below-1) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [TLS inspection custom bypass rules don't duplicate system bypass destinations](zero-trust-protect-networks.md#tls-inspection-custom-bypass-rules-dont-duplicate-system-bypass-destinations) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Threat intelligence filtering protects internet traffic](zero-trust-protect-networks.md#threat-intelligence-filtering-protects-internet-traffic) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [File transfer policies are configured to prevent data exfiltration](zero-trust-protect-networks.md#file-transfer-policies-are-configured-to-prevent-data-exfiltration) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [AI Gateway protects enterprise generative AI applications from prompt injection attacks](zero-trust-protect-networks.md#ai-gateway-protects-enterprise-generative-ai-applications-from-prompt-injection-attacks) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access cloud firewall protects branch office internet traffic](zero-trust-protect-networks.md#global-secure-access-cloud-firewall-protects-branch-office-internet-traffic) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Internet traffic is inspected across all Secure Web Gateway defense layers](zero-trust-protect-networks.md#internet-traffic-is-inspected-across-all-secure-web-gateway-defense-layers) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Network validation is configured through Universal Continuous Access Evaluation](zero-trust-protect-networks.md#network-validation-is-configured-through-universal-continuous-access-evaluation) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access client is deployed on all managed endpoints](zero-trust-protect-networks.md#global-secure-access-client-is-deployed-on-all-managed-endpoints) | Microsoft Entra ID P1 or Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
@@ -145,11 +151,7 @@ Protect your network perimeter.
 | [Private Access sensors are enforcing strong authentication policies on domain controllers](zero-trust-protect-networks.md#private-access-sensors-are-enforcing-strong-authentication-policies-on-domain-controllers) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [Quick Access has user or group assignments](zero-trust-protect-networks.md#quick-access-has-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
 | [All Private Access apps have user or group assignments](zero-trust-protect-networks.md#all-private-access-apps-have-user-or-group-assignments) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
-| [Outbound traffic from VNet integrated workloads is routed through Azure Firewall](zero-trust-protect-networks.md#outbound-traffic-from-vnet-integrated-workloads-is-routed-through-azure-firewall) | Azure Firewall Basic |
-| [Threat intelligence is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#threat-intelligence-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
-| [IDPS inspection is enabled in deny mode on Azure Firewall](zero-trust-protect-networks.md#idps-inspection-is-enabled-in-deny-mode-on-azure-firewall) | Azure Firewall Premium |
-| [Application Gateway WAF is enabled in prevention mode](zero-trust-protect-networks.md#application-gateway-waf-is-enabled-in-prevention-mode) | Azure Application Gateway WAF_v2 |
-| [Azure Front Door WAF is enabled in prevention mode](zero-trust-protect-networks.md#azure-front-door-waf-is-enabled-in-prevention-mode) | Azure Front Door Standard |
+
 
 ## Protect engineering systems
 

@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 
 # Use Azure custom roles in Privileged Identity Management
 
-You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, if your organization hires several contractors to help develop an application that runs in an Azure subscription.
+You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, your organization might hire several contractors to help develop an application that runs in an Azure subscription.
 
 As a resource administrator, you want employees to be eligible for access without requiring approval. However, all contract associates must be approved when they request access to the organization's resources.
 
@@ -19,14 +19,14 @@ Follow the steps outlined in the next section to set up targeted Privileged Iden
 
 To create a custom role for a resource, follow the steps described in [Azure custom roles](/azure/role-based-access-control/custom-roles).
 
-When you create custom role, include a descriptive name so you can easily remember which built-in role you intended to duplicate.
+When you create a custom role, include a descriptive name so you can easily remember which built-in role you intended to duplicate.
 
 > [!NOTE]
 > Ensure that the custom role is a duplicate of the built-in role you want to duplicate, and that its scope matches the built-in role.
 
 ## Apply PIM settings
 
-After the role is created in your Microsoft Entra organization, go to the **Privileged Identity Management - Azure resources** page in the Azure portal. Select the resource that the role applies to.
+After you create the role in your Microsoft Entra organization, go to the **Privileged Identity Management - Azure resources** page in the Azure portal. Select the resource that the role applies to.
 
 :::image type="content" source="media/pim-resource-roles-custom-role-policy/aadpim-manage-azure-resource-some-there.png" alt-text="Screenshot of Privileged Identity Management resources pane.":::
 
