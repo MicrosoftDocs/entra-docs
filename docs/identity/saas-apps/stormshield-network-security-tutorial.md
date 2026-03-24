@@ -16,11 +16,11 @@ ms.custom: sfi-image-nochange
  
 # Configure Stormshield Network Security (OIDC) for Single sign-on with Microsoft Entra ID
  
-In this article,  you learn how to integrate Stormshield Network Security (OIDC) with Microsoft Entra ID. When you integrate Stormshield Network Security (OIDC) with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Stormshield Network Security (OIDC) with Microsoft Entra ID. When you integrate Stormshield Network Security (OIDC) with Microsoft Entra ID, you can:
  
-Use Microsoft Entra ID to control who can access Stormshield Network Security (OIDC).
-Enable your users to be automatically signed in to Stormshield Network Security (OIDC) with their Microsoft Entra accounts.
-Manage your accounts in one central location: the Azure portal.
+* Use Microsoft Entra ID to control who can access Stormshield Network Security (OIDC).
+* Enable your users to be automatically signed in to Stormshield Network Security (OIDC) with their Microsoft Entra accounts.
+* Manage your accounts in one central location: the Microsoft Entra admin center.
  
 ## Prerequisites
  
@@ -33,7 +33,7 @@ To get started, you need the following items:
  
 To configure the integration of Stormshield Network Security (OIDC) into Microsoft Entra ID, you need to add Stormshield Network Security (OIDC) from the gallery to your list of managed SaaS apps.
 
-## Collect and Generate OIDC Provider Credentials (Client ID, Secret, Domain, Tenant ID)
+## Collect and generate OIDC provider credentials (Client ID, Secret, Domain, Tenant ID)
 
 The first step is to collect the necessary information from Microsoft Entra ID and generate the application secret to configure the Stormshield Network Security firewall.
  
@@ -53,7 +53,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  
 1. Browse to **Entra ID** > **Enterprise apps** > **Stormshield Network Security (OIDC)** > **Single sign-on**.
  
-1. Perform the following steps in the below section:
+1. Perform the following steps:
  
     1. Select **Go to application**.
  
@@ -66,13 +66,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. Under **Endpoints** tab, copy **OpenID Connect metadata document** link and use it later in the Stormshield Network Security (OIDC) side configuration.
  
         ![Screenshot shows the endpoints on tab.](common/endpoints.png)
- ## Configure the Redirect URI(s)
+## Configure the redirect URI(s)
 
 This step ensures that Microsoft Entra ID sends the user back to the correct firewall URL after successful authentication.
 
-1. Navigate to **Authentication** tab on the left menu and perform the following steps:
+1. Navigate to the **Authentication** tab on the left menu and perform the following steps:
  
-    1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value, **These URIs must use HTTPS.** which you have copied from Stormshield Network Security (OIDC) side.
+    1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value that you copied from the Stormshield Network Security (OIDC) side. These URIs must use HTTPS.
  
         [![Screenshot shows the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
  
@@ -80,8 +80,8 @@ This step ensures that Microsoft Entra ID sends the user back to the correct fir
  
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
  
-    1. Go to **Client secrets** tab and select **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
+    1. Go to the **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox, select an expiration period from the **Expires** drop-down as per your requirement, and select **Add**.
  
         [![Screenshot shows the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
  
@@ -105,7 +105,7 @@ In this section, you create a test user called B.Simon.
  
 ### Assign roles to users or groups in the application (Optional)
  
-In this section, In Microsoft Entra ID, Controls which users are authorized to use the application and how their access rights are managed. you enable B.Simon to use single sign-on by granting access to Stormshield Network Security (OIDC).
+In this section, you configure which users in Microsoft Entra ID are authorized to use the application and manage their access rights. You enable B.Simon to use single sign-on by granting access to Stormshield Network Security (OIDC).
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Stormshield Network Security (OIDC)**.
@@ -117,7 +117,7 @@ In this section, In Microsoft Entra ID, Controls which users are authorized to u
  
 ## Configure Stormshield Network Security (OIDC) SSO
 
-To configure single sign-on on **Stormshield Network Security** side, you need to the download user groups to import them into the SNS firewall. To simplify the creation of local group objects on the SNS firewall, you can retrieve the unique identifiers (GUIDs) of your Microsoft Entra ID groups.
+To configure single sign-on on **Stormshield Network Security** side, you need to download user groups to import them into the SNS firewall. To simplify the creation of local group objects on the SNS firewall, you can retrieve the unique identifiers (GUIDs) of your Microsoft Entra ID groups.
 
 ## Download user groups to import them into the SNS firewall (Optional)
 
@@ -164,7 +164,7 @@ If you have obtained a server certificate from a public CA that matches the FQDN
 1.  Select on **Import a File** (or **Import an Identity**).
 1.  Follow the wizard steps to import the certificate and its private key.
 
-> [!Note]
+> [!NOTE]
 > You can choose to generate a server identity from the firewall's internal CA, but this is **not recommended** for production environments.
 
 ### Configure the captive portal to use the identity
@@ -212,7 +212,7 @@ Go to **Configuration** > **Users** > **Authentication** > **Authentication poli
     * **out**: interface to access the external captive portal that SSL VPN clients use for retrieving their configuration files and setting up tunnels,
     * **sslvpn**: interface used by SSL VPN clients to access the firewall's SSL VPN service when the tunnel is set up.
 1.  In the **Authentication methods** menu: click on **Enable a method** and select the **OIDC** method.
-1.  Likewise, add the other authentication methods for your users (e.g,: **LDAP**).
+1.  Likewise, add the other authentication methods for your users (e.g., **LDAP**).
 1.  Confirm this authentication rule by clicking on **OK**.
     The rule will be added to the authentication policy but will not be enabled by default.
 1.  In the authentication rule grid, double click on the status of the rule to enable it.
@@ -266,7 +266,7 @@ Go to **Users > Users** > **Microsoft Entra ID** tab.
     * The **Application role UID**, which has to use syntax in `Actions.Permissions` format (e.g., `SNS.Config.All.Write`, `SNS.Config.All.Read`).
     * The optional **Description** (any text).
 
-> **IMPORTANT**
+> [!IMPORTANT]
 > The role UID must be unique on the firewall, and identical to the UID of the corresponding application role that was [created in your **Microsoft Entra ID** tenant](#assign-roles-to-users-or-groups-in-the-application-optional).
 
 1.  Select on **Apply** to confirm the creation of the role.
