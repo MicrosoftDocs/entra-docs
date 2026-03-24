@@ -168,6 +168,8 @@
         }
     ], 
     "typos": {
-        "’": "'"
+        "’": "'",
+        "allowlist": "allow list",
+        "blocklist": "block list"
     }
 }
