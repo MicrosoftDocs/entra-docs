@@ -161,7 +161,7 @@ The certificate of this server identity is meant to be used by the firewall's ca
 If you have obtained a server certificate from a public CA that matches the FQDN defined in the previous step, you must import it into the firewall.
 
 1.  Go to **Objects** > **Certificates and PKI**.
-1.  Select on **Import a File** (or **Import an Identity**).
+1.  Select **Import a File** (or **Import an Identity**).
 1.  Follow the wizard steps to import the certificate and its private key.
 
 > [!NOTE]
@@ -186,15 +186,15 @@ In **Users** > **Authentication > Available methods** tab:
 1.  **Tenant ID**: enter the ID [retrieved from your Microsoft Entra ID administration center](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id) in this field.
 1.  **Application ID (client)**: enter the value [retrieved from your Microsoft Entra ID administration center](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id) in this field.
 1.  **Client secret**: enter the value retrieved and saved when [Creating a secret for the application](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id) during the creation of the SNS application on your **Microsoft Entra ID** tenant. If you did not save this value, you need to delete the **Client secret** that was created earlier for your application, and generate a new one, by following the procedure described in [this step](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id).
-1.  Select on **Next**.
+1.  Select **Next**.
     The wizard suggests URLs that correspond to the captive portal service, the SSL VPN service, and access to the firewall’s web administration interface. These URLs can be copied directly from this wizard to be entered as redirect URLs in [your **Microsoft Entra ID** administration center](#configure-the-redirect-uris) if necessary.
     They are also available in the OIDC/**Microsoft Entra ID** method editing panel.
-1. Select on **Next**.
+1. Select **Next**.
 1. Select the CSV file containing the groups in your **Microsoft Entra ID** tenant, which was downloaded when [Download user groups to import them into the SNS firewall](#download-user-groups-to-import-them-into-the-sns-firewall-optional), then click on **Next**. A summary of the group import operation then appears.
-1. Select on **Next**.
+1. Select **Next**.
 1. Confirm your configuration by clicking on **Finish**.
     You will be redirected to the OIDC/**Microsoft Entra ID** authentication method editing panel.
-1. Select on **Apply** to save the configuration of the **Microsoft Entra ID** authentication method on the firewall.
+1. Select **Apply** to save the configuration of the **Microsoft Entra ID** authentication method on the firewall.
 
 In this example, the configuration of the OIDC/**Microsoft Entra ID** method on the firewall will therefore resemble the following:
 
@@ -204,7 +204,7 @@ In this example, the configuration of the OIDC/**Microsoft Entra ID** method on 
 
 Go to **Configuration** > **Users** > **Authentication** > **Authentication policy** tab:
 
-1.  Select on **New rule** and select **Standard rule**.
+1.  Select **New rule** and select **Standard rule**.
 1.  Select **All** users in the **Users** menu.
     Permissions to connect to the captive portal, web administration interface or SSL VPN by authenticating through **Microsoft Entra ID** will be granted according to the privileges set in the tenant.
 1.  In the **Sources** menu: add the network interfaces through which users authenticated by **Microsoft Entra ID** will be presenting on the firewall. In this example, the following interfaces are used:
@@ -260,7 +260,7 @@ To use application roles to manage user permissions, these roles must have ident
 
 Go to **Users > Users** > **Microsoft Entra ID** tab.
 
-1.  Select on **Add,** then on **Application role**.
+1.  Select **Add,** then on **Application role**.
 1.  Fill in the following fields:
     * The **Application role name** (any text).
     * The **Application role UID**, which has to use syntax in `Actions.Permissions` format (e.g., `SNS.Config.All.Write`, `SNS.Config.All.Read`).
@@ -269,20 +269,20 @@ Go to **Users > Users** > **Microsoft Entra ID** tab.
 > [!IMPORTANT]
 > The role UID must be unique on the firewall, and identical to the UID of the corresponding application role that was [created in your **Microsoft Entra ID** tenant](#assign-roles-to-users-or-groups-in-the-application-optional).
 
-1.  Select on **Apply** to confirm the creation of the role.
-1.  Select on **Apply** to save changes to the configuration.
+1.  Select **Apply** to confirm the creation of the role.
+1.  Select **Apply** to save changes to the configuration.
 
 ### Allow SSL VPN for users authenticated through Microsoft Entra ID
 
 In **Configuration** > **Users** > **Access privileges** > **Detailed access** tab:
 
-1.  Select on **Add**.
+1.  Select **Add**.
 1.  Enable **Microsoft Entra ID** and select a group that has been imported from **Microsoft Entra ID**, a custom group or an application role.
-1.  Select on **Apply**.
+1.  Select **Apply**.
     A rule is added to the grid.
 1.  Select in the **SSL VPN** column of this rule and select **Allow**.
 1.  Double-click in the **Status** column of this rule to enable it.
-1.  Select on **Apply**, then **Save** to confirm changes to the configuration.
+1.  Select **Apply**, then **Save** to confirm changes to the configuration.
 
 ![Screenshot shows the SSL VPN Rule](media/stormshield-network-security-tutorial/users-access-privileges.png)
 
@@ -290,11 +290,11 @@ In **Configuration** > **Users** > **Access privileges** > **Detailed access** t
 
 In **System** > **Administrators**:
 
-1.  Select on **Add an administrator**.
+1.  Select **Add an administrator**.
 1.  Select the type of permissions to be granted to the administrator group.
-1.  Select on **Microsoft Entra ID**, then select a security group that was imported from **Microsoft Entra ID**, a custom security group or an application role.
+1.  Select **Microsoft Entra ID**, then select a security group that was imported from **Microsoft Entra ID**, a custom security group or an application role.
 1.  Confirm your selection by selecting on **Apply**.
-1.  Select on **Apply** to confirm changes to the configuration.
+1.  Select **Apply** to confirm changes to the configuration.
 
 ![Screenshot shows the admin access](media/stormshield-network-security-tutorial/admin-access.png)
 
