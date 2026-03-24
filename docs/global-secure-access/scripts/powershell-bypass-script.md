@@ -4,7 +4,6 @@ description: PowerShell example that bypasses a certain fqdn or IP from being ac
 ms.topic: sample
 ms.date: 06/06/2025
 ai-usage: ai-assisted
-ms.reviewer: frankgomulka
 ---
 
 # Add a custom bypass rule to Global Secure Access Internet Access

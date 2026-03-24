@@ -4,7 +4,6 @@ description: PowerShell example that adds Intune-related endpoints to the Global
 ms.topic: sample
 ms.date: 06/06/2025
 ai-usage: ai-assisted
-ms.reviewer: frankgomulka
 ---
 
 # Add Intune device compliance bypasses to Global Secure Access Internet Access
