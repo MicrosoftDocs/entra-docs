@@ -3,7 +3,6 @@ title: How to Customize Global Secure Access Block Page
 description: Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 ms.topic: how-to
 ms.date: 09/24/2025
-ms.reviewer: kenwith
 ai-usage: ai-assisted
 ---
 
