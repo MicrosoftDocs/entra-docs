@@ -4,7 +4,7 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 03/24/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
 ---
@@ -97,7 +97,7 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
-This policy covers all users and requires multifactor authentication and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
+This policy covers all users and requires multifactor authentication and reauthentication when high-risk sign-ins are detected. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses. Guest users aren't included in the policy.
 

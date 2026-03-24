@@ -2,7 +2,7 @@
 title: The Conditional Access What If tool
 description: Simulate Conditional Access policy results with the What If tool to troubleshoot and optimize your environment.
 ms.topic: troubleshooting-general
-ms.date: 11/06/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
@@ -43,7 +43,7 @@ The following conditions are required: identity, target resource, device platfor
 
 ## Evaluation
 
-Start an evaluation by clicking **What If**. The evaluation result provides you with a report that consists of:
+Start an evaluation by selecting **What If**. The evaluation result provides you with a report that consists of:
 
 - An indicator showing whether classic policies exist in your environment.
 - Policies that apply to your user, agent, or workload identity.

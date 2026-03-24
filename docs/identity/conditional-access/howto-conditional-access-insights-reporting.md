@@ -4,7 +4,7 @@ description: Using the Microsoft Entra Conditional Access insights and reporting
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
@@ -70,7 +70,7 @@ Once the parameters are set, the **Impact summary** loads. The summary shows how
 
 ![Screenshot showing a workbook breakdown per condition and status.](./media/howto-conditional-access-insights-reporting/workbook-breakdown-condition-and-status.png)
 
-View the breakdown of users or sign-ins for each of the conditions. You can filter the sign-ins of a particular result (for example, Success or Failure) by selecting on of the summary tiles at the top of the workbook. You can see the breakdown of sign-ins for each of the Conditional Access conditions: device state, device platform, client app, location, application, and sign-in risk.  
+View the breakdown of users or sign-ins for each of the conditions. You can filter the sign-ins of a particular result (for example, Success or Failure) by selecting one of the summary tiles at the top of the workbook. You can see the breakdown of sign-ins for each of the Conditional Access conditions: device state, device platform, client app, location, application, and sign-in risk.  
 
 ## Sign-in details 
 

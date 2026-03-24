@@ -2,7 +2,7 @@
 title: Authentication transfer as a condition to secure mobile users
 description: Learn how authentication transfer can connect users to apps across desktop and mobile devices.
 ms.topic: concept-article
-ms.date: 08/28/2025
+ms.date: 03/24/2026
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication transfer (preview)

@@ -2,7 +2,7 @@
 title: Block access for users with elevated insider risk
 description: Create Conditional Access policies using signals from Adaptive protection in Microsoft Purview.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: poulomib
 ---
 # Block access for users with insider risk
@@ -24,7 +24,7 @@ Most users have a normal behavior that can be tracked, when they fall outside of
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**:

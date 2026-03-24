@@ -1,8 +1,8 @@
 ---
-title: Building Conditional Access policies in Microsoft Entra
+title: Build Conditional Access policies in Microsoft Entra
 description: Understand the phases of Conditional Access policy enforcement in Microsoft Entra and how to apply them to secure user access.
 ms.topic: concept-article
-ms.date: 07/22/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ms.custom:
   - ai-gen-docs-bap
@@ -10,7 +10,7 @@ ms.custom:
   - ai-seo-date:07/22/2025
   - ai-gen-description
 ---
-# Building a Conditional Access policy
+# Build a Conditional Access policy
 
 As explained in the article [What is Conditional Access](overview.md), a Conditional Access policy is an if-then statement of **Assignments** and **Access controls**. A Conditional Access policy combines signals to make decisions and enforce organizational policies.
 
@@ -32,13 +32,13 @@ All policies are enforced in two phases:
    - If there's a policy that is configured with the **block** grant control, enforcement stops here and the user is blocked. 
    - The user is prompted to complete more grant control requirements that weren't satisfied during phase 1 in the following order, until policy is satisfied:  
       1. [Multifactor authentication​](concept-conditional-access-grant.md#require-multifactor-authentication)
-      2. [Device to be marked as compliant](./concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant)
-      3. [Microsoft Entra hybrid joined device](./concept-conditional-access-grant.md#require-hybrid-azure-ad-joined-device)
-      4. [Approved client app](./concept-conditional-access-grant.md#require-approved-client-app)
-      5. [App protection policy](./concept-conditional-access-grant.md#require-app-protection-policy)
-      6. [Password change](./concept-conditional-access-grant.md#require-password-change)
-      7. [Terms of use](concept-conditional-access-grant.md#terms-of-use)
-      8. [Custom controls](./concept-conditional-access-grant.md#custom-controls-preview)
+      1. [Device to be marked as compliant](./concept-conditional-access-grant.md#require-device-to-be-marked-as-compliant)
+      1. [Microsoft Entra hybrid joined device](./concept-conditional-access-grant.md#require-hybrid-azure-ad-joined-device)
+      1. [Approved client app](./concept-conditional-access-grant.md#require-approved-client-app)
+      1. [App protection policy](./concept-conditional-access-grant.md#require-app-protection-policy)
+      1. [Password change](./concept-conditional-access-grant.md#require-password-change)
+      1. [Terms of use](concept-conditional-access-grant.md#terms-of-use)
+      1. [Custom controls](./concept-conditional-access-grant.md#custom-controls-preview)
    - Once all grant controls are satisfied, session controls are applied (App Enforced, Microsoft Defender for Cloud Apps, and token lifetime). 
    - Phase 2 of policy evaluation occurs for all enabled policies. 
 
@@ -134,7 +134,7 @@ Administrators choose to require one of the previous controls or all selected co
       - Monitor risky session behavior.
       - Require labeling of sensitive files.
 - Sign-in frequency:
-   - Ability to change the default sign in frequency for modern authentication.
+   - Ability to change the default sign-in frequency for modern authentication.
 - Persistent browser session:
    - Allows users to remain signed in after closing and reopening their browser window.
 - Customize continuous access evaluation.

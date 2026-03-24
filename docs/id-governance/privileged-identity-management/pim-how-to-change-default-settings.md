@@ -2,7 +2,7 @@
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/08/2025
+ms.date: 03/23/2026
 ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
