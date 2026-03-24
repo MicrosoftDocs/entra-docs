@@ -220,7 +220,7 @@ Authorization: Bearer <token>
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
 
-$applicationId = "<agent-blueprint-object-id>"
+$applicationId = "<agent-blueprint-application-id>"
 
 # Define the secret properties
 $displayName = "My Secret"

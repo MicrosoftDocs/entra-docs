@@ -2,7 +2,7 @@
 title: Apply security policies to remote network traffic
 description: Learn how to apply security policies like web content filtering, threat intelligence, and cloud firewall to remote network traffic in Global Secure Access.
 ms.topic: how-to
-ms.date: 02/13/2026
+ms.date: 03/13/2026
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 

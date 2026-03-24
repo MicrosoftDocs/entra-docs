@@ -1,8 +1,8 @@
 ---
 title: Learn about the Global Secure Access Dashboard
-description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
+description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 12/08/2025
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 

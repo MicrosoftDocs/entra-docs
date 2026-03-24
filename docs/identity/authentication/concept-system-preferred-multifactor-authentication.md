@@ -98,7 +98,10 @@ Content-Type: application/json
 
 ### How does system-preferred MFA determine the most secure method?
 
-When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Due to known issues with certificate-based authentication (CBA) and system-preferred MFA, we moved CBA to the bottom of the list. Click the link for more information about each method.
+When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Users can always cancel and choose a different available sign in method if needed. If your organization has Conditional Access policies that require specific authentication methods, those policies will continue to take priority over the system preferred MFA order. Click the link for more information about each method.
+
+>[!IMPORTANT]
+>Certificate Based Authentication (CBA) was previously placed last in the system preferred MFA order due to known issues with CBA and system preferred MFA. Now that those issues are resolved, starting March 18th, 2026, Certificate-based authentication(CBA) will move to the third position in the authentication order. Once the rollout is complete, we will update the ordering of methods in the documentation.
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
 1. [Passkey (FIDO2)](concept-authentication-passwordless.md#passkeys-fido2)

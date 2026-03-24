@@ -4,7 +4,7 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ---
 
 # Restrict guest access permissions in Microsoft Entra ID
@@ -26,13 +26,13 @@ When guest access is restricted, guests can view only their own user profile. Pe
 1. Select **External collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 
-   :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
+    :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
 
 1. Select **Save**. The changes can take up to 15 minutes to take effect for guest users.
 
 ## Update with the Microsoft Graph API
 
-There is a new Microsoft Graph API to configure guest permissions in your Microsoft Entra organization. The following API calls can be made to assign any permission level. The value for guestUserRoleId used here is to illustrate the most restricted guest user setting. For more information about using the Microsoft Graph to set guest permissions, see [`authorizationPolicy` resource type](/graph/api/resources/authorizationpolicy).
+There's a new Microsoft Graph API to configure guest permissions in your Microsoft Entra organization. The following API calls can be made to assign any permission level. The value for guestUserRoleId used here is to illustrate the most restricted guest user setting. For more information about using the Microsoft Graph to set guest permissions, see [`authorizationPolicy` resource type](/graph/api/resources/authorizationpolicy).
 
 ### Configuring for the first time
 
@@ -85,7 +85,7 @@ Example response:
 
 ## Update with PowerShell cmdlets
 
-With this feature, we've added the ability to configure the restricted permissions via PowerShell v2 cmdlets. Get and Update PowerShell cmdlets have been published in version `2.0.2.85`.
+With this feature, the ability to configure the restricted permissions via PowerShell v2 cmdlets has been added. Get and Update PowerShell cmdlets have been published in version `2.0.2.85`.
 
 ### Get command: Get-MgPolicyAuthorizationPolicy
 
@@ -123,7 +123,7 @@ Update-MgPolicyAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa
 
 ### Supported services
 
-By supported we mean that the experience is as expected; specifically, that it's same as current guest experience.
+By supported, the experience is as expected; specifically, that it's same as current guest experience.
 
 - Teams
 - Outlook (OWA)
@@ -136,7 +136,7 @@ By supported we mean that the experience is as expected; specifically, that it's
 
 ### Services currently not supported
 
-Service without current support might have compatibility issues with the new guest restriction setting.
+Services without current support might have compatibility issues with the new guest restriction setting.
 
 - Forms
 - Project Online
@@ -151,9 +151,9 @@ Service without current support might have compatibility issues with the new gue
 |Where do these permissions apply? | These directory level permissions are enforced across Microsoft Entra services including the Microsoft Graph, PowerShell v2, the Azure portal, and My Apps portal. Microsoft 365 services using Microsoft 365 groups for collaboration scenarios are also affected, specifically Outlook, Microsoft Teams, and SharePoint.|
 |How do restricted permissions affect which groups guests can see? | Regardless of default or restricted guest permissions, guests can't enumerate the list of groups or users. Guests can see groups they're members of in both the Azure portal and the My Apps portal depending on permissions:<ul><li>**Default permissions**: To find the groups they're members of in the Azure portal, the guest must search for their object ID in the **All users** list, and then select **Groups**. Here they can see the list of groups that they're members of, including all the group details, including name, email, and so on. In the My Apps portal, they can see a list of groups they own and groups they're in.</li><li>**Restricted guest permissions**: In the Azure portal, they can find the list of groups they're in by searching for their object ID in the **All users** list, and then selecting **Groups**. They can see only limited details about the group, notably the object ID. By design, the Name and Email columns are blank and Group Type is Unrecognized. In the My Apps portal, they're not able to access the list of groups they own or groups they're a member of.</li></ul><br>For more detailed comparison of the directory permissions that come from the Graph API, see [Default user permissions](~/fundamentals/users-default-permissions.md#member-and-guest-users).|
 |Which parts of the My Apps portal will this feature affect? | The groups functionality in the My Apps portal honors these new permissions. This functionality includes all paths to view the groups list and group memberships in My Apps. No changes were made to the group tile availability. The group tile availability is still controlled by the existing group setting in the Azure portal.|
-|Do these permissions override SharePoint or Microsoft Teams guest settings? | No. Those existing settings still control the experience and access in those applications. For example, if you see issues in SharePoint, double check your external sharing settings. Guests added by team owners at the team level have access to channel meeting chat only for standard channels, excluding any private and shared channels.|
+|Do these permissions override SharePoint or Microsoft Teams guest settings? | No. Those existing settings still control the experience and access in those applications. For example, if you see issues in SharePoint, double-check your external sharing settings. Guests added by team owners at the team level have access to channel meeting chat only for standard channels, excluding any private and shared channels.|
 |What are the known compatibility issues in  Viva Engage? | With permissions set to "restricted", guests signed into Viva Engage aren't able to leave the group.|
-|Will my existing guest permissions be changed in my tenant? | No changes were made to your current settings. We maintain backward compatibility with your existing settings. You decide when you want to make changes.|
+|Will my existing guest permissions be changed in my tenant? | No changes were made to your current settings. Backward compatibility with your existing settings is maintained. You decide when you want to make changes.|
 |Will these permissions be set by default? | No. The existing default permissions remain unchanged. You can optionally set the permissions to be more restrictive.|
 |Are there any license requirements for this feature? | No, there are no new licensing requirements with this feature.|
 

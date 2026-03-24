@@ -24,6 +24,8 @@ Assign the AI Administrator role to users who need to do the following tasks:
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
+> | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
+> | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |

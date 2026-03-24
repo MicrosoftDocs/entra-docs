@@ -1,9 +1,9 @@
 ---
 title: Wildcard applications in Microsoft Entra application proxy
-description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
+description: "Publish and manage multiple on-premises applications at once using wildcard URL patterns in Microsoft Entra application proxy."
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: harshja
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 ---
@@ -14,7 +14,7 @@ In Microsoft Entra ID, configuring a large number of on-premises applications ca
 
 - Simplified administrative overhead
 - Reduced number of potential configuration errors
-- Secure access more resources
+- Secure access to more resources
 
 This article provides you with the information you need to configure wildcard application publishing in your environment.
 
@@ -26,7 +26,7 @@ You can create a wildcard (*) application if you have a group of applications wi
 - The single sign-on (SSO) method
 - The access protocol (http, https)
 
-You can publish applications with wildcards if both, the internal and external URLs are in the following format:
+You can publish applications with wildcards if both the internal and external URLs are in the following format:
 
 > http(s)://*.\<domain\>
 
@@ -60,7 +60,7 @@ When using custom domains, you need to create a DNS entry with a CNAME record fo
 Confirm you configured your CNAME correctly, you can use [nslookup](/windows-server/administration/windows-commands/nslookup) on one of the target endpoints, for example, `expenses.adventure-works.com`. Your response should include the already mentioned alias (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
 ### Using connector groups assigned to an application proxy cloud service region other than the default region
-If you have connectors installed in regions different from your default tenant region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. To learn more, see, [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
+If you have connectors installed in regions different from your default tenant region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. For more information, see [Optimize connector groups to use closest application proxy cloud service](application-proxy-network-topology.md#optimize-connector-groups-to-use-closest-application-proxy-cloud-service).
  
 If the connector group assigned to the wildcard application uses a **different region than your default region**, you need to update the CNAME record to point to a regional specific external URL. Use the following table to determine the relevant URL:
 
@@ -71,7 +71,7 @@ If the connector group assigned to the wildcard application uses a **different r
 | Europe  | `<yourAADTenantId>.eur.tenant.runtime.msappproxy.net`|
 | North America  | `<yourAADTenantId>.nam.tenant.runtime.msappproxy.net` |
 
-## Considerations
+## Wildcard application considerations
 
 Here are some considerations you should take into account for wildcard applications.
 
@@ -107,7 +107,7 @@ The wildcard application is represented with just one tile in the [MyApps panel]
 1. Follow the guidelines for [setting a homepage URL](application-proxy-configure-custom-home-page.md).
 1. Set **Show Application** to **true** on the application properties page.
 
-### Kerberos constrained delegation
+### Kerberos constrained delegation considerations
 
 For applications using [kerberos constrained delegation (KCD) as the SSO method](./how-to-configure-sso-with-kcd.md), the Service Principal Name (SPN) listed for the SSO method needs a wildcard. For example, the SPN could be: `HTTP/*.adventure-works.com`. You still need to have the individual SPNs configured on your backend servers (for example, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
 
@@ -149,7 +149,7 @@ By publishing the wildcard application, you can now access your three applicatio
 
 The configuration implements the following structure:
 
-![Shows the structure implemented by the example configuration](./media/application-proxy-wildcard/05.png)
+![Diagram showing finance.adventure-works.com with specific URLs routing through application proxy.](./media/application-proxy-wildcard/05.png)
 
 | Color | Description |
 | ---   | ---         |
@@ -178,7 +178,7 @@ Following the [documented steps](application-proxy-add-on-premises-application.m
 
 This configuration implements the following scenario:
 
-![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
+![Diagram of wildcard application routing with three applications sharing a single external URL pattern.](./media/application-proxy-wildcard/09.png)
 
 The URL `finance.adventure-works.com` is specific. The URL `*.adventure-works.com` isn't specific. The more specific URL takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. Only finance employees are able to access `finance.adventure-works.com`.
 
@@ -186,5 +186,5 @@ If you have multiple applications published for finance and you have `finance.ad
 
 ## Next steps
 
-- To learn more about **Custom domains**, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
-- To learn more about **Publishing applications**, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)
+- For more information about custom domains, see [Working with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
+- For more information about publishing applications, see [Publish applications using Microsoft Entra application proxy](application-proxy-add-on-premises-application.md)

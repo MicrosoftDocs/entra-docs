@@ -1,8 +1,8 @@
 ---
 title: How to Update and Delete Remote Networks for Global Secure Access
-description: Learn how to update and delete remote networks for Global Secure Access.
+description: "Modify remote network configurations, delete unused networks, and manage device links and traffic profile assignments for Global Secure Access."
 ms.topic: how-to
-ms.date: 10/21/2025
+ms.date: 03/18/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
@@ -35,19 +35,19 @@ To update the details of your remote networks:
 
 There are three sections with details you can edit. **Basics**, **Links**, and **Traffic profiles**.
 
-#### Basics
+#### Update basic settings
 
 The basics page provides a way to delete a selected remote network. You change the name of a remote network after you create it. Select the pencil icon to edit the name of the remote network.
 
 ![Screenshot of the basics tab with the pencil icon highlighted.](./media/how-to-manage-remote-networks/remote-network-basics.png)
 
-#### Links
+#### Update device links
 
 Add a new device link or delete an existing device link from this page. You can't edit the details of a device link after it was created. Select the trash can icon to delete a remote network device link.
 
 ![Screenshot of the delete option in the device links page.](./media/how-to-manage-remote-networks/delete-device-link.png)
 
-#### Traffic profiles
+#### Update traffic profiles
 
 From this page, you can enable or disable the available traffic forwarding profiles. The Microsoft traffic and Internet Access profiles can be assigned to remote networks. The Private Access profile requires the Global Secure Access client. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md).
 
