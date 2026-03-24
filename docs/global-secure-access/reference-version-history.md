@@ -3,7 +3,6 @@ title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 ms.topic: reference
 ms.date: 03/13/2026
-ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
 

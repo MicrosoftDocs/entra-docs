@@ -4,7 +4,6 @@ description: "Enable single sign-on to on-premises resources published through M
 ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 03/12/2026
-ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
 
