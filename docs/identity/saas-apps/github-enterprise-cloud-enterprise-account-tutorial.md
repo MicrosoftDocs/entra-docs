@@ -134,7 +134,7 @@ In this section, you enable `B.Simon` and your user account to use Azure single 
 To configure single sign-on on the **GitHub Enterprise Cloud - Enterprise Account** side, follow the steps listed in [this GitHub documentation](https://docs.github.com/en/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-security-settings-in-your-enterprise#enabling-saml-single-sign-on-for-organizations-in-your-enterprise-account). 
 1. Sign in to GitHub.com with a user account that's an [enterprise account owner](https://docs.github.com/en/enterprise-cloud@latest/admin/user-management/managing-users-in-your-enterprise/roles-in-an-enterprise#enterprise-owner). 
 1. Copy the value from the `Login URL` field in the app and paste it in the `Sign on URL` field in the GitHub Enterprise Account SAML settings. 
-1. Copy the value from the `Azure AD Identifier` field in the app and paste it in the `Issuer` field in the GitHub Enterprise Account SAML settings. 
+1. Copy the value from the `Microsoft Entra Identifier` field in the app and paste it in the `Issuer` field in the GitHub Enterprise Account SAML settings. 
 1. Copy the contents of the **Certificate (Base64)** file you downloaded in the steps above from Azure portal and paste them in the appropriate field in the GitHub Enterprise Account SAML settings. 
 1. Select the `Test SAML configuration` and confirm that you're able to authenticate from the GitHub Enterprise Account to Microsoft Entra ID successfully.
 1. Once the test is successful, save the settings. 
