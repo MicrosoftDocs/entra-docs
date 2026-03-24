@@ -3,7 +3,7 @@ title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/24/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
