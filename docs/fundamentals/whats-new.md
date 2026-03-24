@@ -333,9 +333,9 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 
 **What’s Changing:**
 
-- Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been set on a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
+- Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been mapped to a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
 - [Audit logs](../identity/monitoring-health/reference-audit-activities.md#core-directory) have been enhanced to capture changes to OnPremisesObjectIdentifier and DirSyncEnabled, enabling better visibility into synchronization behavior.
-- To support [legitimate](../identity/hybrid/connect/how-to-connect-migrate-groups.md) scenarios where an existing hard match must be corrected, Microsoft has introduced a Microsoft Graph API that allows controlled recovery actions, without re‑enabling hard‑match abuse or unauthorized re‑mapping.
+- To support [legitimate](../identity/hybrid/connect/how-to-connect-migrate-groups.md) scenarios where an existing synced Entra object must be remapped to another on-premises object, Microsoft has introduced a Microsoft Graph API that allows controlled recovery actions, without re‑enabling hard‑match abuse or unauthorized re‑mapping.
 
 
 **What's Not Changing:**
