@@ -4,7 +4,7 @@ description: Responding to changes in user state faster with continuous access e
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 03/24/2026
 ms.reviewer: sreyanthmora
 ms.custom: sfi-image-nochange
 ---

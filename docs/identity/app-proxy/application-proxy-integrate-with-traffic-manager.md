@@ -1,9 +1,9 @@
 ---
 title: Add your own Traffic Manager solution to application proxy
-description: Learn how to combine Microsoft Entra application proxy with a Traffic Manager solution.
-ms.reviewer: ashishj
+description: "Combine Microsoft Entra application proxy with Azure Traffic Manager for geographic load balancing and high availability across multiple connector groups."
 ms.topic: how-to
 ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ms.custom: template-how-to
 ai-usage: ai-assisted
 ---
@@ -22,7 +22,7 @@ With the application proxy geo-routing feature, you can optimize which region of
 - Apps that exist in different regions. Geo-routing is enabled per connector group colocated with the app.
 - A custom domain to use for each app.
 
-## Application proxy configuration
+## Configure application proxy
 
 To use Traffic Manager, you must configure application proxy. The configuration steps that follow refer to these URL definitions:
 
@@ -90,7 +90,7 @@ The following table shows a sample application proxy configuration. This configu
 | **Redirects** | (Optional) To maintain redirects for the alternate URL, add the application registration for the app. | (Optional) To maintain redirects for the alternate URL, add the application registration for the app. | This step is required if the alternate URL `www.contoso.com` will be maintained for all redirections. |
 | **Reply URL** | `www.contoso.com` | `www.contoso.com` | |
 
-## Traffic Manager configuration
+## Configure Traffic Manager
 
 Follow these steps to configure Traffic Manager:
 

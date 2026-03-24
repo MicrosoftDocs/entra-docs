@@ -2,7 +2,7 @@
 title: Adaptive Session Lifetime Policies for Conditional Access
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 03/24/2026
 ms.reviewer: inbarc
 ms.custom:
   - ai-gen-docs-bap
@@ -96,7 +96,7 @@ Use the [What If tool](what-if-tool.md) to simulate a sign-in to the target appl
 
 ## Prompt tolerance
 
-We account for five minutes of clock skew when **every time** is selected in policy, so we don’t prompt users more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
+The system accounts for five minutes of clock skew when **every time** is selected in policy, so users aren’t prompted more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
 
 ## Known issues
 

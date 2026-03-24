@@ -2,7 +2,7 @@
 title: Privileged Identity Management (PIM) for Groups
 description: How to manage Microsoft Entra Privileged Identity Management (PIM) for Groups.
 ms.topic: overview
-ms.date: 02/24/2025
+ms.date: 03/23/2026
 ms.custom: pim, sfi-ga-nochange
 ---
 

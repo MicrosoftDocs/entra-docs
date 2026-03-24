@@ -1,6 +1,6 @@
 ---
 title: Silent install Microsoft Entra private network connector
-description: Covers how to perform an unattended installation of the Microsoft Entra private network connector.
+description: "Create a PowerShell script for unattended installation and registration of the Microsoft Entra private network connector for bulk deployments or servers without a UI."
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: ashishj

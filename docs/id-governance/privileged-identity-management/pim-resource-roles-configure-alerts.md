@@ -3,7 +3,7 @@ title: Configure security alerts for Azure roles in Privileged Identity Manageme
 description: Learn how to configure security alerts for Azure resource roles in Privileged
   Identity Management (PIM).
 ms.topic: how-to
-ms.date: 01/31/2025
+ms.date: 03/23/2026
 ms.reviewer: rianakarim
 ms.custom: pim
 ---

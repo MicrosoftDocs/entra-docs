@@ -3,7 +3,7 @@ title: Use application proxy to integrate on-premises apps with Defender for Clo
 description: Use Microsoft Defender for Cloud Apps with on-premises applications in Microsoft Entra ID. Use the Defender for Cloud Apps Conditional Access App Control to monitor and control sessions in real-time based on Conditional Access policies. You apply these policies to on-premises applications that use application proxy in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

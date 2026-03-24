@@ -1,9 +1,9 @@
 ---
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
-description: Learn how to work with existing on-premises proxy servers with Microsoft Entra ID.
+description: "Configure Microsoft Entra private network connectors with outbound proxy servers. Covers bypassing proxies, routing through proxies, and proxy placement between connectors and backend apps."
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---

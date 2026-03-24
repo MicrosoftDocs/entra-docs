@@ -3,7 +3,7 @@ title: Remove personal data - Microsoft Entra application proxy
 description: Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
 ms.topic: how-to
 ms.date: 03/11/2026
-ms.reviewer: harshja
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 

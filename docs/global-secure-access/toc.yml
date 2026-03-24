@@ -255,6 +255,8 @@ items:
             href: troubleshoot-global-secure-access-client-disabled.md
           - name: "Troubleshoot the macOS client: Health check tab"
             href: troubleshoot-global-secure-access-client-macos-health-check.md
+          - name: "Troubleshoot the Global Secure Access mobile client: Health check utility"  
+            href: troubleshoot-global-secure-access-mobile-client-health-check-utility.md
           - name: "Troubleshoot the Global Secure Access mobile client: Advanced diagnostics"
             href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md
       - name: Troubleshoot connectors

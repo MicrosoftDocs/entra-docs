@@ -64,7 +64,7 @@ For example if you want to look at all the logs from a specific connection:
 
     ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
 
-## Connection logs
+## View connection logs
 
 Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
 
