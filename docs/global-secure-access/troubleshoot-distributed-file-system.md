@@ -37,7 +37,7 @@ IP-based network Access Control Lists (ACL) don't work with Global Secure Access
 ## Workaround
 The proposed workaround for the above-mentioned scenario is as follows. 
 
-As a workaround, we suggest moving this employee-to-fileshare mapping to the employee computer (as a Domain Name System (DNS) search suffix), so the traffic would be: 
+As a workaround, move this employee-to-fileshare mapping to the employee computer (as a Domain Name System (DNS) search suffix), so the traffic would be: 
 
 
 :::image type="content" source="media/troubleshoot-distributed-file-system/dfs-2.png" alt-text="Diagram showing the connector.":::
