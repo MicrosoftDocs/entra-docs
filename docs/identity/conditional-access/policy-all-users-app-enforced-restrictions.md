@@ -2,7 +2,7 @@
 title: Use application enforced restrictions to protect access from unmanaged devices
 description: Create a custom Conditional Access policy for unmanaged devices.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Use application enforced restrictions for unmanaged devices

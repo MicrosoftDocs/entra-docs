@@ -3,7 +3,7 @@ title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
 ms.reviewer: markwahl-msft
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 03/23/2026
 ms.custom: pim, sfi-image-nochange
 ---
 

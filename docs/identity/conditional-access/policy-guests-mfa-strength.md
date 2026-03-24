@@ -2,7 +2,7 @@
 title: Conditional Access - Authentication strength for external users
 description: Create a custom Conditional Access policy with authentication strength to require specific multifactor authentication (MFA) methods for external users.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: inbarc
 ---
 # Require multifactor authentication strength for external users

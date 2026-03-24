@@ -1,8 +1,6 @@
 ---
 title: Check web content filtering categories (preview)
 description: Use the web category checker to find which web content category a URL belongs to via Microsoft Graph.
-author: fgomulka
-ms.author: frankgomulka
 ms.topic: how-to
 ms.date: 08/28/2025
 ms.custom: sfi-image-nochange

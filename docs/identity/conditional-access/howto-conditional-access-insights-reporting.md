@@ -4,7 +4,7 @@ description: Using the Microsoft Entra Conditional Access insights and reporting
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
