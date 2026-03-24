@@ -199,8 +199,8 @@ items:
         href: how-to-customize-block-page.md
       - name: Network content filtering
         href: how-to-network-content-filtering.md
-      - name: Configure the AI Gateway Prompt Shield
-        href: how-to-ai-prompt-shield.md
+      - name: Configure the AI Gateway prompt injection protection
+        href: how-to-ai-prompt-injection-protection.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
   - name: Logs and monitoring
