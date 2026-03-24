@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Stormshield Network Security (OIDC) so that I can control who has access to Stormshield Network Security (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
  
-# Configure Stormshield Network Security (OIDC) for Single sign-on with Microsoft Entra ID
+# Configure Stormshield Network Security (OIDC) for single sign-on with Microsoft Entra ID
  
 In this article, you learn how to integrate Stormshield Network Security (OIDC) with Microsoft Entra ID. When you integrate Stormshield Network Security (OIDC) with Microsoft Entra ID, you can:
  
@@ -68,7 +68,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
         ![Screenshot shows the endpoints on tab.](common/endpoints.png)
 ## Configure the redirect URI(s)
 
-This step ensures that Microsoft Entra ID sends the user back to the correct firewall URL after successful authentication.
+> [!IMPORTANT]
+> This step ensures that Microsoft Entra ID sends the user back to the correct firewall URL after successful authentication.
 
 1. Navigate to the **Authentication** tab on the left menu and perform the following steps:
  
@@ -134,7 +135,7 @@ To simplify the creation of local group objects on the SNS firewall, you can ret
 
 This section guides you through the necessary configurations on the **Stormshield Network Security (SNS) firewall** to enable **OIDC authentication** via **Microsoft Entra ID**.
 
-Log in to the web administration interface of the firewall.
+**Log in** to the web administration interface of the firewall.
 
 ### Set the firewall FQDN for access to the captive portal
 
@@ -154,7 +155,7 @@ In **System** > **Configuration** > **General configuration** tab > **Captive po
 The certificate of this server identity is meant to be used by the firewall's captive portal.
 
 > [!NOTE]
-> In SSL VPN access, it is preferable for the captive portal identity to come from a public CA, as it is already integrated into browsers.
+> In **SSL** VPN access, it is preferable for the captive portal identity to come from a public CA, as it is already integrated into browsers.
 
 ### Import a public server identity (Recommended)
 
@@ -187,7 +188,7 @@ In **Users** > **Authentication > Available methods** tab:
 1.  **Application ID (client)**: enter the value [retrieved from your Microsoft Entra ID administration center](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id) in this field.
 1.  **Client secret**: enter the value retrieved and saved when [Creating a secret for the application](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id) during the creation of the SNS application on your **Microsoft Entra ID** tenant. If you did not save this value, you need to delete the **Client secret** that was created earlier for your application, and generate a new one, by following the procedure described in [this step](#collect-and-generate-oidc-provider-credentials-client-id-secret-domain-tenant-id).
 1.  Select **Next**.
-    The wizard suggests URLs that correspond to the captive portal service, the SSL VPN service, and access to the firewall’s web administration interface. These URLs can be copied directly from this wizard to be entered as redirect URLs in [your **Microsoft Entra ID** administration center](#configure-the-redirect-uris) if necessary.
+    The wizard suggests URLs that correspond to the captive portal service, the **SSL** VPN service, and access to the firewall’s web administration interface. These URLs can be copied directly from this wizard to be entered as redirect URLs in [your **Microsoft Entra ID** administration center](#configure-the-redirect-uris) if necessary.
     They are also available in the OIDC/**Microsoft Entra ID** method editing panel.
 1. Select **Next**.
 1. Select the CSV file containing the groups in your **Microsoft Entra ID** tenant, which was downloaded when [Download user groups to import them into the SNS firewall](#download-user-groups-to-import-them-into-the-sns-firewall-optional), then click on **Next**. A summary of the group import operation then appears.
@@ -198,7 +199,7 @@ In **Users** > **Authentication > Available methods** tab:
 
 In this example, the configuration of the OIDC/**Microsoft Entra ID** method on the firewall will therefore resemble the following:
 
-![Screenshot shows the SNS OIDC-Entra Configuration](media/stormshield-network-security-tutorial/entra-configuration.png)
+![Screenshot shows the SNS OIDC-Entra Configuration.](media/stormshield-network-security-tutorial/entra-configuration.png)
 
 ### Create the authentication rule
 
@@ -206,20 +207,20 @@ Go to **Configuration** > **Users** > **Authentication** > **Authentication poli
 
 1.  Select **New rule** and select **Standard rule**.
 1.  Select **All** users in the **Users** menu.
-    Permissions to connect to the captive portal, web administration interface or SSL VPN by authenticating through **Microsoft Entra ID** will be granted according to the privileges set in the tenant.
+    Permissions to connect to the captive portal, web administration interface or **SSL** VPN by authenticating through **Microsoft Entra ID** will be granted according to the privileges set in the tenant.
 1.  In the **Sources** menu: add the network interfaces through which users authenticated by **Microsoft Entra ID** will be presenting on the firewall. In this example, the following interfaces are used:
     * **in**: interface to access the internal captive portal to authenticate administrators via the web administration interface,
-    * **out**: interface to access the external captive portal that SSL VPN clients use for retrieving their configuration files and setting up tunnels,
-    * **sslvpn**: interface used by SSL VPN clients to access the firewall's SSL VPN service when the tunnel is set up.
+    * **out**: interface to access the external captive portal that **SSL** VPN clients use for retrieving their configuration files and setting up tunnels,
+    * **sslvpn**: interface used by **SSL** VPN clients to access the firewall's **SSL** VPN service when the tunnel is set up.
 1.  In the **Authentication methods** menu: click on **Enable a method** and select the **OIDC** method.
 1.  Likewise, add the other authentication methods for your users (e.g., **LDAP**).
 1.  Confirm this authentication rule by clicking on **OK**.
     The rule will be added to the authentication policy but will not be enabled by default.
-1.  In the authentication rule grid, double click on the status of the rule to enable it.
+1.  In the authentication rule grid, double **click** on the status of the rule to enable it.
 
 The authentication rule will look like this:
 
-![Screenshot shows the Authentication Policy](media/stormshield-network-security-tutorial/authentication-policy.png)
+![Screenshot shows the Authentication Policy.](media/stormshield-network-security-tutorial/authentication-policy.png)
 
 > [!NOTE]
 > During an authentication, rules are scanned in order of their appearance in the list.
@@ -238,7 +239,7 @@ In **Configuration** > **Users** > **Authentication** > **Captive portal** tab:
 
 The captive portal configuration will look like this:
 
-![Screenshot shows the Captive Portal Configuration page](media/stormshield-network-security-tutorial/captive-portal-configuration.png)
+![Screenshot shows the Captive Portal Configuration page.](media/stormshield-network-security-tutorial/captive-portal-configuration.png)
 
 ### Import Microsoft Entra security groups
 
@@ -284,7 +285,7 @@ In **Configuration** > **Users** > **Access privileges** > **Detailed access** t
 1.  Double-click in the **Status** column of this rule to enable it.
 1.  Select **Apply**, then **Save** to confirm changes to the configuration.
 
-![Screenshot shows the SSL VPN Rule](media/stormshield-network-security-tutorial/users-access-privileges.png)
+![Screenshot shows the SSL VPN Rule.](media/stormshield-network-security-tutorial/users-access-privileges.png)
 
 ### Allow administrators to access the web administration interface
 
@@ -296,5 +297,5 @@ In **System** > **Administrators**:
 1.  Confirm your selection by selecting on **Apply**.
 1.  Select **Apply** to confirm changes to the configuration.
 
-![Screenshot shows the admin access](media/stormshield-network-security-tutorial/admin-access.png)
+![Screenshot shows the admin access.](media/stormshield-network-security-tutorial/admin-access.png)
 
