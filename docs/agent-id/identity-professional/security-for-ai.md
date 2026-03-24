@@ -1,126 +1,143 @@
 ---
-title: Security for AI agents with Microsoft Entra Agent ID
-description: Understand why security is critical for AI agents. Learn about the challenges they introduce, the concept of agent sprawl, and how Microsoft is addressing AI security across the enterprise.
-ms.date: 11/10/2025
+title: Microsoft Entra security for AI overview
+titleSuffix: Microsoft Entra Agent ID
+description: Learn how Microsoft Entra provides identity-based security controls for AI agents, applications, and services through authentication, governance, and Zero Trust policy enforcement.
+author: omondiatieno
+ms.author: jomondi
+ms.date: 03/04/2026
+ms.service: entra-id
 ms.topic: concept-article
-ms.reviewer: kylemar
+ai-usage: ai-assisted
 
-#customer-intent: As an IT administrator or security professional, I want to understand the security challenges posed by AI agents and how Microsoft Entra ID addresses them, so that I can implement comprehensive security controls and governance for AI agents across my organization.
+#customer-intent: As an IT administrator or security professional, I want to understand how Microsoft Entra secures AI systems at a high level, so that I can navigate to the right documentation for detailed implementation guidance.
 ---
 
-# Security for AI agents with Microsoft Entra Agent ID
+# Microsoft Entra security for AI overview
 
-AI agents are autonomous software systems that can perceive their environment, make decisions, and take action. AI agents can expand organizational capabilities but also introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
+AI agents—autonomous software systems that perceive their environment, make decisions, and take actions—expand organizational capabilities but introduce security challenges that differ from traditional application security. These capabilities require identity-based security controls that authenticate AI workloads, enforce access policies, and provide governance over nonhuman identities.
 
-## Types of AI agents
+Microsoft Entra provides the identity control plane for securing AI systems. It extends identity capabilities to AI agents, applications, and services so that organizations can apply consistent authentication, authorization, and governance controls across human and nonhuman identities.
 
-Organizations are increasingly deploying AI agents for diverse tasks, such as:
+This article explains why AI systems need identity-based security, introduces the key Microsoft Entra capabilities that address these challenges, and links to detailed documentation for each area.
 
-- Assistive agents can perform specific, well-defined tasks on demand.
-    - Analyze customer data for sales recommendations
-    - Support questions with escalation to human representatives
-    - Analyze market data for financial reporting
-- Autonomous agents can operate independently, making decisions and taking actions without human intervention.
-    - Monitor network logs for security operations
-    - Manage infrastructure deployments with autoscaling
-    - Generate and publish routine communications
-- An agent's user account can function with human user characteristics, including persistent identities and access to organizational systems.
-    - Join teams, access documents, or participate in meetings
-    - Require mailbox and calendar access like human users
+## Why AI systems need identity-based security
 
-These deployment models present distinct security and governance challenges.
+Organizations are deploying AI agents for increasingly diverse tasks, and each deployment model presents distinct security challenges:
 
-## Agent applications security challenges
+- **Assistive agents** perform specific tasks on demand, such as analyzing customer data for sales recommendations or answering support questions with escalation to human representatives.
 
-Unlike applications that execute predetermined logic, AI agents make dynamic decisions and adapt behavior based on training data, input, and environment conditions. This adaptive behavior requires different security considerations than static application logic.
+- **Autonomous agents** operate independently, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
 
-### Increased attack surface
+- **Agent users** function with human user characteristics, including persistent identities and access to organizational systems. Agent users might join teams, access documents, participate in meetings, and require mailbox and calendar access.
 
-AI agents expand organizational attack surface in several ways:
+### Security challenges
 
-- External accessibility: Many AI agents interact with external users, third-party systems, or the public internet. This exposure creates potential pathways for adversaries to compromise agents and access organizational systems.
+Unlike applications that execute predetermined logic, AI agents make dynamic decisions and adapt behavior based on training data, input, and environment conditions. This adaptive behavior expands the organizational attack surface:
 
-- Permission escalation risk: Agents are often provisioned with broad permissions to ensure capability to complete assigned tasks. An agent analyzing financial data might receive access to all financial records, expense reports, and vendor contracts—broader than necessary for the specific analytical task.
+- **Permission escalation risk**: Agents are often provisioned with broad permissions to ensure capability. An agent analyzing financial data might receive access to all financial records, expense reports, and vendor contracts—broader than necessary for the specific task.
 
-- Autonomous decision-making: Agents that make autonomous decisions can take harmful actions if compromised. A supply chain agent with purchasing authority could place unauthorized orders. An infrastructure management agent with administrative privileges could delete critical systems.
+- **Autonomous decision-making**: Compromised agents that make autonomous decisions can take harmful actions. A supply chain agent with purchasing authority could place unauthorized orders. An infrastructure management agent could delete critical systems.
 
-- Attack vectors: AI agents are vulnerable to attacks that don't affect traditional applications. Prompt injection attacks manipulate agent behavior by inserting malicious instructions into data processed by the agent.
+- **Prompt injection attacks**: AI agents are vulnerable to attacks that don't affect traditional applications. Prompt injection attacks manipulate agent behavior by inserting malicious instructions into data processed by the agent.
 
-- Agent interaction: Agents that interact with other agents can propagate compromise. If an orchestration agent is compromised, it can potentially target other agents to perform malicious actions.
+- **Agent-to-agent propagation**: Agents that interact with other agents can propagate compromise. If an orchestration agent is compromised, it can potentially target other agents to perform malicious actions.
 
-### Compliance and audit issues
+Organizations must also demonstrate that AI systems operate within governance frameworks, comply with privacy regulations like GDPR and CCPA, and maintain audit trails documenting agent actions and decisions.
 
-Organizations must demonstrate that AI systems operate within governance frameworks and that they can account for AI-driven decisions and actions. It includes:
+### Agent sprawl
 
-- Regulatory requirements: Regulations require oversight of how AI systems are monitored, controlled, and aligned with organizational policies.
+Agent proliferation creates a governance challenge termed "agent sprawl"—the uncontrolled expansion of agents across an organization without adequate visibility, management, or lifecycle controls. Agent sprawl emerges when business units create agents without formal IT oversight (shadow AI), when agents created for temporary purposes remain in production indefinitely, and when agent permissions exceed actual requirements and are never reviewed.
 
-- Data privacy: When agents access personal data, organizations must comply with privacy regulations like GDPR and CCPA. It requires visibility into data access patterns and the ability to demonstrate appropriate authorization.
+Uncontrolled agent sprawl leads to increased security risk from over-privileged agents with unclear ownership, compliance challenges when auditors expect governance over AI systems, and incident response difficulties when organizations can't quickly identify compromised agents.
 
-- Audit trails: Organizations must maintain logs documenting agent actions, data accessed, and decisions made. Audit trails are necessary for incident investigation and regulatory compliance.
+### Agent security scenarios
 
-- Governance and oversight: Organizations must identify deployed agents, document their purpose and permissions, and demonstrate agents operate within governance frameworks.
+Agent security challenges manifest differently depending on the agent's purpose and deployment context:
 
-## Agent sprawl
+| Scenario | Description | Security challenge | Risk |
+|----------|-------------|-------------------|------|
+| **User-initiated agent** | Agents act on behalf of users, inheriting user capabilities and access rights. | Prevent agents from misusing inherited permissions; maintain user control and enable access revocation. | Compromised agents might perform unauthorized actions as the user, such as accessing files, sending communications, or manipulating data. |
+| **Autonomous agent** | Agents operate with their own identities and permissions, independent of users. | Grant only necessary permissions for intended tasks; prevent agents from exceeding authorized scope. | Compromised agents might operate without constraint, placing unauthorized orders, modifying data, or accessing sensitive information. |
+| **Agent user** | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions. | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members. |
+| **Agent-to-agent** | Agents interact with other agents, such as an orchestration agent that delegates tasks to specialized agents. | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions. | Unsecured communication allows adversaries to inject malicious agents or intercept or manipulate agent interactions. |
 
-Agent proliferation creates a governance challenge termed "agent sprawl"—the uncontrolled expansion of agents across an organization without adequate visibility, management, or lifecycle controls.
+## Secure identities for AI agents
 
-### How agent sprawl develops
-
-Agent sprawl emerges through several patterns:
-
-- Shadow AI: Business units create agents to automate tasks without formal approval or IT oversight. A marketing team creates a content analysis agent, a sales team deploys a lead scoring agent, and a finance team creates an expense processing agent. Each addresses a local need but operates outside organization-wide visibility or governance.
-
-- Rapid proliferation: Once created, agents are often deployed across departments, regions, or business units. Different instances might operate with different permissions or configurations, creating inconsistency and governance challenges.
-
-- Inadequate lifecycle management: Agents created for temporary purposes often remain in production indefinitely. Project-specific agents continue running and accessing data long after their intended purpose ends.
-
-- Permission creep: Agents typically receive permissions exceeding their actual requirements. Once provisioned, permissions are rarely reviewed or removed, resulting in over-privileged agents.
-
-- Lost accountability: As agents proliferate, organizations lose track of creation responsibility, operational ownership, and intended purpose. This loss of accountability makes it difficult to identify agents operating outside policy or creating risk.
-
-### Consequences of agent sprawl
-
-Uncontrolled agent sprawl creates the following consequences:
-
-- Security posture impact: Over-privileged agents with unclear ownership increase security risk. A compromised agent with broad permissions and no clear owner prevents effective response to detect the compromise or limit damage.
-
-- Compliance risk: Auditors and regulators expect organizations to demonstrate governance and control over systems processing data or making decisions. Uncontrolled agent sprawl makes compliance demonstration difficult and creates regulatory risk.
-
-- Operational inefficiency: Numerous agents running across an organization consume resources, potentially conflict with each other, duplicate efforts, and create technical debt.
-
-- Data exposure: Agents with broad data access lacking adequate monitoring create risk of data exfiltration or unauthorized disclosure.
-
-- Incident response challenges: When agent populations exceed management capability, organizations can't quickly identify and respond to compromised agents or determine incident scope.
-
-## Agent security scenarios
-
-Agent security challenges manifest in different ways depending on the agent's purpose and deployment context:
-
-| Scenario    |  Description    | Security challenge  | Risk  |
-|-------------|-----------------|---------------------|-------|
-| **User-Initiated Agent**      | Agents act on behalf of users, inheriting user capabilities, and access rights. Example: A support agent can read customer cases, update status, and send communications.  | Prevent agents from misusing inherited permissions; maintain user control and enable access revocation. | Compromised agents might perform unauthorized actions as the user, such as accessing files, sending communications, or manipulating data.  |
-| **Autonomous Agent**          | Agents operate with their own identities and permissions, independent of users. Example: A supply chain agent can query inventory, create orders, and modify supplier data.    | Grant only necessary permissions for intended tasks; prevent agents from exceeding authorized scope.  | Compromised agents might operate without constraint, placing unauthorized orders, modifying data, or accessing sensitive information.  |
-| **Agent's User Account**                | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
-| **Agent-to-Agent**            | Agents interact with other agents. Example: An orchestration agent delegates tasks to specialized agents, requiring authentication and verification of designated tasks.  | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions.  | Unsecured communication allows adversaries to inject malicious agents or intercept/manipulate agent interactions.  |
-
-## Microsoft Entra Agent ID
-
-Microsoft Entra Agent ID provides an identity and security framework designed to address the unique challenges of AI agents. The Microsoft agent identity platform consists of several integrated components that work together to provide identity management for AI agents. Microsoft Entra Agent ID enables you to: 
+AI agents require purpose-built identity constructs that differ from traditional application identities. Microsoft Entra Agent ID provides an identity and security framework designed for AI agents.
 
 :::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
 
-- Register and manage agents
-    - Agent identities: Creates and manages agent identity blueprints as templates and agent identities as individual instances with parent-child relationships
-    - Agent registry: Provides centralized metadata management, secure agent discovery, and automatic organization into security collections
+Microsoft Entra Agent ID enables organizations to:
 
-- Govern agent identities and lifecycle
-    - Identity governance for agent identities: Lifecycle management, access assignment, and compliance reporting for agent identities
+- **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships. The Agent Registry provides centralized metadata management, secure agent discovery, and automatic organization into security collections.
 
-- Protect agent access to resources 
-    - Global Secure Access for agent identities: Network-level security and zero-trust access for agent communications
-    - Conditional access for agent identities: Policy-based access controls and risk-based authentication for agents
-    - Identity protection for agent identities: Real-time risk detection and automated response for agent activities
+- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](../identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
 
-## Next steps
+- **Log and monitor agent activity**: All authentication and actions performed by agents are logged in Microsoft Entra ID and viewable through the Microsoft Entra admin center for compliance and audit purposes.
 
-[Microsoft Entra Agent ID security capabilities for AI Agents](microsoft-entra-agent-identities-for-ai-agents.md)
+For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](../identity-platform/what-is-agent-id.md).
+
+## Control AI access with Zero Trust
+
+Microsoft Entra applies Zero Trust identity controls to AI identities through Conditional Access and Identity Protection.
+
+### Conditional Access for agents
+
+Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources:
+
+- Enforce adaptive access control policies for all agent patterns across assistive, autonomous, and agent user types.
+- Use real-time signals such as agent identity risk to control agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
+- Deploy Conditional Access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
+
+For more information, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id).
+
+### Identity Protection for agents
+
+Microsoft Entra ID Protection detects and blocks threats by flagging anomalous activities involving agents:
+
+- Detect agent identity risk derived from user risk and based on agents' own actions, including unusual or unauthorized activities.
+- Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
+- Provide risk signals to the Agent Registry to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
+
+For more information, see [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
+
+## Govern AI identities and permissions
+
+As organizations deploy more AI agents, identity governance becomes critical to prevent agent sprawl and maintain compliance. Microsoft Entra ID Governance extends lifecycle management, access reviews, and entitlement management to agent identities:
+
+- Govern agent identities at scale, from deployment to expiration.
+- Ensure sponsors and owners are assigned and maintained for each agent identity, preventing orphaned agent identities.
+- Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
+
+For more information, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview).
+
+For a general overview of Microsoft Entra ID Governance, see [What is Microsoft Entra ID Governance?](/entra/id-governance/identity-governance-overview).
+
+## Secure AI services and automation
+
+Many AI workloads run as applications, services, or automation pipelines rather than as interactive agents. These workloads need secure, credential-free authentication to access enterprise resources.
+
+Microsoft Entra workload identities provide identity and access management for software workloads. Organizations can use managed identities and federated credentials to authenticate AI services without managing secrets.
+
+For more information, see [What are workload identities?](/entra/workload-id/workload-identities-overview).
+
+## Secure generative AI architectures
+
+Enterprise generative AI architectures require identity controls at every layer, from the client application to the AI model and the data sources it accesses. Microsoft Entra enforces authentication, authorization, and governance controls across these architectural components.
+
+Network-level controls through Global Secure Access enforce consistent network security policies across users and agents:
+
+- Log agent network activity to remote tools for audit and threat detection, and apply web categorization to control access to APIs and MCP servers.
+- Restrict file uploads and downloads using file-type policies to minimize risk, and automatically block and alert on malicious destinations using threat intelligence-based filtering.
+- Detect and block prompt injection attacks that attempt to manipulate agent behavior through malicious instructions.
+
+For more information, see [Secure Web and AI Gateway for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents).
+
+## Related content
+
+- [What are agent identities?](../identity-platform/what-is-agent-id.md)
+- [What is Microsoft Entra ID Governance?](/entra/id-governance/identity-governance-overview)
+- [What are workload identities?](/entra/workload-id/workload-identities-overview)
+- [What is Conditional Access?](/entra/identity/conditional-access/overview)
+- [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
+- [Secure Web and AI Gateway for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents)
