@@ -36,7 +36,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 - A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
-### Communicating change
+### Communicate change
 
 Communication is critical to the success of any new functionality. Let users know how their experience changes, when it changes, and how to get support if they have issues.
 

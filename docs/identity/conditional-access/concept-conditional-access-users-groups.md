@@ -75,7 +75,7 @@ The following options are available for exclusion when creating a Conditional Ac
 
 To prevent admin lockout, when creating a policy applied to **All users** and **All apps**, the following warning appears.
 
-> Don't lock yourself out! We recommend applying a policy to a small set of users first to verify it behaves as expected. We also recommend excluding at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Please review the affected users and apps.
+> Don't lock yourself out! Apply a policy to a small set of users first to verify it behaves as expected. Also exclude at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Review the affected users and apps.
 
 By default, the policy provides an option to exclude the current user, but an admin can override it as shown in the following image. 
 

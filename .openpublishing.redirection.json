@@ -3139,6 +3139,31 @@
       "source_path": "docs/identity/authentication/how-to-authentication-passkey-profiles.md",
       "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25535.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25537.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25539.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25541.md",
+      "redirect_url": "/azure/networking/security/zero-trust-application-gateway-waf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25543.md",
+      "redirect_url": "/azure/networking/security/zero-trust-front-door-waf",
+      "redirect_document_id": false
     }
   ]
 }

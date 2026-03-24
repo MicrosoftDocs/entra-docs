@@ -23,7 +23,7 @@ The following steps help create a Conditional Access policy to block legacy auth
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose any accounts that must maintain the ability to use legacy authentication. Microsoft recommends you exclude at least one account to prevent yourself from being locked out due to misconfiguration.
@@ -47,7 +47,7 @@ To understand if your users have client apps that use legacy authentication, adm
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
-1. Add the **Client App** column if it isn't shown by clicking on **Columns** > **Client App**.
+1. Add the **Client App** column if it isn't shown by selecting **Columns** > **Client App**.
 1. Select **Add filters** > **Client App** > choose all of the legacy authentication protocols and select **Apply**.
 1. Also perform these steps on the **User sign-ins (non-interactive)** tab.
 
