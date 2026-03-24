@@ -52,9 +52,9 @@ This capability is commonly used by IT administrators to automate access lifecyc
 
 ### Where to learn more
 
-- [Develop a SCIM endpoint for user provisioning](/use-scim-to-provision-users-and-groups.md)
-- [App specific provisioning tutorials](identity/saas-apps/tutorial-list)
-- [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility)
+- [Develop a SCIM endpoint for user provisioning](use-scim-to-provision-users-and-groups.md)
+- [App specific provisioning tutorials](identity/saas-apps/tutorial-list.md)
+- [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility.md)
 
 ---
 
@@ -123,4 +123,4 @@ Together with Microsoft Graph, these capabilities give customers and partners th
 ## Next steps
 
 - [Explore Microsoft Entra ID SCIM API endpoints](entra-id-scim-api-reference.md)
-- [Develop a SCIM endpoint for user provisioning](/use-scim-to-provision-users-and-groups.md)
+- [Develop a SCIM endpoint for user provisioning](use-scim-to-provision-users-and-groups.md)

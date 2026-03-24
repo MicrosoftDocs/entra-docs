@@ -79,7 +79,7 @@ items:
      - name: Understand API-driven inbound provisioning 
        href: inbound-provisioning-api-concepts.md
      - name: Understand SCIM support in Microsoft Entra ID
-       href: scim-support-in-microsoft-entra-id.md
+       href: scim-support-in-entra-id.md
      - name: Partner driven integrations
        href: partner-driven-integrations.md
   - name: How-to guides
@@ -93,8 +93,6 @@ items:
         href: enable-scim-api.md
       - name: Troubleshoot SCIM 2.0 errors
         href: troubleshoot-scim-api-errors.md
-      - name: Configure Microsoft Entra ID as a SCIM client
-        href: scim-client-configuration.md
     - name: Include or exclude users and groups from scope
       items:
       - name: Scoping users or groups to be provisioned 
