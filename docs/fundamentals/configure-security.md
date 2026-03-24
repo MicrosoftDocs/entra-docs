@@ -39,7 +39,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | None (included with Microsoft Entra ID) |
 | [High Global Administrator to privileged user ratio](zero-trust-protect-identities.md#high-global-administrator-to-privileged-user-ratio) | None (included with Microsoft Entra ID) |
 | [Administrative privileges are tightly limited to prevent compromise](zero-trust-protect-identities.md#administrative-privileges-are-tightly-limited-to-prevent-compromise) | Microsoft Entra ID P1 |
-| [Application admin rights are constrained to specific Private Access apps](zero-trust-protect-identities.md#application-admin-rights-are-constrained-to-specific-private-access-apps) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Application admin rights are constrained to specific Private Access apps](zero-trust-protect-identities.md#application-admin-rights-are-constrained-to-specific-private-access-apps) | Microsoft Entra Suite |
 | [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | None (included with Microsoft Entra ID) |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
 | [All Microsoft Entra privileged role assignments are managed with PIM](zero-trust-protect-identities.md#all-microsoft-entra-privileged-role-assignments-are-managed-with-pim) | Microsoft Entra ID P2 |
@@ -47,7 +47,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Security key attestation is enforced](zero-trust-protect-identities.md#security-key-attestation-is-enforced) | None (included with Microsoft Entra ID) |
 | [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
 | [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](zero-trust-protect-identities.md#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
-| [Conditional Access policies enforce strong authentication for private apps](zero-trust-protect-identities.md#conditional-access-policies-enforce-strong-authentication-for-private-apps) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Conditional Access policies enforce strong authentication for private apps](zero-trust-protect-identities.md#conditional-access-policies-enforce-strong-authentication-for-private-apps) | Microsoft Entra Private Access, Microsoft Entra ID P1 |
 | [Application Proxy applications require preauthentication to block anonymous access](zero-trust-protect-identities.md#application-proxy-applications-require-preauthentication-to-block-anonymous-access) | Microsoft Entra ID P1 |
 | [Require password reset notifications for administrator roles](zero-trust-protect-identities.md#require-password-reset-notifications-for-administrator-roles) | Microsoft Entra ID P1 |
 | [Block legacy authentication policy is configured](zero-trust-protect-identities.md#block-legacy-authentication-policy-is-configured) | Microsoft Entra ID P1 |
