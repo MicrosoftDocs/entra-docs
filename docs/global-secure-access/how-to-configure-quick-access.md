@@ -66,7 +66,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the appropriate roles.
 1. Browse to **Global Secure Access** > **Applications** > **Quick access**.
-1. Enter a name. *We recommend using the name Quick Access*.
+1. Enter a name. *Use the name Quick Access*.
 1. Select a Connector group from the dropdown menu.
 1. Select **Save** to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 

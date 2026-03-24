@@ -73,7 +73,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 ### 1. Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access
 
 > [!IMPORTANT]
-> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Please contact support for more information.
+> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Contact support for more information.
 
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.

@@ -57,7 +57,7 @@ Private Access profile requires the following licenses:
 With the internet access profile, you can route traffic to the public internet, including traffic to SaaS apps. This traffic forwarding profile consists of a prepopulated list of regular expressions for fully qualified domain names (FQDNs) and IP addresses representing the public internet. 
 
 > [!NOTE]
-> Internet access profile does not include internet destinations that are available in the Microsoft traffic profile. For complete coverage, we recommend that you enable the Microsoft traffic profile together with the Internet access profile.
+> Internet access profile does not include internet destinations that are available in the Microsoft traffic profile. For complete coverage, enable the Microsoft traffic profile together with the Internet access profile.
 
 Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 

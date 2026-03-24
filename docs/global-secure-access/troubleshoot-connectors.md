@@ -185,7 +185,7 @@ The file contents should look as follows:
 
 ![Screenshot showing an example of the expected final configuration file.](media/troubleshoot-connectors/connector-logging-config-final-example.png)
 
-After you enable logging, attempt to access the resource from the Global Secure Access client in order to reproduce the error. Then, review the log file for errors.
+After you enable logging, attempt to access the resource from the Global Secure Access client to reproduce the error. Then, review the log file for errors.
 
 
 
@@ -197,12 +197,12 @@ This behavior might be due to either the updater service not working correctly o
 The updater service is healthy if it's running and there are no errors recorded in the event log (Applications and Services logs -> Microsoft -> Microsoft Entra private network -> Updater -> Admin). 
 
 > [!IMPORTANT]
-> Only major versions are released for auto-upgrade. We recommend updating your connector manually only if it's necessary. For example, you can't wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes, and new features see, [Microsoft Entra private network connector: Version release history](reference-version-history.md).
+> Only major versions are released for auto-upgrade. Update your connector manually only if it's necessary. For example, you can't wait for a major release, because you must fix a known problem or you want to use a new feature. For more information on new releases, the type of the release (download, auto-upgrade), bug fixes, and new features see, [Microsoft Entra private network connector: Version release history](reference-version-history.md).
 
 To manually upgrade a connector:
 
 - Download the latest version of the connector. (Find it in the Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors**)
-- The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer can't replace all files. Therefore we recommend closing all applications (that is, Event Viewer) before you start the upgrade.
+- The installer restarts the Microsoft Entra private network connector services. In some cases, a reboot of the server might be required if the installer can't replace all files. Therefore close all applications (that is, Event Viewer) before you start the upgrade.
 - Run the installer. The upgrade process is quick and doesn't require providing any credentials and the connector isn't re-registered.
     
 **Can private network connector services run in a different user context than the default?**
@@ -245,7 +245,7 @@ There are Performance Monitor counters that are installed along with the connect
     
 **Does the Microsoft Entra private network connector have to be on the same subnet as the resource?**
 
-The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource, and so on). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
+The connector isn't required to be on the same subnet. However, it needs name resolution (DNS, hosts file) to the resource and the necessary network connectivity (routing to the resource, ports open on the resource). For recommendations, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
     
 **Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?**
 
