@@ -16,6 +16,9 @@ ai-usage: ai-assisted
 
 # Build custom integrations with Microsoft Entra ID SCIM API
 
+> [!NOTE]
+> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+
 This reference guide helps software developers build custom integrations to provision (synchronize) users and groups into Microsoft Entra ID using the System for Cross-domain Identity Management (SCIM) v2.0 protocol. This guide is also useful to IT administrators who need to understand or debug SCIM API operations.
 
 The Microsoft Entra ID SCIM implementation is based on the following IETF drafts:
@@ -29,6 +32,15 @@ The Microsoft Entra ID SCIM implementation is based on the following IETF drafts
 - [Cursor-based Pagination of SCIM Resources](https://www.ietf.org/archive/id/draft-ietf-scim-cursor-pagination-05.html)
 
 The following sections contain examples of API requests and responses currently supported in the Microsoft Entra ID SCIM implementation, along with important notes and constraints to consider in your design.
+
+## Prerequisites
+
+Before you can use the Microsoft Entra ID SCIM APIs, ensure that the following requirements are met:
+
+- **Microsoft Entra ID P1 or P2 license**: A Microsoft Entra ID P1 or P2 license is required for the tenant where you intend to use the SCIM APIs.
+- **Billing enabled for SCIM API**: Billing must be configured for your tenant to use the SCIM API. For details on pricing and how to enable billing, see [Microsoft Entra ID pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+- **Required permissions**: The calling application must be granted the appropriate Microsoft Graph application permissions (see the [Invoking the SCIM APIs](#invoking-the-scim-apis) section).
+- **App registration**: A registered application in your Microsoft Entra ID tenant with a client secret, certificate, or federated identity credential.
 
 ## Invoking the SCIM APIs
 
@@ -856,6 +868,18 @@ Authorization: Bearer \<bearer_token\>
 **Response (204 OK):**
 
 The response conforms to SCIM specification.
+
+## Supported group types
+
+The Microsoft Entra ID SCIM API supports the following group types:
+
+| Group type | Supported | Notes |
+|---|---|---|
+| Security groups | Yes | Standard security groups used for access control. |
+| Microsoft 365 groups | Yes | Groups that provide collaboration features such as shared mailboxes and calendars. |
+| Mail-enabled security groups | No | Not available through the SCIM API. Use Microsoft Graph to manage these groups. |
+| Distribution groups | No | Not available through the SCIM API. Use Exchange Online or Microsoft Graph. |
+| Nested groups | Partial | You can add groups as members of other groups, but nested group membership isn't evaluated when using the `members.value` filter. Only direct memberships are evaluated. |
 
 ## List groups
 

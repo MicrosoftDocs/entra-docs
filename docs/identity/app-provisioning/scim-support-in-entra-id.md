@@ -12,6 +12,9 @@ ms.reviewer: cmmdesai
 
 # SCIM support in Microsoft Entra ID
 
+> [!NOTE]
+> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+
 Microsoft Entra ID supports the **System for Cross‑domain Identity Management (SCIM) 2.0** standard in multiple ways, depending on the provisioning scenario. Entra can act as:
 
 - A **SCIM client**, provisioning users and groups from Entra into third‑party applications.

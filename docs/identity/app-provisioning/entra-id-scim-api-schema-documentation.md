@@ -17,6 +17,9 @@ ai-usage: ai-assisted
 
 # Microsoft Entra ID SCIM API schema 
 
+> [!NOTE]
+> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+
 Microsoft Entra ID SCIM API supports standard SCIM schema elements and Microsoft Entra ID specific extensions. The SCIM schema is published at the endpoint [https://graph.microsoft.com/rp/scim/schemas](https://graph.microsoft.com/rp/scim/schemas)
 This article describes how SCIM schema attributes map to Microsoft Entra ID [user properties](/graph/api/resources/user#properties) and [group properties](/graph/api/resources/group#properties).
 
