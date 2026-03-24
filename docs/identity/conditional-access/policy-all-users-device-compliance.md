@@ -2,7 +2,7 @@
 title: How to Require Device Compliance with Conditional Access
 description: "Learn how to enforce device compliance with Conditional Access policies. Ensure secure access to resources by meeting your organization's configuration requirements."
 ms.topic: how-to
-ms.date: 10/01/2025
+ms.date: 03/24/2026
 ms.reviewer: jodah
 ---
 # Require device compliance with Conditional Access

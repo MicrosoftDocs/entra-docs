@@ -4,7 +4,7 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 03/24/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Apple Platforms (Preview)
@@ -106,7 +106,7 @@ Complete the following steps for *each* platform you're deploying to. These step
 Before enforcing the policy, deploy it in report-only mode to assess the effect and identify noncompliant sign-in sessions.
 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1.	Browse to **Protection** > **Conditional Access** > **Policies**.
+1.	Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users, agents, or workload identities**.
    1. Under **Include**, select the users or groups to target.

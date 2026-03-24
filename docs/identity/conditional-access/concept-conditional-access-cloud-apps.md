@@ -2,7 +2,7 @@
 title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref

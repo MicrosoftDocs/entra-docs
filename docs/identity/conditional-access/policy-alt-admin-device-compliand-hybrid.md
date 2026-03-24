@@ -2,7 +2,7 @@
 title: Require administrators use compliant or hybrid joined devices
 description: Create a custom Conditional Access policy to require compliant or hybrid joined devices for admins.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require compliant device or Microsoft Entra hybrid joined device for administrators

@@ -2,7 +2,7 @@
 title: 'Conditional Access Templates: Simplify Security'
 description: Learn how Conditional Access templates provide preconfigured policies to secure your environment, aligned with Microsoft recommendations.
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ms.custom:
   - sfi-image-nochange

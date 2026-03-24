@@ -2,7 +2,7 @@
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
 ms.topic: concept-article
-ms.date: 10/30/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, jogro
 ms.custom:
   - sfi-image-nochange

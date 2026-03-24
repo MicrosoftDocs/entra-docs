@@ -2,7 +2,7 @@
 title: Conditional Access - Block access
 description: Create a custom Conditional Access policy to Block access.
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 03/24/2026
 ms.reviewer: calebb, lhuangnorth
 ---
 # Block access example policy
