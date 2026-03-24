@@ -4,7 +4,7 @@ description: Discover how to analyze Conditional Access policy results with tool
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/15/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---

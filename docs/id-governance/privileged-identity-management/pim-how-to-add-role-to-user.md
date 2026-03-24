@@ -2,7 +2,7 @@
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/29/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 ---

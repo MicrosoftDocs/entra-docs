@@ -2,7 +2,7 @@
 title: Plan Your Microsoft Entra Conditional Access Deployment
 description: Plan your Conditional Access policies to balance security and productivity. Learn how to design and deploy effective policies for your organization.
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 03/24/2026
 manager: martinco
 ms.reviewer: joflore
 ms.custom:
@@ -36,7 +36,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 - A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
-### Communicating change
+### Communicate change
 
 Communication is critical to the success of any new functionality. Let users know how their experience changes, when it changes, and how to get support if they have issues.
 

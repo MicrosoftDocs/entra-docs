@@ -23,7 +23,8 @@ The following table shows what features associated with identity governance are 
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Cross-tenant user synchronization (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Cross-tenant synchronization for users (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Cross-tenant synchronization for groups (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|||| :white_check_mark: | :white_check_mark: |
 |[Cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|||| :white_check_mark: | :white_check_mark: |
 |**Lifecycle Workflows (LCW)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: |

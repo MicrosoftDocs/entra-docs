@@ -1,4 +1,4 @@
----
+﻿---
 title: Microsoft Entra releases and announcements
 description: Learn what is new with Microsoft Entra, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
 author: owinfreyATL
@@ -77,25 +77,26 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 
 **What is Hard-matching in Microsoft Entra Connect Sync and Cloud Sync?**
 
-When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Microsoft Entra object by looking up the incoming object’s sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
+When Microsoft Entra Connect or Cloud Sync adds new objects from Active Directory, the Microsoft Entra ID service tries to match the incoming object with an Entra object by looking up the incoming object’s sourceAnchor value against the OnPremisesImmutableId attribute of existing cloud managed objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect or Cloud Sync takes over the source or authority (SoA) of that object and updates it with the properties of the incoming Active Directory object in what is known as "hard-match." 
 
-To strengthen the security posture of your Microsoft Entra ID environment, we're introducing a change that restricts certain types of hard-match operations by default.   
+To strengthen the security posture of your Microsoft Entra ID environment, we are introducing a change that will restrict certain types of hard-match operations by default.   
+  
 
 **What’s changing**
 
-Beginning June 1 2026, Microsoft Entra ID will block any attempt by Microsoft Entra Connect Sync or Cloud Sync from hard-matching a new user object from Active Directory to an existing cloud-managed Microsoft Entra ID user object that holds [privileged roles](https://docs.azure.cn/en-us/entra/identity/role-based-access-control/permissions-reference#all-roles).
+Beginning **June 1, 2026**, Microsoft Entra ID will block any attempt by Entra Connect Sync or Cloud Sync from hard-matching a new user object from Active Directory to an existing cloud-managed Entra ID user object that hold [Microsoft Entra roles](../identity/role-based-access-control/permissions-reference.md).
 
-**This means:**
+**This means**:
 
-*   If a cloud managed user already has [onPremisesImmutableId (sourceAnchor)](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) set and is assigned a privileged role, Microsoft Entra Connect Sync or Cloud Sync will no longer be able to take over the Source of Authority of that user by hard-matching with an incoming user object from Active Directory.  
-    
-*   This safeguard prevents attackers from taking over privileged cloud managed users in Microsoft Entra by manipulating attributes of user objects in Active Directory. 
+- If a cloud managed user already has [onPremisesImmutableId (sourceAnchor)](..//identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) set and is assigned a Microsoft Entra role, Microsoft Entra Connect Sync or Cloud Sync will no longer be able to take over the Source of Authority of that user by hard-matching with an incoming user object from Active Directory.
+- This safeguard prevents attackers from taking over privileged cloud managed users in Entra by manipulating attributes of user objects in Active Directory.
     
 
 **What’s not changing**
 
-*   Hard match operations for non-privileged accounts aren't affected.  
-*   [Soft match](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md?source=recommendations#hard-match-vs-soft-match) behavior isn't affected.  
+- Hard match operations for cloud users without Microsoft Entra roles are not affected.   
+- [Soft match](../identity/hybrid/connect/how-to-connect-install-existing-tenant.md?source=recommendations#hard-match-vs-soft-match) behavior isn't affected.
+- Ongoing sync from Active Directory to Entra ID for previously hard-matched objects will not be affected.   
     
 
 **Customer action required**
@@ -104,13 +105,13 @@ If you encounter a hard match error after June 1, 2026, see our [documentatio
 
 ---
 
-### General Availability - External Auth Methods is Generally Available
+### General Availability - External MFA is Generally Available
 
 **Type:** New feature  
 **Service category:** MFA  
 **Product capability:** User Authentication  
 
-We’re excited to announce that External Authentication Methods (EAM) in Microsoft Entra ID has reached General Availability. EAM enables organizations to integrate their preferred third-party MFA solutions seamlessly with Microsoft Entra ID for enhanced security and flexibility. This release includes full registration support and updated documentation to help you get started. For more information, see: [Manage an external authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-external-method-manage.md).
+We're excited to announce that external authentication methods in Microsoft Entra ID is now generally available under a new name: External Multifactor Authentication (External MFA). This capability enables organizations to meet multifactor authentication requirements while continuing to use their preferred MFA provider. Microsoft Entra ID remains the identity control plane, performing full policy evaluation and access decisions on every sign in, including real time Conditional Access enforcement and sign in risk assessment. For more information, see [How to enable external MFA](../identity/authentication/how-to-authentication-external-method-manage.md).
 
 ---
 
@@ -333,14 +334,17 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 
 **What’s Changing:**
 
-- Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been set on a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
+- Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been mapped to a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
 - [Audit logs](../identity/monitoring-health/reference-audit-activities.md#core-directory) have been enhanced to capture changes to OnPremisesObjectIdentifier and DirSyncEnabled, enabling better visibility into synchronization behavior.
-- To support [legitimate](../identity/hybrid/connect/how-to-connect-migrate-groups.md) scenarios where an existing hard match must be corrected, Microsoft has introduced a Microsoft Graph API that allows controlled recovery actions, without re‑enabling hard‑match abuse or unauthorized re‑mapping.
+- To support [legitimate](../identity/hybrid/connect/how-to-connect-migrate-groups.md) scenarios where an existing synced Entra object must be remapped to another on-premises object, Microsoft has introduced a Microsoft Graph API that allows controlled recovery actions, without re‑enabling hard‑match abuse or unauthorized re‑mapping.
 
 
 **What's Not Changing:**
 
-- This enforcement applies only to scenarios where OnPremisesObjectIdentifier is being modified after it has already been set. Hard match functionality using [onPremisesImmutableId](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) remains supported and unchanged. Customers can continue to perform initial hard matches as before.
+- This enforcement applies only to scenarios where OnPremisesObjectIdentifier is being modified for synced object since it was remapped to different on-premises object (through hard-match). Hard match and take over of cloud objects using [onPremisesImmutableId](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) remains supported and unchanged.
+
+
+
 
 **Customer Action Required:** 
 
@@ -352,10 +356,15 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 
 **Microsoft Graph API for Recovery**
 
+Starting **July 1st, 2026**, the sync operations that attempt to remap existing synced objects in Entra to a different on-premises object will fail with the following error:
+
+“*Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.*”
+
+Customers can recover by first clearing the OnPremisesObjectIdentifier property on the Entra object and then re-attempting the hard-match and takeover operation.
+
 To clear the OnPremisesObjectIdentifier for a user, use the following Microsoft Graph API call:
 
 `PATCH https://graph.microsoft.com/beta/users/{userId}`
-
 
 Body:
 
@@ -377,7 +386,7 @@ Required permissions:
 - If enforcement blocks an operation, the following error message will be returned: “*Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.*”
 - Use audit logs to identify affected objects. Look for “*Update user*” events where OnPremisesObjectIdentifier was modified. These users may require remediation before enforcement begins.
 
-The Microsoft Entra Connect Sync .msi installation file is exclusively available on Microsoft Entra admin center under[Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).  Check our [version history page](/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
+The Microsoft Entra Connect Sync .msi installation file is exclusively available on Microsoft Entra admin center under[Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).  Check our [version history page](/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
 
 ---
 
@@ -441,7 +450,7 @@ Microsoft Entra ID Account Recovery is an advanced authentication recovery mecha
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation with Microsoft-managed remediation (preview)](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview).
+**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation with Microsoft-managed remediation (preview)](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control-preview).
 
 ---
 

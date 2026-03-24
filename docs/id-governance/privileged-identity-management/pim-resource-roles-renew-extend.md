@@ -2,7 +2,7 @@
 title: Renew Azure resource role assignments in PIM
 description: Learn how to extend or renew Azure resource role assignments in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-image-nochange
 ---

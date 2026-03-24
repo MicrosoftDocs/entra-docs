@@ -2,7 +2,7 @@
 title: Security alerts for Microsoft Entra roles in PIM
 description: Configure security alerts for Microsoft Entra roles in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
