@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/24/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Snowflake so that I can streamline the user management process and ensure that users have the appropriate access to Snowflake.
@@ -106,25 +106,27 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
    ![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Screenshot of the Provisioning Mode drop-down list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Admin Credentials** section, enter the SCIM 2.0 base URL and authentication token that you retrieved earlier in the **Tenant URL** and **Secret Token** boxes, respectively.
     >[!NOTE]
     >The Snowflake SCIM endpoint consists of the Snowflake account URL appended with `/scim/v2/`. For example, if your Snowflake account name is `acme` and your Snowflake account is in the `east-us-2` Azure region, the **Tenant URL** value is `https://acme.east-us-2.azure.snowflakecomputing.com/scim/v2`.
 
-   Select **Test Connection** to ensure that Microsoft Entra ID can connect to Snowflake. If the connection fails, ensure that your Snowflake account has admin permissions and try again.
+1. Select **Test Connection** to ensure Microsoft Entra ID can connect to Snowflake. If the connection fails, ensure your Snowflake account has the required admin permissions and try again.
 
-    ![Screenshot that shows boxes for tenant URL and secret token, along with the Test Connection button.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** box, enter the email address of a person or group who should receive the provisioning error notifications. Then select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-    ![Screenshot that shows boxes for notification email.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Snowflake**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Snowflake in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Snowflake for update operations. Select the **Save** button to commit any changes.
 
@@ -151,7 +153,7 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
     > How to set up Snowflake custom extension attributes in Microsoft Entra SCIM user provisioning is explained [here](https://community.snowflake.com/s/article/HowTo-How-to-Set-up-Snowflake-Custom-Attributes-in-Azure-AD-SCIM-for-Default-Roles-and-Default-Warehouses).
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Snowflake**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Snowflake in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Snowflake for update operations. Select the **Save** button to commit any changes.
 
@@ -160,23 +162,11 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
     |displayName|String|
     |members|Reference|
 
-1. To configure scoping filters, see the instructions in the      [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Snowflake, change **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Screenshot that shows Provisioning Status switched on.](common/provisioning-toggle-on.png)
-
-1. Define the users and groups that you want to provision to Snowflake by choosing the desired values in **Scope** in the **Settings** section. 
-
-    If this option isn't available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
-
-    ![Screenshot that shows choices for provisioning scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-    ![Screenshot of the button for saving a provisioning configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. Subsequent syncs occur about every 40 minutes, as long as the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
