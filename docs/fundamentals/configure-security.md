@@ -197,7 +197,7 @@ Collect and analyze security logs and triage alerts.
 | [All Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#all-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
 | [Network access activity is visible to security operations for threat detection and response](zero-trust-monitor-detect.md#network-access-activity-is-visible-to-security-operations-for-threat-detection-and-response) | Microsoft Entra ID P1 |
 | [Network access logs are retained for security analysis and compliance requirements](zero-trust-monitor-detect.md#network-access-logs-are-retained-for-security-analysis-and-compliance-requirements) | Microsoft Entra ID P1 |
-| [Global Secure Access deployment logs are populated and reviewed](zero-trust-monitor-detect.md#global-secure-access-deployment-logs-are-populated-and-reviewed) | Microsoft Entra Suite Add-on for Microsoft Entra ID P2 |
+| [Global Secure Access deployment logs are populated and reviewed](zero-trust-monitor-detect.md#global-secure-access-deployment-logs-are-populated-and-reviewed) | Microsoft Entra Internet Access, Microsoft Entra Private Access |
 
 ## Accelerate response and remediation
 
