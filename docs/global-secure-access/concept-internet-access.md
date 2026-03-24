@@ -4,7 +4,6 @@ description: Learn about how Microsoft Entra Internet Access secures access to t
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 

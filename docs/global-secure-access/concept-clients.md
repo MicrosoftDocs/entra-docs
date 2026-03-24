@@ -3,7 +3,6 @@ title: Learn about the Global Secure Access clients for Microsoft Entra Private 
 description: Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access.
 ms.topic: concept-article
 ms.date: 03/12/2026
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 

@@ -4,7 +4,6 @@ description: "Control internet access based on website categories, URLs, and FQD
 ms.topic: how-to
 ms.date: 03/13/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
