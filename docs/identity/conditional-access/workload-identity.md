@@ -2,7 +2,7 @@
 title: Microsoft Entra Conditional Access for workload identities 
 description: Protecting workload identities with Conditional Access policies
 ms.topic: how-to
-ms.date: 03/24/2025
+ms.date: 03/24/2026
 ms.reviewer: swethar
 ---
 # Conditional Access for workload identities

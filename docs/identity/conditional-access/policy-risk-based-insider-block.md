@@ -2,7 +2,7 @@
 title: Block access for users with elevated insider risk
 description: Create Conditional Access policies using signals from Adaptive protection in Microsoft Purview.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: poulomib
 ---
 # Block access for users with insider risk

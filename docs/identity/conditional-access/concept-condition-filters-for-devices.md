@@ -3,7 +3,7 @@ title: Filter for devices as a condition in Conditional Access policy
 description: Use filter for devices in Conditional Access to enhance security posture.
 
 ms.topic: how-to
-ms.date: 05/19/2025
+ms.date: 03/24/2026
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices
