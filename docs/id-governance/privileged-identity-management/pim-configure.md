@@ -2,7 +2,7 @@
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: overview
-ms.date: 01/07/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange
 ---

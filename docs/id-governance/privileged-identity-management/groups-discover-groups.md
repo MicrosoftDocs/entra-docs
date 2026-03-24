@@ -2,7 +2,7 @@
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
 ms.topic: how-to
-ms.date: 01/06/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: sfi-image-nochange
 ---
