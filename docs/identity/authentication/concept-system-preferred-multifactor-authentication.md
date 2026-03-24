@@ -1,7 +1,7 @@
 ---
 title: System-preferred multifactor authentication (MFA)
 description: Learn how system-preferred multifactor authentication and device-preferred credential evaluate methods to prompt users with the most secure sign-in option.
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 03/18/2026
 ms.reviewer: msft-poulomi
 ms.custom: msecd-doc-authoring-106
@@ -11,10 +11,10 @@ ms.author: Justinha
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method so that I can improve my organization's sign-in security.
 ---
 
-# System-preferred multifactor authentication - Authentication methods policy
+# System-preferred multifactor authentication
 
 System-preferred multifactor authentication (MFA) prompts users to sign in by using the most secure method they registered. 
-It's an important security enhancement for users who authenticate by using telecom transports.
+It's an important security enhancement for users who authenticate by using phone-based methods.
 Administrators can enable system-preferred MFA to improve sign-in security and discourage less secure sign-in methods like Short Message Service (SMS).
 
 For example, if a user registered both SMS and Microsoft Authenticator push notifications as methods for MFA, system-preferred MFA prompts the user to sign in by using the more secure push notification method. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered. 
@@ -37,18 +37,18 @@ Device-preferred credential has three modes:
 
 - **Disabled** - No change to sign-in logic. The existing MRU logic continues to apply.
 - **Enabled** - Device-preferred credential logic applies to second-factor (MFA) only for scoped users.
-- **Microsoft Managed** - Device-preferred credential uses Microsoft-managed defaults for second-factor (MFA) only. A toggle for **Apply to both primary and multifactor authentication (preview)** controls whether the feature also applies to primary authentication:
+- **Microsoft managed** - Device-preferred credential uses Microsoft-managed defaults for second-factor (MFA) only. A toggle for **Apply to both primary and multifactor authentication (preview)** controls whether the feature also applies to primary authentication:
   - **Off** (default) - Device-preferred credential applies to second-factor only.
   - **On** - Device-preferred credential applies to both primary and secondary authentication.
 
-Both **Enabled** and **Microsoft Managed** modes allow administrators to include or exclude specific users or groups.
+Both **Enabled** and **Microsoft managed** modes allow administrators to include or exclude specific users or groups.
 
 > [!NOTE]
 > Device-preferred credential is scoped to users, not devices. Administrators include or exclude users or groups but can't assign device-preferred credential to specific devices or device groups. The device context is evaluated dynamically during sign-in.
 
 ### Known limitations
 
-- When you change the policy for a target group, the change doesn't take effect on the user's next sign-in. The change applies to all subsequent sign-ins after that.
+- When you change the policy for a target group, the change might not take effect on the user's very next sign-in. It applies to all subsequent sign-ins after that.
 - Conditional Access policy is validated only for MFA and doesn't apply to first-factor authentication.
 
 ## Enable system-preferred MFA in the Microsoft Entra admin center
@@ -56,20 +56,18 @@ Both **Enabled** and **Microsoft Managed** modes allow administrators to include
 By default, system-preferred MFA is Microsoft managed and enabled for all users. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Entra ID** > **Authentication methods** > **Settings**.
+1. Browse to **Microsoft Entra ID** > **Authentication methods** > **Settings**.
 1. For **System-preferred multifactor authentication**, choose whether to explicitly enable or disable the feature, and include or exclude any users. Excluded groups take precedence over include groups.
 
-   When you set the state to **Microsoft Managed**, a toggle for **Apply to both primary and multifactor authentication (preview)** appears. Turn on the toggle to apply device-preferred credential logic to both primary and secondary authentication. When the toggle is off (default), device-preferred credential applies to second-factor only.
+   When you set the state to **Microsoft managed**, a toggle for **Apply to both primary and multifactor authentication (preview)** appears. Turn on the toggle to apply device-preferred credential logic to both primary and secondary authentication. When the toggle is off (default), device-preferred credential applies to second-factor only.
 
-   <!-- TODO: Add screenshot showing the "Apply to both primary and multifactor authentication (preview)" toggle when State is set to Microsoft Managed. -->
-
-   For example, the following screenshot shows how to make system-preferred MFA explicitly enabled for only the Engineering group. 
+   For example, the following screenshot shows how to make system-preferred MFA explicitly enabled for only the Engineering group.
 
    :::image type="content" border="true" source="./media/concept-system-preferred-multifactor-authentication/enable.png" alt-text="Screenshot of the system-preferred multifactor authentication settings in the Microsoft Entra admin center, showing the feature enabled for the Engineering group.":::
 
 1. After you finish making any changes, select **Save**. 
 
-## Enable system-preferred MFA using Graph APIs
+## Enable system-preferred MFA by using Graph APIs
 
 To enable system-preferred MFA in advance, you need to choose a single target group for the schema configuration, as shown in the [Request](#request) example. 
 
