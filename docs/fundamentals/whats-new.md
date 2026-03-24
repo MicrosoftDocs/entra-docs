@@ -340,7 +340,10 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 
 **What's Not Changing:**
 
-- This enforcement applies only to scenarios where OnPremisesObjectIdentifier is being modified after it has already been set. Hard match functionality using [onPremisesImmutableId](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) remains supported and unchanged. Customers can continue to perform initial hard matches as before.
+- This enforcement applies only to scenarios where OnPremisesObjectIdentifier is being modified for synced object since it was remapped to different on-premises object (through hard-match). Hard match and take over of cloud objects using [onPremisesImmutableId](../identity/hybrid/connect/plan-connect-design-concepts.md#sourceanchor) remains supported and unchanged.
+
+
+
 
 **Customer Action Required:** 
 
@@ -352,7 +355,14 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 
 **Microsoft Graph API for Recovery**
 
+Starting **July 1st, 2026**, the sync operations that attempt to remap existing synced objects in Entra to a different on-premises object will fail with the following error:
+
+“*Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.*”
+
+Customers can recover by first clearing the OnPremisesObjectIdentifier property on the Entra object and then re-attempting the hard-match and takeover operation.
+
 To clear the OnPremisesObjectIdentifier for a user, use the following Microsoft Graph API call:
+
 
 `PATCH https://graph.microsoft.com/beta/users/{userId}`
 
