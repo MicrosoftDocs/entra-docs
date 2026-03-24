@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/09/2026
+ms.date: 03/24/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -14,79 +14,32 @@ ai-usage: ai-assisted
 #customer intent: As a developer or IT administrator, I want to understand how to integrate with Microsoft Entra ID using the SCIM v2.0 protocol so that I can programmatically provision, manage, and synchronize users and groups between my application and Microsoft Entra ID.
 ---
 
-# Build custom integrations with Microsoft Entra ID SCIM API
+# Microsoft Entra ID SCIM API reference
 
-> [!NOTE]
-> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+Use this reference guide to provision (synchronize) users and groups into Microsoft Entra ID using the System for Cross-domain Identity Management (SCIM) v2.0 protocol.
 
-This reference guide helps software developers build custom integrations to provision (synchronize) users and groups into Microsoft Entra ID using the System for Cross-domain Identity Management (SCIM) v2.0 protocol. This guide is also useful to IT administrators who need to understand or debug SCIM API operations.
+## SCIM API overview
 
 The Microsoft Entra ID SCIM implementation is based on the following IETF drafts:
 
 - [RFC 7642: System for Cross-domain Identity Management: Definitions, Overview, Concepts, and Requirements](https://www.rfc-editor.org/rfc/rfc7642)
-
 - [RFC 7643: System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
-
 - [RFC 7644: System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
-
 - [Cursor-based Pagination of SCIM Resources](https://www.ietf.org/archive/id/draft-ietf-scim-cursor-pagination-05.html)
+
+The Microsoft Entra ID SCIM Service supports the following HTTP API endpoints and request methods:
+
+- https://graph.microsoft.com/rp/scim/serviceproviderconfig (GET) - Service Provider config endpoint to fetch configuration details about Entra ID SCIM implementation, such as supported authentication schemes, available endpoints, and compliance with SCIM protocols.
+- https://graph.microsoft.com/rp/scim/resourcetypes (GET) - ResourceTypes endpoint to retrieve information about the resource types (like Users and Groups) supported by Entra ID.
+- https://graph.microsoft.com/rp/scim/schemas (GET) - Schemas endpoint to retrieve detailed information about the schemas supported by Entra ID.  
+- https://graph.microsoft.com/rp/scim/users (GET, POST, PATCH, DELETE) - Users endpoint to read, create, update and delete user data in Entra ID.  
+- https://graph.microsoft.com/rp/scim/groups (GET, POST, PATCH, DELETE)  - Groups endpoint to read, create, update and delete group and group membership data in Entra ID. 
 
 The following sections contain examples of API requests and responses currently supported in the Microsoft Entra ID SCIM implementation, along with important notes and constraints to consider in your design.
 
-## Prerequisites
-
-Before you can use the Microsoft Entra ID SCIM APIs, ensure that the following requirements are met:
-
-- **Microsoft Entra ID P1 or P2 license**: A Microsoft Entra ID P1 or P2 license is required for the tenant where you intend to use the SCIM APIs.
-- **Billing enabled for SCIM API**: Billing must be configured for your tenant to use the SCIM API. For details on pricing and how to enable billing, see [Microsoft Entra ID pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
-- **Required permissions**: The calling application must be granted the appropriate Microsoft Graph application permissions (see the [Invoking the SCIM APIs](#invoking-the-scim-apis) section).
-- **App registration**: A registered application in your Microsoft Entra ID tenant with a client secret, certificate, or federated identity credential.
-
 ## Invoking the SCIM APIs
 
-To invoke the SCIM APIs listed in this document, the SCIM client app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access the SCIM APIs with its own identity using a flow called the [OAuth 2.0 client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). 
-
-Use these steps to register your SCIM client app in your Microsoft Entra ID tenant and grant the app appropriate permissions for invoking the APIs.
-
-1)  Register the app with Microsoft Entra ID. For more information, see [Register an application with the Microsoft identity platform](/graph/auth-register-app-v2). Save the following values from the app registration:
-
-    1.  The application ID (referred to as Object ID on the Microsoft Entra admin center).
-
-    2.  A client secret (application password), a certificate, or a federated identity credential.
-
-2)  Under **API permissions** -\> select Microsoft Graph “Application permissions” and grant one or more of the following permissions:
-
-    1.  ```User.Read.All``` -\> To only provide “user” read access to your SCIM client.
-    2.  ```User.ReadWrite.All``` -\> To provide both “user” read and write access to your SCIM client.
-    3.  ```Group.Read.All``` -\> To only provide “group” read access to your SCIM client.
-    4.  ```Group.ReadWrite.All``` -\> To provide both “group” read and write access to your SCIM client.
-    5.  ```CustomSecAttributeAssignment.Read.All``` -\> To only provide “user” read access to Custom Security Attributes
-    6.  ```CustomSecAttributeAssignment.ReadWrite.All``` -\> To provide “user” read and write access to Custom Security Attributes
-    7.  ```CustomSecAttributeDefinition.Read.All``` -> To provide read access to Custom Security Attributes Schema 
-
-3)  Grant **Admin consent** to the permissions.
-
-Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
-
-| Example request for valid access token | Request/Body | 
-| -------------------------|---------------------------- |
-| **Request** | `POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1` <br> `Host: login.microsoftonline.com` <br> `Content-Type: application/x-www-form-urlencoded` |
-| **Body** | `client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials` |
-
-
-| Example of Successful Response with valid access token | Response | 
-| -------------------------|---------------------------- |
-| **HTTP 200/OK** | `{` <br>`"token_type": "Bearer",` <br> `"expires_in": 3599,` <br>  `"access_token": "eyJhbGciOiJIUzI1NiJ9…"` <br> `}` <br> _(Note: Actual JWT access value will be much larger)_   |
-
-
-
-Reference: </graph/auth-v2-service?tabs=http#token-request>
-
-You can use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
-
-| Example Authorization Request with valid access token | Call |
-|----------------------|
-| **Request** | `GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22` <br> `Authorization: Bearer eyJ0eXAiO...0X2tnSQLEANnSPHY0gKcgw` <br> `Host: graph.microsoft.com` |
+Before you can call the SCIM API endpoints described in this article, you must enable the SCIM Provisioning API feature, set up credentials, and obtain an access token. For step-by-step instructions, see [Enable the SCIM Provisioning API in Microsoft Entra ID](enable-scim-api.md).
 
 ## Get Service Provider Config
 
@@ -94,18 +47,13 @@ Use the ```/ServiceProviderConfig``` endpoint to view additional information a
 
 **API endpoint:** <https://graph.microsoft.com/rp/scim/serviceproviderconfig>
 
+Set HTTP header `Accept: application/json`
+
 Upon success, the API returns HTTP Status 200.
 
 ### Errors for Get Service Provide Config
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Requesting service provider config
 
@@ -159,14 +107,7 @@ Upon success, the API returns HTTP Status 200.
 
 ### Errors for List Resource Types
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Requesting all resource types
 
@@ -274,18 +215,13 @@ Custom Security Attributes Schema Identifier: ```"urn:ietf:params:scim:schemas:e
 
 [https://graph.microsoft.com/rp/scim/schemas/{identifier}](https://graph.microsoft.com/rp/scim/schemas/%7bidentifier%7d)
 
+Set HTTP header `Accept: application/json`
+
 Upon success, the API returns HTTP Status 200.
 
 ### Errors for Get Schema
 
-If there is an error, then one of the following error codes is returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Requesting all schemas
 
@@ -394,7 +330,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
   - ```groups.value```
 
   - ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:```**mailNickname**
-- The following user attributes are allowed for “ew” compare operator. 
+- The following user attributes are allowed for "ew" (endsWith) compare operator. 
 
   - username  
   - ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:```**mailNickname**
@@ -408,14 +344,7 @@ GET https://graph.microsoft.com/rp/scim/users?filter=externalId eq '12345' and u
 
 ### Errors for List Users
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 
 The following examples only include the request details. The response isn't included for brevity. It conforms to the standard SCIM response payload.
@@ -532,14 +461,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 ### Errors Get user by ID
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Get user by ID with specific attributes
 
@@ -594,15 +516,7 @@ The following attributes are required for successful user creation:
 
 ### Errors for Create a user
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| BadRequest | Required attributes are missing | 400 |
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 
 #### Example 1 – Create a new user
@@ -649,9 +563,9 @@ The /users endpoint allows a PATCH request to be made for updating an existi
 
 PATCH [https://graph.microsoft.com/rp/scim/users/{id}](https://graph.microsoft.com/rp/scim/users/%7bid%7d)
 
-Set HTTP header Content-Type: application/scim+json
+Set HTTP header `Content-Type: application/scim+json`
 
-Upon success, the API returns HTTP Status 200.
+Upon success, the API returns HTTP Status 204.
 
 ### Constraints for Update a user
 
@@ -661,15 +575,7 @@ Upon success, the API returns HTTP Status 200.
 
 ### Errors for Update a user
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| BadRequest | Required attributes are missing | 400 |
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Update an attribute value
 
@@ -696,7 +602,7 @@ Content-Type: ```application/scim+json```
 }
 ```
 
-**Response (200 OK):**
+**Response (204 OK):**
 
 The response conforms to SCIM specification.
 
@@ -728,7 +634,7 @@ Content-Type: ```application/scim+json```
 }
 ```
 
-**Response (200 OK):**
+**Response (204 OK):**
 
 The response conforms to SCIM specification.
 
@@ -766,7 +672,7 @@ Content-Type: application/scim+json
 }
 ```
 
-**Response (200 OK):**
+**Response (204 OK):**
 
 The response conforms to SCIM specification.
 
@@ -784,20 +690,18 @@ Content-Type: ```application/scim+json```
 
 ```json
 {
-  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "schemas": [ "urn:ietf:params:scim:api:messages:2.0:PatchOp" ],
   "operations": [
     {
       "op": "replace",
-      "path": "emails[type eq \"work\" and primary eq true]",
-      "value": {
-        "value": "<edited username>@{{tenant_domain}}"
-      }
+      "path": "emails[type eq \"work\" and primary eq true].value",         
+      "value": "{edited_username}@{{tenant_domain}}"      
     }
   ]
 }
 ```
 
-**Response (200 OK):**
+**Response (204 OK):**
 
 The response conforms to SCIM specification.
 
@@ -846,14 +750,7 @@ Upon success, the API returns HTTP Status 204.
 
 ### Errors for Delete a user
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Delete a user
 
@@ -868,18 +765,6 @@ Authorization: Bearer \<bearer_token\>
 **Response (204 OK):**
 
 The response conforms to SCIM specification.
-
-## Supported group types
-
-The Microsoft Entra ID SCIM API supports the following group types:
-
-| Group type | Supported | Notes |
-|---|---|---|
-| Security groups | Yes | Standard security groups used for access control. |
-| Microsoft 365 groups | Yes | Groups that provide collaboration features such as shared mailboxes and calendars. |
-| Mail-enabled security groups | No | Not available through the SCIM API. Use Microsoft Graph to manage these groups. |
-| Distribution groups | No | Not available through the SCIM API. Use Exchange Online or Microsoft Graph. |
-| Nested groups | Partial | You can add groups as members of other groups, but nested group membership isn't evaluated when using the `members.value` filter. Only direct memberships are evaluated. |
 
 ## List groups
 
@@ -928,20 +813,13 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
   - ```id```
 
   - ```members.value```
-- The following group attributes are allowed for "ew" compare operator
+- The following group attributes are allowed for "ew" (endsWith) compare operator
   - displayName
 - Nested group membership is not evaluated when using the ```member.value``` filter. Only direct memberships are evaluated.
 
 ### Errors for List groups
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 ### Examples
 
@@ -1047,14 +925,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 ### Errors for Get group by ID
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Get group by ID 
 
@@ -1098,15 +969,7 @@ The following attributes are required for successful user creation:
 
 ### Errors for Create a group
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| BadRequest | Required attributes are missing | 400 |
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Create a new group
 
@@ -1166,15 +1029,7 @@ Upon success, the API returns HTTP Status 200.
 
 ### Errors for Update a group
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| BadRequest | Required attributes are missing | 400 |
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 
 #### Example 1 – Update Group display name
@@ -1322,14 +1177,7 @@ Upon success, the API returns HTTP Status 204.
 
 ### Errors for Delete a group
 
-If there is an error, then one of the following error codes are returned.
-
-| Error | Condition | HTTP Status Code |
-|----|----|----|
-| InvalidAuthenticationToken | Access token is empty or invalid. | 401 |
-| InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
-| ResourceNotFound | Invalid URN | 404 |
-| InternalServerException | Service failed to process the request | 500 |
+For a list of common error codes returned by this API, see [SCIM API error code reference](troubleshoot-scim-api-errors.md#scim-api-error-code-reference).
 
 #### Example 1 – Delete a group
 

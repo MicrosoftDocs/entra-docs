@@ -90,9 +90,9 @@ items:
     - name: Configure Microsoft Entra SCIM 2.0 APIs
       items: 
       - name: Enable SCIM 2.0 APIs
-        href: entra-id-scim-api-reference.md
+        href: enable-scim-api.md
       - name: Troubleshoot SCIM 2.0 errors
-        href: tbd.md
+        href: troubleshoot-scim-api-errors.md
       - name: Configure Microsoft Entra ID as a SCIM client
         href: scim-client-configuration.md
     - name: Include or exclude users and groups from scope

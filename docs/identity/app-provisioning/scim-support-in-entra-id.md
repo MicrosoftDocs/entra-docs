@@ -1,19 +1,20 @@
 ---
-title: Undertand SCIM support in Microsoft Entra ID
+title: SCIM support in Microsoft Entra ID
 description: Learn how Microsoft Entra ID supports the SCIM standard both as a provisioning client for SaaS applications and as a SCIM service provider through its SCIM APIs.
 ms.topic: conceptual
 ms.service: entra-id
-author: cmmdesai
+ms.subservice: app-provisioning
+author: jenniferf-skc
+manager: pmwongera
+ms.date: 03/24/2026
 ms.author: jfields
-ms.date: 03/23/2026
-ms.reviewer: cmmdesai
+ms.reviewer: chmutali
+ai-usage: ai-assisted
 
+#customer intent: Learn about SCIM support in Microsoft Entra ID, including how to provision users and groups to SaaS applications or into Entra using SCIM APIs.
 ---
 
 # SCIM support in Microsoft Entra ID
-
-> [!NOTE]
-> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 Microsoft Entra ID supports the **System for Cross‑domain Identity Management (SCIM) 2.0** standard in multiple ways, depending on the provisioning scenario. Entra can act as:
 
@@ -51,9 +52,9 @@ This capability is commonly used by IT administrators to automate access lifecyc
 
 ### Where to learn more
 
-- [Develop a SCIM endpoint for user provisioning](use-scim-to-provision-users-and-groups.md)
-- [App-specific provisioning tutorials](../../saas-apps/tutorial-list)
-- [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility.md)
+- [Develop a SCIM endpoint for user provisioning](/use-scim-to-provision-users-and-groups.md)
+- [App specific provisioning tutorials](identity/saas-apps/tutorial-list)
+- [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility)
 
 ---
 
@@ -82,7 +83,7 @@ This capability is designed for **standards‑based identity lifecycle automatio
 
 ### Where to learn more
 
-- [Configure Microsoft Entra SCIM 2.0 APIs](entra-id-scim-api-reference.md)
+- [Configure Microsoft Entra SCIM 2.0 APIs](enable-scim-api.md)
 - [Microsoft Entra ID SCIM API endpoints](entra-id-scim-api-reference.md)
 - [Microsoft Entra ID SCIM API schema](entra-id-scim-api-schema-documentation.md)
 
@@ -118,3 +119,8 @@ Microsoft Entra ID provides flexible, standards‑based identity provisioning by
 - As a **SCIM service provider**, enabling provisioning from business applications to Microsoft Entra ID through SCIM APIs.
 
 Together with Microsoft Graph, these capabilities give customers and partners the choice to integrate with Entra using the model that best fits their architecture, tooling, and long‑term identity strategy.
+
+## Next steps
+
+- [Explore Microsoft Entra ID SCIM API endpoints](entra-id-scim-api-reference.md)
+- [Develop a SCIM endpoint for user provisioning](/use-scim-to-provision-users-and-groups.md)
