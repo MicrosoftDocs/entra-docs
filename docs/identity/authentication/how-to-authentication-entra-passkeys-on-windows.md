@@ -92,10 +92,6 @@ Attestation isn't supported for Microsoft Entra passkeys on Windows during publi
 
 In the Authentication methods policy in the Microsoft Entra admin center, ensure that **Enforce attestation** is set to **No** for any passkey profile that includes Windows Hello AAGUIDs during public preview.
 
-## Known issues
-
-During public preview, if a tenant allows Microsoft Entra passkeys on Windows and a user registers a passkey, it appears in the user's list of usable authentication methods in the Microsoft Entra admin center. If the tenant later removes the Windows Hello AAGUIDs from the allow list, the registered passkey remains on the usable authentication methods list instead of moving to the non-usable methods list. Although the passkey appears as usable, authentication with the passkey is governed by the current passkey (FIDO2) policy. If the Windows Hello AAGUIDs are no longer allowed, the passkey can't be used to authenticate. This display issue will be fixed for General Availability.
-
 ## How to configure passkeys on Windows
 
 During public preview, Microsoft Entra passkeys on Windows require an Authentication Policy Administrator to explicitly opt in.
@@ -138,6 +134,10 @@ To enable registration, all of the following prerequisites and configuration req
 **Question**: Are Microsoft Entra passkeys synced?
 
 **Answer**: No. Microsoft Entra passkeys on Windows are device-bound and stored in the local Windows Hello container. They aren't synced across devices. Each device requires a separate passkey registration for each Microsoft Entra account.
+
+## Known issues
+
+During public preview, if a tenant allows Microsoft Entra passkeys on Windows and a user registers a passkey, it appears in the user's list of usable authentication methods in the Microsoft Entra admin center. If the tenant later removes the Windows Hello AAGUIDs from the allow list, the registered passkey remains on the usable authentication methods list instead of moving to the non-usable methods list. Although the passkey appears as usable, authentication with the passkey is governed by the current passkey (FIDO2) policy. If the Windows Hello AAGUIDs are no longer allowed, the passkey can't be used to authenticate. This display issue will be fixed for General Availability.
 
 ## Related content
 
