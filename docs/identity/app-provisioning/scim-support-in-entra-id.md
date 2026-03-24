@@ -53,7 +53,7 @@ This capability is commonly used by IT administrators to automate access lifecyc
 ### Where to learn more
 
 - [Develop a SCIM endpoint for user provisioning](use-scim-to-provision-users-and-groups.md)
-- [App specific provisioning tutorials](identity/saas-apps/tutorial-list.md)
+- [App specific provisioning tutorials](/entra/identity/saas-apps/tutorial-list.md)
 - [Known SCIM 2.0 compliance issues](application-provisioning-config-problem-scim-compatibility.md)
 
 ---
