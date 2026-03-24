@@ -4,7 +4,7 @@ description: Discover how to configure resilience defaults in Microsoft Entra to
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/12/2025
+ms.date: 03/24/2026
 ms.reviewer: ludwignick
 ---
 # Conditional Access: Resilience defaults

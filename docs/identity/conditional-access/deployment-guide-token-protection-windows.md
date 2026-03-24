@@ -4,7 +4,7 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 03/24/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Windows

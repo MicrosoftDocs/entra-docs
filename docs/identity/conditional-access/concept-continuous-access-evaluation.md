@@ -4,7 +4,7 @@ description: Learn how continuous access evaluation in Microsoft Entra enhances 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 07/22/2025
+ms.date: 03/24/2026
 ms.reviewer: vmahtani
 ms.custom:
   - has-adal-ref

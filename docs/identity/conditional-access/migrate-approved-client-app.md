@@ -2,7 +2,7 @@
 title: Migrate approved client app to application protection policy in Conditional Access 
 description: The approved client app control is going away. Migrate to App protection policies.
 ms.topic: how-to
-ms.date: 01/12/2026
+ms.date: 03/24/2026
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access

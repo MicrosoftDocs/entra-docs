@@ -2,7 +2,7 @@
 title: Conditional Access protections for Generative AI
 description: Protecting Gen AI services like Microsoft Security Copilot and Microsoft 365 Copilot with Conditional Access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy

@@ -2,7 +2,7 @@
 title: Plan Your Microsoft Entra Conditional Access Deployment
 description: Plan your Conditional Access policies to balance security and productivity. Learn how to design and deploy effective policies for your organization.
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 03/24/2026
 manager: martinco
 ms.reviewer: joflore
 ms.custom:
