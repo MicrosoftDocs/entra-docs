@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco Umbrella DNS protection
 
+## Overview
+
 Learn how to deploy Global Secure Access and Cisco Umbrella, with DNS security only, in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
 The configurations outlined apply to both Cisco Umbrella and Cisco Secure Access. Detailed instructions for configuring each portal are provided.
 > [!NOTE]

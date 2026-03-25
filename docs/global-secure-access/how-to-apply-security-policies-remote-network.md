@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 # Apply security policies to remote network traffic
 
+## Overview
+
 Global Secure Access enables you to apply comprehensive security policies to remote network traffic, providing consistent protection across your entire network perimeter. By leveraging the baseline security profile, you can enforce tenant-wide security controls on all remote networks without requiring Conditional Access policies.
 
 This article explains how to configure and apply security policies to protect traffic from remote networks such as branch offices, retail locations, and other remote sites.

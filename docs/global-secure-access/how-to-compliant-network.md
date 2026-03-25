@@ -9,6 +9,8 @@ ms.custom: sfi-image-nochange
 ---
 # Enable compliant network check with Conditional Access
 
+## Overview
+
 Organizations that use Conditional Access along with the Global Secure Access can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions might include strong factor authentication, device compliance, location, and others. Enabling these conditions protects your organization against user identity compromise or token theft. Global Secure Access introduces the concept of a compliant network within Microsoft Entra ID Conditional Access. This compliant network check ensures users connect via the Global Secure Access service for their specific tenant and are compliant with security policies enforced by administrators.
 
 The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage access policies, without having to maintain a list of egress IP addresses and removes the requirement to hairpin traffic through organization's VPN to maintain source IP anchoring and apply IP-based Conditional Access policies.
