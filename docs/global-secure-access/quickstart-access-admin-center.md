@@ -11,6 +11,8 @@ ai-usage: ai-assisted
   
 # Quickstart: Access the Global Secure Access area of the Microsoft Entra admin center
  
+## Overview
+
 This quickstart shows you where to find the Global Secure Access area of the Microsoft Entra admin center. 
 
 Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center. Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge (SSE) solution. For more information about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)

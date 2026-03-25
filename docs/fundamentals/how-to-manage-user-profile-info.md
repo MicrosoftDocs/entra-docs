@@ -11,6 +11,9 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 # Add or update a user's profile information and settings in the Microsoft Entra admin center
 
 
+
+## Overview
+
 The user profile is the digital representation of a user's identity that should, where possible, reflect how the user wants to be represented. The user profile appears in several places across the Microsoft suite, including Outlook, Teams, Windows, and others. Identity information that appears across these tools is sourced from the user profile.
 
 A user's profile information and settings can be managed on an individual basis and for all users in your directory. When you look at these settings together, you can see how permissions, restrictions, and other connections work together.

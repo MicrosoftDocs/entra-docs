@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # Close your work or school account in an unmanaged Microsoft Entra organization
 
+
+## Overview
+
 If you're a user in an unmanaged organization (tenant) in Microsoft Entra ID, and you no longer need to use apps from that organization or maintain any association with it, you can close your account at any time. An unmanaged organization doesn't have an administrator. Users in an unmanaged organization can close their accounts on their own, without contacting an administrator.
 
 Users in an unmanaged organization are often created during self-service sign-up. An example of this occurring is when an information worker in an organization signs up for a free service. For more information about self-service sign-up, see [What is self-service sign-up for Microsoft Entra ID?](directory-self-service-signup.md).

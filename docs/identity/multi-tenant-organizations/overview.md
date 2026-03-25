@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # Multitenant organization capabilities in Microsoft Entra ID
 
+
+## Overview
+
 This article provides an overview of the multitenant organization scenario and the related capabilities in Microsoft Entra ID.
 
 ## What is the multitenant organization scenario?

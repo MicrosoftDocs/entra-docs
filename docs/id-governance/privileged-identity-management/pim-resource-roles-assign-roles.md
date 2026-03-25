@@ -8,6 +8,9 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Assign Azure resource roles in Privileged Identity Management
 
+
+## Overview
+
 With Microsoft Entra Privileged Identity Management (PIM), you can manage the built-in Azure resource roles, and custom roles, including (but not limited to):
 
 - Owner

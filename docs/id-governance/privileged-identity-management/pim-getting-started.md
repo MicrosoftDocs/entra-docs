@@ -8,6 +8,9 @@ ms.custom: pim, sfi-ga-nochange
 ---
 # Start using Privileged Identity Management
 
+
+## Overview
+
 Use Privileged Identity Management (PIM) to manage, control, and monitor access within your Microsoft Entra organization. With PIM you can provide as-needed and just-in-time access to Azure resources, Microsoft Entra resources, and other Microsoft online services like Microsoft 365 or Microsoft Intune.
 
 This article describes how to enable Privileged Identity Management (PIM) and get started using it.

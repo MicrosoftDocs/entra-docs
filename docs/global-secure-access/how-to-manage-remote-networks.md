@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Manage remote networks
 
+## Overview
+
 Remote networks connect your users in remote locations to Global Secure Access. Adding, updating, and removing remote networks from your environment are likely common tasks for many organizations. 
 
 This article explains how to manage your existing remote networks for Global Secure Access.

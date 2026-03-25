@@ -14,6 +14,8 @@ ms.custom:
 ---
 # Plan a Conditional Access deployment
 
+## Overview
+
 Planning your Conditional Access deployment is critical to achieving your organization's access strategy for apps and resources. Conditional Access policies provide significant configuration flexibility. However, this flexibility means you need to plan carefully to avoid undesirable results.
 
 [Microsoft Entra Conditional Access](overview.md) combines signals like user, device, and location to automate decisions and enforce organizational access policies for resources. These Conditional Access policies help you balance security and productivity by enforcing security controls when needed and staying out of the user’s way when they aren't.

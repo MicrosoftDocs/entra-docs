@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Work with existing on-premises proxy servers
 
+
+## Overview
+
 Configure Microsoft Entra private network connectors to use outbound proxy servers. This article assumes the network environment already has a proxy server.
 
 This article covers these main deployment scenarios:

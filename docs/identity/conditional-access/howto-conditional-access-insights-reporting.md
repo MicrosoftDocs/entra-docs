@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # Conditional Access insights and reporting
 
+## Overview
+
 The Conditional Access insights and reporting workbook enables you to understand the impact of Conditional Access policies in your organization over time. During sign-in, one or more Conditional Access policies might apply, granting access if certain grant controls are satisfied or denying access otherwise. Because multiple Conditional Access policies might be evaluated during each sign-in, the insights and reporting workbook lets you examine the impact of an individual policy or a subset of all policies.  
 
 ## Prerequisites

@@ -9,6 +9,8 @@ ms.reviewer: joflore
 ---
 # Conditional Access: Session
 
+## Overview
+
 In a Conditional Access policy, an admin can use session controls to enable limited experiences in specific cloud applications.
 
 ![Screenshot of a Conditional Access policy with a grant control requiring multifactor authentication.](./media/concept-conditional-access-session/conditional-access-session.png)

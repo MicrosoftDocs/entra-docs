@@ -10,6 +10,9 @@ ms.date: 12/13/2024
 
 # Call the Request Service REST API
 
+
+## Overview
+
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify credentials. This article shows you how to start using the Request Service REST API.
 
 ## API access token

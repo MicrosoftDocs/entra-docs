@@ -8,6 +8,9 @@ ms.date: 12/16/2024
 
 # Microsoft Entra Verified ID-supported standards
 
+
+## Overview
+
 Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. Microsoft works with these groups to identify and develop critical standards and implements the open standards in its services.
 
 In this article, you find the currently supported open standards for Microsoft Entra Verified ID.

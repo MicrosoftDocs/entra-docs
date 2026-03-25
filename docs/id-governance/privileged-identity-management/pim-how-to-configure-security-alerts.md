@@ -8,6 +8,9 @@ ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure security alerts for Microsoft Entra roles in Privileged Identity Management
 
+
+## Overview
+
 Privileged Identity Management (PIM) generates alerts when there's suspicious or unsafe activity in your organization in Microsoft Entra ID. When an alert is triggered, it shows up on the Privileged Identity Management dashboard. Select the alert to see a report that lists the users or roles that triggered the alert.
 
 > [!NOTE]

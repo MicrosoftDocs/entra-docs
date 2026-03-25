@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Debug application proxy issues
 
+
+## Overview
+
 This article explains how to troubleshoot issues with Microsoft Entra application proxy. Use the flowchart to fix remote access issues for an on-premises web application.
 
 ## Before you begin

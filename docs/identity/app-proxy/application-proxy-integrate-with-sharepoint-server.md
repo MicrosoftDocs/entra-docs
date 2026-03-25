@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Enable remote access to SharePoint with Microsoft Entra application proxy
 
+
+## Overview
+
 This step-by-step guide explains how to integrate an on-premises SharePoint farm with Microsoft Entra application proxy.
 
 ## Prerequisites

@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require multifactor authentication for elevated sign-in risk
 
+## Overview
+
 Most users have normal behavior that can be tracked. When their behavior falls outside this norm, it might be risky to let them sign in. You might want to block the user or ask them to complete multifactor authentication to confirm their identity. 
 
 Sign-in risk represents the likelihood that an authentication request isn't from the identity owner. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection sign-in risk detections](~/id-protection/concept-identity-protection-risks.md). 

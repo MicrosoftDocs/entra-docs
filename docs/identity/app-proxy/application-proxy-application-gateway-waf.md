@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Use Application Gateway WAF to protect your applications
 
+
+## Overview
+
 Add Web Application Firewall (WAF) protection for apps published with Microsoft Entra application proxy.
 
 For more information about Web Application Firewall, see [What is Azure Web Application Firewall on Azure Application Gateway?][waf-overview].

@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 ---
 
 # Troubleshoot Distributed File System issue with Global Secure Access
+## Overview
+
 This document presents a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access and offers a temporary workaround. 
 
 The scenario involves accessing a file-share location. For instance, consider a DFS path: `\\foo.internal\share\bar`. The `bar` folder is set up as shown in the table: 

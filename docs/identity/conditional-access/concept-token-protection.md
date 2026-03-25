@@ -15,6 +15,8 @@ ms.custom:
 ---
 # Token Protection in Microsoft Entra Conditional Access
 
+## Overview
+
 Token Protection is a Conditional Access session control that attempts to reduce token replay attacks by ensuring only device bound sign-in session tokens, like [Primary Refresh Tokens (PRTs)](../devices/concept-primary-refresh-token.md), are accepted by Microsoft Entra ID when applications request access to protected resources.  
 
 When a user registers a supported device with Microsoft Entra, a PRT is issued and cryptographically bound to that device. This binding ensures that even if a threat actor steals the token, it can't be used from another device. With Token Protection enforced, Microsoft Entra validates that only these bound sign-in session tokens are used by supported applications. 

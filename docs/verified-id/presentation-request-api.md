@@ -12,6 +12,9 @@ ms.date: 01/30/2025
 # Request Service REST API presentation specification
 
   
+
+## Overview
+
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify a credential. This article specifies the Request Service REST API for a presentation request. The presentation request asks the user to present a verifiable credential, and then verify the credential.
 Another article describes [how to call the Request Service REST API](get-started-request-api.md).
 

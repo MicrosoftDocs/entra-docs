@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Monitor and troubleshoot continuous access evaluation
 
+## Overview
+
 Administrators can monitor and troubleshoot sign in events where [continuous access evaluation (CAE)](concept-continuous-access-evaluation.md) is applied in multiple ways.
 
 ## Continuous access evaluation sign-in reporting

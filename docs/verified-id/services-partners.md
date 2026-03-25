@@ -7,6 +7,9 @@ ms.date: 12/03/2025
 
 # Microsoft Entra Verified ID services and solution partners
 
+
+## Overview
+
 The services and solutions partner network extends and accelerates Microsoft Entra Verified ID adoption. Service partners offer advisory, implementation, integration, and managed service capabilities that can help you build seamless end-user experiences using Verified ID.
 
 ## Services and solution partner list

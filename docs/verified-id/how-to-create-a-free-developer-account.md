@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Microsoft Entra Verified ID developer information
 
+
+## Overview
+
 > [!NOTE]
 > The requirement of a Microsoft Entra ID P2 license was removed in early May 2021. The Microsoft Entra ID Free tier is now supported.
 

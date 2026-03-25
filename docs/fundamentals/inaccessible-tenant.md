@@ -12,6 +12,9 @@ ms.custom: sfi-image-nochange
 
 # Tenant inaccessible due to inactivity
 
+
+## Overview
+
 Configured tenants no longer in use might still generate costs for your organization. Making a tenant inaccessible due to inactivity helps reduce unnecessary expenses. This article discusses how to handle an inaccessible tenant, reactivation, and guidance for both administrators and application developers. 
 
 If you try to access the tenant, you receive a message similar to the example shown. 

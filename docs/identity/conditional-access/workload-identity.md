@@ -7,6 +7,8 @@ ms.reviewer: swethar
 ---
 # Conditional Access for workload identities
 
+## Overview
+
 Conditional Access policies historically applied only to users when they access apps and services like SharePoint Online. We're now extending support for Conditional Access policies to be applied to service principals owned by the organization. We call this capability Conditional Access for workload identities.
 
 A [workload identity](~/workload-id/workload-identities-overview.md) is an identity that allows an application or service principal access to resources, sometimes in the context of a user. These workload identities differ from traditional user accounts as they:

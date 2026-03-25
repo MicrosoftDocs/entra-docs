@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # Simulate remote network connectivity using Azure VNG
 
+## Overview
+
 Organizations might want to extend the capabilities of Microsoft Entra Internet Access to entire networks not just individual devices they can [install the Global Secure Access Client](how-to-install-windows-client.md) on. This article shows how to extend these capabilities to an Azure virtual network hosted in the cloud. Similar principles might be applied to a customer's on-premises network equipment.
 
 ## Prerequisites

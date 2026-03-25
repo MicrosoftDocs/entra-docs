@@ -13,6 +13,8 @@ ai-usage: ai-assisted
 
 
 
+## Overview
+
 Microsoft and Palo Alto Networks SSE solutions can be used together in a unified environment. When used together, you harness a robust set of capabilities from both platforms to elevate your SASE journey. The synergy between these platforms enhances security and provides seamless connectivity.
 
 This document contains steps to deploy these solutions side by side across several different access scenarios.

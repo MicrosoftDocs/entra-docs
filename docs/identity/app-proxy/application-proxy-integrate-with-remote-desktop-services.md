@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Publish Remote Desktop with Microsoft Entra application proxy
 
+
+## Overview
+
 Remote Desktop Service and Microsoft Entra application proxy work together to improve the productivity of workers who are away from the corporate network. 
 
 The intended audience for this article is:

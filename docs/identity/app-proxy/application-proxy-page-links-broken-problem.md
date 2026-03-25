@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Broken links in an application proxy app
 
+
+## Overview
+
 This article describes why broken links might occur in your Microsoft Entra application proxy application and resolution options.
 
 After you publish an application proxy app, by default, the only links that work in the app are links to destinations that are located in the published root URL.

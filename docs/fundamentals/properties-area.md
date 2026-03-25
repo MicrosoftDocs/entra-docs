@@ -10,6 +10,9 @@ ms.custom: template-how-to, ge-structured-content-pilot, sfi-ga-nochange
 # Add your organization's privacy information to Microsoft Entra
 
 
+
+## Overview
+
 This article explains how an administrator can add privacy-related info to an organization's directory through the Microsoft Entra admin center.
 
 Add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because each business creates and tailors its own privacy statements, contact a lawyer for assistance.

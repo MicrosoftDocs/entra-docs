@@ -8,6 +8,9 @@ ms.custom: pim, sfi-image-nochange
 
 # Configure PIM for Groups settings
 
+
+## Overview
+
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
 You need group management permissions to manage settings. For role-assignable groups, you must have at least the Privileged Role Administrator role or be an owner of the group. For non-role assignable groups, you must have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role or be an owner of the group. Role assignments for administrators should be scoped at directory level (not at the administrative unit level).

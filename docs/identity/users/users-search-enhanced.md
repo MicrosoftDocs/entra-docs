@@ -9,6 +9,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # User management enhancements in Microsoft Entra ID
 
+
+## Overview
+
 This article describes how to use the user management enhancements in the Microsoft Entra admin center. In this article, you review the **All users** and **user profile** pages.
 
 Enhancements include:

@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 ---
 # How to enable and manage the Microsoft traffic forwarding profile
 
+## Overview
+
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online

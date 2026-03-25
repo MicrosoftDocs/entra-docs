@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Integrate with Microsoft Entra application proxy on a Network Device Enrollment Service (NDES) server
 
+
+## Overview
+
 Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
 
 ## Install and register the connector on the NDES server

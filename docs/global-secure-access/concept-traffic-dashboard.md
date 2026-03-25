@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Global Secure Access dashboard
 
+## Overview
+
 The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many devices using the Global Secure Access client are active in my network?

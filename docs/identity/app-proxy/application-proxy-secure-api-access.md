@@ -9,14 +9,14 @@ ai-usage: ai-assisted
 ---
 # Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
 
+## Overview
+
 Business logic often lives in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
 
 > [!TIP]
 > The term "on premises" is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Today, many self-hosted workloads run on a virtual machine in a datacenter. The terms on premises and private cloud are used interchangeably.
 
 This article walks you through setting up a Microsoft Entra application proxy solution for hosting a web API service that native apps can access.
-
-## Overview
 
 The following diagram shows a traditional way to publish on-premises APIs. This approach requires opening incoming ports 80 and 443.
 

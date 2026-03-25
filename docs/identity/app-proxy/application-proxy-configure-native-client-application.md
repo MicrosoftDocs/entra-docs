@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # How to enable native client applications to interact with proxy applications
 
+
+## Overview
+
 Microsoft Entra application proxy is used to publish web apps. You can also use it to publish native client applications configured with the Microsoft Authentication Library (MSAL). Client applications differ from web apps because they're installed on a device, while web apps are accessed through a browser.
 
 To support native client applications, application proxy accepts Microsoft Entra ID-issued tokens that are sent in the header. The application proxy service does the authentication for the users. This solution doesn't use application tokens for authentication.

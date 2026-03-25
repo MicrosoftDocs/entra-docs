@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk create users in Microsoft Entra ID
 
+
+## Overview
+
 Microsoft Entra ID, part of Microsoft Entra, supports bulk user create and delete operations and supports downloading lists of users. Just fill out the comma-separated values (CSV) template you can download from Microsoft Entra ID.
 
 ## Required permissions

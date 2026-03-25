@@ -7,6 +7,8 @@ ai-usage: ai-assisted
 ---
 # Assign a remote network to a traffic forwarding profile for Global Secure Access
 
+## Overview
+
 If you're tunneling your Microsoft traffic through the Global Secure Access service, you can assign remote networks to the traffic forwarding profile. Your end users can access Microsoft resources by connecting to the service from a remote network, such as a branch office location.
 
 There are multiple ways to assign a remote network to the traffic forwarding profile:

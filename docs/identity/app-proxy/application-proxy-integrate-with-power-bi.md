@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
 
+
+## Overview
+
 This article discusses how to use Microsoft Entra application proxy to enable the Power BI mobile app to connect to Power BI Report Server (PBIRS) and SQL Server Reporting Services (SSRS) 2016 and later. Through this integration, users who are away from the corporate network can access their Power BI reports from the Power BI mobile app and be protected by Microsoft Entra authentication. This protection includes [security benefits](application-proxy-security.md#security-benefits) such as Conditional Access and multifactor authentication.
 
 ## Prerequisites

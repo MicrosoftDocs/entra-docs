@@ -9,6 +9,8 @@ ms.custom: sfi-image-nochange
 ---
 # Configure customer premises equipment for Global Secure Access
 
+## Overview
+
 IPSec tunnel is a bidirectional communication. One side of the communication is established when [adding a device link to a remote network](how-to-manage-remote-network-device-links.md) in Global Secure Access. During that process, you enter your public IP address and border gateway protocol (BGP) addresses in the Microsoft Entra admin center to tell us about your network configurations.
 
 This article provides the steps to set up the other side of the communication channel.

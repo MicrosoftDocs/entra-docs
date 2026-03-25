@@ -9,6 +9,9 @@ ms.date: 11/13/2024
 
 # What's new
 
+
+## Overview
+
 Microsoft Entra is updated regularly to deliver new features, enhance existing functionality, fix defects, and address customer feedback. The best way to stay current with these developments is to visit **What's new** in the [Microsoft Entra admin center](./entra-admin-center.md). 
 
 **What's new** is an information hub that provides a consolidated view of the Microsoft Entra roadmap and change announcements. It gives administrators a centralized location to track, learn, and plan for the releases and changes across the Microsoft Entra family of products. 

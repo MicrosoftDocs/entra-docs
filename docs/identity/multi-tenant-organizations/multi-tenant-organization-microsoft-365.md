@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # Multitenant organization identity provisioning for Microsoft 365
 
+
+## Overview
+
 The multitenant organization capability is designed for organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant collaboration in Microsoft 365. It's built on the premise of reciprocal provisioning of B2B member users across multitenant organization tenants.
 
 ## Microsoft 365 people search

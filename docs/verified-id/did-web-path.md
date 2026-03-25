@@ -10,6 +10,9 @@ ms.date: 01/21/2025
 
 # Enable support for did:web:path
 
+
+## Overview
+
 This article covers the steps to enable support for did:web:path to your authority.
 
 ## Prerequisites
