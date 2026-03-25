@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Use Azure Front Door for geo-acceleration with Microsoft Entra application proxy
 
+
+## Overview
+
 This article describes configuring Microsoft Entra application proxy with Azure Front Door to achieve reduced latency and better performance.
  
 ## What is Azure Front Door?
