@@ -11,6 +11,9 @@ ms.custom: ge-structured-content-pilot, sfi-image-nochange
 # Restore or remove a recently deleted user
 
 
+
+## Overview
+
 After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties. 
 
 After that 30-day window passes, the permanent deletion process automatically starts and can't be stopped. During this time, the management of soft-deleted users is blocked. This limitation also applies to restoring a soft-deleted user via a match during tenant sync cycle for on-premises hybrid scenarios.

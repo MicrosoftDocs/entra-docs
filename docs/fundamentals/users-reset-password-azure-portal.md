@@ -11,6 +11,9 @@ ms.custom: ge-structured-content-pilot, sfi-image-nochange
 # Reset a user's password
 
 
+
+## Overview
+
 Administrators can reset a user's password if the user forgets the password, if the user gets locked out, or if the user never received a password.
 
 > [!NOTE]

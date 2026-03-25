@@ -8,6 +8,9 @@ ms.date: 08/15/2025
 ---
 # What is Microsoft Entra?
 
+
+## Overview
+
 Microsoft Entra is a family of identity and network access products. It lets organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
 
 ## Microsoft Entra product family
