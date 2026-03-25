@@ -2,7 +2,7 @@
 title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.reviewer: absinh
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -67,7 +67,7 @@ Create a resource group to contain all of the necessary resources.
 1. Select **Review + create**.
 1. Confirm your details, then select **Create**.
 
-![Screenshot of the create a resource group fields.](media/how-to-simulate-remote-network/create-azure-resource-group.png)
+![Screenshot that shows the create a resource group fields.](media/how-to-simulate-remote-network/create-azure-resource-group.png)
 
 ## Create a virtual network
 
@@ -81,7 +81,7 @@ Create a virtual network inside your new resource group.
 1. Select **Review + create**.
 1. Select **Create**.
 
-![Screenshot of the create a virtual network fields.](media/how-to-simulate-remote-network/create-azure-virtual-network.png)
+![Screenshot that shows the create a virtual network fields.](media/how-to-simulate-remote-network/create-azure-virtual-network.png)
 
 ## Create a virtual network gateway
 
@@ -114,7 +114,7 @@ Create a virtual network gateway inside your new resource group.
 
 To view these IP addresses, browse to the **Configuration** page of your virtual network gateway after it deploys.
 
-![Screenshot showing how to find the public IP addresses of a virtual network gateway.](media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses.png)
+![Screenshot that shows how to find the public IP addresses of a virtual network gateway.](media/how-to-simulate-remote-network/virtual-network-gateway-public-ip-addresses.png)
 
 ## Create a remote network
 
@@ -194,7 +194,7 @@ After you create a remote network and add a device link, the configuration detai
     - These details are used to set up your connectivity in next step.
     - For more information about viewing these details, see [Configure customer premises equipment](how-to-configure-customer-premises-equipment.md).
 
-    ![Screenshot of the view configuration panel.](media/how-to-simulate-remote-network/view-configuration-details-panel.png)
+    ![Screenshot that shows the view configuration panel.](media/how-to-simulate-remote-network/view-configuration-details-panel.png)
 
 The following diagram connects the key details of these configuration details to their correlating role in the simulated remote network. A text description of the diagram follows the image.
 
