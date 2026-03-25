@@ -80,7 +80,7 @@ Although both features use Windows Hello, Microsoft Entra passkey on Windows and
 
 | Feature | Microsoft Entra passkey on Windows | Windows Hello for Business |
 |---|---|---|
-| Standard base | FIDO2 | First-party (1P) protocol |
+| Standard base | FIDO2 | FIDO2 for authentication, first-party (1P) protocol for device sign-in |
 | Registration | User-initiated, doesn't require device join or registration | Automatically provisioned on some Microsoft Entra joined or registered devices during device registration |
 | Device sign-in and single sign-on (SSO) | N/A | Enables device sign-in and SSO to Microsoft Entra-integrated resources after device sign-in |
 | Passkey type | Device-bound | Device-bound |
