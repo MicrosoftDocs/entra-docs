@@ -2,7 +2,7 @@
 title: How to configure connectors for Microsoft Entra Private Access
 description: "Set up private network connectors that enable outbound connections from your private network to Global Secure Access. Includes installation, connector groups, and high availability."
 ms.topic: how-to
-ms.date: 03/16/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -169,7 +169,7 @@ To use Private Access, install a connector on each Windows server you're using f
 1. Browse to **Global Secure Access** > **Connect** > **Connectors**.
 1. Select **Download connector service**.
 
-    ![Screenshot of the Download connector service button in the App proxy page.](media/how-to-configure-connectors/app-proxy-download-connector-service.png)
+    ![Screenshot that shows the Download connector service button in the App proxy page.](media/how-to-configure-connectors/app-proxy-download-connector-service.png)
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. At the bottom of the window, select **Run** to install the connector. An install wizard opens.
 1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your Application Administrator credentials.
@@ -203,7 +203,7 @@ To confirm the connector installed and registered correctly:
     * Expand the connector to view the details if it's not already expanded.
     * An active green label indicates that your connector can connect to the service. However, even though the label is green, a network issue could still block the connector from receiving messages.
 
-    ![Screenshot of the connector groups and connector group details.](media/how-to-configure-connectors/app-proxy-connectors-status.png)
+    ![Screenshot that shows the connector groups and connector group details.](media/how-to-configure-connectors/app-proxy-connectors-status.png)
 
 For more help with installing a connector, see [troubleshoot connectors](troubleshoot-connectors.md).
 
@@ -217,7 +217,7 @@ To confirm the connector installed and registered correctly:
     * *Microsoft Entra private network connector updater* is an automated update service.
     * The updater checks for new versions of the connector and updates the connector as needed.
 
-    ![Screenshot of the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
+    ![Screenshot that shows the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
 
 1. If the status for the services isn't **Running**, right-click to select each service and choose **Start**.
 

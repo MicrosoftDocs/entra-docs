@@ -2,7 +2,7 @@
 title: How to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access
 description: "Configure Microsoft Entra Private Access to securely connect remote users to Azure Storage accounts through Azure Private Link. Covers prerequisites, Quick Access application setup, and connectivity verification."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted

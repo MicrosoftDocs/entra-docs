@@ -2,7 +2,7 @@
 title: How to configure per-app access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -74,7 +74,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 
-    ![Screenshot of the Enterprise apps and Add new application button.](media/how-to-configure-per-app-access/new-enterprise-app.png)
+    ![Screenshot that shows the Enterprise apps and Add new application button.](media/how-to-configure-per-app-access/new-enterprise-app.png)
 
 1. Enter a name for the app.
 1. Select a Connector group from the dropdown menu.
@@ -115,7 +115,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - Spaces between values are removed when you apply the changes.
     - For example, `400-500, 80, 443`.
 
-    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
+    ![Screenshot that shows the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
 
     The following table provides the most commonly used ports and their associated networking protocols:
 
@@ -166,7 +166,7 @@ You can add or update the FQDNs and IP addresses included in your app at any tim
 
 You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.
 
-![Screenshot of the enable access checkbox.](media/how-to-configure-per-app-access/per-app-access-enable-checkbox.png)
+![Screenshot that shows the enable access checkbox.](media/how-to-configure-per-app-access/per-app-access-enable-checkbox.png)
 
 ## Assign Conditional Access policies
 

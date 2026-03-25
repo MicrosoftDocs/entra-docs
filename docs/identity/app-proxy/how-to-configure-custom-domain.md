@@ -2,7 +2,7 @@
 title: Custom domains in Microsoft Entra application proxy
 description: Configure and manage custom domains in Microsoft Entra application proxy to use your own domain name.
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

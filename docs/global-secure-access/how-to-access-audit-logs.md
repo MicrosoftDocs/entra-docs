@@ -2,7 +2,7 @@
 title: How to access Global Secure Access audit logs (preview)
 description: Learn how to access, archive, and analyze the audit logs for Microsoft's Security Service Edge solution.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to view the logs specific to network access so I can better manage the solution.
