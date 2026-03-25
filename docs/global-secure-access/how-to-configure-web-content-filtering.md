@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # How to configure Global Secure Access web content filtering
 
+## Overview
+
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 

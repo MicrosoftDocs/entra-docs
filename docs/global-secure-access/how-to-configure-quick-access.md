@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # How to configure Quick Access for Global Secure Access
 
+## Overview
+
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
 
 > [!NOTE]

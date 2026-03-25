@@ -8,6 +8,8 @@ ms.subservice: entra-internet-access
 
 # How to configure Global Secure Access threat intelligence (preview)
 
+## Overview
+
 Threat intelligence empowers you to protect your users from accessing malicious destinations on the internet, based on real-time data on current threats. 
 
 You can configure a threat intelligence policy to block users from high-severity known malicious internet destinations. In this policy, Microsoft Entra Internet Access blocks traffic based on domain and URL indicators from both Microsoft and third-party threat intelligence providers. With the threat intelligence rule engine, you can also configure allow lists for handling false positives. All of these policies can become context-aware with the Security Profile framework, linking Global Secure Access (GSA) security policies to Conditional Access. 
