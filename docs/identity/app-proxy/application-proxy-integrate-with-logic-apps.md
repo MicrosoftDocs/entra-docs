@@ -9,12 +9,12 @@ ai-usage: ai-assisted
 ---
 # Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 
+## Overview
+
 Azure Logic Apps is a service allowing easy creation of managed workflows in a no-code environment that can integrate with various external services and systems. Workflows help automate a wide range of business processes, such as data integration, data processing, and event-driven scenarios.
 Logic Apps integrates with other public and cloud-based services. Or, use Logic Apps with on-premises applications and services. Private network integration doesn't expose the service to the public with port forwarding or a traditional reverse proxy.
 
 This article describes the steps necessary to use the Microsoft Entra application proxy solution to provide secure access to a Logic App, while protecting the internal application from unwanted actors. The process and end result is similar to [Access on-premises APIs with Microsoft Entra application proxy](./application-proxy-secure-api-access.md) with special attention paid to utilizing the API from within a Logic App.
-
-## Overview
 
 The following diagram shows a traditional way to publish on-premises APIs for access from Azure Logic Apps. This approach requires opening incoming Transmission Control Protocol (TCP) ports 80 and/or 443 to the API service.
 

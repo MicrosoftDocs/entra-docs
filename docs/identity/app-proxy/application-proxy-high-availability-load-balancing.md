@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # High availability and load balancing in Microsoft Entra application proxy
 
+
+## Overview
+
 This article explains how traffic distribution works with your application proxy deployment. You learn how traffic is distributed among users and connectors, along with tips for optimizing connector performance and recommendations for load balancing among multiple back-end servers.
 
 ## Traffic distribution across connectors
