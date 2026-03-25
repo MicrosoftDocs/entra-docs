@@ -63,7 +63,7 @@ Agent security challenges manifest differently depending on the agent's purpose 
 
 ## Secure identities for AI agents
 
-AI agents require purpose-built identity constructs that differ from traditional application identities. Microsoft Entra Agent ID provides an identity and security framework designed for AI agents.
+AI agents require purpose-built identity constructs that differ from traditional application identities. [Microsoft Entra Agent ID](microsoft-entra-agent-identities-for-ai-agents.md) provides an identity and security framework designed for AI agents.
 
 :::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
 
@@ -135,6 +135,7 @@ For more information, see [Secure Web and AI Gateway for agents](/entra/global-s
 
 ## Related content
 
+- [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
 - [What are agent identities?](../identity-platform/what-is-agent-id.md)
 - [What is Microsoft Entra ID Governance?](/entra/id-governance/identity-governance-overview)
 - [What are workload identities?](/entra/workload-id/workload-identities-overview)

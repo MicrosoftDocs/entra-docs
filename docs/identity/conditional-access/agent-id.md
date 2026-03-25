@@ -26,7 +26,7 @@ To understand how Conditional Access works with agent identities, it's important
 | Agent user | Nonhuman user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
 | Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows). |
 
-For more information, see [Microsoft Entra security for AI overview](../../agent-id/identity-professional/security-for-ai.md).
+For more information, see [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
 
 ## Conditional Access capabilities for agent identities and agent users
 

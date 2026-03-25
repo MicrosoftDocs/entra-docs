@@ -640,7 +640,7 @@ Microsoft Entra ID with Entra Kerberos has added support for cloud-only identiti
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/security-for-ai.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform.
 
 ---
 

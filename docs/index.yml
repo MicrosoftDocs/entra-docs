@@ -18,8 +18,8 @@ highlightedContent:
     - title: What is Microsoft Entra?
       itemType: overview
       url: /entra/fundamentals/what-is-entra
-    - title: Microsoft Entra security for AI
-      url: /entra/agent-id/identity-professional/security-for-ai
+    - title: What is Microsoft Entra Agent ID?
+      url: /entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents
       itemType: overview
     - title: Identity and access fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts

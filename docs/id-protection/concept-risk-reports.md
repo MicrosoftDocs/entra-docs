@@ -61,7 +61,7 @@ To learn more about when to take each of these actions, see [How does Microsoft 
 
 ### Risky agents
 
-ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/security-for-ai.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
+ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
 
 **Risky agent details** include:
 - Agent display name

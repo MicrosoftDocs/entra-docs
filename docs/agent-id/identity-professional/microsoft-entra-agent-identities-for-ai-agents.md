@@ -1,0 +1,63 @@
+---
+title: What is Microsoft Entra Agent ID?
+titleSuffix: Microsoft Entra Agent ID
+description: Learn about Microsoft Entra Agent ID, the identity and security framework that enables organizations to build, discover, govern, and protect AI agent identities at enterprise scale.
+ms.date: 03/25/2026
+ms.custom: agent-id-ignite
+ms.topic: concept-article
+ms.reviewer: kylemar
+ai-usage: ai-assisted
+
+#customer-intent: As an IT administrator or security professional, I want to understand what Microsoft Entra Agent ID is and what capabilities it provides, so that I can evaluate how it helps secure and manage AI agents in my organization.
+---
+
+# What is Microsoft Entra Agent ID?
+
+Microsoft Entra Agent ID is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, they need purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities. Microsoft Entra Agent ID addresses these needs by providing a unified platform for managing agent identities at enterprise scale.
+
+:::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
+
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+
+## Key capabilities
+
+Microsoft Entra Agent ID brings together identity management, access protection, governance, and compliance for AI agents.
+
+### Agent identity platform
+
+The [Microsoft Entra Agent identity platform](../identity-platform/what-is-agent-id-platform.md) enables developers to create and manage [agent identities](../identity-platform/what-is-agent-id.md)—specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
+
+### Agent Registry
+
+The Agent Registry provides centralized visibility into all agents across your organization. It enables secure agent discovery, organizes agents into security collections, and stores agent metadata including capabilities, tasks, and protocols. Administrators can use the Agent Registry to track agent inventory, identify unmanaged agents, and maintain accountability through sponsor and owner assignments.
+
+### Access protection
+
+Microsoft Entra Agent ID applies the same identity-driven security controls to agents that Microsoft Entra provides for users—Conditional Access policies, Identity Protection risk detection, and network-level controls through Global Secure Access. These protections enforce that agents access only what they need, for the right duration, and only when they aren't at risk.
+
+For details on how these security capabilities work for agents, see [Microsoft Entra security for AI overview](security-for-ai.md).
+
+### Governance
+
+Microsoft Entra ID Governance extends lifecycle management, access reviews, and entitlement management to agent identities. Organizations can govern agents from deployment to expiration, enforce sponsor and owner assignments to prevent orphaned agents, and use access packages to ensure agent access to resources is intentional, auditable, and time-bound.
+
+For more information, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview).
+
+### Audit and compliance
+
+All authentication and actions performed by agents are logged in Microsoft Entra ID. Organizations can view agent activity through the Microsoft Entra admin center, export logs to external monitoring tools, and maintain audit trails for regulatory compliance and incident investigation.
+
+For more information, see [Sign-in and audit logs for agents](sign-in-audit-logs-agents.md).
+
+## How to get started
+
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+
+## Related content
+
+- [Microsoft Entra security for AI overview](security-for-ai.md)
+- [What are agent identities?](../identity-platform/what-is-agent-id.md)
+- [What is the Microsoft Entra Agent identity platform?](../identity-platform/what-is-agent-id-platform.md)
+- [Conditional Access for agents](/entra/identity/conditional-access/agent-id)
+- [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
+- [Identity governance for agents](/entra/id-governance/agent-id-governance-overview)
