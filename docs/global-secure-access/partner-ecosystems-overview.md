@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 # Microsoft's SASE partner ecosystem overview
 
+## Overview
+
 Microsoft's Secure Access Service Edge (SASE) partner ecosystem gives organizations a robust, flexible security framework. Microsoft works with leading security vendors so its SASE solution can integrate with different non-Microsoft products. This integration lets organizations use their existing security investments and strengthen their overall security. This article explains the types of partner integrations and coexistence offerings so you can make informed decisions about how to secure your network infrastructure.
 
 Microsoft works with partners to deliver these categories:
