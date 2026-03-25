@@ -69,7 +69,7 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 
 ---
 
-### Upcoming change – Microsoft Entra Connect security update to block hard match for privileged roles
+### Upcoming change – Microsoft Entra Connect security update to block hard match for users with Microsoft Entra roles
 
 **Type:** Plan for change  
 **Service category:** Entra Connect  
