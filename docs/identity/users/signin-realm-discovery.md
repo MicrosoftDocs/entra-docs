@@ -9,6 +9,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # Home realm discovery for Microsoft Entra sign-in pages
 
+
+## Overview
+
 The sign-in behavior in Microsoft Entra ID, part of Microsoft Entra, is changing to make room for new authentication methods and improve usability. During sign-in, Microsoft Entra ID determines where a user needs to authenticate. Microsoft Entra ID makes intelligent decisions by reading organization and user settings for the username entered on the sign-in page. This is a step towards a password-free future that enables other credentials like FIDO 2.0.
 
 ## Home realm discovery behavior
