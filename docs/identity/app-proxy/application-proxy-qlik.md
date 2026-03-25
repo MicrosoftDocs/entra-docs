@@ -8,6 +8,9 @@ ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy and Qlik Sense 
+
+## Overview
+
 Microsoft and Qlik Sense worked together to provide remote access using Microsoft Entra application proxy.  
 
 ## Prerequisites 

@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Add your own Traffic Manager solution to application proxy
 
+
+## Overview
+
 This article explains how to configure Microsoft Entra application proxy and Azure Traffic Manager.
 
 With the application proxy geo-routing feature, you can optimize which region of application proxy your connector groups use. You can combine this functionality with a Traffic Manager solution of your choice. This combination enables a fully dynamic geo-aware solution based on your user location. It unlocks the rich rule set of your preferred Traffic Manager solution to prioritize how traffic is routed to the apps that you help protect by using application proxy. With this combination, users can use a single URL to access the instance of the app that's closest to them.

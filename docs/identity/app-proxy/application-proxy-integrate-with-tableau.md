@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Microsoft Entra application proxy and Tableau 
 
+
+## Overview
+
 Microsoft and Tableau worked together so you can use application proxy to provide remote access for your Tableau deployment.
 
 ## Prerequisites 
