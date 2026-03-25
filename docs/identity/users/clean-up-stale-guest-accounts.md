@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # Monitor and clean up stale guest accounts using access reviews 
 
+
+## Overview
+
 As users collaborate with external partners, it’s possible that many guest accounts get created in Microsoft Entra tenants over time. When collaboration ends and the users no longer access your tenant, the guest accounts might become stale. Administrators can monitor guest accounts at scale using inactive guest insights. Administrators can also use Access Reviews to automatically review inactive guest users, block them from signing in, and delete them from the directory.
 
 Learn more about [how to manage inactive user accounts in Microsoft Entra ID](~/identity/monitoring-health/howto-manage-inactive-user-accounts.md).

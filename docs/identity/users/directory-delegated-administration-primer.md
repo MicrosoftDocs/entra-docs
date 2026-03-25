@@ -11,6 +11,9 @@ ms.custom: it-pro, sfi-ga-nochange
 ---
 # What is delegated administration?
 
+
+## Overview
+
 Managing permissions for external partners is a key part of your security posture. The administrator portal experience in Microsoft Entra ID, part of Microsoft Entra, now includes capabilities so that an administrator can see the relationships that their Microsoft Entra tenant has with Microsoft Cloud Service Providers (CSP) who can manage the tenant. This permissions model is called delegated administration. This article introduces the Microsoft Entra administrator to the relationship between the old Delegated Admin Permissions (DAP) permission model and the new [Granular Delegated Admin Permissions (GDAP)](/partner-center/gdap-introduction) permission model.
 
 ## Delegated administration relationships
