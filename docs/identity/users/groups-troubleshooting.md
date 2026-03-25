@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # Troubleshoot and resolve groups issues
 
+
+## Overview
+
 This article contains troubleshooting information for groups in Microsoft Entra ID, part of Microsoft Entra.
 
 ## Troubleshoot group creation issues
