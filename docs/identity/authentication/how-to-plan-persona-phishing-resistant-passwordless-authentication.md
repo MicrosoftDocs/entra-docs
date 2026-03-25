@@ -101,7 +101,7 @@ Deployment for non admins users requires proper communication and support. This 
 
 Information workers typically have the simplest requirements and are the easiest to begin your phishing-resistant passwordless deployment with. However, there are still some issues that frequently arise when deploying for these users. Common examples include:
 
-<!--Justin, please update these diagrams based on the below reccomendation. The last point needs reference of synced passkeys-->
+<!--Justin, please update these diagrams based on the below recommendation. The last point needs reference of synced passkeys-->
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-examples.png" alt-text="Diagram that shows examples of requirements for information workers.":::
 
 
