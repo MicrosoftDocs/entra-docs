@@ -13,6 +13,8 @@ ms.custom:
 
 # How to use the Global Secure Access deployment logs (preview)
 
+## Overview
+
 Deployment logs provide visibility into the status and progress of configuration changes made in Global Secure Access. Unlike other logging features, deployment logs focus specifically on tracking configuration updates. For example, forwarding profile redistributions and remote network changes. Deployment logs provide detailed insights into the deployment status and success across the global network. These logs help administrators track and troubleshoot deployment updates, such as forwarding profile redistributions and remote network updates, across the global network. 
 
 This article describes how to view and analyze deployment logs, configure diagnostic settings, and understand log fields. 
