@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
+## Overview
+
 In a Conditional Access policy, admins use one or more signals to improve policy decisions.
 
 :::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
