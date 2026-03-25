@@ -10,6 +10,9 @@ ms.custom: pim
 
 # Configure security alerts for Azure roles in Privileged Identity Management
 
+
+## Overview
+
 Privileged Identity Management (PIM) generates alerts when there's suspicious or unsafe activity in your organization in Microsoft Entra ID. When an alert is triggered, it shows up on the Alerts page.
 
 > [!NOTE]
