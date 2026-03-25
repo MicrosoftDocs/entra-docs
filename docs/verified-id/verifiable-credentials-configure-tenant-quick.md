@@ -10,6 +10,9 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Quick Microsoft Entra Verified ID setup
 
   
+
+## Overview
+
 Quick Verified ID setup removes several configuration steps an admin needs to complete with a single select on a **Get started** button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you.
 
 In this tutorial, you learn how to use the quick setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
