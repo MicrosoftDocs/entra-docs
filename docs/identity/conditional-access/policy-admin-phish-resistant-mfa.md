@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Require phishing-resistant multifactor authentication for administrators
 
+## Overview
+
 Accounts with privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant multifactor authentication (MFA) for these accounts reduces the risk of compromise.
 
 > [!CAUTION]
