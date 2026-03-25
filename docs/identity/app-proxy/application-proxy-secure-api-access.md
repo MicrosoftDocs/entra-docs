@@ -2,9 +2,9 @@
 title: Access on-premises Application Programming Interface (API) with Microsoft Entra application proxy
 description: Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
-ms.custom: has-adal-ref, sfi-image-nochange
+ms.custom: has-adal-ref
 ai-usage: ai-assisted
 ---
 # Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
@@ -73,19 +73,19 @@ To publish the SecretAPI web API through application proxy:
 
 1. You don't want APIs to be available to end users in the **MyApps** panel, so set **Visible to users** to **No** at the bottom of the **Properties** page, and then select **Save**.
 
-   ![Properties page with Visible to users toggle set to No.](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
+   ![Properties page in the Microsoft Entra admin center showing the Visible to users toggle.](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
 
 The web API is now published through Microsoft Entra application proxy. Next, add users who can access the app.
 
 1. On the **SecretAPI - Overview** page, select **Users and groups** in the left navigation.
 
-1. On the **Users and groups** page, select **Add user**.
+1. On the **Users and groups** page, select **Add user/group**.
 
 1. On the **Add assignment** page, select **Users and groups**.
 
 1. On the **Users and groups** page, search for and select users who can access the app, including at least yourself. After selecting all users, select **Select**.
 
-   ![User selection dialog showing admin user in the assignment list.](./media/application-proxy-secure-api-access/7-select-admin-user.png)
+   ![Users and groups page in the Microsoft Entra admin center showing assigned users.](./media/application-proxy-secure-api-access/7-select-admin-user.png)
 
 1. On the **Add Assignment** page, select **Assign**.
 
@@ -99,7 +99,7 @@ Native apps are programs developed to use on a particular platform or device. Be
 To register the AppProxyNativeAppSample native app:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select **New registration**.
 
@@ -109,7 +109,7 @@ To register the AppProxyNativeAppSample native app:
 
    1. Under **Supported account types**, select **Accounts in this organizational directory only (Contoso only - Single tenant)**.
 
-   1. Under **Redirect URL**, drop down and select **Public client/native (mobile & desktop)**, and then enter *https://login.microsoftonline.com/common/oauth2/nativeclient    *.
+   1. Under **Redirect URL**, drop down and select **Public client/native (mobile & desktop)**, and then enter *https://login.microsoftonline.com/common/oauth2/nativeclient*.
 
    1. Select **Register**, and wait for the app to be successfully registered.
 
@@ -126,8 +126,6 @@ The `AppProxyNativeAppSample` app is now registered in Microsoft Entra ID. Give 
 1. On the first **Request API permissions** page, select the **APIs my organization uses** tab, and then search for and select **SecretAPI**.
 
 1. On the next **Request API permissions** page, select the check box next to **user_impersonation**, and then select **Add permissions**.
-
-    ![API permissions page with user_impersonation permission checkbox.](./media/application-proxy-secure-api-access/10-secretapi-added.png)
 
 1. Back on the **API permissions** page, you can select **Grant admin consent for Contoso** to prevent other users from having to individually consent to the app.
 
