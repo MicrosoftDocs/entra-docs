@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # How to customize Global Secure Access block page
 
+## Overview
+
 Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 
 ## Prerequisites

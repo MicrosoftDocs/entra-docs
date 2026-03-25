@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # How to list remote networks for Global Secure Access
 
+## Overview
+
 Reviewing your remote networks is an important part of managing your Global Secure Access deployment. As your organization grows, you add more remote networks. You use the Microsoft Entra admin center or the Microsoft Graph API.
 
 ## Prerequisites 
