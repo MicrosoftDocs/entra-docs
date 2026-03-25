@@ -9,6 +9,9 @@ ms.custom: sfi-ga-nochange
 
 # Discover Azure resources to manage in Privileged Identity Management
 
+
+## Overview
+
 You can use Privileged Identity Management (PIM) in Microsoft Entra ID, to improve the protection of your Azure resources. This helps:
 
 - Organizations that already use Privileged Identity Management to protect Microsoft Entra roles
