@@ -8,6 +8,8 @@ ms.date: 03/12/2026
 
 # Understand Microsoft Entra Private DNS
 
+## Private DNS overview
+
 Microsoft Entra Private Access provides a quick and easy way to replace legacy VPNs. It provides granular and secure access to internal resources without exposing your full network. DNS plays a vital role by enabling name resolution for critical internal resources, and remote users don't need to know the configuration of internal DNS systems. Microsoft Entra Private DNS with Quick Access offers a simple setup that uses Connector local resolvers to respond to DNS queries for internal resources.
 
 Private DNS service allows you to add domain suffixes for the organization to the Quick Access configuration. This automatically updates the traffic forwarding profile for clients. Once configured, any DNS queries for a fully qualified domain name (FQDN) that ends with the matching suffixes from client devices are sent to the DNS proxy at a GSA edge for resolution. If a cached result is available, DNS responses are returned to the clients. Otherwise, the DNS proxy forwards the request to the Connector, which sends the DNS query to its DNS server for resolution. The Connector then passes the responses back to the edge, which returns the query to the client. The GSA client then assigns a synthetic IP address, and returns it back to the application. The synthetic IP is used to steer the application traffic to GSA edges.
