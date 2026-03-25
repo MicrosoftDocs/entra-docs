@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # What is a multitenant organization in Microsoft Entra ID?
 
+
+## Overview
+
 Multitenant organization is a feature in Microsoft Entra ID and Microsoft 365 that enables you to define a boundary around the Microsoft Entra tenants that your organization owns. In the directory, it takes the form of a tenant group representing your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B collaboration.
 
 ## Why use multitenant organization?

@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # What's new in multitenant organization documentation
 
+
+## Overview
+
 This article provides information about new features and documentation improvements in multitenant organizations for Microsoft Entra ID.
 
 ## 2026
