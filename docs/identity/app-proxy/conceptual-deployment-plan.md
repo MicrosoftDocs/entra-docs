@@ -2,7 +2,7 @@
 title: Plan a Microsoft Entra application proxy deployment
 description: An end-to-end guide for planning the deployment of application proxy within your organization
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
@@ -74,7 +74,7 @@ The following core requirements must be met to configure and implement Microsoft
 
    * **Application publishing and administration** require the *Application Administrator* role. Application Administrators can manage all applications in the directory including registrations, SSO settings, user, and group assignments and licensing, application proxy settings, and consent. It doesn't grant the ability to manage Conditional Access. The *Cloud Application Administrator* role has all the abilities of the Application Administrator, except that it doesn't allow management of application proxy settings.
 
-* **Licensing**: Application proxy is available through a Microsoft Entra ID P1 or P2 subscription. Refer to the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) for a full list of licensing options and features.
+* **Licensing**: Application proxy is available through a Microsoft Entra ID P1 or P2 subscription. Refer to the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing) for a full list of licensing options and features.
 
 ### Discover applications for migration
 
@@ -210,7 +210,7 @@ If enabled, users sign in to the MyApps portal to request access. They're either
 
 Guest users can also be [invited to access internal applications published via application proxy through Microsoft Entra B2B](~/external-id/add-users-information-worker.md).
 
-For on premises applications that are normally accessible anonymously, requiring no authentication, you might want to disable the option located in the application’s **Properties**.
+For on-premises applications that are normally accessible anonymously, requiring no authentication, you might want to disable the option located in the application’s **Properties**.
 
 ![Application Properties showing User assignment required toggle.](media/App-proxy-deployment-plan/assignment-required.png)
 

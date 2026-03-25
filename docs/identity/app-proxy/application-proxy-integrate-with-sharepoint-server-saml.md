@@ -2,7 +2,7 @@
 title: Publish an on-premises SharePoint farm with Microsoft Entra application proxy
 description: "Configure Microsoft Entra application proxy with SAML-based authentication for secure external access to on-premises SharePoint Server."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -29,7 +29,7 @@ This process requires two Enterprise Applications. One is a SharePoint on premis
 ## Prerequisites
 
 - A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
-- A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
 - A Transport Layer Security (TLS) certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
@@ -52,7 +52,7 @@ In this step, you create an application in your Microsoft Entra tenant that uses
 > [!NOTE]
 > The Internal and External URLs must match the **Sign on URL** in the SAML Based Application configuration in Step 1.
 
-   ![the Sign on URL value.](./media/application-proxy-integrate-with-sharepoint-server/sso-url-saml.png)
+   ![The Sign on URL value.](./media/application-proxy-integrate-with-sharepoint-server/sso-url-saml.png)
 
 
  1. Create a new Microsoft Entra application proxy application with custom domain. For step-by-step instructions, see [Custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md).
@@ -63,13 +63,13 @@ In this step, you create an application in your Microsoft Entra tenant that uses
     - Translate URLs in Headers: No
     - Translate URLs in Application Body: No
 
-        ![the options you use to create the app.](./media/application-proxy-integrate-with-sharepoint-server/create-application-azure-entra.png)
+        ![The options you use to create the app.](./media/application-proxy-integrate-with-sharepoint-server/create-application-azure-entra.png)
 
 2. Assign the [same groups](~/identity/saas-apps/sharepoint-on-premises-tutorial.md#grant-permissions-to-a-security-group) you assigned to the on-premises SharePoint Gallery Application.
 
 3. Finally, go to the **Properties** section and set **Visible to users?** to **No**. This option ensures that only the icon of the first application appears on the My Apps Portal (https://myapplications.microsoft.com).
 
-   ![set the Visible to users? option.](./media/application-proxy-integrate-with-sharepoint-server/configure-properties.png)
+   ![Set the Visible to users? option.](./media/application-proxy-integrate-with-sharepoint-server/configure-properties.png)
  
 ## Step 3: Test your application
 
