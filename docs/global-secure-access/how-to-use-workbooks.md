@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 # How to use workbooks with Global Secure Access
 
+## Overview
+
 Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member with access to the required Azure resources can create and edit workbooks. For more information about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
 
 ## Prerequisites
