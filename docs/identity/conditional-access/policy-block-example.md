@@ -7,6 +7,8 @@ ms.reviewer: calebb, lhuangnorth
 ---
 # Block access example policy
 
+## Overview
+
 For organizations with a conservative cloud migration approach, the block all policy is an option that can be used. 
 
 > [!CAUTION]

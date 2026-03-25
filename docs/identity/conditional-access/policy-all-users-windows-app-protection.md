@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Require an app protection policy on Windows devices
 
+## Overview
+
 App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies let you secure data within an application for scenarios like bring your own device (BYOD).
 
 :::::image type="content" source="./media/policy-all-users-windows-app-protection/browser-sign-in-with-edge-profile.png" alt-text="Screenshot of a browser requiring the user to sign in to their Microsoft Edge profile to access an application.":::
