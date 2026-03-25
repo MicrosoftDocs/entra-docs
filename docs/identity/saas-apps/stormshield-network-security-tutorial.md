@@ -135,7 +135,7 @@ To simplify the creation of local group objects on the SNS firewall, you can ret
 
 This section guides you through the necessary configurations on the **Stormshield Network Security (SNS) firewall** to enable **OIDC authentication** via **Microsoft Entra ID**.
 
-**Log in** to the web administration interface of the firewall.
+**Sign in** to the web administration interface of the firewall.
 
 ### Set the firewall FQDN for access to the captive portal
 
@@ -191,9 +191,9 @@ In **Users** > **Authentication > Available methods** tab:
     The wizard suggests URLs that correspond to the captive portal service, the **SSL** VPN service, and access to the firewall’s web administration interface. These URLs can be copied directly from this wizard to be entered as redirect URLs in [your **Microsoft Entra ID** administration center](#configure-the-redirect-uris) if necessary.
     They are also available in the OIDC/**Microsoft Entra ID** method editing panel.
 1. Select **Next**.
-1. Select the CSV file containing the groups in your **Microsoft Entra ID** tenant, which was downloaded when [Download user groups to import them into the SNS firewall](#download-user-groups-to-import-them-into-the-sns-firewall-optional), then click on **Next**. A summary of the group import operation then appears.
+1. Select the CSV file containing the groups in your **Microsoft Entra ID** tenant, which was downloaded when [Download user groups to import them into the SNS firewall](#download-user-groups-to-import-them-into-the-sns-firewall-optional), then select **Next**. A summary of the group import operation then appears.
 1. Select **Next**.
-1. Confirm your configuration by clicking on **Finish**.
+1. Confirm your configuration by selecting on **Finish**.
     You will be redirected to the OIDC/**Microsoft Entra ID** authentication method editing panel.
 1. Select **Apply** to save the configuration of the **Microsoft Entra ID** authentication method on the firewall.
 
@@ -212,11 +212,11 @@ Go to **Configuration** > **Users** > **Authentication** > **Authentication poli
     * **in**: interface to access the internal captive portal to authenticate administrators via the web administration interface,
     * **out**: interface to access the external captive portal that **SSL** VPN clients use for retrieving their configuration files and setting up tunnels,
     * **sslvpn**: interface used by **SSL** VPN clients to access the firewall's **SSL** VPN service when the tunnel is set up.
-1.  In the **Authentication methods** menu: click on **Enable a method** and select the **OIDC** method.
+1.  In the **Authentication methods** menu: select **Enable a method** and select the **OIDC** method.
 1.  Likewise, add the other authentication methods for your users (e.g., **LDAP**).
-1.  Confirm this authentication rule by clicking on **OK**.
+1.  Confirm this authentication rule by selecting **OK**.
     The rule will be added to the authentication policy but will not be enabled by default.
-1.  In the authentication rule grid, double **click** on the status of the rule to enable it.
+1.  In the authentication rule grid, select on the status of the rule to enable it.
 
 The authentication rule will look like this:
 
@@ -282,7 +282,7 @@ In **Configuration** > **Users** > **Access privileges** > **Detailed access** t
 1.  Select **Apply**.
     A rule is added to the grid.
 1.  Select in the **SSL VPN** column of this rule and select **Allow**.
-1.  Double-click in the **Status** column of this rule to enable it.
+1.  Select in the **Status** column of this rule to enable it.
 1.  Select **Apply**, then **Save** to confirm changes to the configuration.
 
 ![Screenshot shows the SSL VPN Rule.](media/stormshield-network-security-tutorial/users-access-privileges.png)
