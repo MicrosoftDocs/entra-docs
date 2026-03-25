@@ -10,6 +10,9 @@ ms.custom: it-pro
 
 # Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID
 
+
+## Overview
+
 This article discusses the most common methods that you can use to simplify your rules for dynamic membership groups. Rules that are simpler and more efficient result in better processing times for dynamic groups.
 
 When you're writing membership rules for dynamic membership groups, follow the tips in this article to ensure that you create these rules as efficiently as possible.
