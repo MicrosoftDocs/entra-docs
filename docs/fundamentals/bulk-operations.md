@@ -8,6 +8,9 @@ ms.custom: it-pro
 
 # Bulk operations in Microsoft Entra ID (Preview)
 
+
+## Overview
+
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 

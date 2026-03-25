@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # What is the Microsoft Entra admin center?
 
+
+## Overview
+
 The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based identity portal for Microsoft Entra products. It provides a unified administrative experience for organizations to configure and manage their Microsoft Entra solutions in a centralized location.
 
 ## Explore the Microsoft Entra admin center
