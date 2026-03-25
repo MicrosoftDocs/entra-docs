@@ -12,6 +12,8 @@ ms.custom:
 ---
 # Use audit logs to troubleshoot Conditional Access policy changes
 
+## Overview
+
 The Microsoft Entra audit log is a valuable source of information when troubleshooting why and how Conditional Access policy changes happened in your environment.
 
 Audit log data is kept for 30 days by default, which might not be enough for every organization. Organizations can store data longer by changing diagnostic settings in Microsoft Entra ID to:
