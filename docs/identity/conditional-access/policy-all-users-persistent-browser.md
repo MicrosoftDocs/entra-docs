@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Require reauthentication and disable browser persistence
 
+## Overview
+
 Protect user access on unmanaged devices by preventing browser sessions from remaining signed in after the browser is closed and setting a sign-in frequency to 1 hour.
 
 ## User exclusions
