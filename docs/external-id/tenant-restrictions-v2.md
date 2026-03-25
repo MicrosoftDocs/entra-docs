@@ -447,7 +447,7 @@ For more information, see [Creating your App Control AppId tagging policies](/wi
 After you create your policy in the wizard, or create your own by using PowerShell, convert the .xml output to an app ID tagging policy. The tagging policy marks the apps for which you want to allow access to Microsoft resources. The GUID output is your new policy ID.
 
 ```powershell
-   Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforced" -AppIdTaggingValue "True" 
+   Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforcement" -AppIdTaggingValue "True" 
 ```
 
 #### Step 3: Compile and deploy the policy for testing
