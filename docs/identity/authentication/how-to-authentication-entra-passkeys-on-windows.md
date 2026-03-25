@@ -1,6 +1,6 @@
 ---
-title: Enable Microsoft Entra passkeys on Windows devices (preview)
-description: Learn how to enable Microsoft Entra passkeys on Windows devices for phishing-resistant multifactor authentication with work or school accounts.
+title: Enable Microsoft Entra passkey on Windows devices (preview)
+description: Learn how to enable Microsoft Entra passkey on Windows devices for phishing-resistantmultifactor authentication with work or school accounts.
 #customer intent: As an administrator, I want to enable Microsoft Entra passkeys so users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
 author: hanki71
 ms.author: justinha
@@ -12,24 +12,24 @@ ms.collection: msec-ai-copilot
 ms.custom: msecd-doc-authoring-106
 ---
 
-# Enable Microsoft Entra passkeys on Windows (preview)
+# Enable Microsoft Entra passkey on Windows (preview)
 
-This article describes Microsoft Entra passkeys on Windows in public preview. It covers how they work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
+This article describes Microsoft Entra passkey on Windows in public preview. It covers how they work, how they differ from Windows Hello for Business, and how to configure passkey profiles to allow Windows Hello as a passkey provider.
 
-Microsoft Entra passkeys on Windows are currently in public preview and require opt-in. You need to explicitly configure them to enable the preview of passkey registration in Windows Hello.
+Microsoft Entra passkey on Windows is currently in public preview and requires opt-in. You need to explicitly configure them to enable the preview of passkey registration in Windows Hello.
 
 ## Overview
 
-Microsoft Entra passkeys on Windows allow users to register passkeys (FIDO2) directly into their device's local Windows Hello container and use them to sign in to Microsoft Entra ID. Microsoft Entra passkeys on Windows enable phishing-resistant sign-in by using a Windows Hello biometric or PIN without requiring the device to be Microsoft Entra joined or registered.
+Microsoft Entra passkey on Windows allows users to register passkeys (FIDO2) directly into their device's local Windows Hello container and use them to sign in to Microsoft Entra ID. Microsoft Entra passkey on Windows enables phishing-resistant sign-in by using a Windows Hello biometric or PIN without requiring the device to be Microsoft Entra joined or registered.
 
-By using Microsoft Entra passkeys on Windows:
+By using Microsoft Entra passkey on Windows:
 
 - Users can register passkeys (FIDO2) in the local Windows Hello container.
 - Devices don't need to be joined or registered to Microsoft Entra to use a local Windows passkey.
 - A single Windows PC can store multiple passkeys for multiple Microsoft Entra accounts.
 - Passkeys (FIDO2) registered in Windows Hello are governed by Microsoft Entra passkey (FIDO2) policies and passkey profiles.
 
-## How Microsoft Entra passkeys on Windows work
+## How Microsoft Entra passkey on Windows works
 
 Windows Hello acts as a secure local credential container on Windows devices. The container is protected by user-presence verification such as:
 
@@ -37,7 +37,7 @@ Windows Hello acts as a secure local credential container on Windows devices. Th
 - Fingerprint
 - Facial recognition
 
-Microsoft Entra passkeys on Windows allow passkeys (FIDO2) to be created and stored inside this Windows Hello container and used for authentication to Microsoft Entra ID.
+Microsoft Entra passkey on Windows allows passkeys (FIDO2) to be created and stored inside this Windows Hello container and used for authentication to Microsoft Entra ID.
 
 This behavior also applies when the device is governed by Windows Hello for Business policies configured through Microsoft Intune. However, passkeys (FIDO2) are distinct from the Windows Hello for Business credentials that may be automatically registered during device registration to Microsoft Entra ID.
 
@@ -53,9 +53,9 @@ During public preview, Windows Hello passkeys are identified and controlled by u
 
 These AAGUIDs represent Windows Hello passkey providers and are used in passkey profiles to allow or block registration.
 
-## How Microsoft Entra passkeys on Windows compare with Windows Hello for Business
+## How Microsoft Entra passkey on Windows compares with Windows Hello for Business
 
-Although both features use Windows Hello, Microsoft Entra passkeys on Windows and Windows Hello for Business have different purposes and behavior.
+Although both features use Windows Hello, Microsoft Entra passkey on Windows and Windows Hello for Business have different purposes and behavior.
 
 ### Windows Hello for Business
 
@@ -67,9 +67,9 @@ Although both features use Windows Hello, Microsoft Entra passkeys on Windows an
 - Windows Hello for Business is primarily a device-bound sign-in method linked to device trust.
 - Registration and authentication aren't controlled by the Microsoft Entra Authentication Methods Passkey (FIDO2) policy.
 
-### Microsoft Entra passkeys on Windows
+### Microsoft Entra passkey on Windows
 
-- Microsoft Entra passkeys on Windows are FIDO2 passkeys.
+- Microsoft Entra passkey on Windows is a FIDO2 passkey.
 - They can be registered without device join or registration.
 - Users can register multiple passkeys for multiple Microsoft Entra accounts on the same device.
 - Registration and authentication are controlled by using Microsoft Entra Authentication Methods Passkey (FIDO2) policy.
@@ -89,13 +89,13 @@ Although both features use Windows Hello, Microsoft Entra passkeys on Windows an
 
 ## Attestation support
 
-Attestation isn't supported for Microsoft Entra passkeys on Windows during public preview. As a result, if **Enforce attestation** is enabled in a passkey profile that allows Windows Hello AAGUIDs, passkey registration attempts to Windows Hello will fail.
+Attestation isn't supported for Microsoft Entra passkey on Windows during public preview. As a result, if **Enforce attestation** is enabled in a passkey profile that allows Windows Hello AAGUIDs, passkey registration attempts to Windows Hello will fail.
 
 In the Authentication methods policy in the Microsoft Entra admin center, ensure that **Enforce attestation** is set to **No** for any passkey profile that includes Windows Hello AAGUIDs during public preview.
 
 ## How to configure passkeys on Windows
 
-During public preview, Microsoft Entra passkeys on Windows require an Authentication Policy Administrator to explicitly opt in.
+During public preview, Microsoft Entra passkey on Windows requires an Authentication Policy Administrator to explicitly opt in.
 
 To enable registration, you need to meet all of the following prerequisites and configuration requirements.
 
@@ -117,28 +117,28 @@ To enable registration, you need to meet all of the following prerequisites and 
 
 ## FAQ
 
-**Question**: What is the use case for Microsoft Entra passkeys on Windows?
+**Question**: What is the use case for Microsoft Entra passkey on Windows?
 
-**Answer**: Use Microsoft Entra passkeys on Windows when:
+**Answer**: Use Microsoft Entra passkey on Windows when:
 
 - You want passkeys (FIDO2) stored locally on Windows.
 - Users access multiple Microsoft Entra accounts from a single PC.
 - You want standards-based, phishing-resistant sign-in to Microsoft Entra on unregistered, personal, or shared devices.
 
-**Question**: Do Microsoft Entra passkeys on Windows replace Windows Hello for Business?
+**Question**: Does Microsoft Entra passkey on Windows replace Windows Hello for Business?
 
-**Answer**: No. Microsoft Entra passkeys on Windows don't replace Windows Hello for Business. Windows Hello for Business remains the recommended solution for signing into corporate managed, Microsoft Entra joined or registered devices. Microsoft Entra passkeys on Windows complement Windows Hello for Business by enabling passkeys (FIDO2) on Windows in scenarios where devices aren't joined or registered. Microsoft Entra passkeys on Windows don't support device sign-in.
+**Answer**: No. Microsoft Entra passkey on Windows doesn't replace Windows Hello for Business. Windows Hello for Business remains the recommended solution for signing into corporate managed, Microsoft Entra joined or registered devices. Microsoft Entra passkey on Windows complements Windows Hello for Business by enabling passkeys (FIDO2) on Windows in scenarios where devices aren't joined or registered. Microsoft Entra passkey on Windows doesn't support device sign-in.
 
 > [!NOTE]
 > Users can't register a passkey on Windows if a Windows Hello for Business credential already exists for the same account and container. This block may not apply once the user exceeds 50 total platform credentials.
 
 **Question**: Are Microsoft Entra passkeys synced?
 
-**Answer**: No. Microsoft Entra passkeys on Windows are device-bound and stored in the local Windows Hello container. They aren't synced across devices. Each device requires a separate passkey registration for each Microsoft Entra account.
+**Answer**: No. Microsoft Entra passkey on Windows is device-bound and stored in the local Windows Hello container. It isn't synced across devices. Each device requires a separate passkey registration for each Microsoft Entra account.
 
 ## Known issues
 
-During public preview, if a tenant allows Microsoft Entra passkeys on Windows and a user registers a passkey, it appears in the user's list of usable authentication methods in the Microsoft Entra admin center. If the tenant later removes the Windows Hello AAGUIDs from the allow list, the registered passkey remains on the usable authentication methods list instead of moving to the non-usable methods list. Although the passkey appears as usable, authentication with the passkey is governed by the current passkey (FIDO2) policy. If the Windows Hello AAGUIDs are no longer allowed, the passkey can't be used to authenticate. This display issue will be fixed for General Availability.
+During public preview, if a tenant allows Microsoft Entra passkey on Windows and a user registers a passkey, it appears in the user's list of usable authentication methods in the Microsoft Entra admin center. If the tenant later removes the Windows Hello AAGUIDs from the allow list, the registered passkey remains on the usable authentication methods list instead of moving to the non-usable methods list. Although the passkey appears as usable, authentication with the passkey is governed by the current passkey (FIDO2) policy. If the Windows Hello AAGUIDs are no longer allowed, the passkey can't be used to authenticate. This display issue will be fixed for General Availability.
 
 ## Related content
 
