@@ -2,7 +2,7 @@
 title: Securely integrate Azure Logic Apps with on-premises APIs using Microsoft Entra application proxy
 description: Microsoft Entra application proxy lets cloud-native logic apps securely access on-premises APIs to bridge your workload.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
@@ -56,7 +56,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. Select the **API permissions** menu item from the navigation pane.
 
-    ![the Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
+    ![The Microsoft Entra App Registration API Permissions Menu Item.](./media/application-proxy-integrate-with-logic-apps/api-permissions-menu.png)
 
     1. Select the **Add a permission** button.
 
@@ -70,11 +70,11 @@ When a new Enterprise Application is created, a matching App Registration is als
 
     3. Verify the configured permission appears.
 
-        ![the Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
+        ![The Microsoft Entra App Registration API Permissions Detail.](./media/application-proxy-integrate-with-logic-apps/api-permissions-detail.png)
 
 1. Select the **Certificates & secrets** menu item from the navigation pane.
 
-    ![the Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
+    ![The Microsoft Entra App Registration Certificates and Secrets Menu Item.](./media/application-proxy-integrate-with-logic-apps/certificates-and-secrets-menu.png)
 
     1. Select the **Client secrets** tab item.
 
@@ -98,7 +98,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 3. Add a new step and select the **HTTP** operation.
 
-    ![the Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
+    ![The Azure Logic App Trigger Options Pane.](./media/application-proxy-integrate-with-logic-apps/logic-app-trigger-menu.png)
 
     1. *Method*: Select the desired HTTP method to be sent to the internal API.
 
