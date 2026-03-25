@@ -10,6 +10,9 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Create a new tenant in Microsoft Entra ID
 
+
+## Overview
+
 You can perform all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
 
 In this quickstart article, you learn how to create a basic tenant for your organization.

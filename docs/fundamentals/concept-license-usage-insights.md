@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Microsoft Entra license usage insights
 
+
+## Overview
+
 The License Usage page in the Microsoft Entra admin center helps you optimize your Microsoft Entra licenses by providing visibility into feature usage across your tenant. The page shows how many Microsoft Entra ID P1, P2, and Suite licenses you own, along with usage of key features mapped to each license type.
 
 This view gives you a clearer understanding of your license count, the value you're getting from your Microsoft Entra license, and potential over-usage within your tenant.

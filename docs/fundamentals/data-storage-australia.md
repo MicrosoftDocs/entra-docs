@@ -11,6 +11,9 @@ ms.collection: M365-identity-device-management
 
 # Identity data storage for Australian and New Zealand customers in Microsoft Entra ID
 
+
+## Overview
+
 Microsoft Entra ID stores identity data in a location chosen based on the address provided by your organization when subscribing to a Microsoft service like Microsoft 365 or Azure. For information on where your Identity Customer Data is stored, review the Microsoft Trust Center section titled [Where is your data located?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located).
 
 > [!NOTE]
