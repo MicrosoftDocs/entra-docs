@@ -9,6 +9,9 @@ ms.reviewer: shaunliu
 
 # Troubleshoot access to Azure resources denied in Privileged Identity Management
 
+
+## Overview
+
 If you're experiencing issues with Privileged Identity Management (PIM) in Microsoft Entra ID, the information included in this article can help you resolve these issues.
 
 ## Access to Azure resources denied
