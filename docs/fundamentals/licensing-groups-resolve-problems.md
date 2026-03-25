@@ -15,6 +15,9 @@ ms.custom: it-pro
 
 [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
 
+
+## Overview
+
 Group-based licensing (GBL) in Microsoft 365 Admin Portal, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state.
 
 When you assign licenses directly to individual users or using group-based licensing (or both), the assignment operation might fail for reasons that are related to business logic.  

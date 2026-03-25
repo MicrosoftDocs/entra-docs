@@ -11,6 +11,9 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 # Associate or add an Azure subscription to your Microsoft Entra tenant
 
 
+
+## Overview
+
 All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant might be trusted by multiple subscriptions.
 
 [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)] However, when an owner of a subscription joins their subscription to an existing tenant, the owner isn't assigned to the Global Administrator role.
