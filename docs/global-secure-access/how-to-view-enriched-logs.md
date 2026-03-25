@@ -2,7 +2,7 @@
 title: How to use enriched Microsoft 365 logs
 description: "View performance, experience, and availability insights for Microsoft 365 apps routed through Microsoft Entra Internet Access. Integrate enriched log data with Log Analytics or Microsoft Sentinel for network diagnostics and security analysis."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---

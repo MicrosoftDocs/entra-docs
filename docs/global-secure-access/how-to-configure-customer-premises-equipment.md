@@ -2,7 +2,7 @@
 title: How to configure routers for remote networks
 description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access network.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 # Customer Intent: As a Global Secure Access Administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
@@ -37,7 +37,7 @@ You can set up the CPE using the Microsoft Entra admin center or using the Micro
 
 1. Locate and save Microsoft's public IP address `endpoint` from the panel that opens.
 
-    ![Screenshot of the view configuration details panel.](media/how-to-configure-customer-premises-equipment/view-configuration-details-panel.png)
+    ![Screenshot that shows the view configuration details panel.](media/how-to-configure-customer-premises-equipment/view-configuration-details-panel.png)
 
 1. In the preferred interface for *your CPE*, enter the IP address you saved in the previous step. This step completes the IPSec tunnel configuration.
 

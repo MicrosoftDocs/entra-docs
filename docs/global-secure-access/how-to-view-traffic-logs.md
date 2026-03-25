@@ -2,7 +2,7 @@
 title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -64,7 +64,7 @@ For example if you want to look at all the logs from a specific connection:
 1. Select **Add filter** and choose **Connection ID**. 
 1. In the field that appears, paste the `connectionId` and select **Apply**.
 
-    ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
+    ![Screenshot that shows the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
 
 ## View connection logs
 

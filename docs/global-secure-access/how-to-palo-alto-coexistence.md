@@ -2,7 +2,7 @@
 title: Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks
 description: "Deploy Microsoft Entra Private Access alongside Palo Alto Prisma Access. Includes configuration steps for secure internet access and private application connectivity."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
