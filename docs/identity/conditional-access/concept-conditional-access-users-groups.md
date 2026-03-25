@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Users, groups, agents, and workload identities
 
+## Overview
+
 A Conditional Access policy includes a user, group, agent, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
 
 ## Include users

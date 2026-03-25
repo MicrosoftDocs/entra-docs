@@ -9,6 +9,8 @@ ms.reviewer: inbarc
 ---
 # Conditional Access adaptive session lifetime policies
 
+## Overview
+
 Conditional Access adaptive session lifetime policies let organizations restrict authentication sessions in complex deployments. Scenarios include:
 
 * Resource access from an unmanaged or shared device

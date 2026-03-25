@@ -12,6 +12,8 @@ ms.custom:
 ---
 # Conditional Access: Filter for applications
 
+## Overview
+
 Currently Conditional Access policies can be applied to all apps or to individual apps. Organizations with a large number of apps might find this process difficult to manage across multiple Conditional Access policies.
 
 Application filters for Conditional Access allow organizations to tag service principals with custom attributes. These custom attributes are then added to their Conditional Access policies. Filters for applications are evaluated at token issuance runtime, not configuration.
