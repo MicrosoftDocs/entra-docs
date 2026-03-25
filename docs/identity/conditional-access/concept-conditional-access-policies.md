@@ -12,6 +12,8 @@ ms.custom:
 ---
 # Build a Conditional Access policy
 
+## Overview
+
 As explained in the article [What is Conditional Access](overview.md), a Conditional Access policy is an if-then statement of **Assignments** and **Access controls**. A Conditional Access policy combines signals to make decisions and enforce organizational policies.
 
 How does an organization create these policies? What is required? How are they applied?

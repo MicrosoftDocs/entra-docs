@@ -8,6 +8,8 @@ ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices
 
+## Overview
+
 When administrators create Conditional Access policies, the ability to target or exclude specific devices in their environment is a common task. The condition filter for devices gives administrators the ability to target specific devices. Administrators can use [supported operators and properties for device filters](#supported-operators-and-device-properties-for-filters) along side the other available assignment conditions in your Conditional Access policies.
 
 :::image type="content" source="media/concept-condition-filters-for-devices/create-filter-for-devices-condition.png" alt-text="Creating a filter for device in Conditional Access policy conditions":::
