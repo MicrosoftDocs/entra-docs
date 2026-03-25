@@ -14,6 +14,8 @@ ms.custom:
 ---
 # Continuous access evaluation
 
+## Overview
+
 Token expiration and refresh are a standard mechanism in the industry. When a client application like Outlook connects to a service like Exchange Online, the API requests are authorized using OAuth 2.0 access tokens. By default, access tokens are valid for one hour, when they expire the client is redirected to Microsoft Entra to refresh them. That refresh period provides an opportunity to reevaluate policies for user access. For example: the token might not be refreshed because of a Conditional Access policy, or because the user is disabled in the directory.
 
 Customers express concerns about the lag between when conditions change for a user, and when policy changes are enforced. Microsoft experimented with the "blunt object" approach of reduced token lifetimes but found they degrade user experiences and reliability without eliminating risks.
