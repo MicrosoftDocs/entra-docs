@@ -11,6 +11,9 @@ ms.custom: sfi-ga-nochange
 
 # Verifiable credentials admin API
 
+
+## Overview
+
 The Microsoft Entra Verified ID Admin API enables you to manage all aspects of the Verifiable Credential service. It offers a way to set up a brand new service, manage and create Verifiable Credential contracts, revoke Verifiable Credentials, and completely opt out of the service.
 
 > [!NOTE]
