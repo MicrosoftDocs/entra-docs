@@ -69,7 +69,7 @@ In Microsoft Entra External ID (EEID), users who authenticate with a local email
 
 ---
 
-### Upcoming change – Microsoft Entra Connect security update to block hard match for privileged roles
+### Upcoming change – Microsoft Entra Connect security update to block hard match for users with Microsoft Entra roles
 
 **Type:** Plan for change  
 **Service category:** Entra Connect  
@@ -337,6 +337,7 @@ As part of ongoing security hardening, Microsoft is going to introduce enforceme
 - Microsoft Entra will block attempts by Entra Connect to modify the OnPremisesObjectIdentifier attribute after it has already been mapped to a synced user object. This prevents re‑mapping an existing Entra ID user to a different on‑premises identity.
 - [Audit logs](../identity/monitoring-health/reference-audit-activities.md#core-directory) have been enhanced to capture changes to OnPremisesObjectIdentifier and DirSyncEnabled, enabling better visibility into synchronization behavior.
 - To support [legitimate](../identity/hybrid/connect/how-to-connect-migrate-groups.md) scenarios where an existing synced Entra object must be remapped to another on-premises object, Microsoft has introduced a Microsoft Graph API that allows controlled recovery actions, without re‑enabling hard‑match abuse or unauthorized re‑mapping.
+- Resetting a user’s OnPremisesObjectIdentifier field will not impact subsequent sync jobs. This means that both the cloud sync and connect sync clients can continue syncing the user object that was reset without issue. Each time a user object is synced after that field has been set to null, it gets assigned a new GUID.
 
 
 **What's Not Changing:**
@@ -375,8 +376,10 @@ onPremisesObjectIdentifier: null
 ```
 
 Required permissions:
-- Delegated or application permission: “**User.OnPremisesSync.ReadWrite.All**”
+- Delegated or application permission: “**User-OnPremisesSyncBehavior.ReadWrite.All**”
 - The caller must also have one of the following roles: **Global Administrator** or **Hybrid Identity Administrator**
+- Any user, including global or hybrid admins, cannot reset the field via MS graph if the app isn’t granted **User-OnPremisesSyncBehavior.ReadWrite.All**
+
 > [!NOTE]
 > The API only allows clearing OnPremisesObjectIdentifier (setting it to null). Attempts to set it to any other value are blocked.
 

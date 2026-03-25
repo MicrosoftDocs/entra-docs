@@ -2,7 +2,7 @@
 title: Network topology considerations for Microsoft Entra application proxy
 description: "Optimize traffic flow and connector placement for Microsoft Entra application proxy. Covers bandwidth, latency, and network patterns including ExpressRoute and multi-region deployments."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
@@ -28,7 +28,7 @@ When an application is published through Microsoft Entra application proxy, traf
 
 When you sign up for a Microsoft Entra tenant, the region of your tenant is set with the region you choose. The **default** application proxy cloud service instances use the same, or closest, region as your Microsoft Entra tenant.
 
-For example, if your Microsoft Entra tenant's region is the United Kingdom, all your private network connectors at **default** is assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
+For example, if your Microsoft Entra tenant's region is the United Kingdom, all your private network connectors at **default** are assigned to use service instances in European data centers. When your users access published applications, their traffic goes through the application proxy cloud service instances in this location.
 
 If you have connectors installed in regions different from your default region, it's beneficial to change which region your connector group is optimized for to improve performance accessing these applications. After a region is specified for a connector group, it connects to application proxy cloud services in the designated region.
 
