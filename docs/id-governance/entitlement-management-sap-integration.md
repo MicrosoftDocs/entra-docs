@@ -33,11 +33,14 @@ To utilize the Microsoft Entra Entitlement Management integration with SAP IAG, 
 
 SAP Cloud Identity Services instance that is already integrated with Microsoft Entra for:
 - User Provisioning: See, [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
-- In your attribute mapping, set Microsoft Entra ObjectId as mapped to the username by selecting *EDIT* in the username line and set the Source and Target attribute as:
+- In your attribute mapping, add a new mapping to sync Microsoft Entra ObjectId to be mapped as SAP Global User ID. This is required to allow the correct object look up between the two systems.
+- Click *Add New Mapping* and set the attribute mapping as below:
     - Source Attribute: objectId
-    - Target Attribute: userName
-    - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
-    :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/manager-attribute.png":::
+    - Target Attribute: urn:ietf:params:scim:schemas:extension:sap:2.0:User:userUuid
+  :::image type="content" source="media/entitlement-management-sap-integration/newUserIDMapping.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/newUserIDMapping.png":::
+     - Add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
+     - Your Attribute Mapping should look like this when the pre-requesites are complete:
+    :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/SAPIAGMapping.png":::
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 - An existing SAP IAG Business Role.
 
@@ -149,7 +152,7 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
     - **Upload options**: Manual.
     - **Name**: Create a unique name for the SAP IAG secret
     - **Value**: Enter the client identifier from your SAP BTP credentials.
-        - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientID` value.
+        - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientsecret` value.
     - Leave the other values to their defaults. Select **Create**.
 
 For more information, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
@@ -182,7 +185,7 @@ Now that you have set up an Azure subscription containing an Azure Key Vault wit
     
     1. **Secret Name**: Select the secret that contains your SAP IAG client secret.
     
-    1. **Client ID**: Enter the client identifier from your SAP BTP credentials. This was added to the key vault in the step [Set the secret within Azure Key Vault](#8-set-the-secret-within-azure-key-vault).
+    1. **Client ID**: Enter the client identifier (clientID) from your SAP BTP credentials
     
     1. **SAP IAG Access token URL**: Enter the base URL for generating an authentication token to call SAP IAG services.
         - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, copy the `url` parameter, and add the suffix `/oauth/token` before entering it in this field.
