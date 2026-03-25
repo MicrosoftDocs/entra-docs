@@ -85,7 +85,7 @@ If you plan to use certificates, smart cards, and PKI, then the deployment flow 
    1. Passkey in Microsoft Authenticator
 1. Phase 3 (Optional): Local credential registration
    1. Optional: Windows Hello for Business
-   1. Optional: Microsoft Entra passkeys on Windows (preview)
+   1. Optional: Microsoft Entra passkey on Windows (preview)
    1. Optional: Platform SSO Secure Enclave Key
 
 > [!NOTE]
@@ -120,7 +120,7 @@ Steps 1-3 of the deployment flow for information workers should typically follow
    1. FIDO2 security key
 1. Local credential registration
    1. Windows Hello for Business
-   1. Microsoft Entra passkeys on Windows (preview)
+   1. Microsoft Entra passkey on Windows (preview)
    1. Platform SSO Secure Enclave Key
 
 ### Frontline workers
@@ -146,7 +146,7 @@ Steps 1-3 of the deployment flow for frontline workers should typically follow a
    1. Smart card 
 1. Phase 3 (Optional): Local credential registration
    1. Optional: Windows Hello for Business
-   1. Optional: Microsoft Entra passkeys on Windows (preview)
+   1. Optional: Microsoft Entra passkey on Windows (preview)
    1. Optional: Platform SSO Secure Enclave Key
 
 ## General considerations
