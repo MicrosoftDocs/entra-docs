@@ -73,7 +73,7 @@ To publish the SecretAPI web API through application proxy:
 
 1. You don't want APIs to be available to end users in the **MyApps** panel, so set **Visible to users** to **No** at the bottom of the **Properties** page, and then select **Save**.
 
-   ![Properties page in the Microsoft Entra admin center showing the Visible to users toggle.](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
+   ![Screenshot of properties page in the Microsoft Entra admin center showing the Visible to users toggle.](./media/application-proxy-secure-api-access/5-not-visible-to-users.png)
 
 The web API is now published through Microsoft Entra application proxy. Next, add users who can access the app.
 
@@ -85,7 +85,7 @@ The web API is now published through Microsoft Entra application proxy. Next, ad
 
 1. On the **Users and groups** page, search for and select users who can access the app, including at least yourself. After selecting all users, select **Select**.
 
-   ![Users and groups page in the Microsoft Entra admin center showing assigned users.](./media/application-proxy-secure-api-access/7-select-admin-user.png)
+   ![Screenshot of users and groups page in the Microsoft Entra admin center showing assigned users.](./media/application-proxy-secure-api-access/7-select-admin-user.png)
 
 1. On the **Add Assignment** page, select **Assign**.
 
