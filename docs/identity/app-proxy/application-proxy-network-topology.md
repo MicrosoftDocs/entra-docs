@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Optimize traffic flow with Microsoft Entra application proxy
 
+
+## Overview
+
 Learn how to optimize traffic flow and network topology considerations when using Microsoft Entra application proxy.
 
 ## Traffic flow

@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Integrate Microsoft Entra application proxy with SharePoint using Security Assertion Markup Language (SAML)
 
+
+## Overview
+
 This step-by-step guide explains how to secure the access to the [Microsoft Entra integrated on-premises SharePoint (SAML)](~/identity/saas-apps/sharepoint-on-premises-tutorial.md) using Microsoft Entra application proxy, where users in your organization (Microsoft Entra ID, B2B) connect to SharePoint through the Internet.
 
 > [!NOTE]
