@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Header-based single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 
+
+## Overview
+
 Microsoft Entra application proxy natively supports single sign-on (SSO) access to applications that use headers for authentication. You configure header values required by your application in Microsoft Entra ID. The header values are sent to the application via application proxy. Benefits to using native support for header-based authentication with application proxy include:
 
 * **Simplify remote access to your on-premises apps** - Application proxy simplifies your existing remote access architecture. You replace Virtual Private Network (VPN) access to these apps. You remove dependencies on on-premises identity solutions for authentication. You streamline the experience for users and they don't notice anything different when they use corporate applications. Users can work from anywhere on any device.

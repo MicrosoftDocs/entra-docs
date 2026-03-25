@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Redirect hard coded links for apps published with Microsoft Entra application proxy
 
+
+## Overview
+
 Microsoft Entra application proxy makes your on-premises apps available to users who are remote or on their own devices. Some apps, however, were developed with local links embedded in the HTML. These links don't work correctly when the app is used remotely. When you have several on-premises applications point to each other, your users expect the links to keep working when they're not at the office. 
 
 The best way to make sure that links work the same both inside and outside of your corporate network is to configure the external URLs of your apps to be the same as their internal URLs. Use [custom domains](how-to-configure-custom-domain.md) to configure your external URLs to have your corporate domain name instead of the default application proxy domain.

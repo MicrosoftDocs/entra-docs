@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Password vaulting for single sign-on with application proxy
 
+
+## Overview
+
 Microsoft Entra application proxy helps you improve productivity by publishing on-premises applications so that remote employees can securely access them. In the Microsoft Entra admin center, you can also set up single sign-on (SSO) to these apps. Your users only need to authenticate with Microsoft Entra ID, and they can access your enterprise application without having to sign in again.
 
 Application proxy supports several [single sign-on modes](~/identity/enterprise-apps/plan-sso-deployment.md#choosing-a-single-sign-on-method). Password-based sign-on is intended for applications that use a username and password combination for authentication. Microsoft Entra ID stores the sign-in information and automatically provides it to the application when your users access it remotely.
