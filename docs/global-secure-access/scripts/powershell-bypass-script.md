@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Add a custom bypass rule to Global Secure Access Internet Access
 
+## Overview
+
 This PowerShell script demonstrates how to programmatically add a custom bypass rule to the Microsoft Entra Internet Access forwarding policy. The script finds the "Custom Bypass" forwarding policy and adds a sample rule to bypass specified domains.
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.

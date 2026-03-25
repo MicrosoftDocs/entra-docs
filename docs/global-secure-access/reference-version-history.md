@@ -7,6 +7,8 @@ ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector: version release history
+## Overview
+
 This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Look into the release notes for information on whether the connector version will be pushed for automatic update or available for download and manual update only.     
 
 > [!IMPORTANT]

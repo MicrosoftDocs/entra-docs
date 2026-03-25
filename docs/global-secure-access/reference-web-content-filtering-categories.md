@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 ---
 # Global Secure Access Web content filtering categories
 
+## Overview
+
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
 
 > [!NOTE]
