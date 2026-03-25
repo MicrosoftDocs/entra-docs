@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Global Secure Access logs and monitoring
 
+## Overview
+
 As an IT administrator, you need to monitor the performance, experience, and availability of the traffic flowing through your networks. Within the Global Secure Access logs there are many data points that you can review to gain insights into your network traffic. This article describes the logs and dashboards that are available to you and some common monitoring scenarios.
 
 ## Dashboard

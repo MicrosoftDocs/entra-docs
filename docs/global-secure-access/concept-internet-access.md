@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # Learn about Microsoft Entra Internet Access for all apps
 
+## Overview
+
 Microsoft Entra Internet Access provides an identity-centric Secure Web Gateway (SWG) solution for Software as a Service (SaaS) applications and other Internet traffic. It protects users, devices, and data from the Internet's wide threat landscape with best-in-class security controls and visibility through Traffic Logs.
 
 ## Web content filtering

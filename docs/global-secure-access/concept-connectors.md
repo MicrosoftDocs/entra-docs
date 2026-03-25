@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Microsoft Entra private network connectors
 
+## Overview
+
 Connectors make Microsoft Entra Private Access and application proxy possible. This article explains what connectors are, how they work, and how to optimize your deployment.
 
 ## What is a private network connector?
