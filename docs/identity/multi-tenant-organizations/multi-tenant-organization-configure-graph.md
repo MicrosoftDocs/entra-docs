@@ -2,7 +2,7 @@
 title: Configure a multitenant organization using PowerShell or Microsoft Graph API
 description: "Create and manage a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. Covers creating the organization, adding tenants, joining, and managing roles."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
