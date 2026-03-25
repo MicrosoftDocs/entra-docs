@@ -2,7 +2,7 @@
 title: Translate links and URLs for Microsoft Entra application proxy
 description: "Translate hard-coded internal URLs in on-premises applications published through Microsoft Entra application proxy. Covers Edge integration, browser extensions, and link translation settings."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 ## Overview
 
-Microsoft Entra application proxy makes your on-premises apps available to users who are remote or on their own devices. Some apps, however, were developed with local links embedded in the HTML. These links don't work correctly when the app is used remotely. When you have several on-premises applications point to each other, your users expect the links to keep working when they're not at the office. 
+Microsoft Entra application proxy makes your on-premises apps available to users who are remote or on their own devices. Some apps, however, were developed with local links embedded in the HTML. These links don't work correctly when the app is used remotely. When you have several on-premises applications that point to each other, your users expect the links to keep working when they're not at the office. 
 
 The best way to make sure that links work the same both inside and outside of your corporate network is to configure the external URLs of your apps to be the same as their internal URLs. Use [custom domains](how-to-configure-custom-domain.md) to configure your external URLs to have your corporate domain name instead of the default application proxy domain.
 
@@ -109,7 +109,7 @@ For example, suppose that you have three applications published through applicat
 
 When you enable link translation for the Benefits app, the links to Expenses and Travel are redirected to the external URLs for those apps. However, the link to Feedback isn't redirected because there's no external URL. Links from Expenses and Travel back to Benefits don't work, because link translation isn't enabled for those two apps.
 
-![Links from Benefits to other apps when link translation is enabled](./media/application-proxy-configure-hard-coded-link-translation/one_app.png)
+![Links from Benefits to other apps when link translation is enabled.](./media/application-proxy-configure-hard-coded-link-translation/one_app.png)
 
 ### Which links aren't translated?
 
