@@ -7,6 +7,8 @@ ms.reviewer: poulomib
 ---
 # Block access for users with insider risk
 
+## Overview
+
 Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or ask them to review a specific [terms of use policy](terms-of-use.md). Microsoft Purview can provide an [insider risk signal](concept-conditional-access-conditions.md#insider-risk) to Conditional Access to refine access control decisions. Insider risk management is part of [Microsoft Purview](/purview/insider-risk-management-adaptive-protection). You must enable it before you can use the signal in Conditional Access.
 
 :::image type="content" source="media/policy-risk-based-insider-block/insider-risk-based-conditional-access-policy.png" alt-text="Screenshot of an example Conditional Access policy using insider risk as a condition." lightbox="media/policy-risk-based-insider-block/insider-risk-based-conditional-access-policy.png":::

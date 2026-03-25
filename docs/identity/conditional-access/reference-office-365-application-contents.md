@@ -8,6 +8,8 @@ ms.reviewer: kvenkit
 
 # Apps included in Conditional Access Office 365 app suite
 
+## Overview
+
 The following list is provided as a reference and includes a detailed list of services and applications that are included in the Conditional Access [Office 365](concept-conditional-access-cloud-apps.md#office-365) app. In Conditional Access, the Microsoft 365 suite of applications appears under 'Office 365'.
 
 - App Studio for Microsoft Teams
