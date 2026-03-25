@@ -23,7 +23,7 @@ The intended audience for this article is:
 
 A standard RDS deployment includes various Remote Desktop role services running on Windows Server. Multiple deployment options exist in the [Remote Desktop Services architecture](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture). Unlike other RDS deployment options, the [RDS deployment with Microsoft Entra application proxy](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture) (shown in the following diagram) has a permanent outbound connection from the server running the connector service. Other deployments leave open inbound connections through a load balancer.
 
-![Application proxy sits between the RDS VM and the public internet.](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
+![Diagram that shows how application proxy sits between the RDS VM and the public internet.](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
 
 In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role run on Internet-facing machines. These endpoints are exposed for the following reasons:
 - RD Web provides the user a public endpoint to sign in and view the various on-premises applications and desktops they can access. When you select a resource, a Remote Desktop Protocol (RDP) connection is created using the native app on the OS.
@@ -78,7 +78,7 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
 6. In the RD Gateway tab, change the **Server name** field to the External URL that you set for the RD host endpoint in application proxy.
 7. Change the **Logon method** field to **Password Authentication**.
 
-   ![Deployment Properties screen on RDS.](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
+   ![Screenshot that shows the Deployment Properties screen on RDS.](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
 
 8. Run this command for each collection. Replace *\<yourcollectionname\>* and *\<proxyfrontendurl\>* with your own information. This command enables single sign-on between RD Web and RD Gateway, and optimizes performance.
 

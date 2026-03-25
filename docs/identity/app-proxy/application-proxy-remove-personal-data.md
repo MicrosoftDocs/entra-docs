@@ -65,7 +65,7 @@ To delete specific data:
 
 One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config`.
 
-![Shows a code snippet with the highlighted code to remove.](./media/application-proxy-remove-personal-data/01.png)
+![Screenshot that shows a code snippet with the highlighted code to remove.](./media/application-proxy-remove-personal-data/01.png)
 
 ## Next steps
 

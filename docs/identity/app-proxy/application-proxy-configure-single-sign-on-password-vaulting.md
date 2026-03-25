@@ -32,7 +32,7 @@ This article requires that an app is published and tested with application proxy
 1. For the SSO mode, choose **Password-based Sign-on**.
 1. For the Sign-on URL, enter the URL for the page where users enter their username and password to sign in to your app outside of the corporate network. The page could be the External URL that you created when you published the app through application proxy.
 
-   ![Choose password-based Sign-on and enter your URL.](./media/application-proxy-configure-single-sign-on-password-vaulting/password-sso.png)
+   ![Screenshot that shows the password-based sign-on configuration with URL entry.](./media/application-proxy-configure-single-sign-on-password-vaulting/password-sso.png)
 
 1. Select **Save**.
 1. Select **application proxy**. 

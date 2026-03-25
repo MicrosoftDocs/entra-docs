@@ -26,7 +26,7 @@ Look for the **Pre Authentication** field, and make sure that it's set.
 
 For more information about preauthentication methods, see step 4 of [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
-![Pre-authentication method in Microsoft Entra admin center.](./media/application-proxy-config-sso-how-to/app-proxy.png)
+![Screenshot that shows the pre-authentication method in the Microsoft Entra admin center.](./media/application-proxy-config-sso-how-to/app-proxy.png)
 
 ## Configure single sign-on modes for application proxy applications
 Configure the specific type of single sign-on. The sign-on methods are classified based on what type of authentication the backend application uses. Application proxy applications support four types of sign-on:

@@ -117,7 +117,7 @@ Configure the Application Registration that was automatically created in step 2.
 
 1. In the Power BI mobile app, connect to your Reporting Services instance. Enter the **External URL** for the application you published through application proxy.
 
-   ![Power BI mobile app with External URL.](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
+   ![Screenshot that shows the Power BI mobile app with the External URL.](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
 2. Select **Connect**. The Microsoft Entra sign-in page loads.
 
