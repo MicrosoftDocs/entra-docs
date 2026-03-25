@@ -12,6 +12,9 @@ ms.subservice: multitenant-organizations
 
 # Configure cross-tenant synchronization
 
+
+## Overview
+
 ::: zone pivot="same-cloud-synchronization"
 This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users and security groups in your target tenant.
 

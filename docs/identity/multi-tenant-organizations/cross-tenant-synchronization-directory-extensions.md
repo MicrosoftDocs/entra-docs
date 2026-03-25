@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # Map directory extensions in cross-tenant synchronization
 
+
+## Overview
+
 Directory extensions enable you to extend the schema in Microsoft Entra ID with your own attributes. You can map these directory extensions when provisioning users in cross-tenant synchronization. [Custom security attributes](../../fundamentals/custom-security-attributes-overview.md) are different and aren't supported in cross-tenant synchronization.
 
 This article describes how to map directory extensions in cross-tenant synchronization.
