@@ -34,6 +34,8 @@ Organizations are deploying AI agents for increasingly diverse tasks, and each d
 
 Unlike applications that execute predetermined logic, AI agents make dynamic decisions and adapt behavior based on training data, input, and environment conditions. This adaptive behavior expands the organizational attack surface:
 
+- **External accessibility**: Many AI agents interact with external users, third-party systems, or the public internet. This exposure creates potential pathways for adversaries to compromise agents and access organizational systems.
+
 - **Permission escalation risk**: Agents are often provisioned with broad permissions to ensure capability. An agent analyzing financial data might receive access to all financial records, expense reports, and vendor contracts—broader than necessary for the specific task.
 
 - **Autonomous decision-making**: Compromised agents that make autonomous decisions can take harmful actions. A supply chain agent with purchasing authority could place unauthorized orders. An infrastructure management agent could delete critical systems.
@@ -136,9 +138,4 @@ For more information, see [Secure Web and AI Gateway for agents](/entra/global-s
 ## Related content
 
 - [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
-- [What are agent identities?](../identity-platform/what-is-agent-id.md)
-- [What is Microsoft Entra ID Governance?](/entra/id-governance/identity-governance-overview)
-- [What are workload identities?](/entra/workload-id/workload-identities-overview)
-- [What is Conditional Access?](/entra/identity/conditional-access/overview)
-- [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
-- [Secure Web and AI Gateway for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents)
+- [What is the Microsoft Entra Agent identity platform?](../identity-platform/what-is-agent-id-platform.md)
