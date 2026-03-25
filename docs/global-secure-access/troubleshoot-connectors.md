@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # Troubleshoot problems installing the private network connector
 
+## Overview
+
 Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy. This article describes how to troubleshoot issues with connector installation and subsequent functionality.
 
 ## General problem areas with connector installation
