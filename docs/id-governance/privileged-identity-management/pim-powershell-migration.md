@@ -3,12 +3,15 @@ title: PIM PowerShell for Azure resources migration guidance
 description: The following documentation provides guidance for Privileged Identity Management (PIM) PowerShell migration.
 
 ms.topic: how-to
-ms.date: 12/30/2024
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, devx-track-azurepowershell
 
 ---
 # PIM PowerShell for Azure resources migration guidance
+
+## Overview
+
 The following table provides guidance on using the new PowerShell cmdlets in the newer Azure PowerShell module.
 
 ## New cmdlets in the Azure PowerShell module

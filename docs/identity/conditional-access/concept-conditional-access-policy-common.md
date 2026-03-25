@@ -2,7 +2,7 @@
 title: 'Conditional Access Templates: Simplify Security'
 description: Learn how Conditional Access templates provide preconfigured policies to secure your environment, aligned with Microsoft recommendations.
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ms.custom:
   - sfi-image-nochange
@@ -12,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access policy templates
+
+## Overview
 
 Conditional Access templates provide a convenient method to deploy new policies aligned with Microsoft recommendations. These templates are designed to provide maximum protection aligned with commonly used policies across various customer types and locations. 
 
@@ -102,7 +104,7 @@ Find these templates in the [Microsoft Entra admin center](https://entra.microso
 > [!IMPORTANT]
 > Conditional Access template policies targeting users exclude only the user creating the policy from the template. If your organization needs to [exclude other accounts](~/identity/role-based-access-control/security-emergency-access.md), modify the policy after it's created. You can find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Policies**. Select a policy to open the editor and modify the excluded users and groups to select accounts you want to exclude.
 
-By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md). We recommend organizations test and monitor usage to ensure the intended result before turning on each policy.
+By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md). Test and monitor usage to ensure the intended result before turning on each policy.
 
 Organizations can select individual policy templates and:
 

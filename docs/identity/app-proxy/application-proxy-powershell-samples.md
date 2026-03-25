@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Microsoft Entra application proxy PowerShell examples
 
+
+## Overview
+
 The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.
 
 

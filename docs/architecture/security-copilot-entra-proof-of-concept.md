@@ -270,7 +270,7 @@ Use this section to translate your PoC findings into measurable outcomes that re
 * Conditional Access policy gaps, redundant policies, or legacy auth patterns 
 * Misconfigured or unowned resources 
 
-### Improvements
+### Measure improvements
 
 |Category|Baseline|With Copilot|Improvement|
 |---|---|---|---|

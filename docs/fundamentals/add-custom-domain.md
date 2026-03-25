@@ -11,6 +11,9 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange
 # Add your custom domain name to your tenant
 
 
+
+## Overview
+
 Microsoft Entra tenants come with an initial domain name like `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's DNS name as a custom domain name and set it as primary. By adding your domain name, you can add user names that are familiar to your users, such as `alain@contoso.com`.
 
 ## Prerequisites

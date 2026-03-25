@@ -2,10 +2,13 @@
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/08/2025
+ms.date: 03/23/2026
 ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
+
+
+## Overview
 
 In Privileged Identity Management (PIM) in Microsoft Entra ID, which is part of Microsoft Entra, role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 

@@ -2,12 +2,15 @@
 title: Enable remote access to SharePoint - Microsoft Entra application proxy
 description: "Configure Microsoft Entra application proxy to enable secure external access to on-premises SharePoint Server using Kerberos Constrained Delegation for single sign-on."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Enable remote access to SharePoint with Microsoft Entra application proxy
+
+
+## Overview
 
 This step-by-step guide explains how to integrate an on-premises SharePoint farm with Microsoft Entra application proxy.
 
@@ -15,7 +18,7 @@ This step-by-step guide explains how to integrate an on-premises SharePoint farm
 
 To perform the configuration, you need the following resources:
 - A SharePoint 2016 farm or newer.
-- A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
 - On-premises Active Directory deployments synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).

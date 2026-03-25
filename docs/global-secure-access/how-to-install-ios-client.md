@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access Client for iOS (Preview)
+title: The Global Secure Access Client for iOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 #customer intent: As an IT admin, I want to set up and deploy the Global Secure Access client for iOS devices so that I can secure network traffic for my organization.
 ms.topic: how-to
@@ -11,11 +11,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Global Secure Access client for iOS (Preview)
-> [!IMPORTANT]
-> The Global Secure Access client for iOS is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
+# Global Secure Access client for iOS
 This article explains how to set up and deploy the Global Secure Access client app on iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
 
 > [!CAUTION]
@@ -39,12 +35,9 @@ For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](h
 
 ### System requirements
 The iOS device (phone or tablet) must meet the following requirements:
-- The device runs iOS 15.0 or newer.
+- The device runs iOS 16.0 or newer.
 - The device has the Microsoft Authenticator app or the Intune Company Portal app.
-- The device is enrolled to enforce Intune device compliance policies.
-
-## Supported modes
-The Global Secure Access client for iOS supports installation on both modes of enrolled devices: supervised and unsupervised.
+- For the supervised devices, the device must be enrolled to enforce Intune device compliance policies.
 
 ## Known limitations
 
@@ -132,7 +125,7 @@ If the client is unable to connect, a toggle appears to disable the service. Use
 
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
-    - Force stop the Defender app and relaunch it.
+    - Relaunch the Defender app.
 - Access to the Private Access application shows a connection time-out error after a successful interactive sign-in.
     - Reload the application (or refresh the web browser).
 

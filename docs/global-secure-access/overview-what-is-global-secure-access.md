@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 # What is Global Secure Access?
 
+## Overview
+
 The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. As applications and data move to the cloud, the modern workforce needs an identity-aware, cloud-delivered network perimeter. This new network security category is called Security Service Edge (SSE).
 
 Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge (SSE) solution. Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center. Global Secure Access is built upon the core principles of Zero Trust to use least privilege, verify explicitly, and assume breach.

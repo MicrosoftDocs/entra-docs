@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy
 
+
+## Overview
+
 You can provide single sign-on for on-premises applications published through application proxy that are secured with integrated Windows authentication. These applications require a Kerberos ticket for access. Application proxy uses Kerberos Constrained Delegation (KCD) to support these applications.
 
 To learn more about single sign-on (SSO), see [What is single sign-on?](~/identity/enterprise-apps/what-is-single-sign-on.md).

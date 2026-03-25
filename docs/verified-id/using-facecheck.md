@@ -9,6 +9,9 @@ ms.custom: sfi-image-nochange
 
 # Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 
+
+## Overview
+
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. Face Check protects user privacy by sharing only the match results and not any sensitive identity data, while allowing organizations to be sure the person claiming an identity is really them.
 
 :::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of Microsoft Authenticator Face Check verification flow showing verify, confirm, and review steps with facial recognition interface.":::

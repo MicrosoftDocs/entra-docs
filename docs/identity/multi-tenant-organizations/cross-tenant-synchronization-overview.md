@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # What is cross-tenant synchronization?
 
+
+## Overview
+
 *Cross-tenant synchronization* automates creating, updating, and deleting [Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md) users and groups across tenants in an organization. It enables users to access applications and collaborate across tenants, while still allowing the organization to evolve.
 
 Here are the primary goals of cross-tenant synchronization:

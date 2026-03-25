@@ -8,6 +8,9 @@ ms.date: 12/01/2025
 
 # Microsoft Entra licensing
 
+
+## Overview
+
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
 > [!NOTE]

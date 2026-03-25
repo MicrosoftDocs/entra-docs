@@ -2,7 +2,7 @@
 title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 03/23/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: absinh
@@ -19,7 +19,7 @@ To complete the steps in this process, you must have the following prerequisites
 - An Azure subscription and permission to create resources in the [Azure portal](https://portal.azure.com).
 - A basic understanding of virtual wide area networks (vWAN).
 - A basic understanding of [site-to-site VPN connections](/azure/vpn-gateway/tutorial-site-to-site-portal).
-- A Microsoft Entra tenant with the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator) role assigned.
+- A Microsoft Entra tenant with the [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role assigned.
 - A basic understanding of Azure virtual desktops or Azure virtual machines.
 
 This document uses the following example values, along with the values in the images and steps. Feel free to configure these settings according to your own requirements.

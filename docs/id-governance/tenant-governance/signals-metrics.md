@@ -6,7 +6,7 @@ author: barclayn
 ms.author: barclayn
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/10/2026
+ms.date: 03/20/2026
 ---
 
 <!-- source: [Concept] Related tenants signals and metrics.docx -->
@@ -193,9 +193,7 @@ This distinction answers:
 |---|---|---|
 | B2B collaboration | ✅ | ✅ |
 | Multitenant applications | ✅ | ✅ |
-| Shared billing accounts | ❌ | ❌ |
-
-Billing relationships are configuration-based and don't fluctuate over time.
+| Shared billing accounts | ✅ | ✅ |
 
 ### Inbound vs. outbound metrics
 
@@ -258,11 +256,11 @@ Billing is presence-based rather than activity-based.
 
 | Metric Concept | B2B | Multitenant Apps | Billing |
 |---|---|---|---|
-| Initial vs recent | ✅ | ✅ | ❌ |
+| Initial vs recent | ✅ | ✅ | ✅ |
 | Inbound vs outbound | ✅ | ✅ | ❌ |
 | Aggregated counts | ✅ | ✅ | ✅ |
-| Activity-based | ✅ | ✅ | ❌ |
-| Configuration-based | ❌ | ❌ | ✅ |
+| Activity-based | ✅ | ❌ | ❌ |
+| Configuration-based | ✅ | ✅ | ✅ |
 
 Signals explain ***why*** tenants are related while metrics explain ***how*, *how much*, and *how recently*.** Both are intentionally non-prescriptive. They inform investigation and prioritization without enforcing governance actions.
 

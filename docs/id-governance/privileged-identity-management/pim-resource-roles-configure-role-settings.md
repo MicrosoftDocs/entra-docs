@@ -2,11 +2,14 @@
 title: Configure Azure resource role settings in PIM
 description: Learn how to configure Azure resource role settings in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 03/23/2026
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure Azure resource role settings in Privileged Identity Management
+
+
+## Overview
 
 In Privileged Identity Management (PIM) in Microsoft Entra ID, which is part of Microsoft Entra, role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
@@ -20,7 +23,7 @@ To open the settings for an Azure resource role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure Resources**.  You can select the **resource type** you want to manage. Start at either the Management group dropdown or the Subscriptions dropdown, and then select **Resource groups** or **Resources** as needed.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.  You can select the **resource type** you want to manage. Start at either the Management group dropdown or the Subscriptions dropdown, and then select **Resource groups** or **Resources** as needed.
 
     :::image type="content" source="media/pim-resource-roles-configure-role-settings/resources-list.png" alt-text="Screenshot that shows the list of Azure resources discovered in Privileged Identity Management." lightbox="media/pim-resource-roles-configure-role-settings/resources-list.png":::
 

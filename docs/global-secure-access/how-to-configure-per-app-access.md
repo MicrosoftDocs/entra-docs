@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # How to configure per-app access using Global Secure Access applications
 
+## Overview
+
 Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create an Enterprise application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Enterprise application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring an Enterprise application, you create per-app access to your internal resources. Enterprise applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
 
 
@@ -77,7 +79,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 1. Enter a name for the app.
 1. Select a Connector group from the dropdown menu.
     > [!IMPORTANT]
-    > You must have at least one active connector in order to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
+    > You must have at least one active connector to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
 1. Select the **Save** button at the bottom of the page to create your app without adding private resources.
 
 ### Add application segment

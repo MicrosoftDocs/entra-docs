@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 
 # Turn on universal tenant restrictions
 
+## Overview
+
 Universal tenant restrictions enhance the functionality of [tenant restrictions v2](https://aka.ms/tenant-restrictions-enforcement). They use Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. They allow support for both client and remote network connectivity.
 
 Administrators no longer have to manage proxy server configurations or complex network configurations. They can apply tenant restrictions v2 on any platform by using the Global Secure Access client or remote networks.

@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Header-based authentication for single sign-on with application proxy and PingAccess
 
+
+## Overview
+
 Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
 ## What's PingAccess for Microsoft Entra ID?

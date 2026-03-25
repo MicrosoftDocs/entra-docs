@@ -8,6 +8,9 @@ ai-usage: ai-assisted
 ---
 
 # Work with claims-aware apps in application proxy
+
+## Overview
+
 [Claims-aware apps](/previous-versions/windows/desktop/legacy/bb736227(v=vs.85)) perform a redirection to the Security Token Service (STS). The STS requests credentials from the user in exchange for a token and then redirects the user to the application. There are a few ways to enable application proxy to work with these redirects. Use this article to configure your deployment for claims-aware apps. 
 
 ## Prerequisites

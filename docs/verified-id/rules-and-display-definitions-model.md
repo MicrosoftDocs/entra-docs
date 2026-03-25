@@ -11,6 +11,9 @@ ms.date: 01/31/2025
 # Rules and display definition reference
 
   
+
+## Overview
+
 Rules and Display definitions are used to define a credential. You can read more about it in [How to customize your credentials](credential-design.md).
 
 ## rulesModel type

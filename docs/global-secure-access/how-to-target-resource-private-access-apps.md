@@ -11,6 +11,8 @@ ms.custom: sfi-image-nochange
 
 # Apply Conditional Access policies to Private Access apps
 
+## Overview
+
 Applying Conditional Access policies to your Microsoft Entra Private Access apps is a powerful way to enforce security policies for your internal, private resources. You can apply Conditional Access policies to your Quick Access and Private Access apps from Global Secure Access.
 
 This article describes how to apply Conditional Access policies to your Quick Access and Private Access apps.

@@ -2,11 +2,14 @@
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 03/23/2026
 ms.custom: pim, sfi-image-nochange
 ---
 
 # Configure PIM for Groups settings
+
+
+## Overview
 
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 

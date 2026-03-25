@@ -41,7 +41,7 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 >[!IMPORTANT]
 >Microsoft Entra Connect Health now supports installation using the Hybrid Identity Administrator role. If you installed Microsoft Entra Connect Sync using an account with the role, the Entra Connect Health agent will automatically be in active state and you will not need to do a re-install using a Global Administrator account.
 
-### New versions of the agent and auto upgrade
+### New versions of the agent and auto-upgrade
 
 If a new version of the health agent is released, any existing, installed agents are automatically updated.
 
@@ -57,7 +57,7 @@ These URLs allow communication with Microsoft Entra Connect Health service endpo
 
 | Domain environment | Required Azure service endpoints |
 | --- | --- |
-| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `**.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
+| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `*.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
 | Azure Government | - `*.blob.core.usgovcloudapi.net` <br />- `*.servicebus.usgovcloudapi.net` <br />- `*.aadconnecthealth.microsoftazure.us` <br />- `https://management.usgovcloudapi.net` <br />- `https://login.microsoftonline.us` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.us` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
 
 ## Download the agents
@@ -104,7 +104,7 @@ Manually register the Microsoft Entra Connect Health agent for sync by using the
 
 `Register-MicrosoftEntraConnectHealthAgent -AttributeFiltering $true -StagingMode (Get-ADSyncScheduler).StagingModeEnabled`
 
-The command takes following parameters:
+The command takes the following parameters:
 
 - `AttributeFiltering`: `$true` (default) if Microsoft Entra Connect isn't syncing the default attribute set and has been customized to use a filtered attribute set. Otherwise, use `$false`.
 - `StagingMode`: `$false` (default) if the Microsoft Entra Connect server is *not* in staging mode. If the server is configured to be in staging mode, use `$true`. You can determine if the server is in staging mode with `(Get-ADSyncScheduler).StagingModeEnabled`.

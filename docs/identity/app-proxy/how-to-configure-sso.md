@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # How to configure single sign-on to an application proxy application
 
+
+## Overview
+
 Single sign-on (SSO) lets your users access an application without authenticating multiple times. The authentication occurs in the cloud, against Microsoft Entra ID, and the service or connector impersonates the user to complete additional authentication challenges from the application.
 
 ## How to configure single sign-on

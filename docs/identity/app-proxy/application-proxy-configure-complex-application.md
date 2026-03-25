@@ -2,12 +2,15 @@
 title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Understand complex applications in Microsoft Entra application proxy
+
+
+## Overview
 
 Applications are often made up of multiple individual web applications. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
 - **Pre authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions lead to more redirects at sign in to `microsoftonline.com`.
@@ -23,7 +26,7 @@ With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-flow-1.png" alt-text="Diagram of a Complex application with multiple application segments definition.":::
 
 A complex app has multiple app segments. Each app segment has an internal and external URL.
-One Conditional Access policy is associated with the app. Access to any of the external URLs work with preauthentication with the same set of policies. These policies are enforced for all app segments.
+One Conditional Access policy is associated with the app. Access to any of the external URLs works with preauthentication with the same set of policies. These policies are enforced for all app segments.
 
 Complex apps provide several benefits: 
 - User authentication
@@ -51,7 +54,7 @@ This article shows you how to configure wildcard application publishing in your 
 ## Configure application segments for complex applications
 
 > [!NOTE]
-> Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
+> Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 To publish a complex distributed app through application proxy with application segments:
 
@@ -73,7 +76,7 @@ To publish a complex distributed app through application proxy with application 
 
 7. Select **Create**.
 
-    :::image type="content" source="./media/application-proxy-configure-complex-application/create-app-segment.png" alt-text="Screenshot of add or edit application segment context plane.":::
+    :::image type="content" source="./media/application-proxy-configure-complex-application/create-app-segment.png" alt-text="Screenshot of add or edit application segment context pane.":::
 
 8. Assign users to the application. 
 

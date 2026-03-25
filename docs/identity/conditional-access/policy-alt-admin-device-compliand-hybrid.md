@@ -2,10 +2,12 @@
 title: Require administrators use compliant or hybrid joined devices
 description: Create a custom Conditional Access policy to require compliant or hybrid joined devices for admins.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require compliant device or Microsoft Entra hybrid joined device for administrators
+
+## Overview
 
 Accounts that are assigned administrative rights are a target for attackers. Requiring users with these highly privileged rights to perform actions from devices marked as compliant or Microsoft Entra hybrid joined can help limit possible exposure.
 
@@ -31,7 +33,7 @@ The following steps help create a Conditional Access policy to require multifact
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **Directory roles** and choose at least the previously listed roles.
    

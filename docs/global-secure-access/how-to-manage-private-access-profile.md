@@ -12,6 +12,8 @@ ms.custom: sfi-image-nochange
 
 # How to manage the Private Access traffic forwarding profile
 
+## Overview
+
 The Private Access traffic forwarding profile routes traffic to your private network through the Global Secure Access Client. Enabling this traffic forwarding profile allows remote workers to connect to internal resources without a VPN. With the features of Microsoft Entra Private Access, you can control which private resources to tunnel through the service and apply Conditional Access policies to secure access to those services. Once your configurations are in place, you can view and manage all of those configurations from one place.
 
 ## Prerequisites

@@ -9,6 +9,8 @@ ms.custom: sfi-image-nochange
 
 # How to use the Global Secure Access enriched Microsoft 365 logs
 
+## Overview
+
 With your Microsoft traffic flowing through the Microsoft Entra Internet Access for Microsoft Services, you want to gain insights into the performance, experience, and availability of the Microsoft 365 apps your organization uses. With Global Secure Access, Microsoft 365 Audit logs can be easily enriched with the information you need to gain these insights. You can integrate the logs with a third-party security information and event management (SIEM) tool for further analysis.
 
 This article describes the information in the logs and how to use them for the above insights.

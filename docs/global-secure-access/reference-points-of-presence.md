@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 ---
 # Global Secure Access points of presence and IP addresses
 
+## Overview
+
 Global Secure Access is available in specific points of presence, with new locations added periodically. The service routes traffic through one of the following nearby locations, so even if you're not in a listed location, you can still access the service. At this time, both Microsoft Entra Internet Access and Microsoft Entra Private Access are available in the same locations. These locations are Microsoft data centers.
 
 ## Microsoft Entra Internet Access and Microsoft Entra Private Access locations
