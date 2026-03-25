@@ -37,13 +37,17 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
 - Click *Add New Mapping* and set the attribute mapping as below:
     - Source Attribute: objectId
     - Target Attribute: urn:ietf:params:scim:schemas:extension:sap:2.0:User:userUuid
-  :::image type="content" source="media/entitlement-management-sap-integration/new-user-id-mapping.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/new-user-id-mapping.png":::
+  
+ :::image type="content" source="media/entitlement-management-sap-integration/new-user-id-mapping.png" alt-text="Screenshot of setting manager attribute for SAP integration.":::
+  
 - Add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
     - Click *Add New Mapping* and set the attribute mapping as below:
        - Source Attribute: manager
        - Target Attribute: urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager
 - Your Attribute Mapping should look like this when the pre-requesites are complete:
-    :::image type="content" source="media/entitlement-management-sap-integration/sap-iag-mapping" alt-text="Screenshot of attribute mapping for SAP integration." lightbox="media/entitlement-management-sap-integration/sap-iag-mapping.png":::
+
+ :::image type="content" source="media/entitlement-management-sap-integration/sap-iag-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
+  
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 - An existing SAP IAG Business Role.
 
