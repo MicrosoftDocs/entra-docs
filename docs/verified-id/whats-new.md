@@ -11,6 +11,9 @@ ms.custom: references_regions
 
 # What's new in Microsoft Entra Verified ID
 
+
+## Overview
+
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
 ## November 2025
