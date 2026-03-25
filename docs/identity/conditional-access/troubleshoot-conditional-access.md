@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Troubleshoot sign-in problems with Conditional Access
 
+## Overview
+
 Use this article to fix unexpected sign-in outcomes related to Conditional Access by checking error messages and Microsoft Entra sign-in logs.
 
 ## Select "all" consequences

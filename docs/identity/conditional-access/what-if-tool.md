@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
 
+## Overview
+
 The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user, agent identity, or single tenant service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
 The **What If** tool and [APIs](/graph/api/conditionalaccessroot-evaluate) let you quickly determine the policies that apply to a specific user, agent identity, or single tenant service principal. Use this information to troubleshoot issues, understand which policies apply to specific sign-in conditions, and test complex sign-in scenarios.
