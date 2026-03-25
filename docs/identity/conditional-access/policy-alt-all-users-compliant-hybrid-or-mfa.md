@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
 
+## Overview
+
 Organizations who deploy Microsoft Intune can use the information returned from their devices to identify devices that meet compliance requirements such as:
 
 * Requiring a PIN to unlock

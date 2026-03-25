@@ -7,6 +7,8 @@ ms.reviewer: inbarc
 ---
 # Require multifactor authentication strength for external users
 
+## Overview
+
 Authentication strength is a Conditional Access control that lets you define a specific combination of multifactor authentication (MFA) methods that an external user must complete to access your resources. This control is especially useful for restricting external access to sensitive apps in your organization. For example, you can create a Conditional Access policy, require a phishing-resistant authentication strength in the policy, and assign it to guests and external users.
 
 Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):

@@ -7,6 +7,8 @@ ms.topic: how-to
 --- 
 # Block access by location
 
+## Overview
+
 With the location condition in Conditional Access, you can control access to your cloud apps based on the network location of a user. The location condition is commonly used to block access from countries/regions where your organization knows traffic shouldn't come from. For more information about IPv6 support, see the article [IPv6 support in Microsoft Entra ID](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
 
 > [!NOTE]

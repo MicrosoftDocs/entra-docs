@@ -7,6 +7,8 @@ ms.reviewer: calebb, lhuangnorth
 ---
 # Block legacy authentication with Conditional Access
 
+## Overview
+
 Microsoft recommends that organizations block authentication requests using legacy protocols that don't support multifactor authentication. Based on Microsoft's analysis more than 97 percent of credential stuffing attacks use legacy authentication and more than 99 percent of password spray attacks use legacy authentication protocols. These attacks would stop with basic authentication disabled or blocked.
 
 Customers without licenses that include Conditional Access can make use of [security defaults](~/fundamentals/security-defaults.md) to block legacy authentication.
