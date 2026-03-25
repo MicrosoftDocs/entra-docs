@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 ---
 # Apply Conditional Access policies to Global Secure Access traffic
 
+## Overview
+
 You apply Conditional Access policies to Global Secure Access traffic. With Conditional Access, you can require multifactor authentication and device compliance for accessing Microsoft resources. 
 
 This article describes how to apply Conditional Access policies to your Global Secure Access internet traffic.
@@ -21,6 +23,8 @@ This article describes how to apply Conditional Access policies to your Global S
 * The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Create a Conditional Access policy targeting Global Secure Access internet traffic
+
+### Example policy
 
 The following example policy targets all users except for your break-glass accounts and guest/external users, requiring multifactor authentication, device compliance, or a Microsoft Entra hybrid joined device for Global Secure Access internet traffic.
 
