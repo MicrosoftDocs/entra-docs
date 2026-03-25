@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
+## Overview
+
 Every day, Microsoft processes more than 100 trillion security signals from endpoints, cloud services, identity systems, and more. We use this data shape how we respond to threats and inform how we innovate to help build a safer digital future. Read about the work we're doing in the [Microsoft Digital Defense Report](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Microsoft-Digital-Defense-Report-2025.pdf#page=1).
 
 As part of this work, Microsoft-managed policies are available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) require multifactor authentication, which continues to reduce the risk of compromise by more than 99%.
