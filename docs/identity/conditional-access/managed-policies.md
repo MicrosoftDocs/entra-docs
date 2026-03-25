@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
+## Overview
+
 As mentioned in the [Microsoft Digital Defense Report](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023) from October 2023,
 
 > ...threats to digital peace have reduced trust in technology and highlighted the urgent need for improved cyber defenses at all levels...
