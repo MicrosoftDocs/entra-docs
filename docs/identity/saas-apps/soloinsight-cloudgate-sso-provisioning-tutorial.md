@@ -25,14 +25,14 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Soloinsight-CloudGate SSO tenant](https://www.soloinsight.com/)
 * A user account in Soloinsight-CloudGate SSO with Admin permissions.
 
-## Step 1: Assigning users to Soloinsight-CloudGate SSO
+## Step 1: Assign users to Soloinsight-CloudGate SSO
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users and/or groups that have been assigned to an application in Microsoft Entra ID are synchronized.
 
 Before configuring and enabling automatic user provisioning, you should decide which users and/or groups in Microsoft Entra ID need access to Soloinsight-CloudGate SSO. Once decided, you can assign these users and/or groups to Soloinsight-CloudGate SSO by following the instructions here:
 * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Step 2: Important tips for assigning users to Soloinsight-CloudGate SSO
+## Step 2: Important tips for user assignment to Soloinsight-CloudGate SSO
 
 * It's recommended that a single Microsoft Entra user is assigned to Soloinsight-CloudGate SSO to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
@@ -64,7 +64,7 @@ Before configuring Soloinsight-CloudGate SSO for automatic user provisioning wit
 1. Select **Soloinsight-CloudGate SSO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![Soloinsight-CloudGate SSO in the results list](common/search-new-app.png)
 
-## Step 5: Configuring automatic user provisioning to Soloinsight-CloudGate SSO 
+## Step 5: Configure automatic user provisioning to Soloinsight-CloudGate SSO 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Soloinsight-CloudGate SSO based on user and/or group assignments in Microsoft Entra ID.
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Soloinsight-CloudGate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Soloinsight-CloudGate. If the connection fails, ensure your Soloinsight-CloudGate account has the required admin permissions and try again.
+1. In the **Tenant URL** field, input `https://sigateway.com/scim/v2/sync/serviceproviderconfig`. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Soloinsight-CloudGate SSO. If the connection fails, ensure your Soloinsight-CloudGate SSO account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-## Step 6:  Monitor your deployment
+## Step 6: Monitor your deployment
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
