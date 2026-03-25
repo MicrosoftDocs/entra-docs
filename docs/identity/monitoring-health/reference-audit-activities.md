@@ -115,7 +115,7 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 |ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
 |ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
 |ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
-|ProvisioningManagement|Execute|The provisioning job is executing. Jobs running include: provisioningJobStartedInitialSync, provisioningJobStartedIncrementalSync, and provisioningJobCompleted.
+|ProvisioningManagement|Execution|The provisioning job is executing. Jobs running include: provisioningJobStartedInitialSync, provisioningJobStartedIncrementalSync, and provisioningJobCompleted.
 |ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
 |ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
 |ProvisioningManagement|Other||
