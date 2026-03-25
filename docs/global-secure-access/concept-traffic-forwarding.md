@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # Global Secure Access traffic forwarding profiles
 
+## Overview
+
 You use traffic forwarding profiles in Global Secure Access to apply policies to the network traffic that your organization wants to secure and manage. Network traffic is evaluated against the traffic forwarding policies you configure. The profiles are applied and the traffic goes through the service to the appropriate apps and resources. 
 
 This article describes the traffic forwarding profiles and how they work.
