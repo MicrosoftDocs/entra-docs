@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Troubleshoot application proxy issues and errors
 
+
+## Overview
+
 Use these steps to troubleshoot issues and error messages in Microsoft Entra application proxy.
 
 ## Before you begin

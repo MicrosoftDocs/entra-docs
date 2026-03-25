@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Remove personal data for Microsoft Entra application proxy
 
+
+## Overview
+
 Microsoft Entra application proxy requires that you install connectors on your devices, which means that there might be personal data on your devices. This article provides steps for how to delete that personal data to improve privacy.
 
 ## Where is the personal data?

@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Troubleshoot "corporate app can't be accessed" error in application proxy
 
+
+## Overview
+
 This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error in a Microsoft Entra application proxy application.
 
 When you see this error, find the status code on the error page:

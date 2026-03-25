@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Learn about Continuous Access Evaluation (CAE) for Application Proxy (preview)
 
+
+## Overview
+
 Continuous Access Evaluation (CAE) is a security feature designed to provide real-time access control based on policy changes and user risk. CAE enables enforcement of access policies in near real-time by continuously evaluating session validity. When a policy change, user risk update, or other critical security event occurs, CAE can revoke or refresh tokens, ensuring that user access is always in compliance with the latest security requirements. Traditionally, Microsoft Entra ID CAE requires each workload to adopt special libraries and is limited to first-party applications only. 
 
 CAE for Application Proxy extends benefits of CAE to any on-premises applications published through the application proxy, without requiring the application to be CAE-aware.
