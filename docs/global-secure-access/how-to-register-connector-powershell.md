@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Create an unattended installation script for the Microsoft Entra private network connector
 
+## Overview
+
 This article helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra private network connector.
 
 Unattended installation is useful when you want to:
