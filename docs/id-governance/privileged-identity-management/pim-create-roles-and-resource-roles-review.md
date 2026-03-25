@@ -8,6 +8,9 @@ ms.custom: pim, sfi-image-nochange
 
 # Create an access review of Azure resource and Microsoft Entra roles in PIM
 
+
+## Overview
+
 The need for access to privileged Azure resource and Microsoft Entra roles by your users changes over time. To reduce the risk associated with stale role assignments, you should regularly review access. You can use Microsoft Entra Privileged Identity Management (PIM) to create access reviews for privileged access to Azure resource and Microsoft Entra roles. You can also configure recurring access reviews that occur automatically. This article describes how to create one or more access reviews.
 
 ## Prerequisites
