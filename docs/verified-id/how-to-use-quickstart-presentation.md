@@ -11,6 +11,9 @@ ms.date: 01/21/2025
 # Issue verifiable credentials by presenting claims from an existing verifiable credential
 
   
+
+## Overview
+
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [presentations attestation](rules-and-display-definitions-model.md#verifiablepresentationattestation-type) type produces an issuance flow where you want the user to present another verifiable credential in the wallet during issuance and where claim values for issuance of the new credential are taken from the presented credential. An example of this type of flow can be when you present your VerifiedEmployee credential to get a visitors pass credential.
 
 ## Create a custom credential with the presentations attestation type

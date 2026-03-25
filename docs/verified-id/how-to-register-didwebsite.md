@@ -10,6 +10,9 @@ ms.date: 12/18/2024
 
 # Register your decentralized ID for did:web
 
+
+## Overview
+
 This article covers the steps to register your decentralized ID (DID) for did:web.
 
 ## Prerequisites
