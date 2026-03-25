@@ -481,7 +481,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
     If the user isn't in scope, you'll see a page with information about why the test user was skipped.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png" alt-text="Screenshot of the Determine if user is in scope page that shows information about why the test user was skipped." lightbox="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png" alt-text="Screenshot that shows information about why the test user was skipped on the Determine if user is in scope page." lightbox="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png":::
 
     On the **Provision on demand** page, you can view details about the provision and have the option to retry.
 
