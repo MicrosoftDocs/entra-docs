@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk add group members in Microsoft Entra ID
 
+
+## Overview
+
 You can add multiple members to a group by using a comma-separated values (CSV) file to bulk import group members in the portal for Microsoft Entra ID.
 
 ## Understand the CSV template
