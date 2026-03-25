@@ -9,6 +9,9 @@ ms.custom: pim, sfi-image-nochange
 
 # Assign eligibility for a group in Privileged Identity Management
 
+
+## Overview
+
 In Microsoft Entra ID, formerly known as Azure Active Directory, you can use Privileged Identity Management (PIM) to manage just-in-time membership in the group or just-in-time ownership of the group.
 
 When a membership or ownership is assigned, the assignment:
