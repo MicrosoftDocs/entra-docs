@@ -376,8 +376,10 @@ onPremisesObjectIdentifier: null
 ```
 
 Required permissions:
-- Delegated or application permission: “**User.OnPremisesSync.ReadWrite.All**”
+- Delegated or application permission: “**User-OnPremisesSyncBehavior.ReadWrite.All**”
 - The caller must also have one of the following roles: **Global Administrator** or **Hybrid Identity Administrator**
+- Any user, including global or hybrid admins, cannot reset the field via MS graph if the app isn’t granted **User-OnPremisesSyncBehavior.ReadWrite.All**
+
 > [!NOTE]
 > The API only allows clearing OnPremisesObjectIdentifier (setting it to null). Attempts to set it to any other value are blocked.
 
