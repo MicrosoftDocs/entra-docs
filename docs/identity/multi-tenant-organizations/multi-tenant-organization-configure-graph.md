@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # Configure a multitenant organization using PowerShell or Microsoft Graph API
 
+
+## Overview
+
 This article describes the key steps to configure a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 
 If you instead want to use the Microsoft 365 admin center to configure a multitenant organization, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org) and [Join or leave a multitenant organization in Microsoft 365](/microsoft-365/enterprise/join-leave-multi-tenant-org). To learn how to configure Microsoft Teams for your multitenant organization, see the [Microsoft Teams desktop client](/microsoftteams/new-teams-desktop-admin).

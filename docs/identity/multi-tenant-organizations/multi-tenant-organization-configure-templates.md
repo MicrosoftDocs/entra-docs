@@ -11,6 +11,9 @@ ms.subservice: multitenant-organizations
 
 # Configure multitenant organization policy templates using the Microsoft Graph API
 
+
+## Overview
+
 This article describes how to configure a policy template for your multitenant organization.
 
 ## Prerequisites
