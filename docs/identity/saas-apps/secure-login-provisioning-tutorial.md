@@ -76,7 +76,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **SecureLogin**'s Go to domain page. Input your SecureLogin domain and select the **Go** button. You be redirected to **SecureLogin**'s Authorization page. Input your **Username** and **Password** and select the **Login** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to SecureLogin. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, select **Authorize**. You'll be redirected to **SecureLogin**'s Go to domain page. Input your SecureLogin domain and select the **Go** button. You'll be redirected to **SecureLogin**'s Authorization page. Input your **Username** and **Password** and select the **Login** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to SecureLogin. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
 
  	![Admin Credentials](./media/secure-login-provisioning-tutorial/authorize.png)
 

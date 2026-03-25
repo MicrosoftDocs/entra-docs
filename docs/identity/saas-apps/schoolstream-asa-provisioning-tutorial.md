@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your MerchLogix Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to MerchLogix. If the connection fails, ensure your MerchLogix account has the required admin permissions and try again.
+1. In the **Tenant URL** field, input your SchoolStream ASA Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Groups**.
 
-1. Review the group attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in UNIFI for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SchoolStream ASA for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
