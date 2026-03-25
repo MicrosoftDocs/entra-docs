@@ -65,9 +65,9 @@ Agent security challenges manifest differently depending on the agent's purpose 
 
 ## Secure identities for AI agents
 
-AI agents require purpose-built identity constructs that differ from traditional application identities. [Microsoft Entra Agent ID](microsoft-entra-agent-identities-for-ai-agents.md) provides an identity and security framework designed for AI agents.
+AI agents require purpose-built identity constructs that differ from traditional application identities. [Microsoft Entra Agent ID](what-is-microsoft-entra-agent-id.md) provides an identity and security framework designed for AI agents.
 
-:::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
+:::image type="content" source="media/security-for-ai-overview/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
 
 Microsoft Entra Agent ID enables organizations to:
 
@@ -77,7 +77,7 @@ Microsoft Entra Agent ID enables organizations to:
 
 - **Log and monitor agent activity**: All authentication and actions performed by agents are logged in Microsoft Entra ID and viewable through the Microsoft Entra admin center for compliance and audit purposes.
 
-For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](../identity-platform/what-is-agent-id.md).
+For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](../identity-platform/what-are-agent-identities.md).
 
 ## Control AI access with Zero Trust
 
@@ -137,5 +137,5 @@ For more information, see [Secure Web and AI Gateway for agents](/entra/global-s
 
 ## Related content
 
-- [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
+- [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
 - [What is the Microsoft Entra Agent identity platform?](../identity-platform/what-is-agent-id-platform.md)

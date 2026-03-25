@@ -16,7 +16,7 @@ ms.custom: agent-id-ignite
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
+AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/what-is-microsoft-entra-agent-id.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
 
 To learn more about Agent Registry, review the following articles:
 
@@ -63,4 +63,4 @@ Security is embedded at every layer of the Agent Registry:
 - [Publish agents to registry](publish-agents-to-registry.md)
 - [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
 - [Agent Registry collections](agent-registry-collections.md)
-- [What is an agent ID?](what-is-agent-id.md)
+- [What is an agent ID?](what-are-agent-identities.md)

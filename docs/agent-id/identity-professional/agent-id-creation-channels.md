@@ -20,7 +20,7 @@ Identity and Access Management (IAM) and security administrators need clear visi
 - Built‑in Microsoft Entra roles and tenant settings that enable or restrict each action
 - Monitoring, auditing, and control strategies
 
-For foundational concepts, see [What is Microsoft Entra Agent ID?](../identity-platform/what-is-agent-id.md).
+For foundational concepts, see [What is Microsoft Entra Agent ID?](../identity-platform/what-are-agent-identities.md).
 
 ## Overview of creation channels
 
