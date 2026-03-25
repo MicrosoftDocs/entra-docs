@@ -2,7 +2,7 @@
 title: Add your own Traffic Manager solution to application proxy
 description: "Combine Microsoft Entra application proxy with Azure Traffic Manager for geographic load balancing and high availability across multiple connector groups."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ms.custom: template-how-to
 ai-usage: ai-assisted

@@ -2,7 +2,7 @@
 title: Microsoft Entra application proxy and Qlik Sense
 description: Integrate Microsoft Entra application proxy with Qlik Sense.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
