@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-## Connector Limitations
+## Connector limitations
 
 * Proxyclick requires **emails** and **userName** to have the same source value. Any updates to either attributes will modify the other value.
 * Proxyclick doesn't support provisioning for groups.

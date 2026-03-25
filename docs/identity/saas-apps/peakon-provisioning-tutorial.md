@@ -1,5 +1,5 @@
 ---
-title: Configure Configure Peakon for automatic user provisioning with Microsoft Entra ID
+title: Configure Peakon for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Peakon .
 author: jeevansd
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Peakon so that I can streamline the user management process and ensure that users have the appropriate access to Peakon.
 ---
 
-# Configure Configure Peakon for automatic user provisioning with Microsoft Entra ID
+# Configure Peakon for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Peakon  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Peakon.
 
@@ -29,7 +29,7 @@ The scenario outlined in this article assumes that you already have the followin
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
-## Assigning users to Peakon
+## Step 1: Assigning users to Peakon
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users and/or groups that have been assigned to an application in Microsoft Entra ID are synchronized.
 
@@ -37,13 +37,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Important tips for assigning users to Peakon 
+## Step 2: Important tips for assigning users to Peakon 
 
 * It's recommended that a single Microsoft Entra user is assigned to Peakon  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Peakon, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Set up Peakon for provisioning
+## Step 3: Set up Peakon for provisioning
 
 1.  Sign in to your [Peakon Admin Console](https://app.Peakon.com/login). Select **Configuration**. 
 
@@ -61,7 +61,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Peakon Create Token](media/Peakon-provisioning-tutorial/peakon04.png)
 
-## Add Peakon from the gallery
+## Step 4: Add Peakon from the gallery
 
 To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, you need to add Peakon  from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
@@ -71,7 +71,7 @@ To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, 
 1. Select **Peakon** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![Peakon  in the results list](common/search-new-app.png)
 
-## Configuring automatic user provisioning to Peakon 
+## Step 5: Configuring automatic user provisioning to Peakon 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Peakon  based on user and/or group assignments in Microsoft Entra ID.
 
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-## Monitor your deployment
+## Step 6: Monitor your deployment
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
