@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Event enrichment in Microsoft 365 enriched logs
 
+## Overview
+
 Event enrichment uses Microsoft 365 enriched logs to bring events across different workloads into sharper focus. The result is nuanced insights that are essential for improved security and improved efficiency. Events are carefully chosen and several factors are used to select them. These factors include priority ranking, relevance to security landscapes, and how useful these events are for Sentinel or Defender.
 
 In the future, event coverage is set to broaden, increasing the scope of the security narrative.
