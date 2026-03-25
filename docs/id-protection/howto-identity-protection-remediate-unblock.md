@@ -22,9 +22,9 @@ This article provides several options for automatically and manually remediating
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **create or edit risk-based policies**.
 - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
 
-## Terminology: password change vs. password reset
+## Password change vs. self-service password reset (SSPR)
 
-This article distinguishes between two different flows:
+This article distinguishes between two different password change flows:
 
 - **Password change (risk remediation)**: The user knows their current password, authenticates with multifactor authentication (MFA), and then changes their password. This is the mechanism used by risk-based Conditional Access policies, including the **Require password change** and **Require risk remediation** grant controls. This flow doesn't use self-service password reset (SSPR).
 - **Password reset (SSPR / recovery)**: The user doesn't know their password and uses self-service password reset (SSPR) or an admin-initiated reset to recover access. This flow is intended for account recovery, not risk remediation. A password reset through SSPR doesn't remediate user risk.
