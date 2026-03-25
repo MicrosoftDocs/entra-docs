@@ -7,6 +7,8 @@ ai-usage: ai-assisted
 ---
 # How to assign users and groups to traffic forwarding profiles
 
+## Overview
+
 With the Global Secure Access traffic forwarding features, you can assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
 
 This article describes how to assign specific users and groups to a traffic forwarding profile.
