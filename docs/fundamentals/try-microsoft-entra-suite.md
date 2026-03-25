@@ -11,6 +11,9 @@ ms.collection: M365-identity-device-management
 
 # Trial user guide: Microsoft Entra Suite
 
+
+## Overview
+
 Welcome to the Microsoft Entra Suite trial user guide. Make the most of your free trial by discovering the robust and comprehensive capabilities of [Microsoft Entra](what-is-entra.md).
 
 > [!TIP]
