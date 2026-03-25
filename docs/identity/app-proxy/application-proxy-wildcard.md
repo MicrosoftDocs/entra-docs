@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Wildcard applications in the Microsoft Entra application proxy
 
+
+## Overview
+
 In Microsoft Entra ID, configuring a large number of on-premises applications can quickly become unmanageable and introduces unnecessary risks for configuration errors if many of them require the same settings. With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address this issue by using wildcard application publishing to publish and manage many applications at once. The solution provides:
 
 - Simplified administrative overhead

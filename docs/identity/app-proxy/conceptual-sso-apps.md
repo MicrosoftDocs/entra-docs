@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Security Assertion Markup Language (SAML) single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 
+
+## Overview
+
 Provide single sign-on (SSO) to on-premises applications secured with Security Assertion Markup Language (SAML) authentication. Provide remote access to SAML-based SSO applications through application proxy. With SAML single sign-on, Microsoft Entra authenticates to the application using the user's Microsoft Entra account. Microsoft Entra ID communicates the sign-on information to the application through a connection protocol. You can also map users to specific application roles based on rules you define in your SAML claims. By enabling application proxy in addition to SAML SSO, your users have external access to the application and a seamless SSO experience.
 
 The applications must be able to consume SAML tokens issued by **Microsoft Entra ID**. 
