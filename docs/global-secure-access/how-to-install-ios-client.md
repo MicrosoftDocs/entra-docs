@@ -115,10 +115,10 @@ Once the configuration is complete and synced with the device, the following act
 
 ## Confirm Global Secure Access appears in the Defender app
 Because the Global Secure Access client for iOS is integrated with Microsoft Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access.   
-:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::   
+:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard-1.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::   
 
 You can enable or disable the Global Secure Access client for iOS by setting the **EnableGSA** key in the [VPN profile](#create-a-vpn-profile-and-configure-global-secure-access-for-microsoft-defender-for-endpoint). End users can enable or disable individual **Services** or the client itself based on the configuration settings, using the appropriate toggles.   
-:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
+:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled-1.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
 
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
