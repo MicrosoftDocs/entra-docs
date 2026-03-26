@@ -27,7 +27,9 @@ To create an agent identity blueprint, you need:
 
 - [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
-- [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) or [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles are required to create agent identity blueprints.
+- [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) role is required to configure federated identity credentials on an agent identity blueprint.
+-  [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role is required to add a secret or certificate credential.
+- Both [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints.
 - If using PowerShell, version 7 is required.
 - In preview, all operations with the agent identity blueprint require the beta version for both Microsoft Graph and PowerShell. 
 

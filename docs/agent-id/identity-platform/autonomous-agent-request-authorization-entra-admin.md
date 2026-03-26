@@ -102,6 +102,12 @@ Agent implementations might redirect the admin to this URL in various ways, such
 
 After you grant your application the required permissions, request a new agent access token for the permissions to take effect.
 
+> [!IMPORTANT]
+> There's no notification mechanism that informs you when a blueprint has been consented in another tenant. The behavior differs based on your deployment scenario:
+>
+> - **Single-tenant (line-of-business) scenarios**: You can continue requesting tokens. Token requests succeed once the admin grants consent, so polling until success is an acceptable approach.
+> - **Multitenant scenarios**: You must know the target tenant ID before making requests. There's no automated notification when a customer admin grants consent in their tenant, so you need to implement a manual check or polling mechanism. If you're automating agent registration workflows, the automation might stall while waiting for consent to be granted.
+
 ## Related content
 
 - [Microsoft Graph permissions reference](/graph/permissions-reference)

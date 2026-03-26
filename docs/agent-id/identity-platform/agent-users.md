@@ -24,6 +24,9 @@ Sometimes it's not enough for an agent to perform tasks on behalf of a user or o
 
 For these reasons, agent users are created. Agent users are optional and should only be created for interactions where the agent needs to act as a user or access resources restricted to user accounts.
 
+> [!NOTE]
+> Creating an agent's user account through the Microsoft Graph API is sufficient for accessing APIs and resources that require user identities. For full digital worker capabilities, such as provisioning a mailbox, Teams presence, or inclusion in HR systems, additional integration with [Microsoft Agent 365](https://aka.ms/Agent365) is required.
+
 ## Agent users
 
 Agent users represent a subtype of user identity within Microsoft Entra. These identities are designed to enable agent applications to perform actions in contexts where a user identity is required. Unlike nonagentic service principals or application identities, agent users receive tokens with claim `idtyp=user`, allowing them to access APIs and services that specifically require user identities. It also maintains security constraints necessary for nonhuman identities.
