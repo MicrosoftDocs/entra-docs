@@ -3,7 +3,7 @@ title: Publish native client apps
 description: "Publish native client applications through Microsoft Entra application proxy to provide secure remote access to on-premises APIs and resources."
 ms.custom: devx-track-dotnet
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
@@ -17,7 +17,7 @@ Microsoft Entra application proxy is used to publish web apps. You can also use 
 
 To support native client applications, application proxy accepts Microsoft Entra ID-issued tokens that are sent in the header. The application proxy service does the authentication for the users. This solution doesn't use application tokens for authentication.
 
-![Relationship between end users, Microsoft Entra ID, and published applications](./media/application-proxy-configure-native-client-application/richclientflow.png)
+![Diagram that shows the relationship between end users, Microsoft Entra ID, and published applications.](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
 To publish native applications, use the Microsoft Authentication Library, which takes care of authentication and supports many client environments. Application proxy fits into the [Desktop app that calls a web API on behalf of a signed-in user](~/identity-platform/authentication-flows-app-scenarios.md#desktop-app-that-calls-a-web-api-on-behalf-of-a-signed-in-user) scenario.
 
@@ -35,7 +35,7 @@ You now need to register your application in Microsoft Entra ID.
 1. Browse to **Entra ID** > **App registrations**. The list of all app registrations appears.
 1. Select **New registration**. The **Register an application** page appears.
 
-   ![Create a new app registration in the Microsoft Entra admin center](./media/application-proxy-configure-native-client-application/create.png)
+   ![Screenshot that shows the app registration creation page in the Microsoft Entra admin center.](./media/application-proxy-configure-native-client-application/create.png)
 
 1. In the **Name** heading, specify a user-facing display name for your application.
 1. Under the **Supported account types** heading, select an access level using these guidelines.
@@ -102,7 +102,7 @@ The required info in the sample code can be found in the Microsoft Entra admin c
 | --- | --- |
 | \<Tenant ID> | **Entra ID** > **Overview** > **Properties** |
 | \<App ID of the Native app> | **Application registration** > *your native application* > **Overview** > **Application ID** |
-| \<Scope> | **Application registration** > *your native application* > **API permissions** > select on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box. |
+| \<Scope> | **Application registration** > *your native application* > **API permissions** > select the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right-hand side. > The scope is the URL in the edit box. |
 | \<Proxy App URL> | the External URL and path to the API |
 
 After you edit the MSAL code with these parameters, your users can authenticate to native client applications even when they're outside of the corporate network.

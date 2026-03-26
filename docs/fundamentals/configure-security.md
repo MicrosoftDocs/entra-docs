@@ -61,7 +61,9 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Use cloud authentication](zero-trust-protect-identities.md#use-cloud-authentication) | Microsoft Entra ID P1 |
 | [All users are required to register for MFA](zero-trust-protect-identities.md#all-users-are-required-to-register-for-mfa) | Microsoft Entra ID P2 |
 | [Users have strong authentication methods configured](zero-trust-protect-identities.md#users-have-strong-authentication-methods-configured) | Microsoft Entra ID P1 |
+| [Reduce the user-visible password surface area](zero-trust-protect-identities.md#reduce-the-user-visible-password-surface-area) | Microsoft Entra ID P1 |
 | [User sign-in activity uses token protection](zero-trust-protect-identities.md#user-sign-in-activity-uses-token-protection) | Microsoft Entra ID P1 |
+| [Token protection policies are configured](zero-trust-protect-identities.md#token-protection-policies-are-configured) | Microsoft Entra ID P1 |
 | [All user sign-in activity uses phishing-resistant authentication methods](zero-trust-protect-identities.md#all-user-sign-in-activity-uses-phishing-resistant-authentication-methods) | Microsoft Entra ID P1 |
 | [All sign-in activity comes from managed devices](zero-trust-protect-identities.md#all-sign-in-activity-comes-from-managed-devices) | Microsoft Entra ID P1 |
 | [Security key authentication method enabled](zero-trust-protect-identities.md#security-key-authentication-method-enabled) | None (included with Microsoft Entra ID) |
@@ -75,6 +77,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Require multifactor authentication for device join and device registration using user action](zero-trust-protect-identities.md#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | Microsoft Entra ID P1 |
 | [Local Admin Password Solution is deployed](zero-trust-protect-identities.md#local-admin-password-solution-is-deployed) | Microsoft Entra ID P1 |
 | [Entra Connect Sync is configured with Service Principal Credentials](zero-trust-protect-identities.md#entra-connect-sync-is-configured-with-service-principal-credentials) | None (included with Microsoft Entra ID) |
+| [Directory sync account is locked down to specific named location](zero-trust-protect-identities.md#directory-sync-account-is-locked-down-to-specific-named-location) | Microsoft Entra ID P1 |
 | [No usage of ADAL in the tenant](zero-trust-protect-identities.md#no-usage-of-adal-in-the-tenant) | None (included with Microsoft Entra ID) |
 | [Block legacy Azure AD PowerShell module](zero-trust-protect-identities.md#block-legacy-azure-ad-powershell-module) | None (included with Microsoft Entra ID) |
 | [Enable Microsoft Entra ID security defaults for free tenants](zero-trust-protect-identities.md#enable-microsoft-entra-id-security-defaults-for-free-tenants) | None (included with Microsoft Entra ID) |

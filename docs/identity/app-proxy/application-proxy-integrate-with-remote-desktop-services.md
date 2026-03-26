@@ -2,7 +2,7 @@
 title: Publish Remote Desktop with Microsoft Entra application proxy
 description: "Publish Remote Desktop Services (RDS) deployments through Microsoft Entra application proxy for secure external access to remote desktops and RemoteApps."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -23,7 +23,7 @@ The intended audience for this article is:
 
 A standard RDS deployment includes various Remote Desktop role services running on Windows Server. Multiple deployment options exist in the [Remote Desktop Services architecture](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture). Unlike other RDS deployment options, the [RDS deployment with Microsoft Entra application proxy](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture) (shown in the following diagram) has a permanent outbound connection from the server running the connector service. Other deployments leave open inbound connections through a load balancer.
 
-![Application proxy sits between the RDS VM and the public internet](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
+![Diagram that shows how application proxy sits between the RDS VM and the public internet.](./media/application-proxy-integrate-with-remote-desktop-services/rds-with-app-proxy.png)
 
 In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role run on Internet-facing machines. These endpoints are exposed for the following reasons:
 - RD Web provides the user a public endpoint to sign in and view the various on-premises applications and desktops they can access. When you select a resource, a Remote Desktop Protocol (RDP) connection is created using the native app on the OS.
@@ -35,7 +35,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 ## Requirements
 
 - Both the RD Web and RD Gateway endpoints must be located on the same machine, and with a common root. RD Web and RD Gateway are published as a single application with application proxy so that you can have a single sign-on experience between the two applications.
-- [Deploy RDS](/windows-server/remote/remote-desktop-services/rds-in-azure), and [enabled application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Enable application proxy and open required ports and URLs, and enabling Transport Layer Security (TLS) 1.2 on the server. To learn which ports need to be opened, and other details, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
+- [Deploy RDS](/windows-server/remote/remote-desktop-services/rds-in-azure), and [enabled application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Enable application proxy and open required ports and URLs, and enable Transport Layer Security (TLS) 1.2 on the server. To learn which ports need to be opened, and other details, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 - Your end users must use a compatible browser to connect to RD Web or the RD Web client. For more information, see [Support for client configurations](#support-for-other-client-configurations).
 - When publishing RD Web, use the same internal and external Fully Qualified Domain Name (FQDN) when possible. If the internal and external Fully Qualified Domain Names (FQDNs) are different, disable Request Header Translation to avoid the client receiving invalid links.
 - If you're using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you encounter websocket errors when making a RemoteApp connection through the RD Web client.
@@ -78,7 +78,7 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
 6. In the RD Gateway tab, change the **Server name** field to the External URL that you set for the RD host endpoint in application proxy.
 7. Change the **Logon method** field to **Password Authentication**.
 
-   ![Deployment Properties screen on RDS](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
+   ![Screenshot that shows the Deployment Properties screen on RDS.](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
 
 8. Run this command for each collection. Replace *\<yourcollectionname\>* and *\<proxyfrontendurl\>* with your own information. This command enables single sign-on between RD Web and RD Gateway, and optimizes performance.
 
