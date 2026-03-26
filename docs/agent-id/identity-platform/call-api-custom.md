@@ -132,7 +132,7 @@ After determining what works for you, proceed to call your custom web API.
     app.Run();
     ```
 
-1. Call your protected API using `IDownstreamApi`. When calling the API, you can specify the agent identity or agent user identity using the `WithAgentIdentity` or `WithAgentUserIdentity` methods. `IDownstreamApi` automatically handles token acquisition and attaches the access token to the request.
+1. Call your protected API using `IDownstreamApi`. When calling the API, you can specify the agent identity or agent's user account identity using the `WithAgentIdentity` or `WithAgentUserIdentity` methods. `IDownstreamApi` automatically handles token acquisition and attaches the access token to the request.
 
     - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
         
@@ -179,7 +179,7 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-    - For `WithAgentUserIdentity`, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent user.
+    - For `WithAgentUserIdentity`, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account.
 
         ```csharp
         using Microsoft.Identity.Abstractions;
@@ -196,7 +196,7 @@ After determining what works for you, proceed to call your custom web API.
                 _api = api;
             }
         
-            // GET request for agent user identity using UPN
+            // GET request for agent's user account identity using UPN
             public async Task<IActionResult> Index()
             {
         
@@ -210,7 +210,7 @@ After determining what works for you, proceed to call your custom web API.
                 return View(products);
             }
             
-            // GET request for agent user identity using OID
+            // GET request for agent's user account identity using OID
             public async Task<IActionResult> UserProducts()
             {
         
@@ -280,7 +280,7 @@ After determining what works for you, proceed to call your custom web API.
     app.Run();
     ```
 
-1. Acquire token and call your protected API using the configured HttpClient. You can specify the agent identity or agent user using the `WithAgentIdentity` or `WithAgentUserIdentity` methods.
+1. Acquire token and call your protected API using the configured HttpClient. You can specify the agent identity or agent's user account using the `WithAgentIdentity` or `WithAgentUserIdentity` methods.
 
     - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
 
@@ -344,10 +344,10 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-    - To use `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
+    - To use `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent's user account.
     
         ```csharp
-        // Create request with agent user identity authentication with UPN
+        // Create request with agent's user account identity authentication with UPN
         public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
         {
             string agentIdentity = "<your-agent-identity>";
@@ -365,7 +365,7 @@ After determining what works for you, proceed to call your custom web API.
             return await response.Content.ReadAsStringAsync();
         }
         
-        // Create request with agent user identity authentication with OID
+        // Create request with agent's user account identity authentication with OID
         public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
         {
             string agentIdentity = "<your-agent-identity>";
