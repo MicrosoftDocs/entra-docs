@@ -138,15 +138,15 @@ Following the [documented steps](application-proxy-add-on-premises-application.m
 
 - Internal URL:
 
-    ![Example: Wildcard in internal URL.](./media/application-proxy-wildcard/42.png)
+    ![Screenshot that shows a wildcard in the internal URL field.](./media/application-proxy-wildcard/42.png)
 
 - External URL:
 
-    ![Example: Wildcard in external URL.](./media/application-proxy-wildcard/43.png)
+    ![Screenshot that shows a wildcard in the external URL field.](./media/application-proxy-wildcard/43.png)
 
 - Internal Application SPN:
 
-    ![Example: Wildcard in SPN configuration.](./media/application-proxy-wildcard/44.png)
+    ![Screenshot that shows a wildcard in the SPN configuration field.](./media/application-proxy-wildcard/44.png)
 
 By publishing the wildcard application, you can now access your three applications by navigating to the URLs you're used to (for example, `travel.adventure-works.com`).
 

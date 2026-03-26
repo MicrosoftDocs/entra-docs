@@ -2,7 +2,7 @@
 title: include file
 description: include file
 author: barclayn
-ms.service: entra-id-governance
+ms.service: entra-id
 ms.topic: include
 ms.date: 03/17/2026
 ms.author: barclayn
