@@ -25,7 +25,7 @@ items:
             href: autonomous-agent-request-tokens.md
           - name: Request authorization from Entra admin
             href: autonomous-agent-request-authorization-entra-admin.md
-          - name: Request agent user tokens
+          - name: Request agent's user account tokens
             href: autonomous-agent-request-agent-user-tokens.md
       - name: Interactive agents
         items:
@@ -74,7 +74,7 @@ items:
           href: agent-blueprint.md
         - name: Agent identities
           href: agent-identities.md
-        - name: Agent users
+        - name: Agent's user account
           href: agent-users.md
         - name: Agent service principals
           href: agent-service-principals.md
@@ -98,7 +98,7 @@ items:
           href: agent-autonomous-app-oauth-flow.md
         - name: On-behalf-of flow in agents
           href: agent-on-behalf-of-oauth-flow.md
-        - name: Agent user flow in agents
+        - name: Agent's user account flow in agents
           href: agent-user-oauth-flow.md
   - name: Reference
     items:
