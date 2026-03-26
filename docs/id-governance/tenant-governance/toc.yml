@@ -24,6 +24,8 @@
     items:
     - name: Governance relationships
       href: governance-relationships.md
+    - name: Automatic governance relationships
+      href: automatic-governance-relationships.md
     - name: Cross-tenant delegated administration
       href: cross-tenant-delegated-administration.md
     - name: Governance policy templates
