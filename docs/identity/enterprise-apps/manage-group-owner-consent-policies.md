@@ -129,7 +129,7 @@ Follow these steps to create a custom group owner consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy for group has been created, you can [allow group owners consent](configure-user-consent-groups.md) subject to this policy.
+Once the app consent policy for the group has been created, you can [allow group owners to grant consent](configure-user-consent-groups.md) subject to this policy.
 
 ## Delete a custom group owner consent policy using PowerShell
 
