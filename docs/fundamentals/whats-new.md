@@ -20,6 +20,232 @@ This article provides information about the latest releases and change announcem
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## March 2026
+
+### Public Preview - Microsoft Entra Backup and Recovery is now available
+
+**Type:** Public Preview  
+**Service category:** Entra Backup and Recovery  
+**Product capability:** Entra Backup and Recovery  
+
+Microsoft Entra Backup and Recovery is a built-in solution to help restore your tenant after accidental changes or malicious updates. Always on by default, it automatically backs up critical directory objects — including users, groups, applications, service principals, managed identities, conditional Access policies, named locations, agent IDs, and authentication and authorization policy, so admins can quickly restore them to a previously known good state.
+
+At public preview Entra Backup and Recovery automatically takes daily backup of a tenant’s supported directory objects. If a tenant has Microsoft Entra ID P1 or P2 licenses, one backup is taken each day and retained for five days. Admins can view available snapshots, generate difference reports to understand what has changed, and run recovery jobs to restore objects to a prior state.
+
+This gives your organization a reliable, built in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises.
+
+---
+
+### Public Preview - Entra Hybrid Join using Entra Kerberos
+
+**Type:** Public Preview  
+**Service category:** Device Registration and Management  
+**Product capability:** Device Lifecycle Management  
+
+This new capability enables a Windows device to become **Hybrid Entra joined immediately at provisioning time**, without waiting for **Entra Connect sync** or requiring **AD FS**. By leveraging Entra Kerberos, customers can modernize their hybrid identity architecture while reducing infrastructure complexity and dependency on legacy federation components.
+
+---
+
+### General Availability - Synced passkeys in Microsoft Entra ID
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Microsoft Entra ID now supports synced passkeys as a generally available authentication method. Synced passkeys are FIDO2-based credentials that can be stored in built-in or third-party passkey providers and made available across a user’s devices. Administrators can manage the use of synced passkeys alongside device-bound passkeys through passkey profiles in the authentication methods policy. Existing passkey configurations can be managed using the same Entra ID authentication policies and reporting surfaces.
+
+---
+
+### General Availability of SCIM 2.0 APIs for Microsoft Entra ID
+
+**Type:** General Availability  
+**Service category:** Provisioning  
+**Product capability:** Identity Lifecycle Management  
+
+SCIM 2.0 APIs give customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification.
+
+---
+
+### Public Preview - Cross-tenant security group synchronization
+
+**Type:** Public Preview  
+**Service category:** Provisioning  
+**Product capability:** Collaboration  
+
+We’re introducing cross-tenant group synchronization, a new capability that allows organizations to synchronize security groups across Microsoft Entra tenants. This feature enables centralized management of group membership in a source tenant while making those groups available in one or more target tenants, simplifying cross-tenant collaboration and reducing administrative overhead associated with managing duplicate groups.
+
+With cross-tenant group synchronization, organizations can extend their existing cross-tenant synchronization configurations to include groups, supporting scenarios such as shared application access, resource authorization, and consistent group-based access control across tenants. Admins can opt in to this functionality and configure attribute mappings and cross-tenant access policies to enable group synchronization into target tenants. Use of cross-tenant group synchronization requires Microsoft Entra ID Governance licenses.
+
+---
+
+### Public Preview - Microsoft Entra passkeys on Windows
+
+**Type:** Public Preview  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Microsoft Entra passkeys on Windows are now available in public preview. This feature allows users to register device‑bound passkeys directly in the local Windows Hello container and use them to sign in to Microsoft Entra ID with Windows Hello biometrics or PIN.
+
+Entra passkeys on Windows behave as standard FIDO2 credentials and can be used for Entra authentication flows without requiring the device to be Microsoft Entra joined or registered. During public preview, the feature is opt‑in and requires explicit configuration through passkey profiles to allow Windows Hello as a passkey provider.
+
+---
+
+### General Availability - Passkey profiles in Microsoft Entra ID
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Passkey profiles in Microsoft Entra ID are now generally available. Passkey profiles provide a structured way to manage passkey (FIDO2) authentication by allowing administrators to define multiple profiles with different requirements and target them to specific user groups.
+
+Each profile can specify allowed passkey types, attestation requirements, and authenticator restrictions, enabling differentiated policies for scenarios such as administrators versus standard users. For tenants that previously configured passkeys, existing settings are migrated into a default passkey profile.
+
+---
+
+### Public preview - Tenant governance relationships
+
+**Type:** Public Preview  
+**Service category:** Tenant Governance  
+**Product capability:** Tenant Governance  
+
+This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant.
+
+---
+
+### Public Preview - Related Tenants
+
+**Type:** Public Preview  
+**Service category:** Tenant Governance  
+**Product capability:** Tenant Governance  
+
+This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks.
+
+---
+
+### Public preview - Tenant configuration management administration portal experience
+
+**Type:** Public Preview  
+**Service category:** Tenant Governance  
+**Product capability:** Tenant Governance  
+
+You can now use the Entra admin center to administer tenant configuration management capabilities of Entra tenant governance. This experience allows you to create and update monitors that define desired configuration states, view drift reports, and manage permissions required for configuration monitoring across Microsoft services.
+
+---
+
+### Plan for change – Conditional Access enforcement during credential registration for Windows Hello for Business and macOS Platform SSO
+
+**Type:** Plan for Change  
+**Service category:** Conditional Access  
+**Product capability:** User Authentication  
+
+Starting in May 2026, Conditional Access policies scoped to **Register security information** will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. This ensures security requirements are enforced during credential setup, not just sign-in.
+
+Organizations should review Conditional Access policies, validate user readiness, and use report-only mode ahead of enforcement rollout beginning in late April 2026.
+
+---
+
+### General Availability - Microsoft Single Sign-On for Linux support for authenticating with Phish-Resistant MFA credentials
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** SSO  
+
+This release enables authentication using certificate-based and YubiKey phishing-resistant MFA credentials, removes Java runtime dependency, improves reliability and performance, and provides device trust using Entra Join.
+
+---
+
+### Public preview - Secure add-on tenant creation
+
+**Type:** Public Preview  
+**Service category:** Tenant Governance  
+**Product capability:** Tenant Governance  
+
+Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP.
+
+---
+
+### Public Preview - Passkey Adoption Campaigns with the Conditional Access Optimization Agent
+
+**Type:** Public Preview  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+
+The Conditional Access Optimization Agent now supports passkey adoption campaigns, helping organizations roll out phishing-resistant authentication in a structured and automated way. The agent assesses readiness, generates deployment plans, guides users, and enforces Conditional Access policies when ready.
+
+---
+
+### Public Preview - Phased Rollout with the Conditional Access Agent
+
+**Type:** Public Preview  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+
+You can now use the Conditional Access Optimization Agent to safely roll out any report-only Conditional Access policy in phases. The agent analyzes sign-in data and recommends staged deployments to minimize user impact.
+
+---
+
+### General Availability - New M365 group creation experience in My Groups
+
+**Type:** General Availability  
+**Service category:** Group Management  
+**Product capability:** End User Experiences  
+
+The updated My Groups experience allows owners to configure group, email, and security settings during creation, including sensitivity labels, Exchange options, external sender controls, and security group functionality. This self-service experience is rolling out to all tenants by the end of March.
+
+---
+
+### General Availability - Microsoft Entra Connect Health now enforces TLS 1.2
+
+**Type:** General Availability  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+Entra Connect Health now enforces TLS 1.2 for all agent-to-service communications. Organizations should ensure agents are up to date and servers are configured for TLS 1.2 to maintain connectivity and security compliance.
+
+---
+
+### Now GA: Just‑in‑Time Password Migration in Microsoft Entra External ID
+
+**Type:** General Availability  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+Just‑in‑Time Password Migration allows customers to securely migrate passwords at first sign-in, enabling users to continue using existing credentials without forced resets and reducing migration risk.
+
+---
+
+### General Availability - Enabling Email and SMS OTP MFA in Entra External ID Native Authentication
+
+**Type:** General Availability  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** Developer Experience  
+
+Applications can now use Email and SMS OTP MFA with Entra External ID Native Authentication through SDKs and APIs, enabling secure sign-in and sign-up flows.
+
+---
+
+### General Availability - Tenant configuration management APIs
+
+**Type:** General Availability  
+**Service category:** Tenant Governance  
+**Product capability:** Tenant Governance  
+
+Tenant Configuration Management APIs allow organizations to capture tenant configuration snapshots and continuously monitor and enforce desired configuration states through drift detection.
+
+---
+
+### General availability – Improved readability for Authentication Methods Policy Update audit logs
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Authentication Methods Policy Update audit logs now surface only the specific properties that were changed, along with their old and new values, improving clarity without changing policy behavior.
+``
+
+---
+
+
 ## February 2026
 
 ### General Availability - Expanded attribute support in Lifecycle Workflows attribute changes trigger
