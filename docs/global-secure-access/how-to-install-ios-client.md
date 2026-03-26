@@ -120,9 +120,6 @@ Because the Global Secure Access client for iOS is integrated with Microsoft Def
 You can enable or disable the Global Secure Access client for iOS by setting the **EnableGSA** key in the [VPN profile](#create-a-vpn-profile-and-configure-global-secure-access-for-microsoft-defender-for-endpoint). End users can enable or disable individual **Services** or the client itself based on the configuration settings, using the appropriate toggles.   
 :::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
 
-If the client is unable to connect, a toggle appears to disable the service. Users can come back later to try enabling the client.   
-:::image type="content" source="media/how-to-install-ios-client/ios-unable-to-connect.png" alt-text="Screenshot of the Global Secure Access client on iOS showing the message 'Unable to connect.'":::   
-
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
     - Relaunch the Defender app.
@@ -130,6 +127,8 @@ If the client is unable to connect, a toggle appears to disable the service. Use
     - Reload the application (or refresh the web browser).
 
 ## Related content
+- [Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics](troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access mobile client with Health check utility](troubleshoot-global-secure-access-mobile-client-health-check-utility.md)
 - [Microsoft Defender for Endpoint on iOS](/defender-endpoint/microsoft-defender-endpoint-ios)
 - [Deploy Microsoft Defender for Endpoint on iOS with Microsoft Intune](/defender-endpoint/ios-install)
 - [Global Secure Access client for macOS](how-to-install-macos-client.md)
