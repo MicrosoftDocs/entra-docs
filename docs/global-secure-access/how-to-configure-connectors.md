@@ -37,7 +37,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 >
 > Disable `HTTP/2` protocol support in `WinHttp` for web applications published via Microsoft Entra application proxy to work properly. `HTTP/2` is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables `HTTP/2` on Windows Server 2019 and later. This is a machine-wide registry key.
 >
-> ```
+> ```registry
 > Windows Registry Editor Version 5.00
 >
 > [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
@@ -46,7 +46,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 >
 > The key can be set via PowerShell with the following command:
 >
-> ```
+> ```powershell
 > Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
 > ```
 
@@ -61,7 +61,7 @@ To enable TLS 1.2:
 
 1. Set registry keys.
 
-   ```
+   ```registry
    Windows Registry Editor Version 5.00
 
    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]

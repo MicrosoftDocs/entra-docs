@@ -123,15 +123,15 @@ When a new Enterprise Application is created, a matching App Registration is als
 
         1. *Authority*: Enter *https://login.windows.net*.
 
-        2. *Tenant*: Enter the **Directory (tenant) ID** noted in *Configure the Application Access*.
+        2. *Tenant*: Enter the **Directory (tenant) ID** noted in [Configure the Application Access](#configure-the-application-access).
 
         3. *Audience*: Enter the *public* FQDN of your application registered in Microsoft Entra ID (for example, *sampleapp1.msappproxy.net*).
 
-        4. *Client ID*: Enter the **Application (client) ID** noted in *Configure the Application Access*.
+        4. *Client ID*: Enter the **Application (client) ID** noted in [Configure the Application Access](#configure-the-application-access).
 
         5. *Credential Type*: **Secret**.
 
-        6. *Secret*: Enter the **secret value** noted in *Configure the Application Access*.
+        6. *Secret*: Enter the **secret value** noted in [Configure the Application Access](#configure-the-application-access).
 
 5. Save the logic app and test with your trigger.
 
