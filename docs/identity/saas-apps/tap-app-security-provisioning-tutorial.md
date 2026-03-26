@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 	[![Screenshot on how to add domain.](media/tap-app-security-provisioning-tutorial/add-domain.png)](media/tap-app-security-provisioning-tutorial/add-domain.png#lightbox)
 1. After entering the domain, a new line in the table appears showing domain name and its status as **initialize**. Select the gear icon to reveal technical data about TAP app Security server and to complete initialization. 
 	[![Screenshot showing initialize.](media/tap-app-security-provisioning-tutorial/initialize.png)](media/tap-app-security-provisioning-tutorial/initialize.png#lightbox)
-1. Technical data about TAP App Security servers is revealed.You can now copy the **Tenant Url** and **Authorization Token** from this page to be used later on while setting up provisioning in Microsoft Entra ID.
+1. Technical data about TAP App Security servers is revealed. You can now copy the **Tenant Url** and **Authorization Token** from this page to be used later on while setting up provisioning in Microsoft Entra ID.
 	[![Screenshot showing domain details.](media/tap-app-security-provisioning-tutorial/domain-details.png)](media/tap-app-security-provisioning-tutorial/domain-details.png#lightbox)
 <a name='step-3-add-tap-app-security-from-the-azure-ad-application-gallery'></a>
 

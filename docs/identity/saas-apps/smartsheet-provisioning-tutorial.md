@@ -55,7 +55,7 @@ Before configuring Smartsheet for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of Smartsheet domain](media/smartsheet-provisioning-tutorial/smartsheet-domain.png)
 
-1. To add a new domain select **Add Domain** and follow instructions.Once the domain is added make sure it gets verified as well.
+1. To add a new domain select **Add Domain** and follow instructions. Once the domain is added make sure it gets verified as well.
 
 1. Generate the **Secret Token** required to configure automatic user provisioning with Microsoft Entra ID by navigating **[Smartsheet portal](https://app.smartsheet.com/b/home)** and then navigating to **Account > Apps and Integrations**.
 
