@@ -68,4 +68,4 @@ The following is a sequence diagram for the app-only flow:
 
 - [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
 - [On-behalf-of flow in agents](./agent-on-behalf-of-oauth-flow.md)
-- [Agent user flow in agents](./agent-user-oauth-flow.md)
+- [Agent's user account flow in agents](./agent-user-oauth-flow.md)

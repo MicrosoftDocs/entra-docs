@@ -2,11 +2,13 @@
 title: Conditional Access for Agent Identities in Microsoft Entra
 description: Learn how Conditional Access for Agent IDs in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: concept-article
-ms.date: 11/05/2025
+ms.date: 03/24/2026
 ms.custom: agent-id-ignite
 ms.reviewer: kvenkit
 ---
 # Conditional Access for Agent ID (Preview)
+
+## Overview
 
 Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it evaluates requests for human users or workload identities, but with agent-specific logic.
 
@@ -87,7 +89,7 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 There are two key business scenarios where Conditional Access policies can help you manage agents effectively.
 
-In the first scenario, you may want to ensure that only approved agents can access specific resources. You can do this by tagging agents and resources with custom security attributes targeted in your policy, or by manually selecting them using the enhanced object picker.
+In the first scenario, you might want to ensure that only approved agents can access specific resources. You can do this by tagging agents and resources with custom security attributes targeted in your policy, or by manually selecting them using the enhanced object picker.
 
 In the second scenario, Conditional Access uses [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents) to detect and block agents exhibiting risky behavior from accessing resources.
 
@@ -109,7 +111,7 @@ The recommended approach for the first scenario is to create and assign custom s
    1. Create an **Attribute set** named *ResourceAttributes*.
    1. Create **New attributes** named *Department* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**.
       1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
-1. Assign the appropriate value to resources that your agent is allowed to access. For example, you may want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
+1. Assign the appropriate value to resources that your agent is allowed to access. For example, you might want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
 
 ###### Create Conditional Access policy
 

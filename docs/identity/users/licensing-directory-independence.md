@@ -9,6 +9,9 @@ ms.reviewer: sumitp
 
 # Understand how multiple Microsoft Entra tenant organizations interact
 
+
+## Overview
+
 In Microsoft Entra ID, part of Microsoft Entra, each Microsoft Entra organization is fully independent: a peer that is logically independent from the other Microsoft Entra organizations that you manage. This independence between organizations includes resource independence, administrative independence, and synchronization independence. There's no parent-child relationship between organizations.
 
 ## Resource independence
@@ -26,7 +29,7 @@ If a non-administrative user of organization 'Contoso' creates a test organizati
 
 ## Synchronization independence
 
-You can configure each Microsoft Entra organization independently to get data synchronized from different AD forests, using the Microsoft Entra Connect tool.  See [topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md) for more information on supported topologies when there are multiple Microsoft Entra tenants.
+You can configure each Microsoft Entra organization independently to get data synchronized from different AD forests, using the Microsoft Entra Connect tool. For more information on supported topologies when there are multiple Microsoft Entra tenants, see [topologies for Microsoft Entra Connect](~/identity/hybrid/connect/plan-connect-topologies.md).
 
 <a name='add-an-azure-ad-organization'></a>
 
@@ -35,8 +38,8 @@ You can configure each Microsoft Entra organization independently to get data sy
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator).
 1. Browse to **Entra ID** > **Overview**.
 1. Select **Manage tenants**.
-1. Choose **Create**.
-1. Select **Workforce** and provide the requested information. Microsoft Entra ID creates a new organization and appears in the list of organizations.
+1. Select **Create**.
+1. Select **Workforce** and provide the requested information. Microsoft Entra ID creates a new organization and it appears in the list of organizations.
 
 > [!NOTE]
 > Unlike other Azure resources, your Microsoft Entra organizations are not child resources of an Azure subscription. If your Azure subscription is canceled or expired, you can still access your Microsoft Entra organization's data using Azure PowerShell, the Microsoft Graph API, or the Microsoft 365 admin center. You can also [associate another subscription with the organization](~/fundamentals/how-subscriptions-associated-directory.md).

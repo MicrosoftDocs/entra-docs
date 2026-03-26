@@ -2,7 +2,7 @@
 title: Learn about Microsoft Entra Private Access
 description: Learn about how Microsoft Entra Private Access secures access to your private corporate resources through the creation of Quick Access and Global Secure Access apps.
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 03/12/2026
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -10,11 +10,13 @@ ai-usage: ai-assisted
 
 # Learn about Microsoft Entra Private Access
 
+## Overview
+
 Microsoft Entra Private Access unlocks the ability to specify the fully qualified domain names (FQDNs) and IP addresses that you consider private or internal, so you can manage how your organization accesses them. With Private Access, you can modernize how your organization's users access private apps and resources. Remote workers don't need to use a VPN to access these resources if they have the Global Secure Access Client installed. The client quietly and seamlessly connects them to the resources they need.
 
 Private Access provides two ways to configure the private resources that you want to tunnel through the service. You can configure Quick Access, which is the primary group of FQDNs and IP addresses that you want to secure. You can also configure a Global Secure Access app for per-app access, which allows you to specify a subset of private resources that you want to secure. The Global Secure Access app provides a granular approach to securing your private resources.
 
-The features of Microsoft Entra Private Access provide a quick and easy way to replace your VPN to allow secure access to your internal resources with an easy-one time configuration, using the secure capabilities of Conditional Access.
+The features of Microsoft Entra Private Access provide a quick and easy way to replace your VPN to allow secure access to your internal resources with an easy, one-time configuration, using the secure capabilities of Conditional Access.
 
 ## Quick Access and Global Secure Access apps
 

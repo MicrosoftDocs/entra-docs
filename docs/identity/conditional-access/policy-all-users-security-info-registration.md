@@ -2,10 +2,12 @@
 title: Control security information registration with Conditional Access
 description: Create a custom Conditional Access policy for security info registration.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Protect security info registration with Conditional Access policy
+
+## Overview
 
 Securing when and how users register for Microsoft Entra multifactor authentication and self-service password reset is possible with user actions in a Conditional Access policy. This feature is available to organizations who enable [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md). This functionality allows organizations to treat the registration process like any application in a Conditional Access policy and use the full power of Conditional Access to secure the experience. Users signing in to the Microsoft Authenticator app or enabling passwordless phone sign-in are subject to this policy.
 

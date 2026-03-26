@@ -1,15 +1,18 @@
 ---
 title: Complete an access review of Azure resource and Microsoft Entra roles in PIM
-description: Learn how to complete an access review of Azure resource and Microsoft Entra roles Privileged Identity Management.
+description: Learn how to complete an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-image-nochange
 ---
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
 
-Privileged Role Administrators can review privileged access once an [access review starts](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID will automatically send an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
+
+## Overview
+
+Privileged Role Administrators can review privileged access once an [access review starts](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID automatically sends an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
 
 Once the review has been created, follow the steps in this article to complete the review and see the results.
 
@@ -20,7 +23,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 1. Browse to **ID Governance** > **Privileged Identity Management**. 
 
-1. For **Microsoft Entra roles**, select **Microsoft Entra roles**. For **Azure resources**, select **Azure resources**
+1. For **Microsoft Entra roles**, select **Microsoft Entra roles**. For **Azure resources**, select **Azure resources**.
 
 1. Select the access review that you want to manage. Below is a sample screenshot of the **Review Access** overview for both **Azure resources** and **Microsoft Entra roles**.
 
@@ -40,35 +43,35 @@ When the review instance is active and at least one decision has been made by re
 
 ### Apply an access review
 
-After an access review is completed, either because you've reached the end date or stopped it manually, the **Apply** button removes denied users' access to the role. If a user's access was denied during the review, this is the step that removes their role assignment. If the **Auto apply** setting is configured on review creation, this button will always be disabled because the review will be applied automatically instead of manually.
+After an access review is completed, either because you've reached the end date or stopped it manually, the **Apply** button removes denied users' access to the role. If a user's access was denied during the review, this is the step that removes their role assignment. If the **Auto apply** setting is configured on review creation, this button is always disabled because the review will be applied automatically instead of manually.
 
 ### Delete an access review
 
 If you aren't interested in the review any further, delete it. To remove the access review from the Privileged Identity Management service, select the **Delete** button.
 
 > [!IMPORTANT]
-> You will not be required to confirm this destructive change, so verify that you want to delete that review.
+> You aren't required to confirm this destructive change, so verify that you want to delete that review.
 
 ## Results
 
-On the **Results** page, you may view and download a list of your review results.
+On the **Results** page, you can view and download a list of your review results.
 
 :::image type="content" source="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-ad-results.png" alt-text="Results page listing users, outcome, reason, reviewed by, applied by, and apply result for Microsoft Entra roles screenshot." lightbox="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-ad-results.png":::
 
-> [!Note]
+> [!NOTE]
 > **Microsoft Entra roles** have a concept of role-assignable groups, where a group can be assigned to the role. When this happens, the group will show up in the review instead of expanding the members of the group, and a reviewer will either approve or deny the entire group.
 
 :::image type="content" source="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-resource-results.png" alt-text="Results page listing users, outcome, reason, reviewed by, applied by, and apply result for Azure resource roles screenshot." lightbox="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-resource-results.png":::
 
-> [!Note]
->If a group is assigned to **Azure resource roles**, the reviewer of the Azure resource role will see the expanded list of the users in a nested group. Should a reviewer deny a member of a nested group, that deny result will not be applied successfully because the user will not be removed from the nested group.
+> [!NOTE]
+>If a group is assigned to **Azure resource roles**, the reviewer of the Azure resource role will see the expanded list of the users in a nested group. Should a reviewer deny a member of a nested group, that deny result won't be applied successfully because the user will not be removed from the nested group.
 
 ## Reviewers
 
-On the **Reviewers** page, you may view and add reviewers to your existing access review. You may also remind reviewers to complete their reviews here.
+On the **Reviewers** page, you can view and add reviewers to your existing access review. You can also remind reviewers to complete their reviews here.
 
-> [!Note]
-> If the reviewer type selected is user or group, you can add more users or groups as the primary reviewers at any point. You can also remove primary reviewers at any point. If the reviewer type is manager, you can add users or groups as the fallback reviewers to complete reviews on users who do not have managers. Fallback reviewers cannot be removed.
+> [!NOTE]
+> If the reviewer type selected is user or group, you can add more users or groups as the primary reviewers at any point. You can also remove primary reviewers at any point. If the reviewer type is manager, you can add users or groups as the fallback reviewers to complete reviews on users who don't have managers. Fallback reviewers cannot be removed.
 
 :::image type="content" source="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-resource-reviewers.png" alt-text="Reviewers page listing name and user principal name for Azure resource roles screenshot." lightbox="media/pim-complete-azure-ad-roles-and-resource-roles-review/rbac-access-review-azure-resource-reviewers.png":::
 

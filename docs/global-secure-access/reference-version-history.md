@@ -2,12 +2,13 @@
 title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 ms.topic: reference
-ms.date: 02/21/2025
-ms.reviewer: ashishj
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector: version release history
+## Overview
+
 This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Look into the release notes for information on whether the connector version will be pushed for automatic update or available for download and manual update only.     
 
 > [!IMPORTANT]
@@ -175,7 +176,7 @@ March 22, 2022: Released for download. This version is only available for instal
 
 - Increased the number of HTTP headers supported on HTTP requests from 41 to 60.
 - Improved error handling of TLS failures between the connector and Azure services.
-- Updated the default connection limit to 200 for connector traffic when going through outbound proxy. To learn more about outbound proxy, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
+- Updated the default connection limit to 200 for connector traffic when going through outbound proxy. For more information about outbound proxy, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md#use-the-outbound-proxy-server).
 - Deprecated the use of Active Directory Authentication Library (ADAL) and implemented Microsoft Authentication Library (MSAL) as part of the connector installation flow.
 
 ### Fixed issues
@@ -234,7 +235,7 @@ September 20, 2018: Released for download.
 
 ### New features and improvements
 
-- Added WebSocket support for the QlikSense application. To learn more about how to integrate QlikSense with application proxy, see this [walkthrough](../identity/app-proxy/application-proxy-qlik.md). 
+- Added WebSocket support for the QlikSense application. For more information about how to integrate QlikSense with application proxy, see this [walkthrough](../identity/app-proxy/application-proxy-qlik.md). 
 - Improved the installation wizard to make it easier to configure an outbound proxy. 
 - Set TLS 1.2 as the default protocol for connectors. 
 - Added a new End-User License Agreement (EULA).  

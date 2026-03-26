@@ -2,11 +2,13 @@
 title: Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID
 description: Troubleshoot and respond to changes in user state faster with continuous access evaluation in Microsoft Entra ID.
 ms.topic: troubleshooting
-ms.date: 08/28/2025
+ms.date: 03/24/2026
 ms.reviewer: vmahtani
 ms.custom: sfi-image-nochange
 ---
 # Monitor and troubleshoot continuous access evaluation
+
+## Overview
 
 Administrators can monitor and troubleshoot sign in events where [continuous access evaluation (CAE)](concept-continuous-access-evaluation.md) is applied in multiple ways.
 

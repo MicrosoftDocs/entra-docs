@@ -1,6 +1,6 @@
 ---
 title: Call the Request Service REST API
-description: Learn how to issue and verify by using the Request Service REST API.
+description: Learn how to issue and verify credentials by using the Request Service REST API.
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 12/13/2024
@@ -9,6 +9,9 @@ ms.date: 12/13/2024
 ---
 
 # Call the Request Service REST API
+
+
+## Overview
 
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify credentials. This article shows you how to start using the Request Service REST API.
 
@@ -20,7 +23,7 @@ To get an access token, your app must be registered with the Microsoft identity 
 
 ### Get an access token
 
-Use the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. In this tutorial, we use the Microsoft Authentication Library ([MSAL](~/identity-platform/msal-overview.md)). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
+Use the [OAuth 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire the access token by using the Microsoft identity platform. Use a trusted library for this purpose. This tutorial uses the Microsoft Authentication Library ([MSAL](~/identity-platform/msal-overview.md)). MSAL simplifies adding authentication and authorization to an app that can call a secure web API.
 
 # [HTTP](#tab/http)
 
@@ -137,7 +140,7 @@ For more information about how to get an access token by using a console app's i
 - [Node.js](~/identity-platform/quickstart-v2-nodejs-console.md)
 - [Java](~/identity-platform/quickstart-v2-java-daemon.md)
 
-You can also [access a token request with a certificate](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) instead of a client secret.
+You can also [request a token with a certificate](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) instead of a client secret.
 
 # [HTTP](#tab/http)
 
@@ -277,7 +280,7 @@ To issue or verify a verifiable credential:
     Authorization: Bearer <token>
     ```
 
-1. Set the `Content-Type` header to `Application/json`.
+1. Set the `Content-Type` header to `application/json`.
 
 1. Prepare and attach the [issuance](issuance-request-api.md#issuance-request-payload) or [presentation](presentation-request-api.md#presentation-request-payload) request payload to the request body.
 
@@ -399,7 +402,7 @@ Presentation request for a credential with a certain type and issuer:
   "requestedCredentials": [
     {
       "type": "VerifiedCredentialExpert",
-      "purpose": "So we can see that you a veritable credentials expert",
+      "purpose": "So we can see that you are a veritable credentials expert",
       "acceptedIssuers": [
         "did:web:verifiedid.contoso.com"
       ],
@@ -460,7 +463,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt isn't supported then.
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false because receipts aren't supported with FaceCheck.
 
 ```json
 {
@@ -545,7 +548,7 @@ try
 }
 ```
 
-For the complete code, see the [issuance](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/blob/main/1-asp-net-core-api-idtokenhint/IssuerController.cs) and [presentation](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/blob/main/1-asp-net-core-api-idtokenhint/IssuerController.cs) code on the GitHub repo.
+For the complete code, see the [issuance](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/blob/main/1-asp-net-core-api-idtokenhint/IssuerController.cs) and [presentation](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/blob/main/1-asp-net-core-api-idtokenhint/VerifierController.cs) code on the GitHub repo.
 
 # [Node.js](#tab/nodejs)
 

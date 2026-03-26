@@ -2,10 +2,12 @@
 title: Conditional Access protections for Generative AI
 description: Protecting Gen AI services like Microsoft Security Copilot and Microsoft 365 Copilot with Conditional Access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy
+
+## Overview
 
 [Generative Artificial Intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) and [Microsoft 365 Copilot](/copilot/microsoft-365/) when used appropriately bring value to your organization. Protecting these services from misuse can be accomplished with existing features like Microsoft Entra Conditional Access policy.
 
@@ -44,7 +46,7 @@ As an organization adopting services like Microsoft 365 Copilot and Microsoft Se
 
 ### All users of Generative AI services must complete phishing-resistant MFA
 
-The following steps help create a Conditional Access policy to require all users do multifactor authentication using the authentication strength policy.
+The following steps help create a Conditional Access policy to require all users to perform multifactor authentication using the authentication strength policy.
 
 > [!WARNING]
 > If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.

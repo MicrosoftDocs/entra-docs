@@ -2,19 +2,22 @@
 title: Privileged Identity Management (PIM) for Groups
 description: How to manage Microsoft Entra Privileged Identity Management (PIM) for Groups.
 ms.topic: overview
-ms.date: 02/24/2025
+ms.date: 03/23/2026
 ms.custom: pim, sfi-ga-nochange
 ---
 
 # Privileged Identity Management (PIM) for Groups
 
+
+## Overview
+
 Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. Groups can be used to control access to a variety of scenarios, including Microsoft Entra roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications.
 
 ## What is PIM for Groups?
 
-PIM for Groups is part of Microsoft Entra Privileged Identity Management – alongside with PIM for Microsoft Entra roles and PIM for Azure Resources, PIM for Groups enables users to activate the ownership or membership of a Microsoft Entra security group or Microsoft 365 group. Groups can be used to govern access to various scenarios that include Microsoft Entra roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third party applications.
+PIM for Groups is part of Microsoft Entra Privileged Identity Management – alongside PIM for Microsoft Entra roles and PIM for Azure Resources, PIM for Groups enables users to activate the ownership or membership of a Microsoft Entra security group or Microsoft 365 group. Groups can be used to govern access to various scenarios that include Microsoft Entra roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications.
 
-With PIM for Groups you can use policies similar to ones you use in PIM for Microsoft Entra roles and PIM for Azure Resources: you can require approval for membership or ownership activation, enforce multifactor authentication (MFA), require justification, limit maximum activation time, and more. Each group in PIM for Groups has two policies: one for activation of membership and another for activation of ownership in the group. Up until January 2023, PIM for Groups feature was called “Privileged Access Groups”.
+With PIM for Groups you can use policies similar to ones you use in PIM for Microsoft Entra roles and PIM for Azure Resources: you can require approval for membership or ownership activation, enforce multifactor authentication (MFA), require justification, limit maximum activation time, and more. Each group in PIM for Groups has two policies: one for activation of membership and another for activation of ownership in the group. Up until January 2023, the PIM for Groups feature was called “Privileged Access Groups”.
 
 [!INCLUDE [PIM for Groups note](~/includes/pim-for-groups-include.md)]
 
@@ -30,35 +33,35 @@ When working with Microsoft Entra ID, you can assign a Microsoft Entra security 
 
 To learn more about Microsoft Entra role-assignable groups, see [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). 
 
-Role-assignable groups benefit from extra protections comparing to non-role-assignable groups:
+Role-assignable groups benefit from extra protections compared to non-role-assignable groups:
 
 - **Role-assignable groups** - only the Global Administrator, Privileged Role Administrator, or the group Owner can manage the group. Also, no other users can change the credentials of the users who are (active) members of the group. This feature helps prevent an admin from elevating to a higher privileged role without going through a request and approval procedure.
-- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators, and so on. Also, various roles Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators, and so on.
+- **Non-role-assignable groups** - various Microsoft Entra roles can manage these groups – that includes Exchange Administrators, Groups Administrators, User Administrators. Also, various Microsoft Entra roles can change the credentials of the users who are (active) members of the group – that includes Authentication Administrators, Helpdesk Administrators, User Administrators.
 
 To learn more about Microsoft Entra built-in roles and their permissions, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
-Microsoft Entra role-assignable group feature is not part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md) .
+The Microsoft Entra role-assignable group feature isn't part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
 
 
 ## Relationship between role-assignable groups and PIM for Groups
 
 Groups in Microsoft Entra ID can be classified as either role-assignable or non-role-assignable. Additionally, any group can be enabled or not enabled for use with Microsoft Entra Privileged Identity Management (PIM) for Groups. These are independent properties of the group. Any Microsoft Entra security group and any Microsoft 365 group (except dynamic membership groups and groups synchronized from on-premises environment) can be enabled in PIM for Groups. The group doesn't have to be role-assignable group to be enabled in PIM for Groups.
 
-If you want to assign a Microsoft Entra role to a group, it has to be role-assignable. Even if you don't intend to assign a Microsoft Entra role to the group but the group provides access to sensitive resources, it is still recommended to consider creating the group as role-assignable. This is because of extra protections role-assignable groups have – see [“What are Microsoft Entra role-assignable groups?”](#what-are-entra-id-role-assignable-groups) in the section above.
+If you want to assign a Microsoft Entra role to a group, it has to be role-assignable. Even if you don't intend to assign a Microsoft Entra role to the group but the group provides access to sensitive resources, it's still recommended to consider creating the group as role-assignable. This is because of extra protections role-assignable groups have – see [“What are Microsoft Entra role-assignable groups?”](#what-are-entra-id-role-assignable-groups) in the section above.
 
->[!IMPORTANT]
-> Up until January 2023, it was required that every Privileged Access Group (former name for this PIM for Groups feature) had to be role-assignable group. This restriction is currently removed. Because of that, it is now possible to enable more than 500 groups per tenant in PIM, but only up to 500 groups can be role-assignable.
+> [!IMPORTANT]
+> Up until January 2023, it was required that every Privileged Access Group (former name for this PIM for Groups feature) had to be role-assignable group. This restriction is currently removed. Because of that, it's now possible to enable more than 500 groups per tenant in PIM, but only up to 500 groups can be role-assignable.
 
 <a name='making-group-of-users-eligible-for-entra-id-role'></a>
 
-## Making group of users eligible for Microsoft Entra role
+## Make a group of users eligible for a Microsoft Entra role
 
 There are two ways to make a group of users eligible for Microsoft Entra role:
 
 1. Make active assignments of users to the group, and then assign the group to a role as eligible for activation.
-2. Make active assignment of a role to a group and assign users to be eligible to group membership.
+1. Make active assignment of a role to a group and assign users to be eligible to group membership.
 
-To provide a group of users with just-in-time access to Microsoft Entra roles with permissions in SharePoint, Exchange, or Microsoft Purview portal (for example, Exchange Administrator role), be sure to make active assignments of users to the group, and then assign the group to a role as eligible for activation (Option #1 above). If you choose to make active assignment of a group to a role and assign users to be eligible to group membership instead, it may take significant time to have all permissions of the role activated and ready to use.
+To provide a group of users with just-in-time access to Microsoft Entra roles with permissions in SharePoint, Exchange, or Microsoft Purview portal (for example, Exchange Administrator role), be sure to make active assignments of users to the group, and then assign the group to a role as eligible for activation (Option #1 above). If you choose to make active assignment of a group to a role and assign users to be eligible to group membership instead, it might take significant time to have all permissions of the role activated and ready to use.
 
 In other words, to avoid activation delays, use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview portal. For more information, see [Error when accessing SharePoint or OneDrive after role activation in PIM](/sharepoint/troubleshoot/administration/access-denied-to-pim-user-accounts).
 
@@ -72,10 +75,10 @@ If a user is an active member of Group A, and Group A is an eligible member of G
 
 ## Privileged Identity Management and app provisioning
 
-If the group is configured for [app provisioning](~/identity/app-provisioning/index.yml), activation of group membership will trigger provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
+If the group is configured for [app provisioning](~/identity/app-provisioning/index.yml), activation of group membership triggers provisioning of group membership (and user account itself if it wasn’t provisioned previously) to the application using SCIM protocol. 
 
-We have a functionality that triggers provisioning right after group membership is activated in PIM.
-Provisioning configuration depends on the application. Generally, we recommend having at least two groups assigned to the application. Depending on the number of roles in your application, you may choose to define additional “privileged groups.”:
+There's functionality that triggers provisioning right after group membership is activated in PIM.
+Provisioning configuration depends on the application. Generally, it's recommended to have at least two groups assigned to the application. Depending on the number of roles in your application, you might choose to define additional “privileged groups”:
 
 
 |Group|Purpose|Members|Group membership|Role assigned in the application|
@@ -91,8 +94,8 @@ Provisioning configuration depends on the application. Generally, we recommend h
     * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
-* If the user is unable to access the necessary group in the target application, please review the PIM logs and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
-* Using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics), customers can create alerts for failures.
+* If the user is unable to access the necessary group in the target application, review the PIM logs and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it might take additional time for the group membership to take effect in the application.
+* Using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics), you can create alerts for failures.
 
 ## Next steps
 

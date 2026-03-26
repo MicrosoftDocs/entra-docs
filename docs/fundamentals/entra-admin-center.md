@@ -10,11 +10,14 @@ ms.custom: sfi-image-nochange
 
 # What is the Microsoft Entra admin center?
 
+
+## Overview
+
 The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based identity portal for Microsoft Entra products. It provides a unified administrative experience for organizations to configure and manage their Microsoft Entra solutions in a centralized location.
 
 ## Explore the Microsoft Entra admin center
 
-The Microsoft Entra admin center is organized by product. The products can be accessed through the search bar or left-hand menu.
+The Microsoft Entra admin center is organized by product. Access the products through the search bar or left-hand menu.
 
 **Home** includes at-a-glance information about your tenant, recent activities, and other helpful resources, including shortcuts and deployment guides.
  
@@ -96,7 +99,7 @@ For more information about configuring and managing Global Secure Access solutio
 
 ### Need help?
 
-**Diagnose & solve problems** provides troubleshooting resources to fix common problems, and the option to contact our support team by opening a **New support request**.
+**Diagnose & solve problems** provides troubleshooting resources to fix common problems, and the option to contact the support team by opening a **New support request**.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-diagnose-and-solve.png" alt-text="Screenshot of the Microsoft Entra admin center Diagnose & solve menu.":::
 

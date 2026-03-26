@@ -2,11 +2,13 @@
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 ms.topic: concept-article
-ms.date: 02/21/2026
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
 # Understand remote network connectivity
+
+## Overview
 
 Global Secure Access supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
 
@@ -98,7 +100,7 @@ The total bandwidth you're allocated is determined by the number of licenses pur
 
 **Table notes**
 - Minimum number of licenses to use remote network connectivity feature is 50. 
-- The number of licenses is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
+- The number of licenses is equal to the total number of licenses purchased (Microsoft Entra ID P1 + Microsoft Entra Internet Access /Microsoft Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
 - Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
 - If more bandwidth is required, additional bandwidth is available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
 
@@ -107,19 +109,19 @@ The total bandwidth you're allocated is determined by the number of licenses pur
 
 **Tenant 1:**
 
-- 1,000 Entra ID P1 licenses
+- 1,000 Microsoft Entra ID P1 licenses
 - Allocated: 1,000 licenses, 3,500 Mbps
 
 **Tenant 2:**
 
-- 3,000 Entra ID P1 licenses
+- 3,000 Microsoft Entra ID P1 licenses
 - 3,000 Internet Access licenses
 - Allocated: 6,000 licenses, 11,000 Mbps
 
 **Tenant 3:**
 
-- 8,000 Entra ID P1 licenses
-- 6,000 Entra Suite licenses
+- 8,000 Microsoft Entra ID P1 licenses
+- 6,000 Microsoft Entra Suite licenses
 - Allocated: 14,000 licenses, 39,000 Mbps
 
 #### Examples of Bandwidth distribution for Remote Networks 

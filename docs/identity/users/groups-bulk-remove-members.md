@@ -9,7 +9,10 @@ ms.reviewer: jeffsta
 
 # Bulk remove group members in Microsoft Entra ID
 
-You can remove a large number of members from a group by using a comma-separated values (CSV) file to remove group members in bulk using the portal for Microsoft Entra ID.
+
+## Overview
+
+You can remove a large number of members from a group by using a comma-separated values (CSV) file in the portal for Microsoft Entra ID.
 
 ## Understand the CSV template
 
@@ -55,7 +58,7 @@ joseph@contoso.com
 1. On the **Members** page, select **Remove members**.
 1. On the **Bulk remove group members** page, select **Download** to get the CSV file template with required group member properties.
 
-   :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="Screenshot that shows the Remove Members command is on the profile page for the group.":::
+    :::image type="content" source="./media/groups-bulk-remove-members/remove-panel.png" alt-text="Screenshot that shows the Remove Members command is on the profile page for the group.":::
 
 1. Open the CSV file and add a line for each group member you want to remove from the group. For each member, enter either their **User principal name** (UPN, such as `user@contoso.com`) or their **Object ID** (a GUID like `00aa00aa-bb11-cc22-dd33-44ee44ee44ee`). Enter one member per row. Then save the file.
 

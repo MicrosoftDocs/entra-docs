@@ -2,7 +2,7 @@
 title: Configure Salesforce Sandbox for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to perform in Salesforce Sandbox and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce Sandbox.
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/23/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce Sandbox so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce Sandbox.
@@ -55,9 +55,9 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. Select your instance of Salesforce Sandbox, then select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Screenshot shows the Salesforce Sandbox Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/salesforce-sandbox-provisioning-tutorial/provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. Under the **Admin Credentials** section, provide the following configuration settings:
    
@@ -83,21 +83,27 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Salesforce Sandbox app.
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive provisioning error notifications, and check the checkbox.
+1. Select **Create** to create your configuration.
 
-1. Select **Save.**  
-    
-1.  Under the Mappings section, select **Synchronize Microsoft Entra users to Salesforce Sandbox.**
+1. Select **Properties** on the **Overview** page.
 
-1. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to Salesforce Sandbox. The attributes selected as **Matching** properties are used to match the user accounts in Salesforce Sandbox for update operations. Select the Save button to commit any changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. To enable the Microsoft Entra provisioning service for Salesforce Sandbox, change the **Provisioning Status** to **On** in the Settings section
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Save.**
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-It starts the initial synchronization of any users and/or groups assigned to Salesforce Sandbox in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on Salesforce Sandbox app.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Salesforce Sandbox. The attributes selected as **Matching** properties are used to match the user accounts in Salesforce Sandbox for update operations. Select the Save button to commit any changes.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
+
+## Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

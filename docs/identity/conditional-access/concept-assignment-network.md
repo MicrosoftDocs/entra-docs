@@ -2,11 +2,13 @@
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Network assignment
+
+## Overview
 
 Admins can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries or regions, unknown areas that don't map to specific countries or regions, or [Global Secure Access compliant network](../../global-secure-access/how-to-compliant-network.md).
 
@@ -78,6 +80,13 @@ To define a named location by public IPv4 or IPv6 address ranges, provide:
 - A **Name** for the location.
 - One or more public IP ranges.
 - Optionally **Mark as trusted location**.
+
+> [!NOTE]
+> IPv6 addresses must be entered in CIDR notation. For example:
+> - Single IPv6 address: `2001:db8::1/128`
+> - IPv6 subnet range: `2001:db8:abcd:0012::/64`
+> IPv6 ranges represent a block of public addresses and follow standard IPv6 CIDR formatting.
+
 
 Named locations defined by IPv4 or IPv6 address ranges have the following limitations: 
 

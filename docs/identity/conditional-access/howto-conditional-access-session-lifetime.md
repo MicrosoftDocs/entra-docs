@@ -2,7 +2,7 @@
 title: Adaptive Session Lifetime Policies for Conditional Access
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 03/24/2026
 ms.reviewer: inbarc
 ms.custom:
   - ai-gen-docs-bap
@@ -11,6 +11,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Configure adaptive session lifetime policies
+
+## Overview
 
 > [!WARNING]
 > If you're using the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature currently in public preview, we don't support creating two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.  
@@ -96,7 +98,7 @@ Use the [What If tool](what-if-tool.md) to simulate a sign-in to the target appl
 
 ## Prompt tolerance
 
-We account for five minutes of clock skew when **every time** is selected in policy, so we don’t prompt users more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
+The system accounts for five minutes of clock skew when **every time** is selected in policy, so users aren’t prompted more often than once every five minutes. If the user completes MFA in the last 5 minutes and encounters another Conditional Access policy that requires reauthentication, we don't prompt the user. Prompting users too often for reauthentication can affect their productivity and increase the risk of users approving MFA requests they didn’t initiate. Use "Sign-in frequency – every time" only when there are specific business needs.
 
 ## Known issues
 

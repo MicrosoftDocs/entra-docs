@@ -3,7 +3,7 @@ title: Check Workflow Insights
 description: Learn how to check workflow insights within your Microsoft Entra tenant.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 03/12/2026
 ms.reviewer: krbain
 
 #CustomerIntent: As a system administrator, I want to view insights across my environment so that I know which workflows, or tasks, are being used the most.
@@ -43,9 +43,9 @@ For more information, see: [Workflow Insights](lifecycle-workflow-insights.md).
 
    :::image type="content" source="media/manage-workflow-insights/timespan-choice.png" alt-text="Screenshot of picking time duration in workflow insights.":::
 
-1. With the activity filter, you can choose to see the top processed workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones who **Failed**.
+1. With the activity filter, you can choose to see the top processed workflows or tasks by choosing **Total Processed**, only those which were **Successful**, or only the ones that **Failed**.
 
-1. Under **Workflow Runs by Category** you're able to filter workflows by category. You can filter to see percentage  of workflows **Total Processed**, **Successful** workflow by category, or **Failed** workflow by category.
+1. Under **Workflow Runs by Category** you can filter workflows by category. You can filter to see the percentage of workflows **Total Processed**, **Successful** workflows by category, or **Failed** workflows by category.
 
    :::image type="content" source="media/manage-workflow-insights/workflow-filter-category.png" alt-text="Screenshot of workflows by category insights.":::
 

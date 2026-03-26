@@ -11,12 +11,15 @@ ms.collection: M365-identity-device-management
 
 # Trial user guide: Microsoft Entra Suite
 
+
+## Overview
+
 Welcome to the Microsoft Entra Suite trial user guide. Make the most of your free trial by discovering the robust and comprehensive capabilities of [Microsoft Entra](what-is-entra.md).
 
-> [!Tip]
+> [!TIP]
 > Save this trial user guide to your browser favorites. When links in the trial user guide take you away from this location, it'll be easier to return to this guide to continue.
 
-## What is the Microsoft Entra Suite? 
+## What is the Microsoft Entra Suite?
 
 [Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite allows you to provide least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, ID Protection, governance, and identity verification solutions, the Microsoft Entra Suite extends Conditional Access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
 
@@ -27,7 +30,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 When you start a trial or purchase Microsoft Entra Suite, your first step is to determine which licensing option is best suited for your organization. Special pricing is available for Microsoft Entra ID P2/E5 customers. For more information about pricing, see [Microsoft Entra plans & pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
-## What is included in the Microsoft Entra Suite trial? 
+## What is included in the Microsoft Entra Suite trial?
 
 The Microsoft Entra Suite includes these products: 
 
@@ -43,19 +46,19 @@ The Microsoft Entra Suite includes these products:
 
 ## Microsoft Entra Suite product guides
 
-To help you get the most out of your Microsoft Entra Suite trial, we recommend you review the following how-to guides to help ensure a more secure environment for your organization. 
+To help you get the most out of your Microsoft Entra Suite trial, review the following how-to guides to help ensure a more secure environment for your organization. 
 
 The following how-to guides are expanded upon in this section: 
 
 - [Step 1: Deploy ID Protection](#step-1-deploy-microsoft-entra-id-protection): Deploy security controls to enhance identification and protection of risky users.  
 - [Step 2: Enact access reviews](#step-2-enact-access-reviews): Conduct an access review to ensure appropriate system access within your enterprise. 
 - [Step 3: Secure access to the internet](#step-3-secure-access-to-the-internet): Protect internet traffic with secure web gateways.
-- [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems with Quick Access.
+- [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Replace costly VPN systems with Quick Access.
 - [Step 5: Onboard customers with a workflow portal](#step-5-onboard-customers-with-a-workflow-portal): Automate employee onboarding with lifecycle workflows. 
 
 :::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite Zero Trust strategy steps.":::
 
-The following sections include process steps to walk you through each product. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
+The following sections include process steps to walk you through each product. Each of these steps is fully documented in a separate how-to guide that you can access by selecting the link at the end of each step.  
 
 ### Step 1: Deploy Microsoft Entra ID Protection
 
@@ -115,7 +118,7 @@ To view the complete how-to guide, see [Automate employee onboarding tasks with 
 
 ## Customer scenarios for using the Microsoft Entra Suite trial 
 
-The following deployment scenarios provide detailed guidance on how to combine and test all five Microsoft Entra Suite products. Each scenario in this section includes separate step-by-step instructions that you can access by clicking the link at the end of each scenario.
+The following deployment scenarios provide detailed guidance on how to combine and test all five Microsoft Entra Suite products. Each scenario in this section includes separate step-by-step instructions that you can access by selecting the link at the end of each scenario.
 
 To get the most out of your trial, get started by walking through the following user scenarios. 
 
@@ -146,7 +149,7 @@ The step-by-step guidance focuses on Microsoft Entra Verified ID, Microsoft Entr
 
 The modernized remote access to on-premises apps with MFA per app scenarios describe these goals: 
 
-- Upgrade existing VPN to a scalable cloud-based solution that helps to move towards Secure Access Service Microsoft Edge (SASE). 
+- Upgrade existing VPN to a scalable cloud-based solution that helps to move towards Secure Access Service Edge (SASE). 
 - Resolve issues where business application access relies on corporate network connectivity. 
 
 The step-by-step guidance focuses on Microsoft Entra Private Access, Microsoft Entra ID Protection, and Microsoft Entra ID Governance. For more information, see [Microsoft Entra deployment scenario - Modernize remote access](~/architecture/deployment-scenario-remote-access.md).  
