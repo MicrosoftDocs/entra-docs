@@ -40,12 +40,12 @@ Mail-enabled groups and distribution lists written back to Active Directory cont
 
 By default, Microsoft Entra Connect Sync uses the following format when naming groups are written back:
 
-- **Default format:** `CN=Group_<guid>,OU=<container>,DC=<domain component>,DC=<domain component>`
+- **Default format:** `CN=Group_<guid>,OU=<container>,DC=<domain component>`
 - **Example:** `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=Contoso,DC=com`
 
 To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with Cloud Display Name** during initial setup of Group Writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
 
-- **New format:** `CN=<display name>_<last 12 digits of object ID>,OU=<container>`
+- **New format:** `CN=<display name>_<last 12 digits of object ID>,OU=<container>,DC=<domain component>`
 
 - **Example:** `CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
 
