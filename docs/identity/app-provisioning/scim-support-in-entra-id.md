@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 author: jenniferf-skc
 manager: pmwongera
-ms.date: 03/24/2026
+ms.date: 03/26/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -26,6 +26,8 @@ This article provides an overview of SCIM support in Microsoft Entra ID and help
 ---
 
 ## SCIM in Microsoft Entra ID at a glance
+
+:::image type="content" source="./media/scim-support-in-entra-id/scim-overview.png" alt-text="Diagram showing SCIM support scenarios in Microsoft Entra ID" lightbox="./media/scim-support-in-entra-id/scim-overview.png":::
 
 | Scenario | Role played by Entra | Typical use case |
 |--------|---------------------|------------------|

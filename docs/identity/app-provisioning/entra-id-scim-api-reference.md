@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 03/26/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -276,6 +276,50 @@ Response is truncated for readability.
   "attributes": [...]
 }
 ```
+#### Example 3 – Requesting custom security attributes schema
+
+**Request:**
+
+GET [https://graph.microsoft.com/rp/scim/schemas/urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes](https://graph.microsoft.com/rp/scim/schemas/urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes)
+
+Authorization: Bearer <bearer_token>
+
+Response is truncated for readability.
+
+```json
+{
+  "id": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes",
+  "name": "MicrosoftEntraCustomSecurityAttributes",
+  "description": "Microsoft Entra Custom Security Attributes",
+  "attributes": [
+    {
+      "name": "Project",
+      "type": "complex",
+      "multiValued": false,
+      "description": "Projects assigned to the user",
+      "required": false,
+      "caseExact": false,
+      "subAttributes": [
+        {
+          "name": "ProjectName",
+          "type": "String",
+          "multiValued": false,
+          "description": "Name of the project",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none"
+        }
+      ],
+      "mutability": "readWrite",
+      "returned": "request",
+      "uniqueness": "none"
+    }, …
+]
+}
+```
+
 
 ## List users 
 
@@ -437,9 +481,46 @@ Authorization: Bearer \<bearer_token\>
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/users?count=15>
+GET [https://graph.microsoft.com/rp/scim/users?count=15](https://graph.microsoft.com/rp/scim/users?count=15)
 
 Authorization: Bearer \<bearer_token\>
+
+#### Example 9 - Retrieve specific custom security attributes for a user
+
+GET [https://graph.microsoft.com/rp/scim/users?filter=userName eq "AdeleV@contoso.com"&attributes=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes:Project]
+
+Authorization: Bearer <bearer_token>
+
+**Response (200 OK)**
+Response truncated for readability.
+
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+  ],
+  "totalResults": 1,
+  "resources": [
+    {
+      "schemas": [
+        "urn:ietf:params:scim:schemas:core:2.0:User",
+        "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes"
+      ],
+      "id": "e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+      "userName": "AdeleV@contoso.com",
+      "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes": {
+        "Project": {
+          "ProjectName": "IdentityHub"
+        }
+      },
+      "meta": {
+        "location": "/users/e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+        "resourceType": "user"
+      }
+    }
+  ]
+}
+```
 
 ## Get user by ID
 
@@ -735,6 +816,33 @@ Content-Type: ```application/scim+json```
 **Response (200 OK):**
 
 The response conforms to SCIM specification.
+
+#### Example 6 - Update custom security attributes
+
+**Request:**
+PATCH [https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
+
+Authorization: Bearer <bearer_token>
+
+Content-Type: application/scim+json
+
+```json
+{
+  "schemas": [ "urn:ietf:params:scim:api:messages:2.0:PatchOp" ],
+  "operations": [
+    {
+      "op": "add",
+      "path": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes:Project.ProjectName",
+      "value": "IdentityHubV2"
+    }
+  ]
+}
+```
+**Response (204 No Content):**
+The response conforms to SCIM specification.
+
+
+
 
 ## Delete a user
 

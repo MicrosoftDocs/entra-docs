@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 03/26/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -31,8 +31,8 @@ For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id
 
 The SCIM Provisioning API is a paid add-on that requires a subscription and billing configuration:
 
-- **Cost:** USD $0.002 per API call.
-- **Billing:** Monthly, through a linked Azure subscription.
+- **Cost:** USD $0.002 per per transaction.
+- **Billing:** A **billable transaction** corresponds to **one SCIM API request** sent to the service. Successful requests that return HTTP status codes **2xx** or **404 (Not Found)** are counted as billable transactions.
 
 ## Enable the SCIM Provisioning API
 
