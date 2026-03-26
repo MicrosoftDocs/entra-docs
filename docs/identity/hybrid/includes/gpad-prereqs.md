@@ -25,7 +25,7 @@ The following prerequisites are required to implement provisioning groups to Act
  > ```powershell
  > $credential = Get-Credential  
  >
- > Set-AAD DSCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
+ > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
  > ```
  >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendant Groups and User objects. 
  >
