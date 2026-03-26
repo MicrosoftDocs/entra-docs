@@ -2,7 +2,7 @@
 title: Agent identity blueprints in Microsoft Entra Agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
-ms.date: 11/04/2025
+ms.date: 03/26/2026
 ms.custom: agent-id-ignite
 ms.topic: concept-article
 
@@ -30,7 +30,7 @@ An agent identity blueprint has the following properties that are shared across 
 - **Verified publisher**: The organization that built the agent.
 - **Settings for authentication protocols**: Configure which information is included in access tokens issued to the agent, such as **OptionalClaims**.
 
-The full schema is available in the [Microsoft Graph API reference documentation](/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve=true).
+The full schema is available in the [Microsoft Graph API reference documentation](/graph/api/resources/agentidentityblueprint).
 
 ## Key characteristics of agent identity blueprints
 

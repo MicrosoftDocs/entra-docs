@@ -2,7 +2,7 @@
 title: How are agent identities created?
 description: Learn about the ways to create Microsoft Entra agent identity blueprints, agent identities, and agents' user accounts as well as monitor and control their introduction into your tenant.
 ms.topic: concept-article
-ms.date: 03/25/2026
+ms.date: 03/26/2026
 author: omondiatieno
 ms.author: jomondi
 ms.reviewer: dastrock
