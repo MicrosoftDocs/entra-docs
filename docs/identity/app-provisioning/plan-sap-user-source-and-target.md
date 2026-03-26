@@ -384,7 +384,7 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 1. **Bring the application web endpoint into scope of the appropriate Conditional Access policy.** Perhaps you have an existing Conditional Access policy that was created for another application subject to the same governance requirements. Then you can update that policy to have it also apply to this application to avoid having a large number of policies.
 
-   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md).
+   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/what-if-tool.md).
 
 1. **Validate that a test user can connect to the SAP applications.** You can use Microsoft **My Apps** to test the application SSO. Ensure that a test user was assigned to the SAP Cloud Identity Services application and provisioned from Microsoft Entra ID to SAP Cloud Identity Services. Then, sign in to Microsoft Entra as that user and go to  `myapps.microsoft.com`.
 
@@ -412,7 +412,7 @@ If you aren't using SAP ECC, skip to the next section.
 
 1. **Bring the application web endpoint into scope of the appropriate Conditional Access policy.** Perhaps you have an existing Conditional Access policy that was created for another application subject to the same governance requirements. Then you can update that policy to have it also apply to this application to avoid having a large number of policies.
 
-   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md).
+   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/what-if-tool.md).
 
 1. **Validate that a test user can be provisioned and sign in to SAP NetWeaver.** Follow the instructions in the section [Test SSO](../saas-apps/sap-netweaver-tutorial.md#test-sso) to ensure that users can sign in after Conditional Access was configured.
 

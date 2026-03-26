@@ -188,4 +188,4 @@ To get started, see the tutorials to [enable self-service password reset](tutori
 
 Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
-You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).
+You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](overview-authentication.md).
