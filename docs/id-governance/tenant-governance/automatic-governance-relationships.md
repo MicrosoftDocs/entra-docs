@@ -10,8 +10,6 @@ ms.date: 03/26/2026
 ai-usage: ai-assisted
 ---
 
-<!-- source: concept guide -- automatic formation of governance relationships.docx -->
-
 # Automatic formation of governance relationships (preview)
 
 [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
