@@ -301,7 +301,11 @@ Build secure sign‑in and sign‑up experiences for applications in Entra Exter
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-Tenant Configuration Management APIs allow organizations to capture tenant configuration snapshots and continuously monitor and enforce desired configuration states through drift detection.
+Tenant Configuration Management APIs allow organizations to take snapshots of their tenants' current configuration settings in a JSON format and to enforce configuration settings by offering continuous monitoring of drifts.
+
+  
+
+For more information see [Overview of the Tenant Configuration Management APIs](/graph/unified-tenant-configuration-management-concept-overview).
 
 ---
 
