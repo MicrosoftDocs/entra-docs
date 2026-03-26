@@ -210,6 +210,6 @@ This new Microsoft Entra admin center update allows editing certain user attribu
 
 ## Related content
 
-- [Add or delete users](add-users.md)
+- [Add or delete users](how-to-create-delete-users.yml)
 - [Assign roles to users](how-subscriptions-associated-directory.md)
 - [Create a basic group and add members](how-to-manage-groups.yml)

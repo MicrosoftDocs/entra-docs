@@ -214,7 +214,7 @@ Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 
 For Azure Government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install the agent for the Azure Government cloud](../identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
-To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](../identity/app-proxy/application-proxy-connector-installation-problem.md).
+To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](~/global-secure-access/troubleshoot-connectors.md).
 
 ## Inactive connectors
 

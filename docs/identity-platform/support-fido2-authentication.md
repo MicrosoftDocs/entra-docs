@@ -13,7 +13,7 @@ ms.topic: reference
 
 # Support passwordless authentication with FIDO2 keys in apps you develop
 
-These configurations and best practices will help you avoid common scenarios that block [FIDO2 passwordless authentication](~/identity/authentication/concept-authentication-passwordless.md) from being available to users of your applications.
+These configurations and best practices will help you avoid common scenarios that block [FIDO2 passwordless authentication](~/identity/authentication/concept-authentication-passkeys-fido2.md) from being available to users of your applications.
 
 ## General best practices
 
@@ -63,4 +63,4 @@ The availability of FIDO2 passwordless authentication for applications that run 
 
 ## Next steps
 
-[Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
+[Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md)
