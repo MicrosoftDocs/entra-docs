@@ -66,9 +66,9 @@ Then following are the protocol steps.
     &scope=https://resource.example.com/scope1
     &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
     &client_assertion={T1}
-    &assertion={T2}
+    &user_federated_identity_credential={T2}
     &username=agentuser@contoso.com
-    &grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
+    &grant_type=user_fic
     &requested_token_use=on_behalf_of
     ```
 
