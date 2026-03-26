@@ -52,7 +52,7 @@ This new capability enables a Windows device to become **Hybrid Entra joined imm
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Microsoft Entra ID now supports synced passkeys as a generally available authentication method. Synced passkeys are FIDO2-based credentials that can be stored in built-in or third-party passkey providers and made available across a user’s devices. Administrators can manage the use of synced passkeys alongside device-bound passkeys through passkey profiles in the authentication methods policy. Existing passkey configurations can be managed using the same Entra ID authentication policies and reporting surfaces.
+Microsoft Entra ID now supports synced passkeys as a generally available authentication method. Synced passkeys are FIDO2-based credentials that can be stored in built-in or third-party passkey providers and made available across a user’s devices. Administrators can manage the use of synced passkeys alongside device-bound passkeys through passkey profiles in the authentication methods policy. Existing passkey configurations can be managed using the same Entra ID authentication policies and reporting surfaces. For more information, see: [How to enable passkeys (FIDO2) in Microsoft Entra ID](../identity/authentication/how-to-authentication-passkeys-fido2.md).
 
 ---
 
