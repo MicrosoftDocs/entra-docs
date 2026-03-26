@@ -194,3 +194,4 @@ For more information about the OAuth 2.0 protocol and how to get access tokens, 
 - [Consent experience](application-consent-experience.md)
 - [ID tokens](id-tokens.md)
 - [Access tokens](access-tokens.md)
+- [App registrations](quickstart-register-app.md)
