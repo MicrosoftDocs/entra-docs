@@ -84,7 +84,7 @@ To edit/update an application segment, select the application segment from the l
 > [!NOTE]
 > Single sign-on with Integrated Windows Authentication (IWA) doesn't support wildcard Service Principal Names (SPNs). For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
 
-## DNS updates
+## Update DNS records
 
 > [!IMPORTANT]
 > The CNAME instructions shown in the portal UI when editing an application segment might differ from the instructions in this section. For complex (wildcard) applications, always use the CNAME configuration described here, pointing to `tenant.runtime.msappproxy.net`, not the generic `.msappproxy.net` endpoint shown in the portal.

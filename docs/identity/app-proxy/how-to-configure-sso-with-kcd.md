@@ -1,6 +1,6 @@
 ---
 title: Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy
-description: Learn how to provide single sign-on using Microsoft Entra application proxy.
+description: "Configure Kerberos-based SSO for on-premises applications using Kerberos Constrained Delegation (KCD) with Microsoft Entra application proxy."
 ms.topic: how-to
 ms.date: 03/11/2026
 ms.reviewer: KaTabish
@@ -49,7 +49,7 @@ The Active Directory configuration varies, depending on whether your private net
 5. Select **Use any authentication protocol**.
 6. Under **Services to which this account can present delegated credentials**, add the value for the SPN identity of the application server. The setting enables the private network connector to impersonate users in AD against the applications defined in the list.
 
-   ![Connector-SVR Properties window screenshot](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
+   ![Connector-SVR Properties window](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
 
 #### Connector and application server in different domains
 1. For a list of prerequisites for working with KCD across domains, see [Kerberos Constrained Delegation across domains](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11)).
@@ -119,7 +119,7 @@ This feature allows organizations to enable SSO from the cloud to on-premises ap
 
 With application proxy, you can choose the identity used to obtain the Kerberos ticket. This setting is configured per application and supports systems that require nonemail formats or alternative sign-in methods.
 
-![Delegated login identity parameter screenshot](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_upn.png)
+![Delegated login identity parameter](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_upn.png)
 
 If delegated sign-in identity is used, the value might not be unique across all the domains or forests in your organization. You can avoid this issue by publishing these applications twice using two different Connector groups. Since each application has a different user audience, you can join its connectors to a different domain.
 
@@ -127,7 +127,7 @@ If **On-premises SAM account name** is used for the sign-in identity, the comput
 
 ### Configure SSO for different identities
 1. Configure Microsoft Entra Connect settings so the main identity is the email address (mail). The configuration is done as part of the customize process, by changing the **User Principal Name** field in the sync settings. These settings also determine how users sign in to Microsoft 365, Windows computers, and other applications that use Microsoft Entra ID as their identity store.  
-   ![Identifying users screenshot - User Principal Name dropdown](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_connect_settings.png)  
+   ![User Principal Name dropdown for identifying users.](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_connect_settings.png)  
 2. In the Application Configuration settings for the application you would like to modify, select the **Delegated Login Identity** to be used:
 
    * User Principal Name (for example, `joe@contoso.com`)
