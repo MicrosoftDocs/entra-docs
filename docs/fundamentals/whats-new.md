@@ -42,7 +42,7 @@ This gives your organization a reliable, built in safety net helping you recover
 **Service category:** Device Registration and Management  
 **Product capability:** Device Lifecycle Management  
 
-This new capability enables a Windows device to become **Hybrid Entra joined immediately at provisioning time**, without waiting for **Entra Connect sync** or requiring **AD FS**. By leveraging Entra Kerberos, customers can modernize their hybrid identity architecture while reducing infrastructure complexity and dependency on legacy federation components.
+This new capability enables a Windows device to become **Hybrid Entra joined immediately at provisioning time**, without waiting for **Entra Connect sync** or requiring **AD FS**. By leveraging Entra Kerberos, customers can modernize their hybrid identity architecture while reducing infrastructure complexity and dependency on legacy federation components. For more information, see: [Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview)](../identity/devices/how-to-hybrid-join-using-microsoft-entra-kerberos.md).
 
 ---
 
