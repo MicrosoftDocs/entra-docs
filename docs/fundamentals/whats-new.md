@@ -269,7 +269,7 @@ TLS 1.1 is deprecated due to security vulnerabilities. This change helps protect
 **What you need to do**  
 Ensure your Entra Connect Health agents are up to date and that your servers are configured to use TLS 1.2 for outbound connections. 
 
-*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor) support in your environment
+*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
 
 ---
 
