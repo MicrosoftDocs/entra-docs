@@ -196,7 +196,7 @@ After determining what works for you, proceed to call your custom web API.
                 _api = api;
             }
         
-            // GET request for agent user identity using UPN
+            // GET request for agent's user account identity using UPN
             public async Task<IActionResult> Index()
             {
         
@@ -210,7 +210,7 @@ After determining what works for you, proceed to call your custom web API.
                 return View(products);
             }
             
-            // GET request for agent user identity using OID
+            // GET request for agent's user account identity using OID
             public async Task<IActionResult> UserProducts()
             {
         
@@ -347,7 +347,7 @@ After determining what works for you, proceed to call your custom web API.
     - To use `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent's user account.
     
         ```csharp
-        // Create request with agent user identity authentication with UPN
+        // Create request with agent's user account identity authentication with UPN
         public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
         {
             string agentIdentity = "<your-agent-identity>";
@@ -365,7 +365,7 @@ After determining what works for you, proceed to call your custom web API.
             return await response.Content.ReadAsStringAsync();
         }
         
-        // Create request with agent user identity authentication with OID
+        // Create request with agent's user account identity authentication with OID
         public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
         {
             string agentIdentity = "<your-agent-identity>";

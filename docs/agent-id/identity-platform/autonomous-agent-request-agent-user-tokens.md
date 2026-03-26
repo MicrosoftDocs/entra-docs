@@ -136,7 +136,7 @@ To use `Microsoft.Identity.Web` to create an agent's user account, follow these 
                 identityParentId = "<associated-agent-identity-id>"
             };
     
-            // Call the downstream API (Graph) with a POST request to create an Agent User
+            // Call the downstream API (Graph) with a POST request to create an agent's user account
             var jsonResult = await downstreamApi.PostForAppAsync<AgentIdUser, AgentIdUser>(
                 "agent-identity",
                 requestBody
@@ -244,7 +244,7 @@ This gives you a delegated access token you can use to call Microsoft Graph as y
 // Get the service to call the downstream API (preconfigured in the appsettings.json file)
 IAuthorizationHeaderProvider authorizationHeaderProvider = serviceProvider.GetService<IAuthorizationHeaderProvider>();
 
-// Configure options for the agent user identity
+// Configure options for the agent's user account identity
 string agentIdentity = "agent-identity-id";
 string userId = "<user-object-id>";
 var options = new AuthorizationHeaderProviderOptions()

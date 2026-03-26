@@ -152,7 +152,7 @@ This article guides you on how to call Azure services from your agent. To authen
                 _credential = credential;
             }
             
-            // Use object ID to identify the agent user
+            // Use object ID to identify the agent's user account
             public async Task<List<string>> ListBlobsForAgentAsync(string agentIdentity)
             {
                 // Configure for agent identity
@@ -175,7 +175,7 @@ This article guides you on how to call Azure services from your agent. To authen
                 return blobs;
             }
 
-            // Use UPN to identify the agent user\
+            // Use UPN to identify the agent's user account\
             public async Task<List<string>> ListBlobsForAgentAsync(string agentIdentity)
             {
                 // Configure for agent identity

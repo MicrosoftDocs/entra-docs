@@ -10,17 +10,23 @@ ms.reviewer: kylemar
 
 # Security for AI agents with Microsoft Entra Agent ID
 
-AI agents—autonomous software systems that perceive their environment, make decisions, and take actions—expand organizational capabilities but introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
+AI agents are autonomous software systems that can perceive their environment, make decisions, and take action. AI agents can expand organizational capabilities but also introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
 
 ## Types of AI agents
 
-Organizations are increasingly deploying AI agents for diverse tasks:
+Organizations are increasingly deploying AI agents for diverse tasks, such as:
 
-- Assistive agents perform specific, well-defined tasks on demand. Examples include agents that analyze customer data for sales recommendations, answer support questions with escalation to human representatives, or analyze market data for financial reporting.
-
-- Autonomous agents operate independently, making decisions and taking actions without human intervention. Examples include agents that monitor network logs for security operations, manage infrastructure deployments with autoscaling, or generate and publish routine communications.
-
-- Agents' user accounts are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agents' user accounts might join teams, access documents, participate in meetings, and require mailbox and calendar access like human users.
+- Assistive agents can perform specific, well-defined tasks on demand.
+    - Analyze customer data for sales recommendations
+    - Support questions with escalation to human representatives
+    - Analyze market data for financial reporting
+- Autonomous agents can operate independently, making decisions and taking actions without human intervention.
+    - Monitor network logs for security operations
+    - Manage infrastructure deployments with autoscaling
+    - Generate and publish routine communications
+- An agent's user account can function with human user characteristics, including persistent identities and access to organizational systems.
+    - Join teams, access documents, or participate in meetings
+    - Require mailbox and calendar access like human users
 
 These deployment models present distinct security and governance challenges.
 

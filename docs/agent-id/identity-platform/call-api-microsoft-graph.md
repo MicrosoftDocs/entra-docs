@@ -110,7 +110,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
         
         string agentIdentity = "agent-identity-guid";
         
-        // Call Microsoft Graph APIs with the agent user identity using UPN
+        // Call Microsoft Graph APIs with the agent's user account identity using UPN
         string userUpn = "user-upn";
         var me = await graphServiceClient.Me
             .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
