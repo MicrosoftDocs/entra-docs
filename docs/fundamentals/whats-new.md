@@ -303,20 +303,19 @@ Build secure sign‑in and sign‑up experiences for applications in Entra Exter
 
 Tenant Configuration Management APIs allow organizations to take snapshots of their tenants' current configuration settings in a JSON format and to enforce configuration settings by offering continuous monitoring of drifts.
 
-  
-
 For more information see [Overview of the Tenant Configuration Management APIs](/graph/unified-tenant-configuration-management-concept-overview).
 
 ---
 
-### General availability – Improved readability for Authentication Methods Policy Update audit logs
+### General Availability – Improved readability for Authentication Methods Policy Update audit logs
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Authentication Methods Policy Update audit logs now surface only the specific properties that were changed, along with their old and new values, improving clarity without changing policy behavior.
-``
+Starting in April 2026, the Authentication Methods Policy Update audit log entry has been updated to improve readability and clarity. Previously, audit logs included the full authentication methods policy payload in both the old and new values, even when only a small number of settings were changed. With this update, audit log entries now surface only the specific properties that were modified, along with their corresponding old and new values.
+
+Policy-wide updates—such as Registration Campaigns and System‑preferred MFA—may continue to include the full policy payload. The activity name and triggering events remain unchanged. This update affects formatting only and does not change policy behavior. For more information, see: [Core Directory](../identity/monitoring-health/reference-audit-activities.md#core-directory)
 
 ---
 
