@@ -74,7 +74,7 @@ SCIM 2.0 APIs give customers, developers, and partners a standards-based option 
 
 We’re introducing cross-tenant group synchronization, a new capability that allows organizations to synchronize security groups across Microsoft Entra tenants. This feature enables centralized management of group membership in a source tenant while making those groups available in one or more target tenants, simplifying cross-tenant collaboration and reducing administrative overhead associated with managing duplicate groups.
 
-With cross-tenant group synchronization, organizations can extend their existing cross-tenant synchronization configurations to include groups, supporting scenarios such as shared application access, resource authorization, and consistent group-based access control across tenants. Admins can opt in to this functionality and configure attribute mappings and cross-tenant access policies to enable group synchronization into target tenants. Use of cross-tenant group synchronization requires Microsoft Entra ID Governance licenses.
+With cross-tenant group synchronization, organizations can extend their existing cross-tenant synchronization configurations to include groups, supporting scenarios such as shared application access, resource authorization, and consistent group-based access control across tenants. Admins can opt in to this functionality and configure attribute mappings and cross-tenant access policies to enable group synchronization into target tenants. Use of cross-tenant group synchronization requires Microsoft Entra ID Governance licenses. Existing licensing requirements for cross-tenant user synchronization features remains unchanged. For more information, see: [What is cross-tenant synchronization?](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
 
 ---
 
@@ -86,7 +86,7 @@ With cross-tenant group synchronization, organizations can extend their existing
 
 Microsoft Entra passkeys on Windows are now available in public preview. This feature allows users to register device‑bound passkeys directly in the local Windows Hello container and use them to sign in to Microsoft Entra ID with Windows Hello biometrics or PIN.
 
-Entra passkeys on Windows behave as standard FIDO2 credentials and can be used for Entra authentication flows without requiring the device to be Microsoft Entra joined or registered. During public preview, the feature is opt‑in and requires explicit configuration through passkey profiles to allow Windows Hello as a passkey provider.
+Entra passkeys on Windows behave as standard FIDO2 credentials and can be used for Entra authentication flows without requiring the device to be Microsoft Entra joined or registered. During public preview, the feature is opt‑in and requires explicit configuration through passkey profiles to allow Windows Hello as a passkey provider. For more information, see: [How to enable passkeys (FIDO2) in Microsoft Entra ID](../identity/authentication/how-to-authentication-passkeys-fido2.md)
 
 ---
 
@@ -98,7 +98,7 @@ Entra passkeys on Windows behave as standard FIDO2 credentials and can be used f
 
 Passkey profiles in Microsoft Entra ID are now generally available. Passkey profiles provide a structured way to manage passkey (FIDO2) authentication by allowing administrators to define multiple profiles with different requirements and target them to specific user groups.
 
-Each profile can specify allowed passkey types, attestation requirements, and authenticator restrictions, enabling differentiated policies for scenarios such as administrators versus standard users. For tenants that previously configured passkeys, existing settings are migrated into a default passkey profile.
+Each profile can specify allowed passkey types, attestation requirements, and authenticator restrictions, enabling differentiated policies for scenarios such as administrators versus standard users. For tenants that previously configured passkeys, existing settings are migrated into a default passkey profile. For more information, see: [How to enable passkeys (FIDO2) in Microsoft Entra ID](../identity/authentication/how-to-authentication-passkeys-fido2.md).
 
 ---
 
@@ -128,7 +128,13 @@ This feature allows admins to discover related tenants connected to their own by
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-You can now use the Entra admin center to administer tenant configuration management capabilities of Entra tenant governance. This experience allows you to create and update monitors that define desired configuration states, view drift reports, and manage permissions required for configuration monitoring across Microsoft services.
+Now you can use the Entra admin center to administer tenant configuration management capabilities of Entra tenant governance. You can use this experience to:  
+
+- Create and update monitors that enable you to define the desired state of resources in your tenant across a range of Microsoft services, and monitor the actual state of those resources relative to the desired state on an ongoing basis
+- See reports of monitor results, and details of any configuration drifts identified by the configuration management service when it runs a monitor that you defined.
+- Manage permission for the configuration management service to monitor resources in your tenant, by assigning app permissions or Entra roles. 
+
+For more information, see [Tenant configuration management docs](../id-governance/tenant-governance/configuration-management.md)
 
 ---
 
@@ -138,9 +144,43 @@ You can now use the Entra admin center to administer tenant configuration manage
 **Service category:** Conditional Access  
 **Product capability:** User Authentication  
 
-Starting in May 2026, Conditional Access policies scoped to **Register security information** will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. This ensures security requirements are enforced during credential setup, not just sign-in.
+Starting in **May 2026**, if your organization has Conditional Access policies scoped to the **Register security information** user action, those policies will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. Rollout begins in late April 2026. This ensures that your security requirements are met when users set up these credentials, not just when they sign in. Organizations without CA policies targeting this user action aren't affected by this change.
 
-Organizations should review Conditional Access policies, validate user readiness, and use report-only mode ahead of enforcement rollout beginning in late April 2026.
+**Important:** Even without Conditional Access policies protecting the Register security information user action, MFA continues to be required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types.
+
+**What's changing**
+
+Beginning in May 2026, when a user provisions Windows Hello for Business on a new device or registers macOS Platform SSO credentials, Microsoft Entra ID evaluates any Conditional Access policies that target the **Register security information** user action. If the user doesn't meet the policy requirements, they're prompted to satisfy them before completing registration. This only applies to organizations that have configured CA policies protecting this user action.
+
+Depending on your organization's Conditional Access policies, users may be asked to:
+
+*   Authenticate with additional credentials before completing setup
+*   Use a specific authentication method, such as a phishing-resistant credential
+*   Be on a compliant device or connect from a trusted network location
+*   Satisfy other requirements defined in the policy
+
+This appears as a standard Conditional Access prompt during the setup process — the same experience users already see during sign-in.
+
+**What's not changing**
+
+*   Organizations without CA policies targeting the **Register security information** user action aren't affected by this change.
+*   MFA remains required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types — regardless of whether CA policies are configured.
+*   Sign-in behavior and existing CA policy evaluation for sign-in aren't affected.
+*   Credential registration through My Security Info in continues to work as before.
+
+**Customer action required**
+
+Review your Conditional Access policies for possible impact before enforcement reaches your tenant:
+
+1.  In the **Microsoft Entra admin center**, go to **Protection** > **Conditional Access** > **Policies**.
+1.  Identify policies where the target is set to **User actions** > **Register security information**.
+1.  Review the **Grant** controls on those policies — these will apply during Windows Hello for Business and macOS Platform SSO registration.
+1.  Check the **Users and groups** scope to understand which users are affected.
+1.  Consider whether users setting up a new device for the first time can satisfy your policy requirements. If your policy requires methods users may not have during initial provisioning, you may need to adjust conditions or add exclusions.
+1.  Enable **report-only mode** on relevant policies to understand the impact before enforcement begins.
+
+Enforcement begins rolling out in late April 2026 and becomes the default for all tenants in **May 2026**.
+
 
 ---
 
@@ -150,7 +190,15 @@ Organizations should review Conditional Access policies, validate user readiness
 **Service category:** Authentications (Logins)  
 **Product capability:** SSO  
 
-This release enables authentication using certificate-based and YubiKey phishing-resistant MFA credentials, removes Java runtime dependency, improves reliability and performance, and provides device trust using Entra Join.
+The major improvements that this release provides includes:
+
+- Enables authentication using CBA/YubiKey with certificate (PRMFA)
+- Removes dependency on Java runtime as part of the Intune install
+- Improved performance and reliability when authenticating to EntraId
+- Provides device trust using Entra Join instead of Entra Registration
+- Increased stability and performance for authentication requests
+
+For more information, see: [What is Microsoft single sign-on for Linux?](../identity/devices/sso-linux.md).
 
 ---
 
@@ -170,7 +218,11 @@ Permissioned users can now create add-on tenants that are owned and governed by 
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
 
-The Conditional Access Optimization Agent now supports passkey adoption campaigns, helping organizations roll out phishing-resistant authentication in a structured and automated way. The agent assesses readiness, generates deployment plans, guides users, and enforces Conditional Access policies when ready.
+**The Conditional Access Optimization Agent now supports passkey adoption campaigns in public preview, helping organizations roll out phishing‑resistant authentication in a structured and automated way.**
+
+With this capability, the agent can assess user and device readiness, generate a recommended deployment plan, guide users through required steps, and automatically enforce Conditional Access policies once users are ready. Campaigns progress continuously as prerequisites are met, reducing manual effort for large‑scale passkey rollouts.
+
+Passkey adoption campaigns are managed directly from the Microsoft Entra admin center and are currently targeted at privileged administrator roles. The agent creates Conditional Access policies in report‑only mode first, allowing administrators to monitor impact before enforcement. For more information, see: [Deploy passkey adoption campaigns with the Conditional Access Optimization Agent (Preview)](../security-copilot/conditional-access-agent-optimization-passkeys.md)
 
 ---
 
@@ -180,7 +232,7 @@ The Conditional Access Optimization Agent now supports passkey adoption campaign
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
 
-You can now use the Conditional Access Optimization Agent to safely roll out any report-only Conditional Access policy in phases. The agent analyzes sign-in data and recommends staged deployments to minimize user impact.
+You can now use the **Conditional Access Optimization Agent** to safely roll out _any_ report‑only Conditional Access policy in phases. When you initiate the process, the agent analyzes sign‑in data to recommend a low‑risk, staged deployment plan, starting with smaller user groups and gradually expanding, so you can turn policies on with confidence and minimize user impact. For more information, see: [Conditional Access Optimization Agent phased rollout](../security-copilot/conditional-access-agent-optimization-phased-rollout).
 
 ---
 
@@ -190,7 +242,16 @@ You can now use the Conditional Access Optimization Agent to safely roll out any
 **Service category:** Group Management  
 **Product capability:** End User Experiences  
 
-The updated My Groups experience allows owners to configure group, email, and security settings during creation, including sensitivity labels, Exchange options, external sender controls, and security group functionality. This self-service experience is rolling out to all tenants by the end of March.
+We’re improving the Microsoft 365 group creation experience in **[My Groups](https://myaccount.microsoft.com/groups)** to give group owners more control and clarity from the start. The updated experience lets you configure key group, email, and security settings during creation—so your group works the way you expect without extra admin help later.
+
+With this update, you can:
+
+- Set group usage guidelines, email alias, and sensitivity labels
+- Configure Exchange settings such as sending welcome emails, subscribing members to conversations, and showing the group mailbox and calendar in Outlook
+-  Control who can send email to the group, hide the group from the global address list, and allow or block external senders
+- Enable security group functionality when needed
+
+This streamlined, self‑service experience helps ensure your group is created with the right defaults and policies from day one. We are rolling out to all tenants by end of March.
 
 ---
 
@@ -200,17 +261,27 @@ The updated My Groups experience allows owners to configure group, email, and se
 **Service category:** Entra Connect  
 **Product capability:** Entra Connect  
 
-Entra Connect Health now enforces TLS 1.2 for all agent-to-service communications. Organizations should ensure agents are up to date and servers are configured for TLS 1.2 to maintain connectivity and security compliance.
+We’ve completed a full migration to TLS 1.2 for Entra Connect Health and removed legacy TLS 1.1 references as part of security hardening. Ensure your Health agents are up to date and your servers are configured to use TLS 1.2 for outbound connections.
+
+**Why this matters**  
+TLS 1.1 is deprecated due to security vulnerabilities. This change helps protect agent-to-service communication and aligns with modern compliance expectations. 
+
+**What you need to do**  
+Ensure your Entra Connect Health agents are up to date and that your servers are configured to use TLS 1.2 for outbound connections. 
+
+*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment?tabs=azure-monitor) support in your environment
 
 ---
 
-### Now GA: Just‑in‑Time Password Migration in Microsoft Entra External ID
+### General Availability - Just‑in‑Time Password Migration in Microsoft Entra External ID
 
 **Type:** General Availability  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-Just‑in‑Time Password Migration allows customers to securely migrate passwords at first sign-in, enabling users to continue using existing credentials without forced resets and reducing migration risk.
+**Just‑in‑Time Password Migration is now generally available in Microsoft Entra External ID.** 
+
+Customers can migrate user passwords securely at first sign‑in, allowing users to continue using their existing credentials without forced password resets. This enables a smoother transition from Azure AD B2C or other identity providers while reducing migration risk and operational overhead.
 
 ---
 
@@ -220,7 +291,7 @@ Just‑in‑Time Password Migration allows customers to securely migrate passwor
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** Developer Experience  
 
-Applications can now use Email and SMS OTP MFA with Entra External ID Native Authentication through SDKs and APIs, enabling secure sign-in and sign-up flows.
+Build secure sign‑in and sign‑up experiences for applications in Entra External ID using Native Authentication, with Email and SMS OTP MFA available through developer‑friendly [SDKs and APIs.](../identity-platform/concept-native-authentication.md).
 
 ---
 
