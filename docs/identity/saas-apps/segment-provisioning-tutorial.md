@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. The Tenant URL is `https://scim.segmentapis.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Segment application.
 
-1. Login to [Segment](https://www.segment.com/) app.
+1. Sign in to [Segment](https://www.segment.com/) app.
 
 1. On the left panel, navigate to **Settings** > **Authentication** > **Advanced Settings**.
 

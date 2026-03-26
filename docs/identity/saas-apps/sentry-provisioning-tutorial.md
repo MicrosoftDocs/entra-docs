@@ -29,7 +29,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* This feature is only available if your Sentry organization is on a Business or Enterprise plan.It isn't available on Trial plans.
+* This feature is only available if your Sentry organization is on a Business or Enterprise plan. It isn't available on Trial plans.
 * You'll need to have Azure SSO set up already configured for your organization.
 
 ## Step 1: Plan your provisioning deployment
