@@ -86,7 +86,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
 
 If you already have a test application that makes use of a service principal, you can skip this step.
 
-Set up a sample application that, demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. Follow the instructions in the article [Quickstart: Get a token and call the Microsoft Graph API by using a console app's identity](~/identity-platform/quickstart-v2-netcore-daemon.md) to create this application.
+Set up a sample application that, demonstrates how a job or a Windows service can run with an application identity, instead of a user's identity. Follow the instructions in the article [Quickstart: Get a token and call the Microsoft Graph API by using a console app's identity](~/identity-platform/quickstart-daemon-app-call-api.md) to create this application.
 
 ### Step 2: Assign a custom security attribute to an application
 

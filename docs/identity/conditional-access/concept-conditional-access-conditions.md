@@ -216,7 +216,7 @@ If the access control assigned to the policy uses **Require approved client app*
 
 For more information, see the following articles:
 
-- [Block legacy authentication with Conditional Access](block-legacy-authentication.md)
+- [Block legacy authentication with Conditional Access](policy-block-legacy-authentication.md)
 - [Requiring approved client apps with Conditional Access](./policy-all-users-device-compliance.md)
 
 ### Other clients

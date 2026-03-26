@@ -307,6 +307,6 @@ Some browsers require additional configuration to enable Kerberos SSO support, i
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
