@@ -433,8 +433,8 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     <br>
     <p class="text-center" *ngIf="loginDisplay"> See below the claims in your <strong> ID token </strong>. For more
       information, visit: <span>
-        <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
-          docs.microsoft.com </a>
+        <a href="https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens#claims-in-an-id-token">
+          learn.microsoft.com </a>
       </span>
     </p>
     <div id="table-container">
