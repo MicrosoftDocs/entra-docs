@@ -7,7 +7,7 @@ ai-usage: ai-assisted
 ms.custom: it-pro
 ---
 
-# Services and integration partners
+# Services and integration partners for External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
