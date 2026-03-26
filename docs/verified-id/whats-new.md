@@ -68,7 +68,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 ## March 2024
 
 - Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
-- [Wallet Library 1.0.1](using-wallet-library.md#prerequisites) supports P-256.
+- [Wallet Library 1.0.1](decentralized-identifier-overview.md#prerequisites) supports P-256.
 
 ## February 2024
 
@@ -125,7 +125,7 @@ The `presentation_verified` callback from the Request Service API now returns wh
 
 ## June 2023
 
-Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](using-wallet-library.md).
+Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](decentralized-identifier-overview.md).
 
 ## May 2023
 
@@ -133,7 +133,7 @@ Tutorial for getting started with the Wallet Library demo on Android and iOS is 
 
 ## April 2023
 
-Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](linkedin-employment-verification.md).
+Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](whats-new.md).
 
 ## March 2023
 
