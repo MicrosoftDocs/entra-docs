@@ -108,7 +108,7 @@ Each profile can specify allowed passkey types, attestation requirements, and au
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant.
+This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
 
 ---
 
@@ -118,7 +118,7 @@ This feature allows admins to request and accept tenant governance relationships
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks.
+This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
 
 ---
 
@@ -208,7 +208,7 @@ For more information, see: [What is Microsoft single sign-on for Linux?](../iden
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP.
+Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
 
 ---
 
