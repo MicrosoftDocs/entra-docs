@@ -35,8 +35,8 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. Select one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
-    - [Passkey (FIDO2)](../authentication/concept-authentication-passwordless.md#passkeys-fido2) (Recommended)
-    - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a Public Key Infrastructure (PKI) setup
+    - [Passkey (FIDO2)](../authentication/concept-authentication-passkeys-fido2.md#passkeys-fido2) (Recommended)
+    - [Certificate-based authentication](../authentication/concept-authentication-passkeys-fido2.md#certificate-based-authentication) if your organization already has a Public Key Infrastructure (PKI) setup
 
 1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
 
