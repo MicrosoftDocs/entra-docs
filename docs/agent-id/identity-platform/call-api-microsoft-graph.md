@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
 
 # Call a Microsoft Graph API from an agent using .NET
 
-This article explains how to call a Microsoft Graph API from an agent using agent identities or agent's user account.
+This article explains how to call a Microsoft Graph API from an agent using agent identities or an agent's user account.
 
 [!INCLUDE [Common call API content](./includes/call-api-common-dotnet.md)]
 
