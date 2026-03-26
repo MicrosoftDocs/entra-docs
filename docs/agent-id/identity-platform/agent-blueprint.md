@@ -76,19 +76,11 @@ Agent identity blueprints are always created in a Microsoft Entra tenant. An age
 
 In either case, an agent identity blueprint principal is always created when a blueprint is added to a tenant. The presence of this principal indicates that a blueprint exists in a tenant and can be used to create agent identities. Customers can remove a blueprint from their tenant by deleting the agent identity blueprint principal.
 
-## Create an agent identity blueprint
-
-There are multiple ways to create an agent identity blueprint in Microsoft Entra Agent ID. For more information, see [agent identity blueprint](./create-blueprint.md).
-
-## Credentials for agent identities
-
-There are several credentials types that can be used for agent identities. For more information on these, see [credentials for agent identities](./agent-identities.md#credentials-for-agent-identities).
-
 ## Related content
 
 - [Agent identity blueprint creation channels](../identity-professional/agent-id-creation-channels.md)
 - [Create an agent identity blueprint](./create-blueprint.md)
-
+- [Credentials for agent identities](./agent-identities.md#credentials-for-agent-identities).
 
 
 
