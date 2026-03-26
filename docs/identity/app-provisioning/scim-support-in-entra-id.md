@@ -27,7 +27,7 @@ This article provides an overview of SCIM support in Microsoft Entra ID and help
 
 ## SCIM in Microsoft Entra ID at a glance
 
-:::image type="content" source="./media/scim-support-in-entra-id/scim-overview.png" alt-text="Diagram showing SCIM support scenarios in Microsoft Entra ID" lightbox="./media/scim-support-in-entra-id/scim-overview.png":::
+:::image type="content" source="./media/scim-support-in-entra-id/scim-support-in-entra.png" alt-text="Diagram showing SCIM support scenarios in Microsoft Entra ID" lightbox="./media/scim-support-in-entra-id/scim-support-in-entra.png":::
 
 | Scenario | Role played by Entra | Typical use case |
 |--------|---------------------|------------------|
