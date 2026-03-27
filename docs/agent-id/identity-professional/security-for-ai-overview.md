@@ -28,7 +28,7 @@ Organizations are deploying AI agents for increasingly diverse tasks, and each d
 
 - **Autonomous agents** operate independently, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
 
-- **Agent users** function with human user characteristics, including persistent identities and access to organizational systems. Agent users might join teams, access documents, participate in meetings, and require mailbox and calendar access.
+- **Agents' user accounts** function with human user characteristics, including persistent identities and access to organizational systems. Agents' user accounts might join teams, access documents, participate in meetings, and require mailbox and calendar access.
 
 ### Security challenges
 
@@ -60,7 +60,7 @@ Agent security challenges manifest differently depending on the agent's purpose 
 |----------|-------------|-------------------|------|
 | **User-initiated agent** | Agents act on behalf of users, inheriting user capabilities and access rights. | Prevent agents from misusing inherited permissions; maintain user control and enable access revocation. | Compromised agents might perform unauthorized actions as the user, such as accessing files, sending communications, or manipulating data. |
 | **Autonomous agent** | Agents operate with their own identities and permissions, independent of users. | Grant only necessary permissions for intended tasks; prevent agents from exceeding authorized scope. | Compromised agents might operate without constraint, placing unauthorized orders, modifying data, or accessing sensitive information. |
-| **Agent user** | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions. | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members. |
+| **Agent's user account** | An agent's user account enables the agent to function as a human user with persistent identity, mailbox, and access to collaborative systems. | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions. | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members. |
 | **Agent-to-agent** | Agents interact with other agents, such as an orchestration agent that delegates tasks to specialized agents. | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions. | Unsecured communication allows adversaries to inject malicious agents or intercept or manipulate agent interactions. |
 
 ## Secure identities for AI agents
@@ -87,7 +87,7 @@ Microsoft Entra applies Zero Trust identity controls to AI identities through Co
 
 Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources:
 
-- Enforce adaptive access control policies for all agent patterns across assistive, autonomous, and agent user types.
+- Enforce adaptive access control policies for all agent patterns across assistive, autonomous, and agent user account types.
 - Use real-time signals such as agent identity risk to control agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
 - Deploy Conditional Access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 
