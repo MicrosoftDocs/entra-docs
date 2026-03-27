@@ -63,4 +63,4 @@ There are three agent oauth flows:
  
 - [Agent on-behalf of flow](./agent-on-behalf-of-oauth-flow.md): Agents operating on behalf of regular users (interactive agents).
 - [Autonomous app flow](./agent-autonomous-app-oauth-flow.md): App-only operations enable agent identities to act autonomously without user context.
-- [Agent user flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.
+- [Agent's user account flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.

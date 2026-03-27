@@ -36,9 +36,9 @@ For more information, see [What is an agent identity blueprint?](agent-blueprint
 
 When blueprints are added to tenants, they create a corresponding principal object that manages the blueprint's presence within that specific tenant. Agent identity blueprint principal is the Microsoft Entra object is the record of a blueprint's addition to a tenant. For more information, see [agent identity blueprint principals](agent-blueprint.md#agent-identity-blueprint-principals)
 
-### Agent user
+### Agent's user account
 
-For scenarios where agents need to interact with systems that specifically require user objects, the platform provides agent users as an alternative identity type. An agent user is a secondary account that an AI agent uses to authenticate to various systems. These accounts are user objects in a tenant and have most properties of other users, like a manager, UPN, and photo. It makes them compatible with systems that have a hard dependency on user objects, and enable AI agents to connect to these systems. For more information, see [agent users](./agent-users.md)
+For scenarios where agents need to interact with systems that specifically require user objects, the platform provides agents' user accounts as an alternative identity type. An agent's user account is a secondary account that an AI agent uses to authenticate to various systems. These accounts are user objects in a tenant and have most properties of other users, like a manager, UPN, and photo. It makes them compatible with systems that have a hard dependency on user objects, and enable AI agents to connect to these systems. For more information, see [agents' user accounts](./agent-users.md)
 
 ## Agent registry
 
@@ -50,7 +50,7 @@ The agent identity platform supports two primary patterns for how agents operate
 
 - Interactive agents are agents that sign-in a user and taken action in response to user prompts, often via a chat interface. These agents act on behalf of the signed-in user, utilizing that user's authorization to perform actions in various systems. Interactive agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users. Tokens issued to interactive agents are often called user tokens.
 
-- Autonomous agents are agents that perform actions using their own identity; not a human user's identity. These agents often run in the background and make autonomous decisions about what actions to take. Tokens issued to autonomous agents are often called agent tokens when an agent identity is authenticated. They can also be called agent user tokens when an agent user is authenticated.
+- Autonomous agents are agents that perform actions using their own identity; not a human user's identity. These agents often run in the background and make autonomous decisions about what actions to take. Tokens issued to autonomous agents are often called agent tokens when an agent identity is authenticated. They can also be called agent's user account tokens when an agent's user account is authenticated.
 
 ## Agent owners, sponsors, and managers
 
@@ -58,7 +58,7 @@ The agent identity platform introduces an administrative model that separates te
 
 - Owners serve as technical administrators for agents, handling operational and configuration aspects.
 - Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access.
-- A manager is a human user who is designated as the hiring manager or operational owner for an agent user.
+- A manager is a human user who is designated as the hiring manager or operational owner for an agent's user account.
 
 For more information, see [Administrative relationships for agent identities (Owners, sponsors, and managers)](agent-owners-sponsors-managers.md)
 

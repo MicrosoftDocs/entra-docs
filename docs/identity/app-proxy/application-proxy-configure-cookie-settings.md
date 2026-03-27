@@ -30,7 +30,7 @@ Microsoft Entra ID uses access and session cookies to access on-premises applica
 Cookies that don't specify the [SameSite](https://web.dev/articles/samesite-cookies-explained) attribute are treated as if they're set to **SameSite=Lax**. The `SameSite` attribute declares how cookies should be restricted to a same-site context. When set to `Lax`, the cookie is only sent to same-site requests or top-level navigation. However, application proxy requires these cookies to be preserved in the third-party context to keep users signed in during their session. Due to the requirement, updates were made:
 
 * Setting the **SameSite** attribute to **None** ensures application proxy session cookies are sent in the third-party context.
-* Setting the **Use Secure Cookie** setting to use **Yes** as the default. Chrome rejects cookies that don't use the `Secure` flag. The change applies to all existing applications published through application proxy. Application proxy access cookies are set to Secure and only transmitted over HTTPS. The change only applies to the session cookies.
+* Setting the **Use Secure Cookie** setting to use **Yes** as the default. Chrome rejects cookies that don't use the `Secure` flag. This default setting applies to all existing applications published through application proxy. Application proxy access cookies are set to Secure and only transmitted over HTTPS. This secure cookie default only applies to the session cookies.
 
 Additionally, if your back-end application has cookies that need third-party context, you must explicitly opt in by changing your application to use `SameSite=None`. Application proxy translates the `Set-Cookie` header to its URLs and respects the settings.
 

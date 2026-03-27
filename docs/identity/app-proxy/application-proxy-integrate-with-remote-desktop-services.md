@@ -40,7 +40,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 - When publishing RD Web, use the same internal and external Fully Qualified Domain Name (FQDN) when possible. If the internal and external Fully Qualified Domain Names (FQDNs) are different, disable Request Header Translation to avoid the client receiving invalid links.
 - If you're using the RD Web client, you *must* use the same internal and external FQDN. If the internal and external FQDNs are different, you encounter websocket errors when making a RemoteApp connection through the RD Web client.
 - If you're using RD Web on Internet Explorer, you need to enable the RDS ActiveX add-on.
-- If you're using the RD Web client, you need to use the application proxy [connector version 1.5.1975 or later](./application-proxy-release-version-history.md).
+- If you're using the RD Web client, you need to use the application proxy [connector version 1.5.1975 or later](~/global-secure-access/reference-version-history.md).
 - For the Microsoft Entra pre authentication flow, users can only connect to resources published to them in the **RemoteApp and Desktops** pane. Users can't connect to a desktop using the **Connect to a remote PC** pane.
 - If you're using Windows Server 2019, you need to disable HTTP2 protocol. For more information, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
@@ -82,19 +82,19 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
 
 8. Run this command for each collection. Replace *\<yourcollectionname\>* and *\<proxyfrontendurl\>* with your own information. This command enables single sign-on between RD Web and RD Gateway, and optimizes performance.
 
-   ```
+   ```powershell
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
    ```
 
    **For example:**
-   ```
+   ```powershell
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
    >[!NOTE]
    >The command uses a backtick in \``nrequire`.
 
 9. To verify the modification of the custom RDP properties and view the RDP file contents that are downloaded from RDWeb for this collection, run the following command.
-    ```
+    ```powershell
     (get-wmiobject -Namespace root\cimv2\terminalservices -Class Win32_RDCentralPublishedRemoteDesktop).RDPFileContents
     ```
 

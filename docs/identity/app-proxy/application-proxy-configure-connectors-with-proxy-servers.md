@@ -21,7 +21,7 @@ This article covers these main deployment scenarios:
 * Configure connectors to use an outbound proxy to access Microsoft Entra application proxy.
 * Configure using a proxy between the connector and backend application.
 
-For more information about how connectors work, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
+For more information about how connectors work, see [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Bypass outbound proxies
 
@@ -203,5 +203,5 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 
 ## Next steps
 
-- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Visit the Microsoft Question and Answer page for Microsoft Entra ID](/answers/tags/455/entra-id)
