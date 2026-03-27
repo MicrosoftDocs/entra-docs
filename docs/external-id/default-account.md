@@ -1,5 +1,5 @@
 ---
-title: Use Microsoft Entra accounts
+title: Use Microsoft Entra Accounts
 description: Enable your external business partners and guest users to use their Microsoft Entra work or school accounts to sign in to your apps for B2B collaboration.
 ms.topic: how-to
 ms.date: 03/27/2026
@@ -9,7 +9,7 @@ ms.custom: seo-july-2024
 #customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft Entra ID as an identity provider for external guests, so that guest users can use their Microsoft Entra work or school account to sign in without additional configuration.
 ---
 
-# Use Microsoft Entra work or school accounts for B2B collaboration
+# Use Microsoft Entra work and school accounts for B2B collaboration
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -27,7 +27,7 @@ If you want to enable guest users to sign in with their Microsoft Entra account,
 
 When you [invite a guest user](add-users-administrator.yml) to B2B collaboration, you can specify their Microsoft Entra account as the **Email address** they use to sign in.
 
-:::image type="content" source="media/default-account/default-account-invite.png" alt-text="Invite user pane showing a Microsoft Entra work or school account as the sign-in email." lightbox="media/default-account/default-account-invite.png":::
+:::image type="content" source="media/default-account/default-account-invite.png" alt-text="Screenshot of inviting a guest user using the Microsoft Entra account." lightbox="media/default-account/default-account-invite.png":::
 
 <a name='azure-ad-account-in-self-service-sign-up-user-flows'></a>
 
@@ -35,16 +35,13 @@ When you [invite a guest user](add-users-administrator.yml) to B2B collaboration
 
 Microsoft Entra account is an identity provider option for your self-service sign-up user flows. Users can sign up for your applications using their own Microsoft Entra accounts. First, [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant, and then set up a user flow for the application.
 
-:::image type="content" source="media/default-account/default-account-user-flow.png" alt-text="Identity provider selection with Microsoft Entra account enabled in a self-service sign-up user flow." lightbox="media/default-account/default-account-user-flow.png":::
+:::image type="content" source="media/default-account/default-account-user-flow.png" alt-text="Screenshot of Microsoft Entra account in a self-service sign-up user flow." lightbox="media/default-account/default-account-user-flow.png":::
 
-## Verify the application's publisher domain
+## Verifying the application's publisher domain
+As of November 2020, new application registrations show up as unverified in the user consent prompt unless [the application's publisher domain is verified](~/identity-platform/howto-configure-publisher-domain.md), ***and*** the company’s identity has been verified with the Microsoft Partner Network and associated with the application. ([Learn more](~/identity-platform/publisher-verification-overview.md) about this change.) For Microsoft Entra user flows, the publisher’s domain appears only when using a [Microsoft account](microsoft-account.md) or other Microsoft Entra tenant as the identity provider. To meet these new requirements, follow these steps:
 
-Unverified app registrations can show warning text in consent prompts unless [the application's publisher domain is verified](~/identity-platform/howto-configure-publisher-domain.md) and the company identity is verified in Partner Center. For Microsoft Entra user flows, publisher information appears when users sign in with a [Microsoft account](microsoft-account.md) or another Microsoft Entra tenant as the identity provider.
-
-To reduce consent friction, follow these steps:
-
-1. [Verify your company identity in Partner Center](/partner-center/verification-responses).
-1. Complete publisher verification to associate your verified partner account with your app registration by using one of these options:
+1. [Verify your company identity using your Microsoft Partner Network (MPN) account](/partner-center/verification-responses). This process verifies information about your company and your company’s primary contact.
+1. Complete the publisher verification process to associate your MPN account with your app registration using one of the following options:
    - If the app registration for the Microsoft account identity provider is in a Microsoft Entra tenant, [verify your app in the App Registration portal](~/identity-platform/mark-app-as-publisher-verified.md).
    - If your app registration for the Microsoft account identity provider is in an Azure AD B2C tenant, [mark your app as publisher verified using Microsoft Graph APIs](~/identity-platform/troubleshoot-publisher-verification.md#making-microsoft-graph-api-calls) (for example, using Graph Explorer).
 
