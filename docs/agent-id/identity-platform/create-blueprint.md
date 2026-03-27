@@ -353,7 +353,6 @@ Your agent blueprint is now ready and visible in the [Microsoft Entra admin cent
 
 When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you should first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
 
-
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request, you need the permission `AgentIdentityBlueprint.DeleteRestore.All`.
