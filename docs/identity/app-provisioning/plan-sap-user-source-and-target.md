@@ -348,7 +348,7 @@ Alternatively, you can configure SAP Cloud Identity Services to read from Micros
 
 If you aren't using SAP Cloud Identity Services, skip to the next section.
 
-1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html) **with a user account in SAP Cloud Identity Services with Admin permissions.**
+1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://help.sap.com/docs/btp) **with a user account in SAP Cloud Identity Services with Admin permissions.**
 
 1. **Set up SAP Cloud Identity Services for provisioning.** Sign in to your SAP Cloud Identity Services Admin Console and follow the steps in the section [Set up SAP Cloud Identity Services for provisioning](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning).
 
