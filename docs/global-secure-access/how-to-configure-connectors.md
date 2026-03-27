@@ -29,7 +29,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 
 * For high availability in your environment, consider having more than one Windows server.
 * The minimum .NET version required for the connector is v4.7.2+.
-* For more information, see [private network connectors](~/global-secure-access/concept-connectors.md#requirements-and-deployment).
+* For more information, see [private network connectors](~/global-secure-access/concept-connectors.md#specifications-and-sizing-requirements).
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 > [!IMPORTANT]
