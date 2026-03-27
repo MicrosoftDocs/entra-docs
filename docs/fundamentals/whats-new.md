@@ -56,13 +56,13 @@ Microsoft Entra ID now supports synced passkeys as a generally available authent
 
 ---
 
-### General Availability of SCIM 2.0 APIs for Microsoft Entra ID
+### General Availability - SCIM 2.0 APIs for Microsoft Entra ID
 
 **Type:** General Availability  
 **Service category:** Provisioning  
 **Product capability:** Identity Lifecycle Management  
 
-SCIM 2.0 APIs give customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: [Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
+SCIM 2.0 APIs give customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: [Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md).
 
 ---
 
