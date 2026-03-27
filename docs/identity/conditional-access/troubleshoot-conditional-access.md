@@ -122,4 +122,4 @@ If you're locked out because of an incorrect setting in a Conditional Access pol
 
 - [Use the What If tool to troubleshoot Conditional Access policies](what-if-tool.md)
 - [Sign-in activity reports](~/identity/monitoring-health/concept-sign-ins.md)
-- [Troubleshoot Conditional Access using the What If tool](what-if-tool.md)
+- [The Conditional Access What If tool](what-if-tool.md)

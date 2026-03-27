@@ -162,6 +162,6 @@ If the user cannot sign in successfully, then use the following resources to tro
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

@@ -25,7 +25,7 @@ With the location condition in Conditional Access, you can control access to you
    - If you choose Countries/Regions, you can optionally choose to include unknown areas.
 1. Select **Create**
 
-More information about the location condition in Conditional Access can be found in the article, [What is the location condition in Microsoft Entra Conditional Access](concept-assignment-network.md)
+More information about the location condition in Conditional Access can be found in the article, [Conditional Access: Network assignment conditions](concept-assignment-network.md)
 
 ## Create a Conditional Access policy
 
