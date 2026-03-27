@@ -1,7 +1,6 @@
 ---
 title: Reset a user's password
 description: Instructions about how to reset a user's password using Microsoft Entra ID.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 08/27/2025
 ms.reviewer: jeffsta

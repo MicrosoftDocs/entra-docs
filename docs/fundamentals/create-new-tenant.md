@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
-manager: pmwongera
 ms.topic: quickstart
 ms.date: 03/12/2026
 ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange

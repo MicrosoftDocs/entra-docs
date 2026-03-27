@@ -1,7 +1,6 @@
 ---
 title: How to find your tenant ID
 description: Instructions about how to find your Microsoft Entra tenant ID for an existing Azure subscription.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 01/14/2025
 ms.reviewer: jeffsta

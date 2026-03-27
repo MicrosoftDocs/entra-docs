@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
-manager: pmwongera
 ms.topic: overview
 ms.date: 06/04/2025
 ms.custom: sfi-image-nochange
