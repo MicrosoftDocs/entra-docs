@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 03/16/2026
+ms.date: 03/27/2026
 ms.reviewer: buzaher
 
 #customer intent: As a security administrator, I want to migrate from DirectAccess to Microsoft Entra Private Access so that I can provide secure, identity-aware access to private resources without the limitations of legacy VPN solutions.
@@ -16,7 +16,7 @@ ms.reviewer: buzaher
 
 DirectAccess provides remote connectivity to internal resources but relies on IPv6 transition technologies, requires domain-joined Windows Enterprise clients, and grants full network-level access once connected. However, these architectural constraints don't meet the needs of modern hybrid and cloud-first environments.
 
-Microsoft Entra Private Access is a cloud-based, Zero Trust Network Access (ZTNA) solution that replaces legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors), to deliver conditional, per-app access to private resources without exposing your network to inbound connections. Migrating to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
+Microsoft Entra Private Access is a cloud-based, Zero Trust Network Access (ZTNA) solution that replaces legacy VPN and DirectAccess infrastructure. It uses the [Global Secure Access client](/entra/global-secure-access/concept-clients) and [private network connectors](/entra/global-secure-access/how-to-configure-connectors) to deliver conditional, per-app access to private resources without exposing your network to inbound connections. Migrating to Microsoft Entra Private Access reduces infrastructure complexity, strengthens your Zero Trust posture, and extends secure access to any managed or unmanaged device.
 
 ### Technical incompatibilities between DirectAccess and Private Access
 
@@ -50,7 +50,7 @@ To avoid tunnel conflicts and partial connectivity failures, break the migration
 
 You can [deploy the Global Secure Access client](/entra/global-secure-access/how-to-install-windows-client) to your pilot device before removing DirectAccess.
 
-- Deploy the Global Secure Access client by using a Mobile Device Management (MDM) solution, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management).
+- Deploy the Global Secure Access client by using a Mobile Device Management (MDM) solution, such as [Microsoft Intune](/intune/intune-service/apps/apps-win32-app-management).
 - Don't assign the Private Access traffic forwarding profile yet. Instead, follow the steps in [How to assign users and groups to traffic forwarding profiles](/entra/global-secure-access/how-to-manage-users-groups-assignment#change-existing-user-and-group-assignments) to change the default **Assign to all users** setting to a new group.
 
 ### Expected behavior
@@ -114,7 +114,7 @@ Complete the following steps on pilot devices only:
 > [!IMPORTANT]
 > Validate DirectAccess removal from the client **before** you proceed to Phase 3.
 
-After the second reboot, confirm the following conditions:
+After the second restart, confirm the following conditions:
 
 - No DirectAccess NRPT entries exist.
     - Run the following command and verify no DirectAccess-related entries are returned:
@@ -128,6 +128,9 @@ After the second reboot, confirm the following conditions:
 
 - No DirectAccess UI state. 
     - Go to **Settings** > **Network & internet** and verify that the **DirectAccess** option no longer appears.
+
+> [!TIP]
+> If DirectAccess client artifacts remain, restart the client device two more times and validate again. In some cases, you might need to restart several times to fully remove DirectAccess.
 
 ## Phase 3: Enable Private Access traffic forwarding
 
