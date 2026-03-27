@@ -163,7 +163,7 @@ The following known issues and gaps relate to performance and scale.
 
 ### Non-Microsoft blueprint and agent identity limits
 
-There's a limit of 250 active agent identity blueprints per tenant that can be created by third-party developers. Additionally, each third-party blueprint can have a maximum of 250 agent identities connected to it via API calls.
+There's a limit of 250 active agent identity blueprints per tenant that can be created by by platforms not owned by Microsoft when using app-only permissions. Applications that use delegated permissions to create agent identity blueprints are not under this active blueprint limit for admin users. It is possible for one platform not owned by Microsoft to consume the entire active blueprint limit for the tenant. Additionally, each blueprint managed by a platform not owned by Microsoft is limited to 250 active agent identities. Regardless of how a blueprint is created, the limit does not apply to Microsoft-owned platforms like Agent 365. For more information, see [Microsoft Entra service limits and restrictions](../../identity/users/directory-service-limits-restrictions.md).
 
 **Resolution**: Contact your Microsoft representative if your scenario requires exceeding these limits.
 
@@ -174,7 +174,7 @@ There's a limit of 250 active agent identity blueprints per tenant that can be c
      - Upcoming behavior: The limit will be determined by tenant size. What is the formula or scale? When does this change take effect?
      - Should customers/partners take any action before the limit is enforced? -->
 
-When [Microsoft Agent 365](https://aka.ms/Agent365) uses its own credentials to create agent identities, there's currently no enforced limit. This behavior will change in a future update, when the limit will be determined by tenant size.
+When [Microsoft Agent 365](https://aka.ms/Agent365) uses its own credentials to create agent identities, there's currently no enforced limit.
 
 **Resolution**: No action is required at this time. Monitor this article for updates when the tenant-size-based limit is enforced.
 
