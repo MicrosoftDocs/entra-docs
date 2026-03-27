@@ -2,7 +2,7 @@
 title: Known issues and gaps for Microsoft Entra Agent ID preview
 description: Learn about currently known issues and errors encountered when using the Microsoft Entra Agent ID preview.
 ms.topic: troubleshooting-known-issue
-ms.date: 12/02/2025
+ms.date: 03/27/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand known issues and gaps in the Microsoft Entra Agent ID preview so that I can plan accordingly when deploying AI agents in my organization.
@@ -35,18 +35,6 @@ When an agent identity blueprint or agent identity is deleted, any agents' user 
 ## Roles and permissions for agent identity management
 
 The following known issues and gaps relate to roles and permissions for managing agent identities.
-
-### Global Reader can't list agent identities
-
-When querying Microsoft Graph APIs to list agent identities using the endpoint `GET https://graph.microsoft.com/beta/servicePrincipals/graph.agentIdentity`, users assigned the Global Reader role receive a `403 Unauthorized` response.
-
-**Resolution**: Use the endpoint `GET https://graph.microsoft.com/beta/servicePrincipals` instead to make the query.
-
-### Delegated permissions for agent identity creation
-
-There's currently no viable delegated permission for creating agent identities. 
-
-**Resolution**: Implementers must use application permissions to create agent identities.
 
 ### Directory.AccessAsUser.All causes other permissions to be ignored
 
@@ -101,12 +89,6 @@ The following known issues and gaps relate to consent and permissions.
 The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow) doesn't work properly for permissions requested by Agent IDs.
 
 **Resolution**: Users can contact their Microsoft Entra ID tenant admins to request permissions be granted to an Agent ID.
-
-### Application permissions for agent identity blueprints
-
-You can't grant Microsoft Entra ID application permissions (app roles) to agent identity blueprint principals.
-
-**Resolution**: Grant application permissions to individual agent identities instead.
 
 ### App role assignment to agent identity
 
