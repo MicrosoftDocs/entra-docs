@@ -13,7 +13,7 @@ ms.custom: enterprise-apps
 
 A user who registers an application in Microsoft Entra ID is automatically added as the application owner. Default ownership of an enterprise application is assigned only when a user without any administrator roles creates a new application registration.
 
-When a cloud application administrator assigns a user as the owner of a service principal through an enterprise application, that user is also added as an application owner for single-tenant OpenID Connect (OIDC) and Security Assertion Markup Language (SAML) applications.
+When a Cloud Application Administrator assigns a user as the owner of a service principal through an enterprise application, that user is also added as an application owner for single-tenant OpenID Connect (OIDC) and Security Assertion Markup Language (SAML) applications.
 
 In all other scenarios, ownership is not assigned by default to an enterprise application. Although users can be assigned as owners of enterprise applications, groups can't be assigned as owners.
 
@@ -44,7 +44,7 @@ To learn how to identify ownerless enterprise apps (or apps with only one owner)
 
 **How do I add myself as an owner of an enterprise application?**
 
-Existing owners of an application can add other users as the owners. Also, users with a privileged role, such as application administrator or cloud application administrator, can assign owners to applications in the organization. If you aren't an administrator, work with an administrator in your organization to [assign you as the owner](assign-app-owners.md) of the application.
+Existing owners of an application can add other users as the owners. Also, users with a privileged role, such as Application Administrator or Cloud Application Administrator, can assign owners to applications in the organization. If you aren't an administrator, work with an administrator in your organization to [assign you as the owner](assign-app-owners.md) of the application.
 
 **How can I find all the applications that I own?**
 
