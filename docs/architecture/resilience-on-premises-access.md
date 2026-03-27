@@ -12,7 +12,7 @@ Application Proxy is a feature of Microsoft Entra ID that enables users to acces
 Users access on premises resources through a URL published via Application Proxy. They're redirected to the Microsoft Entra sign-in page. The Application Proxy service in Microsoft Entra ID then sends a token to the private network connector in the corporate network that passes the token to the on-premises Active Directory. The authenticated user can then access the on-premises resource. In the diagram below, [connectors](~/global-secure-access/concept-connectors.md) are shown in a [connector group](~/global-secure-access/concept-connector-groups.md).
 
 > [!IMPORTANT]
-> When you publish your applications via Application Proxy, you must implement [capacity planning and appropriate redundancy for the private network connectors](~/global-secure-access/concept-connectors.md#capacity-planning).
+> When you publish your applications via Application Proxy, you must implement [capacity planning and appropriate redundancy for the private network connectors](~/global-secure-access/concept-connectors.md#specifications-and-sizing-requirements).
 
 ![Architecture diagram of Application y](./media/resilience-on-prem-access/admin-resilience-app-proxy.png))
 

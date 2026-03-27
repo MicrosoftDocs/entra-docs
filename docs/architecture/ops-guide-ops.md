@@ -61,7 +61,7 @@ Unless one has been established, you should define a process to upgrade these co
 #### Hybrid management recommended reading
 
 - [Microsoft Entra Connect: Automatic upgrade](~/identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md)
-- [Understand Microsoft Entra private network connectors | Automatic updates](~/global-secure-access/concept-connectors.md#automatic-updates)
+- [Understand Microsoft Entra private network connectors | Automatic updates](~/global-secure-access/concept-connectors.md#connector-updates)
 
 <a name='azure-ad-connect-health-alert-baseline'></a>
 
