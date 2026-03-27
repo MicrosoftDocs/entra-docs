@@ -129,7 +129,7 @@ Once sync runs, you should verify that the extension property is populated with 
 $groupDisplayName = 'My Security Group'
 $clientId = $app.AppId
 $propName = "extension_{0}_GroupDN" -f ($clientId -replace "-","")
-$grp = Get-MgGroup -Filter "displayName eq 'My Security Group'" -ConsistencyLevel eventual
+$grp = Get-MgGroup -Filter "displayName eq '$groupDisplayName'" -ConsistencyLevel eventual
 Get-MgGroup -GroupId $grp.Id -Property "id,displayName,$propName" |
   Select-Object id, displayName, @{n=$propName; e={$_."$propName"}}
 ```
