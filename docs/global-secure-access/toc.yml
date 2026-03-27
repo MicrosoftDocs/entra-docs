@@ -176,6 +176,8 @@ items:
         href: how-to-use-private-link-with-private-access.md
       - name: Configure Private Access for Domain Controllers
         href: how-to-configure-domain-controllers.md
+      - name: Migrate from DirectAccess to Microsoft Entra Private Access
+        href: how-to-migrate-direct-access-to-private-access.md
   - name: Internet Access
     expanded: true
     items:
