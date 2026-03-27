@@ -61,7 +61,7 @@ The domain confirmation dialog shouldn't cause application breakages, because Mi
 
 Domain hints are directives in authentication requests from applications that can accelerate users to their federated IdP sign-in page. Multitenant applications can use them to direct users to the branded Microsoft Entra sign-in page for their tenant.  
 
-For example, `largeapp.com` might allow access via a custom URL `contoso.largeapp.com` and include a domain hint to contoso.com in the authentication request.  
+For example, `largeapp.com` might allow access via a custom URL `contoso.largeapp.com` and include a domain hint to `contoso.com` in the authentication request.  
 
 Domain hint syntax varies by protocol:  
 
@@ -87,7 +87,7 @@ Some applications don't allow configuration of authentication requests. In such 
 
 Some Microsoft and software as a service (SaaS) applications automatically include domain hints, which can disrupt managed credential rollouts like FIDO. Use a [Home Realm Discovery policy to ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from certain apps or domains during managed credential rollouts.
 
-<a name = "#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications"></a>
+<a name = "enable-direct-ropc-authentication-of-federated-users-for-legacy-applications"></a>
 
 ## Direct ROPC authentication of federated users for legacy applications  
 
@@ -118,7 +118,7 @@ Here's an example HRD policy definition:
 }  
 ```  
 
-- `AccelerateToFederatedDomain`: Optional. If the value is `false`, the policy doesn't affect auto-acceleration. If the value is`true` and there's one verified federated domain, users are directed to the federated IdP. If multiple domains exist, specify `PreferredDomain`.  
+- `AccelerateToFederatedDomain`: Optional. If the value is `false`, the policy doesn't affect auto-acceleration. If the value is `true` and there's one verified federated domain, users are directed to the federated IdP. If multiple domains exist, specify `PreferredDomain`.  
 - `PreferredDomain`: Optional. Indicates a domain for acceleration. Omit it if only one federated domain exists. If it's omitted with multiple domains, the policy has no effect.  
 - `AllowCloudPasswordValidation`: Optional. If the value is `true`, this setting allows federated user authentication via username/password credentials directly to a Microsoft Entra token endpoint, and it requires password hash synchronization.  
 
@@ -141,5 +141,5 @@ You can assign HRD policies to organizations and service principals so that mult
 
 ## Related content
 
-- [Configure sign-in behavior for an application using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)
-- [Disable auto-acceleration to a federated IdP during user sign-in with a Home Realm Discovery policy](prevent-domain-hints-with-home-realm-discovery.md)
+- [Configure sign-in auto-acceleration](configure-authentication-for-federated-users-portal.md)
+- [Disable sign-in auto-acceleration](prevent-domain-hints-with-home-realm-discovery.md)

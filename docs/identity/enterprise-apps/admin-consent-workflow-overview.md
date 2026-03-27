@@ -45,8 +45,8 @@ Reviewers can view and act on all pending admin consent requests in the tenant, 
 
 Requests appear on the following two tabs in the pane for admin consent requests:
 
-- **My pending**. This tab shows any active requests that have the signed-in user designated as a reviewer. Although reviewers can block or deny requests, only people with the correct role-based access control (RBAC) permissions to consent to the requested permissions can do so.
-- **All (Preview)**. This tab shows all requests, active or expired, that exist in the tenant. Each request includes information about the application and the users who requested the application.
+- **My pending**: This tab shows any active requests that have the signed-in user designated as a reviewer. Although reviewers can block or deny requests, only people with the correct role-based access control (RBAC) permissions to consent to the requested permissions can do so.
+- **All (Preview)**: This tab shows all requests, active or expired, that exist in the tenant. Each request includes information about the application and the users who requested the application.
 
 ## Email notifications
 

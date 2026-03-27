@@ -56,15 +56,12 @@ This error occurs when the app that a user is trying to consent to requests perm
 
 - The client application developer configured the application incorrectly, causing it to request access to an invalid resource. In this case, the application developer must update the configuration of the client application to resolve this problem.
 
-- A service principal that represents the target resource application doesn't exist in the organization, or it existed in the past but is removed. To resolve this problem, you must provision a service principal for the resource application n the organization so that the client application can request permissions to it. The method that you use for provisioning the service principal depends on the type of application:
+- A service principal that represents the target resource application doesn't exist in the organization, or it existed in the past but is removed. To resolve this problem, you must provision a service principal for the resource application in the organization so that the client application can request permissions to it. The method that you use for provisioning the service principal depends on the type of application:
 
-  - Acquiring a subscription for the resource application (Microsoft published applications).
-
-  - Consenting to the resource application.
-
-  - Granting the application permissions via the Microsoft Entra admin center.
-
-  - Adding the application from the Microsoft Entra application gallery.
+  - Acquiring a subscription for the resource application (Microsoft-published applications)
+  - Consenting to the resource application
+  - Granting the application permissions via the Microsoft Entra admin center
+  - Adding the application from the Microsoft Entra application gallery
 
 ## Risky app
 
@@ -75,9 +72,9 @@ This error occurs when the app that a user is trying to consent to requests perm
   
   This app might be risky. Only continue if you trust this app.
 
-These messages appear when Microsoft determines that the consent request might be risky. Among many other factors, this error might occur if a [verified publisher](~/identity-platform/publisher-verification-overview.md) isn't added to the app registration. The first error code and message appear to users when the [admin consent workflow](configure-admin-consent-workflow.md) is turned off. The second code and message appear to users and to admins when the admin consent workflow is turned on.
+These messages appear when Microsoft determines that the consent request might be risky. Among many other factors, these errors might occur if a [verified publisher](~/identity-platform/publisher-verification-overview.md) isn't added to the app registration. The first error code and message appear to users when the [admin consent workflow](configure-admin-consent-workflow.md) is turned off. The second code and message appear to users and to admins when the admin consent workflow is turned on.
 
-Users can't grant consent to apps that Microsoft detects as risky. Admins can grant the consent, but they should evaluate the app carefully and proceed with caution. If the app seems suspicious upon further review, admins can report it to Microsoft from the consent screen.
+Users can't grant consent to apps that Microsoft detects as risky. Admins can grant the consent, but they should evaluate the app carefully and proceed with caution. If the app seems suspicious upon further review, admins can report it to Microsoft from the consent dialog.
 
 ## User declined to consent to access the app
 
@@ -89,5 +86,5 @@ After the administrator review, and after the user approves the submitted admin 
 
 ## Related content
 
-- [Scopes, permissions, and consent in the Microsoft identity platform (v2.0 endpoint)](~/identity-platform/permissions-consent-overview.md)
+- [Overview of permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
 - [Unexpected consent prompt when signing in to an application](application-sign-in-unexpected-user-consent-prompt.md)

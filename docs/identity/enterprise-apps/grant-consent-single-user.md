@@ -48,7 +48,7 @@ $clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Your client application
 # requests to the Microsoft Graph API, so we'll use that here.
 $resourceAppId = "00000003-0000-0000-c000-000000000000" # Microsoft Graph API
 
-# The permissions to grant. Here we're including "openid", "profile", "User.Read"
+# The permissions to grant. Here we're including "openid", "profile", "User.Read",
 # and "offline_access" (for basic sign-in), as well as "User.ReadBasic.All" (for 
 # reading other users' basic profile).
 $permissions = @("openid", "profile", "offline_access", "User.Read", "User.ReadBasic.All")
@@ -171,4 +171,4 @@ In the following example, you grant delegated permissions defined by a resource 
 
 - [Configure the admin consent workflow](configure-admin-consent-workflow.md)
 - [Configure how users consent to applications](configure-user-consent.md)
-- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
+- [Overview of permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)

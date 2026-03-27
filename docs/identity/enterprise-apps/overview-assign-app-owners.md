@@ -24,7 +24,7 @@ Unlike privileged role administrators, owners can manage only the enterprise app
 > [!NOTE]
 > The application might have more permissions than the owner. This situation is an elevation of privilege over what the owner can access as a user. In that case, an application owner can create or update users or other objects while impersonating the application. The elevation of privilege to owners can raise a security concern in some cases, depending on the application's permissions.
 
-Currently, due to background applications and dependencies for service principal objects' settings, application owners added through methods other than the Microsoft Entra admin center (like Graph API or PowerShell) can't manage some enterprise application settings. These settings include attributes and claims, configured SAML certificate properties, or token encryption settings.
+Currently, due to background applications and dependencies for service principal objects' settings, application owners added through methods other than the Microsoft Entra admin center (like Microsoft Graph API or PowerShell) can't manage some enterprise application settings. These settings include attributes and claims, configured SAML certificate properties, or token encryption settings.
 
 ## FAQ
 
