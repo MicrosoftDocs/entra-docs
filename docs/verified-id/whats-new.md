@@ -68,7 +68,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 ## March 2024
 
 - Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
-- [Wallet Library 1.0.1](decentralized-identifier-overview.md#prerequisites) supports P-256.
+- [Wallet Library 1.0.1](decentralized-identifier-overview.md) supports P-256.
 
 ## February 2024
 
