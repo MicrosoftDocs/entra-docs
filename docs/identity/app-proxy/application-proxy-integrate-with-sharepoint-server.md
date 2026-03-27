@@ -200,4 +200,4 @@ If you see the **BadGateway Incorrect Kerberos** error, run the following comman
 ## Next steps
 
 * [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md)
-* [Understand Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
+* [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)

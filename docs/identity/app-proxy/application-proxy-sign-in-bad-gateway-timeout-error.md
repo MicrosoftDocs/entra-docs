@@ -73,4 +73,4 @@ If the error persists, use the computer where the connector is installed to open
 
 ## Related content
 
-- [Understand Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)
