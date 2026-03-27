@@ -43,21 +43,23 @@ For more information about how to create the extension, see [Cloud sync director
    if (-not $app) { 
      $app = New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "API://$tenantId/CloudSyncCustomExtensionsApp" 
    } 
-    
+   $app
+   
    $sp = Get-MgServicePrincipal -Filter "AppId eq '$($app.AppId)'" 
    if (-not $sp) { 
      $sp = New-MgServicePrincipal -AppId $app.AppId 
-   } 
+   }
+   $sp
    ```
 
 1. Now add a directory extension property named *GroupDN*. This will be a string attribute available on group objects. 
 
    ```powershell
-   New-MgApplicationExtensionProperty ` 
-     -ApplicationId $app.Id ` 
-     -Name "GroupDN" ` 
-     -DataType "String" ` 
-     -TargetObjects Group 
+   New-MgApplicationExtensionProperty `
+     -ApplicationId $app.Id `
+     -Name "GroupDN" `
+     -DataType "String" `
+     -TargetObjects Group
    ```
    
 For more information about how to create the directory extension property for groups, see [Cloud sync directory extensions and custom attribute mapping](/entra/identity/hybrid/cloud-sync/custom-attribute-mapping).
@@ -101,6 +103,7 @@ For more information about how to create the directory extension property for gr
      ]
    }    
    ```
+---
 
 ### Configure Cloud Sync attribute mapping
 
@@ -123,6 +126,7 @@ By mapping distinguishedName directly, you capture the group’s full DN (CN + O
 Once sync runs, you should verify that the extension property is populated with the DN. Use Microsoft Graph PowerShell:
 
 ```powershell
+$groupDisplayName = 'My Security Group'
 $clientId = $app.AppId
 $propName = "extension_{0}_GroupDN" -f ($clientId -replace "-","")
 $grp = Get-MgGroup -Filter "displayName eq 'My Security Group'" -ConsistencyLevel eventual
