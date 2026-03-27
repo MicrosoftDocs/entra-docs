@@ -85,7 +85,9 @@ Some applications don't allow configuration of authentication requests. In such 
 
 ### HRD policy to prevent auto-acceleration  
 
-Some Microsoft and software as a service (SaaS) applications automatically include domain hints, which can disrupt managed credential rollouts like FIDO. Use a [Home Realm Discovery policy to ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from certain apps or domains during managed credential rollouts.  
+Some Microsoft and software as a service (SaaS) applications automatically include domain hints, which can disrupt managed credential rollouts like FIDO. Use a [Home Realm Discovery policy to ignore domain hints](prevent-domain-hints-with-home-realm-discovery.md) from certain apps or domains during managed credential rollouts.
+
+<a name = "#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications"></a>
 
 ## Direct ROPC authentication of federated users for legacy applications  
 

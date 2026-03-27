@@ -15,7 +15,7 @@ ms.custom: enterprise-apps
 
 In some situations, your users might need to consent to permissions for applications that they're creating or using with their work accounts. However, non-admin users aren't allowed to consent to permissions that require admin consent. Also, users can't consent to applications when [user consent](configure-user-consent.md) is turned off in the user's tenant.
 
-When user consent is turned off, an admin can grant users the ability to make requests for gaining access to applications by enabling the admin consent workflow. In this article, you learn about the user and admin experience when the admin consent workflow is on versus when it's off.
+When user consent is turned off, an admin can grant users the ability to make requests for gaining access to applications by turning on the admin consent workflow. In this article, you learn about the user and admin experience when the admin consent workflow is on versus when it's off.
 
 When users attempt to sign in, they might see a consent prompt like the one in the following screenshot.
 
@@ -69,8 +69,8 @@ The following table outlines the scenarios and audit values available for the ad
 
 |Scenario  |Audit service  |Audit category  |Audit activity  |Audit actor  |Audit log limitations  |
 |---------|---------|---------|---------|---------|---------|
-|Admin enabling the consent request workflow        |Access Reviews           |UserManagement           |Create governance policy template          |App context            |Currently you can't find the user context            |
-|Admin disabling the  consent request workflow       |Access Reviews           |UserManagement           |Delete governance policy template          |App context            |Currently you can't find the user context           |
+|Admin turning on the consent request workflow        |Access Reviews           |UserManagement           |Create governance policy template          |App context            |Currently you can't find the user context            |
+|Admin turning off the  consent request workflow       |Access Reviews           |UserManagement           |Delete governance policy template          |App context            |Currently you can't find the user context           |
 |Admin updating the consent workflow configurations        |Access Reviews           |UserManagement           |Update governance policy template          |App context            |Currently you can't find the user context           |
 |User creating an admin consent request for an app       |Access Reviews           |Policy         |Create request           |App context            |Currently you can't find the user context           |
 |Reviewer approving an admin consent request       |Access Reviews           |UserManagement           |Approve all requests in business flow          |App context            |Currently you can't find the user context or the app ID that was granted admin consent           |
