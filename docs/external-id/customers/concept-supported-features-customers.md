@@ -2,7 +2,7 @@
 title: External Tenant Features
 description: Compare features and capabilities of a workforce versus an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.topic: concept-article
-ms.date: 11/17/2025
+ms.date: 03/30/2026
 
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, DevOps, or IT admin, I want to learn about features supported in a CIAM tenant so that I can configure tenants according to my organization's needs.
@@ -125,6 +125,7 @@ The following table compares the unique features for [enterprise application](/e
 | ------- | ---------------- | --------------- |
 | Application gallery | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are integrated into Microsoft Entra ID. | Choose from a range of integrated apps. To find a partner app, use the search bar. The application gallery catalog isn't available. |
 | Register a custom enterprise application | [Add an enterprise application.](/entra/identity/enterprise-apps/add-application-portal) | [Register a SAML app in your external tenant.](/entra/external-id/customers/how-to-register-saml-app) |
+ | Deactivate app registration | [Deactivate an app registration](/entra/identity/enterprise-apps/deactivate-app-registration) to prevent token issuance while preserving configuration. | Same as workforce. |
 | Self-service application assignment | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access). | Self-service application assignment in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) isn't available. |
 | Application proxy | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications. | Not available. |
 
