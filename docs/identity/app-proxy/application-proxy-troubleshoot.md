@@ -16,7 +16,7 @@ Use these steps to troubleshoot issues and error messages in Microsoft Entra app
 
 ## Before you begin
 
-Start by checking the connector. To learn how to debug a private network connector, see [Debug private network connector issues](../../global-secure-access/troubleshoot-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
+Start by checking the connector. To learn how to debug a private network connector, see [Troubleshoot private network connectors](../../global-secure-access/troubleshoot-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
 
 If a user encounters an error while accessing or publishing an application, use these steps to verify that Microsoft Entra application proxy works correctly:
 
