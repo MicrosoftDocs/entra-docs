@@ -154,6 +154,8 @@
       items:
       - name: Enable passkeys (FIDO2)
         href: how-to-authentication-passkeys-fido2.md
+      - name: Enable Entra passkey on Windows
+        href: how-to-authentication-entra-passkeys-on-windows.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device
@@ -166,10 +168,6 @@
         href: concept-fido2-compatibility.md
       - name: Become a passkey (FIDO2) vendor
         href: concept-fido2-hardware-vendor.md
-    - name: Microsoft Entra passkey on Windows
-      items:
-      - name: Enable Microsoft Entra passkey on Windows
-        href: how-to-authentication-entra-passkeys-on-windows.md
     - name: Microsoft Authenticator
       items:
       - name: Enable passkeys in Authenticator
