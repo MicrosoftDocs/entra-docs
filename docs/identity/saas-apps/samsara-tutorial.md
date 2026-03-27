@@ -117,7 +117,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Related content
 
-For more information, please refer to the Samsara KB article on SSO configuration. [Samsara SSO KB Article](https://kb.samsara.com/hc/en-us/articles/18709097464077-Single-Sign-On-SSO-Authentication#UUID-ff7f0e21-59f5-e6d4-6b81-2f090c691895_section-idm232308954423931).
+For more information, refer to the [Samsara SSO KB Article](https://kb.samsara.com/hc/en-us/articles/18709097464077-Single-Sign-On-SSO-Authentication#UUID-ff7f0e21-59f5-e6d4-6b81-2f090c691895_section-idm232308954423931).
 
 
 Once you configure Samsara you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
