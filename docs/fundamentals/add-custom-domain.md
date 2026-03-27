@@ -1,7 +1,6 @@
 ---
 title: Add your custom domain
 description: Instructions about how to add your custom domain name to your tenant.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 12/04/2025
 ms.reviewer: elkuzmen

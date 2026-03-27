@@ -1,7 +1,6 @@
 ---
 title: Sign up for premium editions
 description: Instructions about how to sign up for Microsoft Entra ID P1 or P2 editions.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/05/2025
 ms.reviewer: piotrci

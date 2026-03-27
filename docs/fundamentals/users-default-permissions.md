@@ -1,7 +1,6 @@
 ---
 title: Default user permissions
 description: Compare the default user permissions available in Microsoft Entra ID and learn how to restrict access.
-manager: pmwongera
 ms.topic: concept-article
 ms.date: 03/05/2025
 ms.reviewer: vincesm

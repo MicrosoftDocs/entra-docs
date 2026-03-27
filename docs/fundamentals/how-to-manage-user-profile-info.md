@@ -1,7 +1,6 @@
 ---
 title: How to manage user profile information in the Microsoft Entra admin center
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.reviewer: jeffsta
