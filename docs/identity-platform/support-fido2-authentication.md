@@ -63,4 +63,4 @@ The availability of FIDO2 passwordless authentication for applications that run 
 
 ## Next steps
 
-[Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md)
+[Passkeys (FIDO2) authentication method in Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md)

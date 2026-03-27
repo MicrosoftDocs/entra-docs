@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 
 ## Overview
 
-Connectors are lightweight agents that run on a server in a private network and facilitate outbound connections to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend resources and applications. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Understand Microsoft Entra private network connectors](concept-connectors.md).
+Connectors are lightweight agents that run on a server in a private network and facilitate outbound connections to the Global Secure Access service. Connectors must be installed on a Windows Server that has access to the backend resources and applications. You can organize connectors into connector groups, with each group handling traffic to specific applications. To learn more about connectors, see [Microsoft Entra private network connectors](concept-connectors.md).
 
 ## Prerequisites
 
@@ -181,7 +181,7 @@ If you've previously installed a connector, reinstall it to get the latest versi
 
 If you choose to have more than one Windows server for your on-premises applications, you need to install and register the connector on each server. You can organize the connectors into connector groups. For more information, see [connector groups](concept-connector-groups.md).
 
-For information about connectors, capacity planning, and how they stay up-to-date, see [Understand Microsoft Entra private network connectors](concept-connectors.md).
+For information about connectors, capacity planning, and how they stay up-to-date, see [Microsoft Entra private network connectors](concept-connectors.md).
 
 > [!NOTE]
 > Microsoft Entra Private Access support for multi-geo connectors is currently in PREVIEW. By default, the cloud service instances for your connector are chosen in the same region as your Microsoft Entra tenant (or the closest region to it), even if you have connectors installed in regions different from your default region. Multi-Geo support lets customers optimize traffic flow by assigning connector groups according to their preferred geo locations instead of relying solely on the tenant's geo location.
