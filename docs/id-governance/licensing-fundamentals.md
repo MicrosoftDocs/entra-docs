@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 06/26/2025
+ms.date: 03/27/2026
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
@@ -76,7 +76,6 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 
 
 
-
 ## Privileged Identity Management
 
 [!INCLUDE [licensing](../includes/licensing-pim.md)]
@@ -87,7 +86,7 @@ This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID
 
 ## Account Discovery
 
-Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. This feature allows administrators to discover existing user accounts in target applications, match them to Microsoft Entra ID users, and categorize them for governance. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
+Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. TThis feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
 
 ### License scenarios
 

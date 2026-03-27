@@ -2,7 +2,7 @@
 title: Discover identities in target applications with Account Discovery (preview)
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/27/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 # Discover identities in target applications with Account Discovery (preview)
 
-When organizations adopt Microsoft Entra ID for application provisioning, target applications often already contain user accounts that were created before provisioning was configured. Account Discovery helps you find these existing accounts, match them to Microsoft Entra ID users, and categorize them so you can bring unmanaged identities under governance.
+When organizations adopt Microsoft Entra ID for application provisioning, target applications often already contain user accounts that were created before provisioning was configured. Account Discovery helps you find these existing accounts, match them to Microsoft Entra ID users, and categorize them so you can bring unmanaged identities under governance. After onboarding to provisioning, application administrators can manually create accounts in the application. This report allows organizations to identify local or orphan accounts both during initial onboarding and after they have operationalized provisioning.
 
 Account Discovery retrieves all user accounts from a target application and classifies them into three categories:
 
@@ -37,13 +37,13 @@ Before you can use Account Discovery, the following must be in place:
 - The [Microsoft Entra ID Governance](https://www.microsoft.com/security/business/identity-access/microsoft-entra-id-governance) add-on license or [Microsoft Entra Suite](https://www.microsoft.com/security/business/microsoft-entra-pricing). For details on feature availability by license, see [Microsoft Entra ID Governance licensing fundamentals](/entra/id-governance/licensing-fundamentals#features-by-license).
 - An enterprise application configured for provisioning with valid credentials and a successful test connection.
 - A **direct matching attribute mapping** configured between Microsoft Entra ID and the target application. Account Discovery uses the first matching attribute to correlate users between the two systems.
-- One of the following roles: [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+- One of the following roles: [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](../../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Hybrid Identity Administrator](../../identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
 ## Known limitations
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- Account Discovery isn't supported for the following application types:
+- Account Discovery isn't supported for the following application including:
   - Workday
   - SAP SuccessFactors
   - API-driven provisioning apps
@@ -59,8 +59,6 @@ Account Discovery is validated for the following applications:
 - Atlassian
 - On-premises applications (SQL, LDAP, REST, SOAP, PowerShell). For more information, see [Microsoft Entra on-premises application provisioning architecture](on-premises-application-provisioning-architecture.md).
 
-Other SCIM-based and gallery applications that support provisioning are enabled for Account Discovery but aren't formally certified. You can test Account Discovery with these applications at your discretion.
-
 ## Discover identities in a target application
 
 To discover existing user accounts in a target application:
@@ -72,7 +70,7 @@ To discover existing user accounts in a target application:
 1. Verify that the provisioning configuration has valid credentials and a successful test connection.
 1. Select **Discover identities**.
 
-The provisioning service retrieves all user accounts from the target application and displays them organized by category.
+The provisioning service retrieves all user accounts from the target application and displays them organized by category. The discovery takes at least 30 minutes to generate a report. Note that the more accounts that are included in the target app, the longer the report takes. For example, an application with 250K accounts might take 12 hours or more to generate a discovery report.
 
 ## Review discovered accounts
 
@@ -85,6 +83,7 @@ Local accounts exist in the target application but have no matching user in Micr
 - Former employees whose directory accounts were removed but whose application accounts weren't deprovisioned.
 - Service accounts or shared accounts created directly in the application.
 - Users provisioned through a separate process that didn't use Microsoft Entra ID.
+- A scenario where there is a data quality issue preventing the match.
 
 Review these accounts to determine whether they should be removed from the target application, matched to an existing Microsoft Entra ID user, or kept as-is.
 
@@ -112,7 +111,7 @@ Use the search and filter capabilities to find specific accounts:
 
 Account Discovery works alongside [Microsoft Entra ID Governance](/entra/id-governance/identity-governance-overview) to help you manage the full identity lifecycle. After you discover identities in your target applications, you can:
 
-- Use [access reviews](/entra/id-governance/access-reviews-overview) to determine whether local accounts should retain access.
+- Assign existing users to your access packages to govern access going forward, run reviews on the access packages to certify access, and configure lifecycle workflows to automate lifecycle management.
 - Configure [entitlement management](/entra/id-governance/entitlement-management-overview) to govern who can request access to the application.
 - Set up [lifecycle workflows](/entra/id-governance/what-are-lifecycle-workflows) to automate provisioning and deprovisioning based on user lifecycle events.
 
