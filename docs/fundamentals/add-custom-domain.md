@@ -103,5 +103,5 @@ If you can't verify a custom domain name, try the following suggestions:
 ## Related content
 
 - [How to assign roles and administrators](./how-subscriptions-associated-directory.md)
-- [How to add or delete users](./add-users.md)
+- [How to add or delete users](./how-to-create-delete-users.yml)
 - [Managing custom domain names](~/identity/users/domains-manage.md)
