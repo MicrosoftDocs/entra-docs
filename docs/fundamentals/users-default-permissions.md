@@ -180,4 +180,4 @@ Users can perform the following actions on owned groups.
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
-* [Manage users](./add-users.md).
+* [Manage users](./how-to-create-delete-users.yml).
