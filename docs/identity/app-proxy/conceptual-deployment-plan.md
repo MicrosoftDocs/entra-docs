@@ -36,7 +36,7 @@ You need to meet the following prerequisites before beginning your implementatio
      * Connector machines must [be enabled for Transport Layer Security (TLS) 1.2](application-proxy-add-on-premises-application.md) before installing the connectors.
 
      * If possible, deploy connectors in the [same network and segment as the back-end web application servers](application-proxy-network-topology.md). It's best to deploy connectors after you complete a discovery of applications.
-     * Each connector group should have at least two connectors to provide high availability and scale. Having three connectors is optimal for servicing a machine at any point. Review the [connector capacity table](~/global-secure-access/concept-connectors.md#capacity-planning) to help decide the type of machine for the connector.
+     * Each connector group should have at least two connectors to provide high availability and scale. Having three connectors is optimal for servicing a machine at any point. Review the [connector capacity table](~/global-secure-access/concept-connectors.md#specifications-and-sizing-requirements) to help decide the type of machine for the connector.
 
 * **Network access settings**: Microsoft Entra private network connectors [connect to Azure via HTTPS (Transmission Control Protocol (TCP) Port 443) and HTTP (TCP Port 80)](application-proxy-add-on-premises-application.md).
 
@@ -293,7 +293,7 @@ The connectors and the service take care of all the high availability tasks. You
 
 #### Windows event logs and performance counters
 
-Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs. For more information, see [Understand Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md#under-the-hood). Follow the [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
+Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs. For more information, see [Understand Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md). Follow the [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
 
 ### Troubleshooting guide and steps
 
