@@ -124,5 +124,5 @@ Organizations can select individual policy templates and:
 
 ## Next steps
 
-- [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
+- [Simulate sign in behavior using the Conditional Access What If tool.](what-if-tool.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

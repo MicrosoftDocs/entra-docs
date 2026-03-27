@@ -22,7 +22,7 @@ landingContent:
           - text: What is authentication?
             url: overview-authentication.md
           - text: Authentication methods in Microsoft Entra ID
-            url: concept-authentication-methods.md
+            url: overview-authentication.md
 
   # Card
   - title: Deploy phishing-resistant authentication
