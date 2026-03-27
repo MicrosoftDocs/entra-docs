@@ -137,7 +137,7 @@ When device-preferred credential is enabled, the system evaluates which credenti
 | Rank | Credential | Category | Meets requirement for |
 |------|-----------|----------|----------------------|
 | 1 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) | Recovery | 1FA + MFA |
-| 2 | [Passkey](concept-authentication-passkeys-fido2.md#passkeys-fido2)<sup>1</sup> | Phishing-resistant | 1FA + MFA |
+| 2 | [Passkey](concept-authentication-passkeys-fido2.md)<sup>1</sup> | Phishing-resistant | 1FA + MFA |
 | 3 | [Certificate-based authentication (CBA)](concept-certificate-based-authentication.md) | Phishing-resistant | 1FA or 1FA + MFA |
 | 4 | [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md) | Passwordless | 1FA + MFA |
 | 5 | [External multifactor authentication (MFA)](how-to-authentication-external-method-manage.md) | — | MFA |
