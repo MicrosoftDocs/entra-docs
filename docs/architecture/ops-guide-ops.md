@@ -87,7 +87,7 @@ Some identity and access management services require on-premises agents to enabl
 
 - [Troubleshoot Application Proxy](~/identity/app-proxy/application-proxy-troubleshoot.md)
 - [Self-service password reset troubleshooting](~/identity/authentication/troubleshoot-sspr.md)
-- [Understand Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](~/identity/hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
 - [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-errors.md)
 
@@ -101,7 +101,7 @@ Adopting best practices can help the optimal operation of on-premises agents. Co
 
 #### On-premises agents management recommended reading
 
-- [Understand Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Microsoft Entra pass-through authentication - quickstart](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## Management at scale
