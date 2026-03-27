@@ -25,10 +25,6 @@ Microsoft Entra Agent ID brings together identity management, access protection,
 
 The [Microsoft Entra Agent identity platform](../identity-platform/what-is-agent-id-platform.md) enables developers to create and manage [agent identities](../identity-platform/what-are-agent-identities.md)—specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
 
-## Agent Registry
-
-The Agent Registry provides centralized visibility into all agents across your organization. It enables secure agent discovery, organizes agents into security collections, and stores agent metadata including capabilities, tasks, and protocols. Administrators can use the Agent Registry to track agent inventory, identify unmanaged agents, and maintain accountability through sponsor and owner assignments.
-
 ## Security and governance for agents
 
 Microsoft Entra Agent ID extends existing Microsoft Entra security and governance capabilities to agent identities. Agents receive the same identity-driven protections as users and workloads, including adaptive access policies, real-time risk detection, lifecycle management, and network-level controls. All agent authentication and activity is logged for compliance and audit.

@@ -71,7 +71,7 @@ AI agents require purpose-built identity constructs that differ from traditional
 
 Microsoft Entra Agent ID enables organizations to:
 
-- **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships. The Agent Registry provides centralized metadata management, secure agent discovery, and automatic organization into security collections.
+- **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships, enabling centralized metadata management and automatic organization into security collections.
 
 - **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](../identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
 
@@ -99,7 +99,7 @@ Microsoft Entra ID Protection detects and blocks threats by flagging anomalous a
 
 - Detect agent identity risk derived from user risk and based on agents' own actions, including unusual or unauthorized activities.
 - Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
-- Provide risk signals to the Agent Registry to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
+- Provide risk signals to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
 
 For more information, see [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 
