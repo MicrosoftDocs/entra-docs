@@ -35,7 +35,6 @@ The following list is provided as a reference and includes a detailed list of se
 - make.gov.powerapps.us
 - make.powerapps.com
 - Media Analysis and Transformation Service
-- Media Analysis and Transformation Service
 - Message Recall
 - Messaging Async Media
 - MessagingAsyncMediaProd
@@ -45,7 +44,6 @@ The following list is provided as a reference and includes a detailed list of se
 - Microsoft Flow Portal
 - Microsoft Flow Portal GCC
 - Microsoft Forms
-- Microsoft Forms Web
 - Microsoft Forms Web
 - Microsoft Information Protection API
 - Microsoft Office
@@ -68,7 +66,6 @@ The following list is provided as a reference and includes a detailed list of se
 - Microsoft Teams Targeting Application
 - Microsoft Teams UIS
 - Microsoft Teams Web Client
-- Microsoft Todo web app
 - Microsoft To-Do web app
 - Microsoft Virtual Events Portal
 - Microsoft Virtual Events Services
