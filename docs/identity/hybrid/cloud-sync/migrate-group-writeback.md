@@ -185,6 +185,7 @@ In the Microsoft Entra Connect Synchronization Rules Editor, you create an inbou
 1. Provide a unique value for the sync rule precedence (0-99).
 
    ``` PowerShell 
+   # Provide the sync rule precedence (0-99)
    [int] $inboundSyncRulePrecedence = 88
    ```
 1. Run the following script:
@@ -274,15 +275,17 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
 1. Provide a unique value for the sync rule precedence (0-99).
 
    ``` PowerShell 
+   # Provide the sync rule precedence (0-99)
    [int] $outboundSyncRulePrecedence = 89
    ```
-
+   
 1. Get the Active Directory connector for Group Writeback.
 
    ``` PowerShell 
+   # Provide the name of your Active Directory Connector
    $connectorAD = Get-ADSyncConnector -Name "Contoso.com"
-   ``` 
-
+   ```
+   
 1. Run the following script:
 
    ``` PowerShell 
@@ -375,3 +378,4 @@ Now that the groups are removed from the synchronization scope of Microsoft Entr
 - [Provision groups to Active Directory by using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory-based apps (Kerberos) by using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
+
