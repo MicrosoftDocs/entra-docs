@@ -90,12 +90,6 @@ The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/
 
 **Resolution**: Users can contact their Microsoft Entra ID tenant admins to request permissions be granted to an Agent ID.
 
-### App role assignment to agent identity
-
-You can't assign Microsoft Entra ID app roles where the target resource of the role assignment is an agent identity.
-
-**Resolution**: Assign app roles using an agent identity blueprint principal as the target resource.
-
 ### Consents blocked by risk-based step-up
 
 User consents that are blocked by risk-based step-up have no mention of "risky" in the UX.
