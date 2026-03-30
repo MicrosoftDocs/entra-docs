@@ -41,34 +41,6 @@ In this tutorial, you learn how to:
 
 1. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample Android application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/blob/main/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/IdPSignInSignUpWebFragment.kt) before getting started.
 
-## Update configurations
-
-1. Ensure your client JSON configuration file includes the `redirect_uri` parameter for handling web-based authentication flows:
-
-   - [Microsoft Authentication Library (MSAL) configuration](/entra/msal/android/msal-configuration#redirect_uri)
-
-    ```json
-    {
-        "client_id": "Enter_the_Application_Id_Here",
-        "redirect_uri": "msauth://com.yourpackage.name/Enter_your_Signature_Hash_Here",
-        "authorities": [
-        {
-            "type": "CIAM",
-            "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
-        }
-        ],
-        ...
-    }
-    ```
-
-1. Add or update the MSAL dependency to at least `8.1.0` in your app's `build.gradle` file if not already present:
-
-    ```gradle
-    dependencies {
-        implementation 'com.microsoft.identity.client:msal:[8.1.0,)'
-    }
-    ```
-
 ## Sign in a user with a federated identity provider
 
 To sign in a user with a federated identity provider via web flow, you need to first identify the identity provider to register/authenticate with, and the corresponding `domain_hint`.
@@ -165,6 +137,34 @@ To sign in a user with a federated identity provider via web flow, you need to f
                 accountResult.exception?.message ?: accountResult.errorMessage
             )
         }
+    }
+    ```
+
+### Update configurations
+
+1. Ensure your client JSON configuration file includes the `redirect_uri` parameter for handling web-based authentication flows:
+
+   - [Microsoft Authentication Library (MSAL) configuration](/entra/msal/android/msal-configuration#redirect_uri)
+
+    ```json
+    {
+        "client_id": "Enter_the_Application_Id_Here",
+        "redirect_uri": "msauth://com.yourpackage.name/Enter_your_Signature_Hash_Here",
+        "authorities": [
+        {
+            "type": "CIAM",
+            "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
+        }
+        ],
+        ...
+    }
+    ```
+
+1. Add or update the MSAL dependency to at least `8.1.0` in your app's `build.gradle` file if not already present:
+
+    ```gradle
+    dependencies {
+        implementation 'com.microsoft.identity.client:msal:[8.1.0,)'
     }
     ```
 
