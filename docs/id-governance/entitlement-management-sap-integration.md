@@ -42,8 +42,8 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
   
 - Add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
     - Click *Add New Mapping* and set the attribute mapping as below:
-       - Source Attribute: manager
-       - Target Attribute: urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager
+        - Source Attribute: manager
+        - Target Attribute: urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager
 - Your Attribute Mapping should look like this when the pre-requesites are complete:
 
  :::image type="content" source="media/entitlement-management-sap-integration/sap-iag-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
