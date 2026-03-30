@@ -1,6 +1,6 @@
 ---
-title: The Global Secure Access Client for iOS
-description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
+title: Install the Global Secure Access Client for iOS
+description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the iOS client.
 #customer intent: As an IT admin, I want to set up and deploy the Global Secure Access client for iOS devices so that I can secure network traffic for my organization.
 ms.topic: how-to
 ms.date: 10/13/2025
@@ -11,7 +11,8 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Global Secure Access client for iOS
+# Install the Global Secure Access client for iOS
+
 This article explains how to set up and deploy the Global Secure Access client app on iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
 
 > [!CAUTION]

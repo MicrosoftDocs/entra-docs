@@ -1,16 +1,17 @@
 ---
-title: The Global Secure Access Client for macOS
-description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
+title: Install the Global Secure Access Client for macOS
+description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the macOS client.
 ms.topic: how-to
 ms.date: 02/21/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
-# Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization’s network traffic is protected.
+# Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization's network traffic is protected.
 
 ---
 # Install the Global Secure Access client for macOS
+
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for macOS.
@@ -99,68 +100,68 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-	<dict>
-		<key>PayloadUUID</key>
-		<string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
-		<key>PayloadType</key>
-		<string>Configuration</string>
-		<key>PayloadOrganization</key>
-		<string>Microsoft Corporation</string>
-		<key>PayloadIdentifier</key>
-		<string>com.microsoft.globalsecureaccess</string>
-		<key>PayloadDisplayName</key>
-		<string>Global Secure Access Proxy Configuration</string>
-		<key>PayloadDescription</key>
-		<string>Add Global Secure Access Proxy Configuration</string>
-		<key>PayloadVersion</key>
-		<integer>1</integer>
-		<key>PayloadEnabled</key>
-		<true/>
-		<key>PayloadRemovalDisallowed</key>
-		<true/>
-		<key>PayloadScope</key>
-		<string>System</string>
-		<key>PayloadContent</key>
-		<array>
-			<dict>
-				<key>PayloadUUID</key>
-				<string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
-				<key>PayloadType</key>
-				<string>com.apple.vpn.managed</string>
-				<key>PayloadOrganization</key>
-				<string>Microsoft Corporation</string>
-				<key>PayloadIdentifier</key>
-				<string>com.microsoft.globalsecureaccess</string>
-				<key>PayloadDisplayName</key>
-				<string>Global Secure Access Proxy Configuration</string>
-				<key>PayloadDescription</key>
-				<string/>
-				<key>PayloadVersion</key>
-				<integer>1</integer>
-				<key>TransparentProxy</key>
-				<dict>
-					<key>AuthenticationMethod</key>
-					<string>Password</string>
-					<key>Order</key>
-					<integer>1</integer>
-					<key>ProviderBundleIdentifier</key>
-					<string>com.microsoft.globalsecureaccess.tunnel</string>
-					<key>ProviderDesignatedRequirement</key>
-					<string>identifier "com.microsoft.globalsecureaccess.tunnel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
-					<key>ProviderType</key>
-					<string>app-proxy</string>
-					<key>RemoteAddress</key>
-					<string>100.64.0.0</string>
-				</dict>
-				<key>UserDefinedName</key>
-				<string>Global Secure Access Proxy Configuration</string>
-				<key>VPNSubType</key>
-				<string>com.microsoft.globalsecureaccess</string>
-				<key>VPNType</key>
-				<string>TransparentProxy</string>
-			</dict>
-		</array>
-	</dict>
+  <dict>
+    <key>PayloadUUID</key>
+    <string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadOrganization</key>
+    <string>Microsoft Corporation</string>
+    <key>PayloadIdentifier</key>
+    <string>com.microsoft.globalsecureaccess</string>
+    <key>PayloadDisplayName</key>
+    <string>Global Secure Access Proxy Configuration</string>
+    <key>PayloadDescription</key>
+    <string>Add Global Secure Access Proxy Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadRemovalDisallowed</key>
+    <true/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadContent</key>
+    <array>
+      <dict>
+        <key>PayloadUUID</key>
+        <string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
+        <key>PayloadType</key>
+        <string>com.apple.vpn.managed</string>
+        <key>PayloadOrganization</key>
+        <string>Microsoft Corporation</string>
+        <key>PayloadIdentifier</key>
+        <string>com.microsoft.globalsecureaccess</string>
+        <key>PayloadDisplayName</key>
+        <string>Global Secure Access Proxy Configuration</string>
+        <key>PayloadDescription</key>
+        <string/>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>TransparentProxy</key>
+        <dict>
+          <key>AuthenticationMethod</key>
+          <string>Password</string>
+          <key>Order</key>
+          <integer>1</integer>
+          <key>ProviderBundleIdentifier</key>
+          <string>com.microsoft.globalsecureaccess.tunnel</string>
+          <key>ProviderDesignatedRequirement</key>
+          <string>identifier "com.microsoft.globalsecureaccess.tunnel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
+          <key>ProviderType</key>
+          <string>app-proxy</string>
+          <key>RemoteAddress</key>
+          <string>100.64.0.0</string>
+        </dict>
+        <key>UserDefinedName</key>
+        <string>Global Secure Access Proxy Configuration</string>
+        <key>VPNSubType</key>
+        <string>com.microsoft.globalsecureaccess</string>
+        <key>VPNType</key>
+        <string>TransparentProxy</string>
+      </dict>
+    </array>
+  </dict>
 </plist>
 ```
 
@@ -204,11 +205,11 @@ For a silent upgrade, run the following command.
 
 ## Uninstall the Global Secure Access client
 To manually uninstall the Global Secure Access client, use either of the following methods: 
--	Run the **Uninstall Global Secure Access Client** application.
+-  Run the **Uninstall Global Secure Access Client** application.
 
 Or
 
--	Run the following command:
+-  Run the following command:
 
 `sudo /Applications/GlobalSecureAccessClient/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`
 
@@ -234,14 +235,14 @@ To view the available client menu actions, right-click the Global Secure Access 
 
 |Icon    |Message    |Description    |
 |---------|---------|---------|
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-initializing.png":::	|Global Secure Access Client	|The client is initializing and checking its connection to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-connected.png":::	|Global Secure Access Client - Connected	|The client is connected to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled	|The client is disabled because services are offline or the user disabled the client.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disconnected.png":::	|Global Secure Access Client - Disconnected	|The client failed to connect to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access Client - Disabled by your organization	|Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-initializing.png":::  |Global Secure Access Client  |The client is initializing and checking its connection to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-connected.png":::  |Global Secure Access Client - Connected  |The client is connected to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled  |The client is disabled because services are offline or the user disabled the client.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disconnected.png":::  |Global Secure Access Client - Disconnected  |The client failed to connect to Global Secure Access.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access Client - Some channels are unreachable  |The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access Client - Disabled by your organization  |Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access - Private Access is disabled   |The user disabled Private Access on this device.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access - could not connect to the Internet  |The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
 ## Settings and troubleshooting
 From the Settings window, you can set different configurations and perform some advanced actions.
@@ -254,7 +255,7 @@ The Settings window has two tabs:
 |**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
 |**Enable Verbose Logging**     |Enables verbose logging and network capture to be collected when exporting the logs to a zip file.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macos-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Settings tab selected.":::	
+:::image type="content" source="media/how-to-install-macos-client/macos-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Settings tab selected.":::  
 
 ### Troubleshooting
 
