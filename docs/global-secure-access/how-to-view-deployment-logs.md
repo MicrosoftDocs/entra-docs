@@ -3,7 +3,7 @@ title: View and Analyze Deployment Logs in Global Secure Access
 description: Monitor and troubleshoot configuration changes in Global Secure Access using deployment logs. Learn how to view logs, configure settings, and analyze fields.
 #customer intent: As a Global Secure Access administrator, I want to monitor deployment logs so that I can track and troubleshoot configuration changes.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-description
@@ -35,14 +35,14 @@ To access deployment logs:
 
 > [!NOTE]
 > Deployment logs can also be accessed when a change is made to the configuration of Global Secure Access. A notification shows up at the top right corner of the page when making a configuration change. Select the notification to see the progress of the deployment.
-> ![Screenshot of the deployment progress notification.](media/how-to-view-deployment-logs/deployment-progress.png)
+> ![Screenshot that shows the deployment progress notification.](media/how-to-view-deployment-logs/deployment-progress.png)
 
 
 ### Filter options
 
 To filter the deployment logs to a specific detail, select **Add filter** and then enter the detail for the filter. For example, to look at all the logs for remote network activity, select the activity and then select **Remote Network** and then select **Apply**.
 
-![Screenshot of the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
+![Screenshot that shows the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
 
 ## Supported scenarios 
 

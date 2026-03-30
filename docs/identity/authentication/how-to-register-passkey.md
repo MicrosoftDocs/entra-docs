@@ -47,5 +47,5 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
 ## Next steps
 
-- [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Choosing authentication methods for your organization](overview-authentication.md)
 

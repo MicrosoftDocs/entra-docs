@@ -1,7 +1,6 @@
 ---
 title: Sign up for Microsoft Entra ID
 description: Discover how to sign up for Microsoft Entra ID and Azure. Start using enterprise cloud services today.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 08/15/2025
 ms.reviewer: jeffsta
@@ -24,6 +23,6 @@ Sign up for [Microsoft Entra ID](get-started-premium.md) or a [new Microsoft Azu
 
 - [How to buy Azure](https://azure.microsoft.com/pricing/purchase-options/)
 - [Sign up for Microsoft Entra ID P1 or P2 editions](./get-started-premium.md)
-- [Learn more about Microsoft Entra ID](./whatis.md)
+- [Learn more about Microsoft Entra ID](./what-is-entra.md)
 - [Use your on-premises identity infrastructure in the cloud](~/identity/hybrid/whatis-hybrid-identity.md)
 - [Visit the Microsoft Azure blog](https://azure.microsoft.com/blog/)

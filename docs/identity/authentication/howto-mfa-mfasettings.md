@@ -338,7 +338,7 @@ The following verification methods are available:
 | Notification through mobile app |Sends a push notification to the user's phone or registered device. The user views the notification and selects **Verify** to complete verification. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 | Verification code from mobile app or hardware token |The Microsoft Authenticator app generates a new OATH verification code every 30 seconds. The user enters the verification code into the sign-in interface. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 
-For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md).
+For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md).
 
 #### Enable and disable verification methods
 
@@ -399,4 +399,4 @@ After you enable the **remember multifactor authentication** feature, users can 
 
 ## Next steps
 
-To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)

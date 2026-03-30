@@ -1,7 +1,6 @@
 ---
 title: Add an existing Azure subscription to your tenant
 description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/02/2025
 ms.reviewer: jeffsta

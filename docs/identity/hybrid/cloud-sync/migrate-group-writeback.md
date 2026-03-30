@@ -22,7 +22,7 @@ Mail-enabled groups and distribution lists written back to Active Directory cont
 
 ## Prerequisites
 
- - A Microsoft Entra account with at least a [Hybrid Identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+- A Microsoft Entra account with at least a [Hybrid Identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - An on-premises Active Directory account with at least domain administrator permissions.
      
    Required to access the `adminDescription` attribute and copy it to the `msDS-ExternalDirectoryObjectId` attribute.
@@ -40,12 +40,13 @@ Mail-enabled groups and distribution lists written back to Active Directory cont
 
 By default, Microsoft Entra Connect Sync uses the following format when naming groups are written back:
 
-- **Default format:** `CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
-- **Example:** `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
+- **Default format:** `CN=Group_<guid>,OU=<container>,DC=<domain component>`
+- **Example:** `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=Contoso,DC=com`
 
 To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with Cloud Display Name** during initial setup of Group Writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
 
-- **New format:** `CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
+- **New format:** `CN=<display name>_<last 12 digits of object ID>,OU=<container>,DC=<domain component>`
+
 - **Example:** `CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
 
 By default, Microsoft Entra Cloud Sync uses the new format, even if the Writeback Group Distinguished Name with Cloud Display Name feature isn't enabled in Microsoft Entra Connect Sync. If you use the default Microsoft Entra Connect Sync naming and then migrate the group so that it's managed by Microsoft Entra Cloud Sync, the group is renamed to the new format. Use the following section to allow Microsoft Entra Cloud Sync to use the default format from Microsoft Entra Connect.
@@ -184,6 +185,7 @@ In the Microsoft Entra Connect Synchronization Rules Editor, you create an inbou
 1. Provide a unique value for the sync rule precedence (0-99).
 
    ``` PowerShell 
+   # Provide the sync rule precedence (0-99)
    [int] $inboundSyncRulePrecedence = 88
    ```
 1. Run the following script:
@@ -273,15 +275,17 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
 1. Provide a unique value for the sync rule precedence (0-99).
 
    ``` PowerShell 
+   # Provide the sync rule precedence (0-99)
    [int] $outboundSyncRulePrecedence = 89
    ```
-
+   
 1. Get the Active Directory connector for Group Writeback.
 
    ``` PowerShell 
+   # Provide the name of your Active Directory Connector
    $connectorAD = Get-ADSyncConnector -Name "Contoso.com"
-   ``` 
-
+   ```
+   
 1. Run the following script:
 
    ``` PowerShell 
@@ -374,3 +378,4 @@ Now that the groups are removed from the synchronization scope of Microsoft Entr
 - [Provision groups to Active Directory by using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory-based apps (Kerberos) by using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
+
