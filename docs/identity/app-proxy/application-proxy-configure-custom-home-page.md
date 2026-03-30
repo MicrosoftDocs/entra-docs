@@ -2,7 +2,7 @@
 title: Custom home page for published apps using Microsoft Entra application proxy
 description: "Set a custom home page URL for applications published through Microsoft Entra application proxy so users land on the correct internal page after sign-in."
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin, I want to set a custom home page for published apps using Microsoft Entra application proxy so that users are directed to the correct page when accessing the app.

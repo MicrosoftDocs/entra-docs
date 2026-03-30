@@ -3,7 +3,7 @@ title: Secure private application access with Privileged Identity Management and
 description: "Add just-in-time privileged access for critical servers and applications using Privileged Identity Management (PIM) with Microsoft Entra Private Access."
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

@@ -6,7 +6,6 @@ ms.date: 03/18/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # What is cross-tenant synchronization?
@@ -26,7 +25,7 @@ Here are the primary goals of cross-tenant synchronization:
 
 ## Why use cross-tenant synchronization?
 
-Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users and groups. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md), [Adobe](~/identity/saas-apps/adobe-identity-management-provisioning-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [cross-tenant access settings](~/external-id/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md).
+Cross-tenant synchronization automates creating, updating, and deleting B2B collaboration users and groups. Users created with cross-tenant synchronization are able to access both Microsoft applications (such as Teams and SharePoint) and non-Microsoft applications (such as [ServiceNow](~/identity/saas-apps/servicenow-provisioning-tutorial.md), [Adobe](~/identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial.md), and many more), regardless of which tenant the apps are integrated with. These users continue to benefit from the security capabilities in Microsoft Entra ID, such as [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md) and [cross-tenant access settings](~/external-id/cross-tenant-access-overview.md), and can be governed through features such as [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md).
 
 The following diagram shows how you can use cross-tenant synchronization to enable users to access applications across tenants in your organization.
 

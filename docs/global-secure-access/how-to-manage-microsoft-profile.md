@@ -2,7 +2,7 @@
 title: How to Enable and Manage the Microsoft Profile
 description: "Enable the Microsoft traffic forwarding profile to route traffic to Microsoft 365 services including Exchange Online, SharePoint, and OneDrive through Global Secure Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
@@ -46,7 +46,7 @@ To manage the details included in the Microsoft traffic forwarding policy, selec
 
 The policy groups are listed, with a checkbox to indicate if the policy group is enabled. Expand a policy group to view all of the IPs and FQDNs included in the group.
 
-![Screenshot of the Microsoft profile details.](media/how-to-manage-microsoft-profile/microsoft-profile-details.png)
+![Screenshot that shows the Microsoft profile details.](media/how-to-manage-microsoft-profile/microsoft-profile-details.png)
 
 The policy groups include the following details:
 
@@ -63,7 +63,7 @@ You can configure the traffic acquisition rules to bypass traffic acquisition. I
 
 The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.
 
-![Screenshot of the Action dropdown menu.](media/how-to-manage-microsoft-profile/microsoft-policies-forward-bypass.png)
+![Screenshot that shows the Action dropdown menu.](media/how-to-manage-microsoft-profile/microsoft-policies-forward-bypass.png)
 
 If the Global Secure Access client isn't able to connect to the service (for example due to an authorization or Conditional Access failure), the service *bypasses* the traffic. Traffic is sent direct-and-local instead of being blocked. In this scenario, you can create a Conditional Access policy for the [compliant network check](how-to-compliant-network.md), to block traffic if the client isn't able to connect to the service.
 
@@ -79,11 +79,11 @@ If the traffic forwarding profile has a linked Conditional Access policy, you ca
 
 1. Select the **View** link for **Linked Conditional Access policies**.
 
-    ![Screenshot of traffic forwarding profiles with Conditional Access link highlighted.](media/how-to-manage-microsoft-profile/microsoft-conditional-access-policy-link.png)
+    ![Screenshot that shows traffic forwarding profiles with Conditional Access link highlighted.](media/how-to-manage-microsoft-profile/microsoft-conditional-access-policy-link.png)
 
 1. Select a policy from the list. The details of the policy open in Conditional Access.
 
-    ![Screenshot of the applied Conditional Access policies.](media/how-to-manage-microsoft-profile/conditional-access-applied-policies.png)
+    ![Screenshot that shows the applied Conditional Access policies.](media/how-to-manage-microsoft-profile/conditional-access-applied-policies.png)
 
 ## Microsoft traffic profile remote network assignments
 

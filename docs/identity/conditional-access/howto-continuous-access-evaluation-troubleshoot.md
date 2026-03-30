@@ -83,5 +83,5 @@ For more information about named locations, see [Using the location condition](c
 ## Related content
 
 - [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
-- Learn more about [using the location condition](location-condition.md#named-locations).
+- Learn more about [using the location condition](concept-assignment-network.md).
 - Explore [continuous access evaluation](concept-continuous-access-evaluation.md).

@@ -2,11 +2,10 @@
 title: Configure multitenant organization policy templates using Microsoft Graph API
 description: "Configure cross-tenant access and identity synchronization policy templates for multitenant organizations using the Microsoft Graph API. Covers automatic redemption, inbound sync, and template management."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Configure multitenant organization policy templates using the Microsoft Graph API

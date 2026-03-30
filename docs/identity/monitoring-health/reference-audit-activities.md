@@ -3,8 +3,11 @@ title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 
 ms.topic: reference
-ms.date: 09/04/2025
+ms.date: 03/25/2025
 ms.reviewer: dhanyahk
+
+#customer-intent: As a Microsoft Entra administrator, I want to understand all available audit log activities and categories so I can effectively monitor and track changes within my tenant.
+
 ---
 # Microsoft Entra audit log categories and activities
 
@@ -115,6 +118,7 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 |ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
 |ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
 |ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
+|ProvisioningManagement|Execution|The provisioning job is executing. There are various events that can be emitted including ProvisioningJobStartedInitialSync, ProvisioningJobStartedIncrementalSync, ProvisioningJobComplete and ProvisioningJobDisabled.
 |ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
 |ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
 |ProvisioningManagement|Other||
@@ -127,7 +131,7 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/global-secure-access/concept-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|

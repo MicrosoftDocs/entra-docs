@@ -1,7 +1,6 @@
 ---
 title: Add your organization's privacy information
 description: Add your organization's privacy information, privacy contact, and technical contact to your directory.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/30/2025
 ms.custom: template-how-to, ge-structured-content-pilot, sfi-ga-nochange

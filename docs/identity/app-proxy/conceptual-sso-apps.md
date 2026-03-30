@@ -2,7 +2,7 @@
 title: Security Assertion Markup Language (SAML) single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 description: "Configure SAML-based single sign-on for on-premises applications published through Microsoft Entra application proxy. Covers SAML claim mapping and remote access configuration."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

@@ -2,7 +2,7 @@
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Secure Access
 description: "Configure Microsoft Global Secure Access and Cisco Secure Access for unified SASE capabilities. Covers deployment steps, FQDN and IP bypasses, and client configuration."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted

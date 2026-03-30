@@ -2,12 +2,11 @@
 title: Configure cross-tenant synchronization
 description: "Configure cross-tenant synchronization using the Microsoft Entra admin center. Step-by-step guide covering trust settings, provisioning scope, attribute mappings, and testing."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Configure cross-tenant synchronization
@@ -479,9 +478,9 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provision-on-demand-provision.png" alt-text="Screenshot of the Perform action page that shows the test user and list of modified attributes." lightbox="./media/cross-tenant-synchronization-configure/provision-on-demand-provision.png":::
 
-    If the user isn't in scope, you'll see a page with information about why test user was skipped.
+    If the user isn't in scope, you'll see a page with information about why the test user was skipped.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png" alt-text="Screenshot of the Determine if user is in scope page that shows information about why test user was skipped." lightbox="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png" alt-text="Screenshot that shows information about why the test user was skipped on the Determine if user is in scope page." lightbox="./media/cross-tenant-synchronization-configure/provision-on-demand-provision-skipped.png":::
 
     On the **Provision on demand** page, you can view details about the provision and have the option to retry.
 

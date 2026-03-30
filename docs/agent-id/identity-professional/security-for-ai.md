@@ -10,17 +10,23 @@ ms.reviewer: kylemar
 
 # Security for AI agents with Microsoft Entra Agent ID
 
-AI agents—autonomous software systems that perceive their environment, make decisions, and take actions—expand organizational capabilities but introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
+AI agents are autonomous software systems that can perceive their environment, make decisions, and take action. AI agents can expand organizational capabilities but also introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
 
 ## Types of AI agents
 
-Organizations are increasingly deploying AI agents for diverse tasks:
+Organizations are increasingly deploying AI agents for diverse tasks, such as:
 
-- Assistive agents perform specific, well-defined tasks on demand. Examples include agents that analyze customer data for sales recommendations, answer support questions with escalation to human representatives, or analyze market data for financial reporting.
-
-- Autonomous agents operate independently, making decisions and taking actions without human intervention. Examples include agents that monitor network logs for security operations, manage infrastructure deployments with autoscaling, or generate and publish routine communications.
-
-- Agent users are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agent users might join teams, access documents, participate in meetings, and require mailbox and calendar access like human users.
+- Assistive agents can perform specific, well-defined tasks on demand.
+    - Analyze customer data for sales recommendations
+    - Support questions with escalation to human representatives
+    - Analyze market data for financial reporting
+- Autonomous agents can operate independently, making decisions and taking actions without human intervention.
+    - Monitor network logs for security operations
+    - Manage infrastructure deployments with autoscaling
+    - Generate and publish routine communications
+- An agent's user account can function with human user characteristics, including persistent identities and access to organizational systems.
+    - Join teams, access documents, or participate in meetings
+    - Require mailbox and calendar access like human users
 
 These deployment models present distinct security and governance challenges.
 
@@ -94,7 +100,7 @@ Agent security challenges manifest in different ways depending on the agent's pu
 |-------------|-----------------|---------------------|-------|
 | **User-Initiated Agent**      | Agents act on behalf of users, inheriting user capabilities, and access rights. Example: A support agent can read customer cases, update status, and send communications.  | Prevent agents from misusing inherited permissions; maintain user control and enable access revocation. | Compromised agents might perform unauthorized actions as the user, such as accessing files, sending communications, or manipulating data.  |
 | **Autonomous Agent**          | Agents operate with their own identities and permissions, independent of users. Example: A supply chain agent can query inventory, create orders, and modify supplier data.    | Grant only necessary permissions for intended tasks; prevent agents from exceeding authorized scope.  | Compromised agents might operate without constraint, placing unauthorized orders, modifying data, or accessing sensitive information.  |
-| **Agent User**                | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
+| **Agent's User Account**                | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
 | **Agent-to-Agent**            | Agents interact with other agents. Example: An orchestration agent delegates tasks to specialized agents, requiring authentication and verification of designated tasks.  | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions.  | Unsecured communication allows adversaries to inject malicious agents or intercept/manipulate agent interactions.  |
 
 ## Microsoft Entra Agent ID

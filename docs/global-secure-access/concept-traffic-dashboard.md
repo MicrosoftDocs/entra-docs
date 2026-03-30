@@ -2,7 +2,7 @@
 title: Learn about the Global Secure Access Dashboard
 description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ---
 

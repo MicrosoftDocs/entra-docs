@@ -2,7 +2,7 @@
 title: Enable Compliant Network Check with Conditional Access
 description: Learn how to require known compliant network locations to connect to your secured resources with Conditional Access.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.reviewer: smistry
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
