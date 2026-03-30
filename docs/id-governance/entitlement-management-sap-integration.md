@@ -33,7 +33,7 @@ To utilize the Microsoft Entra Entitlement Management integration with SAP IAG, 
 
 SAP Cloud Identity Services instance that is already integrated with Microsoft Entra for:
 - User Provisioning: See, [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
-- In your attribute mapping, add a new mapping to sync Microsoft Entra ObjectId to be mapped as SAP Global User ID. This is required to allow the correct object look up between the two systems.
+- In your attribute mapping, add a new mapping to sync Microsoft Entra ObjectId to be mapped as SAP Global User ID. This is required to allow the correct object lookup between the two systems.
 - Click *Add New Mapping* and set the attribute mapping as below:
     - Source Attribute: objectId
     - Target Attribute: urn:ietf:params:scim:schemas:extension:sap:2.0:User:userUuid
