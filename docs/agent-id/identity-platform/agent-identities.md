@@ -4,7 +4,7 @@ description: Learn about agent identities in Microsoft Entra ID, specialized ide
 author: omondiatieno
 ms.author: jomondi
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent identities are in Microsoft Entra ID, how they differ from application and human identities, and why my organization needs them so that I can deploy AI agents securely in our Microsoft Entra environment.

@@ -2,7 +2,7 @@
 title: Agent identity blueprints in Microsoft Entra Agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
-ms.date: 11/04/2025
+ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.topic: concept-article
 
@@ -84,7 +84,7 @@ There are multiple ways to create an agent identity blueprint in Microsoft Entra
 
 ## Credentials for agent identities
 
-There are several credentials types that can be used for agent identities. For more information on these, see [credentials for agent identities](./agent-identities.md#credentials-for-agent-identities).
+There are several credentials types that can be used for agent identities. For more information on these, see [credentials for agent identities](./agent-identities.md#authorizing-agent-identities).
 
 ## Related content
 

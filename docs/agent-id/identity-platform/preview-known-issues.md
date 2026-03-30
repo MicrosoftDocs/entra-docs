@@ -2,7 +2,7 @@
 title: Known issues and gaps for Microsoft Entra Agent ID preview
 description: Learn about currently known issues and errors encountered when using the Microsoft Entra Agent ID preview.
 ms.topic: troubleshooting-known-issue
-ms.date: 03/27/2026
+ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand known issues and gaps in the Microsoft Entra Agent ID preview so that I can plan accordingly when deploying AI agents in my organization.
