@@ -1,12 +1,12 @@
 ---
 title: Microsoft Entra ID SCIM API schema documentation
-description: This article provides a comprehensive reference for SCIM schema attributes, including core user and group attributes, enterprise extensions, and Microsoft Entra-specific extensions, along with their mappings to Microsoft Entra ID properties.
+description: This article provides a reference for SCIM schema attributes, including core user and group attributes, enterprise extensions, and Microsoft Entra-specific extensions, along with their mappings to Microsoft Entra ID properties.
 author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 03/30/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -36,18 +36,18 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 | addresses[type eq "work"].streetAddress | streetAddress |
 | displayName | displayName |  |
 | emails[type eq "other"].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
-| emails[type eq "proxyAddress".value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This is currently implemented as type work, primary false and will be changed in an upcoming release) |
+| emails[type eq "proxyAddress".value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This attribute is currently implemented as type work, primary false and will change in an upcoming release) |
 | emails[type eq "work" and primary eq true].value | mail | Only one value of type "work" and primary *true* is allowed. |
 | externalId | crossDomainData.scim.v2.externalId | This attribute is persisted in the Graph entity `crossDomainData`. |
 | groups.value | *See notes* | Read only. The user’s group memberships. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
 | ims[type eq "work"].value | imAddresses |  |
 | name.familyName | surname |  |
 | name.givenName | givenName |  |
-| password | *See notes* | Required for users with a userName value containing a domain name that is managed (non-federated). Write only (cannot be read). Can only be set on user creation, cannot be used to update a user’s password. |
+| password | *See notes* | Required for users with a userName value containing a domain name that is managed (non-federated). Write only (can't be read). Can only be set on user creation, can't be used to update a user’s password. |
 | phoneNumbers[type eq "fax"].value | faxNumber | Only one value of this type is allowed. |
 | phoneNumbers[type eq "mobile"].value | mobilePhone | Only one value of this type is allowed. |
 | phoneNumbers[type eq "work"].value | businessPhones | Only one value of this type is allowed. |
-| preferredLanguage | preferredLanguage | Only allows a single language value and will not accept a ranked preference list. |
+| preferredLanguage | preferredLanguage | Only allows a single language value and won't accept a ranked preference list. |
 | title | jobTitle |  |
 | userName | userPrincipalName |  |
 | userType | employeeType |  |
@@ -107,7 +107,7 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 | userType | userType |
 
 > [!NOTE] 
-> The Microsoft Entra extension namespace does not include Microsoft Entra ID Directory Extensions of the form `extension_{appId-without-hyphens}_{extensionProperty-name}`. The SCIM APIs don't support retrieving these attributes on the user profile.
+> The Microsoft Entra extension namespace doesn't include Microsoft Entra ID Directory Extensions of the form `extension_{appId-without-hyphens}_{extensionProperty-name}`. The SCIM APIs don't support retrieving these attributes on the user profile.
 
 ## Group – Core
 
