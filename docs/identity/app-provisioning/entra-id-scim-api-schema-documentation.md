@@ -43,11 +43,11 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 | ims[type eq "work"].value | imAddresses |  |
 | name.familyName | surname |  |
 | name.givenName | givenName |  |
-| password | *See notes* | Required for users with a userName value containing a domain name that is managed (non-federated). Write only (can't be read). Can only be set on user creation, can't be used to update a user’s password. |
+| password | *See notes* | Required for users with a userName value containing a domain name that is managed (nonfederated). Write only (can't be read). Can only be set on user creation, can't be used to update a user’s password. |
 | phoneNumbers[type eq "fax"].value | faxNumber | Only one value of this type is allowed. |
 | phoneNumbers[type eq "mobile"].value | mobilePhone | Only one value of this type is allowed. |
 | phoneNumbers[type eq "work"].value | businessPhones | Only one value of this type is allowed. |
-| preferredLanguage | preferredLanguage | Only allows a single language value and won't accept a ranked preference list. |
+| preferredLanguage | preferredLanguage | Only allows a single language value and doesn't accept a ranked preference list. |
 | title | jobTitle |  |
 | userName | userPrincipalName |  |
 | userType | employeeType |  |
