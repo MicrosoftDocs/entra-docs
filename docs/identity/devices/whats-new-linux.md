@@ -26,7 +26,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 |Major Version |Primary Purpose|Latest Version| Supported| Source|
 | --------|--------------| -------- |---------------------|--------------|
-|stable|Production workloads|2.0.1|✅ Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
+|stable|Production workloads|3.0.0|✅ Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
 |insiders-fast|Testing upcoming releases|2.5.x|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
 > [!NOTE]
@@ -44,8 +44,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 
 To add the appropriate package repository for your Linux distribution, follow the instructions below:
 
-
-### [Ubuntu Production Repository](#tab/debian-install-prod)
+### [Ubuntu Production](#tab/debian-install-prod)
 
 1. Install the Microsoft production package signing key.  
 
@@ -63,7 +62,7 @@ To add the appropriate package repository for your Linux distribution, follow th
     sudo apt update
     ```
 
-### [Ubuntu insiders-fast Repository](#tab/debian-install-insiders-fast)
+### [Ubuntu insiders-fast](#tab/debian-install-insiders-fast)
 
 1. Install the Microsoft production package signing key.  
 
@@ -81,46 +80,97 @@ To add the appropriate package repository for your Linux distribution, follow th
     sudo apt update
     ```
 
+---
 
-### [RHEL Production Repository](#tab/redhat-install)
+### [RHEL 8/9 Prod](#tab/redhat89-install-prod)
 
-Add the Microsoft repository.  
+1. Install the Microsoft production package signing key.  
 
    ```bash
-	# Legacy key (needed for Edge)
+	# Legacy key (needed for RHEL 8/9 packages & edge)
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
- 
-	# Key for RHEL 10 packages
-	sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
 
+2. Add and update Microsoft Linux Repository to the system repository list.
+
+   ```bash
 	sudo dnf install -y dnf-plugins-core
-
-	# for rhel 8/9
 	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
-
-	# for rhel10:
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-prod
    ```
-   
-### [RHEL insiders-fast Repository](#tab/redhat-install-insiders-fast)
 
-Add the Microsoft repository.  
+### [RHEL 10 Prod](#tab/redhat10-install-prod)
 
-```bash
-	# Legacy key (needed for Edge)
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
- 
-	# Key for RHEL 10 packages
-	sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+1. Install the Microsoft production package signing key. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8/9. You can find more information around [Microsoft GPG Repository Signing Keys](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/gpg-signing-keys). Import both keys
+    
+    ```bash
+    # Legacy key (needed for Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # New key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
+    ```
+  
+2. Then add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
 
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
+    [microsoft-prod]
+    name=Microsoft prod - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/prod-fast
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/prod-fast/repodata/repomd.xml.key
+    EOF
+    ```
+
+### [RHEL 8/9 insiders-fast](#tab/redhat-install-insiders-fast)
+
+1. Install the Microsoft production package signing key.
+
+    ```bash
+    # Legacy key (needed for Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+
+2. Add and update Microsoft Linux Repository to the system repository list.
+    
+    ```bash
     sudo dnf install -y dnf-plugins-core
 
-	# for rhel 8 and 9
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+    # for rhel 8 and 9
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
 
-	# for rhel10:
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
-```
+    # for rhel10:
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
+    ```
+    
+### [RHEL 10 insiders-fast](#tab/redhat10-install-insiders-fast)
+
+1. Install the Microsoft production package signing key. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8/9. You can find more information around [Microsoft GPG Repository Signing Keys](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/gpg-signing-keys). Import both keys
+    
+    ```bash
+    # Legacy key (needed for Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+    
+2. Then add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
+    
+    ```bash
+      sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
+      [microsoft-insiders-fast]
+      name=Microsoft insiders-fast - RHEL 10
+      baseurl=https://packages.microsoft.com/rhel/10/insiders-fast
+      enabled=1
+      gpgcheck=1
+      gpgkey=https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+      EOF
+    ```
 
 ---
 
@@ -129,7 +179,7 @@ Add the Microsoft repository.
 > [!WARNING]
 > When upgrading from version 2.0.2 (or earlier) to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
 
-### 2.5.3 - March 30-, 2026 - (GA Major Release)
+### 3.0.0 - March 31, 2026 - (GA Major Release)
 
 Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
 
@@ -139,12 +189,10 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 - Renamed the device broker service to `microsoft-identity-devicebroker`.
 - There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
 - Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker creates a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
-
 - Added support for the microsoft-identity-broker-diagnostics package.
 - Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
 - Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
 - Update x-client-os to use distro name
-
 - (Linux) Change package file names to include target OS
 - (Linux) Misc Bug Fixes
 - (Linux) Include a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
@@ -154,12 +202,10 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 - (Linux) Update certificates/keys location used by Linux device broker
 - (Linux) Include broker version in broker-produced telemetry
 - (xplat) Add DUNA xplat and DUNA iOS CBA
-
 - (Linux) Fix smartcard dialogs layout for GTK4
 - (Linux) Fix a wrong callback issue if the browser is reused.
 - (Linux) Add GetDeviceState support with TLS 1.3 in CPP broker
 - (Linux) Handle sem_timedwait failure due to process receiving a signal in Msai::SecureStorageLock and Msoa::SystemMutex
-
 - (Linux) Fix smartcard dialogs layout for GTK4
 - (Linux) Fix a wrong callback issue if the browser is reused.
 
