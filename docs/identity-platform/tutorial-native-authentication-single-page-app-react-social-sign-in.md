@@ -1,23 +1,23 @@
 ---
-title: Support Social Sign-in in an Angular SPA With Native Auth JS SDK
-description: Learn how to add social sign-in with Google, Facebook, Apple, or custom OIDC providers to your Angular SPA using native authentication JavaScript SDK.
+title: Support Social Sign-in in a React SPA With Native Auth JS SDK
+description: Learn how to add social sign-in with Google, Facebook, Apple, or custom OIDC providers to your React SPA using native authentication JavaScript SDK.
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 03/25/2026
-ms.custom: msecd-doc-authoring-108
+ms.date: 03/30/2026
 ai-usage: ai-assisted
-#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Google, Facebook, Apple, or custom OIDC identity providers.
+#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Google, Facebook, Apple, or custom OIDC identity providers.
 ---
 
-# Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Support federated identity providers in a React single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Google, Facebook, or Apple, in your Angular single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
+In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Google, Facebook, or Apple, in your React single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
+
 
 In this tutorial, you:
 
@@ -30,7 +30,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-angular-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-angular-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-angular-reset-password.md), [register strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) and [Enable MFA](tutorial-native-authentication-single-page-app-angular-enable-mfa.md) tutorials.
+- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-react-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-react-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-react-reset-password.md), [register strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-method.md), and [enable MFA](tutorial-native-authentication-single-page-app-react-enable-mfa.md) tutorials.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js 20.x or later](https://nodejs.org/en/download/).
 - Configure the federated identity providers you want to enable. Follow the steps in [Identity providers for external tenants](../external-id/customers/concept-authentication-methods-customers.md) for your chosen providers:
@@ -45,7 +45,7 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 1. Locate the *src/app/config/auth-config.ts* file.
 
-1. In the `auth` object, add or update `redirectUri` property, then make sure that its value matches one of the redirect URIs configured in your app registration in the Microsoft Entra admin center:
+1. In the `auth` object, add or update the `redirectUri` property, then make sure that its value matches one of the redirect URIs configured in your app registration in the Microsoft Entra admin center:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
@@ -62,74 +62,114 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Google, Facebook, Apple) or custom OIDC identity providers (such as LinkedIn).
 
-### Update the sign-in form
+### Update the sign-in initial form
 
-Update your `sign-in.component.html` to include federated identity provider buttons. You can find the complete example in [sign-in.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.html):
+Update your sign-in `InitialForm.tsx` component to include federated identity provider buttons. You can find the complete example in [InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx).
 
-- Open `src/app/components/sign-in/sign-in.component.html` and add the social provider buttons to the initial form:
+1. Open `src/app/sign-in/components/InitialForm.tsx` and update the component to include the social provider buttons:
 
-    ```html
-    <div class="auth-container">
-        ...
-        <form
-            *ngIf="!showPassword && !showCode && !isSignedIn && !showAuthMethodsForRegistration && !showChallengeForRegistration && !showMfaAuthMethods && !showMfaChallenge"
-            (ngSubmit)="startSignIn()">
+    ```typescript
+    import type { SignInInitialFormProps } from "../types/formProperties";
+
+    const socialProviders = [
+        {
+            name: "Google",
+            domainHint: "Google",
+        },
+        {
+            name: "Facebook",
+            domainHint: "Facebook",
+        },
+        {
+            name: "Apple",
+            domainHint: "Apple",
+        },
+        {
+            name: "LinkedIn",
+            domainHint: "www.linkedin.com",
+        },
+    ];
+
+    export const InitialForm = ({
+        onSubmit,
+        username,
+        setUsername,
+        loading,
+        onSignInWithSocial,
+    }: SignInInitialFormProps) => (
+        <form onSubmit={onSubmit} style={styles.form}>
             ...
 
-            <div class="separator">
-                <div class="separator-line"></div>
-                <span class="separator-text">OR</span>
-                <div class="separator-line"></div>
+            <div style={styles.separator}>
+                <div style={styles.separatorLine}></div>
+                <span style={styles.separatorText}>OR</span>
+                <div style={styles.separatorLine}></div>
             </div>
 
-            <button *ngFor="let provider of socialProviders" type="button" class="social-button"
-                (click)="startSignInWithSocial(provider.domainHint)">
-                <img [src]="provider.logo" [alt]="provider.name + ' logo'" class="provider-logo" />
-                <span>Sign In with {{ provider.name }}</span>
-            </button>
+            {socialProviders.map((provider) => (
+                <button
+                    key={provider.domainHint}
+                    type="button"
+                    style={styles.socialButton}
+                    onClick={() => onSignInWithSocial(provider.domainHint)}
+                >
+                    <span>Sign In with {provider.name}</span>
+                </button>
+            ))}
         </form>
-        ...
-    </div>
+    );
     ```
 
-### Update the sign-up form
+1. Update the `SignInInitialFormProps` interface in `src/app/sign-in/types/formProperties.ts`:
 
-Similarly, update your `sign-up.component.html` component. You can find the complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html):
+    ```typescript
+    import { FormProps } from "@/app/shared/types/formProperties";
 
-- Open `src/app/components/sign-up/sign-up.component.html` and add the social provider buttons after the regular sign-up button. Use the same HTML block from the sign-in form to include the social provider buttons.
+    export interface SignInInitialFormProps extends FormProps {
+        ...
+        onSignInWithSocial: (domainHint: string) => Promise<void>;
+    }
+    ```
+
+### Update the sign-up initial form
+
+Similarly, update your sign-up `InitialForm.tsx` component. You can find the complete example in [InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialForm.tsx).
+
+1. Open `src/app/sign-up/components/InitialForm.tsx` and add the social providers array and buttons. Use the same structure from the sign-in `InitialForm.tsx`, but update the click handler to call `onSignUpWithSocial` and update the button text to say "Sign Up with."
+
+1. Update the `SignUpInitialFormProps` interface in `src/app/sign-up/types/formProperties.ts`:
+
+    ```typescript
+    import { FormProps } from "@/app/shared/types/formProperties";
+
+    export interface SignUpInitialFormProps extends FormProps {
+        ...
+        onSignUpWithSocial: (domainHint: string) => Promise<void>;
+    }
+    ```
 
 ## Handle form interaction
 
 In this section, you implement the logic to handle sign-in and sign-up with federated identity providers. The implementation uses the `loginPopup` method from MSAL with a `PopupRequest` that includes the `domainHint` property. This property specifies which federated identity provider to use. For more information about `domainHint` configuration and issuer acceleration, see [Identity providers for External ID](../external-id/customers/concept-authentication-methods-customers.md).
 
-### Update sign-up component to support federated identity providers
+### Update sign-up page to support federated identity providers
 
-Update your `sign-up.component.ts` to handle authentication with federated identity providers. You can find the complete example in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts).
+Update your sign-up `page.tsx` to handle authentication with federated identity providers. You can find the complete example in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx).
 
-1. Import the necessary types in `sign-up.component.ts`:
+1. Import the necessary types:
 
     ```typescript
-    import { customAuthConfig } from "../../config/auth-config";
     import { PopupRequest } from "@azure/msal-browser";
     ```
 
-1. Add the identity provider list in `sign-up.component.ts`:
+1. Add the handler function for federated identity provider sign-up in your sign-up `page.tsx`:
 
     ```typescript
-    socialProviders = [
-        { name: "Google", domainHint: "Google", logo: "/logos/google.svg" },
-        { name: "Facebook", domainHint: "Facebook", logo: "/logos/facebook.svg" },
-        { name: "Apple", domainHint: "Apple", logo: "/logos/apple.svg" },
-        { name: "LinkedIn", domainHint: "www.linkedin.com", logo: "/logos/linkedin.svg" },
-    ];
-    ```
+    const startSignUpWithSocial = async (domainHint: string) => {
+        setError("");
+        setLoading(false);
 
-1. Add the handler function for federated identity provider sign-up in `sign-up.component.ts`:
-
-    ```typescript
-    async startSignUpWithSocial(domainHint: string) {
-        this.error = "";
-        this.loading = false;
+        if (!authClient) return;
 
         const popUpRequest: PopupRequest = {
             authority: customAuthConfig.auth.authority,
@@ -140,53 +180,67 @@ Update your `sign-up.component.ts` to handle authentication with federated ident
         };
 
         try {
-            const client = await this.auth.getClient();
+            await authClient.loginPopup(popUpRequest);
 
-            await client.loginPopup(popUpRequest);
-
-            const accountResult = client.getCurrentAccount();
+            const accountResult = authClient.getCurrentAccount();
 
             if (accountResult.isFailed()) {
-                this.error =
+                setError(
                     accountResult.error?.errorData?.errorDescription ??
-                    "An error occurred while getting the account from cache";
+                        "An error occurred while getting the account from cache"
+                );
             }
 
             if (accountResult.isCompleted()) {
-                this.userData = accountResult.data;
-                this.isSignedIn = true;
+                setData(accountResult.data);
+                setSignInState(true);
             }
         } catch (error) {
             if (error instanceof Error) {
-                this.error = error.message;
+                setError(error.message);
             } else {
-                this.error = "An unexpected error occurred while logging in with popup";
+                setError("An unexpected error occurred while logging in with popup");
             }
         }
-    }
+    };
     ```
 
-### Update sign-in component to support federated identity providers
-
-Update your `sign-in.component.ts` to handle authentication with federated identity providers. You can find the complete example in [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts).
-
-1. Add the identity provider list in `sign-in.component.ts`:
+1. Update the `renderForm()` function to pass the handler to the `InitialForm` component:
 
     ```typescript
-    socialProviders = [
-        { name: "Google", domainHint: "Google", logo: "/logos/google.svg" },
-        { name: "Facebook", domainHint: "Facebook", logo: "/logos/facebook.svg" },
-        { name: "Apple", domainHint: "Apple", logo: "/logos/apple.svg" },
-        { name: "LinkedIn", domainHint: "www.linkedin.com", logo: "/logos/linkedin.svg" },
-    ];
+    const renderForm = () => {
+
+        ... other state checks ...
+
+        if (!signUpState) {
+            return (
+                <InitialForm
+                    ...
+                    onSignUpWithSocial={startSignUpWithSocial}
+                />
+            );
+        }
+    };
     ```
 
-1. Add the handler function for federated identity provider sign-in in `sign-in.component.ts`:
+### Update sign-in page to support federated identity providers
+
+Update your sign-in `page.tsx` to handle authentication with federated identity providers. You can find the complete example in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/page.tsx).
+
+1. Import the necessary types:
 
     ```typescript
-    async startSignInWithSocial(domainHint: string) {
-        this.error = "";
-        this.loading = false;
+    import { PopupRequest } from "@azure/msal-browser";
+    ```
+
+1. Add the handler function for federated identity provider sign-in in your sign-in `page.tsx`:
+
+    ```typescript
+    const startSignInWithSocial = async (domainHint: string) => {
+        setError("");
+        setLoading(false);
+
+        if (!authClient) return;
 
         const popUpRequest: PopupRequest = {
             authority: customAuthConfig.auth.authority,
@@ -197,35 +251,49 @@ Update your `sign-in.component.ts` to handle authentication with federated ident
         };
 
         try {
-            const client = await this.auth.getClient();
+            await authClient.loginPopup(popUpRequest);
 
-            await client.loginPopup(popUpRequest);
-
-            const accountResult = client.getCurrentAccount();
+            const accountResult = authClient.getCurrentAccount();
 
             if (accountResult.isFailed()) {
-                this.error =
+                setError(
                     accountResult.error?.errorData?.errorDescription ??
-                    "An error occurred while getting the account from cache";
+                        "An error occurred while getting the account from cache"
+                );
             }
 
             if (accountResult.isCompleted()) {
-                this.userData = accountResult.data;
-                this.isSignedIn = true;
+                setData(accountResult.data);
+                setCurrentSignInStatus(true);
             }
         } catch (error) {
             if (error instanceof Error) {
-                this.error = error.message;
+                setError(error.message);
             } else {
-                this.error = "An unexpected error occurred while logging in with popup";
+                setError("An unexpected error occurred while logging in with popup");
             }
         }
-    }
+    };
+    ```
+
+1. Update the `renderForm()` function to pass the handler to the `InitialForm` component:
+
+    ```typescript
+    const renderForm = () => {
+
+        ... other state checks ...
+
+        return (
+            <InitialForm
+                ...
+                onSignInWithSocial={startSignInWithSocial}
+            />
+        );
+    };
     ```
 
 > [!NOTE]
 > Microsoft Entra accounts and Microsoft accounts (MSA) identity providers aren't currently supported.
-
 
 ### PopupRequest configuration details
 
@@ -240,7 +308,7 @@ The `loginPopup` method opens a popup window where the user completes the authen
 
 ## Run and test your app
 
-Before you test your app, make sure your CORS proxy and app are runing:
+Before you test your app, make sure your CORS proxy and app are running:
 
 1. Make sure your CORS proxy is running:
 
@@ -251,12 +319,12 @@ Before you test your app, make sure your CORS proxy and app are runing:
 1. Start your application:
 
     ```console
-    npm run start
+    npm run dev
     ```
 
 ### Test sign-up with federated identity providers
 
-1. Navigate to `http://localhost:4200/sign-up` to see the sign-up form.
+1. Navigate to `http://localhost:3000/sign-up` to see the sign-up form.
 
 1. Select the button for the federated identity provider that you want to authenticate with, such as **Sign Up with Google**. A popup window opens, redirecting you to the Google authentication page.
 
@@ -264,15 +332,13 @@ Before you test your app, make sure your CORS proxy and app are runing:
 
 1. Grant the necessary permissions when prompted.
 
-
 After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md).
 
 The popup window closes automatically. You should be signed in and see your account information displayed in the app. A new user account is created in your external tenant using the information from your Google profile.
 
-
 ### Test sign-in with federated identity providers
 
-1. Navigate to `http://localhost:4200/sign-in` to see the sign-in form.
+1. Navigate to `http://localhost:3000/sign-in` to see the sign-in form.
 
 1. Select the button for the federated identity provider that you want to authenticate with, such as **Sign In with Google**. A popup window opens, redirecting you to the Google authentication page.
 
@@ -296,7 +362,7 @@ Use this section to resolve common issues you might encounter when integrating f
 
 The `loginPopup` method requires browser popups. If the popup is blocked, the authentication flow fails silently or throws an error.
 
-**Solution**: Check your browser's popup blocker settings and allow popups from your application's domain. Instruct your users to do the same. Most browsers display a notification in the address bar when a popup is blocked.
+**Solution**: Check your browser's popup blocker settings and allow popups from your application's domain (for example, `localhost:3000`). Instruct your users to do the same. Most browsers display a notification in the address bar when a popup is blocked.
 
 ### Domain hint not recognized
 
