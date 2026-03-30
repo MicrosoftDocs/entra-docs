@@ -44,7 +44,7 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
     - Click *Add New Mapping* and set the attribute mapping as below:
         - Source Attribute: manager
         - Target Attribute: urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager
-- Your Attribute Mapping should look like this when the pre-requesites are complete:
+- Your Attribute Mapping should look like this when the prerequisites are complete:
 
  :::image type="content" source="media/entitlement-management-sap-integration/sap-iag-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
   
