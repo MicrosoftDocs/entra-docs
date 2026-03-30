@@ -45,11 +45,11 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 1. Locate the *src/app/config/auth-config.ts* file.
 
-1. In the `customAuth` object, add or update `redirectUri` property, then make sure that its value matches one of the redirect URIs configured in your app registration in the Microsoft Entra admin center:
+1. In the `auth` object, add or update `redirectUri` property, then make sure that its value matches one of the redirect URIs configured in your app registration in the Microsoft Entra admin center:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
-        customAuth: {
+        auth: {
             ...
             redirectUri: "/",
             ...
