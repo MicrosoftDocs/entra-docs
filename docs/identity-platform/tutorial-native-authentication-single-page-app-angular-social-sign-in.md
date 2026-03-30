@@ -43,16 +43,16 @@ Ensure that the redirect URI is configured in the `CustomAuthConfiguration` inte
 
 1. In the `customAuth` object, add or update `redirectUri` property, then make sure that its value matches one of the redirect URIs configured in your app registration in the Microsoft Entra admin center:
 
-```typescript
-const customAuthConfig: CustomAuthConfiguration = {
-    customAuth: {
+    ```typescript
+    const customAuthConfig: CustomAuthConfiguration = {
+        customAuth: {
+            ...
+            redirectUri: "/",
+            ...
+        },
         ...
-        redirectUri: "/",
-        ...
-    },
-    ...
-};
-```
+    };
+    ```
 
 ## Create UI components
 
@@ -227,7 +227,7 @@ Update your `sign-in.component.ts` to handle authentication with federated ident
 
 When configuring the `PopupRequest` for federated identity provider authentication:
 
-- **authority**: Use your configured Microsoft Entra External ID tenant authority.
+- **authority**: Use your configured external tenant authority.
 - **redirectUri**: The redirect URI you configured in your app registration.
 - **prompt**: Set to `"login"` to force the user to enter credentials.
 - **domainHint**: The key parameter that determines which federated identity provider to use.
@@ -252,44 +252,37 @@ Before you test your app, make sure your CORS proxy and app are runing:
 
 ### Test sign-up with federated identity providers
 
-1. Navigate to `http://localhost:4200/sign-up` to see the sign-up form. You should see the regular sign-up form, followed by a separator with "OR" text, and then buttons for each configured federated identity provider.
+1. Navigate to `http://localhost:4200/sign-up` to see the sign-up form.
 
-1. Select the button for the federated identity provider that you want to authenticate with, such as **Sign Up with Google**.
-
-1. A popup window opens, redirecting you to the Google authentication page.
+1. Select the button for the federated identity provider that you want to authenticate with, such as **Sign Up with Google**. A popup window opens, redirecting you to the Google authentication page.
 
 1. Sign in with your Google account credentials (or create a new Google account if needed).
 
 1. Grant the necessary permissions when prompted.
 
-1. After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md). The popup window closes automatically. You should be signed in automatically and see your account information displayed in the app, and a new user account is created in your Microsoft Entra External ID tenant using the information from your Google profile.
+
+After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md). The popup window closes automatically. You should be signed in automatically and see your account information displayed in the app, and a new user account is created in your external tenant using the information from your Google profile.
 
 
 ### Test sign-in with federated identity providers
 
 1. Navigate to `http://localhost:4200/sign-in` to see the sign-in form.
 
-1. You should see the regular email input field and sign-in button, followed by a separator with "OR" text, and then buttons for each configured federated identity provider (Google, Facebook, Apple, LinkedIn).
+1. Select the button for the federated identity provider that you want to authenticate with, such as **Sign In with Google**. A popup window opens, redirecting you to the Google authentication page.
 
-1. Select one of the federated identity provider buttons, for example, **Sign In with Google**.
+1. Sign in with your Google account credentials. If this is your first time signing in with this identity provider, you might be prompted to consent to sharing your information with the application.
 
-1. A popup window opens, redirecting you to the Google authentication page.
 
-1. Sign in with your Google account credentials.
 
-1. If this is your first time signing in with this identity provider, you might be prompted to consent to sharing your information with the application.
-
-1. After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md).
-
-1. The popup window closes automatically. You should now be signed in and see your account information displayed in the app.
+After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md). The popup window closes automatically. You should now be signed in and see your account information displayed in the app.
 
 ### Multifactor authentication
 
-When SMS or email one-time passcode (OTP) MFA is enabled, the MFA challenge is presented in the web flow user experience after the social identity provider authentication completes.
+When SMS or email one-time passcode (OTP) MFA is enabled, the MFA challenge is presented in the browser-delegated user experience after the social identity provider authentication completes.
 
-- For more information about enabling MFA, refer to [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md) and [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md).
+For more information about enabling MFA, refer to [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md) and [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md).
 
-## Troubleshooting
+## Troubleshoot
 
 Use this section to resolve common issues you might encounter when integrating federated identity providers.
 
@@ -297,13 +290,13 @@ Use this section to resolve common issues you might encounter when integrating f
 
 The `loginPopup` method requires browser popups. If the popup is blocked, the authentication flow fails silently or throws an error.
 
-**Solution**: Check your browser's popup blocker settings and allow popups from your application's domain (for example, `localhost:4200`). Instruct your users to do the same. Most browsers display a notification in the address bar when a popup is blocked.
+**Solution**: Check your browser's popup blocker settings and allow popups from your application's domain. Instruct your users to do the same. Most browsers display a notification in the address bar when a popup is blocked.
 
 ### Domain hint not recognized
 
 The federated identity provider authentication page doesn't appear, or you receive an error indicating the `domainHint` value is invalid.
 
-**Solution**: Verify that the `domainHint` value in your `PopupRequest` matches exactly what you configured in your Microsoft Entra External ID tenant. Use the following values:
+**Solution**: Verify that the `domainHint` value in your `PopupRequest` matches exactly what you configured in your external tenant. Use the following values:
 
 | Provider | Expected `domainHint` value |
 |---|---|
@@ -320,13 +313,13 @@ The popup opens and redirects to the identity provider, but the authentication d
 
 1. The `redirectUri` in your `PopupRequest` matches one of the redirect URIs registered in your app registration in the Microsoft Entra admin center.
 1. The client ID in your app configuration is correct.
-1. The federated identity provider is properly configured in your Microsoft Entra External ID tenant and added to the relevant user flow.
+1. The federated identity provider is properly configured in your external tenant and added to the relevant user flow.
 
 ### User account isn't created after sign-up
 
 The user completes federated identity provider authentication, but a new account isn't created in the tenant.
 
-**Solution**: Confirm that the federated identity provider is configured and enabled in the user flows for both sign-up and sign-in scenarios in your Microsoft Entra External ID tenant. When a user signs in with a federated identity provider for the first time, a new account is automatically created and linked to that provider. Subsequent sign-ins with the same provider use the existing account.
+**Solution**: Confirm that the federated identity provider is configured and enabled in the user flows for both sign-up and sign-in scenarios in your external tenant. When a user signs in with a federated identity provider for the first time, a new account is automatically created and linked to that provider. Subsequent sign-ins with the same provider use the existing account.
 
 ### CORS-related errors appear in the console
 
