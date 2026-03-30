@@ -64,15 +64,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Diagram that shows Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Real Links**.
 
-	![The Real Links link in the Applications list](common/all-applications.png)
+	![Diagram that shows The Real Links link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Diagram that shows Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:real-links:2.0:User:location|String|
    |urn:ietf:params:scim:schemas:extension:real-links:2.0:User:countryCode|String|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 

@@ -20,9 +20,9 @@ The objective of this article is to demonstrate the steps to be performed in Pea
 
 ## Prerequisites
 
-The scenario outlined in this article assumes that you already have the following prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites.
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Peakon tenant](https://www.workday.com/en-us/products/employee-voice/overview.html).
 * A user account in Peakon  with Admin permissions.
 
@@ -63,7 +63,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Step 4: Add Peakon from the gallery
 
-To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, you need to add Peakon  from the Microsoft Entra application gallery to your list of managed SaaS applications.
+To configure Peakon  for automatic user provisioning with Microsoft Entra ID, you need to add Peakon  from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
@@ -71,7 +71,7 @@ To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, 
 1. Select **Peakon** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![Peakon  in the results list](common/search-new-app.png)
 
-## Step 5: Configuring automatic user provisioning to Peakon 
+## Step 5: Configure automatic user provisioning to Peakon 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Peakon  based on user and/or group assignments in Microsoft Entra ID.
 
@@ -80,7 +80,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-peakon--in-azure-ad'></a>
 
-### To configure automatic user provisioning for Peakon  in Microsoft Entra ID:
+### To configure automatic user provisioning for Peakon  in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Peakon User Attributes](media/Peakon-provisioning-tutorial/Peakon-user-attributes.png)
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 

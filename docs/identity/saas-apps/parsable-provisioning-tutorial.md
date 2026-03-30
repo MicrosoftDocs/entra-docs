@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Contact the Parsable Customer Success representative to opt-in to this pre-release feature.
 1. They will further assist in raising a support ticket to obtain the necessary **Bearer token** (secret token).
-1. Copy and save the **Bearer token**. This value is entered in the **Secret Token** * field in the Provisioning tab of your Parsable application.
+1. Copy and save the **Bearer token**. This value is entered in the **Secret Token** field in the Provisioning tab of your Parsable application.
 
 <a name='step-3-add-parsable-from-the-azure-ad-application-gallery'></a>
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |---|---|---|
       |displayName|String|&check;|
       |members|Reference|
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
