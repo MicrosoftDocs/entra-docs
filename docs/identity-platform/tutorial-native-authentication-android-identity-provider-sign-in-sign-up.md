@@ -51,7 +51,7 @@ To sign in a user with a federated identity provider via web flow, you need to f
   - `"Facebook"` for Facebook
   - `"Google"` for Google
 
-### Steps
+To sign in a user, you need to:
 
 1. Create a user interface to sign in with a federated identity provider. This should identify a specific identity provider and its corresponding `domain_hint`.  
 
