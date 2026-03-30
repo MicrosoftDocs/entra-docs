@@ -78,6 +78,8 @@ items:
           href: agent-registry-collections.md
         - name: Agent metadata and discoverability
           href: agent-metadata-discoverability.md
+        - name: Agent Registry convergence with Agent 365
+          href: agent-registry-convergence.md
     - name: Management
       items:
         - name: Agent owners, sponsors, and managers
