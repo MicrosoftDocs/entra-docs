@@ -11,6 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/30/2026
+ai-usage: ai-assisted
 ms.custom:
 #Customer intent: As an Android developer, I want to enable federated identity provider sign-in and sign-up using native authentication web flow so that users can authenticate with existing social accounts like Apple, Google, or Facebook.
 ---
@@ -19,46 +20,70 @@ ms.custom:
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your Android app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, Google, or custom OpenID Connect (OIDC) providers.
+This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your Android app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, and Google.
 
 In this tutorial, you learn how to:
 
-- Sign in a user using a federated identity provider via web flow
-- Sign up a user using a federated identity provider via web flow
+> [!div class="checklist"]
+>
+> - Sign in a user using a federated identity provider via web flow
+> - Sign up a user using a federated identity provider via web flow
 
 ## Prerequisites
 
 1. Complete the steps in [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md).
+
 1. Configure federated identity providers in your Microsoft Entra External ID tenant. Follow the steps in the Microsoft Entra admin center to add and configure your desired identity providers:
 
    - [Configure Apple as an identity provider](../external-id/customers/how-to-apple-federation-customers.md)
    - [Configure Facebook as an identity provider](../external-id/customers/how-to-facebook-federation-customers.md)
    - [Configure Google as an identity provider](../external-id/customers/how-to-google-federation-customers.md)
-   - [Configure a custom OIDC provider](../external-id/customers/how-to-custom-oidc-federation-customers.md)
 
-      > [!NOTE]
-      > The domain of the Issuer URI is configured for custom OIDC will be your `domain_hint`.
-
-1. Add/update the MSAL dependency to at least `8.1.0` to your app's `build.gradle` file if not already present:
 1. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample Android application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/blob/main/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/IdPSignInSignUpWebFragment.kt) before getting started.
+
+## Update configurations
+
+1. Ensure your client JSON configuration file includes the `redirect_uri` parameter for handling web-based authentication flows:
+
+   - [Microsoft Authentication Library (MSAL) configuration](/entra/msal/android/msal-configuration#redirect_uri)
+
+    ```json
+    {
+        "client_id": "Enter_the_Application_Id_Here",
+        "redirect_uri": "msauth://com.yourpackage.name/Enter_your_Signature_Hash_Here",
+        "authorities": [
+        {
+            "type": "CIAM",
+            "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
+        }
+        ],
+        ...
+    }
+    ```
+
+1. Add or update the MSAL dependency to at least `8.1.0` in your app's `build.gradle` file if not already present:
+
+    ```gradle
+    dependencies {
+        implementation 'com.microsoft.identity.client:msal:[8.1.0,)'
+    }
+    ```
 
 ## Sign in a user with a federated identity provider
 
-To sign in a user with a federated identity provider via web flow, you need to first identify the identity provider to authenticate with, and the corresponding `domain_hint`.
+To sign in a user with a federated identity provider via web flow, you need to first identify the identity provider to register/authenticate with, and the corresponding `domain_hint`.
 
-- Identity providers are from the prerequisite configuration above.
-- `domain_hint` values are defined here in [Issuer acceleration](/entra/external-id/customers/concept-authentication-methods-customers#issuer-acceleration). The `domain_hint` specifies which identity provider to redirect to for federated IdP authentication.
-
-You'll send a request with the `domain_hint` which will open the OAuth/OIDC web flow to complete the sign in via web view.
-
-> [!NOTE]
-> Microsoft Entra and Microsoft Account (MSA) identity providers are currently not supported.
+- Use the identity providers defined in the [prerequisite configuration section](#prerequisites).
+- Use the `domain_hint` parameter to direct authentication to a specific identity provider. Choose one of the following values:
+  - `"Apple"` for Apple
+  - `"Facebook"` for Facebook
+  - `"Google"` for Google
 
 ### Steps
 
 1. Create a user interface to sign in with a federated identity provider. This should identify a specific identity provider and its corresponding `domain_hint`.  
 
-1. Once `domain_hint` value is identified from the client app, call `INativeAuthPublicClientApplication.acquireToken` with `domain_hint` to trigger OAuth/OIDC web authentication with IdP like below.
+1. Once `domain_hint` value is identified from the client app, call `INativeAuthPublicClientApplication.acquireToken` with `domain_hint` to trigger web authentication with Social IdP. Here's a code snippet example:
 
    Use the Prompt value as `Prompt.LOGIN` to force interactive authentication, even if user is signed in.
 

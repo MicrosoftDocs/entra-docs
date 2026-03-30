@@ -17,38 +17,36 @@ ms.custom:
 
 # Tutorial: Add federated identity provider sign-in and sign-up web flow to your iOS app
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
-
 This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your iOS app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, and Google.
 
 In this tutorial, you learn how to:
 
-> [!div class="checklist"]
-> 
-> - Sign in a user using a federated identity provider via web flow
-> - Sign up a user using a federated identity provider via web flow
+- Sign in a user using a federated identity provider via web flow
+- Sign up a user using a federated identity provider via web flow
 
 ## Prerequisites
 
 1. Complete the steps in [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
+
 1. Configure federated identity providers in your Microsoft Entra External ID tenant. Follow the steps in the Microsoft Entra admin center to add and configure your desired identity providers:
 
    - [Configure Apple as an identity provider](../external-id/customers/how-to-apple-federation-customers.md)
    - [Configure Facebook as an identity provider](../external-id/customers/how-to-facebook-federation-customers.md)
    - [Configure Google as an identity provider](../external-id/customers/how-to-google-federation-customers.md)
-
+  
 1. Ensure your app supports web fallback [Tutorial: Support web fallback](tutorial-native-authentication-ios-macos-support-web-fallback.md).
 
-1. Add/update the MSAL dependency to at least `2.6.0`.
+1. Add/update the Microsoft Authentication Library (MSAL) dependency to at least `2.6.0`.
 
-1. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample iOS application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/blob/b691d1e607fe38f6b3ede10321c76aa7d81b0af9/NativeAuthSampleApp/WebFallbackViewController.swift) before getting started.
+1. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample iOS application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/blob/main/NativeAuthSampleApp/WebFallbackViewController.swift) before getting started.
 
 ## Sign in a user with a federated identity provider
 
 To sign in a user with a federated identity provider via web flow, you need to first identify the identity provider to authenticate with, and the corresponding `domain_hint`.
 
-- Select an identity provider configured in the prerequisites.
-- Use the `domain_hint` parameter to specify which identity provider the authentication flow redirects to. Choose one of the following values:
+- Use the identity providers defined in the [prerequisite configuration section](#prerequisites).
+- Use the `domain_hint` parameter to direct authentication to a specific identity provider. Choose one of the following values:
+
   - `"Apple"` for Apple
   - `"Facebook"` for Facebook
   - `"Google"` for Google
@@ -56,9 +54,10 @@ To sign in a user with a federated identity provider via web flow, you need to f
 ### Steps
 
 1. Create a user interface that lets the user sign in with a federated identity provider. This interface should identify a specific identity provider and its corresponding `domain_hint`.  
-1. Once `domain_hint` value is identified from the client app, create `MSALInteractiveTokenParameters`, set `domain_hint` and  call `acquireToken(with: parameters)` method of `MSALNativeAuthPublicClientApplication` to trigger web authentication with Social IdP as shown in the following code snippet.
 
-   Set the prompt type to `.login` to force interactive authentication, even when the user is already signed in.
+1. Once `domain_hint` value is identified from the client app, create `MSALInteractiveTokenParameters`, set `domain_hint` and  call `acquireToken(with: parameters)` method of `MSALNativeAuthPublicClientApplication` to trigger web authentication with Social IdP like below.
+
+   Use the Prompt type value as `.login` to force interactive authentication, even if user is signed in.
 
     ```swift
     let parameters = MSALInteractiveTokenParameters(scopes: ["User.Read"], webviewParameters: webviewParams)
@@ -84,7 +83,7 @@ To sign in a user with a federated identity provider via web flow, you need to f
     }
     ```
 
-1. You can retrieve the current cached account after successful authentication by using the `getNativeAuthUserAccount()` from `MSALNativeAuthPublicClientApplication`:
+1. You can also retrieve the current cached account after successful authentication by using the `getNativeAuthUserAccount()` from `MSALNativeAuthPublicClientApplication`:
 
     ```swift
         if let account = nativeAuth.getNativeAuthUserAccount() {
