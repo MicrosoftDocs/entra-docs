@@ -2,7 +2,7 @@
 title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 03/30/2026
 ms.subservice: hybrid-cloud-sync
 ms.custom: sfi-image-nochange
 ---
@@ -161,6 +161,17 @@ To delete a configuration, follow these steps.
 >[!IMPORTANT]
 >There's no confirmation prior to deleting a configuration. Make sure this is the action you want to take before you select **Delete**.
 
+## Agent removal from the portal after uninstall
+
+When you [uninstall](how-to-automatic-upgrade.md#uninstall-the-agent) or stop a Microsoft Entra Cloud Sync agent, the agent isn't removed from the Microsoft Entra admin center immediately. The following timeline describes the agent removal process:
+
+| Timeframe | Portal behavior |
+| --- | --- |
+| After approximately 1 hour | The agent shows as **Inactive** in the portal. |
+| After approximately 10 days | The agent is soft-deleted and no longer appears in the portal. |
+| When the agent certificate expires | The agent is permanently removed and can no longer interact with Microsoft services. |
+
+If you don't want to wait for automatic cleanup, you can manually remove the agent configuration from the portal by deleting the configuration associated with the agent.
 
 ## Next steps 
 
