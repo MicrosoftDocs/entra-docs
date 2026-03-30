@@ -9,6 +9,8 @@ ms.reviewer: kvenkit
 ---
 # Service dependencies in Microsoft Entra Conditional Access
 
+## Overview
+
 With Conditional Access policies, you specify requirements to use websites and services. For example, your requirements can include requiring multifactor authentication (MFA) or [managed devices](./concept-conditional-access-grant.md).
 
 When you use a site or service directly, it's usually easy to see how a related policy affects you. For example, if you set a policy that requires multifactor authentication (MFA) for SharePoint Online, MFA is required for each sign-in to the SharePoint web portal. But sometimes it's hard to know how a policy affects you because some cloud apps depend on other cloud apps. For example, Microsoft Teams lets you use resources in SharePoint Online. So, when you use Microsoft Teams in this scenario, you're also subject to the SharePoint MFA policy.

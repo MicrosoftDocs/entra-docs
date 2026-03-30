@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Require multifactor authentication for device registration
 
+## Overview
+
 Use the [Conditional Access user action](concept-conditional-access-cloud-apps.md#user-actions) to enforce policy when users register or join devices to Microsoft Entra ID. This control provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. Administrators can customize this policy to fit the security needs of their organization.
 
 ## User exclusions

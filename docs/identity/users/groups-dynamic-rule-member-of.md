@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 
+
+## Overview
+
 This feature preview in Microsoft Entra ID enables admins to create dynamic membership groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
 
 > [!WARNING]

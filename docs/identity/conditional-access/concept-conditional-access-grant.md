@@ -13,6 +13,8 @@ ms.custom:
 ---
 # Conditional Access: Grant
 
+## Overview
+
 In a Conditional Access policy, an admin can use access controls to grant or block access to resources.
 
 :::image type="content" source="media/concept-conditional-access-grant/conditional-access-grant.png" alt-text="Screenshot of a Conditional Access policy that shows a grant control requiring phishing-resistant multifactor authentication." lightbox="media/concept-conditional-access-grant/conditional-access-grant.png":::

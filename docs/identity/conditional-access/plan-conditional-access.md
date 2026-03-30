@@ -14,6 +14,8 @@ ms.custom:
 ---
 # Plan a Conditional Access deployment
 
+## Overview
+
 Planning your Conditional Access deployment is critical to achieving your organization's access strategy for apps and resources. Conditional Access policies provide significant configuration flexibility. However, this flexibility means you need to plan carefully to avoid undesirable results.
 
 [Microsoft Entra Conditional Access](overview.md) combines signals like user, device, and location to automate decisions and enforce organizational access policies for resources. These Conditional Access policies help you balance security and productivity by enforcing security controls when needed and staying out of the user’s way when they aren't.
@@ -33,7 +35,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
    - Create, modify, or restore soft-deleted Conditional Access policies.
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
-- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ### Communicate change
@@ -315,7 +317,7 @@ If the user gets a message with a **More details** link, they can collect most o
 After you collect the information, see these resources:
 
 - [Sign-in problems with Conditional Access](troubleshoot-conditional-access.md) – Learn about unexpected sign-in outcomes related to Conditional Access using error messages and the Microsoft Entra sign-in log.
-- [Using the What-If tool](troubleshoot-conditional-access-what-if.md) – Learn why a policy is or isn't applied to a user in a specific situation or if a policy applies in a known state.
+- [The Conditional Access What If tool](what-if-tool.md) – Learn why a policy is or isn't applied to a user in a specific situation or if a policy applies in a known state.
 
 ## Related content
 

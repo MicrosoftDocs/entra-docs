@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Troubleshoot sign-in problems with Conditional Access
 
+## Overview
+
 Use this article to fix unexpected sign-in outcomes related to Conditional Access by checking error messages and Microsoft Entra sign-in logs.
 
 ## Select "all" consequences
@@ -120,4 +122,4 @@ If you're locked out because of an incorrect setting in a Conditional Access pol
 
 - [Use the What If tool to troubleshoot Conditional Access policies](what-if-tool.md)
 - [Sign-in activity reports](~/identity/monitoring-health/concept-sign-ins.md)
-- [Troubleshoot Conditional Access using the What If tool](troubleshoot-conditional-access-what-if.md)
+- [The Conditional Access What If tool](what-if-tool.md)

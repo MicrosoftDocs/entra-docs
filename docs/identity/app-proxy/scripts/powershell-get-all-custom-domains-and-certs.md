@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps using custom domains and certificate information
 
+
+## Overview
+
 The PowerShell script example lists all Microsoft Entra application proxy applications that are using custom domains and lists the certificate information associated with the custom domains.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

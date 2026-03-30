@@ -13,6 +13,8 @@ ms.custom:
 ---
 # Set up Microsoft Entra terms of use with Conditional Access
 
+## Overview
+
 Microsoft Entra terms of use policies provide a simple method to present information to end users before granting access to resources. This guide shows you how to set up Microsoft Entra terms of use with Conditional Access policies to require acceptance of your terms of use policy before accessing applications and data. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]

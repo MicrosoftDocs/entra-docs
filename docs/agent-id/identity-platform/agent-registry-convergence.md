@@ -11,6 +11,7 @@ ms.custom: agent-id-ignite
 ai-usage: ai-assisted
 
 #customer-intent: As an IT administrator, I want to understand how the agent registry experiences are converging under Agent 365 so that I can manage agents in one place while continuing to use Microsoft Entra for identity and access control.
+
 ---
 
 # Agent registry convergence with Agent 365

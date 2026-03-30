@@ -7,6 +7,8 @@ ms.reviewer: inbarc
 ---
 # Require multifactor authentication strength for external users
 
+## Overview
+
 Authentication strength is a Conditional Access control that lets you define a specific combination of multifactor authentication (MFA) methods that an external user must complete to access your resources. This control is especially useful for restricting external access to sensitive apps in your organization. For example, you can create a Conditional Access policy, require a phishing-resistant authentication strength in the policy, and assign it to guests and external users.
 
 Microsoft Entra ID provides three [built-in authentication strengths](/entra/identity/authentication/concept-authentication-strengths):
@@ -50,7 +52,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**.
-      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types) you want to apply the policy to.
+      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assign-conditional-access-policies-to-external-user-types) you want to apply the policy to.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Resources (formerly cloud apps)**, under **Include** or **Exclude**, select any applications you want to include in or exclude from the authentication strength requirements.
 1. Under **Access controls** > **Grant**, select **Grant access**.

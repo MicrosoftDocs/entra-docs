@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Use application enforced restrictions for unmanaged devices
 
+## Overview
+
 This policy can help organizations accomplish the following initiatives:
 
 - [Block or limit access to a specific SharePoint site or OneDrive](/sharepoint/control-access-from-unmanaged-devices#block-or-limit-access-to-a-specific-sharepoint-site-or-onedrive)

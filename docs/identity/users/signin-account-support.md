@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # Sign-in options for Microsoft accounts in Microsoft Entra ID
 
+
+## Overview
+
 The Microsoft 365 sign-in page for Microsoft Entra ID, part of Microsoft Entra, supports work or school accounts and Microsoft accounts, but depending on the user's situation, it could be one or the other or both. For example, the Microsoft Entra sign-in page supports:
 
 * Apps that accept sign-ins from both types of account

@@ -7,6 +7,8 @@ ms.topic: how-to
 ---
 # Require approved client apps or app protection policy
 
+## Overview
+
 People regularly use their mobile devices for both personal and work tasks. While making sure staff can be productive, organizations also want to prevent data loss from applications on devices they may not manage fully.
 
 With Conditional Access, organizations can restrict access to [approved (modern authentication capable) client apps with Intune app protection policies](concept-conditional-access-grant.md#require-app-protection-policy). For older client apps that may not support app protection policies, administrators can restrict access to [approved client apps](concept-conditional-access-grant.md#require-approved-client-app).

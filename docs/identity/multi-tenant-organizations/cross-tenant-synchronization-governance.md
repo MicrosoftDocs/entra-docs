@@ -1,7 +1,7 @@
 ---
 title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
-ms.service: entra
+ms.service: entra-id
 ms.topic: concept-article
 ms.date: 03/18/2026
 ms.author: gasinh

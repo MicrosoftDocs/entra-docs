@@ -65,7 +65,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 
 ### Locations 
 
-Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
+Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
 
 > [!NOTE]
 > Looking for the **Risk detections mapped to riskEventType** table? It moved to the new [**Risk detection and event types**](concept-identity-protection-risks.md) article.

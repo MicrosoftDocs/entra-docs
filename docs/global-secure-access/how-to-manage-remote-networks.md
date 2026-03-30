@@ -2,11 +2,13 @@
 title: How to Update and Delete Remote Networks for Global Secure Access
 description: "Modify remote network configurations, delete unused networks, and manage device links and traffic profile assignments for Global Secure Access."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # Manage remote networks
+
+## Overview
 
 Remote networks connect your users in remote locations to Global Secure Access. Adding, updating, and removing remote networks from your environment are likely common tasks for many organizations. 
 
@@ -39,13 +41,13 @@ There are three sections with details you can edit. **Basics**, **Links**, and *
 
 The basics page provides a way to delete a selected remote network. You change the name of a remote network after you create it. Select the pencil icon to edit the name of the remote network.
 
-![Screenshot of the basics tab with the pencil icon highlighted.](./media/how-to-manage-remote-networks/remote-network-basics.png)
+![Screenshot that shows the basics tab with the pencil icon highlighted.](./media/how-to-manage-remote-networks/remote-network-basics.png)
 
 #### Update device links
 
 Add a new device link or delete an existing device link from this page. You can't edit the details of a device link after it was created. Select the trash can icon to delete a remote network device link.
 
-![Screenshot of the delete option in the device links page.](./media/how-to-manage-remote-networks/delete-device-link.png)
+![Screenshot that shows the delete option in the device links page.](./media/how-to-manage-remote-networks/delete-device-link.png)
 
 #### Update traffic profiles
 
@@ -88,7 +90,7 @@ You can delete remote networks in the Microsoft Entra admin center or using the 
 1. Select **Delete**.
 1. Select **Delete** from the confirmation message.
 
-![Screenshot of delete remote network.](media/how-to-manage-remote-networks/delete-remote-network.png)
+![Screenshot that shows delete remote network.](media/how-to-manage-remote-networks/delete-remote-network.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 

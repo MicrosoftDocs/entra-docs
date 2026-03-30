@@ -11,7 +11,7 @@ ms.topic: concept-article
 
 # Access packages for Agent identities
 
-Microsoft Entra entitlement management provides access packages as a governance mechanism. Access packages ensure that agent access assignments are intentional, auditable, and time-bound. Access packages represent a structured approach to managing agent identity permissions, contrasting with ad-hoc permission assignments that might lack appropriate governance controls. Access packages enable standardized access for many AI Agents with the same access needs, for example, a fleet of customer support AI Agents. Through access packages, organizations can establish consistent governance practices for agent identity, agent user, and service principal access to resources. For more information, see [Governing agent identities](/entra/id-governance/agent-id-governance-overview).
+Microsoft Entra entitlement management provides access packages as a governance mechanism. Access packages ensure that agent access assignments are intentional, auditable, and time-bound. Access packages represent a structured approach to managing agent identity permissions, contrasting with ad-hoc permission assignments that might lack appropriate governance controls. Access packages enable standardized access for many AI Agents with the same access needs, for example, a fleet of customer support AI Agents. Through access packages, organizations can establish consistent governance practices for agent identity, agent's user account, and service principal access to resources. For more information, see [Governing agent identities](/entra/id-governance/agent-id-governance-overview).
 
 ## License requirements
 
@@ -75,9 +75,9 @@ In addition to using the Microsoft Entra Admin Center, you can also create an ac
 
 Agents can then be assigned access packages through three different request pathways.
 
-- The agent itself, if using a service principal, can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
-- The agent identity's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
-- An administrator can [directly assign the agent identity or agent user to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
+- The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
+- The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
+- An administrator can [directly assign the agent identity or agent's user account to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
 After submission, the access request is routed to designated approvers based on the access package policy configuration.
 

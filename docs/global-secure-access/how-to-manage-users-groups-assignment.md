@@ -2,10 +2,12 @@
 title: Assign users and groups to traffic forwarding profiles
 description: "Control which users and groups receive traffic forwarding policies, enabling gradual rollout and limiting scope during testing or deployment phases."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ---
 # How to assign users and groups to traffic forwarding profiles
+
+## Overview
 
 With the Global Secure Access traffic forwarding features, you can assign specific users and groups to a traffic forwarding profile. User or group assignment limits the scope of the traffic forwarding profile so you have a mechanism to roll out the profile safely and at a controlled pace.
 
@@ -38,21 +40,21 @@ You can configure the user and group assignments before or after enabling the tr
 
 1. Select the **View** link in the **User and group assignments** section.
 
-    ![Screenshot of the traffic forwarding profiles with the view link highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-view-user-group-assignments.png)
+    ![Screenshot that shows the traffic forwarding profiles with the view link highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-view-user-group-assignments.png)
 
 1. Select the **0 Users, 0 Groups assigned** link.
 
-    ![Screenshot of the 0 users, 0 groups assigned link.](media/how-to-manage-users-groups-assignment/user-group-assignment-link.png)
+    ![Screenshot that shows the 0 users, 0 groups assigned link.](media/how-to-manage-users-groups-assignment/user-group-assignment-link.png)
 
 1. Select **Add user/group**.
 
-    ![Screenshot of the users and groups page with the Add user/group button highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-add-user-group-button.png)
+    ![Screenshot that shows the users and groups page with the Add user/group button highlighted.](media/how-to-manage-users-groups-assignment/traffic-profile-add-user-group-button.png)
 
 1. Select the **None selected** link, select the users and/or groups from the list, and select the **Select** button.
     - The **All** list groups users and groups together. Select either the **Users** or **Groups** tab to narrow the list.
     - You can also use the Search box to find the user or group directly.
 
-    ![Screenshot of the user/group selection process with the None selected link highlighted.](media/how-to-manage-users-groups-assignment/user-group-selection-steps.png)
+    ![Screenshot that shows the user/group selection process with the None selected link highlighted.](media/how-to-manage-users-groups-assignment/user-group-selection-steps.png)
 
 1. Select the **Assign** button.
 
@@ -62,11 +64,11 @@ The process to change the user and group assignments for a traffic profile that'
 
 1. When you select the **View** link in the **User and group assignments** section, you need to change the **Assign to all users** setting to **No.**
 
-    ![Screenshot of the Assign to all users toggle.](media/how-to-manage-users-groups-assignment/assign-to-all-users-toggle.png)
+    ![Screenshot that shows the Assign to all users toggle.](media/how-to-manage-users-groups-assignment/assign-to-all-users-toggle.png)
 
 1. Review the confirmation message, and select the **OK** button.
 
-    ![Screenshot of the confirmation message.](media/how-to-manage-users-groups-assignment/user-group-assignment-message.png)
+    ![Screenshot that shows the confirmation message.](media/how-to-manage-users-groups-assignment/user-group-assignment-message.png)
 
 1. Continue with the steps in the previous section.
 
@@ -84,7 +86,7 @@ Once you assign a traffic forwarding profile to a specific user or group, you ca
 
 1. Change the **Assign to all users** toggle to **Yes**, review the confirmation message, and select the **OK** button.
 
-    ![Screenshot of the assign to all users confirmation message.](media/how-to-manage-users-groups-assignment/toggle-confirmation-message.png)
+    ![Screenshot that shows the assign to all users confirmation message.](media/how-to-manage-users-groups-assignment/toggle-confirmation-message.png)
 
 1. Select the **Done** button.
 

@@ -11,6 +11,8 @@ ms.custom: sfi-image-nochange
 
 # Analyze Conditional Access Policy Impact
 
+## Overview
+
 Conditional Access helps organizations stay secure by applying the appropriate security access controls in the right circumstances. Understanding the impact of these policies is challenging, especially when deploying new policies. This article explains how to analyze the impact of Conditional Access policies using report-only mode and other tools.
 
 Administrators have several options based on report-only mode. Report-only mode is a policy state that lets administrators test most Conditional Access policies before enabling them.

@@ -8,6 +8,9 @@ ms.custom: sfi-image-nochange
 ---
 # Audit activity history for group assignments in Privileged Identity Management
 
+
+## Overview
+
 When working with your organization's groups in Privileged Identity Management (PIM), you can view activity, activations, and audit history for Microsoft Entra group membership or ownership changes.
 
 > [!NOTE]

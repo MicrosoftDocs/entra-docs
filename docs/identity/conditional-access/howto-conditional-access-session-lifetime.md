@@ -12,6 +12,8 @@ ms.custom:
 ---
 # Configure adaptive session lifetime policies
 
+## Overview
+
 > [!WARNING]
 > If you're using the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature currently in public preview, we don't support creating two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.  
 >

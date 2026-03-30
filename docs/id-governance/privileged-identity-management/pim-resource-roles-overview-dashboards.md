@@ -10,6 +10,9 @@ ms.custom: pim
 
 # Use a resource dashboard to perform an access review in Privileged Identity Management
 
+
+## Overview
+
 You can use a resource dashboard to perform an access review in Privileged Identity Management (PIM). The Admin View dashboard in Microsoft Entra ID, part of Microsoft Entra, has three primary components:
 
 - A graphical representation of resource role activations.

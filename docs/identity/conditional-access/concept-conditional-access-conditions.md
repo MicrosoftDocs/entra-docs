@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
+## Overview
+
 In a Conditional Access policy, admins use one or more signals to improve policy decisions.
 
 :::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
@@ -214,7 +216,7 @@ If the access control assigned to the policy uses **Require approved client app*
 
 For more information, see the following articles:
 
-- [Block legacy authentication with Conditional Access](block-legacy-authentication.md)
+- [Block legacy authentication with Conditional Access](policy-block-legacy-authentication.md)
 - [Requiring approved client apps with Conditional Access](./policy-all-users-device-compliance.md)
 
 ### Other clients

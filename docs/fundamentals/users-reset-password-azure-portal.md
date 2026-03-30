@@ -1,7 +1,6 @@
 ---
 title: Reset a user's password
 description: Instructions about how to reset a user's password using Microsoft Entra ID.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 08/27/2025
 ms.reviewer: jeffsta
@@ -10,6 +9,9 @@ ms.custom: ge-structured-content-pilot, sfi-image-nochange
 
 # Reset a user's password
 
+
+
+## Overview
 
 Administrators can reset a user's password if the user forgets the password, if the user gets locked out, or if the user never received a password.
 
@@ -57,6 +59,6 @@ Follow these steps:
 
 ## Related content
 
-- [Add or delete users](./add-users.md)
+- [Add or delete users](./how-to-create-delete-users.yml)
 - [Assign roles to users](./how-subscriptions-associated-directory.md)
 - [Add or change profile information](./how-to-manage-user-profile-info.md)

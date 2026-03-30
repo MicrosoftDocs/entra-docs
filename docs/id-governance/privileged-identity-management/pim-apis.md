@@ -9,6 +9,9 @@ ms.custom: pim
 ---
 # Privileged Identity Management APIs
 
+
+## Overview
+
 Privileged Identity Management (PIM), part of Microsoft Entra, includes three providers: 
 
  - PIM for Microsoft Entra roles.

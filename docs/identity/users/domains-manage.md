@@ -8,6 +8,9 @@ ms.custom: it-pro, sfi-ga-nochange
 ---
 # Manage custom domain names in your Microsoft Entra ID
 
+
+## Overview
+
 A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. [Global Administrators](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and [Domain name administrators](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) can manage domains in Microsoft Entra ID. 
 
 <a name='set-the-primary-domain-name-for-your-azure-ad-organization'></a>

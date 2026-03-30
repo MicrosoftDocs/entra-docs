@@ -9,6 +9,9 @@ ms.custom: pim, sfi-ga-nochange
 
 # Plan a Privileged Identity Management deployment
 
+
+## Overview
+
 **Privileged Identity Management (PIM)** provides a time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions to important resources. These resources include resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune.
 
 PIM enables you to allow a specific set of actions at a particular scope. Key features include:

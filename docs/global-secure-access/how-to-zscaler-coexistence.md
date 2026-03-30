@@ -3,7 +3,7 @@ title: Configure Microsoft and Zscaler for a Unified SASE Solution
 description: "Learn how to deploy Microsoft Global Secure Access alongside Zscaler Private Access and Internet Access. Covers four integration scenarios with step-by-step configuration, verification, and traffic testing procedures."
 #customer intent: As a network administrator, I want to configure Microsoft and Zscaler SSE for unified SASE solutions so that I can enhance security and connectivity in my organization.  
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -15,6 +15,8 @@ ms.custom:
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler
+## Overview
+
 In today's rapidly evolving digital landscape, organizations require robust, and unified solutions to ensure secure and seamless connectivity. Microsoft and Zscaler offer complementary Secure Access Service Edge (SASE) capabilities that, when integrated, provide enhanced security and connectivity for diverse access scenarios.
 
 This guide outlines how to configure and deploy Microsoft Entra solutions alongside Zscaler's Security Service Edge (SSE) offerings. By using the strengths of both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.

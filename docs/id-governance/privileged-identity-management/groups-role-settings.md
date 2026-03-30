@@ -2,11 +2,16 @@
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 03/27/2026
+ms.reviewer: tamimsangrar
 ms.custom: pim, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Configure PIM for Groups settings
+
+
+## Overview
 
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
@@ -84,6 +89,16 @@ This means that security principals with permissions to manage Conditional Acces
 Create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during group membership/ownership activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](groups-role-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 
 This backup protection mechanism is designed to solely protect from a scenario when PIM settings were updated before the Conditional Access policy was created because of a configuration mistake. This backup protection mechanism isn't triggered if the Conditional Access policy is turned off, is in report-only mode, or has eligible users excluded from the policy.
+
+To enforce reauthentication on every group membership or ownership activation, configure the Conditional Access policy targeting your authentication context with sign-in frequency set to **Every time** under **Session controls**. This ensures users must reauthenticate each time they activate group membership or ownership, even if they have an active session.
+
+:::image type="content" source="media/pim-for-groups/role-settings-conditional-access-authentication-context.png" alt-text="Screenshot that shows the Edit role setting page with the Microsoft Entra Conditional Access authentication context option selected." lightbox="media/pim-for-groups/role-settings-conditional-access-authentication-context.png":::
+
+When a user reauthenticates for one activation, a 10-minute window applies. If the user activates another eligible membership or ownership within this window, they aren't prompted to reauthenticate again. The 10-minute window applies across Microsoft Entra roles, Azure resource roles, and PIM for Groups.
+
+When a user activates eligible group membership or ownership configured with an authentication context, they see the message: "A Conditional Access policy is enabled and may require additional verification. Click to continue." The user is then redirected to complete reauthentication as defined by the Conditional Access policy.
+
+:::image type="content" source="media/pim-for-groups/activate-role-conditional-access-verification-banner.png" alt-text="Screenshot that shows the Activate role page with a Conditional Access policy banner requiring additional verification." lightbox="media/pim-for-groups/activate-role-conditional-access-verification-banner.png":::
 
 The **On activation, require Microsoft Entra Conditional Access authentication context** setting defines the authentication context requirements that users must satisfy when they activate group membership/ownership. After group membership/ownership is activated, users aren't prevented from using another browsing session, device, or location to use group membership/ownership.
 

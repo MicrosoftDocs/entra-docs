@@ -2,13 +2,15 @@
 title: How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
 description: "Configure direct connectivity between your virtual network and Azure SQL using service endpoints with Microsoft Entra Private Access for secure database access."
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ---
 
 # How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
+
+## Overview
 
 Access Azure services using Microsoft Entra Private Access with a virtual network service endpoint. The combination provides direct connectivity using an optimal network route. A virtual network service endpoint lets you limit network access to Azure service resources and remove access from the internet. Service endpoints provide a direct connection between your virtual network and supported Azure services. You use your virtual networks private address space to access the Azure services.
 

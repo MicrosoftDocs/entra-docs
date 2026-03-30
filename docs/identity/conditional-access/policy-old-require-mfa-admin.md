@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Require MFA for administrators
 
+## Overview
+
 > [!WARNING]
 > This article describes a Conditional Access policy that uses the **Require multifactor authentication** grant control. For stronger protection against phishing attacks, consider using **authentication strength** to require phishing-resistant MFA methods instead. For more information, see [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md).
 

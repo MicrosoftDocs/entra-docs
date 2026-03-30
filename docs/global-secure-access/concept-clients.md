@@ -3,11 +3,12 @@ title: Learn about the Global Secure Access clients for Microsoft Entra Private 
 description: Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access.
 ms.topic: concept-article
 ms.date: 03/12/2026
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
 # Global Secure Access client overview
+
+## Overview
 
 The Global Secure Access client gives organizations control over network traffic at the end-user computing device. With this client, organizations can route specific traffic profiles through Microsoft Entra Internet Access and Microsoft Entra Private Access. Routing traffic in this method allows for more controls like continuous access evaluation (CAE), device compliance, or multifactor authentication to be required for resource access.
 

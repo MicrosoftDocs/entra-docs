@@ -99,7 +99,7 @@ Alternatively, if you want to get the specific enterprise application that was d
    $deletedServicePrincipal = Get-EntraDeletedServicePrincipal -Filter "DisplayName eq 'test-App1-Deleted'"
    
    #assign the value returned to a variable and restore the deleted service principal
-   Id = $deletedServicePrincipal.Id
+   $Id = $deletedServicePrincipal.Id
    Restore-EntraDeletedDirectoryObject -Id $deletedServicePrincipal.Id
    ```
 

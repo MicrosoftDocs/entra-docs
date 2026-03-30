@@ -9,6 +9,8 @@ ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Windows
 
+## Overview
+
 This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Windows platform.
 
 For an overview of Token Protection and supported platforms, see [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md). Review the overview documentation before using this deployment guide.

@@ -9,6 +9,8 @@ ms.reviewer: ludwignick
 ---
 # Conditional Access: Resilience defaults
 
+## Overview
+
 If the primary authentication service is unavailable, the Microsoft Entra Backup Authentication Service automatically issues access tokens to applications for existing sessions. This functionality significantly improves Microsoft Entra resilience because reauthentications for existing sessions account for more than 90% of authentications to Microsoft Entra ID. The Backup Authentication Service doesn't support new sessions or authentications by guest users.
 
 For authentications protected by Conditional Access, policies are reevaluated before access tokens are issued to determine:

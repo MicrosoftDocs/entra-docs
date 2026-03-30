@@ -1,7 +1,6 @@
 ---
 title: Add an existing Azure subscription to your tenant
 description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/02/2025
 ms.reviewer: jeffsta
@@ -10,6 +9,9 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 
 # Associate or add an Azure subscription to your Microsoft Entra tenant
 
+
+
+## Overview
 
 All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant might be trusted by multiple subscriptions.
 

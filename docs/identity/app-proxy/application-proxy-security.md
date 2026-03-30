@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Security considerations for accessing apps remotely with Microsoft Entra application proxy
 
+
+## Overview
+
 This article explains the components that work to keep your users and applications safe when you use Microsoft Entra application proxy.
 
 The following diagram shows how Microsoft Entra ID enables secure remote access to your on-premises applications.

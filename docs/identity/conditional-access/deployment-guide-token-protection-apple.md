@@ -8,6 +8,8 @@ ms.date: 03/24/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Apple Platforms (Preview)
+## Overview
+
 This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Apple platforms (iOS, iPadOS, and macOS). Token Protection on Apple platforms is currently in Preview.
 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.

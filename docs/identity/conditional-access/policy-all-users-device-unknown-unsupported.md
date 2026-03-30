@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Block unknown or unsupported device platform
 
+## Overview
+
 Users are blocked from accessing company resources when the device type is unknown or unsupported.
 
 The [device platform condition](concept-conditional-access-conditions.md#device-platforms) is based on user agent strings. Conditional Access policies using this condition should be used with another policy, like one requiring device compliance or app protection policies, to mitigate the risk of user agent spoofing.

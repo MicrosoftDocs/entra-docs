@@ -53,7 +53,7 @@ To address on-premises threats, we recommend you adhere to the four principles t
 
 1. **Ensure no on-premises account has elevated privileges to Microsoft 365.** Some accounts access on-premises applications that require NTLM, Lightweight Directory Access Protocol (LDAP), or Kerberos authentication. These accounts must be in the organization's on-premises identity infrastructure. Ensure that you don't include these accounts, along with service accounts, in privileged cloud roles or groups. Ensure that changes to these accounts can't affect the integrity of your cloud environment. Privileged on-premises software must not be capable of affecting Microsoft 365 privileged accounts or roles.
 
-1. **Use Microsoft Entra cloud authentication to eliminate dependencies on your on-premises credentials.** Always use phishing-resistant authentication methods, such as Windows Hello for Business, [Platform Credential for macOS](../identity/authentication/concept-authentication-passwordless.md#platform-credential-for-macos), Passkeys (FIDO2), Microsoft Authenticator passkeys, or certificate-based authentication.
+1. **Use Microsoft Entra cloud authentication to eliminate dependencies on your on-premises credentials.** Always use phishing-resistant authentication methods, such as Windows Hello for Business, [Platform Credential for macOS](../identity/authentication/concept-authentication-passkeys-fido2.md), Passkeys (FIDO2), Microsoft Authenticator passkeys, or certificate-based authentication.
 
 ## Specific security recommendations
 
@@ -80,7 +80,7 @@ Credentials are a primary attack vector. Implement the following practices to ma
 - **Deploy passwordless authentication**. Reduce the use of passwords as much as possible by deploying passwordless credentials. You can manage and validate these credentials natively in the cloud. For more information, see [Get started with phishing-resistant passwordless authentication deployment in Microsoft Entra ID](../identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md). Choose from these authentication methods:
 
   - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
-  - [Platform Credential for macOS](../identity/authentication/concept-authentication-passwordless.md#platform-credential-for-macos)
+  - [Platform Credential for macOS](../identity/authentication/concept-authentication-passkeys-fido2.md)
   - [Microsoft Authenticator app](../identity/authentication/howto-authentication-passwordless-phone.md)
   - Passkeys [FIDO2)](../identity/authentication/howto-authentication-passwordless-security-key-windows.md)
   - [Microsoft Entra Certificate-based authentication](../identity/authentication/concept-certificate-based-authentication.md)

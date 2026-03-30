@@ -20,7 +20,7 @@ To complete the scenario in this quickstart, you need:
 - An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md).
 - A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
-- **A test account called Isabella Simonsen** - If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/add-users.md#add-a-new-user).
+- **A test account called Isabella Simonsen** - If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/how-to-create-delete-users.yml).
 
 ## Perform a failed sign-in
 
@@ -72,7 +72,7 @@ Now, that you know how to find an entry in the sign-in log by name, you should a
 
 ## Clean up resources
 
-When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](~/fundamentals/add-users.md#delete-a-user). 
+When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml). 
 
 ## Related content
 
