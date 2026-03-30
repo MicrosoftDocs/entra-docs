@@ -17,9 +17,6 @@ ai-usage: ai-assisted
 
 # Microsoft Entra ID SCIM API schema 
 
-> [!NOTE]
-> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
 Microsoft Entra ID SCIM API supports standard SCIM schema elements and Microsoft Entra ID specific extensions. The SCIM schema is published at the endpoint [https://graph.microsoft.com/rp/scim/schemas](https://graph.microsoft.com/rp/scim/schemas)
 This article describes how SCIM schema attributes map to Microsoft Entra ID [user properties](/graph/api/resources/user#properties) and [group properties](/graph/api/resources/group#properties).
 
@@ -32,23 +29,24 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 | SCIM Attribute | Entra ID Attribute | Notes / Restrictions |
 |---|---|---|
 | active | accountEnabled |  |
-| addresses[type eq *work*].country | country | Only one *addresses* value is allowed, and it requires a type of *work*. |
-| addresses[type eq *work*].locality | city |
-| addresses[type eq *work*].postalCode | postalCode |
-| addresses[type eq *work*].region | state |
-| addresses[type eq *work*].streetAddress | streetAddress |
+| addresses[type eq "work"].country | country | Only one *addresses* value is allowed, and it requires a type of "work". |
+| addresses[type eq "work"].locality | city |
+| addresses[type eq "work"].postalCode | postalCode |
+| addresses[type eq "work"].region | state |
+| addresses[type eq "work"].streetAddress | streetAddress |
 | displayName | displayName |  |
-| emails[type eq ].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
-| emails[type eq *proxyAddress*.value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This is currently implemented as type work, primary false and will be changed in an upcoming release) |
-| emails[type eq *work* and primary eq true].value | mail | Only one value of type *work* and primary *true* is allowed. |
+| emails[type eq "other"].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
+| emails[type eq "proxyAddress".value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This is currently implemented as type work, primary false and will be changed in an upcoming release) |
+| emails[type eq "work" and primary eq true].value | mail | Only one value of type "work" and primary *true* is allowed. |
+| externalId | crossDomainData.scim.v2.externalId | This attribute is persisted in the Graph entity `crossDomainData`. |
 | groups.value | *See notes* | Read only. The user’s group memberships. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
-| ims[type eq *work*].value | imAddresses |  |
+| ims[type eq "work"].value | imAddresses |  |
 | name.familyName | surname |  |
 | name.givenName | givenName |  |
 | password | *See notes* | Required for users with a userName value containing a domain name that is managed (non-federated). Write only (cannot be read). Can only be set on user creation, cannot be used to update a user’s password. |
-| phoneNumbers[type eq *fax*].value | faxNumber | Only one value of this type is allowed. |
-| phoneNumbers[type eq *mobile*].value | mobilePhone | Only one value of this type is allowed. |
-| phoneNumbers[type eq *work*].value | businessPhones | Only one value of this type is allowed. |
+| phoneNumbers[type eq "fax"].value | faxNumber | Only one value of this type is allowed. |
+| phoneNumbers[type eq "mobile"].value | mobilePhone | Only one value of this type is allowed. |
+| phoneNumbers[type eq "work"].value | businessPhones | Only one value of this type is allowed. |
 | preferredLanguage | preferredLanguage | Only allows a single language value and will not accept a ranked preference list. |
 | title | jobTitle |  |
 | userName | userPrincipalName |  |
@@ -107,6 +105,9 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 | proxyAddresses | proxyAddresses (all values) |
 | usageLocation | usageLocation |
 | userType | userType |
+
+> [!NOTE] 
+> The Microsoft Entra extension namespace does not include Microsoft Entra ID Directory Extensions of the form `extension_{appId-without-hyphens}_{extensionProperty-name}`. The SCIM APIs don't support retrieving these attributes on the user profile.
 
 ## Group – Core
 

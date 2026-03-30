@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/26/2026
+ms.date: 03/23/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -17,6 +17,9 @@ ai-usage: ai-assisted
 # Enable the SCIM Provisioning API in Microsoft Entra ID
 
 This article describes how to enable the SCIM Provisioning API feature in the Microsoft Entra admin center. Once enabled, you can use the SCIM 2.0 protocol to automate the management of users and groups in your Microsoft Entra ID tenant.
+
+> [!NOTE]
+> By enabling this feature, Microsoft Entra ID acts as the SCIM service provider (server), allowing external SCIM‑compatible clients—such as HR apps, identity platforms, orchestration tools, or custom automation frameworks—to provision and manage users and groups in Entra using standard SCIM operations at scale. This feature is intended for direct programmatic access to the SCIM API; if you want to use Entra ID's built-in [app provisioning](user-provisioning.md), [HR-driven provisioning](what-is-hr-driven-provisioning.md) or [API-driven provisioning](inbound-provisioning-api-concepts.md) capabilities, you don't need to enable it. For more details refer to [SCIM support in Entra ID](scim-support-in-entra-id.md).
 
 For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id-scim-api-reference.md).
 
@@ -31,8 +34,8 @@ For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id
 
 The SCIM Provisioning API is a paid add-on that requires a subscription and billing configuration:
 
-- **Cost:** USD $0.002 per per transaction.
-- **Billing:** A **billable transaction** corresponds to **one SCIM API request** sent to the service. Successful requests that return HTTP status codes **2xx** or **404 (Not Found)** are counted as billable transactions.
+- **Cost:** USD $0.002 per API call.
+- **Billing:** Monthly, through a linked Azure subscription.
 
 ## Enable the SCIM Provisioning API
 
@@ -71,12 +74,15 @@ Register an application in your Microsoft Entra tenant, grant the required appli
    - The application ID (referred to as Object ID on the Microsoft Entra admin center).
    - A client secret (application password), a certificate, or a federated identity credential.
 
-1. Under **API permissions**, select **Microsoft Graph** > **Application permissions** and grant one or more of the following permissions:
+1. Under **API permissions**, select **Microsoft Graph** > **Application permissions** and grant one or more of the following permissions depending on how you plan to use the SCIM APIs:
 
    | Permission | Description |
    |---|---|
    | `User.Read.All` | Read-only access to users. |
    | `User.ReadWrite.All` | Read and write access to users. |
+   | `User-Mail.ReadWrite.All` | Least privileged permission to update **emails[type eq "other"].value** that maps to *otherMails* user property |
+   | `User-Phone.ReadWrite.All` | Least privileged permission to update **phoneNumbers[type eq "mobile"].value** and **phoneNumbers[type eq "work"].value** that map to *mobilePhone* and *businessPhones* user properties respectively |
+   | `User.EnableDisableAccount.All` | Least privileged permission to update **active** SCIM attribute that maps to *accountEnabled* user property |
    | `Group.Read.All` | Read-only access to groups. |
    | `Group.ReadWrite.All` | Read and write access to groups. |
    | `CustomSecAttributeAssignment.Read.All` | Read-only access to Custom Security Attributes on users. |
@@ -86,7 +92,7 @@ Register an application in your Microsoft Entra tenant, grant the required appli
 
 1. Grant **Admin consent** for all assigned permissions.
 
-1. Use the following HTTP request to obtain an access token, replacing the placeholder values to match your environment:
+1. Use the following HTTP request to obtain an access token, replacing the placeholder values to match your environment. For production usage, it's highly recommended to use client certificate or managed identity for authentication.
 
    **Request:**
 
@@ -164,6 +170,41 @@ Host: graph.microsoft.com
 ```
 
 For the full list of supported SCIM operations including user and group management, see the [Microsoft Entra ID SCIM API reference](entra-id-scim-api-reference.md).
+
+## View SCIM API billing information
+
+SCIM API usage is billed through the Azure subscription and resource group you linked when you enabled the feature. You can view accumulated costs and usage forecasts in the Azure portal using the **Cost analysis** blade.
+
+### Prerequisites for viewing billing
+
+You must have one of the following Azure roles on the linked resource group to access Cost analysis:
+
+- **Owner**
+- **Contributor**
+- **Reader**
+- **Cost Management Reader**
+
+### Steps to view billing
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+
+1. In the top search bar, search for **Resource groups** and select it.
+
+1. From the list of resource groups, select the resource group you linked when enabling SCIM API billing.
+
+1. In the left navigation pane, expand **Cost Management** and select **Cost analysis**.
+
+1. In the Cost analysis view:
+
+   - Set the **Scope** to your resource group.
+   - Set the **View** to **AccumulatedCosts**.
+   - Set the date range to the month you want to review.
+
+1. The chart shows your accumulated SCIM API spend over the selected period. The summary cards at the top show:
+   - **Actual cost (USD)** – charges billed so far in the current period.
+   - **Forecast** – projected total cost for the period based on current usage.
+
+1. Use the breakdown tiles at the bottom to view costs by **Service name**, **Location**, and **Resource**. SCIM API charges appear under **Microsoft Entra** as the service name.
 
 ## Disable the SCIM Provisioning API
 
