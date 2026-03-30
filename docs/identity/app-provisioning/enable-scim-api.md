@@ -206,21 +206,8 @@ You must have one of the following Azure roles on the linked resource group to a
 
 1. Use the breakdown tiles at the bottom to view costs by **Service name**, **Location**, and **Resource**. SCIM API charges appear under **Microsoft Entra** as the service name.
 
-## Disable the SCIM Provisioning API
-
-If you no longer need programmatic SCIM access, you can turn off the SCIM Provisioning API to stop all API access and billing.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-
-1. In the left navigation, expand **ID Governance** and select **Dashboard**.
-
-1. On the Dashboard page, locate the **SCIM Provisioning API** tile and select **Edit**.
-
-1. In the **SCIM Provisioning API** pane, select **Turn off**.
-
-1. Confirm the action when prompted. After the feature is turned off, all SCIM API calls to the tenant return an error and billing stops.
-
 ## Next steps
 
+- [Disable the SCIM Provisioning API](disable-scim-api.md) – Learn how to turn off the SCIM Provisioning API to stop all API access and billing.
 - [Microsoft Entra ID SCIM API reference](entra-id-scim-api-reference.md) – Learn about the supported SCIM API endpoints, request formats, and constraints.
 - [Troubleshoot SCIM API errors](troubleshoot-scim-api-errors.md) – Resolve common errors encountered when calling the SCIM APIs.

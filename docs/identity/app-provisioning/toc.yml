@@ -91,6 +91,8 @@ items:
       items: 
       - name: Enable SCIM 2.0 APIs
         href: enable-scim-api.md
+      - name: Disable SCIM 2.0 APIs
+        href: disable-scim-api.md
       - name: Troubleshoot SCIM 2.0 errors
         href: troubleshoot-scim-api-errors.md
     - name: Include or exclude users and groups from scope
