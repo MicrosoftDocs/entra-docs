@@ -17,6 +17,8 @@ ms.custom:
 
 # Tutorial: Add federated identity provider sign-in and sign-up web flow to your Android app
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your Android app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, Google, or custom OpenID Connect (OIDC) providers.
 
 In this tutorial, you learn how to:

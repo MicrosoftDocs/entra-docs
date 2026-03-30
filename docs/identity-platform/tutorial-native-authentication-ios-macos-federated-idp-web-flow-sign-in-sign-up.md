@@ -17,6 +17,8 @@ ms.custom:
 
 # Tutorial: Add federated identity provider sign-in and sign-up web flow to your iOS app
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your iOS app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, and Google.
 
 In this tutorial, you learn how to:
