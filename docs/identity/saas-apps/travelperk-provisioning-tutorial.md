@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and select the **Sign In** button. Select **Authorize App** on the Authorization page. Select **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and select the **Sign In** button. Select **Authorize App** on the Authorization page. Select **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
 
    ![Admin Credentials](./media/travelperk-provisioning-tutorial/authorize.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Properties** on the **Overview** page.
 
-1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
@@ -140,7 +140,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    | urn:ietf:params:scim:schemas:extension:travelperk:2.0:User:emergencyContact.phone | String |
    | urn:ietf:params:scim:schemas:extension:travelperk:2.0:User:travelPolicy | String |
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
