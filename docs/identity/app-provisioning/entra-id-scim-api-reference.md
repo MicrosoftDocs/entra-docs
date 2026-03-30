@@ -52,7 +52,7 @@ To learn how Microsoft Graph user and group properties map to SCIM user and grou
 
 ## Throttling
 
-The same throttling guidance and service-specific throttling limits that apply to Microsoft Graph APIs also apply to Microsoft Entra ID SCIM APIs. For the throttling policies that apply to Microsoft Graph user and group APIs, see [Microsoft Graph throttling guidance](https://learn.microsoft.com/graph/throttling) and [Microsoft Graph service-specific throttling limits for identity and access APIs](https://learn.microsoft.com/graph/throttling-limits#identity-and-access-service-limits).
+The same throttling guidance and service-specific throttling limits that apply to Microsoft Graph APIs also apply to Microsoft Entra ID SCIM APIs. For the throttling policies that apply to Microsoft Graph user and group APIs, see [Microsoft Graph throttling guidance](/graph/throttling) and [Microsoft Graph service-specific throttling limits for identity and access APIs](/graph/throttling-limits#identity-and-access-service-limits).
 
 ## Errors
 
