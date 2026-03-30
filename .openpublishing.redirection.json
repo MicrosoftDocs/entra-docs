@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "docs/id-governance/privileged-identity-management/pim-resource-roles-custom-role-policy.md",
+      "redirect_url": "/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/permissions-management/all-reports.md",
       "redirect_url": "/previous-versions/entra/permissions-management/all-reports",
       "redirect_document_id": false
