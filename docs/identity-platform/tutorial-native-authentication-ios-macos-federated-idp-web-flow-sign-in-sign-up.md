@@ -104,7 +104,7 @@ To sign up a user with a federated identity provider, the process is almost the 
     }
 ```
 
-# Related content
+## Related content
 
 - For attribute collection, this happens in web sign-up flow UX. Refer to [User profile attributes](../external-id/customers/concept-user-attributes.md).
 - For SMS and email one-time passcode multifactor authentication (MFA), this is handled also in web flow UX. If enabled, after the social IdP authentication completes, the client app prompt the user for MFA as part of the web flow. For more information, see [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md) and [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md).
