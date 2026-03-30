@@ -127,7 +127,41 @@ Add the Microsoft repository.
 ## Changes
 
 > [!WARNING]
-> When upgrading from version 2.0.2 or earlier to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+> When upgrading from version 2.0.2 (or earlier) to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+
+### 2.5.3 - March 30-, 2026 - (GA Major Release)
+
+Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
+
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
+- Added a header of token requests, enabling differentiation between identity broker versions.
+- When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
+- Renamed the device broker service to `microsoft-identity-devicebroker`.
+- There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
+- Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker creates a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
+
+- Added support for the microsoft-identity-broker-diagnostics package.
+- Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
+- Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
+- Update x-client-os to use distro name
+
+- (Linux) Change package file names to include target OS
+- (Linux) Misc Bug Fixes
+- (Linux) Include a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
+- (Linux) Update embedded authentication window defaults (title/size) and improve centering behavior.
+- (Linux) Add support for RHEL 10
+- (Linux) Add dsreg command-line tool for device registration management and diagnostics
+- (Linux) Update certificates/keys location used by Linux device broker
+- (Linux) Include broker version in broker-produced telemetry
+- (xplat) Add DUNA xplat and DUNA iOS CBA
+
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
+- (Linux) Add GetDeviceState support with TLS 1.3 in CPP broker
+- (Linux) Handle sem_timedwait failure due to process receiving a signal in Msai::SecureStorageLock and Msoa::SystemMutex
+
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
 
 ### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
 
