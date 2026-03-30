@@ -1,0 +1,91 @@
+2026-03-30T10:41:12.909007Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:102: Agency process starting (pid=42608) telem=true
+2026-03-30T10:41:12.962011Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:109: Terminal environment detected use_color=false
+2026-03-30T10:41:12.962396Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:125: Parsing CLI arguments
+2026-03-30T10:41:12.982549Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:157: CLI parsed successfully
+2026-03-30T10:41:12.983039Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:235: Session log directory created dir=${AGENCY_LOG_SESSION_DIR}
+2026-03-30T10:41:12.983095Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:242: Telemetry context resolved telem=true operation_id=${AGENCY_OPERATION_ID} telemetry_env=Prod
+2026-03-30T10:41:12.984021Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:253: Telemetry provider initialized
+2026-03-30T10:41:12.988086Z  INFO main ThreadId(01) agency: client\agency\src\main.rs:286: 🤖 Agency 2026.3.28.4 telem=true
+2026-03-30T10:41:12.988204Z  INFO main ThreadId(01) agency: client\agency\src\main.rs:287: 📁 Log directory: ${AGENCY_LOG_SESSION_DIR} telem=true
+2026-03-30T10:41:12.988708Z DEBUG main ThreadId(01) agency::update::user_oid: client\agency\src\update\user_oid.rs:304: Using cached user-targeted ring: Prod
+2026-03-30T10:41:12.988744Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:327: 🔗 Operation ID for distributed tracing: ${AGENCY_OPERATION_ID}
+2026-03-30T10:41:12.988759Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:328: 📊 Using Prod Application Insights
+2026-03-30T10:41:12.988780Z DEBUG main ThreadId(01) agency: client\agency\src\main.rs:329: Parsed CLI:
+Mcp(
+    McpCli {
+        schema: false,
+        command: Some(
+            Builtin(
+                Teams(
+                    NoArgs,
+                ),
+            ),
+        ),
+        proxy_args: ProxyArgs {
+            transport: None,
+            port: 0,
+            auth: AuthArgs {
+                entra_client_id: None,
+                wif_auth_connection: None,
+            },
+        },
+    },
+)
+2026-03-30T10:41:12.988854Z TRACE main ThreadId(01) ecs: client\ecs\src\lib.rs:84: Fetching ECS config from https://config.edge.skype.com/config/v1/Agency/1.0.0.0?agent=Agency&Ring=Prod
+2026-03-30T10:41:12.989390Z DEBUG ThreadId(21) telem::os_info: client\telem\src\os_info.rs:102: Loaded cached user alias from C:\Users\kengaderdus\.agency\user_alias.txt
+2026-03-30T10:41:12.991737Z TRACE main ThreadId(01) ecs::cache: client\ecs\src\cache.rs:67: Cache hit for https://config.edge.skype.com/config/v1/Agency/1.0.0.0?agent=Agency&Ring=Prod from file C:\Users\kengaderdus\.ecs\aHR0cHM6Ly9jb25maWcuZWRnZS5za3lwZS5jb20vY29uZmlnL3YxL0FnZW5jeS8xLjAuMC4wP2FnZW50PUFnZW5jeSZSaW5nPVByb2Q=.
+Config {
+    version: "2026.3.28.4",
+    executable_name: "agency.exe",
+    app_data_folder_name: "agency",
+    windows_package_name: "agency.win-x64",
+    windows_tool_path: "\\",
+    windows_package_name_x64: Some(
+        "agency.win-x64",
+    ),
+    windows_tool_path_x64: Some(
+        "\\",
+    ),
+    windows_package_name_arm64: Some(
+        "agency.win-arm64",
+    ),
+    windows_tool_path_arm64: Some(
+        "\\",
+    ),
+    mac_package_name: "agency.osx-x64",
+    mac_tool_path: "/",
+    mac_package_name_x64: "agency.osx-x64",
+    mac_tool_path_x64: "/",
+    mac_package_name_arm64: "agency.osx-arm64",
+    mac_tool_path_arm64: "/",
+    linux_package_name: "agency.linux-x64",
+    linux_tool_path: "/",
+    linux_package_name_x64: Some(
+        "agency.linux-x64",
+    ),
+    linux_tool_path_x64: Some(
+        "/",
+    ),
+    linux_package_name_arm64: Some(
+        "agency.linux-arm64",
+    ),
+    linux_tool_path_arm64: Some(
+        "/",
+    ),
+    feed_org: "Office",
+    feed_project: "Office",
+    feed_name: "Guardian1ESPTUpstreamOrgFeed",
+    max_versions_installed: 3,
+    available_rings: "Internal,Dogfood,Prod",
+    default_ring: "Prod",
+    tool_owner: "https://aka.ms/agency/support",
+    minimum_accepted_version: "2026.3.28.4",
+    disable_signature_validation: false,
+    extra: Object {
+        "useGlobalFeed": Bool(true),
+    },
+}
+2026-03-30T10:41:12.992338Z DEBUG main ThreadId(01) agency::update::install_mode: client\agency\src\update\install_mode.rs:90: Detected symlink installation: base_dir=C:\Users\kengaderdus\AppData\Roaming\agency
+2026-03-30T10:41:12.992493Z TRACE main ThreadId(01) agency::telemetry: client\agency\src\telemetry.rs:1093: Serialized command JSON:
+{"mcp":{"command":{"Builtin":{"Teams":{}}}}}
+2026-03-30T10:41:13.002436Z DEBUG ThreadId(21) agency::telemetry::machine_marker: client\agency\src\telemetry.rs:586: Loaded existing machine marker from C:\Users\kengaderdus\.agency\machine_id.txt
