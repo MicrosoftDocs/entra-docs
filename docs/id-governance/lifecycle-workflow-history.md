@@ -3,24 +3,24 @@ title: Lifecycle Workflow History
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.custom: template-concept, sfi-image-nochange
 ---
 
 
 # Lifecycle Workflows history
 
-Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for who, and rather or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective section. You're also able to [download these reports as CSV files](download-workflow-history.md). In this article, you learn when you would use each of these features when getting more information about how workflows were utilized for users in your organization. For aggregate workflow information across your tenant, see: [Lifecycle workflow Insights](lifecycle-workflow-insights.md). For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle tasks for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With Lifecycle Workflow's history features, you can specify which workflow events you want to view a history of based on users, runs, or task summaries. This reporting feature allows you to quickly see what ran for whom, and whether or not it was successful. Along with the summaries in these specific areas, you're also able to view detailed information about each specific event recorded in their respective section. You're also able to [download these reports as CSV files](download-workflow-history.md). In this article, you learn when you would use each of these features when getting more information about how workflows were utilized for users in your organization. For aggregate workflow information across your tenant, see: [Lifecycle workflow Insights](lifecycle-workflow-insights.md). For detailed information about every action Lifecycle Workflows takes, see: [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md).
 
 ## Lifecycle Workflow History Summaries
 
-Lifecycle Workflows introduce a history feature based on summaries and details. These history summaries allow you to quickly get information about for who a workflow ran, and whether or not this run was successful. This is valuable because the large set of information given by audit logs might become too numerous to be efficiently used. To make a large set of information processed easier to read, Lifecycle Workflows provide summaries for quick use. You can view these history summaries in three ways:
+Lifecycle Workflows introduce a history feature based on summaries and details. These history summaries allow you to quickly get information about for whom a workflow ran, and whether or not this run was successful. This is valuable because the large set of information given by audit logs might become too numerous to be efficiently used. To make a large set of information processed easier to read, Lifecycle Workflows provide summaries for quick use. You can view these history summaries in three ways:
 
-- **Users summary**: Shows a summary of users processed by a workflow. Successfully, failed, and total ran information for each specific user is shown.
+- **Users summary**: Shows a summary of users processed by a workflow. Successful, failed, and total ran information for each specific user is shown.
 - **Runs summary**: Shows a summary of workflow runs in terms of the workflow. Successful, failed, and total task information when workflow runs are noted.
-- **Tasks summary**: Shows a summary of tasks processed by a workflow, and which tasks failed, successfully, and totally ran in the workflow.
+- **Tasks summary**: Shows a summary of tasks processed by a workflow, including how many tasks succeeded, failed, and ran in total.
 
-Summaries allow you to quickly gain details about how a workflow ran for itself, or users, without going into further details in logs.  For a step by step guide on getting this information, see [Check the status of a workflow](check-status-workflow.md).
+Summaries allow you to quickly gain details about how a workflow ran for itself, or users, without going into further details in logs.  For a step-by-step guide on getting this information, see [Check the status of a workflow](check-status-workflow.md).
 
 
 ## Users Summary information
@@ -56,7 +56,7 @@ When you view the status of user processing history, the status values correspon
 
 |Status  |Details  |
 |---------|---------|
-|Completed     | This state is reported if all of the workflow's tasks processes successfully for a user.       |
+|Completed     | This state is reported if all of the workflow's tasks process successfully for a user.       |
 |In Progress     | This state is reported when a workflow begins running tasks for a user. The status remains in this state until all the workflow's tasks are processed for the user, or it fails.        |
 |Queued     | This state is reported when a user is identified by the Lifecycle Workflow engine that meets the execution conditions of a workflow. From here a user either enters a state of *In progress* if the workflow begins running for them, or canceled if the admin manually cancels the workflow.       |
 |Canceled     |  This state is reported for the following reasons: <br><br>**1.** If the workflow was deleted, all scheduled users it's set to run for are canceled.<br>**2.** If the workflow was disabled, all scheduled users it's set to run for are canceled.<br>**3**. If the workflow's schedule was disabled, all scheduled users it's set to run for are canceled.<br>**4.** If the workflow had a new version created and all tasks were disabled, all scheduled users it's set to run for are canceled.<br>**5.** If users don't meet the current execution conditions of the workflow's new version, the scheduled runs are canceled.<br>**6.**  If the user was queued to have the workflow run for them, but has a profile change and no longer meet the current execution conditions of the workflow immediately before it runs, the processing is canceled.      |
@@ -101,7 +101,7 @@ When you view the status of run history, the status values correspond to the fol
 |Queued      | This state is reported the first time a workflow is set to run.        |
 |In Progress     |  This state is reported as soon as the workflow begins processing its first task.       |
 |Canceled     |  This state is reported if it was *In Progress* at one point of time, and is now frozen in that state.       |
-|Completed with errors     | This state is reported if the workflow runs successfully for some, but not others. If a workflow enters the queued state, but all of its instances are canceled before executing, then it will also show this state before ever entering a state of *In Progress*.        |
+|Completed with errors     | This state is reported if the workflow runs successfully for some, but not others. If a workflow enters the queued state, but all of its instances are canceled before executing, then it also shows this state before ever entering a state of *In Progress*.        |
 |Completed     |  This state is reported if the workflow ran successfully for every user.       |
 |Failed     |  This state is reported if all tasks failed for all users the workflow runs for. Canceled users aren't counted as failures in the report.      |
 
@@ -144,7 +144,7 @@ When you view the status of task history, the status values correspond to the fo
 |---------|---------|
 |Queued      | This state is reported once a workflow instance is scheduled for execution, task reports for all of the tasks within the workflow are also created with this status with Run record. Each task report includes all users but represents a specific task.        |
 |In Progress     |  This state is reported as soon as the first task begins being processed.       |
-|Canceled     |  This state is reported if no tasks are processed before the workflow is canceled. If a workflow that contains the tasks is deleted, then the status will also show as canceled.      |
+|Canceled     |  This state is reported if no tasks are processed before the workflow is canceled. If a workflow that contains the tasks is deleted, then the status also shows as canceled.      |
 |Completed with errors     | This state is reported if a task is processed for a user, but not every task succeeds.       |
 |Completed     |  This state is reported if all tasks ran successfully for every user.       |
 |Failed     |  This state is reported if all tasks failed.      |

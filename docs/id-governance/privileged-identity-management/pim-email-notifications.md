@@ -2,27 +2,30 @@
 title: Email notifications in Privileged Identity Management (PIM)
 description: Describes email notifications in Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: concept-article
-ms.date: 01/07/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Email notifications in PIM
 
-Privileged Identity Management (PIM) lets you know when important events occur in your Microsoft Entra organization, such as when a role is assigned or activated. Privileged Identity Management keeps you informed by sending you and other participants email notifications. These emails might also include links to relevant tasks, such activating or renewing a role. This article describes what these emails look like, when they are sent, and who receives them.
 
->[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1,000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+## Overview
+
+Privileged Identity Management (PIM) lets you know when important events occur in your Microsoft Entra organization, such as when a role is assigned or activated. Privileged Identity Management keeps you informed by sending you and other participants email notifications. These emails might also include links to relevant tasks, such as activating or renewing a role. This article describes what these emails look like, when they are sent, and who receives them.
+
+> [!NOTE]
+> One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1,000. If the number of recipients exceeds 1,000 – only the first 1,000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Sender email address and subject line
 
 Emails sent from Privileged Identity Management for both Microsoft Entra ID and Azure resource roles have the following sender email address:
 
-- Email address:  **MSSecurity-noreply@microsoft.com**
+- Email address: `MSSecurity-noreply@microsoft.com`
 - Display name: **Microsoft Security**
 
->[!IMPORTANT]
-> The azure-noreply@microsoft.com has been deprecated and should no longer be sending PIM email notifications
+> [!IMPORTANT]
+> The `azure-noreply@microsoft.com` has been deprecated and should no longer be sending PIM email notifications.
 
 These emails include a **PIM** prefix in the subject line. Here's an example:
 
@@ -39,7 +42,7 @@ Also, Global Administrators and Privileged Role Administrators receive an email 
 
 - The user's role is activated (sent by Privileged Identity Management)
 
-The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to 10 minutes, but for 1% customers it can be longer, up to 15 minutes.
+The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to 10 minutes, but for 1% of customers it can be longer, up to 15 minutes.
 
 If an approval request is approved in the Azure portal before the first email is sent, the first email isn't triggered and other approvers don't receive email notifications of the approval request. It might appear as if they didn't get an email but it's the expected behavior.
 
@@ -125,9 +128,9 @@ Privileged Identity Management sends emails to *permanent* Owners only when the 
 Privileged Identity Management sends emails to end users when the following events occur for PIM for Groups role assignments:
 
 - When an Owner or Member role is assigned to the user
-- When a user's an Owner or Member role is expired
-- When a user's an Owner or Member role is extended
-- When a user's an Owner or Member role activation request is completed
+- When a user's Owner or Member role is expired
+- When a user's Owner or Member role is extended
+- When a user's Owner or Member role activation request is completed
 
 
 ## Next steps

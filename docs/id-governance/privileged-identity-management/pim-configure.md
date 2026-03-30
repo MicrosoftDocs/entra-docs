@@ -2,12 +2,15 @@
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: overview
-ms.date: 01/07/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # What is Microsoft Entra Privileged Identity Management?
+
+
+## Overview
 
  Privileged Identity Management (PIM) is a service in Microsoft Entra ID that enables you to manage, control, and monitor access to important resources in your organization. These resources include resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune. The following video explains important PIM concepts and features.
 <br><br>
@@ -40,7 +43,7 @@ Privileged Identity Management provides time-based and approval-based role activ
 - Get **notifications** when privileged roles are activated
 - Conduct **access reviews** to ensure users still need roles
 - Download **audit history** for internal or external audit
-- Prevents removal of the **last active Global Administrator** and **Privileged Role Administrator** role assignments
+- Prevent removal of the **last active Global Administrator** and **Privileged Role Administrator** role assignments
 
 ## What can I do with it?
 
@@ -74,9 +77,9 @@ To better understand Privileged Identity Management and its documentation, you s
 
 ## Role assignment overview
 
-The PIM role assignments give you a secure way to grant access to resources in your organization. This section describes the assignment process. It includes assign roles to members, activate assignments, approve or deny requests, extend and renew assignments. 
+The PIM role assignments give you a secure way to grant access to resources in your organization. This section describes the assignment process. It includes assigning roles to members, activating assignments, approving or denying requests, and extending and renewing assignments.
 
-PIM keeps you informed by sending you and other participants [email notifications](pim-email-notifications.md). These emails might also include links to relevant tasks, such activating, approve or deny a request.
+PIM keeps you informed by sending you and other participants [email notifications](pim-email-notifications.md). These emails might also include links to relevant tasks, such as activating, approving, or denying a request.
 
 The following screenshot shows an email message sent by PIM. The email informs Patti that Alex updated a role assignment for Emily.
 
@@ -88,17 +91,17 @@ The assignment process starts by assigning roles to members. To grant access to 
 
 - The members or owners to assign the role.
 - The scope of the assignment. The scope limits the assigned role to a particular set of resources.
-- The type of the assignment
-  - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include  activation, or requesting approval from designated approvers.
+- The type of the assignment.
+  - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include activation, or requesting approval from designated approvers.
   - **Active** assignments don't require the member to perform any action to use the role. Members assigned as active have the privileges assigned to the role.
-- The duration of the assignment, using start and end dates or permanent. For eligible assignments, the members can activate or requesting approval during the start and end dates. For active assignments, the members can use the assigned role during this period of time.
+- The duration of the assignment, using start and end dates or permanent. For eligible assignments, the members can activate or request approval during the start and end dates. For active assignments, the members can use the assigned role during this period of time.
 
 The following screenshot shows how administrator assigns a role to members.
 
 :::image type="content" source="./media/pim-configure/role-assignment.png" alt-text="Screenshot of Privileged Identity Management role assignment.":::
 
 
-For more information, check out the following articles: [Assign Microsoft Entra roles](pim-how-to-add-role-to-user.md), [Assign Azure resource roles](pim-resource-roles-assign-roles.md), and [Assign eligibility for a PIM for Groups](groups-assign-member-owner.md)
+For more information, check out the following articles: [Assign Microsoft Entra roles](pim-how-to-add-role-to-user.md), [Assign Azure resource roles](pim-resource-roles-assign-roles.md), and [Assign eligibility for a PIM for Groups](groups-assign-member-owner.md).
 
 ### Activate
 
@@ -114,7 +117,7 @@ For more information, check out the following articles: [Activate Microsoft Entr
 
 ### Approve or deny
 
-Delegated approvers receive email notifications when a role request is pending their approval. Approvers can view, approve, or deny these pending requests in PIM. After the request is approved, the member can start using the role. For example, if a user or a group was assigned with Contribution role to a resource group, they are able to manage that particular resource group.
+Delegated approvers receive email notifications when a role request is pending their approval. Approvers can view, approve, or deny these pending requests in PIM. After the request is approved, the member can start using the role. For example, if a user or a group was assigned with Contribution role to a resource group, they can manage that particular resource group.
 
 For more information, check out the following articles: [Approve or deny requests for Microsoft Entra roles](./pim-approval-workflow.md), [Approve or deny requests for Azure resource roles](pim-resource-roles-approval-workflow.md), and [Approve activation requests for PIM for Groups](groups-approval-workflow.md)
 

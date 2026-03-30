@@ -2,13 +2,16 @@
 title: Topologies for cross-tenant synchronization
 description: Learn about topologies for cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 12/10/2024
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Topologies for cross-tenant collaboration
+
+
+## Overview
 
 Organizations often find themselves managing multiple tenants due to mergers and acquisitions, regulatory requirements, or administrative boundaries. Regardless of your scenario, Microsoft Entra offers a flexible and ready-to-use solution for provisioning accounts across tenants and facilitating seamless collaboration. Microsoft Entra accommodates the following three models and can adapt to your evolving organizational needs.
 

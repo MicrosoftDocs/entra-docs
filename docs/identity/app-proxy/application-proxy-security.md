@@ -3,11 +3,14 @@ title: Security considerations for Microsoft Entra application proxy
 description: Learn about security considerations and architecture for using Microsoft Entra application proxy.
 ms.topic: concept-article
 ms.date: 03/10/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Security considerations for accessing apps remotely with Microsoft Entra application proxy
+
+
+## Overview
 
 This article explains the components that work to keep your users and applications safe when you use Microsoft Entra application proxy.
 

@@ -1,5 +1,5 @@
 ---
-title: The Global Secure Access Client for iOS (Preview)
+title: The Global Secure Access Client for iOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 #customer intent: As an IT admin, I want to set up and deploy the Global Secure Access client for iOS devices so that I can secure network traffic for my organization.
 ms.topic: how-to
@@ -11,11 +11,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Global Secure Access client for iOS (Preview)
-> [!IMPORTANT]
-> The Global Secure Access client for iOS is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
+# Global Secure Access client for iOS
 This article explains how to set up and deploy the Global Secure Access client app on iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
 
 > [!CAUTION]
@@ -39,12 +35,9 @@ For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](h
 
 ### System requirements
 The iOS device (phone or tablet) must meet the following requirements:
-- The device runs iOS 15.0 or newer.
+- The device runs iOS 16.0 or newer.
 - The device has the Microsoft Authenticator app or the Intune Company Portal app.
-- The device is enrolled to enforce Intune device compliance policies.
-
-## Supported modes
-The Global Secure Access client for iOS supports installation on both modes of enrolled devices: supervised and unsupervised.
+- For the supervised devices, the device must be enrolled to enforce Intune device compliance policies.
 
 ## Known limitations
 
@@ -122,21 +115,20 @@ Once the configuration is complete and synced with the device, the following act
 
 ## Confirm Global Secure Access appears in the Defender app
 Because the Global Secure Access client for iOS is integrated with Microsoft Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access.   
-:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::   
+:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard-1.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::   
 
 You can enable or disable the Global Secure Access client for iOS by setting the **EnableGSA** key in the [VPN profile](#create-a-vpn-profile-and-configure-global-secure-access-for-microsoft-defender-for-endpoint). End users can enable or disable individual **Services** or the client itself based on the configuration settings, using the appropriate toggles.   
-:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
-
-If the client is unable to connect, a toggle appears to disable the service. Users can come back later to try enabling the client.   
-:::image type="content" source="media/how-to-install-ios-client/ios-unable-to-connect.png" alt-text="Screenshot of the Global Secure Access client on iOS showing the message 'Unable to connect.'":::   
+:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled-1.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
 
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
-    - Force stop the Defender app and relaunch it.
+    - Relaunch the Defender app.
 - Access to the Private Access application shows a connection time-out error after a successful interactive sign-in.
     - Reload the application (or refresh the web browser).
 
 ## Related content
+- [Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics](troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access mobile client with Health check utility](troubleshoot-global-secure-access-mobile-client-health-check-utility.md)
 - [Microsoft Defender for Endpoint on iOS](/defender-endpoint/microsoft-defender-endpoint-ios)
 - [Deploy Microsoft Defender for Endpoint on iOS with Microsoft Intune](/defender-endpoint/ios-install)
 - [Global Secure Access client for macOS](how-to-install-macos-client.md)

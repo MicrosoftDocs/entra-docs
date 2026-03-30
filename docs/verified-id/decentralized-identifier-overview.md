@@ -1,6 +1,6 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
-description: An overview Microsoft Entra Verified ID.
+description: An overview of Microsoft Entra Verified ID.
 ms.topic: overview
 ms.date: 06/25/2025
 ms.reviewer: 
@@ -8,21 +8,24 @@ ms.reviewer:
 
 # Introduction to Microsoft Entra Verified ID
 
-In today's world, our digital and physical lives are becoming increasingly intertwined with the apps, services, and devices we use. This digital revolution opened a world of possibilities, allowing us to connect with countless companies and individuals in ways that were once unimaginable. 
 
-This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can be devastating to our personal and professional lives. Microsoft actively collaborates with various organizations and standards bodies to create a Decentralized Identity solution that puts individuals in control of their own digital identities. Decentralized identity technologies provide a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
+## Overview
 
-## Why we need decentralized identity
+In today's world, your digital and physical life is becoming increasingly intertwined with the apps, services, and devices you use. This digital revolution opened a world of possibilities, allowing you to connect with countless companies and individuals in ways that were once unimaginable.
 
-Today we use our digital identity at work, at home, and across every app, service, and device we use. This identity is made up of everything we say, do, and experience in our lives—purchasing tickets for an event, checking into a hotel, or even ordering lunch. Currently, our identity and all our digital interactions are dependent on third parties, in some cases, even without our knowledge.
+This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can be devastating to personal and professional lives. Microsoft actively collaborates with various organizations and standards bodies to create a Decentralized Identity solution that puts individuals in control of their own digital identities. Decentralized identity technologies provide a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
 
-Every day users grant apps and devices access to their data. A great deal of effort would be required for them to keep track of who has access to which pieces of information. On the enterprise front, collaboration with consumers and partners requires high-touch orchestration to securely exchange data in a way that maintains privacy and security for all involved.
+## Why decentralized identity matters
 
-We believe a standards-based Decentralized Identity system can unlock a new set of experiences that give users and organizations greater control over their data—and deliver a higher degree of trust and security for apps, devices, and service providers.
+Today you use your digital identity at work, at home, and across every app, service, and device you use. This identity is made up of everything you say, do, and experience in your life—purchasing tickets for an event, checking into a hotel, or even ordering lunch. Currently, your identity and all your digital interactions are dependent on third parties, in some cases, even without your knowledge.
+
+Every day, users grant apps and devices access to their data. A great deal of effort would be required for them to keep track of who has access to which pieces of information. On the enterprise front, collaboration with consumers and partners requires high-touch orchestration to securely exchange data in a way that maintains privacy and security for all involved.
+
+A standards-based Decentralized Identity system can unlock a new set of experiences that give users and organizations greater control over their data—and deliver a higher degree of trust and security for apps, devices, and service providers.
 
 ## Lead with open standards
 
-Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. The following standards are implemented in our services.
+Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. The following standards are implemented in Verified ID services.
 
 * [W3C Decentralized Identifiers](https://www.w3.org/TR/did-core/)
 * [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/)
@@ -34,24 +37,24 @@ Microsoft is actively collaborating with members of the Decentralized Identity F
 
 ## What are DIDs?
 
-Before we can understand DIDs, it helps to compare them with other identity systems. Email addresses and social network IDs are human-friendly aliases that  for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This situation creates a potential problem, because access to these IDs could be removed at any time.
+Before you can understand DIDs, it helps to compare them with other identity systems. Email addresses and social network IDs are human-friendly aliases used for collaboration but are now overloaded to serve as the control points for data access across many scenarios beyond collaboration. This situation creates a potential problem, because access to these IDs could be removed at any time.
 Decentralized Identifiers (DIDs) are different. DIDs are user-generated, self-owned, globally unique identifiers rooted in decentralized trust systems. They possess unique characteristics, like greater assurance of immutability, censorship resistance, and tamper evasiveness. These attributes are critical for any ID system intended to provide self-ownership and user control.
 
 Microsoft’s verifiable credential solution uses decentralized credentials (DIDs) to cryptographically sign as proof that a relying party (verifier) is attesting to information proving their ownership of a verifiable credential. A basic understanding of DIDs is recommended for anyone creating a verifiable credential solution based on the Microsoft offering.
 
-## What are Verifiable Credentials?
+## What are verifiable credentials?
 
-We use IDs in our daily lives. We have drivers licenses that we use as evidence of our ability to operate a car. Universities issue diplomas that prove we attained a level of education. We use passports to prove who we are to authorities as we arrive at foreign destinations. The data model describes how we could handle these types of scenarios when working over the internet but in a secure manner that respects users' privacy. You can get additional information in The [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/).
+You use IDs in your daily life. You have driver's licenses that you use as evidence of your ability to operate a car. Universities issue diplomas that prove you attained a level of education. You use passports to prove who you are to authorities as you arrive at foreign destinations. The data model describes how you can handle these types of scenarios when working over the internet but in a secure manner that respects users' privacy. You can get additional information in the [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/).
 
 In short, verifiable credentials are data objects consisting of claims made by the issuer attesting information about a subject. 
-The schema identifies these claims. Claims include the DID of the issuer and the subject. The issuer's DID produces a digital signature as evidence of their attestation to this information
+The schema identifies these claims. Claims include the DID of the issuer and the subject. The issuer's DID produces a digital signature as evidence of their attestation to this information.
 
 
-## How does Decentralized Identity work?
+## How does decentralized identity work?
 
-We need a new form of identity. We need an identity that brings together technologies and standards to deliver key identity attributes like self-ownership and censorship resistance. These capabilities are difficult to achieve using existing systems.
+A new form of identity is needed. An identity that brings together technologies and standards to deliver key identity attributes like self-ownership and censorship resistance. These capabilities are difficult to achieve using existing systems.
 
-To deliver on these promises, we need a technical foundation made up of seven key innovations. One key innovation is user owned identifiers, a user agent to manage keys associated with such identifiers, and encrypted, user-controlled datastores.
+To deliver on these promises, a technical foundation made up of seven key innovations is needed. One key innovation is user owned identifiers, a user agent to manage keys associated with such identifiers, and encrypted, user-controlled datastores.
 
 :::image type="content" source="media/decentralized-identifier-overview/microsoft-did-system.png" alt-text="Diagram of a Microsoft verifiable credential environment.":::
 
@@ -59,28 +62,28 @@ To deliver on these promises, we need a technical foundation made up of seven ke
 IDs users create, own, and control independently of any organization or government. DIDs are globally unique identifiers linked to Decentralized Public Key Infrastructure (DPKI) metadata composed of JSON documents that contain public key material, authentication descriptors, and service endpoints.
 
 **2. Trust System**.
-In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports di:web trust system. The did:web trust system is a permission based model that allows trust using a web domain’s existing reputation. did:web is in support status General Available.
+In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports the `did:web` trust system. The `did:web` trust system is a permission-based model that allows trust using a web domain’s existing reputation. The `did:web` method is generally available.
 
 **3. DID User Agent/Wallet: Microsoft Authenticator App**.
 Enables real people to use decentralized identities and Verifiable Credentials. **Microsoft Authenticator** creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.
 
 **4. Microsoft Resolver**.
-An API that looks up and resolves DIDs using the ```did:web```method and returns the DID Document Object (DDO). The DDO includes DPKI metadata associated with the DID such as public keys and service endpoints. 
+An API that looks up and resolves DIDs using the `did:web` method and returns the DID Document Object (DDO). The DDO includes DPKI metadata associated with the DID such as public keys and service endpoints. 
 
 **5. Microsoft Entra Verified ID Service**.
-An issuance and verification service in Azure and a REST API for [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) that are signed with the ```did:web``` method. They enable identity owners to generate, present, and verify claims. This service forms the basis of trust between users of the systems.
+An issuance and verification service in Azure and a REST API for [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) that are signed with the `did:web` method. They enable identity owners to generate, present, and verify claims. This service forms the basis of trust between users of the systems.
 
 ## A sample scenario
 
-The scenario we use to explain how verifiable credentials work involves:
+The following scenario explains how verifiable credentials work:
 
-- Woodgrove Inc. a company.
+- Woodgrove Inc., a company.
 - Proseware, a company that offers Woodgrove employees discounts.
-- Alice, an employee at Woodgrove, Inc. who wants to get a discount from Proseware
+- Alice, an employee at Woodgrove, Inc. who wants to get a discount from Proseware.
 
 
 
-Today, Alice provides a username and password to sign in Woodgrove’s networked environment. Woodgrove is deploying a verifiable credential solution to provide a more manageable way for Alice to prove her employment status at Woodgrove. Proseware accepts verifiable credentials issued by Woodgrove as proof of employment that can give access to corporate discounts as part of their corporate discount program.
+Today, Alice provides a username and password to sign in to Woodgrove’s networked environment. Woodgrove is deploying a verifiable credential solution to provide a more manageable way for Alice to prove her employment status at Woodgrove. Proseware accepts verifiable credentials issued by Woodgrove as proof of employment that can give access to corporate discounts as part of their corporate discount program.
 
 Alice requests Woodgrove Inc for a proof of employment verifiable credential. Woodgrove Inc attests Alice's identity and issues a signed verifiable credential that Alice can accept and store in her digital wallet application. Alice can now present this verifiable credential as a proof of employment on the Proseware site. After a successful credential presentation, Alice qualifies for Proseware discounts. The transaction is logged in Alice's wallet application. Log entries help Alice track where and to whom she presented her proof of employment verifiable credential.
 
@@ -104,7 +107,7 @@ The issuer is an organization that creates an issuance solution requesting infor
 
 ### User
 
-The user is the person or entity that is requesting a VC. For example, Alice is a new Woodgrove employee and was previously issued her proof of employment verifiable credential. When Alice needs to provide proof of employment to get a discount at Proseware, she can grant access to the credential in her Authenticator app by signing a verifiable presentation that proves Alice is the owner of the DID. Proseware is able to validate Woodgrove issued  credentials and Alice's verifiable credential ownership.
+The user is the person or entity that is requesting a VC. For example, Alice is a new Woodgrove employee and was previously issued her proof of employment verifiable credential. When Alice needs to provide proof of employment to get a discount at Proseware, she can grant access to the credential in her Authenticator app by signing a verifiable presentation that proves Alice is the owner of the DID. Proseware is able to validate Woodgrove-issued credentials and Alice's verifiable credential ownership.
 
 ### Verifier
 
@@ -115,7 +118,7 @@ The verifier is a company or entity who needs to verify claims from one or more 
 
 ## Next steps
 
-Now that you know about DIDs and verifiable credentials try them yourself by following our get started article or one of our articles providing more detail on verifiable credential concepts.
+Now that you know about DIDs and verifiable credentials, try them yourself by following the get started article or one of the articles providing more detail on verifiable credential concepts.
 
 - [Get started with verifiable credentials](verifiable-credentials-configure-tenant.md)
 - [How to customize your credentials](credential-design.md)

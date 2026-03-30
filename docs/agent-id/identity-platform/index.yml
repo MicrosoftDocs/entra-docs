@@ -27,7 +27,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Agent users
+          - text: Agent's user account
             url: ./agent-users.md
           - text: Agent identity blueprint
             url: ./agent-blueprint.md
@@ -37,7 +37,7 @@ landingContent:
             url: ./agent-service-principals.md
       - linkListType: how-to-guide
         links:
-          - text: Request agent user tokens for autonomous agents
+          - text: Request agent's user account tokens for autonomous agents
             url: ./autonomous-agent-request-tokens.md
           - text: Request agent tokens for autonomous agents
             url: ./autonomous-agent-request-tokens.md

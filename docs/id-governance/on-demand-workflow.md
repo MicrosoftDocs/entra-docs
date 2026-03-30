@@ -3,14 +3,14 @@ title: Run a workflow on-demand
 description: This article guides a user to running a workflow on demand using Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.custom: template-how-to
 ---
 
 
 # Run a workflow on-demand
 
-Scheduled workflows by default run every 3 hours, but can also run on-demand so that they can be applied to specific users whenever you see fit. A workflow can be run on demand for any user, and doesn't take into account whether or not a user meets the workflow's execution conditions. Running a workflow on-demand allows you to test workflows before their scheduled run. This testing, on a set of users up to 10 at a time, allows you to see how a workflow will run before it processes a larger set of users. Testing your workflow before their scheduled runs helps you proactively solve potential lifecycle issues more quickly.
+Scheduled workflows by default run every 3 hours, but can also run on-demand so that they can be applied to specific users whenever you see fit. A workflow can be run on demand for any user, and doesn't take into account whether or not a user meets the workflow's execution conditions. Running a workflow on-demand allows you to test workflows before their scheduled run. This testing, on a set of users up to 10 at a time, allows you to see how a workflow will run before it processes a larger set of users. Testing your workflows before their scheduled runs helps you proactively solve potential lifecycle issues more quickly.
 
 
 ## Run a workflow on-demand in the Microsoft Entra admin center
@@ -36,7 +36,7 @@ Use the following steps to run a workflow on-demand:
 
      :::image type="content" source="media/on-demand-workflow/on-demand-add-users.png" alt-text="Screenshot of add users for on-demand workflow.":::
 
-1. Select **Add**
+1. Select **Add**.
 
 1. Confirm your choices and select **Run workflow**.   
 

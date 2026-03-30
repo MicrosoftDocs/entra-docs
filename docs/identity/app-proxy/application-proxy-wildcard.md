@@ -1,14 +1,17 @@
 ---
 title: Wildcard applications in Microsoft Entra application proxy
-description: Learn how to use Wildcard applications in Microsoft Entra application proxy.
+description: "Publish and manage multiple on-premises applications at once using wildcard URL patterns in Microsoft Entra application proxy."
 ms.topic: how-to
-ms.date: 03/11/2026
-ms.reviewer: harshja
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 ---
 
 # Wildcard applications in the Microsoft Entra application proxy
+
+
+## Overview
 
 In Microsoft Entra ID, configuring a large number of on-premises applications can quickly become unmanageable and introduces unnecessary risks for configuration errors if many of them require the same settings. With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address this issue by using wildcard application publishing to publish and manage many applications at once. The solution provides:
 
@@ -32,7 +35,7 @@ You can publish applications with wildcards if both the internal and external UR
 
 For example: `http(s)://*.adventure-works.com`.
 
-While the internal and external URLs can use different domains, as a best practice, they should be same. When publishing the application, you see an error if one of the URLs doesn't have a wildcard.
+While the internal and external URLs can use different domains, as a best practice, they should be the same. When publishing the application, you see an error if one of the URLs doesn't have a wildcard.
 
 Creating a wildcard application is based on the same [application publishing flow](application-proxy-add-on-premises-application.md) that is available for all other applications. The only difference is that you include a wildcard in the URLs and potentially the SSO configuration.
 
@@ -71,7 +74,7 @@ If the connector group assigned to the wildcard application uses a **different r
 | Europe  | `<yourAADTenantId>.eur.tenant.runtime.msappproxy.net`|
 | North America  | `<yourAADTenantId>.nam.tenant.runtime.msappproxy.net` |
 
-## Considerations
+## Wildcard application considerations
 
 Here are some considerations you should take into account for wildcard applications.
 
@@ -79,11 +82,11 @@ Here are some considerations you should take into account for wildcard applicati
 
 For wildcard applications, the **Internal URL** must be formatted as `http(s)://*.<domain>`.
 
-![For internal URL, use the format http(s)://*.\<domain>](./media/application-proxy-wildcard/22.png)
+![For internal URL, use the format http(s)://*.\<domain>.](./media/application-proxy-wildcard/22.png)
 
 When you configure an **External URL**, you must use the following format: `https://*.<custom domain>`
 
-![For external URL, use the format https://*.\<custom domain>](./media/application-proxy-wildcard/21.png)
+![For external URL, use the format https://*.\<custom domain>.](./media/application-proxy-wildcard/21.png)
 
 Other positions of the wildcard, multiple wildcards, or other regex strings aren't supported and are causing errors.
 
@@ -91,10 +94,10 @@ Other positions of the wildcard, multiple wildcards, or other regex strings aren
 
 You can exclude an application from the wildcard application by
 
-- Publishing the exception application as regular application
+- Publishing the exception application as a regular application
 - Enabling the wildcard only for specific applications through your DNS settings
 
-Publishing an application as regular application is the preferred method to exclude an application from a wildcard. You should publish the excluded applications before the wildcard applications to ensure that your exceptions are enforced from the beginning. The most specific application always takes precedence – an application published as `budgets.finance.adventure-works.com` takes precedence over the application `*.finance.adventure-works.com`, which in turn takes precedence over the application `*.adventure-works.com`.
+Publishing an application as a regular application is the preferred method to exclude an application from a wildcard. You should publish the excluded applications before the wildcard applications to ensure that your exceptions are enforced from the beginning. The most specific application always takes precedence – an application published as `budgets.finance.adventure-works.com` takes precedence over the application `*.finance.adventure-works.com`, which in turn takes precedence over the application `*.adventure-works.com`.
 
 You can also limit the wildcard to only work for specific applications through your DNS management. As a best practice, you should create a CNAME entry that includes a wildcard and matches the format of the external URL you configured. However, you can instead point specific application URLs to the wildcards. For example, instead of `*.adventure-works.com`, point `hr.adventure-works.com`, `expenses.adventure-works.com`, and `travel.adventure-works.com individually` to `00001111-aaaa-2222-bbbb-3333cccc4444.tenant.runtime.msappproxy.net`.
 
@@ -107,7 +110,7 @@ The wildcard application is represented with just one tile in the [MyApps panel]
 1. Follow the guidelines for [setting a homepage URL](application-proxy-configure-custom-home-page.md).
 1. Set **Show Application** to **true** on the application properties page.
 
-### Kerberos constrained delegation
+### Kerberos constrained delegation considerations
 
 For applications using [kerberos constrained delegation (KCD) as the SSO method](./how-to-configure-sso-with-kcd.md), the Service Principal Name (SPN) listed for the SSO method needs a wildcard. For example, the SPN could be: `HTTP/*.adventure-works.com`. You still need to have the individual SPNs configured on your backend servers (for example, `HTTP/expenses.adventure-works.com and HTTP/travel.adventure-works.com`).
 
@@ -135,21 +138,21 @@ Following the [documented steps](application-proxy-add-on-premises-application.m
 
 - Internal URL:
 
-    ![Example: Wildcard in internal URL](./media/application-proxy-wildcard/42.png)
+    ![Screenshot that shows a wildcard in the internal URL field.](./media/application-proxy-wildcard/42.png)
 
 - External URL:
 
-    ![Example: Wildcard in external URL](./media/application-proxy-wildcard/43.png)
+    ![Screenshot that shows a wildcard in the external URL field.](./media/application-proxy-wildcard/43.png)
 
 - Internal Application SPN:
 
-    ![Example: Wildcard in SPN configuration](./media/application-proxy-wildcard/44.png)
+    ![Screenshot that shows a wildcard in the SPN configuration field.](./media/application-proxy-wildcard/44.png)
 
 By publishing the wildcard application, you can now access your three applications by navigating to the URLs you're used to (for example, `travel.adventure-works.com`).
 
 The configuration implements the following structure:
 
-![Shows the structure implemented by the example configuration](./media/application-proxy-wildcard/05.png)
+![Diagram showing finance.adventure-works.com with specific URLs routing through application proxy.](./media/application-proxy-wildcard/05.png)
 
 | Color | Description |
 | ---   | ---         |
@@ -166,19 +169,19 @@ Following the [documented steps](application-proxy-add-on-premises-application.m
 
 - In the **Internal URL**, you set **finance** instead of a wildcard.
 
-    ![Example: Set finance instead of a wildcard in internal URL](./media/application-proxy-wildcard/52.png)
+    ![Example: Set finance instead of a wildcard in internal URL.](./media/application-proxy-wildcard/52.png)
 
 - In the **External URL**, you set **finance** instead of a wildcard.
 
-    ![Example: Set finance instead of a wildcard in external URL](./media/application-proxy-wildcard/53.png)
+    ![Example: Set finance instead of a wildcard in external URL.](./media/application-proxy-wildcard/53.png)
 
 - Internal Application SPN you set **finance** instead of a wildcard.
 
-    ![Example: Set finance instead of a wildcard in SPN configuration](./media/application-proxy-wildcard/54.png)
+    ![Example: Set finance instead of a wildcard in SPN configuration.](./media/application-proxy-wildcard/54.png)
 
 This configuration implements the following scenario:
 
-![Shows the configuration implemented by the sample scenario](./media/application-proxy-wildcard/09.png)
+![Diagram of wildcard application routing with three applications sharing a single external URL pattern.](./media/application-proxy-wildcard/09.png)
 
 The URL `finance.adventure-works.com` is specific. The URL `*.adventure-works.com` isn't specific. The more specific URL takes precedence. Users navigating to `finance.adventure-works.com` have the experience specified in the Finance Resources application. Only finance employees are able to access `finance.adventure-works.com`.
 

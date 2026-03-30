@@ -3,7 +3,7 @@ title: Use custom attribute triggers in lifecycle workflows
 description: This article discusses how to use Custom Attribute Triggers as an attribute change trigger within a workflow in Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 10/29/2025
+ms.date: 03/12/2026
 
 #CustomerIntent: As a Lifecycle Workflows Administrator, I want to use Custom Attribute triggers as an attribute change trigger so that I can trigger workflows based on other custom attributes.
 ---
@@ -72,13 +72,13 @@ The following image shows the potential differences in processing times for usin
 :::image type="content" source="media/workflow-custom-triggers/custom-attribute-timing.png" alt-text="Screenshot of a comparison between regular and custom attribute processing timing in a workflow run.":::
 
 
-In example A, The workflow is scheduled to run when the department attribute changes, it's 12:00 pm and the next target runs are at 1pm and 2pm:
+In example A, the workflow is scheduled to run when the department attribute changes, it's 12:00 pm and the next target runs are at 1pm and 2pm:
 - At 12:10pm, the user department changes
 - At 12:15 pm, the user is detected to be in scope of the workflow
 - In the 1pm run, the user gets processed by the workflow
 
 
-In example B, Workflow is scheduled to run when the TestCustomSecurityAttribute1 attribute changes, it's 12:00 pm and the next target runs are at 1pm and 2pm:
+In example B, the workflow is scheduled to run when the TestCustomSecurityAttribute1 attribute changes, it's 12:00 pm and the next target runs are at 1pm and 2pm:
 - At 12:10pm the TestCustomSecurityAttribute1 attribute changes for a user
 - At 3:55 pm the change is passed to Lifecycle Workflows
 - At 4:00 pm the user is detected to be in scope of the workflow (too late for the 4pm run)

@@ -3,20 +3,23 @@ title: Change Static Groups to Dynamic Membership Groups
 description: Learn how to convert existing membership groups from static to dynamic by using either the Azure portal or PowerShell cmdlets.
 ms.topic: how-to
 ms.date: 07/10/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Change static groups to dynamic membership groups in Microsoft Entra ID
+
+
+## Overview
 
 You can change a group's membership from static to dynamic (or vice versa) in Microsoft Entra ID. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you need to update those references.
 
 Creating dynamic membership groups eliminates the management overhead of adding and removing users. This article shows you how to convert existing membership groups from static to dynamic, by using either the Azure portal or PowerShell cmdlets. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!NOTE]
-> When a static group is converted to a dynamic membership group, existing members who meet the membership rule remain. Members who do not are removed. Other users who satisfy the membership rule are added automatically. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
+> When a static group is converted to a dynamic membership group, existing members who meet the membership rule remain. Members who don't are removed. Other users who satisfy the membership rule are added automatically. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 >
-> We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](/entra/fundamentals/licensing-groups-resolve-problems).
+> Test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](/entra/fundamentals/licensing-groups-resolve-problems).
 
 ## Prerequisites
 

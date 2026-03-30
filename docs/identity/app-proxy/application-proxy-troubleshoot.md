@@ -3,17 +3,20 @@ title: Troubleshoot Application Proxy
 description: Learn how to troubleshoot common errors and configuration problems with Microsoft Entra application proxy.
 ms.topic: troubleshooting
 ms.date: 03/10/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Troubleshoot application proxy issues and errors
 
+
+## Overview
+
 Use these steps to troubleshoot issues and error messages in Microsoft Entra application proxy.
 
 ## Before you begin
 
-Start by checking the connector. To learn how to debug a private network connector, see [Debug private network connector issues](../../global-secure-access/troubleshoot-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
+Start by checking the connector. To learn how to debug a private network connector, see [Troubleshoot private network connectors](../../global-secure-access/troubleshoot-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
 
 If a user encounters an error while accessing or publishing an application, use these steps to verify that Microsoft Entra application proxy works correctly:
 
