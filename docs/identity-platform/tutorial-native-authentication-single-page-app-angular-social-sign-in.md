@@ -1,28 +1,32 @@
 ---
-title: Support Federated Identity Providers in an Angular SPA by Using Native Authentication JavaScript SDK
-description: Learn how to support federated identity providers (social sign-in) during sign-up and sign-in in an Angular single-page application that uses native authentication JavaScript SDK for external tenants.
+title: Support Social Sign-in in an Angular SPA With Native Auth JS SDK
+description: Learn how to add social sign-in with Google, Facebook, Apple, or custom OIDC providers to your Angular SPA using native authentication JavaScript SDK.
+author: kengaderdus
+manager: dougeby
+ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/25/2026
+ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
 #Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Google, Facebook, Apple, or custom OIDC identity providers.
 ---
 
-# Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK
+# Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to support federated identity providers (social identity providers and custom OIDC identity providers) during sign-up and sign-in in your Angular single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
+In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Google, Facebook, or Apple, in your Angular single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
 
 In this tutorial, you:
 
 >[!div class="checklist"]
 >
-> - Update the app configuration to set a redirect URI.
-> - Add federated identity provider buttons to sign-in and sign-up forms.
-> - Handle sign-in and sign-up with federated identity providers.
-> - Test the social sign-in flow.
+> * Update the app configuration to set a redirect URI.
+> * Add federated identity provider buttons to sign-in and sign-up forms.
+> * Handle sign-in and sign-up with federated identity providers.
+> * Test the social sign-in flow.
 
 ## Prerequisites
 
@@ -37,7 +41,7 @@ In this tutorial, you:
 
 ## Update the configuration to set the redirect URI
 
-Ensure that the redirect URI is configured in the `CustomAuthConfiguration` interface and that its value matches one of the redirect URIs [configured in your app registration](how-to-add-redirect-uri.md) in the Microsoft Entra admin center:
+Make sure that the redirect URI is configured in the `CustomAuthConfiguration` interface and that its value matches one of the redirect URIs [configured in your app registration](how-to-add-redirect-uri.md) in the Microsoft Entra admin center:
 
 1. Locate the *src/app/config/auth-config.ts* file.
 
@@ -96,7 +100,7 @@ Similarly, update your `sign-up.component.html` component. You can find the comp
 
 ## Handle form interaction
 
-In this section, you implement the logic to handle sign-in and sign-up with federated identity providers. The implementation uses the `loginPopup` method from MSAL with a `PopupRequest` that includes the `domainHint` property to specify which federated identity provider to use. For more information about `domainHint` configuration and issuer acceleration, see [Identity providers for External ID](../external-id/customers/concept-authentication-methods-customers.md).
+In this section, you implement the logic to handle sign-in and sign-up with federated identity providers. The implementation uses the `loginPopup` method from MSAL with a `PopupRequest` that includes the `domainHint` property. This property specifies which federated identity provider to use. For more information about `domainHint` configuration and issuer acceleration, see [Identity providers for External ID](../external-id/customers/concept-authentication-methods-customers.md).
 
 ### Update sign-up component to support federated identity providers
 
@@ -223,7 +227,7 @@ Update your `sign-in.component.ts` to handle authentication with federated ident
 > Microsoft Entra accounts and Microsoft accounts (MSA) identity providers aren't currently supported.
 
 
- ### PopupRequest configuration details
+### PopupRequest configuration details
 
 When configuring the `PopupRequest` for federated identity provider authentication:
 
@@ -261,7 +265,9 @@ Before you test your app, make sure your CORS proxy and app are runing:
 1. Grant the necessary permissions when prompted.
 
 
-After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md). The popup window closes automatically. You should be signed in automatically and see your account information displayed in the app, and a new user account is created in your external tenant using the information from your Google profile.
+After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md).
+
+The popup window closes automatically. You should be signed in and see your account information displayed in the app. A new user account is created in your external tenant using the information from your Google profile.
 
 
 ### Test sign-in with federated identity providers
@@ -272,9 +278,9 @@ After successful authentication, you might be required to complete attribute col
 
 1. Sign in with your Google account credentials. If this is your first time signing in with this identity provider, you might be prompted to consent to sharing your information with the application.
 
+After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md).
 
-
-After successful authentication, you might be required to complete attribute collection if your tenant is configured to collect additional user attributes during sign-up. For more information about attribute collection, see [Collect user attributes during sign-up](../external-id/customers/concept-user-attributes.md). The popup window closes automatically. You should now be signed in and see your account information displayed in the app.
+The popup window closes automatically. You should now be signed in and see your account information displayed in the app.
 
 ### Multifactor authentication
 
@@ -282,7 +288,7 @@ When SMS or email one-time passcode (OTP) MFA is enabled, the MFA challenge is p
 
 For more information about enabling MFA, refer to [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md) and [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md).
 
-## Troubleshoot
+## Troubleshoot common errors
 
 Use this section to resolve common issues you might encounter when integrating federated identity providers.
 
