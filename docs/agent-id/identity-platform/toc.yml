@@ -29,14 +29,8 @@ items:
             href: autonomous-agent-request-agent-user-tokens.md
       - name: Interactive agents
         items:
-        - name: Sign-in users
-          href: interactive-agent-authenticate-user.md
-        - name: Request authorization from user
-          href: interactive-agent-request-user-authorization.md
-        - name: Request authorization from Entra admin
-          href: interactive-agent-request-admin-authorization.md
-        - name: Request user tokens
-          href: interactive-agent-request-user-tokens.md
+        - name: Authenticate users and acquire tokens
+          href: interactive-agent-authentication-authorization-flow.md
       - name: Call an API (.NET)
         items:
           - name: Call Microsoft Graph API
@@ -84,6 +78,8 @@ items:
           href: agent-registry-collections.md
         - name: Agent metadata and discoverability
           href: agent-metadata-discoverability.md
+        - name: Agent Registry convergence with Agent 365
+          href: agent-registry-convergence.md
     - name: Management
       items:
         - name: Agent owners, sponsors, and managers
