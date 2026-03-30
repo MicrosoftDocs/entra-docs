@@ -512,7 +512,7 @@
                 - name: Add email OTP sign-in
                   href: tutorial-native-authentication-android-email-one-time-passcode-sign-in.md
                 - name: Federated Identity Provider sign-in and sign-up using web flow
-                  href: tutorial-native-authentication-android-federated-identity-provider-web-flow-sign-in-sign-up.md
+                  href: tutorial-native-authentication-android-federated-identity-provider-sign-in-sign-up.md
                 - name: Register email strong authentication method
                   href: tutorial-native-authentication-android-email-strong-authentication-method.md
                 - name: Add SMS OTP sign-in
@@ -553,7 +553,7 @@
                 - name: Add email OTP sign-in
                   href: tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md
                 - name: Federated IdP sign-in and sign-up using web flow
-                  href: tutorial-native-authentication-ios-macos-federated-identity-provider-web-flow-sign-in-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-federated-identity-provider-sign-in-sign-up.md
                 - name: Register email strong authentication method
                   href: tutorial-native-authentication-ios-swift-email-strong-authentication-method.md
                 - name: Add SMS OTP sign-in

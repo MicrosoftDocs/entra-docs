@@ -266,7 +266,7 @@ items:
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Federated IdP sign-in and sign-up using web flow
-                  href: /entra/identity-platform/tutorial-native-authentication-android-federated-identity-provider-web-flow-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/tutorial-native-authentication-android-federated-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add SMS OTP sign-in
@@ -293,7 +293,7 @@ items:
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Federated IdP sign-in and sign-up using web flow
-                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-federated-identity-provider-web-flow-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-federated-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add SMS OTP sign-in
