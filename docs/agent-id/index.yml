@@ -90,12 +90,10 @@ additionalContent:
         ## CARD 3 ######################
         - title: Authenticate and call APIs
           links:
-            - text: Request tokens for autonomous agents
-              url: ./identity-platform/autonomous-agent-request-tokens.md
+            - text: Authenticate and acquire tokens for autonomous agents
+              url: ./identity-platform/autonomous-agent-authentication-authorization-flow.md
             - text: Call Microsoft Graph from an agent
               url: ./identity-platform/call-api-microsoft-graph.md
-            - text: Grant app permissions to an autonomous agent
-              url: ./identity-platform/autonomous-agent-request-authorization-entra-admin.md
    
 
     ## Section 3: Learn more ######################

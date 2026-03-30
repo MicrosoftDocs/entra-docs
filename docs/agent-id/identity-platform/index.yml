@@ -37,16 +37,14 @@ landingContent:
             url: ./agent-service-principals.md
       - linkListType: how-to-guide
         links:
-          - text: Request agent user tokens for autonomous agents
-            url: ./autonomous-agent-request-tokens.md
-          - text: Request agent tokens for autonomous agents
-            url: ./autonomous-agent-request-tokens.md
+          - text: Authenticate and acquire tokens for autonomous agents
+            url: ./autonomous-agent-authentication-authorization-flow.md
 
   - title: Access management
     linkLists: 
       - linkListType: how-to-guide
         links:
           - text: Grant app permissions to an autonomous agent
-            url: ./autonomous-agent-request-authorization-entra-admin.md
+            url: ./autonomous-agent-authentication-authorization-flow.md#grant-application-permissions
           - text: Authenticate users and acquire tokens
             url: ./interactive-agent-authentication-authorization-flow.md

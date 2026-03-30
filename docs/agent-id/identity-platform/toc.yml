@@ -21,12 +21,8 @@ items:
         href: create-delete-agent-identities.md
       - name: Autonomous agents
         items:
-          - name: Request agent tokens
-            href: autonomous-agent-request-tokens.md
-          - name: Request authorization from Entra admin
-            href: autonomous-agent-request-authorization-entra-admin.md
-          - name: Request agent user tokens
-            href: autonomous-agent-request-agent-user-tokens.md
+          - name: Authenticate and acquire tokens
+            href: autonomous-agent-authentication-authorization-flow.md
       - name: Interactive agents
         items:
         - name: Authenticate users and acquire tokens

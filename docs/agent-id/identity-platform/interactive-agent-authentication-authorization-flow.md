@@ -378,6 +378,6 @@ If you're using the Microsoft Graph SDK, you can authenticate to Microsoft Graph
 - [Token claims reference](agent-token-claims.md)
 - [On-behalf-of flow in agents](agent-on-behalf-of-oauth-flow.md)
 - [Agent users](agent-users.md)
-- [Request agent tokens for autonomous agents](autonomous-agent-request-tokens.md)
+- [Authenticate and acquire tokens for autonomous agents](autonomous-agent-authentication-authorization-flow.md)
 - [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview)
 - [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
