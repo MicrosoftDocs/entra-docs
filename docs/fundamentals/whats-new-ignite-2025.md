@@ -215,7 +215,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Synced passkey FAQ](../identity/authentication/synced-passkey-faq.yml) (New)
 - [Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md) (Updated)
 - [Manage authentication methods](../identity/authentication/concept-authentication-methods-manage.md) (Updated)
-- [Authentication methods](../identity/authentication/concept-authentication-methods.md) (Updated)
+- [Authentication methods](../identity/authentication/overview-authentication.md) (Updated)
 - [Phone authentication options](../identity/authentication/concept-authentication-phone-options.md) (Updated)
 - [FIDO2 hardware vendor considerations](../identity/authentication/concept-fido2-hardware-vendor.md) (Updated)
 - [Deploy phishing-resistant passwordless authentication](../identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md) (Updated)

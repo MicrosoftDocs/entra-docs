@@ -8,6 +8,9 @@ ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done,
 ---
 # Restore a deleted Microsoft 365 group or cloud security group in Microsoft Entra ID
 
+
+## Overview
+
 When you delete a Microsoft 365 group or cloud security group in Microsoft Entra ID, the deleted group is retained but not visible for 30 days from the deletion date. This behavior is so that the group and its contents can be restored if needed. This functionality is available for Microsoft 365 groups and cloud security groups in Microsoft Entra ID. It isn't available for distribution groups. The 30-day group restoration period isn't customizable.
 
 Permissions that are required to restore a group are listed in the following table.

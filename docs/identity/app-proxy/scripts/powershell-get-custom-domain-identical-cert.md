@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all Microsoft Entra application proxy apps that are published with the identical certificate
 
+
+## Overview
+
 The PowerShell script example lists all Microsoft Entra application proxy applications published with the identical certificate.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

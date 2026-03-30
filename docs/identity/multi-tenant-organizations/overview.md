@@ -6,10 +6,12 @@ ms.date: 03/18/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Multitenant organization capabilities in Microsoft Entra ID
+
+
+## Overview
 
 This article provides an overview of the multitenant organization scenario and the related capabilities in Microsoft Entra ID.
 

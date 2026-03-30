@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps with a token lifetime policy
 
+
+## Overview
+
 The PowerShell script example lists all the Microsoft Entra application proxy applications in your directory that have a token lifetime policy and lists details about the policy.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

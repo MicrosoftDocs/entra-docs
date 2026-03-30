@@ -10,6 +10,9 @@ ms.collection: M365-identity-device-management
 
 # Integrate LinkedIn account connections in Microsoft Entra ID
 
+
+## Overview
+
 You can allow users in your organization to access their LinkedIn connections within some Microsoft apps. No data is shared until users consent to connect their accounts. You can integrate your organization with Microsoft Entra ID, part of Microsoft Entra.
 
 > [!IMPORTANT]

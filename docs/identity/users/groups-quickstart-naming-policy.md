@@ -11,6 +11,9 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Naming policy for groups in Microsoft Entra ID
 
+
+## Overview
+
 In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you set up naming policy in your Microsoft Entra organization for user-created Microsoft 365 groups, to help you sort and search your groups. For example, you could use the naming policy to:
 
 * Communicate the function of a group, membership, geographic region, or who created the group.

@@ -10,6 +10,9 @@ ms.date: 12/13/2024
 
 # Call the Request Service REST API
 
+
+## Overview
+
 Microsoft Entra Verified ID includes the Request Service REST API. This API allows you to issue and verify credentials. This article shows you how to start using the Request Service REST API.
 
 ## API access token
@@ -132,7 +135,7 @@ In the preceding code, provide the following parameters:
 
 For more information about how to get an access token by using a console app's identity, see one of the following articles:
 
-- [C#](~/identity-platform/quickstart-v2-netcore-daemon.md)
+- [C#](~/identity-platform/quickstart-daemon-app-call-api.md)
 - [Python](~/identity-platform/quickstart-v2-python-daemon.md)
 - [Node.js](~/identity-platform/quickstart-v2-nodejs-console.md)
 - [Java](~/identity-platform/quickstart-v2-java-daemon.md)

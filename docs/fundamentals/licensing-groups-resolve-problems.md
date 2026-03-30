@@ -2,18 +2,17 @@
 title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing.
 keywords: Microsoft Entra ID licensing
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.reviewer: sumitp
 ms.custom: it-pro
 ---
 
 # Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal
 
 [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
+
+## Overview
 
 Group-based licensing (GBL) in Microsoft 365 Admin Portal, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state.
 

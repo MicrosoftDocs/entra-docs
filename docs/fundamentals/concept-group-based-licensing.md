@@ -2,7 +2,6 @@
 title: What is group-based licensing?
 description: Learn about Microsoft Entra group-based licensing, including how it works,
   key features, and best practices.
-manager: pmwongera
 ms.topic: concept-article
 ms.date: 01/31/2025
 ms.reviewer: krbain
@@ -11,6 +10,9 @@ ms.reviewer: krbain
 # What is group-based licensing in Microsoft Entra ID?
 
 [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
+
+## Overview
 
 Microsoft paid cloud services, such as Microsoft 365, Enterprise Mobility + Security, Dynamics 365, and other similar products, require licenses. These licenses are assigned to each user who needs access to these services. To manage licenses, administrators use one of the management portals (Office or Azure) and PowerShell cmdlets. Microsoft Entra ID is the underlying infrastructure that supports identity management for all Microsoft Cloud services. Microsoft Entra ID stores information about license assignment states for users.
 

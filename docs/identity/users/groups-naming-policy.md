@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-noch
 
 # Enforce a naming policy on Microsoft 365 groups in Microsoft Entra ID
 
+
+## Overview
+
 To enforce consistent naming conventions for Microsoft 365 groups created or edited by your users, set up a group naming policy for your organizations in Microsoft Entra ID. For example, you could use the naming policy to communicate the function of a group, membership, geographic region, or person who created the group. You could also use the naming policy to help categorize groups in the address book. You can use the policy to block specific words from being used in group names and aliases.
 
 > [!IMPORTANT]

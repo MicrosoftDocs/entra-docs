@@ -2,13 +2,15 @@
 title: Global Secure Access and Universal Tenant Restrictions
 description: Learn about how Global Secure Access helps secure access to your corporate network by restricting access to external tenants.
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Turn on universal tenant restrictions
+
+## Overview
 
 Universal tenant restrictions enhance the functionality of [tenant restrictions v2](https://aka.ms/tenant-restrictions-enforcement). They use Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. They allow support for both client and remote network connectivity.
 

@@ -13,6 +13,8 @@ ms.custom:
 ---
 # Conditional Access policy templates
 
+## Overview
+
 Conditional Access templates provide a convenient method to deploy new policies aligned with Microsoft recommendations. These templates are designed to provide maximum protection aligned with commonly used policies across various customer types and locations. 
 
 :::image type="content" source="media/concept-conditional-access-policy-common/conditional-access-policies-azure-ad-listing.png" alt-text="Screenshot that shows Conditional Access policies and templates in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-policy-common/conditional-access-policies-azure-ad-listing.png":::
@@ -122,5 +124,5 @@ Organizations can select individual policy templates and:
 
 ## Next steps
 
-- [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
+- [Simulate sign in behavior using the Conditional Access What If tool.](what-if-tool.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

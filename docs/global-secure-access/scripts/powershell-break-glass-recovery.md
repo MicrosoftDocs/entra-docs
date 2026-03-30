@@ -7,6 +7,8 @@ ms.date: 03/16/2026
 
 # Restore compliant network requirement after a break glass operation
 
+## Overview
+
 After an outage is resolved, you need to make a fast and accurate recovery from a [break glass](./powershell-break-glass.md) operation.
 
 The following script helps you quickly regain the security value of [Global Secure Access](../overview-what-is-global-secure-access.md) and [Compliant Network](../how-to-compliant-network.md) for your users.

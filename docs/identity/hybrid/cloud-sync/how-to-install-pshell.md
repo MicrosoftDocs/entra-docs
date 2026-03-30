@@ -36,7 +36,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
  6. For the purposes of these instructions, the agent was downloaded to the C:\temp folder.
  7. Install ProvisioningAgent in quiet mode.
        ```
-      $installerProcess = Start-Process 'c:\temp\AADConnectProvisioningAgentSetup.exe' /quiet -NoNewWindow -PassThru 
+      $installerProcess = Start-Process 'c:\temp\ProvisioningAgentSetup.exe' /quiet -NoNewWindow -PassThru 
       $installerProcess.WaitForExit()
 
        ```

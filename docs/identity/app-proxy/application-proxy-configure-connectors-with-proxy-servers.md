@@ -2,13 +2,16 @@
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
 description: "Configure Microsoft Entra private network connectors with outbound proxy servers. Covers bypassing proxies, routing through proxies, and proxy placement between connectors and backend apps."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Work with existing on-premises proxy servers
+
+
+## Overview
 
 Configure Microsoft Entra private network connectors to use outbound proxy servers. This article assumes the network environment already has a proxy server.
 
@@ -18,7 +21,7 @@ This article covers these main deployment scenarios:
 * Configure connectors to use an outbound proxy to access Microsoft Entra application proxy.
 * Configure using a proxy between the connector and backend application.
 
-For more information about how connectors work, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
+For more information about how connectors work, see [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Bypass outbound proxies
 
@@ -55,7 +58,7 @@ Some environments require all outbound traffic to go through an outbound proxy, 
 
 You can configure the connector traffic to go through the outbound proxy, as shown in the following diagram:
 
- ![Configuring connector traffic to go through an outbound proxy to Microsoft Entra application proxy](./media/application-proxy-configure-connectors-with-proxy-servers/configure-proxy-settings.png)
+ ![Configuring connector traffic to go through an outbound proxy to Microsoft Entra application proxy.](./media/application-proxy-configure-connectors-with-proxy-servers/configure-proxy-settings.png)
 
 As a result of having only outbound traffic, there's no need to configure inbound access through your firewalls.
 
@@ -172,14 +175,14 @@ For initial troubleshooting, perform the following steps:
 
 1. From `services.msc`, stop the Microsoft Entra private network connector service.
 
-   ![Microsoft Entra private network connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
+   ![Microsoft Entra private network connector service in services.msc.](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
 1. Run *Message Analyzer* as an administrator.
 1. Select **Start local trace**.
 1. Start the Microsoft Entra private network connector service.
 1. Stop the network capture.
 
-   ![Screenshot shows the Stop network capture button](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
+   ![Screenshot shows the Stop network capture button.](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
 
 ### Check if the connector traffic bypasses outbound proxies
 If you expect the connector to make direct connections to application proxy services, `SynRetransmit` responses on port 443 are an indication that you have a network or firewall problem.
@@ -200,5 +203,5 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 
 ## Next steps
 
-- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Visit the Microsoft Question and Answer page for Microsoft Entra ID](/answers/tags/455/entra-id)

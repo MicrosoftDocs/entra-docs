@@ -9,6 +9,9 @@ ms.custom: pim, devx-track-azurepowershell
 
 ---
 # PIM PowerShell for Azure resources migration guidance
+
+## Overview
+
 The following table provides guidance on using the new PowerShell cmdlets in the newer Azure PowerShell module.
 
 ## New cmdlets in the Azure PowerShell module

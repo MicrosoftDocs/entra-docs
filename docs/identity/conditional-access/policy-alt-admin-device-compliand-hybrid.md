@@ -7,6 +7,8 @@ ms.reviewer: lhuangnorth
 ---
 # Require compliant device or Microsoft Entra hybrid joined device for administrators
 
+## Overview
+
 Accounts that are assigned administrative rights are a target for attackers. Requiring users with these highly privileged rights to perform actions from devices marked as compliant or Microsoft Entra hybrid joined can help limit possible exposure.
 
 More information about device compliance policies can be found in the article, [Set rules on devices to allow access to resources in your organization using Intune](/mem/intune/protect/device-compliance-get-started).

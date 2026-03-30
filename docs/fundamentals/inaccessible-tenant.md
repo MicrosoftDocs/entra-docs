@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
-manager: pmwongera
 ms.topic: troubleshooting
 ms.date: 01/15/2025
 ms.reviewer: Sunayana
@@ -11,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 
 # Tenant inaccessible due to inactivity
+
+
+## Overview
 
 Configured tenants no longer in use might still generate costs for your organization. Making a tenant inaccessible due to inactivity helps reduce unnecessary expenses. This article discusses how to handle an inaccessible tenant, reactivation, and guidance for both administrators and application developers. 
 

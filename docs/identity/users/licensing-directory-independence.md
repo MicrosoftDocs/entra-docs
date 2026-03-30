@@ -9,6 +9,9 @@ ms.reviewer: sumitp
 
 # Understand how multiple Microsoft Entra tenant organizations interact
 
+
+## Overview
+
 In Microsoft Entra ID, part of Microsoft Entra, each Microsoft Entra organization is fully independent: a peer that is logically independent from the other Microsoft Entra organizations that you manage. This independence between organizations includes resource independence, administrative independence, and synchronization independence. There's no parent-child relationship between organizations.
 
 ## Resource independence

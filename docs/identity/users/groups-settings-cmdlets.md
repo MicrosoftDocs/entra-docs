@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Microsoft Entra cmdlets for configuring group settings
 
+
+## Overview
+
 This article contains instructions for using PowerShell cmdlets to create and update groups in Microsoft Entra ID, part of Microsoft Entra. This content applies only to Microsoft 365 groups.
 
 > [!IMPORTANT]

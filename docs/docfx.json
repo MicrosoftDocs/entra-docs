@@ -254,6 +254,8 @@
         "identity/saas-apps/**/*.yml": "saas-apps",
         "identity/users/**/*.md": "users",
         "identity/users/**/*.yml": "users",
+        "identity/multi-tenant-organizations/**/*.md": "multitenant-organizations",
+        "identity/multi-tenant-organizations/**/*.yml": "multitenant-organizations",
         "id-governance/privileged-identity-management/**/*.md": "privileged-identity-management",
         "id-governance/privileged-identity-management/**/*.yml": "privileged-identity-management"
       },

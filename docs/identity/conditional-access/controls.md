@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
 
+## Overview
+
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!NOTE]

@@ -8,6 +8,9 @@ ms.reviewer:
 
 # Introduction to Microsoft Entra Verified ID
 
+
+## Overview
+
 In today's world, your digital and physical life is becoming increasingly intertwined with the apps, services, and devices you use. This digital revolution opened a world of possibilities, allowing you to connect with countless companies and individuals in ways that were once unimaginable.
 
 This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can be devastating to personal and professional lives. Microsoft actively collaborates with various organizations and standards bodies to create a Decentralized Identity solution that puts individuals in control of their own digital identities. Decentralized identity technologies provide a secure and private way to manage identity data without relying on centralized authorities or intermediaries.

@@ -67,6 +67,9 @@ In this example, you create a policy such that when you assign it to an applicat
 - Auto-accelerates users to a federated identity provider sign-in screen if there's more than one federated domain in your tenant.
 - Enables non-interactive username/password sign-in directly to Microsoft Entra ID for federated users for the applications the policy is assigned to.
 
+[!Note]
+Enabling `"AccelerateToFederatedDomain": true` in the policy may prevent guest users from signing in, even if the policy isn’t explicitly applied to any service principals. Review this setting carefully before applying the policy to avoid unintended access issues.
+
 The following policy auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 
 1. Run the Connect command to sign in to Microsoft Entra ID with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role:

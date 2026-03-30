@@ -11,6 +11,8 @@ ai-usage: ai-assisted
   
 # Quickstart: Configure per-app access to private resources
 
+## Overview
+
 This quickstart shows you the steps needed to configure per-app access to private resources. For more information about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
 
 ## Prerequisites

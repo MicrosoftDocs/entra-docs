@@ -9,6 +9,9 @@ ms.date: 01/15/2025
 
 # Assign licenses to users by group membership in the Microsoft 365 admin center
 
+
+## Overview
+
 This article shows you how to use the Microsoft 365 license center to assign licenses to security groups. 
 
 > [!NOTE]

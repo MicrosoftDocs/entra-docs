@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
-manager: pmwongera
 ms.topic: quickstart
 ms.date: 03/12/2026
 ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
@@ -9,6 +8,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Quickstart: Create a new tenant in Microsoft Entra ID
+
+
+## Overview
 
 You can perform all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
 
@@ -108,10 +110,10 @@ If you're not going to continue to use this tenant, you can delete the tenant us
 
 - To change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
 
-- To add users, see [Add or delete a new user](./add-users.md).
+- To add users, see [Add or delete a new user](./how-to-create-delete-users.yml).
 
 - To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
 
 - To learn about access management, see [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 
-- Learn about Microsoft Entra ID, including [basic licensing information, terminology, and associated features](./whatis.md).
+- Learn about Microsoft Entra ID, including [basic licensing information, terminology, and associated features](./what-is-entra.md).

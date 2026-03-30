@@ -322,5 +322,5 @@ Review the following topics to learn more about how to configure and deploy MFA:
 - [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md)
 - [Phishing-resistant MFA methods](~/identity/authentication/phishing-resistant-authentication-videos.md)
 - [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) 
-- [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
+- [Authentication methods](~/identity/authentication/overview-authentication.md)
 

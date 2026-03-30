@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Microsoft Entra private network connector groups
 
+## Overview
+
 Use private network connector groups to assign connectors to applications. Connector groups give you more control and help you optimize deployments.
 
 Each private network connector is in a connector group. Connectors in the same group act as a unit for high availability and load balancing. If you don't create groups, all connectors are in the default group. Create new groups and assign connectors in the Microsoft Entra admin center.

@@ -2,13 +2,15 @@
 title: Password vaulting for single sign-on with application proxy
 description: Turn on single sign-on for your published on-premises applications with Microsoft Entra application proxy in the Microsoft Entra admin center.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
-ms.custom: sfi-image-nochange
 ---
 
 # Password vaulting for single sign-on with application proxy
+
+
+## Overview
 
 Microsoft Entra application proxy helps you improve productivity by publishing on-premises applications so that remote employees can securely access them. In the Microsoft Entra admin center, you can also set up single sign-on (SSO) to these apps. Your users only need to authenticate with Microsoft Entra ID, and they can access your enterprise application without having to sign in again.
 
@@ -27,12 +29,10 @@ This article requires that an app is published and tested with application proxy
 1. Change the **Pre Authentication type** to **Passthrough** and select **Save**. Later you can switch back to **Microsoft Entra ID** type again.
 1. Select **Single sign-on**.
 
-   ![Select Single sign-on from the app's overview page](./media/application-proxy-configure-single-sign-on-password-vaulting/select-sso.png)
-
 1. For the SSO mode, choose **Password-based Sign-on**.
 1. For the Sign-on URL, enter the URL for the page where users enter their username and password to sign in to your app outside of the corporate network. The page could be the External URL that you created when you published the app through application proxy.
 
-   ![Choose password-based Sign-on and enter your URL](./media/application-proxy-configure-single-sign-on-password-vaulting/password-sso.png)
+   ![Screenshot that shows the password-based sign-on configuration with URL entry.](./media/application-proxy-configure-single-sign-on-password-vaulting/password-sso.png)
 
 1. Select **Save**.
 1. Select **application proxy**. 

@@ -13,6 +13,8 @@ ai-usage: ai-assisted
 
 # Bring Your Own Device (Preview)
 
+## Overview
+
 The Global Secure Access client supports bring your own device (BYOD) scenarios so users can access company resources. As a tenant administrator, enable Global Secure Access traffic profiles for members, including internal guests. The client supports automatic Microsoft Entra device registration.
 
 > [!IMPORTANT]

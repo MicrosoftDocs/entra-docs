@@ -62,7 +62,7 @@ To ensure disable controls remain effective and detect drift (new Agent IDs or a
 
 Agent IDs are logged under the base identity types they originate from. This means that:
 
-- The creation of an agent user appears as a *Create user* audit activity.
+- The creation of an agent's user account appears as a *Create user* audit activity.
 - The creation of an agent identity appears as a *Create service principal* audit event.
 
 To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
@@ -133,9 +133,9 @@ Content-type: application/json
 }
 ```
 
-### Policy 2: Block agent user authentication
+### Policy 2: Block agent's user account authentication
 
-The following steps help create a conditional access policy to block issuance of access tokens requested using agent users.
+The following steps help create a conditional access policy to block issuance of access tokens requested using agents' user accounts.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.

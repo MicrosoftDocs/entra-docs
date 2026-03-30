@@ -86,4 +86,4 @@ Users can add and manage OATH tokens at [Security info](https://aka.ms/mysecurit
 ## Related content
 
 Learn more about [how to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
-Learn about [FIDO2 security key providers](concept-authentication-passwordless.md) that are compatible with passwordless authentication.
+Learn about [FIDO2 security key providers](concept-authentication-passkeys-fido2.md) that are compatible with passwordless authentication.

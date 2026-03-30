@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Understand remote network connectivity
 
+## Overview
+
 Global Secure Access supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
 
 This article describes the key concepts of remote network connectivity along with common scenarios where it's useful.

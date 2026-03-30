@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 ---
 # Share accounts with Microsoft Entra ID
 
+
+## Overview
+
 In Microsoft Entra ID, part of Microsoft Entra, sometimes organizations need to use a single username and password for multiple people, which often happens in the following cases:
 
 * When accessing applications that require a unique sign in and password for each user, whether on-premises apps or consumer cloud services (for example, corporate social media accounts).

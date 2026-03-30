@@ -2,8 +2,8 @@
 title: Get started with a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 description: Detailed guidance for planning the prerequisites to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 11/07/2025
-author: mepples21
+ms.date: 03/24/2026
+author: sipower
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management
@@ -25,7 +25,9 @@ Microsoft Entra ID offers the following phishing-resistant passwordless authenti
 
 - Passkeys (FIDO2)
   - Windows Hello for Business
+  - Microsoft Entra passkey on Windows (preview)
   - Platform credential for macOS (preview)
+  - Entra Passkey on Windows
   - Microsoft Authenticator app passkeys
   - FIDO2 security keys
   - Synced passkeys (synced via providers such as Google Password Manager or iCloud Keychain)
