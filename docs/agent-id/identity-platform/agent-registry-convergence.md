@@ -1,6 +1,6 @@
 ---
-title: Agent Registry convergence with Agent 365
-description: Learn how agent registry experiences are converging under Agent 365, what the change means for Microsoft Entra Agent ID, and how to view all agents in your organization.
+title: Agent Registry convergence with Microsoft Agent 365
+description: Learn how agent registry experiences are converging under Microsoft Agent 365, what the change means for Microsoft Entra Agent ID, and how to view all agents in your organization.
 author: shlipsey3
 ms.author: sarahlipsey
 ms.service: entra
@@ -10,21 +10,21 @@ ms.reviewer: jadedsouza
 ms.custom: agent-id-ignite
 ai-usage: ai-assisted
 
-#customer-intent: As an IT administrator, I want to understand how the agent registry experiences are converging under Agent 365 so that I can manage agents in one place while continuing to use Microsoft Entra for identity and access control.
+#customer-intent: As an IT administrator, I want to understand how the agent registry experiences are converging under Microsoft Agent 365 so that I can manage agents in one place while continuing to use Microsoft Entra for identity and access control.
 
 ---
 
-# Agent Registry convergence with Agent 365
+# Agent Registry convergence with Microsoft Agent 365
 
 Organizations are rapidly adopting AI agents across Microsoft platforms, partner ecosystems, and custom applications. As agents grow in number and capability, organizations need a centralized way to observe, govern, and secure them.
 
-Agent 365 is Microsoft's control plane for AI agents. It helps organizations:
+Microsoft Agent 365 is Microsoft's control plane for AI agents. It helps organizations:
 
 - Observe agents across the enterprise.
 - Govern how agents access systems, data, and tools.
 - Secure agents using Microsoft identity and security capabilities.
 
-A key capability within Agent 365 is the agent registry, which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
+A key capability within Microsoft Agent 365 is the agent registry, which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
 
 ## Registry convergence
 
@@ -66,7 +66,7 @@ In the Microsoft Entra admin center, administrators can:
 - Apply Conditional Access, identity governance, and network security controls.
 - Monitor identity-related security signals.
 
-### Why should I go to Agent 365 if I'm an identity administrator?
+### Why should I go to Microsoft Agent 365 if I'm an identity administrator?
 
 Identity administrators can optionally use Agent 365, via the Microsoft 365 admin center, to view all agents in the organization, while continuing to use the Microsoft Entra admin center to manage agent identities, access policies, and identity governance controls.
 
@@ -92,4 +92,4 @@ To view the complete inventory of agents in your organization:
 
 - [What is Microsoft Entra Agent ID?](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md)
 - [What is the Microsoft Entra Agent Registry?](what-is-agent-registry.md)
-- [Agent 365 overview](/microsoft-agent-365/overview)
+- [Microsoft Agent 365 overview](/microsoft-agent-365/overview)
