@@ -152,6 +152,9 @@ When device-preferred credential is enabled, the system evaluates which credenti
 
 <sup>3</sup>Includes SMS and voice calls.
 
+>[!IMPORTANT]
+>Certificate Based Authentication (CBA) was previously placed last in the system preferred MFA order due to known issues with CBA and system preferred MFA. Now that those issues are resolved, starting March 18th, 2026, Certificate-based authentication(CBA) will move to the third position in the authentication order.
+
 ### How does system-preferred MFA affect the NPS extension?
 
 System-preferred MFA doesn't affect users who sign in by using the Network Policy Server (NPS) extension. Those users don't see any change to their sign-in experience.
