@@ -76,7 +76,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your WiggleDesk Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to WiggleDesk. If the connection fails, ensure your WiggleDesk account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your WiggleDesk tenant URL and secret token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to WiggleDesk. If the connection fails, ensure your WiggleDesk account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Properties** on the **Overview** page.
 
-1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean||&check;
    |emails[type eq "work"].value|String||&check;
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
