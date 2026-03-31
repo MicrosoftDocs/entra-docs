@@ -2,7 +2,7 @@
 title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 03/31/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: absinh
@@ -393,6 +393,8 @@ To test (option 2):
 :::image type="content" source="media/how-to-create-remote-network-vwan/remote-network-health-logs-filter.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP.":::
 
 The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
+
+[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
 
 ## Remove unneeded resources
 When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.
