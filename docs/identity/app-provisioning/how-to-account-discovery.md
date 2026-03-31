@@ -2,7 +2,7 @@
 title: Discover identities in target applications with Account Discovery (preview)
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 03/27/2026
+ms.date: 03/31/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -43,7 +43,7 @@ Before you can use Account Discovery, the following must be in place:
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- Account Discovery isn't supported for the following application including:
+- See [Supported applications](#supported-applications) for applications that support Account Discovery. Account Discovery isn't supported for the following applications including:
   - Workday
   - SAP SuccessFactors
   - API-driven provisioning apps
@@ -57,7 +57,6 @@ Account Discovery is validated for the following applications:
 - SAP Cloud Identity Services
 - Salesforce
 - Atlassian
-- On-premises applications (SQL, LDAP, REST, SOAP, PowerShell). For more information, see [Microsoft Entra on-premises application provisioning architecture](on-premises-application-provisioning-architecture.md).
 
 ## Discover identities in a target application
 
