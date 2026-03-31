@@ -54,4 +54,4 @@ For more information about publishing Qlik Sense with application proxy, see the
 ## Next steps
 
 - [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-- [Working with private network connectors](~/identity/app-proxy/application-proxy-connector-groups.md)
+- [Working with private network connectors](~/global-secure-access/concept-connector-groups.md)

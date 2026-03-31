@@ -52,7 +52,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**.
-      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types) you want to apply the policy to.
+      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assign-conditional-access-policies-to-external-user-types) you want to apply the policy to.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Resources (formerly cloud apps)**, under **Include** or **Exclude**, select any applications you want to include in or exclude from the authentication strength requirements.
 1. Under **Access controls** > **Grant**, select **Grant access**.

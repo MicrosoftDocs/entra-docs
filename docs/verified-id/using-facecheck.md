@@ -258,7 +258,7 @@ No subscription exists. In the Link a subscription pane, you can create a subscr
 ## Frequently asked questions for Face Check Developers 
 ### Does Face Check Require MS Authenticator?
 
-Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. For more information, see [Using the Wallet Library](using-wallet-library.md).
+Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. For more information, see [Using the Wallet Library](decentralized-identifier-overview.md).
 
 ### What is the confidence percentage match and what does confidence mean?
 

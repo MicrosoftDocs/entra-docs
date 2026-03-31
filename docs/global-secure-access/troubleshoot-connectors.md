@@ -254,4 +254,4 @@ The connector isn't required to be on the same subnet. However, it needs name re
 When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the Microsoft Entra admin center. There's no way to remove the Inactive connector manually from the Microsoft Entra admin center.
 
 ## Next steps
-- [Understand Microsoft Entra private network connectors](concept-connectors.md)
+- [Microsoft Entra private network connectors](concept-connectors.md)

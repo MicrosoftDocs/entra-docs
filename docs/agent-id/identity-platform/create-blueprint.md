@@ -131,7 +131,7 @@ To request access tokens using the agent identity blueprint, you must add a [cli
 
 Other kinds of app credentials including `keyCredentials` and `passwordCredentials` are supported, but not recommended for production. They can be convenient for local development and testing or where managed identities won't work, but these options don't align with security best practices. For more information, see [Security best practices for application properties](../../identity-platform/security-best-practices-for-app-registration.md#credentials-including-certificates-and-secrets).
 
-Keep in mind that to use a managed identity you must run your code on an Azure service, such as a virtual machine or Azure App Service. For local development and testing, use a [client secret](#other-app-credentials).
+Keep in mind that to use a managed identity you must run your code on an Azure service, such as a virtual machine or Azure App Service. For local development and testing, use a [client secret or certificate](#other-app-credentials).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -242,7 +242,7 @@ If the agents created with the blueprint will support interactive agents, where 
 
 ## Configure identifier URI and scope
 
-To receive incoming requests from users and other agents, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
+To receive incoming requests from users and other agents, like for any web API, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 

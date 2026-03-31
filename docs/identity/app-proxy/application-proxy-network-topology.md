@@ -113,7 +113,7 @@ Although the focus of this article is connector placement, you can also change t
 
 Increasingly, organizations are moving their networks into hosted environments. The move enables them to place their apps in a hosted environment that is also part of their corporate network, and still be within the domain. In this case, [Pattern 1](#pattern-1-put-the-connector-close-to-the-application), [Pattern 2](#pattern-2-take-advantage-of-expressroute-with-microsoft-peering), and [Pattern 3](#pattern-3-take-advantage-of-expressroute-with-private-peering) can be applied to the new application location. If you're considering this option, see [Microsoft Entra Domain Services](/entra/identity/domain-services/overview).
 
-Additionally, consider organizing your connectors using [connector groups](application-proxy-connector-groups.md) to target apps that are in different locations and networks.
+Additionally, consider organizing your connectors using [connector groups](~/global-secure-access/concept-connector-groups.md) to target apps that are in different locations and networks.
 
 ## Diagrams for common use cases
 

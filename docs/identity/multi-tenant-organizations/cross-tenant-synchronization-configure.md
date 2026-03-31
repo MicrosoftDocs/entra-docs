@@ -7,7 +7,6 @@ ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Configure cross-tenant synchronization

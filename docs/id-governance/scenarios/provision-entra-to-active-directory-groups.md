@@ -6,7 +6,6 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 06/09/2025
-ms.subservice:
 ms.author: justinha
 ---
 
