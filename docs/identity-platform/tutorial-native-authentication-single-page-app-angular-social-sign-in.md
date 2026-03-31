@@ -237,7 +237,7 @@ The `loginPopup` method opens a popup window where the user completes the authen
 
 ## Run and test your app
 
-Before you test your app, make sure your CORS proxy and app are runing:
+Before you test your app, make sure your CORS proxy and app are running:
 
 1. Make sure your CORS proxy is running:
 
