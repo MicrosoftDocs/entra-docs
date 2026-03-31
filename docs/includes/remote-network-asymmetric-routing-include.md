@@ -11,25 +11,21 @@ ms.custom: include file
 
 ### Avoid asymmetric routing with remote networks
 
-Global Secure Access maintains TCP connection state for all traffic flowing through its gateway. For connections to work correctly, the gateway must see the complete TCP handshake (SYN, SYN-ACK, ACK). If routing is asymmetric, meaning traffic in one direction flows through the Global Secure Access gateway but the return path bypasses it, the gateway sees only part of the handshake and drops the connection.
+When an Azure VM is connected to a Global Secure Access remote network, you can't use RDP to connect to the VM using its public IP address. If you disconnect the remote network, RDP works again. This behavior is caused by asymmetric routing and is expected.
 
-For example, if inbound RDP traffic to a virtual machine (VM) routes through Global Secure Access but the VM's response takes a different path, the gateway never sees the full TCP handshake. The client retransmits, eventually times out, and the connection fails.
+Here's why it happens: the VM has a public IP address, so inbound RDP traffic (the SYN packet) from your PC reaches the VM directly. However, because Global Secure Access advertises the entire internet address range over BGP, the VM's return traffic (the SYN-ACK) routes through the IPsec tunnel to the Global Secure Access gateway. The gateway receives a SYN-ACK for a session it never saw the SYN for, so it drops the packet. The client retransmits, eventually times out, and the connection fails. This effectively makes the VM's public IP address unusable for inbound connections.
+
+> [!IMPORTANT]
+> This asymmetric routing behavior applies to any inbound connection to a VM on a remote network, not just RDP. Any protocol where inbound traffic arrives directly at the VM's public IP but return traffic routes through the Global Secure Access gateway will fail.
 
 ### Workarounds
-To avoid asymmetric routing issues with remote networks, consider these workarounds:
 
-#### Use Azure Bastion to avoid asymmetric routing
+To avoid asymmetric routing issues with remote networks, use one of these workarounds:
 
-[Azure Bastion](/azure/bastion/bastion-overview) eliminates asymmetric routing for remote management scenarios like RDP and SSH. Bastion keeps all traffic within the Azure virtual network:
+#### Use Azure Bastion
 
-1. You connect to Azure Bastion over HTTPS (port 443) from your browser.
-1. Bastion initiates the RDP or SSH session to the target VM using its private IP address.
-1. The VM responds directly to Bastion within the virtual network.
+[Azure Bastion](/azure/bastion/bastion-overview) eliminates asymmetric routing for remote management scenarios like RDP and SSH. With Bastion, your PC connects to the Bastion service over HTTPS, and Bastion initiates the RDP or SSH session to the VM using its private IP address. The VM responds directly to Bastion within the virtual network. Because both directions of the connection stay inside the virtual network, traffic never passes through the Global Secure Access gateway, and routing remains symmetric.
 
-Because all traffic between Bastion and the VM stays inside the virtual network (east-west traffic), it never passes through the Global Secure Access gateway. This symmetric routing preserves TCP state and avoids connection failures.
+#### Use point-to-site (P2S) VPN with your VNG
 
-> [!TIP]
-> For inbound remote management of Azure VMs on networks protected by Global Secure Access, use [Azure Bastion](/azure/bastion/bastion-overview) instead of direct RDP or SSH connections to avoid asymmetric routing issues.
-
-#### Use P2S with your VNG
-If you configure a virtual network gateway (VNG) for point-to-site (P2S) connectivity, you can connect from your client device using the Azure VPN client. Your device receives a private IP address from the VNG address pool, and all traffic to the virtual network flows through the VNG and returns the same way. This approach avoids asymmetric routing issues.
+If you configure a virtual network gateway (VNG) for [point-to-site (P2S) connectivity](/azure/vpn-gateway/point-to-site-about), your client device receives a private IP address from the VNG address pool using the [Azure VPN Client](/azure/vpn-gateway/point-to-site-vpn-client-certificate-windows-azure-vpn-client). All traffic to the VM flows through the VNG tunnel and returns the same way, keeping routing symmetric.
