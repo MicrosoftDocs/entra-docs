@@ -36,7 +36,7 @@ Unlike applications that execute predetermined logic, AI agents make dynamic dec
 
 - **External accessibility**: Many AI agents interact with external users, third-party systems, or the public internet. This exposure creates potential pathways for adversaries to compromise agents and access organizational systems.
 
-- **Permission escalation risk**: Agents are often provisioned with broad permissions to ensure capability. An agent analyzing financial data might receive access to all financial records, expense reports, and vendor contracts—broader than necessary for the specific task.
+- **Permission escalation risk**: Agents are often provisioned with broad permissions to ensure capability. An agent analyzing financial data might receive access to all financial records, expense reports, and vendor contracts, which is broader than necessary for the specific task.
 
 - **Autonomous decision-making**: Compromised agents that make autonomous decisions can take harmful actions. A supply chain agent with purchasing authority could place unauthorized orders. An infrastructure management agent could delete critical systems.
 
@@ -48,7 +48,7 @@ Organizations must also demonstrate that AI systems operate within governance fr
 
 ### Agent sprawl
 
-Agent proliferation creates a governance challenge termed "agent sprawl"—the uncontrolled expansion of agents across an organization without adequate visibility, management, or lifecycle controls. Agent sprawl emerges when business units create agents without formal IT oversight (shadow AI), when agents created for temporary purposes remain in production indefinitely, and when agent permissions exceed actual requirements and are never reviewed.
+Agent proliferation creates a governance challenge termed "agent sprawl", which is the uncontrolled expansion of agents across an organization without adequate visibility, management, or lifecycle controls. Agent sprawl emerges when business units create agents without formal IT oversight (shadow AI), when agents created for temporary purposes remain in production indefinitely, and when agent permissions exceed actual requirements and are never reviewed.
 
 Uncontrolled agent sprawl leads to increased security risk from over-privileged agents with unclear ownership, compliance challenges when auditors expect governance over AI systems, and incident response difficulties when organizations can't quickly identify compromised agents.
 
