@@ -77,6 +77,8 @@ Before you start implementation, review the following areas at a high level:
 - **User experience**: Inventory sign-in UX customizations and decide which External ID experience to use.
 - **Identity providers**: List social and enterprise identity providers and any federation requirements.
 - **Access controls**: Note Conditional Access policies and conditions that must be equivalent post-migration.
+- **Age gating**: Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
+- **Application-level changes**: Migration requires changes at the application level, not just the tenant level. Each application must be updated to use External ID endpoints and validate tokens accordingly. If your tenant contains applications owned by third parties (for example, ISV tenants where customers register their own apps), coordinate with those app owners early. You can't complete migration until every application is updated.
 - **Automation and operations**: Plan Microsoft Graph-based lifecycle operations, monitoring, and runbooks.
 
 ### When to choose standard migration
