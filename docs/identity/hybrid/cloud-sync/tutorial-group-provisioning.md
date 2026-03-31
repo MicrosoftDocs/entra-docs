@@ -250,8 +250,8 @@ To configure provisioning, follow these steps:
         &'.\GroupCN_expression.txt'
         ```
 
-        3. Go to **Attribute mapping**
-        4. Edit the `cn` attribute mapping
+        3. Go to **Attribute mapping**.
+        4. Edit the `cn` attribute mapping.
         5. Change **Mapping type** to **Expression**.
         6. In the expression box, insert the updated expression and select **Apply**.
         7. Select **Save schema**.
