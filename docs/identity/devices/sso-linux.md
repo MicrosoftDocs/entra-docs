@@ -76,7 +76,7 @@ Run the following commands in a command line to manually install the Microsoft s
 
 ### [Ubuntu](#tab/debian-install)
 
-1. Install `curl` and `gpg`.
+1. Install Curl. 
 
     ```bash
     sudo apt install curl gpg
@@ -105,9 +105,9 @@ Run the following commands in a command line to manually install the Microsoft s
 
 5. Reboot your device.  
 
-### [RHEL 8/9 Prod](#tab/redhat89-install-prod)
+### [RHEL 8/9](#tab/redhat89-install-prod)
 
-1. Potential pre-requisite depending on your systems configuration. 
+1. Potential prerequisite depending on your systems configuration. 
 
      ```bash
     # This fixes gpg key issues
@@ -145,7 +145,7 @@ Run the following commands in a command line to manually install the Microsoft s
 
 
 
-### [RHEL 10 Prod](#tab/redhat10-install-prod)
+### [RHEL 10](#tab/redhat10-install-prod)
 
 1. Potential pre-requisites depending on your systems configuration. 
 
@@ -261,13 +261,13 @@ Run the following commands to uninstall the Microsoft Identity Broker and remove
 ---
 
 > [!WARNING]
-> Note that uninstalling the Microsoft Identity Broker does not automatically unregister your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
+> Note that uninstalling the Microsoft Identity Broker doesn't automatically unregister your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
 
 ---
 
 ## Unregister device using dsregc
 
-With the release of 2.5.x of the `microsoft-identity-broker`, we have included a new utility called the `dsreg` tool that allows you to manage your device's registration with Microsoft Entra ID. 
+With the release of 2.5.x of the `microsoft-identity-broker`, we've included a new utility called the `dsreg` tool that allows you to manage your device's registration with Microsoft Entra ID. 
 
 To unregister your device from Microsoft Entra ID using the `dsreg` tool, run the following command in your terminal, replacing `<tenant-guid>` with your Microsoft Entra ID tenant GUID:
 
@@ -275,7 +275,7 @@ To unregister your device from Microsoft Entra ID using the `dsreg` tool, run th
 sudo dsreg --tenant-id <tenant-guid> --unregister
 ```
 
-If your system gets into a bad state and you want to clean all local registration data and key material, you can use the `--cleanup` option with the `dsreg` tool. This is userful in scenarios where you want to ensure that all local traces of the Microsoft Identity Broker are removed from the device, such as when troubleshooting or preparing the device for a new user.
+If your system gets into a bad state and you want to clean all local registration data and key material, you can use the `--cleanup` option with the `dsreg` tool. This utility mode is useful in scenarios where you want to ensure that all local traces of the Microsoft Identity Broker are removed from the device, such as when troubleshooting or preparing the device for a new user.
 
 To unregister and remove any key material using the dsreg tool, run the following command in your terminal:
 
@@ -285,7 +285,7 @@ sudo dsreg --cleanup
 ```
 
 > [!WARNING]
-> The `--cleanup` option is irreversible and will remove all key material from the device. Use with caution.
+> The `--cleanup` option is irreversible and removes all key material from the device. Use with caution.
 
 ## Enabling Phish-Resistant MFA (PRMFA) on Linux devices 
 
@@ -316,7 +316,7 @@ Configuring SmartCard support involves setting up the necessary libraries and mo
 
 ### Example Smart Card configuration
 
-The following steps configure a reference example of using the YubiKey/Edge bridge integration, but other smart card providers can be configured similarly. This is just an example configuration and your configuration may vary per provider. Please refer to your smart card provider documentation for specific configuration instructions. 
+The following steps configure a reference example of using the YubiKey/Edge bridge integration, but other smart card providers can be configured similarly. This is just an example configuration and your configuration may vary per provider. Refer to your smart card provider documentation for specific configuration instructions. 
 
 ### [Ubuntu](#tab/debian-sc-example)
 
@@ -366,8 +366,8 @@ The following steps configure a reference example of using the YubiKey/Edge brid
 
 For more information, see the following Intune documentation:
 
-- [What's new in Microsoft single sign-on for Linux](whats-new-linux.md).
-- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-registration-tool-linux.md).
-- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux).
-- [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
+- [What's new in Microsoft single sign-on for Linux](whats-new-linux.md)
+- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-registration-tool-linux.md)
+- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
+- [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux)
 

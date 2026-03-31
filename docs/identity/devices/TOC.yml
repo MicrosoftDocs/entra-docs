@@ -58,75 +58,80 @@
           href: device-join-plan.md
         - name: Assign local admins to Microsoft Entra joined devices
           href: assign-local-admin.md
-    - name: Windows Devices
-      items: 
-        - name: Microsoft Entra hybrid join
+    - name: Microsoft Entra hybrid join
+      items:
+        - name: Plan your Microsoft Entra hybrid join implementation
+          href: hybrid-join-plan.md
+        - name: Targeted Microsoft Entra hybrid join deployment
+          href: hybrid-join-control.md
+        - name: Configure Microsoft Entra hybrid join
+          href: how-to-hybrid-join.md
+        - name: Verifying Microsoft Entra hybrid join
+          href: how-to-hybrid-join-verify.yml
+        - name: Troubleshoot Microsoft Entra hybrid join
           items:
-            - name: Plan your Microsoft Entra hybrid join implementation
-              href: hybrid-join-plan.md
-            - name: Targeted Microsoft Entra hybrid join deployment
-              href: hybrid-join-control.md
-            - name: Configure Microsoft Entra hybrid join
-              href: how-to-hybrid-join.md
-            - name: Verifying Microsoft Entra hybrid join
-              href: how-to-hybrid-join-verify.yml
-            - name: Troubleshoot Microsoft Entra hybrid join
-              items:
-                - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
-                  href: troubleshoot-hybrid-join-windows-current.md
-                - name: Troubleshoot pending device state
-                  href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
-                - name: Troubleshoot using dsregcmd
-                  href: troubleshoot-device-dsregcmd.md
-                - name: Troubleshoot Microsoft Entra hybrid joined down level Windows devices
-                  href: troubleshoot-hybrid-join-windows-legacy.md
-        - name: Troubleshoot Windows devices
-          href: troubleshoot-device-windows-joined.md
-        - name: Troubleshoot primary refresh tokens on Windows devices
-          displayName: PRT
-          href: troubleshoot-primary-refresh-token.md
-        - name: Local Administrator Password Solution
-          href: howto-manage-local-admin-passwords.md
-    - name: Apple Devices
-      items:
-        - name: Troubleshoot SSO on Apple devices
-          href: troubleshoot-mac-sso-extension-plugin.md
-        - name: Add Your Work or School Account to a macOS Device
-          href: macos-get-started.md
-        - name: Troubleshoot macOS PSSO on Mac
-          href: troubleshoot-macos-platform-single-sign-on-extension.md
-        - name: Configure macOS PSSO to meet NIST and EO requirements
-          href: macos-psso-deployment-eocustomers.md
-    - name: Linux Devices
-      items:
-        - name: Troubleshoot using dsregcmd on Linux
-          href: troubleshoot-device-registration-tool-linux.md
-    - name: Virtual Devices
-      items:
-        - name: Azure Linux VMs and Microsoft Entra ID
-          href: howto-vm-sign-in-azure-ad-linux.md
-        - name: Azure Arc-enabled VMs and Microsoft Entra ID
-          href: howto-arc-sign-in-windows.md
-        - name: Virtual desktop infrastructure
-          href: howto-device-identity-virtual-desktop-infrastructure.md
+            - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
+              href: troubleshoot-hybrid-join-windows-current.md
+            - name: Troubleshoot pending device state
+              href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
+            - name: Troubleshoot using dsregcmd
+              href: troubleshoot-device-dsregcmd.md
+            - name: Troubleshoot Microsoft Entra hybrid joined down level Windows devices
+              href: troubleshoot-hybrid-join-windows-legacy.md
+- name: Windows Devices
+  expanded: false
+  items:
+    - name: Troubleshoot Windows devices
+      href: troubleshoot-device-windows-joined.md
+    - name: Troubleshoot primary refresh tokens on Windows devices
+      displayName: PRT
+      href: troubleshoot-primary-refresh-token.md
+    - name: Local Administrator Password Solution
+      href: howto-manage-local-admin-passwords.md
+- name: Apple Devices
+  expanded: false
+  items:
+    - name: Troubleshoot SSO on Apple devices
+      href: troubleshoot-mac-sso-extension-plugin.md
+    - name: Add Your Work or School Account to a macOS Device
+      href: macos-get-started.md  
+    - name: Troubleshoot macOS PSSO on Mac
+      href: troubleshoot-macos-platform-single-sign-on-extension.md
+    - name: Configure macOS PSSO to meet NIST and EO requirements
+      href: macos-psso-deployment-eocustomers.md
+- name: Linux Devices
+  expanded: false
+  items:
+    - name: Azure Linux VMs and Microsoft Entra ID
+      href: howto-vm-sign-in-azure-ad-linux.md
+    - name: Troubleshoot using dsregcmd on Linux
+      href: troubleshoot-device-registration-tool-linux.md
+- name: Virtual Devices
+  expanded: false
+  items:        
     - name: Azure Windows VMs and Microsoft Entra ID
       href: howto-vm-sign-in-azure-ad-windows.md
-    - name: Enterprise state roaming
-      items:
-        - name: Enable enterprise state roaming
-          href: enterprise-state-roaming-enable.md
-        - name: Enterprise state roaming FAQs
-          href: enterprise-state-roaming-faqs.yml
-        - name: Troubleshoot enterprise state roaming
-          href: enterprise-state-roaming-troubleshooting.md
-        - name: Enterprise state roaming Group Policy Object (GPO) settings
-          href: enterprise-state-roaming-group-policy-settings.md
-        - name: Enterprise state roaming Windows settings
-          href: /windows/configuration/windows-backup/catalog-esr
-    - name: Manage device identities
-      href: manage-device-identities.md
-    - name: Manage stale devices
-      href: manage-stale-devices.md
+    - name: Azure Arc-enabled VMs and Microsoft Entra ID
+      href: howto-arc-sign-in-windows.md 
+    - name: Virtual desktop infrastructure
+      href: howto-device-identity-virtual-desktop-infrastructure.md
+- name: Enterprise state roaming
+  expanded: false
+  items:
+    - name: Enable enterprise state roaming
+      href: enterprise-state-roaming-enable.md
+    - name: Enterprise state roaming FAQs
+      href: enterprise-state-roaming-faqs.yml
+    - name: Troubleshoot enterprise state roaming
+      href: enterprise-state-roaming-troubleshooting.md
+    - name: Enterprise state roaming Group Policy Object (GPO) settings
+      href: enterprise-state-roaming-group-policy-settings.md
+    - name: Enterprise state roaming Windows settings
+      href: /windows/configuration/windows-backup/catalog-esr
+- name: Manage device identities
+  href: manage-device-identities.md
+- name: Manage stale devices
+  href: manage-stale-devices.md
 - name: Frequently asked questions
   href: faq.yml
 - name: Reference
