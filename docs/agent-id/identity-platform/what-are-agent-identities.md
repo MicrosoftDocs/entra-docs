@@ -83,5 +83,6 @@ Several Microsoft products already use agent identities for authenticating AI ag
 ## Related content
 
 - [Agent identities in Microsoft Entra Agent ID](./agent-identities.md)
-- [What is Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md)
+- [What is Microsoft Entra Agent ID?](../identity-professional/what-is-microsoft-entra-agent-id.md)
+- [Microsoft Entra security for AI overview](../identity-professional/security-for-ai-overview.md)
 - [What is the Microsoft Entra Agent identity platform](what-is-agent-id-platform.md)
