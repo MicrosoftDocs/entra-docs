@@ -171,16 +171,16 @@ To add the appropriate package repository for your Linux distribution, follow th
     
 1. Add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
     
-        ```bash
-        sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
-        [microsoft-insiders-fast]
-        name=Microsoft insiders-fast - RHEL 10
-        baseurl=https://packages.microsoft.com/rhel/10/insiders-fast
-        enabled=1
-        gpgcheck=1
-        gpgkey=https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
-        EOF
-        ```
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
+    [microsoft-insiders-fast]
+    name=Microsoft insiders-fast - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/insiders-fast
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    EOF
+    ```
 
 ---
 
