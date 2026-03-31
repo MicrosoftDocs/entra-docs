@@ -263,7 +263,7 @@ To configure provisioning, follow these steps:
 
 ## Test configuration 
 >[!NOTE]
->When you run on-demand provisioning, members aren't automatically provisioned. You need to select the members you want to test, and the limit is five members. If you want to test after removing a member, select "View all users" and then select the member(s) that have been removed from the group.
+>When you run on-demand provisioning, members aren't automatically provisioned. You need to select the members you want to test, and the limit is five members. If you want to test after removing a member, select **View all users** and then select the member(s) that have been removed from the group.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
