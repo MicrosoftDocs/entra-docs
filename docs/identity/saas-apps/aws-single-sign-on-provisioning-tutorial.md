@@ -232,7 +232,7 @@ You can also check the AWS IAM Identity Center troubleshooting tips [here](https
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and IAM Identity Center with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 ## Related content
 
