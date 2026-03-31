@@ -4,20 +4,16 @@ description: Learn how Shadow AI discovery in Global Secure Access provides netw
 author: jenniferf-skc
 ms.author: jfields
 ms.topic: concept-article
-ms.date: 03/30/2026
+ms.date: 03/31/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to discover and manage unsanctioned generative AI applications and tools in my organization so I can reduce security and compliance risks.
 ---
 
-# Shadow AI discovery in Global Secure Access (Preview)
+# Shadow AI discovery in Global Secure Access
 
 Shadow AI discovery in Microsoft Entra Global Secure Access is a network-based feature that provides visibility into unsanctioned AI applications and tools used in your organization. It identifies traffic to AI services like ChatGPT, Claude, SaaS MCP servers, and AI Model Provider frameworks (for example, DeepSeek, Anthropic Claude API) by analyzing network traffic. Shadow AI discovery lets administrators see which generative AI apps or tools employees are using without IT approval.
-
-> [!IMPORTANT]
-> Shadow AI discovery is currently in preview.
-> This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Why shadow AI discovery matters
 
