@@ -99,7 +99,7 @@ To configure provisioning, follow these steps:
       - You can use a constant OU mapping to provision all groups in the same OU:
 
         1. Under **Target container**, select **Edit attribute mapping**.
-        2. For **Constant value** enter the DistinguishedName for the target OU.
+        2. For **Constant value**, enter the DistinguishedName for the target OU.
 
            :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png" alt-text="Screenshot of target OU configuration." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png":::
         3. Select **Apply**.
