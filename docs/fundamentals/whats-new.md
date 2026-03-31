@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft Entra releases and announcements
 description: Learn what is new with Microsoft Entra, such as the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
 author: owinfreyATL
@@ -307,7 +307,7 @@ Microsoft Entra Conditional Access is strengthening how policies that target All
 **Service category:** Authentications (Logins)  
 **Product capability:** SSO  
 
-Windows has many user experiences that uses webview’s to gather web information to present web information to users that looks like native content. One of the common scenarios for this is for authentication flows, where a user is prompted for their username and provides credentials. 
+Windows has many user experiences that use webview’s to gather web information to present web information to users that looks like native content. One of the common scenarios for this is for authentication flows, where a user is prompted for their username and provides credentials. 
 
 Microsoft Entra ID app sign-in through Web Account Manager (WAM) now has the option to be powered by WebView2, the Chromium-based web control, starting with [KB5072033 (OS Builds 26200.7462 and 26100.7462) or later](https://support.microsoft.com/topic/december-9-2025-kb5072033-os-builds-26200-7462-and-26100-7462-0c1a4334-19ba-406d-bb1e-88fcffc87b79). This release marks a significant step forward in delivering a secure, modern, and consistent sign-in experience across apps and services.  
 
@@ -640,7 +640,7 @@ Microsoft Entra ID with Entra Kerberos has added support for cloud-only identiti
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) platform.
 
 ---
 
