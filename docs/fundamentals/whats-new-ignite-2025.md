@@ -29,9 +29,9 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **The future of AI security is here.** Microsoft Entra Agent ID introduces revolutionary identity and access management capabilities specifically designed for AI agents. This groundbreaking service provides first-class identity constructs for AI agents, bringing the same Zero Trust principles that protect human users to autonomous AI systems.
 
-- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-is-agent-id.md) (New)
-- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) (New)
-- [Security for AI](../agent-id/identity-professional/security-for-ai.md) (New)
+- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-are-agent-identities.md) (New)
+- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) (New)
+- [Security for AI](../agent-id/identity-professional/security-for-ai-overview.md) (New)
 - [Agent ID creation channels](../agent-id/identity-professional/agent-id-creation-channels.md) (New)
 - [Control user access to agents](../agent-id/identity-professional/control-user-access-agents.md) (New)
 - [Grant agent access to Microsoft 365](../agent-id/identity-professional/grant-agent-access-microsoft-365.md) (New)
@@ -104,8 +104,8 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 ### Microsoft Entra ID Governance
 
 **Next-generation identity governance with AI integration.** Enhanced lifecycle workflows, intelligent risk-based approvals, and streamlined access package management deliver comprehensive identity governance at enterprise scale.
-- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-is-agent-id.md) (New)
-- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) (New)
+- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-are-agent-identities.md) (New)
+- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) (New)
 - [Entitlement management: Configure ID Protection approvals](../id-governance/entitlement-management-configure-id-protection-approvals.md) (New)
 - [Entitlement management: Configure Insider Risk Management approvals](../id-governance/entitlement-management-configure-insider-risk-management-approvals.md) (New)
 - [Workflow sensitivity labels](../id-governance/workflow-sensitivity-labels.md) (New)

@@ -149,13 +149,13 @@ This section of the agent settings describes the identity under which the agent 
 
 ### Agent identity
 
-The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md), allowing the agent to run under its own identity rather than a specific user’s identity. This capability improves security, simplifies management, and provides greater flexibility.
+The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md), allowing the agent to run under its own identity rather than a specific user’s identity. This capability improves security, simplifies management, and provides greater flexibility.
 
 Select **Manage agent identity** to view the agent details in Microsoft Entra Agent ID.
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot of the agent settings view for permissions and identities.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
 
-- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-is-agent-id.md).
+- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-are-agent-identities.md).
 - Existing installations can switch from the user context to run under an agent identity at any time. 
   - This change doesn't impact reporting or analytics.
   - Existing policies and recommendations remain unaffected.
