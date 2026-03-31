@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 03/31/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
