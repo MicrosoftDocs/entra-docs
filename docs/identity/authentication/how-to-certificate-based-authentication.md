@@ -161,7 +161,7 @@ Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 
 #### Configure the isIssuerHintEnabled attribute for a CA
 
-Issuer hints send back a *trusted CA* indicator as part of the Transport Layer Security (TLS) handshake. The trusted CA list is set to the subject of the CAs that the tenant uploads to the Microsoft Entra trust store. For more information, see [Understanding issuer hints](concept-certificate-based-authentication-technical-deep-dive.md#issuer-hints-preview).
+Issuer hints send back a *trusted CA* indicator as part of the Transport Layer Security (TLS) handshake. The trusted CA list is set to the subject of the CAs that the tenant uploads to the Microsoft Entra trust store. For more information, see [Understanding issuer hints](concept-certificate-based-authentication-technical-deep-dive.md#issuer-hints).
 
 By default, the subject names of all CAs in the Microsoft Entra trust store are sent as hints. If you want to send back a hint only for specific CAs, set the issuer hint attribute `isIssuerHintEnabled` to `true`.
 
