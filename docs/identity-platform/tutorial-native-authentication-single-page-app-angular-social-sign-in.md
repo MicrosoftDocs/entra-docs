@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 #Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook and Google identity providers.
 ---
 
-# Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
