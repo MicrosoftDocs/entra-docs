@@ -43,7 +43,7 @@ Before you can use Account Discovery, the following must be in place:
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- See [Supported applications](#supported-applications) for applications that support Account Discovery. Account Discovery isn't supported for the some applications, including:
+- See [Supported applications](#supported-applications) for applications that support Account Discovery. Account Discovery isn't supported for some applications, including:
   - Workday
   - SAP SuccessFactors
   - API-driven provisioning apps
