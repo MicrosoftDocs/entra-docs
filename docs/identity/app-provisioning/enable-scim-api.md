@@ -25,7 +25,7 @@ For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id
 
 ## Prerequisites
 
-- An Entra ID P1 license or any license that contains Entra ID P1 (e.g., Entra ID P2, M365 E3, M365 E5, etc)
+- An Entra ID P1 license or any license that contains Entra ID P1 (e.g., Entra ID P2, Microsoft 365 E3, Microsoft 365 E5, etc)
 - An active Azure subscription to link for billing.
 - An admin with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role to create an app registration with the permissions required to invoke the SCIM API.
 - An admin with the [Billing Administrator](/entra/identity/role-based-access-control/permissions-reference#billing-administrator) role to enable SCIM API billing and link the Azure subscription.
@@ -34,7 +34,7 @@ For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id
 
 The SCIM Provisioning API is a paid add-on that requires a subscription and billing configuration:
 
-- **Cost:** USD $0.002 per API call.
+- **Cost:** See [API call pricing](https://aka.ms/EntraSCIMAPIPricing).
 - **Billing:** Monthly, through a linked Azure subscription.
 
 ## Enable the SCIM Provisioning API

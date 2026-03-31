@@ -28,6 +28,31 @@ If you no longer need programmatic SCIM access, you can turn off the SCIM Provis
 
 1. Confirm the action when prompted. After the feature is turned off, all SCIM API calls to the tenant return an error and billing stops.
 
+
+## Verify that the SCIM API is disabled
+
+Use the following steps to validate that the disable operation was successful.
+
+1. Obtain an app-only access token that previously worked for SCIM API calls.
+
+1. Send a GET request to any SCIM endpoint. For example, call the user read endpoint:
+
+ ```http
+ GET https://graph.microsoft.com/rp/scim/users/{id}
+ Authorization: Bearer {token}
+ Accept: application/json
+ ```
+
+1. Confirm that the API returns **HTTP 400 Bad Request**.
+
+1. Confirm that the response includes an error message similar to the following:
+
+ ```text
+ No 'scimapiconsumptions' resource found for TenantId: {tenantId}. Please ensure 'SCIM Provisioning API' feature is enabled and only one 'scimapiconsumptions' resource exists.
+ ```
+
+If you receive this error, the SCIM APIs are now disabled in your tenant.
+
 ## Next steps
 
 - [Enable the SCIM Provisioning API](enable-scim-api.md) – Learn how to enable the SCIM Provisioning API and set up credentials.

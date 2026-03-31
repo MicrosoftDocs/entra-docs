@@ -26,17 +26,17 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 
 ## User - Core
 
-| SCIM Attribute | Entra ID Attribute | Notes / Restrictions |
+| SCIM Attribute | Microsoft Entra ID Attribute | Notes / Restrictions |
 |---|---|---|
 | active | accountEnabled |  |
-| addresses[type eq "work"].country | country | Only one *addresses* value is allowed, and it requires a type of "work". |
+| addresses[type eq "work"].country/region | country/region | Only one *addresses* value is allowed, and it requires a type of "work". |
 | addresses[type eq "work"].locality | city |
 | addresses[type eq "work"].postalCode | postalCode |
 | addresses[type eq "work"].region | state |
 | addresses[type eq "work"].streetAddress | streetAddress |
 | displayName | displayName |  |
 | emails[type eq "other"].value | otherMails | A list of email addresses associated with the user that may not be linked to their Exchange Online recipient object, such as a personal email address. |
-| emails[type eq "proxyAddress".value | proxyAddresses - only for values that start with smtp: (case-insensitive) | A read-only list of email addresses(Note: This attribute is currently implemented as type work, primary false and will change in an upcoming release) |
+| emails[type eq "proxyAddress"].value | proxyAddresses - only for values that start with SMTP: (case-insensitive) | A read-only list of email addresses. This attribute is currently implemented as type "work" and primary equal to false. |
 | emails[type eq "work" and primary eq true].value | mail | Only one value of type "work" and primary *true* is allowed. |
 | externalId | crossDomainData.scim.v2.externalId | This attribute is persisted in the Graph entity `crossDomainData`. |
 | groups.value | *See notes* | Read only. The user’s group memberships. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
@@ -56,7 +56,7 @@ This article describes how SCIM schema attributes map to Microsoft Entra ID [use
 
 Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:extension:enterprise:2.0:User```.
 
-| SCIM Attribute  | Entra ID Attribute          |
+| SCIM Attribute  | Microsoft Entra ID Attribute          |
 |-----------------|-----------------------------|
 | costCenter      | employeeOrgData.costCenter  |
 | department      | department                  |
@@ -69,7 +69,7 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 
 Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User```.
 
-| SCIM Attribute | Entra ID Attribute |
+| SCIM Attribute | Microsoft Entra ID Attribute |
 |---|---|
 | creationType | creationType |
 | employeeHireDate | employeeHireDate |
@@ -111,7 +111,7 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 
 ## Group – Core
 
-| SCIM Attribute | Entra ID Attribute | Notes / Restrictions |
+| SCIM Attribute | Microsoft Entra ID Attribute | Notes / Restrictions |
 |----|----|----|
 | displayName | displayName |  |
 | members.value | *See Notes column* | Read only. The group’s members. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
@@ -120,7 +120,7 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 
 Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group```.
 
-| SCIM Attribute               | Entra ID Attribute           |
+| SCIM Attribute               | Microsoft Entra ID Attribute           |
 |------------------------------|------------------------------|
 | description                  | description                  |
 | expirationDateTime           | expirationDateTime           |

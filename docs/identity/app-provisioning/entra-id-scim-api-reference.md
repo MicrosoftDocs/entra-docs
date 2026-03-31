@@ -31,10 +31,10 @@ All SCIM API endpoints are under the base URL: `https://graph.microsoft.com/rp/s
 
 | Endpoint | Supported HTTP methods | Description |
 |---|---|---|
-| `/serviceproviderconfig` | GET | Fetch configuration details about the Entra ID SCIM implementation, such as supported authentication schemes, available endpoints, and compliance with SCIM protocols. |
-| `/resourcetypes` | GET | Retrieve information about the resource types (Users and Groups) supported by Entra ID. |
-| `/schemas` | GET | Retrieve detailed information about the schemas supported by Entra ID. |
-| `/users` | GET, POST, PATCH, DELETE | Read, create, update, and delete user data in Entra ID. |
+| `/serviceproviderconfig` | GET | Fetch configuration details about the Microsoft Entra ID SCIM implementation, such as supported authentication schemes, available endpoints, and compliance with SCIM protocols. |
+| `/resourcetypes` | GET | Retrieve information about the resource types (Users and Groups) supported by Microsoft Entra ID. |
+| `/schemas` | GET | Retrieve detailed information about the schemas supported by Microsoft Entra ID. |
+| `/users` | GET, POST, PATCH, DELETE | Read, create, update, and delete user data in Microsoft Entra ID. |
 | `/groups` | GET, POST, PATCH, DELETE | Read, create, update, and delete group and group membership data in Entra ID. |
 
 The following sections contain examples of API requests and responses currently supported in the Microsoft Entra ID SCIM implementation, along with important notes and constraints to consider in your design.
@@ -447,7 +447,7 @@ Accept: application/json
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
         "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User"
       ],
-      "id": "97c0abe1-14f7-417b-951c-bc8e2a17f200",
+      "id": "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
       "active": true,
       "displayName": "Ellen Reckert",
       "name": {
@@ -459,7 +459,7 @@ Accept: application/json
         "department": "Human Resources US",
         "employeeNumber": "100009",
         "manager": {
-          "value": "b9e73e31-2c34-4d57-b47a-d212943d61e6"
+          "value": "bbbbbbbb-7777-8888-9999-cccccccccccc"
         }
       },
       "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
@@ -467,7 +467,7 @@ Accept: application/json
         "userType": "Member"
       },
       "meta": {
-        "location": "/users/97c0abe1-14f7-417b-951c-bc8e2a17f200",
+        "location": "/users/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
         "resourceType": "user"
       }
     },
@@ -503,7 +503,7 @@ Authorization: Bearer {token}
 Accept: application/json
 ```
 
-#### Example 2 – Get user by id with specific attributes
+#### Example 2 – Get user by ID with specific attributes
 
 **Request:**
 
@@ -521,7 +521,7 @@ GET https://graph.microsoft.com/rp/scim/users?attributes=urn:ietf:params:scim:sc
 Authorization: Bearer {token}
 ```
 
-#### Example 4 - Get user by id with excluded attributes
+#### Example 4 - Get user by ID with excluded attributes
 
 **Request:**
 
@@ -555,13 +555,13 @@ Response is truncated for readability.
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User"
       ],
-      "id": "97c0abe1-14f7-417b-951c-bc8e2a17f200",
+      "id": "f5f5f5f5-aaaa-bbbb-cccc-d6d6d6d6d6d6",
       "displayName": "Ellen Reckert",
       "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
         "mailNickname": "100009"
       },
       "meta": {
-        "location": "/users/97c0abe1-14f7-417b-951c-bc8e2a17f200",
+        "location": "/users/f5f5f5f5-aaaa-bbbb-cccc-d6d6d6d6d6d6",
         "resourceType": "user"
       }
     }
@@ -584,7 +584,7 @@ Authorization: Bearer {token}
 Use the Entra `group objectId` for the `groups.value` property and the `user objectId` for the `id` property to check if a user belongs to a specific group.
 
 ```http
-GET https://graph.microsoft.com/rp/scim/users?filter=filter=groups.value eq "9fe5f9ba-2b5d-49ff-b61b-eddd938787e1" and id eq "19134e88-95eb-4616-89af-189f0a4e2abf"&attributes=displayName
+GET https://graph.microsoft.com/rp/scim/users?filter=filter=groups.value eq "dddddddd-3333-4444-5555-eeeeeeeeeeee" and id eq "19134e88-95eb-4616-89af-189f0a4e2abf"&attributes=displayName
 Authorization: Bearer {token}
 ```
 
@@ -602,10 +602,10 @@ Response truncated for readability.
       "schemas": [
         "urn:ietf:params:scim:schemas:core:2.0:User"
       ],
-      "id": "19134e88-95eb-4616-89af-189f0a4e2abf",
+      "id": "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
       "displayName": "Tanya Clifton",
       "meta": {
-        "location": "/users/19134e88-95eb-4616-89af-189f0a4e2abf",
+        "location": "/users/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
         "resourceType": "user"
       }
     }
@@ -635,7 +635,7 @@ Response truncated for readability.
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes"
       ],
-      "id": "e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+      "id": "b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2",
       "userName": "AdeleV@contoso.com",
       "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes": {
         "Project": {
@@ -643,7 +643,7 @@ Response truncated for readability.
         }
       },
       "meta": {
-        "location": "/users/e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+        "location": "/users/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2",
         "resourceType": "user"
       }
     }
@@ -680,7 +680,7 @@ The following SCIM query parameters can be used with this API endpoint:
 **Request:**
 
 ```http
-GET https://graph.microsoft.com/rp/scim/users/e36a8d7e-299a-4767-a2ca-56d05a92b0c1?attributes=displayName,userName
+GET https://graph.microsoft.com/rp/scim/users/aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb?attributes=displayName,userName
 Authorization: Bearer {token}
 ```
 
@@ -693,11 +693,11 @@ Response is truncated for readability.
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User"
   ],
-  "id": "e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+  "id": "aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb",
   "displayName": "Adele Vance",
   "userName": "AdeleV@contoso.com",
   "meta": {
-    "location": "/users/e36a8d7e-299a-4767-a2ca-56d05a92b0c1",
+    "location": "/users/aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb",
     "resourceType": "user"
   }
 }
@@ -873,9 +873,9 @@ Content-Type: application/scim+json
       "value": [
         {
           "type": "work",
-          "streetAddress": "2 Microsoft Way",
-          "locality": "Redmond",
-          "region": "King County",
+          "streetAddress": "4567 Main Street",
+          "locality": "Buffalo",
+          "region": "NY",
           "postalCode": "98052",
           "country/region": "United States"
         }
@@ -1083,7 +1083,7 @@ If the number of groups is more than 100, then the response will include the `it
         "urn:ietf:params:scim:schemas:core:2.0:Group",
         "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group"
       ],
-      "id": "157cca4a-cf48-4b2b-98c3-99878b39d956",
+      "id": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
       "displayName": "Sales and Marketing",
       "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group": {
         "description": "Description of Sales and Marketing",
@@ -1093,11 +1093,11 @@ If the number of groups is more than 100, then the response will include the `it
         "mailEnabled": true,
         "mailNickname": "SalesandMarketing",
         "securityEnabled": false,
-        "securityIdentifier": "S-1-12-1-360499786-1261162312-2275001240-1457076619"
+        "securityIdentifier": "ffffffff-5a5a-6b6b-7c7c-888888888888"
       },
       "meta": {
         "created": "2022-01-11T01:23:26+00:00",
-        "location": "/groups/157cca4a-cf48-4b2b-98c3-99878b39d956",
+        "location": "/groups/c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
         "resourceType": "group"
       }
     },    
@@ -1138,7 +1138,7 @@ Accept: application/json
 **Request:**
 
 ```http
-GET https://graph.microsoft.com/rp/scim/groups?filter=id eq "9fe5f9ba-2b5d-49ff-b61b-eddd938787e1"&attributes=displayName
+GET https://graph.microsoft.com/rp/scim/groups?filter=id eq "dddddddd-3333-4444-5555-eeeeeeeeeeee"&attributes=displayName
 Authorization: Bearer {token}
 ```
 
@@ -1147,7 +1147,7 @@ Authorization: Bearer {token}
 **Request:**
 
 ```http
-GET https://graph.microsoft.com/rp/scim/groups?filter=id eq "9fe5f9ba-2b5d-49ff-b61b-eddd938787e1"&excludedAttributes=displayName
+GET https://graph.microsoft.com/rp/scim/groups?filter=id eq "dddddddd-3333-4444-5555-eeeeeeeeeeee"&excludedAttributes=displayName
 Authorization: Bearer {token}
 ```
 
@@ -1175,10 +1175,10 @@ Response is truncated for readability.
       "schemas": [
         "urn:ietf:params:scim:schemas:core:2.0:Group"
       ],
-      "id": "9fe5f9ba-2b5d-49ff-b61b-eddd938787e1",
+      "id": "a6a6a6a6-bbbb-cccc-dddd-e7e7e7e7e7e7",
       "displayName": "GroupA",
       "meta": {
-        "location": "/groups/9fe5f9ba-2b5d-49ff-b61b-eddd938787e1",
+        "location": "/groups/a6a6a6a6-bbbb-cccc-dddd-e7e7e7e7e7e7",
         "resourceType": "group"
       }
     }
@@ -1232,7 +1232,7 @@ The following SCIM query parameters can be used with this API endpoint:
 **Request:**
 
 ```http
-GET https://graph.microsoft.com/rp/scim/groups/9fe5f9ba-2b5d-49ff-b61b-eddd938787e1
+GET https://graph.microsoft.com/rp/scim/groups/dddddddd-3333-4444-5555-eeeeeeeeeeee
 Authorization: Bearer {token}
 ```
 
@@ -1246,18 +1246,18 @@ Response is truncated for readability.
     "urn:ietf:params:scim:schemas:core:2.0:Group",
     "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group"
   ],
-  "id": "9fe5f9ba-2b5d-49ff-b61b-eddd938787e1",
+  "id": "dddddddd-3333-4444-5555-eeeeeeeeeeee",
   "displayName": "GroupA",
   "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group": {
     "description": "Group for All Employees - Baseline access",
     "mailEnabled": false,
     "mailNickname": "3c998a58-6",
     "securityEnabled": true,
-    "securityIdentifier": "S-1-12-1-2682649018-1241459549-3723303862-3783755667"
+    "securityIdentifier": "ffffffff-5a5a-6b6b-7c7c-888888888888"
   },
   "meta": {
     "created": "2024-05-23T17:21:41+00:00",
-    "location": "/groups/9fe5f9ba-2b5d-49ff-b61b-eddd938787e1",
+    "location": "/groups/dddddddd-3333-4444-5555-eeeeeeeeeeee",
     "resourceType": "group"
   }
 }
@@ -1320,17 +1320,17 @@ Returns the SCIM representation of the group created.
     "urn:ietf:params:scim:schemas:core:2.0:Group",
     "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group"
   ],
-  "id": "0bf1b479-45b0-4953-9878-3782a0cf8b7a",
+  "id": "66aa66aa-bb77-cc88-dd99-00ee00ee00ee",
   "displayName": "Test SCIM Group",
   "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group": {
     "mailEnabled": false,
     "mailNickname": "test-scim-group",
     "securityEnabled": true,
-    "securityIdentifier": "S-1-12-1-200389753-1230194096-2184673432-2055983008"
+    "securityIdentifier": "ffffffff-5a5a-6b6b-7c7c-888888888888"
   },
   "meta": {
     "created": "2026-03-30T16:28:37+00:00",
-    "location": "/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a",
+    "location": "/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee",
     "resourceType": "group"
   }
 }
@@ -1373,7 +1373,7 @@ Upon success, the API returns HTTP Status 200.
 **Request:**
 
 ```http
-PATCH https://graph.microsoft.com/rp/scim/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a
+PATCH https://graph.microsoft.com/rp/scim/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee
 Authorization: Bearer {token}
 Content-Type: application/scim+json
 ```
@@ -1400,7 +1400,7 @@ The response conforms to SCIM specification.
 **Request:**
 
 ```http
-PATCH https://graph.microsoft.com/rp/scim/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a
+PATCH https://graph.microsoft.com/rp/scim/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee
 Authorization: Bearer {token}
 Content-Type: application/scim+json
 ```
@@ -1427,7 +1427,7 @@ The response conforms to SCIM specification.
 **Request:**
 
 ```http
-PATCH https://graph.microsoft.com/rp/scim/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a
+PATCH https://graph.microsoft.com/rp/scim/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee
 Authorization: Bearer {token}
 Content-Type: application/scim+json
 ```
@@ -1463,7 +1463,7 @@ The response conforms to SCIM specification.
 **Request:**
 
 ```http
-PATCH https://graph.microsoft.com/rp/scim/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a
+PATCH https://graph.microsoft.com/rp/scim/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee
 Authorization: Bearer {token}
 Content-Type: application/scim+json
 ```
@@ -1476,7 +1476,7 @@ Content-Type: application/scim+json
   "Operations": [
     {
       "op": "remove",
-      "path": "members[value eq \"e36a8d7e-299a-4767-a2ca-56d05a92b0c1\"]"
+      "path": "members[value eq \"aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb\"]"
     }
   ]
 }
@@ -1507,7 +1507,7 @@ Upon success, the API returns HTTP Status 204.
 **Request:**
 
 ```http
-DELETE https://graph.microsoft.com/rp/scim/groups/0bf1b479-45b0-4953-9878-3782a0cf8b7a
+DELETE https://graph.microsoft.com/rp/scim/groups/66aa66aa-bb77-cc88-dd99-00ee00ee00ee
 Authorization: Bearer {token}
 ```
 

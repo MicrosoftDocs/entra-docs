@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 author: jenniferf-skc
 manager: pmwongera
-ms.date: 03/24/2026
+ms.date: 03/31/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -17,8 +17,6 @@ ai-usage: ai-assisted
 # Troubleshoot Microsoft Entra ID SCIM API errors
 
 This article helps troubleshoot common issues encountered when calling the Microsoft Entra ID SCIM APIs for user and group management.
-
----
 
 ## Error: 401 – Invalid authentication token
 
@@ -45,7 +43,6 @@ The request does not include a valid access token in the HTTP `Authorization` he
    - Collect details of the failing API call
    - Create a support ticket
 
----
 
 ## Error: 403 – Forbidden
 
@@ -70,8 +67,6 @@ The app registration used by the SCIM API client does not have the required API 
    - Collect API request details
    - Create a support ticket
 
----
-
 ## Error: 404 – Resource not found
 
 ### Symptoms
@@ -95,8 +90,6 @@ The `{id}` value in the request does not resolve to a valid user or group object
 2. If the issue persists:
    - Collect API request details
    - Create a support ticket
-
----
 
 ## Error: 400 – Bad request
 
@@ -135,8 +128,6 @@ The request payload or query parameters do not meet the constraints defined for 
    - Collect API request details
    - Create a support ticket
 
----
-
 ## Error: 400 – SCIM Provisioning API feature not enabled
 
 ### Symptoms
@@ -171,8 +162,6 @@ The SCIM Provisioning API feature is not enabled in the Microsoft Entra admin ce
 
 For detailed steps, see [Enable the SCIM Provisioning API](enable-scim-api.md).
 
----
-
 ## Error: 500 – Internal server error
 
 ### Symptoms
@@ -192,8 +181,6 @@ An unexpected server-side error occurred while processing the SCIM API request.
 1. Collect details of the failing API call.
 2. Create a support ticket.
 
----
-
 ## Error: 504 – Gateway timeout
 
 ### Symptoms
@@ -212,8 +199,6 @@ Intermittent 504 responses may be returned by the SCIM service.
 
 1. Collect details of the failing API calls and time window for the errors.
 2. Create a support ticket if the issue persists.
-
----
 
 ## SCIM API error code reference
 
