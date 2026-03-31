@@ -160,8 +160,8 @@ Run the following commands in a command line to manually install the Microsoft s
     sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
     ```
 
-1. Install the Microsoft production package signing key. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8/9. You can find more information around [Microsoft GPG Repository Signing Keys](/windows-server/identity/ad-fs/operations/gpg-signing-keys). Import both keys
-    
+2. Install the Microsoft production package signing key. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8/9.
+
     ```bash
     # Legacy key (needed for Edge)
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -170,7 +170,7 @@ Run the following commands in a command line to manually install the Microsoft s
     sudo rpm --import https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
     ```
   
-2. Then add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
+3. Then add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
 
     ```bash
     sudo tee /etc/yum.repos.d/microsoft-prod.repo > /dev/null <<EOF

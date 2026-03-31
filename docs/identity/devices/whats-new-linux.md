@@ -110,7 +110,7 @@ To add the appropriate package repository for your Linux distribution, follow th
 
 ### [RHEL 10 Prod](#tab/redhat10-install-prod)
 
-1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. For more information, see [Microsoft GPG Repository Signing Keys](/windows-server/identity/ad-fs/operations/gpg-signing-keys). Import both keys.
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
     
     ```bash
     # Legacy key (needed for Microsoft Edge)
@@ -159,7 +159,7 @@ To add the appropriate package repository for your Linux distribution, follow th
     
 ### [RHEL 10 insiders-fast](#tab/redhat10-install-insiders-fast)
 
-1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. For more information, see [Microsoft GPG Repository Signing Keys](/windows-server/identity/ad-fs/operations/gpg-signing-keys). Import both keys.
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
     
     ```bash
     # Legacy key (needed for Edge)
