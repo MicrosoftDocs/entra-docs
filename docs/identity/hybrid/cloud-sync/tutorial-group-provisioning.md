@@ -253,7 +253,7 @@ To configure provisioning, follow these steps:
         3. Go to **Attribute mapping**
         4. Edit the `cn` attribute mapping
         5. Change **Mapping type** to **Expression**.
-        6. In the expression box, insert the updated expression and Select **Apply**.
+        6. In the expression box, insert the updated expression and select **Apply**.
         7. Select **Save schema**.
    
    11. On the left, select **Overview**.
