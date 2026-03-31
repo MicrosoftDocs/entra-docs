@@ -304,8 +304,9 @@ The federated identity provider authentication page doesn't appear, or you recei
 | Provider | Expected `domainHint` value |
 |---|---|
 | Apple | `"Apple"` |
-| Google | `"Google"` |
 | Facebook | `"Facebook"` |
+| Google | `"Google"` |
+
 
 
 
