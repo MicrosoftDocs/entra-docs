@@ -28,7 +28,7 @@ Organizations are deploying AI agents for increasingly diverse tasks, and each d
 
 - **Autonomous agents** operate independently, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
 
-- **Agents' user accounts** function with human user characteristics, including persistent identities and access to organizational systems. Agents' user accounts might join teams, access documents, participate in meetings, and require mailbox and calendar access.
+- **An agent's user account** functions with human user characteristics, including persistent identities and access to organizational systems. An agent's user account might join teams, access documents, participate in meetings, and require mailbox and calendar access.
 
 ### Security challenges
 

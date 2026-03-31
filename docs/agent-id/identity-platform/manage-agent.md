@@ -12,7 +12,7 @@ ms.date: 11/05/2025
 
 # Manage Agents in end user experience (Preview)
 
-The Manage Agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](agent-owners-sponsors-managers.md). [Agents identities](what-are-agent-identities.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
+The Manage Agents feature in Microsoft Entra lets you view and control, [agent identities you own or sponsor](agent-owners-sponsors-managers.md). [Agents identities](what-are-agent-identities.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
