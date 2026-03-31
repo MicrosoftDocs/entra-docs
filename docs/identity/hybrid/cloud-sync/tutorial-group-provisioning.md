@@ -171,7 +171,7 @@ To configure provisioning, follow these steps:
         ```
 
         3. Change **Mapping type** to **Expression**.
-        4. In the expression box, insert the updated expression and Select **Apply**.
+        4. In the expression box, insert the updated expression and select **Apply**.
         5. Select **Save**.
 
       - If you want to place groups into different organizational units based on their DisplayName:
