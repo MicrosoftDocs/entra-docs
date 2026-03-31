@@ -173,9 +173,9 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <y
 $applicationId = "<agent-blueprint-id>"
 
 $federatedCredential = @{
-  Name             = "my-msi"
+  Name             = "my-managed-identity"
   Issuer           = "https://login.microsoftonline.com/<your-tenant-id>/v2.0"
-  Subject          = "api://graph.agentIdentityBlueprintPrincipal/<my-agent-blueprint-principal>"
+  Subject          = "<managed-identity-principal-id>"
   Audiences         = @("api://AzureADTokenExchange")
 }
 
