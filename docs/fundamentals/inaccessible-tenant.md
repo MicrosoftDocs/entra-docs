@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
-manager: pmwongera
 ms.topic: troubleshooting
 ms.date: 01/15/2025
 ms.reviewer: Sunayana

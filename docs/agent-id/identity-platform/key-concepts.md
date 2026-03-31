@@ -24,7 +24,7 @@ The following concepts form the foundation of the agent identity system in Micro
 
 ### Agent identity
 
-Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions. Agent identities don't have a password or any other credential. Instead, agent identities can only authenticate by presenting an access token issued to the service or platform on which the agent runs. For more information, see [what is an agent ID](./what-is-agent-id.md)
+Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions. Agent identities don't have a password or any other credential. Instead, agent identities can only authenticate by presenting an access token issued to the service or platform on which the agent runs. For more information, see [what is an agent ID](./what-are-agent-identities.md)
 
 ### Agent identity blueprint
 
@@ -68,7 +68,7 @@ The Microsoft Entra SDK for AgentID is a containerized web service that handles 
 
 ## Related content
 
-- [What is an agent ID?](what-is-agent-id.md)
+- [What is an agent ID?](what-are-agent-identities.md)
 - [What is the agent identity platform?](what-is-agent-id-platform.md)
 - [Microsoft Entra Agent ID oauth protocols](agent-oauth-protocols.md)
 - [Create an agent identity blueprint](create-blueprint.md)

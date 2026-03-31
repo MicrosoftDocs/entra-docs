@@ -137,7 +137,7 @@ When device-preferred credential is enabled, the system evaluates which credenti
 | Rank | Credential | Category | Meets requirement for |
 |------|-----------|----------|----------------------|
 | 1 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) | Recovery | 1FA + MFA |
-| 2 | [Passkey](concept-authentication-passwordless.md#passkeys-fido2)<sup>1</sup> | Phishing-resistant | 1FA + MFA |
+| 2 | [Passkey](concept-authentication-passkeys-fido2.md)<sup>1</sup> | Phishing-resistant | 1FA + MFA |
 | 3 | [Certificate-based authentication (CBA)](concept-certificate-based-authentication.md) | Phishing-resistant | 1FA or 1FA + MFA |
 | 4 | [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md) | Passwordless | 1FA + MFA |
 | 5 | [External multifactor authentication (MFA)](how-to-authentication-external-method-manage.md) | — | MFA |
@@ -151,6 +151,9 @@ When device-preferred credential is enabled, the system evaluates which credenti
 <sup>2</sup>Includes hardware or software TOTP from Microsoft Authenticator, Authenticator Lite, or third-party applications.
 
 <sup>3</sup>Includes SMS and voice calls.
+
+>[!IMPORTANT]
+>Certificate-based authentication (CBA) was previously placed last in the system-preferred MFA order due to known issues with CBA and system-preferred MFA. Now that those issues are resolved, starting March 18th, 2026, certificate-based authentication  will move to the third position in the authentication order.
 
 ### How does system-preferred MFA affect the NPS extension?
 

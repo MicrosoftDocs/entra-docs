@@ -37,9 +37,9 @@ You can choose to direct different types of traffic based on your network needs.
 - Private network traffic
 
 The following partners support coexistence:
-- [Cisco](concept-cisco-coexistence.md)
+- [Cisco](how-to-cisco-coexistence.md)
 - [Netskope](how-to-netskope-coexistence.md)
-- [Palo Alto Networks](concept-palo-alto-coexistence.md)
+- [Palo Alto Networks](how-to-palo-alto-coexistence.md)
 - [Zscaler](how-to-zscaler-coexistence.md)
 
 ## Partner connectivity offerings

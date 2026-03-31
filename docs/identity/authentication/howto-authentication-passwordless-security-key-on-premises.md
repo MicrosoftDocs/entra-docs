@@ -301,7 +301,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passkeys-fido2.md).
 
 ### What can I do if I lose my security key?
 
@@ -336,4 +336,4 @@ An FIDO2 Windows login looks for a writable DC to exchange the user TGT. As long
 
 ## Next steps
 
-[Learn more about passwordless authentication](concept-authentication-passwordless.md)
+[Learn more about passwordless authentication](concept-authentication-passkeys-fido2.md)

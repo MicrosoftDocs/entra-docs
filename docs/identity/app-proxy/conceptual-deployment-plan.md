@@ -31,12 +31,12 @@ You need to meet the following prerequisites before beginning your implementatio
    * A virtual machine (VM) hosted within any hypervisor solution
    * A VM hosted in Azure to enable outbound connection to the application proxy service.
 
-* See [Understand Microsoft Entra private network connectors](application-proxy-connectors.md) for a more detailed overview.
+* See [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md) for a more detailed overview.
 
      * Connector machines must [be enabled for Transport Layer Security (TLS) 1.2](application-proxy-add-on-premises-application.md) before installing the connectors.
 
      * If possible, deploy connectors in the [same network and segment as the back-end web application servers](application-proxy-network-topology.md). It's best to deploy connectors after you complete a discovery of applications.
-     * Each connector group should have at least two connectors to provide high availability and scale. Having three connectors is optimal for servicing a machine at any point. Review the [connector capacity table](./application-proxy-connectors.md#capacity-planning) to help decide the type of machine for the connector.
+     * Each connector group should have at least two connectors to provide high availability and scale. Having three connectors is optimal for servicing a machine at any point. Review the [connector capacity table](~/global-secure-access/concept-connectors.md#specifications-and-sizing-requirements) to help decide the type of machine for the connector.
 
 * **Network access settings**: Microsoft Entra private network connectors [connect to Azure via HTTPS (Transmission Control Protocol (TCP) Port 443) and HTTP (TCP Port 80)](application-proxy-add-on-premises-application.md).
 
@@ -161,7 +161,7 @@ Finally, apply Conditional Access and MFA policies as required. Test and validat
 
 ### Deploy application proxy
 
-The steps to deploy your application proxy are covered in the [tutorial for adding an on-premises application for remote access](application-proxy-add-on-premises-application.md). If the installation isn't successful, select **Troubleshoot application proxy**  in the portal or use the troubleshooting guide [for Problems with installing the application proxy Agent Connector](application-proxy-connector-installation-problem.md).
+The steps to deploy your application proxy are covered in the [tutorial for adding an on-premises application for remote access](application-proxy-add-on-premises-application.md). If the installation isn't successful, select **Troubleshoot application proxy**  in the portal or use the troubleshooting guide [for Problems with installing the application proxy Agent Connector](~/global-secure-access/troubleshoot-connectors.md).
 
 ### Publish applications via application proxy
 
@@ -289,11 +289,11 @@ These logs provide detailed information about sign-ins to applications configure
 
 #### Private network connector monitoring
 
-The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance, see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#maintenance).
+The connectors and the service take care of all the high availability tasks. You can monitor the status of your connectors from the application proxy page in the Microsoft Entra admin center. For more information about connector maintenance, see [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md#maintenance).
 
 #### Windows event logs and performance counters
 
-Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs. For more information, see [Understand Microsoft Entra private network connectors](./application-proxy-connectors.md#under-the-hood). Follow the [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
+Connectors have both admin and session logs. The admin logs include key events and their errors. The session logs include all the transactions and their processing details. Logs and counters are located in Windows Event Logs. For more information, see [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md). Follow the [tutorial to configure event log data sources in Azure Monitor](/azure/azure-monitor/agents/data-sources-windows-events).
 
 ### Troubleshooting guide and steps
 
@@ -309,5 +309,5 @@ The following articles cover common scenarios that can also be used to create tr
 - [Configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 - [Configure with PingAccess](application-proxy-ping-access-publishing-guide.md)
 - [Troubleshoot Access the Corporate Application error](application-proxy-sign-in-bad-gateway-timeout-error.md)
-- [Troubleshoot installing the application proxy Agent Connector](application-proxy-connector-installation-problem.md)
+- [Troubleshoot installing the application proxy Agent Connector](~/global-secure-access/troubleshoot-connectors.md)
 - [Troubleshoot sign-in problem](application-proxy-troubleshoot.md)

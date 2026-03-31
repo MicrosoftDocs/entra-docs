@@ -38,7 +38,7 @@ After the governance relationship is active and GDAP role assignments are in pla
 1. After successful sign-in, perform administrative tasks in the governed tenant based on the roles assigned to your security group.
 
    > [!IMPORTANT]
-   > Due to privacy requirements, your user information appears different from a regular user:
+   > Your user information appears different from a regular user:
    > - Your display name appears as `user_{your user object ID in the governing tenant without dashes}`.
    > - Sign-in logs and audit logs in the governed tenant show your display name as `{Governing tenant name} Technician`.
 

@@ -1,7 +1,6 @@
 ---
 title: What's new
 description: Overview of the What's new experience in the Microsoft Entra admin center.
-manager: pmwongera
 ms.topic: overview
 ms.date: 11/13/2024
 # Customer intent: As a customer, I want an overview of the What's new experience in the Microsoft Entra admin center.

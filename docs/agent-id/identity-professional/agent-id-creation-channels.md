@@ -14,7 +14,7 @@ ms.reviewer: dastrock
 
 Administrators who work in identity and access management and security need clear visibility into how AI agent identities are added to a tenant, how they're added, and what they do when they're there. This article describes the various channels through which agent identities can be created in your Microsoft Entra tenant, the roles and permissions required for each channel, and strategies for monitoring and controlling agent identity creation.
 
-## How are agent identities created in Microsoft Entra ID?
+## Overview of creation channels
 
 **Agent identity blueprints** can enter your directory through multiple channels. Each channel implies different monitoring and control points:
 

@@ -1,7 +1,6 @@
 ---
 title: Sign up for premium editions
 description: Instructions about how to sign up for Microsoft Entra ID P1 or P2 editions.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/05/2025
 ms.reviewer: piotrci
@@ -92,4 +91,4 @@ The activation process typically takes only a few minutes and then you can use y
 
 ## Next steps
 
-Now that you have Microsoft Entra ID P1 or P2, you can [customize your domain](add-custom-domain.md), add your [corporate branding](./how-to-customize-branding.md), [create a tenant](create-new-tenant.md), and [add groups](./how-to-manage-groups.yml) and [users](./add-users.md).
+Now that you have Microsoft Entra ID P1 or P2, you can [customize your domain](add-custom-domain.md), add your [corporate branding](./how-to-customize-branding.md), [create a tenant](create-new-tenant.md), and [add groups](./how-to-manage-groups.yml) and [users](./how-to-create-delete-users.yml).
