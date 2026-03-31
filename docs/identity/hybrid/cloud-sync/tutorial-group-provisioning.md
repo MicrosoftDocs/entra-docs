@@ -189,8 +189,8 @@ To configure provisioning, follow these steps:
         3. Select **Apply**. The target container changes depending on the group displayName attribute.
         4. Select **Save**.
 
-        >[!NOTE]
-        >These changes cause a full sync and don’t affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it writes back to original OU.
+        > [!NOTE]
+        > These changes cause a full sync and don’t affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it writes back to original OU.
 
    10. You can use a custom expression to ensure the group is re-created with the same CommonName (CN). This expression can extract the CN value, handling escaped commas by temporarily replacing them with hex values, and provide a fallback CN from DisplayName + ObjectId if the extension is empty. Use the following expression for `cn` mapping by adapting the sample expression, or by running the PowerShell script to generate the final expression.
 
