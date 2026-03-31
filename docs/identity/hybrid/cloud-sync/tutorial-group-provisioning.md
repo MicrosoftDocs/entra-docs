@@ -194,8 +194,8 @@ To configure provisioning, follow these steps:
 
    10. You can use a custom expression to ensure the group is re-created with the same CommonName (CN). This expression can extract the CN value, handling escaped commas by temporarily replacing them with hex values, and provide a fallback CN from DisplayName + ObjectId if the extension is empty. Use the following expression for `cn` mapping by adapting the sample expression, or by running the PowerShell script to generate the final expression.
 
-        >[!NOTE]
-        >This expression assumes you have already created an extension property for GroupDN. If not, please do that first before using the sample expression or running the script.
+        > [!NOTE]
+        > This expression assumes you have already created an extension property for GroupDN. If not, do that first before using the sample expression or running the script.
         
         1. If you want to adapt a sample expression, replace the placeholders with your respective values for your extension attribute name `extension_<AppIdWithoutHyphens>_GroupDN`. 
       
