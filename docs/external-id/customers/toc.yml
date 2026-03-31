@@ -265,7 +265,7 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Federated IdP sign-in and sign-up using web flow
+                - name: Federated identity provider sign-in and sign-up using web flow
                   href: /entra/identity-platform/tutorial-native-authentication-android-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
@@ -292,7 +292,7 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Federated IdP sign-in and sign-up using web flow
+                - name: Federated identity provider sign-in and sign-up using web flow
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
