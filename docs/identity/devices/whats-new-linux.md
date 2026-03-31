@@ -28,7 +28,7 @@ Microsoft uses the following package repositories to distribute Microsoft Identi
 |Channel|Primary purpose|Latest version|Supported|Source|
 | --------|--------------| -------- |---------------------|--------------|
 |stable|Production workloads|3.0.0|Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
-|insiders-fast|Testing prerelease packages|2.5.x|No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
+|insiders-fast|Testing prerelease packages|3.0.x|No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
 > [!NOTE]
 > The current production version of the `microsoft-identity-broker` is `3.0.0`. 
