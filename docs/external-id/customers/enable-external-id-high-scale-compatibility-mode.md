@@ -76,7 +76,7 @@ Federated users might fail to sign in after applications move to External ID if 
 
 Review attributes for any users who sign in with Google or Facebook and verify that the `accountEnabled` property on user objects is set to `true`.
 
-The following example finds federated users where `accountEnabled` is `false` and updates them:
+The following example finds federated users where `accountEnabled` is `false`:
 
 ```powershell
 # Find federated users with accountEnabled set to false
@@ -84,10 +84,7 @@ $disabledUsers = Get-MgUser -Filter "accountEnabled eq false" -All | Where-Objec
     $_.Identities | Where-Object { $_.SignInType -eq 'federated' }
 }
 
-# Update each user to set accountEnabled to true
-foreach ($user in $disabledUsers) {
-    Update-MgUser -UserId $user.Id -AccountEnabled:$true
-}
+$disabledUsers | Format-Table DisplayName, Id
 ```
 
 This ensures federated users can authenticate successfully once applications move to External ID endpoints.
