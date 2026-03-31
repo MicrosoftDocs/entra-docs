@@ -578,7 +578,7 @@ GET https://graph.microsoft.com/rp/scim/users?filter=userName eq "AdeleV@contoso
 Authorization: Bearer {token}
 ```
 
-#### Example 7 – Get user by user id and group id
+#### Example 7 – Get user by user ID and group ID
 
 **Request:**
 Use the Entra `group objectId` for the `groups.value` property and the `user objectId` for the `id` property to check if a user belongs to a specific group.
@@ -1133,7 +1133,7 @@ Authorization: Bearer {token}
 Accept: application/json
 ```
 
-#### Example 2 – Get group by id with specific attributes
+#### Example 2 – Get group by ID with specific attributes
 
 **Request:**
 
@@ -1142,7 +1142,7 @@ GET https://graph.microsoft.com/rp/scim/groups?filter=id eq "dddddddd-3333-4444-
 Authorization: Bearer {token}
 ```
 
-#### Example 3 – Get group by id with excluded attributes
+#### Example 3 – Get group by ID with excluded attributes
 
 **Request:**
 

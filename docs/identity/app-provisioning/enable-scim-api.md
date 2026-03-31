@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 03/31/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -25,7 +25,7 @@ For the full API reference, see [Microsoft Entra ID SCIM API reference](entra-id
 
 ## Prerequisites
 
-- An Entra ID P1 license or any license that contains Entra ID P1 (e.g., Entra ID P2, Microsoft 365 E3, Microsoft 365 E5, etc)
+- An Entra ID P1 license or any license that contains Entra ID P1 (e.g., Entra ID P2, Microsoft 365 E3, Microsoft 365 E5, etc.)
 - An active Azure subscription to link for billing.
 - An admin with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role to create an app registration with the permissions required to invoke the SCIM API.
 - An admin with the [Billing Administrator](/entra/identity/role-based-access-control/permissions-reference#billing-administrator) role to enable SCIM API billing and link the Azure subscription.

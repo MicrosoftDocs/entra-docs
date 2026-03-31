@@ -3097,7 +3097,7 @@
     },
     {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
-      "redirect_url": "/entra/enterprise-apps/assign-agent-identities-to-applications",
+      "redirect_url": "/entra/identity/enterprise-apps/assign-agent-identities-to-applications",
       "redirect_document_id": false
     },
     {

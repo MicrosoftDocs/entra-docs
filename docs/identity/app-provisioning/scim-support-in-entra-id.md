@@ -19,7 +19,7 @@ ai-usage: ai-assisted
 Microsoft Entra ID supports the **System for Cross‑domain Identity Management (SCIM) 2.0** standard in multiple ways, depending on the provisioning scenario. Microsoft Entra can act as:
 
 - A **SCIM client**, provisioning users and groups from Microsoft Entra into partner applications.
-- A **SCIM service provider**, exposing SCIM APIs that allow external systems to provision users and groups directly into MicrosoftEntra.
+- A **SCIM service provider**, exposing SCIM APIs that allow external systems to provision users and groups directly into Microsoft Entra.
 
 This article provides an overview of SCIM support in Microsoft Entra ID and helps you understand which capabilities and documentation apply to your scenario.
 
