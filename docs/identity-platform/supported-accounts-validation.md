@@ -28,6 +28,10 @@ After the application has been registered, you can check or change the account t
 
 If you change this property you may need to change other properties first. 
 
+## Global application property limit
+
+Apps are subject to a global limit of about 1000 items across all the collection properties on the app object. 
+
 ## Validation differences
 
 See the following table for the validation differences of various properties for different supported account types.
@@ -36,8 +40,8 @@ See the following table for the validation differences of various properties for
 | -------- | --------------- | --------------------- | -------------------------------------------------------------------- |
 | Application ID URI (`identifierURIs`)    | Must be unique in the tenant <br><br> `urn://` schemes are supported <br><br> Wildcards aren't supported <br><br> Query strings and fragments are supported <br><br> Maximum length of 255 characters <br><br> No limit\* on number of identifierURIs                                           | Must be globally unique <br><br> `urn://` schemes are supported <br><br> Wildcards aren't supported <br><br> Query strings and fragments are supported <br><br> Maximum length of 255 characters <br><br> No limit\* on number of identifierURIs                                                                                        | Must be globally unique <br><br> `urn://` schemes aren't supported <br><br> Wildcards, fragments, and query strings aren't supported <br><br> Maximum length of 120 characters <br><br> Maximum of 50 identifierURIs |
 | National clouds                             | Supported                 | Supported                | Not supported                          |
-| Certificates (`keyCredentials`)             | Symmetric signing key     | Symmetric signing key    | Encryption and asymmetric signing key  |
-| Client secrets (`passwordCredentials`)      | No limit\*                | No limit\*               | Maximum of two client secrets  |
+| Certificates (`keyCredentials`)             | Symmetric signing key <br><br> Maximum of 100 total certificates and client secrets | Symmetric signing key <br><br> Maximum of 100 total certificates and client secrets | Encryption and asymmetric signing key <br><br> Maximum of 100 total certificates and client secrets |
+| Client secrets (`passwordCredentials`)      | Maximum of 100 total certificates and client secrets | Maximum of 100 total certificates and client secrets | Maximum of two client secrets, maximum of 100 total certificates and client secrets |
 | Redirect URIs (`replyURLs`)                 | See [Redirect URI/reply URL restrictions and limitations](reply-url.md) for more info.  |  |   |
 | API permissions (`requiredResourceAccess`)  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs.  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs. | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 200 permissions total across all APIs. Maximum of 30 permissions per resource (for example, Microsoft Graph).   |
 | Scopes defined by this API (`oauth2Permissions`)             | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined       | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined    | Maximum scope name length of 40 characters <br><br> Maximum of 100 scopes defined     |
@@ -45,8 +49,7 @@ See the following table for the validation differences of various properties for
 | appRoles      | Supported <br> No limit\*   | Supported <br> No limit\* | `PersonalMicrosoftAccount`: Not supported <br><br> `AzureADandPersonalMicrosoftAccount`: Supported <br> No limit\* <br> App roles are not supported for consumer (MSA) users of the application at runtime |
 | Front-channel logout URL      | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed, `http://localhost` fails <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters <br><br>   |
 | Display name    | Maximum length of 120 characters  | Maximum length of 120 characters  | Maximum length of 90 characters  |
-
-\* There's a global limit of about 1000 items across all the collection properties on the app object.
+| Directory extensions and schema extensions | Maximum of 100 extensions, regardless of data type | Maximum of 100 extensions, regardless of data type | Maximum of 100 extensions, regardless of data type |
 
 ## Next steps
 
