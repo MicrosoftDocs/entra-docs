@@ -44,7 +44,7 @@ Unlike applications that execute predetermined logic, AI agents make dynamic dec
 
 - **Agent-to-agent propagation**: Agents that interact with other agents can propagate compromise. If an orchestration agent is compromised, it can potentially target other agents to perform malicious actions.
 
-Organizations must also demonstrate that AI systems operate within governance frameworks, comply with privacy regulations like GDPR and CCPA, and maintain audit trails documenting agent actions and decisions.
+Organizations must also demonstrate that AI systems operate within governance frameworks, comply with privacy regulations, and maintain audit trails documenting agent actions and decisions.
 
 ### Agent sprawl
 
