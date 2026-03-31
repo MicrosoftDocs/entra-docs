@@ -1,6 +1,6 @@
 ---
 title: Support Social Sign-in in a React SPA With Native Auth JS SDK
-description: Learn how to add social sign-in with Google, Facebook, and Apple identity providers to your React SPA using native authentication JavaScript SDK.
+description: Learn how to add social sign-in with Apple, Facebook and Google identity providers to your React SPA using native authentication JavaScript SDK.
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
@@ -9,14 +9,14 @@ ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/30/2026
 ai-usage: ai-assisted
-#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Google, Facebook, and Apple identity providers.
+#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook and Google identity providers.
 ---
 
 # Tutorial: Support federated identity providers in a React single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Google, Facebook, or Apple, in your React single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
+In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Apple, Facebook and Google, in your React single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
 
 
 In this tutorial, you:
@@ -34,9 +34,9 @@ In this tutorial, you:
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js 20.x or later](https://nodejs.org/en/download/).
 - Configure the federated identity providers you want to enable. Follow the steps in [Identity providers for external tenants](../external-id/customers/concept-authentication-methods-customers.md) for your chosen providers:
-    - [Google](../external-id/customers/how-to-google-federation-customers.md)
-    - [Facebook](../external-id/customers/how-to-facebook-federation-customers.md)
     - [Apple](../external-id/customers/how-to-apple-federation-customers.md)
+    - [Facebook](../external-id/customers/how-to-facebook-federation-customers.md)  
+    - [Google](../external-id/customers/how-to-google-federation-customers.md)
 
 ## Update the configuration to set the redirect URI
 
@@ -59,7 +59,7 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 ## Create UI components
 
-In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Google, Facebook, Apple).
+In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Apple, Facebook and Google).
 
 ### Update the sign-in initial form
 
@@ -367,9 +367,11 @@ The federated identity provider authentication page doesn't appear, or you recei
 
 | Provider | Expected `domainHint` value |
 |---|---|
-| Google | `"Google"` |
-| Facebook | `"Facebook"` |
 | Apple | `"Apple"` |
+| Facebook | `"Facebook"` |
+| Google | `"Google"` |
+
+
 
 ### Authentication fails after the popup opens
 
