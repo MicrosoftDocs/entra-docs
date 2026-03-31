@@ -27,7 +27,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Agent users
+          - text: Agent's user account
             url: ./agent-users.md
           - text: Agent identity blueprint
             url: ./agent-blueprint.md
@@ -39,7 +39,6 @@ landingContent:
         links:
           - text: Authenticate and acquire tokens for autonomous agents
             url: ./autonomous-agent-authentication-authorization-flow.md
-
   - title: Access management
     linkLists: 
       - linkListType: how-to-guide

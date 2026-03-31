@@ -3,12 +3,13 @@ title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access
 description: "Enable single sign-on to on-premises resources published through Microsoft Entra Private Access using Kerberos authentication. Optionally integrate Windows Hello for Business cloud Kerberos trust."
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/12/2026
-ms.reviewer: ashishj
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ---
 
 # Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access
+## Overview
+
 Provide single sign-on for on-premises resources published through Microsoft Entra Private Access. Microsoft Entra Private Access uses Kerberos to support these resources. Optionally, use Windows Hello for Business cloud Kerberos trust to allow single sign-on for users.
 
 ## Prerequisites
@@ -65,7 +66,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |49152-65535  |UDP/TCP   |Ephemeral ports  |
 
 > [!NOTE]
-> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). For more information about Windows network port requirements including support for legacy versions of Windows Server, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
+> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy). For more information about Windows network port requirements including support for legacy versions of Windows Server, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.

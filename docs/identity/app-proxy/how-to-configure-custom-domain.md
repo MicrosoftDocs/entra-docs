@@ -2,13 +2,16 @@
 title: Custom domains in Microsoft Entra application proxy
 description: Configure and manage custom domains in Microsoft Entra application proxy to use your own domain name.
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Configure custom domains with Microsoft Entra application proxy
+
+
+## Overview
 
 When you publish an application through Microsoft Entra application proxy, you create an external URL for your users. This URL gets the default domain *`yourtenant.msappproxy.net`*. For example, if you publish an app named *Expenses* in your tenant named *Contoso*, the external URL is *`https://expenses-contoso.msappproxy.net`*. If you want to use your own domain name instead of *`msappproxy.net`*, you can configure a custom domain for your application. 
 

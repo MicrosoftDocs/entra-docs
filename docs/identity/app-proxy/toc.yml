@@ -151,7 +151,7 @@ items:
     - name: Application proxy FAQ
       href: application-proxy-faq.yml
     - name: Application proxy version history
-      href: application-proxy-release-version-history.md
+      href: ~/global-secure-access/reference-version-history.md
   - name: Resources
     items:
     - name: Support and help options for developers

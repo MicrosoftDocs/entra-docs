@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Troubleshoot Kerberos constrained delegation
 
+
+## Overview
+
 Single sign-on (SSO) methods vary between applications. Microsoft Entra application proxy provides Kerberos constrained delegation (KCD) by default. In application proxy, a user authenticates to a private application by using Kerberos.
 
 This article describes how to troubleshoot the most common problems in KCD configuration. It includes diagnostic steps you can take for more complex implementations.

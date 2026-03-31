@@ -221,14 +221,14 @@ If a user was deleted from the directory that had a risk present, that user stil
 
 ## Token theft related detections
 
-With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in.
+With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Verified threat actor IP detection triggers during sign-in.
 
-The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer auto-remediated:
+The following ID Protection detections that identify suspicious token activity or the Verified threat actor IP detection are no longer auto-remediated:
 
-- Microsoft Entra threat intelligence 
+- Microsoft Entra threat intelligence 
 - Anomalous token
 - Attacker in the Middle
-- MSTIC Nation State IP
+- Verified threat actor IP
 - Token issuer anomaly 
 
 ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user-level risk details provides valuable information to assist with investigation. This information includes:

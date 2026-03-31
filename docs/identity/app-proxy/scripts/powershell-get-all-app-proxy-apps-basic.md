@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps and list basic information
 
+
+## Overview
+
 The PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), and object ID (ObjId).
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

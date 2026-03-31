@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Revoke user access in Microsoft Entra ID
 
+
+## Overview
+
 Scenarios that could require an administrator to revoke all access for a user include compromised accounts, employee termination, and other insider threats. Depending on the complexity of the environment, administrators can take several steps to ensure access is revoked. In some scenarios, there could be a period between the initiation of access revocation and when access is effectively revoked.
 
 To mitigate the risks, you must understand how tokens work. There are many kinds of tokens, which fall into one of the patterns discussed in this article.

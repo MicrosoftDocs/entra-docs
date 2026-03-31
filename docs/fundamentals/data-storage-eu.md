@@ -51,7 +51,7 @@ Some components of a service will continue to transfer a limited amount of custo
 
 **EU Data Residency:**
 
-[Microsoft Entra ID](./whatis.md): When an IP Address or phone number is determined to be used in fraudulent activities, they're published globally to block access from any workloads using them.
+[Microsoft Entra ID](./what-is-entra.md): When an IP Address or phone number is determined to be used in fraudulent activities, they're published globally to block access from any workloads using them.
 
 **EU Data Boundary:**
 

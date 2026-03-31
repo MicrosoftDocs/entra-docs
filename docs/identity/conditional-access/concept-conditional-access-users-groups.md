@@ -2,10 +2,12 @@
 title: "Conditional Access Setup: Users, Groups, Agents, and Workload Identities"
 description: Learn how to include or exclude users, groups, and workload identities in Conditional Access policies for secure and flexible access management.
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Users, groups, agents, and workload identities
+
+## Overview
 
 A Conditional Access policy includes a user, group, agent, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
 
@@ -75,7 +77,7 @@ The following options are available for exclusion when creating a Conditional Ac
 
 To prevent admin lockout, when creating a policy applied to **All users** and **All apps**, the following warning appears.
 
-> Don't lock yourself out! We recommend applying a policy to a small set of users first to verify it behaves as expected. We also recommend excluding at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Please review the affected users and apps.
+> Don't lock yourself out! Apply a policy to a small set of users first to verify it behaves as expected. Also exclude at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Review the affected users and apps.
 
 By default, the policy provides an option to exclude the current user, but an admin can override it as shown in the following image. 
 

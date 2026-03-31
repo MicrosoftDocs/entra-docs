@@ -8,6 +8,9 @@ ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 
 # Assign, update, list, or remove custom security attributes for a user
 
+
+## Overview
+
 [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
 
 ## Prerequisites

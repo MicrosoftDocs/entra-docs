@@ -220,7 +220,7 @@ Authorization: Bearer <token>
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
 
-$applicationId = "<agent-blueprint-object-id>"
+$applicationId = "<agent-blueprint-application-id>"
 
 # Define the secret properties
 $displayName = "My Secret"
@@ -358,7 +358,7 @@ Invoke-MgGraphRequest -Method POST `
 
 ## Delete an agent identity blueprint
 
-When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you must first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
+When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you must first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and the agents' user accounts associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
 
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)

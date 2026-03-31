@@ -1,8 +1,8 @@
 ---
 title: Microsoft single sign-on for Linux
 description: Overview of Microsoft single sign-on for Linux that enables Microsoft Entra ID integration and seamless authentication.
-author:      ploegert # GitHub alias
-ms.author:   jploegert # Microsoft alias
+author: ploegert
+ms.author: jploegert
 ms.topic: overview
 ms.date:     02/03/2026
 ms.custom: linux-related-content

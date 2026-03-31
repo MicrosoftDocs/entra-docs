@@ -2,12 +2,14 @@
 title: Configure Microsoft Entra Private Access for Active Directory Domain Controllers
 description: "Enforce Conditional Access and multifactor authentication for Kerberos authentication to Active Directory Domain Controllers through Microsoft Entra Private Access."
 ms.topic: how-to
-ms.date: 03/16/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 # Configure Microsoft Entra Private Access for Active Directory domain controllers
+
+## Overview
 
 This guide describes how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
 
@@ -73,7 +75,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
-[![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png#lightbox)
+[![Screenshot that shows the Private Access traffic forwarding profile activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png#lightbox)
 
 ### 5. Install the Global Secure Access client
 
@@ -89,7 +91,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
 1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 
-[![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)](media/how-to-configure-domain-controllers/connectors-and-sensors.png#lightbox)
+[![Screenshot that shows the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)](media/how-to-configure-domain-controllers/connectors-and-sensors.png#lightbox)
 
 > [!IMPORTANT]
 > To upgrade to the Private Access Sensor version 2.1.31, uninstall the previous sensor and then install the new sensor. You can in-place upgrade from the sensor versions 2.1.31 and later.
@@ -230,7 +232,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 
 Example of how to configure SPN username exclusions and inclusions from the Microsoft Entra admin center:
 >
-[![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png#lightbox)
+[![Screenshot that shows the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png#lightbox)
 
 #### Break glass mode
 
@@ -256,7 +258,7 @@ Example of how to configure SPN username exclusions and inclusions from the Micr
 ### 10. Investigation and troubleshooting
 
 - Use **Event Viewer** from **Application and Service Logs** > **Microsoft** > **Windows** > **Private Access Sensor** to review Private Access Sensor logs.
-[![Screenshot of Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)](media/how-to-configure-domain-controllers/event-viewer.png#lightbox)
+[![Screenshot that shows Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)](media/how-to-configure-domain-controllers/event-viewer.png#lightbox)
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.

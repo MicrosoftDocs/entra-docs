@@ -2,12 +2,15 @@
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: overview
-ms.date: 01/07/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # What is Microsoft Entra Privileged Identity Management?
+
+
+## Overview
 
  Privileged Identity Management (PIM) is a service in Microsoft Entra ID that enables you to manage, control, and monitor access to important resources in your organization. These resources include resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune. The following video explains important PIM concepts and features.
 <br><br>

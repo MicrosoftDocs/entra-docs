@@ -9,6 +9,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # User management enhancements in Microsoft Entra ID
 
+
+## Overview
+
 This article describes how to use the user management enhancements in the Microsoft Entra admin center. In this article, you review the **All users** and **user profile** pages.
 
 Enhancements include:
@@ -76,7 +79,7 @@ You can edit properties by selecting the pencil icon next to any category, which
 **User operations**
 
 - [Add or change profile information](~/fundamentals/how-to-manage-user-profile-info.md)
-- [Add or delete users](~/fundamentals/add-users.md)
+- [Add or delete users](~/fundamentals/how-to-create-delete-users.yml)
 
 **Bulk operations**
 

@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk delete users in Microsoft Entra ID
 
+
+## Overview
+
 Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can remove a large number of users by using a comma-separated values (CSV) file to bulk delete users.
 
 ## To bulk delete users

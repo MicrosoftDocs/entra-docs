@@ -37,18 +37,18 @@ The sign-in shows up on the report within 10 - 15 minutes.
 
 ## Simulate Unfamiliar Sign-In Properties
 
-To simulate unfamiliar locations, you must use a location and device your test account hasn't used before.
+To simulate unfamiliar locations, your sign-in needs to be different from your normal sign-ins. This detection requires more than just signing in with a VPN.
 
 The following procedure uses a newly created:
 
-- A VPN connection, to simulate new location
-- A virtual machine, to simulate a new device
+- A different operating system (OS) from what you normally use.
+- An IP address from a different provider or location from where you normally sign in. 
 
 Completing the following procedure requires you to use a user account that has at least 30-days of sign-in history and usable multifactor authentication methods.
 
 **To simulate a sign-in from an unfamiliar location, perform the following steps**:
 
-1. Using your new VPN, navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com) and enter the credentials of your test account.
+1. Using your new OS or IP, navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com) and enter the credentials of your test account.
 2. When signing in with your test account, fail the multifactor authentication challenge by not passing the MFA challenge.
 
 The sign-in shows up on the report within 10 - 15 minutes.

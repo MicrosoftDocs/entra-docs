@@ -1,7 +1,6 @@
 ---
 title: How to manage user profile information in the Microsoft Entra admin center
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.reviewer: jeffsta
@@ -10,6 +9,9 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 
 # Add or update a user's profile information and settings in the Microsoft Entra admin center
 
+
+
+## Overview
 
 The user profile is the digital representation of a user's identity that should, where possible, reflect how the user wants to be represented. The user profile appears in several places across the Microsoft suite, including Outlook, Teams, Windows, and others. Identity information that appears across these tools is sourced from the user profile.
 
@@ -207,6 +209,6 @@ This new Microsoft Entra admin center update allows editing certain user attribu
 
 ## Related content
 
-- [Add or delete users](add-users.md)
+- [Add or delete users](how-to-create-delete-users.yml)
 - [Assign roles to users](how-subscriptions-associated-directory.md)
 - [Create a basic group and add members](how-to-manage-groups.yml)

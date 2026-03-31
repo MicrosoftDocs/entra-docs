@@ -1,6 +1,6 @@
 ## Validate tokens from agent identities
 
-Token validation of token acquired for agent identities or agent user identities is [the same as for any web API](). You can do more checks to ascertain a few more things:
+Token validation of token acquired for agent identities or agent's user account identities is [the same as for any web API](). You can do more checks to ascertain a few more things:
 
 - Check if a token was issued for an agent identity and for which agent blueprint.
 
@@ -8,7 +8,7 @@ Token validation of token acquired for agent identities or agent user identities
     HttpContext.User.GetParentAgentBlueprint()
     ```
 
-- Check if a token was issued for an agent user identity.
+- Check if a token was issued for an agent's user account identity.
 
     ```csharp
     HttpContext.User.IsAgentUserIdentity()

@@ -2,10 +2,12 @@
 title: Conditional Access - Block access
 description: Create a custom Conditional Access policy to Block access.
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 03/24/2026
 ms.reviewer: calebb, lhuangnorth
 ---
 # Block access example policy
+
+## Overview
 
 For organizations with a conservative cloud migration approach, the block all policy is an option that can be used. 
 
@@ -26,7 +28,7 @@ The first policy blocks access to all apps except for Microsoft 365 applications
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
@@ -48,7 +50,7 @@ The first policy blocks access to all apps except for Microsoft 365 applications
 The following policy is created to require multifactor authentication or a compliant device for users of Microsoft 365.
 
 1. Select **Create new policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 

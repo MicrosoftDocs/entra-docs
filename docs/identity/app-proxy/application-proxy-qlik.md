@@ -2,12 +2,15 @@
 title: Microsoft Entra application proxy and Qlik Sense
 description: Integrate Microsoft Entra application proxy with Qlik Sense.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy and Qlik Sense 
+
+## Overview
+
 Microsoft and Qlik Sense worked together to provide remote access using Microsoft Entra application proxy.  
 
 ## Prerequisites 
@@ -36,9 +39,9 @@ Publish your application in Microsoft Entra. For a more detailed walkthrough of 
 ### Application 2: Qlik Sense virtual proxy 
 Follow the same steps as for Application #1, with the following exceptions: 
 
-**Step #5**: The Internal URL should now be the Qlik Sense URL with the authentication port used by the application. The default is **4244** for HTTPS, and **4248** for HTTP for Qlik Sense releases before April 2018. The default for Qlik Sense releases after April 2018 is **443** for HTTPS and **80** for HTTP. For example, `https//demo.qlik.com:4244`.
+**Step #5** (required fields): The Internal URL should now be the Qlik Sense URL with the authentication port used by the application. The default is **4244** for HTTPS, and **4248** for HTTP for Qlik Sense releases before April 2018. The default for Qlik Sense releases after April 2018 is **443** for HTTPS and **80** for HTTP. For example, `https//demo.qlik.com:4244`.
 
-**Step #10:** Don’t set up single sign-on. Leave the **single sign-on** option disabled.
+**Step #8** (single sign-on): Don't set up single sign-on. Leave the **single sign-on** option disabled.
  
 ## Testing 
 Your application is now ready to test. Access the external URL you used to publish Qlik Sense in Application #1, and sign in as a user assigned to both applications.  
@@ -51,4 +54,4 @@ For more information about publishing Qlik Sense with application proxy, see the
 ## Next steps
 
 - [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
-- [Working with private network connectors](~/identity/app-proxy/application-proxy-connector-groups.md)
+- [Working with private network connectors](~/global-secure-access/concept-connector-groups.md)

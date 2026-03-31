@@ -11,6 +11,9 @@ ms.custom: references_regions
 
   
 
+
+## Overview
+
 Microsoft’s Microsoft Entra Verified ID (Microsoft Entra VC) service enables you to trust proofs of user identity without expanding your trust boundary. With Microsoft Entra VC, you create accounts or federate with another identity provider. When a solution implements a verification exchange using verifiable credentials, it enables applications to request credentials that aren't bound to a specific domain. This approach makes it easier to request and verify credentials at scale.
 
 If you haven’t already, review the [Microsoft Entra Verified ID architecture overview](introduction-to-verifiable-credentials-architecture.md). Also review [Plan your Microsoft Entra Verified ID issuance solution](plan-issuance-solution.md).

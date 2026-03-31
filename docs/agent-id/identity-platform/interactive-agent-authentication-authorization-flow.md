@@ -2,20 +2,19 @@
 title: Authenticate users and acquire tokens for interactive agents
 description: Learn how to authenticate users, configure authorization, and implement the On-Behalf-Of flow for interactive agents to access resources on behalf of users.
 titleSuffix: Microsoft Entra Agent ID
-author: omondiatieno
-ms.author: jomondi
+author: Dickson-Mwendia
+ms.author: dmwendia
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/17/2026
 ms.custom: agent-id-ignite
-ms.reviewer: dastrock
-ai-usage: ai-assisted
+ms.reviewer: dastrock, jomondi
 
 #customer-intent: As a developer building interactive agents, I want to authenticate users, configure authorization, and acquire tokens through the On-Behalf-Of flow, so that my agent can securely act on behalf of users to access protected resources.
 ---
 
 # Authenticate users and acquire tokens for interactive agents
 
-Interactive agents take actions on behalf of users. To do so securely, the agent must authenticate the user, obtain consent for the required permissions, and acquire access tokens for downstream APIs. This article walks you through the end-to-end flow:
+Interactive agents take actions on behalf of users. To do so securely, the agent must authenticate the user, obtain consent for the required permissions, and acquire access tokens for downstream APIs. This article walks you through implementing the end-to-end flow for your interactive agent:
 
 1. Register a redirect URI for your agent identity blueprint.
 1. Configure user or admin authorization (consent).
@@ -241,49 +240,9 @@ After an interactive agent validates the user's token, it can request access tok
 - Exchange it for a new access token for a downstream API like Microsoft Graph.
 - Use that new token to access protected resources on behalf of the original user.
 
-### [Microsoft Graph API](#tab/graph-api-tokens)
-
-The OBO flow involves exchanging the incoming user token along with the agent's client credential for a new token scoped to the downstream resource.
-
-1. The agent identity blueprint requests an exchange token by presenting its client credential (secret, certificate, or managed identity token). In this example, a managed identity is used as a Federated Identity Credential (FIC):
-
-    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
-
-    ```http
-    POST https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded
-    
-    client_id=<agent-blueprint-id>
-    &scope=api://AzureADTokenExchange/.default
-    &fmi_path=<agent-identity-id>
-    &client_assertion=<managed-identity-token>
-    &grant_type=client_credentials
-    ```
-
-    This step returns token T1.
-
-1. The agent identity sends an OBO token exchange request. This request includes both T1 and the user access token:
-
-    ```http
-    POST https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded
-    
-    client_id=<agent-identity-id>
-    &scope=https://graph.microsoft.com/.default
-    &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
-    &client_assertion=<T1>
-    &grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
-    &assertion=<user-access-token>
-    &requested_token_use=on_behalf_of
-    ```
-
-1. Microsoft Entra ID returns the resource token after validating both T1 and the user token. Use this token to call the downstream API.
-
-For more information on the protocol details, see [On-behalf-of flow in agents](agent-on-behalf-of-oauth-flow.md).
-
 ### [Microsoft Identity Web](#tab/identity-web-tokens)
 
-The `Microsoft.Identity.Web` library simplifies the OBO implementation by handling token exchange automatically.
+The `Microsoft.Identity.Web` library simplifies the OBO implementation by handling token exchange automatically, so you don't have to manually implement the flow by following the protocol.
 
 1. Install the required NuGet packages:
 
@@ -317,9 +276,6 @@ The `Microsoft.Identity.Web` library simplifies the OBO implementation by handli
     app.Run();
     ```
 
-    > [!NOTE]
-    > `AddInMemoryTokenCaches()` is suitable for development and testing. For production environments, use a distributed token cache such as Redis or SQL Server to ensure tokens persist across app restarts and scale across instances.
-
 1. In the agent API, exchange the incoming access token for a new access token for the agent identity. `Microsoft.Identity.Web` validates the incoming access token and handles the on-behalf-of token exchange:
 
     ```csharp
@@ -337,20 +293,40 @@ The `Microsoft.Identity.Web` library simplifies the OBO implementation by handli
     .RequireAuthorization();
     ```
 
-#### Use Microsoft Graph SDK
+### [Microsoft Graph SDK](#tab/graph-sdk-tokens)
 
 If you're using the Microsoft Graph SDK, you can authenticate to Microsoft Graph using the `GraphServiceClient`.
 
-1. Install the `Microsoft.Identity.Web.GraphServiceClient` package that handles authentication for the Graph SDK:
+1. Install the required NuGet packages:
 
     ```bash
+    dotnet add package Microsoft.Identity.Web
+    dotnet add package Microsoft.Identity.Web.AgentIdentities
     dotnet add package Microsoft.Identity.Web.GraphServiceClient
     ```
 
-1. In your ASP.NET Core web API project, add support for Microsoft Graph in your service collection:
+1. In your ASP.NET Core web API project, configure authentication and add support for Microsoft Graph:
 
     ```csharp
+    // Program.cs
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.Identity.Web;
+    using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
+    
+    var builder = WebApplication.CreateBuilder(args);
+    
+    builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
+        .EnableTokenAcquisitionToCallDownstreamApi();
+    builder.Services.AddAgentIdentities();
+    builder.Services.AddInMemoryTokenCaches();
     builder.Services.AddMicrosoftGraph();
+    
+    var app = builder.Build();
+    
+    app.UseAuthentication();
+    app.UseAuthorization();
+    
+    app.Run();
     ```
 
 1. Get a `GraphServiceClient` from the service provider and call Microsoft Graph APIs with the agent identity:
@@ -372,6 +348,8 @@ If you're using the Microsoft Graph SDK, you can authenticate to Microsoft Graph
     ```
 
 ---
+
+Under the hood, the OBO flow involves two token exchanges: first, the agent identity blueprint obtains an exchange token using its client credential, and then the agent identity exchanges that token along with the user's access token for a downstream API token. For the full protocol walkthrough, including HTTP request formats and token validation details, see [On-behalf-of flow in agents](agent-on-behalf-of-oauth-flow.md).
 
 ## Related content
 
