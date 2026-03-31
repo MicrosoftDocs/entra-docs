@@ -1,15 +1,16 @@
 ---
 title: What's new in Microsoft single sign-on for Linux
 description: Discusses new feature releases of Microsoft single sign-on for Linux
+ai-usage: ai-assisted
 author: ploegert
 ms.author: jploegert
 ms.topic: whats-new
-ms.date:     02/03/2026
+ms.date: 03/31/2026
 ms.custom: linux-related-content
 ---
 
 # What's new in Microsoft single sign-on for Linux
-Microsoft periodically adds and modifies the features and functionality of the Microsoft identity platform to improve its security, usability, and standards compliance.
+Microsoft periodically adds and modifies features and functionality in the Microsoft identity platform to improve security, usability, and standards compliance.
 
 Unless otherwise noted, the changes described here apply only to applications registered after the stated effective date of the change.
 
@@ -20,114 +21,197 @@ Check this article regularly to learn about:
 
 This article provides information about the latest updates to Microsoft single sign-on for Linux. 
 
-## Microsoft-Identity-Broker - Version Lifecycle and Support Matrix
+## Microsoft Identity Broker version lifecycle and support matrix
 
-Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
+Microsoft uses the following package repositories to distribute Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format; however, only Ubuntu long-term support (LTS) and Red Hat Enterprise Linux (RHEL) are supported.
 
-|Major Version |Primary Purpose|Latest Version| Supported| Source|
+|Channel|Primary purpose|Latest version|Supported|Source|
 | --------|--------------| -------- |---------------------|--------------|
-|stable|Production workloads|2.0.1|✅ Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
-|insiders-fast|Testing upcoming releases|2.5.x|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
+|stable|Production workloads|3.0.0|Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
+|insiders-fast|Testing prerelease packages|2.5.x|No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
 > [!NOTE]
-> The current production version of the `microsoft-identity-broker` is `2.0.1`. 
+> The current production version of the `microsoft-identity-broker` is `3.0.0`. 
 
-We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow prerelease testing of packages newer than 2.0.1 (the latest production version). This channel isn't intended for production use and might contain breaking changes or incomplete features.
+The `insiders-fast` channel in `packages.microsoft.com` lets you test prerelease packages. Don't use it for production workloads. It might contain breaking changes or incomplete features.
 
-### Important Notes for Version 2.0.2 and Later
+### Important notes for version 2.0.2 and later
 
 > [!WARNING]
 > Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (prod: 2.0.1 or earlier, insiders-fast: 2.0.4 or earlier), users will need to re-register and re-enroll their devices after performing an upgrade of the previous version.
 
-## Instructions to Add Package Repositories
-### Adding Repositories
+## Instructions to add package repositories
 
 To add the appropriate package repository for your Linux distribution, follow the instructions below:
 
+### [Ubuntu Production](#tab/debian-install-prod)
 
-### [Ubuntu Production Repository](#tab/debian-install-prod)
-
-1. Install the Microsoft production package signing key.  
+1. Install `curl` and `gpg`.
 
     ```bash
     sudo apt install curl gpg
+    ```
+
+1. Install the Microsoft package signing key.
+
+    ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings
     rm microsoft.gpg
     ```
 
-3. Add and update Microsoft Linux Repository to the system repository list.
+1. Add the Microsoft package repository and update package metadata.
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
     sudo apt update
     ```
 
-### [Ubuntu insiders-fast Repository](#tab/debian-install-insiders-fast)
+### [Ubuntu insiders-fast](#tab/debian-install-insiders-fast)
 
-1. Install the Microsoft production package signing key.  
+1. Install `curl` and `gpg`.
 
     ```bash
     sudo apt install curl gpg
-    curl https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/Release.gpg  | gpg --dearmor > fast-insiders.gpg
-    sudo install -o root -g root -m 644 fast-insiders.gpg  /usr/share/keyrings
-    rm fast-insiders.gpg
     ```
 
-3. Add and update Microsoft Linux Repository to the system repository list.
+1. Install the insiders-fast repository signing key.
 
     ```bash
-    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
+    curl https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod/dists/insiders-fast/Release.gpg | gpg --dearmor > microsoft-insiders-fast.gpg
+    sudo install -o root -g root -m 644 microsoft-insiders-fast.gpg /usr/share/keyrings
+    rm microsoft-insiders-fast.gpg
+    ```
+
+1. Add the Microsoft package repository and update package metadata.
+
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-insiders-fast.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod insiders-fast main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-insiders-fast.list'
     sudo apt update
     ```
 
+---
 
-### [RHEL Production Repository](#tab/redhat-install)
+### [RHEL 8/9 Prod](#tab/redhat89-install-prod)
 
-Add the Microsoft repository.  
+1. Install the Microsoft package signing key.
 
-   ```bash
-	# Legacy key (needed for Edge)
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
- 
-	# Key for RHEL 10 packages
-	sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```bash
+    # Legacy key (needed for RHEL 8 and RHEL 9 packages and Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    ```
 
-	sudo dnf install -y dnf-plugins-core
+1. Add the Microsoft package repository.
 
-	# for rhel 8/9
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
+    ```bash
+    sudo dnf install -y dnf-plugins-core
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
+    ```
 
-	# for rhel10:
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-prod
-   ```
-   
-### [RHEL insiders-fast Repository](#tab/redhat-install-insiders-fast)
+### [RHEL 10 Prod](#tab/redhat10-install-prod)
 
-Add the Microsoft repository.  
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
+    
+    ```bash
+    # Legacy key (needed for Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # New key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
+    ```
+  
+1. Add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
 
-```bash
-	# Legacy key (needed for Edge)
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
- 
-	# Key for RHEL 10 packages
-	sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-prod.repo > /dev/null <<EOF
+    [microsoft-prod]
+    name=Microsoft prod - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/prod
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
+    EOF
+    ```
 
+### [RHEL 8/9 insiders-fast](#tab/redhat-install-insiders-fast)
+
+1. Install the Microsoft package signing keys.
+
+    ```bash
+    # Legacy key (needed for Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Repository key for insiders-fast packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+
+1. Add the Microsoft package repository.
+    
+    ```bash
     sudo dnf install -y dnf-plugins-core
 
-	# for rhel 8 and 9
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+    # for rhel 8 and 9
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
 
-	# for rhel10:
-	sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
-```
+    # for rhel10:
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
+    ```
+    
+### [RHEL 10 insiders-fast](#tab/redhat10-install-insiders-fast)
+
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
+    
+    ```bash
+    # Legacy key (needed for Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+    
+1. Add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
+    
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
+    [microsoft-insiders-fast]
+    name=Microsoft insiders-fast - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/insiders-fast
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    EOF
+    ```
 
 ---
 
 ## Changes
 
-> [!WARNING]
-> When upgrading from version 2.0.2 or earlier to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+### 3.0.0 - March 31, 2026 - (GA Major Release)
+
+GA release of the Microsoft Identity Broker for Linux, now using a newly rewritten C++ broker instead of the previous Java-based broker.
+
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
+- Added a header to token requests to help differentiate identity broker versions.
+- When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
+- Renamed the device broker service to `microsoft-identity-devicebroker`.
+- There's no longer a user broker service named `microsoft-identity-broker`. The user broker is now an executable invoked over D-Bus.
+- Device certificates are moved from the keychain to `/etc/ssl/private`. In that directory, the broker creates a device certificate per tenant, a session transport key per tenant, and a deviceless key. All other user data, such as access tokens and refresh tokens, are stored in the keychain and accessed via Microsoft Authentication Library (MSAL).
+- Added support for the `microsoft-identity-broker-diagnostics` package.
+- Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
+- Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
+- Updated `x-client-os` to use the distro name.
+- Changed package file names to include the target OS.
+- Included a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
+- Updated embedded authentication window defaults (title/size) and improved centering behavior.
+- Added support for RHEL 10.
+- Added a `dsreg` command-line tool for device registration management and diagnostics.
+- Updated the certificates and keys location used by the Linux device broker.
+- Included the broker version in broker-produced telemetry.
+- Added DUNA cross-platform support and DUNA iOS CBA.
+- Fixed smart card dialog layout for GTK4.
+- Fixed a callback issue when the browser is reused.
+- Added GetDeviceState support with TLS 1.3 in the C++ broker.
+- Handled `sem_timedwait` failures due to signals in `Msai::SecureStorageLock` and `Msoa::SystemMutex`.
 
 ### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
 
@@ -212,7 +296,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 
 ### 2.0.1 - November 18, 2024 
 
-- Releasing package support for ubuntu 24.04
+- Added package support for Ubuntu 24.04.
 
 #### Assets
 
@@ -313,7 +397,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 ### 2.0.3 - October 21, 2025 - (Preview Release)
 
 - Added support for the microsoft-identity-broker-diagnostics package.
-- Rename linux_broker to microsoft-identity-broker
+- Renamed `linux_broker` to `microsoft-identity-broker`.
 
 #### Assets
 
@@ -321,7 +405,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 - Ubuntu-22.04 - [microsoft-identity-diagnostics_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_2.0.3_amd64.deb)
 
 
-#### 1.01 - November 29, 2022
+#### 1.1.0 - November 29, 2022
 
 #### Assets
 - Ubuntu 22.04 - [microsoft-identity-diagnostics_1.1.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_1.1.0_amd64.deb)
@@ -338,9 +422,9 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 ### Version Compatibility
 
 **Before upgrading:**
-- Check current version: `dpkg -l microsoft-identity-broker`
-- Review breaking changes in the target version
-- Plan for potential device re-registration
+- Check the current version: `dpkg -l microsoft-identity-broker`.
+- Review breaking changes in the target version.
+- Plan for potential device re-registration.
 
 ### Common Migration Issues
 

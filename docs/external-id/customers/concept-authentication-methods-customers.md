@@ -119,7 +119,7 @@ You can use the following `domain_hint` values to go directly to the sign-in pag
 - **Facebook**: `domain_hint=facebook`.
 - **Google**: `domain_hint=google`.
 - **Apple**: `domain_hint=apple`.
-- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
+- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax such as `"www.linkedin.com"` for LinkedIn.
 
    :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Issuer URI domain segment used for domain_hint in custom OpenID Connect configuration.":::
 

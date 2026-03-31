@@ -1,8 +1,8 @@
 {
   "redirections": [
     {
-      "source_path": "docs/id-governance/privileged-identity-management/pim-resource-roles-custom-role-policy.md",
-      "redirect_url": "/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings",
+      "source_path": "docs/fundamentals/sign-up-organization.md",
+      "redirect_url": "/entra/fundamentals/create-new-tenant",
       "redirect_document_id": false
     },
     {
