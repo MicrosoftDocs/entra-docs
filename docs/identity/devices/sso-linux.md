@@ -56,13 +56,13 @@ The following animation shows the sign-in experience for brokered flows on Linux
 
 Using Password authentication on Linux, as shown in the following animation.
 
-![Demo of the Linux sign-in experience with PRMFA](./media/sso-linux/ubuntu-auth-prmfa.gif)
+![Demo of the Linux sign-in experience with PRMFA](./media/sso-linux/linux-entra-login.gif)
 
 ### [phish-resistant MFA](#tab/prmfa-auth)
 
 Using PRMFA auth via SmartCard on Linux provides a seamless sign-in experience, as shown in the following animation.
 
-![Demo of the Linux sign-in experience](./media/sso-linux/linux-entra-login.gif)
+![Demo of the Linux sign-in experience](./media/sso-linux/ubuntu-authentication-smartcard.gif)
 
 ---
 
