@@ -3,7 +3,7 @@ title: Configure Zscaler One for automatic user provisioning with Microsoft Entr
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler One.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/30/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler One so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler One.
@@ -28,7 +28,7 @@ The scenario outlined in this article assumes that you have:
 > [!NOTE]
 > The Microsoft Entra provisioning integration relies on the Zscaler One SCIM API. This API is available to Zscaler One developers for accounts with the Enterprise package.
 
-## Add Zscaler One from the Azure Marketplace
+## Step 1: Add Zscaler One from the Azure Marketplace
 
 Before you configure Zscaler One for automatic user provisioning with Microsoft Entra ID, add Zscaler One from the Azure Marketplace to your list of managed SaaS applications.
 
@@ -40,7 +40,7 @@ To add Zscaler One from the Marketplace, follow these steps.
 
 	![Screenshot of Zscaler One in the results list.](common/search-new-app.png)
 
-## Assign users to Zscaler One
+## Step 2: Assign users to Zscaler One
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users or groups that were assigned to an application in Microsoft Entra ID are synchronized.
 
@@ -52,7 +52,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 
 * When you assign a user to Zscaler One, select any valid application-specific role, if available, in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning.
 
-## Configure automatic user provisioning to Zscaler One
+## Step 3: Configure automatic user provisioning to Zscaler One
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service. Use it to create, update, and disable users or groups in Zscaler One based on user or group assignments in Microsoft Entra ID.
 
@@ -75,17 +75,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of The Zscaler One link in the applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot ofZscaler One Provisioning.](./media/zscaler-one-provisioning-tutorial/provisioning-tab.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Zscaler One Provisioning Mode.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, fill in the **Tenant URL** and **Secret Token** boxes with the settings for your Zscaler One account as described in Step 6.
+1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described later in the article.
 
-6. To obtain the tenant URL and secret token, go to **Administration** > **Authentication Settings** in the Zscaler One portal UI. Under **Authentication Type**, select **SAML**.
+1. To obtain the tenant URL and secret token, go to **Administration** > **Authentication Settings** in the Zscaler One portal UI. Under **Authentication Type**, select **SAML**.
 
 	![Screenshot of Zscaler One Authentication Settings.](./media/zscaler-one-provisioning-tutorial/secret-token-1.png)
 
@@ -99,15 +99,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Zscaler One Test Connection.](common/provisioning-testconnection-tenanturltoken.png)
 
-8. In the **Notification Email** box, enter the email address of the person or group to receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Screenshot of Zscaler One Notification Email.](./media/zscaler-one-provisioning-tutorial/notification.png)
+1. Select **Properties** on the **Overview** page.
 
-9. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler One**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler One for update operations. To save any changes, select **Save**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler One for update operations. To save any changes, select **Save**.
 
   	 |Attribute|Type|Supported for filtering|Required by Zscaler One|
   	 |---|---|---|---|
@@ -119,9 +121,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
      |name.familyName|String||
      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
-12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler One**.
+1. Select **Groups**.
 
-13. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler One for update operations. To save any changes, select **Save**.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler One in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler One for update operations. To save any changes, select **Save**.
 
     |Attribute|Type|Supported for filtering|Required by Zscaler One|
     |---|---|---|---|
@@ -129,25 +131,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |externalId|String||&check;
     |members|Reference|
 
-14. To configure scoping filters, follow the instructions in the [scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-15. To enable the Microsoft Entra provisioning service for Zscaler One, in the **Settings** section, change **Provisioning Status** to **On**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Zscaler One Provisioning Status.](./media/zscaler-one-provisioning-tutorial/provisioning-status.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-16. Define the users or groups that you want to provision to Zscaler One. In the **Settings** section, select the values you want in **Scope**.
+## Step 4: Monitor your deployment
 
-	![Screenshot of Zscaler One Scope.](./media/zscaler-one-provisioning-tutorial/scoping.png)
-
-17. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than later syncs. They occur approximately every 40 minutes as long as the Microsoft Entra provisioning service runs. 
-
-You can use the **Synchronization Details** section to monitor progress and follow links to the provisioning activity report. The report describes all the actions performed by the Microsoft Entra provisioning service on Zscaler One.
-
-For information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Change Logs
 * 05/16/2022 - **Schema Discovery** feature enabled on this app.

@@ -3,7 +3,7 @@ title: Configure Zscaler Private Access (ZPA) for automatic user provisioning wi
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zscaler Private Access (ZPA).
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/30/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Private Access so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Private Access.
@@ -25,46 +25,46 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Zscaler Private Access (ZPA) tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
 * A user account in Zscaler Private Access (ZPA) with Admin permissions.
 
-## Assigning users to Zscaler Private Access (ZPA)
+## Step 1: Assign users to Zscaler Private Access (ZPA)
 
 Microsoft Entra ID uses a concept called *assignments* to determine which users should receive access to selected apps. In the context of automatic user provisioning, only the users and/or groups that have been assigned to an application in Microsoft Entra ID are synchronized.
 
 Before configuring and enabling automatic user provisioning, you should decide which users and/or groups in Microsoft Entra ID need access to Zscaler Private Access (ZPA). Once decided, you can assign these users and/or groups to Zscaler Private Access (ZPA) by following the instructions here:
 * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Important tips for assigning users to Zscaler Private Access (ZPA)
+### Important tips to assign users to Zscaler Private Access (ZPA)
 
 * It's recommended that a single Microsoft Entra user is assigned to Zscaler Private Access (ZPA) to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Zscaler Private Access (ZPA), you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Set up Zscaler Private Access (ZPA) for provisioning
+## Step 2: Set up Zscaler Private Access (ZPA) for provisioning
 
 1. Sign in to your [Zscaler Private Access (ZPA) Admin Console](https://admin.private.zscaler.com/). Navigate to **Administration > IdP Configuration**.
 
-	![Zscaler Private Access (ZPA) Admin Console](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
+	![Screenshot of Zscaler Private Access (ZPA) Admin Console.](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by selecting the plus icon at the top right corner of the screen.
+1.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by selecting the plus icon at the top right corner of the screen.
 
-	![Zscaler Private Access (ZPA) Add SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
+	![Screenshot of Zscaler Private Access (ZPA) Add SCIM.](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Select **Next** to navigate to the next window.
+1. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Select **Next** to navigate to the next window.
 
-	![Zscaler Private Access (ZPA) Add IdP](media/zscaler-private-access-provisioning-tutorial/addidp.png)
+	![Screenshot of Zscaler Private Access (ZPA) Add IdP.](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
-4. Download the **Service Provider Certificate**. Select **Next** to navigate to the next window.
+1. Download the **Service Provider Certificate**. Select **Next** to navigate to the next window.
 
-	![Zscaler Private Access (ZPA) SP certificate](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
+	![Screenshot of Zscaler Private Access (ZPA) SP certificate.](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
 
-5. In the next window, upload the **Service Provider Certificate** downloaded previously.
+1. In the next window, upload the **Service Provider Certificate** downloaded previously.
 
-	![Zscaler Private Access (ZPA) upload certificate](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
+	![Screenshot of Zscaler Private Access (ZPA) upload certificate.](media/zscaler-private-access-provisioning-tutorial/uploadfile.png)
 
-6.	Scroll down to provide the **Single sign-On URL** and **IdP Entity ID**.
+1.	Scroll down to provide the **Single sign-On URL** and **IdP Entity ID**.
 
 	![Zscaler Private Access (ZPA) IdP ID](media/zscaler-private-access-provisioning-tutorial/idpid.png)
 
-7.	Scroll down to **Enable SCIM Sync**. Select **Generate New Token** button. Copy the **Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
+1.	Scroll down to **Enable SCIM Sync**. Select **Generate New Token** button. Copy the **Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
 	![Zscaler Private Access (ZPA) Create Token](media/zscaler-private-access-provisioning-tutorial/token.png)
 
@@ -87,9 +87,10 @@ Before configuring Zscaler Private Access (ZPA) for automatic user provisioning 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler Private Access (ZPA)**, select **Zscaler Private Access (ZPA)** in the search box.
 1. Select **Zscaler Private Access (ZPA)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Zscaler Private Access (ZPA) in the results list](common/search-new-app.png)
 
-## Configuring automatic user provisioning to Zscaler Private Access (ZPA) 
+	![Screenshot of Zscaler Private Access (ZPA) in the results list.](common/search-new-app.png)
+
+## Step 3: Configure automatic user provisioning to Zscaler Private Access (ZPA) 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zscaler Private Access (ZPA) based on user and/or group assignments in Microsoft Entra ID.
 
@@ -104,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Zscaler Private Access (ZPA) in Microsoft Entra ID:
+### To configure automatic user provisioning for Zscaler Private Access (ZPA) in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)**.
@@ -115,21 +116,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. Under the **Admin Credentials** section, input the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Tenant URL + Token.](common/provisioning-testconnection-tenanturltoken.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Private Access (ZPA)**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
@@ -149,9 +152,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|string||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
 
-
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Private Access (ZPA)**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
@@ -161,23 +162,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |members|Reference||
    |externalId|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Zscaler Private Access (ZPA), change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-1. Define the users and/or groups that you would like to provision to Zscaler Private Access (ZPA) by choosing the desired values in **Scope** in the **Settings** section.
+## Step 4: Monitor your deployment
 
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Zscaler Private Access (ZPA).
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 
