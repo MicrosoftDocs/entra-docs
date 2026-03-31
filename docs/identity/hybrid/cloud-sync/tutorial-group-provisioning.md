@@ -83,12 +83,12 @@ To configure provisioning, follow these steps:
 
    5. On the configuration screen, select your domain. Select **Create**.
 
-      :::image type="content" source="media/how-to-configure/new-ux-configure-2-gpad.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2-gpad.png":::
+      :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
    6. The **Get started** screen opens. From here, you can continue configuring cloud sync.
    7. On the left, select **Scoping filters**.
 
-      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png":::
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png" alt-text="Screenshot Overview page." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png":::
    
    8. For **Groups scope**, select **Selected security groups**.
 
@@ -101,7 +101,7 @@ To configure provisioning, follow these steps:
         1. Under **Target container** select **Edit attribute mapping**.
         2. For **Constant value** enter the DistinguishedName for the target OU.
 
-           :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-4a.png" alt-text="Screenshot of target OU configuration." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-4a.png":::
+           :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png" alt-text="Screenshot of target OU configuration." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png":::
         3. Select **Apply**.
         4. Select **Save**.
            
