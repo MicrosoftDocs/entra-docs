@@ -2,6 +2,7 @@
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 ms.topic: concept-article
+ms.reviewer: abhijeetsinha
 ms.date: 03/31/2026
 ai-usage: ai-assisted
 ---

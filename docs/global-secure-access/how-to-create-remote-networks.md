@@ -149,8 +149,6 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
 
 ### Assign a traffic forwarding profile
 
-[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
-
 Associating a traffic forwarding profile to your remote network using the Microsoft Graph API is two step process. First, locate the ID of the traffic profile. The ID is different for all tenants. Second, associate the traffic forwarding profile with your desired remote network.
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
@@ -173,6 +171,8 @@ Associating a traffic forwarding profile to your remote network using the Micros
             "name": "Test Redmond branch"
         }
     ```
+
+[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
 
 ---
 
