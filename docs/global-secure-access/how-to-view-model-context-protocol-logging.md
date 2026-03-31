@@ -1,5 +1,5 @@
 ---
-title: How to view Model Context Protocol (MCP) traffic logs in Global Secure Access (preview)
+title: How to view Model Context Protocol (MCP) traffic logs in Global Secure Access
 description: Learn how to monitor and analyze Model Context Protocol (MCP) traffic between AI agents and remote MCP servers using the Global Secure Access Generative AI Insights page.
 author: jenniferf-skc
 ms.author: jfields
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 ---
 
-# How to view MCP traffic logs in Global Secure Access (preview)
+# How to view MCP traffic logs in Global Secure Access
 
 Global Secure Access MCP logging provides advanced monitoring and analysis capabilities for [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) traffic between client MCP on devices and remote MCP servers. This feature provides thorough visibility into which MCP servers are being used, what tools and resources they expose, and how those tools are invoked. MCP Logging helps you discover shadow MCP servers in your organization and enforce stronger security and governance controls on AI agent communications and helps in understanding what tool is exposed  and what tools are used. MCP logging also monitors a client MCP that is used by the Copilot Studio agent and a remote MCP server in case you have enabled [GSA MCP integration for Copilot Studio agents](/power-platform/admin/security/secure-web-ai-gateway-agents#enable-network-controls-for-copilot-studio-agents).
 
