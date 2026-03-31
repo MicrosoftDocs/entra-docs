@@ -2,7 +2,7 @@
 title: Install the Global Secure Access Client for macOS
 description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the macOS client.
 ms.topic: how-to
-ms.date: 02/21/2026
+ms.date: 03/30/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -18,7 +18,7 @@ This article describes how to download and install the Global Secure Access clie
 
 ## Prerequisites
 
-- A Mac device with an Intel, M1, M2, M3, or M4 processor running macOS version 13 or later.
+- A Mac device with an Intel, M1, M2, M3, or M4 processor running macOS version 14 or later.
 - A device registered to a Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - An internet connection.
@@ -26,7 +26,7 @@ This article describes how to download and install the Global Secure Access clie
 
 ## Download the client
 
-The most current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
+You can download the most current version of the Global Secure Access client from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
@@ -41,7 +41,7 @@ Use the following command for silent installation.
 
 `sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
-The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components with mobile device management.
+The client uses system extensions and a transparent application proxy that you need to approve during the installation. For a silent deployment without prompting the end user to allow these components, deploy a policy to automatically approve the components by using mobile device management.
 
 ### Deploy with Microsoft Intune
 To deploy the Global Secure Access client .pkg through Microsoft Intune as a managed app:
@@ -51,7 +51,7 @@ To deploy the Global Secure Access client .pkg through Microsoft Intune as a man
 1. In the **Select app type** pane, under **Other** app types, select **macOS app (PKG)** and select **Select**.
 1. On the **App package file** tab, select **Select app package file**, browse to the GlobalSecureAccessClient.pkg file, and select **OK**.
 1. On the **App information** tab, fill in the required details and select **Next**.
-1. On the **Requirements** tab, set the minimum operating system to **macOS 13.0** and select **Next**.
+1. On the **Requirements** tab, set the minimum operating system to **macOS 14.0** and select **Next**.
 1. On the **Detection rules** tab, review the **Included apps** list to verify the Global Secure Access client app is detected correctly and select **Next**.
 1. On the **Assignments** tab, assign the app to the appropriate device or user groups and select **Next**.
 1. Review the configuration and select **Create**.
@@ -59,9 +59,9 @@ To deploy the Global Secure Access client .pkg through Microsoft Intune as a man
 ### Allow system extensions through mobile device management (MDM)
 
 > [!IMPORTANT]
-> Previous versions of these instructions referenced the deprecated **Extensions** profile type. If your organization previously deployed system extensions using the **Extensions** profile, migrate to the **Allowed System Extensions** setting in the **Settings catalog** as described in the following steps.
+> Previous versions of these instructions referenced the deprecated **Extensions** profile type. If your organization previously deployed system extensions by using the **Extensions** profile, migrate to the **Allowed System Extensions** setting in the **Settings catalog** as described in the following steps.
 
-The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
+The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDMs.
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile with a **Platform** of **macOS** and a **Profile type** set to **Settings catalog**. Select **Create**.
@@ -75,18 +75,18 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. In the list of **Allowed System Extensions**, select **+ Edit instance**.
 1. In the **Configure instance** dialog, configure the System Extensions payload settings with the following entries:
 
-|Bundle identifier   |Team identifier   |
-|---------|---------|
-|com.microsoft.globalsecureaccess.tunnel   |UBF8T346G9   |
-|com.microsoft.globalsecureaccess   |UBF8T346G9   |
+    |Bundle identifier   |Team identifier   |
+    |---------|---------|
+    |com.microsoft.globalsecureaccess.tunnel   |UBF8T346G9   |
+    |com.microsoft.globalsecureaccess   |UBF8T346G9   |
 
-10. Select **Save** and **Next**.   
+1. Select **Save** and **Next**.   
 1. On the **Scope tags** tab, add tags as appropriate.
 1. On the **Assignments** tab, assign the profile to a group of macOS devices or users.
 1. On the **Review + create** tab, review the configuration and select **Create**.
 
 ### Allow transparent application proxy through MDM
-The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
+The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDMs.
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
@@ -96,38 +96,15 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. Keep **Deployment channel** set to "Device channel."
 1. Upload an .xml file that contains the following data:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>PayloadUUID</key>
-    <string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadOrganization</key>
-    <string>Microsoft Corporation</string>
-    <key>PayloadIdentifier</key>
-    <string>com.microsoft.globalsecureaccess</string>
-    <key>PayloadDisplayName</key>
-    <string>Global Secure Access Proxy Configuration</string>
-    <key>PayloadDescription</key>
-    <string>Add Global Secure Access Proxy Configuration</string>
-    <key>PayloadVersion</key>
-    <integer>1</integer>
-    <key>PayloadEnabled</key>
-    <true/>
-    <key>PayloadRemovalDisallowed</key>
-    <true/>
-    <key>PayloadScope</key>
-    <string>System</string>
-    <key>PayloadContent</key>
-    <array>
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
       <dict>
         <key>PayloadUUID</key>
-        <string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
+        <string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
         <key>PayloadType</key>
-        <string>com.apple.vpn.managed</string>
+        <string>Configuration</string>
         <key>PayloadOrganization</key>
         <string>Microsoft Corporation</string>
         <key>PayloadIdentifier</key>
@@ -135,41 +112,64 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
         <key>PayloadDisplayName</key>
         <string>Global Secure Access Proxy Configuration</string>
         <key>PayloadDescription</key>
-        <string/>
+        <string>Add Global Secure Access Proxy Configuration</string>
         <key>PayloadVersion</key>
         <integer>1</integer>
-        <key>TransparentProxy</key>
-        <dict>
-          <key>AuthenticationMethod</key>
-          <string>Password</string>
-          <key>Order</key>
-          <integer>1</integer>
-          <key>ProviderBundleIdentifier</key>
-          <string>com.microsoft.globalsecureaccess.tunnel</string>
-          <key>ProviderDesignatedRequirement</key>
-          <string>identifier "com.microsoft.globalsecureaccess.tunnel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
-          <key>ProviderType</key>
-          <string>app-proxy</string>
-          <key>RemoteAddress</key>
-          <string>100.64.0.0</string>
-        </dict>
-        <key>UserDefinedName</key>
-        <string>Global Secure Access Proxy Configuration</string>
-        <key>VPNSubType</key>
-        <string>com.microsoft.globalsecureaccess</string>
-        <key>VPNType</key>
-        <string>TransparentProxy</string>
+        <key>PayloadEnabled</key>
+        <true/>
+        <key>PayloadRemovalDisallowed</key>
+        <true/>
+        <key>PayloadScope</key>
+        <string>System</string>
+        <key>PayloadContent</key>
+        <array>
+          <dict>
+            <key>PayloadUUID</key>
+            <string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadOrganization</key>
+            <string>Microsoft Corporation</string>
+            <key>PayloadIdentifier</key>
+            <string>com.microsoft.globalsecureaccess</string>
+            <key>PayloadDisplayName</key>
+            <string>Global Secure Access Proxy Configuration</string>
+            <key>PayloadDescription</key>
+            <string/>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>TransparentProxy</key>
+            <dict>
+              <key>AuthenticationMethod</key>
+              <string>Password</string>
+              <key>Order</key>
+              <integer>1</integer>
+              <key>ProviderBundleIdentifier</key>
+              <string>com.microsoft.globalsecureaccess.tunnel</string>
+              <key>ProviderDesignatedRequirement</key>
+              <string>identifier "com.microsoft.globalsecureaccess.tunnel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
+              <key>ProviderType</key>
+              <string>app-proxy</string>
+              <key>RemoteAddress</key>
+              <string>100.64.0.0</string>
+            </dict>
+            <key>UserDefinedName</key>
+            <string>Global Secure Access Proxy Configuration</string>
+            <key>VPNSubType</key>
+            <string>com.microsoft.globalsecureaccess</string>
+            <key>VPNType</key>
+            <string>TransparentProxy</string>
+          </dict>
+        </array>
       </dict>
-    </array>
-  </dict>
-</plist>
-```
+    </plist>
+    ```
 
-7. Complete the creation of the profile by assigning users and devices according to your needs.
+1. Complete the creation of the profile by assigning users and devices according to your needs.
 
 ### Manual interactive installation
 To manually install the Global Secure Access client:
-1. Run the GlobalSecureAccessClient.pkg setup file. The **Install** wizard launches. Follow the prompts.
+1. Run the `GlobalSecureAccessClient.pkg` setup file. The **Install** wizard launches. Follow the prompts.
 1. On the **Introduction** step, select **Continue**.
 1. On the **License** step, select **Continue** and then select **Agree** to accept the license agreement.
 :::image type="content" source="media/how-to-install-macos-client/macos-install-license-agreement.png" alt-text="Screenshot of the Install wizard on the SumLicense step, showing the software license agreement pop-up.":::
@@ -177,22 +177,22 @@ To manually install the Global Secure Access client:
 1. On the **Summary** step, when the installation is complete, select **Close**.
 1. Allow the Global Secure Access system extension.
     1. In the **System Extension Blocked** dialog, select **Open System Settings**.    
-:::image type="content" source="media/how-to-install-macos-client/macos-client-open-system-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
+    :::image type="content" source="media/how-to-install-macos-client/macos-client-open-system-settings.png" alt-text="Screenshot of the System Extension Blocked dialog box with the Open System Settings highlighted.":::    
 
     1. Allow the Global Secure Access client system extension by selecting **Allow**.
-:::image type="content" source="media/how-to-install-macos-client/macos-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
+    :::image type="content" source="media/how-to-install-macos-client/macos-allow-blocked-application.png" alt-text="Screenshot of the System Settings, open to the Privacy & Security options, showing a blocked application message, with the Allow button highlighted.":::   
 
     1. In the **Privacy & Security** dialog, enter your username and password to validate the approval of the system extension. Then select **Modify Settings**.    
-:::image type="content" source="media/how-to-install-macos-client/macos-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
+    :::image type="content" source="media/how-to-install-macos-client/macos-client-credentials.png" alt-text="Screenshot of the Privacy & Security pop-up requesting sign-in credentials and the Modify Settings button highlighted.":::
 
     1. Complete the process by selecting **Allow** to enable the Global Secure Access client to add proxy configurations.   
-:::image type="content" source="media/how-to-install-macos-client/macos-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
+    :::image type="content" source="media/how-to-install-macos-client/macos-add-proxy.png" alt-text="Screenshot of the Global Secure Access client would like to add proxy configurations pop-up with the Allow button highlighted.":::
    
 1. After the installation is complete, you might be prompted to sign in to Microsoft Entra.
-> [!NOTE]
-> If the [Microsoft Enterprise SSO plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
+    > [!NOTE]
+    > If the [Microsoft Enterprise SSO plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is deployed, the default behavior is to use single sign-on with the credentials entered in the company portal.   
 
-8. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.   
+1. The **Global Secure Access - Connected** icon appears in the system tray, indicating a successful connection to Global Secure Access.   
 :::image type="content" source="media/how-to-install-macos-client/macos-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
    
 ## Upgrade the Global Secure Access client
@@ -221,9 +221,9 @@ To view the available client menu actions, right-click the Global Secure Access 
 
 |Action   |Description   |
 |---------|---------|
-|**Disable**   |Disables the client until the user enables it again. When the user disables the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
+|**Disable**   |Disables the client until you enable it again. When you disable the client, you're prompted to enter a business justification and reenter your sign-in credentials. The business justification is logged.   |
 |**Enable**   |Enables the client.   |
-|**Pause**   |Pauses the client for either 10 minutes, until the user resumes the client, or until the device is restarted. When the user pauses the client, they're prompted to enter a business justification and reenter their sign-in credentials. The business justification is logged.   |
+|**Pause**   |Pauses the client for either 10 minutes, until you resume the client, or until the device is restarted. When you pause the client, you're prompted to enter a business justification and reenter your sign-in credentials. The business justification is logged.   |
 |**Resume**   |Resumes the paused client.   |
 |**Restart**   |Restarts the client.   |
 |**Collect logs**   |Collects client logs and archives them in a zip file to share with Microsoft Support for investigation.   |
@@ -237,16 +237,16 @@ To view the available client menu actions, right-click the Global Secure Access 
 |---------|---------|---------|
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-initializing.png":::  |Global Secure Access Client  |The client is initializing and checking its connection to Global Secure Access.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-connected.png":::  |Global Secure Access Client - Connected  |The client is connected to Global Secure Access.    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled  |The client is disabled because services are offline or the user disabled the client.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disabled.png":::   |Global Secure Access Client - Disabled  |The client is disabled because services are offline or you disabled the client.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-disconnected.png":::  |Global Secure Access Client - Disconnected  |The client failed to connect to Global Secure Access.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access Client - Some channels are unreachable  |The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access Client - Disabled by your organization  |Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
-|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access - Private Access is disabled   |The user disabled Private Access on this device.    |
+|:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access - Private Access is disabled   |You disabled Private Access on this device.    |
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::  |Global Secure Access - could not connect to the Internet  |The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
 ## Settings and troubleshooting
-From the Settings window, you can set different configurations and perform some advanced actions.
-The Settings window has two tabs:
+From the **Settings** window, you can set different configurations and perform some advanced actions.
+The **Settings** window has two tabs:
 
 ### Settings
 

@@ -61,6 +61,8 @@
       href: deployment-guide-token-protection-apple.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
+  - name: Resilience defaults
+    href: resilience-defaults.md
   - name: Authentication transfer
     href: concept-authentication-transfer.md
   - name: Workload identities

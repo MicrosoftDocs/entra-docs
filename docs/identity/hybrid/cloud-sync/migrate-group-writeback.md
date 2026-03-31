@@ -138,7 +138,10 @@ $groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID'
 
 ## Step 3: Create a custom group inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules Editor, you create an inbound sync rule that filters out groups that have `NULL` for the mail attribute. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
+In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound sync rule that targets cloud-created groups that are currently mastered in Microsoft Entra ID and have a `NULL` mail attribute. This inbound sync rule is a join rule that sets the `cloudNoFlow` attribute to True.
+
+The purpose of this rule is to flag these groups so that Microsoft Entra Connect continues to recognize them as joined objects after Group Writeback is disabled, preventing them from being treated as out-of-scope objects. This rule is required to preserve existing on-premises group objects during the transition from Group Writeback in Microsoft Entra Connect Sync to group provisioning using Microsoft Entra Cloud Sync.
+You can create this sync rule by using either the user interface or PowerShell with the provided script.
 
 ### Create a custom group inbound rule in the user interface
 
@@ -239,7 +242,12 @@ In the Microsoft Entra Connect Synchronization Rules Editor, you create an inbou
 
 ## Step 4: Create a custom group outbound rule
 
-You also need an outbound sync rule with a link type of `JoinNoFlow` and the scoping filter that has the `cloudNoFlow` attribute set to `True`. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
+You also need an outbound sync rule with a Link Type of `JoinNoFlow` and a scoping filter that selects groups where `cloudNoFlow` is set to `True`.
+This outbound rule ensures that, after Group Writeback is disabled in Microsoft Entra Connect, it maintains the join relationship without flowing changes or triggering deprovisioning.
+
+Without this rule, previously written-back groups would be interpreted as no longer in scope and deleted from on-premises Active Directory during the next sync cycle.
+This rule is required to safely retire Group Writeback v2 while allowing Microsoft Entra Cloud Sync to take over group provisioning responsibilities.
+You can create this sync rule by using either the user interface or PowerShell with the provided script.
 
 ### Create a custom group outbound rule in the user interface
 
