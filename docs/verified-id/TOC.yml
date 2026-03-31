@@ -108,8 +108,12 @@
     href: admin-api.md
   - name: Verified ID Network API specification
     href: vc-network-api.md
+  - name: API error codes
+    href: error-codes.md
   - name: Supported standards
     href: verifiable-credentials-standards.md
+  - name: Enable did:web:path support
+    href: did-web-path.md
 - name: Resources
   expanded: true
   items:
