@@ -52,17 +52,17 @@ Microsoft single sign-on for Linux is supported on the following operating syste
 
 The following animation shows the sign-in experience for brokered flows on Linux.
 
-### [password authentication](#tab/password-auth)
+### [Password authentication](#tab/password-auth)
 
 Using Password authentication on Linux, as shown in the following animation.
 
-![Demo of the Linux sign-in experience with PRMFA](./media/sso-linux/linux-entra-login.gif)
+![Demo of the Linux sign-in experience with PRMFA.](./media/sso-linux/linux-entra-login.gif)
 
-### [phish-resistant MFA](#tab/prmfa-auth)
+### [Phish-resistant MFA](#tab/prmfa-auth)
 
 Using PRMFA auth via SmartCard on Linux provides a seamless sign-in experience, as shown in the following animation.
 
-![Demo of the Linux sign-in experience](./media/sso-linux/ubuntu-authentication-smartcard.gif)
+![Demo of the Linux sign-in experience.](./media/sso-linux/ubuntu-authentication-smartcard.gif)
 
 ---
 
