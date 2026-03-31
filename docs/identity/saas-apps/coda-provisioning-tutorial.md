@@ -43,7 +43,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Open your Organization Admin Console by selecting Organization Settings under the ... menu below your workspace.
 
-    ![Coda Enterprise Organization SCIM Settings](media/coda-provisioning-tutorial/coda-scim-enable.png)
+    ![Screenshot of Coda Enterprise Organization SCIM Settings.](media/coda-provisioning-tutorial/coda-scim-enable.png)
 
 2. Ensure Provision with SCIM is enabled.
 3. Note the SCIM Base URL and SCIM Bearer Token. If there is no Bearer Token, select Generate New Token.
@@ -69,11 +69,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-    ![Enterprise applications blade](common/enterprise-applications.png)
+    ![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Coda**.
 
-    ![The Coda link in the Applications list](common/all-applications.png)
+    ![Screenshot of The Coda link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 

@@ -73,7 +73,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Tenant URL** field, input your Colloquial Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Colloquial. If the connection fails, ensure your Colloquial account has the required admin permissions and try again.
 
- 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1. Select **Create** to create your configuration.
 

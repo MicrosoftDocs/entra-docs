@@ -45,19 +45,19 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Select **Dashboard** on the home page next to the profile icon.
 
-	![Home](media/cloud-academy-sso-provisioning-tutorial/dashboard.png)
+	![Screenshot of Home.](media/cloud-academy-sso-provisioning-tutorial/dashboard.png)
 
 3. Navigate to **your profile** > **Settings & Integrations**.
 
-	![Integrations](media/cloud-academy-sso-provisioning-tutorial/settings.png)
+	![Screenshot of Integrations.](media/cloud-academy-sso-provisioning-tutorial/settings.png)
 
 4. Select **Integrations** tab and select **View Integration** in Microsoft Entra ID.
 
-	![Directory](media/cloud-academy-sso-provisioning-tutorial/active.png)
+	![Screenshot of Directory.](media/cloud-academy-sso-provisioning-tutorial/active.png)
 
 5. Select **Generate a new API Key**.
 
-	![Generate](media/cloud-academy-sso-provisioning-tutorial/key.png)
+	![Screenshot of Generate a new API key.](media/cloud-academy-sso-provisioning-tutorial/key.png)
 
 6. Copy the full API Key. This value is entered in the **Secret Token** field in the Provisioning tab of your QA application.
 
@@ -87,23 +87,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **QA**.
 
-	![The QA link in the Applications list](common/all-applications.png)
+	![Screenshot of The QA link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, input your QA Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to QA. If the connection fails, ensure your QA account has the required admin permissions and try again.
 
- 	![Provisioning test connection](common/provisioning-test-connection.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1. Select **Create** to create your configuration.
 

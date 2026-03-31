@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 4. Copy the **URL** and **Token**. This values are entered in the **Tenant URL** and the **Secret Token** field in the Provisioning tab of your Clebex application.
 
-	![Connector](media/clebex-provisioning-tutorial/url.png)
+	![Screenshot of Connector.](media/clebex-provisioning-tutorial/url.png)
 
 <a name='step-3-add-clebex-from-the-azure-ad-application-gallery'></a>
 
@@ -72,23 +72,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Clebex**.
 
-	![The Clebex link in the Applications list](common/all-applications.png)
+	![Screenshot of The Clebex link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, input your Clebex Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Clebex. If the connection fails, ensure your Clebex account has the required admin permissions and try again.
 
- 	![Provisioning test connection](common/provisioning-test-connection.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1. Select **Create** to create your configuration.
 
