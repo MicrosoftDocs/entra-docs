@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.reviewer: jomondi, dastrock
-ai-usage: ai-assisted
 
 #customer-intent: As a developer building autonomous agents, I want to authenticate my agent, grant it application permissions, and optionally create an agent's user account, so that my agent can operate independently and access Microsoft Graph and other resources.
 ---
