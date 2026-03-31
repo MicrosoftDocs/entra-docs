@@ -2,7 +2,7 @@
 title: Agent identity blueprints in Microsoft Entra Agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
-ms.date: 11/04/2025
+ms.date: 03/26/2026
 ms.custom: agent-id-ignite
 ms.topic: concept-article
 
@@ -11,56 +11,54 @@ ms.topic: concept-article
 
 # Agent identity blueprints in Microsoft Entra Agent ID
 
-An agent identity blueprint is an object in Microsoft Entra ID that serves as a template for creating agent identities. It establishes the foundation for how agents are created, authenticated, and managed within an organization.
-
-## Defining an agent identity blueprint
+An agent identity blueprint is an object in Microsoft Entra ID that serves as a template for creating agent identities. It establishes the foundation for how agents are created, authenticated, and managed within an organization. The agent identity blueprint is a key component of the Microsoft agent identity platform that enables secure development and administration of AI agents at scale.
 
 :::image type="content" source="media/agent-blueprint/agent-blueprint.png" alt-text="Diagram showing relationship between agent identity and agent identity blueprint.":::
 
-All agent identities in a Microsoft Entra ID tenant are created from an agent identity blueprint. The agent identity blueprint is a key component of the Microsoft agent identity platform that enables secure development and administration of AI agents at scale. An agent identity blueprint serves four purposes.
+Agent identity blueprints are a powerful component of the Microsoft Entra Agent ID platform. They hold critical information about how agent identities are created and authenticated, and they serve as a container for managing agent identities at scale. 
 
-- **Blueprints are a template for agent identities.**
+## Agent identity blueprints
 
-    Organizations can deploy many instances of an AI agent. Each instance pursues a different goal and requires a different level of access. Each instance uses a distinct agent identity for authentication and access. However, the many agent identities used share certain characteristics. The agent identity blueprint records these common characteristics, so that all agent identities created using the blueprint have a consistent configuration.
+An agent identity blueprint is more than just a template for agent identities, just like a blueprint for a building is more than just a drawing. Where architectural blueprints include plumbing, electrical, and structural details, agent identity blueprints include important information about authentication, permissions, and activity logs. 
 
-    An agent identity blueprint has the following properties that are shared across all its agent identities:
+Agent identity blueprints can be used to deploy multiple agents of the same type. If multiple agents are created from one agent identity blueprint, each agent has its own identity, credentials, and permissions but they share common characteristics that are defined by the blueprint. This allows organizations to create a consistent configuration for all agents of a particular type, while still maintaining the flexibility to customize individual agents as needed.
 
-    - `description`: A brief summary of the agent's purpose and functions.
-    - `appRoles`: Define the roles that can be given to users and other principals when using the agent.
-    - `verifiedPublisher`: The organization that built the agent.
-    - Settings for authentication protocols, such as `optionalClaims`: Configure which information is included in access tokens issued to the agent.
+An agent identity blueprint has the following properties that are shared across all its agent identities:
 
-    These settings are configured on a blueprint so that they're consistent across all agent identities created using the blueprint.
+- **Description**: A brief summary of the agent's purpose and functions.
+- **App roles**: Define the roles that can be given to users and other principals when using the agent.
+- **Verified publisher**: The organization that built the agent.
+- **Settings for authentication protocols**: Configure which information is included in access tokens issued to the agent, such as **OptionalClaims**.
 
-    The full schema is available in the Microsoft Graph API reference documentation.
+The full schema is available in the [Microsoft Graph API reference documentation](/graph/api/resources/agentidentityblueprint).
 
-- **Blueprints create agent identities.**
+## Key characteristics of agent identity blueprints
 
-    Blueprints don't just hold information. They're also a special identity type in a Microsoft Entra ID tenant. A blueprint can perform exactly one operation in the tenant: provision or deprovision agent identities. To create an agent identity, a blueprint has:
+In addition to standard properties, the agent identity blueprint includes key characteristics that are important to understand before creating agent identities from your agent identity blueprint.
 
-    - An OAuth client ID: a unique ID used to request access tokens from Microsoft Entra ID.
-    - Credentials: used to request access tokens from Microsoft Entra ID.
-    - `AgentIdentity.CreateAsManager`: a special Microsoft Graph permission that enables the blueprint to create agent identities in the tenant.
+### Credentials
 
-    A service uses the blueprint's client ID, credentials, and permissions to send agent identity creation requests via Microsoft Graph APIs. The agent identities created by a blueprint share common characteristics.
+Credentials used to authenticate an agent identity are configured on the agent identity blueprint. When an AI agent wants to perform an operation, the credentials configured on the agent identity blueprint are used to request an access token from Microsoft Entra ID. OAuth permissions granted to a agent identity blueprint are granted to all agent identities created from that blueprint.
 
-    For more information, see [create agent identities](./create-delete-agent-identities.md).
+For auth protocols, see [Agent ID authentication protocols](./agent-oauth-protocols.md)
 
-- **Blueprints hold credentials for agent identities.**
+### Security
 
-    Each agent identity doesn't have its own credentials. Instead, the credentials used to authenticate an agent identity are configured on the blueprint. When an AI agent wants to perform an operation, the credentials configured on the blueprint are used to request an access token from Microsoft Entra ID.
+The blueprint provides a logical container for agent identities in which many different identity administration operations can be performed. This capability helps administrators scale their security efforts to large numbers of AI agents.
 
-    For auth protocols, see [Agent ID authentication protocols](./agent-oauth-protocols.md)
+Identity administrators can apply policies and settings to agent identity blueprints that take effect for all agent identities created from the blueprint. You can apply Conditional Access policies an agent identity blueprint that targets all agent identities created from that blueprint. Disabling an agent identity blueprint prevents all its agent identities from authenticating.
 
-- **Blueprints are a container for agent identities.**
+### Used to create agent identities
 
-    Identity administrators can apply policies and settings to agent identity blueprints that take effect for all agent identities created using the blueprint. Examples include:
+Blueprints don't just hold information. They're also a special identity type in a Microsoft Entra ID tenant. A blueprint can perform exactly one operation in the tenant: provision or deprovision agent identities. To create an agent identity, a blueprint has:
 
-    - Conditional access policies applied to a blueprint take effect for all its agent identities.
-    - OAuth permissions granted to a blueprint are granted to all its agent identities.
-    - Disabling blueprints prevents all its agent identities from authenticating.
+- An OAuth client ID: a unique ID used to request access tokens from Microsoft Entra ID.
+- Credentials: used to request access tokens from Microsoft Entra ID.
+- `AgentIdentity.CreateAsManager`: a special Microsoft Graph permission that enables the blueprint to create agent identities in the tenant.
 
-    The blueprint provides a logical container for agent identities on which many different identity administration operations can be performed. This helps administrators scale their security efforts to large numbers of AI agents.
+A service uses the blueprint's client ID, credentials, and permissions to send agent identity creation requests via Microsoft Graph APIs. The agent identities created by a blueprint share common characteristics.
+
+For more information, see [create agent identities](./create-delete-agent-identities.md).
 
 ## Agent identity blueprint principals
 
@@ -78,15 +76,13 @@ Agent identity blueprints are always created in a Microsoft Entra tenant. An age
 
 In either case, an agent identity blueprint principal is always created when a blueprint is added to a tenant. The presence of this principal indicates that a blueprint exists in a tenant and can be used to create agent identities. Customers can remove a blueprint from their tenant by deleting the agent identity blueprint principal.
 
-## Create an agent identity blueprint
-
-There are multiple ways to create an agent identity blueprint in Microsoft Entra Agent ID. For more information, see [agent identity blueprint](./create-blueprint.md).
-
-## Credentials for agent identities
-
-There are several credentials types that can be used for agent identities. For more information on these, see [credentials for agent identities](./agent-identities.md#credentials-for-agent-identities).
-
 ## Related content
 
 - [Agent identity blueprint creation channels](../identity-professional/agent-id-creation-channels.md)
 - [Create an agent identity blueprint](./create-blueprint.md)
+- [Credentials for agent identities](./agent-identities.md#credentials-for-agent-identities).
+
+
+
+
+All agent identities in a Microsoft Entra ID tenant are created from an agent identity blueprint.
