@@ -332,7 +332,7 @@ Authorization: Bearer <token>
 
 After creating the agent identity blueprint, create an agent identity blueprint principal using the newly created agent identity blueprint `appId`.
 
-Connect-MgGraph -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId <your-tenant-id>
+Connect-MgGraph -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId '<your-tenant-id>'
 
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId
