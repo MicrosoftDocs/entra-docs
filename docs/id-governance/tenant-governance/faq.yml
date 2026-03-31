@@ -60,9 +60,11 @@ sections:
   - name: Governance relationships
     questions:
       - question: |
-          I'm a Microsoft partner in the Partner Center program. Can I use these capabilities to manage customer tenants?
+          I'm a Cloud Service Provider (CSP), Managed Service Provider (MSP), or Managed Security Service Provider (MSSP). Can I use these capabilities to manage customer tenants?
         answer: |
-          Tenant Governance relationships aren't currently supported for Microsoft partners with existing [GDAP relationships configured through Partner Center](/partner-center/customers/gdap-introduction).
+          Yes. Cloud Solution Providers (CSPs), Managed Service Providers (MSPs), and Managed Security Service Providers (MSSPs) can use Tenant Governance relationships to manage customer tenants.
+
+          However, Tenant Governance relationships can't coexist with [GDAP relationships that are configured through Partner Center](/partner-center/customers/gdap-introduction) between the same two tenants. If you already have a Partner Center GDAP relationship with a customer tenant, you must first remove that Partner Center relationship before creating a Tenant Governance relationship with the same tenant.
 
       - question: |
           Can governed tenants independently terminate the relationship?

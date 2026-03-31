@@ -5,9 +5,9 @@ items:
   expanded: true
   items:
   - name: What is Microsoft Entra Agent ID?
-    href: microsoft-entra-agent-identities-for-ai-agents.md
-  - name: Security for AI
-    href: security-for-ai.md
+    href: what-is-microsoft-entra-agent-id.md
+  - name: Security for AI overview
+    href: security-for-ai-overview.md
 - name: How to guides
   expanded: true
   items:

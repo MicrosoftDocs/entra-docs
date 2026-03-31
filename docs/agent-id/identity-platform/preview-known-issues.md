@@ -102,9 +102,7 @@ The following known issues and gaps relate to Microsoft Entra ID administration.
 
 ### Dynamic groups
 
-You can't add agent identities and agents' user accounts to Microsoft Entra ID groups with dynamic membership.
-
-**Resolution**: Add Agent IDs to security groups with fixed membership.
+You can't specify dynamic group rules to include or exclude agents' user accounts. Please use assigned groups to manage agents' user accounts' group memberships. 
 
 ## Monitoring and logs
 
