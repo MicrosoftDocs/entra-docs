@@ -219,7 +219,7 @@ items:
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
       - name: MCP traffic logs
-        href: how-to-view-mcp-logging.md
+        href: how-to-view-model-context-protocol-logging.md
       - name: Deployment logs
         href: how-to-view-deployment-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
