@@ -167,7 +167,7 @@ To configure provisioning, follow these steps:
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
- 3. Under **Configuration**, select your configuration.
+3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
  5. Enter **Sales** in the **Selected group** box.
  6. From the **Selected users** section, select some users to test.
