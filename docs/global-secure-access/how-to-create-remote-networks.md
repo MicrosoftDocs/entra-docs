@@ -4,7 +4,7 @@ description: Learn how to create remote networks, for remote locations such as b
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 10/21/2025
+ms.date: 03/31/2026
 ms.reviewer: abhijeetsinha
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
@@ -83,6 +83,8 @@ You can assign the remote network to a traffic forwarding profile when you creat
 
     :::image type="content" source="media/how-to-create-remote-networks/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
 
+[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
+
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
 ### View CPE connectivity configuration
@@ -146,6 +148,8 @@ Global Secure Access remote networks can be viewed and managed using Microsoft G
     ```
 
 ### Assign a traffic forwarding profile
+
+[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
 
 Associating a traffic forwarding profile to your remote network using the Microsoft Graph API is two step process. First, locate the ID of the traffic profile. The ID is different for all tenants. Second, associate the traffic forwarding profile with your desired remote network.
 

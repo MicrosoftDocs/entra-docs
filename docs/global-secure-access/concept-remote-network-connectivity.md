@@ -2,7 +2,7 @@
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 03/31/2026
 ai-usage: ai-assisted
 ---
 
@@ -52,6 +52,8 @@ Remote networks support different traffic forwarding profiles for acquiring traf
 > The **Microsoft traffic** and **Internet Access** traffic forwarding profiles can be assigned to remote networks. The **Private Access** traffic forwarding profile requires the Global Secure Access client installed on end-user devices. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md) and [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
 
 Once traffic is acquired through a forwarding profile, you apply security policies to it using security profiles. The [baseline security profile](how-to-apply-security-policies-remote-network.md) enforces policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware security profiles linked to Conditional Access policies require the Global Secure Access client.
+
+[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
  
 ## Why remote network connectivity is important for you? 
 Maintaining security of a corporate network is increasingly difficult in a world of remote work and distributed teams. Security Service Edge (SSE) promises a world of security where customers can access their corporate resources from anywhere in the world without needing to back haul their traffic to headquarters.
