@@ -4,28 +4,33 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 03/24/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
-As mentioned in the [Microsoft Digital Defense Report](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023) from October 2023,
+## Overview
 
-> ...threats to digital peace have reduced trust in technology and highlighted the urgent need for improved cyber defenses at all levels...
->
-> ...at Microsoft, our more than 10,000 security experts analyze over 65 trillion signals each day... driving some of the most influential insights in
-cybersecurity. Together, we can build cyber resilience through innovative action and collective defense.
+Every day, Microsoft processes more than 100 trillion security signals from endpoints, cloud services, identity systems, and more. We use this data shape how we respond to threats and inform how we innovate to help build a safer digital future. Read about the work we're doing in the [Microsoft Digital Defense Report](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Microsoft-Digital-Defense-Report-2025.pdf#page=1).
 
-As part of this work, we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds reduces the risk of compromise by more than 99%.
+As part of this work, Microsoft-managed policies are available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) require multifactor authentication, which continues to reduce the risk of compromise by more than 99%.
 
-:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot of a Microsoft-managed Conditional Access policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
+:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot of a Microsoft-managed Conditional Access policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded.png":::
+
+## Prerequisites
+
+- [Microsoft Entra ID P2](../../fundamentals/licensing.md) or [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) is required to use Conditional Access features
+- The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to view Conditional Access policies.
+- For a full list of roles, see [Least privileged roles by task](../../identity/role-based-access-control/delegate-by-task.md#security---conditional-access-least-privileged-roles).
 
 ## How Microsoft-managed policies work
 
-Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Policies**.
+Microsoft-managed policies are preconfigured Conditional Access policies that are created and maintained by Microsoft to help protect you against common identity risks. Microsoft creates and deploys these policies directly to eligible tenants based on licensing and feature eligibility. When a policy is introduced:
 
-You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
+- The policy is automatically created in your tenant in a **Report-only** state.  
+- The policy includes preconfigured conditions and recommended controls, such as requiring multifactor authentication. 
+- Administrators don't need to manually create these policies. Microsoft manages the policy template, configuration, and updates to ensure it aligns with current security guidance.
 
 Microsoft enables these policies no less than 45 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
 
@@ -35,21 +40,46 @@ Microsoft enables these policies no less than 45 days after they're introduced i
 > - It's mentioned in emails and Microsoft 365 message center posts you receive about Microsoft-managed policies. 
 > - It's mentioned in the policy details in the Microsoft Entra admin center.
 
-## Policies
-
-These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to create custom versions.
-
 As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness. Microsoft‑managed Conditional Access policies automatically adapt to changes within a tenant to maintain consistent security posture without requiring administrator action. As Microsoft identifies new users, groups, or workloads that meet the eligibility criteria for an existing MMP policy, they are automatically included in the policy’s scope. These updates do not modify the policy’s settings, conditions, or grant controls, and any admin‑configured exclusions are always preserved to prevent accidental lockouts. This ensures that coverage stays current as the tenant evolves, while maintaining predictable behavior for administrators. Microsoft communicates these updates through standard notification channels to keep tenants informed.
 
+## Policies
+
+These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies.
 
 - [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
-- [Block legacy authentication](#block-legacy-authentication)
+- [Block legacy authentication](#block-legacy-authentication) (also a Baseline security mode policy)
 - [Block device code flow](#block-device-code-flow)
 - [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
 - [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
 - [Block access for high-risk users](#block-access-for-high-risk-users)
+- [Require phishing resistant authentication for admins](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) (Baseline security mode policy)
+
+## How to access and manage Microsoft-managed policies
+
+Microsoft-managed policies appear in the same list as all of your other Conditional Access policies.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select a policy that shows **Microsoft** in the **Created by** column.
+
+:::image type="content" source="media/managed-policies/microsoft-managed-policy-list.png" alt-text="Screenshot of the Conditional Access policies with Microsoft-managed policies highlighted." lightbox="media/managed-policies/microsoft-managed-policy-list-expanded.png":::
+
+You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
+
+### Baseline security mode policies
+
+[Baseline security mode (BSM)](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) in the Microsoft 365 admin center bundles recommended security settings and policies for Microsoft 365 workloads. Two of these settings show up as Conditional Access policies: 
+
+- Require phishing resistant authentication for admins
+- Block legacy authentication
+
+These policies are based on the Microsoft-managed policy framework, but they show up as **Baseline security mode** in the **Created by** column. BSM policies are managed in the Microsoft 365 admin center. For steps on how to manage these policies, see [Baseline security mode policies](/microsoft-365/baseline-security-mode/baseline-security-mode-settings#how-to-access-baseline-security-mode-settings).
+
+:::image type="content" source="media/managed-policies/baseline-security-mode-policies-list.png" alt-text="Screenshot of the Security Baseline Mode policies in the Conditional Access policies list." lightbox="media/managed-policies/baseline-security-mode-policies-list.png":::
+
+One important difference between BSM policies and Microsoft-managed policies is that the BSM policies are created by the administrator, not Microsoft.
 
 ### Block all high risk agents from accessing all resources (Preview)
 
@@ -97,7 +127,7 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
-This policy covers all users and requires multifactor authentication and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
+This policy covers all users and requires multifactor authentication and reauthentication when high-risk sign-ins are detected. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses. Guest users aren't included in the policy.
 
@@ -109,7 +139,6 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
     - This setup ensures that the policy doesn't block legitimate users and that you’re getting maximum value on your P2 licenses.
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
-
 
 ### Block access for high-risk users
 

@@ -78,7 +78,7 @@ To complete the scenario in this tutorial, you need:
 1. Select **New policy**.
 1. Name your policy, like **Require MFA for B2B portal access**. Create a meaningful standard for naming policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
+   1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assign-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-user-access.png" alt-text="Screenshot showing selecting all guest users.":::
 

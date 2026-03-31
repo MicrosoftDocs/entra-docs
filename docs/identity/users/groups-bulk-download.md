@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk download groups in Microsoft Entra ID
 
+
+## Overview
+
 You can download a list of all the groups in your organization to a comma-separated values (CSV) file in the portal for Microsoft Entra ID. All admins and nonadmin users can download group lists.
 
 ## Bulk download groups

@@ -96,4 +96,4 @@ Agent identities can inherit delegated permissions from their parent agent ident
 
 - [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
 - [Autonomous app flow in agents](./agent-autonomous-app-oauth-flow.md)
-- [Agent user flow in agents](./agent-user-oauth-flow.md)
+- [Agent's user account flow in agents](./agent-user-oauth-flow.md)

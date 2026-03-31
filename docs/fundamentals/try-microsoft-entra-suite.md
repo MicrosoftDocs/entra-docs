@@ -2,7 +2,6 @@
 title: Try Microsoft Entra Suite for free
 description: Make the most of your Microsoft Entra Suite trial. Try out some of the
   key productivity and security capabilities.
-manager: pmwongera
 ms.topic: overview
 ms.date: 04/02/2025
 ms.custom: it-pro
@@ -10,6 +9,9 @@ ms.collection: M365-identity-device-management
 ---
 
 # Trial user guide: Microsoft Entra Suite
+
+
+## Overview
 
 Welcome to the Microsoft Entra Suite trial user guide. Make the most of your free trial by discovering the robust and comprehensive capabilities of [Microsoft Entra](what-is-entra.md).
 

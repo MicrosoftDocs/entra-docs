@@ -49,7 +49,7 @@ Use the following list to plan for authentication deployment.
   - See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   - See, [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 - **Microsoft Entra self-service password reset (SSPR)** - Help users reset a password without administrator intervention:
-  - See, [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
+  - See, [Passkeys (FIDO2) authentication method in Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md)
     
   - See, [Plan a Microsoft Entra self-service password-reset deployment](~/identity/authentication/concept-sspr-deploy.md)
     

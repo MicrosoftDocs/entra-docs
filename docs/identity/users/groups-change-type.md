@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-n
 
 # Change static groups to dynamic membership groups in Microsoft Entra ID
 
+
+## Overview
+
 You can change a group's membership from static to dynamic (or vice versa) in Microsoft Entra ID. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you need to update those references.
 
 Creating dynamic membership groups eliminates the management overhead of adding and removing users. This article shows you how to convert existing membership groups from static to dynamic, by using either the Azure portal or PowerShell cmdlets. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.

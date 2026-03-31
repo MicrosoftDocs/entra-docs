@@ -13,8 +13,6 @@ ms.date: 03/05/2026
 
 [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
-[!INCLUDE [entra-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
-
 Most large organizations operate Microsoft services in multiple tenants because of mergers and acquisitions, requirements for partitioning security or privacy-sensitive workloads, test environments, and other reasons. Most organizations also have user-created "shadow IT" tenants that central IT doesn't administer and often doesn't know about. In many environments, it's not easy to verify that each of these tenants is configured properly, especially if you don't know that some tenants even exist. This creates risk for your organization's security and compliance objectives.
 
 Microsoft Entra Tenant Governance enables you to get visibility across all your tenants and ensure they are configured to meet your security and compliance requirements. This includes the tenants you administer today, "shadow IT" tenants that you don't administer but that create risks for your organization, and new tenants that your users create.

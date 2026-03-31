@@ -2,13 +2,16 @@
 title: Header-based authentication with PingAccess for Microsoft Entra application proxy
 description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Header-based authentication for single sign-on with application proxy and PingAccess
+
+
+## Overview
 
 Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
@@ -57,7 +60,7 @@ First, publish your application. This action involves:
 
 To publish your own on-premises application:
 
-1. Sign in to the [Microsoft Entra admin center](https://portal.azure.com) as an Application Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator.
 1. Browse to **Enterprise applications** > **New application** > **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
    ![Application configuration form with fields for name, internal URL, and external URL settings.](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)

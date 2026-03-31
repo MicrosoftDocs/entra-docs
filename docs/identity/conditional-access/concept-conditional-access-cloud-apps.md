@@ -2,7 +2,7 @@
 title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref
@@ -12,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access: Target resources
+
+## Overview
 
 Target resources (formerly cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies let admins assign controls to specific applications, services, actions, or authentication context.
 

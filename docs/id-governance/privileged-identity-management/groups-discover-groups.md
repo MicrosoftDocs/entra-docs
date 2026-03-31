@@ -2,12 +2,15 @@
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
 ms.topic: how-to
-ms.date: 01/06/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: sfi-image-nochange
 ---
 
 # Bring groups into Privileged Identity Management
+
+
+## Overview
 
 In Microsoft Entra ID, you can use Privileged Identity Management (PIM) to manage just-in-time membership in the group or just-in-time ownership of the group. Use groups to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM.
 

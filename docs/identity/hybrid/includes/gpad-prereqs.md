@@ -17,7 +17,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises AD DS schema with the *msDS-ExternalDirectoryObjectId* attribute, which is available in Windows Server 2016 and later.  
- - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history.md#1113730) or later.
+ - Provisioning agent with build version [1.1.1373.0](../cloud-sync/reference-version-history.md#1113730) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. If you're upgrading from the previous version, then permissions need to be assigned manually by using PowerShell: 
@@ -25,7 +25,7 @@ The following prerequisites are required to implement provisioning groups to Act
  > ```powershell
  > $credential = Get-Credential  
  >
- > Set-AAD DSCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
+ > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
  > ```
  >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendant Groups and User objects. 
  >

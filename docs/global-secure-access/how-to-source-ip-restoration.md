@@ -2,12 +2,14 @@
 title: Enable Source IP Restoration with Global Secure Access
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # Source IP Restoration
+## Overview
+
 Use of cloud-based network proxy and SSE solutions abstracts the original source IP of the user from the service to which the user is connecting. Instead, the service will detect the user's IP address to be the egress address of the cloud-based network proxy. While this helps with privacy-related concerns in consumer scenarios, not having the original source IP information makes it difficult to achieve enterprise security goals. For example, without an actual client egress IP address, applying Microsoft Entra ID Conditional Access policies based on organization's well-known IP addresses is not possible, and audit logs will not reflect accurate location information.
 
 Source IP Restoration is part of the Adaptive Access feature of Microsoft Entra Internet Access for Microsoft Services. Source IP Restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to the organization:

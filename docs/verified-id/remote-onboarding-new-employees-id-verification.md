@@ -10,6 +10,9 @@ ms.date: 12/17/2024
 
 # Onboard new remote employees using ID verification
 
+
+## Overview
+
 Enterprises onboarding users face significant challenges onboarding remote users who aren't yet inside the trust boundary. Microsoft Entra Verified ID can help customers facing these scenarios because it can use government-issued, ID-based attestations as a way to establish trust. 
 
 ## When to use this pattern

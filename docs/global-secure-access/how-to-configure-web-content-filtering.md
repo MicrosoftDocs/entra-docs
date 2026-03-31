@@ -2,13 +2,14 @@
 title: How to configure Global Secure Access web content filtering
 description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
+
+## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
@@ -206,9 +207,9 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot that shows a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
-![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
+![Screenshot that shows a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 
 
 > [!NOTE]

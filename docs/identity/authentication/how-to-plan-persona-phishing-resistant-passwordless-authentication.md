@@ -85,6 +85,7 @@ If you plan to use certificates, smart cards, and PKI, then the deployment flow 
    1. Passkey in Microsoft Authenticator
 1. Phase 3 (Optional): Local credential registration
    1. Optional: Windows Hello for Business
+   1. Optional: Microsoft Entra passkey on Windows (preview)
    1. Optional: Platform SSO Secure Enclave Key
 
 > [!NOTE]
@@ -100,7 +101,7 @@ Deployment for non admins users requires proper communication and support. This 
 
 Information workers typically have the simplest requirements and are the easiest to begin your phishing-resistant passwordless deployment with. However, there are still some issues that frequently arise when deploying for these users. Common examples include:
 
-<!--Justin, please update these diagrams based on the below reccomendation. The last point needs reference of synced passkeys-->
+<!--Justin, please update these diagrams based on the below recommendation. The last point needs reference of synced passkeys-->
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-examples.png" alt-text="Diagram that shows examples of requirements for information workers.":::
 
 
@@ -119,6 +120,7 @@ Steps 1-3 of the deployment flow for information workers should typically follow
    1. FIDO2 security key
 1. Local credential registration
    1. Windows Hello for Business
+   1. Microsoft Entra passkey on Windows (preview)
    1. Platform SSO Secure Enclave Key
 
 ### Frontline workers
@@ -144,6 +146,7 @@ Steps 1-3 of the deployment flow for frontline workers should typically follow a
    1. Smart card 
 1. Phase 3 (Optional): Local credential registration
    1. Optional: Windows Hello for Business
+   1. Optional: Microsoft Entra passkey on Windows (preview)
    1. Optional: Platform SSO Secure Enclave Key
 
 ## General considerations

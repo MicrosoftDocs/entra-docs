@@ -7,6 +7,9 @@ ms.date: 11/04/2025
 
 # Integrate Verified ID APIs
 
+
+## Overview
+
 Integrating with Microsoft Entra Verified ID APIs enables organizations to deliver secure, privacy-respecting identity verification experiences at scale. This technical integration pattern provides a clear blueprint for partners and developers to connect their identity verification workflows with Verified ID, ensuring interoperability, compliance, and a seamless user journey.
 This document walks you through the essential steps, architectural considerations, and best practices for implementing Verified ID in your solutions—helping you build integrations that are robust, scalable, and future-ready.
 

@@ -2,12 +2,15 @@
 title: Approve activation requests for group members and owners
 description: Learn how to approve activation requests for group members and owners in Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
 ---
 
 # Approve activation requests for group members and owners
+
+
+## Overview
 
 With Privileged Identity Management (PIM) and Microsoft Entra ID, you can configure activation of group membership and ownership to require approval. You can also choose users or groups from your Microsoft Entra organization as delegated approvers.
 

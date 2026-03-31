@@ -4,11 +4,13 @@ description: Learn how custom controls in Microsoft Entra Conditional Access wor
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/12/2025
+ms.date: 03/24/2026
 ms.reviewer: gkinasewitz
 ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
+
+## Overview
 
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 

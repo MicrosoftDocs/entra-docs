@@ -154,6 +154,8 @@
       items:
       - name: Enable passkeys (FIDO2)
         href: how-to-authentication-passkeys-fido2.md
+      - name: Enable Entra passkey on Windows
+        href: how-to-authentication-entra-passkeys-on-windows.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device

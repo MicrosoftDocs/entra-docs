@@ -2,7 +2,7 @@
 title: How to use workbooks with Global Secure Access
 description: Workbooks provide rich, interactive reports for Global Secure Access. Learn how to integrate workbooks with log analytics for Global Secure Access.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to learn how to use workbooks with Global Secure Access so I can better manage the solution.
@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 ---
 
 # How to use workbooks with Global Secure Access
+
+## Overview
 
 Workbooks combine text, log queries, metrics, and parameters into rich interactive reports. Any team member with access to the required Azure resources can create and edit workbooks. For more information about Azure Workbooks, see [Overview of Azure Workbooks](/azure/azure-monitor/visualize/workbooks-overview).
 
