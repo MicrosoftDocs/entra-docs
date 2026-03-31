@@ -3097,7 +3097,12 @@
     },
     {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
-      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_url": "/entra/identity/enterprise-apps/assign-agent-identities-to-applications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/app-provisioning/scim-graph-scenarios.md",
+      "redirect_url": "/entra/identity/app-provisioning/scim-support-in-entra-id.md#Microsoft-Graph-vs-SCIM-when-to-use-which",
       "redirect_document_id": false
     },
     {
