@@ -93,6 +93,7 @@ The following is the list of Microsoft Entra roles that can be assigned to agent
 - Reports Reader
 - Search Administrator
 - Search Editor
+- Security Reader
 - Service Support Administrator
 - SharePoint Administrator
 - SharePoint Embedded Administrator
