@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/31/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-ms.reviewer: absinh
+ms.reviewer: abhijeetsinha
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
 ---
@@ -286,6 +286,8 @@ View the Remote network health logs to validate connectivity in the Microsoft En
 
 You can also validate by filtering by **tunnelConnected** or **BGPConnected**. For more information, see [What are remote network health logs?](/entra/global-secure-access/how-to-remote-network-health-logs).
 
+[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
+
 ## Configure security features for testing
 In this step, we prepare for testing by configuring a virtual network, adding a virtual network connection to the vWAN, and creating an Azure Virtual Desktop.
 
@@ -393,8 +395,6 @@ To test (option 2):
 :::image type="content" source="media/how-to-create-remote-network-vwan/remote-network-health-logs-filter.png" alt-text="Screenshot of the Remote network health logs page with the Add filter menu open ready to type the Source IP.":::
 
 The system restores the branch office's customer premises equipment (CPE) IP address. Because the VPN gateway represents the CPE, the health logs show the public IP address of the VPN gateway, not the proxy's IP address.
-
-[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
 
 ## Remove unneeded resources
 When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.

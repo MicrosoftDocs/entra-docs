@@ -3,7 +3,7 @@ title: Simulate remote network connectivity using Azure VNG
 description: Configure Azure resources to simulate remote network connectivity to Microsoft's Security Edge Solutions with Global Secure Access.
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.reviewer: absinh
+ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to configure Global Secure Access with an Azure virtual network so I can better understand how the service can be implemented in my organization.
@@ -278,6 +278,8 @@ Repeat these steps to create another connection with second local network gatewa
 
 To verify connectivity, you need to simulate the traffic flow. One method is to create a virtual machine (VM) to initiate the traffic.
 
+[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
+
 ### Simulate traffic with a virtual machine
 
 To simulate traffic and verify connectivity, create a VM in the virtual network and initiate traffic to Microsoft services. Leave all settings set to the default value unless noted.
@@ -313,8 +315,6 @@ You can use the virtual machine you created to validate that traffic is flowing 
 
 > [!TIP]
 > If you're using this article for testing Microsoft Entra Internet Access, clean up all related Azure resources by deleting the new resource group after you're done.
-
-[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
 
 ## Next steps
 
