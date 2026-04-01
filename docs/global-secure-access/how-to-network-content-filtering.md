@@ -101,9 +101,9 @@ To configure a content policy in Global Secure Access, complete the following st
     1. Select the appropriate option for the **Action** menu:
         - To configure a basic data policy, select **Allow** or **Block**.
         - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
-            :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
+            :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the content rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **Content types**.
-        :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add File Rule page showing the Matching conditions section with Activities set to Download and Upload, and the Content types dropdown expanded with file type options." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
+        :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
     1. Select **+ Add destination** and configure the destinations.
         - For application-specific control, you can add the exact upload URLs and related FQDNs that the app uses. Use browser developer tools or network traffic analysis to identify the endpoints used during file upload.
         - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md) for those categories.
