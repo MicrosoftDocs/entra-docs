@@ -14,6 +14,14 @@ ai-usage: ai-assisted
 
 Lifecycle Workflows allows administrators to cancel in-progress or queued workflow runs to prevent or mitigate the widespread impact of automation errors and misconfigurations.
 
+When you cancel a workflow run, keep the following behavior in mind:
+
+- **In-progress runs**: Canceling an in-progress workflow run cancels any tasks that haven't been processed yet. Tasks that already completed aren't affected.
+- **Queued runs**: Queued workflows are runs where execution hasn't started yet. Canceling a queued run cancels the upcoming execution of all tasks for that run.
+- **No rollback**: Previously completed changes aren't reversed. Only execution of upcoming changes is halted.
+- **Single run selection**: Currently, you can only select a single run to cancel at a time.
+- **Run-level cancellation only**: You can't cancel specific tasks or specific users within a run. Cancellation applies to the entire run.
+
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
@@ -42,16 +50,6 @@ To cancel a workflow run:
     > The **Cancel** button is only enabled after you select a run that has a status of **In progress** or **Queued**. The **Cancel** button isn't available on the **Users** or **Tasks** tabs because only runs can be canceled.
 
 1. Select **Cancel**.
-
-### Understand cancellation behavior
-
-When you cancel a workflow run, keep the following behavior in mind:
-
-- **In-progress runs**: Canceling an in-progress workflow run cancels any tasks that haven't been processed yet. Tasks that already completed aren't affected.
-- **Queued runs**: Queued workflows are runs where execution hasn't started yet. Canceling a queued run cancels the upcoming execution of all tasks for that run.
-- **No rollback**: Previously completed changes aren't reversed. Only execution of upcoming changes is halted.
-- **Single run selection**: Currently, you can only select a single run to cancel at a time.
-- **Run-level cancellation only**: You can't cancel specific tasks or specific users within a run. Cancellation applies to the entire run.
 
 ## Known issues
 
