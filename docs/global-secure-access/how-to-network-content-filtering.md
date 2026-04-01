@@ -30,10 +30,6 @@ This article explains how to create a content policy to filter internet traffic 
 > [!NOTE]
 > Basic content policy detects the file MIME type and enforces the **Allow** or **Block** action in Global Secure Access. Microsoft Purview is only involved when you choose **Scan with Purview**.
 
-> [!IMPORTANT]
-> The **Scan with Purview** action in content policies is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 ## Supported scenarios
 
 Network content filtering supports the following key scenarios and outcomes for HTTP/1.1 traffic:
