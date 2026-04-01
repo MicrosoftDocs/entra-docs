@@ -34,7 +34,7 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 * GitHub Enterprise Server supports [Automated user provisioning](./github-enterprise-server-provisioning-tutorial.md).
 
 > [!NOTE]
-> The `GitHub Enterprise Server` application currently doesn't support any of the government cloud platforms.
+> The `GitHub Enterprise Server` application currently doesn’t support SCIM provisioning in government cloud platforms. This limitation is due to `GitHub Enterprise Server` requiring the User-Agent header, which isn’t included in provisioning requests sent from government cloud environments.
 
 ## Add GitHub Enterprise Server from the gallery
 
