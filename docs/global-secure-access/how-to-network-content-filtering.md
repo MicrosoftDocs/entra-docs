@@ -106,7 +106,7 @@ To configure a content policy in Global Secure Access, complete the following st
         :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
     1. Select **+ Add destination** and configure the destinations.
         - For application-specific control, you can add the exact upload URLs and related FQDNs that the app uses. Use browser developer tools or network traffic analysis to identify the endpoints used during file upload.
-        - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md) for those categories.
+        - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
     :::image type="content" source="media/how-to-network-content-filtering/file-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the content policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/file-policy-review-tab.png":::
