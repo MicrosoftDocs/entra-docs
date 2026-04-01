@@ -44,20 +44,6 @@ Because each of the agents perform a specific set of tasks, they need a specific
 
 The following agents are currently available for Microsoft Entra. Due to the fast pace at which these agents are released and updated, each agent might have features at various stages of availability. Preview features are added frequently.
 
-### Access Review Agent
-
-Empower your reviewers to make fast and accurate access decisions. The [Access Review Agent](../id-governance/access-review-agent.md) with [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) delivers insights and recommendations so reviewers can complete their work through a simple conversation, right inside Microsoft Teams.
-
-| Attribute           | Description |
-|---------------------|------------ |
-| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
-| Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
-| Permissions         | AccessReview.Read.All</br>EntitlementManagement.Read.All</br>LifecycleWorkflows-Reports.Read.All</br>LifecycleWorkflows-Workflow.ReadBasic.All</br>User.Read.All</br>User-LifeCycleInfo.Read.All |
-| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [ID Governance Access Reviews](../id-governance/access-reviews-overview.md) |
-| Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
-| Trigger             | Runs every 24 hours or triggered manually |
-
 ### Conditional Access Optimization Agent
 
 The [Conditional Access Optimization Agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
