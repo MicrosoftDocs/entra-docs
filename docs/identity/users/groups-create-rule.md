@@ -9,6 +9,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # Create or update a dynamic membership group in Microsoft Entra ID
 
+
+## Overview
+
 You can use rules to determine dynamic membership groups based on user or device properties in Microsoft Entra ID. This article describes how to set up a rule for dynamic membership groups in the Azure portal.
 
 Group membership based on user or device properties is supported for security groups and Microsoft 365 groups. When you apply a rule for a dynamic membership group, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all rules for dynamic membership groups in the organization are processed for changes. Users and devices are added or removed if they meet the conditions for a dynamic membership group. In Microsoft Entra ID, a single tenant can have a maximum of 15,000 dynamic membership groups.

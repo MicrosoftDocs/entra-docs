@@ -165,6 +165,6 @@ If a user attempts to upgrade multiple installations (5+) of Authenticator with 
 
 To learn about Microsoft Entra authentication and passwordless methods, see the following articles:
 
-- [Learn how passwordless authentication works](concept-authentication-passwordless.md)
+- [Learn how passwordless authentication works](concept-authentication-passkeys-fido2.md)
 - [Learn about device registration](~/identity/devices/overview.md)
 - [Learn about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

@@ -24,7 +24,7 @@ When designing isolated environments, it's important to consider the following p
 
 * **Use only modern authentication** - Applications deployed in isolated environments must use claims-based modern authentication (for example, SAML, * Auth, OAuth2, and OpenID Connect) to use capabilities such as federation, Microsoft Entra B2B collaboration, delegation, and the consent framework. This way, legacy applications that have dependency on legacy authentication methods such as NT LAN Manager (NTLM) won't carry forward in isolated environments.
 
-* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](~/identity/authentication/concept-authentication-passwordless.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) should be used.
+* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](~/identity/authentication/concept-authentication-passkeys-fido2.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) should be used.
 
 * **Deploy secure workstations** - [Secure workstations](/security/privileged-access-workstations/privileged-access-devices) provide the mechanism to ensure that the platform and the identity that platform represents is properly attested and secured against exploitation. Two other approaches to consider are:
 
@@ -99,7 +99,7 @@ All human identities (local accounts and external identities provisioned through
 
 #### Passwordless credentials
 
-A [passwordless solution](~/identity/authentication/concept-authentication-passwordless.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
+A [passwordless solution](~/identity/authentication/concept-authentication-passkeys-fido2.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
 
 #### Password protection
 

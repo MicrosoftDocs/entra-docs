@@ -10,6 +10,9 @@ ms.date: 04/30/2025
 
 # Verify credentials by using the Microsoft Entra Verified ID Network
 
+
+## Overview
+
 The Microsoft Entra Verified ID Network simplifies the verification of credentials by streamlining the discovery of issuers' decentralized identifiers (DIDs) and credential types. This article reviews the steps required to use the network.
 
 ## Prerequisites

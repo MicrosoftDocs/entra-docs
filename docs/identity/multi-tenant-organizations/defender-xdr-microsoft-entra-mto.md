@@ -6,10 +6,12 @@ ms.date: 03/18/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, DevOps, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Govern access for security operations center (SOC) teams in a multitenant environment
+
+
+## Overview
 
 Managing multitenant environments can add another layer of complexity when it comes to keeping up with the ever-evolving security threats facing your enterprise. Navigating across multiple tenants can be time consuming and reduce the overall efficiency of security operations center (SOC) teams.
 Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defender/mto-overview) provides security operation teams with a single, unified view of all the tenants they manage. This view enables teams to quickly investigate incidents and perform advanced hunting across data from multiple tenants, improving their security operations.

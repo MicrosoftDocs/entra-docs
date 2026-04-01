@@ -4,7 +4,7 @@ description: Learn how to add and delete customer premises equipment device link
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 03/23/2026
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to manage the router devices that connect to the Global Secure Access service so my customers can connect to the service.
@@ -83,6 +83,9 @@ The **Details** tab is where you establish the bidirectional communication chann
 
 Remote networks with a custom IKE policy can be created using Microsoft Graph on the `/beta` endpoint.
 
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. For details, see [Microsoft Graph versioning and support](/graph/versioning-and-support).
+
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select `POST` as the HTTP method from the dropdown.
 1. Set the API version to beta.
@@ -117,7 +120,7 @@ Sample response:
     },
     "tunnelConfiguration": {
         "@odata.type": "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default",
-        "preSharedKey": "test123"
+        "preSharedKey": "<your-preshared-key>"
     }
 }
 ```
@@ -130,7 +133,7 @@ You can delete device links through the Microsoft Entra admin center and using t
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**. Device links appear in the **Links** column on the list of remote networks.
 

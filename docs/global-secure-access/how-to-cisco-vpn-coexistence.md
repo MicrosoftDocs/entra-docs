@@ -2,13 +2,15 @@
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco VPNs
 description: "Configure Microsoft Global Secure Access alongside Cisco AnyConnect and ASA VPNs for unified SASE. Covers deployment scenarios with step-by-step configuration for private access, Microsoft 365 traffic, and internet access."
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco VPNs
+
+## Overview
 
 Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft Secure Access Service Edge (SASE) capabilities that, when integrated with Cisco Virtual Private Networks (VPN), provide enhanced security and connectivity for diverse access scenarios.
 
@@ -73,7 +75,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 ### 1. Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access
 
 > [!IMPORTANT]
-> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Please contact support for more information.
+> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Contact support for more information.
 
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.

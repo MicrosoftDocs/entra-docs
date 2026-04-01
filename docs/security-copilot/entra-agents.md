@@ -35,7 +35,7 @@ Administrators can configure the agent to run automatically or trigger the agent
 
 Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
 
-- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
+- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-are-agent-identities).
 - **Roles**: Specific Microsoft Entra built-in roles are needed to turn on, view, and interact with the agent. Not all roles can perform the same tasks with an agent.
 - **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks. These permissions can't be changed or removed.
 - **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
@@ -85,6 +85,12 @@ The [Identity Risk Management Agent](../id-protection/identity-risk-management-a
 | Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) |
 | Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |
 | Trigger             | Runs every 24 hours, triggered manually, or continuous monitoring |
+
+## Discover agents in the Security Store
+
+[Security Store](/security/store/what-is-security-store) is embedded in the Microsoft Entra admin center, providing a centralized place to discover, purchase, and deploy Microsoft and partner-built agents and solutions. You can browse available agents and solutions, view details and requirements, and start the deployment process directly from the Entra portal.
+
+For more information, see [Discover and deploy agents and solutions in Microsoft Entra](security-store-in-entra.md).
 
 ## Getting started with Microsoft Entra agents
 

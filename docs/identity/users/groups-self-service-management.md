@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Set up self-service group management in Microsoft Entra ID
 
+
+## Overview
+
 Microsoft Entra ID provides self-service group management features that enable users to create and manage their own security groups or Microsoft 365 groups. The owner of the group can approve or deny membership requests and delegate control of group membership. Self-service group management features aren't available for [mail-enabled security groups or distribution lists](~/fundamentals/concept-learn-about-groups.md).
 
 

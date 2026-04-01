@@ -4,10 +4,12 @@ description: Learn how conditions are used in Microsoft Entra Conditional Access
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 06/20/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ---
 # Service dependencies in Microsoft Entra Conditional Access
+
+## Overview
 
 With Conditional Access policies, you specify requirements to use websites and services. For example, your requirements can include requiring multifactor authentication (MFA) or [managed devices](./concept-conditional-access-grant.md).
 

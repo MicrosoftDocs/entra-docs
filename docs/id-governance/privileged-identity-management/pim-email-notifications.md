@@ -2,12 +2,15 @@
 title: Email notifications in Privileged Identity Management (PIM)
 description: Describes email notifications in Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: concept-article
-ms.date: 01/07/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Email notifications in PIM
+
+
+## Overview
 
 Privileged Identity Management (PIM) lets you know when important events occur in your Microsoft Entra organization, such as when a role is assigned or activated. Privileged Identity Management keeps you informed by sending you and other participants email notifications. These emails might also include links to relevant tasks, such as activating or renewing a role. This article describes what these emails look like, when they are sent, and who receives them.
 

@@ -9,6 +9,9 @@ ai-usage: ai-assisted
 
 # Resolve cross-origin resource sharing issues in Microsoft Entra application proxy
 
+
+## Overview
+
 [Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
 Browser security usually prevents a webpage from making requests to another domain. This restriction is called the *same-origin policy*. The policy prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that directs a server to allow some cross-origin requests and reject others.

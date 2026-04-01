@@ -73,7 +73,7 @@ This article shows how to register a passkey as an authentication method by usin
 
 ## Next steps
 
-- [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Choosing authentication methods for your organization](overview-authentication.md)
 - [Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
 
 

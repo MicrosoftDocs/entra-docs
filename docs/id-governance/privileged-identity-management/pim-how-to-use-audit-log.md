@@ -3,11 +3,14 @@ title: View audit log report for Microsoft Entra roles in Microsoft Entra PIM
 description: Learn how to view the audit log history for Microsoft Entra roles in
   Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/26/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim
 ---
 # View audit history for Microsoft Entra roles in Privileged Identity Management
+
+
+## Overview
 
 You can use the Microsoft Entra Privileged Identity Management (PIM) audit history to see the role assignment changes and activations done through PIM. Data is available for the past 30 days. If you want to retain audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md). To see full audit history of Microsoft Entra ID activity including administrator, end user, and synchronization activity, you can use the [Microsoft Entra security and activity reports](~/identity/monitoring-health/overview-monitoring-health.md).
 

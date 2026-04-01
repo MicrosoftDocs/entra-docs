@@ -5,9 +5,9 @@ items:
   expanded: true
   items:
   - name: What is Microsoft Entra Agent ID?
-    href: microsoft-entra-agent-identities-for-ai-agents.md
-  - name: Security for AI
-    href: security-for-ai.md
+    href: what-is-microsoft-entra-agent-id.md
+  - name: Security for AI overview
+    href: security-for-ai-overview.md
 - name: How to guides
   expanded: true
   items:
@@ -46,7 +46,7 @@ items:
           href: /entra/agent-id/identity-platform/agent-blueprint?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
         - name: Agent identities
           href: /entra/agent-id/identity-platform/agent-identities?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
-        - name: Agent users
+        - name: Agents' user accounts
           href: /entra/agent-id/identity-platform/agent-users?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
         - name: Agent service principals
           href: /entra/agent-id/identity-platform/agent-service-principals?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json

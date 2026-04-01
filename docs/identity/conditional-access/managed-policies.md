@@ -1,15 +1,16 @@
 ---
 title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
-ms.topic: article
-ms.date: 03/18/2026
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
+
+## Overview
 
 Every day, Microsoft processes more than 100 trillion security signals from endpoints, cloud services, identity systems, and more. We use this data shape how we respond to threats and inform how we innovate to help build a safer digital future. Read about the work we're doing in the [Microsoft Digital Defense Report](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Microsoft-Digital-Defense-Report-2025.pdf#page=1).
 
@@ -21,7 +22,7 @@ As part of this work, Microsoft-managed policies are available in Microsoft Entr
 
 - [Microsoft Entra ID P2](../../fundamentals/licensing.md) or [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) is required to use Conditional Access features
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to view Conditional Access policies.
-- For a full list of roles, see [Lease privileged roles by task](../../identity/role-based-access-control/delegate-by-task.md#security---conditional-access-least-privileged-roles).
+- For a full list of roles, see [Least privileged roles by task](../../identity/role-based-access-control/delegate-by-task.md#security---conditional-access-least-privileged-roles).
 
 ## How Microsoft-managed policies work
 
@@ -41,7 +42,19 @@ Microsoft enables these policies no less than 45 days after they're introduced i
 
 As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness. Microsoft‑managed Conditional Access policies automatically adapt to changes within a tenant to maintain consistent security posture without requiring administrator action. As Microsoft identifies new users, groups, or workloads that meet the eligibility criteria for an existing MMP policy, they are automatically included in the policy’s scope. These updates do not modify the policy’s settings, conditions, or grant controls, and any admin‑configured exclusions are always preserved to prevent accidental lockouts. This ensures that coverage stays current as the tenant evolves, while maintaining predictable behavior for administrators. Microsoft communicates these updates through standard notification channels to keep tenants informed.
 
-These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to create custom versions.
+## Policies
+
+These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies.
+
+- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
+- [Block legacy authentication](#block-legacy-authentication) (also a Baseline security mode policy)
+- [Block device code flow](#block-device-code-flow)
+- [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
+- [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
+- [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
+- [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
+- [Block access for high-risk users](#block-access-for-high-risk-users)
+- [Require phishing resistant authentication for admins](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) (Baseline security mode policy)
 
 ## How to access and manage Microsoft-managed policies
 
@@ -67,23 +80,10 @@ These policies are based on the Microsoft-managed policy framework, but they sho
 :::image type="content" source="media/managed-policies/baseline-security-mode-policies-list.png" alt-text="Screenshot of the Security Baseline Mode policies in the Conditional Access policies list." lightbox="media/managed-policies/baseline-security-mode-policies-list.png":::
 
 One important difference between BSM policies and Microsoft-managed policies is that the BSM policies are created by the administrator, not Microsoft.
- 
-## Policies
-
-The following Microsoft-managed policies are currently available:
-
-- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
-- [Block legacy authentication](#block-legacy-authentication) (also a Baseline security mode policy)
-- [Block device code flow](#block-device-code-flow)
-- [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
-- [Multifactor authentication for all users](#multifactor-authentication-for-all-users)
-- [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
-- [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
-- [Require phishing resistant authentication for admins](#require-phishing-resistant-authentication-for-admins) (Baseline security mode policy)
 
 ### Block all high risk agents from accessing all resources (Preview)
 
-This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection for agents](/entra/id-protection/concept-risky-agents).
+This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 
 ### Block legacy authentication
 
@@ -123,11 +123,11 @@ This policy targets:
 To apply this policy to more users, duplicate it and change the assignments.
 
 > [!TIP]
-> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To avoid this issue, select **Edit** under the **Excluded identities** section of the policy instead.
+> Using the **Edit** pencil at the top to modify the Microsoft-managed per-user multifactor authentication policy might result in a **failed to update** error. To work around this issue, select **Edit** under the **Excluded identities** section of the policy.
 
 ### Multifactor authentication and reauthentication for risky sign-ins
 
-This policy covers all users and requires multifactor authentication and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
+This policy covers all users and requires multifactor authentication and reauthentication when high-risk sign-ins are detected. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses. Guest users aren't included in the policy.
 
@@ -140,36 +140,66 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
 
 To prevent attackers from taking over accounts, Microsoft blocks risky users from registering for multifactor authentication.
 
-### Require phishing resistant authentication for admins
+### Block access for high-risk users
 
-Accounts that are assigned specific privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant MFA on those accounts is an easy way to reduce the risk of those accounts being compromised. For more information on this policy, see [Require phishing resistant authentication for admins](policy-admin-phish-resistant-mfa.md).
+This policy helps protect your organization by restricting access for users identified as high risk by Microsoft Entra ID Protection. User risk represents the likelihood that a user account has been compromised, based on signals such as leaked credentials or other risk detections. When enabled, this policy blocks access for users who meet the configured high user risk level until the risk is remediated. Remediation follows existing Microsoft Entra ID Protection processes and guidance.
 
-This policy is a [Baseline security mode](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) policy from Microsoft 365.
+This policy targets:
 
-## Upgrade from security defaults
+- Organizations with Microsoft Entra ID P2 licenses
+- Organizations where security defaults aren't enabled
 
-When organizations [disable security defaults](../../fundamentals/security-defaults.md#disabling-security-defaults) to adopt Conditional Access, Microsoft automatically creates managed policies in the tenant to maintain the same protections. These policies ensure there's no gap in security coverage during the transition.
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
-The following managed policies are created as part of the upgrade:
+## Security defaults policies
 
-| Upgrade policy | Similar Microsoft-managed policy | Notes |
-| --- | --- | --- |
-| Block legacy authentication | [Block legacy authentication](#block-legacy-authentication) | Same scope. Blocks sign-in attempts from clients using legacy authentication protocols. |
-| Require multifactor authentication for Azure management | *No equivalent* | Unique to the security defaults upgrade. Requires MFA for all users accessing Azure Resource Manager services, including the Azure portal, Microsoft Entra admin center, Azure PowerShell, and Azure CLI. |
-| Require multifactor authentication for admins | [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) | Broader scope. Requires MFA for privileged admin roles signing in to *all applications*, not just admin portals. Also includes Authentication Policy Administrator and Identity Governance Administrator roles. |
-| Require multifactor authentication for all users | [Multifactor authentication for all users](#multifactor-authentication-for-all-users) | Same scope. Requires MFA for all users in the organization. |
+The following policies are available for when you upgrade from using security defaults.
+
+- [Block legacy authentication](#block-legacy-authentication)
+- [Require multifactor authentication for Azure management](#require-multifactor-authentication-for-azure-management)
+- [Require multifactor authentication for admins](#require-multifactor-authentication-for-admins)
+- [Require multifactor authentication for all users](#require-multifactor-authentication-for-all-users)
+
+### Block legacy authentication
+
+This policy blocks legacy authentication protocols from accessing applications. Legacy authentication refers to an authentication request made by:
+
+- Clients that don't use modern authentication (for example, an Office 2010 client)
+- Any client that uses older mail protocols such as IMAP, SMTP, or POP3
+- Any sign-in attempts to use legacy authentication. 
+ 
+Most observed compromising sign-in attempts come from legacy authentication. Because legacy authentication doesn't support multifactor authentication, attackers can bypass multifactor authentication requirements by using older protocols.
+
+### Require multifactor authentication for Azure management
+
+This policy covers all users when they're trying to access various Azure services managed through the Windows Azure Service Management API including:
+
+- Azure portal
+- Microsoft Entra admin center
+- Azure PowerShell
+- Azure CLI
+
+Users must complete multifactor authentication to access these resources. 
+
+### Require multifactor authentication for admins
+
+This policy applies to users with highly privileged admin roles:
+
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
+
+These accounts must use multifactor authentication to sign in to any application. 
+
+### Require multifactor authentication for all users
+
+This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications. 
 
 ## Monitor and review
 
-To see the effect of these policies on your organization and investigate changes to the policies, you have a few options.
+The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
 
-### Policy impact
+Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
 
-Select the **Policy impact** tab of the managed policy from within Conditional access to see a summary of how the policy affects your environment. Adjust the filter, data format, and more to explore the policy's effect, even on report-only policies.
-
-:::image type="content" source="media/managed-policies/microsoft-managed-policy-impact.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
-
-### Sign-in logs
+:::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
 
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
@@ -183,19 +213,6 @@ Analyze the **Microsoft Entra sign-in logs** to see details about how the polici
 1. Select a specific sign-in event, then select **Conditional Access**.
    - To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
 1. Explore the other tabs to see the **client user** and **device details** that were used for the Conditional Access policy assessment.
-
-### Audit logs
-
-The **Microsoft Entra audit logs** are helpful when investigating changes made to a policy.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
-1. Set the **Service** filter to **Conditional Access**.
-1. If needed, select a specific **Activity** filter.
-
-The **Target(s)** column displays the name of the policy that was updated. Microsoft-managed policy names start with **Microsoft-managed**.
-
-The **Initiated by (actor)** column indicates who made the change. For Microsoft-managed policies, the value can be either **Microsoft Managed Policy Manager** or a user from your organization. Some changes to Microsoft-managed policies must be initiated or enabled by an administrator.
 
 ## Common questions
 
@@ -236,14 +253,6 @@ Depending on your Certificate-Based Authentication (CBA) configuration, it can f
 ### How do I monitor when Microsoft makes a change to these policies or adds a new one?
 
 Administrators with **AuditLog.Read.All** and **Directory.Read** permissions can query the audit log for entries initiated by **Microsoft Managed Policy Manager** in the **Policy** category. For example, use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to find entries with this query string: `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=initiatedBy/app/displayName eq 'Microsoft Managed Policy Manager' and category eq 'Policy'`.
-
-In the Microsoft Entra admin center, use the following filter to narrow the audit log results.
-
-- Category: Conditional Access
-- Filter: Target(s) = "Microsoft-managed"
-- Filter: Initiated by (actor) = "Microsoft Managed Policy Manager"
-
-Keep in mind that some activities on a Microsoft-managed policy might be initiated by a user, not the Microsoft Managed Policy Manager.
 
 ## Related content
 

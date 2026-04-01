@@ -2,13 +2,15 @@
 title: How to configure per-app access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # How to configure per-app access using Global Secure Access applications
+
+## Overview
 
 Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create an Enterprise application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Enterprise application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring an Enterprise application, you create per-app access to your internal resources. Enterprise applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
 
@@ -72,12 +74,12 @@ To create a new app, you provide a name, select a connector group, and then add 
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 
-    ![Screenshot of the Enterprise apps and Add new application button.](media/how-to-configure-per-app-access/new-enterprise-app.png)
+    ![Screenshot that shows the Enterprise apps and Add new application button.](media/how-to-configure-per-app-access/new-enterprise-app.png)
 
 1. Enter a name for the app.
 1. Select a Connector group from the dropdown menu.
     > [!IMPORTANT]
-    > You must have at least one active connector in order to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
+    > You must have at least one active connector to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
 1. Select the **Save** button at the bottom of the page to create your app without adding private resources.
 
 ### Add application segment
@@ -113,7 +115,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - Spaces between values are removed when you apply the changes.
     - For example, `400-500, 80, 443`.
 
-    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
+    ![Screenshot that shows the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
 
     The following table provides the most commonly used ports and their associated networking protocols:
 
@@ -164,7 +166,7 @@ You can add or update the FQDNs and IP addresses included in your app at any tim
 
 You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.
 
-![Screenshot of the enable access checkbox.](media/how-to-configure-per-app-access/per-app-access-enable-checkbox.png)
+![Screenshot that shows the enable access checkbox.](media/how-to-configure-per-app-access/per-app-access-enable-checkbox.png)
 
 ## Assign Conditional Access policies
 

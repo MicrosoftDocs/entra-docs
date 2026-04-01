@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/20/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SchoolStream ASA so that I can streamline the user management process and ensure that users have the appropriate access to SchoolStream ASA.
@@ -85,19 +85,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. If you're configuring provisioning for the first time, select **Get started**.
 	
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your SchoolStream ASA Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has the required admin permissions and try again.
 
-	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Save** to see the **Settings** section.
+1. Select **Create** to create your configuration.
 
-1. In the **Notification Email** field of **Settings** section, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Properties** on the **Overview** page.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. In the **Mappings** section, select **Provision Microsoft Entra users**.
 
@@ -117,8 +119,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SchoolStream ASA for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SchoolStream ASA API supports filtering users based on that attribute.
 
-
-
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;
@@ -133,10 +133,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String| 
 
+1. Select **Groups**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to UNIFI**.
-
-1. Review the group attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in UNIFI for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SchoolStream ASA for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
@@ -144,24 +143,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |members|Reference|
       |externalId|String|      
 
-
 1. Select the **Save** button to commit any changes. You can go back to the **Application** tab and select **Edit provisioning** to continue.
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for SchoolStream ASA, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to SchoolStream ASA by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

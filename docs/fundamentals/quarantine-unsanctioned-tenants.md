@@ -1,13 +1,15 @@
 ---  
 title: Quarantine unsanctioned tenants  
 description: Isolate unsanctioned tenants using Microsoft Entra features. Follow steps to quarantine unapproved tenants and strengthen security.  
-manager: pmwongera
 ms.topic: concept-article  
 ms.date: 04/14/2025  
 #customer intent: As an administrator, I want to quarantine unsanctioned tenants to reduce security risks and ensure compliance with security policies.  
 ---  
 
 # Quarantine unsanctioned tenants  
+
+
+## Overview
 
 > [!IMPORTANT]
 > Refer to this article only after reviewing [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) to discover your organization's inventory of tenants. This article outlines the specific existing Microsoft Entra capabilities you can use within your primary tenant to quarantine suspected unsanctioned tenants in their discovered list of tenants. 

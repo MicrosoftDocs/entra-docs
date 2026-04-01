@@ -16,12 +16,12 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+      url: ./identity-professional/what-is-microsoft-entra-agent-id.md
     - title: Microsoft agent identity platform for developers
       itemType: overview
       url: ./identity-platform/what-is-agent-id-platform.md 
     - title: What is an agent identity?
-      url: ./identity-platform/what-is-agent-id.md
+      url: ./identity-platform/what-are-agent-identities.md
       itemType: overview
     - title: Create an agent identity
       url: ./identity-platform/create-delete-agent-identities.md
@@ -38,7 +38,7 @@ additionalContent:
         - title: Manage agents
           links:
             - text: What is Microsoft Entra Agent ID?
-              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+              url: ./identity-professional/what-is-microsoft-entra-agent-id.md
             - text: Owners, sponsors, and managers
               url: ./identity-platform/agent-owners-sponsors-managers.md
             - text: Manage agents in the end user experience
@@ -74,7 +74,7 @@ additionalContent:
               url: ./identity-platform/agent-blueprint.md
             - text: What is an agent identity?
               url: ./identity-platform/agent-identities.md
-            - text: What are agent users?
+            - text: What are agents' user accounts?
               url: ./identity-platform/agent-users.md
 
         ## CARD 2 ######################

@@ -2,7 +2,7 @@
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: troubleshooting
-ms.date: 10/04/2025
+ms.date: 03/31/2026
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -119,7 +119,7 @@ Multivalue directory extensions can't be used in attribute mappings or scoping f
 - Provisioning passwords isn't supported. 
 - Provisioning nested groups beyond the first level is not supported. 
 - Provisioning is not supported for B2C tenants, including into or out of the tenant.
-- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Provisioning (inbound) is not supported for External ID tenants.
 - Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"

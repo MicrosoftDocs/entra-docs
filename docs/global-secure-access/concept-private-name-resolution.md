@@ -3,10 +3,12 @@ title: Microsoft Entra Private DNS - Configure Secure Internal Name Resolution
 description: Learn how to configure Microsoft Entra Private DNS for secure and efficient internal DNS query resolution, replacing legacy VPNs with granular access.  
 contributors:  
 ms.topic: how-to
-ms.date: 03/12/2026  
+ms.date: 03/25/2026  
 ---  
 
 # Understand Microsoft Entra Private DNS
+
+## Private DNS overview
 
 Microsoft Entra Private Access provides a quick and easy way to replace legacy VPNs. It provides granular and secure access to internal resources without exposing your full network. DNS plays a vital role by enabling name resolution for critical internal resources, and remote users don't need to know the configuration of internal DNS systems. Microsoft Entra Private DNS with Quick Access offers a simple setup that uses Connector local resolvers to respond to DNS queries for internal resources.
 

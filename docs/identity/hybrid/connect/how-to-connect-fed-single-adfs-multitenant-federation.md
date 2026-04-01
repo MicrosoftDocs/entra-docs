@@ -36,32 +36,57 @@ For AD FS in contoso.com to be able to authenticate users in fabrikam.com, a two
  
 The default issuer set for a single domain federated to AD FS is "http\://ADFSServiceFQDN/adfs/services/trust", for example, `http://fs.contoso.com/adfs/services/trust`. Microsoft Entra ID requires unique issuer for each federated domain. Because AD FS is going to federate two domains, the issuer value needs to be modified so that it's unique. 
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-On the AD FS server, open Azure AD PowerShell (ensure that the MSOnline module is installed) and do the following steps:
+On the AD FS server, open Microsoft Graph PowerShell and do the following steps:
  
 Connect to the Microsoft Entra ID that contains the domain `contoso.com`.
 
-  `Connect-MsolService`
+  `Connect-MgGraph -Scope 'Domain.ReadWrite.All'`
 
 Update the federation settings for `contoso.com`:
 
-  `Update-MsolFederatedDomain -DomainName contoso.com –SupportMultipleDomain`
+```powershell
+ $domainId  = "contoso.com"
+ $newIssuer = "http://contoso.com/adfs/services/trust"
+
+ $fed = Get-MgDomainFederationConfiguration -DomainId $domainId
+
+ 
+ Update-MgDomainFederationConfiguration `
+   -DomainId $domainId `
+   -InternalDomainFederationId $fed.Id `
+   -IssuerUri $newIssuer
+```
  
 Issuer in the domain federation setting is changed to `http://contoso.com/adfs/services/trust` and an issuance claim rule is added for the Microsoft Entra ID Relying Party Trust to issue the correct issuerId value based on the UPN suffix.
  
 ## Step 3: Federate fabrikam.com with AD FS
  
-In Azure AD PowerShell session perform the following steps:
+In Microsoft Graph PowerShell session perform the following steps:
 Connect to Microsoft Entra ID that contains the domain fabrikam.com
 
 ```powershell
-Connect-MsolService
+Connect-MgGraph -Scope 'Domain.ReadWrite.All'
 ```
 Convert the fabrikam.com managed domain to federated:
 
 ```powershell
-Convert-MsolDomainToFederated -DomainName fabrikam.com -Verbose -SupportMultipleDomain
+ # Create the federation configuration
+ 
+ $params = @{
+ 	"@odata.type" = "#microsoft.graph.internalDomainFederation"
+ 	displayName = "fabrikam.com"
+ 	issuerUri = $issuerUri
+ 	signingCertificate = $signingCertificate
+ 	passiveSignInUri = $passiveSignInUri
+ 	preferredAuthenticationProtocol = $preferredAuthenticationProtocol
+ 	activeSignInUri = $activeSignInUri
+ 	signOutUri = $signOutUri
+ }
+
+ New-MgDomainFederationConfiguration -DomainId $domainId -BodyParameter $params
+
+ # Switch the domain authentication type to Federated
+ Update-MgDomain -DomainId $domainId -AuthenticationType "Federated"
 ```
  
 The prior operation federates the domain fabrikam.com with the same AD FS. You can verify the domain settings by using Get-MsolDomainFederationSettings for both domains.

@@ -2,11 +2,14 @@
 title: View audit report for Azure resource roles in Privileged Identity Management (PIM)
 description: View activity and audit history for Azure resource roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: sfi-image-nochange
 ---
 # View activity and audit history for Azure resource roles in Privileged Identity Management
+
+
+## Overview
 
 Privileged Identity Management (PIM) in Microsoft Entra ID enables you to view activity, activations, and audit history for Azure resource roles within your organization. This includes subscriptions, resource groups, and even virtual machines. Any resource within the Microsoft Entra admin center that uses the Azure role-based access control functionality can take advantage of the security and lifecycle management capabilities in Privileged Identity Management. If you want to keep audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 

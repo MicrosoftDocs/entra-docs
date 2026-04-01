@@ -6,10 +6,12 @@ ms.date: 03/18/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Limitations in multitenant organizations
+
+
+## Overview
 
 This article describes limitations to be aware of when you work with multitenant organization functionality across Microsoft Entra ID and Microsoft 365. To provide feedback about the multitenant organization functionality on UserVoice, see [Microsoft Entra UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?category_id=360892). UserVoice is closely monitored to improve the service.
 

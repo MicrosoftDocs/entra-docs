@@ -57,6 +57,10 @@ items:
         href: how-to-configure-waf-integration.md
       - name: Akamai
         href: how-to-configure-akamai-integration.md
+      - name: Third-party account takeover protection with native API
+        href: tutorial-third-party-account-take-over-protection-native-api.md
+      - name: Third-party bot protection with native API sign-up
+        href: tutorial-third-party-bot-protection-native-api-sign-up.md
     - name: Fraud protection integration
       href: how-to-integrate-fraud-protection.md
     - name: Native authentication fraud protection for SMS MFA
@@ -148,6 +152,8 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Enable MFA
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Add social sign-in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -162,6 +168,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Enable MFA
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Add social sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js

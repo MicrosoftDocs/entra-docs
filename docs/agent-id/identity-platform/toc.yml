@@ -7,7 +7,7 @@ items:
     - name: What is the Microsoft agent identity platform?
       href: what-is-agent-id-platform.md
     - name: What is an agent identity?
-      href: what-is-agent-id.md
+      href: what-are-agent-identities.md
     - name: What is the agent registry?
       href: what-is-agent-registry.md
   - name: How to guides
@@ -25,18 +25,12 @@ items:
             href: autonomous-agent-request-tokens.md
           - name: Request authorization from Entra admin
             href: autonomous-agent-request-authorization-entra-admin.md
-          - name: Request agent user tokens
+          - name: Request agent's user account tokens
             href: autonomous-agent-request-agent-user-tokens.md
       - name: Interactive agents
         items:
-        - name: Sign-in users
-          href: interactive-agent-authenticate-user.md
-        - name: Request authorization from user
-          href: interactive-agent-request-user-authorization.md
-        - name: Request authorization from Entra admin
-          href: interactive-agent-request-admin-authorization.md
-        - name: Request user tokens
-          href: interactive-agent-request-user-tokens.md
+        - name: Authenticate users and acquire tokens
+          href: interactive-agent-authentication-authorization-flow.md
       - name: Call an API (.NET)
         items:
           - name: Call Microsoft Graph API
@@ -74,7 +68,7 @@ items:
           href: agent-blueprint.md
         - name: Agent identities
           href: agent-identities.md
-        - name: Agent users
+        - name: Agent's user account
           href: agent-users.md
         - name: Agent service principals
           href: agent-service-principals.md
@@ -84,6 +78,8 @@ items:
           href: agent-registry-collections.md
         - name: Agent metadata and discoverability
           href: agent-metadata-discoverability.md
+        - name: Agent Registry convergence with Agent 365
+          href: agent-registry-convergence.md
     - name: Management
       items:
         - name: Agent owners, sponsors, and managers
@@ -98,7 +94,7 @@ items:
           href: agent-autonomous-app-oauth-flow.md
         - name: On-behalf-of flow in agents
           href: agent-on-behalf-of-oauth-flow.md
-        - name: Agent user flow in agents
+        - name: Agent's user account flow in agents
           href: agent-user-oauth-flow.md
   - name: Reference
     items:

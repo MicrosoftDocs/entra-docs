@@ -1,7 +1,6 @@
 ---
 title: How to find your tenant ID
 description: Instructions about how to find your Microsoft Entra tenant ID for an existing Azure subscription.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 01/14/2025
 ms.reviewer: jeffsta
@@ -10,6 +9,9 @@ ms.custom: it-pro, ge-structured-content-pilot, sfi-image-nochange
 
 # How to find your Microsoft Entra tenant ID
 
+
+
+## Overview
 
 Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft Entra ID is trusted to authenticate the subscription's users, services, and devices. Each subscription has a tenant ID associated with it, and there are a few ways you can find the tenant ID for your subscription.
 

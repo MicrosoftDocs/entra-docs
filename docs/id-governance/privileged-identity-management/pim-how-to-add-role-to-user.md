@@ -2,12 +2,15 @@
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/29/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Microsoft Entra roles in Privileged Identity Management
+
+
+## Overview
 
 With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
 

@@ -10,6 +10,9 @@ ms.date: 01/31/2025
 
 # Create verifiable credentials for an ID token hint
 
+
+## Overview
+
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). The relying party application is responsible for passing the required claim values in the request. The application determines how to gather the claim values. 
 
 ## Create a custom credential

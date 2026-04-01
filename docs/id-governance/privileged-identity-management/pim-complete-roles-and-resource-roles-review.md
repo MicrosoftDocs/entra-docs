@@ -2,12 +2,15 @@
 title: Complete an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to complete an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-image-nochange
 ---
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
+
+
+## Overview
 
 Privileged Role Administrators can review privileged access once an [access review starts](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID automatically sends an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
 
