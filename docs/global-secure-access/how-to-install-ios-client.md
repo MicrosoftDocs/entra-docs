@@ -18,7 +18,7 @@ This article explains how to set up and deploy the Global Secure Access client a
 The Global Secure Access client is deployed through Microsoft Defender for Endpoint on iOS. The Global Secure Access client on iOS uses a VPN that isn't a regular VPN. Instead, it's a local/self-looping VPN.
 
 > [!CAUTION]
-> Running other third-party endpoint protection products alongside Defender for Endpoint on iOS is likely to cause performance problems and unpredictable system errors.
+> Running non-Microsoft endpoint protection products alongside Defender for Endpoint on iOS is likely to cause performance problems and unpredictable system errors.
 
 ## Prerequisites
 
@@ -159,7 +159,7 @@ You can enable or disable the Global Secure Access client for iOS by setting the
 
 - The Global Secure Access tile doesn't appear in the Defender app after you onboard the tenant:
   - Restart the Defender app.
-- Access to the Private Access application shows a connection time-out error after a successful interactive sign-in:
+- Access to the Private Access application shows a connection timeout error after a successful interactive sign-in:
   - Reload the application (or refresh the web browser).
 
 ## Related content

@@ -70,6 +70,8 @@ To deploy the Global Secure Access client's .pkg file through Microsoft Intune a
 
 1. Review the configuration, and then select **Create**.
 
+<a name = "allow-system-extensions-through-mobile-device-management-mdm"></a>
+
 ### Allow system extensions through mobile device management
 
 > [!IMPORTANT]
@@ -111,6 +113,8 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. On the **Assignments** tab, assign the profile to a group of macOS devices or users.
 
 1. On the **Review + create** tab, review the configuration and then select **Create**.
+
+<a name = "allow-transparent-application-proxy-through-mdm"></a>
 
 ### Allow a transparent application proxy through MDM
 
@@ -297,7 +301,7 @@ In the **Settings** window, you can set configurations and perform some advanced
 
 |Option  |Description  |
 |---------|---------|
-|**Telemetry full diagnostics**     |Sends full telemetry data to Microsoft for application improvement.         |
+|**Telemetry full diagnostics**     |Sends full diagnostic data to Microsoft for application improvement.         |
 |**Enable Verbose Logging**     |Enables verbose logging and network capture to be collected when you're exporting the logs to a .zip file.         |
 
 :::image type="content" source="media/how-to-install-macos-client/macos-client-settings-toggles.png" alt-text="Screenshot of the macOS Settings tab.":::  
