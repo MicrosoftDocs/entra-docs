@@ -16,8 +16,7 @@ Lifecycle Workflows allows administrators to cancel in-progress or queued workfl
 
 ## Prerequisites
 
-- One or more Microsoft Entra ID Governance or Microsoft Entra Suite licenses.
-- [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role.
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Cancel a workflow run in the Microsoft Entra admin center
 
