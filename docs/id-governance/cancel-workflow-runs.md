@@ -12,9 +12,6 @@ ai-usage: ai-assisted
 
 # Cancel workflow runs using Lifecycle Workflows (preview)
 
-> [!IMPORTANT]
-> This feature is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
 Lifecycle Workflows allows administrators to cancel in-progress or queued workflow runs to prevent or mitigate the widespread impact of automation errors and misconfigurations.
 
 ## Prerequisites
