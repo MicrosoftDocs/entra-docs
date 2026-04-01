@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: VPN replacement with Quick Access"
+titleSuffix: Microsoft Entra Private Access
 description: Learn how to configure Quick Access for VPN-like connectivity to on-premises resources using Microsoft Entra Private Access.
 ms.topic: tutorial
 ms.date: 03/11/2026
@@ -147,10 +148,10 @@ For more information on troubleshooting, refer to [Troubleshoot app access issue
 
 In this exercise, you accomplished the following:
 
-1. **Configured Quick Access for broad network connectivity** - You published a private network segment in the Quick Access app and configured an IP range segment.
-1. **Set up Private DNS behavior** - You configured specific DNS suffixes so private name resolution works for internal resources.
-1. **Assigned users to the generated enterprise app** - You controlled who can use the Quick Access configuration.
-1. **Validated tunnel behavior on the client** - You confirmed traffic flow using Advanced Diagnostics.
+- **Configured Quick Access for broad network connectivity** - You published a private network segment in the Quick Access app and configured an IP range segment.
+- **Set up Private DNS behavior** - You configured specific DNS suffixes so private name resolution works for internal resources.
+- **Assigned users to the generated enterprise app** - You controlled who can use the Quick Access configuration.
+- **Validated tunnel behavior on the client** - You confirmed traffic flow using Advanced Diagnostics.
 
 Quick Access helps you transition users off VPN quickly while keeping operational continuity. Treat Quick Access as a migration bridge. Move high-value apps to per-app segmentation for stronger least-privilege control and app-specific Conditional Access.
 

@@ -27,11 +27,11 @@ This series is designed to build foundational and advanced skills in Microsoft E
 
 To complete this tutorial series, you need the following:
 
-1. Microsoft Entra ID tenant with P1 and either Microsoft Entra Private Access or Microsoft Entra Suite licenses.
-1. Either Global Admin role or all three of the following roles: Global Secure Access Admin, Security Admin, Application Admin.
-1. A Windows 11 device (must be Entra joined, hybrid joined, or Entra registered) with internet access.
-1. A Windows Server 2016 or later to host the Private Network Connector.
-1. An on-premises resource such as a server for RDP, an internal website, a file share, or similar. The tutorial steps assume it's an SMB file share.
+- Microsoft Entra ID tenant with P1 and either Microsoft Entra Private Access or Microsoft Entra Suite licenses.
+- Either Global Admin role or all three of the following roles: Global Secure Access Admin, Security Admin, Application Admin.
+- A Windows 11 device (must be Entra joined, hybrid joined, or Entra registered) with internet access.
+- A Windows Server 2016 or later to host the Private Network Connector.
+- An on-premises resource such as a server for RDP, an internal website, a file share, or similar. The tutorial steps assume it's an SMB file share.
 
 ## Learning progression
 

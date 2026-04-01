@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Set up the Private Network Connector"
+titleSuffix: Microsoft Entra Private Access
 description: Learn how to install and configure the Private Network Connector for Microsoft Entra Private Access, verify registration, and organize connector groups.
 ms.topic: tutorial
 ms.date: 03/11/2026
@@ -68,7 +69,7 @@ Before enabling Microsoft Entra Private Access policies, you should validate you
 8. Run the Connector Diagnostics to verify proper connectivity and function.
    - Default location is `C:/Program Files/Microsoft Entra Private Network Connector/ConnectorDiagnosticsTool.exe`.
 
-![Connector health check results showing successful connectivity.](media/tutorial-private-access-connector-setup/connector-health-check.png)
+![Screenshot that shows connector health check results with successful connectivity.](media/tutorial-private-access-connector-setup/connector-health-check.png)
 
 ### Step 3: Verify connector registration in the Microsoft Entra admin center
 
@@ -106,10 +107,10 @@ Before enabling Microsoft Entra Private Access policies, you should validate you
 
 In this exercise, you accomplished the following:
 
-1. **Validated your Private Access foundation** - You confirmed server/resource prerequisites.
-1. **Installed and registered a Private Network Connector** - You established the path for private app access without opening any inbound ports to your network.
-1. **Verified connector health in the Microsoft Entra admin center** - You confirmed the service can manage and monitor your connector.
-1. **Implemented connector group organization** - You created a custom connector group and moved the connector out of the Default connector group.
+- **Validated your Private Access foundation** - You confirmed server/resource prerequisites.
+- **Installed and registered a Private Network Connector** - You established the path for private app access without opening any inbound ports to your network.
+- **Verified connector health in the Microsoft Entra admin center** - You confirmed the service can manage and monitor your connector.
+- **Implemented connector group organization** - You created a custom connector group and moved the connector out of the Default connector group.
 
 Connector readiness is a hard dependency for successful private resource access in all remaining tutorials.
 

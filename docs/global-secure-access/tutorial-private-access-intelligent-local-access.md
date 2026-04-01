@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Configure Intelligent Local Access"
+titleSuffix: Microsoft Entra Private Access
 description: Learn how to configure Intelligent Local Access (ILA) in Microsoft Entra Private Access to optimize traffic flow when users are on the corporate network.
 ms.topic: tutorial
 ms.date: 03/11/2026
@@ -72,7 +73,7 @@ To verify that Intelligent Local Access is working correctly, use the **Advanced
    :::image type="content" source="media/tutorial-private-access-intelligent-local-access/intelligent-local-access-traffic-capture.png" alt-text="Screenshot showing network traffic capture with Intelligent Local Access bypassed traffic.":::
 
 > [!NOTE]
-> You can also review Windows Event Logs by opening **Event Viewer** and navigating to **Application and Services Logs** > **Microsoft** > **Windows** > **Global Secure Access Client** > **Operational**. You can then search for Event ID's 217 and 218 which are triggered when the GSA client detects that it is now on or off the corporate network.
+> You can also review Windows Event Logs by opening **Event Viewer** and navigating to **Application and Services Logs** > **Microsoft** > **Windows** > **Global Secure Access Client** > **Operational**. You can then search for Event ID's 217 and 218, which are triggered when the GSA client detects that it is now on or off the corporate network.
 
 To fully understand ILA behavior, you can test from both locations:
 
@@ -82,7 +83,7 @@ To fully understand ILA behavior, you can test from both locations:
 | **Off corporate network (remote)** | Traffic goes through the tunnel (Action: `Tunnel`) |
 
 > [!NOTE]
-> The DNS probe used by Intelligent Local Access always bypasses GSA tunneling even if the DNS probe matches a suffix configured in Private DNS. This ensure that when the user is off the corporate network, the DNS probe will fail to resolve to the expected IP range, and traffic will be tunneled as normal. 
+> The DNS probe used by Intelligent Local Access always bypasses GSA tunneling even if the DNS probe matches a suffix configured in Private DNS. This ensures that when the user is off the corporate network, the DNS probe will fail to resolve to the expected IP range, and traffic will be tunneled as normal. 
 
 ## Troubleshooting
 
@@ -97,9 +98,9 @@ If ILA isn't working as expected:
 
 In this exercise, you accomplished the following:
 
-1. **Defined corporate network detection signals** - You configured DNS-based indicators used by the client to determine when it is on or off the private network.
-1. **Scoped ILA to specific target resources** - You controlled which apps can bypass tunnel routing when on the private network.
-1. **Validated behavior in diagnostics** - You confirmed expected `Local` vs `Tunnel` actions by network location.
+- **Defined corporate network detection signals** - You configured DNS-based indicators used by the client to determine when it is on or off the private network.
+- **Scoped ILA to specific target resources** - You controlled which apps can bypass tunnel routing when on the private network.
+- **Validated behavior in diagnostics** - You confirmed expected `Local` vs `Tunnel` actions by network location.
 
 ILA improves user experience and reduces unnecessary tunnel usage without requiring users to change how they access applications.
 

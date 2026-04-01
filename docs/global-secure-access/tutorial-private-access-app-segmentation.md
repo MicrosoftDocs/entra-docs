@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Per-app access segmentation"
+titleSuffix: Microsoft Entra Private Access
 description: Learn how to transition from Quick Access to per-app segmentation by using Application Discovery to create enterprise applications with granular Conditional Access controls.
 ms.topic: tutorial
 ms.date: 03/11/2026
@@ -43,9 +44,9 @@ In this tutorial, you learn how to:
 >
 > Why this is important:
 >
-> 1. You reduce lateral movement risk by limiting app scope.
-> 1. You can apply Conditional Access to specific apps.
-> 1. You can migrate app segments in phases instead of a "big bang" cutover.
+> - You reduce lateral movement risk by limiting app scope.
+> - You can apply Conditional Access to specific apps.
+> - You can migrate app segments in phases instead of a "big bang" cutover.
 >
 > When an enterprise application network segment overlaps Quick Access, the enterprise application takes precedence for that resource. This enforces explicit assignment and prevents accidental overexposure.
 
@@ -163,10 +164,10 @@ For more information, see [Apply Conditional Access policies to Private Access a
 
 In this exercise, you accomplished the following:
 
-1. **Used Application Discovery for segmentation planning** - Identified real traffic patterns before publishing apps.
-1. **Created per-app enterprise applications** - Created enterprise applications for internal resources with explicit network segments.
-1. **Controlled access through app assignments and Conditional Access** - Enforced per-app assignment and applied identity-driven Conditional Access policy to specific on-premises applications.
-1. **Validated tunneled app behavior** - Confirmed that segmented resources are properly acquired and tunneled by the **Global Secure Access client**.
+- **Used Application Discovery for segmentation planning** - Identified real traffic patterns before publishing apps.
+- **Created per-app enterprise applications** - Created enterprise applications for internal resources with explicit network segments.
+- **Controlled access through app assignments and Conditional Access** - Enforced per-app assignment and applied identity-driven Conditional Access policy to specific on-premises applications.
+- **Validated tunneled app behavior** - Confirmed that segmented resources are properly acquired and tunneled by the **Global Secure Access client**.
 
 This is where Private Access shifts from VPN replacement to Zero Trust access control. In the next tutorial, you optimize user experience by allowing eligible app traffic to stay local when users are on trusted corporate networks.
 

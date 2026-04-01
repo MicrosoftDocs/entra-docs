@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Enable Private Access traffic forwarding"
+titleSuffix: Microsoft Entra Private Access
 description: Learn how to enable the Private Access traffic forwarding profile in Microsoft Entra, assign users, and verify the configuration.
 ms.topic: tutorial
 ms.date: 03/11/2026
@@ -58,7 +59,7 @@ In this tutorial, you:
 
 ### Step 3: Install the GSA client
 
-1. Download the GSA client for Windows 11 from one of these links OR using this [sample powershell script](scripts/powershell-windows-client-install-proof-of-concept.md).
+1. Download the GSA client for Windows 11 from one of these links OR using this [sample PowerShell script](scripts/powershell-windows-client-install-proof-of-concept.md).
    - For standard Windows 11 machines use `https://aka.ms/GlobalSecureAccess-Windows`
    - For ARM-based Windows 11 machines use `https://aka.ms/GlobalSecureAccess-WindowsOnArm`
 1. Run the downloaded installer and complete the setup wizard.
@@ -67,7 +68,7 @@ In this tutorial, you:
 ![Screenshot showing the GSA client icon in the Windows system tray.](media/tutorial-private-access-enable-traffic-forwarding/global-secure-access-tray-icon.png)
 
 > [!NOTE]
-> If you installed the client without using the [sample powershell script](scripts/powershell-windows-client-install-proof-of-concept.md) and you plan to test MFA on an RDP connection, be sure to increase the `TimeoutTcpDirectConnection` value in your device's registry to at least 60 seconds to avoid timeout errors. If you wish to do so manually you can run the following:
+> If you installed the client without using the [sample PowerShell script](scripts/powershell-windows-client-install-proof-of-concept.md) and you plan to test MFA on an RDP connection, be sure to increase the `TimeoutTcpDirectConnection` value in your device's registry to at least 60 seconds to avoid timeout errors. If you wish to do so manually you can run the following:
 > ```
 > function Test-IsAdmin {
 >   $id = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -111,9 +112,9 @@ In this tutorial, you:
 
 In this exercise, you accomplished the following:
 
-1. **Enabled the Private Access forwarding profile** - This activated the client path for private-resource traffic.
-1. **Scoped who receives the profile** - You learned how to assign users/groups for controlled rollout.
-1. **Installed and validated the GSA client** - You confirmed the client can receive Private Access forwarding configuration.
+- **Enabled the Private Access forwarding profile** - This activated the client path for private-resource traffic.
+- **Scoped who receives the profile** - You learned how to assign users/groups for controlled rollout.
+- **Installed and validated the GSA client** - You confirmed the client can receive Private Access forwarding configuration.
 
 With the Private Access forwarding profile enabled, client traffic to private apps will be tunneled securely to its destination.
 
