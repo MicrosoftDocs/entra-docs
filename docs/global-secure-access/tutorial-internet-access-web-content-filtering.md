@@ -118,7 +118,7 @@ Configure a web content filtering policy that blocks gambling websites and Bing.
 
 1. Verify that the webpages don't load.
 
-   ![Connection Reset](media/tutorial-internet-access-web-content-filtering/connection-reset-error.png)
+   ![Screenshot that shows Connection Reset.](media/tutorial-internet-access-web-content-filtering/connection-reset-error.png)
 
 > [!NOTE]
 > This isn't a user-friendly error message. This is because you haven't enabled TLS inspection, which provides a customizable block message and unlocks additional security capabilities. You'll see a more user-friendly error message in the TLS inspection tutorial.

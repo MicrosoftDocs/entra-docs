@@ -199,7 +199,7 @@ To verify TLS inspection is occurring properly:
 
    1. Verify the common name says **Microsoft Global Secure Access Intermediate**.
 
-      ![Certificate verification](media/tutorial-internet-access-tls-inspection/tls-certificate-verification.png)
+      ![Screenshot that shows certificate verification.](media/tutorial-internet-access-tls-inspection/tls-certificate-verification.png)
 
 ## What you learned
 

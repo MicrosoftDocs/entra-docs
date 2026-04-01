@@ -67,7 +67,7 @@ The Internet Access profile needs to be assigned to users before it takes effect
 
 ## Step 3: Install the GSA client
 
-1. Download the GSA client for Windows 11 from one of these links OR using the [sample powershell script](scripts/powershell-windows-client-install-proof-of-concept.md).
+1. Download the GSA client for Windows 11 from one of these links OR using the [sample PowerShell script](scripts/powershell-windows-client-install-proof-of-concept.md).
    - For standard Windows 11 machines, use `https://aka.ms/GlobalSecureAccess-Windows`.
    - For ARM-based Windows 11 machines, use `https://aka.ms/GlobalSecureAccess-WindowsOnArm`.
 1. Select the downloaded file and complete the wizard to install the GSA client.
