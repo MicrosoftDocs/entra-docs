@@ -23,6 +23,28 @@ items:
     href: quickstart-quick-access.md
   - name: Configure per-app access to private resources
     href: quickstart-per-app-access.md
+- name: Tutorials
+  expanded: true
+  items:
+  - name: Internet Access labs
+    expanded: true
+    items:
+    - name: Get started
+      href: tutorial-internet-access-introduction.md
+    - name: Enable traffic forwarding
+      href: tutorial-internet-access-enable-traffic-forwarding.md
+    - name: Configure web content filtering
+      href: tutorial-internet-access-web-content-filtering.md
+    - name: Enable TLS inspection
+      href: tutorial-internet-access-tls-inspection.md
+    - name: Configure URL filtering
+      href: tutorial-internet-access-url-filtering.md
+    - name: Configure threat intelligence
+      href: tutorial-internet-access-threat-intelligence.md
+    - name: Discover applications
+      href: tutorial-internet-access-application-discovery.md
+    - name: Configure file controls
+      href: tutorial-internet-access-file-controls.md
 - name: Samples
   expanded: false
   items: 
