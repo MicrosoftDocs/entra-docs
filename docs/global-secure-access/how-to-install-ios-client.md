@@ -13,29 +13,33 @@ ms.custom: sfi-image-nochange
 
 # Install the Global Secure Access client for iOS
 
-This article explains how to set up and deploy the Global Secure Access client app on iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
+This article explains how to set up and deploy the Global Secure Access client app on iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as *iOS*.  
+
+The Global Secure Access client is deployed through Microsoft Defender for Endpoint on iOS. The Global Secure Access client on iOS uses a VPN that isn't a regular VPN. Instead, it's a local/self-looping VPN.
 
 > [!CAUTION]
 > Running other third-party endpoint protection products alongside Defender for Endpoint on iOS is likely to cause performance problems and unpredictable system errors.
-> [!NOTE]
-> - The Global Secure Access client is deployed through Microsoft Defender for Endpoint on iOS.
-> - The Global Secure Access client on iOS uses a VPN. This VPN isn't a regular VPN. Instead, it's a local/self-looping VPN.
 
 ## Prerequisites
+
 - To use the Global Secure Access iOS client, configure the iOS endpoint device as a Microsoft Entra registered device.
-- To enable Global Secure Access for your tenant, refer to the [Licensing requirements](overview-what-is-global-secure-access.md#licensing-overview). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).   
+- To enable Global Secure Access for your tenant, refer to the [Licensing requirements](overview-what-is-global-secure-access.md#licensing-overview). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - Onboard the tenant to Global Secure Access and configure one or more traffic forwarding profiles. For more information, see [Access the Global Secure Access area of the Microsoft Entra admin center](quickstart-access-admin-center.md).
 - To enable a Kerberos SSO experience, create and deploy a profile for the iOS [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension).
 
 ## Requirements
+
 ### Network requirements
-For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](https://apps.apple.com/us/app/microsoft-defender-security/id1526737990)) to function when connected to a network, you must configure the firewall/proxy to [Enable access to Microsoft Defender for Endpoint service URLs](/defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).   
+
+For Microsoft Defender for Endpoint on iOS (available in the [Apple App Store](https://apps.apple.com/us/app/microsoft-defender-security/id1526737990)) to function when connected to a network, you must configure the firewall/proxy to [Enable access to Microsoft Defender for Endpoint service URLs](/defender-endpoint/configure-environment#enable-access-to-microsoft-defender-for-endpoint-service-urls-in-the-proxy-server).
 
 > [!NOTE]
 > Microsoft Defender for Endpoint on iOS isn't supported on userless or shared devices.
 
 ### System requirements
+
 The iOS device (phone or tablet) must meet the following requirements:
+
 - The device runs iOS 16.0 or newer.
 - The device has the Microsoft Authenticator app or the Intune Company Portal app.
 - For the supervised devices, the device must be enrolled to enforce Intune device compliance policies.
@@ -44,94 +48,125 @@ The iOS device (phone or tablet) must meet the following requirements:
 
 [!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
-## Installation Steps
-### Deploy on Device Administrator enrolled devices with Microsoft Intune
-1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Apps** > **iOS/iPadOS** > **Add** > **iOS store app** and select **Select**.    
-:::image type="content" source="media/how-to-install-ios-client/ios-client-add-ios-store-app.png" alt-text="Screenshot of the Microsoft Intune admin center with the steps to add an iOS store app highlighted.":::   
+## Installation steps
 
-1. On the **Add app** page, select **Search the App Store** and type **Microsoft Defender** in the search bar. 
+### Deploy on Device Administrator enrolled devices with Microsoft Intune
+
+1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Apps** > **iOS/iPadOS** > **Add** > **iOS store app** and choose **Select**.
+
+    :::image type="content" source="media/how-to-install-ios-client/ios-client-add-ios-store-app.png" alt-text="Screenshot of the Microsoft Intune admin center with the steps to add an iOS store app highlighted.":::
+
+1. On the **Add app** page, select **Search the App Store** and type **Microsoft Defender** in the search bar.
+
 1. In the search results, select **Microsoft Defender** and select **Select**.
+
 1. Select **iOS 15.0** as the minimum operating system. Review the rest of the information about the app, and select **Next**.
-1. In the **Assignments** section, go to the **Required** section and select **Add group**.    
-:::image type="content" source="media/how-to-install-ios-client/ios-client-add-group.png" alt-text="Screenshot of the Add App screen with the Add group option highlighted.":::   
+
+1. In the **Assignments** section, go to the **Required** section and select **Add group**.
+
+    :::image type="content" source="media/how-to-install-ios-client/ios-client-add-group.png" alt-text="Screenshot of the Add App screen with the Add group option highlighted.":::
   
 1. Choose the user groups to target with the Defender for Endpoint on iOS app.
-> [!NOTE]
-> The selected user group should consist of Microsoft Intune enrolled users.    
 
-7. Select **Select** and then **Next**.   
+    > [!NOTE]
+    > The selected user group should consist of Microsoft Intune enrolled users.
+
+1. Select **Select** and then **Next**.
+
 1. In the **Review + Create** section, verify that all the information entered is correct and then select **Create**. After a few moments, the Defender for Endpoint app is created successfully, and a notification appears at the top-right corner of the page.
-1. On the app information page, in the **Monitor** section, select **Device install status** to verify that the device installation is completed successfully.     
-:::image type="content" source="media/how-to-install-ios-client/ios-client-device-install-status.png" alt-text="Screenshot of the Device install status screen showing a list of installed devices.":::    
+
+1. On the app information page, in the **Monitor** section, select **Device install status** to verify that the device installation is completed successfully.
+
+    :::image type="content" source="media/how-to-install-ios-client/ios-client-device-install-status.png" alt-text="Screenshot of the Device install status screen showing a list of installed devices.":::
 
 ### Create a VPN profile and configure Global Secure Access for Microsoft Defender for Endpoint
-1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Devices** > **Configuration** > **Create** > **New Policy**.   
-1. Set the **Platform** to **iOS/iPadOS**, the **Profile type** to **Templates**, and the **Template name** to **VPN**.   
-1. Select **Create**.   
-1. Type a name for the profile and select **Next**.   
+
+1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Devices** > **Configuration** > **Create** > **New Policy**.
+
+1. Set the **Platform** to **iOS/iPadOS**, the **Profile type** to **Templates**, and the **Template name** to **VPN**.
+
+1. Select **Create**.
+
+1. Type a name for the profile and select **Next**.
+
 1. Set the **Connection Type** to **Custom VPN**.  
-1. In the **Base VPN** section, enter the following:   
+
+1. In the **Base VPN** section, enter the following:
+
     - **Connection Name**: Microsoft Defender for Endpoint
     - **VPN server address**: 127.0.0.1
     - **Auth method**: "Username and password"
     - **Split Tunneling**: Disable
     - **VPN identifier**: com.microsoft.scmx
-1. In the key-value pairs fields:   
+
+1. In the key/value pairs fields:
+
     - Add the key **SilentOnboard** and set the value to **True**.
     - Add the key **EnableGSA** and set the appropriate value from the following table:
 
-        |Key |Value |Details |
-        |---------|---------|---------|
-        |EnableGSA |No value | Global Secure Access isn't enabled and the tile isn't visible. |
-        |  |0 | Global Secure Access isn't enabled and the tile isn't visible.|
-        |  |1 | Global Secure Access tile is visible and defaults to disabled state. User can enable or disable using the toggle.|
-        |  |2 | Global Secure Access tile is visible and defaults to enabled state. User can enable or disable using the toggle from the app. |
-        |  |3 | Global Secure Access tile is visible and defaults to enabled state. User **can't** disable Global Secure Access. |   
+      |Key |Value |Details |
+      |---------|---------|---------|
+      |EnableGSA |No value | Global Secure Access isn't enabled and the tile isn't visible. |
+      |  |0 | Global Secure Access isn't enabled and the tile isn't visible.|
+      |  |1 | Global Secure Access tile is visible and defaults to disabled state. User can enable or disable using the toggle.|
+      |  |2 | Global Secure Access tile is visible and defaults to enabled state. User can enable or disable using the toggle from the app. |
+      |  |3 | Global Secure Access tile is visible and defaults to enabled state. User **can't** disable Global Secure Access. |
 
-    - Add more key-value pairs as required (optional):  
+    - Add more key/value pairs as required (optional):  
 
-        |Key |Value |Details |
-        |---------|---------|---------|
-        |EnableGSAPrivateChannel |No value |Use the EnableGSA configured option. |
-        |  |0 |Private Access isn't enabled and the toggle option isn't visible to user. |
-        |  |1 |The Private Access toggle is visible and defaults to disabled state. User can enable or disable. |
-        |  |2 |The Private Access toggle is visible and defaults to enabled state. User can enable or disable. |
-        |  |3 |The Private Access toggle is visible but grayed out, and defaults to enabled state. The user **can't** disable Private Access. |
+      |Key |Value |Details |
+      |---------|---------|---------|
+      |EnableGSAPrivateChannel |No value |Use the EnableGSA configured option. |
+      |  |0 |Private Access isn't enabled and the toggle option isn't visible to user. |
+      |  |1 |The Private Access toggle is visible and defaults to disabled state. User can enable or disable. |
+      |  |2 |The Private Access toggle is visible and defaults to enabled state. User can enable or disable. |
+      |  |3 |The Private Access toggle is visible but grayed out, and defaults to enabled state. The user **can't** disable Private Access. |
 
-1. Continue filling out the VPN form:  
-    - **Type of Automatic VPN**: On-demand VPN
-    - **On Demand Rules**: select **Add** and then:
-        - Set **I want to do the following** to **Connect VPN**.
-        - Set **I want to restrict** to **All domains**.
-:::image type="content" source="media/how-to-install-ios-client/ios-client-set-up-vpn.png" alt-text="Screenshot of the VPN screen showing example setup parameters.":::
+1. For **Type of Automatic VPN**, select **On-demand VPN**.
+
+1. For **On Demand Rules**, select **Add** and then:
+
+    - Set **I want to do the following** to **Connect VPN**.
+    - Set **I want to restrict** to **All domains**.
+
+    :::image type="content" source="media/how-to-install-ios-client/ios-client-set-up-vpn.png" alt-text="Screenshot of the VPN screen showing example setup parameters.":::
+
 1. To prevent end users from disabling VPN, set **Block users from disabling automatic VPN** to **Yes**. By default, this setting isn't configured, and users can disable VPN only in the settings.
+
 1. Select **Next** and assign the profile to targeted users.
+
 1. In the **Review + Create** section, verify that all the information is correct and then select **Create**.
- 
-Once the configuration is complete and synced with the device, the following actions take place on the targeted iOS devices:
+
+After the configuration is complete and synced with the device, the following actions take place on the targeted iOS devices:
+
 - Microsoft Defender for Endpoint is deployed and silently onboarded.  
 - The device is listed in the Defender for Endpoint portal.  
 - A provisional notification is sent to the user device.  
-- Global Secure Access and other Microsoft Defender for Endpoint (MDE)-configured features are activated.
+- Global Secure Access and other Microsoft Defender for Endpoint-configured features are activated.
 
 ## Confirm Global Secure Access appears in the Defender app
-Because the Global Secure Access client for iOS is integrated with Microsoft Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access.   
-:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard-1.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::   
 
-You can enable or disable the Global Secure Access client for iOS by setting the **EnableGSA** key in the [VPN profile](#create-a-vpn-profile-and-configure-global-secure-access-for-microsoft-defender-for-endpoint). End users can enable or disable individual **Services** or the client itself based on the configuration settings, using the appropriate toggles.   
-:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled-1.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::   
+Because the Global Secure Access client for iOS is integrated with Microsoft Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access.
+
+:::image type="content" source="media/how-to-install-ios-client/ios-defender-dashboard-1.png" alt-text="Screenshot of the iOS Microsoft Defender dashboard.":::
+
+You can enable or disable the Global Secure Access client for iOS by setting the **EnableGSA** key in the [VPN profile](#create-a-vpn-profile-and-configure-global-secure-access-for-microsoft-defender-for-endpoint). End users can enable or disable individual **Services** or the client itself based on the configuration settings, using the appropriate toggles.
+
+:::image type="content" source="media/how-to-install-ios-client/ios-client-enabled-disabled-1.png" alt-text="Screenshot of the Global Secure Access client on iOS showing both the Enabled and Disabled status screens.":::
 
 ## Troubleshooting
+
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
-    - Relaunch the Defender app.
-- Access to the Private Access application shows a connection time-out error after a successful interactive sign-in.
-    - Reload the application (or refresh the web browser).
+  - Relaunch the Defender app.
+- Access to the Private Access application shows a connection time-out error after a successful interactive sign-in:
+  - Reload the application (or refresh the web browser).
 
 ## Related content
-- [Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics](troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md)
+
+- [Troubleshoot the Global Secure Access mobile client: Advanced diagnostics](troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access mobile client with Health check utility](troubleshoot-global-secure-access-mobile-client-health-check-utility.md)
 - [Microsoft Defender for Endpoint on iOS](/defender-endpoint/microsoft-defender-endpoint-ios)
 - [Deploy Microsoft Defender for Endpoint on iOS with Microsoft Intune](/defender-endpoint/ios-install)
-- [Global Secure Access client for macOS](how-to-install-macos-client.md)
-- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
-- [Global Secure Access client for Android](how-to-install-android-client.md)
+- [Install the Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Install the Global Secure Access client for Windows](how-to-install-windows-client.md)
+- [Install the Global Secure Access client for Android](how-to-install-android-client.md)

@@ -77,28 +77,27 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 1. On the **Settings** tab:
 
     1. Set **Configuration settings format** to **Use configuration designer**.
-    1. Add the Global Secure Access configuration keys:
-        1. Select the **+ Add** button.
-        1. In the search field, type **global** and select the configuration keys listed in the following table.
-        1. Set the appropriate values for each configuration key according to the following table.
+    1. Select the **+ Add** button.
+    1. In the search field, type **global** and select the Global Secure Access configuration keys listed in the following table.
+    1. Set the appropriate values for each configuration key according to the following table.
 
-        > [!NOTE]
-        > The Android configuration keys differ from the iOS client keys. On Android, use `Global Secure Access` and `GlobalSecureAccessPrivateChannel` as shown here. Don't use the iOS key names (`EnableGSA`, `EnableGSAPrivateChannel`).
-        >
-        > The `GlobalSecureAccessPA` configuration key is no longer supported.
+    > [!NOTE]
+    > The Android configuration keys differ from the iOS client keys. On Android, use `Global Secure Access` and `GlobalSecureAccessPrivateChannel` as shown here. Don't use the iOS key names (`EnableGSA`, `EnableGSAPrivateChannel`).
+    >
+    > The `GlobalSecureAccessPA` configuration key is no longer supported.
 
-        | Configuration key                | Value    | Details   |
-        |----------------------------------|----------|-----------|
-        | `Global Secure Access`             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
-        |                                  | `0`      | Global Secure Access isn't enabled and the tile isn't visible. |
-        |                                  | `1`      | The tile is visible and defaults to `false` (disabled state). The user can enable or disable Global Secure Access by using the toggle in the app. |
-        |                                  | `2`      | The tile is visible and defaults to `true` (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access by using the toggle in the app. |
-        |                                  | `3`      | The tile is visible and defaults to `true` (enabled state). The user *can't* disable Global Secure Access. |
-        | `GlobalSecureAccessPrivateChannel` | No value | Global Secure Access defaults to value 2 behavior. |
-        |                                  | `0`      | Private Access isn't enabled and the toggle option isn't visible to the user. |
-        |                                  | `1`      | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
-        |                                  | `2`      | The Private Access toggle is visible and defaults to the enabled state. The user can enable or disable Private Access. |
-        |                                  | `3`      | The Private Access toggle is visible but unavailable, and defaults to the enabled state. The user *can't* disable Private Access. |
+    | Configuration key                | Value    | Details   |
+    |----------------------------------|----------|-----------|
+    | `Global Secure Access`             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
+    |                                  | `0`      | Global Secure Access isn't enabled and the tile isn't visible. |
+    |                                  | `1`      | The tile is visible and defaults to `false` (disabled state). The user can enable or disable Global Secure Access by using the toggle in the app. |
+    |                                  | `2`      | The tile is visible and defaults to `true` (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access by using the toggle in the app. |
+    |                                  | `3`      | The tile is visible and defaults to `true` (enabled state). The user *can't* disable Global Secure Access. |
+    | `GlobalSecureAccessPrivateChannel` | No value | Global Secure Access defaults to value `2` behavior. |
+    |                                  | `0`      | Private Access isn't enabled and the toggle option isn't visible to the user. |
+    |                                  | `1`      | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+    |                                  | `2`      | The Private Access toggle is visible and defaults to the enabled state. The user can enable or disable Private Access. |
+    |                                  | `3`      | The Private Access toggle is visible but unavailable, and it defaults to the enabled state. The user *can't* disable Private Access. |
 
     :::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Settings tab in the pane for creating an app configuration policy." lightbox="media/how-to-install-android-client/create-policy-settings-expanded.png":::
 
@@ -121,7 +120,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
 Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
 
-![Screenshot of the Defender app that shows the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
+![Screenshot of the Global Secure Access tile on the dashboard of the Defender app.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
 *The client is disabled by default when it's deployed to user devices.* Users need to enable the client from the Defender app. To enable the client, tap the toggle.
 
