@@ -118,7 +118,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
 ## Confirm Global Secure Access appears in the Defender app
 
-Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
+Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the user experience. The client appears in the Defender dashboard after you onboard to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
 
 ![Screenshot of the Global Secure Access tile on the dashboard of the Defender app.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
