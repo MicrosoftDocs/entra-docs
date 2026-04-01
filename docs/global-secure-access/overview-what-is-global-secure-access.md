@@ -102,7 +102,7 @@ Most Global Secure Access services operate on a per-user license model unless ot
 
 **Remote Network licensing**
 
-The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). For more information about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
+The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-is-allocated-per-tenant). For more information about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 
 ## Related content
