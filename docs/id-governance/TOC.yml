@@ -412,7 +412,9 @@
         - name: Check the status of a workflow
           href: check-status-workflow.md
         - name: Reprocess workflows
-          href: reprocess-workflow.md    
+          href: reprocess-workflow.md
+        - name: Cancel workflow runs (preview)
+          href: cancel-workflow-runs.md    
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users
