@@ -54,6 +54,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 
 ### Identifying existing users in Salesforce
 Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users, created by a Salesforce administrator or other processes. You have two ways to determine which users are already present in Salesforce. 
+
 **Option 1**
 Using the account discovery functionality, you can generate a report of all the users in Salesforce, identify which users have matching accounts in Entra, and which users are local to Salesforce with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). 
 
