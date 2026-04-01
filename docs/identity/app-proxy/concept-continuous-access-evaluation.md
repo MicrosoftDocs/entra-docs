@@ -76,7 +76,7 @@ You can also disable CAE for Application Proxy in the Microsoft Entra admin cent
 
 ### Disable CAE for the entire tenant
 
-Microsoft Entra ID Conditional Access controls tenant-wide CAE behavior. By default, CAE is enabled for all applications that support it. To disable CAE for all services, update your Conditional Access configuration. For steps, see [Continuous Access Evaluation in Microsoft Entra](/entra/identity/conditional-access/concept-continuous-access-evaluation).
+Microsoft Entra ID Conditional Access controls tenant-wide CAE behavior. By default, CAE is enabled for all applications that support it. To disable CAE for all services, update your Conditional Access configuration. For steps, see [Enable or disable CAE](/entra/identity/conditional-access/concept-continuous-access-evaluation#enable-or-disable-cae).
 
 > [!NOTE]
 > CAE is opportunistic unless you enable Strict Enforcement in Conditional Access and apply it to the Application Proxy application. With a non-strict policy, Application Proxy can fall back to issuing a regular access token on reauthentication. Because of this fallback behavior, disabling tenant-wide CAE is rarely necessary.
