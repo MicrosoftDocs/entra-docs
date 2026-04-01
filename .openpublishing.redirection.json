@@ -3268,7 +3268,7 @@
     {
       "source_path": "docs/agent-id/identity-professional/what-is-microsoft-entra-agent-id.md",
       "redirect_url": "/entra/agent-id/what-is-microsoft-entra-agent-id",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/what-is-agent-id.md",
