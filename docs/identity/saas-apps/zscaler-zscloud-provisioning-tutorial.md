@@ -49,7 +49,7 @@ Microsoft Entra users need to be assigned access to selected apps before they ca
 
 Before you configure and enable automatic user provisioning, you should decide which users and/or groups in Microsoft Entra ID need access to Zscaler ZSCloud. After you decide that, you can assign these users and groups to Zscaler ZSCloud by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
-### Important tips to assign users to Zscaler ZSCloud
+### Important tips for assigning users to Zscaler ZSCloud
 
 * We recommend that you first assign a single Microsoft Entra user to Zscaler ZSCloud to test the automatic user provisioning configuration. You can assign more users and groups later.
 

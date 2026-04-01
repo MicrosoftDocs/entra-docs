@@ -48,7 +48,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-### Important tips to assign users to Zscaler Beta
+### Important tips for assigning users to Zscaler Beta
 
 * It's recommended that a single Microsoft Entra user is assigned to Zscaler Beta to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
@@ -66,7 +66,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-zscaler-beta-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Zscaler Beta in Microsoft Entra ID
+### Configure automatic user provisioning for Zscaler Beta in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -76,7 +76,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Zscaler Beta**.
 
-	![Screenshot that shows The Zscaler Beta link in the Applications list](common/all-applications.png)
+	![Screenshot that shows The Zscaler Beta link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described later in the article.
+1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described later in this article.
 
 1. To obtain the **Tenant URL** and **Secret Token**, navigate to **Administration > Authentication Settings** in the Zscaler Beta portal user interface and select **SAML** under **Authentication Type**.
 

@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Zscaler Private Access (ZPA) in Microsoft Entra ID
+### Configure automatic user provisioning for Zscaler Private Access (ZPA) in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)**.
