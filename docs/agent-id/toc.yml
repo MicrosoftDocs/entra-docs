@@ -1,11 +1,11 @@
 items:
   - name: Microsoft Entra Agent ID
-    href: index.yml
+    expanded: true
     items:
     - name: What is Microsoft Entra Agent ID?
       href: what-is-microsoft-entra-agent-id.md
     - name: What is the Microsoft agent identity platform?
-      href: what-is-agent-id-platform.md
+      href: ../identity-platform/what-is-agent-id-platform.md
     - name: Security for AI overview
       href: security-for-ai-overview.md
   # LEARN ######################
@@ -15,25 +15,25 @@ items:
     - name: Core concepts
       items:
       - name: Key concepts
-        href: key-concepts.md
+        href: ../identity-platform/key-concepts.md
       - name: Agent identities
-        href: what-are-agent-identities.md
+        href: ../identity-platform/what-are-agent-identities.md
       - name: Agent identity blueprints
-        href: agent-blueprint.md
+        href: ../identity-platform/agent-blueprint.md
       - name: Agent's user account
-        href: agent-users.md
+        href: ../identity-platform/agent-users.md
       - name: Agent service principals
-        href: agent-service-principals.md
+        href: ../identity-platform/agent-service-principals.md
       - name: Owners, sponsors, and managers
-        href: agent-owners-sponsors-managers.md
+        href: ../identity-platform/agent-owners-sponsors-managers.md
     - name: Authentication and authorization
       items:
       - name: Authorization in Entra Agent ID
         href: authorization-agent-id.md
       - name: Tokens in Microsoft agent identity platform
-        href: agent-tokens.md
+        href: ../identity-platform/agent-tokens.md
       - name: Authentication protocols for agents
-        href: agent-oauth-protocols.md
+        href: ../identity-platform/agent-oauth-protocols.md
     - name: Governance and protection
       items:
       - name: Conditional Access for agents
@@ -53,33 +53,33 @@ items:
 
   # PLAN ######################
   - name: Plan your agent identity deployment
+    expanded: true
     items:
-    - name: Agent identity architecture
-      href: plan-agent-identity-architecture.md
     - name: Agent creation channels
       href: agent-id-creation-channels.md
     
   # BUILD / IMPLEMENT ######################
   - name: Create and configure agents
+    expanded: true
     items:    
     - name: Create identity objects
       items:
       - name: Create an agent blueprint
-        href: create-blueprint.md
+        href: ../identity-platform/create-blueprint.md
       - name: Create and delete agent identities
-        href: create-delete-agent-identities.md
+        href: ../identity-platform/create-delete-agent-identities.md
       - name: Manage agent blueprints
-        href: manage-agent-blueprint.md
+        href: ../identity-platform/manage-agent-blueprint.md
       - name: AI-guided setup
-        href: agent-id-ai-guided-setup.md
+        href: ../identity-platform/agent-id-ai-guided-setup.md
     - name: Authentication, authorization, and permissions
       items:
       - name: Autonomous agent app OAuth flow
-        href: agent-autonomous-app-oauth-flow.md
+        href: ../identity-platform/agent-autonomous-app-oauth-flow.md
       - name: On-behalf-of OAuth flow
-        href: agent-on-behalf-of-oauth-flow.md
+        href: ../identity-platform/agent-on-behalf-of-oauth-flow.md
       - name: Agent's user account OAuth flow
-        href: agent-user-oauth-flow.md
+        href: ../identity-platform/agent-user-oauth-flow.md
       - name: Configure inheritable permissions
         href: configure-inheritable-permissions-blueprints.md
       - name: Grant agent access to Microsoft 365
@@ -111,6 +111,7 @@ items:
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
+    expanded: true
     items:
     - name: Assign agents to applications
       href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
@@ -142,7 +143,6 @@ items:
         href: preview-known-issues.md
       - name: Error codes reference
         href: error-codes.md
-
     - name: Agent registry
       items:
       - name: Agent Registry convergence

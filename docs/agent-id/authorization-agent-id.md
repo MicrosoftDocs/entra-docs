@@ -146,7 +146,7 @@ Depending on what an agent needs to do, administrators can grant access in diffe
 
 ### Delegated Microsoft Graph permissions
 
-**If an agent acts on behalf of a user (user-centric scenarios)**: Use delegated Microsoft Graph permissions. This option requires interactive user consent but ensures the agent can't exceed that user's access. For example, an agent scheduling meetings for Alice would use delegated calendar API permissions; Alice consents, and the agent can only manage Alice's calendar (just as Alice could by themselves). For more information, see [Overview of permissions and consent in the Microsoft identity platform](identity-platform/permissions-consent-overview.md).
+**If an agent acts on behalf of a user (user-centric scenarios)**: Use delegated Microsoft Graph permissions. This option requires interactive user consent but ensures the agent can't exceed that user's access. For example, an agent scheduling meetings for Alice would use delegated calendar API permissions; Alice consents, and the agent can only manage Alice's calendar (just as Alice could by themselves). For more information, see [Overview of permissions and consent in the Microsoft identity platform](../identity-platform/permissions-consent-overview.md).
 
 ### Microsoft Graph application permissions
 
