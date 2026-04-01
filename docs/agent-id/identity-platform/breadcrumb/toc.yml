@@ -7,9 +7,9 @@ items:
     tocHref: /entra/agent-id/
     topicHref: /entra/agent-id/index
     items:
-    - name: Identity platform
-      tocHref: /entra/agent-id/identity-professional/
-      topicHref: /entra/agent-id/identity-platform/index
-    - name: Identity platform
+    - name: Agent ID
+      tocHref: /entra/agent-id/identity-platform/
+      topicHref: /entra/agent-id/index
+    - name: Agent ID
       tocHref: /graph/api/resources/
-      topicHref: /entra/agent-id/identity-platform/index
+      topicHref: /entra/agent-id/index

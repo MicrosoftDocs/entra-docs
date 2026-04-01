@@ -122,7 +122,7 @@ items:
     - name: View and manage agent identities
       href: identity-platform/agent-lists.md
     - name: Manage agents in end user experience
-      href: manage-agent.md
+      href: identity-platform/manage-agent.md
 
   # REFERENCE ######################
   - name: Reference

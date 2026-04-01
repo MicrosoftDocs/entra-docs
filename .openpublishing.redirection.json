@@ -3213,7 +3213,7 @@
     {
       "source_path": "docs/agent-id/identity-professional/security-for-ai-overview.md",
       "redirect_url": "/entra/agent-id/security-for-ai-overview",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-professional/agent-access-packages.md",
