@@ -19,6 +19,7 @@ This article describes the steps you need to perform in both Atlassian Cloud and
 
 ## Capabilities supported
 > [!div class="checklist"]
+> * [Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in Atlassian Cloud 
 > * Create users in Atlassian Cloud
 > * Remove users in Atlassian Cloud when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Atlassian Cloud
