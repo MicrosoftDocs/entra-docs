@@ -272,7 +272,7 @@ If you use **Scan with Purview**, review the corresponding investigation data in
 1. To investigate matching activities, open **Activity explorer** and filter for **Network DLP activities** or the policy, user, or app you want to review. For more information, see [Get started with activity explorer](/purview/data-classification-activity-explorer).
 
 > [!NOTE]
-> Purview alerts and Activity explorer apply when you use **Scan with Purview**. Basic content policy enforcement stays within Global Secure Access.
+> Purview alerts and Activity explorer apply only when you use **Scan with Purview**. If you use basic content policy with **Allow** or **Block** actions, review the [Global Secure Access traffic logs](#review-global-secure-access-traffic-logs) instead.
 
 ## Related content
 
