@@ -11,7 +11,7 @@ ms.custom: include file
 
 ### Avoid asymmetric routing with remote networks
 
-When you connect an Azure virtual machine (VM) to a Global Secure Access remote network, you can't use Remote Desktop Protocol (RDP) to connect to the VM by using its public IP address. If you disconnect the remote network, RDP works again. This behavior is caused by asymmetric routing and is expected.
+When you connect an Azure virtual machine (VM) to a Global Secure Access remote network, you can't use Remote Desktop Protocol (RDP) to connect to the VM by using its public IP address. If you disconnect the remote network, RDP works again. Asymmetric routing causes this behavior and is expected.
 
 Here's why it happens: the VM has a public IP address, so inbound RDP traffic (the SYN packet) from your PC reaches the VM directly. However, because Global Secure Access advertises the entire internet address range, the VM's return traffic (the SYN-ACK) routes through the IPsec tunnel to Global Secure Access. Global Secure Access receives a SYN-ACK for a session with no corresponding SYN, so it drops the packet and the connection fails. This condition makes the VM's public IP address unusable for inbound connections.
 

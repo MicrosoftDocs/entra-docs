@@ -33,7 +33,7 @@ When you build this functionality in Azure, your organization can better underst
 | **[Virtual network](#create-a-virtual-network)** | Your on-premises IP address space |
 | **[Virtual network gateway](#create-a-virtual-network-gateway)** | Your on-premises router, sometimes referred to as customer premises equipment (CPE) |
 | **[Local network gateway](#create-local-network-gateway)** | The Microsoft gateway that your router (Azure virtual network gateway) creates an IPsec tunnel to |
-| **[Connection](#create-site-to-site-s2s-vpn-connection)** | IPsec VPN tunnel created between the virtual network gateway and local network gateway |
+| **[Connection](#create-a-site-to-site-s2s-vpn-connection)** | IPsec VPN tunnel created between the virtual network gateway and local network gateway |
 | **[Virtual machine](#verify-connectivity)** | Client devices on your on-premises network |
 
 In this article, use the following default values. You can change these settings to fit your own requirements.
@@ -53,7 +53,7 @@ Before creating your virtual resources, you need a resource group and virtual ne
 1. [Create a virtual network gateway](#create-a-virtual-network-gateway) (Azure portal)
 1. [Create a remote network with device links](#create-a-remote-network) (Microsoft Entra admin center)
 1. [Create local network gateway](#create-local-network-gateway) (Azure portal)
-1. [Create site-to-site (S2S) VPN connection](#create-site-to-site-s2s-vpn-connection) (Azure portal)
+1. [Create a site-to-site (S2S) VPN connection](#create-a-site-to-site-s2s-vpn-connection) (Azure portal)
 1. [Verify connectivity](#verify-connectivity) (Both)
 
 ## Create a resource group
