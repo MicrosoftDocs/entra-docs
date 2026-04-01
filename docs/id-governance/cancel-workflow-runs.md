@@ -33,7 +33,11 @@ To cancel a workflow run:
 
 1. Select the workflow that contains the run you want to cancel.
 
+    :::image type="content" source="media/cancel-workflow-runs/workflow-list.png" alt-text="Screenshot of the Lifecycle workflows page showing a list of workflows in the Microsoft Entra admin center.":::
+
 1. On the workflow page, select **Workflow History**.
+
+    :::image type="content" source="media/cancel-workflow-runs/workflow-history-cancel.png" alt-text="Screenshot of the workflow overview page with the Workflow history link highlighted in the left navigation.":::
 
 1. Select the **Runs** tab.
 
