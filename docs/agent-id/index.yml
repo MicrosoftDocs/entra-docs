@@ -45,7 +45,7 @@ sections:
         imageUrl: media/index/hero-image-entra-copilot-chat.png
         links:
           - componentType: link
-            url: ./identity-platform/create-delete-agent-identities.md
+            url: ./id-governance/agent-id-governance-overview?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
             text: Get started
       - componentType: card
         title: Protect agent access to resources
