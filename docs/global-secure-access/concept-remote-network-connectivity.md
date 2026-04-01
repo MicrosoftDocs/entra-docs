@@ -107,7 +107,6 @@ The total bandwidth you're allocated is determined by the number of licenses pur
 - Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
 - If more bandwidth is required, additional bandwidth is available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
 
-
 #### Examples of Allocated Bandwidth per tenant: 
 
 **Tenant 1:**
