@@ -8,9 +8,6 @@ items:
     topicHref: /entra/agent-id/index
     items:
     - name: Identity professionals
-      tocHref: /entra/agent-id/identity-platform/
-      topicHref: /entra/agent-id/identity-professional/index
-    - name: Identity professionals
       tocHref: /entra/id-governance/
       topicHref: /entra/agent-id/identity-professional/index
     - name: Identity professionals
