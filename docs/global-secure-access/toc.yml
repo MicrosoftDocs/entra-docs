@@ -45,6 +45,21 @@ items:
       href: tutorial-internet-access-application-discovery.md
     - name: Configure file controls
       href: tutorial-internet-access-file-controls.md
+  - name: Private Access labs
+    expanded: true
+    items:
+    - name: Get started
+      href: tutorial-private-access-introduction.md
+    - name: Set up the connector
+      href: tutorial-private-access-connector-setup.md
+    - name: Enable traffic forwarding
+      href: tutorial-private-access-enable-traffic-forwarding.md
+    - name: VPN replacement with Quick Access
+      href: tutorial-private-access-vpn-replacement.md
+    - name: Per-app access segmentation
+      href: tutorial-private-access-app-segmentation.md
+    - name: Intelligent Local Access
+      href: tutorial-private-access-intelligent-local-access.md
 - name: Samples
   expanded: false
   items: 
