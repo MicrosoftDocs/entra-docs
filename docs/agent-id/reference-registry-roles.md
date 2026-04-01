@@ -12,11 +12,11 @@ ms.reviewer: paparth
 
 In the Microsoft Entra Agent Registry, you can assign roles to administrators or other security principals to manage agent instances, agent card manifests, and agent collections. These roles provide the permissions required to perform specific actions, such as creating or updating agent instances, creating agent card manifests, or managing collection membership.
 
-This article lists the Agent Registry roles you can assign to manage Agent Registry resources. Agent Registry also allows the [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) built-in Microsoft Entra role.
+This article lists the Agent Registry roles you can assign to manage Agent Registry resources. Agent Registry also allows the [Agent Registry Administrator](../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) built-in Microsoft Entra role.
 
 ## Assign Agent Registry roles
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
 1. Browse to **Entra ID** > **Agent ID** > **Agent collections** > **Custom** > **Manage role assignments**.
 1. Under **Access Control**, select **Role Assignments** > **Create Role Assignment**.
 1. Choose **Select principal** > select **Role** > **Resource scope** > **Next**. Role assignment to Groups isn't supported. If you're choosing Resource scope as specific resource, select Resource type and enter Resource ID as the corresponding objectId.

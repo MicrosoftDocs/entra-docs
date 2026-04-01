@@ -31,7 +31,7 @@ For example, the creation of an agent identity user appears as a "Create user" a
 
 A new complex sign-in log resource type, `agentSignIn`, now appears in the Microsoft Entra sign-in logs. This resource type contains properties about the agent, such as if the agent is an app or an instance of an app. Because agents can sign in with either user-delegated or app-only permissions, their sign-ins might appear across each of the four sign-in log types. The new sign-in log resource type is available in the Microsoft Entra admin center and the Microsoft Graph API.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use the following filter options to view agent sign-ins:
    - **Agent type**: Choose from **Agent ID user**, **Agent Identity**, **Agent Identity Blueprint** or **Not Agentic**

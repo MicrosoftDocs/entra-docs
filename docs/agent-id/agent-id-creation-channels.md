@@ -112,5 +112,5 @@ All agent identity creations are recorded in Microsoft Entra audit logs. Using a
 
 ## Related content
 
-- [Create and delete agent identities](../identity-platform/create-delete-agent-identities.md)
-- [Create agent identity blueprints](../identity-platform/create-blueprint.md)
+- [Create and delete agent identities](identity-platform/create-delete-agent-identities.md)
+- [Create agent identity blueprints](identity-platform/create-blueprint.md)

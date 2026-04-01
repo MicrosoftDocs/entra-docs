@@ -31,7 +31,7 @@ Use delegated permissions when your interactive agent needs to act on behalf of 
 
 Use application permissions when your autonomous agent runs without a user present and requires app-only access. For example, to read all users' profiles. App permissions appear in the token's roles claim.
 
-For more information, see [permissions and consent overview](../../identity-platform/permissions-consent-overview.md)
+For more information, see [permissions and consent overview](identity-platform/permissions-consent-overview.md)
 
 ### How consent works
 

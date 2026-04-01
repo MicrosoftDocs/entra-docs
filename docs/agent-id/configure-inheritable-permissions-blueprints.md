@@ -189,6 +189,6 @@ HTTP/1.1 204 No Content
 
 ## Related content
 
-- [Create an agent identity from your blueprint](../identity-platform/create-delete-agent-identities.md)
+- [Create an agent identity from your blueprint](identity-platform/create-delete-agent-identities.md)
 - [Microsoft Entra roles and permissions for agent identities](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents)
-- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](../../identity-platform/v2-protocols.md)
+- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](identity-platform/v2-protocols.md)

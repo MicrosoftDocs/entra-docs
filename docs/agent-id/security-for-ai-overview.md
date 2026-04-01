@@ -73,11 +73,11 @@ Microsoft Entra Agent ID enables organizations to:
 
 - **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships, enabling centralized metadata management and automatic organization into security collections.
 
-- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](../identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
+- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
 
 - **Log and monitor agent activity**: All authentication and actions performed by agents are logged in Microsoft Entra ID and viewable through the Microsoft Entra admin center for compliance and audit purposes.
 
-For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](../identity-platform/what-are-agent-identities.md).
+For more information about agent identities as identity constructs, including how they differ from application and user identities, see [What are agent identities?](identity-platform/what-are-agent-identities.md).
 
 ## Control AI access with Zero Trust
 
@@ -138,4 +138,4 @@ For more information, see [Secure Web and AI Gateway for agents](/entra/global-s
 ## Related content
 
 - [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
-- [What is the Microsoft Entra Agent identity platform?](../identity-platform/what-is-agent-id-platform.md)
+- [What is the Microsoft Entra Agent identity platform?](identity-platform/what-is-agent-id-platform.md)

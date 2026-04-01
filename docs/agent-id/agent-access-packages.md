@@ -15,7 +15,7 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## License requirements
 
-[!INCLUDE [entra-agent-id-license](../../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ To use access packages for agents, the IT admin first configures a new access pa
 
 As agent identities and service principals can't be added through access packages to application roles, SAP roles, or SharePoint Online site roles, you won't be able to reuse an existing access package that contains any of those resource roles. Instead, create a new access package.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
     > [!TIP]
     > If you'll be adding OAuth API permissions or directory roles to the access package as resource roles, then you will need to be a Global Administrator.
