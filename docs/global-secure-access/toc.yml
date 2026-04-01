@@ -63,6 +63,8 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
+  - name: Shadow AI discovery
+    href: concept-shadow-ai-discovery.md
   - name: External user access
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
@@ -233,6 +235,8 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: MCP traffic logs
+        href: how-to-view-model-context-protocol-logging.md
       - name: Deployment logs
         href: how-to-view-deployment-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs

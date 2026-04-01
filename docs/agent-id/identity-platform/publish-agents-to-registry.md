@@ -241,5 +241,5 @@ Content-Type: application/json
 
 ## Related content
 
-- [What are agent IDs?](what-is-agent-id.md)
+- [What are agent IDs?](what-are-agent-identities.md)
 - [Agent Registry collections](agent-registry-collections.md)

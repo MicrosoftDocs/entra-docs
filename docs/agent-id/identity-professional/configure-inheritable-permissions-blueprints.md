@@ -104,8 +104,10 @@ Content-Type: application/json
 OData-Version: 4.0
 
 {
+  "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
   "inheritableScopes": {
-    "@odata.type": "microsoft.graph.allAllowedScopes"
+    "@odata.type": "#microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
   }
 }
 ```
