@@ -89,11 +89,11 @@ The iOS device (phone or tablet) must meet the following requirements:
 
 1. Enter a name for the profile, and then select **Next**.
 
-1. Set **Connection Type** to **Custom VPN**.  
+1. Set **Connection type** to **Custom VPN**.  
 
 1. In the **Base VPN** section, enter the following information:
 
-    - **Connection Name**: **Microsoft Defender for Endpoint**
+    - **Connection name**: **Microsoft Defender for Endpoint**
     - **VPN server address**: **127.0.0.1**
     - **Authentication method**: **Username and password**
     - **Split tunneling**: **Disable**
@@ -123,9 +123,9 @@ The iOS device (phone or tablet) must meet the following requirements:
       |  |`2` |The Private Access toggle is visible and defaults to an enabled state. The user can enable or disable it. |
       |  |`3` |The Private Access toggle is visible but unavailable, and it defaults to an enabled state. The user *can't* disable Private Access. |
 
-1. For **Type of Automatic VPN**, select **On-demand VPN**.
+1. For **Type of automatic VPN**, select **On-demand VPN**.
 
-1. For **On Demand Rules**, select **Add** and then:
+1. For **On-demand rules**, select **Add** and then:
 
     - Set **I want to do the following** to **Connect VPN**.
     - Set **I want to restrict** to **All domains**.
@@ -157,10 +157,9 @@ You can enable or disable the Global Secure Access client for iOS by setting the
 
 ## Troubleshooting
 
-- The Global Secure Access tile doesn't appear in the Defender app after you onboard the tenant:
-  - Restart the Defender app.
-- Access to the Private Access application shows a connection timeout error after a successful interactive sign-in:
-  - Reload the application (or refresh the web browser).
+If the Global Secure Access tile doesn't appear in the Defender app after you onboard the tenant, restart the Defender app.
+
+If access to the Private Access application shows a connection timeout error after a successful interactive sign-in, reload the application (or refresh the web browser).
 
 ## Related content
 

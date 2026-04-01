@@ -48,7 +48,7 @@ The Global Secure Access client for Android supports deployment in these Android
 
 The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. These scenarios, known as *Global Secure Access only mode*, require enabling a traffic forwarding profile and configuring the app based on the vendor documentation.
 
-When you're configuring through a non-Microsoft MDM, use the following key/value pairs in the managed app configuration:
+When you're configuring through a non-Microsoft MDM solution, use the following key/value pairs in the managed app configuration:
 
 | Configuration key                | Value | Details |
 |----------------------------------|-------|---------|
@@ -67,7 +67,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
     1. Enter a **Name** value.
     1. Set **Platform** to **Android Enterprise**.
-    1. Set **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
+    1. Set **Profile Type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
     1. Set **Targeted app** to **Microsoft Defender**.
 
     :::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Basics tab in the pane for creating an app configuration policy." lightbox="media/how-to-install-android-client/create-policy-basics-expanded.png":::
@@ -78,7 +78,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
     1. Set **Configuration settings format** to **Use configuration designer**.
     1. Select the **+ Add** button.
-    1. In the search field, type **global** and select the Global Secure Access configuration keys listed in the following table.
+    1. In the search box, type **global** and select the Global Secure Access configuration keys listed in the following table.
     1. Set the appropriate values for each configuration key according to the following table.
 
     > [!NOTE]

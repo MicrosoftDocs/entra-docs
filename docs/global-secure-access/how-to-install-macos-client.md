@@ -26,7 +26,7 @@ This article describes how to download and install the Global Secure Access clie
 
 ## Download the client
 
-You can download the most current version of the Global Secure Access client from the Microsoft Entra admin center.
+You can download the most current version of the Global Secure Access client from the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
@@ -77,7 +77,7 @@ To deploy the Global Secure Access client's .pkg file through Microsoft Intune a
 > [!IMPORTANT]
 > Previous versions of these instructions referenced the deprecated **Extensions** profile type. If your organization previously deployed system extensions by using the **Extensions** profile, migrate to the **Allowed System Extensions** setting in **Settings catalog** as described in the following steps.
 
-The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDMs.
+The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDM solutions.
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 
@@ -118,7 +118,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 ### Allow a transparent application proxy through MDM
 
-The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDMs.
+The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management). You can adapt them for different MDM solutions.
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 
@@ -261,7 +261,7 @@ To manually uninstall the Global Secure Access client, use either of the followi
 - Run the **Uninstall Global Secure Access Client** application.
 - Run the following command: `sudo /Applications/GlobalSecureAccessClient/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`.
 
-If you're using an MDM, uninstall the client with the MDM.
+If you're using an MDM solution, uninstall the client with the MDM solution.
 
 ## Client actions
 
@@ -273,10 +273,10 @@ To view the available client menu actions, right-click the Global Secure Access 
 |---------|---------|
 |**Disable**   |Disables the client until you enable it again. When you disable the client, you're prompted to enter a business justification and reenter your sign-in credentials. The business justification is logged.   |
 |**Enable**   |Enables the client.   |
-|**Pause**   |Pauses the client for either 10 minutes, until you resume the client, or until the device is restarted. When you pause the client, you're prompted to enter a business justification and reenter your sign-in credentials. The business justification is logged.   |
+|**Pause**   |Pauses the client for 10 minutes, until you resume the client, or until the device is restarted. When you pause the client, you're prompted to enter a business justification and reenter your sign-in credentials. The business justification is logged.   |
 |**Resume**   |Resumes the paused client.   |
 |**Restart**   |Restarts the client.   |
-|**Collect logs**   |Collects client logs and archives them in a .zip file to share with Microsoft Support for investigation.   |
+|**Collect Logs**   |Collects client logs and archives them in a .zip file to share with Microsoft Support for investigation.   |
 |**Settings**   |Opens the **Settings and Advanced diagnostics** tool.   |
 |**About**   |Shows information about the product's version.   |
 
@@ -312,7 +312,7 @@ In the **Settings** window, you can set configurations and perform some advanced
 |---------|---------|
 |**Get Latest Policy**     |Downloads and applies the latest forwarding profile for your organization.         |
 |**Clear cached data**     |Deletes the client's internal cached data related to authentication, forwarding profile, FQDNs, and IPs.         |
-|**Export Logs**     |Exports logs and configuration files related to the client to a .zip file.         |
+|**Export Logs**     |Exports client-related logs and configuration files to a .zip file.         |
 |**Advanced Diagnostics Tool**     |Opens an advanced tool to monitor and troubleshoot the client's behavior.         |
 
 :::image type="content" source="media/how-to-install-macos-client/macos-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Troubleshooting tab.":::

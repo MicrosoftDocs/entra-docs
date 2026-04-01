@@ -200,11 +200,11 @@ For detailed guidance, see [Add a Win32 app to Intune](/mem/intune/apps/apps-win
 
 1. Select **Apps** > **All apps** > **Add**.
 
-1. On **Select app type**, under **Other** app types, select **Windows app (Win32)**.
+1. On **Select app type**, under **Other app types**, select **Windows app (Win32)**.
 
-1. Select **Select**. The **Add app** steps appear.
+1. Choose **Select**. The **Add app** steps appear.
 
-1. Select **Select app package file**.
+1. Choose **Select app package file**.
 
 1. Select the folder icon. Open the `.intunewin` file that you created in the previous section.
 
@@ -212,14 +212,14 @@ For detailed guidance, see [Add a Win32 app to Intune](/mem/intune/apps/apps-win
 
 1. Select **OK**.
 
-1. On the **App Information** tab, configure these fields:
+1. On the **App information** tab, configure these values:
 
    - **Name**: Enter a name for the client app.
    - **Description**: Enter a description.
    - **Publisher**: Enter **Microsoft**.
    - **App Version** *(optional)*: Enter the client version.
 
-1. Use the default values in the remaining fields.
+1. Use the default values for the remaining settings.
 
    :::image type="content" source="media/how-to-install-windows-client/add-app.png" alt-text="Screenshot of adding app information to install a client." lightbox="media/how-to-install-windows-client/add-app.png":::
 
@@ -235,9 +235,9 @@ For detailed guidance, see [Add a Win32 app to Intune](/mem/intune/apps/apps-win
 
      |Return code|Code type|
      |-----------|---------|
-     |0|**Success**|
-     |3010|**Soft reboot**|
-     |1618|**Retry**|
+     |0|Success|
+     |3010|Soft reboot|
+     |1618|Retry|
 
    :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of the Program tab for configuring installation parameters." lightbox="media/how-to-install-windows-client/program-install-parameters.png":::
 
@@ -261,9 +261,9 @@ For detailed guidance, see [Add a Win32 app to Intune](/mem/intune/apps/apps-win
 
 1. Select **Add**.
 
-1. Under **Rule type**, select **File**.
+1. For **Rule type**, select **File**.
 
-1. Configure these fields:
+1. Configure these values:
 
    - **Path**: Enter `C:\Program Files\Global Secure Access Client\TrayApp`.
    - **File or folder**: Enter `GlobalSecureAccessClient.exe`.
@@ -280,7 +280,7 @@ For detailed guidance, see [Add a Win32 app to Intune](/mem/intune/apps/apps-win
 
 1. Under **Required**, select **+Add group**. Select a group of users or devices, and then choose **Select**.
 
-1. Set the **Restart grace period** to **Enabled** to avoid disrupting users with an abrupt device reboot.
+1. Set **Restart grace period** to **Enabled** to avoid disrupting users with an abrupt device reboot.
 
     :::image type="content" source="media/how-to-install-windows-client/restart-grace-period.png" alt-text="Screenshot of the Assignments tab that shows the required groups and the restart grace period set to Enabled." lightbox="media/how-to-install-windows-client/restart-grace-period.png":::
 
@@ -480,6 +480,8 @@ Make sure to configure these scripts to run in 64-bit PowerShell.
 
 :::image type="content" source="media/how-to-install-windows-client/run-script-64-bit.png" alt-text="Screenshot of the tab for creating custom script settings, with the option for running the script in 64-bit PowerShell set to Yes.":::
 
+Select the PowerShell scripts to expand them.
+
 <details>
   <summary>PowerShell detection script</summary>
 
@@ -623,7 +625,7 @@ $utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($false)
 
 1. The connection icon turns green. Hover over it to open the client status notification, which should show as **Connected**.
 
-:::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot that shows a connected client.":::
+   :::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot that shows a connected client.":::
 
 ## Client interface
 
@@ -631,9 +633,11 @@ To open the Global Secure Access client interface, select the Global Secure Acce
 
 ### Connections view
 
-The **Connections** view shows the client status and the channels configured for the client.
+The **Connections** view shows the client status and the channels configured for the client. These actions are available to you:
 
-To disable the client, select the **Disable** button. You can use the information in the **Additional details** section to troubleshoot the client connection. Select **Show more details** to expand the section and view more information.
+- To disable the client, select the **Disable** button.
+- To troubleshoot the client connection, you can use the information in the **Additional details** section.
+- To expand the section and view more information, select **Show more details**.
 
 :::image type="content" source="media/how-to-install-windows-client/client-interface-connections.png" alt-text="Screenshot of the Connections view of the Global Secure Access client interface.":::
 
@@ -664,10 +668,10 @@ To view the available actions on the client menu, select the Global Secure Acces
 
 |Action   |Description  |
 |---------|-------------|
-|**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with a Microsoft Entra user other than the one that you used to sign in to Windows. To make this action available, update the appropriate [client registry keys](#client-registry-keys).         |
-|**Disable**   |Select the **Disable** action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
+|**Sign out**   |*Hidden by default*. Use this action when you need to sign in to the Global Secure Access client with a Microsoft Entra user other than the one that you used to sign in to Windows. To make this action available, update the appropriate [client registry keys](#client-registry-keys).         |
+|**Disable**   |Select this action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
 |**Enable**   |Select this action to enable the Global Secure Access client.         |
-|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you want to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [client registry keys](#client-registry-keys).         |
+|**Disable Private Access**   |*Hidden by default*. Use this action when you want to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [client registry keys](#client-registry-keys).         |
 |**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a .zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`. You can also collect client logs on Windows by entering the following command in the command prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
 |**Advanced diagnostics**   |Select this action to open the advanced diagnostics and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
@@ -745,7 +749,7 @@ Administrators can prevent nonprivileged users on the Windows device from disabl
 |Value  |Type  |Data  |Description  |
 |-------|------|------|-------------|
 |`RestrictNonPrivilegedUsers`  |`REG_DWORD`  |`0x0`  |Nonprivileged users on the Windows device can disable and enable the client.  |
-|`RestrictNonPrivilegedUsers`  |`REG_DWORD`  |`0x1`  |Nonprivileged users on the Windows device are restricted from disabling and enabling the client. A User Account Control (UAC) prompt requires local administrator credentials for disable and enable options. The administrator can also hide the disable button (see [Hide or unhide menu buttons in the system tray](#hide-or-unhide-menu-buttons-in-the-system-tray)).  |
+|`RestrictNonPrivilegedUsers`  |`REG_DWORD`  |`0x1`  |Nonprivileged users on the Windows device are restricted from disabling and enabling the client. A User Account Control (UAC) prompt requires local administrator credentials for disable and enable options. The administrator can also hide the **Disable** button (see [Hide or unhide menu buttons in the system tray](#hide-or-unhide-menu-buttons-in-the-system-tray)).  |
 
 ### Disable or enable Private Access on the client
 
@@ -767,6 +771,8 @@ Administrators can disable or enable Private Access for the user by setting the 
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-access-enabled.png" alt-text="Screenshot of the Registry Editor with the IsPrivateAccessDisabledByUser registry key highlighted.":::
   
 If the registry value doesn't exist, the default value is `0x0` and Private Access is enabled.
+
+<a name = "hide-or-unhide-system-tray-menu-buttons"></a>
 
 ### Hide or unhide menu buttons in the system tray
 
