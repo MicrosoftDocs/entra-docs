@@ -29,7 +29,7 @@ items:
     - name: Authentication and authorization
       items:
       - name: Authorization in Entra Agent ID
-        href: identity-platform/authorization-agent-id.md
+        href: authorization-agent-id.md
       - name: Tokens in Microsoft agent identity platform
         href: identity-platform/agent-tokens.md
       - name: Authentication protocols for agents
@@ -89,25 +89,25 @@ items:
       - name: Autonomous agents
         items:
         - name: Request tokens for autonomous agents
-          href: autonomous-agent-request-tokens.md
+          href: identity-platform/autonomous-agent-request-tokens.md
         - name: Grant app permissions to an autonomous agent
-          href: autonomous-agent-request-authorization-entra-admin.md
+          href: identity-platform/autonomous-agent-request-authorization-entra-admin.md
         - name: Request agent's user account tokens
-          href: autonomous-agent-request-agent-user-tokens.md
+          href: identity-platform/autonomous-agent-request-agent-user-tokens.md
       - name: Interactive agents
         items:
         - name: Authenticate users and request user tokens
-          href: interactive-agent-authentication-authorization-flow.md
+          href: identity-platform/interactive-agent-authentication-authorization-flow.md
     - name: Integrate with APIs and services
       items:
       - name: Configure SDK for agent identities
-        href: microsoft-entra-sdk-for-agent-identities.md
+        href: identity-platform/microsoft-entra-sdk-for-agent-identities.md
       - name: Call Microsoft Graph API
-        href: call-api-microsoft-graph.md
+        href: identity-platform/call-api-microsoft-graph.md
       - name: Call custom APIs
-        href: call-api-custom.md
+        href: identity-platform/call-api-custom.md
       - name: Call Azure services
-        href: call-api-azure-services.md
+        href: identity-platform/call-api-azure-services.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
@@ -120,7 +120,7 @@ items:
     - name: Disable agent identities
       href: disable-agent-identities.md
     - name: View and manage agent identities
-      href: agent-lists.md
+      href: identity-platform/agent-lists.md
     - name: Manage agents in end user experience
       href: manage-agent.md
 
@@ -128,7 +128,7 @@ items:
   - name: Reference
     items:
     - name: Token claims reference
-      href: agent-token-claims.md
+      href: identity-platform/agent-token-claims.md
     - name: Microsoft Graph API
       items:
       - name: Permissions reference
@@ -140,23 +140,23 @@ items:
       - name: Agent identity API
         href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Known issues
-        href: preview-known-issues.md
+        href: identity-platform/preview-known-issues.md
       - name: Error codes reference
-        href: error-codes.md
+        href: identity-platform/error-codes.md
     - name: Agent registry
       items:
       - name: Agent Registry convergence
-        href: agent-registry-convergence.md
+        href: identity-platform/agent-registry-convergence.md
       - name: What is the agent registry?
-        href: what-is-agent-registry.md
+        href: identity-platform/what-is-agent-registry.md
       - name: Register agents with Agent Registry
-        href: publish-agents-to-registry.md
+        href: identity-platform/publish-agents-to-registry.md
       - name: Agent Registry collections
-        href: agent-registry-collections.md
+        href: identity-platform/agent-registry-collections.md
       - name: Manage agent collections
-        href: agent-registry-manage-collections.md
+        href: identity-platform/agent-registry-manage-collections.md
       - name: Agent communication
-        href: registry-agent-to-agent-protocol.md
+        href: identity-platform/registry-agent-to-agent-protocol.md
       - name: Manage Agent Registry-only agents
         href: manage-agents-without-identity.md
       - name: Agent Registry roles
