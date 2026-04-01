@@ -4,7 +4,6 @@ description: Learn how to cancel in-progress or queued workflow runs in Lifecycl
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 04/01/2026
-ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
 
 #customer intent: As a Lifecycle Workflows Administrator, I want to cancel in-progress or queued workflow runs so that I can prevent or mitigate the impact of automation errors and misconfigurations.
