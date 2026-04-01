@@ -20,7 +20,7 @@ Global Secure Access supports network content filtering through content policies
 The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
 > [!NOTE]
-> Basic content policy (block or allow by file MIME type) is generally available. The **Scan with Purview** action in content policies is currently in preview.
+> Basic content policy (block or allow by file MIME type) is generally available. The **Scan with Purview** action in content policies is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ### High-level architecture
 :::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
