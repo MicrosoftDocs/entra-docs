@@ -169,6 +169,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
+1. Select **Discover identities** in the provisioning overview to [discover accounts](~/identity/app-provisioning/how-to-account-discovery.md) in SAP Cloud Identity Services. This option will only be visible for organizations with [Entra ID Governance](~/entra/id-governance/licensing-fundamentals#features-by-license) licenses.  
+
 1. Under the **Mappings** section, select **Provision Microsoft Entra ID users** or **Provision Microsoft Entra ID groups** depending on your scenario.
 
 	![Screenshot of the user and group mappings for SAP Cloud Identity Services.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mappings.png)
