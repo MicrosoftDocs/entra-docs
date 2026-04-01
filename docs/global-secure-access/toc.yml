@@ -238,7 +238,7 @@ items:
         href: how-to-configure-cloud-firewall.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
-      - name: Network content filtering
+      - name: Configure network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
