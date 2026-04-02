@@ -1,11 +1,11 @@
 ---
 title: "Configure a custom authentication extension for account recovery"
 description: Learn how to configure a custom authentication extension for account recovery in Microsoft Entra ID. You can customize the account recovery experience using a REST API.
-author: cilwerner
+author: justinha
 manager: pmwongera
-ms.author: cwerner
+ms.author: justinha
 ms.date: 04/02/2026
-ms.reviewer: stsoneff
+ms.reviewer: rogulati
 ms.service: identity-platform
 ms.topic: how-to
 #Customer intent: As a developer, I want to configure a custom authentication extension for account recovery, so that I can customize the recovery experience for users in my organization.
@@ -33,9 +33,7 @@ The account recovery custom authentication extension supports the following scen
 
 ## Step 1: Create an Azure Function
 
-[!INCLUDE [portal-include](./includes/custom-extension-azure-function.md)]
-
-Create an HTTP trigger function that handles the account recovery event. The function receives a JSON payload from Microsoft Entra ID with details about the recovery request and returns a response indicating whether to continue or block the recovery.
+Create an Azure Function app and an HTTP trigger function to handle the account recovery event. For more information about creating Azure Functions for custom authentication extensions, see [Create a REST API for a token issuance start event in Azure Functions](custom-extension-tokenissuancestart-setup.md). The same general approach applies to account recovery extensions.
 
 ## Step 2: Register a custom authentication extension
 
@@ -94,9 +92,7 @@ Configure the application registration for the custom authentication extension t
 
 ## Step 4: Protect your Azure Function
 
-The custom authentication extension for account recovery uses server-to-server authentication. Ensure your Azure Function validates the incoming token.
-
-[!INCLUDE [portal-include](./includes/custom-extension-protect-function.md)]
+The custom authentication extension for account recovery uses server-to-server authentication. Ensure your Azure Function validates the incoming token. For detailed steps on protecting your Azure Function, see [Protect your Azure Function](custom-extension-tokenissuancestart-configuration.md?tabs=microsoft-graph%2Cworkforce-tenant#step-4-protect-your-azure-function).
 
 ## Step 5: Test the extension
 
