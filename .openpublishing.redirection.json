@@ -3279,6 +3279,11 @@
       "source_path": "docs/agent-id/identity-platform/what-is-agent-id.md",
       "redirect_url": "/entra/agent-id/identity-platform/what-are-agent-identities",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/index.yml",
+      "redirect_url": "/entra/agent-id/toc",
+      "redirect_document_id": true
     }
   ]
 }
