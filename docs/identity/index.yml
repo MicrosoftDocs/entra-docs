@@ -78,7 +78,7 @@ productDirectory:
       url: ./domain-services/overview.md
     - title: Tenant Governance
       imageSrc: ./media/index/domain-services.svg
-      summary:"Discover related tenants, manage cross-tenant governance relationships, monitor configuration drift, and control secure tenant creation."
+      summary: "Discover related tenants, manage cross-tenant governance relationships, monitor configuration drift, and control secure tenant creation."
       url: ../id-governance/tenant-governance/overview.md
     - title: Azure Active Directory B2C
       imageSrc: ./media/index/azure-ad-b2c.svg
