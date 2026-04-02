@@ -45,7 +45,7 @@ sections:
         imageUrl: media/index/hero-image-entra-copilot-chat.png
         links:
           - componentType: link
-            url: ../id-governance/agent-id-governance-overview?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+            url: ../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
             text: Get started
       - componentType: card
         title: Protect agent access to resources
