@@ -10,10 +10,6 @@ items:
     - name: Agent ID
       tocHref: /entra/agent-id/
       topicHref: /entra/agent-id/
-      items:
-      - name: Developers
-        tocHref: /entra/agent-id/identity-platform/
-        topicHref: /entra/agent-id/identity-platform/
     - name: Architecture
       tocHref: /entra/architecture/
       topicHref: /entra/architecture/
