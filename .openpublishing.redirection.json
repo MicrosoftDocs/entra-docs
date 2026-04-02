@@ -3281,6 +3281,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/agent-id/identity-platform/index.yml",
+      "redirect_url": "/entra/agent-id/index",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/agent-id/identity-professional/index.yml",
       "redirect_url": "/entra/agent-id/index",
       "redirect_document_id": true
