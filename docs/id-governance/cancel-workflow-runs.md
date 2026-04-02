@@ -51,12 +51,6 @@ To cancel a workflow run:
 
 1. Select **Cancel**.
 
-## Known issues
-
-<!-- TODO: Confirm with the engineering team whether these issues are still active at the time of publication. -->
-
-- Filtering by the **Cancellation Requested** status isn't yet supported.
-
 ## Related content
 
 - [Lifecycle Workflows history](lifecycle-workflow-history.md)
