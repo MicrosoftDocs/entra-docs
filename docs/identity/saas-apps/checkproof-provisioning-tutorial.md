@@ -46,13 +46,13 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Navigate to **Settings** > **Company Settings**.
 
-	![provision](media/checkproof-provisioning-tutorial/settings.png)
+	![Screenshot of provision.](media/checkproof-provisioning-tutorial/settings.png)
 
 3. Select the **PROVISIONING** tab.
 
 4. The **Provisioning URL** and **Provisioning Secret Token** is displayed. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your CheckProof application.
 
-	![tenant](media/checkproof-provisioning-tutorial/token.png)
+	![Screenshot of tenant.](media/checkproof-provisioning-tutorial/token.png)
 
 <a name='step-3-add-checkproof-from-the-azure-ad-application-gallery'></a>
 
@@ -75,19 +75,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **CheckProof**.
 
-	![The CheckProof link in the Applications list](common/all-applications.png)
+	![Screenshot of the CheckProof link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, input your CheckProof Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to CheckProof. If the connection fails, ensure your CheckProof account has the required admin permissions and try again.
 

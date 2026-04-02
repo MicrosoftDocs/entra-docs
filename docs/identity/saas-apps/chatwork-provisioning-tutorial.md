@@ -48,13 +48,13 @@ Access the Chatwork admin portal as a user with admin rights. If you have admini
 
 **User Synchronization** page contains notes and restrictions for using the user provisioning feature. Check all the items.
 
-![User Synchronization page](media/chatwork-provisioning-tutorial/chatwork-sync.png)
+![Screenshot of User Synchronization page.](media/chatwork-provisioning-tutorial/chatwork-sync.png)
 
 ### 2. Configure the SAML login settings.
 
 If you're using Microsoft Entra ID and user provisioning, login to Chatwork using your Microsoft Entra ID. 
 
-![Configure the SAML login settings](media/chatwork-provisioning-tutorial/chatwork-saml.png)
+![Screenshot of Configure the SAML login settings.](media/chatwork-provisioning-tutorial/chatwork-saml.png)
 
 ### 3. Check the checkboxes after accepting the various items.
 
@@ -62,11 +62,11 @@ Check the checkboxes after accepting the cautions and restrictions for using the
 
 When all the items are checked, select the **Enable user synchronization** button.
 
-![Accepting the various items and enable user synchronization button](media/chatwork-provisioning-tutorial/chatwork-accept.png)
+![Screenshot of accepting the various items and enable user synchronization button.](media/chatwork-provisioning-tutorial/chatwork-accept.png)
 
 When the user provisioning function is enabled, a message appears at the top of the page indicating that it has been enabled.
 
-![Enabled message](media/chatwork-provisioning-tutorial/chatwork-enable.png)
+![Screenshot of enabled message.](media/chatwork-provisioning-tutorial/chatwork-enable.png)
 
 <a name='step-3-add-chatwork-from-the-azure-ad-application-gallery'></a>
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of the Provisioning tab with automatic configuration option.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, input your Chatwork Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Chatwork. If the connection fails, ensure your Chatwork account has the required admin permissions and try again.
 

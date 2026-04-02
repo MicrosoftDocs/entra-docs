@@ -48,7 +48,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 5. Select **Create token**.
 
-![Create token](media/cinode-provisioning-tutorial/token.png)
+![Screenshot of Create token.](media/cinode-provisioning-tutorial/token.png)
 
 6. Copy the **Tenant URL** and the **Token**. These values are entered in the Provisioning tab of your Cinode application.
 
@@ -73,19 +73,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Cinode**.
 
-	![The Cinode link in the Applications list](common/all-applications.png)
+	![Screenshot of the Cinode link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, input your Cinode Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cinode. If the connection fails, ensure your Cinode account has the required admin permissions and try again.
 
