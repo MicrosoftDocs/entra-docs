@@ -267,7 +267,7 @@ For more information see [Overview of the Tenant Configuration Management APIs](
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Starting in April 2026, the Authentication Methods Policy Update audit log entry has been updated to improve readability and clarity. Previously, audit logs included the full authentication methods policy payload in both the old and new values, even when only a small number of settings were changed. With this update, audit log entries now surface only the specific properties that were modified, along with their corresponding old and new values.
+Starting in April 2026, the Authentication Methods Policy Update and Authentication Methods Policy Reset audit log activities has been updated to improve readability and clarity. Previously, audit logs included the full authentication methods policy payload in both the old and new values, even when only a small number of settings were changed. With this update, audit log entries now surface only the specific properties that were modified, along with their corresponding old and new values.
 
 Policy-wide updates—such as Registration Campaigns and System‑preferred MFA—may continue to include the full policy payload. The activity name and triggering events remain unchanged. This update affects formatting only and does not change policy behavior. For more information, see: [Core Directory](../identity/monitoring-health/reference-audit-activities.md#core-directory)
 
