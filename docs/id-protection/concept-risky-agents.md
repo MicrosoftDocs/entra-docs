@@ -80,3 +80,9 @@ You can also query risky agents [using the Microsoft Graph API](/graph/use-the-a
 
    - `riskyAgents`
    - `agentRiskDetections`
+
+## Related content
+
+- [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
+- [Conditional Access for Agent ID](../identity/conditional-access/agent-id.md) - Enforce Zero Trust policies across agent identity token acquisition flows.
+- [Governing Agent Identities](../id-governance/agent-id-governance-overview.md) - Preventive governance approaches including access packages and sponsor oversight.

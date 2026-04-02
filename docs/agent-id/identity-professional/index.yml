@@ -23,6 +23,19 @@ landingContent:
           - text: Microsoft Entra Agent ID overview
             url: what-is-microsoft-entra-agent-id.md
 
+  - title: Manage and monitor agents
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Manage agent identities in your organization
+            url: manage-agent-identities-organization.md
+          - text: View and manage agent identities (Admin portal)
+            url: ../identity-platform/agent-lists.md
+          - text: Manage agents in end user experience (Owner/Sponsor portal)
+            url: ../identity-platform/manage-agent.md
+          - text: Agent identity sponsor tasks in Lifecycle Workflows
+            url: ../../id-governance/agent-sponsor-tasks.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+
   - title: Protect agent access to resources
     linkLists:
       - linkListType: concept

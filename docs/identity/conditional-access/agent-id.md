@@ -8,6 +8,8 @@ ms.reviewer: kvenkit
 ---
 # Conditional Access for Agent ID (Preview)
 
+For a high-level guide to managing agent identities across your organization, see [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization).
+
 ## Overview
 
 Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it evaluates requests for human users or workload identities, but with agent-specific logic.
@@ -208,10 +210,11 @@ Admins can use the Sign-in logs to investigate why a Conditional Access policy d
 
 ## Related content
 
+- [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
 - [Conditional Access template policies](concept-conditional-access-policy-common.md)
 - [Conditional Access: Users, groups, agents, and workload identities](concept-conditional-access-users-groups.md)
 - [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)
 - [Conditional Access: Grant](concept-conditional-access-grant.md)
 - [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai-overview.md)
-- [Microsoft Entra ID Protection and agents](/entra/id-protection/concept-risky-agents)
+- [Microsoft Entra ID Protection and agents](/entra/id-protection/concept-risky-agents) - Detect and respond to risky agent behavior.

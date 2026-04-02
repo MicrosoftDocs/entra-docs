@@ -11,6 +11,16 @@ items:
 - name: How to guides
   expanded: true
   items:
+  - name: Agent management
+    items:
+        - name: Manage agent identities in your organization
+          href: manage-agent-identities-organization.md
+        - name: View and manage agent identities
+          href: /entra/agent-id/identity-platform/agent-lists?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+        - name: View and manage agent blueprints
+          href: /entra/agent-id/identity-platform/manage-agent-blueprint?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
+        - name: Manage agents in end user experience
+          href: /entra/agent-id/identity-platform/manage-agent?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Access management
     items:
         - name: Authorization in Microsoft Entra Agent ID

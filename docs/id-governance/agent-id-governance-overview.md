@@ -82,5 +82,8 @@ One of the most important parts of governing agent identities is making sure tha
 
 ## Related content
 
+- [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
+- [Agent identity sponsor tasks in Lifecycle Workflows](agent-sponsor-tasks.md) - Automate sponsor change notifications using Lifecycle Workflows.
+- [Manage agents in end user experience](/entra/agent-id/identity-platform/manage-agent) - Sponsors can manage their agents from the My Account portal.
 - [What is entitlement management?](entitlement-management-overview.md)
 - [What is Microsoft Entra ID Governance?](identity-governance-overview.md)

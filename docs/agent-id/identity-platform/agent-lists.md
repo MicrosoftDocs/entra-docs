@@ -22,11 +22,11 @@ Microsoft Entra admin center provides you with a centralized interface to view a
 
 To view agent identities in your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). No admin role is required for viewing.
 
 To manage agent identities in your Microsoft Entra tenant, you need:
 
-- Agent ID Administrator or Cloud Application Administrator role
+- Agent ID Administrator or Cloud Application Administrator role.
 - You can also manage your agent identity if you're the owner of that agent identity, with or without the above roles.
 
 ## View a list of agent identities
@@ -77,3 +77,10 @@ To disable an agent identity while in this page:
 1. Select the **Disable** button in the toolbar.
 
 You might also navigate into a single agent identity, and disable it there.
+
+## Related content
+
+- [Manage agent identities in your organization](../identity-professional/manage-agent-identities-organization.md) - Overview of agent identity management including roles, lifecycle, and governance.
+- [Manage agents in end user experience](manage-agent.md) - Owners and sponsors can manage their agents from the My Account portal without admin roles.
+- [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id) - Enforce Conditional Access policies across all agent identities or specific groups.
+- [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md)

@@ -38,9 +38,9 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 1.	Select an agent to view details about it.
     :::image type="content" source="media/manage-agent/manage-agent-view.png" alt-text="Screenshot of the manage agent view.":::
 
-## Enable or Disable an agent
+## Enable or disable an agent
 
-1. To disable an agent, select it from the list and choose **Disable agent**. This blocks users from being able to access it and prevents it from being issued tokens.
+1. To disable an agent, select it from the list and choose **Disable agent**. This blocks users from being able to access it and prevents it from being issued tokens. This has the same effect as disabling the agent from the admin center.
 
 1. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens.
 
@@ -48,6 +48,9 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 
 [!INCLUDE [entitlement-management-request-behalf-agent](../../includes/governance/entitlement-management-request-behalf-agent.md)]
 
-## Next Steps
+## Next steps
 
+- [Manage agent identities in your organization](../identity-professional/manage-agent-identities-organization.md) - Full agent management overview including roles, security, and governance.
+- [View and manage agent identities in your tenant](agent-lists.md) - For organization-wide agent management tasks including inventory, filtering, and bulk disable.
 - If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](../../id-governance/entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
+- [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview) - Understand sponsor responsibilities and access package governance.

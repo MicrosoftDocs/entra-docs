@@ -37,6 +37,8 @@ additionalContent:
         ## CARD 1 ######################
         - title: Manage agents
           links:
+            - text: Manage agent identities in your organization
+              url: ./identity-professional/manage-agent-identities-organization.md
             - text: What is Microsoft Entra Agent ID?
               url: ./identity-professional/what-is-microsoft-entra-agent-id.md
             - text: Owners, sponsors, and managers

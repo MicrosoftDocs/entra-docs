@@ -10,14 +10,14 @@ ms.date: 10/25/2025
 
 # Agent identity sponsor tasks in Lifecycle Workflows (Preview)
 
-
-Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. 
+Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. For an overview of agent identity governance including access packages and sponsor responsibilities, see [Governing Agent Identities](agent-id-governance-overview.md).
 
 Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent identities:
 
 - [Send email to manager about sponsorship changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes-preview)
 - [Send email to cosponsors about sponsor changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes-preview)
 
+These tasks ensure continuity of sponsorship when an agent's sponsor changes roles or leaves the organization. Both tasks are classified as **mover and leaver** tasks and are available only under mover or leaver workflow templates.
 
 This article explains how to configure Lifecycle Workflows to streamline agent identity sponsor governance.
 
@@ -46,5 +46,7 @@ To create a workflow that notifies the manager or cosponsors of an existing agen
 
 ## Next step
 
+- [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization) - See how sponsor governance fits into overall agent management.
+- [Governing Agent Identities](agent-id-governance-overview.md) - Overview of agent identity governance including access packages and sponsor responsibilities.
 - [Write concepts](manage-workflow-tasks.md)
 - [Manage workflow properties](manage-workflow-properties.md)
