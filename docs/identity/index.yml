@@ -76,6 +76,10 @@ productDirectory:
       imageSrc: ./media/index/domain-services.svg
       summary: "Move legacy apps to managed domains in the cloud while preserving user accounts, groups, and access."
       url: ./domain-services/overview.md
+    - title: Tenant Governance
+      imageSrc:
+      summary: "Discover related tenants, manage cross-tenant governance relationships, monitor configuration drift, and control secure tenant creation."
+      url: ../id-governance/tenant-governance/overview.md
     - title: Azure Active Directory B2C
       imageSrc: ./media/index/azure-ad-b2c.svg
       summary: "Business to consumers identity and access management for your app."
