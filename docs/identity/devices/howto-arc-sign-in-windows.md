@@ -12,7 +12,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 # Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of on-premises Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later. You can then centrally control and enforce Azure role-based access control policies that allow or deny access to the servers.
+Organizations can improve the security of on-premises Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later and Windows 11 24H2 or later. You can then centrally control and enforce Azure role-based access control policies that allow or deny access to the servers.
 
 This article shows you how to create and configure an Azure Arc-enabled Windows Server and sign in by using Microsoft Entra ID-based authentication.
 
