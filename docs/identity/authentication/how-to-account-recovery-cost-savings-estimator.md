@@ -2,7 +2,7 @@
 title: How to Estimate Cost Savings for Account Recovery (Preview) in the Microsoft Entra Admin Center
 description: Learn how to estimate cost savings for account recovery (preview) in the Microsoft Entra Admin Center
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 04/02/2026
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and test Microsoft Entra ID account recovery for end users.

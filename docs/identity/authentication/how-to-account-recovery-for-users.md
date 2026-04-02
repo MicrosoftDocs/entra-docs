@@ -2,7 +2,7 @@
 title: How End Users Can Set Up Account Recovery for Microsoft Entra ID
 description: How end users can set up account recovery for Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 04/02/2026
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how end users can set up account recovery for Microsoft Entra ID.
