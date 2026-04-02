@@ -17,6 +17,9 @@ Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features includ
 
 The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
 
+> [!TIP]
+> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
+
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
@@ -220,4 +223,5 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 ## Next steps
 
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)

@@ -411,12 +411,6 @@ Follow the instructions in the articles listed in the table.
 | [Self-review your access](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
 | [Complete an access review](../id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
 
-## Access Review Agent (Preview)
-
-The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It proactively scans for active access reviews in your tenant that are flagged for processing by the agent. The agent then analyzes identified reviews by gathering extra insights, and generates a recommendation (approve / deny) and a justification summary for each decision. Once the agent analyzes the recommendations and corresponding justification summaries, it's able to guide reviewers, in natural language, through the review process in Microsoft Teams. As the agent guides them through the review, they're able to review the agent's reasoning behind the recommendations, ask questions in the context of the review itself, and finally make their own informed decision.
-
-After the Access Review Agent is started, you must flag access reviews to be processed by the Access Review Agent. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
-
 ## Use the Access Reviews API
 
 To interact with and manage reviewable resources, see [Microsoft Graph API methods](/graph/api/resources/accessreviewsv2-overview) and [role and application permission authorization checks](/graph/api/resources/accessreviewsv2-overview). The access reviews methods in the Microsoft Graph API are available for both application and user contexts. When you run scripts in the application context, the account used to run the API (the service principle) must be granted the AccessReview.Read.All permission to query access reviews information.
