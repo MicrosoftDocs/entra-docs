@@ -3141,6 +3141,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/identity/conditional-access/policy-all-users-copilot-ai-security.md",
+      "redirect_url": "/entra/identity/conditional-access/plan-conditional-access",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
       "redirect_document_id": true
