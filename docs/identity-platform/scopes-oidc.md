@@ -173,6 +173,22 @@ In this case, a trailing slash on the resource URI means the slash must be prese
 
 In general, if you verify that the token is being issued, and if the token is being rejected by the API that should accept it, consider adding a second forward slash and trying again.
 
+## Preauthorization
+
+Preauthorization enables a resource application owner to grant permissions to client apps, without requiring users to see a consent prompt for the set of permissions that are preauthorized. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs like Microsoft Graph.
+
+In most cases, customer-facing applications in Microsoft Entra External ID will require preauthorization since they are intended for users who are not part of the organization and who would not be able to consent to the permissions requested by the application. Preauthorization ensures that these users can access the application without being prompted for consent.
+
+Preauthorized permissions will always appear in the relevant token claims. Not all preauthorized permissions can be granted in all tenants.
+
+### Internal service-to-service permissions
+
+Microsoft services calling other Microsoft services on your behalf may be authorized using preauthorization. Preauthorized permissions appear in token claims, similarly to permissions granted through other methods like consent.
+
+In some cases, these requests will use preauthorized permissions that are created specifically for service-to-service requests and are not available to external developers. These permissions may also grant access to internal business data or other sensitive content which is not exposed in public APIs. Following internal naming conventions, some of these service-to-service permissions may have claim values like "MS-<permission>" or "_A.AA".
+
+Customers who see such values in token claims should know that this is expected behavior and represents normal access between Microsoft services, as described in our Terms of Service.
+
 ## See also
 
 - [Requesting permissions through consent in the identity platform](consent-types-developer.md)

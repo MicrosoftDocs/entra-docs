@@ -87,9 +87,7 @@ Permission requests that contain custom application scopes aren't considered hig
 
 ### Preauthorization
 
-Preauthorization enables a resource application owner to grant permissions without requiring users to see a consent prompt for the same set of permissions that are preauthorized. This way, a preauthorized application doesn't ask users to consent to permissions. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs like Microsoft Graph.
-
-In most cases customer facing applications in Microsoft Entra External ID will all require preauthorization since they are intended for users who are not part of the organization and who would not be able to consent to the permissions requested by the application. Preauthorization ensures that these users can access the application without being prompted for consent.
+Preauthorization enables a resource application owner to grant permissions to client apps, without requiring users to see a consent prompt for the set of permissions that are preauthorized. For more information about preauthorization, see [Scopes and Permissions](scopes-oidc.md#preauthorization).
 
 ## Other authorization systems
 
