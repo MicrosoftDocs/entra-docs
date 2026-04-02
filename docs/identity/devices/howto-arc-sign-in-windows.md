@@ -37,6 +37,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 
 This feature currently supports the following Windows Server distributions:
 
+- Windows 11 24H2 or later installed.
 - Windows Server 2025 or later installed with Desktop Experience.
 
 This feature is now available in the following Azure clouds:
@@ -105,7 +106,7 @@ To successfully authenticate and sign in to an Azure Arc-enabled Windows Server 
 - **Client device requirements**: The device initiating the RDP connection must be:
   - Microsoft Entra joined to the same directory as the Arc-enabled server, or
   - Microsoft Entra hybrid joined to the same directory, or
-  - Microsoft Entra registered to the same directory.
+  - Microsoft Entra registered (Windows 10 20H1 or later) to the same directory.
 
 - **Password restrictions**: Temporary passwords cannot be used for remote desktop connections. Users with temporary passwords must change their password through another method (such as the Azure portal) before attempting to connect.
 
@@ -322,7 +323,7 @@ Exit code -2145648607 translates to `DSREG_AUTOJOIN_DISC_FAILED`. The extension 
 
 Exit code 51 translates to "This extension isn't supported on this operating system."
 
-The AADLoginForWindows extension is intended to be installed only on Arc-enabled Windows Servers with Windows Server 2022 or later operating systems. Ensure that your version of Windows Server is supported. If it isn't supported, uninstall the extension.
+The AADLoginForWindows extension is intended to be installed only on Arc-enabled Windows Servers with Windows Server 2025 or Windows 11 24H2 on Arc-enabled Windows Server. Ensure that your version of Windows Server is supported. If it isn't supported, uninstall the extension.
 
 ## Troubleshoot sign-in problems
 
@@ -379,7 +380,7 @@ If you configure a legacy per-user **Enabled/Enforced Microsoft Entra multifacto
 
 If Windows Hello for Business isn't an option, configure a Conditional Access policy that excludes the Microsoft Azure Windows Virtual Machine Sign-in app. To learn more about Windows Hello for Business, see [Windows Hello for Business overview](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
+Support for biometric authentication with RDP was added in Windows 10 version 1809. Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
 
 Share your feedback about this feature or report problems with using it on the [Microsoft Entra feedback forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
