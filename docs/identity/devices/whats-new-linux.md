@@ -213,6 +213,13 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 - Added GetDeviceState support with TLS 1.3 in the C++ broker.
 - Handled `sem_timedwait` failures due to signals in `Msai::SecureStorageLock` and `Msoa::SystemMutex`.
 
+#### Assets
+- Ubuntu-24.04 - [microsoft-identity-broker_3.0.0-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.0-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_3.0.0-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.0-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-3.0.0-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-3.0.0-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-3.0.0-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.0-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-3.0.0-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.0-1.el8.x86_64.rpm)
+
 ### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
 
 - (Linux) Fix smartcard dialogs layout for GTK4
