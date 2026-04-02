@@ -17,20 +17,18 @@ With a server in staging mode, you can make changes to the configuration and pre
 
 Staging mode can be used for several scenarios, including:
 
-* High availability.
+* Fault tolerance.
 * Test and deploy new configuration changes.
 * Introduce a new server and decommission the old.
 
-During installation, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
+During installation or via the wizard, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
 
-> [!NOTE]
-> Suppose you have a Microsoft Entra Connect with Password Hash Synchronization feature enabled. When you enable staging mode, the server stops synchronizing password changes from on-premises AD. When you disable staging mode, the server resumes synchronizing password changes from where it last left off. If the server is left in staging mode for an extended period of time, it can take a while for the server to synchronize all password changes that had occurred during the time period.
->
->
+When staging mode is disabled, password sync resumes from the last recorded watermark. If the server was left in staging mode for an extended period of time, password sync might need a long catch-up period (possibly many hours or longer in large environments) to process all the password changes that occurred while it was in staging mode. During catch-up, newly changed passwords don't work in Microsoft Entra ID immediately because they are processed only after the backlog is completed. If business impact is high (for example, in a case of a failover), consider from time to time promoting the staging server to active temporarily and keeping it active until password sync catch-up completes (preferably during off-peak hours), so that future role switches have a smaller backlog of password changes to process. To confirm that password sync is progressing during catch-up, monitor the server’s application event logs for ongoing activity (for example, Event IDs 654/656 indicating batch processing). You may also see per-user success events (for example, Event ID 657) that can help you validate that password changes are being processed.
 
-You can still force an export by using the synchronization service manager.
-
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure.
+> [!WARNING]
+> Password sync catch-up can take an extended period of time after disabling staging mode. **Do not restart the sync services during catch-up** — stopping the service can cause PHS to resume from an earlier watermark when it starts again, which increases the time to become current.
+> 
+A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. In staging mode, you can still force an export by using the synchronization service manager.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 
