@@ -152,6 +152,8 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Enable MFA
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Add social sign-in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -166,6 +168,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Enable MFA
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Add social sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js
@@ -265,6 +269,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: /entra/identity-platform/tutorial-native-authentication-android-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add SMS OTP sign-in
@@ -290,6 +296,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add email OTP sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Register email strong authentication
                   href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Add SMS OTP sign-in
