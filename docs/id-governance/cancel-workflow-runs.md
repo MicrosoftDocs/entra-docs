@@ -55,7 +55,6 @@ To cancel a workflow run:
 
 <!-- TODO: Confirm with the engineering team whether these issues are still active at the time of publication. -->
 
-- The notification shows as successful.
 - Filtering by the **Cancellation Requested** status isn't yet supported.
 
 ## Related content
