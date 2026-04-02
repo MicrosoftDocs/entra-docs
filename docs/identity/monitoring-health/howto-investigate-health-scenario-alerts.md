@@ -2,7 +2,8 @@
 title: How to investigate Health monitoring alerts (preview)
 description: Learn how to investigate Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 ms.topic: how-to
-ms.date: 02/09/2026
+ms.date: 04/02/2026
+ai-usage: ai-assisted
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.
@@ -95,6 +96,21 @@ From the selected scenario, you have several options to investigate:
     - The equivalent action using the Microsoft Graph API is to update the alert status to `resolved`.
 
     :::image type="content" source="media/howto-investigate-health-scenario-alerts/mark-alert-as.png" alt-text="Screenshot of the alert page with the Mark alert as menu highlighted." lightbox="media/howto-investigate-health-scenario-alerts/mark-alert-as-expanded.png":::
+
+#### Investigate alerts with the health alert investigator (preview)
+
+The health alert investigator is a Copilot skill embedded within monitoring alerts. It allows you to investigate health alerts directly from the alert page, performing correlation analysis to identify actionable issues within your tenant. Unlike other Copilot skills, the health alert investigator isn't accessed through the Copilot chat. Instead, you access it through the diagnostics tools on the alert page.
+
+> [!NOTE]
+> Both the existing diagnostic tools and the health alert investigator are available during the transition to the new experience.
+
+To use the health alert investigator:
+
+1. From the active alert page, select the **Copilot** button to launch the health alert investigator.
+
+1. The health alert investigator performs a correlation analysis across the relevant signals and affected entities for the alert.
+
+1. Review the results provided by the investigator, which include a summary of identified issues and recommended actions to resolve the root cause.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
