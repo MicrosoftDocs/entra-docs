@@ -42,6 +42,8 @@ Depending on your organization's Conditional Access policies, users may be asked
 *   Use a specific authentication method, such as a phishing-resistant credential
 *   Be on a compliant device or connect from a trusted network location
 *   Satisfy other requirements defined in the policy
+
+This appears as a standard Conditional Access prompt during the setup process — the same experience users already see during sign-in.
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
