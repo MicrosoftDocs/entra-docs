@@ -62,6 +62,12 @@ Review your Conditional Access policies for possible impact before enforcement r
 1.  Check the **Users and groups** scope to understand which users are affected.
 1.  Consider whether users setting up a new device for the first time can satisfy your policy requirements. If your policy requires methods users may not have during initial provisioning, you may need to adjust conditions or add exclusions.
 1.  Enable **report-only mode** on relevant policies to understand the impact before enforcement begins.
+
+Enforcement begins rolling out in late April 2026 and becomes the default for all tenants in **May 2026**.
+
+
+---
+
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
