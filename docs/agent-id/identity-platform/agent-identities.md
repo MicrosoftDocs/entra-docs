@@ -3,9 +3,8 @@ title: Overview of agent identities in Microsoft Entra
 description: Learn about agent identities in Microsoft Entra ID, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent identities are in Microsoft Entra ID, how they differ from application and human identities, and why my organization needs them so that I can deploy AI agents securely in our Microsoft Entra environment.
@@ -21,9 +20,7 @@ Agent identities can be used to:
 - Receive incoming access tokens issued by Microsoft Entra ID. The audience of the access token is the agent identity.
 - Request user tokens from Microsoft Entra ID for an authenticated user. The subject of the token is a user, while the actor is the agent identity.
 
-## Prerequisites
-
-[Agent identity blueprints](agent-blueprint.md)
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
 ## Anatomy of an agent identity
 
@@ -33,7 +30,7 @@ An account used by an AI agent is referred to as an **agent identity**. Much lik
 
 - **Identifier**. Each agent identity has an `id` (also known as object ID), such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. Microsoft Entra generates the `id` and uniquely identifies the account within a Microsoft Entra tenant.
 
-- **Credentials**. Agent identities don't have passwords, but have other forms of credentials they can use to authenticate.
+- **Credentials**. Agent identities don't have credentials of their own. They rely on the agent identity blueprint to acquire tokens on their behalf.
 
 - **Display name**. An agent identity's display name is surfaced in many experiences such as the Microsoft Entra admin center, Azure portal, Teams, Outlook, and more. It's the human-friendly name of an agent and can be changed.
 
@@ -41,20 +38,19 @@ An account used by an AI agent is referred to as an **agent identity**. Much lik
 
 - **Blueprint**. All agent identities are created from a reusable template called an agent identity blueprint. The agent identity blueprint establishes the kind of agent and records metadata shared across all agent identities of a common kind.
 
-- **Agent user (optional)**. Some agents need access to systems that strictly require a Microsoft Entra user account be used for authentication. In these cases, an agent can be given a second account, called an **agent user**. This second account is a user account in the Microsoft Entra tenant that is decorated as an AI agent. It has a different `id` than the agent identity, but a 1:1 relationship is always established between an agent identity and its agent user.
+- **Agent's user account (optional)**. Some agents need access to systems that strictly require a Microsoft Entra user account be used for authentication. In these cases, an agent can be given a second account, called an **agent's user account**. This second account is a user account in the Microsoft Entra tenant that is decorated as an AI agent. It has a different `id` than the agent identity, but a 1:1 relationship is always established between an agent identity and its agent's user account.
 
 These are the basic components of an agent identity that enable secure authentication and authorization. The full object schema of an agent identity is available in Microsoft Graph reference documentation.
 
-## Credentials for agent identities
+## Authorizing agent identities
 
-Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions.
+Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers such as the object ID and the app ID, which always have the same value and can be reliably used for authentication and authorization decisions.
 
-Unlike human users, AI agents don't use passwords, Short Message Service (SMS), passkeys, or authenticator apps for authentication. Instead, agent identities use credentials types that are usable by software systems. These credential types include:
+Unlike human users, AI agents don't use passwords, Short Message Service (SMS), passkeys, or authenticator apps for authentication. Agent identities don't have credentials of their own. They only *authenticate* using [federated identity credentials (FIC)](/graph/api/resources/federatedidentitycredentials-overview) issued by the agent identity blueprint. *The blueprint holds credentials* that it uses to acquire tokens on behalf of agent identities. Credentials do *not* reside on the agent identity. These credential types on the blueprint include:
 
-- Managed identities, for AI agents that run on Azure (most secure).
-- Federated identity credentials, for AI agents that run on Kubernetes or other cloud providers.
-- Certificates / cryptographic keys.
-- Client secrets.
+- Federated identity credentials
+- Certificates / cryptographic keys
+- Client secrets
 
 Agent identities can only be issued tokens in the Microsoft Entra tenant where they're created. They can't access resources or APIs in other tenants.
 

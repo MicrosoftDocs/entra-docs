@@ -1,8 +1,8 @@
 ---
 title: How to use the remote network health logs
-description: Learn how to check the health of your remote networks with the Global Secure Access remote network health logs.
+description: "Access and analyze IPsec tunnel and BGP health logs for remote networks using the Microsoft Entra admin center, Microsoft Graph API, or Log Analytics."
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/25/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -10,6 +10,8 @@ ms.custom: sfi-image-nochange
 ---
 
 # What are remote network health logs?
+
+## Overview
 
 Remote networks, such as a branch office, rely on customer premises equipment (CPE) to connect users in those locations to the online resources and services they need. Users expect that CPE to function so they can do their work. To keep everyone connected, you need to ensure the health of the IPSec tunnel and the Border Gateway Protocol (BGP) route advertisement. This long-running tunnel and routing information are the keys to your remote network health.
 
@@ -39,7 +41,7 @@ To view Remote network health logs in Microsoft Entra admin center:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Monitor** > **Remote network health logs**.
 
-    ![Screenshot of the Remote network health logs.](media/how-to-remote-network-health-logs/remote-network-health-logs.png)
+    ![Screenshot that shows the Remote network health logs.](media/how-to-remote-network-health-logs/remote-network-health-logs.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -122,7 +124,7 @@ The basic steps to configure diagnostic settings are as follows:
 
 1. Select the `RemoteNetworkHealthLogs` (and any other logs) you want to include.
 
-    ![Screenshot of the Microsoft Entra diagnostic settings page.](media/how-to-remote-network-health-logs/diagnostic-settings-remote-network-logs.png)
+    ![Screenshot that shows the Microsoft Entra diagnostic settings page.](media/how-to-remote-network-health-logs/diagnostic-settings-remote-network-logs.png)
 
 1. Select the destinations you want to send the logs to.
 

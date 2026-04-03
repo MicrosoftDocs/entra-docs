@@ -1728,7 +1728,7 @@
       - name: Lexmark cloud services
         href: lexmark-cloud-services-tutorial.md
       - name: Lexmark cloud services oidc
-        href: lexmark-cloud-services-oidc-tutorial.md      
+        href: lexmark-cloud-services-oidc-tutorial.md
       - name: M-Files
         href: m-files-tutorial.md
       - name: Mail Luck!
@@ -2706,7 +2706,9 @@
       - name: Stonebranch Universal Automation Center (SaaS Cloud)
         href: stonebranch-universal-automation-center-saas-cloud-tutorial.md
       - name: Stormboard
-        href: stormboard-tutorial.md
+        href: stormboard-tutorial.md    
+      - name: Stormshield Network Security (SNS)
+        href: stormshield-network-security-tutorial.md
       - name: Striim Cloud
         href: striim-cloud-tutorial.md
       - name: Striim Platform
@@ -3600,6 +3602,10 @@
         href: lawvu-provisioning-tutorial.md
       - name: LDAP directory
         href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: Lexmark Cloud Services (SAML) 
+        href: lexmark-cloud-services-provisioning-saml-tutorial.md
+      - name: Lexmark Cloud Services (OIDC)
+        href: lexmark-cloud-services-provisioning-oidc-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS

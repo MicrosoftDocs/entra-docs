@@ -3,12 +3,8 @@ title: Configure Genesys Cloud for Azure for automatic user provisioning with Mi
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Genesys Cloud for Azure.
 
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/20/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Genesys Cloud for Azure so that I can streamline the user management process and ensure that users have the appropriate access to Genesys Cloud for Azure.
@@ -72,33 +68,35 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Diagram that shows Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Genesys Cloud for Azure**.
 
-	![The Genesys Cloud for Azure link in the Applications list](common/all-applications.png)
+	![Diagram that shows the Genesys Cloud for Azure link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Genesys Cloud for Azure API URL and Oauth Token in the **Tenant URL** and **Secret Token** fields respectively. The API URL is structured as `{{API Url}}/api/v2/scim/v2`, using the API URL for your PureCloud region from the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/index.html). Select **Test Connection** to ensure Microsoft Entra ID can connect to Genesys Cloud for Azure. If the connection fails, ensure your Genesys Cloud for Azure account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Genesys Cloud for Azure API URL and Oauth Token in the **Tenant URL** and **Secret Token** fields respectively. The API URL is structured as `{{API Url}}/api/v2/scim/v2`, using the API URL for your PureCloud region from the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/index.html). Select **Test Connection** to ensure Microsoft Entra ID can connect to Genesys Cloud for Azure. If the connection fails, ensure your Genesys Cloud for Azure account has Admin permissions and try again.
 
- 	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
+	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Genesys Cloud for Azure**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Genesys Cloud for Azure for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Genesys Cloud for Azure API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Genesys Cloud for Azure for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Genesys Cloud for Azure API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
      |Attribute|Type|Supported for filtering|Required by Genesys Cloud for Azure|
      |---|---|---|---|
@@ -123,9 +121,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	 |urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq ‘ringcentral’].value|String|	 
 	 |urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq ‘zoomphone].value|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Genesys Cloud for Azure**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Genesys Cloud for Azure for update operations. Select the **Save** button to commit any changes. Genesys Cloud for Azure doesn't support group creation or deletion and only supports updating of groups.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Genesys Cloud for Azure for update operations. Select the **Save** button to commit any changes. Genesys Cloud for Azure doesn't support group creation or deletion and only supports updating of groups.
 
       |Attribute|Type|Supported for filtering|Required by Genesys Cloud for Azure|
       |---|---|---|---|
@@ -133,21 +131,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Genesys Cloud for Azure, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Genesys Cloud for Azure by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

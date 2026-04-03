@@ -1,17 +1,14 @@
 ---
 title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
-author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 08/15/2025
-ms.author: barclayn
-
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?
+
+
+## Overview
 
 Microsoft Entra is a family of identity and network access products. It lets organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
 
@@ -25,7 +22,7 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 #### Microsoft Entra ID
 
-[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It's a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
+[Microsoft Entra ID](./what-is-entra.md) is the foundational product of Microsoft Entra. It's a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
 
 **Microsoft 365, Azure, or Dynamics CRM Online subscribers** already use Microsoft Entra ID as every Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start managing access to your integrated cloud apps.
 
@@ -87,9 +84,9 @@ In addition to human and device identities, workload identities such as applicat
 
 **For example**, GitHub Actions need a workload identity to access Azure subscriptions to automate, customize, and execute software development workflows.
 
-## Getting ready for Microsoft Entra
+## Get ready for Microsoft Entra
 
-Before organizations deploy Microsoft Entra, they should configure their infrastructure and processes according to security best practices and standards. The following articles provide architectural, deployment, and operational guidance to integrate Microsoft Entra successfully.
+Before you deploy Microsoft Entra, configure your infrastructure and processes according to security best practices and standards. The following articles provide architectural, deployment, and operational guidance to integrate Microsoft Entra successfully.
 
 - [Architecture](~/architecture/architecture.md)
 - [Deployment plans](~/architecture/deployment-plans.md)
@@ -97,13 +94,13 @@ Before organizations deploy Microsoft Entra, they should configure their infrast
 - [Operations guide](~/architecture/security-operations-introduction.md)
 - [Recommended security configurations](configure-security.md)
 
-### Licensing Microsoft Entra features
+### License Microsoft Entra features
 
 The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. Microsoft Entra is also part of licenses like [Microsoft 365](https://www.microsoft.com/microsoft-365/enterprise/microsoft365-plans-and-pricing) and [Enterprise Mobility + Security](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing). For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
-## Working with Microsoft Entra
+## Work with Microsoft Entra
 
-After organizations deploy Microsoft Entra, administrators can use the [Microsoft Entra admin center](#microsoft-entra-admin-center) and [Microsoft Graph API](#microsoft-graph-api) to manage the identity and network access resources, and developers can use the [Microsoft identity platform](#microsoft-identity-platform) to build identity and access applications. 
+After you deploy Microsoft Entra, you can use the [Microsoft Entra admin center](#microsoft-entra-admin-center) and [Microsoft Graph API](#microsoft-graph-api) to manage the identity and network access resources, and developers can use the [Microsoft identity platform](#microsoft-identity-platform) to build identity and access applications. 
 
 ### Microsoft Entra admin center
 
@@ -128,4 +125,4 @@ To start developing, see [Getting started](~/identity-platform/v2-overview.md#ge
 - Sign up for a [free 30-day Microsoft Entra ID P1 or P2 trial](https://azure.microsoft.com/trial/get-started-active-directory/).
 - [Learn the differences between Active Directory and Microsoft Entra ID](compare.md).
 - Learn how to get started with [Microsoft Entra ID for developers](~/identity-platform/index.yml).
-- Find definitions to related terms [Microsoft identity platform glossary](/entra/identity-platform/developer-glossary#tenant)
+- Find definitions of related terms [Microsoft identity platform glossary](/entra/identity-platform/developer-glossary#tenant).

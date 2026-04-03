@@ -2,11 +2,12 @@
 title: Require phishing-resistant multifactor authentication for Microsoft Entra administrator roles
 description: Create a Conditional Access policy requiring stronger authentication methods for highly privileged roles in your organization.
 ms.topic: how-to
-ms.date: 09/02/2025
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require phishing-resistant multifactor authentication for administrators
+
+## Overview
 
 Accounts with privileged administrative roles are frequent targets of attackers. Requiring phishing-resistant multifactor authentication (MFA) for these accounts reduces the risk of compromise.
 

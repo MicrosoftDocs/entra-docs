@@ -2,12 +2,15 @@
 title: "Resolve a 'Corporate app can't be accessed' error"
 description: Learn how to resolve common access issues with Microsoft Entra application proxy applications.
 ms.topic: troubleshooting
-ms.date: 05/01/2025
-ms.reviewer: asteen
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Troubleshoot "corporate app can't be accessed" error in application proxy
+
+
+## Overview
 
 This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error in a Microsoft Entra application proxy application.
 
@@ -27,7 +30,7 @@ A *gateway time-out* error occurs when the service tries to reach the connector 
 
 ## "Bad gateway" errors
 
-A *bad gateway* error indicates that the connector is can't reach the back-end application. Common mistakes that cause this error are:
+A *bad gateway* error indicates that the connector can't reach the back-end application. Common mistakes that cause this error are:
 
 - A typo or mistake is in the internal URL.
 - The root of the application isn't published. An example is publishing `http://expenses/reimbursement` but trying to access `http://expenses`.
@@ -38,7 +41,7 @@ A *bad gateway* error indicates that the connector is can't reach the back-end a
 
 If you see a *forbidden* error, the user isn't assigned to the application. This error might be either in Microsoft Entra ID or on the back-end application.
 
-To learn how to assign users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
+For more information about assigning users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
 
 ## Check the application's internal URL
 
@@ -58,7 +61,7 @@ Verify that all required ports are open. For required ports, see the open ports 
 
 Look for issues or errors with the connector itself. For more information about common errors, see [Application proxy troubleshooting](application-proxy-troubleshoot.md).
 
-Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](application-proxy-connectors.md).
+Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Common solutions
 
@@ -70,4 +73,4 @@ If the error persists, use the computer where the connector is installed to open
 
 ## Related content
 
-- [Understand Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)

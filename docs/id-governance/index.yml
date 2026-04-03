@@ -101,6 +101,26 @@ landingContent:
             url: lifecycle-workflow-tasks.md  
   
   # Card
+  - title: Govern tenants across your organization (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Entra Tenant Governance?
+            url: tenant-governance/overview.md
+      - linkListType: concept
+        links:
+          - text: Related tenants
+            url: tenant-governance/related-tenants.md
+          - text: Governance relationships
+            url: tenant-governance/governance-relationships.md
+          - text: Configuration management
+            url: tenant-governance/configuration-management.md
+      - linkListType: how-to-guide
+        links:
+          - text: Deploy Tenant Governance
+            url: tenant-governance/deployment-guide.md
+
+  # Card
   - title: Make users eligible for privileged roles
     linkLists:
       - linkListType: overview

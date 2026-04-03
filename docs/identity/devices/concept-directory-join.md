@@ -2,14 +2,9 @@
 title: What is a Microsoft Entra joined device?
 description: Microsoft Entra joined devices can help you to manage devices accessing resources in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -32,7 +27,7 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | (Public preview) Apple Automated Device Enrollment (applies to Apple devices only) |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
-|   | [Passwordless](../authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide), [Platform Credential for macOS (Public preview)](macos-psso.md) and FIDO2.0 security keys. |
+|   | [Passwordless](../authentication/concept-authentication-passkeys-fido2.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide), [Platform Credential for macOS (Public preview)](macos-psso.md) and FIDO2.0 security keys. |
 | **Device management** | Mobile Device Management (example: Microsoft Intune) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
 | **Key capabilities** | single sign-on (SSO) to both cloud and on-premises resources |

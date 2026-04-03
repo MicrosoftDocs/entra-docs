@@ -2,12 +2,9 @@
 title: Agent autonomous app OAuth flow - App-only protocol
 description: Learn how agent identities operate autonomously without user context using app-only protocol with OAuth 2.0 client credentials flows.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing autonomous agent scenarios, I want to understand the app-only protocol so that I can enable agents to act independently using client credentials flows.
 ---
@@ -71,4 +68,4 @@ The following is a sequence diagram for the app-only flow:
 
 - [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
 - [On-behalf-of flow in agents](./agent-on-behalf-of-oauth-flow.md)
-- [Agent user flow in agents](./agent-user-oauth-flow.md)
+- [Agent's user account flow in agents](./agent-user-oauth-flow.md)

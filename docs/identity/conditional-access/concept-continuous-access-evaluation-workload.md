@@ -1,9 +1,8 @@
 ---
 title: Continuous Access Evaluation for Workload Identities in Entra ID
 description: Learn how to enable continuous access evaluation for workload identities to enforce Conditional Access policies and instantly revoke tokens.
-ms.topic: article
-ms.date: 08/28/2025
-manager: dougeby
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: joroja
 ms.custom:
   - ai-gen-docs-bap
@@ -12,6 +11,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Continuous access evaluation for workload identities
+
+## Overview
 
 Continuous access evaluation (CAE) for [workload identities](~/workload-id/workload-identities-overview.md) improves your organization's security. It enforces Conditional Access location and risk policies in real time and instantly enforces token revocation events for workload identities. 
 
@@ -48,7 +49,7 @@ When a client's access to a resource is blocked because CAE is triggered, the cl
 Follow these steps to verify sign-in activity in the sign-in logs: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Service Principal Sign-ins**. Use filters to simplify the debugging process. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Service principal sign-ins**. Use filters to simplify the debugging process.
 1. Select an entry to view activity details. The **Continuous access evaluation** field shows whether a CAE token is issued for a specific sign-in attempt.
 
 ## Related content

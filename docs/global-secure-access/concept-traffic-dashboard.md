@@ -1,12 +1,14 @@
 ---
 title: Learn about the Global Secure Access Dashboard
-description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
+description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 12/08/2025
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ---
 
 # Global Secure Access dashboard
+
+## Overview
 
 The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
@@ -168,7 +170,7 @@ The **Alerts** widget shows a chart of alert counts by type and severity.
 
 ## No data available
 
-If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
+If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](quickstart-access-admin-center.md) guide to onboard your tenant.
 
 :::image type="content" source="media/concept-traffic-dashboard/no-data-available.png" alt-text="Screenshot of a widget with no data available.":::
 

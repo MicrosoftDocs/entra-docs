@@ -1,14 +1,17 @@
 ---
 title: Enable remote access to Power BI with Microsoft Entra application proxy
-description: Covers the basics about how to integrate an on-premises Power BI with Microsoft Entra application proxy.
+description: "Enable Power BI mobile app users to access Power BI Report Server and SQL Server Reporting Services from outside the corporate network using Microsoft Entra application proxy."
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: ashishj
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ms.custom: has-adal-ref
 ai-usage: ai-assisted
 ---
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
+
+
+## Overview
 
 This article discusses how to use Microsoft Entra application proxy to enable the Power BI mobile app to connect to Power BI Report Server (PBIRS) and SQL Server Reporting Services (SSRS) 2016 and later. Through this integration, users who are away from the corporate network can access their Power BI reports from the Power BI mobile app and be protected by Microsoft Entra authentication. This protection includes [security benefits](application-proxy-security.md#security-benefits) such as Conditional Access and multifactor authentication.
 
@@ -16,18 +19,18 @@ This article discusses how to use Microsoft Entra application proxy to enable th
 
 - Deploy Reporting Services in your environment.
 - Enable [Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
-- When possible, use the same internal and external domains for Power BI. To learn more about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
+- When possible, use the same internal and external domains for Power BI. For more information about custom domains, see [Working with custom domains in application proxy](how-to-configure-custom-domain.md).
 
 ## Step 1: Configure Kerberos Constrained Delegation (KCD)
 
-For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). The private network connector uses KCD to obtain a Windows token for a user, even if the user isn't signed into Windows directly. To learn more about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
+For on-premises applications that use Windows authentication, you can achieve single sign-on (SSO) with the Kerberos authentication protocol and a feature called Kerberos constrained delegation (KCD). The private network connector uses KCD to obtain a Windows token for a user, even if the user isn't signed into Windows directly. For more information about KCD, see [Kerberos Constrained Delegation Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)) and [Kerberos Constrained Delegation for single sign-on to your apps with application proxy](how-to-configure-sso-with-kcd.md).
 
 There isn’t much to configure on the Reporting Services side. A valid Service Principal Name (SPN) is required for proper Kerberos authentication to occur. Enable the Reporting Services server for `Negotiate` authentication.
 
 ### Configure the Service Principal Name (SPN)
 
 The SPN is a unique identifier for a service that uses Kerberos authentication. A proper HTTP SPN is required for the report server. For information on how to configure the proper Service Principal Name (SPN) for your report server, see [Register a Service Principal Name (SPN) for a Report Server](/sql/reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server).
-Verify the SPN was added by running the `Setspn` command with the `-L` option. To learn more about the command, see [Setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx).
+Verify the SPN was added by running the `Setspn` command with the `-L` option. For more information about the command, see [Setspn](/windows-server/administration/windows-commands/setspn).
 
 ### Enable Negotiate authentication
 
@@ -84,7 +87,7 @@ Now you're ready to configure Microsoft Entra application proxy.
 
    e. Select **Save** to save your changes.
 
-To finish setting up your application, go to **the Users and groups** section and assign users to access this application.
+To finish setting up your application, go to the **Users and groups** section and assign users to access this application.
 
 ## Step 3: Modify the reply Uniform Resource Identifier (URI) for the application
 
@@ -114,7 +117,7 @@ Configure the Application Registration that was automatically created in step 2.
 
 1. In the Power BI mobile app, connect to your Reporting Services instance. Enter the **External URL** for the application you published through application proxy.
 
-   ![Power BI mobile app with External URL](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
+   ![Screenshot that shows the Power BI mobile app with the External URL.](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
 2. Select **Connect**. The Microsoft Entra sign-in page loads.
 
@@ -137,7 +140,7 @@ You can use Microsoft Intune to manage the client apps that your company's workf
 
 If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the time-out setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end time-out to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
 
-Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
+Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on-premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
 
 ## Next steps
 

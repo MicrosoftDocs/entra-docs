@@ -1,11 +1,8 @@
 ---
 title: Known issues and gaps for Microsoft Entra Agent ID preview
 description: Learn about currently known issues and errors encountered when using the Microsoft Entra Agent ID preview.
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: troubleshooting-known-issue
-ms.date: 12/02/2025
+ms.date: 03/30/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand known issues and gaps in the Microsoft Entra Agent ID preview so that I can plan accordingly when deploying AI agents in my organization.
@@ -25,31 +22,19 @@ Microsoft Graph APIs support various relationships involving agent identities an
 
 **Resolution**: Use the existing APIs documented in Microsoft Graph reference docs and perform client side filtering using the `odata.type` property to filter results to Agent IDs.
 
-## Agent users
+## The agent's user account
 
-The following known issues and gaps relate to agent users.
+The following known issues and gaps relate to the agent's user account.
 
-### Clean up agent users
+### Clean up the agent's user account
 
-When an agent identity blueprint or agent identity is deleted, any agent users created using that blueprint or identity remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. 
+When an agent identity blueprint or agent identity is deleted, any agents' user accounts created using that blueprint or identity remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. 
 
-**Resolution**: Delete any orphaned agent users via Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
+**Resolution**: Delete any orphaned agents' user accounts via Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
 
 ## Roles and permissions for agent identity management
 
 The following known issues and gaps relate to roles and permissions for managing agent identities.
-
-### Global Reader can't list agent identities
-
-When querying Microsoft Graph APIs to list agent identities using the endpoint `GET https://graph.microsoft.com/beta/servicePrincipals/graph.agentIdentity`, users assigned the Global Reader role receive a `403 Unauthorized` response.
-
-**Resolution**: Use the endpoint `GET https://graph.microsoft.com/beta/servicePrincipals` instead to make the query.
-
-### Delegated permissions for agent identity creation
-
-There's currently no viable delegated permission for creating agent identities. 
-
-**Resolution**: Implementers must use application permissions to create agent identities.
 
 ### Directory.AccessAsUser.All causes other permissions to be ignored
 
@@ -69,11 +54,11 @@ You can't add agent identities, agent identity blueprints, and agent identity bl
 
 **Resolution**: Use the `owners` property of Agent IDs to limit the set of users who can manage these objects.
 
-### Updating photos for agent users
+### Updating photos for agents' user accounts
 
-The *Agent ID Administrator* role can't update photos for agent users.
+The *Agent ID Administrator* role can't update photos for agents' user accounts.
 
-**Resolution**: Use the *User Administrator* role to update photos for agent users.
+**Resolution**: Use the *User Administrator* role to update photos for agents' user accounts.
 
 ## Microsoft Entra admin center
 
@@ -105,18 +90,6 @@ The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/
 
 **Resolution**: Users can contact their Microsoft Entra ID tenant admins to request permissions be granted to an Agent ID.
 
-### Application permissions for agent identity blueprints
-
-You can't grant Microsoft Entra ID application permissions (app roles) to agent identity blueprint principals.
-
-**Resolution**: Grant application permissions to individual agent identities instead.
-
-### App role assignment to agent identity
-
-You can't assign Microsoft Entra ID app roles where the target resource of the role assignment is an agent identity.
-
-**Resolution**: Assign app roles using an agent identity blueprint principal as the target resource.
-
 ### Consents blocked by risk-based step-up
 
 User consents that are blocked by risk-based step-up have no mention of "risky" in the UX.
@@ -129,9 +102,7 @@ The following known issues and gaps relate to Microsoft Entra ID administration.
 
 ### Dynamic groups
 
-You can't add agent identities and agent users to Microsoft Entra ID groups with dynamic membership.
-
-**Resolution**: Add Agent IDs to security groups with fixed membership.
+You can't specify dynamic group rules to include or exclude agents' user accounts. Please use assigned groups to manage agents' user accounts' group memberships. 
 
 ## Monitoring and logs
 
@@ -142,9 +113,9 @@ The following known issues and gaps relate to monitoring and logs.
 Audit logs don't distinguish Agent IDs from other identities:
 
 - Operations on agent identities, agent identity blueprints, and agent identity blueprint principals are logged in the *ApplicationManagement* category.
-- Operations on agent users are logged in the *User Management* category.
+- Operations on agents' user accounts are logged in the *User Management* category.
 - Operations initiated by agent identities appear as service principals in audit logs.
-- Operations initiated by agent users appear as users in audit logs.
+- Operations initiated by agents' user accounts appear as users in audit logs.
 
 **Resolution**: Use the following workarounds to identify Agent ID-related activities in audit logs:
 
@@ -156,13 +127,30 @@ Audit logs don't distinguish Agent IDs from other identities:
 The Microsoft Graph activity logs don't distinguish Agent IDs from other identities:
 
 - Requests from agent identities are logged as applications, with the agent identity included in the *appID* column.
-- Requests from agent users are logged as users, with the `agentUser` ID in the *UserID* column.
+- Requests from agents' user accounts are logged as users, with the `agentUser` ID in the *UserID* column.
 
 **Resolution**: Join with the Microsoft Entra sign-in logs to determine the entity type.
 
 ## Performance and scale
 
 The following known issues and gaps relate to performance and scale.
+
+### Non-Microsoft blueprint and agent identity limits
+
+There's a limit of 250 active agent identity blueprints per tenant that can be created by by platforms not owned by Microsoft when using app-only permissions. Applications that use delegated permissions to create agent identity blueprints are not under this active blueprint limit for admin users. It is possible for one platform not owned by Microsoft to consume the entire active blueprint limit for the tenant. Additionally, each blueprint managed by a platform not owned by Microsoft is limited to 250 active agent identities. Regardless of how a blueprint is created, the limit does not apply to Microsoft-owned platforms like Agent 365. For more information, see [Microsoft Entra service limits and restrictions](../../identity/users/directory-service-limits-restrictions.md).
+
+**Resolution**: Contact your Microsoft representative if your scenario requires exceeding these limits.
+
+### Agent 365 blueprint limits
+
+<!-- SME REVIEW NEEDED: Please confirm the following details before publishing.
+     - Current behavior: Agent 365 using its own credentials to create agent IDs has no enforced limit.
+     - Upcoming behavior: The limit will be determined by tenant size. What is the formula or scale? When does this change take effect?
+     - Should customers/partners take any action before the limit is enforced? -->
+
+When [Microsoft Agent 365](https://aka.ms/Agent365) uses its own credentials to create agent identities, there's currently no enforced limit.
+
+**Resolution**: No action is required at this time. Monitor this article for updates when the tenant-size-based limit is enforced.
 
 ### Delays in multiple creation requests
 
@@ -171,7 +159,7 @@ When using the Microsoft Graph APIs to create Agent IDs, attempts to create mult
 - Create agent identity blueprint, quickly create blueprint principal.
 - Create agent identity blueprint, quickly add credential.
 - Create agent identity blueprint principal, then use blueprint to create agent identity.
-- Create agent identity, quickly create agent user.
+- Create agent identity, quickly create agent's user account.
 
 These sequences of requests often fail when using MS Graph application permissions to authorize the requests.
 
@@ -184,6 +172,17 @@ The following known issues and gaps relate to product integrations.
 ### Copilot Studio agents
 
 Agents built using Copilot Studio must opt in to Agent IDs in the agent's environment settings. Only custom engine agents are supported at this time. Custom engine agents currently use Agent IDs for authenticating to the channels where they're published. Agent IDs aren't currently used for authentication to connectors or tools in Copilot Studio.
+
+## Beta features and permissions
+
+<!-- SME REVIEW NEEDED: Please confirm the following details before publishing.
+     - Which specific features or permissions are currently available in beta but not yet reflected in the documentation?
+     - Are there any new Graph API endpoints, roles, or scopes in beta that developers should know about?
+     - Please list each undocumented capability so it can be added to the appropriate article. -->
+
+Some functionality is available in the beta endpoints and APIs but isn't yet reflected in this documentation set. As those features reach documentation readiness, this article will be updated and the relevant articles will be expanded.
+
+**Resolution**: Check [Microsoft Graph beta API reference](/graph/api/overview?view=graph-rest-beta&preserve-view=true) for the latest available endpoints and permissions not yet documented here. Report undocumented gaps using [aka.ms/agentidfeedback](https://aka.ms/agentidfeedback).
 
 ## Libraries and SDKs
 

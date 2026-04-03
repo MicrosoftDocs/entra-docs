@@ -2,9 +2,6 @@
 title: Authentication protocols in agents
 description: Learn about OAuth 2.0 protocols and token exchange patterns for agents in Microsoft Entra ID. Key concepts
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -66,4 +63,4 @@ There are three agent oauth flows:
  
 - [Agent on-behalf of flow](./agent-on-behalf-of-oauth-flow.md): Agents operating on behalf of regular users (interactive agents).
 - [Autonomous app flow](./agent-autonomous-app-oauth-flow.md): App-only operations enable agent identities to act autonomously without user context.
-- [Agent user flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.
+- [Agent's user account flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.

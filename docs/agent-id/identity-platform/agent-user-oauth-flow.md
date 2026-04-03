@@ -1,20 +1,17 @@
 ---
-title: Agent user impersonation protocol
-description: Learn how agent identities operate with user context through agent users using the agent user impersonation protocol with OAuth 2.0 token exchange.
+title: Agent's user account impersonation protocol
+description: Learn how agent identities operate with user context through an agent's user account using the agent's user account impersonation protocol with OAuth 2.0 token exchange.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 10/30/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
-#Customer intent: As a developer implementing agent user scenarios, I want to understand the agent user impersonation protocol so that I can enable agents to operate with user context and delegated permissions.
+#Customer intent: As a developer implementing agent's user account scenarios, I want to understand the agent's user account impersonation protocol so that I can enable agents to operate with user context and delegated permissions.
 ---
 
-# Agent user impersonation protocol
+# Agent's user account impersonation protocol
 
-Agent user impersonation enables agent identities to operate with user context through agent users, combining user permissions with autonomous operation. In this scenario, an agent identity blueprint (actor 1) impersonates an agent identity (actor 2) that impersonates an agent user (subject) using FIC. Access is scoped to delegations assigned to the agent identity. Agent user can be impersonated only by a single agent identity.
+Agent's user account impersonation enables agent identities to operate with user context through an agent's user account, combining user permissions with autonomous operation. In this scenario, an agent identity blueprint (actor 1) impersonates an agent identity (actor 2) that impersonates an agent's user account (subject) using FIC. Access is scoped to delegations assigned to the agent identity. The agent's user account can be impersonated only by a single agent identity.
 
 [!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 
@@ -24,7 +21,7 @@ Agent user impersonation enables agent identities to operate with user context t
 
 Then following are the protocol steps.
 
-:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow.png" alt-text="Diagram showing the illustration of agent user token acquisition flow for agents.":::
+:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow.png" alt-text="Diagram showing the illustration of agent's user account token acquisition flow for agents.":::
 
 1. The agent identity blueprint requests an exchange token (T1) that it uses for agent identity impersonation. The agent identity blueprint presents client credentials that could be a secret, a certificate, or a managed identity token used as an FIC.
 
@@ -44,7 +41,7 @@ Then following are the protocol steps.
 
     Where TUAMI is the MSI token for user assigned managed identity (UAMI). This returns token T1.
 
-1. The agent identity requests a token (T2) that it uses for agent user impersonation. The agent identity presents T1 as its client assertion. Microsoft Entra ID returns T2 to the agent identity after validating that T1 (aud) == Agent identity parent app == Agent identity blueprint.​
+1. The agent identity requests a token (T2) that it uses for agent's user account impersonation. The agent identity presents T1 as its client assertion. Microsoft Entra ID returns T2 to the agent identity after validating that T1 (aud) == Agent identity parent app == Agent identity blueprint.​
 
     ```
     POST /oauth2/v2.0/token
@@ -69,9 +66,9 @@ Then following are the protocol steps.
     &scope=https://resource.example.com/scope1
     &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
     &client_assertion={T1}
-    &assertion={T2}
+    &user_federated_identity_credential={T2}
     &username=agentuser@contoso.com
-    &grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
+    &grant_type=user_fic
     &requested_token_use=on_behalf_of
     ```
 
@@ -79,8 +76,8 @@ Then following are the protocol steps.
 
 ### Sequence diagram
 
-The following sequence diagram shows the agent user impersonation flow
+The following sequence diagram shows the agent's user account impersonation flow
 
-:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow-token-sequence.png" alt-text="Diagram showing the token sequence of agent user token acquisition flow for agents.":::
+:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow-token-sequence.png" alt-text="Diagram showing the token sequence of agent's user account token acquisition flow for agents.":::
 
-Agent user impersonation requires credential chaining that follows the pattern agent identity blueprint → Agent identity → Agent user. Each step in this chain uses the token from the previous step as a credential, creating a secure delegation pathway. The same client ID must be used for both phases to prevent privilege escalation attacks.
+Agent's user account impersonation requires credential chaining that follows the pattern agent identity blueprint → Agent identity → Agent's user account. Each step in this chain uses the token from the previous step as a credential, creating a secure delegation pathway. The same client ID must be used for both phases to prevent privilege escalation attacks.

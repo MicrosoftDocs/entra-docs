@@ -2,12 +2,9 @@
 title: Disable agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
-author: SHERMANOUKO
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: dastrock
 #Customer intent: As a security administrator managing agent identities in my tenant, I want to disable agent identities to prevent their use in my organization so that I can maintain strict control over identity types and reduce potential security risks from AI agents.
 ---
@@ -65,7 +62,7 @@ To ensure disable controls remain effective and detect drift (new Agent IDs or a
 
 Agent IDs are logged under the base identity types they originate from. This means that:
 
-- The creation of an agent user appears as a *Create user* audit activity.
+- The creation of an agent's user account appears as a *Create user* audit activity.
 - The creation of an agent identity appears as a *Create service principal* audit event.
 
 To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
@@ -136,9 +133,9 @@ Content-type: application/json
 }
 ```
 
-### Policy 2: Block agent user authentication
+### Policy 2: Block agent's user account authentication
 
-The following steps help create a conditional access policy to block issuance of access tokens requested using agent users.
+The following steps help create a conditional access policy to block issuance of access tokens requested using agents' user accounts.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.

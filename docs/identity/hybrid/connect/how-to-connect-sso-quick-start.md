@@ -2,14 +2,10 @@
 title: 'Quickstart: Microsoft Entra seamless single sign-on'
 description: Learn how to get started with Microsoft Entra seamless single sign-on by using Microsoft Entra Connect.
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 
@@ -232,7 +228,7 @@ In [Enable the feature](#enable-the-feature), Microsoft Entra Connect creates co
 > [!IMPORTANT]
 > The Kerberos decryption key on a computer account, if leaked, can be used to generate Kerberos tickets for any synchronized user. Malicious actors can then impersonate Microsoft Entra sign-ins for compromised users. We highly recommend that you periodically roll over these Kerberos decryption keys, or at least once every 30 days.
 
-For instructions on how to roll over keys, see [Microsoft Entra seamless single sign-on: Frequently asked questions](how-to-connect-sso-faq.yml).
+For instructions on how to roll over keys, see [Microsoft Entra seamless single sign-on: Frequently asked questions](how-to-connect-sso-faq.yml#how-can-i-roll-over-the-kerberos-decryption-key-of-the--azureadsso--computer-account-).
 
 > [!IMPORTANT]
 > You don't need to do this step *immediately* after you have enabled the feature. Roll over the Kerberos decryption keys at least once every 30 days.

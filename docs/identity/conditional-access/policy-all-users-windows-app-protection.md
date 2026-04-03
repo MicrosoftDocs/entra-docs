@@ -2,12 +2,13 @@
 title: Conditional Access - Require app protection policy for Windows
 description: Create a Conditional Access policy to require app protection policy for Windows.
 ms.topic: how-to
-ms.date: 10/24/2025
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, jogro
 ms.custom: sfi-image-nochange
 ---
 # Require an app protection policy on Windows devices
+
+## Overview
 
 App protection policies apply [mobile application management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics) to specific applications on a device. These policies let you secure data within an application for scenarios like bring your own device (BYOD).
 
@@ -15,7 +16,7 @@ App protection policies apply [mobile application management (MAM)](/mem/intune/
 
 ## Prerequisites
 
-- We support applying policy to the Microsoft Edge browser on devices running Windows 11 and Windows 10 version 20H2 and higher with KB5031445.
+- Policy can be applied to the Microsoft Edge browser on devices running Windows 11 and Windows 10 version 20H2 and higher with KB5031445.
 - Set up an app protection policy targeting Windows devices. For details, see [Configured app protection policy targeting Windows devices](/mem/intune/apps/app-protection-policy-settings-windows).
 - Sovereign clouds aren't supported.
 
@@ -39,7 +40,7 @@ Follow these steps to create a Conditional Access policy that requires an app pr
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
@@ -69,11 +70,11 @@ Follow these steps to create a Conditional Access policy that requires an app pr
 
 When users attempt to sign in to a site that is protected by an app protection policy for the first time, they're prompted: To access your service, app, or website, you might need to sign in to Microsoft Edge using `username@domain.com` or register your device with `organization` if you're already signed in.
 
-Clicking on **Switch Edge profile** opens a window listing their Work or school account along with an option to **Sign in to sync data**.
+Selecting **Switch Edge profile** opens a window listing their Work or school account along with an option to **Sign in to sync data**.
 
    :::image type="content" source="./media/policy-all-users-windows-app-protection/browser-sign-in-continue-with-work-or-school-account.png" alt-text="Screenshot showing the popup in Microsoft Edge asking user to sign in.":::
 
-This process opens a window offering to allow Windows to remember your account and automatically sign you into your apps, websites, and services. Select **Yes** to sign in and enroll your device in mobile application management. 
+This process opens a window offering to allow Windows to remember your account and automatically sign you in to your apps, websites, and services. Select **Yes** to sign in and enroll your device in mobile application management. 
 
    :::image type="content" source="media/policy-all-users-windows-app-protection/stay-signed-in-to-all-your-apps.png" alt-text="Screenshot showing the stay signed in to all your apps window for MAM enrollment.":::
 

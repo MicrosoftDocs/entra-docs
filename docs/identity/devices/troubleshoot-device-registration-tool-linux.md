@@ -1,10 +1,8 @@
 ---
 title: Troubleshoot Device Registration Command Tool on Linux
 description: This article covers how to use the output from the Device Registration command tool on Linux to understand the state of devices in Microsoft Entra ID.
-author:      ploegert # GitHub alias
-ms.author:   jploegert # Microsoft alias
-ms.service: entra-id
-ms.subservice: devices
+author: ploegert
+ms.author: jploegert
 ms.topic: troubleshooting
 ms.date:     01/07/2026
 ms.custom: linux-related-content

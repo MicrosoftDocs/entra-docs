@@ -2,9 +2,6 @@
 title: Agent identities, service principals, and applications
 description: Learn about agent service principals in Microsoft Entra, including agent identity blueprint Principal and Agent Identity, and how they differ from traditional service principals in authentication, permissions, and lifecycle management.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -81,4 +78,4 @@ Agent service principals support both application permissions (for app-only oper
 
 Agent service principals maintain distinct identities in audit logs and sign-in reports. When an agent identity performs operations, the logs show the agent identity as the acting client while indicating the relationship to the parent agent identity blueprint.
 
-Sign-in logs differentiate between agent identity blueprints, agent identities, and agent users. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agent operations.
+Sign-in logs differentiate between agent identity blueprints, agent identities, and agents' user accounts. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agent operations.

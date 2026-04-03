@@ -82,6 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.braze.com/auth/saml/callback`
+1. Configure RelayState by entering your Relay State API key generated from Braze into the **Relay State** field.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

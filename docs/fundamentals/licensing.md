@@ -1,21 +1,19 @@
 ---
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
-author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/01/2025
-ms.subservice: fundamentals
-ms.author: barclayn
 ---
 
 # Microsoft Entra licensing
 
+
+## Overview
+
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
->[!NOTE]
->If you are troubleshooting licensing assignment issues, review [Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal](licensing-groups-resolve-problems.md).
+> [!NOTE]
+>If you're troubleshooting licensing assignment issues, review [Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal](licensing-groups-resolve-problems.md).
 
 ## Microsoft Entra licensing options
 
@@ -35,9 +33,17 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
+## Microsoft Entra Agent ID
+
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+
 ## Microsoft Entra ID Governance
 
 [!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
+
+## Microsoft Entra Tenant Governance (Preview)
+
+[!INCLUDE [Microsoft Entra Tenant Governance](../includes/licensing-tenant-governance.md)]
 
 ## Microsoft Entra Connect
 
@@ -51,13 +57,13 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Microsoft Entra Conditional Access](../includes/licensing-conditional-access.md)]
 
-## Microsoft Entra Domain services
+## Microsoft Entra Domain Services
 
-Microsoft Entra [Domain Services](../identity/domain-services/overview.md) usage is charged per hour, based on the [SKU](https://azure.microsoft.com/pricing/details/microsoft-entra-ds/) selected by the tenant owner.
+Microsoft Entra [Domain Services](../identity/domain-services/overview.md) charges accrue per hour based on the [SKU](https://azure.microsoft.com/pricing/details/microsoft-entra-ds/) the tenant owner selects.
 
 ## Microsoft External ID
 
-Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. More licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing)
+Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. More licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing).
 
 ## Microsoft Entra ID Protection
 
@@ -73,7 +79,7 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 ## Microsoft Entra Private Access
 
-[Microsoft Entra Private access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
+[Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
 
 ## Microsoft Entra Privileged Identity Management
 
@@ -85,7 +91,7 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 ## Microsoft Entra Workload ID
 
-Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) supports application identities and service principles in Azure, requiring licenses per workload identity per month.
+Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) supports application identities and service principals in Azure, requiring licenses per workload identity per month.
 
 ## Multitenant organizations
 

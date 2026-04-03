@@ -2,12 +2,9 @@
 title: Agent OAuth flows - On-behalf-of flow
 description: Learn how agent applications operate on behalf of signed-in users using OAuth 2.0 On-Behalf-Of flows with agent identity blueprints and agent identities.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing on-behalf-of flows for agents, I want to understand how Agent IDs operate on behalf of signed-in users so that I can enable agents to access user data with proper delegated permissions.
 ---
@@ -24,7 +21,7 @@ Agents have the capabilities of Microsoft Entra ID resource (API) applications a
 
 ## Protocol steps
 
-Agents aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate, or a managed identity used as Federated Identity Credential (FIC).
+Agents aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt-bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate, or a managed identity used as Federated Identity Credential (FIC).
 
 :::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow.png" alt-text="Diagram showing the illustration of on-behalf-of token acquisition flow for agents.":::
 
@@ -59,7 +56,7 @@ Agents aren't supported for OBO (`/authorize`) flows. Supported grant types are 
     &scope=https://resource.example.com/scope1
     &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
     &client_assertion={T1}
-    &grant_type=urn:ietf:params:oauth:grant-type:jwt_bearer
+    &grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
     &assertion={Tc(aud=AgentIdentity Blueprint, oid=User)}
     &requested_token_use=on_behalf_of
     ```
@@ -99,4 +96,4 @@ Agent identities can inherit delegated permissions from their parent agent ident
 
 - [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
 - [Autonomous app flow in agents](./agent-autonomous-app-oauth-flow.md)
-- [Agent user flow in agents](./agent-user-oauth-flow.md)
+- [Agent's user account flow in agents](./agent-user-oauth-flow.md)

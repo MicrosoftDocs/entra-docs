@@ -1,14 +1,16 @@
 ---
-title: How to Configure Quick Access for Global Secure Access
+title: How to configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # How to configure Quick Access for Global Secure Access
+
+## Overview
 
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
 
@@ -33,11 +35,11 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 [!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
-## High level steps
+## High-level steps
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
-To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/entra/identity/app-proxy/) connector. The connector group handles the traffic to this new application. Once you have Quick Access and a private network connector group configured, you need to grant access to the app.
+To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra private network](/entra/identity/app-proxy/) connector. The connector group handles the traffic to this new application. Once you have Quick Access and a private network connector group configured, you need to grant access to the app.
 
 To summarize, the overall process is as follows:
 
@@ -66,7 +68,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the appropriate roles.
 1. Browse to **Global Secure Access** > **Applications** > **Quick access**.
-1. Enter a name. *We recommend using the name Quick Access*.
+1. Enter a name. *Use the name Quick Access*.
 1. Select a Connector group from the dropdown menu.
 1. Select **Save** to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
@@ -102,7 +104,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - Spaces between values are removed when you apply the changes.
     - For example, `400-500, 80, 443`.
 
-    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
+    ![Screenshot that shows the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
 
     The following table provides the most commonly used ports and their associated networking protocols:
 
@@ -120,7 +122,8 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > You can add up to 500 application segments to your Quick Access app.
 
 ### Add private DNS suffixes
-Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type
+
+[Private DNS support for Microsoft Entra Private Access](concept-private-name-resolution.md) lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type
 `https://benefits` in their web browser. But you don’t want to configure a FQDN for the application. Using Private DNS, you configure a corresponding DNS Suffix so that the Global Secure Access client knows how to route the request correctly.
 
 Additionally, you can provide a single sign-on (SSO) experience for Kerberos resources by configuring Kerberos Authentication to domain controllers using Private DNS. To learn more about creating an SSO experience, see [Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access](how-to-configure-kerberos-sso.md).
@@ -143,7 +146,7 @@ You can view the properties from **Quick Access** or navigate to **Enterprise ap
 
 1. Select **Edit application settings** from Quick Access. 
 
-    ![Screenshot of edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
+    ![Screenshot that shows edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
 
 1. Select **Users and groups** from the side menu.
 

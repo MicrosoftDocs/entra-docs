@@ -2,7 +2,7 @@
 title: Understand access package visibility in the My Access portal
 description: A conceptual article describing access package visibility in the My Access portal.
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/12/2025
 
 #Customer intent: As an Identity Governance Administrator, Catalog Owner, or Access Package Manager, I want detailed information about which, and why, access packages are visible to users when discovering packages in the My Access portal.

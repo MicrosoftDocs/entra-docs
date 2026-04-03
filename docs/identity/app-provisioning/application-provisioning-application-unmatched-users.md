@@ -24,6 +24,9 @@ These inconsistencies between Microsoft Entra ID and an existing application's d
 
 Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those users from the application that did not match. This article outlines options for how to resolve for different situations that a user could not be matched.
 
+> [!TIP]
+> For supported applications, you can use [Account Discovery](how-to-account-discovery.md) to automatically scan the target application and categorize existing users as local accounts, unassigned users, or assigned users. This provides visibility into the application's user landscape before you configure provisioning.
+
 ## Determine if there are users in the application that did not match
 
 If you already determined the list of users in the application that do not match users in Microsoft Entra ID, then continue in the next section.
@@ -243,6 +246,7 @@ Once you have completed the necessary updates and confirm all users from the app
 
 ## Next steps
 
+- [Discover existing user accounts in target applications](how-to-account-discovery.md)
 - [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](~/id-governance/identity-governance-applications-integrate.md)
 - [Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell](~/id-governance/identity-governance-applications-existing-users.md)
 - [Prepare for an access review of users' access to an application](~/id-governance/access-reviews-application-preparation.md)

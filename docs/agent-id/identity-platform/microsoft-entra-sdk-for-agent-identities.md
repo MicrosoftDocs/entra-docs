@@ -2,12 +2,9 @@
 title: Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how autonomous agents acquire tokens using the Microsoft Entra SDK for Agent ID to call downstream APIs independently.
-author: SHERMANOUKO
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/05/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer building autonomous agents, I want to acquire tokens using the Microsoft Entra SDK for Agent ID so that my agents can independently call downstream APIs with proper authentication.
 ---
@@ -50,7 +47,7 @@ These are the steps to acquire tokens using the Microsoft Entra SDK for Agent ID
 1. Acquire token using the Microsoft Entra SDK for Agent ID. This varies based on whether the agent is operating autonomously or on behalf of a user. There are three scenarios to consider:
 
     - Autonomous agents: Agents operating on their own behalf using service principals created for agents (autonomous).
-    - Autonomous agent user: Agents operating on their own behalf using user principals created specifically for agents (for instance agents having their own mailbox).
+    - Autonomous agent's user account: Agents operating on their own behalf using user principals created specifically for agents (for instance agents having their own mailbox).
     - Interactive agents: Agents operating on behalf of human users.
 
     Specify the downstream API by including its name in the request URL based on your agent ID SDK configuration. The authorization header endpoint takes the format `/AuthorizationHeader/{serviceName}` where `serviceName` is the name of the downstream API configured in the SDK settings.
@@ -62,7 +59,7 @@ These are the steps to acquire tokens using the Microsoft Entra SDK for Agent ID
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
-1. To acquire token for an autonomous agent user, provide either the user object ID or User Principal Name but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both causes a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
+1. To acquire token for an autonomous agent's user account, provide either the user object ID or User Principal Name but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both causes a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
 
     ```bash
     GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-id>&AgentUserId=<agent-user-object-id>

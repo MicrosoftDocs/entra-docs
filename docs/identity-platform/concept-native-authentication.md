@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 11/21/2025
+ms.date: 03/30/2026
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -16,7 +16,7 @@ ms.author: cmulligan
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-Microsoft Entra’s native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. Unlike browser-based solutions, native authentication enables you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app’s interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
+Microsoft Entra’s native authentication allows you to have full control over the design of your mobile and desktop application sign-in experience. Unlike browser-based solutions, native authentication allows you to create visually appealing, pixel-perfect authentication screens that seamlessly blend into your app's interface. With this approach, you can fully customize the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look.
 
 The standard app sign-in process, which relies on browser-delegated authentication, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
 
@@ -50,53 +50,53 @@ The following table compares the two authentication methods to help you decide t
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
 | **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
+| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md).  |
 
 
 ## Feature availability
 
 The following table shows the availability of features for browser-delegated and native authentication. 
 
-|   | Browser-delegated authentication | Native authentication | 
+|   | Browser-delegated authentication | Native authentication |
 | ---- | --- |  --- |
-| **Sign-up and sign-in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign-up and sign-in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign-in with email and password can use username and password** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Sign up and sign in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Sign up and sign in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Sign in with email and password can use username (alias) and password** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Self-service password reset (SSPR)**  | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
-| **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :x:  |
-| **Multifactor authentication with SMS**| :heavy_check_mark:  | :x:  |
+| **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
+| **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
+| **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
 | **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
 
 ## How to enable native authentication
 
-First, review the guidelines above on [when to use native authentication](/entra/external-id/customers/concept-native-authentication#when-to-use-native-authentication). Then, have an internal discussion with your application's business owner, designer, and development team to determine if native authentication is necessary.
+First, review the guidelines on [when to use native authentication](/entra/external-id/customers/concept-native-authentication#when-to-use-native-authentication). Then, have an internal discussion with your application's business owner, designer, and development team to determine if native authentication is necessary.
 
-If your team has determined that native authentication is necessary for your application, follow these steps to enable native authentication in the Microsoft Entra admin center:
+If your team determines that native authentication is necessary for your application, follow these steps to enable native authentication in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Applications** > **App registrations** and select the app registration for which you want to enable public client and native authentication flows.
+1. Browse to **App registrations** and select the app registration for which you want to enable public client and native authentication flows.
 1. Under **Manage**, select **Authentication**.
 1. Under **Advanced settings**, allow public client flows: 
     1. For **Enable the following mobile and desktop flows** select **Yes**.
     1. For **Enable native authentication**, select **Yes**.
-1. Select **Save** button.
+1. Select the **Save** button.
 
 ## Update your configuration code
 
-After enabling the native authentication APIs in the admin center, you still need to update your application’s configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types [here](/entra/external-id/customers/concept-native-authentication-challenge-types). 
-If the configuration isn’t updated to integrate native authentication components, the native authentication SDKs and APIs won’t be usable. 
+After enabling the native authentication APIs in the admin center, you still need to update your application's configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types in [Native authentication challenge types](/entra/external-id/customers/concept-native-authentication-challenge-types). 
+If the configuration isn't updated to integrate native authentication components, the native authentication SDKs and APIs aren't usable. 
 
 ## Risk of enabling native authentication
 
-Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the security of the app lies with your development team.
+Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the app's security lies with your development team.
 
 ## How to use native authentication
 
-You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android, iOS/macOS and web applications. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
+You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android, iOS, macOS, and web applications. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
-For more information on native authentication samples and tutorials, see the following table.
+For more information on native authentication samples and tutorials, see the following table:
 
 | Language/<br/>Platform | Quickstart | Build and integrate guide |
 | ----------- | ----------- |----------- |
@@ -106,7 +106,7 @@ For more information on native authentication samples and tutorials, see the fol
 |React (Next.js) | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md)|
 |Angular | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-angular-sign-up.md)|
 
-If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
+If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, see [Native authentication API reference](reference-native-authentication-api.md).
 
 ## Related content 
 

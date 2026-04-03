@@ -1,13 +1,16 @@
 ---
 title: Conditional Access insights and reporting workbook
 description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies.
-ms.topic: article
-ms.date: 09/24/2025
-manager: dougeby
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: how-to
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
 # Conditional Access insights and reporting
+
+## Overview
 
 The Conditional Access insights and reporting workbook enables you to understand the impact of Conditional Access policies in your organization over time. During sign-in, one or more Conditional Access policies might apply, granting access if certain grant controls are satisfied or denying access otherwise. Because multiple Conditional Access policies might be evaluated during each sign-in, the insights and reporting workbook lets you examine the impact of an individual policy or a subset of all policies.  
 
@@ -69,7 +72,7 @@ Once the parameters are set, the **Impact summary** loads. The summary shows how
 
 ![Screenshot showing a workbook breakdown per condition and status.](./media/howto-conditional-access-insights-reporting/workbook-breakdown-condition-and-status.png)
 
-View the breakdown of users or sign-ins for each of the conditions. You can filter the sign-ins of a particular result (for example, Success or Failure) by selecting on of the summary tiles at the top of the workbook. You can see the breakdown of sign-ins for each of the Conditional Access conditions: device state, device platform, client app, location, application, and sign-in risk.  
+View the breakdown of users or sign-ins for each of the conditions. You can filter the sign-ins of a particular result (for example, Success or Failure) by selecting one of the summary tiles at the top of the workbook. You can see the breakdown of sign-ins for each of the Conditional Access conditions: device state, device platform, client app, location, application, and sign-in risk.  
 
 ## Sign-in details 
 

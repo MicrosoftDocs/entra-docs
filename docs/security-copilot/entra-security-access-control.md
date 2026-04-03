@@ -1,9 +1,6 @@
 ---
 title: Security and access control with Microsoft Security Copilot
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to manage roles, authentication methods, conditional access policies, and assess application risks.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

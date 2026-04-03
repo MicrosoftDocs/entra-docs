@@ -3,12 +3,8 @@ title: Configure MerchLogix for automatic user provisioning with Microsoft Entra
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to MerchLogix.
 
 author: zhchia
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/16/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Merchlogix so that I can streamline the user management process and ensure that users have the appropriate access to Merchlogix.
@@ -68,41 +64,45 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-2. Select MerchLogix from your list of SaaS applications.
+1. Select **MerchLogix** from your list of applications.
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-4. Set the **Provisioning Mode** to **Automatic**.
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+1. Select **+ New configuration**.
 
-5. Under the **Admin Credentials** section:
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-	* In the **Tenant URL** field, enter the SCIM endpoint URL provided by your MerchLogix technical contact.
+1. In the **Tenant URL** field, input your MerchLogix Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to MerchLogix. If the connection fails, ensure your MerchLogix account has the required admin permissions and try again.
 
-	* In the **Secret Token** field, enter secret token provided by your MerchLogix technical contact.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to MerchLogix. If the connection fails, ensure your MerchLogix account has Admin permissions and try again.
+1. Select **Create** to create your configuration.
 
-7. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Properties** on the **Overview** page.
 
-8. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to MerchLogix**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MerchLogix for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-11. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to MerchLogix**.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MerchLogix for update operations. Select the **Save** button to commit any changes.
 
-12. Review the group attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MerchLogix for update operations. Select the **Save** button to commit any changes.
+1. Select **Groups**.
 
-13. To enable the Microsoft Entra provisioning service for MerchLogix, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to MerchLogix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in MerchLogix for update operations. Select the **Save** button to commit any changes.
 
-14. When you're ready to provision, select **Save**.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on MerchLogix.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
+
+## Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

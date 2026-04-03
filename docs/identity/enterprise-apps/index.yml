@@ -6,8 +6,6 @@ summary: Microsoft Entra ID is an Identity and Access Management (IAM) system. I
 metadata:
   title: Application management documentation
   description: Microsoft Entra ID is an Identity and Access Management (IAM) system. It provides a single place to store information about digital identities. You can configure your software applications to use Microsoft Entra ID as the place where user information is stored.
-  ms.service: entra-id
-  ms.subservice: enterprise-apps
   
   ms.topic: landing-page
   ms.date: 03/31/2025
@@ -150,7 +148,7 @@ landingContent:
           - text: Plan application proxy deployment
             url: ~/identity/app-proxy/conceptual-deployment-plan.md
           - text: Set up connectors
-            url: ~/identity/app-proxy/application-proxy-connectors.md
+            url: ~/global-secure-access/concept-connectors.md
           - text: Configure single sign-on
             url: ~/identity/app-proxy/how-to-configure-sso.md
           - text: Publish native client applications

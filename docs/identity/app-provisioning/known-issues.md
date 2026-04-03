@@ -2,7 +2,7 @@
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: troubleshooting
-ms.date: 10/04/2025
+ms.date: 03/31/2026
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -66,7 +66,7 @@ When two users in the source tenant have the same mail, and they both need to be
 
 - B2B users are unable to manage certain Microsoft 365 services in remote tenants (such as Exchange Online), as there's no directory picker.
 - To learn about Azure Virtual Desktop support for B2B users, see [Prerequisites for Azure Virtual Desktop](/azure/virtual-desktop/prerequisites?tabs=portal).
-- For the latest status on Power BI support for external member users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite)
+- For the latest status on Power BI support for external member users, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b)
 ::: zone-end
 
 ## Authorization 
@@ -119,7 +119,7 @@ Multivalue directory extensions can't be used in attribute mappings or scoping f
 - Provisioning passwords isn't supported. 
 - Provisioning nested groups beyond the first level is not supported. 
 - Provisioning is not supported for B2C tenants, including into or out of the tenant.
-- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Inbound provisioning using System for Cross‑domain Identity Management (SCIM) is not supported. Use Microsoft Graph and [Microsoft Graph batch](/graph/json-batching) instead.
 - Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"
@@ -130,6 +130,10 @@ If you create an app registration, the corresponding service principal in enterp
 #### Manager isn't provisioned
 
 If a user and their manager are both in scope for provisioning, the service provisions the user and then updates the manager. If on day one the user is in scope and the manager is out of scope, we'll provision the user without the manager reference. When the manager comes into scope, the manager reference won't be updated until you restart provisioning and cause the service to reevaluate all the users again. 
+
+#### Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds
+
+The non-gallery / custom application and ecma connector are available for provisioning in the US Government / 21Vianet (China) clouds. A limited number of gallery applications are available in these environments.  
 
 ::: zone-end
 

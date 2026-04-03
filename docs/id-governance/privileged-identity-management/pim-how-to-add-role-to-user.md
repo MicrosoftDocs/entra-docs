@@ -1,27 +1,27 @@
 ---
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 08/29/2025
-ms.author: barclayn
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Microsoft Entra roles in Privileged Identity Management
 
+
+## Overview
+
 With Microsoft Entra ID, a Global Administrator can make **permanent** Microsoft Entra admin role assignments. These role assignments can be created using the [Microsoft Entra admin center](~/identity/role-based-access-control/permissions-reference.md) or using [PowerShell commands](/powershell/module/azuread/#directory_roles).
 
 The Microsoft Entra Privileged Identity Management (PIM) service also allows Privileged Role Administrators to make permanent admin role assignments. Additionally, Privileged Role Administrators can make users **eligible** for Microsoft Entra admin roles. An eligible administrator can activate the role when they need it, and then their permissions expire once they're done.
 
-Privileged Identity Management support both built-in and custom Microsoft Entra roles. For more information on Microsoft Entra custom roles, see [Role-based access control in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md).
+Privileged Identity Management supports both built-in and custom Microsoft Entra roles. For more information on Microsoft Entra custom roles, see [Role-based access control in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md).
 
->[!Note]
->When a role is assigned, the assignment:
->- Can't be assigned for a duration of less than five minutes
->- Can't be removed within five minutes of it being assigned
+> [!NOTE]
+> When a role is assigned, the assignment:
+> - Can't be assigned for a duration of less than five minutes
+> - Can't be removed within five minutes of it being assigned
 
 ## Assign a role
 
@@ -41,7 +41,7 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/select-role.png" alt-text="Screenshot showing the new assignment pane.":::
 
-1. Select a role you want to assign, select a member to whom you want to assign to the role, and then select **Next**.
+1. Select a role you want to assign, select a member you want to assign to the role, and then select **Next**.
 
     You can select users, groups, or agent identities. For a list of roles that you can assign to agent identities, see [Authorization in Microsoft Entra Agent ID](../../agent-id/identity-professional/authorization-agent-id.md).
 
@@ -59,9 +59,9 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
     - **Time-bound** assignments expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
 
-    >[!NOTE]
+    > [!NOTE]
     > Active time-bound role assignment for the Global Administrator role isn't removed at expiration time if there are no other assigned active role assignments for Global Administrator present. In other words, if it’s last assigned active role assignment for Global Administrator role, it will remain.
-Similarly, eligible time-bound role assignment for Global Administrator role isn't removed at expiration time if there are no other assigned role assignments for Global Administrator role present, that is, if it’s the last Global Administrator role assignment. This is done to minimize the risk of administrators locking themselves out of the tenant by accident.
+    > Similarly, eligible time-bound role assignment for Global Administrator role isn't removed at expiration time if there are no other assigned role assignments for Global Administrator role present, that is, if it’s the last Global Administrator role assignment. This is done to minimize the risk of administrators locking themselves out of the tenant by accident.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
 
@@ -71,7 +71,7 @@ Similarly, eligible time-bound role assignment for Global Administrator role isn
 
 ## Assign a role with restricted scope
 
-For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). This feature is currently being rolled out to Microsoft Entra organizations.
+For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example of assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). This feature is currently being rolled out to Microsoft Entra organizations.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -81,15 +81,15 @@ For certain roles, the scope of the granted permissions can be restricted to a s
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/add-assignment.png" alt-text="Screenshot showing the Add assignment command is available when you open a role in the portal.":::
 
-1. ​Select **Add assignments**.
+1. Select **Add assignments**.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/add-scope.png" alt-text="Screenshot showing when a role supports scope, you can select a scope.":::
 
 1. On the **Add assignments** page, you can:
 
-   - Select a user or group to be assigned to the role
-   - Select the role scope (in this case, administrative units)
-   - Select an administrative unit for the scope
+    - Select a user or group to be assigned to the role.
+    - Select the role scope (in this case, administrative units).
+    - Select an administrative unit for the scope.
 
 If you try to assign a custom role that is compatible with administrative units, you aren't able to assign the role with administrative unit scope by starting from the **Roles & admins** page. To assign the custom role with administrative unit scope, you must first open the administrative unit and then assign the role. For more information, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). For information about creating administrative units, see [Create or delete administrative units](../../identity/role-based-access-control/admin-units-manage.md).
 
@@ -174,7 +174,7 @@ Content-Type: application/json
 
 ### Active and time-bound
 
-The example shows an HTTP request to create a time bound active assignment. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleAssignmentScheduleRequests](/graph/api/rbacapplication-post-roleassignmentschedulerequests).
+The example shows an HTTP request to create a time-bound active assignment. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleAssignmentScheduleRequests](/graph/api/rbacapplication-post-roleassignmentschedulerequests).
 
 #### HTTP request
 
@@ -245,7 +245,7 @@ This example shows the response. The response object shown here might be shorten
 ## Update or remove an existing role assignment
 
 Follow these steps to update or remove an existing role assignment.  
-You can't remove the last active role assignment for Global Administrators. We recommend having an emergency access account with active permanent role assignment for Global Administrator role. See more [details.](~/identity/role-based-access-control/security-emergency-access.md)  
+You can't remove the last active role assignment for Global Administrators. Consider having an emergency access account with active permanent role assignment for Global Administrator role. For more information, see [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).  
 You can't remove the eligible role assignment for Global Administrators if there would be no assigned role assignments for the Global Administrator role left.
 This is done to minimize risks of administrators locking themselves out of the tenant inadvertently.
 

@@ -1,13 +1,14 @@
 ---
 title: Silent install Microsoft Entra private network connector
-description: Covers how to perform an unattended installation of the Microsoft Entra private network connector.
+description: "Create a PowerShell script for unattended installation and registration of the Microsoft Entra private network connector for bulk deployments or servers without a UI."
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.reviewer: ashishj
+ms.date: 03/25/2026
 ai-usage: ai-assisted
 ---
 
 # Create an unattended installation script for the Microsoft Entra private network connector
+
+## Overview
 
 This article helps you create a Windows PowerShell script that enables unattended installation and registration for your Microsoft Entra private network connector.
 
@@ -166,7 +167,7 @@ Register the connector using a token created offline.
    ```powershell
    $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
    ```
-1. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID:
+1. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID. The `RegisterConnector.ps1` script is located in the connector installation folder (by default, `C:\Program Files\Microsoft Entra private network connector\`). If you're running the command from a different directory, provide the full path to the script.
 
    ```powershell
    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId <tenant GUID> -Feature ApplicationProxy

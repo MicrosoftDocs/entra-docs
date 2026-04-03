@@ -2,11 +2,12 @@
 title: Microsoft Entra Conditional Access for workload identities 
 description: Protecting workload identities with Conditional Access policies
 ms.topic: how-to
-ms.date: 03/24/2025
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: swethar
 ---
 # Conditional Access for workload identities
+
+## Overview
 
 Conditional Access policies historically applied only to users when they access apps and services like SharePoint Online. We're now extending support for Conditional Access policies to be applied to service principals owned by the organization. We call this capability Conditional Access for workload identities.
 
@@ -43,7 +44,7 @@ Create a location based Conditional Access policy that applies to service princi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
    1. Under **Include**, choose **Select service principals**, and select the appropriate service principals from the list.
@@ -62,7 +63,7 @@ Create a risk-based Conditional Access policy that applies to service principals
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **What does this policy apply to?**, select **Workload identities**.
    1. Under **Include**, choose **Select service principals**, and select the appropriate service principals from the list.

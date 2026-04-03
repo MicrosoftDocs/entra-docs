@@ -5,7 +5,6 @@ titleSuffix: Microsoft Entra Agent ID
 
 author: omondiatieno
 ms.author: jomondi
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -102,6 +101,12 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 Agent implementations might redirect the admin to this URL in various ways, such as including it in a message sent to the admin in a chat window. When the admin is redirected to this URL, they're asked to sign in and grant consent to the permissions specified in the scope parameter. At the moment you must use the redirect URI listed, which directs the admin to a blank page after granting consent.
 
 After you grant your application the required permissions, request a new agent access token for the permissions to take effect.
+
+> [!IMPORTANT]
+> There's no notification mechanism that informs you when a blueprint has been consented in another tenant. The behavior differs based on your deployment scenario:
+>
+> - **Single-tenant (line-of-business) scenarios**: You can continue requesting tokens. Token requests succeed once the admin grants consent, so polling with an exponential backoff until success is an acceptable approach.
+> - **Multitenant scenarios**: You must know the target tenant ID before making requests. There's no automated notification when a customer admin grants consent in their tenant, so you need to implement a manual process. If you're automating agent registration workflows, the automation might stall while waiting for consent to be granted.
 
 ## Related content
 

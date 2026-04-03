@@ -4,7 +4,8 @@ description: Learn about the supported cryptographic algorithms, or ciphers, use
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: reference
-ms.date: 02/18/2025
+ms.service: global-secure-access
+ms.date: 03/09/2026
 ms.reviewer: sumeetmittal
 
 

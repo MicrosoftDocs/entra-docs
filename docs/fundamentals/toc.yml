@@ -59,6 +59,8 @@ items:
       href: licensing-preview-info.md
     - name: Microsoft Entra licensing
       href: licensing.md
+    - name: License usage insights
+      href: concept-license-usage-insights.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
     - name: Trial user guide for Microsoft Entra Suite
@@ -96,6 +98,8 @@ items:
     href: how-to-find-tenant.md
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: How to use Self-Service Support (Preview)
+    href: how-to-entra-self-service-support.md
   - name: Quarantine unsanctioned tenants 
     href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity

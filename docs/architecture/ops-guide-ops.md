@@ -3,12 +3,11 @@ title: Microsoft Entra general operations guide reference
 description: This operations reference guide describes the checks and actions you should take to secure general operations
 author: martincoetzer
 manager: travisgr
-ms.service: entra
-ms.topic: article
-ms.subservice: architecture
+ms.topic: best-practice
 ms.date: 08/17/2022
 ms.author: martinco
 ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra general operations guide reference
@@ -62,7 +61,7 @@ Unless one has been established, you should define a process to upgrade these co
 #### Hybrid management recommended reading
 
 - [Microsoft Entra Connect: Automatic upgrade](~/identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md)
-- [Understand Microsoft Entra private network connectors | Automatic updates](~/identity/app-proxy/application-proxy-connectors.md#automatic-updates)
+- [Understand Microsoft Entra private network connectors | Automatic updates](~/global-secure-access/concept-connectors.md#connector-updates)
 
 <a name='azure-ad-connect-health-alert-baseline'></a>
 
@@ -88,7 +87,7 @@ Some identity and access management services require on-premises agents to enabl
 
 - [Troubleshoot Application Proxy](~/identity/app-proxy/application-proxy-troubleshoot.md)
 - [Self-service password reset troubleshooting](~/identity/authentication/troubleshoot-sspr.md)
-- [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Microsoft Entra Connect: Troubleshoot Pass-through Authentication](~/identity/hybrid/connect/tshoot-connect-pass-through-authentication.md#collecting-pass-through-authentication-agent-logs)
 - [Troubleshoot error codes for the Microsoft Entra multifactor authentication NPS extension](~/identity/authentication/howto-mfa-nps-extension-errors.md)
 
@@ -102,7 +101,7 @@ Adopting best practices can help the optimal operation of on-premises agents. Co
 
 #### On-premises agents management recommended reading
 
-- [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md)
+- [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md)
 - [Microsoft Entra pass-through authentication - quickstart](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## Management at scale
