@@ -44,7 +44,7 @@ Service principals were designed for static, deterministic workloads. Microsoft 
 
 ### Regular user account (not recommended for AI agents)
 
-Regular Microsoft Entra user accounts are designed for human sign-in patterns. Assigning them to AI agents causes failures across every Zero Trust enforcement layer: Conditional Access policies built for humans don't apply correctly to agents, ID Protection detections are degraded, and identity governance processes can incorrectly remove agent access. For more information, see [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md).
+Regular Microsoft Entra user accounts are designed for human sign-in patterns. Assigning them to AI agents causes failures across every Zero Trust enforcement layer: Conditional Access policies built for humans don't apply correctly to agents, ID Protection detections are degraded, and identity governance processes can incorrectly remove agent access. For more information, see [Plan your agent identity architecture](../how-to-plan-agent-identity-architecture.md).
 
 ## Agent operation patterns
 
