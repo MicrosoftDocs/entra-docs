@@ -140,10 +140,8 @@ Creating one agent identity per meeting, per document, or per ephemeral object a
 
 ## Related content
 
-- [Plan your agent identity architecture](plan-agent-identity-architecture.md)
 - [Agent identity blueprints](identity-platform/agent-blueprint.md)
 - [Agent identities](identity-platform/agent-identities.md)
 - [Agent's user accounts](identity-platform/agent-users.md)
+- [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md)
 - [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
-- [Authorization in Microsoft Entra Agent ID](authorization-agent-id.md)
-- [Grant agent access to Microsoft 365](grant-agent-access-microsoft-365.md)

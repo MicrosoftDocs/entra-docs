@@ -124,6 +124,6 @@ Multi-agent architectures where multiple agent identities are appropriate can in
 
 ## Related content
 
-- [Agent ID design patterns](agent-id-design-patterns.md)
+- [Agent ID design patterns](concept-agent-id-design-patterns.md)
 - [Agent identity blueprints](identity-platform/agent-blueprint.md)
 - [Agent identities, service principals, and applications](identity-platform/agent-service-principals.md)
