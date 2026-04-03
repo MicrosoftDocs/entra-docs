@@ -44,6 +44,13 @@ Depending on your organization's Conditional Access policies, users may be asked
 *   Satisfy other requirements defined in the policy
 
 This appears as a standard Conditional Access prompt during the setup process — the same experience users already see during sign-in.
+
+**What's not changing**
+
+*   Organizations without CA policies targeting the **Register security information** user action aren't affected by this change.
+*   MFA remains required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types — regardless of whether CA policies are configured.
+*   Sign-in behavior and existing CA policy evaluation for sign-in aren't affected.
+*   Credential registration through My Security Info in continues to work as before.
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
