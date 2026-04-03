@@ -3,7 +3,7 @@ title: Build resilience with credential management in Microsoft Entra ID
 description: A guide for architects
  and IT administrators on building a resilient credential strategy.
 ms.topic: best-practice
-ms.date: 11/16/2022
+ms.date: 04/03/2026
 ms.subservice: architecture
 ---
 # Build resilience with credential management
@@ -39,7 +39,7 @@ For second factors, the Microsoft Authenticator app or other authenticator apps 
 |Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas)|
 |Pass Through Authentication (PTA)|PTA uses on-premise agents to process the password authentication.|[How does Microsoft Entra pass-through authentication work?](~/identity/hybrid/connect/how-to-connect-pta-how-it-works.md#how-does-microsoft-entra-pass-through-authentication-work)|
 |Federation| Federation server(s) must be online and available to process the authentication attempt|[High availability cross-geographic AD FS deployment in Azure with Azure Traffic Manager](/windows-server/identity/ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager)|
-|External Authentication Methods (EAM)| EAM provides a path for customers to use external MFA providers.|[Manage an external authentication method in Microsoft Entra ID (Preview)](~/identity/authentication/how-to-authentication-external-method-manage.md)|
+|External Authentication Methods (EAM)| EAM provides a path for customers to use external MFA providers.|[Manage external MFA in Microsoft Entra ID](~/identity/authentication/how-to-authentication-external-method-manage.md)|
 
 ## How do multiple credentials help resilience?
 

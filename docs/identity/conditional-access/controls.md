@@ -13,9 +13,9 @@ ms.custom: sfi-image-nochange
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!IMPORTANT]
-> Custom controls are deprecated and will be retired in the future. External authentication methods are the replacement for custom controls, and they provide several benefits over the custom controls approach. Existing custom controls will continue to function, but new implementations should use external authentication methods. As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808), start planning your migration now.
+> Custom controls are deprecated and will be retired on September 30, 2026. External MFA (previously known as external authentication methods) is the replacement for custom controls and is now generally available. External MFA provides several benefits over the custom controls approach. Existing custom controls will continue to function until retirement, but new implementations should use external MFA. Start planning your migration now.
 
-For more information, see [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
+For more information, see [Manage external MFA in Microsoft Entra ID](../authentication/how-to-authentication-external-method-manage.md).
 
 ## Creating custom controls
 
@@ -61,4 +61,6 @@ Custom controls can't be used with Microsoft Entra ID Protection's automation re
 
 ## Related content
 
+- [External MFA in Microsoft Entra ID is now generally available](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926)
+- [Manage external MFA in Microsoft Entra ID](../authentication/how-to-authentication-external-method-manage.md)
 - [Upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696)
