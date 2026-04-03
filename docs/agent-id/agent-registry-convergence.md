@@ -72,24 +72,24 @@ Identity administrators can optionally use Agent 365, via the Microsoft 365 admi
 
 ### Do I need a different role to view agents in Agent 365?
 
-To see all agents in Agent 365, users need the [AI Administrator](../../identity/role-based-access-control/permissions-reference.md#ai-administrator) role. To see all agents with a Microsoft Entra Agent ID in the Microsoft Entra admin center, users need the [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role. Identity administrators can be assigned these roles for complete agent visibility.
+To see all agents in Agent 365, users need the [AI Administrator](../identity/role-based-access-control/permissions-reference.md#ai-administrator) role. To see all agents with a Microsoft Entra Agent ID in the Microsoft Entra admin center, users need the [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role. Identity administrators can be assigned these roles for complete agent visibility.
 
 ### Is a license required?
 
 Viewing all agents in the Microsoft 365 admin center doesn't require a specific license. Administrators only need the appropriate role, such as AI Reader (recommended least-privilege role) or AI Administrator, to access the inventory view.
 
-Applying security and governance controls for agents, such as Conditional Access or identity governance policies, requires the appropriate licensing for [Microsoft Entra Agent ID](../../fundamentals/licensing.md#microsoft-entra-agent-id).
+Applying security and governance controls for agents, such as Conditional Access or identity governance policies, requires the appropriate licensing for [Microsoft Entra Agent ID](../fundamentals/licensing.md#microsoft-entra-agent-id).
 
 ## How to view the complete agent inventory
 
 To view the complete inventory of agents in your organization:
 
-1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com) as at least an [AI Administrator](../../identity/role-based-access-control/permissions-reference.md#ai-administrator).
+1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com) as at least an [AI Administrator](../identity/role-based-access-control/permissions-reference.md#ai-administrator).
 1. Select **Agents** from the navigation menu.
 1. Select **All agents** to view the comprehensive list of agents in your tenant.
 
 ## Related content
 
-- [What is Microsoft Entra Agent ID?](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md)
+- [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
 - [What is the Microsoft Entra Agent Registry?](what-is-agent-registry.md)
 - [Microsoft Agent 365 overview](/microsoft-agent-365/overview)

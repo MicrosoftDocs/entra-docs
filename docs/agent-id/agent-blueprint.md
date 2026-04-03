@@ -56,7 +56,7 @@ Blueprints don't just hold information. They're also a special identity type in 
 
 A service uses the blueprint's client ID, credentials, and permissions to send agent identity creation requests via Microsoft Graph APIs. The agent identities created by a blueprint share common characteristics.
 
-For more information, see [create agent identities](./create-delete-agent-identities.md).
+For more information, see [create agent identities](create-delete-agent-identities.md).
 
 ## Agent identity blueprint principals
 
@@ -76,6 +76,6 @@ In either case, an agent identity blueprint principal is always created when a b
 
 ## Related content
 
-- [Agent identity blueprint creation channels](../identity-professional/agent-id-creation-channels.md)
-- [Create an agent identity blueprint](./create-blueprint.md)
-- [Credentials for agent identities](./agent-identities.md#authorizing-agent-identities).
+- [Agent identity blueprint creation channels](.agent-id-creation-channels.md)
+- [Create an agent identity blueprint](create-blueprint.md)
+- [Credentials for agent identities](agent-identities.md#authorizing-agent-identities).
