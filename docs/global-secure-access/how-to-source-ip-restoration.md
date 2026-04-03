@@ -10,7 +10,7 @@ ms.custom: sfi-image-nochange
 # Source IP restoration
 When you use cloud-based network proxy and SSE solutions, they abstract the original source IP of the user from the service that the user connects to. Instead, the service detects the user's IP address as the egress address of the cloud-based network proxy. While this abstraction helps with privacy-related concerns in consumer scenarios, not having the original source IP information makes it difficult to achieve enterprise security goals. For example, without an actual client egress IP address, you can't apply Microsoft Entra ID Conditional Access policies based on your organization's well-known IP addresses, and audit logs don't reflect accurate location information.
 
-Source IP restoration is part of the Adaptive Access featureof Microsoft Entra Internet Access for Microsoft Services. Source IP restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to your organization:
+Source IP restoration is part of the Adaptive Access feature of Microsoft Entra Internet Access for Microsoft Services. Source IP restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to your organization:
 
 - You can continue to enforce IP-based location policies in [Microsoft Entra ID Conditional Access](/azure/active-directory/conditional-access/overview).
 - It improves the accuracy of risk detection in [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks).
@@ -21,11 +21,11 @@ Source IP restoration is part of the Adaptive Access featureof Microsoft Entra I
 
 ## Prerequisites
 
-* Administrators who interact with **Global Secure Access** features must have both of the following role assignments depending on the tasks they're performing:
-   * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
-   * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
-* The product requires Microsoft Entra ID P1 licenses. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* You must enable the [Microsoft Traffic Profile](concept-microsoft-traffic-profile.md) to use Source IP restoration.
+- Administrators who interact with **Global Secure Access** features must have both of the following role assignments depending on the tasks they're performing:
+   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
+   - The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
+- The product requires Microsoft Entra ID P1 licenses. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- You must enable the [Microsoft Traffic Profile](concept-microsoft-traffic-profile.md) to use Source IP restoration.
 
 ### Known limitations
 
@@ -34,7 +34,7 @@ Source IP restoration is part of the Adaptive Access featureof Microsoft Entra I
 ## Enable Global Secure Access signaling for Conditional Access
 
 > [!NOTE]
-> Source IP restoration is now enabled by default for new tenants. If you enabled Global Secure Access features in your tenant before June 2025, you might need to explicitly enable Source IP Restoration.
+> Source IP restoration is now enabled by default for new tenants. If you enabled Global Secure Access features in your tenant before June 2025, you might need to explicitly enable source IP restoration.
 
 To enable the required setting to allow source IP restoration, an administrator must take the following steps.
 
@@ -55,10 +55,10 @@ To see source IP restoration in action, administrators can take the following st
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](/azure/active-directory/roles/permissions-reference#security-reader).
 1. Browse to **Entra ID** > **Users** > select one of your test users > **Sign-in logs**.
-1. When you enable source IP restoration, you see IP addresses that include their actual IP address. 
-   - When you disable source IP restoration, you can't see their actual IP address.
+1. When you enable source IP restoration, you see IP addresses that include the user's actual IP address.
+   - When you disable source IP restoration, you can't see the user's actual IP address.
 
-Sign-in log data might take some time to appear. This delay is normal as there's some processing that must take place.
+Sign-in log data might take some time to appear. This delay is normal because the data undergoes some processing before it appears.
 
 :::image type="content" source="media/how-to-source-ip-restoration/user-log-data.png" alt-text="Screenshot of the sign-in logs showing events with source IP restoration on, then off, then on again." lightbox="media/how-to-source-ip-restoration/user-log-data.png":::
 

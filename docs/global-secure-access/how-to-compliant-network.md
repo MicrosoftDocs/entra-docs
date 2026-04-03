@@ -23,8 +23,8 @@ The compliant network is different from [IPv4, IPv6, or geographic locations](..
 ## Prerequisites
 
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing:
-   - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
-   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to enable Global Secure Access signaling for Conditional Access, as well as to create and interact with Conditional Access policies and named locations.
+   - The [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
+   - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to enable Global Secure Access signaling for Conditional Access, and to create and interact with Conditional Access policies and named locations.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
@@ -45,7 +45,7 @@ To enable the setting that allows the compliant network check, an administrator 
    1. Confirm you have a location called **All Compliant Network locations** with location type **Network Access**. You can optionally mark this location as trusted.
 
 > [!CAUTION]
-> If your organization has active Conditional Access policies based on compliant network check, and you later disable Global Secure Access signaling in Conditional Access, you might unintentionally block targeted end-users from accessing the resources. If you must disable this feature, first delete any corresponding Conditional Access policies.
+> If your organization has active Conditional Access policies based on compliant network check, and you later disable Global Secure Access signaling in Conditional Access, you might unintentionally block targeted end users from accessing the resources. If you must disable this feature, first delete any corresponding Conditional Access policies.
 
 ## Protect your resources behind the compliant network
 
