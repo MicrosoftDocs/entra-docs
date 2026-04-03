@@ -68,7 +68,7 @@ Learn more about [adding sign-in and sign-up to your app](concept-planning-your-
 
 ## Design user flows for self-service sign-up
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md) federation, as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), or [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md) federation, as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
 
 Several user flow settings let you control how the customer signs up for the application, including:
 

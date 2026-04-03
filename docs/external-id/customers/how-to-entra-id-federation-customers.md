@@ -8,7 +8,7 @@ author: garrodonnell
 ms.custom: it-pro
 ai-usage: ai-assisted
 
-#Customer intent: As a developer, devops, or it administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
+#Customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
@@ -42,7 +42,7 @@ When you register the application, use the following federation-specific setting
 
    `https://<tenant-subdomain>.ciamlogin.com/<custom-domain>/federation/oauth2`
 
-For step by step guidance, see [Register an application](/entra/identity-platform/quickstart-register-app).
+For step-by-step guidance, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
 After the app is registered, complete the following configuration:
 
@@ -53,7 +53,7 @@ After the app is registered, complete the following configuration:
 
 ## Configure the identity provider in the external tenant
 
-After you register the external tenant in the Microsoft Entra ID tenant, add it as a custom OIDC identity provider in the external tenant. Follow the steps in [Configure a new OpenID Connect identity provider in the admin center](how-to-custom-oidc-federation-customers.md#configure-a-new-openid-connect-identity-provider-in-the-admin-center) and use the following Entra ID-specific values:
+After you register the external tenant in the Microsoft Entra ID tenant, add it as a custom OIDC identity provider in the external tenant. Follow the steps in [Configure a new OpenID Connect identity provider in the admin center](how-to-custom-oidc-federation-customers.md#configure-a-new-openid-connect-identity-provider-in-the-admin-center) and use the following Microsoft Entra ID-specific values:
 
 | Setting | Value |
 |---------|-------|
@@ -82,7 +82,7 @@ After you set up the identity provider, add it to a user flow so it appears on t
 
 ## Known limitations
 
-- Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users are unable to register an MFA method and can't complete sign-in. This limitation applies only for External ID to Entra ID federation and doesn't affect other external identity provider federations.
+- Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users can't register an MFA method and can't complete sign-in. This limitation applies only for External ID to Microsoft Entra ID federation and doesn't affect other external identity provider federations.
 
 ## Frequently asked questions
 
