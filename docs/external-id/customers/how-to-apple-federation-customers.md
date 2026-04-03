@@ -102,3 +102,5 @@ At this point, the Apple identity provider has been set up in your Microsoft Ent
 
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

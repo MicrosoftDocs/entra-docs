@@ -114,4 +114,5 @@ At this point, the Facebook identity provider has been set up in your external t
 
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
