@@ -98,7 +98,13 @@ landingContent:
           - text: Understanding Lifecycle Workflows 
             url: understanding-lifecycle-workflows.md
           - text: Lifecycle Workflows built-in tasks
-            url: lifecycle-workflow-tasks.md  
+            url: lifecycle-workflow-tasks.md
+          - text: Custom task extensions
+            url: lifecycle-workflow-extensibility.md
+      - linkListType: how-to-guide
+        links:
+          - text: Trigger Logic Apps based on custom task extensions
+            url: trigger-custom-task.md
   
   # Card
   - title: Govern tenants across your organization (preview)
