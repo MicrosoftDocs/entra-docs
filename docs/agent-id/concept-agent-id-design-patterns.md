@@ -17,21 +17,21 @@ Microsoft Entra Agent ID introduces new identity constructs as well as new ways 
 
 This article describes common AI agent deployment patterns and how they map to Microsoft Entra Agent ID. The article starts with a review of key identity concepts, describes permisssions and trust boundaries, and then walks through common deployment patterns.
 
-For step-by-step decision guidance on how many blueprints and agent identities to create, see [Plan your agent identity architecture](plan-agent-identity-architecture.md).
+For step-by-step decision guidance on how many blueprints and agent identities to create, see [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Key concepts
 
-The following components are the foundation of Microsoft Entra Agent ID. If you're new to them, start with [Microsoft Entra Agent ID key concepts](../identity-platform/key-concepts.md) before continuing with this article.
+The following components are the foundation of Microsoft Entra Agent ID. If you're new to them, start with [Microsoft Entra Agent ID key concepts](identity-platform/key-concepts.md) before continuing with this article.
 
 ### Identity constructs
 
 The following identity constructs are used throughout the patterns described in this article:
-- **[Agent identity blueprint](../identity-platform/agent-blueprint.md)**: The template and authentication foundation for one or more agent identities. It holds credentials and policies that apply to all agent identities created from it.
-- **[Agent identity blueprint principal](../identity-platform/agent-blueprint.md#agent-identity-blueprint-principals)**: The Microsoft Entra object created when a blueprint is added to a tenant. It's what actually acquires tokens, creates agent identities, and appears in audit logs on behalf of the blueprint.
-- **[Agent identity](../identity-platform/agent-identities.md)**: The runtime identity for a specific AI agent, with its own permissions on downstream resources.
-- **[Agent's user account](../identity-platform/agent-users.md)**: An optional 1:1 account paired with an agent identity, needed only when the agent must access systems that require a user object.
+- **[Agent identity blueprint](identity-platform/agent-blueprint.md)**: The template and authentication foundation for one or more agent identities. It holds credentials and policies that apply to all agent identities created from it.
+- **[Agent identity blueprint principal](identity-platform/agent-blueprint.md#agent-identity-blueprint-principals)**: The Microsoft Entra object created when a blueprint is added to a tenant. It's what actually acquires tokens, creates agent identities, and appears in audit logs on behalf of the blueprint.
+- **[Agent identity](identity-platform/agent-identities.md)**: The runtime identity for a specific AI agent, with its own permissions on downstream resources.
+- **[Agent's user account](identity-platform/agent-users.md)**: An optional 1:1 account paired with an agent identity, needed only when the agent must access systems that require a user object.
 
 ### Permissions models
 
@@ -141,9 +141,9 @@ Creating one agent identity per meeting, per document, or per ephemeral object a
 ## Related content
 
 - [Plan your agent identity architecture](plan-agent-identity-architecture.md)
-- [Agent identity blueprints](../identity-platform/agent-blueprint.md)
-- [Agent identities](../identity-platform/agent-identities.md)
-- [Agent's user accounts](../identity-platform/agent-users.md)
+- [Agent identity blueprints](identity-platform/agent-blueprint.md)
+- [Agent identities](identity-platform/agent-identities.md)
+- [Agent's user accounts](identity-platform/agent-users.md)
 - [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
 - [Authorization in Microsoft Entra Agent ID](authorization-agent-id.md)
 - [Grant agent access to Microsoft 365](grant-agent-access-microsoft-365.md)

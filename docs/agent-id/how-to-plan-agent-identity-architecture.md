@@ -20,9 +20,9 @@ Before you integrate your AI agent with Microsoft Entra Agent ID, you need to ma
 1. **How many blueprints** your system requires.
 1. **How many agent identities** to create per blueprint.
 
-Work through these decisions in order, because earlier choices shape later ones. Some single-agent deployments might only need the first two steps. For examples of how these decisions map to real-world agent architectures, see [Agent ID design patterns](agent-id-design-patterns.md).
+Work through these decisions in order, because earlier choices shape later ones. Some single-agent deployments might only need the first two steps. For examples of how these decisions map to real-world agent architectures, see [Agent ID design patterns](concept-agent-id-design-patterns.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Step 1: Choose an identity type
 
@@ -44,7 +44,7 @@ Service principals are designed for deterministic, static workloads. Microsoft E
 - Blueprint-managed credentials and lifecycle: you create, rotate, and delete agent identities through their parent blueprint, not individually.
 - Support for ephemeral agent identities that are created at runtime with inheritable permissions already granted through the blueprint, and deleted when the task completes.
 
-For a detailed comparison, see [Agent identities, service principals, and applications](../identity-platform/agent-service-principals.md).
+For a detailed comparison, see [Agent identities, service principals, and applications](identity-platform/agent-service-principals.md).
 
 ### Why not a regular user account?
 
@@ -80,8 +80,8 @@ Choose **interactive** when your agent:
 
 Some agents need both. For example, an agent might run a nightly background sync using the autonomous pattern and also respond to user chat messages using the interactive pattern. In this case, implement both OAuth flows and select the appropriate token based on the operation.
 
-- For autonomous agents, see [Request agent tokens for autonomous agents](../identity-platform/autonomous-agent-request-tokens.md).
-- For interactive agents, see [Authenticate users in interactive agents](../identity-platform/interactive-agent-authenticate-user.md).
+- For autonomous agents, see [Request agent tokens for autonomous agents](identity-platform/autonomous-agent-request-tokens.md).
+- For interactive agents, see [Authenticate users in interactive agents](identity-platform/interactive-agent-authenticate-user.md).
 
 ## Step 3: Decide how many agent identity blueprints
 
@@ -103,7 +103,7 @@ The following factors are *not* reasons to add more blueprints:
 - **Scale-out or replicas**: Running multiple instances of the same agent doesn't require multiple blueprints.
 - **Memory or context separation**: Agent memory is typically a shared data store filtered by session ID at retrieval time, which doesn't require separate blueprints.
 
-For more information about blueprints, see [Agent identity blueprints](../identity-platform/agent-blueprint.md).
+For more information about blueprints, see [Agent identity blueprints](identity-platform/agent-blueprint.md).
 
 ## Step 4: Decide how many agent identities per blueprint
 
@@ -125,5 +125,5 @@ Multi-agent architectures where multiple agent identities are appropriate can in
 ## Related content
 
 - [Agent ID design patterns](agent-id-design-patterns.md)
-- [Agent identity blueprints](../identity-platform/agent-blueprint.md)
-- [Agent identities, service principals, and applications](../identity-platform/agent-service-principals.md)
+- [Agent identity blueprints](identity-platform/agent-blueprint.md)
+- [Agent identities, service principals, and applications](identity-platform/agent-service-principals.md)

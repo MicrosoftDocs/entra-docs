@@ -36,7 +36,7 @@ When a blueprint is added to a tenant, Microsoft Entra creates a corresponding p
 
 ### Agent's user account
 
-An agent's user account is an optional account that pairs 1:1 with an agent identity. An agent's user account should only be used when the agent must access systems that require a user object, such as Exchange Online mailboxes or Teams channels. It doesn't replace the agent identity; both must exist. For more information, see [Agent's user accounts](./agent-users.md).
+An agent's user account is an optional account that pairs 1:1 with an agent identity. An agent's user account should only be used when the agent must access systems that require a user object, such as Exchange Online mailboxes or Teams channels. It doesn't replace the agent identity; both must exist. For more information, see [Agent's user accounts](agent-users.md).
 
 ### Service principal (not recommended for AI agents)
 
@@ -44,7 +44,7 @@ Service principals were designed for static, deterministic workloads. Microsoft 
 
 ### Regular user account (not recommended for AI agents)
 
-Regular Microsoft Entra user accounts are designed for human sign-in patterns. Assigning them to AI agents causes failures across every Zero Trust enforcement layer: Conditional Access policies built for humans don't apply correctly to agents, ID Protection detections are degraded, and identity governance processes can incorrectly remove agent access. For more information, see [Plan your agent identity architecture](../identity-professional/plan-agent-identity-architecture.md).
+Regular Microsoft Entra user accounts are designed for human sign-in patterns. Assigning them to AI agents causes failures across every Zero Trust enforcement layer: Conditional Access policies built for humans don't apply correctly to agents, ID Protection detections are degraded, and identity governance processes can incorrectly remove agent access. For more information, see [Plan your agent identity architecture](identity-professional/plan-agent-identity-architecture.md).
 
 ## Agent operation patterns
 
