@@ -82,7 +82,7 @@ After you set up the identity provider, add it to a user flow so it appears on t
 
 ## Known limitations
 
-- Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users can't register an MFA method and can't complete sign-in. This limitation applies only for External ID to Microsoft Entra ID federation and doesn't affect other external identity provider federations.
+Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users can't register an MFA method and can't complete sign-in. This limitation applies only for External ID to Microsoft Entra ID federation and doesn't affect other external identity provider federations.
 
 ## Frequently asked questions
 
