@@ -22,6 +22,11 @@ This article provides information about the latest releases and change announcem
 
 ## March 2026
 
+### Plan for change – Conditional Access enforcement during credential registration for Windows Hello for Business and macOS Platform SSO
+
+**Type:** Plan for Change  
+**Service category:** Conditional Access  
+**Product capability:** User Authentication
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
