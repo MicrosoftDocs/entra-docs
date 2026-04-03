@@ -3,7 +3,7 @@ title: Global Secure Access and Universal Tenant Restrictions
 description: Learn about how Global Secure Access helps secure access to your corporate network by restricting access to external tenants.
 ms.topic: how-to
 ms.date: 04/03/2026
-ms.reviewer: alexpav
+ms.reviewer: dhruvinrshah
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
@@ -66,9 +66,9 @@ After you create the tenant restriction v2 policies, you can use Global Secure A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
-1. Browse to **Global Secure Access** > **Settings** > **Session Management** > **Universal Tenant Restrictions**.
+1. Go to **Global Secure Access** > **Settings** > **Session Management**.
 
-1. Turn on the **Enable Tenant Restrictions for Microsoft Entra ID (covering all cloud apps)** toggle.
+1. On the **Universal Tenant Restrictions** tab, turn on the **Enable Tenant Restrictions for Microsoft Entra ID and Microsoft Graph** toggle.
 
 ## Try universal tenant restrictions
 
@@ -92,9 +92,11 @@ For example, if you configure a tenant restrictions v2 policy in the tenant cont
 
    For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. The Fabrikam user should be able to access the My Apps portal, because signaling for universal tenant restrictions is turned off in Global Secure Access.
 
-1. Turn on universal tenant restrictions in the Microsoft Entra admin center. Go to **Global Secure Access** > **Session Management** > **Universal Tenant Restrictions**, and then turn on the **Enable Tenant Restrictions for Microsoft Entra ID (covering all cloud apps)** toggle.
+1. Turn on universal tenant restrictions in the Microsoft Entra admin center. 
+    1. Go to **Global Secure Access** > **Settings** > **Session Management**.
+    1. On the **Universal Tenant Restrictions** tab, turn on the **Enable Tenant Restrictions for Microsoft Entra ID and Microsoft Graph** toggle.
 
-1. Sign out of the My Apps portaland restart your browser.
+1. Sign out of the My Apps portal and restart your browser.
 
 1. With the Global Secure Access client running, go to the [My Apps portal](https://myapps.microsoft.com/) by using the same identity (in the preceding example, the Fabrikam user in the Fabrikam tenant).
 
@@ -116,9 +118,11 @@ For example, if you configure a tenant restrictions v2 policy in the tenant cont
 
 1. Keep the browser window open with the logs.
 
-1. Turn on universal tenant restrictions in the Microsoft Entra admin center. Go to **Global Secure Access** > **Session Management** > **Universal Tenant Restrictions**, and then turn on the **Enable Tenant Restrictions for Microsoft Entra ID (covering all cloud apps)** toggle.
+1. Turn on universal tenant restrictions in the Microsoft Entra admin center. 
+    1. Go to **Global Secure Access** > **Settings** > **Session Management**.
+    1. On the **Universal Tenant Restrictions** tab, turn on the **Enable Tenant Restrictions for Microsoft Entra ID and Microsoft Graph** toggle.
 
-1. While you're signed in as the other user(the Fabrikam user in the preceding example), new logs appear in the browser with Graph Explorer open. The process might take a few minutes. Also, the browser might refresh itself, based on the request and responses happening in the back end. If the browser doesn't refresh itself after a couple of minutes, refresh the page.
+1. While you're signed in as the other user (the Fabrikam user in the preceding example), new logs appear in the browser with Graph Explorer open. The process might take a few minutes. Also, the browser might refresh itself, based on the request and responses happening in the back end. If the browser doesn't refresh itself after a couple of minutes, refresh the page.
 
    Your access is now blocked with this message: "Access is blocked. The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
 
