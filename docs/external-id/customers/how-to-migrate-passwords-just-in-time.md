@@ -4,7 +4,7 @@ description: Learn how to migrate passwords from another identity provider to Mi
 ai-usage: ai-assisted
 author: garrodonnell
 ms.topic: how-to
-ms.date: 12/12/2025
+ms.date: 04/03/2026
 ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
@@ -34,8 +34,7 @@ Before you begin, ensure you have:
 - An account with the following roles assigned:
     - [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) 
     - [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator)
-    - Authentication Extensibility Password Administrator. This role gives you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
-    You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph). 
+    - [Authentication Extensibility Password Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-extensibility-password-administrator). This built-in role is available in the Azure portal and gives you the necessary permissions to create and manage custom authentication extensions for password migration. For more information about role assignments, see [Assign Microsoft Entra roles](/entra/identity/role-based-access-control/manage-roles-portal).
 
 
 ## Overview of the JIT migration process
