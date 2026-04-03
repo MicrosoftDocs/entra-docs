@@ -1,16 +1,16 @@
 ---
 title: Protecting authentication methods in Microsoft Entra ID
-description: Learn how Microsoft Entra ID enables default protection for authentication methods, including Microsoft managed settings for registration campaigns, Authenticator, and passkeys.
+description: Learn how Microsoft Entra ID protects authentication methods with default protection and Microsoft managed settings for registration campaigns.
 ms.topic: concept-article
 ms.date: 03/11/2026
-ms.custom: msecd-doc-authoring-104
+ms.custom: msecd-doc-authoring-108
 # Customer intent: As an identity administrator, I want to understand how default protection and Microsoft managed settings work so that I can improve my organization's security posture.
 ---
 # Protecting authentication methods in Microsoft Entra ID
 
-Microsoft Entra ID adds and improves security features to better protect customers against increasing attacks. As new attack vectors become known, Microsoft Entra ID can respond by enabling protection by default to help customers stay ahead of emerging security threats. 
+Microsoft Entra ID adds and improves security features to better protect customers against increasing attacks. As new attack vectors become known, Microsoft Entra ID can respond by enabling protection by default to help customers stay ahead of emerging security threats.
 
-For example, in response to increasing MFA fatigue attacks, Microsoft recommended ways for customers to [defend users](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/defend-your-users-from-mfa-fatigue-attacks/ba-p/2365677). One recommendation to prevent users from accidental multifactor authentication (MFA) approvals is to enable [number matching](how-to-mfa-number-match.md). As a result, default behavior for number matching will be explicitly **Enabled** for all Microsoft Authenticator users. You can learn more about new security features like number matching in our blog post [Advanced Microsoft Authenticator security features are now generally available!](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/advanced-microsoft-authenticator-security-features-are-now/ba-p/2365673). 
+For example, in response to increasing MFA fatigue attacks, Microsoft recommended ways for customers to [defend users](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/defend-your-users-from-mfa-fatigue-attacks/ba-p/2365677). To prevent accidental multifactor authentication (MFA) approvals, enable [number matching](how-to-mfa-number-match.md). As a result, default behavior for number matching is explicitly **Enabled** for all Microsoft Authenticator users. You can learn more about new security features like number matching in the blog post [Advanced Microsoft Authenticator security features are now generally available!](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/advanced-microsoft-authenticator-security-features-are-now/ba-p/2365673).
 
 There are two ways for protection of a security feature to be enabled by default: 
 
@@ -72,8 +72,9 @@ Once these changes take effect, targeted users receive passkey registration nudg
 
 As threat vectors change, Microsoft Entra ID can announce default protection for a **Microsoft managed** setting in [release notes](~/fundamentals/whats-new.md) and on commonly read forums like [Tech Community](https://techcommunity.microsoft.com/). 
 
-For more information, see our blog post [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752) which discusses moving away from using text message and voice calls. Microsoft managed registration campaigns help users set up modern authentication methods, including Microsoft Authenticator and passkeys.
+For more information, see the blog post [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752) which discusses moving away from using text message and voice calls. Microsoft managed registration campaigns help users set up modern authentication methods, including Microsoft Authenticator and passkeys.
 
-## Next steps
+## Related content
 
-[Authentication methods in Microsoft Entra ID - Microsoft Authenticator](concept-authentication-authenticator-app.md)
+- [Authentication methods in Microsoft Entra ID - Microsoft Authenticator](concept-authentication-authenticator-app.md)
+- [Enable passkeys (FIDO2)](how-to-enable-passkey-fido2.md)

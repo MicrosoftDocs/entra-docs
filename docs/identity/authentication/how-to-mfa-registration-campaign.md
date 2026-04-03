@@ -1,10 +1,10 @@
 ---
 title: Run a registration campaign to set up Microsoft Authenticator or passkey
-description: Learn how to nudge users to register Microsoft Authenticator or a passkey during sign-in by using a registration campaign in Microsoft Entra ID. Configure campaigns for Authenticator or passkey (FIDO2).
+description: Learn how to nudge users to set up Microsoft Authenticator or a passkey by using a registration campaign in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/11/2026
 author: mjsantani
-ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-104
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-108
 #Customer intent: As an identity administrator, I want to encourage users to set up Microsoft Authenticator or a passkey in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -36,47 +36,47 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ### Authenticator campaign
 
-1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
+1. First, successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
 
 1. If you're enabled for Authenticator push notifications and don't have it already set up, you get prompted to set up Authenticator to improve your sign-in experience. 
 
    > [!NOTE]
    > Other security features, such as passwordless passkey, self-service password reset, or security defaults, might also prompt you for setup.
 
-    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot showing the registration campaign prompt asking the user to set up Microsoft Authenticator.":::
 
 1. Select **Next** and step through the Authenticator app setup. 
 1. First download the app.  
 
-    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot showing the prompt to download Microsoft Authenticator from the app store."::: 
 
    1. See how to set up the Authenticator app. 
 
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/setup.png" alt-text="Screenshot of Microsoft Authenticator.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/setup.png" alt-text="Screenshot showing the Authenticator app setup instructions with a QR code.":::
 
    1. Scan the QR Code. 
 
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/scan.png" alt-text="Screenshot of QR Code.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/scan.png" alt-text="Screenshot showing a QR code to scan with the Authenticator app.":::
 
    1. Verify your identity.
 
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/approved.png" alt-text="Screenshot of Verify your identity screen."::: 
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/approved.png" alt-text="Screenshot showing the Verify your identity screen during Authenticator setup."::: 
 
    1. Approve the test notification on your device.
 
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot showing a test notification sent to the Authenticator app for approval."::: 
 
    1. Authenticator app is now successfully set up.
    
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
+      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot showing that Authenticator app setup completed successfully.":::
 
-1. If you don't want to install the Authenticator app, you can select **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
+1. If you don't want to set up the Authenticator app, you can select **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
-    :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot of snooze option.":::
+    :::image type="content" source="./media/how-to-mfa-registration-campaign/snooze.png" alt-text="Screenshot showing the Skip for now option to snooze the registration campaign prompt.":::
 
 ### Passkey campaign
 
-1. First, you need to successfully authenticate using Microsoft Entra multifactor authentication (MFA).
+1. First, successfully authenticate using Microsoft Entra multifactor authentication (MFA).
 
 1. If passkey is enabled for your account and you haven't already registered a passkey, you get prompted to set up a passkey.
 
@@ -133,7 +133,7 @@ To configure the policy using Graph Explorer:
 
    To open the Permissions panel:
 
-   ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
+   ![Screenshot of Graph Explorer showing the Permissions panel with Policy.Read.All and Policy.ReadWrite.AuthenticationMethod consented.](./media/how-to-nudge-authenticator-app/permissions.png)
    
 1. Retrieve the Authentication methods policy: 
 
@@ -317,7 +317,7 @@ Here are a few sample JSON bodies you can use to get started.
 
    ![Nudge group](./media/how-to-nudge-authenticator-app/group.png)
    
-<!---comment out PS until ready>
+<!-- comment out PS until ready
 
 ### PowerShell
 
@@ -331,7 +331,7 @@ Here are a few sample JSON bodies you can use to get started.
 1. Select the beta profile.
 1. Call `Update-MgPolicyAuthenticationMethod`.
 
-<---->
+-->
 
 ## Limitations
 
