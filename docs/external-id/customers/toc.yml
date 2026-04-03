@@ -392,6 +392,8 @@ items:
       items:
         - name: Custom OIDC federation
           href: how-to-custom-oidc-federation-customers.md
+        - name: Microsoft Entra ID federation
+          href: how-to-entra-id-federation-customers.md
         - name: Microsoft account federation
           href: how-to-microsoft-accounts-federation-customers.md
         - name: Azure AD B2C federation
