@@ -60,8 +60,6 @@ procedureSection:
       - |
         Set the **Show keep user signed in** toggle to **Yes**.
 
-        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png" alt-text="Screenshot of the Show keep user signed in prompt." lightbox="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in-expanded.png":::
-
         ## Troubleshoot 'Stay signed in?' issues
 
         If a user doesn't act on the **Stay signed in?** prompt but abandons the sign-in attempt, a sign-in log entry appears in the Microsoft Entra sign-in logs. The prompt the user sees is called an "interrupt."
