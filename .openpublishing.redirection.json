@@ -3171,26 +3171,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "docs/agent-id/identity-platform/interactive-agent-authenticate-user.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-authorization.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-admin-authorization.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-tokens.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "docs/global-secure-access/how-to-ai-prompt-shield.md",
       "redirect_url": "/entra/global-secure-access/how-to-ai-prompt-injection-protection",
       "redirect_document_id": true
@@ -3312,7 +3292,7 @@
     },
     {
       "source_path": "docs/agent-id/identity-platform/what-is-agent-id.md",
-      "redirect_url": "/entra/agent-id/identity-platform/what-are-agent-identities",
+      "redirect_url": "/entra/agent-id/what-are-agent-identities",
       "redirect_document_id": true
     },
     {
