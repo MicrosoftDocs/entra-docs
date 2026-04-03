@@ -8,9 +8,6 @@ ms.custom: msecd-doc-authoring-104
 ---
 # Protecting authentication methods in Microsoft Entra ID
 
-> [!NOTE]
-> The Microsoft managed value for Authenticator Lite will move from disabled to enabled on June 26th, 2023. All tenants left in the default state **Microsoft managed** will be enabled for the feature on June 26th.
-
 Microsoft Entra ID adds and improves security features to better protect customers against increasing attacks. As new attack vectors become known, Microsoft Entra ID can respond by enabling protection by default to help customers stay ahead of emerging security threats. 
 
 For example, in response to increasing MFA fatigue attacks, Microsoft recommended ways for customers to [defend users](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/defend-your-users-from-mfa-fatigue-attacks/ba-p/2365677). One recommendation to prevent users from accidental multifactor authentication (MFA) approvals is to enable [number matching](how-to-mfa-number-match.md). As a result, default behavior for number matching will be explicitly **Enabled** for all Microsoft Authenticator users. You can learn more about new security features like number matching in our blog post [Advanced Microsoft Authenticator security features are now generally available!](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/advanced-microsoft-authenticator-security-features-are-now/ba-p/2365673). 
@@ -54,15 +51,12 @@ The following table lists each setting that can be set to Microsoft managed and 
 
 ### Microsoft managed registration campaign
 
-When the registration campaign is set to **Microsoft managed**, Microsoft determines the optimal campaign configuration for your tenant based on best practices. For tenants with passkey (FIDO2) enabled and an active registration campaign set to **Microsoft managed**, the campaign settings may change after passkey profile automatic migration.
+When the registration campaign is set to **Microsoft managed**, Microsoft determines the optimal campaign configuration for your tenant based on best practices. For tenants with passkey (FIDO2) enabled and an active registration campaign set to **Microsoft managed**, the campaign settings are incrementally updated as Microsoft rolls out changes to tenants.
 
-These changes apply to tenants where passkey profiles meet the following criteria:
+> [!NOTE]
+> A registration campaign can only target one authentication method at a time. A tenant can't run campaigns for both Microsoft Authenticator and passkeys simultaneously.
 
-- Passkey profiles allow both device-bound and synced passkeys.
-- Attestation enforcement isn't enabled.
-- AAGUID-specific key restrictions aren't configured.
-
-When the criteria are met, the following Microsoft managed registration campaign settings are updated:
+The following Microsoft managed registration campaign settings are updated:
 
 | Setting | Previous value | New value |
 |---|---|---|
@@ -71,10 +65,10 @@ When the criteria are met, the following Microsoft managed registration campaign
 | **Limited number of snoozes** | Enabled | Disabled (no longer configurable) |
 | **User targeting** | Voice call or text message users | All multifactor authentication (MFA) capable users |
 
-Once these changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
+Once these changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication. If your tenant has AAGUID-specific key restrictions configured, the targeted authentication method won't update to passkeys under Microsoft managed mode. You can still switch to **Enabled** and configure passkey targeting manually.
 
 > [!NOTE]
-> If the Microsoft managed settings don't meet your organization's needs, you can switch the registration campaign state to **Enabled** to configure all settings manually, or **Disabled** to turn off the campaign. For example, if you want synced passkeys enabled but don't want the registration campaign to target passkeys, switch the state to **Enabled** and continue targeting Microsoft Authenticator. For more information, see [Run a registration campaign](how-to-mfa-registration-campaign.md).
+> If the Microsoft managed settings don't meet your organization's needs, you can switch the registration campaign state to **Enabled** to configure all settings manually, or **Disabled** to turn off the campaign. For example, if you want passkeys enabled but don't want the registration campaign to target passkeys, switch the state to **Enabled** and target Microsoft Authenticator. For more information, see [Run a registration campaign](how-to-mfa-registration-campaign.md).
 
 As threat vectors change, Microsoft Entra ID can announce default protection for a **Microsoft managed** setting in [release notes](~/fundamentals/whats-new.md) and on commonly read forums like [Tech Community](https://techcommunity.microsoft.com/). 
 

@@ -17,6 +17,9 @@ Registration campaigns support two authentication methods:
 - **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
 - **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both sync passkeys and device-bound passkeys.
 
+> [!NOTE]
+> A registration campaign can only target one authentication method at a time. You can't run campaigns for both Microsoft Authenticator and passkeys simultaneously in the same tenant.
+
 You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
 > [!NOTE]
@@ -27,7 +30,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 - If you want to know the number of users who registered each authentication method before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
 - Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
 - **For Authenticator campaigns**: Users can't have already set up the Authenticator app for push notifications on their account. Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
-- **For passkey campaigns**: The passkey (FIDO2) authentication method must be enabled in the Authentication methods policy. For more information, see [Enable passkeys](how-to-enable-passkey-fido2.md).
+- **For passkey campaigns**: The passkey (FIDO2) authentication method must be enabled in the Authentication methods policy. In addition, the **Allow self-service setup** toggle must be enabled in the passkey (FIDO2) method configuration. For more information, see [Enable passkeys](how-to-enable-passkey-fido2.md).
 
 ## User experience
 
@@ -77,11 +80,8 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 1. If passkey is enabled for your account and you haven't already registered a passkey, you get prompted to set up a passkey.
 
-   - If you already have Microsoft Authenticator or another application that supports device-bound passkeys, you can register a device-bound passkey.
-   - If you're on a device that supports sync passkeys (for example, through Apple Keychain or Google Password Manager), you can register a sync passkey.
-
    > [!NOTE]
-   > Users who already have a passkey registered aren't nudged again.
+   > Users who already have a passkey registered aren't nudged again. However, users who only have a Windows Hello for Business passkey or a Mac platform SSO passkey are still nudged to register an additional passkey.
 
 1. If you don't want to set up a passkey, you can tap **Skip for now** to snooze the prompt.
 
@@ -98,20 +98,20 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 1. For **State**:
 
-   - Select **Enabled** to enable the registration campaign for all users. When the state is set to **Enabled**, you can configure snooze duration, limited number of snoozes, and include/exclude targets.
-   - Select **Microsoft managed** to enable the registration campaign with Microsoft-recommended defaults. When **Microsoft managed** is selected, snooze duration and limited number of snoozes are set automatically and can't be configured. You can still configure include/exclude targets. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
+   - Select **Enabled** to enable the registration campaign for all users. When the state is set to **Enabled**, you can configure the target authentication method, snooze duration, limited number of snoozes, and include/exclude targets.
+   - Select **Microsoft managed** to enable the registration campaign with Microsoft-recommended defaults. When **Microsoft managed** is selected, the target authentication method, snooze duration, and limited number of snoozes are set automatically and can't be configured. You can still configure include/exclude targets. For more information, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
 
    > [!NOTE]
-   > When the state is set to **Microsoft managed**, Microsoft determines the optimal campaign settings based on best practices for your tenant. For tenants with passkey (FIDO2) enabled and an active Microsoft managed registration campaign, the following changes may occur after passkey profile automatic migration:
+   > When the state is set to **Microsoft managed**, Microsoft determines the optimal campaign settings based on best practices for your tenant. The following changes are incrementally rolled out to tenants:
    >
    > - **Targeted authentication method** changes from Microsoft Authenticator to passkeys (FIDO2).
    > - **Days allowed to snooze** changes to 1 day. This setting is no longer configurable.
    > - **Limited number of snoozes** changes to Disabled (unlimited snoozes). This setting is no longer configurable.
    > - **User targeting** changes from voice call or text message users to all multifactor authentication (MFA) capable users.
    >
-   > These changes apply to tenants where passkey profiles allow both device-bound and synced passkeys, attestation enforcement isn't enabled, and AAGUID-specific key restrictions aren't configured. Once the changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
+   > If your tenant has AAGUID-specific key restrictions configured, the targeted authentication method won't update to passkeys under Microsoft managed mode. You can still switch to **Enabled** and configure passkey targeting manually. Once the changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
    >
-   > If you want synced passkeys enabled but don't want the registration campaign to target passkeys, you can switch the state to **Enabled** and continue targeting Microsoft Authenticator, or set the state to **Disabled**. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
+   > If you want passkeys enabled but don't want the registration campaign to target passkeys, you can switch the state to **Enabled** and target Microsoft Authenticator, or set the state to **Disabled**. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
 
    If the registration campaign state is set to **Enabled**, you can configure the experience for end users by using **Limited number of snoozes**:
    - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register the targeted authentication method.
@@ -207,6 +207,9 @@ Here are a few sample JSON bodies you can use to get started.
 
 - Include all users and target passkey
   
+  > [!NOTE]
+  > Passkey targeting via the Graph API isn't available yet. The following example is for future use when the API supports passkey as a `targetedAuthenticationMethod`. Use the Microsoft Entra admin center to configure passkey registration campaigns.
+
   If you want to include ALL users in your tenant and nudge them to register a passkey, update the following JSON example. Then paste it in Graph Explorer and run `PATCH` on the endpoint. 
 
   ```json
@@ -370,7 +373,11 @@ Yes. If a user is enabled for an Authenticator registration campaign and the Aut
 
 **Will a user who already has a passkey see the nudge?**
 
-No. If a user already has a registered passkey and the registration campaign targets passkeys, the user isn't nudged again.
+No. If a user already has a registered passkey and the registration campaign targets passkeys, the user isn't nudged again. However, users who only have a Windows Hello for Business passkey or a Mac platform SSO passkey are still nudged to register an additional passkey.
+
+**Can I run registration campaigns for both Authenticator and passkeys at the same time?**
+
+No. A registration campaign can only target one authentication method at a time. You can either target Microsoft Authenticator or passkeys, but not both simultaneously in the same tenant.
 
 **If a user just went through MFA registration, are they nudged in the same sign-in session?** 
 
