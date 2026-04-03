@@ -2,7 +2,7 @@
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
 ms.topic: overview
-ms.date: 06/04/2025
+ms.date: 04/03/2026
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
@@ -71,6 +71,7 @@ For more information about configuring and managing Microsoft Entra ID Governanc
 * [Access reviews](~/id-governance/access-reviews-overview.md)
 * [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md)
 * [Lifecycle workflows](~/id-governance/what-are-lifecycle-workflows.md)
+* [Custom task extensions for Lifecycle workflows](~/id-governance/lifecycle-workflow-extensibility.md)
 
 ### Verified ID
 

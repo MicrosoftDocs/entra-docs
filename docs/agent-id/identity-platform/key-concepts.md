@@ -1,16 +1,16 @@
 ---
-title: Fundamental concepts in Microsoft agent identity platform
+title: Fundamental concepts in Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Discover the role of agent identities in AI authentication. Understand their unique identifiers, token usage, and how they enable secure access to systems.
 author: omondiatieno
 ms.author: jomondi
 ms.reviewer: dastrock
-ms.date: 11/04/2025
+ms.date: 04/03/2026
 ms.custom: agent-id-ignite
 ms.topic: concept-article
 #customer intent: As a developer, I want to understand the core concepts of agent identities and blueprints in Microsoft Entra ID so that I can implement secure authentication patterns for AI agents in my applications.
 ---
-# Agent identity and blueprint concepts in Microsoft Entra ID
+# Microsoft Entra Agent ID key concepts
 
 The Microsoft agent identity platform provides specialized identity constructs designed specifically for AI agents operating in enterprise environments. These identity constructs enable secure authentication and authorization patterns that differ from traditional user and application identities, addressing the unique requirements of autonomous AI systems.
 
@@ -20,45 +20,47 @@ The agent identity architecture follows a hierarchical model where agent identit
 
 ## Core identity concepts
 
-The following concepts form the foundation of the agent identity system in Microsoft Entra ID.
+The following concepts form the foundation of Microsoft Entra Agent ID and the Microsoft agent identity platform.
 
 ### Agent identity
 
-Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions. Agent identities don't have a password or any other credential. Instead, agent identities can only authenticate by presenting an access token issued to the service or platform on which the agent runs. For more information, see [what is an agent ID](./what-are-agent-identities.md)
+An agent identity is the primary identity an AI agent uses to authenticate to systems and access resources. Unlike user accounts, agent identities don't have credentials of their own. They authenticate using tokens issued by their agent identity blueprint. For more information, see [Agent identities](agent-identities.md).
 
 ### Agent identity blueprint
 
-Agent identity blueprints provide the template and management structure for creating and managing multiple agent identities. Agent identity blueprint serves as the parent of an agent identity.
-
-For more information, see [What is an agent identity blueprint?](agent-blueprint.md)
+An agent identity blueprint is an object in Microsoft Entra ID that serves as the template and authentication foundation for one or more agent identities. The blueprint holds credentials and uses them to acquire tokens on behalf of all agent identities created from it. Policies and settings applied to a blueprint, such as Conditional Access, take effect for all its agent identities. For more information, see [Agent identity blueprints](agent-blueprint.md).
 
 ### Agent identity blueprint principal
 
-When blueprints are added to tenants, they create a corresponding principal object that manages the blueprint's presence within that specific tenant. Agent identity blueprint principal is the Microsoft Entra object is the record of a blueprint's addition to a tenant. For more information, see [agent identity blueprint principals](agent-blueprint.md#agent-identity-blueprint-principals)
+When a blueprint is added to a tenant, Microsoft Entra creates a corresponding principal object. An agent identity blueprint principal is the Microsoft Entra object that records a blueprint's presence in a tenant and enables it to acquire tokens and appear in audit logs. For more information, see [Agent identity blueprint principals](agent-blueprint.md#agent-identity-blueprint-principals).
 
 ### Agent's user account
 
-For scenarios where agents need to interact with systems that specifically require user objects, the platform provides agents' user accounts as an alternative identity type. An agent's user account is a secondary account that an AI agent uses to authenticate to various systems. These accounts are user objects in a tenant and have most properties of other users, like a manager, UPN, and photo. It makes them compatible with systems that have a hard dependency on user objects, and enable AI agents to connect to these systems. For more information, see [agents' user accounts](./agent-users.md)
+An agent's user account is an optional account that pairs 1:1 with an agent identity. An agent's user account should only be used when the agent must access systems that require a user object, such as Exchange Online mailboxes or Teams channels. It doesn't replace the agent identity; both must exist. For more information, see [Agent's user accounts](agent-users.md).
 
-## Agent registry
+### Service principal (not recommended for AI agents)
 
-The agent registry is a centralized repository that maintains metadata about all registered agents within an organization. It serves as a discovery mechanism, allowing systems and services to locate and interact with agents based on their capabilities, roles, and other attributes. For more information, see [agent registry](what-is-agent-registry.md)
+Service principals were designed for static, deterministic workloads. Microsoft Entra Agent ID exists because service principals lack the governance infrastructure AI agents need. There's no enforced sponsorship, no agent-aware audit entries, and no blueprint-managed lifecycle. For more information, see [Agent identities, service principals, and applications](./agent-service-principals.md).
+
+### Regular user account (not recommended for AI agents)
+
+Regular Microsoft Entra user accounts are designed for human sign-in patterns. Assigning them to AI agents causes failures across every Zero Trust enforcement layer: Conditional Access policies built for humans don't apply correctly to agents, ID Protection detections are degraded, and identity governance processes can incorrectly remove agent access. For more information, see [Plan your agent identity architecture](../how-to-plan-agent-identity-architecture.md).
 
 ## Agent operation patterns
 
 The agent identity platform supports two primary patterns for how agents operate and authenticate, each serving different use cases and security requirements.
 
-- Interactive agents are agents that sign-in a user and taken action in response to user prompts, often via a chat interface. These agents act on behalf of the signed-in user, utilizing that user's authorization to perform actions in various systems. Interactive agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users. Tokens issued to interactive agents are often called user tokens.
+- **Interactive agents** are agents that sign-in a user and taken action in response to user prompts, often via a chat interface. These agents act *on behalf of* the signed-in user, utilizing that user's authorization to perform actions in various systems. Interactive agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users. Tokens issued to interactive agents are often called user tokens.
 
-- Autonomous agents are agents that perform actions using their own identity; not a human user's identity. These agents often run in the background and make autonomous decisions about what actions to take. Tokens issued to autonomous agents are often called agent tokens when an agent identity is authenticated. They can also be called agent's user account tokens when an agent's user account is authenticated.
+- **Autonomous agents** are agents that perform actions using their own identity; not a human user's identity. These agents often run in the background and make autonomous decisions about what actions to take. Tokens issued to autonomous agents are often called agent tokens when an agent identity is authenticated. They can also be called agent's user account tokens when an agent's user account is authenticated.
 
 ## Agent owners, sponsors, and managers
 
 The agent identity platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. The agent administrative roles include owners, managers, and sponsors.
 
-- Owners serve as technical administrators for agents, handling operational and configuration aspects.
-- Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access.
-- A manager is a human user who is designated as the hiring manager or operational owner for an agent's user account.
+- **Owners** serve as technical administrators for agents, handling operational and configuration aspects.
+- **Sponsors** provide business accountability for agents, making lifecycle decisions without technical administrative access.
+- **Managers** are human users who are designated as the hiring manager or operational owner for an agent's user account.
 
 For more information, see [Administrative relationships for agent identities (Owners, sponsors, and managers)](agent-owners-sponsors-managers.md)
 
