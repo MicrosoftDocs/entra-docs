@@ -35,6 +35,13 @@ Starting in **May 2026**, if your organization has Conditional Access policies s
 **What's changing**
 
 Beginning in May 2026, when a user provisions Windows Hello for Business on a new device or registers macOS Platform SSO credentials, Microsoft Entra ID evaluates any Conditional Access policies that target the **Register security information** user action. If the user doesn't meet the policy requirements, they're prompted to satisfy them before completing registration. This only applies to organizations that have configured CA policies protecting this user action.
+
+Depending on your organization's Conditional Access policies, users may be asked to:
+
+*   Authenticate with additional credentials before completing setup
+*   Use a specific authentication method, such as a phishing-resistant credential
+*   Be on a compliant device or connect from a trusted network location
+*   Satisfy other requirements defined in the policy
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
