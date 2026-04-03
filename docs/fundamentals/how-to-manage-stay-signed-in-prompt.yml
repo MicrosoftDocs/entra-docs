@@ -61,7 +61,7 @@ procedureSection:
       - |
         Browse to **Entra ID** > **Users** > **User settings**.
 
-        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page in Microsoft Entra ID.":::
+        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot that shows the User settings page in Microsoft Entra ID with the Show keep user signed in toggle visible at the bottom.":::
       - |
         Set the **Show keep user signed in** toggle to **Yes**.
 
