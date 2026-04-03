@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk remove group members in Microsoft Entra ID
 
+
+## Overview
+
 You can remove a large number of members from a group by using a comma-separated values (CSV) file in the portal for Microsoft Entra ID.
 
 ## Understand the CSV template

@@ -41,7 +41,7 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Passkey in Microsoft Authenticator 
 * QR code
 * Certificate-based authentication (when configured for multifactor authentication)
-* External authentication methods (preview)
+* External MFA
 * Temporary Access Pass (TAP)
 * OATH hardware token (preview)
 * OATH software token
@@ -60,7 +60,7 @@ For more granular controls, you can use [Conditional Access](~/identity/conditio
 
 ## Related content
 
-To learn more about different authentication and validation methods, see [Authentication methods in Microsoft Entra ID](concept-authentication-methods.md).
+To learn more about different authentication and validation methods, see [Authentication methods in Microsoft Entra ID](overview-authentication.md).
 
 To see MFA in action, enable Microsoft Entra multifactor authentication for a set of test users in the following tutorial:
 

@@ -11,6 +11,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # Add or remove group members automatically
 
+
+## Overview
+
 In Microsoft Entra ID, part of Microsoft Entra, you can automatically add or remove users to security groups or Microsoft 365 groups, so you don't always have to do it manually. Whenever any properties of a user or device change, Microsoft Entra ID evaluates all rules for dynamic membership groups in your Microsoft Entra organization to see if the change should add or remove members.
 
 In this tutorial, you learn how to:

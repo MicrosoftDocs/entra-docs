@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Assign a user to a specific Microsoft Entra application proxy application
 
+
+## Overview
+
 The PowerShell script example assigns a user to a specific Microsoft Entra application proxy application.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

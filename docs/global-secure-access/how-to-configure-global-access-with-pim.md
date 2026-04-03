@@ -1,15 +1,17 @@
 ---
 title: Secure private application access with Privileged Identity Management and Global Secure Access
-description: Learn how to secure highly valued private application access with Privileged Identity Management (PIM) and Global Secure Access
+description: "Add just-in-time privileged access for critical servers and applications using Privileged Identity Management (PIM) with Microsoft Entra Private Access."
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
+
+## Overview
 
 Microsoft Entra Private Access provides secure access to private applications. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](concept-private-access.md).
 

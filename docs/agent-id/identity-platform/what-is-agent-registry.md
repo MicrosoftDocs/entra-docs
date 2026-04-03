@@ -16,7 +16,7 @@ ms.custom: agent-id-ignite
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
+AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/what-is-microsoft-entra-agent-id.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
 
 To learn more about Agent Registry, review the following articles:
 
@@ -34,9 +34,9 @@ Agent Registry integrates with Microsoft Entra Agent ID and Core Directory to en
 
 ## Registry Architecture & Components
 
-The Agent Registry acts as the central store for agent-related data, including [agent identities](agent-identities.md), [agent users](agent-users.md), [agent identity blueprints](agent-blueprint.md), and other identity attributes. Each agent instance from an authoritative agent store, such as Copilot Studio, is registered in the Registry and linked to an agent card manifest, which can represent multiple agents (1:N relationship). These components are the manifests that provide the agent's metadata. 
+The Agent Registry acts as the central store for agent-related data, including [agent identities](agent-identities.md), [agents' user accounts](agent-users.md), [agent identity blueprints](agent-blueprint.md), and other identity attributes. Each agent instance from an authoritative agent store, such as Copilot Studio, is registered in the Registry and linked to an agent card manifest, which can represent multiple agents (1:N relationship). These components are the manifests that provide the agent's metadata. 
 
-The registry then connects to the Microsoft Entra Core Directory, which enforces identity and entitlement policies. The agent identity blueprints define reusable identity templates that can map to multiple agent instances, enabling flexible identity governance. Each agent instance also has a direct 1:1 relationship with an agent identity and optionally an agent user, ensuring policy enforcement and lifecycle management. This capability mirrors human identity principles in Microsoft Entra, providing a single source of truth for agent identity, metadata, and governance while supporting one-to-many mappings for scalability.
+The registry then connects to the Microsoft Entra Core Directory, which enforces identity and entitlement policies. The agent identity blueprints define reusable identity templates that can map to multiple agent instances, enabling flexible identity governance. Each agent instance also has a direct 1:1 relationship with an agent identity and optionally an agent's user account, ensuring policy enforcement and lifecycle management. This capability mirrors human identity principles in Microsoft Entra, providing a single source of truth for agent identity, metadata, and governance while supporting one-to-many mappings for scalability.
 
 The registry enables organizations to map diverse agent data sources, identify systems of authority, and route users to the correct endpoints. The following diagram explains the relationship between various key attributes.
 
@@ -63,4 +63,4 @@ Security is embedded at every layer of the Agent Registry:
 - [Publish agents to registry](publish-agents-to-registry.md)
 - [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
 - [Agent Registry collections](agent-registry-collections.md)
-- [What is an agent ID?](what-is-agent-id.md)
+- [What is an agent ID?](what-are-agent-identities.md)

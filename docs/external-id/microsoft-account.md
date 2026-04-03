@@ -3,7 +3,8 @@
 title: Use Microsoft Accounts
 description: Enable your external business partners and guest users to use their Microsoft Account (MSA) to sign in to your apps for B2B collaboration.
 ms.topic: how-to
-ms.date: 04/14/2025
+ms.date: 03/27/2026
+ai-usage: ai-assisted
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024
 

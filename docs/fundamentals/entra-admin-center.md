@@ -1,14 +1,16 @@
 ---
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
-manager: pmwongera
 ms.topic: overview
-ms.date: 06/04/2025
+ms.date: 04/03/2026
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
 
 # What is the Microsoft Entra admin center?
+
+
+## Overview
 
 The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based identity portal for Microsoft Entra products. It provides a unified administrative experience for organizations to configure and manage their Microsoft Entra solutions in a centralized location.
 
@@ -24,7 +26,7 @@ The following sections provide a high-level overview of the product interfaces a
 
 ### Entra ID
 
-**Entra ID** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
+**Entra ID** gives administrators and developers access to [Microsoft Entra ID](./what-is-entra.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Screenshot of the Microsoft Entra admin center Identity menu.":::
 
@@ -39,7 +41,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 * [Conditional Access](~/identity/conditional-access/overview.md)
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
-* [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
+* [Authentication methods](~/identity/authentication/overview-authentication.md)
 * [Password reset](~/identity/authentication/concept-sspr-howitworks.md)
 * [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md)
 
@@ -69,6 +71,7 @@ For more information about configuring and managing Microsoft Entra ID Governanc
 * [Access reviews](~/id-governance/access-reviews-overview.md)
 * [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md)
 * [Lifecycle workflows](~/id-governance/what-are-lifecycle-workflows.md)
+* [Custom task extensions for Lifecycle workflows](~/id-governance/lifecycle-workflow-extensibility.md)
 
 ### Verified ID
 

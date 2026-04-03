@@ -1,12 +1,14 @@
 ---
 title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
-manager: pmwongera
 ms.topic: overview
 ms.date: 08/15/2025
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?
+
+
+## Overview
 
 Microsoft Entra is a family of identity and network access products. It lets organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
 
@@ -20,7 +22,7 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 #### Microsoft Entra ID
 
-[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It's a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
+[Microsoft Entra ID](./what-is-entra.md) is the foundational product of Microsoft Entra. It's a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
 
 **Microsoft 365, Azure, or Dynamics CRM Online subscribers** already use Microsoft Entra ID as every Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start managing access to your integrated cloud apps.
 

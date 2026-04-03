@@ -1,14 +1,17 @@
 ---
 title: Enable remote access to Power BI with Microsoft Entra application proxy
-description: Learn how to integrate an on-premises Power BI with Microsoft Entra application proxy.
+description: "Enable Power BI mobile app users to access Power BI Report Server and SQL Server Reporting Services from outside the corporate network using Microsoft Entra application proxy."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ms.custom: has-adal-ref
 ai-usage: ai-assisted
 ---
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
+
+
+## Overview
 
 This article discusses how to use Microsoft Entra application proxy to enable the Power BI mobile app to connect to Power BI Report Server (PBIRS) and SQL Server Reporting Services (SSRS) 2016 and later. Through this integration, users who are away from the corporate network can access their Power BI reports from the Power BI mobile app and be protected by Microsoft Entra authentication. This protection includes [security benefits](application-proxy-security.md#security-benefits) such as Conditional Access and multifactor authentication.
 
@@ -27,7 +30,7 @@ There isn’t much to configure on the Reporting Services side. A valid Service 
 ### Configure the Service Principal Name (SPN)
 
 The SPN is a unique identifier for a service that uses Kerberos authentication. A proper HTTP SPN is required for the report server. For information on how to configure the proper Service Principal Name (SPN) for your report server, see [Register a Service Principal Name (SPN) for a Report Server](/sql/reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server).
-Verify the SPN was added by running the `Setspn` command with the `-L` option. For more information about the command, see [Setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx).
+Verify the SPN was added by running the `Setspn` command with the `-L` option. For more information about the command, see [Setspn](/windows-server/administration/windows-commands/setspn).
 
 ### Enable Negotiate authentication
 
@@ -84,7 +87,7 @@ Now you're ready to configure Microsoft Entra application proxy.
 
    e. Select **Save** to save your changes.
 
-To finish setting up your application, go to **the Users and groups** section and assign users to access this application.
+To finish setting up your application, go to the **Users and groups** section and assign users to access this application.
 
 ## Step 3: Modify the reply Uniform Resource Identifier (URI) for the application
 
@@ -114,7 +117,7 @@ Configure the Application Registration that was automatically created in step 2.
 
 1. In the Power BI mobile app, connect to your Reporting Services instance. Enter the **External URL** for the application you published through application proxy.
 
-   ![Power BI mobile app with External URL](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
+   ![Screenshot that shows the Power BI mobile app with the External URL.](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
 2. Select **Connect**. The Microsoft Entra sign-in page loads.
 

@@ -45,9 +45,9 @@ This tutorial assumes:
 
   Display name | Distinguished name
   -------------|-------------------
-  Groups       | OU=Marketing,DC=contoso,DC=com
+  Marketing    | OU=Marketing,DC=contoso,DC=com
   Sales        | OU=Sales,DC=contoso,DC=com
-  Marketing    | OU=Groups,DC=contoso,DC=com
+  Groups       | OU=Groups,DC=contoso,DC=com
 
 
 ## Add users to cloud-native or Source of Authority (SOA) converted security groups
@@ -75,33 +75,51 @@ To add synced users, follow these steps:
 To configure provisioning, follow these steps:
 
    [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
+   
    3. Select **New configuration**.
    4. Select **Microsoft Entra ID to AD sync**.
 
       :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
-   5. On the configuration screen, select your domain and whether to enable password hash sync. Select **Create**. 
+   5. On the configuration screen, select your domain. Select **Create**.
 
-      :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+      :::image type="content" source="media/how-to-configure/new-ux-configure-19.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-19.png":::
 
    6. The **Get started** screen opens. From here, you can continue configuring cloud sync.
    7. On the left, select **Scoping filters**.
+
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png" alt-text="Screenshot Overview page." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png":::
+   
    8. For **Groups scope**, select **Selected security groups**.
 
       :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
 
-   9. There are two possible approaches to set the OU:
+   9. There are three possible approaches to set the target OU where the groups are provisioned:
 
-      - You can use custom expressions ensure the group is re-created with the same OU. Use the following expression for ParentDistinguishedName value:
+      - You can use a constant OU mapping to provision all groups in the same OU:
 
-        ```https
+        1. Under **Target container**, select **Edit attribute mapping**.
+        2. For **Constant value**, enter the DistinguishedName for the target OU.
+
+           :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png" alt-text="Screenshot of target OU configuration." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-12.png":::
+        3. Select **Apply**.
+        4. Select **Save**.
+           
+      - You can use custom expressions to ensure the group is re-created with the same OU. This expression can strip the CN portion of the Group's DN and preserve the parent DN path, handling escaped commas, and provide a default OU if the extension value is empty. Use the following expression for `ParentDistinguishedName` mapping by adapting the sample expression, or by running the PowerShell script to generate the final expression.
+
+        >[!NOTE]
+        >This expression assumes you have already created an extension property for GroupDN. If not, please do that first before using the sample expression or running the script.
+        
+        1. From the following sample expression, replace the placeholders with your respective values for your extension attribute name `extension_<AppIdWithoutHyphens>_GroupDN`. For your default target OU (in case the extension value is `NULL`), replace the `<Default ParentDistinguishedName>` :
+        
+        ```
         IIF(
-            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDN]),
             Replace(
                 Mid(
                     Mid(
-                        Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ),
-                        Instr(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), ",", , ),
+                        Replace([extension_<AppIdWithoutHyphens>_GroupDN], "\,", , , "\2C", , ),
+                        Instr(Replace([extension_<AppIdWithoutHyphens>_GroupDN], "\,", , , "\2C", , ), ",", , ),
                         9999
                     ),
                     2,
@@ -109,61 +127,143 @@ To configure provisioning, follow these steps:
                 ),
                 "\2C", , , ",", ,
             ),
-        "<Existing ParentDistinguishedName>",
+        "<Default ParentDistinguishedName>"
         )
         ```
+        
+        2. Or, provide the value for the `$defaultGroupOU` parameter and execute the script to generate the final expression as a text file:
+      
+        ```PowerShell
+        # Provide the Default OU for groups that don't have the GroupDN extension populated.
+        $defaultGroupOU = 'OU=Groups,OU=SYNC,DC=adatum,DC=com'
 
-        This expression:
-        - Uses a default OU if the extension is empty.
-        - Otherwise strips the CN portion and preserves the parentDN path, again handling escaped commas.
+        # Get the extension name
+        $tenantId = (Get-MgOrganization).Id
+        $app = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')" 
+        $ext = Get-MgApplicationExtensionProperty -ApplicationId $app.Id | Where-Object { $_.Name -like '*GroupDN' }
+        $groupDN_extension = $ext.Name
+        "GroupDN extension name: $groupDN_extension"
+        
+        # Sample expression
+        $groupDN_expression = @'
+        IIF(
+        IsPresent([{groupDN_extension}]),
+            Replace(
+                Mid(
+                    Mid(
+                        Replace([{groupDN_extension}], "\,", , , "\2C", , ),
+                        Instr(Replace([{groupDN_extension}], "\,", , , "\2C", , ), ",", , ),
+                        9999
+                    ),
+                    2,
+                    9999
+                ),
+                "\2C", , , ",", ,
+            ),
+            "{defaultGroupOU}"
+        )
+        '@
+        
+        # Generate the expression by replacing the placeholders with actual values
+        $groupDN_expression -replace ('{groupDN_extension}', $groupDN_extension) -replace ('{defaultGroupOU}', $defaultGroupOU) | 
+            Out-File -FilePath '.\GroupDN_expression.txt' -Encoding utf8
+        &'.\GroupDN_expression.txt'
+        ```
 
-        This changes causes a full sync and doesn't affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it moves back to original OU.
+        3. Change **Mapping type** to **Expression**.
+        4. In the expression box, insert the updated expression and select **Apply**.
+        5. Select **Save**.
 
-      - If you don't want to preserve the original OU path and CN information from on-premises, under **Target container** select **Edit attribute mapping**.
+      - If you want to place groups into different organizational units based on their DisplayName:
 
-        1. Change **Mapping type** to **Expression**.
-        1. In the expression box, enter:
+        1. Adapt the following expression and place it in expression box:
 
-           ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+           ```
+           Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com")
+           ```
 
-        1. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+        2. Update the **Default value** to be the default target OU, for example, `OU=Groups,DC=contoso,DC=com`.
 
            :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
 
-        1. Select **Apply**. The target container changes depending on the group displayName attribute.
+        3. Select **Apply**. The target container changes depending on the group displayName attribute.
+        4. Select **Save**.
 
-   10. You can use custom expressions to ensure the group is re-created with the same CN. Use the following expression for CN value:
+        > [!NOTE]
+        > These changes cause a full sync and don’t affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it writes back to original OU.
 
-        ```https
+   10. You can use a custom expression to ensure the group is re-created with the same CommonName (CN). This expression can extract the CN value, handling escaped commas by temporarily replacing them with hex values, and provide a fallback CN from DisplayName + ObjectId if the extension is empty. Use the following expression for `cn` mapping by adapting the sample expression, or by running the PowerShell script to generate the final expression.
+
+        > [!NOTE]
+        > This expression assumes you have already created an extension property for GroupDN. If not, do that first before using the sample expression or running the script.
+        
+        1. If you want to adapt a sample expression, replace the placeholders with your respective values for your extension attribute name `extension_<AppIdWithoutHyphens>_GroupDN`. 
+      
+        ```
         IIF(
-            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+           IsPresent([extension_<AppIdWithoutHyphens>_GroupDN]),
+               Replace(
+                   Replace(
+                       Replace(
+                           Word(Replace([extension_<AppIdWithoutHyphens>_GroupDN], "\,", , , "\2C", , ), 1, ","),
+                           "CN=", , , "", ,
+                       ),
+                       "cn=", , , "", ,
+                   ),
+                   "\2C", , , ",", ,
+               ),
+           Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))
+        )
+        ```
+        
+        2. Or, if you want to use a Microsoft Graph PowerShell script:
+
+        ```PowerShell
+        # Get the extension name
+        $tenantId = (Get-MgOrganization).Id
+        $app = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')" 
+        $ext = Get-MgApplicationExtensionProperty -ApplicationId $app.Id | Where-Object { $_.Name -like '*GroupDN' }
+        $groupDN_extension = $ext.Name
+        "GroupDN extension name: $groupDN_extension"
+        
+        # Sample expression
+        $groupCN_expression = @'
+        IIF(
+            IsPresent([{groupDN_extension}]),
             Replace(
                 Replace(
                     Replace(
-                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
+                        Word(Replace([{groupDN_extension}], "\,", , , "\2C", , ), 1, ","),
                         "CN=", , , "", ,
                     ),
                     "cn=", , , "", ,
                 ),
                 "\2C", , , ",", ,
             ),
-        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
+            Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))
         )
+        '@
+        
+        # Generate the expression by replacing the placeholders with actual values
+        $groupCN_expression -replace ('{groupDN_extension}', $groupDN_extension) | 
+            Out-File -FilePath '.\GroupCN_expression.txt' -Encoding utf8
+        &'.\GroupCN_expression.txt'
         ```
 
-        This expression:
-        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
-        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
-
-   11. Select **Save**.
-   12. On the left, select **Overview**.
-   13. At the top, select **Review and enable**.
-   14. On the right, select **Enable configuration**.
+        3. Go to **Attribute mapping**.
+        4. Edit the `cn` attribute mapping.
+        5. Change **Mapping type** to **Expression**.
+        6. In the expression box, insert the updated expression and select **Apply**.
+        7. Select **Save schema**.
+   
+   11. On the left, select **Overview**.
+   12. At the top, select **Review and enable**.
+   13. On the right, select **Enable configuration**.
 
 
 ## Test configuration 
 >[!NOTE]
->When you run on-demand provisioning, members aren't automatically provisioned. You need to select the members you want to test, and the limit is five members.
+>When you run on-demand provisioning, members aren't automatically provisioned. You need to select the members you want to test, and the limit is five members. If you want to test after removing a member, select **View all users** and then select the member(s) that have been removed from the group.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 

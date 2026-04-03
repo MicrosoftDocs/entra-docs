@@ -10,6 +10,9 @@ ms.date: 12/13/2024
 
 # Verified helpdesk with Microsoft Entra Verified ID
 
+
+## Overview
+
 An ongoing challenge for helpdesk is verifying the identity of callers seeking help, especially in remote interactions via phone, chat, or email. Traditional methods such as personally identifiable information (PII) and knowledge-based authentication are no match for today’s sophisticated attackers, who use phishing, social engineering, and even AI-powered voice cloning to bypass defenses. The consequences are serious: under pressure, helpdesk agents may unintentionally expose sensitive data or authorize fraudulent actions.
 
 ## The way forward: Stronger and phish-resistant authentication

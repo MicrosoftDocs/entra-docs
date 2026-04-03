@@ -3,7 +3,7 @@ title: Configure Microsoft and Zscaler for a Unified SASE Solution
 description: "Learn how to deploy Microsoft Global Secure Access alongside Zscaler Private Access and Internet Access. Covers four integration scenarios with step-by-step configuration, verification, and traffic testing procedures."
 #customer intent: As a network administrator, I want to configure Microsoft and Zscaler SSE for unified SASE solutions so that I can enhance security and connectivity in my organization.  
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -15,6 +15,8 @@ ms.custom:
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler
+## Overview
+
 In today's rapidly evolving digital landscape, organizations require robust, and unified solutions to ensure secure and seamless connectivity. Microsoft and Zscaler offer complementary Secure Access Service Edge (SASE) capabilities that, when integrated, provide enhanced security and connectivity for diverse access scenarios.
 
 This guide outlines how to configure and deploy Microsoft Entra solutions alongside Zscaler's Security Service Edge (SSE) offerings. By using the strengths of both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
@@ -259,7 +261,8 @@ Verify configurations for clients:
 
 #### Test traffic flow
 
-Test traffic flow:
+##### Verify internet traffic routes through Zscaler
+
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
 1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`.
 1. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** > **Traffic** tab.
@@ -267,11 +270,17 @@ Test traffic flow:
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
 1. Sign in to Zscaler Internet Access (ZIA) admin portal and browse to **Analytics** > **Web Insights** > **Logs**.
 1. Validate traffic related to these sites is present in Zscaler logs.
+
+##### Verify private application traffic routes through Zscaler
+
 1. Access your private application set up in Zscaler Private Access. For example, open an RDP session to a private server.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**.
-1. Validate traffic related to the RDP session **isn’t** in the Global Secure Access traffic logs
+1. Validate traffic related to the RDP session **isn’t** in the Global Secure Access traffic logs.
 1. Sign in to Zscaler Private Access (ZPA) admin portal and browse to **Analytics** > **Diagnostics** > **Logs**. Validate traffic related to the RDP session is present in the Dashboard or Diagnostic logs.
-1. Access Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).  
+
+##### Verify Microsoft 365 traffic routes through Global Secure Access
+
+1. Access Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 1. Scroll to confirm the Global Secure Access client handled only Microsoft 365 traffic.
 1. You can also validate that the traffic is captured in the Global Secure Access traffic logs. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Traffic logs**.

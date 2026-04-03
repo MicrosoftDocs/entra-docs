@@ -1,8 +1,8 @@
 ---
 title: How to Manage the Private Access Profile
-description: Learn how to manage the Private Access traffic forwarding profile for Microsoft Entra Private Access.
+description: "Configure the Private Access traffic forwarding profile to provide secure, VPN-less access to internal resources through Global Secure Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -11,6 +11,8 @@ ms.custom: sfi-image-nochange
 ---
 
 # How to manage the Private Access traffic forwarding profile
+
+## Overview
 
 The Private Access traffic forwarding profile routes traffic to your private network through the Global Secure Access Client. Enabling this traffic forwarding profile allows remote workers to connect to internal resources without a VPN. With the features of Microsoft Entra Private Access, you can control which private resources to tunnel through the service and apply Conditional Access policies to secure access to those services. Once your configurations are in place, you can view and manage all of those configurations from one place.
 
@@ -40,7 +42,7 @@ You can also configure per-app access to your private resources by creating a Pr
 
 To manage the details included in the Private Access traffic forwarding policy, select the **View** link for **Private Access policies**. 
 
-![Screenshot of the Private Access profile, with the view applications link highlighted.](media/how-to-manage-private-access-profile/private-access-profile-link.png)
+![Screenshot that shows the Private Access profile, with the view applications link highlighted.](media/how-to-manage-private-access-profile/private-access-profile-link.png)
 
 Details of your Quick Access and enterprise apps for Private Access are displayed. Select the link for the application to view the details from the Enterprise applications area of Microsoft Entra ID.
 

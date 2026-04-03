@@ -10,7 +10,7 @@ ms.custom: sfi-image-nochange
 # Source IP restoration
 When you use cloud-based network proxy and SSE solutions, they abstract the original source IP of the user from the service that the user connects to. Instead, the service detects the user's IP address as the egress address of the cloud-based network proxy. While this abstraction helps with privacy-related concerns in consumer scenarios, not having the original source IP information makes it difficult to achieve enterprise security goals. For example, without an actual client egress IP address, you can't apply Microsoft Entra ID Conditional Access policies based on your organization's well-known IP addresses, and audit logs don't reflect accurate location information.
 
-Source IP restoration is part of the Adaptive Access feature of Microsoft Entra Internet Access for Microsoft Services. Source IP restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to your organization:
+Source IP restoration is part of the Adaptive Access featureof Microsoft Entra Internet Access for Microsoft Services. Source IP restoration detects and securely communicates the original egress IP address of the end user to Microsoft Entra ID and Microsoft Graph, bringing the following benefits to your organization:
 
 - You can continue to enforce IP-based location policies in [Microsoft Entra ID Conditional Access](/azure/active-directory/conditional-access/overview).
 - It improves the accuracy of risk detection in [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks).

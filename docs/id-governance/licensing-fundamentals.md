@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 06/26/2025
+ms.date: 03/27/2026
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
@@ -76,7 +76,6 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 
 
 
-
 ## Privileged Identity Management
 
 [!INCLUDE [licensing](../includes/licensing-pim.md)]
@@ -84,6 +83,10 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 ## API-driven provisioning
 
 This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID Governance subscriptions. A subscription license is required with enough seats for every identity that is sourced using the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API and provisioned to either on-premises Active Directory or Microsoft Entra ID.
+
+## Account Discovery
+
+Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. TThis feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
 
 ### License scenarios
 
@@ -121,7 +124,7 @@ If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or t
 
 ### Will any IGA features and capabilities be added under the Microsoft Entra ID P2 License?
 
-All currently Generally Available features in Microsoft Entra ID P2 will remain, but no new IGA features or capabilities will be added to the Microsoft Entra ID P2 SKU.
+All currently Generally Available features in Microsoft Entra ID P2 will remain, but no new Identity Governance & Administration (IGA) features or capabilities will be added to the Microsoft Entra ID P2 SKU.
 
 ## Next steps
 

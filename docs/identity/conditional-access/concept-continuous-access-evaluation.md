@@ -4,7 +4,7 @@ description: Learn how continuous access evaluation in Microsoft Entra enhances 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 07/22/2025
+ms.date: 03/24/2026
 ms.reviewer: vmahtani
 ms.custom:
   - has-adal-ref
@@ -14,11 +14,13 @@ ms.custom:
 ---
 # Continuous access evaluation
 
-Token expiration and refresh are a standard mechanism in the industry. When a client application like Outlook connects to a service like Exchange Online, the API requests are authorized using OAuth 2.0 access tokens. By default, access tokens are valid for one hour, when they expire the client is redirected to Microsoft Entra to refresh them. That refresh period provides an opportunity to reevaluate policies for user access. For example: we might choose not to refresh the token because of a Conditional Access policy, or because the user is disabled in the directory. 
+## Overview
+
+Token expiration and refresh are a standard mechanism in the industry. When a client application like Outlook connects to a service like Exchange Online, the API requests are authorized using OAuth 2.0 access tokens. By default, access tokens are valid for one hour, when they expire the client is redirected to Microsoft Entra to refresh them. That refresh period provides an opportunity to reevaluate policies for user access. For example: the token might not be refreshed because of a Conditional Access policy, or because the user is disabled in the directory.
 
 Customers express concerns about the lag between when conditions change for a user, and when policy changes are enforced. Microsoft experimented with the "blunt object" approach of reduced token lifetimes but found they degrade user experiences and reliability without eliminating risks.
 
-Timely response to policy violations or security issues really requires a "conversation" between the token issuer Microsoft Entra, and the relying party (enlightened app). This two-way conversation gives us two important capabilities. The relying party can see when properties change, like network location, and tell the token issuer. It also gives the token issuer a way to tell the relying party to stop respecting tokens for a given user because of account compromise, disablement, or other concerns. The mechanism for this conversation is continuous access evaluation (CAE), an industry standard based on [Open ID Continuous Access Evaluation Profile (CAEP)](https://openid.net/specs/openid-caep-specification-1_0-01.html). The goal for critical event evaluation is for response to be near real time, but latency of up to 15 minutes might be observed because of event propagation time; however, IP locations policy enforcement is instant.
+Timely response to policy violations or security issues really requires a "conversation" between the token issuer Microsoft Entra, and the relying party (enlightened app). This two-way conversation provides two important capabilities. The relying party can see when properties change, like network location, and tell the token issuer. It also gives the token issuer a way to tell the relying party to stop respecting tokens for a given user because of account compromise, disablement, or other concerns. The mechanism for this conversation is continuous access evaluation (CAE), an industry standard based on [Open ID Continuous Access Evaluation Profile (CAEP)](https://openid.net/specs/openid-caep-specification-1_0-01.html). The goal for critical event evaluation is for response to be near real time, but latency of up to 15 minutes might be observed because of event propagation time; however, IP locations policy enforcement is instant.
 
 The initial implementation of continuous access evaluation focuses on Exchange, Teams, and SharePoint Online.
 
@@ -89,7 +91,7 @@ Continuous access evaluation is also available in Azure Government tenants (GCC 
 
 ### Client-side claim challenge
 
-Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, we introduce a new case where a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens aren't expired, we introduce a mechanism called **claim challenge** to indicate that the token was rejected and a new access token needs to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
+Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens aren't expired, a mechanism called **claim challenge** indicates that the token was rejected and a new access token needs to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
 
 | | Web | Win32 | iOS | Android | Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -140,7 +142,7 @@ In step 8 above, when Microsoft Entra reevaluates the conditions, it denies acce
 
 If you're sending traffic to non-Microsoft 365 resources through Global Secure Access, resource providers aren't aware of the source IP address of the user as [source IP restoration](../../global-secure-access/how-to-source-ip-restoration.md) isn’t currently supported for these resources. In this case, if the user is in the trusted IP location (as seen by Microsoft Entra), Microsoft Entra issues a one-hour token that suspends IP address checks at the resource until token expiration. Microsoft Entra continues to enforce IP address checks correctly for these resources. 
 
-Standard vs. Strict mode. The granting of access under this exception (that is, an allowed location detected between Microsoft Entra ID with a disallowed location detected by the resource provider) protects user productivity by maintaining access to critical resources. This is standard location enforcement. On the other hand, Administrators who operate under stable network topologies and wish remove this exception can use [Strict Location Enforcement (Public Preview)](concept-continuous-access-evaluation-strict-enforcement.md).
+Standard vs. Strict mode. The granting of access under this exception (that is, an allowed location detected between Microsoft Entra ID with a disallowed location detected by the resource provider) protects user productivity by maintaining access to critical resources. This is standard location enforcement. On the other hand, Administrators who operate under stable network topologies and wish to remove this exception can use [Strict Location Enforcement (Public Preview)](concept-continuous-access-evaluation-strict-enforcement.md).
 
 ## Enable or disable CAE
 
@@ -189,7 +191,7 @@ In addition to IP variations, customers also might employ network solutions and 
 - Use IP addresses that might be shared with other customers. For example, cloud-based proxy services where egress IP addresses are shared between customers.
 - Use easily varied or undefinable IP addresses. For example, topologies where there are large, dynamic sets of egress IP addresses used, like large enterprise scenarios or [split VPN](/microsoft-365/enterprise/microsoft-365-vpn-implement-split-tunnel) and local egress network traffic.
 
-Networks where egress IP addresses might change frequently or are shared might affect Microsoft Entra Conditional Access and Continues Access Evaluation (CAE). This variability can affect how these features work and their recommended configurations. Split Tunneling might also cause unexpected blocks when an environment is configured using [Split Tunneling VPN Best Practices](/microsoft-365/enterprise/microsoft-365-vpn-implement-split-tunnel). Routing [Optimized IPs](/microsoft-365/enterprise/microsoft-365-vpn-implement-split-tunnel#optimize-ip-address-ranges) through a Trusted IP/VPN might be required to prevent blocks related to *insufficient_claims* or *Instant IP Enforcement check failed*.
+Networks where egress IP addresses might change frequently or are shared might affect Microsoft Entra Conditional Access and Continuous Access Evaluation (CAE). This variability can affect how these features work and their recommended configurations. Split Tunneling might also cause unexpected blocks when an environment is configured using [Split Tunneling VPN Best Practices](/microsoft-365/enterprise/microsoft-365-vpn-implement-split-tunnel). Routing [Optimized IPs](/microsoft-365/enterprise/microsoft-365-vpn-implement-split-tunnel#optimize-ip-address-ranges) through a Trusted IP/VPN might be required to prevent blocks related to *insufficient_claims* or *Instant IP Enforcement check failed*.
 
 
 The following table summarizes Conditional Access and CAE feature behaviors and recommendations for different types of network deployments and resource providers (RP): 

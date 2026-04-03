@@ -2,7 +2,7 @@
 title: Tutorial - Quick setup of your tenant for Microsoft Entra Verified ID
 description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service.
 ms.topic: tutorial
-ms.date: 08/17/2025
+ms.date: 04/02/2026
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
@@ -10,6 +10,9 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Quick Microsoft Entra Verified ID setup
 
   
+
+## Overview
+
 Quick Verified ID setup removes several configuration steps an admin needs to complete with a single select on a **Get started** button. The quick setup takes care of signing keys, registering your decentralized ID, and verifying your domain ownership. It also creates a Verified Workplace Credential for you.
 
 In this tutorial, you learn how to use the quick setup to configure your Microsoft Entra tenant to use the verifiable credentials service.
@@ -35,7 +38,7 @@ Watch this video to quickly set up your Microsoft Entra tenant to use the verifi
 ## How Quick Verified ID setup works
 
 - Microsoft manages a shared signing key across multiple tenants within a given region. You no longer need to deploy Azure Key Vault.
-- There's a two RPS per tenant limit for issuance and verifications. 
+- There's a two requests per second (RPS) per tenant limit for issuance and verifications. 
 - Since it's a shared key, the validityInterval of issued credentials is limited to a maximum of six months.
 - Verified ID uses the [custom domain registered](~/identity/users/domains-manage.md) for your Microsoft Entra tenant for domain verification. You no longer need to upload your DID configuration JSON to verify your domain. If you don't have a custom domain registered for your tenant, you can't set up Verified ID using the quick setup method.
 - If you have customized your [tenant's branding](~/fundamentals/how-to-customize-branding.md#before-you-begin), the VerifiedEmployee default credential picks up logo and background color from there. If you haven't or prefer other values, you can make changes after setup is complete.

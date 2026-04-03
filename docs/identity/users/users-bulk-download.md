@@ -9,6 +9,9 @@ ms.reviewer: yukarppa
 
 # Download a list of users in Azure portal
 
+
+## Overview
+
 Microsoft Entra ID, part of Microsoft Entra, supports bulk user list download operations.
 
 ## Required permissions

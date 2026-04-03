@@ -65,14 +65,14 @@ These fields are essential for real-time monitoring, threat response, and mainta
 
 ### Locations 
 
-Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
+Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
 
 > [!NOTE]
 > Looking for the **Risk detections mapped to riskEventType** table? It moved to the new [**Risk detection and event types**](concept-identity-protection-risks.md) article.
 
 ## Agent detections (Preview)
 
-The **Risk detections** report includes a dedicated tab for **Agent detections** that displays risk detections specifically for autonomous AI agents using [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md). These detections help identify suspicious activities associated with agents, allowing administrators to monitor and respond to potential threats effectively. For a list of the risk detections associated with agents, see [ID Protection for agents](concept-risky-agents.md#activities-contributing-to-risk).
+The **Risk detections** report includes a dedicated tab for **Agent detections** that displays risk detections specifically for autonomous AI agents using [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). These detections help identify suspicious activities associated with agents, allowing administrators to monitor and respond to potential threats effectively. For a list of the risk detections associated with agents, see [ID Protection for agents](concept-risky-agents.md#activities-contributing-to-risk).
 
 :::image type="content" source="media/concept-risk-detection-types/risk-detections-report.png" alt-text="Screenshot showing the Agent detections column on the risk detections report." lightbox="media/concept-risk-detection-types/risk-detections-report.png":::
 

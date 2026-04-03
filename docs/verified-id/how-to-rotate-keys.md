@@ -9,6 +9,9 @@ ms.date: 01/31/2025
 
 # Rotate signing keys
 
+
+## Overview
+
 This article covers the steps to rotate your Microsoft Entra Verified ID signing keys.
 
 ## Rotate the signing keys

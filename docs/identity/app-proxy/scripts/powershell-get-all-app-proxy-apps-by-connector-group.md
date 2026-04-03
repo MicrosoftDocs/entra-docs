@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps and list by connector group
 
+
+## Overview
+
 The PowerShell script example lists information about all Microsoft Entra private network connector groups with the assigned applications.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

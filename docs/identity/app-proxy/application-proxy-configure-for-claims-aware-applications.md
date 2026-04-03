@@ -2,12 +2,15 @@
 title: Claims-aware apps - Microsoft Entra application proxy
 description: How to publish on-premises ASP.NET applications that accept Active Directory Federation Services claims for secure remote access by your users.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Work with claims-aware apps in application proxy
+
+## Overview
+
 [Claims-aware apps](/previous-versions/windows/desktop/legacy/bb736227(v=vs.85)) perform a redirection to the Security Token Service (STS). The STS requests credentials from the user in exchange for a token and then redirects the user to the application. There are a few ways to enable application proxy to work with these redirects. Use this article to configure your deployment for claims-aware apps. 
 
 ## Prerequisites
@@ -32,12 +35,12 @@ If all the internal URLs for your applications are fully qualified domain names 
 1. Open Active Directory Federation Services management.
 2. Go to **Relying Party Trusts**, right-click on the app you're publishing with application proxy, and choose **Properties**.  
 
-   ![Relying Party Trusts right-click on app name - screenshot](./media/application-proxy-configure-for-claims-aware-applications/appproxyrelyingpartytrust.png)  
+   ![Relying Party Trusts right-click on app name.](./media/application-proxy-configure-for-claims-aware-applications/appproxyrelyingpartytrust.png)  
 
 3. On the **Endpoints** tab, under **Endpoint type**, select **WS-Federation**.
 4. Under **Trusted URL**, enter the URL you entered in the application proxy under **External URL** and select **OK**.  
 
-   ![Add an Endpoint - set Trusted URL value - screenshot](./media/application-proxy-configure-for-claims-aware-applications/appproxyendpointtrustedurl.png)  
+   ![Add an Endpoint - set Trusted URL value.](./media/application-proxy-configure-for-claims-aware-applications/appproxyendpointtrustedurl.png)  
 
 ## Next steps
 * [Enable native client apps to interact with proxy applications](application-proxy-configure-native-client-application.md)

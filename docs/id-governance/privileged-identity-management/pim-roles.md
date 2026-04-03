@@ -3,11 +3,14 @@ title: Roles you can't manage in Privileged Identity Management
 description: Describes the roles you can't manage in Microsoft Entra Privileged Identity
   Management (PIM).
 ms.topic: concept-article
-ms.date: 02/24/2025
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ---
 
 # Roles you can't manage in Privileged Identity Management
+
+
+## Overview
 
 You can manage just-in-time assignments to all [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) and all [Azure roles](/azure/role-based-access-control/built-in-roles) using Privileged Identity Management (PIM) in Microsoft Entra ID. Azure roles include built-in and custom roles attached to your management groups, subscriptions, resource groups, and resources. However, there are a few roles that you can't manage. This article describes the roles you can't manage in Privileged Identity Management.
 

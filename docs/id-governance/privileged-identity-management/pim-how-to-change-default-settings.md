@@ -2,10 +2,15 @@
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/08/2025
+ms.date: 03/27/2026
+ms.reviewer: tamimsangrar
 ms.custom: pim, sfi-ga-nochange
+ai-usage: ai-assisted
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
+
+
+## Overview
 
 In Privileged Identity Management (PIM) in Microsoft Entra ID, which is part of Microsoft Entra, role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
@@ -80,6 +85,16 @@ This means that security principals with permissions to manage Conditional Acces
 Create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during PIM role activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](pim-how-to-change-default-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 
 This backup protection mechanism is designed to solely protect from a scenario when PIM settings were updated before the Conditional Access policy was created because of a configuration mistake. This backup protection mechanism isn't triggered if the Conditional Access policy is turned off, is in report-only mode, or has an eligible user excluded from the policy.
+
+To enforce reauthentication on every role activation, configure the Conditional Access policy targeting your authentication context with sign-in frequency set to **Every time** under **Session controls**. This ensures users must reauthenticate each time they activate a privileged role, even if they have an active session.
+
+:::image type="content" source="media/pim-how-to-change-default-settings/role-settings-conditional-access-authentication-context.png" alt-text="Screenshot that shows the Edit role setting page with the Microsoft Entra Conditional Access authentication context option selected." lightbox="media/pim-how-to-change-default-settings/role-settings-conditional-access-authentication-context.png":::
+
+When a user reauthenticates for one role activation, a 10-minute window applies. If the user activates another eligible role within this window, they aren't prompted to reauthenticate again. The 10-minute window applies across Microsoft Entra roles, Azure resource roles, and PIM for Groups.
+
+When a user activates an eligible role configured with an authentication context, they see the message: "A Conditional Access policy is enabled and may require additional verification. Click to continue." The user is then redirected to complete reauthentication as defined by the Conditional Access policy.
+
+:::image type="content" source="media/pim-how-to-change-default-settings/activate-role-conditional-access-verification-banner.png" alt-text="Screenshot that shows the Activate role page with a Conditional Access policy banner requiring additional verification." lightbox="media/pim-how-to-change-default-settings/activate-role-conditional-access-verification-banner.png":::
 
 The **On activation, require Microsoft Entra Conditional Access authentication context** setting defines the authentication context requirements that users must satisfy when they activate the role. After the role is activated, users aren't prevented from using another browsing session, device, or location to use permissions.
 

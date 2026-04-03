@@ -6,10 +6,12 @@ ms.date: 03/18/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Multitenant organization capabilities in Microsoft Entra ID
+
+
+## Overview
 
 This article provides an overview of the multitenant organization scenario and the related capabilities in Microsoft Entra ID.
 
@@ -116,7 +118,7 @@ Here are the primary benefits with using cross-tenant synchronization:
 Here are the primary constraints with using cross-tenant synchronization across multiple tenants:
 
 - Synchronized users will have the same cross-tenant Teams and Microsoft 365 experiences available to any other B2B collaboration user.
-- Doesn't synchronize groups, devices, or contacts.
+- Doesn't synchronize devices or contacts.
 
 :::image type="content" source="./media/overview/multi-tenant-cross-tenant-sync.png" alt-text="Diagram that shows using cross-tenant synchronization across tenants." lightbox="./media/overview/multi-tenant-cross-tenant-sync.png":::
 

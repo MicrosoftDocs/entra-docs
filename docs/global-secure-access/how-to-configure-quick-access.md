@@ -2,13 +2,15 @@
 title: How to configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # How to configure Quick Access for Global Secure Access
+
+## Overview
 
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
 
@@ -33,7 +35,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 [!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
-## High level steps
+## High-level steps
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
@@ -66,7 +68,7 @@ On the Quick Access page, you provide a name for the Quick Access app, select a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the appropriate roles.
 1. Browse to **Global Secure Access** > **Applications** > **Quick access**.
-1. Enter a name. *We recommend using the name Quick Access*.
+1. Enter a name. *Use the name Quick Access*.
 1. Select a Connector group from the dropdown menu.
 1. Select **Save** to create your "Quick Access" app without FQDNs, IP addresses, and private DNS suffixes.
 
@@ -102,7 +104,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - Spaces between values are removed when you apply the changes.
     - For example, `400-500, 80, 443`.
 
-    ![Screenshot of the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
+    ![Screenshot that shows the create app segment panel with multiple ports added.](media/how-to-configure-per-app-access/app-segment-multiple-ports.png)
 
     The following table provides the most commonly used ports and their associated networking protocols:
 
@@ -144,7 +146,7 @@ You can view the properties from **Quick Access** or navigate to **Enterprise ap
 
 1. Select **Edit application settings** from Quick Access. 
 
-    ![Screenshot of edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
+    ![Screenshot that shows edit application settings.](media/how-to-configure-quick-access/edit-application-settings.png)
 
 1. Select **Users and groups** from the side menu.
 

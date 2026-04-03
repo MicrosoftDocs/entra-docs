@@ -3,7 +3,7 @@ title: Configure Proxyclick for automatic user provisioning with Microsoft Entra
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Proxyclick.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/20/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Proxyclick so that I can streamline the user management process and ensure that users have the appropriate access to Proxyclick.
@@ -35,7 +35,8 @@ Before configuring Proxyclick for automatic user provisioning with Microsoft Ent
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Proxyclick**, select **Proxyclick** in the search box.
 1. Select **Proxyclick** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Proxyclick in the results list](common/search-new-app.png)
+
+	![Diagram that shows Proxyclick in the results list.](common/search-new-app.png)
 
 ## Assigning users to Proxyclick
 
@@ -51,7 +52,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Proxyclick, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Configuring automatic user provisioning to Proxyclick 
+## Configure automatic user provisioning to Proxyclick 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Proxyclick based on user and/or group assignments in Microsoft Entra ID.
 
@@ -60,88 +61,82 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-proxyclick-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Proxyclick in Microsoft Entra ID:
+### To configure automatic user provisioning for Proxyclick in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Diagram that shows Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Proxyclick**.
 
-	![The Proxyclick link in the Applications list](common/all-applications.png)
+	![Diagram that shows the Proxyclick link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. To retrieve the **Tenant URL** and **Secret Token** of your Proxyclick account, follow the walkthrough as described in Step 6.
+1. To retrieve the **Tenant URL** and **Secret Token** of your Proxyclick account, follow the steps mentioned later in the document.
 
-6. Sign in to your [Proxyclick Admin Console](https://app.proxyclick.com/login//?destination=%2Fdefault). Navigate to **Settings** > **Integrations** > **Browse Marketplace**.
+1. Sign in to your [Proxyclick Admin Console](https://app.proxyclick.com/login//?destination=%2Fdefault). Navigate to **Settings** > **Integrations** > **Browse Marketplace**.
 
-	![Proxyclick Settings](media/proxyclick-provisioning-tutorial/proxyclick09.png)
+	![Diagram that shows Proxyclick Settings.](media/proxyclick-provisioning-tutorial/proxyclick09.png)
 
-	![Proxyclick Integrations](media/proxyclick-provisioning-tutorial/proxyclick01.png)
+	![Diagram that shows Proxyclick Integrations.](media/proxyclick-provisioning-tutorial/proxyclick01.png)
 
-	![Proxyclick Marketplace](media/proxyclick-provisioning-tutorial/proxyclick02.png)
+	![Diagram that shows Proxyclick Marketplace.](media/proxyclick-provisioning-tutorial/proxyclick02.png)
 
 	Select **Microsoft Entra ID**. Select **Install now**.
 
-	![Proxyclick Microsoft Entra ID](media/proxyclick-provisioning-tutorial/proxyclick03.png)
+	![Diagram that shows Proxyclick Microsoft Entra ID.](media/proxyclick-provisioning-tutorial/proxyclick03.png)
 
-	![Proxyclick Install](media/proxyclick-provisioning-tutorial/proxyclick04.png)
+	![Diagram that shows Proxyclick Install.](media/proxyclick-provisioning-tutorial/proxyclick04.png)
 
 	Select **User Provisioning** and select **Start integration**. 
 
-	![Proxyclick User Provisioning](media/proxyclick-provisioning-tutorial/proxyclick05.png)
+	![Diagram that shows Proxyclick User Provisioning.](media/proxyclick-provisioning-tutorial/proxyclick05.png)
 
 	The appropriate settings configuration UI should now show up under **Settings** > **Integrations**. Select **Settings** under **Microsoft Entra ID (User Provisioning)**.
 
-	![Proxyclick Create](media/proxyclick-provisioning-tutorial/proxyclick06.png)
+	![Diagram that shows Proxyclick Create.](media/proxyclick-provisioning-tutorial/proxyclick06.png)
 
 	You can find the **Tenant URL** and **Secret Token** here.
 
-	![Proxyclick Create Token](media/proxyclick-provisioning-tutorial/proxyclick07.png)
+	![Diagram that shows Proxyclick Create Token.](media/proxyclick-provisioning-tutorial/proxyclick07.png)
 
-7. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Proxyclick. If the connection fails, ensure your Proxyclick account has Admin permissions and try again.
+1. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Proxyclick. If the connection fails, ensure your Proxyclick account has Admin permissions and try again.
 
-	![Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Diagram that shows Token.](common/provisioning-testconnection-tenanturltoken.png)
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-9. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Proxyclick**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Proxyclick in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Proxyclick for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-    ![Proxyclick User Attributes](media/proxyclick-provisioning-tutorial/proxyclick-user-attribute.png)
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Proxyclick in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Proxyclick for update operations. Select the **Save** button to commit any changes.
 
-13. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+    ![Diagram that shows Proxyclick User Attributes.](media/proxyclick-provisioning-tutorial/proxyclick-user-attribute.png)
 
-14. To enable the Microsoft Entra provisioning service for Proxyclick, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-15. Define the users and/or groups that you would like to provision to Proxyclick by choosing the desired values in **Scope** in the **Settings** section.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-	![Provisioning Scope](common/provisioning-scope.png)
+## Monitor your deployment
 
-16. When you're ready to provision, select **Save**.
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Proxyclick.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
-
-## Connector Limitations
+## Connector limitations
 
 * Proxyclick requires **emails** and **userName** to have the same source value. Any updates to either attributes will modify the other value.
 * Proxyclick doesn't support provisioning for groups.

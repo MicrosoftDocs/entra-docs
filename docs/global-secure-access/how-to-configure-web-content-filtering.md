@@ -1,20 +1,24 @@
 ---
 title: How to configure Global Secure Access web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
+description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
+
+## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
 The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
+
+> [!TIP]
+> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
 
 ## Prerequisites
 
@@ -206,9 +210,9 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot that shows a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
-![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
+![Screenshot that shows a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 
 
 > [!NOTE]
@@ -219,4 +223,5 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 ## Next steps
 
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)

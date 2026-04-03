@@ -2,10 +2,12 @@
 title: "Microsoft Entra Conditional Access: Zero Trust Policy Engine"
 description: Explore Microsoft Entra Conditional Access, the Zero Trust policy engine that integrates signals to secure access to resources.
 ms.topic: overview
-ms.date: 11/05/2025
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ---
 # What is Conditional Access?
+
+## Overview
 
 Modern security extends beyond an organization's network perimeter to include user and device identity. Organizations now use identity-driven signals as part of their access control decisions. Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) taking signals from various sources into account when enforcing policy decisions.
 

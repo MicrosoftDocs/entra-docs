@@ -2,8 +2,7 @@
 title: External Tenant Features
 description: Compare features and capabilities of a workforce versus an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.topic: concept-article
-ms.date: 11/17/2025
-
+ms.date: 03/30/2026
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, DevOps, or IT admin, I want to learn about features supported in a CIAM tenant so that I can configure tenants according to my organization's needs.
 ---
@@ -68,23 +67,24 @@ The following table compares the [identity providers](../identity-providers.md) 
 | Feature | Workforce tenant | External tenant |
 | ------- | ---------------- | --------------- |
 | Identity providers for external users (primary authentication) | For self-service sign-up guests:<ul><li>Microsoft Entra accounts</li><li>Microsoft accounts</li><li>Emailed one-time passcode</li><li>Google federation</li><li>Facebook federation</li></ul></br>For invited guests:<ul><li>Microsoft Entra accounts</li><li>Microsoft accounts</li><li>Emailed one-time passcode</li><li>Google federation</li><li>SAML/WS-Fed federation</li></ul> | For self-service sign-up users (consumers, business customers):<ul><li>[Authentication methods available in External ID](#authentication-methods-available-in-external-id)</li></ul></br>For invited guests (preview) via a directory role (for example, admins):<ul><li>Microsoft Entra accounts</li><li>Microsoft accounts</li><li>[Emailed one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</li><li>[SAML/WS-Fed federation](../direct-federation.md)</li></ul></br> You can invite external users for administrative purposes only. You can't use this feature to invite customers to sign in to your apps. This feature isn't compatible with customer identity and access management (CIAM) user flows. |
-| Authentication methods for MFA | For internal users (employees and admins):<ul><li>[Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md)</li></ul></br>For guests (invited or self-service sign-up):<ul><li>[Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)</li></ul> | For self-service sign-up users (consumers, business customers):<ul><li>[Authentication methods available in External ID](#authentication-methods-available-in-external-id)</li></ul></br>For invited users (preview):<ul><li>[Emailed one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</li><li>[SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)</li></ul> |
+| Authentication methods for MFA | For internal users (employees and admins):<ul><li>[Authentication and verification methods](~/identity/authentication/overview-authentication.md)</li></ul></br>For guests (invited or self-service sign-up):<ul><li>[Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)</li></ul> | For self-service sign-up users (consumers, business customers):<ul><li>[Authentication methods available in External ID](#authentication-methods-available-in-external-id)</li></ul></br>For invited users (preview):<ul><li>[Emailed one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</li><li>[SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)</li></ul> |
 
 ### Authentication methods available in External ID
 
 You can use some authentication methods as the primary factor when users sign in to an application, such username and password. Other authentication methods are available only as a secondary factor. The following table outlines when you can use an authentication method during sign-in, self-service sign-up, self-service password reset, and MFA in External ID.
 
-| Method | Sign-in | Sign-up | Password reset | MFA |
-| ------ | ------- | ------- | -------------- | --- |
-| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Emailed one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication) | | | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [Apple federation](./how-to-apple-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Facebook federation](./how-to-facebook-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [SAML/WS-Fed federation](../direct-federation.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
+|Method  |Sign-in  |Sign-up  |Password reset  |MFA  |
+|---------|---------|---------|---------|---------|
+| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication)|  |  |  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [Apple federation](./how-to-apple-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   |  |  |
+| [Facebook federation](./how-to-facebook-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Microsoft Entra ID federation](./how-to-entra-id-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [SAML/WS-Fed federation](../direct-federation.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 
 ## Application registration
 
@@ -127,6 +127,7 @@ The following table compares the unique features for [enterprise application](/e
 | Register a custom enterprise application | [Add an enterprise application.](/entra/identity/enterprise-apps/add-application-portal) | [Register a SAML app in your external tenant.](/entra/external-id/customers/how-to-register-saml-app) |
 | Self-service application assignment | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access). | Self-service application assignment in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) isn't available. |
 | Application proxy | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications. | Not available. |
+| Deactivate app registration | [Deactivate an app registration](/entra/identity/enterprise-apps/deactivate-app-registration) to prevent token issuance while preserving configuration. | Same as workforce. |
 
 ### Consent and permission features for enterprise applications
 

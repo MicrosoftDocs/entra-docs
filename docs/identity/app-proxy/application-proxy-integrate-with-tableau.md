@@ -1,18 +1,21 @@
 ---
 title: Microsoft Entra application proxy and Tableau
-description: Learn how to use Microsoft Entra application proxy to provide remote access for your Tableau deployment.
+description: "Publish Tableau Server through Microsoft Entra application proxy to provide secure remote access with preauthentication and Conditional Access."
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy and Tableau 
 
+
+## Overview
+
 Microsoft and Tableau worked together so you can use application proxy to provide remote access for your Tableau deployment.
 
 ## Prerequisites 
-- Configure [Tableau](https://onlinehelp.tableau.com/current/server/en-us/proxy.htm#azure). 
+- Configure [Tableau](https://help.tableau.com/current/server/en-us/proxy.htm#azure). 
 - Install a [private network connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
  

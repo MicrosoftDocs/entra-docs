@@ -9,6 +9,9 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Advanced Microsoft Entra Verified ID setup
 
+
+## Overview
+
 Advanced Verified ID setup is the classic way of setting up Verified ID where you, as an admin, manually configure various components. This includes setting up Azure Key Vault, registering your decentralized ID, and verifying your domain. The advanced setup gives you full control over the configuration process, ensuring that every detail meets your organization's specific requirements. It's ideal for enterprises that need a customized setup.
 
 Advanced setup involves the following steps:

@@ -8,6 +8,9 @@ ms.custom: it-pro, sfi-image-nochange
 ---
 # Use a group to manage access to SaaS applications
 
+
+## Overview
+
 When you use Microsoft Entra ID with a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to software as a service (SaaS) applications integrated with Microsoft Entra ID.
 
 For example, if you want to assign access for a marketing department to use five different SaaS applications, you can create an Office 365 or security group that contains the users in the marketing department. Then you can assign that group to the five SaaS applications that the marketing department needs.

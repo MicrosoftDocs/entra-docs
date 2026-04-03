@@ -3,15 +3,39 @@ title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
 ms.topic: how-to
 ms.reviewer: yukarppa
-ms.date: 01/07/2025
+ms.date: 04/02/2026
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Revoke user access in Microsoft Entra ID
 
+
+## Overview
+
 Scenarios that could require an administrator to revoke all access for a user include compromised accounts, employee termination, and other insider threats. Depending on the complexity of the environment, administrators can take several steps to ensure access is revoked. In some scenarios, there could be a period between the initiation of access revocation and when access is effectively revoked.
 
 To mitigate the risks, you must understand how tokens work. There are many kinds of tokens, which fall into one of the patterns discussed in this article.
+
+## Prerequisites
+
+The PowerShell steps in this article require the following:
+
+- [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) installed. Install the required modules:
+
+    ```PowerShell
+    Install-Module Microsoft.Graph.Users
+    Install-Module Microsoft.Graph.Users.Actions
+    Install-Module Microsoft.Graph.Identity.DirectoryManagement
+    ```
+
+- Sign in with an account that has the appropriate roles. Different steps require different roles:
+    - Disable user accounts: [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) for non-admin users, or [Privileged Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) for admin accounts.
+    - Disable devices: [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator) at minimum.
+- Connect to Microsoft Graph with the required scopes:
+
+    ```PowerShell
+    Connect-MgGraph -Scopes "User.ReadWrite.All","Directory.AccessAsUser.All"
+    ```
 
 ## Access tokens and refresh tokens
 
@@ -68,7 +92,7 @@ As an admin in the Active Directory, connect to your on-premises network, open P
 
 ### Microsoft Entra environment
 
-As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph`, and take the following actions:
+As an administrator in Microsoft Entra ID, open PowerShell, connect to Microsoft Graph with the required scopes (see [Prerequisites](#prerequisites)), and take the following actions:
 
 1. Disable the user in Microsoft Entra ID. Refer to [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser).
 
@@ -86,8 +110,9 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 1. Disable the user's devices. Refer to [Get-MgUserRegisteredDevice](/powershell/module/microsoft.graph.users/get-mguserregistereddevice).
 
     ```PowerShell
-    $Device = Get-MgUserRegisteredDevice -UserId $User.Id 
-    Update-MgDevice -DeviceId $Device.Id -AccountEnabled:$false
+    Get-MgUserRegisteredDevice -UserId $User.Id -All | ForEach-Object {
+        Update-MgDevice -DeviceId $_.Id -AccountEnabled:$false
+    }
     ```
 
 > [!NOTE]

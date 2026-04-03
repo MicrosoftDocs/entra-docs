@@ -2,12 +2,15 @@
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/03/2026
 ms.reviewer: yukarppa
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
+
+
+## Overview
 
 Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) and the labels are configured for groups and sites. 
 
@@ -26,8 +29,8 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 1. Open a PowerShell prompt on your computer and install the Graph modules required to run the cmdlets.
 
     ```powershell
-    Install-Module Microsoft.Graph -Scope CurrentUser
-    Install-Module Microsoft.Graph.Beta -Scope CurrentUser
+    Install-Module Microsoft.Graph.Authentication -Scope CurrentUser
+    Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement -Scope CurrentUser
     ```
 
 1. Connect to your tenant.

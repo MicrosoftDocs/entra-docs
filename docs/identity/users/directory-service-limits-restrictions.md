@@ -9,6 +9,9 @@ ms.reviewer: vincesm
 ---
 # Microsoft Entra service limits and restrictions
 
+
+## Overview
+
 This article contains the usage constraints and other service limits for Microsoft Entra ID, part of Microsoft Entra. If you’re looking for the full set of Microsoft Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 [!INCLUDE [AAD-service-limits](~/includes/entra-service-limits-include.md)]

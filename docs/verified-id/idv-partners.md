@@ -7,6 +7,9 @@ ms.date: 12/16/2025
 
 # Microsoft Entra Verified ID Identity Verification partners
 
+
+## Overview
+
 The Identity Verification (IDV) partner network extends Microsoft Entra Verified ID capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding, secure access to resources, and account recovery with Government ID checks using identity verification and proofing services.
 
 ## IDV integrations

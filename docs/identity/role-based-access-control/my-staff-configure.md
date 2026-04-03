@@ -38,7 +38,7 @@ To complete the steps in this article, you need the following resources and priv
 
 After configuring administrative units, you can apply this scope to your users who access My Staff. Only users who are assigned an administrative role can access My Staff. To enable My Staff, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
 1. Browse to **Entra ID** > **Users** > **User settings**.
 

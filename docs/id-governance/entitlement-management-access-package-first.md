@@ -50,7 +50,7 @@ A resource directory has one or more resources to share. In this step, you creat
 
 1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
-1. [Create two users](../fundamentals/add-users.md). Use the following names or different names.
+1. [Create two users](../fundamentals/how-to-create-delete-users.yml). Use the following names or different names.
 
     | Name | Directory role |
     | --- | --- |

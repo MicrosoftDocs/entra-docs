@@ -2,10 +2,12 @@
 title: Require remediation for risky users
 description: Create Conditional Access policies using Microsoft Entra ID Protection user risk.
 ms.topic: how-to
-ms.date: 10/30/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require remediation for risky users
+
+## Overview
 
 Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). This policy enables end users to self-remediate and unblock themselves, increasing their productivity while reducing incidents sent to your help desk or security operations teams.  
 

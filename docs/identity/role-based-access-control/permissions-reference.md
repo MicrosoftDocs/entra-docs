@@ -1,9 +1,8 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-search.appverid: MET150
 ms.topic: reference
-ms.date: 03/16/2026
+ms.date: 03/23/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -24,7 +23,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
 > | [Agent ID Developer](#agent-id-developer) | Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
 > | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
-> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -52,7 +51,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Compliance Administrator](#compliance-administrator) | Can read and manage compliance configuration and reports in Microsoft Entra ID and Microsoft 365. | 17315797-102d-40b4-93e0-432062caca18 |
 > | [Compliance Data Administrator](#compliance-data-administrator) | Creates and manages compliance content. | e6d1a23a-da11-4be4-9570-befc86d067a7 |
 > | [Conditional Access Administrator](#conditional-access-administrator) | Can manage Conditional Access capabilities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9 |
-> | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
+> | [Customer Lockbox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
 > | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
@@ -62,6 +61,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
+> | [Entra Backup Administrator](#entra-backup-administrator) | Manage all aspects of Microsoft Entra Backup, such as create recovery jobs and manage backup snapshots. | b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb |
+> | [Entra Backup Reader](#entra-backup-reader) | Read all aspects of Microsoft Entra Backup, such as list all preview jobs, recovery jobs, backup snapshots, and create preview jobs. | f42252d9-5400-4d7b-b9ef-cc582dbb8577 |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -131,9 +132,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams External Collaboration Administrator](#teams-external-collaboration-administrator) | Manage external collaboration policies and settings for Teams, including configuring external domains and controlling which groups and users can interact with the organization. | 2fe872fb-daa8-4afc-8f6c-53c4565cfef4 |
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
+> | [Tenant Governance Administrator](#tenant-governance-administrator) | Manage all capabilities in the Microsoft Entra Tenant Governance service. | 1981f584-96e9-4a6f-95b0-f522373f8fae |
+> | [Tenant Governance Reader](#tenant-governance-reader) | Can read all tenant governance data. | e0a4caa6-fe82-443f-b92f-d87341d17b2e |
+> | [Tenant Governance Relationship Administrator](#tenant-governance-relationship-administrator) | Can initiate governance relationships and terminate them. | b8e31d83-1534-480f-9b10-0338ded51b7e |
+> | [Tenant Governance Relationship Reader](#tenant-governance-relationship-reader) | Can read tenant governance relationships and relevant objects. | 124577f8-48ed-456a-839f-13b419002e33 |
 > | [Usage Summary Reports Reader](#usage-summary-reports-reader) | Read Usage reports and Adoption Score, but can't access user details. | 75934031-6c7e-415a-99d7-48dbd49e875e |
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
 > | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
@@ -270,7 +276,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [conditional-access-administrator](includes/conditional-access-administrator.md)]
 
-## Customer LockBox Access Approver
+## Customer Lockbox Access Approver
 
 [!INCLUDE [customer-lockbox-access-approver](includes/customer-lockbox-access-approver.md)]
 
@@ -309,6 +315,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Edge Administrator
 
 [!INCLUDE [edge-administrator](includes/edge-administrator.md)]
+
+## Entra Backup Administrator
+
+[!INCLUDE [entra-backup-administrator](includes/entra-backup-administrator.md)]
+
+## Entra Backup Reader
+
+[!INCLUDE [entra-backup-reader](includes/entra-backup-reader.md)]
 
 ## Exchange Administrator
 
@@ -586,6 +600,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
 
+## Teams External Collaboration Administrator
+
+[!INCLUDE [teams-external-collaboration-administrator](includes/teams-external-collaboration-administrator.md)]
+
 ## Teams Reader
 
 [!INCLUDE [teams-reader](includes/teams-reader.md)]
@@ -597,6 +615,22 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Tenant Creator
 
 [!INCLUDE [tenant-creator](includes/tenant-creator.md)]
+
+## Tenant Governance Administrator
+
+[!INCLUDE [tenant-governance-administrator](includes/tenant-governance-administrator.md)]
+
+## Tenant Governance Reader
+
+[!INCLUDE [tenant-governance-reader](includes/tenant-governance-reader.md)]
+
+## Tenant Governance Relationship Administrator
+
+[!INCLUDE [tenant-governance-relationship-administrator](includes/tenant-governance-relationship-administrator.md)]
+
+## Tenant Governance Relationship Reader
+
+[!INCLUDE [tenant-governance-relationship-reader](includes/tenant-governance-relationship-reader.md)]
 
 ## Usage Summary Reports Reader
 

@@ -4,11 +4,13 @@ description: Responding to changes in user state faster with continuous access e
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 03/24/2026
 ms.reviewer: sreyanthmora
 ms.custom: sfi-image-nochange
 ---
 # Strictly enforce location policies using continuous access evaluation (preview)
+
+## Overview
 
 Strictly enforce location policies is a new enforcement mode for continuous access evaluation (CAE) used in Conditional Access policies. This new mode provides protection for resources, immediately stopping access if the IP address detected by the resource provider isn't allowed by Conditional Access policy. This option is the highest security modality of CAE location enforcement, and requires that administrators understand the routing of authentication and access requests in their network environment. See [Introduction to continuous access evaluation](concept-continuous-access-evaluation.md) for a review of how CAE-capable clients and resource providers, like the Outlook email client and Exchange Online, evaluate location changes.  
 
