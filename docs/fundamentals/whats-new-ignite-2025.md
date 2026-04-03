@@ -31,7 +31,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 - [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-are-agent-identities.md) (New)
 - [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) (New)
-- [Security for AI](../agent-id/identity-professional/security-for-ai-overview.md) (New)
+- [Security for AI](../agent-id/security-for-ai-overview.md) (New)
 - [Agent ID creation channels](../agent-id/identity-professional/agent-id-creation-channels.md) (New)
 - [Control user access to agents](../agent-id/identity-professional/control-user-access-agents.md) (New)
 - [Grant agent access to Microsoft 365](../agent-id/identity-professional/grant-agent-access-microsoft-365.md) (New)
