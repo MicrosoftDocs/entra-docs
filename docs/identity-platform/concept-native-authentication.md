@@ -67,7 +67,9 @@ The following table shows the availability of features for browser-delegated and
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
-| **Single sign-on (SSO)** | :heavy_check_mark:  | :heavy_check_mark: (embedded web views only) |
+| **Single sign-on (SSO)**<sup>1</sup> | :heavy_check_mark:  | :heavy_check_mark:  |
+
+<sup>1</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication. For details, see [Single sign-on (SSO)](#single-sign-on-sso).
 
 ## How to enable native authentication
 
@@ -90,7 +92,18 @@ If the configuration isn't updated to integrate native authentication components
 
 ## Risk of enabling native authentication
 
-Microsoft Entra's native authentication supports single sign-on (SSO) for embedded web views, which allows users to sign in once through the native app and access web resources in a web view without a second login prompt. For implementation details, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md). Cross-app SSO through system browsers isn't supported with native authentication. The responsibility for ensuring the app's security lies with your development team.
+When you use native authentication, the responsibility for ensuring the app's security lies with your development team.
+
+## Single sign-on (SSO)
+
+Native authentication supports single sign-on (SSO) for embedded web views. This allows users to sign in once through the native app's UI and then access web resources hosted in an embedded web view (for example, `WKWebView` on iOS or `WebView` on Android) without encountering a second login prompt.
+
+The app achieves this by retrieving an access token from the Native Auth SDK and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
+
+For implementation steps, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md).
+
+> [!NOTE]
+> Cross-app SSO through system browsers isn't supported with native authentication.
 
 ## How to use native authentication
 
