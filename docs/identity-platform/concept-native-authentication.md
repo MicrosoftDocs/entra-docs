@@ -67,7 +67,7 @@ The following table shows the availability of features for browser-delegated and
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
-| **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
+| **Single sign-on (SSO)** | :heavy_check_mark:  | :heavy_check_mark: (embedded web views only) |
 
 ## How to enable native authentication
 
@@ -90,7 +90,7 @@ If the configuration isn't updated to integrate native authentication components
 
 ## Risk of enabling native authentication
 
-Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the app's security lies with your development team.
+Microsoft Entra's native authentication supports single sign-on (SSO) for embedded web views, which allows users to sign in once through the native app and access web resources in a web view without a second login prompt. For implementation details, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md). Cross-app SSO through system browsers isn't supported with native authentication. The responsibility for ensuring the app's security lies with your development team.
 
 ## How to use native authentication
 
