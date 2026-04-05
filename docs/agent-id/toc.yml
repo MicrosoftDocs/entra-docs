@@ -62,7 +62,7 @@ items:
   - name: Create and configure agents
     expanded: true
     items:    
-    - name: Create identity objects
+    - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
         href: create-blueprint.md
