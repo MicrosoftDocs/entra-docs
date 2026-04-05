@@ -90,6 +90,6 @@ To view the complete inventory of agents in your organization:
 
 ## Related content
 
-- [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
+- [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
 - [What is the Microsoft Entra Agent Registry?](what-is-agent-registry.md)
 - [Microsoft Agent 365 overview](/microsoft-agent-365/overview)

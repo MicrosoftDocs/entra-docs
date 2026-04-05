@@ -76,6 +76,6 @@ In either case, an agent identity blueprint principal is always created when a b
 
 ## Related content
 
-- [Agent identity blueprint creation channels](.agent-id-creation-channels.md)
+- [Agent identity blueprint creation channels](agent-id-creation-channels.md)
 - [Create an agent identity blueprint](create-blueprint.md)
 - [Credentials for agent identities](agent-identities.md#authorizing-agent-identities).
