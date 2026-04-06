@@ -3,7 +3,7 @@ title: Configure Configuring Velpic for for automatic user provisioning with Mic
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Velpic.
 author: zhchia
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Velpic so that I can streamline the user management process and ensure that users have the appropriate access to Velpic.
@@ -20,11 +20,11 @@ The objective of this article is to show you the steps you need to perform in Ve
 
 The scenario outlined in this article assumes that you already have the following items:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Velpic tenant with the Enterprise plan or better enabled
 * A user account in Velpic with Admin permissions
 
-## Assigning users to Velpic
+## Step 1: Assign users to Velpic
 
 Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized. 
 
@@ -38,7 +38,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 * When assigning a user to Velpic, you must select either the **User** role, or another valid application-specific role (if available) in the assignment dialog. The **Default Access** role doesn't work for provisioning, and these users are skipped.
 
-## Configuring user provisioning to Velpic
+## Step 2: Configure user provisioning to Velpic
 
 This section guides you through connecting your Microsoft Entra ID to Velpic's user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Velpic based on user and group assignment in Microsoft Entra ID.
 
@@ -47,40 +47,52 @@ This section guides you through connecting your Microsoft Entra ID to Velpic's u
 
 <a name='to-configure-automatic-user-account-provisioning-to-velpic-in-azure-ad'></a>
 
-### To configure automatic user account provisioning to Velpic in Microsoft Entra ID:
+### Configure automatic user account provisioning to Velpic in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
 2. If you have already configured Velpic for single sign-on, search for your instance of Velpic using the search field. Otherwise, select **Add** and search for **Velpic** in the application gallery. Select Velpic from the search results, and add it to your list of applications.
 
-3. Select your instance of Velpic, then select the **Provisioning** tab.
+1. In the applications list, select **Velpic**.
 
-4. Set the **Provisioning Mode** to **Automatic**.
+	![Screenshot of the Velpic link in the Applications list.](common/all-applications.png)
 
-    ![Screenshot shows the provisioning tab automatic.](common/provisioning-automatic.png "Provisioning tab")
+1. Select the **Provisioning** tab.
 
-5. Under the **Admin Credentials** section, input the **Tenant URL&Secret Token** of Velpic.(You can find these values under your Velpic account: **Manage** > **Integration** > **Plugin** > **SCIM**)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-    ![Authorization Values](./media/velpic-provisioning-tutorial/Velpic2.png)
+1. Select **+ New configuration**.
+
+	![Screenshot of New configuration.](common/application-provisioning.png)
+
+5. Under the **Admin Credentials** section, input Tenant URL and Secret Token of Velpic.(You can find these values under your Velpic account: **Manage** > **Integration** > **Plugin** > **SCIM**)
+
+    ![Screenshot of Authorization Values.](./media/velpic-provisioning-tutorial/Velpic2.png)
 
 6. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Velpic app. If the connection fails, ensure your Velpic account has Admin permissions and try step 5 again.
 
-7. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
+1. Select **Create** to create your configuration.
 
-8. Select **Save**.
+1. Select **Properties** on the **Overview** page.
 
-9. Under the Mappings section, select **Synchronize Microsoft Entra users to Velpic**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-10. In the **Attribute Mappings** section, review the user attributes that's synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties are used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-11. To enable the Microsoft Entra provisioning service for Velpic, change the **Provisioning Status** to **On** in the **Settings** section
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-12. Select **Save**.
+1. Review the user attributes that's synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties are used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
 
-This starts the initial synchronization of any users and/or groups assigned to Velpic in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity reports, which describe all actions performed by the provisioning service.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
+
+## Step 3: Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 
