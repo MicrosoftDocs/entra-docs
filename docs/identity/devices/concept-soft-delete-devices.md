@@ -52,7 +52,7 @@ The following device types aren't currently supported for soft delete and are ha
 
 Only specific roles can initiate, restore, or permanently delete devices:
 
-- **Global Administrators**, **Cloud Device Administrators**, and **Intune Administrators** can soft delete any device, restore soft-deleted devices, and permanently delete soft-deleted devices.
+- **Cloud Device Administrators**, **Intune Administrators**, and **Global Administrators** can soft delete any device, restore soft-deleted devices, and permanently delete soft-deleted devices.
 - **Device owners** (the user who joined or registered the device) can soft delete their own device but can't restore or permanently delete it.
 
 Custom roles with soft-delete or restore permissions aren't available at this time.
@@ -94,7 +94,7 @@ When a device is restored:
 - Compliance-related properties remain in their reset state until the device checks in with its management authority.
 
 > [!IMPORTANT]
-> Only Global Administrators, Cloud Device Administrators, and Intune Administrators can restore soft-deleted devices.
+> Only Cloud Device Administrators, Intune Administrators, and Global Administrators can restore soft-deleted devices.
 
 ## Permanent deletion
 
