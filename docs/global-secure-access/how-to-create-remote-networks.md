@@ -4,7 +4,7 @@ description: Learn how to create remote networks, for remote locations such as b
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 04/01/2026
+ms.date: 04/06/2026
 ms.reviewer: abhijeetsinha
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
@@ -82,6 +82,8 @@ You can assign the remote network to a traffic forwarding profile when you creat
 1. Select the **Review + create** button.
 
     :::image type="content" source="media/how-to-create-remote-networks/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
+
+#### Traffic profile enforcement on remote network device links
 
 [!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
 
@@ -171,6 +173,8 @@ Associating a traffic forwarding profile to your remote network by using the Mic
             "name": "Test Redmond branch"
         }
     ```
+
+### Traffic profile enforcement on remote network device links
 
 [!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
 

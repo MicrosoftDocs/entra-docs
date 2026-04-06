@@ -3,7 +3,7 @@ title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 ms.topic: concept-article
 ms.reviewer: abhijeetsinha
-ms.date: 04/01/2026
+ms.date: 04/06/2026
 ai-usage: ai-assisted
 ---
 
@@ -54,6 +54,7 @@ Remote networks support different traffic forwarding profiles for acquiring traf
 
 After you acquire traffic through a forwarding profile, apply security policies to it by using security profiles. The [baseline security profile](how-to-apply-security-policies-remote-network.md) enforces policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware security profiles linked to Conditional Access policies require the Global Secure Access client.
 
+### Traffic profile enforcement on remote network device links
 [!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
  
 ## Why is remote network connectivity important for you? 

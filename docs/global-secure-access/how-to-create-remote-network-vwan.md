@@ -2,7 +2,7 @@
 title: Simulate remote network connectivity using Azure vWAN
 description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.topic: how-to
-ms.date: 04/01/2026
+ms.date: 04/06/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: abhijeetsinha
@@ -287,8 +287,6 @@ View the Remote network health logs to validate connectivity in the Microsoft En
 
 You can also validate by filtering by **tunnelConnected** or **BGPConnected**. For more information, see [What are remote network health logs?](/entra/global-secure-access/how-to-remote-network-health-logs).
 
-[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
-
 ## Configure security features for testing
 In this step, we prepare for testing by configuring a virtual network, adding a virtual network connection to the vWAN, and creating an Azure Virtual Desktop.
 
@@ -362,6 +360,9 @@ In this step, create a virtual desktop and host it with Bastion.
 
 ## Test security features with Azure Virtual Desktop (AVD)
 In this step, we use the AVD to test access restrictions to the virtual network.
+
+### Avoid asymmetric routing when connecting to virtual machines in remote networks
+[!INCLUDE [remote-network-asymmetric-routing-include](../includes/remote-network-asymmetric-routing-include.md)]
 
 ### Test the tenant restriction
 Before testing, enable tenant restrictions on the virtual network.
