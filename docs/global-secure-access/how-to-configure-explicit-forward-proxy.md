@@ -39,6 +39,6 @@ You can enable and manage EFP using the Microsoft Entra portal.
 
 ## Next Steps
 
-[Learn How to Configure Conditional Access Policy for Explicit Forward Proxy](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
-LINK Configure HTTP Header Session Management
-LINK Configure EFP in Microsoft Edge using Intune Mobile Application Management (MAM)
+[Configure Conditional Access Policy for Explicit Forward Proxy](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+[Configure HTTP Header Session management](how-to-configure-efp-header-session-management.md)
+[Configure EFP in Microsoft Edge using Intune Mobile Application Management (MAM)](how-to-configure-efp-with-edge-and-intune.md)
