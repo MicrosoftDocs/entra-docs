@@ -3,7 +3,7 @@ title: Configure Zapier for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zapier.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zapier so that I can streamline the user management process and ensure that users have the appropriate access to Zapier.
@@ -32,8 +32,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Zapier](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Zapier](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-zapier-to-support-provisioning-with-azure-ad'></a>
 
@@ -41,15 +41,15 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Sign in to your [Zapier Admin Console](https://zapier.com/app/login/). Navigate to **Settings** under the tenant ID.
 
-    ![Zapier Admin Console](media/zapier-provisioning-tutorial/admin.png)
+    ![Screenshot of Zapier Admin Console.](media/zapier-provisioning-tutorial/admin.png)
 
-2. Under **COMPANY SETTINGS**, Select **User provisioning**.
+1. Under **COMPANY SETTINGS**, Select **User provisioning**.
 
-    ![Zapier Add SCIM](media/zapier-provisioning-tutorial/user.png)
+    ![Screenshot of Zapier Add SCIM.](media/zapier-provisioning-tutorial/user.png)
 
-3. Copy the **SCIM Base URL** and **SCIM Bearer Token**. These values are entered in the Tenant URL and Secret Token fields respectively in the Provisioning tab of your Zapier application.
+1. Copy the **SCIM Base URL** and **SCIM Bearer Token**. These values are entered in the Tenant URL and Secret Token fields respectively in the Provisioning tab of your Zapier application.
 
-    ![Zapier Create Token](media/zapier-provisioning-tutorial/token.png)
+    ![Screenshot of Zapier Create Token.](media/zapier-provisioning-tutorial/token.png)
 
 <a name='step-3-add-zapier-from-the-azure-ad-application-gallery'></a>
 
@@ -67,36 +67,38 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-zapier-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Zapier in Microsoft Entra ID:
+### Configure automatic user provisioning for Zapier in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-   ![Enterprise applications blade](common/enterprise-applications.png)
+   ![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Zapier**.
 
-   ![The Zapier link in the Applications list](common/all-applications.png)
+   ![Screenshot of The Zapier link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Zapier **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zapier. If the connection fails, ensure your Zapier account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Zapier Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zapier. If the connection fails, ensure your Zapier account has the required admin permissions and try again.
 
-   ![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/zapier-provisioning-tutorial/provisioning.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-   ![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zapier**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zapier in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zapier for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Zapier API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -109,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String|
    |emails[type eq "work"].value|String|
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zapier**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zapier in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zapier for update operations. Select the **Save** button to commit any changes.
 
@@ -118,21 +120,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |displayName|String|
     |members|Reference|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Zapier, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to Zapier by choosing the desired values in **Scope** in the **Settings** section.
-
-    ![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-    ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.  
 
 ## Step 6: Monitor your deployment
 

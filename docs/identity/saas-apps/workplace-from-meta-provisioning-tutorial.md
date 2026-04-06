@@ -3,7 +3,7 @@ title: Configure Workplace from Meta for automatic user provisioning with Micros
 description: Learn the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/02/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 ---
@@ -71,36 +71,38 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Workplace from Meta**.
 
-	![The Workplace from Meta link in the Applications list](common/all-applications.png)
+	![Screenshot of the Workplace from Meta link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. Ensure the "Tenant URL" section is populated with the correct endpoint: `https://scim.workplace.com/`. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 
- 	![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
+   ![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
- 	![Authorize](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
+   ![Screenshot of Authorize.](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
 
    > [!NOTE]
    > Failure to change the URL to `https://scim.workplace.com/` results in a failure when trying to save the configuration 
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workplace from Meta**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Workplace from Meta in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workplace from Meta for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Workplace from Meta API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -136,22 +138,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:scim:schemas:extension:facebook:frontline:1.0.is_frontline|Boolean|
    |urn:scim:schemas:extension:facebook:starttermdates:1.0.startDate|Integer|
 
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-1. To enable the Microsoft Entra provisioning service for Workplace from Meta, change the **Provisioning Status** to **On** in the **Settings** section.
-
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to Workplace from Meta by choosing the appropriate values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
