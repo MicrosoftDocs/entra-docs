@@ -108,6 +108,15 @@ items:
     href: concept-secure-web-ai-gateway-agents.md
   - name: Configure antivirus-client coexistence
     href: concept-edr-antivirus-coexistence.md
+  - name: Explicit Forward Proxy
+    expanded: false
+    items:
+    - name: Understand Explicit Forward Proxy
+      href: concept-explicit-forward-proxy.md
+    - name: Explicit Forward Proxy Session Management
+      href: concept-efp-session-management.md
+    - name: Proxy Auto-Configuration (PAC) files
+      href: concept-pac-files.md
 - name: How-to guides
   expanded: true
   items:
@@ -259,6 +268,15 @@ items:
         href: how-to-ai-prompt-injection-protection.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
+      - name: Explicit Forward Proxy
+        expanded: false
+        items:
+        - name: Configure Explicit Forward Proxy
+          href: how-to-configure-explicit-forward-proxy.md
+        - name: Configure Conditional Access policy for Explicit Forward Proxy
+          href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
+        - name: Configure HTTP Header Session Management
+          href: how-to-configure-efp-header-session-management.md
   - name: Logs and monitoring
     expanded: false
     items:
