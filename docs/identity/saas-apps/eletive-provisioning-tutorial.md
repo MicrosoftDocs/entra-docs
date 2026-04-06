@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Eletive so that I can streamline the user management process and ensure that users have the appropriate access to Eletive.
@@ -34,8 +34,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Eletive](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Eletive](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-eletive-to-support-provisioning-with-azure-ad'></a>
 
@@ -45,21 +45,21 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Features](media/eletive-provisioning-tutorial/settings.png)
 
-2.	Enable **Integrations** and **SCIM 2.0**.
+1.	Enable **Integrations** and **SCIM 2.0**.
 
     ![Integrations](media/eletive-provisioning-tutorial/scim.png)
 
-3.	Navigate to **Settings** > **Integrations**.
+1.	Navigate to **Settings** > **Integrations**.
 
-4.	Select **User Provisioning**.
+1.	Select **User Provisioning**.
 
     ![Tab](media/eletive-provisioning-tutorial/user.png)
 
-5.	Select **Connect**.
+1.	Select **Connect**.
 
     ![Button](media/eletive-provisioning-tutorial/connect.png)
 
-6.	Copy and save the SCIM 2.0 URL and Bearer token. These values are entered in the Tenant URL and Secret Token field in the Provisioning tab of your Eletive application.
+1.	Copy and save the SCIM 2.0 URL and Bearer token. These values are entered in the Tenant URL and Secret Token field in the Provisioning tab of your Eletive application.
 
 
 <a name='step-3-add-eletive-from-the-azure-ad-application-gallery'></a>
@@ -89,27 +89,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Eletive link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Eletive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Eletive. If the connection fails, ensure your Eletive account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Eletive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Eletive. If the connection fails, ensure your Eletive account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Eletive**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Eletive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Eletive for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Eletive API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Eletive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Eletive for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Eletive API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
@@ -122,21 +124,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |userType|String||
    |urn:ietf:params:scim:schemas:extension:eletive:2.0:User:participateInSurvey|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Eletive, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Eletive by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
