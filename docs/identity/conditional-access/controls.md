@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!IMPORTANT]
-> Custom controls will be deprecated on September 30, 2026. External MFA (previously known as external authentication methods) is the replacement for custom controls and is now generally available. External MFA provides several benefits over the custom controls approach. Existing custom controls will continue to function during the transition period, but new implementations should use external MFA. Start planning your migration now.
+> Custom controls are being replaced by external MFA (previously known as external authentication methods), which is now generally available. External MFA provides several benefits over the custom controls approach. Existing custom controls will continue to function during the transition period, but new implementations should use external MFA. For deprecation timeline details, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926). Start planning your migration now.
 
 For more information, see [Manage external MFA in Microsoft Entra ID](../authentication/how-to-authentication-external-method-manage.md).
 
