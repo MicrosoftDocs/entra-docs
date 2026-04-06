@@ -2,18 +2,15 @@
 title: Build resilience with credential management in Microsoft Entra ID
 description: A guide for architects
  and IT administrators on building a resilient credential strategy.
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: best-practice
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience with credential management
 
 When a credential is presented to Microsoft Entra ID in a token request, there can be multiple dependencies that must be available for validation. The first authentication factor relies on Microsoft Entra authentication and, in some cases, on external (non-Entra ID) dependency, such as on-premises infrastructure. For more information on hybrid authentication architectures, see [Build resilience in your hybrid infrastructure](resilience-in-hybrid.md). 
 
-The most secure and resilient credential strategy is to use passwordless authentication. [Windows Hello for Business](~/identity/authentication/concept-authentication-passwordless.md#windows-hello-for-business) and [Passkey (FIDO 2.0)](~/identity/authentication/concept-authentication-passwordless.md#passkeys-fido2) security keys have fewer dependencies than other MFA methods. For macOS users customers can enable [Platform Credential for macOS](~/identity/authentication/concept-authentication-passwordless.md#platform-credential-for-macos). When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA). 
+The most secure and resilient credential strategy is to use passwordless authentication. [Windows Hello for Business](~/identity/authentication/concept-authentication-passkeys-fido2.md) and [Passkey (FIDO 2.0)](~/identity/authentication/concept-authentication-passkeys-fido2.md) security keys have fewer dependencies than other MFA methods. For macOS users customers can enable [Platform Credential for macOS](~/identity/authentication/concept-authentication-passkeys-fido2.md). When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA). 
 
 ![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/passwordless-pr.png)
 

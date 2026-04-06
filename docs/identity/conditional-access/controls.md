@@ -1,24 +1,19 @@
 ---
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: article
-ms.date: 09/12/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.topic: concept-article
+ms.date: 04/01/2026
 ms.reviewer: gkinasewitz
 ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
 
+## Overview
+
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
-> [!NOTE]
-> As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808):
->
-> External authentication methods are the replacement of custom controls, and they provide several benefits over the custom controls approach.
+> [!IMPORTANT]
+> Custom controls are deprecated and will be retired in the future. External authentication methods are the replacement for custom controls, and they provide several benefits over the custom controls approach. Existing custom controls will continue to function, but new implementations should use external authentication methods. As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808), start planning your migration now.
 
 For more information, see [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
 

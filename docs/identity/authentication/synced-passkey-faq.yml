@@ -2,13 +2,9 @@
 metadata:
   title: Synced passkeys FAQs
   description: Frequently asked questions and answers related to synced passkeys. 
-  ms.service: entra-id
-  ms.subservice: authentication
   ms.topic: faq
   ms.date: 11/03/2025
-  ms.author: justinha
   author: hanki71
-  manager: dougeby
   ms.reviewer: kimhana
 title: Frequently asked questions about synced passkeys 
 summary: |

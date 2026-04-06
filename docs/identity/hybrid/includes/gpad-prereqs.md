@@ -1,11 +1,8 @@
 ---
 title: Include file
 description: Include file
-author: omondiatieno
-ms.service: entra-id
 ms.topic: Include
 ms.date: 10/09/2025
-ms.author: jomondi
 ms.custom: Include file
 ---
 
@@ -20,7 +17,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises AD DS schema with the *msDS-ExternalDirectoryObjectId* attribute, which is available in Windows Server 2016 and later.  
- - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history.md#1113730) or later.
+ - Provisioning agent with build version [1.1.1373.0](../cloud-sync/reference-version-history.md#1113730) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. If you're upgrading from the previous version, then permissions need to be assigned manually by using PowerShell: 
@@ -28,7 +25,7 @@ The following prerequisites are required to implement provisioning groups to Act
  > ```powershell
  > $credential = Get-Credential  
  >
- > Set-AAD DSCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
+ > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
  > ```
  >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendant Groups and User objects. 
  >
@@ -37,7 +34,7 @@ The following prerequisites are required to implement provisioning groups to Act
  - The provisioning agent must be installed on a server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016.
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for Global Catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history.md#2280)
+ - Microsoft Entra Connect Sync with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280)
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize `AD DS:user:objectGUID` to `AAD DS:user:onPremisesObjectIdentifier`
 

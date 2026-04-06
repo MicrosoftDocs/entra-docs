@@ -2,20 +2,19 @@
 title: Upgrade signing keys
 description: Learn how to upgrade Microsoft Entra Verified ID signing keys to become FIPS compliant.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
-ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information on how to upgrade signing keys to become FIPS compliant.
 ---
 
 # Upgrade signing key to become FIPS compliant
 
-In this article, we review the steps to upgrade your Microsoft Entra Verified ID signing keys to become FIPS compliant. 
-Most of authorities are already FIPS compliant. It's only authorities created before February 2024 using [Advanced Setup](verifiable-credentials-configure-tenant.md) method that require signing key upgrade. [Quick Setup](verifiable-credentials-configure-tenant-quick.md) authorities are already FIPS compliant and are using P-256 signing keys.
+
+## Overview
+
+This article covers the steps to upgrade your Microsoft Entra Verified ID signing keys to become FIPS compliant. 
+Most authorities are already FIPS compliant. It's only authorities created before February 2024 using [Advanced Setup](verifiable-credentials-configure-tenant.md) method that require signing key upgrade. [Quick Setup](verifiable-credentials-configure-tenant-quick.md) authorities are already FIPS compliant and are using P-256 signing keys.
 
 ## Do I need to upgrade?
 
@@ -41,7 +40,7 @@ Microsoft advises that you upgrade anyway as the support for P-256K signing key 
 
 ## Upgrading the signing key
 
-Upgrading the signing key is a seven step operation:
+Upgrading the signing key is a seven-step operation:
 
 1. Call the [didInfo/signingKeys](admin-api.md#create-signing-key) API to create a new P-256 signing key in Key Vault. The access token in the call must be for an admin user with access to keys in the key vault. The `didDocumentStatus` attribute for the authority changes to an `outOfSync` value, which indicates that there's a discrepancy between Key Vault and the publicly available `did.json` document.
 
@@ -49,15 +48,15 @@ Upgrading the signing key is a seven step operation:
 
 1. Replace `did.json` on all web servers where it was previously deployed. Before you continue, make sure that you can retrieve the new `did.json` document from the public internet with a browser.
 
-1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new P-256 signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. From this point, your authority signs using the new P-256 key. As your DID document also contains one or more old P-256K key(s), previously issued credentials, signed by a P-256K key, continue to work in presentations. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value still is `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
+1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new P-256 signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. From this point, your authority signs using the new P-256 key. As your DID document also contains one or more old P-256K key(s), previously issued credentials, signed by a P-256K key, continue to work in presentations. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value is still `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
 
-1. Call the [generateWellKnownDidConfiguration](admin-api.md#well-known-did-configuration) API to regenerate the linked domain configuration. Save the response as a file named `did-configuration.json`. Technically, you could delay this step as the old P-256K keys that were used to sign the linked domain configuration is still available in the DID document. Performing this step here is a good test that the new signing key is active.
+1. Call the [generateWellKnownDidConfiguration](admin-api.md#well-known-did-configuration) API to regenerate the linked domain configuration. Save the response as a file named `did-configuration.json`. Technically, you could delay this step as the old P-256K keys that were used to sign the linked domain configuration are still available in the DID document. Performing this step here is a good test that the new signing key is active.
 
 1. Replace `did-configuration.json` on all web servers where it was previously deployed. Before you continue, make sure that you can retrieve the new `did-configuration.json` document from the public internet with a browser.
 
 1. Call the [validateWellKnownDidConfiguration](admin-api.md#validate-well-known-did-configuration) API to set the linked domain status to `verified`. 
 
-## Post upgraded considerations
+## Post-upgrade considerations
 
 Any signing activities, like issuing credentials or making presentation requests, are now signed by your new P-256 key. 
 

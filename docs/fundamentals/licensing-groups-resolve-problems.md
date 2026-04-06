@@ -1,15 +1,9 @@
 ---
-title: Resolve group license assignment problems.
+title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing.
 keywords: Microsoft Entra ID licensing
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: barclayn
-ms.reviewer: sumitp
 ms.custom: it-pro
 ---
 
@@ -17,11 +11,14 @@ ms.custom: it-pro
 
 [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
 
-Group-based licensing (GBL) in Microsoft 365 Admin Portal, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state. 
+
+## Overview
+
+Group-based licensing (GBL) in Microsoft 365 Admin Portal, introduces the concept of users in a licensing error state. This article explains the reasons why users might end up in this state.
 
 When you assign licenses directly to individual users or using group-based licensing (or both), the assignment operation might fail for reasons that are related to business logic.  
  
-Some example issues include but aren't limited to: 
+Some example issues include:
 
 - An insufficient number of licenses  
 
@@ -30,20 +27,20 @@ Some example issues include but aren't limited to:
 - Service plans in one license depend on service plans from another license 
 
 
-## Find license assignment errors on users members of a group when using group based licensing
+## Find license assignment errors for group members with group-based licensing
 
 When you're using group-based licensing, these errors happen in the background while the service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object within the group. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group-based licensing activity](/azure/security/fundamentals/log-audit).
 
-### To find Users in an error state within a group
+### Find users in an error state within a group
 
 1. Sign in to the [Microsoft 365 Admin Portal](https://admin.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all license products in the organization.
-1. Select the affected license and to view the status of each group assigned to the selected license navigate to the group selection option. 
+1. Select the affected license. To view the status of each group assigned to the selected license navigate to the group selection option. 
 
    :::image type="content" source="./media/licensing-groups-resolve-problems/licenses.png" alt-text="Screenshot of group and error notifications messages.":::
 
-1. A notification appears if there are any users of the group in an error state. The status of license assignment for each group would be one of the following values: 
-    - **All licenses Assigned** – no issues 
+1. A notification appears if there are any users of the group in an error state. The status of license assignment for each group is one of the following values: 
+    - **All licenses assigned** – no issues 
     - **In progress** – pending assignment of licenses to users 
     - **Errors and issues** – need to investigate 
 
@@ -95,7 +92,7 @@ Licensing Error Message
 
 License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
-``` 
+```
 
 ## Usage location not specified
 
@@ -105,7 +102,7 @@ To solve this problem, remove users from unsupported locations from the licensed
 
 **PowerShell:** PowerShell cmdlets report this error as ProhibitedInUsageLocationViolation.
 
->[!NOTE]
+> [!NOTE]
 > When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations. - The attributes of First name, Last name, Other email address, and User type aren't mandatory for license assignment.
 
 ## Duplicate proxy addresses
@@ -113,7 +110,7 @@ To solve this problem, remove users from unsupported locations from the licensed
 **Problem**: If you use Exchange Online, some users in your organization might be incorrectly configured with the same proxy address value. When group-based licensing tries to assign a license to such a user, it fails and shows “Proxy address is already being used”.
 
 
->[!TIP] 
+> [!TIP]
 > To see if there's a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online:
 
 ```powershell
@@ -124,7 +121,7 @@ For more information about this problem, see [Proxy address is already being use
 
 ## Other
 
-**Other** errors are typically the result of an error with another license assigned by the same group.   
+**Other** errors are typically the result of an error with another license assigned by the same group.
 
 :::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of other type errors.":::
  
@@ -132,7 +129,7 @@ To identify the other licensing assigned to the affected user from the same grou
  
 In the **Entra Admin Portal**, navigate to **Users – All Users** – locate the affected user and then review their **Licenses**. 
  
-You can review the user's audit logs for more information about the error as long as the error occurred in the last 30 days in most cases (depending on the number of days Audit logs available in the tenant, some may have only seven days) 
+You can review the user's audit logs for more information about the error as long as the error occurred in the last 30 days in most cases. Depending on the number of days audit logs are available in the tenant, some might have only seven days.
  
 Audit log License Assignment Error Records can be identified using the following details: 
  
@@ -146,7 +143,7 @@ Audit log License Assignment Error Records can be identified using the following
 
 ## Force user license processing to resolve errors 
 
-**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state. 
+**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the user's state. 
 
 For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where one or more affected users show in error, select the user(s) and then select the **Reprocess** button on the toolbar. 
 
@@ -157,16 +154,16 @@ Alternately, you can use Graph for PowerShell [Invoke-MgLicenseUser](/powershell
 You can assign more than one product license to a group. For example, you can assign Office 365 Enterprise E3 and Enterprise Mobility + Security to a group to easily enable all included services for users.
 
 **Problem**: Group based licensing processing attempts to assign all specified licenses in the group to each user within the group. However, if the processing of the licenses encounters issues such as insufficient licenses or conflicts with other services enabled, it doesn't assign other licenses in the group either. You need to check which users have license assignment failures and which products are affected.
-If a problem occurs during license assignment, the process may not complete. For example, issues like insufficient licenses or service plans that can't be assigned at the same time, would prevent the process from finishing.
+If a problem occurs during license assignment, the process might not complete. For example, issues like insufficient licenses or service plans that can't be assigned at the same time, would prevent the process from finishing.
 
 ## When a licensed group is deleted
 
-**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. When an administrator removes license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license assigned dependent on a license being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and it can't be removed until the dependency is resolved.
+**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. When an administrator removes license assignments from a group, there can be failures if a user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license assigned dependent on a license being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and it can't be removed until the dependency is resolved.
 Once the dependency is resolved, you need to reprocess the user licensing using Graph for PowerShell.
 
 ## Manage licenses for products with prerequisites
 
-Some Microsoft Online products you might own have prerequisites. These include add-ons and other service plans which may require a prerequisite service plan to be enabled on a user or a group before the dependent service plans can be added to the user or group. 
+Some Microsoft Online products you might own have prerequisites. These include add-ons and other service plans which might require a prerequisite service plan to be enabled on a user or a group before the dependent service plans can be added to the user or group. 
 With group-based licensing, the system requires that both the prerequisite and add-on service plans or other dependent service plans be present in the same group. This requirement exists to ensure that any users who are added to the group can receive the fully working product. Let's consider the following example:
 Microsoft Workplace Analytics is an add-on product. It contains a single service plan with the same name. You can only assign this service plan to a user, or group, when one of the following prerequisites is also assigned:
 
@@ -182,18 +179,18 @@ It's also possible to create a standalone group that contains only the minimum r
 
 From now on, any users added to this group consume one license of the E3 product and one license of the Workplace Analytics product. At the same time, those users can be members of another group that gives them the full E3 product, and they still consume only one license for that product.
 
->[!TIP] 
->You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
+> [!TIP]
+> You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
 
 
 ## License removal of dynamic membership groups with rules based on licenses with an initial static group
 
 This error occurs because users are added and removed from another batch of dynamic membership groups. The cascading setup of dynamic membership groups, with rules based on licenses in an initial static group, creates this issue. This error can affect multiple dynamic membership groups and demands extensive reprocessing to restore access.
 
->[!WARNING] 
+> [!WARNING]
 > When you change an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 
-We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see Use audit logs to monitor group-based licensing activity.
+Test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see Use audit logs to monitor group-based licensing activity.
 
 
 ## Microsoft Entra ID Mail and ProxyAddresses attribute change

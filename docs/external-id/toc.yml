@@ -108,7 +108,7 @@ items:
       href: tenant-restrictions-v2.md
     - name: Migrate to tenant restrictions v2
       href: tenant-restrictions-migration.md
-    - name: B2B user claims mapping  <!---Check this entry--->
+    - name: B2B user claims mapping
       href: claims-mapping.md
   - name: Cross‑tenant Microsoft Teams collaboration
     items:
@@ -176,5 +176,3 @@ items:
       href: https://azure.microsoft.com/updates/?product=active-directory
     - name: Stack Overflow
       href: https://stackoverflow.com/questions/tagged/azure-active-directory
-    - name: Videos
-      href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

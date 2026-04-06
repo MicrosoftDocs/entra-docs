@@ -1,14 +1,10 @@
 ---
 title: Assign Microsoft Entra roles - Entitlement management (Preview)
 description: Learn how to assign Microsoft Entra roles with access packages.
-author: owinfreyatl
-manager: dougeby
 editor: mamtakumar
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/27/2025
-ms.author: owinfrey
 ms.reviewer: sponnada
 ms.custom: sfi-ga-nochange
 #Customer intent: As an admin, I want steps for how to add a Microsoft Entra role as a resource in an access packages so that I can assign Microsoft Entra roles using access packages.
@@ -84,9 +80,9 @@ You can add Microsoft Entra roles as resource roles in an access package using M
 
 ### Add a Microsoft Entra role as a resource in an access package using Graph
 
-First, call [Create accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http) to add the Microsoft Entra role as a resource to the catalog.
+First, call [Create accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?tabs=http) to add the Microsoft Entra role as a resource to the catalog.
 
-Then, to add that Microsoft Entra role to an access package as a resource role, use the following payload for [Create resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&tabs=http):
+Then, to add that Microsoft Entra role to an access package as a resource role, use the following payload for [Create resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?tabs=http):
 
 ```json
 {

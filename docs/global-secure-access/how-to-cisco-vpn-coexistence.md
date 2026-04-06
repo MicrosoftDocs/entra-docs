@@ -1,18 +1,16 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco VPNs
-description: Microsoft and Cisco VPNs coexistence solution guide.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
+description: "Configure Microsoft Global Secure Access alongside Cisco AnyConnect and ASA VPNs for unified SASE. Covers deployment scenarios with step-by-step configuration for private access, Microsoft 365 traffic, and internet access."
 ms.topic: how-to
-ms.date: 10/06/2025
-ms.service: global-secure-access
+ms.date: 03/25/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco VPNs
+
+## Overview
 
 Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft Secure Access Service Edge (SASE) capabilities that, when integrated with Cisco Virtual Private Networks (VPN), provide enhanced security and connectivity for diverse access scenarios.
 
@@ -77,12 +75,12 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 ### 1. Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access
 
 > [!IMPORTANT]
-> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Please contact support for more information.
+> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Contact support for more information.
 
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 1. Install and configure the Global Secure Access client for Windows or macOS.
-1. Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service. [Instructions above.](#adding-a-custom-bypass)
+1. Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service. Add a custom bypass rule for `*.vpn.sse.cisco.com` in the Internet Access profile. For detailed steps, see [Adding a custom bypass](#adding-a-custom-bypass).
 
 **Cisco configuration:**
 1. Set up remote access VPN profile as [described previously](#split-include-configuration).
@@ -108,12 +106,12 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 1. Install a private network connector for Microsoft Entra Private Access.
 1. Configure Quick Access and set up Private DNS.
 1. Create an app segment, for example an SMB file share. This will be the application you want to access through Global Secure Access and not Cisco VPN.
-1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass) to exclude Cisco Secure Access VPNaaS endpoint.
+1. Add an Internet Access traffic forwarding profile custom bypass to exclude the Cisco Secure Access VPNaaS endpoint. Add a custom bypass rule for `*.vpn.sse.cisco.com` in the Internet Access profile. For detailed steps, see [Adding a custom bypass](#adding-a-custom-bypass).
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-1. Set up remote access VPN profile as [described previously](#split-include-configuration).
-1. Ensure that in step 1 you have configured applications to access through Cisco ASA VPN, for example an RDP server. This should be different apps than configured in Global Secure Access.
+1. Set up remote access VPN profile using Split-Include mode to tunnel your private app subnets and `6.6.0.0/16`. For detailed steps, see [Split-Include configuration](#split-include-configuration).
+1. Ensure that you configured applications to access through Cisco ASA VPN, for example an RDP server. These apps should be different from the apps configured in Global Secure Access.
 1. Install Cisco Secure Client with VPN.
 
 **Validation:**
@@ -199,10 +197,10 @@ Configure split-include for Cisco ASA Remote Access VPN:
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 1. Install and configure the Global Secure Access client for Windows or macOS.
-1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
+1. Add an Internet Access traffic forwarding profile custom bypass to exclude the Cisco ASA remote access URL and public IP address. For detailed steps, see [Adding a custom bypass for Cisco ASA](#adding-a-custom-bypass-for-cisco-asa).
 
 **Cisco configuration:**
-1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) configuration, as described previously.
+1. Configure Cisco ASA remote access VPN connection profile for split-include mode to tunnel your private app subnets. For detailed steps, see [Split-Include configuration (ASA)](#split-include-configuration-asa).
 1. Install Cisco Secure Client or AnyConnect software.
 1. Connect to your VPN endpoint.
 
@@ -226,12 +224,12 @@ Configure split-include for Cisco ASA Remote Access VPN:
 1. Install a Private Network Connector for Microsoft Entra Private Access.
 1. Configure Quick Access and set up Private DNS.
 1. Create an app segment, for example an SMB file share. This will be the application you want to access through Global Secure Access and not Cisco ASA VPN.
-1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
+1. Add an Internet Access traffic forwarding profile custom bypass to exclude the Cisco ASA remote access URL and public IP address. For detailed steps, see [Adding a custom bypass for Cisco ASA](#adding-a-custom-bypass-for-cisco-asa).
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) configuration, as described previously.
-1. Ensure that in step 1 you have configured applications to access through Cisco ASA VPN, for example an RDP server. This should be different apps than configured in Global Secure Access.
+1. Configure Cisco ASA remote access VPN connection profile for split-include mode to tunnel your private app subnets. For detailed steps, see [Split-Include configuration (ASA)](#split-include-configuration-asa).
+1. Ensure that you configured applications to access through Cisco ASA VPN, for example an RDP server. These apps should be different from the apps configured in Global Secure Access.
 1. Install Cisco Secure Client software.
 1. Connect to your VPN endpoint.
 

@@ -1,16 +1,14 @@
 ---
 title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: concept-article
-ms.date: 09/02/2025
-ms.service: global-secure-access
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
 # Understand remote network connectivity
+
+## Overview
 
 Global Secure Access supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
 
@@ -39,6 +37,21 @@ To connect a remote network to Global Secure Access, you set up an Internet Prot
 
 Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
+
+## Supported traffic forwarding profiles
+
+Remote networks support different traffic forwarding profiles for acquiring traffic. Traffic forwarding profiles control which traffic is routed through Global Secure Access. Security profiles (such as the baseline profile) control what policies are applied to that acquired traffic.
+
+| Traffic forwarding profile | Global Secure Access client | Remote network |
+|---|---|---|
+| **Microsoft traffic** | ✅ Supported | ✅ Supported |
+| **Internet Access** | ✅ Supported | ✅ Supported |
+| **Private Access** | ✅ Supported | ❌ Not supported |
+
+> [!IMPORTANT]
+> The **Microsoft traffic** and **Internet Access** traffic forwarding profiles can be assigned to remote networks. The **Private Access** traffic forwarding profile requires the Global Secure Access client installed on end-user devices. For more information, see [Assign a traffic profile to a remote network](how-to-assign-traffic-profile-to-remote-network.md) and [Understand traffic forwarding profiles](concept-traffic-forwarding.md).
+
+Once traffic is acquired through a forwarding profile, you apply security policies to it using security profiles. The [baseline security profile](how-to-apply-security-policies-remote-network.md) enforces policies at the tenant level for all traffic routed through Global Secure Access, including remote network traffic. User-aware security profiles linked to Conditional Access policies require the Global Secure Access client.
  
 ## Why remote network connectivity is important for you? 
 Maintaining security of a corporate network is increasingly difficult in a world of remote work and distributed teams. Security Service Edge (SSE) promises a world of security where customers can access their corporate resources from anywhere in the world without needing to back haul their traffic to headquarters.
@@ -87,7 +100,7 @@ The total bandwidth you're allocated is determined by the number of licenses pur
 
 **Table notes**
 - Minimum number of licenses to use remote network connectivity feature is 50. 
-- The number of licenses is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
+- The number of licenses is equal to the total number of licenses purchased (Microsoft Entra ID P1 + Microsoft Entra Internet Access /Microsoft Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
 - Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
 - If more bandwidth is required, additional bandwidth is available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
 
@@ -96,19 +109,19 @@ The total bandwidth you're allocated is determined by the number of licenses pur
 
 **Tenant 1:**
 
-- 1,000 Entra ID P1 licenses
+- 1,000 Microsoft Entra ID P1 licenses
 - Allocated: 1,000 licenses, 3,500 Mbps
 
 **Tenant 2:**
 
-- 3,000 Entra ID P1 licenses
+- 3,000 Microsoft Entra ID P1 licenses
 - 3,000 Internet Access licenses
 - Allocated: 6,000 licenses, 11,000 Mbps
 
 **Tenant 3:**
 
-- 8,000 Entra ID P1 licenses
-- 6,000 Entra Suite licenses
+- 8,000 Microsoft Entra ID P1 licenses
+- 6,000 Microsoft Entra Suite licenses
 - Allocated: 14,000 licenses, 39,000 Mbps
 
 #### Examples of Bandwidth distribution for Remote Networks 

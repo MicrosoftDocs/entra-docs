@@ -2,14 +2,8 @@
 title: ID Protection Risk Reports
 description: Learn how to access, filter, and use the Microsoft Entra ID Protection risk reports to mark users and sign-ins as risky or confirmed compromised.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 11/05/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risk reports
@@ -67,7 +61,7 @@ To learn more about when to take each of these actions, see [How does Microsoft 
 
 ### Risky agents
 
-ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
+ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
 
 **Risky agent details** include:
 - Agent display name

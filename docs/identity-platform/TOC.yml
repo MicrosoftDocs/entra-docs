@@ -118,6 +118,8 @@
         - name: Content Security Policy (CSP) overview
           href: content-security-policy.md
           displayName: CSP, security headers, XSS protection
+        - name: Native authentication fraud protection for SMS MFA
+          href: concept-native-authentication-sms-mfa-third-party-fraud-protection.md
         - name: Tokens and claims
           items:
             - name: Tokens and claims overview
@@ -202,6 +204,12 @@
                     href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
                   - name: Support web fallback
                     href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
+                  - name: Register strong authentication method
+                    href: tutorial-native-authentication-single-page-app-react-register-strong-method.md
+                  - name: Enable MFA
+                    href: tutorial-native-authentication-single-page-app-react-enable-mfa.md
+                  - name: Add social sign-in
+                    href: tutorial-native-authentication-single-page-app-react-social-sign-in.md
         - name: Angular
           items:
             - name: Browser-delegated authentication
@@ -222,6 +230,12 @@
                 href: tutorial-native-authentication-single-page-app-angular-reset-password.md
               - name: Support web fallback
                 href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
+              - name: Register strong authentication method
+                href: tutorial-native-authentication-single-page-app-angular-register-strong-method.md
+              - name: Enable MFA
+                href: tutorial-native-authentication-single-page-app-angular-enable-mfa.md
+              - name: Add social sign-in
+                href: tutorial-native-authentication-single-page-app-angular-social-sign-in.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -499,6 +513,16 @@
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Auto-sign in after sign-up
                   href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Add email OTP sign-in
+                  href: tutorial-native-authentication-android-email-one-time-passcode-sign-in.md
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: tutorial-native-authentication-android-identity-provider-sign-in-sign-up.md
+                - name: Register email strong authentication method
+                  href: tutorial-native-authentication-android-email-strong-authentication-method.md
+                - name: Add SMS OTP sign-in
+                  href: tutorial-native-authentication-android-sms-one-time-passcode-sign-in.md
+                - name: Register SMS strong authentication method
+                  href: tutorial-native-authentication-android-sms-strong-authentication-method.md
                 - name: Self-service password reset
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
@@ -530,6 +554,16 @@
                   href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
                 - name: Auto-sign in after sign-up
                   href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
+                - name: Add email OTP sign-in
+                  href: tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up.md
+                - name: Register email strong authentication method
+                  href: tutorial-native-authentication-ios-swift-email-strong-authentication-method.md
+                - name: Add SMS OTP sign-in
+                  href: tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in.md
+                - name: Register SMS strong authentication method
+                  href: tutorial-native-authentication-ios-swift-sms-strong-authentication-method.md
                 - name: Self-service password reset
                   href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
@@ -958,7 +992,7 @@
     - name: API reference
       items:
         - name: Microsoft Graph API reference (identity operations)
-          href: /graph/api/resources/azure-ad-overview
+          href: /graph/api/resources/identity-network-access-overview
         - name: MSA Server side API reference 
           href: reference-msa-server-side-api.md
         - name: Microsoft Entra ID WAM API reference
@@ -983,5 +1017,3 @@
       href: https://devblogs.microsoft.com/microsoft365dev/category/microsoft-identity-platform/
     - name: "Blog: Microsoft Entra ID - Identity"
       href: https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity
-    - name: Azure roadmap - security and identity
-      href: https://azure.microsoft.com/roadmap/?category=security-identity

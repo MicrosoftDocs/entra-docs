@@ -2,14 +2,8 @@
 title: Grant consent on behalf of a single user
 description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/12/2024
-ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
 ms.custom: enterprise-apps
@@ -51,9 +45,9 @@ To grant consent to an application on behalf of one user using Microsoft Graph P
 
 ```powershell
 # The app for which consent is being granted.
-$clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Microsoft Graph Explorer
+$clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Your client application
 
-# The API to which access will be granted. Microsoft Graph Explorer makes API 
+# The API to which access will be granted. Your client application makes API 
 # requests to the Microsoft Graph API, so we'll use that here.
 $resourceAppId = "00000003-0000-0000-c000-000000000000" # Microsoft Graph API
 

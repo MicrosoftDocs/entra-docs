@@ -2,13 +2,9 @@
 title: Call Azure services from an agent  using .NET Azure SDK
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call Azure services  using .NET Azure SDK from an agent using agent identities.
-author: SHERMANOUKO
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer building AI agents, I want to call Azure services from my agent using agent identities so that the agent can securely access Azure resources like Storage and Key Vault.
 ---
@@ -140,7 +136,7 @@ This article guides you on how to call Azure services from your agent. To authen
         ```
 
 
-    1. You can also acquire a token for an agent user. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent user.
+    1. You can also acquire a token for an agent's user account. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account.
 
         For object ID:
         
@@ -156,7 +152,7 @@ This article guides you on how to call Azure services from your agent. To authen
                 _credential = credential;
             }
             
-            // Use object ID to identify the agent user
+            // Use object ID to identify the agent's user account
             public async Task<List<string>> ListBlobsForAgentAsync(string agentIdentity)
             {
                 // Configure for agent identity
@@ -179,7 +175,7 @@ This article guides you on how to call Azure services from your agent. To authen
                 return blobs;
             }
 
-            // Use UPN to identify the agent user\
+            // Use UPN to identify the agent's user account\
             public async Task<List<string>> ListBlobsForAgentAsync(string agentIdentity)
             {
                 // Configure for agent identity

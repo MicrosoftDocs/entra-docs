@@ -4,10 +4,9 @@ description: This article a tutorial on how to provision users and groups from a
 author: owinfreyATL
 manager: femila
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice:
-ms.author: owinfrey
 ---
 
 # Govern cloud users that are provisioned from and managed in Workday

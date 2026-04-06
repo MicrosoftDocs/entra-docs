@@ -1,18 +1,16 @@
 ---
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: barclayn
-ms.reviewer: krbain
+ms.date: 04/03/2026
+ms.reviewer: yukarppa
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
+
+
+## Overview
 
 Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) and the labels are configured for groups and sites. 
 
@@ -31,8 +29,8 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 1. Open a PowerShell prompt on your computer and install the Graph modules required to run the cmdlets.
 
     ```powershell
-    Install-Module Microsoft.Graph -Scope CurrentUser
-    Install-Module Microsoft.Graph.Beta -Scope CurrentUser
+    Install-Module Microsoft.Graph.Authentication -Scope CurrentUser
+    Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement -Scope CurrentUser
     ```
 
 1. Connect to your tenant.
@@ -85,22 +83,22 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 #### [21Vianet](#tab/21Vianet)
 
-If you are performing these Microsoft 365 operations from 21Vianet:
+If you're performing these Microsoft 365 operations from 21Vianet:
 
 1. Register a Microsoft Entra ID application in Microsoft Entra ID.
-1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsoft Graph.
-1. Generate a client secret and copy it. You need the client secret to connect to MS Graph;
+1. Grant your application API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you might need to get tenant admin's explicit consent to grant the application access to Microsoft Graph.
+1. Generate a client secret and copy it. You need the client secret to connect to Microsoft Graph.
 1. Run PowerShell as administrator:
 
     ```PowerShell
     $ClientSecretCredential = Get-Credential -Credential
     ```
-     After commands run, you'll be prompted to enter a password. The password is the new client secret you copied in earlier step.
+     After commands run, you'll be prompted to enter a password. The password is the new client secret you copied in an earlier step.
 
-1. Run the following command to get access to MS Graph:
+1. Run the following command to get access to Microsoft Graph:
 
     ```PowerShell
-    Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China
+    Connect-MgGraph -TenantId "Current tenant id" -ClientSecretCredential $ClientSecretCredential -Environment China
     ```
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
@@ -151,7 +149,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 1. Select **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**. Then fill out the required information for the new group and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Screenshot that shows assigning a sensitivity label on the New groups page.":::
+    :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Screenshot that shows assigning a sensitivity label on the New groups page.":::
 
 1. Select **Create** to save your changes.
 
@@ -165,7 +163,7 @@ Your group is created and the site and group settings associated with the select
 1. From the **All groups** page, select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Screenshot that shows assigning a sensitivity label on the overview page for a group.":::
+    :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Screenshot that shows assigning a sensitivity label on the overview page for a group.":::
 
 1. Select **Save** to save your changes.
 
@@ -183,7 +181,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up previously. When this feature is enabled, those classifications aren't applied to groups.
 
-## Troubleshooting issues
+## Troubleshoot issues
 
 This section offers troubleshooting tips for common issues.
 
@@ -229,6 +227,6 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 ## Next steps
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
-- [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
+- [Update groups after label policy change manually with a Microsoft Graph PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
 - [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

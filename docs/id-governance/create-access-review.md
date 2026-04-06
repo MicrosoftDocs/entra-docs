@@ -1,14 +1,10 @@
 ---
 title: Create an access review of groups and applications
 description: Learn how to create an access review of group members or application access in Microsoft Entra ID.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 ---
@@ -52,48 +48,48 @@ If you're reviewing access to an application, then before you create the review,
 
 1. Browse to **ID Governance** > **Access Reviews**.
 
-3. Select **New access review** to create a new access review.
+1. Select **New access review** to create a new access review.
 
     ![Screenshot that shows the Access reviews pane in Identity Governance.](./media/create-access-review/access-reviews.png)
 
 1. On the Access reviews template screen, select **Review access to a resource type**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 
-4. In the **Select what to review** box, select which resource you want to review.
+1. In the **Select what to review** box, select which resource you want to review.
 
     ![Screenshot that shows creating an access review.](./media/create-access-review/select-what-review.png)
 
-5. If you selected **Teams + Groups**, you have two options:
+1. If you selected **Teams + Groups**, you have two options:
 
    - **All Microsoft 365 groups with guest users**: Select this option if you want to create recurring reviews on all your guest users across all your Microsoft Teams and Microsoft 365 groups in your organization. Dynamic groups and role-assignable groups aren't included. You can also choose to exclude individual groups by selecting **Select group(s) to exclude**.
    - **Select Teams + groups**: Select this option if you want to specify a finite set of teams or groups to review. A list of groups to choose from appears on the right.
 
      ![Screenshot that shows selecting Teams + Groups.](./media/create-access-review/teams-groups.png)
 
-6. If you selected **Applications**, select one or more applications.
+1. If you selected **Applications**, select one or more applications.
 
    ![Screenshot that shows the interface that appears if you selected applications instead of groups.](./media/create-access-review/select-application-detailed.png)
 
 > [!NOTE]
 > Selecting multiple groups or applications results in the creation of multiple access reviews. For example, if you select five groups to review, the result is five separate access reviews.
 
-8. Now you can select a scope for the review. Your options are:
+1. Now you can select a scope for the review. Your options are:
     - **Guest users only**: This option limits the access review to only the Microsoft Entra B2B guest users in your directory.
     - **Everyone**: This option scopes the access review to all user objects associated with the resource.
 
     > [!NOTE]  
     > If you selected **All Microsoft 365 groups with guest users**, your only option is to review **Guest users only**.
 
-9. Or if you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, those who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive**  with many days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
+1. Or if you're conducting group membership review, you can create access reviews for only the inactive users in the group. In the *Users scope* section, check the box next to **Inactive users (on tenant level)**. If you check the box, the scope of the review focuses on inactive users only, those who haven't signed in either interactively or non-interactively to the tenant. Then, specify **Days inactive** with the number of days inactive up to 730 days (two years). Users in the group inactive for the specified number of days are the only users in the review.
 
     > [!NOTE]  
     > Recently created users aren't affected when configuring the inactivity time. The Access Review checks if a user has been created in the time frame configured and disregard users who haven’t existed for at least that amount of time. For example, if you set the inactivity time as 90 days and a guest user was created or invited less than 90 days ago, the guest user won't be in scope of the Access Review. This ensures that a user can sign in at least once before being removed.
 
-10. Select **Next: Reviews**.
+1. Select **Next: Reviews**.
 
 ### Next: Reviews
  
-1. You can create a single-stage or multi-stage review. For a single stage review, continue here. To create a multi-stage access review, follow the steps in [Create a multi-stage access review](#create-a-multi-stage-access-review)
+1. You can create a single-stage or multi-stage review. For a single stage review, continue here. To create a multi-stage access review, follow the steps in [Create a multi-stage access review](#create-a-multi-stage-access-review).
 
 1. In the **Specify reviewers** section, in the **Select reviewers** box, select either one or more people to make decisions in the access reviews. You can choose from:
 
@@ -125,8 +121,6 @@ If you're reviewing access to an application, then before you create the review,
 > [!NOTE]
 > When creating an access review, you're able to specify the start date, but the start time could vary a few hours based on system processing. For example, if you create an access review at 03:00 UTC on 09/09 that is set to run on 09/12, then the review is scheduled to run at 03:00 UTC on the start date, but could be delayed due to system processing.
 
-You're able to specify the start date, but the start time can vary a few hours based on system processing. 
-
 ### Next: Settings
 
 1. In the **Upon completion settings** section, you can specify what happens after the review finishes.
@@ -143,7 +137,7 @@ You're able to specify the start date, but the start time can vary a few hours b
        - **Take recommendations**: Takes the system's recommendation to deny or approve the user's continued access.
     
         >[!WARNING]
-        > If the settings **If reviewers don't respond** is set to **Remove access** or **Take recommendations** and **Auto apply results to resource** is enabled, all access to this resource could potentially be revoked if the reviewers fail to respond.
+        > If the setting **If reviewers don't respond** is set to **Remove access** or **Take recommendations** and **Auto apply results to resource** is enabled, all access to this resource could potentially be revoked if the reviewers fail to respond.
 
     - **Action to apply on denied guest users**: This option is only available if the access review is scoped to include only guest users to specify what happens to guest users if they're denied either by a reviewer or by the **If reviewers don't respond** setting.
 
@@ -173,9 +167,6 @@ You're able to specify the start date, but the start time can vary a few hours b
     - **Reminders**: Select this checkbox to have Microsoft Entra ID send reminders of access reviews in progress to all reviewers. Reviewers receive the reminders halfway through the review, no matter if they've finished their review or not.
     - **Additional content for reviewer email**: The content of the email sent to reviewers is autogenerated based on the review details, such as review name, resource name, and due date. If you need to communicate more information, you can specify details such as instructions or contact information in the box. The information that you enter is included in the invitation, and reminder emails are sent to assigned reviewers. The section highlighted in the following image shows where this information appears.
       ![Screenshot that shows additional content for reviewers.](./media/create-access-review/additional-content-reviewer.png)
-    - **Access Review Agent (Preview)**: Select this checkbox to allow reviewers to complete the access review in Microsoft Teams with natural language, insights, and recommendations.
-    > [!NOTE]
-    > This setting is only available for review configurations currently supported by the Access Review Agent and additional setup steps are required. For more information, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
     
       
 
@@ -192,8 +183,6 @@ You're able to specify the start date, but the start time can vary a few hours b
 ## Create a multi-stage access review
 
 A multi-stage review allows the administrator to define two or three sets of reviewers to complete a review one after another. In a single-stage review, all reviewers make a decision within the same period and the last reviewer to make a decision, has their decision applied. In a multi-stage review, two or three independent sets of reviewers each make a decision within their own stage. The stages are sequential, and the next stage doesn't happen until a decision is recorded in the previous stage. Multi-stage reviews can be used to reduce the burden on later-stage reviewers, allow for escalation of reviewers, or have independent groups of reviewers agree on decisions.
-> [!NOTE]
-> Data of users included in multi-stage access reviews are a part of the audit record at the start of the review. Administrators can delete the data at any time by deleting the multi-stage access review series. For general information about GDPR and protecting user data, see the [GDPR section of the Microsoft Trust Center](https://www.microsoft.com/trust-center/privacy/gdpr-overview) and the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 1. After you have selected the resource and scope of your review, move on to the **Reviews** tab. 
 
@@ -215,7 +204,7 @@ A multi-stage review allows the administrator to define two or three sets of rev
  
 1. By default, you see two stages when you create a multi-stage review. However, you can add up to three stages. If you want to add a third stage, select **+ Add a stage** and complete the required fields.  
 
-1. You can decide to allow 2nd and 3rd stage reviewers to see decisions made in the previous stage(s). If you want to allow them to see the decisions made prior, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
+1. You can decide to allow 2nd and 3rd stage reviewers to see decisions made in the previous stage(s). If you want to allow them to see the prior decisions, select the box next to **Show previous stage(s) decisions to later stage reviewers** under **Reveal review results**. Leave the box unchecked to disable this setting if you’d like your reviewers to review independently. 
 
     ![Screenshot that shows duration and show previous stages setting enabled for multi-stage review.](./media/create-access-review/reveal-multi-stage-results-and-duration.png)
 
@@ -274,7 +263,7 @@ Use the following instructions to create an access review on a team with shared 
     > - If you set **Select reviewers** to **Users review their own access** or **Managers of users**, B2B direct connect users and Teams won't be able to review their own access in your tenant. The owner of the Team under review gets an email that asks the owner to review the B2B direct connect user and Teams.
     > - If you select **Managers of users**, a selected fallback reviewer reviews any user without a manager in the home tenant. This includes B2B direct connect users and Teams without a manager.
 
-1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see our [Create a single-stage access review](#create-a-single-stage-access-review).
+1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see [Create a single-stage access review](#create-a-single-stage-access-review).
 
 ## Allow group owners to create and manage access reviews of their groups
 
@@ -334,7 +323,6 @@ After one or more access reviews have started, you might want to modify or updat
 ## Next steps
 
 - [Complete an access review of groups or applications](complete-access-review.md)
-- [Access Review Agent (preview)](../security-copilot/access-review-agent.md)
 - [Create an access review of PIM for Groups (preview)](create-access-review-pim-for-groups.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Review access for yourself to groups or applications](review-your-access.md)

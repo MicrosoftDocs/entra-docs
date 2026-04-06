@@ -1,18 +1,17 @@
 ---
 title: Configure a multitenant organization using PowerShell or Microsoft Graph API
-description: Learn how to configure a multitenant organization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
-author: kenwith
-manager: dougeby
-ms.service: entra-id
-ms.subservice: multitenant-organizations
+description: "Create and manage a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. Covers creating the organization, adding tenants, joining, and managing roles."
 ms.topic: how-to
-ms.date: 05/27/2025
-ms.author: kenwith
+ms.date: 03/25/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
 # Configure a multitenant organization using PowerShell or Microsoft Graph API
+
+
+## Overview
 
 This article describes the key steps to configure a multitenant organization using Microsoft Graph PowerShell or Microsoft Graph API. This article uses an example owner tenant named *Cairo* and two member tenants named *Berlin* and *Athens*.
 

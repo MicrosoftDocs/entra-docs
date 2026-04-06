@@ -2,9 +2,6 @@
 title: Token claims reference for agent IDs
 description: Learn about specialized token claims used by agent applications in Microsoft Entra to identify entity types, relationships, and roles during authentication and authorization flows.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
-ms.service: entra-id
 ms.topic: reference
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
@@ -63,13 +60,13 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | ----------------- | ------------------------------------------------------------------------------------- |
 | `tid`             | Tenant ID of the customer tenant where the agent identity is registered. It's the tenant where the token is valid.            |
 | `sub`             | Subject (the user, service principal, or agent identity being authenticated)         |
-| `oid`             | Object ID of the subject. User object ID for user delegation scenarios. Agent ID service principal OID for app-only scenarios. Agent user OID for user impersonation scenarios.          |
+| `oid`             | Object ID of the subject. User object ID for user delegation scenarios. Agent ID service principal OID for app-only scenarios. Agent's user account OID for user impersonation scenarios.          |
 | `idtyp`           | Type of entity the subject is. Values are `user`, `app`.                               |
 | `tid`             | Tenant ID of the customer tenant where the agent identity is registered.              |
 | `xms_idrel`       | Relationship between the subject and the resource tenant. Learn [more](#xms_idrel).   |
 | `aud`             | Audience (the API that the agent is trying to access)                                 |
 | `azp` or `appid`  | Authorized party / actor. The application ID of the agent identity. Enables proper client attribution in audit logs.     |
-| `scp`             | Scope. Delegated permissions for user-context tokens. Only present in user delegation and agent user scenarios. Empty or `/` for app-only scenarios                                            |
+| `scp`             | Scope. Delegated permissions for user-context tokens. Only present in user delegation and agent's user account scenarios. Empty or `/` for app-only scenarios                                            |
 | `xms_act_fct`     | Actor facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims).    |
 | `xms_sub_fct`     | Subject facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) . |
 | `xms_tnt_fct`     | Tenant facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) .  |
@@ -156,9 +153,9 @@ In this scenario, the agent identity acts using its own identity. The access tok
 | `aud`         | Resource audience for the token                          |
 | `scp`         | Empty or `/` (unscoped).                          |
 
-### Agent identity acts autonomously via agent user
+### Agent identity acts autonomously via agent's user account
 
-In this scenario, the agent obtains a token using the agent user associated with its agent identity. The access token includes the following claims:
+In this scenario, the agent obtains a token using the agent's user account associated with its agent identity. The access token includes the following claims:
 
 | Claim Name  | Description                                         |
 | ------------- | --------------------------------------------------- |
@@ -167,7 +164,7 @@ In this scenario, the agent obtains a token using the agent user associated with
 | `xms_idrel`   | `1` (indicating a member user; others possible too) |
 | `azp` / `appid` | Application ID of the agent identity   |
 | `scp`         | Delegated permissions granted to the agent identity      |
-| `oid`         | Object ID of the agent user                       |
+| `oid`         | Object ID of the agent's user account                       |
 | `xms_act_fct` | `11` (Agent identity)                           |
-| `xms_sub_fct` | `13` (Agent user)                                  |
+| `xms_sub_fct` | `13` (Agent's user account)                                  |
 | `aud`         | Resource audience for the token                      |

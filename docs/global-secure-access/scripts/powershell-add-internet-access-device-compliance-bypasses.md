@@ -1,17 +1,14 @@
 ---
 title: PowerShell sample - Add Intune device compliance bypasses to Global Secure Access Internet Access
 description: PowerShell example that adds Intune-related endpoints to the Global Secure Access Internet Access custom bypass policy to mitigate device compliance issues.
-author: fgomulka
-manager: ashishj
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 06/06/2025
-ms.author: frankgomulka
 ai-usage: ai-assisted
-ms.reviewer: frankgomulka
 ---
 
 # Add Intune device compliance bypasses to Global Secure Access Internet Access
+
+## Overview
 
 The [Universal Conditional Access documentation](/entra/global-secure-access/concept-universal-conditional-access#known-tunnel-authorization-limitations) notes that Global Secure Access has tunnel authorization limitations. This means that you can block access to a forwarding profile in Conditional Access and inadvertently lock users out from accessing anything on their machine.
 

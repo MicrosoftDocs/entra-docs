@@ -1,6 +1,21 @@
 {
   "redirections": [
     {
+      "source_path": "docs/security-copilot/access-review-agent.md",
+      "redirect_url": "/entra/id-governance/access-reviews-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/security-copilot/access-review-agent-logs-metrics.md",
+      "redirect_url": "/entra/id-governance/access-reviews-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/fundamentals/sign-up-organization.md",
+      "redirect_url": "/entra/fundamentals/create-new-tenant",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/permissions-management/all-reports.md",
       "redirect_url": "/previous-versions/entra/permissions-management/all-reports",
       "redirect_document_id": false
@@ -462,13 +477,13 @@
     },
     {
       "source_path_from_root": "/docs/id-governance/access-review-agent-logs-metrics.md",
-      "redirect_url": "/entra/security-copilot/access-review-agent-logs-metrics",
-      "redirect_document_id": true
+      "redirect_url": "/entra/id-governance/access-reviews-overview",
+      "redirect_document_id": false
     },
-   {
+    {
       "source_path_from_root": "/docs/id-governance/access-review-agent.md",
-      "redirect_url": "/entra/security-copilot/access-review-agent",
-      "redirect_document_id": true
+      "redirect_url": "/entra/id-governance/access-reviews-overview",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
@@ -1742,7 +1757,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/authentication/howto-authentication-passwordless-security-key.md",
-      "redirect_url": "/entra/identity/authentication/how-to-enable-passkey-fido2",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
       "redirect_document_id": false
     },
     {
@@ -2320,7 +2335,7 @@
       "redirect_url": "/entra/msal/android/logging",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity-platform/migrate-android-adal-msal.md",
       "redirect_url": "/entra/msal/android/migrate-android-adal-msal",
       "redirect_document_id": false
@@ -2615,27 +2630,27 @@
       "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-chat.md",
       "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-chat",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization.md",
       "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-logs-metrics.md",
       "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-logs-metrics",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-phased-rollout.md",
       "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-phased-rollout",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-review-suggestions.md",
       "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-review-suggestions",
       "redirect_document_id": false
@@ -2645,32 +2660,32 @@
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-entra-lifecycle-workflow.md",
       "redirect_url": "/entra/security-copilot/entra-lifecycle-workflows",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-entra-risky-user-summarization.md",
       "redirect_url": "/entra/security-copilot/entra-risky-user-summarization",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-entra-security-scenarios.md",
       "redirect_url": "/entra/security-copilot/entra-security-scenarios",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-incident.md",
       "redirect_url": "/entra/security-copilot/entra-investigate-incident",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-risky-apps.md",
       "redirect_url": "/entra/security-copilot/entra-investigate-risky-apps",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra.md",
       "redirect_url": "/entra/security-copilot/security-copilot-in-entra",
       "redirect_document_id": false
@@ -2986,6 +3001,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/verified-id/using-wallet-library.md",
+      "redirect_url": "/entra/verified-id/decentralized-identifier-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
       "redirect_url": "/entra/verified-id/whats-new",
       "redirect_document_id": false
@@ -3081,13 +3101,208 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
+      "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
-      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_url": "/entra/identity/enterprise-apps/assign-agent-identities-to-applications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/app-provisioning/scim-graph-scenarios.md",
+      "redirect_url": "/entra/identity/app-provisioning/scim-support-in-entra-id.md#Microsoft-Graph-vs-SCIM-when-to-use-which",
       "redirect_document_id": false
     },
     {
       "source_path": "docs/identity/hybrid/connect/four-steps.md",
       "redirect_url": "/entra/identity/hybrid/whatis-hybrid-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/deactivate-application-portal.md",
+      "redirect_url": "/entra/identity/enterprise-apps/deactivate-app-registration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/troubleshoot-global-secure-access-client-ios-health-check-utility.md",
+      "redirect_url": "/entra/global-secure-access/troubleshoot-global-secure-access-mobile-client-health-check-utility",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-b2b-guest-access.md",
+      "redirect_url": "/entra/global-secure-access/concept-external-user-access",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-migration-mfa.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-policy-common",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-all-users-copilot-ai-security.md",
+      "redirect_url": "/entra/identity/conditional-access/plan-conditional-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
+      "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-authenticate-user.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-authorization.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-admin-authorization.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-tokens.md",
+      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/how-to-ai-prompt-shield.md",
+      "redirect_url": "/entra/global-secure-access/how-to-ai-prompt-injection-protection",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-enable-passkey-fido2.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-synced-passkeys.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-authentication-passkey-profiles.md",
+      "redirect_url": "/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25535.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25537.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25539.md",
+      "redirect_url": "/azure/networking/security/zero-trust-azure-firewall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25541.md",
+      "redirect_url": "/azure/networking/security/zero-trust-application-gateway-waf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/includes/secure-recommendations/25543.md",
+      "redirect_url": "/azure/networking/security/zero-trust-front-door-waf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md",
+      "redirect_url": "/entra/agent-id/what-is-microsoft-entra-agent-id",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/security-for-ai.md",
+      "redirect_url": "/entra/agent-id/security-for-ai-overview",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/security-for-ai-overview.md",
+      "redirect_url": "/entra/agent-id/security-for-ai-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/agent-access-packages.md",
+      "redirect_url": "/entra/agent-id/agent-access-packages",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/agent-id-creation-channels.md",
+      "redirect_url": "/entra/agent-id/agent-id-creation-channels",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/authorization-agent-id.md",
+      "redirect_url": "/entra/agent-id/authorization-agent-id",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/configure-inheritable-permissions-blueprints.md",
+      "redirect_url": "/entra/agent-id/configure-inheritable-permissions-blueprints",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/control-user-access-agents.md",
+      "redirect_url": "/entra/agent-id/control-user-access-agents",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/disable-agent-identities.md",
+      "redirect_url": "/entra/agent-id/disable-agent-identities",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/grant-agent-access-microsoft-365.md",
+      "redirect_url": "/entra/agent-id/grant-agent-access-microsoft-365",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/manage-agents-without-identity.md",
+      "redirect_url": "/entra/agent-id/manage-agents-without-identity",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/reference-registry-roles.md",
+      "redirect_url": "/entra/agent-id/reference-registry-roles",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/sign-in-audit-logs-agents.md",
+      "redirect_url": "/entra/agent-id/sign-in-audit-logs-agents",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/sign-in-process.md",
+      "redirect_url": "/entra/agent-id/sign-in-process",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/what-is-microsoft-entra-agent-id.md",
+      "redirect_url": "/entra/agent-id/what-is-microsoft-entra-agent-id",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/what-is-agent-id.md",
+      "redirect_url": "/entra/agent-id/identity-platform/what-are-agent-identities",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/index.yml",
+      "redirect_url": "/entra/agent-id/index",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-professional/index.yml",
+      "redirect_url": "/entra/agent-id/index",
       "redirect_document_id": false
     }
   ]

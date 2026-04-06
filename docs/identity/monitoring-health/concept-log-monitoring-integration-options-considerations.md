@@ -1,13 +1,8 @@
 ---
 title: Microsoft Entra activity log integration options
 description: Introduction to the options and considerations for integrating Microsoft Entra activity logs with storage and analysis tools.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
-ms.topic: article
-ms.subservice: monitoring-health
+ms.topic: concept-article
 ms.date: 05/27/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
 # Customer intent: As an IT admin, I need to know what options are available for integrating Microsoft Entra activity logs with storage and analysis tools so I can choose the best option for my organization.

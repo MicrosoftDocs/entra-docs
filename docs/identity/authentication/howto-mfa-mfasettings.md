@@ -1,13 +1,8 @@
 ---
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/18/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.date: 02/27/2026
 ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---
@@ -343,7 +338,7 @@ The following verification methods are available:
 | Notification through mobile app |Sends a push notification to the user's phone or registered device. The user views the notification and selects **Verify** to complete verification. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 | Verification code from mobile app or hardware token |The Microsoft Authenticator app generates a new OATH verification code every 30 seconds. The user enters the verification code into the sign-in interface. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 
-For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md).
+For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md).
 
 #### Enable and disable verification methods
 
@@ -363,7 +358,7 @@ To enable or disable verification methods, complete the following steps:
  The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or less.
 
 > [!IMPORTANT]
-> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.yml).
+> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke sessions](howto-mfa-userdevicesettings.yml).
 >
 > The revoke action revokes the trusted status from all devices, and the user is required to perform multifactor authentication again. You can also instruct your users to restore the original MFA status on their own devices as noted in [Manage your settings for multifactor authentication](https://support.microsoft.com/account-billing/change-your-two-step-verification-method-and-settings-c801d5ad-e0fc-4711-94d5-33ad5d4630f7#turn-on-two-factor-verification-prompts-on-a-trusted-device).
 
@@ -404,4 +399,4 @@ After you enable the **remember multifactor authentication** feature, users can 
 
 ## Next steps
 
-To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)

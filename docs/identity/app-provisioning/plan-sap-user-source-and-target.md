@@ -1,13 +1,9 @@
 ---
 title: Plan deploying Microsoft Entra for user provisioning with SAP source and target apps
 description: Learn how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and give them access to SAP ECC, SAP S/4HANA, and other apps.
-author: markwahl-msft
-manager: pmwongera
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
@@ -352,7 +348,7 @@ Alternatively, you can configure SAP Cloud Identity Services to read from Micros
 
 If you aren't using SAP Cloud Identity Services, skip to the next section.
 
-1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html) **with a user account in SAP Cloud Identity Services with Admin permissions.**
+1. **Ensure that you have a** [SAP Cloud Identity Services tenant](https://help.sap.com/docs/btp) **with a user account in SAP Cloud Identity Services with Admin permissions.**
 
 1. **Set up SAP Cloud Identity Services for provisioning.** Sign in to your SAP Cloud Identity Services Admin Console and follow the steps in the section [Set up SAP Cloud Identity Services for provisioning](../saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning).
 
@@ -388,7 +384,7 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 1. **Bring the application web endpoint into scope of the appropriate Conditional Access policy.** Perhaps you have an existing Conditional Access policy that was created for another application subject to the same governance requirements. Then you can update that policy to have it also apply to this application to avoid having a large number of policies.
 
-   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md).
+   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/what-if-tool.md).
 
 1. **Validate that a test user can connect to the SAP applications.** You can use Microsoft **My Apps** to test the application SSO. Ensure that a test user was assigned to the SAP Cloud Identity Services application and provisioned from Microsoft Entra ID to SAP Cloud Identity Services. Then, sign in to Microsoft Entra as that user and go to  `myapps.microsoft.com`.
 
@@ -416,7 +412,7 @@ If you aren't using SAP ECC, skip to the next section.
 
 1. **Bring the application web endpoint into scope of the appropriate Conditional Access policy.** Perhaps you have an existing Conditional Access policy that was created for another application subject to the same governance requirements. Then you can update that policy to have it also apply to this application to avoid having a large number of policies.
 
-   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md).
+   After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [Conditional Access what-if tool](~/identity/conditional-access/what-if-tool.md).
 
 1. **Validate that a test user can be provisioned and sign in to SAP NetWeaver.** Follow the instructions in the section [Test SSO](../saas-apps/sap-netweaver-tutorial.md#test-sso) to ensure that users can sign in after Conditional Access was configured.
 

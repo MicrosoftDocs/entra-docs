@@ -1,16 +1,10 @@
 ---
 title: What are risk detections?
 description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
-
 ms.service: entra-id-protection
-
-ms.topic: article
-ms.date: 01/07/2026
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
-ms.reviewer: cokoopma
+ms.topic: reference
+ms.date: 03/17/2026
+ms.reviewer: lvandenende
 ---
 
 # What are risk detections?
@@ -152,7 +146,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Microsoft Entra threat intelligence (sign-in) 
 
-Microsoft Entra threat intelligence indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. These detections show up as "Microsoft Entra threat intelligence" in logs and ID Protection reports.
+Microsoft Entra threat intelligence indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence research, including data from the Microsoft Threat Intelligence Center (MSTIC) and other Microsoft security teams. These detections show up as "Microsoft Entra threat intelligence" in logs and ID Protection reports.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
@@ -169,7 +163,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Password spray 
 
-A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password was correctly identified through a password spray attack, not that the attacker was able to access any resources.
+A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. Microsoft monitors password spray patterns across IP addresses and other identifiers to detect these attacks across all Microsoft Entra tenants. The risk detection is only triggered when an attacker successfully validates a user's password. Unsuccessful spray attempts against your users don't generate a detection. When the detection fires in your tenant, it means Microsoft observed a spray attack and confirmed that the attacker achieved a successful credential validation against a user in your tenant. This detection signals that the user's password was correctly identified, not that the attacker was able to access any resources.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
@@ -265,15 +259,16 @@ Also referred to as Adversary in the Middle, this high precision detection is tr
 
 ### Leaked credentials 
 
-This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [FAQs](id-protection-faq.yml). 
+This risk detection indicates that a user's valid credentials appeared in a known credential breach. Microsoft operates a large-scale credential scanning pipeline that continuously monitors dark web forums, breach dump repositories, paste sites, law enforcement seizure data, and other sources through partnerships with the Microsoft Threat Intelligence Center (MSTIC), Microsoft Digital Crimes Unit (DCU), and industry partners. When discovered credentials are found, the service validates the actual credential material against your tenant's current valid password hashes. A detection is only emitted when a confirmed match is found. This detection is always as **high** risk because it represents verified credential exposure, not a heuristic signal. A cloud-based password reset through Microsoft Entra remediates the user risk for this detection for cloud and on-premises passwords, as long as password hash synchronization (PHS) is enabled for on-premises passwords. For more information about on-premises password protection, see [Microsoft Defender for Identity accounts security posture assessments](/defender-for-identity/security-posture-assessments/accounts#change-password-for-on-premises-account-with-potentially-leaked-credentials-preview).
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
+- Requires [password hash synchronization (PHS)](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) for on-premises passwords
 - [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#leaked-credentials-detections)
 
 ### Microsoft Entra threat intelligence (user) 
 
-This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
+This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence research, including data from the Microsoft Threat Intelligence Center (MSTIC) and other Microsoft security teams. 
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1

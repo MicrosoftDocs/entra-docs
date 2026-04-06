@@ -1,13 +1,9 @@
 ---
 title: SharePoint Advanced Management Administrator
 description: SharePoint Advanced Management Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Assign the SharePoint Advanced Management Administrator role to users who need to do the following tasks:
@@ -49,3 +45,4 @@ Assign the SharePoint Advanced Management Administrator role to users who need t
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
