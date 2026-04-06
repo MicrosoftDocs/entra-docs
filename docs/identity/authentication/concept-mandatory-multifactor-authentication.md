@@ -173,7 +173,7 @@ For more information about how to migrate from user-based service accounts to wo
 
 Some customers apply Conditional Access policies to user-based service accounts. You can reclaim the user-based license, and add a [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
 
-## Migrate federated Identity Provider to external authentication methods 
+## Migrate federated Identity Provider to external MFA 
 
 Support for external MFA solutions is available with [external MFA](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to external MFA to use an external solution with Microsoft Entra ID.
 
