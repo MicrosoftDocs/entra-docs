@@ -277,6 +277,8 @@ items:
           href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
         - name: Configure HTTP Header Session Management
           href: how-to-configure-efp-header-session-management.md
+        - name: Configure EFP with Microsoft Edge and Intune Mobile Application Management (MAM)
+          href: how-to-configure-efp-with-edge-and-intune.md
   - name: Logs and monitoring
     expanded: false
     items:
