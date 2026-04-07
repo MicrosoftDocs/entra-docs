@@ -52,20 +52,6 @@ This appears as a standard Conditional Access prompt during the setup process â€
 *   Sign-in behavior and existing CA policy evaluation for sign-in aren't affected.
 *   Credential registration through My Security Info in continues to work as before.
 
-**Customer action required**
-
-Review your Conditional Access policies for possible impact before enforcement reaches your tenant:
-
-1.  In the **Microsoft Entra admin center**, go to **Protection** > **Conditional Access** > **Policies**.
-1.  Identify policies where the target is set to **User actions** > **Register security information**.
-1.  Review the **Grant** controls on those policies â€” these will apply during Windows Hello for Business and macOS Platform SSO registration.
-1.  Check the **Users and groups** scope to understand which users are affected.
-1.  Consider whether users setting up a new device for the first time can satisfy your policy requirements. If your policy requires methods users may not have during initial provisioning, you may need to adjust conditions or add exclusions.
-1.  Enable **report-only mode** on relevant policies to understand the impact before enforcement begins.
-
-Enforcement begins rolling out in late April 2026 and becomes the default for all tenants in **May 2026**.
-
-
 ---
 
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
