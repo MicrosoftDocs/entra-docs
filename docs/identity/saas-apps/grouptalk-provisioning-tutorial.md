@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GroupTalk so that I can streamline the user management process and ensure that users have the appropriate access to GroupTalk.
@@ -27,22 +27,22 @@ This article describes the steps you need to perform in both GroupTalk and Micro
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A user account in GroupTalk with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and GroupTalk](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and GroupTalk](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-grouptalk-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure GroupTalk to support provisioning with Microsoft Entra ID
 
 1. Reach out to GroupTalk Support at support@grouptalk.com with the **Tenant name** and **ID** you would like to integrate with  Microsoft Entra ID.
-2. When you've been notified that the necessary setup for your Microsoft Entra integration is ready, login to GroupTalk Admin and navigate to your Organization view. 
-3. A Microsoft Entra Integration configuration item should be visible. Select it to verify the **Tenant name** and **ID**  to obtain a **JWT (Secret Token)**. 
-4. The GroupTalk Tenant URL is `https://api.grouptalk.com/api/scim/`. The **Tenant URL** and the **Secret Token** retrieved in the previous step is entered in the Provisioning tab of your GroupTalk application. 
+1. When you've been notified that the necessary setup for your Microsoft Entra integration is ready, login to GroupTalk Admin and navigate to your Organization view. 
+1. A Microsoft Entra Integration configuration item should be visible. Select it to verify the **Tenant name** and **ID**  to obtain a **JWT (Secret Token)**. 
+1. The GroupTalk Tenant URL is `https://api.grouptalk.com/api/scim/`. The **Tenant URL** and the **Secret Token** retrieved in the previous step is entered in the Provisioning tab of your GroupTalk application. 
 
 <a name='step-3-add-grouptalk-from-the-azure-ad-application-gallery'></a>
 
@@ -51,12 +51,12 @@ The scenario outlined in this article assumes that you already have the followin
 Add **GroupTalk** from the Microsoft Entra application gallery to start managing provisioning to GroupTalk.
 
 1. Select the **Sign up for GroupTalk** button, which will route you to the GroupTalk administrative application.
-2. If you're already logged in to GroupTalk, logout to get to the login screen. Select the Microsoft Entra ID tab, and select the **Sign in** button.
+1. If you're already logged in to GroupTalk, logout to get to the login screen. Select the Microsoft Entra ID tab, and select the **Sign in** button.
 
 	![GroupTalk](media/grouptalk-provisioning-tutorial/login.png)
 
-3. Login with your AD Administrative account, and accept the GroupTalk application's access rights. You get an error message after this is done indicating the user isn't present. This is expected since your user isn't provisioned to GroupTalk yet but you have now added GroupTalk to your tenant.
-4. Go back to the Azure portal and verify that **GroupTalk** is now added to your Enterprise Applications.
+1. Login with your AD Administrative account, and accept the GroupTalk application's access rights. You get an error message after this is done indicating the user isn't present. This is expected since your user isn't provisioned to GroupTalk yet but you have now added GroupTalk to your tenant.
+1. Go back to the Azure portal and verify that **GroupTalk** is now added to your Enterprise Applications.
 
 Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
@@ -81,27 +81,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The GroupTalk link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your GroupTalk Tenant URL and Secret Token retrieved earlier from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to GroupTalk. If the connection fails, ensure your GroupTalk account has Admin permissions and try again. You can always obtain a new Secret Token as described in Step 2.
+1. In the **Tenant URL** field, input your GroupTalk Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GroupTalk. If the connection fails, ensure your GroupTalk account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GroupTalk**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to GroupTalk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GroupTalk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GroupTalk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to GroupTalk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GroupTalk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GroupTalk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -120,10 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:grouptalk:2.0:User:label4|String||
    |urn:ietf:params:scim:schemas:extension:grouptalk:2.0:User:label5|String||
 
-
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to GroupTalk**.
-
-11. Review the group attributes that are synchronized from Microsoft Entra ID to GroupTalk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GroupTalk for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to GroupTalk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GroupTalk for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
@@ -132,21 +131,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String||
       |urn:ietf:params:scim:schemas:extension:grouptalk:2.0:Group:description|String||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for GroupTalk, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to GroupTalk by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
