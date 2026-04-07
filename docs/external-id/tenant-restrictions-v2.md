@@ -2,7 +2,7 @@
 title: Configure Tenant Restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts that users can use on your networks and the devices that you manage. 
 ms.topic: how-to
-ms.date: 04/14/2025
+ms.date: 03/20/2026
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure tenant restrictions v2 so that I can control access to external apps and enhance security for users who sign in from my organization's networks or devices.
@@ -139,7 +139,7 @@ Think of the access settings this way:
 
 ## Tenant restrictions vs. B2B collaboration
 
-When your users need access to external organizations and apps, we recommend that you enable tenant restrictions to block external accounts and use B2B collaboration instead. B2B collaboration gives you the ability to:
+When your users need access to external organizations and apps, consider enabling tenant restrictions to block external accounts and use B2B collaboration instead. B2B collaboration gives you the ability to:
 
 - Use Conditional Access and force multifactor authentication for B2B collaboration users.
 - Manage inbound and outbound access.
@@ -370,7 +370,7 @@ After you create a tenant restrictions v2 policy, you can enforce the policy on 
 When you enable tenant restrictions on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
 
 > [!IMPORTANT]
-> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in public preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
+> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
 
 #### Use Group Policy to deploy tenant restrictions
 
@@ -521,7 +521,7 @@ If you're considering using tenant restrictions for Teams, keep the following po
 - Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
 
 > [!NOTE]
-> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. We recommend setting the tenant restrictions v2 policy on the Office 365 app instead of setting the policy on Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (SharePoint Online, Exchange Online, and so on) that are part of Office 365, it will also affect apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected.
+> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. Set the tenant restrictions v2 policy on the Office 365 app instead of setting the policy on Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (for example, SharePoint Online or Exchange Online) that are part of Office 365, it also affects apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected.
 
 ### Pure anonymous meeting join
 
@@ -684,7 +684,7 @@ Use Microsoft Graph to get policy information.
 
 - Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy if the corporate proxy uses a certificate trust chain outside Apple system root certificates. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers using untrusted certificates. Apple does not support customers adding their own PKI certificates to the Apple system trusted root certificates store. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling which uses a certificate trusted by Apple systems. 
 
-- When TRv2 is enabled, accessing the Microsoft Entra admin center may result in an "Access denied" error. To resolve this issue, append the following feature flags to the Microsoft Entra admin center URL: `?feature.msaljs=true&exp.msaljsexp=true`. If you're accessing the admin center for a partner tenant (e.g., Fabrikam) and encounter the error at `https://entra.microsoft.com/`, update the URL as follows: `https://entra.microsoft.com/?feature.msaljs=true&exp.msaljsexp=true#home`. This will enable the necessary flags and restore access.
+- When TRv2 is enabled, accessing the Microsoft Entra admin center might result in an "Access denied" error. To resolve this issue, append the following feature flags to the Microsoft Entra admin center URL: `?feature.msaljs=true&exp.msaljsexp=true`. If you're accessing the admin center for a partner tenant (e.g., Fabrikam) and encounter the error at `https://entra.microsoft.com/`, update the URL as follows: `https://entra.microsoft.com/?feature.msaljs=true&exp.msaljsexp=true#home`. This will enable the necessary flags and restore access.
 
 
 ## Related content

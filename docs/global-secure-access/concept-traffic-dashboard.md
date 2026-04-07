@@ -2,7 +2,8 @@
 title: Learn about the Global Secure Access Dashboard
 description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 04/03/2026
+ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 ---
 
@@ -10,7 +11,7 @@ ai-usage: ai-assisted
 
 ## Overview
 
-The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
+The Global Secure Access dashboard provides you with visualizations of the network traffic acquired by the Microsoft Entra Private Access and Microsoft Entra Internet Access services. The dashboard compiles the data from your network configurations, including devices, users, and tenants into several widgets that provide you with answers to the following questions:
 
 - How many devices using the Global Secure Access client are active in my network?
 - Was there a recent change to the number of active devices?
@@ -43,7 +44,7 @@ To access the dashboard:
 
 ## Global Secure Access snapshot
 
-This widget provides a summary of how many users and devices use the service and how many applications the service secured. 
+This widget summarizes the number of users and devices using the service and the applications the service secures. 
 
 - **Users**: The number of distinct users seen in the last 24 hours. The data uses the *user principal name (UPN)*.
 - **Devices**: The number of distinct devices seen in the last 24 hours. The data uses the *device ID*.
@@ -62,7 +63,7 @@ This widget shows network activity and helps you spot suspicious activities or t
 This widget provides the following alerts:
 
 - **Unhealthy remote network**: An unhealthy remote network has one or more device links disconnected.
-- **Increased external tenants activity**: There has been an increase in the number of users accessing external tenants.
+- **Increased external tenants activity**: There's an increase in the number of users accessing external tenants.
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website is blocked.
 
@@ -137,7 +138,7 @@ Select **View all web categories** to view more details about your network traff
 The **Device status** widgets display the active and inactive devices that you deployed.
 
 - **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
-- **Inactive devices**: The number of distinct device IDs that the service saw in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
+- **Inactive devices**: The number of distinct device IDs that the service saw in the last seven days, but not during the last 24 hours. The widget also shows the % change during the last 24 hours.
 
 :::image type="content" source="media/concept-traffic-dashboard/device-status.png" alt-text="Screenshot of the device status widgets.":::
 

@@ -3,17 +3,12 @@
 metadata:
   title: Manage the 'Stay signed in' prompt in Microsoft Entra ID
   description: Learn how the 'Stay signed in' prompt for Microsoft Entra users works and how to configure it in Microsoft Entra ID.
-  author: shlipsey3
-  ms.author: sarahlipsey
   ms.reviewer: almars
-  ms.date: 01/30/2025
-  ms.service: entra
-  ms.subservice: fundamentals
+  ms.date: 04/03/2026
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
     - sfi-ga-nochange
-    - sfi-image-nochange
 
   # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 
@@ -60,12 +55,10 @@ procedureSection:
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
       - |
         Browse to **Entra ID** > **Users** > **User settings**.
-
-        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page in Microsoft Entra ID.":::
       - |
         Set the **Show keep user signed in** toggle to **Yes**.
 
-        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in.png" alt-text="Screenshot of the Show keep user signed in prompt." lightbox="media/how-to-manage-stay-signed-in-prompt/show-keep-user-signed-in-expanded.png":::
+        :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot that shows the User settings page in Microsoft Entra ID with the Show keep user signed in toggle highlighted.":::
 
         ## Troubleshoot 'Stay signed in?' issues
 

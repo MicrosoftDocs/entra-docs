@@ -2,11 +2,8 @@
 title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing.
 keywords: Microsoft Entra ID licensing
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.reviewer: sumitp
 ms.custom: it-pro
 ---
 

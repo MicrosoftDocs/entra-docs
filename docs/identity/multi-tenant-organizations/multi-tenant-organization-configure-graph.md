@@ -6,7 +6,6 @@ ms.date: 03/25/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Configure a multitenant organization using PowerShell or Microsoft Graph API

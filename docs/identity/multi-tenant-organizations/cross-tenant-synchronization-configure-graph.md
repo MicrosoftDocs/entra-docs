@@ -7,7 +7,6 @@ ms.custom: it-pro
 ai-usage: ai-assisted
 
 #Customer intent: As a dev, devops, or it admin, I want to
-ms.subservice: multitenant-organizations
 ---
 
 # Configure cross-tenant synchronization using PowerShell or Microsoft Graph API
