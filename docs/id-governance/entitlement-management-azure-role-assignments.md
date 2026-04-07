@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 01/20/2026
+ms.date: 04/07/2026
 
 #CustomerIntent: As an IT administrator, I want to assign Azure RBAC roles to access packages so that I can manage resource access efficiently.
 ---
@@ -36,10 +36,33 @@ By assigning Azure resources, administrators can:
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-To add Azure resources to a catalog, the administrator must have the following permissions at the same scope, either Management Group or Subscription, they're onboarding:
-- `Microsoft.Authorization/roleassignments/read` 
+### Azure RBAC requirements for catalog onboarding
+
+To onboard an Azure Subscription or Management Group into an Entitlement Management catalog, the administrator performing this action must have Azure RBAC permissions that allow role assignment management at that scope.
+
+Specifically, Entitlement Management performs an Azure RBAC check for:
+
+- `Microsoft.Authorization/roleassignments/read`
 - `Microsoft.Authorization/roleassignments/write`
 - `Microsoft.Authorization/roleassignments/delete`
+
+at the selected Management Group or Subscription. This check ensures that the administrator has sufficient permissions for Entitlement Management to later assign Azure RBAC roles at that scope on behalf of approved access package assignments.
+
+If any of these checks fail, onboarding of the Azure resource into the catalog fails.
+
+### Azure RBAC requirements for adding a role to an access package
+
+After a Subscription or Management Group has been onboarded into a catalog, an Access Package administrator can add Azure RBAC roles at:
+
+- Management Group
+- Subscription
+- Resource Group (within an onboarded Subscription)
+
+When adding an Azure RBAC role to an access package, Entitlement Management dynamically enumerates available role definitions at the selected assignment scope. As a result, the administrator configuring the access package must have:
+
+- `Microsoft.Authorization/roleDefinitions/read`
+
+at the specific scope selected for role assignment (Management Group, Subscription, or Resource Group) to query role visibility.
 
 ## Add an Azure RBAC role to a Catalog
 
