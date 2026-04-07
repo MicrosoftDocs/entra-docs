@@ -3,7 +3,7 @@ title: Configure Federated Directory for automatic user provisioning with Micros
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Federated Directory.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Federated Directory so that I can streamline the user management process and ensure that users have the appropriate access to Federated Directory.
@@ -45,20 +45,20 @@ Before configuring Federated Directory for automatic user provisioning with Micr
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/companyname.png" alt-text="Screenshot of the Federated Directory admin console showing a field for entering a company name. Sign-in buttons are also visible." border="false":::
 
-2. Navigate to **Directories > User directories** and select your tenant. 
+1. Navigate to **Directories > User directories** and select your tenant. 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/ad-user-directories.png" alt-text="Screenshot of the Federated Directory admin console, with Directories and Federated Directory Microsoft Entra ID Test highlighted." border="false":::
 
-3. 	To generate a permanent bearer token, navigate to **Directory Keys > Create New Key.** 
+1. 	To generate a permanent bearer token, navigate to **Directory Keys > Create New Key.** 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated01.png" alt-text="Screenshot of the Directory keys page of the Federated Directory admin console. The Create new key button is highlighted." border="false":::
 
-4. Create a directory key. 
+1. Create a directory key. 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated02.png" alt-text="Screenshot of the Create directory key page of the Federated Directory admin console, with Name and Description fields and a Create key button." border="false":::
 	
 
-5. Copy the **Access Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Federated Directory application. 
+1. Copy the **Access Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Federated Directory application. 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated03.png" alt-text="Screenshot of a page in the Federated Directory admin console. An access token placeholder and a key name, description, and issuer are visible." border="false":::
 	
@@ -72,21 +72,21 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Federated Directory**, select **Federated Directory** in the results panel.
 
-	![Federated Directory in the results list](common/search-new-app.png)
+	![Screenshot of Federated Directory in the results list](common/search-new-app.png)
 
-5. Navigate to the **URL** highlighted below in a separate browser. 
+1. Navigate to the **URL** highlighted below in a separate browser. 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage1.png" alt-text="Screenshot of a page in the Azure portal that displays information on Federated Directory. The U R L value is highlighted." border="false":::
 
-6. Select **LOG IN**.
+1. Select **LOG IN**.
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated04.png" alt-text="Screenshot of the main menu on the Federated Directory site. The Login button is highlighted." border="false":::
 
-7.  As Federated Directory is an OpenIDConnect app, choose to log in to Federated Directory using your Microsoft work account.
+1.  As Federated Directory is an OpenIDConnect app, choose to log in to Federated Directory using your Microsoft work account.
 	
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage3.png" alt-text="Screenshot of the S C I M A D test page on the Federated Directory site. Log in with your Microsoft account is highlighted." border="false":::
  
-8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Federated Directory account.
+1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Federated Directory account.
 
 ## Configuring automatic user provisioning to Federated Directory 
 
@@ -99,52 +99,46 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
 
 1. In the applications list, select **Federated Directory**.
 
-	![The Federated Directory link in the Applications list](common/all-applications.png)
+	![Screenshot of The Federated Directory link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://api.federated.directory/v2/` in Tenant URL. Input the value that you retrieved and saved earlier from Federated Directory in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Federated Directory Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-9. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Federated Directory**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 	
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Federated Directory in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Federated Directory for update operations. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Federated Directory in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Federated Directory for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/user-attributes.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and Federated Directory attributes and the matching status." border="false":::
 	
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Federated Directory, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Federated Directory by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Federated Directory.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 ## Additional resources

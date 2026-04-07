@@ -3,7 +3,7 @@ title: Configure Configure Figma for automatic user provisioning with Microsoft 
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Figma.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Figma so that I can streamline the user management process and ensure that users have the appropriate access to Figma.
@@ -45,19 +45,19 @@ Before configuring Figma for automatic user provisioning with Microsoft Entra ID
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/image0.png" alt-text="Screenshot of the Figma admin console. A tenant named A A D Scim Test is visible. Next to the tenant, a gear icon is highlighted." border="false":::
 
-2. Navigate to **General > Update Log in Settings**.
+1. Navigate to **General > Update Log in Settings**.
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/figma03.png" alt-text="Screenshot of the General tab of the Figma admin console. Under Log in and provisioning, Update log in settings is highlighted." border="false":::
 
-3. Copy the **Tenant ID**. This value is used to construct the SCIM endpoint URL to be entered into the **Tenant URL** field in the Provisioning tab of your Figma application.
+1. Copy the **Tenant ID**. This value is used to construct the SCIM endpoint URL to be entered into the **Tenant URL** field in the Provisioning tab of your Figma application.
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/figma-tenantid.png" alt-text="Screenshot of the S A M L S S O section in the Figma admin console. A Tenant ID label and an adjacent link that says Copy are highlighted." border="false":::
 
-4. Scroll down and select **Generate API Token**.
+1. Scroll down and select **Generate API Token**.
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/token.png" alt-text="Screenshot of the S C I M provisioning section in the Figma admin console. A link labeled Generate A P I token is highlighted." border="false":::
 
-5. Copy the  **API Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Figma application. 
+1. Copy the  **API Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Figma application. 
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/figma04.png" alt-text="Screenshot of a page in the Figma admin console. Under Your provisioning A P I token, a placeholder for the token is highlighted." border="false":::
 
@@ -69,7 +69,7 @@ To configure Figma for automatic user provisioning with Microsoft Entra ID, you 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Figma**, select **Figma** in the search box.
 1. Select **Figma** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Figma  in the results list](common/search-new-app.png)
+	![Screenshot of Figma  in the results list](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Figma 
 
@@ -85,51 +85,45 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
 
 1. In the applications list, select **Figma**.
 
-	![The Figma  link in the Applications list](common/all-applications.png)
+	![Screenshot of The Figma  link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://www.figma.com/scim/v2/<TenantID>` in **Tenant URL** where **TenantID** is the value that you retrieved from Figma earlier. Input the **API Token** value in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Figma. If the connection fails, ensure your Figma account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Figma Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Figma. If the connection fails, ensure your Figma account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-9. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Figma**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Figma  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Figma  for update operations. Select the **Save** button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-	![Figma User Attributes](media/Figma-provisioning-tutorial/figma06.png)
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Figma  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Figma  for update operations. Select the **Save** button to commit any changes.
 
-13. To enable the Microsoft Entra provisioning service for Figma, change the **Provisioning Status** to **On** in the **Settings** section.
+	![Screenshot of Figma User Attributes](media/Figma-provisioning-tutorial/figma06.png)
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-14. Define the users and/or groups that you would like to provision to Figma  by choosing the desired values in **Scope** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Figma.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 

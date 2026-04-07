@@ -3,7 +3,7 @@ title: Configure Configure Foodee for for automatic user provisioning with Micro
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
 author: jeevansd
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
@@ -50,7 +50,7 @@ Before you configure Foodee for automatic user provisioning by using Microsoft E
 
 1. Under **Enterprise portal**, select **Single Sign On**.
 
-	![The Foodee Enterprise Portal left-pane menu](media/Foodee-provisioning-tutorial/scim.png)
+	![Screenshot of the Foodee Enterprise Portal left-pane menu](media/Foodee-provisioning-tutorial/scim.png)
 
 1. Copy the value in the **API Token** box for later use. You'll enter it in the **Secret Token** box in the **Provisioning** tab of your Foodee application.
 
@@ -65,15 +65,15 @@ To add Foodee from the Microsoft Entra application gallery, do the following:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-	![The Enterprise applications pane](common/enterprise-applications.png)
+	![Screenshot of The Enterprise applications pane](common/enterprise-applications.png)
 
 1. To add a new application, select **New application** at the top of the pane.
 
-	![The New application button](common/add-new-app.png)
+	![Screenshot of the New application button](common/add-new-app.png)
 
 1. In the search box, enter **Foodee**, select **Foodee** in the results pane, and then select **Add** to add the application.
 
-	![Foodee in the results list](common/search-new-app.png)
+	![Screenshot of Foodee in the results list](common/search-new-app.png)
 
 ## Configure automatic user provisioning to Foodee 
 
@@ -87,37 +87,35 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-	![Enterprise applications pane](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications pane](common/enterprise-applications.png)
 
 1. In the **Applications** list, select **Foodee**.
 
-	![The Foodee link in the Applications list](common/all-applications.png)
+	![Screenshot of the Foodee link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. In the **Provisioning Mode** drop-down list, select **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-1. Under **Admin Credentials**, do the following:
+1. In the **Tenant URL** field, input your Foodee Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Foodee. If the connection fails, ensure your Foodee account has the required admin permissions and try again.
 
-   a. In the **Tenant URL** box, enter the **https:\//concierge.food.ee/scim/v2** value that you retrieved earlier.
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-   b. In the **Secret Token** box, enter the **API Token** value that you retrieved earlier.
-   
-   c. To ensure that Microsoft Entra ID can connect to Foodee, select **Test Connection**. If the connection fails, ensure that your Foodee account has administrator permissions, and then try again.
+1. Select **Create** to create your configuration.
 
-	![The Test Connection link](common/provisioning-testconnection-tenanturltoken.png)
+1. Select **Properties** on the **Overview** page.
 
-1. In the **Notification Email** box, enter the email address of a person or group who should receive the provisioning error notifications, and then select the **Send an email notification when a failure occurs** check box.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-	![The Notification Email text box](common/provisioning-notification-email.png)
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-1. Select **Save**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Under **Mappings**, select **Synchronize Microsoft Entra users to Foodee**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Foodee. The attributes that are selected as **Matching** properties are used to match the *user accounts* in Foodee for update operations. 
 
@@ -126,26 +124,11 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 1. To commit your changes, select **Save**.
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Foodee**.
 
-1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Foodee. The attributes that are selected as **Matching** properties are used to match the *group accounts* in Foodee for update operations.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-	:::image type="content" source="media/Foodee-provisioning-tutorial/groupattribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, Foodee attributes, and the matching precedence." border="false":::
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-1. To commit your changes, select **Save**.
-1. Configure the scoping filters. To learn how, refer to the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-1. To enable the Microsoft Entra provisioning service for Foodee, in the **Settings** section, change the **Provisioning Status** to **On**.
-
-	![The Provisioning Status switch](common/provisioning-toggle-on.png)
-
-1. Under **Settings**, in the **Scope** drop-down list, define the users or groups that you want to provision to Foodee.
-
-	![The Provisioning Scope drop-down list](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![The Provisioning Configuration Save button](common/provisioning-configuration-save.png)
-
-The preceding operation starts the initial synchronization of the users or groups that you've defined in the **Scope** drop-down list. The initial sync takes longer to perform than subsequent syncs. For more information, see [How long will it take to provision users?](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 You can use the **Current Status** section to monitor progress and follow links to your provisioning activity report. The report describes all actions that are performed by the Microsoft Entra provisioning service on Foodee. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
