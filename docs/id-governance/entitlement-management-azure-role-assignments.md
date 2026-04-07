@@ -16,7 +16,7 @@ ms.date: 04/07/2026
 
 Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, Teams, and [Microsoft Entra Roles](entitlement-management-roles.md). To manage access to Azure resources, You can assign access to Azure RBAC roles directly to Access packages and Catalogs.
 
-By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which Azure roles are assigned to that identity. Following the security principle of [least privilege access](../identity-platform/secure-least-privileged-access.md), you're able to assign both **Active** and **Eligible** role types allowing privilege to be elevated just in time when access to Azure resources are needed.
+By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which Azure roles are assigned to that identity. Following the security principle of [least privilege access](../identity-platform/secure-least-privileged-access.md), you're able to assign both **Active** and **Eligible** role types allowing privilege to be activated just in time when access to Azure resources are needed.
 
 By assigning Azure resources, administrators can:
 - Choose the target scope that aligns with the catalog resource options (Management Group, Subscription, or Resource Group).
