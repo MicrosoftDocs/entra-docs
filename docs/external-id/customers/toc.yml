@@ -4,17 +4,27 @@ items:
   items:
     - name: Overview of External ID in external tenants
       href: overview-customers-ciam.md
-    - name: Planning guide
-      href: concept-planning-your-solution.md
+    - name: Supported features
+      href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
-- name: Fundamentals
+- name: Get started
   expanded: false
   items:
+    - name: Planning guide
+      href: concept-planning-your-solution.md
     - name: Create a tenant
       href: quickstart-tenant-setup.md
+    - name: Choose your authentication approach
+      items:
+        - name: Native authentication overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Enterprise applications
@@ -78,14 +88,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
-    - name: Native authentication overview
+    - name: Native authentication
       items:
-        - name: Native authentication overview
-          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication challenge types
-          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
           href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication how-to guides
