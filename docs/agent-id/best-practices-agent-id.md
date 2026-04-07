@@ -29,11 +29,11 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Provision a unique identity per agent instance.** Avoid sharing identities between different agents. Distinct identities improve traceability and let you disable or update one agent without impacting others. The blueprint model makes scaling with unique identities manageable because credentials live on the blueprint, not each instance.
 
-- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](identity-platform/agent-owners-sponsors-managers.md) — the person or group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
+- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](identity-platform/agent-owners-sponsors-managers.md); the person or group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
 
 - **Provide descriptive metadata.** Fill in the description, tags, and verified publisher fields on each blueprint to clearly document the agent's purpose, scope, and owning team. Good metadata improves discovery and helps colleagues understand the agent's role at a glance.
 
-- **Apply policies at the blueprint level.** Associate Conditional Access rules, API permissions, and governance controls with the blueprint so that all current and future agent instances inherit them automatically. Disabling a blueprint instantly blocks all its agent identities — a rapid kill-switch when needed.
+- **Apply policies at the blueprint level.** Associate Conditional Access rules, API permissions, and governance controls with the blueprint so that all current and future agent instances inherit them automatically. Disabling a blueprint instantly blocks all its agent identities. This option provides a rapid kill-switch when needed.
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
@@ -47,7 +47,7 @@ Credential management is critical to preventing unauthorized access through agen
 
 - **Isolate credentials per blueprint.** Don't reuse the same credential across unrelated blueprints. If you have separate environments (dev, test, prod), use separate blueprints or environment-specific federated credentials so that a compromise in one environment doesn't affect others.
 
-- **Store credentials securely.** Store certificate private keys in Azure Key Vault or an HSM. If using federated credentials tied to a managed identity, limit the managed identity's scope. Establish a rotation schedule — rotate certificates at least annually even though blueprints allow long-lived credentials.
+- **Store credentials securely.** Store certificate private keys in Azure Key Vault or an HSM. If using federated credentials tied to a managed identity, limit the managed identity's scope. Establish a rotation schedule to rotate certificates at least annually even though blueprints allow long-lived credentials.
 
 - **Align OAuth flows with agent scenarios.** Use the appropriate [OAuth flow](identity-platform/agent-oauth-protocols.md) for your agent's operating model:
   - For autonomous agents with no user context, use the client credentials flow with only the required app permissions.
@@ -60,7 +60,7 @@ Credential management is critical to preventing unauthorized access through agen
 
 Apply the same Zero Trust principles to agent identities as you do to user identities. For detailed configuration, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id) and [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 
-- **Segment agents with custom security attributes.** Define organization-wide attributes such as `Environment`, `Department`, or `DataSensitivity` and assign them to agent identities. Use these attributes in Conditional Access policy conditions to apply fine-grained controls at scale — for example, blocking non-production agents from accessing production resources.
+- **Segment agents with custom security attributes.** Define organization-wide attributes such as `Environment`, `Department`, or `DataSensitivity` and assign them to agent identities. Use these attributes in Conditional Access policy conditions to apply fine-grained controls at scale, for example, blocking non-production agents from accessing production resources.
 
 - **Block high-risk agents automatically.** Deploy a Conditional Access policy that blocks agent identities flagged with high risk levels by Identity Protection. This is analogous to blocking risky users and ensures compromised agents are cut off immediately.
 
@@ -68,13 +68,13 @@ Apply the same Zero Trust principles to agent identities as you do to user ident
 
 - **Review existing policies for agent impact.** Audit broad policies (like "All users must use MFA") to ensure they don't unintentionally block agent flows. Refactor to exclude agent identities and create dedicated agent policies with appropriate controls.
 
-- **Implement least-privilege permissions.** Use the [authorization guidance](authorization-agent-id.md) to grant only the permissions each agent needs. Don't grant broad permissions as a convenience — limit to specific scopes, API resources, or sites. Review and right-size permissions periodically.
+- **Implement least-privilege permissions.** Use the [authorization guidance](authorization-agent-id.md) to grant only the permissions each agent needs. Don't grant broad permissions as a convenience. Limit permissions to specific scopes, API resources, or sites. Review and right-size permissions periodically.
 
 ## Govern the agent lifecycle
 
 Effective governance prevents agent sprawl and ensures agents remain accountable throughout their lifecycle. For governance tools, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview) and [Access packages for agent identities](agent-access-packages.md).
 
-- **Register all agents in Microsoft Entra.** Register every agent — whether built in Copilot Studio, Azure, or external platforms — in Microsoft Entra through the Agent ID framework. Centralized registration eliminates shadow AI and gives IT full visibility.
+- **Register all agents in Microsoft Entra.** Register every agent, whether built in Copilot Studio, Azure, or external platforms, in Microsoft Entra through the Agent ID framework. Centralized registration eliminates shadow AI and gives IT full visibility.
 
 - **Standardize naming conventions.** Define and enforce a naming convention for agent identities, such as prefixing display names with the department or function (for example, `Agent-HROnboardingBot`). Consistent naming makes agents recognizable in logs and the admin center.
 
