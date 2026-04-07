@@ -33,7 +33,7 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Provide descriptive metadata.** Fill in the description, tags, and verified publisher fields on each blueprint to clearly document the agent's purpose, scope, and owning team. Good metadata improves discovery and helps colleagues understand the agent's role at a glance. For blueprint setup details, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
 
-- **Apply policies at the blueprint level.** Associate Conditional Access rules, API permissions, and governance controls with the blueprint so that all current and future agent instances inherit them automatically. Disabling a blueprint instantly blocks all its agent identities. This option provides a rapid kill-switch when needed. For details, see [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md) and [Conditional Access for agents](/entra/identity/conditional-access/agent-id).
+- **Apply policies at the blueprint level.** Associate Conditional Access rules, API permissions, and governance controls with the blueprint so that all current and future agent instances inherit them automatically. Disabling a blueprint instantly blocks all its agent identities. This option provides a rapid kill-switch when needed. For details, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id).
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
