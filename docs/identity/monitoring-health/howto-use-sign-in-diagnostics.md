@@ -91,6 +91,9 @@ You can start the Sign-in diagnostic from a specific sign-in event in the Sign-i
 
 The single log investigator is a Copilot skill accessible within the sign-in logs. It provides an AI-enhanced diagnostic that determines the cause of failed sign-ins and provides guidance on remediation. Unlike the standard Sign-in diagnostic, the single log investigator uses AI to analyze the sign-in event and provide contextual remediation steps.
 
+> [!NOTE]
+> Both the existing diagnostic tools and the health alert investigator are available during the transition to the new experience.
+
 To use the single log investigator:
 
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** and select a failed sign-in event.
