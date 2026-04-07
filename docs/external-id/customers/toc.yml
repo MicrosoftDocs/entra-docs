@@ -4,19 +4,29 @@ items:
   items:
     - name: Overview of External ID in external tenants
       href: overview-customers-ciam.md
-    - name: Planning guide
-      href: concept-planning-your-solution.md
+    - name: Supported features
+      href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Services and integration partners
       href: services-integration-partners.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
-- name: Fundamentals
+- name: Get started
   expanded: false
   items:
+    - name: Planning guide
+      href: concept-planning-your-solution.md
     - name: Create a tenant
       href: quickstart-tenant-setup.md
+    - name: Choose your authentication approach
+      items:
+        - name: Native authentication overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Enterprise applications
@@ -61,7 +71,7 @@ items:
       href: concept-security-customers.md
     - name: Use application roles to manage access
       href: how-to-use-app-roles-customers.md
-    - name: Web Application Firewall partners
+    - name: Edge platform integrations
       items: 
       - name: Azure Web Application Firewall
         href: tutorial-configure-external-id-web-app-firewall.md
@@ -69,17 +79,18 @@ items:
         href: how-to-configure-waf-integration.md
       - name: Akamai
         href: how-to-configure-akamai-integration.md
-    - name: Fraud protection integration with native authentication
-      href: how-to-integrate-fraud-protection.md
+    - name: Bot & fraud protection
       items:
-      - name: Third-party bot protection with native API sign-up
+      - name: Web-hosted bot protection (sign-up)
+        href: how-to-integrate-fraud-protection.md
+      - name: Native API bot protection (sign-up)
         href: tutorial-third-party-bot-protection-native-api-sign-up.md
-    - name: Account-takeover protection with native authentication
-      items:
-      - name: Third-party account takeover protection with native API
+      - name: Native API account takeover protection (sign-in)
         href: tutorial-third-party-account-take-over-protection-native-api.md
-    - name: Native authentication fraud protection for SMS MFA
-      href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
+    - name: MFA security
+      items:
+      - name: Native API fraud protection for SMS MFA
+        href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
 - name: Authentication
   expanded: false
   items:
@@ -93,14 +104,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
-    - name: Native authentication overview
+    - name: Native authentication
       items:
-        - name: Native authentication overview
-          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication challenge types
-          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
           href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication how-to guides
