@@ -86,8 +86,6 @@ To find the group SID, use the following command, with your group name
 
 `Get-ADGroup "GroupName"`
 
-   ![Image of screen shot showing the results of the Get-ADGroup script.](./media/how-to-migrate-mfa-server-to-mfa-user-authentication/find-the-sid.png)
-
 <a name='setting-the-claims-rules-to-call-azure-ad-mfa'></a>
 
 #### Setting the claims rules to call Microsoft Entra multifactor authentication
