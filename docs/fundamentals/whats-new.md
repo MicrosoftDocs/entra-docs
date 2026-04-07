@@ -22,8 +22,6 @@ This article provides information about the latest releases and change announcem
 
 ## March 2026
 
----
-
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
