@@ -8,6 +8,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Services and integration partners
+      href: services-integration-partners.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
 - name: Fundamentals
