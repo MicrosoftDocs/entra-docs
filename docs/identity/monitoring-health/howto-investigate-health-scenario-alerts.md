@@ -104,6 +104,9 @@ The health alert investigator is a Copilot skill embedded within monitoring aler
 > [!NOTE]
 > Both the existing diagnostic tools and the health alert investigator are available during the transition to the new experience.
 
+> [!NOTE]
+> To use the health alert investigator, your tenant must be onboarded to Microsoft Security Copilot, and ensure the Microsoft Entra plugin is enabled in Security Copilot.
+
 To use the health alert investigator:
 
 1. From the active alert page, select the **Copilot** button to launch the health alert investigator.

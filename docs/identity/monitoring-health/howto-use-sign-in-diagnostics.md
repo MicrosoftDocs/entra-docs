@@ -94,6 +94,9 @@ The single log investigator is a Copilot skill accessible within the sign-in log
 > [!NOTE]
 > Both the existing diagnostic tools and the health alert investigator are available during the transition to the new experience.
 
+> [!NOTE]
+> To use the single log investigator, your tenant must be onboarded to Microsoft Security Copilot, and ensure the Microsoft Entra plugin is enabled in Security Copilot.
+
 To use the single log investigator:
 
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** and select a failed sign-in event.
