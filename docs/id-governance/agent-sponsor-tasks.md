@@ -46,7 +46,7 @@ To create a workflow that notifies the manager or cosponsors of an existing agen
 
 ## Next step
 
-- [Manage agent identities in your organization](/entra/agent-id/identity-professional/manage-agent-identities-organization) - See how sponsor governance fits into overall agent management.
+- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - See how sponsor governance fits into overall agent management.
 - [Governing Agent Identities](agent-id-governance-overview.md) - Overview of agent identity governance including access packages and sponsor responsibilities.
 - [Write concepts](manage-workflow-tasks.md)
 - [Manage workflow properties](manage-workflow-properties.md)

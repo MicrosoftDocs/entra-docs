@@ -16,7 +16,7 @@ ms.reviewer: alamaral
 Microsoft Entra admin center provides you with a centralized interface to view and manage your agent identities. This comes with the ability to perform various actions like searching, filtering, sorting, and selecting multiple agent identities to disable.
 
 - To view and manage your agent identity blueprint principals, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md).
-- To view and manage agents registered in the Agent Registry without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
+- To view and manage agents registered in the Agent Registry without an identity, see [manage agent identity blueprints with no identities](../manage-agents-without-identity.md).
 
 ## Prerequisites
 
@@ -80,7 +80,7 @@ You might also navigate into a single agent identity, and disable it there.
 
 ## Related content
 
-- [Manage agent identities in your organization](../identity-professional/manage-agent-identities-organization.md) - Overview of agent identity management including roles, lifecycle, and governance.
+- [Manage agent identities in your organization](../manage-agent-identities-organization.md) - Overview of agent identity management including roles, lifecycle, and governance.
 - [Manage agents in end user experience](manage-agent.md) - Owners and sponsors can manage their agents from the My Account portal without admin roles.
 - [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id) - Enforce Conditional Access policies across all agent identities or specific groups.
 - [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md)

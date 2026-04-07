@@ -154,7 +154,7 @@ Based on our experience with Conditional Access and supporting other customers, 
 
 ### Minimize the number of Conditional Access policies
 
-Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 195 policies per tenant. This 195-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
+Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 240 policies per tenant. This 240-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
 
 Analyze your apps and group them by the same resource requirements for the same users. For example, if all Microsoft 365 apps or all HR apps have the same requirements for the same users, create a single policy and include all the apps it applies to.
 

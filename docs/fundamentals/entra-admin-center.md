@@ -2,7 +2,8 @@
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
 ms.topic: overview
-ms.date: 06/04/2025
+ms.date: 04/06/2026
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
@@ -12,13 +13,26 @@ ms.custom: sfi-image-nochange
 
 ## Overview
 
-The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based identity portal for Microsoft Entra products. It provides a unified administrative experience for organizations to configure and manage their Microsoft Entra solutions in a centralized location.
+The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based portal that provides a unified administrative experience for configuring and managing Microsoft Entra products in a centralized location. From the admin center, administrators can manage users and groups, configure authentication methods, create Conditional Access policies, monitor identity security posture, and govern access across the organization.
+
+The admin center brings together the following Microsoft Entra product areas, each accessible from the left-hand navigation menu:
+
+- **[Entra ID](#entra-id)** — Manage users, groups, devices, applications, roles, and authentication methods.
+- **[ID Protection](#id-protection)** — Monitor and respond to identity-based risks with risk policies and reports.
+- **[Identity Governance](#identity-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
+- **[Verified ID](#verified-id)** — Issue and manage verifiable credentials.
+- **[Global Secure Access](#global-secure-access)** — Secure access to apps and resources with Private Access and Internet Access.
 
 ## Explore the Microsoft Entra admin center
 
-The Microsoft Entra admin center is organized by product. Access the products through the search bar or left-hand menu.
+The Microsoft Entra admin center is organized by product. Access the products through the search bar or left-hand menu. You can also use the search bar at the top of the page to find specific settings, features, or documentation.
 
-**Home** includes at-a-glance information about your tenant, recent activities, and other helpful resources, including shortcuts and deployment guides.
+**Home** includes at-a-glance information about your tenant, recent activities, and other helpful resources, including shortcuts and deployment guides. The home page provides quick access to:
+
+- **Tenant overview** — View your tenant name, ID, and license information.
+- **Recommended actions** — Personalized [recommendations](~/identity/monitoring-health/overview-recommendations.md) to help improve the security and health of your tenant.
+- **Deployment guides** — Step-by-step guidance for deploying Microsoft Entra features.
+- **Recent activity** — Quick access to recently visited pages and recent changes.
  
 :::image type="content" source="./media/entra-admin-center/entra-admin-center-home.png" alt-text="Screenshot of the Microsoft Entra admin center overview home page.":::
 
@@ -71,6 +85,7 @@ For more information about configuring and managing Microsoft Entra ID Governanc
 * [Access reviews](~/id-governance/access-reviews-overview.md)
 * [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md)
 * [Lifecycle workflows](~/id-governance/what-are-lifecycle-workflows.md)
+* [Custom task extensions for Lifecycle workflows](~/id-governance/lifecycle-workflow-extensibility.md)
 
 ### Verified ID
 
@@ -96,7 +111,22 @@ For more information about configuring and managing Global Secure Access solutio
 * [Remote networks](~/global-secure-access/concept-remote-network-connectivity.md)
 * [Logs and monitoring](~/global-secure-access/concept-global-secure-access-logs-monitoring.md)
 
-### Need help?
+## Common admin tasks
+
+The following table lists common administrative tasks you can perform from the Microsoft Entra admin center, with links to detailed guidance for each task.
+
+| Task | Description | Learn more |
+|------|-------------|------------|
+| Create or delete users | Add new members or guests to your organization, or remove existing users. | [Create or delete users](./how-to-create-delete-users.yml) |
+| Manage groups | Create and manage groups to organize users for access management and licensing. | [Manage groups and group membership](./how-to-manage-groups.yml) |
+| Assign roles | Delegate administrative responsibilities using built-in or custom roles. | [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md) |
+| Manage applications | Register and configure applications for single sign-on and API access. | [What is application management?](~/identity/enterprise-apps/what-is-application-management.md) |
+| Create a Conditional Access policy | Define access controls based on conditions such as user, device, location, and risk. | [What is Conditional Access?](~/identity/conditional-access/overview.md) |
+| Review identity secure score | Check your tenant's security posture and follow recommendations to improve it. | [What is Identity Secure Score?](~/identity/monitoring-health/concept-identity-secure-score.md) |
+| Set up multifactor authentication | Require users to verify their identity with more than one authentication method. | [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) |
+| Configure self-service password reset | Allow users to reset their own passwords without contacting an administrator. | [How it works: Microsoft Entra self-service password reset](~/identity/authentication/concept-sspr-howitworks.md) |
+
+## Need help?
 
 **Diagnose & solve problems** provides troubleshooting resources to fix common problems, and the option to contact the support team by opening a **New support request**.
 
@@ -107,5 +137,12 @@ For more information about configuring and managing Global Secure Access solutio
 
 ## Related content
 
+* [What is Microsoft Entra?](./what-is-entra.md)
+* [Create or delete users](./how-to-create-delete-users.yml)
+* [Manage groups and group membership](./how-to-manage-groups.yml)
+* [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md)
+* [What is Conditional Access?](~/identity/conditional-access/overview.md)
+* [What is Identity Secure Score?](~/identity/monitoring-health/concept-identity-secure-score.md)
+* [Manage Microsoft Entra using Microsoft Graph](/graph/api/resources/identity-network-access-overview)
 * [Find your tenant](./how-to-find-tenant.md)
 * [Create a new tenant](./create-new-tenant.md)
