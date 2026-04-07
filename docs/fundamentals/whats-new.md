@@ -30,8 +30,6 @@ This article provides information about the latest releases and change announcem
 
 Starting in **May 2026**, if your organization has Conditional Access policies scoped to the **Register security information** user action, those policies will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. Rollout begins in late April 2026. This ensures that your security requirements are met when users set up these credentials, not just when they sign in. Organizations without CA policies targeting this user action aren't affected by this change.
 
-**Important:** Even without Conditional Access policies protecting the Register security information user action, MFA continues to be required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types.
-
 ---
 
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
