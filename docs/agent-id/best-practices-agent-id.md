@@ -17,19 +17,19 @@ ms.reviewer: kylemar
 
 This article provides operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID. These recommendations help you make informed decisions when planning agent deployments, managing credentials, enforcing access policies, and monitoring agent activity.
 
-For foundational concepts, see [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md) and [Key concepts](../identity-platform/key-concepts.md).
+For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](identity-platform/key-concepts.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Design agent identity blueprints
 
-[Agent identity blueprints](../identity-platform/agent-blueprint.md) are templates that define the security posture for all agent instances of a common kind. Thoughtful blueprint design is the foundation of well-governed agent deployments.
+[Agent identity blueprints](identity-platform/agent-blueprint.md) are templates that define the security posture for all agent instances of a common kind. Thoughtful blueprint design is the foundation of well-governed agent deployments.
 
 - **Plan blueprints before deploying agents.** Define required settings, permissions, and metadata in the blueprint up front rather than creating ad-hoc service principals. This ensures a consistent, governed rollout across all instances.
 
 - **Provision a unique identity per agent instance.** Avoid sharing identities between different agents. Distinct identities improve traceability and let you disable or update one agent without impacting others. The blueprint model makes scaling with unique identities manageable because credentials live on the blueprint, not each instance.
 
-- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](../identity-platform/agent-owners-sponsors-managers.md) — the person or group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
+- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](identity-platform/agent-owners-sponsors-managers.md) — the person or group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
 
 - **Provide descriptive metadata.** Fill in the description, tags, and verified publisher fields on each blueprint to clearly document the agent's purpose, scope, and owning team. Good metadata improves discovery and helps colleagues understand the agent's role at a glance.
 
@@ -37,11 +37,11 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](microsoft-ent
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
-- **Create agent user accounts only when necessary.** [Agent user accounts](../identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent user accounts because they add complexity with licenses, group memberships, and user-level policies.
+- **Create agent user accounts only when necessary.** [Agent user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent user accounts because they add complexity with licenses, group memberships, and user-level policies.
 
 ## Manage credentials securely
 
-Credential management is critical to preventing unauthorized access through agent identities. For detailed steps, see [Create an agent identity blueprint](../identity-platform/create-blueprint.md).
+Credential management is critical to preventing unauthorized access through agent identities. For detailed steps, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
 
 - **Use managed identities or certificates in production.** For production agents, prefer [federated identity credentials](/entra/identity/managed-identities-azure-resources/overview) (managed identities) or certificates over client secrets. Managed identities eliminate stored secrets entirely. Use client secrets only for initial development or testing, and rotate them out before going live.
 
@@ -49,7 +49,7 @@ Credential management is critical to preventing unauthorized access through agen
 
 - **Store credentials securely.** Store certificate private keys in Azure Key Vault or an HSM. If using federated credentials tied to a managed identity, limit the managed identity's scope. Establish a rotation schedule — rotate certificates at least annually even though blueprints allow long-lived credentials.
 
-- **Align OAuth flows with agent scenarios.** Use the appropriate [OAuth flow](../identity-platform/agent-oauth-protocols.md) for your agent's operating model:
+- **Align OAuth flows with agent scenarios.** Use the appropriate [OAuth flow](identity-platform/agent-oauth-protocols.md) for your agent's operating model:
   - For autonomous agents with no user context, use the client credentials flow with only the required app permissions.
   - For interactive agents acting on behalf of a user, use the on-behalf-of (OBO) flow so user access policies and consent apply.
   - Avoid granting app permissions when delegated permissions would suffice.
@@ -116,5 +116,5 @@ Smooth agent deployments require alignment between developers building agents an
 
 ## Related content
 
-- [What is Microsoft Entra Agent ID?](microsoft-entra-agent-identities-for-ai-agents.md)
-- [Microsoft Entra security for AI overview](security-for-ai.md)
+- [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
+- [Microsoft Entra security for AI overview](security-for-ai-overview.md)
