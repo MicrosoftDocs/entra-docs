@@ -22,6 +22,30 @@ This article provides information about the latest releases and change announcem
 
 ## March 2026
 
+### Plan for change – Agent Registry consolidation into Microsoft Agent 365
+
+**Type:** Plan for change  
+**Service category:** Other  
+**Product capability:** Directory    
+
+We’re consolidating agent management experiences to make it easier to observe, govern, and secure all agents in your tenant. Agent 365 will be the single source of truth, offering a unified catalog, consistent visibility, and simplified management.
+
+**What’s changing**
+
+*   The Agent registry and Agent collections blades in the [Entra admin center](https://entra.microsoft.com/) will be retired on May 1, 2026.  
+*   No action is required by administrators. Agent functionality and management remain unaffected. You can still access the agent inventory in the [All agents view within the Microsoft 365 admin center (MAC)](https://admin.microsoft.com/Adminportal/Home#/homepage).  
+
+**With this change:**
+
+*   Agent 365 becomes the unified registry and control plane for agents.  
+*   Microsoft Entra continues to provide the identity foundation through Agent ID.  
+*   The existing [registry Graph API](/graph/api/resources/agentregistry) will be deprecated and replaced by a new API powered by Agent 365. Agents registered via the current API will need to be re-registered. We’ll follow up soon with details on the deprecation date and the availability of the new registry Graph API.  
+*   All agent access and governance capabilities remain fully available through Agent ID and Agent 365.  
+
+For more information, see: [Agent Registry convergence with Microsoft Agent 365](../agent-id/identity-platform/agent-registry-convergence.md).
+
+---
+
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
 **Type:** Public Preview  
