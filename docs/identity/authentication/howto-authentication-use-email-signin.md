@@ -412,12 +412,12 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
     # Output affected synced users
     $allUsers |
         Where-Object { $_.OnPremisesSyncEnabled -eq $true -and ($_.ProxyAddresses | Where-Object { ($duplicateValues | ForEach-Object { "smtp:$_"} ) -contains $_}).Length -GT 0} |
-        Select-Object Id, DisplayName, UserPrincipalName, ProxyAddresses, ImmutableId, UserType
+        Select-Object Id, DisplayName, UserPrincipalName, ProxyAddresses, OnPremisesImmutableId, UserType
     
     # Output affected cloud-only users
     $allUsers |
         Where-Object { $_.OnPremisesSyncEnabled -ne $true -and $duplicateValues -contains $_.UserPrincipalName } |
-        Select-Object ObjectId, DisplayName, UserPrincipalName, ProxyAddresses, ImmutableId, UserType
+        Select-Object ObjectId, DisplayName, UserPrincipalName, ProxyAddresses, OnPremisesImmutableId, UserType
     ```
 
 1. To output affected users to CSV:
