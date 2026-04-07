@@ -2,16 +2,17 @@
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/07/2026
 ms.reviewer: sumitp
-ms.custom: it-pro, sfi-ga-nochange
+ms.custom: it-pro
+ai-usage: ai-assisted
 ---
 # Manage custom domain names in your Microsoft Entra ID
 
 
 ## Overview
 
-A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. [Global Administrators](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and [Domain name administrators](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) can manage domains in Microsoft Entra ID. 
+A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. The [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role is the least privileged role required to manage domains in Microsoft Entra ID. 
 
 <a name='set-the-primary-domain-name-for-your-azure-ad-organization'></a>
 
@@ -20,7 +21,7 @@ A domain name is an important part of the identifier for resources in many Micro
 
 When your organization is created, the initial domain name, such as "contoso.onmicrosoft.com," is also the primary domain name. The primary domain is the default domain name for a new user when you create a new user. Setting a primary domain name streamlines the process for an administrator to create new users in the portal. To change the primary domain name:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 1. Browse to **Entra ID** > **Domain names**  
 1. Select **Custom domain names**.
 
@@ -62,7 +63,7 @@ To delete a custom domain name, you must first ensure that no resources in your 
 You must change or delete any such resource in your Microsoft Entra organization before you can delete the custom domain name. 
 
 > [!NOTE]
-> To delete the custom domain, use a Global Administrator account that is based on either the default domain (onmicrosoft.com) or a different custom domain (mydomainname.com).
+> To delete the custom domain, use an account with at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role that is based on either the default domain (onmicrosoft.com) or a different custom domain (mydomainname.com).
 
 ## ForceDelete option
 
@@ -103,7 +104,7 @@ Keep your domain names current with your registrar, and verify TXT records for a
 **A:** Today, certain groups like Mail-Enabled Security groups and distributed lists are provisioned by Exchange and need to be manually cleaned up in [Exchange Admin Center](/exchange/exchange-admin-center). There might be lingering ProxyAddresses, which rely on the custom domain name and will need to be updated manually to another domain name. 
 
 **Q: I am logged in as admin\@contoso.com but I cannot delete the domain name “contoso.com”?**<br>
-**A:** You can't reference the custom domain name you're trying to delete in your user account name. Ensure that the Global Administrator account is using the initial default domain name (.onmicrosoft.com) such as admin@contoso.onmicrosoft.com. Sign in with a different Global Administrator account such as admin@contoso.onmicrosoft.com or another custom domain name like “fabrikam.com” where the account is admin@fabrikam.com.
+**A:** You can't reference the custom domain name you're trying to delete in your user account name. Ensure that your account with at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role is using the initial default domain name (.onmicrosoft.com) such as admin@contoso.onmicrosoft.com. Sign in with a different account that has at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role, such as admin@contoso.onmicrosoft.com or another custom domain name like “fabrikam.com” where the account is admin@fabrikam.com.
 
 **Q: I clicked the Delete domain button and see `In Progress` status for the Delete operation. How long does it take? What happens if it fails?**<br>
 **A:**  The delete domain operation is an asynchronous background task that renames all references to the domain name. It might take up to 24 hours to complete. If domain deletion fails, ensure that you don’t have:
