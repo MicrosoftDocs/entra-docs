@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to delegate access governance to access package managers so that they can manage access themselves.
+#Customer Intent: As an IT admin, I want to delegate access governance to access package managers so that they can manage access themselves.
 ---
 
 # Delegate access governance to access package managers in entitlement management
