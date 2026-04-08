@@ -6,6 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: florianf
+#CustomerIntent: As an IT admin, I want to use multi-stage reviews so that I can design more efficient attestation and certification processes.
 ---
  
 # Using multi-stage reviews to meet your attestation and certification needs with Microsoft Entra 
