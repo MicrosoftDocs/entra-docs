@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to
 ai-usage: ai-assisted
+#CustomerIntent: As an IT admin, I want to simulate workflow execution using the What-if tool so that I can preview results without impacting actual users.
 ---
 
 # Simulate workflow execution using the What-if tool (Preview)
