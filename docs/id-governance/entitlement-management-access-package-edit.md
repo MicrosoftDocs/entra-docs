@@ -4,7 +4,7 @@ description: Learn how to hide or delete an access package in Microsoft Entra en
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-#CustomerIntent: As an IT admin, I want to hide or delete an access package so that I can manage the availability of access packages in my organization.
+#Customer Intent: As an IT admin, I want to hide or delete an access package so that I can manage the availability of access packages in my organization.
 ---
 # Hide or delete an access package in entitlement management
 
