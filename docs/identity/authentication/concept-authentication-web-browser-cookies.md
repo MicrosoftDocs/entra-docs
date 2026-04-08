@@ -7,7 +7,9 @@ author: custorod
 ms.reviewer: sahenry, michmcla
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.
+
 ---
+
 # Web browser cookies used in Microsoft Entra authentication
 
 During authentication against Microsoft Entra ID through a web browser, multiple cookies are involved in the process. Some of the cookies are common on all requests. Other cookies are used for specific authentication flows or specific client-side conditions.  
@@ -57,6 +59,21 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 > Cookies identified as client-side cookies are set locally on the client device by JavaScript, hence, will be marked with HttpOnly=false.  
 >
 > Cookie definitions and respective names are subject to change at any moment in time according to Microsoft Entra service requirements.  
+
+## When Cookies Are Missing
+
+The cookies listed above may not be partially or fully provided to Entra ID due to the following reasons:
+
+- Third-party client authentication library implementations
+- Browser-specific implementations
+- Cookies being cleared in the browser
+- Use of InPrivate or Incognito mode in the browser
+
+When cookies are not properly provided to Entra ID, users may experience the following issues. We recommend that customers use supported client libraries (MSAL) or supported browsers to ensure that cookies are fully provided to Entra ID.
+
+- Single sign-on (SSO) does not work, and users are prompted to re-enter their credentials
+- Users may unexpectedly see confirmation dialogs
+- The sign-out flow fails or stops prematurely (for instance, post_logout_redirect_uri parameter is not evaluated)
 
 ## Next steps
 
