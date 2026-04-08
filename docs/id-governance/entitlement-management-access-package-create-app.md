@@ -8,7 +8,7 @@ ms.date: 08/25/2024
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to create an access package for an application with PowerShell so that I can enforce policies for application access.
+#Customer Intent: As an IT admin, I want to create an access package for an application with PowerShell so that I can enforce policies for application access.
 ---
 
 # Create an access package in entitlement management for an application with a single role using PowerShell
