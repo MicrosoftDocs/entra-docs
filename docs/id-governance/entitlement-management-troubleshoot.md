@@ -7,7 +7,7 @@ ms.topic: troubleshooting
 ms.date: 06/02/2025
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to troubleshoot entitlement management issues so that I can resolve problems with access packages and assignments.
+#Customer Intent: As an IT admin, I want to troubleshoot entitlement management issues so that I can resolve problems with access packages and assignments.
 ---
 # Troubleshoot entitlement management
 
