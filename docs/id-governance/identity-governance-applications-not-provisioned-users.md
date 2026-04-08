@@ -7,7 +7,7 @@ ms.date: 12/20/2022
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to govern existing users of an application that doesn't support provisioning so that I can manage access for users not provisioned through Microsoft Entra ID.
+#Customer Intent: As an IT admin, I want to govern existing users of an application that doesn't support provisioning so that I can manage access for users not provisioned through Microsoft Entra ID.
 ---
 
 # Govern the users of an application that does not support provisioning - Microsoft PowerShell
