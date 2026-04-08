@@ -4,7 +4,7 @@ description: Learn how to review user access of entitlement management access pa
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 03/12/2026
-#CustomerIntent: As a user, I want to self-review my access package assignments so that I can confirm my access is still needed.
+#Customer Intent: As a user, I want to self-review my access package assignments so that I can confirm my access is still needed.
 ---
 # Self-review of an access package in entitlement management
 
