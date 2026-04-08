@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 06/26/2024
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include a policy for users to get and lose access package assignments automatically, without them or an administrator needing to request access.
+#CustomerIntent: As an IT admin, I want to configure automatic assignment policies for an access package so that I can automatically assign access based on rules.
 ---
 # Configure an automatic assignment policy for an access package in entitlement management
 
