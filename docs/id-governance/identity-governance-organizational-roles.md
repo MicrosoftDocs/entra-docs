@@ -6,6 +6,7 @@ ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 12/10/2024
 ms.reviewer: markwahl-msft
+#CustomerIntent: As an IT admin, I want to govern access with an organizational role model so that I can migrate existing role definitions to entitlement management.
 ---
 
 # Govern access by migrating an organizational role model to Microsoft Entra ID Governance
