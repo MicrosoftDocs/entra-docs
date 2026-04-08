@@ -5,7 +5,7 @@ editor: markwahl-msft
 ms.topic: how-to
 ms.date: 11/25/2024
 ms.reviewer: markwahl-msft
-#CustomerIntent: As an IT admin, I want to integrate applications with Microsoft Entra ID for identity governance so that I can establish a baseline of reviewed access.
+#Customer Intent: As an IT admin, I want to integrate applications with Microsoft Entra ID for identity governance so that I can establish a baseline of reviewed access.
 ---
 
 # Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access
