@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to
+#CustomerIntent: As an IT admin, I want to run a lifecycle workflow on demand so that I can execute workflow tasks immediately for specific users.
 ---
 
 
