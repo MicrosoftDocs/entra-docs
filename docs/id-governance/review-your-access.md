@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 06/18/2025
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
-#CustomerIntent: As a user, I want to review my own access to groups and applications so that I can confirm my access is still appropriate.
+#Customer Intent: As a user, I want to review my own access to groups and applications so that I can confirm my access is still appropriate.
 ---
 
 # Review access for yourself to groups or applications in access reviews
