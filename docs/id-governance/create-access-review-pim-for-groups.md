@@ -6,6 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: jgangadhar
+#CustomerIntent: As an IT admin, I want to create an access review of PIM for Groups so that I can regularly review privileged group membership.
 ---
  
 # Create an access review of PIM for Groups in Microsoft Entra ID (preview)
