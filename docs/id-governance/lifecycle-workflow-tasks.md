@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
+#CustomerIntent: As an IT admin, I want to understand lifecycle workflow task definitions and parameters so that I can configure workflow tasks correctly.
 ---
 
 # Lifecycle Workflow built-in tasks
