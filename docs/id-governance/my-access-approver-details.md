@@ -4,7 +4,7 @@ description: Learn how to configure whether requestors can see approver details 
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.reviewer: owinfrey
-#CustomerIntent: As an IT admin, I want to configure whether requestors can see approver details in the My Access portal so that I can control the visibility of approval information.
+#Customer Intent: As an IT admin, I want to configure whether requestors can see approver details in the My Access portal so that I can control the visibility of approval information.
 ---
 
 # Configure whether requestors can see approver details (Preview)
