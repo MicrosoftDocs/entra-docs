@@ -2,17 +2,11 @@
 title: 'Microsoft Entra Connect: Declarative Provisioning Expressions'
 description: Explains the declarative provisioning expressions.
 
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: e3ea53c8-3801-4acf-a297-0fb9bb1bf11d
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions
 Microsoft Entra Connect Sync builds on declarative provisioning first introduced in Forefront Identity Manager 2010. It allows you to implement your complete identity integration business logic without the need to write compiled code.

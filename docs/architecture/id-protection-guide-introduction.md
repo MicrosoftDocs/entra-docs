@@ -2,7 +2,6 @@
 title: Introduction to Microsoft Entra ID Protection proof-of-concept guidance
 description: Learn, deploy, and test Microsoft Entra ID Protection so that you can detect, investigate, and remediate identity-based risks.
 author: gargi-sinha
-manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article

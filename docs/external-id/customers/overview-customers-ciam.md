@@ -1,15 +1,8 @@
 ---
 title: External Tenant Overview
 description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: overview
-ms.date: 09/16/2025
+ms.date: 01/30/2026
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -37,11 +30,11 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **Extensions**: If you need to add user attributes and data from external systems, you can create custom authentication extensions for your user flows.
 
-- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google, Facebook, Apple or custom OIDC identities.
+- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google, Facebook, Apple, Microsoft Entra ID, or custom OIDC identities.
 
 - **Encryption keys**: Add and manage encryption keys for signing and validating tokens, client secrets, certificates, and passwords.
 
-Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) and [OIDC](how-to-custom-oidc-federation-customers.md) federation.
+Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md), and [OIDC](how-to-custom-oidc-federation-customers.md) federation.
 
 There are two types of user accounts you can manage in your external tenant:
 
@@ -75,7 +68,7 @@ Learn more about [adding sign-in and sign-up to your app](concept-planning-your-
 
 ## Design user flows for self-service sign-up
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or [Apple](how-to-apple-federation-customers.md), as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), or [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md) federation, as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
 
 Several user flow settings let you control how the customer signs up for the application, including:
 
@@ -110,6 +103,12 @@ Microsoft Entra MFA helps safeguard access to data and applications while mainta
 - You offer multiple apps to your customers, but you don't require MFA for every application. For example, the customer can sign into an auto insurance application with a social or local account, but must verify the phone number before accessing the home insurance application registered in the same directory. In your Conditional Access policy, you can target all users but just those apps for which you want to enforce MFA.
 
 Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
+
+### Machine-to-machine authentication (M2M)
+
+Machine-to-machine (M2M) authentication uses the [OAuth 2.0 client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to let an application authenticate directly with Microsoft Entra ID. This flow is intended for scenarios without user interaction, where backend services need to securely request access tokens and call APIs on their own behalf.
+
+For Microsoft Entra External ID applications, you can configure M2M authentication by using the client credentials flow with either a client secret or a certificate. This approach allows your application to authenticate as itself when accessing APIs. To enable M2M authentication, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure compliance with internal governance and licensing requirements.
 
 ### Microsoft Entra reliability and scalability
 

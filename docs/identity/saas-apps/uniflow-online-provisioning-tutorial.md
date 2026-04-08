@@ -3,8 +3,6 @@ title: Configure uniFLOW Online for automatic user provisioning with Microsoft E
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to uniFLOW Online.
 author: jeevansd
 manager: beatrizd
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: jeedes

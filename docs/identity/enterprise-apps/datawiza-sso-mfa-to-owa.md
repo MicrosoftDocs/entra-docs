@@ -2,8 +2,6 @@
 title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 description: Learn how to configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 author: gargi-sinha
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 07/02/2024
 ms.author: gasinh

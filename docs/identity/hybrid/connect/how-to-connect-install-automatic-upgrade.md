@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect: Automatic upgrade'
 description: This topic describes the built-in automatic upgrade feature in Microsoft Entra Connect Sync.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: 6b395e8f-fa3c-4e55-be54-392dd303c472
-ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect: Automatic upgrade
 Microsoft Entra Connect automatic upgrade is a feature that regularly checks for newer versions of Microsoft Entra Connect. If your server is enabled for automatic upgrade and a newer version is available, it performs an automatic upgrade to the newer version.

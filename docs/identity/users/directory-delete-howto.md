@@ -1,17 +1,15 @@
 ---
 title: Delete a Microsoft Entra tenant
 description: Learn how to prepare a Microsoft Entra tenant, including a self-service tenant, for deletion.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: addimitu
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
 # Delete a tenant in Microsoft Entra ID
+
+
+## Overview
 
 When an organization (tenant) is deleted in Microsoft Entra ID, all resources in the organization are also deleted. Prepare your organization by minimizing its associated resources before you delete. Only a Global Administrator can delete a Microsoft Entra organization from the Microsoft Entra admin center.
 
@@ -32,19 +30,19 @@ Check the following conditions:
   For example, if a default Microsoft Entra tenant was created for you, you can't delete this organization if your subscription still relies on it for authentication. You also can't delete a tenant if an association with another user's subscription remains.
 
 > [!NOTE]
-> Microsoft is aware that customers with certain tenant configurations might be unable to successfully delete their Microsoft Entra organization. We're working to address this problem. If you need more information, contact Microsoft support.
+> Microsoft is aware that customers with certain tenant configurations might be unable to successfully delete their Microsoft Entra organization. Microsoft is working to address this problem. If you need more information, contact Microsoft support.
 
 ## Delete the organization
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID.
+1. Select **Microsoft Entra ID**.
 1. On a tenant's **Overview** page, select **Manage tenants**.
   
-   :::image type="content" source="./media/directory-delete-howto/manage-tenants-command.png" alt-text="Screenshot that shows the button for managing tenants.":::
+    :::image type="content" source="./media/directory-delete-howto/manage-tenants-command.png" alt-text="Screenshot that shows the button for managing tenants.":::
 
 1. Select the checkbox for the tenant that you want to delete, and then select **Delete**.
   
-   :::image type="content" source="./media/directory-delete-howto/manage-tenants-delete-command.png" alt-text="Screenshot that shows the button for deleting an organization.":::
+    :::image type="content" source="./media/directory-delete-howto/manage-tenants-delete-command.png" alt-text="Screenshot that shows the button for deleting an organization.":::
 
 1. If your organization doesn't pass one or more checks, you get a link to more information on how to pass. After you pass all checks, select **Delete** to complete the process.
 
@@ -69,31 +67,31 @@ You can use the Microsoft admin center to put a subscription into the **Deprovis
 
 1. You need to cancel a subscription before you can delete it. Select **Billing** > **Your products**, and then select **Cancel subscription** for the subscription that you want to cancel. 
 
-   :::image type="content" source="./media/directory-delete-howto/cancel-choose-subscription.png" alt-text="Screenshot that shows choosing a subscription to cancel.":::
+    :::image type="content" source="./media/directory-delete-howto/cancel-choose-subscription.png" alt-text="Screenshot that shows choosing a subscription to cancel.":::
 
 1. Complete the feedback form, and then select **Cancel subscription**.
 
-   :::image type="content" source="./media/directory-delete-howto/cancel-command.png" alt-text="Screenshot that shows feedback options and the button for canceling a subscription.":::
+    :::image type="content" source="./media/directory-delete-howto/cancel-command.png" alt-text="Screenshot that shows feedback options and the button for canceling a subscription.":::
 
 1. Select **Delete** for the subscription that you want to delete. If you can't find the subscription on the **Your products** page, make sure that you have **Subscription status** set to **All**.
 
-   :::image type="content" source="./media/directory-delete-howto/delete-command.png" alt-text="Screenshot that shows subscription status and the delete link.":::
+    :::image type="content" source="./media/directory-delete-howto/delete-command.png" alt-text="Screenshot that shows subscription status and the delete link.":::
 
 1. Select the checkbox to accept terms and conditions, and then select **Delete subscription**. All data for the subscription is permanently deleted in three days. You can [reactivate the subscription](/microsoft-365/commerce/subscriptions/reactivate-your-subscription) during the three-day period if you change your mind.
   
-   :::image type="content" source="./media/directory-delete-howto/delete-terms.png" alt-text="Screenshot that shows the link for terms and conditions, along with the button for deleting a subscription.":::  
+    :::image type="content" source="./media/directory-delete-howto/delete-terms.png" alt-text="Screenshot that shows the link for terms and conditions, along with the button for deleting a subscription.":::  
 
-   Now the subscription state is **Disabled**, and the subscription is marked for deletion. The subscription enters the **Deprovisioned** state 72 hours later.
+    Now the subscription state is **Disabled**, and the subscription is marked for deletion. The subscription enters the **Deprovisioned** state 72 hours later.
 
 1. After 72 hours from the time you deleted a subscription, sign in to the Microsoft Entra admin center again. Confirm that no required actions or subscriptions are blocking your organization deletion. You should be able to successfully delete your Microsoft Entra organization.
 
-   :::image type="content" source="./media/directory-delete-howto/delete-checks-passed.png" alt-text="Screenshot that shows resources that passed a subscription check.":::
+    :::image type="content" source="./media/directory-delete-howto/delete-checks-passed.png" alt-text="Screenshot that shows resources that passed a subscription check.":::
    
 ## Delete an Azure subscription
 
-If you have an active or canceled Azure subscription associated with your Microsoft Entra tenant, you can't delete the tenant. After you cancel, billing is stopped immediately. After you cancel a subscription, your billing stops immediately. You can delete your subscription directly using the Azure portal seven days after you cancel it, when the Deleted subscription option becomes available. Once your subscription is deleted. Microsoft waits 30 to 90 days before permanently deleting your data in case you need to access it or reactivate your subscription. We don't charge you for retaining this data. To learn more, see [Microsoft Trust Center - How we manage your data](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409). 
+If you have an active or canceled Azure subscription associated with your Microsoft Entra tenant, you can't delete the tenant. After you cancel a subscription, your billing stops immediately. You can delete your subscription directly using the Azure portal seven days after you cancel it, when the Deleted subscription option becomes available. Once your subscription is deleted, Microsoft waits 30 to 90 days before permanently deleting your data in case you need to access it or reactivate your subscription. We don't charge you for retaining this data. To learn more, see [Microsoft Trust Center - How we manage your data](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409). 
 
-If you have a free trial or pay-as-you-go subscription. You can delete your subscription three days after you cancel it, when the **Delete subscription** option becomes available. For details, read through [Delete free trial or pay-as-you-go subscriptions](/azure/cost-management-billing/manage/cancel-azure-subscription#delete-subscriptions).
+If you have a free trial or pay-as-you-go subscription, you can delete your subscription three days after you cancel it, when the **Delete subscription** option becomes available. For details, read through [Delete free trial or pay-as-you-go subscriptions](/azure/cost-management-billing/manage/cancel-azure-subscription#delete-subscriptions).
 
 All other subscription types are deleted only through the [subscription cancellation](/azure/cost-management-billing/manage/cancel-azure-subscription#cancel-a-subscription-in-the-azure-portal) process. In other words, you can't delete a subscription directly unless it's a free trial or pay-as-you-go subscription.
 
@@ -106,65 +104,60 @@ After you have all the Azure, Office 365, and Microsoft 365 subscriptions cancel
 A few enterprise applications can't be deleted in the Microsoft Entra admin center and might block you from deleting the tenant. 
 
 > [!WARNING]
-> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
+> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You might have to adjust the code to meet the specific needs of your environment.
 
 Use the following PowerShell code to remove those applications:
 
 1. [Install](/powershell/microsoftgraph/installation) the Microsoft Graph PowerShell module by running the following command:
 
-   ```powershell
-   Install-Module Microsoft.Graph
-   ```
+    ```powershell
+    Install-Module Microsoft.Graph
+    ```
 
-2. Install the Az PowerShell module by running the following command:
+1. Install the Az PowerShell module by running the following command:
 
-   ```powershell
-   Install-Module -Name Az
-   ```
+    ```powershell
+    Install-Module -Name Az
+    ```
 
-3. Create or use a managed administrative account from the tenant that you want to delete. For example: `newAdmin@tenanttodelete.onmicrosoft.com`.
+1. Create or use a managed administrative account from the tenant that you want to delete. For example: `newAdmin@tenanttodelete.onmicrosoft.com`.
 
-4. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph`
+1. Open PowerShell and connect to Microsoft Entra ID by using admin credentials with the following command: `Connect-MgGraph -Scopes "Application.ReadWrite.All"`
 
-   >[!WARNING]
-   > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via Powershell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
-   >
-   > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
+    > [!WARNING]
+    > You must run PowerShell by using admin credentials for the tenant that you're trying to delete. Only homed-in admins have access to manage the directory via PowerShell. You can't use guest user admins, Microsoft accounts, or multiple directories. 
+    >
+    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Microsoft Graph PowerShell module. We recommend that you run the `Get-MgDomain` command to confirm that you're connected to the correct tenant ID and `onmicrosoft.com` domain.
 
-5. Run the following commands to set the tenant context.  DO NOT skip these steps or you run the risk of deleting enterprise apps from the wrong tenant.
+1. Run the following commands to verify your tenant context with the Az PowerShell module. This step is a safety check to confirm you're connected to the correct tenant. **Don't skip these steps or you risk deleting enterprise apps from the wrong tenant.**
 
-   ```powershell
-   Clear-AzContext -Scope CurrentUser
-   Connect-AzAccount -Tenant <object id of the tenant you are attempting to delete>
-   Get-AzContext
-   ```
+    ```powershell
+    Clear-AzContext -Scope CurrentUser
+    Connect-AzAccount -Tenant <object id of the tenant you are attempting to delete>
+    Get-AzContext
+    ```
 
-   >[!WARNING]
-   > Before you proceed, verify that you're connected to the tenant that you want to delete with the Az PowerShell module. We recommend that you run the `Get-AzContext` command to check the connected tenant ID and `onmicrosoft.com` domain.  Do NOT skip the above steps or you run the risk of deleting enterprise apps from the wrong tenant.
+    > [!WARNING]
+    > Before you proceed, verify that you're connected to the tenant that you want to delete with the Az PowerShell module. We recommend that you run the `Get-AzContext` command to check the connected tenant ID and `onmicrosoft.com` domain.  Do NOT skip the above steps or you run the risk of deleting enterprise apps from the wrong tenant.
 
-6. Run the following command to remove any enterprise apps that you can't delete:
+1. Run the following command to remove service principals. Run the command multiple times until all service principals are removed, since some might fail on the first attempt due to dependencies.
 
-   ```powershell
-   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ObjectId $_.Id }
-   ```
+    ```powershell
+    Get-MgServicePrincipal -All | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
+    ```
 
-7. Run the following command to remove applications and service principals:
+1. If some service principals can't be deleted, disable them so they don't block tenant deletion, and then retry the removal:
 
-   ```powershell
-   Get-MgServicePrincipal | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
-   ```
+    ```powershell
+    $ServicePrincipalUpdate = @{ "accountEnabled" = "false" }
 
-8. Run the following command to disable any blocking service principals:
+    Get-MgServicePrincipal -All | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
+    Get-MgServicePrincipal -All | ForEach-Object { Remove-MgServicePrincipal -ServicePrincipalId $_.Id }
+    ```
 
-   ```powershell
-   $ServicePrincipalUpdate =@{ "accountEnabled" = "false" }
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), and remove any new admin account that you created in step 3.
 
-   Get-MgServicePrincipal | ForEach-Object { Update-MgServicePrincipal -ServicePrincipalId $_.Id -BodyParameter $ServicePrincipalUpdate }
-   ```
-
-9. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), and remove any new admin account that you created in step 3.
-
-10. Retry tenant deletion from the Microsoft Entra admin center.
+1. Retry tenant deletion from the Microsoft Entra admin center.
 
 ## Handle a trial subscription that blocks deletion
 
@@ -192,11 +185,11 @@ Product state | Data | Access to data
 
 You can put a self-service sign-up product like Microsoft Power BI or Azure RMS into a **Delete** state to be immediately deleted in the Microsoft Entra admin center:
 
->[!NOTE]
+> [!NOTE]
 > If you're trying to delete the Contoso organization that has the initial default domain `contoso.onmicrosoft.com`, sign in with a UPN such as `admin@contoso.onmicrosoft.com`.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID.
+1. Select **Microsoft Entra ID**.
 1. Select **Licenses**, and then select **Self-service sign-up products**. You can see all the self-service sign-up products separately from the seat-based subscriptions. Choose the product that you want to permanently delete. Here's an example in Microsoft Power BI:
 
     :::image type="content" source="./media/directory-delete-howto/licenses-page.png" alt-text="Screenshot that shows a list of self-service sign-up products.":::

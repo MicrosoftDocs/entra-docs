@@ -1,13 +1,9 @@
 ---
 title: Manage mappings and users in applications that did not match to users in Microsoft Entra ID | Microsoft Docs
 description: The Microsoft Entra provisioning service matches users in Microsoft Entra ID with users already in an application. In some cases, an application may have users that do not match with any in Microsoft Entra ID.
-author: markwahl-msft
-manager: pmwongera
 editor: markwahl-msft
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
 ---
@@ -27,6 +23,9 @@ These inconsistencies between Microsoft Entra ID and an existing application's d
 * the organization was using an identity management product which independently provisioned Windows Server AD and the application with different communities. For example, store employees needed application access but did not require Exchange mailboxes, so store employees were not represented in Windows Server AD or Microsoft Entra ID.
 
 Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those users from the application that did not match. This article outlines options for how to resolve for different situations that a user could not be matched.
+
+> [!TIP]
+> For supported applications, you can use [Account Discovery](how-to-account-discovery.md) to automatically scan the target application and categorize existing users as local accounts, unassigned users, or assigned users. This provides visibility into the application's user landscape before you configure provisioning.
 
 ## Determine if there are users in the application that did not match
 
@@ -247,6 +246,7 @@ Once you have completed the necessary updates and confirm all users from the app
 
 ## Next steps
 
+- [Discover existing user accounts in target applications](how-to-account-discovery.md)
 - [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](~/id-governance/identity-governance-applications-integrate.md)
 - [Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell](~/id-governance/identity-governance-applications-existing-users.md)
 - [Prepare for an access review of users' access to an application](~/id-governance/access-reviews-application-preparation.md)

@@ -1,14 +1,8 @@
 ---
 title: Disable auto-acceleration sign-in
 description: Learn how to prevent domain_hint auto-acceleration to federated IDPs using Home Realm Discovery policy.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: ludwignick
 zone_pivot_groups: enterprise-apps-minus-portal-aad
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, 

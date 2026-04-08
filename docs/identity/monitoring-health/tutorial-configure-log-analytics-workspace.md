@@ -1,13 +1,8 @@
 ---
 title: Configure a Log Analytics workspace and a custom workbook
 description: Learn how to configure a Log Analytics workspace, create a workbook, and run Kusto queries in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: monitoring-health
 ms.topic: tutorial
 ms.date: 03/27/2025
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.

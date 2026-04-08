@@ -1,15 +1,9 @@
 ---
 title: 'Quickstart: Add an enterprise application'
 description: Learn to add pre-integrated apps to your Microsoft Entra tenant with clear, step-by-step instructions.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: quickstart
 
 ms.date: 03/31/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: mode-other, enterprise-apps
 #customer intent: As an IT admin, I want to add an enterprise application to my Microsoft Entra tenant, so that I can provide my organization with access to pre-integrated applications from the gallery.

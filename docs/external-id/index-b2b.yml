@@ -6,12 +6,8 @@ summary: Microsoft Entra External ID is a solution for managing your external id
 metadata:
   title: External ID for business guests documentation
   description: Microsoft Entra External ID enables secure and efficient workforce collaboration with business guests and partners.
-  ms.service: entra-external-id   
   ms.topic: landing-page
   ms.date: 04/15/2025
-  ms.author: cmulligan
-  author: csmulligan
-  manager: dougeby
 
 landingContent:
   - title: About External ID

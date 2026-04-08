@@ -3,9 +3,7 @@ title: Configure Global Secure Access cloud firewall with remote networks for in
 description: Learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 author: jenniferf-skc    
 ms.author: jfields
-manager: pmwongera
 ms.topic: how-to
-ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.date: 11/18/2025
 ms.custom: it-pro

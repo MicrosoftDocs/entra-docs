@@ -1,13 +1,8 @@
 ---
 title: Prevent attacks using smart lockout
 description: Learn how Microsoft Entra smart lockout helps protect your organization from brute-force attacks that try to guess user passwords.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 04/29/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: rogoya
 ms.custom: sfi-image-nochange
 ---
@@ -88,7 +83,7 @@ To check or modify the smart lockout values for your organization, complete the 
 > [!NOTE]
 > If the first sign-in after a lockout period has expired also fails, the account locks out again. If an account locks repeatedly, the lockout duration increases.
 
-![Customize the Microsoft Entra smart lockout policy in the Microsoft Entra admin center](./media/howto-password-smart-lockout/azure-entra-custom-smart-lockout-policy.png)
+   :::image type="content" border="true" source="media/howto-password-smart-lockout/custom-smart-lockout-policy.png" alt-text="Screenshot that shows how to customize the Microsoft Entra smart lockout policy in the Microsoft Entra admin center."lightbox="media/howto-password-smart-lockout/custom-smart-lockout-policy.png":::
 
 ## Testing Smart lockout
 

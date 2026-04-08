@@ -1,14 +1,9 @@
 ---
 title: Configure a GitHub Enterprise Cloud Organization for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and a GitHub Enterprise Cloud Organization.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub so that I can control who has access to GitHub, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -183,6 +178,9 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Go to GitHub Sign-on URL directly and initiate the login flow from there.
 
 * You can use Microsoft My Apps. When you select the GitHub tile in the My Apps, this option redirects to GitHub Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+> [!NOTE]
+> If a user has Global Administrator rights in Microsoft Entra ID, they can sign in through the SSO endpoint on your GitHub organization without being added as a member of the enterprise application. They can also self-join the organization without an invite.
 
 ## Related content
 

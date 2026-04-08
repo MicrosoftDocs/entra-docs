@@ -19,7 +19,7 @@ highlightedContent:
       itemType: overview
       url: /entra/fundamentals/what-is-entra
     - title: What is Microsoft Entra Agent ID?
-      url: /entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents
+      url: /entra/agent-id/identity-professional/what-is-microsoft-entra-agent-id
       itemType: overview
     - title: Identity and access fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts

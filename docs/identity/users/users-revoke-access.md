@@ -1,34 +1,52 @@
 ---
 title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
-
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.reviewer: krbain
-ms.date: 01/07/2025
+ms.reviewer: yukarppa
+ms.date: 04/02/2026
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Revoke user access in Microsoft Entra ID
 
+
+## Overview
+
 Scenarios that could require an administrator to revoke all access for a user include compromised accounts, employee termination, and other insider threats. Depending on the complexity of the environment, administrators can take several steps to ensure access is revoked. In some scenarios, there could be a period between the initiation of access revocation and when access is effectively revoked.
 
 To mitigate the risks, you must understand how tokens work. There are many kinds of tokens, which fall into one of the patterns discussed in this article.
+
+## Prerequisites
+
+The PowerShell steps in this article require the following:
+
+- [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) installed. Install the required modules:
+
+    ```PowerShell
+    Install-Module Microsoft.Graph.Users
+    Install-Module Microsoft.Graph.Users.Actions
+    Install-Module Microsoft.Graph.Identity.DirectoryManagement
+    ```
+
+- Sign in with an account that has the appropriate roles. Different steps require different roles:
+    - Disable user accounts: [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) for non-admin users, or [Privileged Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) for admin accounts.
+    - Disable devices: [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator) at minimum.
+- Connect to Microsoft Graph with the required scopes:
+
+    ```PowerShell
+    Connect-MgGraph -Scopes "User.ReadWrite.All","Directory.AccessAsUser.All"
+    ```
 
 ## Access tokens and refresh tokens
 
 Access tokens and refresh tokens are frequently used with thick client applications, and also used in browser-based applications such as single page apps.
 
 - When users authenticate to Microsoft Entra ID, part of Microsoft Entra, authorization policies are evaluated to determine if the user can be granted access to a specific resource.
-- Once authorized, Microsoft Entra ID issues an access token and a refresh token for the resource.
+- After authorization, Microsoft Entra ID issues an access token and a refresh token for the resource.
 - If the authentication protocol allows, the app can silently reauthenticate the user by passing the refresh token to Microsoft Entra ID when the access token expires. By default, access tokens issued by Microsoft Entra ID last for 1 hour.
-- Microsoft Entra ID then reevaluates its authorization policies. If the user is still authorized, Microsoft Entra ID issues a new access token and refreshes token.
+- Microsoft Entra ID then reevaluates its authorization policies. If the user is still authorized, Microsoft Entra ID issues a new access token and refresh token.
 
-Access tokens may pose a security risk if they need to be revoked within a period shorter than their typical one-hour lifespan. For this reason, Microsoft is actively working to bring [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) to Office 365 applications, which helps ensure invalidation of access tokens in near real time.  
+Access tokens might pose a security risk if they need to be revoked within a period shorter than their typical one-hour lifespan. For this reason, Microsoft is actively working to bring [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) to Office 365 applications, which helps ensure invalidation of access tokens in near real time.  
 
 ## Session tokens (cookies)
 
@@ -36,15 +54,15 @@ Most browser-based applications use session tokens instead of access and refresh
 
 - When a user opens a browser and authenticates to an application via Microsoft Entra ID, the user receives two session tokens. One from Microsoft Entra ID and another from the application.  
 
-- Once the application issues its own session token, the application controls access based on its authorization policies.
+- After the application issues its own session token, the application controls access based on its authorization policies.
 
-- The authorization policies of Microsoft Entra ID are reevaluated as often as the application sends the user back to Microsoft Entra ID. Reevaluation usually happens silently, though the frequency depends on how the application is configured. It's possible that the app may never send the user back to Microsoft Entra ID as long as the session token is valid.
+- The authorization policies of Microsoft Entra ID are reevaluated as often as the application sends the user back to Microsoft Entra ID. Reevaluation usually happens silently, though the frequency depends on how the application is configured. It's possible that the app might never send the user back to Microsoft Entra ID as long as the session token is valid.
 
-- For a session token to be revoked, the application must revoke access based on its own authorization policies. Microsoft Entra ID can't directly revoke a session token issued by an application.  
+- To revoke a session token, the application must revoke access based on its own authorization policies. Microsoft Entra ID can't directly revoke a session token issued by an application.
 
 ## Revoke access for a user in the hybrid environment
 
-For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends IT admins to take the following actions. If you have a **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
+For a hybrid environment with on-premises Active Directory synchronized with Microsoft Entra ID, Microsoft recommends that IT admins take the following actions. If you have a **Microsoft Entra-only environment**, skip to the [Microsoft Entra environment](#azure-active-directory-environment) section.
 
 
 ### On-premises Active Directory environment
@@ -57,10 +75,10 @@ As an admin in the Active Directory, connect to your on-premises network, open P
     Disable-ADAccount -Identity johndoe  
     ```
 
-2. Reset the user's password twice in the Active Directory. Refer to [Set-ADAccountPassword](/powershell/module/activedirectory/set-adaccountpassword).
+1. Reset the user's password twice in the Active Directory. Refer to [Set-ADAccountPassword](/powershell/module/activedirectory/set-adaccountpassword).
 
     > [!NOTE]
-    > The reason for changing a user's password twice is to mitigate the risk of pass-the-hash, especially if there are delays in on-premises password replication. If you can safely assume this account isn't compromised, you may reset the password only once.
+    > The reason for changing a user's password twice is to mitigate the risk of pass-the-hash, especially if there are delays in on-premises password replication. If you can safely assume this account isn't compromised, you might reset the password only once.
 
     > [!IMPORTANT]
     > Don't use the example passwords in the following cmdlets. Be sure to change the passwords to a random string.
@@ -74,7 +92,7 @@ As an admin in the Active Directory, connect to your on-premises network, open P
 
 ### Microsoft Entra environment
 
-As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph`, and take the following actions:
+As an administrator in Microsoft Entra ID, open PowerShell, connect to Microsoft Graph with the required scopes (see [Prerequisites](#prerequisites)), and take the following actions:
 
 1. Disable the user in Microsoft Entra ID. Refer to [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser).
 
@@ -83,20 +101,21 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
     Update-MgUser -UserId $User.Id -AccountEnabled:$false
     ```
 
-2. Revoke the user's Microsoft Entra ID refresh tokens. Refer to [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
+1. Revoke the user's Microsoft Entra ID refresh tokens. Refer to [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession).
 
     ```PowerShell
     Revoke-MgUserSignInSession -UserId $User.Id
     ```
 
-3. Disable the user's devices. Refer to [Get-MgUserRegisteredDevice](/powershell/module/microsoft.graph.users/get-mguserregistereddevice).
+1. Disable the user's devices. Refer to [Get-MgUserRegisteredDevice](/powershell/module/microsoft.graph.users/get-mguserregistereddevice).
 
     ```PowerShell
-    $Device = Get-MgUserRegisteredDevice -UserId $User.Id 
-    Update-MgDevice -DeviceId $Device.Id -AccountEnabled:$false
+    Get-MgUserRegisteredDevice -UserId $User.Id -All | ForEach-Object {
+        Update-MgDevice -DeviceId $_.Id -AccountEnabled:$false
+    }
     ```
 
->[!NOTE]
+> [!NOTE]
 > For information on specific roles that can perform these steps review [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
 
@@ -104,7 +123,7 @@ As an administrator in Microsoft Entra ID, open PowerShell, run `Connect-MgGraph
 
 ## When access is revoked
 
-Once admins take the above steps, the user can't gain new tokens for any application tied to Microsoft Entra ID. The elapsed time between revocation and the user losing their access depends on how the application is granting access:
+After admins take the above steps, the user can't gain new tokens for any application tied to Microsoft Entra ID. The elapsed time between revocation and the user losing their access depends on how the application is granting access:
 
 - For **applications using access tokens**, the user loses access when the access token expires.
 

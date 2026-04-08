@@ -2,16 +2,9 @@
 title: Configure Predictix Ordering for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Predictix Ordering.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Predictix Ordering so that I can control who has access to Predictix Ordering, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure Predictix Ordering for Single sign-on with Microsoft Entra ID
@@ -89,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<companyname-pricing>.ordering.predictix.com/sso/request`
 
 	> [!NOTE]
-	> These values are placeholders. Update these values with the actual Identifier and Sign on URL. Contact the [Predictix Ordering support team](https://www.predix.io/support/) to get the values. You can also refer to the patterns shown in the **Basic SAML Configuration** dialog box.
+	> These values are placeholders. Update these values with the actual Identifier and Sign on URL. Contact the Predictix Ordering support team to get the values. You can also refer to the patterns shown in the **Basic SAML Configuration** dialog box.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select the **Download** link next to **Certificate (Base64)**, per your requirements, and save the certificate on your computer:
 
@@ -105,11 +98,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Predictix Ordering SSO
 
-To configure single sign-on on the Predictix Ordering side, you need to send the certificate that you downloaded and the URLs that you copied to the [Predictix Ordering support team](https://www.predix.io/support/). This team ensures the SAML SSO connection is set properly on both sides.
+To configure single sign-on on the Predictix Ordering side, you need to send the certificate that you downloaded and the URLs that you copied to the Predictix Ordering support team. This team ensures the SAML SSO connection is set properly on both sides.
 
 ### Create a Predictix Ordering test user
 
-Next, you need to create a user named Britta Simon in Predictix Ordering. Work with the [Predictix Ordering support team](https://www.predix.io/support/) to add users. Users need to be created and activated before you use single sign-on.
+Next, you need to create a user named Britta Simon in Predictix Ordering. Work with the Predictix Ordering support team to add users. Users need to be created and activated before you use single sign-on.
 
 ## Test SSO
 

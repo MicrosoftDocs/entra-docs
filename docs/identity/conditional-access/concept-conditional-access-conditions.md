@@ -1,18 +1,13 @@
 ---
 title: How to Use Conditions in Conditional Access Policies
 description: Explore Conditional Access conditions, including user risk, sign-in risk, and insider risk, to secure your organization's resources with tailored policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 11/05/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 04/01/2026
 ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
+
+## Overview
 
 In a Conditional Access policy, admins use one or more signals to improve policy decisions.
 
@@ -99,7 +94,7 @@ When policy blocks the use of Exchange ActiveSync, the affected user receives a 
       - Admins can apply policy only to supported platforms (such as iOS, Android, and Windows) through the Conditional Access Microsoft Graph API.
    - Other clients
       - This option includes clients that use basic/legacy authentication protocols that don’t support modern authentication.
-         - SMTP - Used by POP and IMAP client's to send email messages.
+         - SMTP - Used by POP and IMAP clients to send email messages.
          - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
          - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
          - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and non-Microsoft apps.
@@ -150,7 +145,7 @@ These browsers support device authentication, allowing the device to be identifi
 
 #### Why do I see a certificate prompt in the browser
 
-On Windows 7, iOS, Android, and macOS devices are identified using a client certificate. This certificate is provisioned when the device is registered. When a user first signs in through the browser the user is prompted to select the certificate. The user must select this certificate before using the browser.
+On iOS, Android, and macOS devices are identified using a client certificate. This certificate is provisioned when the device is registered. When a user first signs in through the browser the user is prompted to select the certificate. The user must select this certificate before using the browser.
 
 #### Chrome support
 
@@ -172,13 +167,6 @@ To automatically deploy the Microsoft Single Sign On extension to Chrome browser
 - Type: `REG_SZ (String)`
 - Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https://clients2.google.com/service/update2/crx`
 
-For Chrome support in **Windows 8.1 and 7**, create the following registry key:
-
-- Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`
-- Name: `1`
-- Type: `REG_SZ (String)`
-- Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
-
 ##### macOS
 
 macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
@@ -193,11 +181,10 @@ This setting has an effect on access attempts made from the following mobile app
 
 | Client apps | Target Service | Platform |
 | --- | --- | --- |
-| Dynamics CRM app | Dynamics CRM | Windows 10, Windows 8.1, iOS, and Android |
+| Dynamics CRM app | Dynamics CRM | Windows 10, iOS, and Android |
 | Mail/Calendar/People app, Outlook 2016, Outlook 2013 (with modern authentication)| Exchange Online | Windows 10 |
 | MFA and location policy for apps. Device-based policies aren’t supported.| Any My Apps app service | Android and iOS |
-| Microsoft Teams Services - this client app controls all services that support Microsoft Teams and all its Client Apps - Windows Desktop, iOS, Android, WP, and web client | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android, and macOS |
-| Office 2016 apps, Office 2013 (with modern authentication), [OneDrive sync client](/sharepoint/enable-conditional-access) | SharePoint | Windows 8.1, Windows 7 |
+| Microsoft Teams Services - this client app controls all services that support Microsoft Teams and all its Client Apps - Windows Desktop, iOS, Android, WP, and web client | Microsoft Teams | Windows 10, iOS, Android, and macOS |
 | Office 2016 apps, Universal Office apps, Office 2013 (with modern authentication), [OneDrive sync client](/sharepoint/enable-conditional-access) | SharePoint Online | Windows 10 |
 | Office 2016 (Word, Excel, PowerPoint, OneNote only). | SharePoint | macOS |
 | Office 2019| SharePoint | Windows 10, macOS |
@@ -205,11 +192,9 @@ This setting has an effect on access attempts made from the following mobile app
 | Office Yammer app | Yammer | Windows 10, iOS, Android |
 | Outlook 2019 | SharePoint | Windows 10, macOS |
 | Outlook 2016 (Office for macOS) | Exchange Online | macOS |
-| Outlook 2016, Outlook 2013 (with modern authentication), Skype for Business (with modern authentication) | Exchange Online | Windows 8.1, Windows 7 |
 | Outlook mobile app | Exchange Online | Android, iOS |
-| Power BI app | Power BI service | Windows 10, Windows 8.1, Windows 7, Android, and iOS |
-| Skype for Business | Exchange Online| Android, iOS |
-| Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, Windows 8.1, Windows 7, iOS, and Android |
+| Power BI app | Power BI service | Windows 10, Android, and iOS |
+| Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, iOS, and Android |
 
 ### Exchange ActiveSync clients
 
@@ -221,7 +206,7 @@ If the access control assigned to the policy uses **Require approved client app*
 
 For more information, see the following articles:
 
-- [Block legacy authentication with Conditional Access](block-legacy-authentication.md)
+- [Block legacy authentication with Conditional Access](policy-block-legacy-authentication.md)
 - [Requiring approved client apps with Conditional Access](./policy-all-users-device-compliance.md)
 
 ### Other clients

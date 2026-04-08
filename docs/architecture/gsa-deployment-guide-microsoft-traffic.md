@@ -2,12 +2,9 @@
 title: Microsoft Global Secure Access deployment guide for Microsoft Traffic
 description: Deploy and verify Microsoft Global Secure Access for Microsoft Traffic
 customer intent: As a Microsoft Partner, I want to deploy Microsoft Traffic as a Proof of Concept in my production or test environment.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/06/2025
-ms.author: jricketts
 ---
 # Microsoft Global Secure Access deployment guide for Microsoft Traffic
 

@@ -1,48 +1,46 @@
 ---
 title: User management enhancements
 description: Describes how Microsoft Entra ID enables user search, filtering, and more information about your users.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/06/2025
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, sfi-image-nochange
 ---
 
 # User management enhancements in Microsoft Entra ID
 
+
+## Overview
+
 This article describes how to use the user management enhancements in the Microsoft Entra admin center. In this article, you review the **All users** and **user profile** pages.
 
 Enhancements include:
 
-- Preloaded scrolling so that you no longer have to select "Load more" to view more users 
-- More user properties can be added as columns including city, country/region, employee ID, employee type, and external user state
-- More user properties can be filtered on including custom security attributes, on-premises extension attributes, and manager 
-- More ways to customize your view, like using drag-and-drop to reorder columns 
-- Copy and share your customized All Users view with others 
-- An enhanced User Profile experience that gives you quick insights about a user and lets you view and edit more properties 
+- Preloaded scrolling so that you no longer have to select **Load more** to view more users.
+- More user properties can be added as columns including city, country/region, employee ID, employee type, and external user state.
+- More user properties can be filtered on including custom security attributes, on-premises extension attributes, and manager.
+- More ways to customize your view, like using drag-and-drop to reorder columns.
+- Copy and share your customized All Users view with others.
+- An enhanced User Profile experience that gives you quick insights about a user and lets you view and edit more properties.
 
 > [!NOTE]
 > These enhancements aren't currently available for Azure AD B2C tenants.
 
 ## All users page
 
-We’ve made some changes to the columns and filters available on the **All users** page. In addition to the existing columns for managing your list of users, we've added the option to add more user properties as columns and filters including employee ID, employee hire date, on-premises attributes, and more. 
+The columns and filters available on the **All users** page have been updated. In addition to the existing columns for managing your list of users, the option to add more user properties as columns and filters including employee ID, employee hire date, on-premises attributes, and more has been added.
 
 :::image type="content" source="./media/users-search-enhanced/user-properties.png" alt-text="Screenshot of new user properties displayed on All users page and user profile pages.":::
 
 ### Reorder columns
 
-You can customize your list view by reordering the columns on the page in one of two ways. One way is to directly drag and drop the columns on the page. Another way is to select **Columns** to open the column picker and then drag and drop the three- dot "handle" next to any given column. 
+You can customize your list view by reordering the columns on the page in one of two ways. One way is to directly drag and drop the columns on the page. Another way is to select **Columns** to open the column picker and then drag and drop the three-dot "handle" next to any given column.
 
 ### Share views
 
 If you want to share your customized list view with another person, you can select **Copy link to current view** in the upper right corner to share a link to the view. 
 
-## User Profile enhancements
+## User profile enhancements
 
 The user profile page is now organized into three tabs: **Overview**, **Monitoring**, and **Properties**.  
 
@@ -81,7 +79,7 @@ You can edit properties by selecting the pencil icon next to any category, which
 **User operations**
 
 - [Add or change profile information](~/fundamentals/how-to-manage-user-profile-info.md)
-- [Add or delete users](~/fundamentals/add-users.md)
+- [Add or delete users](~/fundamentals/how-to-create-delete-users.yml)
 
 **Bulk operations**
 

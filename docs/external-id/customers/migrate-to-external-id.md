@@ -4,7 +4,7 @@ description: 'Transition to Microsoft Entra External ID for CIAM: Learn how to m
 ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.date: 07/30/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.service: entra-external-id
 ms.subservice: external
 ms.collection:

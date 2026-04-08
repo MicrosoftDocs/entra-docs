@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
 description: Learn how to deploy employee lifecycle automation in Microsoft Entra ID Governance.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 04/17/2025

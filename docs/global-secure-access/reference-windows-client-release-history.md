@@ -1,12 +1,10 @@
 ---
 title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
-ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/05/2025
+ms.date: 02/09/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 
@@ -22,6 +20,43 @@ You can download the current version of the Global Secure Access client from the
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
+## Version 2.26.108
+Released for download on February 9, 2026.
+### Functional changes
+- Support for Private Access for Microsoft Entra-registered devices (preview). For more information, see [Bring Your Own Device](concept-bring-your-own-device.md).
+- Removes **Device is Microsoft Entra Joined** and **Entra user signed in to Windows** from health check tests since these checks are no longer prerequisites. The client supports Microsoft Entra-registered devices.
+- Optimizes Intelligent Local Access (ILA) detection by reevaluating the status on each network change.
+- The client interface adds **Join type** to indicate whether the device is registered or joined to the user's Microsoft Entra ID tenant.
+- The Global Secure Access tracert includes a 50-MB speed test between the client and the edge.
+- Support for Windows in Turkish.
+### Other changes
+- The Global Secure Access client certificate is removed if the certificate is no longer needed.
+- Improves management of stale internal Global Secure Access connections going on the network.
+- Adds power configuration and logs, Windows services list, and drivers list to the collected logs.
+- Enhances the logs for the log collection process.
+- Enhances the health check tests.
+- Accessibility improvements.
+- New telemetries are available.
+- Miscellaneous bug fixes and improvements.
+
+## Version 2.24.117
+Released for download on December 3, 2025.
+### Functional changes
+- Support for [Intelligent Local Access](enable-intelligent-local-access.md).
+- Support for [B2B guest access](concept-external-user-access.md).
+- The client package includes a tracert tool.
+- Support to display the **Disable Private Access** button when the **Disable** button is hidden. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
+- The Global Secure Access interface includes a **View account** link to the user's Microsoft Entra **My Account** homepage.
+### Other changes
+- Improved error messages when installing client version intended for a different platform (x64 client on an Arm device or Arm client on an x64 device).
+- Logs collect Kerberos registry keys.
+- Improved log writing to event trace log (ETL) files.
+- The health check test for NRPT rules supports non-English versions of Windows.
+- The client installer includes .NET Runtime version 8.0.21.
+- The client installer includes OneAuth version 6.5.0.
+- New telemetries are available.
+- Miscellaneous bug fixes and improvements.   
+
 ## Version 2.22.90
 Released for download on November 5, 2025.
 ### Functional changes
@@ -30,7 +65,7 @@ Released for download on November 5, 2025.
 - The **Get policy** button lets you poll the Global Secure Access cloud service for the latest forwarding profile.
 - Bug fix: the client uses Private DNS only when the Private Access channel is active.
 ### Other changes
-- New telemetries are now available.
+- New telemetries are available.
 - Miscellaneous bug fixes and improvements.
 
 ## Version 2.20.56
@@ -85,7 +120,7 @@ Released for download on November 26, 2024.
 ### Functional changes
 - Adds support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
+> The mTLS connection gradually rolls out to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Adds support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Shows health check tests when loading a log zip file to Advanced diagnostics.
 - Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 

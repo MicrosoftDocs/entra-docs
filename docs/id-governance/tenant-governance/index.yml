@@ -1,0 +1,66 @@
+### YamlMime:Landing
+
+title: Microsoft Entra tenant governance documentation (preview)
+summary: Microsoft Entra tenant governance helps organizations discover, manage, and govern tenants across their environment with centralized policies and cross-tenant delegated administration.
+
+metadata:
+  description: "Learn how to discover, manage, and govern Microsoft Entra tenants across your organization."
+  ms.date: 03/02/2026
+  ms.topic: landing-page
+  ms.service: entra
+  titleSuffix: Microsoft Entra ID Governance
+  author: barclayn
+  ms.author: barclayn
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+  # Card
+  - title: About tenant governance
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is tenant governance?
+            url: overview.md
+
+  # Card
+  - title: Concepts
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Related tenants
+            url: related-tenants.md
+          - text: Signals and metrics
+            url: signals-metrics.md
+          - text: Governance relationships
+            url: governance-relationships.md
+          - text: Governance policy templates
+            url: governance-policy-templates.md
+          - text: Cross-tenant delegated administration
+            url: cross-tenant-delegated-administration.md
+          - text: Configuration management
+            url: configuration-management.md
+
+  # Card
+  - title: How-to guides
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Enable tenant discovery
+            url: how-to-enable-tenant-discovery.md
+          - text: Set up a governance relationship
+            url: how-to-set-up-governance-relationship.md
+          - text: Use delegated administration and monitor activity
+            url: how-to-delegated-administration.md
+          - text: Configuration management
+            url: configuration-management.md
+          - text: Create a tenant
+            url: how-to-create-tenant.md
+
+  # Card
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Frequently asked questions
+            url: faq.yml

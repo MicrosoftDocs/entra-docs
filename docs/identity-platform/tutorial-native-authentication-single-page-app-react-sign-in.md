@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 02/07/2025
+ms.date: 11/17/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication API so that I can sign in users with a username (email) and password.
 ---
 
@@ -326,6 +326,10 @@ export const AppRoutes = () => {
 ## Run and test your app
 
 Use the steps in [Run and test you app](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md#run-and-test-you-app) to run your app, but this time, test the sign in flow by using the user account that you signed up earlier.
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next step
 

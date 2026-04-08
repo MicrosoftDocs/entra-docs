@@ -1,23 +1,20 @@
 ---
 title: Conditional Access - Require approved app or app protection policy
 description: Create a custom Conditional Access policy require approved app or app protection policy
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 04/01/2025
-ms.service: entra-id
-ms.subservice: conditional-access
+ms.date: 03/24/2026
 ms.topic: how-to
 ---
 # Require approved client apps or app protection policy
+
+## Overview
 
 People regularly use their mobile devices for both personal and work tasks. While making sure staff can be productive, organizations also want to prevent data loss from applications on devices they may not manage fully.
 
 With Conditional Access, organizations can restrict access to [approved (modern authentication capable) client apps with Intune app protection policies](concept-conditional-access-grant.md#require-app-protection-policy). For older client apps that may not support app protection policies, administrators can restrict access to [approved client apps](concept-conditional-access-grant.md#require-approved-client-app).
 
 > [!WARNING]
-> App protection policies are supported on iOS and Android where applications meet specific requirements. **App protection policies are supported on Windows in preview for the Microsoft Edge browser only.** Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. In order to require approved client apps or to enforce app protection policies for iOS and Android devices, these devices must first register in Microsoft Entra ID.
+> App protection policies are supported on iOS and Android where applications meet specific requirements. **App protection policies are supported on Windows in preview for the Microsoft Edge browser only.** Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. To require approved client apps or to enforce app protection policies for iOS and Android devices, these devices must first register in Microsoft Entra ID.
 
 > [!NOTE]
 > **Require one of the selected controls** under grant controls is like an **OR** clause. This is used within policy to enable users to utilize apps that support either the **Require app protection policy** or **Require approved client app** grant controls. **Require app protection policy** is enforced when the app supports that grant control.
@@ -48,7 +45,7 @@ Organizations can choose to deploy this policy using the following steps or usin
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 > [!NOTE]
 > When a policy is created in report-only mode for "Require app protection policy" control, your sign-in log may show the result as "Report-only: Failure" in "Conditional Access" tab when all configured policy conditions were satisfied. This is because the control was not satisified in report-only mode. Once you enabled the policy, the control is applied to the app and the sign-in will not be blocked.
@@ -79,11 +76,15 @@ This policy blocks all Exchange ActiveSync clients using basic authentication fr
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require app protection policy**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+## Related content
 
 - [App protection policies overview](/mem/intune/apps/app-protection-policy)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)

@@ -1,15 +1,11 @@
 ---
 title: Recover from deletions in Microsoft Entra ID
 description: Understand the difference between soft and hard deletions and how to recover or recreate objects in Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/03/2025
-ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 # Recover from deletions
 
@@ -125,6 +121,11 @@ For more information on how to restore users, see the following documentation:
 You can see soft-deleted Microsoft 365 Groups and cloud security groups in the Azure portal on the **Groups | Deleted groups** page.
 
 ![Screenshot that shows restoring groups in the Azure portal.](media/recoverability/deletion-restore-groups.png)
+
+> [!IMPORTANT]
+> Soft delete for security groups isn't supported in the following scenarios:
+> - EDU tenants using OneDrive for Business (OBD) storage
+> - Audience targeting with classic web parts (all tenancies)
 
 For more information on how to restore soft-deleted Microsoft 365 Groups and cloud security groups, see the following documentation:
 

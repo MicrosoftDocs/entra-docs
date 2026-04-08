@@ -37,8 +37,6 @@ The following is a list of FedRAMP resources:
 
 * [Federal Risk and Authorization Management Program](https://www.fedramp.gov/)
 
-* [FedRAMP Security Assessment Framework](https://reciprocity.com/blog/conducting-a-fedramp-risk-assessment/)
-
 * [Agency Guide for FedRAMP Authorizations](https://www.fedramp.gov/assets/resources/documents/Agency_Authorization_Playbook.pdf)
 
 * [Managing compliance in the cloud at Microsoft](https://www.microsoft.com/trustcenter/common-controls-hub)
@@ -49,7 +47,7 @@ The following is a list of FedRAMP resources:
 
 * [FedRAMP High Azure Policy built-in initiative definition](/azure/governance/policy/samples/fedramp-high)
 
-* [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center)
+* [Microsoft Purview portal](/purview/purview-portal)
 
 * [Microsoft Purview Compliance Manager](/purview/compliance-manager)
 

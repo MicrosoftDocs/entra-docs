@@ -148,6 +148,8 @@ The generic SQL connector requires a Data Source Name (DSN) file to connect to t
 
  12. Select **OK** twice. Close the ODBC Data Source Administrator. The DSN connection file is saved by default to your **Documents** folder.
 
+     >[!NOTE]
+     >The SQL Connector expects the DSN connection file to be encoded in UTF-8. If the file isn't encoded in UTF-8, use Notepad to save the file with UTF-8 encoding.
 
 <a name='3-install-and-configure-the-azure-ad-connect-provisioning-agent'></a>
 

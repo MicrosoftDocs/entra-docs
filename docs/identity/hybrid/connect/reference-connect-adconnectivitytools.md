@@ -1,12 +1,8 @@
 ---
 title: 'Microsoft Entra Connect: ADConnectivityTools PowerShell Reference'
 description: This document provides reference information for the ADConnectivityTools.psm1 PowerShell module.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.topic: reference
 
 ms.custom:

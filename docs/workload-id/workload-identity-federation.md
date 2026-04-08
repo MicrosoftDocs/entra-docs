@@ -1,13 +1,9 @@
 ---
 title: Workload Identity Federation
-description: Learn how workload identify federation enables secre access to Microsoft Entra protected resources from external software workloads without managing secrets.
+description: Learn how workload identify federation enables secure access to Microsoft Entra protected resources from external software workloads without managing secrets.
 
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-workload-id
 ms.topic: concept-article
 ms.date: 04/09/2025
-ms.author: shermanouko
 ms.reviewer: hosamsh
 ms.custom: aaddev
 #Customer intent: As a developer, I want to learn about workload identity federation so that I can securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets.

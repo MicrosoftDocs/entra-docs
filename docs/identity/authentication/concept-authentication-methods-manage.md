@@ -1,20 +1,15 @@
 ---
 title: Manage authentication methods
 description: Learn about the authentication methods policy and different ways to manage authentication methods.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: jpettere
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # Manage authentication methods for Microsoft Entra ID
 
-Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
+Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. For an overview of the available options, see [Authentication methods in Microsoft Entra ID](overview-authentication.md). Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
 
 ## Authentication methods policy
 
@@ -108,7 +103,7 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 - Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
 
   >[!NOTE]
-  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted groups as much as possible. 
+  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. To avoid this limitation, consolidate targeted groups as much as possible.
 
 ## Usable and non-usable methods for users
 
@@ -116,11 +111,11 @@ Administrators can view user authentication methods in the Microsoft Entra admin
 
 Each authentication method can become nonusable for different reasons. For example, a Temporary Access Pass might expire, or a FIDO2 security key might fail attestation. The portal gets updated to explain why the method isn't usable. 
 
-Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
+Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here. 
 
 ## Related content
 
 - [How to migrate MFA and SSPR policy settings to the Authentication methods policy](how-to-authentication-methods-manage.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
 - [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
 - [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview)

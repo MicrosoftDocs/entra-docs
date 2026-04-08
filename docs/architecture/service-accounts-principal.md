@@ -1,14 +1,10 @@
 ---
 title: Securing service principals in Microsoft Entra ID
 description: Find, assess, and secure service principals.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 02/08/2023
-ms.author: jricketts
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Securing service principals in Microsoft Entra ID 

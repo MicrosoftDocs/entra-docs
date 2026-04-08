@@ -2,13 +2,9 @@
 title: Create and manage custom attributes for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create and manage custom attributes in a Domain Services managed domain.
 author: AlexCesarini
-manager: dougeby
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 03/07/2025
-ms.author: justinha
 ms.custom: sfi-image-nochange
 ---
 # Custom attributes for Microsoft Entra Domain Services
@@ -35,7 +31,7 @@ The minimum SKU supported for custom attributes is the Enterprise SKU. If you us
 
 ## How custom attributes work 
 
-After you create a managed domain, click **Custom Attributes (Preview)** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
+After you create a managed domain, click **Custom Attributes** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
 
 :::image type="content" border="true" source="./media/concepts-custom-attributes/enable.png" alt-text="Screenshot of how to enable custom attributes.":::
 

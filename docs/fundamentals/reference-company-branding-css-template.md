@@ -2,11 +2,9 @@
 title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
 author: shlipsey3
-manager: femila
-ms.service: entra
-ms.subservice: fundamentals
+manager: pmwongera
 ms.topic: reference
-ms.date: 12/01/2023
+ms.date: 12/16/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
 ms.custom: sfi-image-nochange
@@ -16,6 +14,10 @@ ms.custom: sfi-image-nochange
 
 Configuring your company branding for the user sign-in process provides a seamless experience in your applications that use Microsoft Entra ID as the identity and access management service. Use this CSS reference guide if you're using the [CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css) as part of the [customize company branding](reference-company-branding-css-template.md) process.
 
+> [!IMPORTANT]
+> Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID tenants. Tenants created before January 5 can continue to use custom CSS.
+> 
+> Microsoft Entra External ID tenants are not affected.
 
 ## HTML selectors
 
@@ -33,7 +35,10 @@ The following CSS styles become the default body and link styles for the whole p
 
 ## Microsoft Entra CSS selectors
 
-Use the following CSS selectors to configure the details of the sign-in experience. 
+Use the following CSS selectors to configure the details of the sign-in experience.
+
+>[!Note]
+>To customize internal navigation links, use the new custom CSS selector: `.ext-link`.
 
 - `.ext-background-image` - Container that includes the background image in the default lightbox template
 - `.ext-header` - Header at the top of the container
@@ -50,6 +55,9 @@ Use the following CSS selectors to configure the details of the sign-in experien
    :::image type="content" source="media/reference-company-branding-css-template/sign-in-box-title.png" alt-text="Screenshot of the sign-in box, with the portion of the box that is styled with the .ext-sign-in-box selector.":::
 
 - `.ext-subtitle` - Subtitle text
+
+- Styles for links:
+    - `.ext-link` - Internal navigation links
 
 - Styles for primary buttons:
     - `.ext-button.ext-primary` - Primary button default style

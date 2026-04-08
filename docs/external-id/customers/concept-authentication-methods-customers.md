@@ -1,16 +1,11 @@
 ---
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/07/2025
+ms.date: 03/27/2026
+ai-usage: ai-assisted
 ms.custom: it-pro, seo-july-2024
-#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
+#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, Microsoft Entra ID, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity providers for external tenants
@@ -20,7 +15,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, a Microsoft Entra ID tenant, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -34,7 +29,7 @@ Email sign-up is enabled by default in your local account identity provider sett
 
 - **Password reset**: If you enable email and password sign-in, a password reset link appears on the password page. If the user forgets their password, selecting this link sends a one-time passcode to their email address. After verification, the user can choose a new password.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/email-password-sign-in.png" alt-text="Screenshots of the email with password sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/email-password-sign-in.png" alt-text="Email and password screens shown during local account sign-up and sign-in." border="false":::
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email with password** is the default option.
 
@@ -44,7 +39,7 @@ You can enable users who sign in with a local account (email and password) to si
 
 When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they will be prompted to enter a password, similar to Email and password sign-in. If you [enable password reset](how-to-customize-branding-customers.md#to-customize-self-service-password-reset), users can reset their password by selecting the password reset link on the sign-in page.
 
-   :::image type="content" source="media/how-to-sign-in-alias/alias-sign-in.png" alt-text="Screenshot of the username sign-in option.":::
+   :::image type="content" source="media/how-to-sign-in-alias/alias-sign-in.png" alt-text="Username sign-in option on the sign-in page.":::
 
 ## Email with one-time passcode sign-in
 
@@ -54,7 +49,7 @@ Email with one-time passcode is an option in your local account identity provide
 
 - **Sign-in**: After the user signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Screenshots of the email with one-time passcode sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Email one-time passcode screens shown during sign-up and sign-in." border="false":::
 
 You can also configure options for showing, hiding, or customizing the self-service password reset link on the sign-in page ([learn more](how-to-customize-branding-customers.md#to-customize-self-service-password-reset)).
 
@@ -70,28 +65,34 @@ When you enable social identity providers, users can select from the social iden
 
 By setting up federation with Google, you can allow users to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
-The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
+The following screenshots show the sign-in with Google experience. On the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Screenshots of Google sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Google sign-in flow after the user selects Sign in with Google." border="false":::
 
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 
 ### Facebook sign-in
 
-By setting up federation with Facebook, you can allow users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
+By setting up federation with Facebook, you can allow users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Facebook account.
 
-The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
+The following screenshots show the sign-in with Facebook experience. On the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/facebook-sign-in.png" alt-text="Screenshots of Facebook sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/facebook-sign-in.png" alt-text="Facebook sign-in flow after the user selects Sign in with Facebook." border="false":::
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
 ### Apple sign-in
 
-By setting up federation with Apple, you can allow users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with an Apple account.
+By setting up federation with Apple, you can allow users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with an Apple account.
 
-The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
+The following screenshots show the sign-in with Apple experience. On the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
+
+## Microsoft Entra ID federation
+
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
+
+Learn how to [add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md).
 
 ## Custom OIDC identity provider
 
@@ -113,7 +114,7 @@ When you federate with custom SAML/WS-Fed IdPs, users usually see the Microsoft 
 
 For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax: `domain_hint=<domain name of federating idp>`
 
-:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Domain name of federating identity provider used for domain_hint in SAML configuration.":::
 
 ## Issuer acceleration
 
@@ -121,12 +122,13 @@ When you federate with other external identity providers—such as Facebook, Goo
 
 You can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
 
-- **Facebook**: `domain_hint=facebook`.  
-- **Google**: `domain_hint=Google`.  
+- **Facebook**: `domain_hint=facebook`.
+- **Google**: `domain_hint=google`.
 - **Apple**: `domain_hint=apple`.
-- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
-
-   :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
+- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax such as `"www.linkedin.com"` for LinkedIn.
+- **Custom OIDC - Entra ID**: For a custom OIDC Entra identity provider, use domain name of the Entra ID tenant like `domain_hint=contoso.onmicrosoft.com`.
+  
+   :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Issuer URI domain segment used for domain_hint in custom OpenID Connect configuration.":::
 
 ## Updating sign-in methods
 
@@ -147,5 +149,6 @@ The following Microsoft Graph API operations are supported for managing identity
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add federation with SAML/WS-Fed identity providers](../direct-federation.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

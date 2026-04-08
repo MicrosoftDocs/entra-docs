@@ -1,6 +1,4 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 05/27/2024
 ms.topic: include
 ---

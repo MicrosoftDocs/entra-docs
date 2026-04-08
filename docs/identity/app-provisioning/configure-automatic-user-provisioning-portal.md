@@ -1,13 +1,8 @@
 ---
 title: User provisioning management for enterprise apps in Microsoft Entra ID
 description: Learn how to manage user account provisioning for enterprise apps using the Microsoft Entra ID.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -80,3 +75,6 @@ Expand **Settings** to set an email address to receive notifications and whether
 If provisioning is being enabled for the first time for an application, turn on the service by changing the **Provisioning Status** to **On**. This change causes the Microsoft Entra provisioning service to run an initial cycle. It reads the users assigned in the **Users and groups** section, queries the target application for them, and then runs the provisioning actions defined in the Microsoft Entra ID **Mappings** section. During this process, the provisioning service stores cached data about what user accounts it's managing. The service stores cached data so nonmanaged accounts inside the target applications that were never in scope for assignment aren't affected in deprovisioning operations. After the initial cycle, the provisioning service automatically synchronizes user and group objects on a forty-minute interval.
 
 Change the **Provisioning Status** to **Off**  to pause the provisioning service. In this state, Azure doesn't create, update, or remove any user or group objects in the app. Change the state back to **On** and the service picks up where it left off.
+
+> [!TIP]
+> For applications that already have existing users, use [Account Discovery](how-to-account-discovery.md) to identify and categorize existing accounts before you enable provisioning. This helps you verify your matching attribute configuration and avoid creating duplicate accounts.

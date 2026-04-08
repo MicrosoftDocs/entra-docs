@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Protection to Investigate Risk Telemetry
 description: Learn how Security Operations Center (SOC) admins use Microsoft Entra ID Protection to bring identity risk-related telemetry into security investigations. 
 author: gargi-sinha
-manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article

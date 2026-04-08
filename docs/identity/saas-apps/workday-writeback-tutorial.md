@@ -3,9 +3,6 @@ title: Configure Workday writeback in Microsoft Entra ID
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
 
 author: cmmdesai
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 
 ms.date: 05/06/2024

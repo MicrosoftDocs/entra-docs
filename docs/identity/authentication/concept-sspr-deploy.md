@@ -1,13 +1,9 @@
 ---
 title: Deployment considerations for Microsoft Entra self-service password reset
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra self-service password reset
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: justinha
 author: gargi-sinha
-manager: martinco
 ms.reviewer: tilarso
 adobe-target: true
 ms.custom: sfi-image-nochange
@@ -168,7 +164,7 @@ When enabling SSPR, choose an appropriate security group in the pilot environmen
 
 ### Authentication methods
 
-When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, and so on. For more information, see [What are authentication methods?](./concept-authentication-methods.md).
+When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, and so on. For more information, see [What are authentication methods?](overview-authentication.md).
 
 We recommend the following authentication method settings:
 
@@ -232,7 +228,7 @@ At each stage of your deployment from initial pilot groups through organization-
 
 ### Plan testing
 
-To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 
 The following table includes useful test scenarios you can use to document your organizations expected results based on your policies.
 <br>
@@ -291,7 +287,7 @@ Before deploying, ensure that you have done the following:
 
 See [Enable self-service password reset](./tutorial-enable-sspr.md#enable-self-service-password-reset) for complete step-by-step directions on configuring the following areas.
 
-1. [Authentication methods](./concept-authentication-methods.md)
+1. [Authentication methods](overview-authentication.md)
 
 1. [Registration settings](./concept-registration-mfa-sspr-combined.md)
 
@@ -331,7 +327,7 @@ Audit logs for registration and password reset are available for 30 days. If sec
 
 ### Helpful documentation
 
-* [What are authentication methods?](./concept-authentication-methods.md)
+* [What are authentication methods?](overview-authentication.md)
 
 * [How it works: Microsoft Entra self-service password reset?](./concept-sspr-howitworks.md)
 

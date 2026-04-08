@@ -1,13 +1,8 @@
 ---
 title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
-ms.topic: article
-ms.subservice: monitoring-health
+ms.topic: concept-article
 ms.date: 05/27/2025
-ms.author: sarahlipsey
 ms.reviewer: madansr7
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand how my users are using Microsoft Entra ID so that I can make informed decisions about my organization's security posture.

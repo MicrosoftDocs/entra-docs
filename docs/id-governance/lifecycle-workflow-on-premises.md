@@ -1,14 +1,10 @@
 ---
 title: Managing Users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle Workflows
 description: Conceptual article discussing managing Users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra with Lifecycle Workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: concept-article
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.custom: template-concept 
 
 #CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
@@ -24,18 +20,18 @@ The following table lists common automation scenarios for synchronized users fro
 |---------|---------|
 |Creating the user account in Active Directory Domain Services    |   [HR driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md)      |
 |Providing initial credentials or password for user accounts  |  The [Generate Temporary Access Pass and send via email to user's manager](../id-governance/lifecycle-workflow-tasks.md#generate-temporary-access-pass-and-send-via-email-to-users-manager) task can be used to set up password-less credentials. For setting up a regular Active Directory password, you can use [Microsoft Entra self-service password reset](../identity/authentication/concept-sspr-howitworks.md).      |
-|Assigning licenses     |  The [Assign licenses to user](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to users via [a group](../fundamentals/license-users-groups.yml).    |
+|Assigning licenses     |  The [Assign licenses to user](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user) Lifecycle Workflow task can be used to assign licenses. You're also able to assign licenses to users via [a group](../fundamentals/licensing.md).    |
 |Give users access to Active Directory group-based applications     |  [Govern on-premises Active Directory (Kerberos) application access](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)       |
 |Update user attributes in Active Directory as they move organizations     |  [Plan scoping filters and attribute mapping](../identity/app-provisioning/plan-cloud-hr-provision.md#plan-scoping-filters-and-attribute-mapping)       |
 |Move users to different OUs as they move organizations     | [Configure Active Directory OU container assignment](../identity/app-provisioning/plan-cloud-hr-provision.md#configure-active-directory-ou-container-assignment)        |
 |Disable users on last day     |   The [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account) Lifecycle Workflow task can be used to disable a user account on their last day.     |
-|Deleting users on a set number of days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) Lifecycle Workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
+|Deleting users a set number of days after termination     |   The [Delete User](../id-governance/lifecycle-workflow-tasks.md#delete-user) Lifecycle Workflow task can be used within a workflow template to delete users a set number of days after their termination.      |
 
 In this article, you learn what needs to be considered if you want to use Lifecycle Workflows for user accounts that are synchronized from AD DS to Microsoft Entra ID.
 
 ## Workflow execution conditions with users synchronized from Active Directory Domain Services (AD DS) to Microsoft Entra ID
 
-Lifecycle Workflows are processed for user accounts when they meet the workflow's execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows you to further define for whom the workflow runs for when the event occurs.
+Lifecycle Workflows are processed for user accounts when they meet the workflow's execution conditions. Executing conditions are composed of a trigger and scope. The trigger describes the event that occurs for a user account. The scope allows you to further define for whom the workflow runs when the event occurs.
 
 ### Workflow triggers
 
@@ -65,16 +61,16 @@ For groups that are synchronized from AD DS to Microsoft Entra ID, you wouldn't 
 
 ## User account tasks
 
-Additional configuration is required for the Lifecycle Workflow tasks to enable, disable, and delete user accounts to work with synchronized from AD DS. The following prerequisites must be completed before you can configure the tasks to perform actions in Active Directory.
+Additional configuration is required for the Lifecycle Workflow tasks that enable, disable, and delete user accounts to work with users synchronized from AD DS. The following prerequisites must be completed before you can configure the tasks to perform actions in Active Directory.
 
 - You must have the [Microsoft Entra provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md) installed in your environment. For prerequisites on installing the Microsoft Entra provisioning agent, see: [Cloud provisioning agent requirements](../identity/hybrid/cloud-sync/how-to-prerequisites.md#cloud-provisioning-agent-requirements). For a step by step guide on installing the Microsoft Entra Provisioning agent, see: [Install the Microsoft Entra Provisioning Agent](../identity/hybrid/cloud-sync/how-to-install.md). During installation, choose “**HR-driven provisioning / Microsoft Entra Connect Sync**” as “**extension configuration**”. You aren't required to add any other configuration for the provisioning agent, such as the cloud sync configuration, and you can install the provisioning agent even if you're also currently using Microsoft Entra Connect Sync for your user synchronization.
 
 > [!NOTE]
 > The Provisioning agent installed must be at least version 1.1.1586.0, which was released May 13th, 2024.
 
-- Ensure the Group Managed Service Account(gMSA) used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to perform operations on user accounts.
+- Ensure the Group Managed Service Account (gMSA) used by the provisioning agent has the [appropriate permissions](../identity/hybrid/cloud-sync/how-to-prerequisites.md#custom-gmsa-account) to perform operations on user accounts.
 
-- To delete users accounts, you must enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
+- To delete user accounts, you must enable the Active Directory recycle bin. For a step-by-step guide on enabling the recycle bin, see: [Active Directory Recycle Bin step-by-step](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).
 
 For a step by step guide on setting the flag so that user account tasks run for users synchronized from Active Directory Domain Services, see: [Manage synchronized from Active Directory Domain Services (AD DS) with workflows](./manage-workflow-on-premises.md).
 

@@ -2,13 +2,8 @@
 title: Sensitive operations report workbook
 description: Learn how to use the sensitive operations report workbook in Microsoft Entra ID to explore suspicious app and service principal activity.
 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/04/2024
-ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 #Customer intent: As an IT admin, I need to use the sensitive operations report workbook to explore suspicious app and service principal activity so I can identify compromises in my environment.

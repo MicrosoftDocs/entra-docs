@@ -1,13 +1,11 @@
 ---
 title: Increase the resilience of authentication for federated applications deployed at sites with colocated users
 description: Resilience guidance for application deployments with orchestration of a relying party security token service to change its identity provider
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 author: markwahl-msft
 ms.author: mwahl
-manager: martinco
 ms.date: 02/19/2025
+ms.subservice: architecture
 ---
 
 # Increase the resilience of authentication for federated applications deployed at sites with colocated users

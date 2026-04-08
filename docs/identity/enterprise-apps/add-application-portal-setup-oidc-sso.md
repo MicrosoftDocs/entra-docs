@@ -1,15 +1,9 @@
 ---
 title: Configure OIDC SSO for gallery and custom applications
 description: Learn how to configure OpenID Connect-based single sign-on (SSO) in Microsoft Entra ID for both gallery applications and your own custom (non-gallery) applications.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 07/22/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 

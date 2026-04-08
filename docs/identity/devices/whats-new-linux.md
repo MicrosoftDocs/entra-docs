@@ -1,65 +1,349 @@
 ---
-title:       What's new in Microsoft Single Sign-on for Linux
-description: Discusses new feature releases of Microsoft Single Sign-on for Linux
-author:      ploegert # GitHub alias
-ms.author:   jploegert # Microsoft alias
-ms.service: entra-id
+title: What's new in Microsoft single sign-on for Linux
+description: Discusses new feature releases of Microsoft single sign-on for Linux
+ai-usage: ai-assisted
+author: ploegert
+ms.author: jploegert
 ms.topic: whats-new
-ms.date:     05/16/2025
-ms.subservice: devices
+ms.date: 04/02/2026
+ms.custom: linux-related-content
 ---
 
-# What's new in Microsoft Single Sign-on for Linux
-This article provides information about the latest updates to Microsoft Single Sign-on for Linux. 
+# What's new in Microsoft single sign-on for Linux
+Microsoft periodically adds and modifies features and functionality in the Microsoft identity platform to improve security, usability, and standards compliance.
 
-### Package Repositories
-Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
+Unless otherwise noted, the changes described here apply only to applications registered after the stated effective date of the change.
 
+Check this article regularly to learn about:
+- Known issues and fixes
+- Protocol changes
+- Deprecated functionality
 
-#### [Ubuntu20.04](#tab/ubuntu2004)
-- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msft-identity-broker/)
+This article provides information about the latest updates to Microsoft single sign-on for Linux. 
 
-#### [Ubuntu22.04](#tab/ubuntu2204)
-- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/)
-- [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
+## Microsoft Identity Broker version lifecycle and support matrix
 
-#### [Ubuntu24.04](#tab/ubuntu2404)
-- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/)
+Microsoft uses the following package repositories to distribute Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format; however, only Ubuntu long-term support (LTS) and Red Hat Enterprise Linux (RHEL) are supported.
 
-#### [RedHat 9](#tab/redhat9)
-- [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
-- [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
+|Channel|Primary purpose|Latest version|Supported|Source|
+| --------|--------------|--------|---------------------|--------------|
+|stable|Production workloads|3.0.x|Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
+|insiders-fast|Testing prerelease packages|3.0.x|No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
-#### [RedHat 8](#tab/redhat8)
-- [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
-- [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
+> [!NOTE]
+> The current production version of the `microsoft-identity-broker` is `3.0.1`. 
+
+The `insiders-fast` channel in `packages.microsoft.com` lets you test prerelease packages. Don't use it for production workloads. It might contain breaking changes or incomplete features.
+
+### Important notes for version 2.0.2 and later
+
+> [!WARNING]
+> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (prod: 2.0.1 or earlier, insiders-fast: 2.0.4 or earlier), users will need to re-register and re-enroll their devices after performing an upgrade of the previous version.
+
+## Instructions to add package repositories
+
+To add the appropriate package repository for your Linux distribution, follow the instructions below:
+
+### [Ubuntu Production](#tab/debian-install-prod)
+
+1. Install `curl` and `gpg`.
+
+    ```bash
+    sudo apt install curl gpg
+    ```
+
+1. Install the Microsoft package signing key.
+
+    ```bash
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings
+    rm microsoft.gpg
+    ```
+
+1. Add the Microsoft package repository and update package metadata.
+
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
+    sudo apt update
+    ```
+
+### [Ubuntu insiders-fast](#tab/debian-install-insiders-fast)
+
+1. Install `curl` and `gpg`.
+
+    ```bash
+    sudo apt install curl gpg
+    ```
+
+1. Install the insiders-fast repository signing key.
+
+    ```bash
+   curl -s https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft-insiders-fast.gpg
+    sudo install -o root -g root -m 644 microsoft-insiders-fast.gpg /usr/share/keyrings
+    rm microsoft-insiders-fast.gpg
+    ```
+
+1. Add the Microsoft package repository and update package metadata.
+
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-insiders-fast.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod insiders-fast main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-insiders-fast.list'
+    sudo apt update
+    ```
 
 ---
 
-## Microsoft-Identity-Broker
+### [RHEL 8/9 Prod](#tab/redhat89-install-prod)
 
-### 2.0.1 - Nov 18, 2024 
-- Releasing package support for ubuntu 24.04
+1. Install the Microsoft package signing key.
 
-### 2.0.1 - Mar 21, 2024
+    ```bash
+    # Legacy key (needed for RHEL 8 and RHEL 9 packages and Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    ```
+
+1. Add the Microsoft package repository.
+
+    ```bash
+    sudo dnf install -y dnf-plugins-core
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
+    ```
+
+### [RHEL 10 Prod](#tab/redhat10-install-prod)
+
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
+    
+    ```bash
+    # Legacy key (needed for Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # New key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
+    ```
+  
+1. Add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
+
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-prod.repo > /dev/null <<EOF
+    [microsoft-prod]
+    name=Microsoft prod - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/prod
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/prod/repodata/repomd.xml.key
+    EOF
+    ```
+
+### [RHEL 8/9 insiders-fast](#tab/redhat-install-insiders-fast)
+
+1. Install the Microsoft package signing keys.
+
+    ```bash
+    # Legacy key (needed for Microsoft Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Repository key for insiders-fast packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+
+1. Add the Microsoft package repository.
+    
+    ```bash
+    sudo dnf install -y dnf-plugins-core
+
+    # for rhel 8 and 9
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+
+    # for rhel10:
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel10-insiders-fast-prod
+    ```
+    
+### [RHEL 10 insiders-fast](#tab/redhat10-install-insiders-fast)
+
+1. Install the Microsoft package signing keys. RHEL 10 packages are signed with a newer Microsoft GPG key (RSA-4096), different from the `microsoft.asc` key used for RHEL 8 and RHEL 9. 
+    
+    ```bash
+    # Legacy key (needed for Edge)
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    
+    # Key for RHEL 10 packages
+    sudo rpm --import https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    ```
+    
+1. Add the repository by creating a new repo file under `/etc/yum.repos.d/` with the following content:
+    
+    ```bash
+    sudo tee /etc/yum.repos.d/microsoft-insiders-fast.repo > /dev/null <<EOF
+    [microsoft-insiders-fast]
+    name=Microsoft insiders-fast - RHEL 10
+    baseurl=https://packages.microsoft.com/rhel/10/insiders-fast
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://packages.microsoft.com/rhel/10/insiders-fast/repodata/repomd.xml.key
+    EOF
+    ```
+
+---
+
+## Changes
+
+### 3.0.1 - March 31, 2026 - (GA Major Release)
+
+GA release of the Microsoft Identity Broker for Linux, now using a newly rewritten C++ broker instead of the previous Java-based broker.
+
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
+- Added a header to token requests to help differentiate identity broker versions.
+- When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
+- Renamed the device broker service to `microsoft-identity-devicebroker`.
+- There's no longer a user broker service named `microsoft-identity-broker`. The user broker is now an executable invoked over D-Bus.
+- Device certificates are moved from the keychain to `/etc/ssl/private`. In that directory, the broker creates a device certificate per tenant, a session transport key per tenant, and a deviceless key. All other user data, such as access tokens and refresh tokens, are stored in the keychain and accessed via Microsoft Authentication Library (MSAL).
+- Added support for the `microsoft-identity-broker-diagnostics` package.
+- Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
+- Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
+- Updated `x-client-os` to use the distro name.
+- Changed package file names to include the target OS.
+- Included a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
+- Updated embedded authentication window defaults (title/size) and improved centering behavior.
+- Added support for RHEL 10.
+- Added a `dsreg` command-line tool for device registration management and diagnostics.
+- Updated the certificates and keys location used by the Linux device broker.
+- Included the broker version in broker-produced telemetry.
+- Added DUNA cross-platform support and DUNA iOS CBA.
+- Fixed smart card dialog layout for GTK4.
+- Fixed a callback issue when the browser is reused.
+- Added GetDeviceState support with TLS 1.3 in the C++ broker.
+- Handled `sem_timedwait` failures due to signals in `Msai::SecureStorageLock` and `Msoa::SystemMutex`.
+
+#### Assets
+- Ubuntu-24.04 - [microsoft-identity-broker_3.0.1-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.1-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_3.0.1-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.1-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-3.0.1-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-3.0.1-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-3.0.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.1-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-3.0.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.1-1.el8.x86_64.rpm)
+
+### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
+
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
+
+#### Assets
+- Ubuntu-24.04 - [microsoft-identity-broker_2.5.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.2-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.5.2-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.2-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm)
+
+### 2.5.1 - Jan 29, 2026 - (Preview Release in fast Insiders channel)
+
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
+- (Linux) Add GetDeviceState support with TLS 1.3 in CPP broker
+- (Linux) Handle sem_timedwait failure due to process receiving a signal in Msai::SecureStorageLock and Msoa::SystemMutex
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.5.1-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.1-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.5.1-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.1-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-2.5.1-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm)
+
+### 2.5.0 - Jan 13, 2026 - (Preview Release in fast Insiders channel)
+
+- (Linux) Change package file names to include target OS
+- (Linux) Misc Bug Fixes
+- (Linux) Include a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
+- (Linux) Update embedded authentication window defaults (title/size) and improve centering behavior.
+- (Linux) Add support for RHEL 10
+- (Linux) Add dsreg command-line tool for device registration management and diagnostics
+- (Linux) Update certificates/keys location used by Linux device broker
+- (Linux) Include broker version in broker-produced telemetry
+- (xplat) Add DUNA xplat and DUNA iOS CBA
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.5.0-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.5.0-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-jammy_amd64.deb)
+
+
+### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
+
+- Added support for the microsoft-identity-broker-diagnostics package.
+- Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
+- Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
+- Update x-client-os to use distro name
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.3_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.3_amd64.deb)
+
+---
+
+### 2.0.2 - Sept 19, 2025 - (Preview Release in fast Insiders channel)
+Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
+
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
+- Added a header of token requests, enabling differentiation between identity broker versions.
+- When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
+- Renamed the device broker service to `microsoft-identity-devicebroker`.
+- There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
+- Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker creates a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.0.2_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.2_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.0.2_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.2_amd64.deb)
+
+
+### Broker Support for MSAL Python and MSAL .NET on Linux - June 13, 2025
+
+- As of 2.0.1, the `microsoft.identity.broker` now supports using [Using MSAL Python with an Auth Broker on Linux](/entra/msal/python/advanced/linux-broker-py) and [Using MSAL.NET with broker on Linux](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk) to make token requests via broker.
+
+---
+
+### 2.0.1 - November 18, 2024 
+
+- Added package support for Ubuntu 24.04.
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.0.1_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.1_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.0.1_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.1_amd64.deb)
+- Ubuntu-20.04 - [microsoft-identity-broker_2.0.1_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.1_amd64.deb)
+
+---
+
+### 2.0.0 - March 21, 2024
+
 - Bug fixes
 
-### 1.7.0 - Jan 31, 2024
+#### Assets
+
+- Ubuntu-22.04 - [microsoft-identity-broker_2.0.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.0_amd64.deb)
+- Ubuntu-20.04 - [microsoft-identity-broker_2.0.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.0_amd64.deb)
+
+---
+
+### 1.7.0 - January 31, 2024
+
 - Addressing the 1001 on registration failure
 - Updating the install scripts for Red Hat Enterprise Linux Broker
 - Adding license to Linux Broker Package
 
+---
 
-### 1.6.1 - Aug 17, 2023
+### 1.6.1 - August 17, 2023
 - [PATCH] Perform safe deserialization for X509 Certificate in Linux Broker (#2483) 
 
 #### Assets
+
 - Ubuntu-20.04 - [microsoft-identity-broker_1.6.1_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.6.1_amd64.deb) 
 - Ubuntu-22.04 - [microsoft-identity-broker_1.6.1_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.6.1_amd64.deb)
 
 ---
 
-### 1.6.0 - Jun 29, 2023
+### 1.6.0 - June 29, 2023
+
 - Added support for Red Hat Enterprise Linux 8 and 9.
 
 #### Assets
@@ -76,12 +360,12 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 - Secret service version upgrade - kubuntu
 
 #### Assets
-- Ubuntu-20.04 -[microsoft-identity-broker_1.5.1_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.5.1_amd64.deb)
-- Ubuntu-22.04 -[microsoft-identity-broker_1.5.1_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.5.1_amd64.deb)
+- Ubuntu-20.04 - [microsoft-identity-broker_1.5.1_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.5.1_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_1.5.1_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.5.1_amd64.deb)
 
 ---
 
-### 1.4.1 - Oct 22, 2022
+### 1.4.1 - October 22, 2022
 - Resource Owner Password Credential (ROPC) test hook.
 - added logging for keyring "1001" errors.
 
@@ -91,7 +375,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.4.0 - Oct 26, 2022
+### 1.4.0 - October 26, 2022
 - Java 17 support
 - Ubuntu 22 support
 
@@ -101,14 +385,14 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.3.0 - Oct 26, 2022
+### 1.3.0 - October 26, 2022
 
 #### Assets
-- Ubuntu-20.04 -[microsoft-identity-broker_1.3.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.3.0_amd64.deb)
+- Ubuntu-20.04 - [microsoft-identity-broker_1.3.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.3.0_amd64.deb)
 
 ---
 
-### 1.2.0 - Oct 26, 2022
+### 1.2.0 - October 26, 2022
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.2.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.2.0_amd64.deb)
@@ -117,17 +401,55 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ## Microsoft-Identity-Diagnostics
 
-#### 1.01 - Nov 29, 2022
+### 2.0.3 - October 21, 2025 - (Preview Release)
+
+- Added support for the microsoft-identity-broker-diagnostics package.
+- Renamed `linux_broker` to `microsoft-identity-broker`.
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-diagnostics_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_2.0.3_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-diagnostics_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_2.0.3_amd64.deb)
+
+
+#### 1.1.0 - November 29, 2022
 
 #### Assets
 - Ubuntu 22.04 - [microsoft-identity-diagnostics_1.1.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_1.1.0_amd64.deb)
 
 ---
 
-#### 1.0.1 - Aug 07, 2022
+#### 1.0.1 - August 07, 2022
 
 #### Assets
-- Red Hat Enterprise Linux 9.0 - [microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm](https://packages.microsoft.com/rhel/9/prod/Packages/m/microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm)
-
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm](https://packages.microsoft.com/rhel/8/prod/Packages/m/microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm)
 
+## Troubleshooting Version Issues
+
+### Version Compatibility
+
+**Before upgrading:**
+- Check the current version: `dpkg -l microsoft-identity-broker`.
+- Review breaking changes in the target version.
+- Plan for potential device re-registration.
+
+### Common Migration Issues
+
+**Java to C++ Broker Migration (2.0.1 → 2.0.2+):**
+- Symptom: Authentication failures after upgrade
+- Solution: Complete uninstall and clean reinstall required
+- Steps: Remove all broker state, reinstall new version, re-register device
+
+**Package Installation Issues:**
+- Verify repository configuration matches your Ubuntu/RHEL version
+- Check network connectivity to packages.microsoft.com
+- Ensure sufficient disk space for installation
+
+### Getting Help
+
+For version-specific issues:
+- Check the release notes for known issues
+- Verify system requirements are met
+- Review logs using: `journalctl --user -u microsoft-identity-broker.service`
+
+- Consider using the microsoft-identity-diagnostics package for detailed troubleshooting

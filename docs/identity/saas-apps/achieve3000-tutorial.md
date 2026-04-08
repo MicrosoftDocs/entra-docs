@@ -2,16 +2,9 @@
 title: Configure Achieve3000 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Achieve3000.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Achieve3000 so that I can control who has access to Achieve3000, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -87,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://saml.achieve3000.com/district/<District Identifier>`
 
 	> [!NOTE]
-	> The Sign-On URL value isn't  real. Update the value with the actual Sign-On URL. Contact [Achieve3000 Client support team](https://www.achieve3000.com/contact-us/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-On URL value isn't  real. Update the value with the actual Sign-On URL. Contact Achieve3000 Client support team to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. Achieve3000 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes..
 
@@ -113,11 +106,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Achieve3000 SSO
 
-To configure single sign-on on **Achieve3000** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Achieve3000 support team](https://www.achieve3000.com/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Achieve3000** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to Achieve3000 support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Achieve3000 test user
 
-In this section, you create a user called B.Simon in Achieve3000. Work with [Achieve3000 support team](https://www.achieve3000.com/contact-us/) to add the users in the Achieve3000 platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in Achieve3000. Work with Achieve3000 support team to add the users in the Achieve3000 platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

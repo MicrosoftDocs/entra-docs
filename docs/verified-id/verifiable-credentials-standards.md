@@ -1,18 +1,17 @@
 ---
 title: Microsoft Entra Verified ID-supported standards
 description: This article outlines current and upcoming standards
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/16/2024
-ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
 
 # Microsoft Entra Verified ID-supported standards
 
-Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. We’re working with these groups to identify and develop critical standards, and we implement the open standards in our services.
+
+## Overview
+
+Microsoft is actively collaborating with members of the Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. Microsoft works with these groups to identify and develop critical standards and implements the open standards in its services.
 
 In this article, you find the currently supported open standards for Microsoft Entra Verified ID.
 
@@ -49,17 +48,17 @@ Microsoft Entra Verified ID supports the following key types for the JSON Web Si
 |Ed25519|EdDSA|
 |EC|P-256|
 
-Starting February 2024, Verified ID support NIST compliant P-256 curve.
+Starting February 2024, Verified ID supports the NIST-compliant P-256 curve.
 
-For the quick setup customers, the newly issued credentials use P-256 curve as default and any previously issued credentials continue to work until they expire. Existing authorities automatically migrate to using P-256 for any future issuances.
+For quick setup customers, newly issued credentials use the P-256 curve as the default, and any previously issued credentials continue to work until they expire. Existing authorities automatically migrate to using P-256 for any future issuances.
 
-For the advanced setup customers, Verified ID credentials issued are signed with P-256 curve by default for any new authorities. For existing authorities, there are no changes to already issued or newly issued credentials.
+For advanced setup customers, Verified ID signs credentials with the P-256 curve by default for any new authorities. For existing authorities, there are no changes to already issued or newly issued credentials.
 
 ## Interoperability
 
-Microsoft is collaborating with organization members of Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. Our collaboration efforts aim to build a Verifiable Credentials Interoperability profile to support standards-based issuance, revocation, presentation, and wallet portability.
+Microsoft is collaborating with organization members of Decentralized Identity Foundation (DIF), the W3C Credentials Community Group, and the wider identity community. These collaboration efforts aim to build a Verifiable Credentials Interoperability profile to support standards-based issuance, revocation, presentation, and wallet portability.
 
-Today, we have a working JWT verifiable credentials presentation profile that supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. Join us at the DIF Claims and Credentials working group, [aka.ms/vcinterop](https://aka.ms/vcinterop) and [aka.ms/vcinteroppresentation](https://aka.ms/vcinteroppresentation).
+Today, a working JWT verifiable credentials presentation profile supports the interoperable presentation of verifiable credentials between wallets and verifiers/resource providers. For more information, see the DIF Claims and Credentials working group at [aka.ms/vcinterop](https://aka.ms/vcinterop) and [aka.ms/vcinteroppresentation](https://aka.ms/vcinteroppresentation).
 
 ## Next steps
 

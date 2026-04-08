@@ -1,22 +1,17 @@
 ---
 title: Troubleshoot Conditional Access policies for Microsoft Security Copilot
 description: Security Copilot Conditional Access - Learn to create, assign, and troubleshoot policies using custom security attributes for better protection.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 06/04/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Troubleshoot Conditional Access policies for Microsoft Security Copilot
 
+## Overview
+
 [Generative artificial intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) can bring value to your organization when used appropriately.
 
-Apply Conditional Access policy to these generative AI services by following [our recommendation to target all resources](concept-conditional-access-cloud-apps.md#all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md), [sign-ins](policy-risk-based-sign-in.md), [device compliance](policy-all-users-device-compliance.md), and users with [insider risk](policy-risk-based-insider-block.md).
+Apply Conditional Access policy to these generative AI services by following [our recommendation to target all resources](concept-conditional-access-cloud-apps.md#conditional-access-for-all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md), [sign-ins](policy-risk-based-sign-in.md), [device compliance](policy-all-users-device-compliance.md), and users with [insider risk](policy-risk-based-insider-block.md).
 
 Some organizations target these services directly by using the underlying service principals and custom security attributes in their Conditional Access policies:
 
@@ -74,7 +69,7 @@ Follow the instructions in the article [Add or deactivate custom security attrib
 1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **New policy** or select an existing policy to update.
 1. When configuring your **Target resources**, select the following options:
-   1. Select what this policy applies to **Cloud apps**.
+   1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include **Select resources**.
    1. Select **Edit filter**.
    1. Set **Configure** to **Yes**.

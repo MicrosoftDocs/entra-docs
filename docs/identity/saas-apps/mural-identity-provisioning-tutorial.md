@@ -3,8 +3,6 @@ title: Configure MURAL Identity for automatic user provisioning with Microsoft E
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to MURAL Identity.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes

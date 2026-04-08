@@ -1,7 +1,4 @@
 ---
-author: cilwerner
-manager: pmwongera
-ms.author: cwerner
 ms.date: 06/29/2025
 ms.topic: include
 ms.service: entra

@@ -1,15 +1,8 @@
 ---
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: faq
-ms.date: 04/25/2025
+ms.date: 01/06/2026
 ms.custom: it-pro
 ---
 
@@ -107,7 +100,7 @@ Our next-generation CIAM platform is designed to accommodate equivalent capabili
 
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, Microsoft Entra ID federation, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
 
 ### Where can I find a list of External ID features?
 
@@ -118,7 +111,7 @@ For a detailed list of the External ID features and capabilities, see [Supported
 -->
 ### Will External ID support Microsoft Entra US Government Cloud?
 
-Currently, External ID supports public clouds only.
+External ID currently supports public clouds only. External ID in the public cloud is accredited for [Federal Risk and Authorization Management Program](/azure/compliance/offerings/offering-fedramp) (FedRAMP) High and [Department of Defense (DoD) Impact Level 2 (IL2)](/azure/compliance/offerings/offering-dod-il2).
 
 ## Developer Experiences
 

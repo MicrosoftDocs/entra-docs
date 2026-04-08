@@ -1,13 +1,8 @@
 ---
 title: Windows Hello for Business authentication method in Microsoft Entra ID
 description: Learn about using Windows Hello for Business authentication in Microsoft Entra ID to help improve and secure sign-in events
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 11/01/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use Windows Hello for Business authentication in Microsoft Entra ID to improve and secure user sign-in events.
 ---

@@ -2,7 +2,6 @@
 title: include file
 description: include file
 author: shlipsey3
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 08/08/2023

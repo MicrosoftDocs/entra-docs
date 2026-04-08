@@ -1,13 +1,8 @@
 ---
 title: Quickstart - Get started
 description: Learn how to get started with Microsoft Entra External ID. Customize your apps' look and feel, set up a user to test the sign-up flow, and configure a sample app in just a few minutes.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: quickstart
 ms.date: 11/28/2024
-ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
@@ -30,16 +25,16 @@ When you set up an external tenant free trial, the guide will start automaticall
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Tenant overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. On the **Get started** tab, select **Start the guide**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
-You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure external accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or [custom OIDC](how-to-custom-oidc-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
+You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure external accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md), or [custom OIDC](how-to-custom-oidc-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
 
 If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, other branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
 
-:::image type="content" source="media/quickstart-trial-setup/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
+:::image type="content" source="media/quickstart-get-started-guide/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
 
 ## Try out the sign-up experience and create your first user
 
@@ -54,7 +49,7 @@ If you prefer, you can add your company logo, change the background color or adj
 5. Complete the sign-up steps on the screen. Typically, once the user has signed in, they're redirected back to your app. However, since you haven’t set up an app at this step, you'll be redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
 6. Go back to the guide tab. At this stage, you can either exit the guide and go to the admin center to explore the full range of configuration options for your tenant. Or you can **Continue** and set up a sample app. We recommend setting up the sample app, so that you can use it to test any further configuration changes you make
 
-    :::image type="content" source="media/quickstart-trial-setup/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
+    :::image type="content" source="media/quickstart-get-started-guide/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
 
 ## Set up a sample app
 
@@ -71,7 +66,7 @@ Follow the next steps, to download and run the sample app.
 1. Select your language and **Download sample app** on your machine.
 1. Follow the instructions to install and run the app. Sign into the sample app.
 
-    :::image type="content" source="media/quickstart-trial-setup/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
+    :::image type="content" source="media/quickstart-get-started-guide/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
 
 1. You've completed the process of creating a trial tenant, configuring the sign-in experience, creating your first user, and setting up a sample app. Select **Continue** to go to the summary page, where you can either go to the admin center or you can restart the guide to choose different options.
 

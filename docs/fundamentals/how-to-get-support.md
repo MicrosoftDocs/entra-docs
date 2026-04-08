@@ -3,12 +3,11 @@ title: Find help and get support for Microsoft Entra
 description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra.
 author: shlipsey3
 manager: pmwongera
-ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 05/23/2025
+ms.date: 03/09/2026
 ms.author: sarahlipsey
-ms.reviewer: jeffsta
+ms.reviewer: tychusnyanga
 ---
 
 # Find help and get support for Microsoft Entra
@@ -60,7 +59,18 @@ Search for or select **Diagnose and solve problems** from the navigation menu.
 
 Some of the diagnostic tools require specific roles to use the tool. For example, you need to be at least a **Billing administrator** to use the sign-in diagnostic tool. Contact your local administrator for assistance or to get the necessary permissions.
 
-## Open a support request
+### Use Microsoft Entra Self-Service Support
+
+Self-Service Support is an AI-powered tool that can help you troubleshoot identity and access issues and find solutions before creating a support request. It uses Microsoft documentation from [learn.microsoft.com](https://learn.microsoft.com) and generative AI to analyze your problem and provide relevant guidance.
+
+1. From **Diagnose and solve problems**, select **Self-Service Support**.
+1. Describe your issue in the chat interface or select one of the prebuilt options.
+1. Continue with the follow-up questions as needed.
+1. After the third follow-up question, select **Create a support request** if your issue wasn't resolved and you still need support.
+
+For more information, see [How to use Microsoft Entra Self-Service Support](how-to-entra-self-service-support.md).
+
+### Open a support request
 
 If you're unable to find answers by using the previously mentioned resources, you can open an online support request.
 
@@ -78,7 +88,7 @@ Online support requests can be created from several places in the admin center:
 
     ![Screenshot of the new support request button in the help icon.](media/how-to-get-support/help-icon-support-request.png)
 
-### Tips for creating online support requests
+#### Tips for creating online support requests
 
 - **Open a support request for only a single problem**
     - We try to connect you to the support engineers who are subject matter experts for your problem.
@@ -91,7 +101,7 @@ Online support requests can be created from several places in the admin center:
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs).
 - **Support is available online and by phone for Microsoft paid and trial subscriptions**
     - Support is provided for global technical, presales, billing, and subscription issues.
-    - Phone support and online billing support are available in additional languages.
+    - Phone support and online billing support are available in more languages.
 - Explore the [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario.
 - Microsoft customers can create and manage support requests in the Azure portal and the Microsoft Entra admin center.
 

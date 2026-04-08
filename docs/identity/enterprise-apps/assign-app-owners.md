@@ -1,15 +1,8 @@
 ---
 title: Assign enterprise application owners
 description: Learn how to assign an owner to an enterprise application in Microsoft Entra ID, manage configurations, and streamline user access efficiently.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 12/06/2024
-ms.author: jomondi
 ms.reviewer: saibandaru
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
@@ -84,6 +77,9 @@ Content-Type: application/json
 
 > [!NOTE]
 > If the user setting **Restrict access to Microsoft Entra administration portal** is set to `Yes`, non-admin users aren't able to use the Microsoft Entra admin center to manage the applications they own. For more information about the actions that can be performed on owned enterprise applications, see [Owned enterprise applications](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
+
+> [!NOTE]
+> Currently due to background applications and service principals objects settings dependencies, the application owners added by other than Entra admin center means (Graph API, PowerShell), will not be able to manage some enterprise applications settings like attributes and claims, modify configured SAML certificates properties or token encryption settings, etc. 
 
 ## Next steps
 

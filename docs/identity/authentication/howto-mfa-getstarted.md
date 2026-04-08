@@ -1,14 +1,9 @@
 ---
 title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 11/02/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: jpettere
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
@@ -39,7 +34,7 @@ Methods include:
 
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
-- [FIDO2 security key](concept-authentication-passwordless.md)
+- [FIDO2 security key](concept-authentication-passkeys-fido2.md)
 - [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)
 - Synced passkey (preview)
 - [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
@@ -49,7 +44,7 @@ Methods include:
 
 To learn more about the strength and security of these methods and how they work, see the following resources:
 
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
 
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).

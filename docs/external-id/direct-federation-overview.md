@@ -1,13 +1,8 @@
 ---
 title: About SAML/WS-Fed identity provider federation
 description: Learn about federation with an external organization's SAML/WS-Fed identity provider (IdP) for external user self-service sign-up and invitation redemption.
- 
-ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/07/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As an External ID admin of a workforce or external tenant, I want to configure and enable federation with a SAML/WS-Fed identity provider (IdP) for external users, so that they can easily use self-service sign-up or redeem  invitations and access our apps and resources.

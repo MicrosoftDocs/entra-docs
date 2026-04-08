@@ -2,14 +2,8 @@
 title: Manage users and groups assignment to an application
 description: Learn how to assign and unassign users, and groups, for an app using Microsoft Entra ID for identity management.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 04/14/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
@@ -41,6 +35,7 @@ To assign users to an enterprise application, you need:
   - User Administrator
   - Owner of the service principal.
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
+- Group-based assignment is supported for Security groups, Microsoft 365 groups, and Distribution groups whose SecurityEnabled setting is set to True only.
 
 :::zone pivot="portal"
 

@@ -3,8 +3,6 @@ title: PowerShell Sample - Create a TLS Certificate Using Active Directory Certi
 description: Use this PowerShell script to create a TLS certificate using Active Directory Certificate Services (ADCS) in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 09/09/2025
 ms.reviewer: teresayao

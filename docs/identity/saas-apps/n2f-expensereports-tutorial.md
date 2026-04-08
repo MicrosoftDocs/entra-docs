@@ -1,14 +1,9 @@
 ---
 title: Configure N2F - Expense reports for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and N2F - Expense reports.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and N2F - Expense reports so that I can control who has access to N2F - Expense reports, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -76,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 5. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://www.n2f.com/app/`
+    `https://auth.n2f.com/`
 
 6. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 

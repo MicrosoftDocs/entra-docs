@@ -1,14 +1,11 @@
 ---
 title: Passkeys (FIDO2) authentication method in Microsoft Entra ID
 description: Learn about using passkey (FIDO2) authentication in Microsoft Entra ID to help improve and secure sign-in events
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/10/2025
+ms.date: 02/02/2026
 ms.author: justinha
 author: justinha
 ms.reviewer: kimhana
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use passkey (FIDO2) authentication in Microsoft Entra ID to improve and secure user sign-in events.
 ---
@@ -17,9 +14,15 @@ ms.custom: sfi-image-nochange
 
 Remote phishing attacks are on the rise. These attacks aim to steal or relay identity proofs—such as passwords, SMS codes, or email one-time passcodes—without physical access to the user’s device. Attackers often use social engineering, credential harvesting, or downgrade techniques to bypass stronger protections like passkeys or security keys. With AI-driven attack toolkits, these threats are becoming more sophisticated and scalable.
 
-Passkeys help prevent remote phishing by replacing phishable methods like passwords, SMS, and email codes. Built on **FIDO (Fast Identity Online) standards**, passkeys use origin-bound public key cryptography, ensuring credentials can't be replayed or shared with malicious actors. In addition to stronger security, passkeys (FIDO2) offer a frictionless sign-in experience by eliminating passwords, reducing prompts, and enabling fast, secure authentication across devices.
+Passkeys help prevent remote phishing by replacing phishable methods like passwords, SMS, and email codes. Built on **FIDO (Fast Identity Online) standards**, passkeys use origin-bound public key cryptography, ensuring credentials can't be replayed or shared with malicious actors. 
 
-Passkeys (FIDO2) can also be used to sign in to Microsoft Entra ID or Microsoft Entra hybrid joined Windows 11 devices and get single-sign on to cloud and on-premises resources.
+Built on interoperable **FIDO (Fast Identity Online) standards** developed by industry security experts. They use origin-bound public-key cryptography and require local user interaction. Taken together, these characteristics make passkeys almost impossible to phish.
+
+A private key is stored on your device and public key is stored with the app or the website that you sign into. Both unique keys are needed to sign in. This key pair combination is unique, so your passkey only works on the website or the app you created it for.
+
+Every sign-in attempt requires that you're present to unlock the passkey on the device that you use for sign in. Someone can’t trick you to sign in on another device that they control.
+
+In addition to stronger security, passkeys (FIDO2) offer a frictionless sign-in experience by eliminating passwords, reducing prompts, and enabling fast, secure authentication across devices. You can use them to sign in to Microsoft Entra ID or Microsoft Entra hybrid joined Windows 11 devices and get single-sign on to cloud and on-premises resources.
 
 ## What are passkeys?
 Passkeys are phishing-resistant credentials that provide **strong authentication** and can serve as a **multifactor authentication (MFA)** method when combined with device biometrics or PIN. They also provide verifier impersonation resistance, which ensures an authenticator only releases secrets to the Relying Party (RP) the passkey was registered with and not an attacker pretending to be that RP. Passkeys (FIDO2) follow FIDO2 standards, using WebAuthn for browsers and CTAP for authenticator communication.
@@ -41,9 +44,9 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 - **Device-bound passkeys**: The private key is created and stored on a single physical device and never leaves it. Examples: 
   - Microsoft Authenticator 
   - FIDO2 Security keys 
-- **Synced passkeys**: The private key is stored in a passkey provider’s cloud and synced across devices signed-in to the same passkey provider account. Synced passkeys do not support attestation. Examples: 
-  - Apple iCloud Keychain 
-  - Google Password Manager 
+- **Synced passkeys**: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
+  - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
+  - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
 
 Synced passkeys offer a seamless and convenient user experience where users can use a device’s native unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learned: 
 

@@ -1,13 +1,9 @@
 ---
 title: Reprocess requests for an access package in entitlement management
 description: Learn how to reprocess a request for an access package in entitlement management.
-author: owinfreyatl
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
 #Customer intent: As an administrator or access package manager, I want detailed information about how I can reprocess a request for an access package if a request failed so that requestors have the resources in the access package they need to perform their job.
 ---
 # Reprocess requests for an access package in entitlement management

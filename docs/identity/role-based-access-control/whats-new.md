@@ -1,14 +1,8 @@
 ---
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
-
-author: rolyon
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 10/02/2025
-ms.author: rolyon
+ms.date: 03/23/2026
 
 ---
 
@@ -16,10 +10,20 @@ ms.author: rolyon
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
+## 2026
+
+| Date | Area | Description |
+| --- | --- | --- |
+| March 2026 | Roles | Added [Teams External Collaboration Administrator](permissions-reference.md#teams-external-collaboration-administrator) role. |
+| March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
+| March 2026 | Roles | Added [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator), [Tenant Governance Reader](permissions-reference.md#tenant-governance-reader), [Tenant Governance Relationship Administrator](permissions-reference.md#tenant-governance-relationship-administrator), and [Tenant Governance Relationship Reader](permissions-reference.md#tenant-governance-relationship-reader) roles. |
+| March 2026 | Roles | Added [Authentication Extensibility Password Administrator](permissions-reference.md#authentication-extensibility-password-administrator) role. |
+
 ## 2025
 
 | Date | Area | Description |
 | --- | --- | --- |
+| December 2025 | Roles | Added [Microsoft 365 Support Engineer](permissions-reference.md#microsoft-365-support-engineer) role. |
 | November 2025 | Roles | Added [SharePoint Advanced Management Administrator](permissions-reference.md#sharepoint-advanced-management-administrator) role. |
 | November 2025 | Roles | Updated [Exchange Backup Administrator](permissions-reference.md#exchange-backup-administrator) role. |
 | November 2025 | Roles | Updated [SharePoint Backup Administrator](permissions-reference.md#sharepoint-backup-administrator) role. |

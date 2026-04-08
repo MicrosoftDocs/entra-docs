@@ -1,15 +1,8 @@
 ---
 title: Add Azure AD B2C for customer sign-in
 description: Learn how to configure an Azure AD B2C tenant as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
- 
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 

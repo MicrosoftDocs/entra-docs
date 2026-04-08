@@ -1,13 +1,8 @@
 ---
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 07/10/2025
-ms.author: sarahlipsey
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
@@ -156,6 +151,7 @@ Use the following table to better understand how to resolve errors that you find
 | InvitationCreation<br/>FailureAmbiguousUser| The invited user has a proxy address that matches an internal user in the target tenant. The proxy address must be unique. | To resolve this error, delete the existing internal user in the target tenant or remove this user from sync scope.|
 | AzureActiveDirectory<br/>CannotUpdateObjects<br/>MasteredOnPremises| If the user in the target tenant was originally synchronized from AD to Microsoft Entra ID and converted to an external user, the source of authority is still on-premises and the user can't be updated.| The user can't be updated with cross-tenant synchronization. |
 | EntityTypeNotSupported|Groups can be used to determine what users are in scope for provisioning. Groups objects cannot be synchronized. | No customer action is required. This is a skipped event. If you are using the provisioning on-demand, ensure that you choose a user rather than a group to provision.|
+| AzureActiveDirectoryConflictEncountered|There is a conflicting object in the target tenant. | Check if there is a contact in the target tenant with the same mail. Delete the contact from the target tenant to ensure that the B2B user can be updated. Take care to migrate any group memberships from the contact to the B2B user as needed.|
 
 ## Related content
 

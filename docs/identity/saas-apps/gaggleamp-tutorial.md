@@ -1,14 +1,9 @@
 ---
 title: Configure GaggleAMP for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GaggleAMP.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GaggleAMP so that I can control who has access to GaggleAMP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -96,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure GaggleAMP SSO
 
-1. In another browser instance, navigate to the SAML SSO page created for you by the Gaggle support team (for example: *https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit*).
+1. In another browser instance, navigate to the SAML SSO page created for you by the Gaggle support team (for example: `https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit`).
 
 2. On your **SAML SSO** page, perform the following steps:  
    

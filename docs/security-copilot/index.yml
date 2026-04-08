@@ -97,7 +97,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Microsoft Entra ID?
-            url: ~/fundamentals/whatis.md
+            url: ~/fundamentals/what-is-entra.md
           - text: What's new in Microsoft Entra ID
             url: ~/fundamentals/whats-new.md
       - linkListType: concept

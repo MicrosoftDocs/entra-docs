@@ -1,15 +1,10 @@
 ---
 title: How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn how to enforce TLS 1.2 for a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: dougeby
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 09/03/2025
-ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---

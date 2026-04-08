@@ -1,13 +1,8 @@
 --- 
 title: Enforce signed SAML authentication requests
 description: Learn how to enforce signed SAML authentication requests.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 07/10/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, sfi-image-nochange

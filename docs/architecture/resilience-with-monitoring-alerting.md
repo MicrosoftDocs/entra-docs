@@ -1,13 +1,11 @@
 ---
 title: Resilience through monitoring and analytics using Azure AD B2C
 description: Resilience through monitoring and analytics using Azure AD B2C
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
-manager: martinco
 ms.date: 05/20/2025
+ms.subservice: architecture
 ---
 
 # Resilience through monitoring and analytics

@@ -1,13 +1,9 @@
 ---
 title: 'Microsoft Entra Connect cloud sync insights workbook'
 description: This article describes the Azure Monitor workbook for cloud sync.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 

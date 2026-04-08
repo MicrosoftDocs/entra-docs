@@ -3,8 +3,6 @@ title: Configure Sign In Enterprise for automatic host provisioning with Microso
 description: Learn how to automatically provision and de-provision hosts from Microsoft Entra ID to Sign In Enterprise.
 author: jeevansd
 manager: beatrizd
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: jeedes

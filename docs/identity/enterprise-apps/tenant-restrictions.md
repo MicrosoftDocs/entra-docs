@@ -1,14 +1,9 @@
 ---
 title: Use tenant restrictions to manage access to SaaS apps
 description: How to use tenant restrictions to manage which users can access apps based on their Microsoft Entra tenant.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 
 ms.topic: concept-article
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps-article

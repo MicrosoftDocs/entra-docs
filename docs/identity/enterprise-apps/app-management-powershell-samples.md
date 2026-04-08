@@ -2,14 +2,8 @@
 title: PowerShell samples in Application Management
 description: These PowerShell samples are used for apps you manage in your Microsoft Entra tenant. You can use these sample scripts to find expiration information about secrets and certificates.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: sample
 ms.date: 01/23/2025
-ms.author: jomondi
 ms.reviewer: mifarca
 ms.custom: enterprise-apps, no-azure-ad-ps-ref
 

@@ -1,17 +1,12 @@
 ---
 title: Resilience in identity and access management with Microsoft Entra ID
 description: Learn how to build resilience into identity and access management. Resilience helps endure disruption to system components and recover with minimal effort.
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
 ms.topic: overview
 ms.date: 08/26/2022
-ms.author: jricketts
 ms.custom:
   - it-pro
   - kr2b-contr-experiment
+ms.subservice: architecture
 ---
 
 # Building resilience into identity and access management with Microsoft Entra ID

@@ -1,12 +1,6 @@
 ---
 title: User default permissions in external tenants
 description: Learn about the default permissions for users in an external tenant. 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: reference
 ms.date: 03/10/2025
 ms.custom: it-pro

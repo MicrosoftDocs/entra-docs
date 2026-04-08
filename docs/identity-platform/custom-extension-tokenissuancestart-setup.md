@@ -28,7 +28,7 @@ This video outlines the procedure of mapping claims from external systems into s
 ## Prerequisites
 
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
 
 ::: zone-end
@@ -40,7 +40,7 @@ This article describes how to create a REST API for a [token issuance start even
 ## Prerequisites
 
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
 - One of the following IDEs and configurations:
     - Visual Studio with [Azure Development workload for Visual Studio](/dotnet/azure/configure-visual-studio) configured.

@@ -1,9 +1,6 @@
 ---
 title: Configure ID Protection-based approvals for access package requests in Entitlement Management (Preview)
 description: This article describes how to configure ID Protection-based approvals for access package requests.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/04/2025

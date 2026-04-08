@@ -2,21 +2,17 @@
 title: Rotate signing keys
 description: Learn how to rotate Microsoft Entra Verified ID signing keys.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
-ms.author: barclayn
 #Customer intent: As an administrator, I'm looking for information on how to rotate signing keys.
 ---
 
 # Rotate signing keys
 
-In this article, we review the steps to rotate your Microsoft Entra Verified ID signing keys.
 
-## Prerequisites
+## Overview
 
+This article covers the steps to rotate your Microsoft Entra Verified ID signing keys.
 
 ## Rotate the signing keys
 
@@ -34,7 +30,7 @@ To help admins perform rotation of signing keys without any service disruption, 
     :::image type="content" source="media/how-to-register-didwebsite/how-to-register-didwebsite-diddoc.png" alt-text="Screenshot that shows did.json.":::
 1. Replace `did.json` on all web servers where it was previously deployed. If you edited it manually, make sure it still has valid JSON syntax by using a tool like `https://jsonformatter.org/`. Before you continue, make sure that you can retrieve the new `did.json` document from the internet with a browser.
 
-1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value still is `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
+1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value is still `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
 
 ## Do I need to rotate keys in Verified ID?
 
@@ -46,7 +42,7 @@ After you successfully perform steps 1-4, Verified ID has a new signing key and 
 
 ## What happens to credentials signed by the old key?
 
-Issued Verified ID credentials signed by a key that's no longer current continues to work if the public key is available in the public `did.json` document and the key isn't disabled or deleted in Key Vault.
+Issued Verified ID credentials signed by a key that's no longer current continue to work if the public key is available in the public `did.json` document and the key isn't disabled or deleted in Key Vault.
 
 ## What happens when old signing keys are no longer available?
 
@@ -58,7 +54,7 @@ For example, say you have 12 keys in Key Vault and you want Verified ID to not l
 
 **Second:** In this example, if you rotate keys 12 times, Verified ID doesn't load the two oldest keys anymore. Any Verified ID credential issued using those two keys can't be verified anymore.
 
->[!NOTE]
+> [!NOTE]
 > Your key rotation policy needs to be coordinated with the lifetime of issued Verified ID credentials so that credentials are renewed or reissued before an old key is retired. An example of a solution that doesn't work is issuing Verified ID credentials with an expiration date 12 months away and at the same time having a key rotation policy to rotate keys every month. Such a solution is in trouble the last two months of the year because old keys aren't available anymore.
 
 ## Can I rotate keys directly in Key Vault instead of calling the Verified ID API?
