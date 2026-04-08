@@ -4,7 +4,7 @@ description: Learn how to reprocess a request for an access package in entitleme
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-#CustomerIntent: As an IT admin, I want to reprocess requests for an access package so that I can resolve failed or incomplete access requests.
+#Customer Intent: As an IT admin, I want to reprocess requests for an access package so that I can resolve failed or incomplete access requests.
 ---
 # Reprocess requests for an access package in entitlement management
 
