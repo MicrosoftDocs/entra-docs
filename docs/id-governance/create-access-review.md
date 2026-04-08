@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to create an access review of group members or application access so that I can ensure appropriate access in my organization.
+#Customer Intent: As an IT admin, I want to create an access review of group members or application access so that I can ensure appropriate access in my organization.
 ---
  
 # Create an access review of groups and applications in Microsoft Entra ID 
