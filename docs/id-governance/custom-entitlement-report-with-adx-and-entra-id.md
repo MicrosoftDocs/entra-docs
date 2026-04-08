@@ -4,7 +4,7 @@ description: This tutorial describes how to create customized reports in Azure D
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to create custom entitlement reports using Microsoft Entra and Azure Data Explorer so that I can analyze access data across my organization.
+#Customer Intent: As an IT admin, I want to create custom entitlement reports using Microsoft Entra and Azure Data Explorer so that I can analyze access data across my organization.
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer by using data from Microsoft Entra
