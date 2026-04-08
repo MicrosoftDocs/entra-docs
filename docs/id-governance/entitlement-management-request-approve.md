@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 06/18/2025
 ms.reviewer: mamkumar
 #Customer intent: As an approver, I want steps for how to approve requests for access packages so that I can unlock requestors who need to use the resources.
+#CustomerIntent: As an approver, I want to approve or deny access requests in the My Access portal so that I can manage access to resources in my organization.
 ---
 
 # Approve or deny access requests in entitlement management
