@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to plan a Microsoft Entra access reviews deployment so that I can successfully implement access reviews in my organization.
+#Customer Intent: As an IT admin, I want to plan a Microsoft Entra access reviews deployment so that I can successfully implement access reviews in my organization.
 ---
 
 # Plan a Microsoft Entra access reviews deployment
