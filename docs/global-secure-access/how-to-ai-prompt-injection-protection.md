@@ -2,7 +2,7 @@
 title: Protect enterprise generative AI apps with prompt injection protection (preview)
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 04/08/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Protect enterprise generative AI applications with prompt injection protection (preview)
+# Protect enterprise generative AI applications with prompt injection protection
 
 Prompt injection attacks pose a significant risk for generative AI apps. Bad actors craft malicious input to make a large language model (LLM) ignore instructions, expose sensitive data, perform unintended actions, or generate harmful content.
 
@@ -26,10 +26,6 @@ Prompt Injection Protection:
 
 ## High-level architecture
 :::image type="content" source="media/how-to-ai-prompt-injection-protection/prompt-shield-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-ai-prompt-injection-protection/prompt-shield-architecture.png":::
-
-> [!IMPORTANT]
-> The Prompt Injection Protection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
