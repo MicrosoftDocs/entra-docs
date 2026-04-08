@@ -6,7 +6,7 @@ documentationcenter: ''
 ms.topic: best-practice
 ms.date: 04/09/2025
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to learn best practices for securely deploying Microsoft Entra ID Governance so that I can protect my organization's identity infrastructure.
+#Customer Intent: As an IT admin, I want to learn best practices for securely deploying Microsoft Entra ID Governance so that I can protect my organization's identity infrastructure.
 ---
 
 # Best practices for securely deploying Microsoft Entra ID Governance 
