@@ -4,6 +4,7 @@ description: This article shows how to use the new identity governance dashboard
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.custom:
+#CustomerIntent: As an IT admin, I want to use the identity governance dashboard so that I can monitor and manage governance activities in my organization.
 ---
 # Identity Governance dashboard
 
