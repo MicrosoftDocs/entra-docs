@@ -6,7 +6,6 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: mwahl
-#Customer intent: As an administrator, I want to allow users in certain partner organizations to request access packages so that our organizations can collaborate on projects.
 #CustomerIntent: As an IT admin, I want to manage connected organizations in entitlement management so that I can allow people outside my organization to request access packages.
 ---
 
