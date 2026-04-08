@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 04/03/2026
 ms.custom: template-concept
-#CustomerIntent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
+#Customer Intent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
 ---
 
 # Lifecycle Workflows templates and categories
