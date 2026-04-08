@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/08/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Juno Journey so that I can streamline the user management process and ensure that users have the appropriate access to Juno Journey.
@@ -33,8 +33,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Juno Journey](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Juno Journey](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-juno-journey-to-support-provisioning-with-azure-ad'></a>
 
@@ -69,27 +69,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Juno Journey link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Juno Journey. If the connection fails, ensure your Juno Journey account has admin permissions and try again.
+1. In the **Tenant URL** field, input your Juno Journey Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Juno Journey. If the connection fails, ensure your Juno Journey account has the required admin permissions and try again.
 
- 	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/juno-journey-provisioning-tutorial/provisioning.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Juno Journey**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Juno Journey in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Juno Journey for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Juno Journey API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Juno Journey in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Juno Journey for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Juno Journey API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Variable|Type|
    |---|---|
@@ -120,22 +122,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|
    urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
 
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-11. To enable the Microsoft Entra provisioning service for Juno Journey, change the **Provisioning Status** to **On** in the **Settings** section.
-
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Juno Journey by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page. 
 
 ## Step 6: Monitor your deployment
 
