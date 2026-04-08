@@ -5,7 +5,7 @@ author: Sammak
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
-#CustomerIntent: As an IT admin, I want to onboard external users through an approval process so that I can ensure appropriate access for external collaborators.
+#Customer Intent: As an IT admin, I want to onboard external users through an approval process so that I can ensure appropriate access for external collaborators.
 ---
 # Tutorial - Onboard external users to Microsoft Entra ID through an approval process
 
