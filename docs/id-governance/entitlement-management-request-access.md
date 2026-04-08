@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 09/11/2024
 ms.reviewer: mamkumar
-#CustomerIntent: As a user, I want to request access to an access package using the My Access portal so that I can get access to the resources I need.
+#Customer Intent: As a user, I want to request access to an access package using the My Access portal so that I can get access to the resources I need.
 ---
 # Request access to an access package in entitlement management
 
