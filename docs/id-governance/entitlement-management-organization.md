@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to manage connected organizations in entitlement management so that I can allow people outside my organization to request access packages.
+#Customer Intent: As an IT admin, I want to manage connected organizations in entitlement management so that I can allow people outside my organization to request access packages.
 ---
 
 # Manage connected organizations in entitlement management
