@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.date: 02/20/2024
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to understand delegation and roles in entitlement management so that I can assign the right governance responsibilities to the appropriate people.
+#Customer Intent: As an IT admin, I want to understand delegation and roles in entitlement management so that I can assign the right governance responsibilities to the appropriate people.
 ---
 
 # Delegation and roles in entitlement management
