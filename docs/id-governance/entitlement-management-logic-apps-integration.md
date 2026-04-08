@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to trigger Logic Apps with custom extensions in entitlement management so that I can integrate custom workflows with access management.
+#Customer Intent: As an IT admin, I want to trigger Logic Apps with custom extensions in entitlement management so that I can integrate custom workflows with access management.
 ---
 # Trigger Logic Apps with custom extensions in entitlement management
 
