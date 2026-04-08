@@ -6,6 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 06/18/2025
 ms.reviewer: mwahl
+#CustomerIntent: As an IT admin, I want to manage users excluded from Conditional Access policies so that I can ensure exclusions are reviewed and remain appropriate.
 ---
 
 # Use access reviews to manage users excluded from Conditional Access policies
