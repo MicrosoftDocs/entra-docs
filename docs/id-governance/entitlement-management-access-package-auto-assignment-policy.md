@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2024
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to configure automatic assignment policies for an access package so that I can automatically assign access based on rules.
+#Customer Intent: As an IT admin, I want to configure automatic assignment policies for an access package so that I can automatically assign access based on rules.
 ---
 # Configure an automatic assignment policy for an access package in entitlement management
 
