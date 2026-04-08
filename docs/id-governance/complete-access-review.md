@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to complete an access review of group members or application access so that I can finalize access decisions in my organization.
+#Customer Intent: As an IT admin, I want to complete an access review of group members or application access so that I can finalize access decisions in my organization.
 ---
  
 # Complete an access review of groups and applications in access reviews
