@@ -83,7 +83,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Screenshot shows the SCIM enabled confirmation with OAuth client credentials details and attribute mappings.](./media/uipath-provisioning-tutorial/secret-token.png)
 
-    Please Copy these values, you will need them later in this tutorial.
+    Copy these values, you need them later in this tutorial.
 
     > [!NOTE]
     > Leave this browser tab open. Do not click **I have completed identity provider configuration** until you have completed the steps in Step 5.
@@ -129,13 +129,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the connection details, enter the values obtained from Step 2 based on your chosen authorization method:
 
     **For OAuth2 client credentials grant (Recommended):**
-    * **Tenant URL** — Enter the **SCIM URL** from Step 2 (e.g., `https://cloud.uipath.com/{orgId}/identity_/api/scim/v2`).
-    * **Token endpoint** — Enter your UiPath organization's token exchange endpoint (e.g., `https://cloud.uipath.com/{org-name}/identity_/connect/token`).
+    * **Tenant URL** — Enter the **SCIM URL** from Step 2 (for example, `https://cloud.uipath.com/{orgId}/identity_/api/scim/v2`).
+    * **Token endpoint** — Enter your UiPath organization's token exchange endpoint (for example, `https://cloud.uipath.com/{org-name}/identity_/connect/token`).
     * **Client identifier** — Enter the **OAuth application ID** from Step 2.
     * **Client secret** — Enter the **OAuth secret** from Step 2.
 
     **For Bearer authentication:**
-    * **Tenant URL** — Enter the **SCIM URL** from Step 2 (e.g., `https://cloud.uipath.com/{orgId}/identity_/api/scim/v2`).
+    * **Tenant URL** — Enter the **SCIM URL** from Step 2 (for example, `https://cloud.uipath.com/{orgId}/identity_/api/scim/v2`).
     * **Secret token** — Enter the **Bearer token** from Step 2.
 
     Select **Test Connection** to ensure Microsoft Entra ID can connect to UiPath. If the connection fails, verify the values entered match those provided in Step 2 and try again.
