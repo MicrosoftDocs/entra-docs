@@ -99,21 +99,21 @@ From the selected scenario, you have several options to investigate:
 
 #### Investigate alerts with the health alert investigator (preview)
 
-The health alert investigator is a Copilot skill embedded within monitoring alerts. It allows you to investigate health alerts directly from the alert page, performing correlation analysis to identify actionable issues within your tenant. Unlike other Copilot skills, the health alert investigator isn't accessed through the Copilot chat. Instead, you access it through the diagnostics tools on the alert page.
-
-> [!NOTE]
-> Both the existing diagnostic tools and the health alert investigator are available during the transition to the new experience.
+The health alert investigator is a Copilot skill embedded within Entra health alerts. It can investigate a health alert on your behalf directly from the alert page, performing correlation analysis to identify actionable root causes within your tenant. After you trigger an investigation, Copilot will post a report of findings that contains a recommended fix and the logic behind the correlation analysis that uses Entra activity logs and tenant configuration data to draw its conclusions.
 
 > [!NOTE]
 > To use the health alert investigator, your tenant must be onboarded to Microsoft Security Copilot, and ensure the Microsoft Entra plugin is enabled in Security Copilot.
 
+> [!NOTE]
+> The health alert investigator isn't accessible through Copilot chat yet. The chat experience is coming soon.
+
 To use the health alert investigator:
 
-1. From the active alert page, select the **Copilot** button to launch the health alert investigator.
+1. From the active alert page, select the **Investigate with Copilot** button to launch the health alert investigator.
 
-1. The health alert investigator performs a correlation analysis across the relevant signals and affected entities for the alert.
+1. The health alert investigator performs a correlation analysis between the health metrics that led to the alert and the tenant's activity logs and configuration data. When the analysis is complete, the **Investigate health alert** card will display a summary of findings.
 
-1. Review the results provided by the investigator, which include a summary of identified issues and recommended actions to resolve the root cause.
+1. Click the **Show Copilot investigation** button to display a detailed report of findings with suggested next steps to resolve the root cause.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
