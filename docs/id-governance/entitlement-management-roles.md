@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 06/27/2025
 ms.reviewer: sponnada
 ms.custom: sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to assign Microsoft Entra roles with access packages so that I can manage role assignments through entitlement management.
+#Customer Intent: As an IT admin, I want to assign Microsoft Entra roles with access packages so that I can manage role assignments through entitlement management.
 ---
 
 # Assign Microsoft Entra roles (Preview)
