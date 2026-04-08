@@ -4,6 +4,7 @@ description: Use Access Reviews to extend or remove access from members of partn
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/12/2026
+#CustomerIntent: As an IT admin, I want to review and remove external users who no longer need access to my organization's resources so that I can maintain security and governance compliance.
 ---
 
 # Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access
