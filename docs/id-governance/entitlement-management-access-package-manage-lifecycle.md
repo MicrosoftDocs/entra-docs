@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to convert guest user lifecycle in entitlement management so that I can manage how guest access package assignments are handled.
+#Customer Intent: As an IT admin, I want to convert guest user lifecycle in entitlement management so that I can manage how guest access package assignments are handled.
 ---
 
 # Manage guest user lifecycle
