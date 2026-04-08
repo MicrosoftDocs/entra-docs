@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: krbain
-#CustomerIntent: As an IT admin, I want to delete a lifecycle workflow so that I can remove workflows that are no longer needed.
+#Customer Intent: As an IT admin, I want to delete a lifecycle workflow so that I can remove workflows that are no longer needed.
 ---
 
 # Delete a lifecycle workflow
