@@ -61,6 +61,8 @@ items:
       href: how-to-plan-agent-identity-architecture.md
     - name: Agent creation channels
       href: agent-id-creation-channels.md
+    - name: Best practices
+      href: best-practices-agent-id.md
     
   # BUILD / IMPLEMENT ######################
   - name: Create and configure agents
