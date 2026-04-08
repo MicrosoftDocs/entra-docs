@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept, sfi-image-nochange
+#CustomerIntent: As an IT admin, I want to understand lifecycle workflow versioning so that I can manage and track changes to my workflows over time.
 ---
 
 # Lifecycle Workflows Versioning
