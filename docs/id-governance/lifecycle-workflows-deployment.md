@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to plan a lifecycle workflow deployment so that I can successfully implement lifecycle workflows in my organization.
+#Customer Intent: As an IT admin, I want to plan a lifecycle workflow deployment so that I can successfully implement lifecycle workflows in my organization.
 ---
 
 # Plan a Lifecycle Workflow deployment
