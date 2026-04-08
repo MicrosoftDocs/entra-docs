@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
+#CustomerIntent: As an IT admin, I want to share a link to request an access package so that users can easily request access to resources.
 ---
 # Share link to request an access package in entitlement management
 
