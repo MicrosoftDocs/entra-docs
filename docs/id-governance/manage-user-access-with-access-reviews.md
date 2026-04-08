@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
+#CustomerIntent: As an IT admin, I want to manage user access with access reviews so that I can ensure users have appropriate access to groups and applications.
 ---
 
 # Manage user access with Microsoft Entra access reviews
