@@ -5,7 +5,6 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 #CustomerIntent: As an IT admin, I want to view, add, and remove assignments for an access package so that I can manage who has access to bundled resources.
 ---
 # View, add, and remove assignments for an access package in entitlement management
