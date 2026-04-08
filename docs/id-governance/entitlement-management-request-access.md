@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 09/11/2024
 ms.reviewer: mamkumar
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
+#CustomerIntent: As a user, I want to request access to an access package using the My Access portal so that I can get access to the resources I need.
 ---
 # Request access to an access package in entitlement management
 
