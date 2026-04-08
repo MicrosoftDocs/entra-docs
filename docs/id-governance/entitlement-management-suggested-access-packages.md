@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 1/09/2025
 ms.reviewer: myra-ramdenbourg
-#CustomerIntent: As an IT admin, I want to show suggested access packages to users in My Access so that they can quickly find the most relevant access packages.
+#Customer Intent: As an IT admin, I want to show suggested access packages to users in My Access so that they can quickly find the most relevant access packages.
 ---
 
 # Suggested access packages in My Access
