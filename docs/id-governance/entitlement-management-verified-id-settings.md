@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 10/17/2024
 ms.reviewer: hanki
 ms.custom: sfi-ga-nochange
+#CustomerIntent: As an IT admin, I want to configure Verified ID settings for an access package so that I can require identity verification for access requests.
 ---
 
 # Configure Verified ID settings for an access package in entitlement management
