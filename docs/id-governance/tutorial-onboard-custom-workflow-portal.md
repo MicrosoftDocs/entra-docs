@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to automate employee onboarding tasks before their first day of work so that I can ensure new employees have the access they need from day one.
+#Customer Intent: As an IT admin, I want to automate employee onboarding tasks before their first day of work so that I can ensure new employees have the access they need from day one.
 ---
 
 # Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center
