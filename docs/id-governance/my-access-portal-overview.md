@@ -5,7 +5,7 @@ ms.topic: overview
 ms.date: 12/10/2024
 
 
-#CustomerIntent: As a user, I want to understand the My Access portal so that I can manage my access to resources within Microsoft Entra.
+#Customer Intent: As a user, I want to understand the My Access portal so that I can manage my access to resources within Microsoft Entra.
 ---
 
 
