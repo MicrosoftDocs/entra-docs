@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 03/12/2026
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
+#CustomerIntent: As an IT admin, I want to review access for an access package so that I can complete access review decisions in entitlement management.
 ---
 # Review access of an access package in entitlement management
 
