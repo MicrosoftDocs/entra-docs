@@ -8,6 +8,7 @@ ms.date: 03/10/2025
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
+#CustomerIntent: As an IT admin, I want to delegate access governance to catalog creators so that they can manage access packages themselves.
 ---
 
 # Delegate access governance to catalog creators in entitlement management
