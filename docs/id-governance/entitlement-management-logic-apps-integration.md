@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 These Logic Apps can then be triggered to run in accordance with entitlement management use cases such as when an access package is granted or requested. For example, an admin could create and link a custom Logic App to entitlement management, so that when a user requests an access package, a Logic App is triggered that ensures the user is also assigned certain characteristics in a third party SAAS app (like Salesforce) or is sent a custom email. 
 
-Entitlement management use cases that can be integrated with Logic Apps include the following stages. These are the triggers associated with an access package that can launch the custom extension Logic App:  
+Entitlement management use cases that can be integrated with Logic Apps include the following stages. These stages are the triggers associated with an access package that can launch the custom extension Logic App:  
 
 - When an access package request is created
 
@@ -73,7 +73,7 @@ These triggers to Logic Apps are controlled in a tab within access package polic
         :::image type="content" source="media/entitlement-management-logic-apps/create-logic-app-extension-details.png" alt-text="Screenshot of creating logic app detail selections.":::
 
     > [!NOTE]    
-    > When creating a new Logic App in this modal, the length of "/subscriptions/{SubscriptionId}/resourceGroups/{RG Name}/providers/Microsoft.Logic/workflows/{Logicapp Name}" can't exceed 150 characters.
+    > When you create a new Logic App in this modal, the length of "/subscriptions/{SubscriptionId}/resourceGroups/{RG Name}/providers/Microsoft.Logic/workflows/{Logicapp Name}" can't exceed 150 characters.
 
 1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App callout are correct. Then select **Create**.
 
@@ -90,13 +90,13 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 1. The Token Security column shows the associated auth security framework used when creating the custom extension. New V2 custom extensions show “*proof-of-possession*” (PoP) as the token security type. Older custom extensions show “regular”.   
 
-1. Old style custom extensions are no longer able to be created from the UI, however existing ones can be converted to new style custom extensions from the UI. 
+1. Old style custom extensions are no longer able to be created from the UI. Existing ones can be converted to new style custom extensions from the UI. 
    :::image type="content" source="media/entitlement-management-logic-apps/convert-token-security-extension.png" alt-text="Screenshot of converting old security token to new."::: 
 
 1. Selecting the three dots at the end of the row of an old custom extension allows you to update the custom extension to a new type quickly. 
     > [!NOTE]
     > Custom extensions can only be converted to the new type if they aren't in use, or if they are in use exclusively for policy stages of one specific extension type (assignment request stages or pre expiration stages).
-1. You can also edit any custom extension. This allows you to update the name, description, and other field values. This can be accomplished by selecting **Edit** inside the three-dot pane for any custom extension. 
+1. You can also edit any custom extension. Editing allows you to update the name, description, and other field values. This can be accomplished by selecting **Edit** inside the three-dot pane for any custom extension. 
 
 1. Old style custom extensions can continue to be used and edited even if not converted, even though they can no longer be created.
 
