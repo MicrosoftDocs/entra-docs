@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to
-#CustomerIntent: As an IT admin, I want to create a lifecycle workflow so that I can automate identity lifecycle processes in my organization.
+#Customer Intent: As an IT admin, I want to create a lifecycle workflow so that I can automate identity lifecycle processes in my organization.
 ---
 
 # Create a lifecycle workflow
