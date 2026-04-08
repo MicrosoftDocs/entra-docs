@@ -52,7 +52,7 @@ File controls address a key data exfiltration vector. Users who intentionally or
          │<───────────────────┤                     │                      │
  ```
 
-File controls require Transport Layer Security (TLS) inspection to be enabled. Without decrypting the traffic, the security service edge (SSE) can't detect file types within encrypted uploads.
+File controls require Transport Layer Security (TLS) inspection to be enabled. The security service edge (SSE) can't detect file types within encrypted uploads unless the traffic is decrypted.
 
 ## Sample walkthrough videos
 
@@ -106,7 +106,7 @@ The following video demonstrates how to configure a file policy.
 1. Select the file policy that you created and select **Add**.
 
 > [!NOTE]
-> Verify that the security profile is assigned to a Conditional Access policy.
+> Verify that the security profile is assigned to a Microsoft Entra Conditional Access policy.
 
 ## Step 3: Verify file upload and download blocking
 

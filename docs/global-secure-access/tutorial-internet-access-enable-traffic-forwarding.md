@@ -11,7 +11,7 @@ ms.custom: sfi-image-nochange
 
 # Tutorial: Enable Internet Access traffic forwarding
 
-The Internet Access traffic forwarding profile routes internet traffic through the Global Secure Access (GSA) client. Enabling this traffic forwarding profile allows workers to connect to the internet in a controlled and secure way. Internet Access allows organizations to discover and monitor all internet sites accessed by your users. As an administrator, you can control access to these internet sites through various policies like web content filtering policies, file scan policies, and more.
+The Microsoft Entra Internet Access traffic forwarding profile routes internet traffic through the Global Secure Access (GSA) client. Enabling this traffic forwarding profile allows workers to connect to the internet in a controlled and secure way. Internet Access allows organizations to discover and monitor all internet sites accessed by your users. As an administrator, you can control access to these internet sites through various policies like web content filtering policies, file scan policies, and more.
 
 In this tutorial, you learn how to:
 > [!div class="checklist"]
@@ -79,7 +79,7 @@ With the Internet Access traffic profile enabled and assigned to users, the GSA 
 
 1. Optionally, review the **Health check** tab results.
 
-The GSA client automatically checks for updates to traffic forwarding profile changes every five minutes. You can see the date and time of the last check next to the **Forwarding profile last checked** field on the **Forwarding profile** tab. If you don't see the results that you want, wait five minutes and then select **Refresh**.
+The GSA client automatically checks for updates to traffic-forwarding profile changes every five minutes. You can see the date and time of the last check next to the **Forwarding profile last checked** field on the **Forwarding profile** tab. If you don't see the results that you want, wait five minutes and then select **Refresh**.
 
 > [!NOTE]
 >
