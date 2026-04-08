@@ -4,7 +4,7 @@ description: Learn how to write PowerShell scripts in Azure Automation to intera
 ms.topic: how-to
 ms.date: 11/25/2024
 ms.custom:
-#CustomerIntent: As an IT admin, I want to automate Microsoft Entra ID Governance tasks with Azure Automation so that I can use PowerShell scripts to manage entitlement management and other features.
+#Customer Intent: As an IT admin, I want to automate Microsoft Entra ID Governance tasks with Azure Automation so that I can use PowerShell scripts to manage entitlement management and other features.
 ---
 # Automate Microsoft Entra ID Governance tasks via Azure Automation and Microsoft Graph
 
