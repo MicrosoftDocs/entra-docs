@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.custom: devx-track-azurepowershell, sfi-ga-nochange
-#CustomerIntent: As an IT admin, I want to archive logs and create reports with Azure Monitor in entitlement management so that I can audit and analyze access activity.
+#Customer Intent: As an IT admin, I want to archive logs and create reports with Azure Monitor in entitlement management so that I can audit and analyze access activity.
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 
