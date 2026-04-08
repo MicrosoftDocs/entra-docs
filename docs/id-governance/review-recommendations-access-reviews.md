@@ -6,7 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
-#CustomerIntent: As a reviewer, I want to understand review recommendations in access reviews so that I can make informed decisions about user access.
+#Customer Intent: As a reviewer, I want to understand review recommendations in access reviews so that I can make informed decisions about user access.
 ---
 
 # Review recommendations for Access reviews 
