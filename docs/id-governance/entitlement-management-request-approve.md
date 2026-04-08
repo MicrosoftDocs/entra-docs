@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/18/2025
 ms.reviewer: mamkumar
-#CustomerIntent: As an approver, I want to approve or deny access requests in the My Access portal so that I can manage access to resources in my organization.
+#Customer Intent: As an approver, I want to approve or deny access requests in the My Access portal so that I can manage access to resources in my organization.
 ---
 
 # Approve or deny access requests in entitlement management
