@@ -7,7 +7,7 @@ ms.date: 06/20/2023
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-blocked, sfi-ropc-nochange
-#CustomerIntent: As an IT admin, I want to govern an application's existing users using PowerShell so that I can identify and manage users whose access doesn't derive from Microsoft Entra ID.
+#Customer Intent: As an IT admin, I want to govern an application's existing users using PowerShell so that I can identify and manage users whose access doesn't derive from Microsoft Entra ID.
 ---
 
 # Govern an application's existing users - Microsoft PowerShell
