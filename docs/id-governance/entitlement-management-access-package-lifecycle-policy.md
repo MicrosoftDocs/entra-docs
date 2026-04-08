@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include requestor information to screen requestors and get requestors the resources they need to perform their job.
+#CustomerIntent: As an IT admin, I want to change the lifecycle settings for an access package so that I can control how long access assignments last.
 ---
 # Change lifecycle settings for an access package in entitlement management
 
