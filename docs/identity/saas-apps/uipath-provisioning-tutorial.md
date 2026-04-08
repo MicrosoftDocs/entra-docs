@@ -56,17 +56,17 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Ensure the Microsoft Entra ID directory integration is configured and shows **Active** status.
 
-    ![Screenshot shows the Microsoft Entra ID integration card with Active status.](./media/uipath-provisioning-tutorial/uipath-entra-id-integration-active.png)
+    ![Screenshot shows the Microsoft Entra ID integration card with Active status.](./media/uipath-provisioning-tutorial/integration-active.png)
 
 1. Scroll down to the **Directory integration details** section and click **Enable SCIM**.
 
-    ![Screenshot shows the Directory integration details section with the Enable SCIM button.](./media/uipath-provisioning-tutorial/uipath-enable-scim.png)
+    ![Screenshot shows the Directory integration details section with the Enable SCIM button.](./media/uipath-provisioning-tutorial/enable.png)
 
 1. In the **Configure SCIM directory integration** dialog, select one of the following SCIM authorization methods supported by Entra ID:
     * **OAuth client credentials grant** (Recommended)
     * **Long-lived bearer token**
 
-    ![Screenshot shows the Configure SCIM directory integration dialog with authorization method options.](./media/uipath-provisioning-tutorial/uipath-scim-auth-method.png)
+    ![Screenshot shows the Configure SCIM directory integration dialog with authorization method options.](./media/uipath-provisioning-tutorial/configure.png)
 
 1. Click **Configure**. The **SCIM is enabled!** confirmation screen displays the connection details you need to configure in Microsoft Entra ID.
 
@@ -74,14 +74,14 @@ The scenario outlined in this article assumes that you already have the followin
     * **SCIM URL** : The endpoint URL for the SCIM connector.
     * **Bearer token** : The secret token to authenticate requests.
 
-    ![Screenshot shows the SCIM enabled confirmation with Bearer token details and attribute mappings.](./media/uipath-provisioning-tutorial/uipath-scim-enabled-bearer.png)
+    ![Screenshot shows the SCIM enabled confirmation with Bearer token details and attribute mappings.](./media/uipath-provisioning-tutorial/bearer-token.png)
 
     **For OAuth client credentials grant:**
     * **SCIM URL** : The endpoint URL for the SCIM connector.
     * **OAuth application ID** : The client identifier for the OAuth application.
     * **OAuth secret** : The client secret for the OAuth application.
 
-    ![Screenshot shows the SCIM enabled confirmation with OAuth client credentials details and attribute mappings.](./media/uipath-provisioning-tutorial/scim-enabled-oauth.png)
+    ![Screenshot shows the SCIM enabled confirmation with OAuth client credentials details and attribute mappings.](./media/uipath-provisioning-tutorial/secret-token.png)
 
     Please Copy these values, you will need them later in this tutorial.
 
@@ -90,7 +90,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. After completing the Entra ID configuration in Step 5, return to UiPath and click **I have completed identity provider configuration**. The Directory integration details section now confirms SCIM provisioning and deprovisioning are active.
 
-    ![Screenshot shows the Directory integration details after SCIM is configured, with Manage SCIM and Remove SCIM buttons.](./media/uipath-provisioning-tutorial/uipath-scim-configured.png)
+    ![Screenshot shows the Directory integration details after SCIM is configured, with Manage SCIM and Remove SCIM buttons.](./media/uipath-provisioning-tutorial/configured.png)
 
 ## Step 3: Add UiPath from the Microsoft Entra application gallery
 
