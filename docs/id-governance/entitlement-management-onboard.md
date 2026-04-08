@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: concept-article
 ms.date: 10/07/2025
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to understand how to onboard external users with entitlement management so that I can simplify the access approval process for external collaborators.
+#Customer Intent: As an IT admin, I want to understand how to onboard external users with entitlement management so that I can simplify the access approval process for external collaborators.
 ---
 
 # Onboard external users with entitlement management
