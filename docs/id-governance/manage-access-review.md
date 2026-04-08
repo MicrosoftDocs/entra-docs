@@ -6,7 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to manage access reviews so that I can control user and guest access to groups and applications.
+#Customer Intent: As an IT admin, I want to manage access reviews so that I can control user and guest access to groups and applications.
 ---
  
 # Manage user and guest user access with access reviews
