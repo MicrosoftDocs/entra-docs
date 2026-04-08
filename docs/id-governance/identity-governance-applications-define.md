@@ -5,7 +5,7 @@ editor: markwahl-msft
 ms.topic: how-to
 ms.date: 12/10/2024
 ms.reviewer: markwahl-msft
-#CustomerIntent: As an IT admin, I want to define organizational policies for governing access to applications so that I can enforce consistent access controls across my environment.
+#Customer Intent: As an IT admin, I want to define organizational policies for governing access to applications so that I can enforce consistent access controls across my environment.
 ---
 
 # Define organizational policies for governing access to applications in your environment
