@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.date: 11/25/2024
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to automate employee offboarding tasks after their last day of work so that I can ensure former employees are properly deprovisioned.
+#Customer Intent: As an IT admin, I want to automate employee offboarding tasks after their last day of work so that I can ensure former employees are properly deprovisioned.
 ---
 # Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 
