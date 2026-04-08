@@ -5,7 +5,6 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want detailed information about how I can convert an ungoverned guest user access package assignment so that requestors have the resources they need to perform their job.
 #CustomerIntent: As an IT admin, I want to convert guest user lifecycle in entitlement management so that I can manage how guest access package assignments are handled.
 ---
 
