@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 06/18/2025
 
-#CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+#Customer Intent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
 
 
