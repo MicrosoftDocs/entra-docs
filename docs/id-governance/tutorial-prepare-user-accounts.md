@@ -6,6 +6,7 @@ ms.topic: tutorial
 ms.date: 08/27/2025
 ms.reviewer: krbain
 ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
+#CustomerIntent: As an IT admin, I want to prepare user accounts for lifecycle workflows so that I can ensure the required user attributes are properly configured.
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 
