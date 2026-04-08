@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to create an access review for an access package so that I can regularly review access assignments in entitlement management.
+#Customer Intent: As an IT admin, I want to create an access review for an access package so that I can regularly review access assignments in entitlement management.
 ---
 # Create an access review of an access package in entitlement management
 
