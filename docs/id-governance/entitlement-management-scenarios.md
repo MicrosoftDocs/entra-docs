@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: mwahl
-#CustomerIntent: As an IT admin, I want to learn about common entitlement management scenarios so that I can apply them to my organization's access governance needs.
+#Customer Intent: As an IT admin, I want to learn about common entitlement management scenarios so that I can apply them to my organization's access governance needs.
 ---
 # Common scenarios in entitlement management
 
