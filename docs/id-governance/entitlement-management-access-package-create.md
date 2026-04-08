@@ -4,7 +4,7 @@ description: Learn how to create an access package of resources that you want to
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/25/2024
-#CustomerIntent: As an IT admin, I want to create an access package so that I can share resources with users who need access.
+#Customer Intent: As an IT admin, I want to create an access package so that I can share resources with users who need access.
 ---
 # Create an access package in entitlement management
 
