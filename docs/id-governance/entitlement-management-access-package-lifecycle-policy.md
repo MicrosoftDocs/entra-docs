@@ -4,7 +4,7 @@ description: Learn how to change requestor information & lifecycle settings for 
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
-#CustomerIntent: As an IT admin, I want to change the lifecycle settings for an access package so that I can control how long access assignments last.
+#Customer Intent: As an IT admin, I want to change the lifecycle settings for an access package so that I can control how long access assignments last.
 ---
 # Change lifecycle settings for an access package in entitlement management
 
