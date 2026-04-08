@@ -3,6 +3,7 @@ title: Create Custom Reports Using Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from more sources in addition to Microsoft Entra
 ms.topic: tutorial
 ms.date: 04/11/2025
+#CustomerIntent: As an IT admin, I want to create custom entitlement reports using application data from multiple sources so that I can gain comprehensive visibility into access across my organization.
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer using data from other sources
