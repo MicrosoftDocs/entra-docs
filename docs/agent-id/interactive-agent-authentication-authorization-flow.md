@@ -37,7 +37,7 @@ Before you begin, ensure you have:
 For admin authorization, you also need:
 
 - An access token with `Application.ReadWrite.OwnedBy` delegated permission. Understand the difference between [delegated and application permissions](/entra/identity-platform/permissions-consent-overview).
-- [Administrator access to grant consent](../identity-professional/grant-agent-access-microsoft-365.md) for application permissions.
+- [Administrator access to grant consent](grant-agent-access-microsoft-365.md) for application permissions.
 
 ## Register a redirect URI
 
