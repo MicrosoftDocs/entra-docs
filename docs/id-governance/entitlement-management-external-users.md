@@ -8,6 +8,7 @@ ms.date: 09/09/2025
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
+#CustomerIntent: As an IT admin, I want to govern access for external users in entitlement management so that I can control how external users access my organization's resources.
 ---
 
 # Govern access for external users in entitlement management
