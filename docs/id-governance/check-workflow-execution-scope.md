@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: sfi-image-nochange
+#CustomerIntent: As an IT admin, I want to check which users fall into the execution scope of a lifecycle workflow so that I can verify the workflow targets the correct users.
 ---
 
 # Check execution user scope of a workflow
