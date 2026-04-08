@@ -3216,7 +3216,6 @@
       "redirect_document_id": false
     },
     {
-<<<<<<< HEAD
       "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
       "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
       "redirect_document_id": true
