@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 11/25/2024
 ms.reviewer: markwahl-msft
-#CustomerIntent: As an IT admin, I want to understand what entitlement management is so that I can manage access to groups, applications, and SharePoint Online sites for internal and external users.
+#Customer Intent: As an IT admin, I want to understand what entitlement management is so that I can manage access to groups, applications, and SharePoint Online sites for internal and external users.
 ---
 # What is entitlement management?
 
