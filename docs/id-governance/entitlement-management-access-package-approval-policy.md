@@ -4,7 +4,7 @@ description: Learn how to change approval and requestor information settings for
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/26/2025
-#CustomerIntent: As an IT admin, I want to change the approval and requestor information settings for an access package so that I can control how access requests are approved.
+#Customer Intent: As an IT admin, I want to change the approval and requestor information settings for an access package so that I can control how access requests are approved.
 ---
 # Change approval and requestor information settings for an access package in entitlement management
 
