@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to, sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to check the status of a lifecycle workflow so that I can monitor workflow execution and troubleshoot issues.
+#Customer Intent: As an IT admin, I want to check the status of a lifecycle workflow so that I can monitor workflow execution and troubleshoot issues.
 ---
 
 
