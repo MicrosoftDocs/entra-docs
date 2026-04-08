@@ -5,9 +5,8 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 06/12/2025
 
-#Customer intent: As an Identity Governance Administrator, Catalog Owner, or Access Package Manager, I want detailed information about which, and why, access packages are visible to users when discovering packages in the My Access portal.
-
 #CustomerIntent: As an IT admin, I want to understand access package visibility in the My Access portal so that I can control which access packages users can discover.
+
 ---
 
 # Understand access package visibility in the My Access portal
