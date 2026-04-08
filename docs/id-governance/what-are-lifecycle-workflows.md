@@ -4,7 +4,7 @@ description: Get an overview of the lifecycle workflow feature of Microsoft Entr
 ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 03/12/2026
-#CustomerIntent: As an IT admin, I want to understand what lifecycle workflows are so that I can evaluate how to automate identity lifecycle management in my organization.
+#Customer Intent: As an IT admin, I want to understand what lifecycle workflows are so that I can evaluate how to automate identity lifecycle management in my organization.
 ---
 
 # What are lifecycle workflows?
