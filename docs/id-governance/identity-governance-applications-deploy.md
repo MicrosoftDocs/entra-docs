@@ -5,7 +5,7 @@ editor: markwahl-msft
 ms.topic: how-to
 ms.date: 03/10/2025
 ms.reviewer: markwahl-msft
-#CustomerIntent: As an IT admin, I want to deploy policies for governing access to applications so that I can enforce access controls using entitlement management and other governance features.
+#Customer Intent: As an IT admin, I want to deploy policies for governing access to applications so that I can enforce access controls using entitlement management and other governance features.
 ---
 
 # Deploying organizational policies for governing access to applications integrated with Microsoft Entra ID
