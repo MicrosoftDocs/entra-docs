@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: troubleshooting
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to synchronize attributes for lifecycle workflows so that I can ensure the correct user attributes are available for workflow execution.
+#Customer Intent: As an IT admin, I want to synchronize attributes for lifecycle workflows so that I can ensure the correct user attributes are available for workflow execution.
 ---
 
 # How to synchronize attributes for Lifecycle workflows
