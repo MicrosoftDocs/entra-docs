@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to share a link to request an access package so that users can easily request access to resources.
+#Customer Intent: As an IT admin, I want to share a link to request an access package so that users can easily request access to resources.
 ---
 # Share link to request an access package in entitlement management
 
