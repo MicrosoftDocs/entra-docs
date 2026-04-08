@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 07/15/2024
 ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can configure and add custom logic apps to my catalogs and access packages in entitlement management.
+#CustomerIntent: As an IT admin, I want to trigger Logic Apps with custom extensions in entitlement management so that I can integrate custom workflows with access management.
 ---
 # Trigger Logic Apps with custom extensions in entitlement management
 
