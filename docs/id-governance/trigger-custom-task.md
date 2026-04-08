@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024
 ms.custom: template-howto
+#CustomerIntent: As an IT admin, I want to trigger Logic Apps based on custom task extensions so that I can integrate custom automation with lifecycle workflows.
 ---
 
 
