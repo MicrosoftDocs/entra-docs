@@ -8,6 +8,7 @@ ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-blocked, sfi-ropc-nochange
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
+#CustomerIntent: As an IT admin, I want to govern an application's existing users using PowerShell so that I can identify and manage users whose access doesn't derive from Microsoft Entra ID.
 ---
 
 # Govern an application's existing users - Microsoft PowerShell
