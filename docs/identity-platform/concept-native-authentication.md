@@ -94,11 +94,12 @@ If the configuration isn't updated to integrate native authentication components
 
 Native authentication gives your development team full control over the authentication experience. With this control comes the responsibility to follow security best practices in your app's implementation, such as secure token handling and transport security (HTTPS).
 
+
 ## Single sign-on (SSO)
 
 Native authentication supports single sign-on (SSO) for embedded web views. This allows users to sign in once through the native app's UI and then access web resources hosted in an embedded web view (for example, `WKWebView` on iOS or `WebView` on Android) without encountering a second login prompt.
 
-The app achieves this by retrieving an access token from the Native Auth SDK and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
+The app achieves this by retrieving an access token using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md) and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
 
 For implementation steps, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md).
 

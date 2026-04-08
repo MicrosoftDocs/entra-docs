@@ -23,8 +23,8 @@ This article shows you how to implement single sign-on (SSO) between a native mo
 
 The recommended flow works as follows:
 
-1. The user signs in through the mobile app's native UI via the Native Auth SDK.
-1. Before loading the web view, the app retrieves a valid access token from the SDK.
+1. The user signs in through the mobile app's native UI using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md).
+1. Before loading the web view, the app retrieves a valid access token from the SDK or API.
 1. The app loads the web view with a custom request that includes the access token in the `Authorization: Bearer <access_token>` header.
 1. The web resource validates the token and grants access immediately.
 
@@ -34,14 +34,14 @@ The following diagram shows the interaction between the web resource, mobile app
 
 ## Prerequisites
 
-- A mobile app with native authentication configured using the Native Auth SDK. If you haven't set up your app yet, see [Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) or [Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
+- A mobile app with native authentication configured using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md). If you're using the SDK and haven't set up your app yet, see [Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) or [Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
 - A completed sign-in flow in your native app. For guidance, see [Sign in users in an Android mobile app](quickstart-native-authentication-android-sign-in.md) or [Sign in users in an iOS mobile app](quickstart-native-authentication-ios-sign-in.md).
 - A web resource served over HTTPS (TLS). Don't send tokens over HTTP.
 - A shared client identity (application ID) between the mobile app and the web resource. For details, see [Limitations and configuration requirements](#limitations-and-configuration-requirements).
 
 ## Sign in with native authentication
 
-Complete the standard sign-in flow using the Native Auth SDK. When sign-in succeeds, the SDK caches the access token, ID token, and refresh token securely.
+Complete the standard sign-in flow using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md). When sign-in succeeds using the SDK, it caches the access token, ID token, and refresh token securely. If you use the API directly, your app is responsible for securely storing the tokens it receives.
 
 For detailed sign-in implementation steps, see:
 
@@ -50,12 +50,14 @@ For detailed sign-in implementation steps, see:
 
 ## Retrieve the access token
 
-When the user triggers the action to open the web view, request a token silently from the SDK. A silent token request ensures the app has a valid, unexpired token before loading the web resource.
+When the user triggers the action to open the web view, ensure the app has a valid, unexpired access token before loading the web resource.
 
-The Native Auth SDK provides a `getAccessToken()` method that retrieves a valid token from the cache or silently refreshes it. For details on acquiring access tokens with specific scopes, see:
+If you use the Native Auth SDK, request a token silently. The SDK provides a `getAccessToken()` method that retrieves a valid token from the cache or silently refreshes it. For details on acquiring access tokens with specific scopes, see:
 
 - **Android**: [Acquire multiple access tokens](tutorial-native-authentication-android-sign-in-call-api.md)
 - **iOS/macOS**: [Acquire multiple access tokens](tutorial-native-authentication-ios-sign-in-call-api.md)
+
+If you use the native authentication API directly, your app retrieves tokens through the API's `/oauth/v2.0/token` endpoint. For details, see [Native authentication API reference](reference-native-authentication-api.md).
 
 Request the token with the exact scopes required by the web resource. For scope requirements, see [Limitations and configuration requirements](#limitations-and-configuration-requirements).
 
