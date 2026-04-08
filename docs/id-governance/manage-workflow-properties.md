@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to
-#CustomerIntent: As an IT admin, I want to manage workflow properties so that I can edit and update lifecycle workflow configurations.
+#Customer Intent: As an IT admin, I want to manage workflow properties so that I can edit and update lifecycle workflow configurations.
 ---
 
 # Manage workflow properties
