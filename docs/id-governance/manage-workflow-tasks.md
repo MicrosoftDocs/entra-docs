@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to, sfi-image-nochange
+#CustomerIntent: As an IT admin, I want to manage workflow versions so that I can update and track changes to lifecycle workflow tasks.
 ---
 
 # Manage workflow versions
