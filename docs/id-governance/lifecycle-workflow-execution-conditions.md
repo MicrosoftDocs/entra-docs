@@ -6,6 +6,7 @@ ms.workload: identity
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept 
+#CustomerIntent: As an IT admin, I want to understand lifecycle workflow execution conditions and scheduling so that I can configure when and how workflows run.
 ---
 
 # Lifecycle workflows execution conditions and scheduling
