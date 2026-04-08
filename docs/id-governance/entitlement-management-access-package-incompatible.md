@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/23/2024
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#CustomerIntent: As an IT admin, I want to configure separation of duties for an access package so that I can prevent users from having incompatible access.
+#Customer Intent: As an IT admin, I want to configure separation of duties for an access package so that I can prevent users from having incompatible access.
 ---
 # Configure separation of duties checks for an access package in entitlement management
 
