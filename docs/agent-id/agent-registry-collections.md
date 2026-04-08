@@ -27,7 +27,7 @@ In other words, agents without an agent identity can act only as target agents i
 To help administrators manage agent discoverability, Microsoft Entra Agent Registry offers predefined and custom collections.
 
 - **Global Collection**: Makes agents discoverable across the entire organization.
-    - For example, an agent responsible for travel booking within the Global Collection can be discovered and invoked by other agents that have an agent identity and the appropriate [Agent Registry role](../identity-professional/reference-registry-roles.md).
+    - For example, an agent responsible for travel booking within the Global Collection can be discovered and invoked by other agents that have an agent identity and the appropriate [Agent Registry role](reference-registry-roles.md).
 - **Custom collection**: Created by administrators to apply discovery boundaries that align with business or policy needs.
     - For example, if human resources agents should only interact with payroll agents, an admin can create a "human resources department" collection so that only agents within that collection can discover and collaborate with each other.
 
