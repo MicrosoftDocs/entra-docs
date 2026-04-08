@@ -4,6 +4,7 @@ description: This page provides an overview of the Microsoft Entra ID Governance
 ms.topic: overview
 ms.date: 12/03/2025
 ms.reviewer: amycolannino
+#CustomerIntent: As an IT admin, I want to understand the Microsoft Entra ID Governance integrations available so that I can automate provisioning and governance controls for my applications.
 ---
 
 # Microsoft Entra ID Governance integrations
