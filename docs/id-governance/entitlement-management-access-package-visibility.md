@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 06/12/2025
 
-#CustomerIntent: As an IT admin, I want to understand access package visibility in the My Access portal so that I can control which access packages users can discover.
+#Customer Intent: As an IT admin, I want to understand access package visibility in the My Access portal so that I can control which access packages users can discover.
 
 ---
 
