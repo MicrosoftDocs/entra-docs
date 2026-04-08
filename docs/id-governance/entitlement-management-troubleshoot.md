@@ -7,7 +7,6 @@ ms.topic: troubleshooting
 ms.date: 06/02/2025
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
-#Customer intent: As an administrator, I want checklists and tips to help troubleshoot entitlement management to unblock users from performing their job.
 #CustomerIntent: As an IT admin, I want to troubleshoot entitlement management issues so that I can resolve problems with access packages and assignments.
 ---
 # Troubleshoot entitlement management
