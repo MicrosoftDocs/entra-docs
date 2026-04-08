@@ -5,7 +5,7 @@ items:
     - name: What is Microsoft Entra Agent ID?
       href: what-is-microsoft-entra-agent-id.md
     - name: What is the Microsoft agent identity platform?
-      href: identity-platform/what-is-agent-id-platform.md
+      href: what-is-agent-id-platform.md
     - name: Security for AI overview
       href: security-for-ai-overview.md
   # LEARN ######################
@@ -15,25 +15,25 @@ items:
     - name: Core concepts
       items:
       - name: Key concepts
-        href: identity-platform/key-concepts.md
+        href: key-concepts.md
       - name: Agent identities
-        href: identity-platform/what-are-agent-identities.md
+        href: what-are-agent-identities.md
       - name: Agent identity blueprints
-        href: identity-platform/agent-blueprint.md
+        href: agent-blueprint.md
       - name: Agent's user account
-        href: identity-platform/agent-users.md
+        href: agent-users.md
       - name: Agent service principals
-        href: identity-platform/agent-service-principals.md
+        href: agent-service-principals.md
       - name: Owners, sponsors, and managers
-        href: identity-platform/agent-owners-sponsors-managers.md
+        href: agent-owners-sponsors-managers.md
     - name: Authentication and authorization
       items:
       - name: Authorization in Entra Agent ID
         href: authorization-agent-id.md
       - name: Tokens in Microsoft agent identity platform
-        href: identity-platform/agent-tokens.md
+        href: agent-tokens.md
       - name: Authentication protocols for agents
-        href: identity-platform/agent-oauth-protocols.md
+        href: agent-oauth-protocols.md
     - name: Governance and protection
       items:
       - name: Conditional Access for agents
@@ -55,10 +55,6 @@ items:
   - name: Plan your agent identity deployment
     expanded: true
     items:
-    - name: Agent ID design patterns
-      href: concept-agent-id-design-patterns.md
-    - name: Plan your agent identity architecture
-      href: how-to-plan-agent-identity-architecture.md
     - name: Agent creation channels
       href: agent-id-creation-channels.md
     - name: Best practices
@@ -68,24 +64,24 @@ items:
   - name: Create and configure agents
     expanded: true
     items:    
-    - name: Create identity objects
+    - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
-        href: identity-platform/create-blueprint.md
+        href: create-blueprint.md
       - name: Create and delete agent identities
-        href: identity-platform/create-delete-agent-identities.md
+        href: create-delete-agent-identities.md
       - name: Manage agent blueprints
-        href: identity-platform/manage-agent-blueprint.md
+        href: manage-agent-blueprint.md
       - name: AI-guided setup
-        href: identity-platform/agent-id-ai-guided-setup.md
+        href: agent-id-ai-guided-setup.md
     - name: Authentication, authorization, and permissions
       items:
       - name: Autonomous agent app OAuth flow
-        href: identity-platform/agent-autonomous-app-oauth-flow.md
+        href: agent-autonomous-app-oauth-flow.md
       - name: On-behalf-of OAuth flow
-        href: identity-platform/agent-on-behalf-of-oauth-flow.md
+        href: agent-on-behalf-of-oauth-flow.md
       - name: Agent's user account OAuth flow
-        href: identity-platform/agent-user-oauth-flow.md
+        href: agent-user-oauth-flow.md
       - name: Configure inheritable permissions
         href: configure-inheritable-permissions-blueprints.md
       - name: Grant agent access to Microsoft 365
@@ -95,25 +91,25 @@ items:
       - name: Autonomous agents
         items:
         - name: Request tokens for autonomous agents
-          href: identity-platform/autonomous-agent-request-tokens.md
+          href: autonomous-agent-request-tokens.md
         - name: Grant app permissions to an autonomous agent
-          href: identity-platform/autonomous-agent-request-authorization-entra-admin.md
+          href: autonomous-agent-request-authorization-entra-admin.md
         - name: Request agent's user account tokens
-          href: identity-platform/autonomous-agent-request-agent-user-tokens.md
+          href: autonomous-agent-request-agent-user-tokens.md
       - name: Interactive agents
         items:
         - name: Authenticate users and request user tokens
-          href: identity-platform/interactive-agent-authentication-authorization-flow.md
+          href: interactive-agent-authentication-authorization-flow.md
     - name: Integrate with APIs and services
       items:
       - name: Configure SDK for agent identities
-        href: identity-platform/microsoft-entra-sdk-for-agent-identities.md
+        href: microsoft-entra-sdk-for-agent-identities.md
       - name: Call Microsoft Graph API
-        href: identity-platform/call-api-microsoft-graph.md
+        href: call-api-microsoft-graph.md
       - name: Call custom APIs
-        href: identity-platform/call-api-custom.md
+        href: call-api-custom.md
       - name: Call Azure services
-        href: identity-platform/call-api-azure-services.md
+        href: call-api-azure-services.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
@@ -126,15 +122,15 @@ items:
     - name: Disable agent identities
       href: disable-agent-identities.md
     - name: View and manage agent identities
-      href: identity-platform/agent-lists.md
+      href: agent-lists.md
     - name: Manage agents in end user experience
-      href: identity-platform/manage-agent.md
+      href: manage-agent.md
 
   # REFERENCE ######################
   - name: Reference
     items:
     - name: Token claims reference
-      href: identity-platform/agent-token-claims.md
+      href: agent-token-claims.md
     - name: Microsoft Graph API
       items:
       - name: Permissions reference
@@ -146,23 +142,23 @@ items:
       - name: Agent identity API
         href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Known issues
-        href: identity-platform/preview-known-issues.md
+        href: preview-known-issues.md
       - name: Error codes reference
-        href: identity-platform/error-codes.md
+        href: error-codes.md
     - name: Agent registry
       items:
       - name: Agent Registry convergence
-        href: identity-platform/agent-registry-convergence.md
+        href: agent-registry-convergence.md
       - name: What is the agent registry?
-        href: identity-platform/what-is-agent-registry.md
+        href: what-is-agent-registry.md
       - name: Register agents with Agent Registry
-        href: identity-platform/publish-agents-to-registry.md
+        href: publish-agents-to-registry.md
       - name: Agent Registry collections
-        href: identity-platform/agent-registry-collections.md
+        href: agent-registry-collections.md
       - name: Manage agent collections
-        href: identity-platform/agent-registry-manage-collections.md
+        href: agent-registry-manage-collections.md
       - name: Agent communication
-        href: identity-platform/registry-agent-to-agent-protocol.md
+        href: registry-agent-to-agent-protocol.md
       - name: Manage Agent Registry-only agents
         href: manage-agents-without-identity.md
       - name: Agent Registry roles
