@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept
+#CustomerIntent: As an IT admin, I want to understand workflow extensibility in lifecycle workflows so that I can extend workflows with custom tasks and integrations.
 ---
 
 
