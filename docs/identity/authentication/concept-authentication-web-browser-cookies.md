@@ -60,20 +60,17 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 >
 > Cookie definitions and respective names are subject to change at any moment in time according to Microsoft Entra service requirements.  
 
-## When Cookies Are Missing
+## When Cookies Are Not Available to Entra ID 
+ 
+Under certain conditions, the cookies listed above might not be fully available to Microsoft Entra ID. This can occur due to factors such as use of unsupported or non‑Microsoft authentication libraries, privacy features, browser-specific behavior including scenarios where InPrivate or Incognito browsing modes are used.
 
-The cookies listed above may not be partially or fully provided to Entra ID due to the following reasons:
+When cookies are not correctly provided to Entra ID, users may experience one or more of the following issues:
 
-- Third-party client authentication library implementations
-- Browser-specific implementations
-- Cookies being cleared in the browser
-- Use of InPrivate or Incognito mode in the browser
+- Single sign-on (SSO) does not function as expected, and users are prompted to reauthenticate
+- Users may see unexpected confirmation or consent dialogs
+- The sign-out experience may fail or terminate before completion (for example, the `post_logout_redirect_uri` parameter is not processed)
 
-When cookies are not properly provided to Entra ID, users may experience the following issues. We recommend that customers use supported client libraries (MSAL) or supported browsers to ensure that cookies are fully provided to Entra ID.
-
-- Single sign-on (SSO) does not work, and users are prompted to re-enter their credentials
-- Users may unexpectedly see confirmation dialogs
-- The sign-out flow fails or stops prematurely (for instance, post_logout_redirect_uri parameter is not evaluated)
+To ensure a consistent and reliable authentication experience, Microsoft recommends using supported browsers and supported client authentication libraries, such as the Microsoft Authentication Library (MSAL). This helps ensure cookies are handled correctly and authentication and sign-out flows operate as designed.
 
 ## Next steps
 
