@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.service: entra
 # customer intent: As an IT admin, I want to troubleshoot identity and access issues using the Support Assistant so that I can resolve problems quickly.
 
+#Customer Intent: As an IT admin, I want to use Microsoft Entra self-service support so that I can resolve common issues without contacting support.
 ---
 # Use Microsoft Entra Self-Service Support (Preview)
 

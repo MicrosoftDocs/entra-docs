@@ -6,6 +6,7 @@ ms.author: jricketts
 ms.topic: how-to
 ms.date: 03/01/2023
 # Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized Identity and Access Management.
+#Customer Intent: As an IT admin, I want to learn the five steps to integrate my apps with Microsoft Entra ID so that I can centralize application access management.
 ---
 
 # Five steps to integrate your apps with Microsoft Entra ID
