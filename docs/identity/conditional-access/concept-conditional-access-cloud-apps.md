@@ -466,7 +466,7 @@ Select **New authentication context** to create an authentication context defini
 
 #### Add to Conditional Access policy
 
-Admins can select published authentication contexts in Conditional Access policies by going to **Assignments** > **Cloud apps or actions** and selecting **Authentication context** from the **Select what this policy applies to** menu.
+Admins can select published authentication contexts in Conditional Access policies by going to **Assignments** > **Target resources** and selecting **Authentication context** from the **Select what this policy applies to** menu.
 
 :::image type="content" source="media/concept-conditional-access-cloud-apps/conditional-access-authentication-context-in-policy.png" alt-text="Screenshot showing how to add a Conditional Access authentication context to a policy":::
 

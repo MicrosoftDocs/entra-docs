@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: concept-article
 ms.date: 07/15/2024
 ms.reviewer: mamkumar
-#Customer intent: As a < type of user >, I want < what? > so that < why? >.
+#Customer Intent: As an IT admin, I want to understand the access package request process and notifications so that I can manage how access requests are processed in entitlement management.
 ---
 # Request process and email notifications in entitlement management
 

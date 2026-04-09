@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-search.appverid: MET150
 ms.topic: reference
 ms.date: 03/23/2026
 ms.reviewer: abhijeetsinha

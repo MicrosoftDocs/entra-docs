@@ -23,6 +23,43 @@ items:
     href: quickstart-quick-access.md
   - name: Configure per-app access to private resources
     href: quickstart-per-app-access.md
+- name: Tutorials
+  expanded: true
+  items:
+  - name: Internet Access labs
+    expanded: true
+    items:
+    - name: Get started
+      href: tutorial-internet-access-introduction.md
+    - name: Enable traffic forwarding
+      href: tutorial-internet-access-enable-traffic-forwarding.md
+    - name: Configure web content filtering
+      href: tutorial-internet-access-web-content-filtering.md
+    - name: Enable TLS inspection
+      href: tutorial-internet-access-tls-inspection.md
+    - name: Configure URL filtering
+      href: tutorial-internet-access-url-filtering.md
+    - name: Configure threat intelligence
+      href: tutorial-internet-access-threat-intelligence.md
+    - name: Discover applications
+      href: tutorial-internet-access-application-discovery.md
+    - name: Configure file controls
+      href: tutorial-internet-access-file-controls.md
+  - name: Private Access labs
+    expanded: true
+    items:
+    - name: Get started
+      href: tutorial-private-access-introduction.md
+    - name: Set up the connector
+      href: tutorial-private-access-connector-setup.md
+    - name: Enable traffic forwarding
+      href: tutorial-private-access-enable-traffic-forwarding.md
+    - name: VPN replacement with Quick Access
+      href: tutorial-private-access-vpn-replacement.md
+    - name: Per-app access segmentation
+      href: tutorial-private-access-app-segmentation.md
+    - name: Intelligent Local Access
+      href: tutorial-private-access-intelligent-local-access.md
 - name: Samples
   expanded: false
   items: 
@@ -63,6 +100,8 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
+  - name: Shadow AI discovery
+    href: concept-shadow-ai-discovery.md
   - name: External user access
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
@@ -214,7 +253,7 @@ items:
         href: how-to-configure-cloud-firewall.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
-      - name: Network content filtering
+      - name: Configure network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
@@ -233,6 +272,8 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: MCP traffic logs
+        href: how-to-view-model-context-protocol-logging.md
       - name: Deployment logs
         href: how-to-view-deployment-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs

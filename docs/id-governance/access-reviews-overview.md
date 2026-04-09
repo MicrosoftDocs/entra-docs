@@ -7,6 +7,7 @@ ms.topic: reference
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to understand what access reviews are and when to use them so that I can manage group memberships, application access, and role assignments effectively.
 ---
 
 # What are access reviews?
@@ -59,10 +60,6 @@ Depending on what you want to review, you create your access review in access re
 
 >[!NOTE]
 >Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, or an [access review of multiple resources together (preview)](catalog-access-reviews.md), requires a Microsoft Entra ID Governance license.
-
-## Access Review Agent (Preview)
-
-The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
 
 ## Next steps
 

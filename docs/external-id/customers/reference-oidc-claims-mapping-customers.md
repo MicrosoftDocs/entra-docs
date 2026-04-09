@@ -39,7 +39,7 @@ Find the list of standard OpenID Connect claims and the corresponding user flow 
 |country |Country or Region|Country name.|
 
 > [!NOTE]
-> To collect user data from the ID token issued by your identity provider, you need to do two things. First, map your external identity provider claims with the OIDC standard claims. Second, enable the corresponding user flow attributes in the user flow, which the identity provider is attached.
+> For claims from the identity provider to be stored on the user object, the corresponding user flow attributes must be included in the user flow. First, map your external identity provider claims with the OIDC standard claims. Second, enable the corresponding user flow attributes in the user flow that the identity provider is attached to. If you don't want an attribute to be visible to the user during sign-up, you can [hide the attribute](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph) while still keeping it in the user flow so the claim value is stored.
 
 ## Review the identity provider
 

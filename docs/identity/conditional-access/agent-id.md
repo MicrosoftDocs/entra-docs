@@ -12,7 +12,7 @@ ms.reviewer: kvenkit
 
 Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it evaluates requests for human users or workload identities, but with agent-specific logic.
 
-For more information about the types of agents and the identity and access management challenges they present, see [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai.md).
+For more information about the types of agents and the identity and access management challenges they present, see [Security for AI with Microsoft Entra agent identity](../../agent-id/security-for-ai-overview.md).
 
 ## Agent identity architecture in Microsoft Entra
 
@@ -26,7 +26,7 @@ To understand how Conditional Access works with agent identities, it's important
 | Agent user | Nonhuman user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
 | Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows). |
 
-For more information, see [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
+For more information, see [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md).
 
 ## Conditional Access capabilities for agent identities and agent users
 
@@ -213,5 +213,5 @@ Admins can use the Sign-in logs to investigate why a Conditional Access policy d
 - [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)
 - [Conditional Access: Grant](concept-conditional-access-grant.md)
-- [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai.md)
+- [Security for AI with Microsoft Entra agent identity](../../agent-id/security-for-ai-overview.md)
 - [Microsoft Entra ID Protection and agents](/entra/id-protection/concept-risky-agents)

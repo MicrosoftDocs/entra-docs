@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
 ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to integrate entitlement management with Microsoft Teams using custom extensibility and Logic Apps so that I can automate Teams-based access management.
 ---
 
 # Tutorial: Integrating Microsoft Entra Entitlement Management with Microsoft Teams using Custom Extensibility and Logic Apps

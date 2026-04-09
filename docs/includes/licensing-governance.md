@@ -4,7 +4,7 @@ description: include file
 author: owinfreyATL
 ms.service: entra-id
 ms.topic: include
-ms.date: 12/19/2025
+ms.date: 03/27/2026
 ms.author: owinfrey
 ms.custom: include file
 ---
@@ -20,6 +20,7 @@ The following table shows what features associated with identity governance are 
 |**Provisioning**||||||
 |[API-driven provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+[Account Discovery](~/identity/app-provisioning/how-to-account-discovery.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |

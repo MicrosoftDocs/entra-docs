@@ -81,7 +81,7 @@ After you configure your identity provider, complete this step to configure a ne
    - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. An example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI can be taken from your discovery URI with the "issuer" tag and looks like: `https://login.b2clogin.com/{tenant}/v2.0/`. Issuer URI is a case-sensitive URL using https scheme contains scheme, host, and optionally, port number and path components and no query or fragment components.
    
    > [!NOTE]
-   > Configuring other Microsoft Entra tenants as an external identity provider isn't currently supported. As a result, the `microsoftonline.com` domain in the issuer URI isn't accepted. OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
+   > To federate with a Microsoft Entra ID tenant, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
 
    - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret if you select `client_secret` authentication. If you select `private_key_jwt`, the public key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property `jwks_uri`.
    - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt`, and `private_key_jwt` authentication methods are supported.
@@ -111,5 +111,6 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
 
 ## Related content
 
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

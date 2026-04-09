@@ -5,6 +5,7 @@ editor: markwahl-msft
 ms.topic: overview
 ms.date: 04/09/2025
 ms.reviewer: markwahl-msft
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
 
 # What is Microsoft Entra ID Governance?
@@ -61,7 +62,7 @@ Access changes across apps and groups can be automated based on attribute change
 
 Organizations that previously had been using an on-premises identity governance product can [migrate their organizational role model](identity-governance-organizational-roles.md) to Microsoft Entra ID Governance.
 
-Furthermore, IT can delegate access management decisions to business decision makers. For example, employees that wish to access confidential customer data in a company's marketing application in Europe could need approval from their manager, a department lead or resource owner, and a security risk officer.  [Entitlement management](entitlement-management-overview.md) enables you to define how identities request access across packages of group and team memberships, app roles, and SharePoint Online roles, and enforce separation of duties checks on access requests. Access packages can require regular access reviews, and other access rights, such as group memberships, can also be regularly reviewed using recurring [Microsoft Entra access reviews](access-reviews-overview.md) for access recertification, including AI-identified peer outliers which may require higher scrutiny. The [Access Review Agent](../security-copilot/access-review-agent.md) helps reviewers by automatically gathering insights and generating recommendations, and guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
+Furthermore, IT can delegate access management decisions to business decision makers. For example, employees that wish to access confidential customer data in a company's marketing application in Europe could need approval from their manager, a department lead or resource owner, and a security risk officer.  [Entitlement management](entitlement-management-overview.md) enables you to define how identities request access across packages of group and team memberships, app roles, and SharePoint Online roles, and enforce separation of duties checks on access requests. Access packages can require regular access reviews, and other access rights, such as group memberships, can also be regularly reviewed using recurring [Microsoft Entra access reviews](access-reviews-overview.md) for access recertification, including AI-identified peer outliers which may require higher scrutiny.
 
 Organizations can also control which guest identities have access, including to [on-premises applications](../external-id/hybrid-cloud-to-on-premises.md).
 

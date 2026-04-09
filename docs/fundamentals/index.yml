@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: What is Microsoft Entra?
             url: what-is-entra.md
+          - text: What is the Microsoft Entra admin center?
+            url: entra-admin-center.md
           - text: What's new in Microsoft Entra
             url: whats-new.md
       - linkListType: concept
