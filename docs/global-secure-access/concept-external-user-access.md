@@ -1,10 +1,10 @@
 ---
-title: Learn about Global Secure Access External User Access (Preview)
-description: Learn how Global Secure Access enables secure External User access for partners through the Global Secure Access client and Azure Virtual Desktop.
+title: Learn about Global Secure Access external user access
+description: Learn how Global Secure Access enables secure external user access for partners through the Global Secure Access client and Azure Virtual Desktop.
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: concept-article
-ms.date: 12/02/2025
+ms.date: 04/09/2026
 ms.reviewer: cagautham
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -13,14 +13,10 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Overview of External User Access with Global Secure Access (preview)
+# Overview of external user access with Global Secure Access
 Organizations often collaborate with external partners such as vendors and contractors. Traditional solutions for granting access to internal resources for external users typically lack visibility and granular security controls. Global Secure Access, built into Microsoft Entra, solves these challenges by using existing external user identities and providing advanced security features like Conditional Access, Continuous Access Evaluation, and cross-tenant trust. This approach enables secure, efficient management of external user access without duplicating accounts or requiring complex federation.
 
 The External User access feature in Global Secure Access allows partners to use their own devices and identities to access company resources securely. It supports bring your own device (BYOD) scenarios, enforces per-app multifactor authentication, and offers seamless multitenant switching for partner users. Administrators benefit from single-pane management for identity, access, and network policies, reducing operational overhead while improving governance. Integrated logging and telemetry across identity and network layers provide full visibility into external user activity, ensuring a secure and streamlined experience for external collaboration.
-
-> [!IMPORTANT]
-> The external User access feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Enable external user access with the Global Secure Access client
 Partners can enable the external user access feature with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is an external user (guest or member) and offers the option to switch into the customer's tenant context. External users can access only assigned resources and only if they're included in the resource tenant's Private Access traffic forwarding profile. The client routes only traffic for the customer's private applications through the customer's Global Secure Access service.
@@ -91,6 +87,15 @@ A: Yes, the client retains the tenant connection after a reboot. Additionally, i
 **Q: Is this feature supported from a windows Entra registered device(BYOD)?**   
 A: Yes, you can use a windows device which is registered to Entra for switching to resource tenant.
 
+## Traffic logs visibility
+
+On the resource tenant, you can check if traffic originates from an external user. The traffic logs include the following fields for external user sessions:
+
+- **Cross-tenant access type**: B2B collaboration
+- **Home tenant ID**: The tenant ID of the external user's home organization
+
+These fields help administrators identify and monitor external user traffic patterns in the resource tenant.
+
 ## Known limitations
 - External user access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
@@ -120,6 +125,7 @@ Once configured, the Global Secure Access client automatically connects to the t
 
 ## Related content
 
+- [Global Secure Access licensing for guest users](reference-licensing-guest-users.md)
 - [Global Secure Access client for Windows](how-to-install-windows-client.md)
 - [Global Secure Access client for Android](how-to-install-android-client.md)
 - [Global Secure Access client for macOS](how-to-install-macos-client.md)
