@@ -3,12 +3,12 @@ title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
 ai-usage: ai-assisted
 ms.topic: overview
-ms.date: 04/08/2026
+ms.date: 04/09/2026
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?
 
-Microsoft Entra is a family of identity and network access products that helps organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy. Use Microsoft Entra to verify identities, validate access conditions, check permissions, encrypt connection channels, and monitor for compromise across your environment.
+Microsoft Entra is a family of identity and network access products that helps organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy. Use Microsoft Entra to verify identities, validate access conditions, check permissions, encrypt connection channels, and monitor for compromise across your environment. Microsoft Entra also integrates with [Security Copilot](~/security-copilot/security-copilot-in-entra.md) to help investigate identity risks and troubleshoot access issues using AI.
 
 ## Microsoft Entra product family
 
