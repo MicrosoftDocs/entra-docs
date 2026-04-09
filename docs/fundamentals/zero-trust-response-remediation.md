@@ -9,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to accelerate response and remediation so that I can quickly recover from security incidents.
 ---
 # Accelerate response and remediation with the Zero Trust Assessment
 
