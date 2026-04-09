@@ -96,11 +96,13 @@ The following table lists the service limits we implement to prevent outages and
 
 The following table shows which Microsoft Graph capabilities are available based on your tenant's directory scale and deployment mode.
 
-| Capability area | Standard mode (up to 15 million objects) | HSC mode |
+| Capability area | Standard mode* | HSC mode |
 |---|---|---|
 | Advanced directory queries (filtering, sorting, count, search, transitive membership) | Supported | Not supported |
 | Change-based (delta) queries | Supported | Not supported |
 | SCIM outbound user provisioning | Supported | Not supported |
+
+\* Standard mode supports up to 15 million objects.
 
 > [!NOTE]
 > These capabilities aren't available in HSC mode regardless of directory size. HSC mode prioritizes stability and throughput at scale over query-heavy or event-driven directory operations.
