@@ -155,7 +155,7 @@ Select **Manage agent identity** to view the agent details in Microsoft Entra Ag
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot of the agent settings view for permissions and identities.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
 
-- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-are-agent-identities.md).
+- New installations of the agent default to use an [agent identity](../agent-id/what-are-agent-identities.md).
 - Existing installations can switch from the user context to run under an agent identity at any time. 
   - This change doesn't impact reporting or analytics.
   - Existing policies and recommendations remain unaffected.

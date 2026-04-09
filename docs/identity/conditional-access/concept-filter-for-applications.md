@@ -66,7 +66,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
    1. Select **Done**.
 1. Under **Target resources**, select the following options:
-   1. Select what this policy applies to **Cloud apps**.
+   1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include **Select resources**.
    1. Select **Edit filter**.
    1. Set **Configure** to **Yes**.

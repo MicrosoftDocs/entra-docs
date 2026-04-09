@@ -48,7 +48,11 @@ More information about the location condition in Conditional Access can be found
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+## Related content
 
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
