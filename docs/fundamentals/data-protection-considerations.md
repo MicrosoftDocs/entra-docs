@@ -10,7 +10,6 @@ ms.reviewer: jricketts
 ms.collection: 
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As a cloud service customer, I want to understand the data protection considerations for Microsoft Entra, so that I can ensure the security and privacy of my data stored in the service.
-#Customer Intent: As an IT admin, I want to understand data protection considerations for Microsoft Entra so that I can ensure identity data is properly protected.
 ---
 
 # Data protection considerations
