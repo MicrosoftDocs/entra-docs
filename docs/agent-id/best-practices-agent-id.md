@@ -116,5 +116,6 @@ Smooth agent deployments require alignment between developers building agents an
 
 ## Related content
 
+- [Manage agent identities in your organization](manage-agent-identities-admin.md)
 - [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
 - [Microsoft Entra security for AI overview](security-for-ai-overview.md)

@@ -206,4 +206,5 @@ For organizations managing large numbers of agent identities, the following opti
 
 ## Related content
 
+- [Best practices for Microsoft Entra Agent ID](best-practices-agent-id.md)
 - [Manage agents in end user experience](manage-agent-identities-end-user.md)
