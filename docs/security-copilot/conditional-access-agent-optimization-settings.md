@@ -49,7 +49,9 @@ In addition to the daily scheduled run, the agent can trigger runs when changes 
 The **Capabilities** category includes important settings that you should review.
 
 - **Microsoft Entra objects to monitor**: Use the checkboxes to specify what the agent should monitor when making policy suggestions. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
-- **Agent capabilities**: By default, the Conditional Access Optimization Agent *can't create new policies*, even in report-only mode. You can change this setting so that the agent can create report-only policies on your behalf. With this setting enabled, an administrator must approve the new report-only policy before it's turned on. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+- **Agent capabilities**: By default, the Conditional Access Optimization Agent *can't create new policies*, even in report-only mode. You can change this setting so that the agent can create report-only policies on your behalf.
+  - With this setting enabled, an administrator must approve the new report-only policy before it's turned on. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+  - With this setting disabled, you still receive the suggestion and insights, but you must create the policy on your own.
 - **Phased rollout**: When the agent creates a new policy in report-only mode and that policy meets the criteria for a phased rollout, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png" alt-text="Screenshot of the Conditional Access Optimization agent Capabilities settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png":::
