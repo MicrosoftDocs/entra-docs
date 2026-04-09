@@ -9,7 +9,6 @@ ms.author: sarahlipsey
 ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
-#Customer Intent: As an IT admin, I want to add company branding to my organization's sign-in page so that I can provide a customized authentication experience.
 ---
 
 # Configure your company branding
