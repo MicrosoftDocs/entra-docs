@@ -5,7 +5,6 @@ ms.topic: concept-article
 ms.date: 12/16/2024
 # Customer intent: I am trying to find information on the terms and conditions for Microsoft Entra ID preview programs.
 
-#Customer Intent: As an IT admin, I want to understand Microsoft Entra ID preview program information so that I can evaluate new features before general availability.
 ---
 
 
