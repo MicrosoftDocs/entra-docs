@@ -100,7 +100,7 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Elium Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Elium. If the connection fails, ensure your Elium account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Elium Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Elium. If the connection fails, ensure your Elium account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

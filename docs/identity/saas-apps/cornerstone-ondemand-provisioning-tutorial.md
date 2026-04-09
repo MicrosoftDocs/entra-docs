@@ -78,7 +78,7 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
+1. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
 
 	* In the **Admin Username** box, fill in the domain or username of the admin account on your Cornerstone OnDemand tenant. An example is contoso\admin.
 
@@ -86,7 +86,7 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 	* In the **Domain** box, fill in the web service URL of the Cornerstone OnDemand tenant. For example, the service is located at `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, and for Contoso the domain is `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`.
 
-1. In the **Tenant URL** field, input your Cornerstone OnDemand Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cornerstone OnDemand. If the connection fails, ensure your Cornerstone OnDemand account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Cornerstone OnDemand Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cornerstone OnDemand. If the connection fails, ensure your Cornerstone OnDemand account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -106,7 +106,7 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
