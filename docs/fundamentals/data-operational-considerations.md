@@ -10,6 +10,7 @@ ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
 # Customer intent: As a Microsoft Entra user, I want to understand the data operational considerations, so that I can ensure the security and proper usage of my data.
+#Customer Intent: As an IT admin, I want to understand data operational considerations for Microsoft Entra so that I can manage how identity data is handled.
 ---
 
 # Data operational considerations

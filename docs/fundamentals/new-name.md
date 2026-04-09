@@ -9,6 +9,7 @@ ms.author: celested
 ms.reviewer: nicholepet
 
 # Customer intent: As a new or existing customer, I want to learn more about the new name for Azure Active Directory (Azure AD) and understand the impact the name change may have on other products, new or existing license(s), what I need to do, and where I can learn more about Microsoft Entra products.
+#Customer Intent: As an IT admin, I want to understand the new name for Azure Active Directory so that I can stay informed about product branding changes.
 ---
 
 # New name for Azure Active Directory

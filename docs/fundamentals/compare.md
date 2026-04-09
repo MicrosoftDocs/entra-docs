@@ -8,6 +8,7 @@ ms.topic: concept-article
 ms.date: 08/17/2022
 ms.author: martinco
 # Customer intent: As an IT administrator, I want to compare Active Directory to Microsoft Entra ID, so that I can understand the differences and similarities between the on-premises and cloud identity and access management solutions.
+#Customer Intent: As an IT admin, I want to compare Active Directory to Microsoft Entra ID so that I can understand the differences and plan a migration strategy.
 ---
 
 # Compare Active Directory to Microsoft Entra ID

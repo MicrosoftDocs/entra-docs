@@ -6,6 +6,7 @@ ms.author: rolyon
 ms.topic: concept-article
 ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to understand custom security attributes so that I can define business-specific attributes for objects in my directory.
 ---
 
 # What are custom security attributes in Microsoft Entra ID?

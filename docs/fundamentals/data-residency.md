@@ -10,6 +10,7 @@ ms.reviewer: jricketts
 ms.custom: it-pro, references_regions
 ms.collection:
 # Customer intent: As a cloud administrator, I want to understand how Microsoft Entra ID handles data residency, so that I can ensure compliance with data residency requirements and make informed decisions about storing and managing identity and access data in the cloud.
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra ID data residency so that I can ensure compliance with data location requirements.
 ---
 
 # Microsoft Entra ID and data residency
