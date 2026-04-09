@@ -8,6 +8,7 @@ ms.topic: partner-tools
 ms.date: 6/12/2023
 ms.author: mwahl
 ms.reviewer: mwahl
+#Customer Intent: As an IT admin, I want to find services and integration partners for identity governance so that I can get help with deployment and integration of governance scenarios.
 ---
 
 # Services and integration partners

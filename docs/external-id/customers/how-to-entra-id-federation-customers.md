@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 #Customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
-# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
+# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -136,7 +136,7 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 **Can new users be automatically redirected based on their email domain when they enter their email address on the sign-in page?**
 
-There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in.
+There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The domain_hint value for Entra ID should be the domain name like domain_hint=contoso.onmicrosoft.com. For more information see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration)
 
 **Can I hide other identity provider buttons and show only Microsoft Entra ID?**
 

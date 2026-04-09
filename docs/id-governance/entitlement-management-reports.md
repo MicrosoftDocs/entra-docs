@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/10/2025
 ms.reviewer: jocastel
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As an administrator, I want view resources an identity has access to and view request logs for auditing purposes.
+#Customer Intent: As an IT admin, I want to view reports and audit logs in entitlement management so that I can monitor identity assignments and access changes.
 ---
 
 # View reports and logs in entitlement management

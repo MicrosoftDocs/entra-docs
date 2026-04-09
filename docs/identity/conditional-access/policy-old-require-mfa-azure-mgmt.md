@@ -49,7 +49,7 @@ The following steps help create a Conditional Access policy to require users who
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

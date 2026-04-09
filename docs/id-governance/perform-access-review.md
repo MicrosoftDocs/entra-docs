@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
+#Customer Intent: As a reviewer, I want to review access to groups and applications so that I can make informed access decisions during an access review.
 ---
 
 # Review access to groups and applications in access reviews
