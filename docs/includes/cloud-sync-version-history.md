@@ -23,7 +23,7 @@ April 9, 2026: released for download
 ### New or changed functionality
 
 - Account discovery is now supported for on-premises applications using ECMA connectors.
-- The `Add-AADCloudSyncADDomain` PowerShell cmdlet no longer sets additional Active Directory permissions on custom group Managed Service Accounts (gMSAs). Administrators are now responsible for ensuring that the custom gMSA has the right permissions, documented [here](../hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
+- The `Add-AADCloudSyncADDomain` PowerShell cmdlet no longer sets additional Active Directory permissions on custom group Managed Service Accounts (gMSAs). Administrators are now responsible for ensuring that the custom gMSA has the right permissions, documented [here](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
 
 ### Fixed issues
 
