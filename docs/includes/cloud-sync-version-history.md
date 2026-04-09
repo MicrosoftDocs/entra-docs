@@ -16,6 +16,19 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.2332.0
+
+April 9, 2026: released for download
+
+### New or changed functionality
+
+- Account discovery is now supported for on-premises applications using ECMA connectors.
+- The `Add-AADCloudSyncADDomain` PowerShell cmdlet no longer sets additional Active Directory permissions on custom group Managed Service Accounts (gMSAs). Administrators are now responsible for ensuring that the custom gMSA has the right permissions, documented [here](../hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
+
+### Fixed issues
+
+- Fixed an issue where the Provisioning Agent service could fail to shut down cleanly, affecting restarts and upgrades.
+
 ## 1.1.2108.0
  
 December 4, 2025: released for download only
