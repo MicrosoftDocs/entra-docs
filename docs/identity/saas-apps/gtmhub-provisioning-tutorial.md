@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Gtmhub Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Gtmhub. If the connection fails, ensure your Gtmhub account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Gtmhub Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Gtmhub. If the connection fails, ensure your Gtmhub account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

@@ -112,9 +112,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Infor CloudSuite Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Infor CloudSuite. If the connection fails, ensure your Infor CloudSuite account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Infor CloudSuite Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Infor CloudSuite. If the connection fails, ensure your Infor CloudSuite account has the required admin permissions and try again.
 	> [!NOTE]
-	> Enter the input `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim` in Tenant URL
+	> Enter `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim` in **Tenant URL**.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

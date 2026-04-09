@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input the SCIM endpoint URL in **Tenant URL**. The endpoint URL should be in the format `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2` where **Insight4GRC Domain Name** is the value retrieved in previous steps. Input the bearer token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Insight4GRC. If the connection fails, ensure your Insight4GRC account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input the SCIM endpoint URL in **Tenant URL**. The endpoint URL should be in the format `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2` where **Insight4GRC Domain Name** is the value retrieved in previous steps. Enter the bearer token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Insight4GRC. If the connection fails, ensure your Insight4GRC account has Admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/insight4grc-provisioning-tutorial/provisioning.png)
 
