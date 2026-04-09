@@ -54,7 +54,7 @@ Microsoft evaluates each discovered application and assigns a risk score based o
 
 The following video demonstrates how to identify shadow AI with application discovery.
 
-[!VIDEO https://www.youtube.com/embed/l8M7KFPXMe8]
+> [!VIDEO https://www.youtube.com/embed/l8M7KFPXMe8]
 
 ## Step 1: Generate internet traffic
 
@@ -123,10 +123,10 @@ Cloud application analytics give admins visibility into the cloud applications t
 
 In this tutorial, you accomplished the following tasks:
 
-- **Discovered shadow IT in your organization**: You now have visibility into cloud applications that are being used, even apps that aren't sanctioned by IT.
-- **Identified shadow AI applications**: You can use the generative AI filter to help you quickly find AI tools that might pose data leakage risks.
-- **Understood application risk scoring**: You can prioritize remediation efforts based on risk scores across general, security, compliance, and legal factors.
-- **Analyzed usage patterns**: You can see which apps have the most users, data transfer, or transactions to understand true business impact.
+- **Discovered shadow IT in your organization:** You now have visibility into cloud applications that are being used, even apps that aren't sanctioned by IT.
+- **Identified shadow AI applications:** You can use the generative AI filter to help you quickly find AI tools that might pose data leakage risks.
+- **Understood application risk scoring:** You can prioritize remediation efforts based on risk scores across general, security, compliance, and legal factors.
+- **Analyzed usage patterns:** You can see which apps have the most users, data transfer, or transactions to understand true business impact.
 
 ### From discovery to action
 

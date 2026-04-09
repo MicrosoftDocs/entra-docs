@@ -125,10 +125,10 @@ Refer to [official documentation](/entra/global-secure-access/how-to-network-con
 
 In this tutorial, you accomplished the following tasks:
 
-- **Created a file policy to prevent data exfiltration**: You blocked specific document types from being uploaded to AI tools and personal email, which addresses a key data loss vector.
-- **Understood FQDN discovery for apps**: You learned that web applications often use multiple back-end URLs, like `*.oaiusercontent.com` for ChatGPT.
-- **Linked file policies to security profiles**: You learned that file policies follow the same security profile model, which you can use to target specific users via Conditional Access.
-- **Combined multiple security controls**: You learned that this tutorial demonstrates how file controls work alongside web content filtering, TLS inspection, and threat intelligence as part of a comprehensive security strategy.
+- **Created a file policy to prevent data exfiltration:** You blocked specific document types from being uploaded to AI tools and personal email, which addresses a key data loss vector.
+- **Understood FQDN discovery for apps:** You learned that web applications often use multiple back-end URLs, like `*.oaiusercontent.com` for ChatGPT.
+- **Linked file policies to security profiles:** You learned that file policies follow the same security profile model, which you can use to target specific users via Conditional Access.
+- **Combined multiple security controls:** You learned that this tutorial demonstrates how file controls work alongside web content filtering, TLS inspection, and threat intelligence as part of a comprehensive security strategy.
 
 ### Identify application FQDNs
 

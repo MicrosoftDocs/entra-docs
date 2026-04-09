@@ -89,9 +89,9 @@ The GSA client automatically checks for updates to traffic-forwarding profile ch
 
 In this exercise, you accomplished the following tasks:
 
-- **Enabled the Internet Access traffic forwarding profile**: You learned that this profile activates the GSA client's ability to tunnel internet-bound traffic to the Microsoft SSE.
-- **Understood traffic flow**: You learned that internet traffic now flows from the user device, to the GSA client, to the Microsoft SSE proxy, and finally to the internet destination.
-- **Scoped the deployment**: You learned that by assigning specific users and groups, you can implement a phased rollout strategy.
+- **Enabled the Internet Access traffic forwarding profile:** You learned that this profile activates the GSA client's ability to tunnel internet-bound traffic to the Microsoft SSE.
+- **Understood traffic flow:** You learned that internet traffic now flows from the user device, to the GSA client, to the Microsoft SSE proxy, and finally to the internet destination.
+- **Scoped the deployment:** You learned that by assigning specific users and groups, you can implement a phased rollout strategy.
 
 With the traffic forwarding profile enabled, you now have a foundation to apply security policies (web filtering, TLS inspection, and threat intelligence) to internet traffic. Without this step, traffic bypasses the GSA service and no policies can be enforced.
 

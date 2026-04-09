@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Configure URL Filtering and Custom Block Pages
+title: 'Tutorial: Configure URL Filtering and Custom Block Pages'
 description: Learn how to configure URL filtering and custom block pages for fine-grained web content filtering in Global Secure Access.
 ms.topic: tutorial
 ms.date: 03/07/2026
@@ -30,11 +30,11 @@ Understanding the difference between FQDN and URL filtering is critical for effe
 
 | Aspect | FQDN filtering | URL filtering |
 |--------|----------------|---------------|
-| Requires TLS inspection | No | Yes |
-| Visibility | Domain only | Full path |
-| Example match | `www.youtube.com` | `www.youtube.com/shorts` |
-| Use case | Block or allow entire sites | Block or allow specific sites |
-| Granularity | Coarse | Fine-grained |
+| Requires TLS inspection | No | Yes. |
+| Visibility | Domain only | Full path. |
+| Example match | `www.youtube.com` | `www.youtube.com/shorts`. |
+| Use case | Block or allow entire sites | Block or allow specific sites. |
+| Granularity | Coarse | Fine-grained. |
 
 ## Objective
 

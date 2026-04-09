@@ -87,8 +87,7 @@ Configure a web content filtering policy that blocks gambling websites and Bing.
 1. Select **Next**.
 1. Select **Create policy**.
 
-> [!NOTE]
-> This tutorial only configures FQDN and `webCategory` web content filtering. URL filtering requires TLS inspection. Both TLS inspection and URL filtering are covered in later tutorials.
+This tutorial configures only FQDN and `webCategory` web content filtering. URL filtering requires TLS inspection. Both TLS inspection and URL filtering are covered in later tutorials.
 
 ### Step 2: Link the web content filtering policy to the baseline security profile
 

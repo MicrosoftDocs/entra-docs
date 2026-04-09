@@ -39,7 +39,7 @@ With TLS inspection enabled, security tools can see the:
 
 ### How does TLS inspection work?
 
-Here's the flow of traffic.
+Here's the flow of traffic:
 
 1. Client establishes TLS connection to security service edge (SSE).
 1. SSE establishes separate TLS connection to destination.
