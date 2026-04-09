@@ -3216,6 +3216,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#grant-application-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#authenticate-as-an-agent-user",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/agent-id/autonomous-agent-request-tokens.md",
       "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
       "redirect_document_id": true
