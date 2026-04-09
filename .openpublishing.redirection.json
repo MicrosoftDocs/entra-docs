@@ -3406,21 +3406,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-agent-user-tokens",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-authorization-entra-admin",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-tokens",
-      "redirect_document_id": true
-    },
-    {
       "source_path": "docs/agent-id/identity-platform/call-api-azure-services.md",
       "redirect_url": "/entra/agent-id/call-api-azure-services",
       "redirect_document_id": true
