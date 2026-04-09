@@ -28,7 +28,7 @@ Shadow IT refers to applications and services that are used by employees without
 | Risk category | Examples | Why it matters |
 |---|---|---|
 | Data loss | Uploading files to personal cloud storage | Sensitive data leaves corporate control. |
-| Compliance | Using apps that don't meet regulatory requirements | General Data Protection Regulation (GDPR), Health Insurance Portability and Accountability Act (HIPAA), and Sarbanes-Oxley Act violations. |
+| Compliance | Using apps that don't meet regulatory requirements | Health Insurance Portability and Accountability Act (HIPAA) and Sarbanes-Oxley Act violations. |
 | Security | Apps with poor security practices | Credential theft and malware delivery. |
 | Licensing | Duplicate tools across teams | Wasted IT budget. |
 
@@ -47,7 +47,7 @@ Microsoft evaluates each discovered application and assigns a risk score based o
 
 - **General factors:** Popularity, data sovereignty, and company information availability.
 - **Security factors:** Encryption, multifactor authentication support, audit logs, and penetration testing.
-- **Compliance factors:** SOC 2, ISO 27001, GDPR compliance, and HIPAA certification.
+- **Compliance factors:** SOC 2, ISO 27001, and HIPAA certification.
 - **Legal factors:** Data ownership, Microsoft Software License Terms, and data retention policies.
 
 ## Sample walkthrough videos
