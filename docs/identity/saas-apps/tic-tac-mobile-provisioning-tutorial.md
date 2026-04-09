@@ -5,7 +5,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/09/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tic-Tac Mobile so that I can streamline the user management process and ensure that users have the appropriate access to Tic-Tac Mobile.
@@ -75,21 +75,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot that shows the Provisioning tab.](common/provisioning.png)
 
-1. Set **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot that shows the Provisioning tab Automatic option.](common/provisioning-automatic.png)
+	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Tic-Tac Mobile **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tic-Tac Mobile. If the connection fails, ensure your Tic-Tac Mobile account has admin permissions and try again.
+1. In the **Tenant URL** field, enter your Tic-Tac Mobile Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tic-Tac Mobile. If the connection fails, ensure your Tic-Tac Mobile account has the required admin permissions and try again.
 
- 	![Screenshot that shows the Secret Token box.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** box, enter the email address of a person or group who should receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Screenshot that shows the Notification Email box.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Tic-Tac Mobile**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Tic-Tac Mobile in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tic-Tac Mobile for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Tic-Tac Mobile API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -112,21 +114,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
 
-1. To configure scoping filters, see the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Tic-Tac Mobile, change **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot that shows the Provisioning Status toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users or groups that you want to provision to Tic-Tac Mobile by selecting the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot that shows the provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot that shows saving the provisioning configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
