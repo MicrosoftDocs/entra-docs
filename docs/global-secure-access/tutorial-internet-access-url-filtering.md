@@ -170,7 +170,7 @@ In this tutorial, you accomplished the following tasks:
 ```
 Without TLS inspection:              With TLS inspection:
 ┌───────────────────┐             ┌───────────────────┐
-│ TLS Handshake     │             │ Decrypted Traffic │
+│ TLS handshake     │             │ Decrypted traffic │
 │                   │             │                   │
 │ SNI: youtube.com  │  ← Visible  │ GET /shorts/abc   │  ← Now visible!
 │                   │             │ Host: youtube.com │

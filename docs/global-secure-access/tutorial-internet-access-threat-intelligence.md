@@ -24,7 +24,7 @@ In this tutorial, you learn how to:
 
 ### What is threat intelligence?
 
-Threat intelligence is curated data about known malicious domains, URLs, and IP addresses. This list is continuously updated as Microsoft aggregates intelligence from multiple sources like the ones in the following table.
+Threat intelligence is curated data about known malicious domains, URLs, and IP addresses. This list is continuously updated as Microsoft aggregates intelligence from multiple sources like the examples in the following table.
 
 | Source | Description |
 |--------|-------------|
@@ -77,7 +77,7 @@ The following video demonstrates how to test a threat intelligence policy.
 
 ## Step 2: Configure your allow list (optional)
 
-If you're aware of sites that might be business-critical or are labeled as false positives, you can configure rules that allow these sites.
+If you're aware of sites that might be business critical or are labeled as false positives, you can configure rules that allow these sites.
 
 > [!WARNING]
 > Bypassing a domain from threat intelligence is risky. Only do it if you're sure that the destination is safe.
@@ -126,16 +126,16 @@ If Windows Defender or SmartScreen blocks you, override and access the site to t
 
 In this tutorial, you accomplished the following tasks:
 
-- **Enabled automated threat protection:** Your organization is now protected against thousands of known malicious sites without manually maintaining block lists. Microsoft continuously updates this threat list based on its intelligence signals.
-- **Understood the "default allow" model:** Threat intelligence policies only block traffic that matches a known threat. Other policies evaluate all the other traffic that passes through.
+- **Enabled automated threat protection:** You learned that your organization is now protected against thousands of known malicious sites without manually maintaining block lists. Microsoft continuously updates this threat list based on its intelligence signals.
+- **Understood the "default allow" model:** You learned that threat intelligence policies only block traffic that matches a known threat. Other policies evaluate all the other traffic that passes through.
 - **Configured exception rules:** You learned how to bypass specific domains if needed for business reasons, although you should do this step sparingly.
-- **Observed threat type classification:** The block page shows the specific threat type, like MaliciousUrl, phishing, and C2. This information helps you understand why traffic was blocked.
+- **Observed threat type classification:** You learned that the block page shows the specific threat type, like `MaliciousUrl`, phishing, and C2. This information helps you understand why traffic was blocked.
 
 ### Defense-in-depth strategy
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                 Security Layers                         │
+│                 Security layers                         │
 ├─────────────────────────────────────────────────────────┤
 │ Layer 1: Web content filtering                          │
 │   • Blocks unwanted categories like gambling or adult.  │

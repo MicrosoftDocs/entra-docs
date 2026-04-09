@@ -202,11 +202,11 @@ To check the certificate on the Microsoft Edge browser:
 In this exercise, you accomplished the following tasks:
 
 - **Created a certificate hierarchy:** You generated a CSR, signed it with a root CA, and uploaded both certificates to GSA. You established the trust chain that you need for TLS inspection.
-- **Understood bypass rules:** Some destinations are incompatible with TLS inspection, such as certificate pinning or mutual TLS, or are privacy sensitive, such as banking or healthcare. The system automatically bypasses some destinations by default.
-- **Created a security profile with Conditional Access:** Unlike the baseline profile (which applies to everyone), this security profile uses Conditional Access to target specific users to allow for phased rollouts.
-- **Distributed the root CA certificate:** For clients to trust the re-encrypted traffic, they need the root CA certificate in their trusted store.
+- **Understood bypass rules:** You learned that some destinations are incompatible with TLS inspection, such as certificate pinning or mutual TLS, or are privacy sensitive, such as banking or healthcare. The system automatically bypasses some destinations by default.
+- **Created a security profile with Conditional Access:** You learned that unlike the baseline profile (which applies to everyone), this security profile uses Conditional Access to target specific users to allow for phased rollouts.
+- **Distributed the root CA certificate:** You learned that for clients to trust the re-encrypted traffic, they need the root CA certificate in their trusted store.
 
-### Deep Dive: The certificate chain
+### Deep dive: The certificate chain
 
 ```Example:
  ┌─────────────────────────────┐

@@ -28,7 +28,7 @@ Shadow IT refers to applications and services that are used by employees without
 | Risk category | Examples | Why it matters |
 |---|---|---|
 | Data loss | Uploading files to personal cloud storage | Sensitive data leaves corporate control. |
-| Compliance | Using apps that don't meet regulatory requirements | GDPR, Health Insurance Portability and Accountability Act (HIPAA), and SOX violations. |
+| Compliance | Using apps that don't meet regulatory requirements | General Data Protection Regulation (GDPR), Health Insurance Portability and Accountability Act (HIPAA), and Sarbanes-Oxley Act violations. |
 | Security | Apps with poor security practices | Credential theft and malware delivery. |
 | Licensing | Duplicate tools across teams | Wasted IT budget. |
 
@@ -45,10 +45,10 @@ Generative AI tools (ChatGPT, Claude, Gemini, and others) present unique challen
 
 Microsoft evaluates each discovered application and assigns a risk score based on:
 
-- **General factors:** Popularity, data sovereignty, and company information availability
-- **Security factors:** Encryption, multifactor authentication support, audit logs, and penetration testing
-- **Compliance factors:** SOC 2, ISO 27001, GDPR compliance, and HIPAA certification
-- **Legal factors:** Data ownership, Microsoft Software License Terms, and data retention policies
+- **General factors:** Popularity, data sovereignty, and company information availability.
+- **Security factors:** Encryption, multifactor authentication support, audit logs, and penetration testing.
+- **Compliance factors:** SOC 2, ISO 27001, GDPR compliance, and HIPAA certification.
+- **Legal factors:** Data ownership, Microsoft Software License Terms, and data retention policies.
 
 ## Sample walkthrough videos
 
@@ -124,7 +124,7 @@ Cloud application analytics give admins visibility into the cloud applications t
 In this tutorial, you accomplished the following tasks:
 
 - **Discovered shadow IT in your organization**: You now have visibility into cloud applications that are being used, even apps that aren't sanctioned by IT.
-- **Identified shadow AI applications**: The generative AI filter helps you quickly find AI tools that might pose data leakage risks.
+- **Identified shadow AI applications**: You can use the generative AI filter to help you quickly find AI tools that might pose data leakage risks.
 - **Understood application risk scoring**: You can prioritize remediation efforts based on risk scores across general, security, compliance, and legal factors.
 - **Analyzed usage patterns**: You can see which apps have the most users, data transfer, or transactions to understand true business impact.
 

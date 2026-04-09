@@ -68,11 +68,11 @@ The following video demonstrates how to configure a file policy.
 1. Select **Add rule**.
 1. Enter the following information:
 
-   - **Rule name:** `Block uploads to ChatGPT and Gmail`
+   - **Rule name:** Enter **Block uploads to ChatGPT and Gmail**.
    - **Description:** Enter a description (optional).
-   - **Priority:** `120`
-   - **Status:** Enabled.
-   - **Action:** Block.
+   - **Priority:** Select **120**.
+   - **Status:** Select **Enabled**.
+   - **Action:** Select **Block**.
    - **Activities:** Select the checkbox for **Upload**.
    - **Content types:** Select the checkboxes for **Word (97-2003)**, **Word Document**, and **PDF**.
 1. Select **Add destination**, select **FQDN**, and then enter the following fully qualified domain names (FQDNs):
@@ -126,15 +126,15 @@ Refer to [official documentation](/entra/global-secure-access/how-to-network-con
 In this tutorial, you accomplished the following tasks:
 
 - **Created a file policy to prevent data exfiltration**: You blocked specific document types from being uploaded to AI tools and personal email, which addresses a key data loss vector.
-- **Understood FQDN discovery for apps**: You learned that web applications often use multiple back-end URLs (like `*.oaiusercontent.com` for ChatGPT).
-- **Linked file policies to security profiles**: File policies follow the same security profile model, which you can use to target specific users via Conditional Access.
-- **Combined multiple security controls**: This tutorial demonstrates how file controls work alongside web content filtering, TLS inspection, and threat intelligence as part of a comprehensive security strategy.
+- **Understood FQDN discovery for apps**: You learned that web applications often use multiple back-end URLs, like `*.oaiusercontent.com` for ChatGPT.
+- **Linked file policies to security profiles**: You learned that file policies follow the same security profile model, which you can use to target specific users via Conditional Access.
+- **Combined multiple security controls**: You learned that this tutorial demonstrates how file controls work alongside web content filtering, TLS inspection, and threat intelligence as part of a comprehensive security strategy.
 
 ### Identify application FQDNs
 
 When you configure file controls, you need to know the actual FQDNs that are used by applications.
 
-To discover them, select F12 to open the browser developer tools:
+To discover them, select **F12** to open the browser developer tools:
 
 1. Open the **Network** tab.
 1. Upload a file to the target app.

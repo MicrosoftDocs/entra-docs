@@ -44,7 +44,7 @@ Each lab builds on the previous one and follows a logical progression.
 | [Enable Internet Access](tutorial-internet-access-enable-traffic-forwarding.md) | How traffic forwarding works and how to route internet traffic through Global Secure Access. |
 | [Configure web content filtering](tutorial-internet-access-web-content-filtering.md) | How to create policies that apply to all users and understand policy evaluation. |
 | [Transport Layer Security (TLS) inspection](tutorial-internet-access-tls-inspection.md) | Why encrypted traffic inspection is essential for modern security. |
-| [URL filtering](tutorial-internet-access-url-filtering.md) | The difference between FQDN and URL filtering, and how TLS inspection enables deeper inspection. |
+| [URL filtering](tutorial-internet-access-url-filtering.md) | What the difference is between FQDN and URL filtering, and how TLS inspection enables deeper inspection. |
 | [Threat intelligence](tutorial-internet-access-threat-intelligence.md) | How the Microsoft threat feeds protect against known malicious sites. |
 | [Application discovery](tutorial-internet-access-application-discovery.md) | How to identify shadow IT and manage application risk. |
 | [File controls](tutorial-internet-access-file-controls.md) | How to prevent data exfiltration through file upload controls. |
