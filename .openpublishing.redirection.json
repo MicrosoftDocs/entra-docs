@@ -3233,7 +3233,7 @@
     {
       "source_path": "docs/agent-id/autonomous-agent-request-tokens.md",
       "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/autonomous-agent-request-authorization-entra-admin.md",

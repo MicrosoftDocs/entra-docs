@@ -91,7 +91,7 @@ items:
       - name: Autonomous agents
         items:
         - name: Authenticate and acquire tokens for autonomous agents
-          href: docs/agent-id/autonomous-agent-authentication-authorization-flow.md
+          href: agent-id/autonomous-agent-authentication-authorization-flow.md
       - name: Interactive agents
         items:
         - name: Authenticate users and request user tokens
