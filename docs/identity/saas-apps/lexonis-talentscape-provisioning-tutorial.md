@@ -71,7 +71,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Lexonis TalentScape Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Lexonis TalentScape. If the connection fails, ensure your Lexonis TalentScape account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Lexonis TalentScape Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Lexonis TalentScape. If the connection fails, ensure your Lexonis TalentScape account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 

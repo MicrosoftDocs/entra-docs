@@ -95,9 +95,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Infor CloudSuite Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Infor CloudSuite. If the connection fails, ensure your Infor CloudSuite account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Leapsome Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Leapsome. If the connection fails, ensure your Leapsome account has the required admin permissions and try again.
 	> [!NOTE]
-	> Enter the input `https://www.leapsome.com/api/scim` in Tenant URL.
+	> Enter `https://www.leapsome.com/api/scim` in **Tenant URL**.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Cybozu in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Cybozu for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Cybozu API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Leapsome for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Leapsome API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
 	![Leapsome User Attributes](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
