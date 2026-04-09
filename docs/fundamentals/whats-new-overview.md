@@ -4,7 +4,6 @@ description: Overview of the What's new experience in the Microsoft Entra admin 
 ms.topic: overview
 ms.date: 11/13/2024
 # Customer intent: As a customer, I want an overview of the What's new experience in the Microsoft Entra admin center.
-#Customer Intent: As an IT admin, I want to learn about what's new in Microsoft Entra so that I can stay informed about the latest features and changes.
 ---
 
 # What's new
