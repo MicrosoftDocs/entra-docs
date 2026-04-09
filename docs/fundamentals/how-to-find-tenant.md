@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 01/14/2025
 ms.reviewer: jeffsta
 ms.custom: it-pro, ge-structured-content-pilot, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to find my tenant ID so that I can use it for configuration and troubleshooting tasks.
 ---
 
 # How to find your Microsoft Entra tenant ID
