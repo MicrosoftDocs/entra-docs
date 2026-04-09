@@ -8,6 +8,7 @@ ms.subservice: fundamentals
 ms.date: 03/09/2026
 ms.author: sarahlipsey
 ms.reviewer: tychusnyanga
+#Customer Intent: As an IT admin, I want to find help and get support for Microsoft Entra so that I can resolve issues with my identity and access services.
 ---
 
 # Find help and get support for Microsoft Entra
