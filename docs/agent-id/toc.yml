@@ -123,9 +123,9 @@ items:
       href: manage-agent-identities-admin.md
     - name: Disable agent identities
       href: disable-agent-identities.md
-    - name: View and manage agent identities
+    - name: View and manage agent identities (admin center)
       href: agent-lists.md
-    - name: Manage agents in end user experience
+    - name: Manage agents (owner and sponsor portal)
       href: manage-agent-identities-end-user.md
 
   # REFERENCE ######################

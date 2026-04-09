@@ -66,7 +66,7 @@ In the risky agent report, select an entry to view the full details including th
 - Risk state and risk level
 - Agent type and sponsors (if specified)
 
-You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. 
+You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. Risk detections are retained for up to 90 days for investigation purposes.
 
 :::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agent details." lightbox="media/concept-risky-agents/risky-agent-details.png":::
 

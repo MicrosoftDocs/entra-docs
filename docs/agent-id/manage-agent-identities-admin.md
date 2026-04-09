@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 04/09/2026
 ms.custom: msecd-doc-authoring-108
 
 #customer intent: As an IT administrator, I want a unified guide for managing agent identities in my organization so that I can efficiently view, govern, monitor, and secure agents across the full management lifecycle.
@@ -17,7 +17,7 @@ ms.custom: msecd-doc-authoring-108
 
 Microsoft Entra Agent ID provides a centralized set of tools for managing agent identities across your organization. Agent identities are a distinct identity type in Microsoft Entra ID, designed for AI agents with classification, metadata, and security controls tailored to agentic workloads.
 
-This article covers key agent management tasks: from viewing and disabling agents, to governing access, monitoring activity, and responding to security risks. Each section summarizes a management area and links to the detailed article for step-by-step instructions.
+This article covers key agent management tasks: from viewing and disabling agents, to governing access, monitoring activity, and responding to security risks. Whether you're an administrator responsible for tenant-wide agent oversight or a sponsor managing specific agents, this guide provides the information you need to effectively manage agent identities in your organization.
 
 [!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
@@ -33,6 +33,7 @@ Different management tasks require different roles and licenses. The following t
 | Configure Conditional Access policies | Conditional Access Administrator | Requires Microsoft Entra ID P1 license. |
 | View ID Protection risk reports | Security Administrator, Security Operator, or Security Reader | Requires Microsoft Entra ID P2 license during preview. |
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
+| Verify Frontier licensing | Billing Administrator | Required to check Microsoft Agent 365 licensing in the Microsoft 365 admin center. |
 
 [!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
@@ -46,7 +47,7 @@ The Microsoft Entra admin center provides a centralized interface to view all ag
 
 To search for a specific agent, enter the **name** or **object ID** in the search box, or add the **Agent Blueprint ID** filter. You can customize which columns are shown by selecting the **Choose columns** button. Available columns include **Name**, **Created On**, **Status**, **Object ID**, **View Access**, **Agent Blueprint ID**, **Owners**, and **Uses agent identity**.
 
-For detailed instructions on filtering, column customization, and managing agents from this view, see [View and manage agent identities in your tenant](identity-platform/agent-lists.md).
+For detailed instructions on filtering, column customization, and managing agents from this view, see [View and manage agent identities in your tenant](agent-lists.md).
 
 ## Manage agent identity blueprints
 
@@ -66,34 +67,43 @@ From a blueprint's management page, you can:
 - **View sign-in logs**: Monitor authentication events.
 - **Disable the blueprint**: Select **Disable** in the command bar.
 
-For detailed instructions, see [View and manage agent identity blueprints in your tenant](identity-platform/manage-agent-blueprint.md).
+For detailed instructions, see [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md).
 
-## Enable or disable agent identities
+## Configure inheritable permissions for blueprints
 
-You can enable or disable agent identities from two locations, depending on your role:
+Inheritable permissions let agent identities automatically inherit OAuth 2.0 delegated permission scopes from their parent blueprint. When you configure inheritable permissions on a blueprint, newly created agent identities receive a base set of scopes without requiring interactive user or admin consent prompts.
 
-### Admin center (administrators)
+Two inheritance patterns are supported per resource app:
 
-Administrators can disable one or more agent identities from the admin center:
+| Pattern | Description |
+|---|---|
+| **Enumerated scopes** | Inherit only explicitly listed scopes. Use for fine-grained control. |
+| **All allowed scopes** | Inherit all available delegated scopes for the resource app. Newly granted scopes on the blueprint are automatically included. |
 
-1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
-1. Select one or more agents from the list by checking the box next to their name.
-1. Select the **Disable** button in the toolbar.
+Start with enumerated scopes using only essential permissions, then expand as needed. This approach follows the principle of least privilege and makes it easier to audit which permissions agents actually use.
 
-You can also navigate into a single agent identity and disable it from its details page. For the full procedure, see [View and manage agent identities in your tenant](identity-platform/agent-lists.md).
+Key limits:
 
-### My Account portal (owners and sponsors)
+- Maximum of 10 resource apps per blueprint.
+- For enumerated scopes, maximum of 40 scopes per resource app.
+- Some high-privilege scopes are blocked by platform policy and can't be inherited.
 
-Agent identity owners and sponsors can manage agents they're responsible for through the My Account portal:
+Inheritable permissions are configured via the `inheritablePermissions` navigation property on the `agentIdentityBlueprint` application resource using Microsoft Graph. For step-by-step API examples (add, update, delete), see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
 
-1. Sign in to the [My Account end user portal](https://myaccount.microsoft.com/) as an owner or sponsor of at least one agent identity.
-1. In the left menu, select **Manage agents (Preview)**.
-1. Choose either the **Agents you sponsor** or **Agents you own** tab.
-1. Select an agent, then choose **Disable agent** or **Enable agent**.
+## Disable or restrict agent identities
 
-Disabling an agent from either location has the same effect: it blocks users from accessing the agent and prevents token issuance. Re-enabling restores access and token issuance.
+Organizations can control agent identity usage at three levels, depending on the scope needed:
 
-For the full end-user management experience, see [Manage agents in end user experience](identity-platform/manage-agent-identities-end-user.md).
+| Scope | What it does | Details |
+|---|---|---|
+| **Individual agent** | Disable a specific agent identity to block its access and token issuance. Administrators use the admin center; owners and sponsors use the My Account portal. | [View and manage agent identities in your tenant](agent-lists.md) · [Manage agents in end user experience](manage-agent-identities-end-user.md) |
+| **Blueprint-level** | Disable an agent identity blueprint from its management page. This prevents new agent identities from being created from that blueprint and blocks existing ones. | [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md) |
+| **Tenant-wide** | Block all agent identity authentication using Conditional Access policies, and optionally block creation of new agent identities through product-specific controls (Microsoft Entra ID, Security Copilot, Copilot Studio, Azure AI Foundry, Microsoft Teams). | [Disable agent identities in your tenant](disable-agent-identities.md) |
+
+Re-enabling a disabled agent identity at any scope restores access and token issuance.
+
+> [!CAUTION]
+> Globally disabling agent identities can cause existing agents to fail, degrade Microsoft product experiences, and push teams to use less transparent application or service principal identities. Evaluate the impact before enforcing. For a partial approach, use Conditional Access policies to block specific agents rather than all agent identities.
 
 ## Control agent access with Conditional Access
 
@@ -192,20 +202,8 @@ For step-by-step workflow configuration, see [Agent identity sponsor tasks in Li
 For organizations managing large numbers of agent identities, the following options are available:
 
 - **Multi-select disable**: The admin center supports selecting multiple agent identities at once and disabling them in batch from the **All agent identities** page.
-- **Microsoft Graph API (beta)**: Agent identity endpoints on the `/beta` API support programmatic management. For example, ID Protection exposes `riskyAgents` and `agentRiskDetections` collections for programmatic risk monitoring.
-
-> [!NOTE]
-> Comprehensive scripting tutorials for agent identity management don't yet exist on Microsoft Learn. At-scale management beyond multi-select currently requires custom scripting using the Graph API.
+- **Microsoft Graph API**: Agent identity endpoints support programmatic management. For example, ID Protection exposes `riskyAgents` and `agentRiskDetections` collections for programmatic risk monitoring.
 
 ## Related content
 
-- [View and manage agent identities in your tenant](identity-platform/agent-lists.md)
-- [View and manage agent identity blueprints in your tenant](identity-platform/manage-agent-blueprint.md)
-- [Manage agents in end user experience](identity-platform/manage-agent-identities-end-user.md)
-- [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id)
-- [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
-- [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview)
-- [Agent identity sponsor tasks in Lifecycle Workflows](/entra/id-governance/agent-sponsor-tasks)
-- [Microsoft Entra Agent ID logs](sign-in-audit-logs-agents.md)
-- [Owners, sponsors, and managers](identity-platform/agent-owners-sponsors-managers.md)
-- [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference)
+- [Manage agents in end user experience](manage-agent-identities-end-user.md)

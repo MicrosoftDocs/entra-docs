@@ -97,6 +97,9 @@ In the second scenario, Conditional Access uses [signals from Microsoft Entra ID
 
 ### Scenario 1: Allow only specific agents to access resources
 
+> [!TIP]
+> **Required role:** [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with a Microsoft Entra ID P1 license.
+
 #### [Using custom security attributes](#tab/custom-security-attributes)
 
 ###### Create Conditional Access policy using custom security attributes
@@ -178,7 +181,10 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 ### Scenario 2: Block high-risk agent identities from accessing my organization’s resources
 
-Organizations can create a Conditional Access policy to block high-risk agent identities based on [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
+> [!TIP]
+> **Required role:** [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with a Microsoft Entra ID P1 license.
+
+Organizations can create a Conditional Access policy to block high-risk agent identities based on [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents). For details on risk detection types and response actions for agents, see [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
