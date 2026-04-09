@@ -4,7 +4,7 @@ description: Learn how to view requests and remove for an access package in enti
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
-#Customer intent: As an access package manager, I want detailed information about requests for access packages so that I can view the status and troubleshoot any issues.
+#Customer Intent: As an IT admin, I want to view and remove requests for an access package so that I can manage pending and completed access requests.
 ---
 # View and remove requests for an access package in entitlement management
 

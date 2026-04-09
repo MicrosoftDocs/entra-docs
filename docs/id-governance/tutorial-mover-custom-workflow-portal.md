@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 03/12/2026
 ms.custom: template-tutorial, sfi-image-nochange
-#CustomerIntent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
+#Customer Intent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
 ---
 
 # Automate employee mover tasks when they change jobs using the Microsoft Entra admin center

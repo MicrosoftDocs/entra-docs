@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 03/24/2026
-ms.reviewer: vmahtani
+ms.reviewer: sreyanthmora
 ms.custom:
   - has-adal-ref
   - ai-gen-docs-bap
