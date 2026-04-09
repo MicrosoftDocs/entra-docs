@@ -66,7 +66,7 @@ This section guides you through connecting your Microsoft Entra ID to Velpic's u
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input Tenant URL and Secret Token of Velpic.(You can find these values under your Velpic account: **Manage** > **Integration** > **Plugin** > **SCIM**)
+5. Under the **Admin Credentials** section, enter the Tenant URL and Secret Token of Velpic.(You can find these values under your Velpic account: **Manage** > **Integration** > **Plugin** > **SCIM**)
 
     ![Screenshot of Authorization Values.](./media/velpic-provisioning-tutorial/Velpic2.png)
 
@@ -82,7 +82,7 @@ This section guides you through connecting your Microsoft Entra ID to Velpic's u
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. Review the user attributes that's synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties are used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties are used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

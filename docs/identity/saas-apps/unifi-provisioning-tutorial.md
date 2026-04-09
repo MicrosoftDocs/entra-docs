@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, input your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

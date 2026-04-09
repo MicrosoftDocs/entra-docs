@@ -77,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Visibly Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Visibly. If the connection fails, ensure your Visibly account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Visibly Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Visibly. If the connection fails, ensure your Visibly account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Visibly in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Visibly for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Visibly API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Visibly in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Visibly for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Visibly API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
