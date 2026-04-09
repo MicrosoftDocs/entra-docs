@@ -6,6 +6,7 @@ ms.topic: faq
 ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: template-tutorial
+#Customer Intent: As an IT admin, I want to find answers to common questions about lifecycle workflows so that I can better understand and use the feature.
 ---
 
 # Lifecycle workflows - FAQs

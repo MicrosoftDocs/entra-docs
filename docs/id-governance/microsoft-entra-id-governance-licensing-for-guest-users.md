@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 03/02/2026
 ms.reviewer: jercon
+#Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
 
 # Microsoft Entra ID Governance licensing for guest users
