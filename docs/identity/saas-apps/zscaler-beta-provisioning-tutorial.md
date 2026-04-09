@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 The scenario outlined in this article assumes that you already have the following:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Zscaler Beta tenant
 * A user account in Zscaler Beta with Admin permissions
 
@@ -38,7 +38,7 @@ Before configuring Zscaler Beta for automatic user provisioning with Microsoft E
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **Zscaler Beta**, select **Zscaler Beta** from result panel then select **Add** button to add the application.
 
-	![Zscaler Beta in the results list](common/search-new-app.png)
+	![Screenshot of Zscaler Beta in the results list.](common/search-new-app.png)
 
 ## Step 2: Assign users to Zscaler Beta
 
@@ -72,29 +72,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Beta**.
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Zscaler Beta**.
 
-	![Screenshot that shows The Zscaler Beta link in the Applications list.](common/all-applications.png)
+	![Screenshot that shows the Zscaler Beta link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot that shows There's a list of tabs arranged into categories, and titled ZScaler Beta - Provisioning / Enterprise Application. The Provision tab of the Manage category is selected.](./media/zscaler-beta-provisioning-tutorial/provisioning-tab.png)
+	![Screenshot that shows the Provision tab of the Manage category is selected.](./media/zscaler-beta-provisioning-tutorial/provisioning-tab.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of new configuration.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described later in this article.
+1. Under the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described later in this article.
 
 1. To obtain the **Tenant URL** and **Secret Token**, navigate to **Administration > Authentication Settings** in the Zscaler Beta portal user interface and select **SAML** under **Authentication Type**.
 
-	![Screenshot that shows On Authentication Settings, in the Authentication Profile, the selected Directory Type is Hosted DB, and the selected Authentication Type is SAML.](./media/zscaler-beta-provisioning-tutorial/secret-token-1.png)
+	![Screenshot that shows On Authentication Settings.](./media/zscaler-beta-provisioning-tutorial/secret-token-1.png)
 
 	Select **Configure SAML** to open the **Configuration SAML** options.
 
-	![Screenshot that shows On Configure SAML, the Enable SAML Auto-Provisioning and the Enable SCIM-Based Provisioning options are selected. The Base URL and Bearer Token text boxes are highlighted.](./media/zscaler-beta-provisioning-tutorial/secret-token-2.png)
+	![Screenshot that shows On Configure SAML.](./media/zscaler-beta-provisioning-tutorial/secret-token-2.png)
 
 	Select **Enable SCIM-Based Provisioning** to retrieve **Base URL** and **Bearer Token**, then save the settings. Copy the **Base URL** to **Tenant URL**, and **Bearer Token**  to **Secret Token**.
 
@@ -136,7 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 

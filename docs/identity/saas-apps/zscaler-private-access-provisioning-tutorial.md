@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Zscaler Private Access (ZPA) tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
 * A user account in Zscaler Private Access (ZPA) with Admin permissions.
 
@@ -62,22 +62,22 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1.	Scroll down to provide the **Single sign-On URL** and **IdP Entity ID**.
 
-	![Zscaler Private Access (ZPA) IdP ID](media/zscaler-private-access-provisioning-tutorial/idpid.png)
+	![Screenshot of Zscaler Private Access (ZPA) IdP ID.](media/zscaler-private-access-provisioning-tutorial/idpid.png)
 
 1.	Scroll down to **Enable SCIM Sync**. Select **Generate New Token** button. Copy the **Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
-	![Zscaler Private Access (ZPA) Create Token](media/zscaler-private-access-provisioning-tutorial/token.png)
+	![Screenshot of Zscaler Private Access (ZPA) Create Token.](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.	To locate the **Tenant URL**, navigate to **Administration > IdP Configuration**. Select the name of the newly added IdP configuration listed on the page.
+1.	To locate the **Tenant URL**, navigate to **Administration > IdP Configuration**. Select the name of the newly added IdP configuration listed on the page.
 
-	![Zscaler Private Access (ZPA) Idp Name](media/zscaler-private-access-provisioning-tutorial/idpname.png)
+	![Screenshot of Zscaler Private Access (ZPA) Idp Name.](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
-9.	Scroll down to view the **SCIM Service Provider Endpoint** at the end of the page. Copy the **SCIM Service Provider Endpoint**. This value is entered in the Tenant URL field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
+1.	Scroll down to view the **SCIM Service Provider Endpoint** at the end of the page. Copy the **SCIM Service Provider Endpoint**. This value is entered in the Tenant URL field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
-	![Zscaler Private Access (ZPA) SCIM URL](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
+	![Screenshot of Zscaler Private Access (ZPA) SCIM URL.](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
 
-## Add Zscaler Private Access (ZPA) from the gallery
+## Step 3: Add Zscaler Private Access (ZPA) from the gallery
 
 Before configuring Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID, you need to add Zscaler Private Access (ZPA) from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
@@ -90,7 +90,7 @@ Before configuring Zscaler Private Access (ZPA) for automatic user provisioning 
 
 	![Screenshot of Zscaler Private Access (ZPA) in the results list.](common/search-new-app.png)
 
-## Step 3: Configure automatic user provisioning to Zscaler Private Access (ZPA) 
+## Step 4: Configure automatic user provisioning to Zscaler Private Access (ZPA) 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zscaler Private Access (ZPA) based on user and/or group assignments in Microsoft Entra ID.
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)**.
 
-	![The Zscaler Private Access (ZPA) link in the Applications list](common/all-applications.png)
+	![The Zscaler Private Access (ZPA) link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -118,9 +118,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of  New configuration.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, enter the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
 
 	![Screenshot of Tenant URL + Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -164,11 +164,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-## Step 4: Monitor your deployment
+## Step 5: Monitor your deployment
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 

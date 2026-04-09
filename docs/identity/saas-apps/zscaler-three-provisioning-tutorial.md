@@ -20,7 +20,7 @@ In this article,  you learn how to configure Microsoft Entra ID to automatically
 
 To complete the steps outlined in this article,  you need the following:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler Three tenant.
 * A user account in Zscaler Three with admin permissions.
 
@@ -74,7 +74,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of New configuration.](common/application-provisioning.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler Three account, as described in the next step.
 
@@ -126,7 +126,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 

@@ -20,7 +20,7 @@ In this article,  you learn how to configure Microsoft Entra ID to automatically
 
 To complete the steps outlined in this article,  you need the following:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler Two tenant.
 * A user account in Zscaler Two with admin permissions.
 
@@ -63,21 +63,21 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Two**.
 1. Select the **Provisioning** tab:
 
-	![Zscaler Two Provisioning](./media/zscaler-two-provisioning-tutorial/provisioning-tab.png)
+	![Screenshot of Zscaler Two Provisioning.](./media/zscaler-two-provisioning-tutorial/provisioning-tab.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of new configuration.](common/application-provisioning.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler Two account, as described in the next step.
 
 1. To get the **Tenant URL** and **Secret Token**, go to **Administration** > **Authentication Settings** in the Zscaler Two portal and select **SAML** under **Authentication Type**:
 
-	![Zscaler Two Authentication Settings](./media/zscaler-two-provisioning-tutorial/secret-token-1.png)
+	![Screenshot of Zscaler Two Authentication Settings.](./media/zscaler-two-provisioning-tutorial/secret-token-1.png)
 
 1. Select **Configure SAML** to open the **Configure SAML** window:
 
-	![Screenshot of Configure SAML window](./media/zscaler-two-provisioning-tutorial/secret-token-2.png)
+	![Screenshot of Configure SAML window.](./media/zscaler-two-provisioning-tutorial/secret-token-2.png)
 
 1. Select **Enable SCIM-Based Provisioning** and copy the **Base URL** and **Bearer Token**, and then save the settings. In the Azure portal, paste the **Base URL** into the **Tenant URL** box and the **Bearer Token** into the **Secret Token** box.
 
@@ -119,7 +119,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 

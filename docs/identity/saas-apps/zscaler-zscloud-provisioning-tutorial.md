@@ -21,7 +21,7 @@ In this article,  you learn how to configure Microsoft Entra ID to automatically
 
 To complete the steps outlined in this article,  you need the following:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler ZSCloud tenant.
 * A user account in Zscaler ZSCloud with admin permissions.
 
@@ -36,12 +36,12 @@ Before you configure Zscaler ZSCloud for automatic user provisioning with Micros
 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
-   ![Enterprise applications](common/enterprise-applications.png)
+   ![Screenshot of Enterprise applications.](common/enterprise-applications.png)
 
 1. In the search box, enter **Zscaler ZSCloud**. 
 1. Select **Zscaler ZSCloud** in the results and then select **Add**.
 
-![Results list](common/search-new-app.png)
+   ![Screenshot of Results list.](common/search-new-app.png)
 
 ## Step 2: Assign users to Zscaler ZSCloud
 
@@ -75,7 +75,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of new configuration.](common/application-provisioning.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler ZSCloud account, as described in the next step.
 
@@ -127,7 +127,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
