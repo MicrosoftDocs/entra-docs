@@ -36,8 +36,6 @@ Different management tasks require different roles and licenses. The following t
 
 [!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
-<!-- TODO: Confirm whether Billing Administrator access to M365 admin center (Copilot > Settings > User access > Copilot Frontier) is needed for licensing verification, and if this should be mentioned here. -->
-
 ## View agent identities
 
 The Microsoft Entra admin center provides a centralized interface to view all agent identities in your tenant. You can search, filter, sort, and customize columns to find specific agents.
@@ -112,8 +110,6 @@ Key points about Conditional Access for agent identities:
 > Conditional Access enforcement applies when an agent identity or agent user requests a token for any resource. It does **not** apply when an agent identity blueprint acquires a token to create agent identities or agent users.
 
 For detailed policy configuration, step-by-step walkthroughs, and business scenario examples, see [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id).
-
-<!-- TODO: PM question: Should the standalone "Disable agent identities in your tenant" article be formally retired and redirected to the CA article? If so, should its creation-blocking guidance (product-specific methods for Security Copilot and Copilot Studio) and impact warnings be migrated to the CA article or this consolidated guide? -->
 
 ## Monitor agent activity and risk
 
@@ -190,8 +186,6 @@ Lifecycle Workflows provides two automated tasks for agent identity sponsorship:
 Both tasks are **mover and leaver** category tasks: they trigger only under mover or leaver workflow templates, not joiner templates. This ensures continuity of sponsorship when an agent's sponsor changes roles or leaves the organization.
 
 For step-by-step workflow configuration, see [Agent identity sponsor tasks in Lifecycle Workflows](/entra/id-governance/agent-sponsor-tasks).
-
-<!-- TODO: PM question: Are periodic sponsor re-certification or manual reassignment features planned? Should we mention these as upcoming capabilities? -->
 
 ## Automate agent management at scale
 
