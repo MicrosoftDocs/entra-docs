@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your TerraTrue Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to TerraTrue. If the connection fails, ensure your TerraTrue account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your TerraTrue Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to TerraTrue. If the connection fails, ensure your TerraTrue account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -134,4 +134,4 @@ Lastly, TerraTrue sets the user's Display Name based on the first name and last 
 
 ## Related content
 
-[Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -83,7 +83,7 @@ To configure TheOrgWiki for automatic user provisioning with Microsoft Entra ID,
 
 	![Screenshot of the The Org Wiki sign in page with the Sign in with Microsoft option called out.](media/theorgwiki-provisioning-tutorial/image03.png)
 	
-8. After a successful authentication, the application is automatically added to your tenant and you be redirected to your TheOrgWiki account.
+8. After a successful authentication, the application is automatically added to your tenant and you'll be redirected to your TheOrgWiki account.
 
 	![Screenshot of OrgWiki Add SCIM.](media/theorgwiki-provisioning-tutorial/image04.png)
 
@@ -112,14 +112,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input `https://<TheOrgWiki Subdomain 		value>.theorgwiki.com/api/v2/scim/v2/` in **Tenant URL**. 
+1. Under the **Admin Credentials** section, enter `https://<TheOrgWiki Subdomain 		value>.theorgwiki.com/api/v2/scim/v2/` in **Tenant URL**. 
 
 	Example: `https://test1.theorgwiki.com/api/v2/scim/v2/`
 
 	> [!NOTE]
 	> The **Subdomain Value** can only be set during the initial sign-up process for TheOrgWiki.
  
-1. Input the token value in **Secret Token** field, that you retrieved earlier from TheOrgWiki. Select **Test Connection** to ensure Microsoft Entra ID can connect to TheOrgWiki. If the connection fails, ensure your TheOrgWiki account has Admin permissions and try again.
+1. Enter the token value in **Secret Token** field, that you retrieved earlier from TheOrgWiki. Select **Test Connection** to ensure Microsoft Entra ID can connect to TheOrgWiki. If the connection fails, ensure your TheOrgWiki account has Admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -154,4 +154,4 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Related content
 
-[Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).

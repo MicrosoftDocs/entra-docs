@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input `https://scim.templafy.com/scim` in **Tenant URL**. Input the **SCIM API-key** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Templafy. If the connection fails, ensure your Templafy account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, enter `https://scim.templafy.com/scim` in **Tenant URL**. Enter the **SCIM API-key** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Templafy. If the connection fails, ensure your Templafy account has Admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
