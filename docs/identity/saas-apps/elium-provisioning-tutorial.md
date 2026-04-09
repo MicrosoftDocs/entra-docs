@@ -120,7 +120,7 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
