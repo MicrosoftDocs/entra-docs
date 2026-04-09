@@ -5,7 +5,6 @@ ai-usage: ai-assisted
 ms.topic: overview
 ms.date: 04/08/2026
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
-#Customer Intent: As an IT admin, I want to understand what Microsoft Entra is so that I can evaluate its identity and access management capabilities for my organization.
 ---
 # What is Microsoft Entra?
 
