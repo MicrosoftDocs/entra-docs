@@ -3216,6 +3216,36 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#grant-application-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#authenticate-as-an-agent-user",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-authorization-entra-admin.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#grant-application-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-agent-user-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#authenticate-as-an-agent-user",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md",
       "redirect_url": "/entra/agent-id/what-is-microsoft-entra-agent-id",
       "redirect_document_id": true
@@ -3388,21 +3418,6 @@
     {
       "source_path": "docs/agent-id/identity-platform/agent-users.md",
       "redirect_url": "/entra/agent-id/agent-users",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-agent-user-tokens",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-authorization-entra-admin",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
-      "redirect_url": "/entra/agent-id/autonomous-agent-request-tokens",
       "redirect_document_id": true
     },
     {

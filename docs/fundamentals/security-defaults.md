@@ -13,6 +13,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/21/2025
   - ai-gen-description
+#Customer Intent: As an IT admin, I want to configure security defaults for Microsoft Entra ID so that I can protect my organization with baseline security settings.
 ---
 # Security defaults in Microsoft Entra ID
 

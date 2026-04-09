@@ -3,18 +3,16 @@ title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
 ai-usage: ai-assisted
 ms.topic: overview
-ms.date: 04/08/2026
+ms.date: 04/09/2026
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?
 
-Microsoft Entra is a family of identity and network access products that helps organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy. Use Microsoft Entra to verify identities, validate access conditions, check permissions, encrypt connection channels, and monitor for compromise across your environment.
+Microsoft Entra is a family of identity and network access products that helps organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy. Use Microsoft Entra to verify identities, validate access conditions, check permissions, encrypt connection channels, and monitor for compromise across your environment. Microsoft Entra also integrates with [Security Copilot](~/security-copilot/security-copilot-in-entra.md) to help investigate identity risks and troubleshoot access issues using AI.
 
 ## Microsoft Entra product family
 
-The Microsoft Entra product family spans identity, access, governance, and security. It covers secure end-to-end access for employees, customers, partners, and workloads across any cloud environment.
-
-:::image type="content" source="./media/what-is-entra/entra-product-family.png" alt-text="Diagram of Microsoft Entra products across four maturity stages.":::
+The Microsoft Entra product family spans identity, access, governance, and security. It covers secure end-to-end access for employees, customers, partners, workloads, and AI agents across any cloud environment.
 
 ### Establish Zero Trust access controls
 
@@ -77,6 +75,14 @@ If you're a **Microsoft 365, Azure, or Dynamics CRM Online subscriber**, you're 
 [Microsoft Entra Workload ID](~/workload-id/workload-identities-overview.md) is the identity and access management solution for workload identities — applications, services, and containers that require authentication and authorization policies. It lets organizations secure access to resources using adaptive policies and custom security attributes.
 
 **For example**, GitHub Actions need a workload identity to access Azure subscriptions to automate, customize, and execute software development workflows.
+
+### Secure access for AI agents
+
+#### Microsoft Entra Agent ID
+
+[Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, Agent ID provides purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities at enterprise scale.
+
+> **Scenario:** An organization deploys AI agents that access corporate data on behalf of users. Agent ID provides each agent with a governed identity, enforces least-privilege access, and maintains an audit trail of the agent's actions.
 
 ## Prepare your environment
 

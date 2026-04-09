@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 03/05/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to restore or permanently remove recently deleted users so that I can manage user lifecycle in my directory.
 ---
 
 # Restore or remove a recently deleted user
