@@ -55,6 +55,10 @@ Use the **Authentication flows** condition in Conditional Access to manage the f
 1. Confirm your settings and set **Enable policy** to **Enabled**.
 1. Select **Create** to enable your policy. 
 
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
 ## Related content
 
 - [Conditional Access: Authentication flows](concept-authentication-flows.md)

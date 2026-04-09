@@ -169,7 +169,7 @@ You can work with your passkey vendor to determine the AAGUID of the passkey (FI
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
-## Passkeys (FIDO2)
+## Synced passkeys (FIDO2)
 
 ### What are synced versus device-bound passkeys?
 
