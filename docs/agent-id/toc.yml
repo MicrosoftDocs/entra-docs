@@ -120,13 +120,13 @@ items:
     - name: Maintain agent sponsors and lifecycle
       href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
     - name: Manage agent identities in your organization
-      href: manage-agent-identities-organization.md
+      href: manage-agent-identities-admin.md
     - name: Disable agent identities
       href: disable-agent-identities.md
     - name: View and manage agent identities
       href: agent-lists.md
     - name: Manage agents in end user experience
-      href: manage-agent.md
+      href: manage-agent-identities-end-user.md
 
   # REFERENCE ######################
   - name: Reference

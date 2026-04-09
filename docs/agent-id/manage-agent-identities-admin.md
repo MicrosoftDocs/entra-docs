@@ -95,7 +95,7 @@ Agent identity owners and sponsors can manage agents they're responsible for thr
 
 Disabling an agent from either location has the same effect: it blocks users from accessing the agent and prevents token issuance. Re-enabling restores access and token issuance.
 
-For the full end-user management experience, see [Manage agents in end user experience](identity-platform/manage-agent.md).
+For the full end-user management experience, see [Manage agents in end user experience](identity-platform/manage-agent-identities-end-user.md).
 
 ## Control agent access with Conditional Access
 
@@ -207,7 +207,7 @@ For organizations managing large numbers of agent identities, the following opti
 
 - [View and manage agent identities in your tenant](identity-platform/agent-lists.md)
 - [View and manage agent identity blueprints in your tenant](identity-platform/manage-agent-blueprint.md)
-- [Manage agents in end user experience](identity-platform/manage-agent.md)
+- [Manage agents in end user experience](identity-platform/manage-agent-identities-end-user.md)
 - [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id)
 - [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
 - [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview)

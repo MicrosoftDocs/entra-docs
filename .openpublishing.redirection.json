@@ -3489,6 +3489,16 @@
       "source_path": "docs/agent-id/identity-platform/what-is-agent-registry.md",
       "redirect_url": "/entra/agent-id/what-is-agent-registry",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/manage-agent-identities-organization.md",
+      "redirect_url": "/entra/agent-id/manage-agent-identities-admin",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/manage-agent.md",
+      "redirect_url": "/entra/agent-id/manage-agent-identities-end-user",
+      "redirect_document_id": false
     }
   ]
 }

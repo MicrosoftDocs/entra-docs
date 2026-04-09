@@ -73,7 +73,7 @@ It doesn't give the agent unlimited access. It only gets the specific items show
 
 ## Disable an agent or its permissions
 
-You (or an administrator) can remove or disable the agent or its permissions. For more information, see [manage agents in end user experience](/entra/agent-id/identity-platform/manage-agent). For global removal, administrators can delete the agent identity from the Microsoft Entra admin center.
+You (or an administrator) can remove or disable the agent or its permissions. For more information, see [manage agents in end user experience](/entra/agent-id/identity-platform/manage-agent-identities-end-user). For global removal, administrators can delete the agent identity from the Microsoft Entra admin center.
 
 ## Criteria to report a suspicious agent
 
