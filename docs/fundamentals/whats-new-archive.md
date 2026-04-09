@@ -9,6 +9,7 @@ ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to review archived Microsoft Entra releases and announcements so that I can reference past product updates and changes.
 ---
 
 # Archive for Microsoft Entra releases and announcements
