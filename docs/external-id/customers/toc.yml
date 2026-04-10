@@ -50,12 +50,10 @@ items:
           href: plan-your-migration-from-b2c-to-external-id.md
         - name: Standard migration
           href: migrate-from-b2c-to-external-id.md
-        - name: High Scale Compatibility (HSC)
-          items:
-            - name: Enable HSC mode
-              href: enable-external-id-high-scale-compatibility-mode.md
-            - name: Troubleshoot HSC mode
-              href: troubleshoot-high-scale-compatibility-mode.md
+        - name: Enable HSC mode
+          href: enable-external-id-high-scale-compatibility-mode.md
+        - name: Troubleshoot HSC mode
+          href: troubleshoot-high-scale-compatibility-mode.md
 - name: Security
   expanded: false
   items:
