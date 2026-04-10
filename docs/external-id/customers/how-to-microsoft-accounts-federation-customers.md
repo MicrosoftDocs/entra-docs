@@ -89,5 +89,6 @@ At this point, the MSA identity provider has been set up in your Microsoft Entra
 
 ## Related content
 
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

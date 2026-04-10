@@ -78,6 +78,8 @@ items:
        href: workday-integration-reference.md
      - name: Understand API-driven inbound provisioning 
        href: inbound-provisioning-api-concepts.md
+     - name: Understand SCIM support in Microsoft Entra ID
+       href: scim-support-in-entra-id.md
      - name: Partner driven integrations
        href: partner-driven-integrations.md
   - name: How-to guides
@@ -85,6 +87,14 @@ items:
     items:
     - name: Configure provisioning for a gallery app
       href: configure-automatic-user-provisioning-portal.md
+    - name: Configure Microsoft Entra SCIM 2.0 APIs
+      items: 
+      - name: Enable SCIM 2.0 APIs
+        href: enable-scim-api.md
+      - name: Disable SCIM 2.0 APIs
+        href: disable-scim-api.md
+      - name: Troubleshoot SCIM 2.0 errors
+        href: troubleshoot-scim-api-errors.md
     - name: Include or exclude users and groups from scope
       items:
       - name: Scoping users or groups to be provisioned 
@@ -93,6 +103,8 @@ items:
         href: skip-out-of-scope-deletions.md
       - name: Manage application unmatched users
         href: application-provisioning-application-unmatched-users.md
+    - name: Discover existing accounts in target applications
+      href: how-to-account-discovery.md
     - name: Provisioning in Microsoft Entra ID
       items:
       - name: On-demand provisioning
@@ -139,6 +151,8 @@ items:
         href: on-premises-ecma-troubleshoot.md
       - name: Provisioning logs
         href: ~/identity/monitoring-health/howto-analyze-provisioning-logs.md?toc=/entra/identity/app-provisioning/toc.json&bc=/entra/identity/app-provisioning/breadcrumb/TOC.json
+      - name: SCIM 2.0 protocol compliance issues
+        href: application-provisioning-config-problem-scim-compatibility.md
     - name: Troubleshoot HR provisioning
       items:
       - name: Attribute retrieval issues
@@ -164,15 +178,15 @@ items:
     - name: Automate configuration using MS Graph
       href: application-provisioning-configuration-api.md
   - name: Reference
-    items:
+    items: 
     - name: Provision a user with Expression Builder
       href: provision-user-with-expression-builder.md
     - name: Function reference for writing expressions for attribute mappings
       href: functions-for-customizing-application-data.md
-    - name: SCIM 2.0 protocol compliance
-      href: application-provisioning-config-problem-scim-compatibility.md
-    - name: SCIM and Graph scenarios
-      href: scim-graph-scenarios.md
+    - name: Microsoft Entra ID SCIM API schema 
+      href: entra-id-scim-api-schema-documentation.md
+    - name: Microsoft Entra ID SCIM API
+      href: entra-id-scim-api-reference.md
     - name: Cloud HR provisioning
       items:
       - name: Workday expression mapping guide
