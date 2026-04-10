@@ -47,7 +47,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Select the **Save** button to store the generated token.
 
-1. If you want to redirect your users to use Microsoft login page when they attempt to log in using H5mag's own system, you can set a SSO redirect on this page as well by selecting **Microsoft 365 / Microsoft Entra ID** in the SSO Provider options.
+1. If you want to redirect your users to use Microsoft login page when they attempt to log in using H5mag's own system, you can set an SSO redirect on this page as well by selecting **Microsoft 365 / Microsoft Entra ID** in the SSO Provider options.
 
 <a name='step-3-add-h5mag-from-the-azure-ad-application-gallery'></a>
 
