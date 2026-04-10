@@ -10,7 +10,7 @@ ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 03/30/2026
+ms.date: 04/10/2026
 ms.custom:
 #Customer intent: As an iOS developer, I want to enable federated identity provider sign-in and sign-up using native authentication web flow so that users can authenticate with existing social accounts like Apple, Google, or Facebook.
 ---
