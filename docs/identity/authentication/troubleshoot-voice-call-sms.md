@@ -35,7 +35,7 @@ After the request reaches an external telecom provider, two types of problems ca
 
 ### The call or message is dropped or blocked
 
-The provider should confirm this to Microsoft. Common causes include:
+The provider should confirm this issue to Microsoft. Common causes include:
 
 - **Device-level configuration.** Even when all steps to send the message are correct, the device itself could refuse the call or route it to voicemail. Microsoft automatically retries these failures across different providers.
 - **Carrier-level blocking.** The carrier might block the call or message due to international automated fraud detection systems.
@@ -65,7 +65,7 @@ Microsoft doesn't publish RCAs for issues that originate with external telecom p
 
 To help Microsoft Support investigate provider-related issues:
 
-- **Submit a Correlation ID and timestamp** for the sign-ins that need investigation. You can find these in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md). The Correlation ID returns all Request IDs associated with the sign-in.
+- **Submit a Correlation ID and timestamp** for the sign-ins that need investigation. You can find these values in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md). The Correlation ID returns all Request IDs associated with the sign-in.
 
   To view the sign-in logs from the Microsoft Entra admin center:
 
