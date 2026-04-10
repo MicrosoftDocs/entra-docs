@@ -2,7 +2,7 @@
 title: Learn about the Global Secure Access Dashboard
 description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 04/10/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 ---
@@ -153,7 +153,6 @@ The **Top used cloud applications** widget shows the most used cloud application
 The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
 
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
-<!--Temporarily converting the "Network activity by location" section to a comment until the feature is in Public Preview.
 ## Network activity by location (preview)
 
 The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
@@ -162,7 +161,6 @@ The **Network activity by location** widget is an interactive map that shows con
 - Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
 
 :::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
--->
 ## Alerts
 
 The **Alerts** widget shows a chart of alert counts by type and severity.
