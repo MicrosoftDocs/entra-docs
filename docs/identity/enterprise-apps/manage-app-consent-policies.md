@@ -68,6 +68,10 @@ An additional policy is enabled by default is the **microsoft-user-allow-default
 - Android-Mail (application ID:2cee05de-2b8f-45a2-8289-2a06ca32c4c8)
 - Thunderbird (application ID:9e5f94bc-e8a4-4e73-b8be-63364c29d753)
 
+> [!Note]
+>The Mail client policy (microsoft-user-allow-default-consent-apps) allows end users to consent only to a limited set of delegated mail-related permissions for specific mail client applications.
+Therefore, even when this policy is enabled, administrator consent may still be required if an application requests permissions that are outside the scope of the Mail client policy.
+
 ## Multiple policies
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
