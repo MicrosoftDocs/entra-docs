@@ -1,15 +1,16 @@
 ---
-title: Troubleshoot SMS and voice call problems with multifactor authentication (MFA)
-description: Learn how to troubleshoot SMS and voice call problems with multifactor authentication (MFA).
+title: Troubleshoot MFA voice call and SMS problems
+description: Learn how to troubleshoot voice call and SMS problems with MFA, understand telecom delivery, and help Microsoft Support investigate delivery issues.
 ms.topic: how-to
 ms.date: 04/09/2026
+ms.custom: msecd-doc-authoring-108
 author: justinha
 ms.reviewer: xueca
-# Customer intent: As an authentication administrator, I want to learn how to troubleshoot SMS and voice call problems with multifactor authentication (MFA) for Microsoft Entra ID.
+# Customer intent: As an authentication administrator, I want to troubleshoot voice call and SMS problems with multifactor authentication (MFA) for Microsoft Entra ID.
 ---
-# Troubleshoot voice call and SMS problems with multifactor authentication (MFA)
+# Troubleshoot MFA voice call and SMS problems
 
-This article covers how to investigate and resolve problems with SMS or voice call sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and cannot see, and what to expect during an investigation.
+This article explains how to investigate and resolve problems with voice call or SMS sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and cannot see, and what to expect during an investigation.
 
 ## How global telecom delivery works
 
@@ -54,13 +55,13 @@ Due to the complexity and visibility constraints described previously, telecom d
 
 ### Timeline
 
-Investigations into downstream customer-reported delivery issues can take 4–6 weeks. The provider checks their logs and, if no issue is found locally, queries downlevel partners who may use additional providers.
+Investigations into downstream customer-reported delivery issues can take 4–6 weeks. The provider checks their logs and, if no issue is found locally, queries downstream partners who may use additional providers.
 
 ### Root cause analysis (RCA) policy
 
-Microsoft doesn't publish RCAs for issues that originate with external telecom providers. Microsoft is often not provided visibility into the root cause due to international visibility and competitive agreements between carriers.
+Microsoft doesn't publish RCAs for issues that originate with external telecom providers. Carriers often don't share root cause details with Microsoft due to international visibility and competitive agreements.
 
-## How to help with the investigation
+## Help with the investigation
 
 To help Microsoft Support investigate provider-related issues:
 
