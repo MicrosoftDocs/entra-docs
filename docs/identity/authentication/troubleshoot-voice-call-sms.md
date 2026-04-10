@@ -67,6 +67,11 @@ To help Microsoft Support investigate provider-related issues:
 
 - **Submit a Correlation ID and timestamp** for the sign-ins that need investigation. You can find these in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md). The Correlation ID returns all Request IDs associated with the sign-in.
 
+  To view the sign-in logs from the Microsoft Entra admin center:
+
+  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+  1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+
   :::image type="content" source="media/troubleshoot-voice-call-sms/sign-in-log-correlation-id.png" alt-text="Screenshot that shows the Date and Correlation ID fields in the sign-in logs in the Microsoft Entra admin center." lightbox="media/troubleshoot-voice-call-sms/sign-in-log-correlation-id.png":::
 
 - **Provide fresh samples.** End carriers often require Correlation IDs from the last 48–72 hours. Older requests may not propagate to the final end carrier in time for investigation. You may be asked to provide multiple samples.
