@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/07/2026
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ideo so that I can streamline the user management process and ensure that users have the appropriate access to Ideo.
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to IDEO so that I can streamline the user management process and ensure that users have the appropriate access to IDEO.
 ---
 
 # Configure IDEO for automatic user provisioning with Microsoft Entra ID
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.givenName|String|
    |name.familyName|String|
    
-1. Review the group attributes that are synchronized from Microsoft Entra ID to ideo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in IDEO for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to IDEO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in IDEO for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|
