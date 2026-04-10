@@ -42,7 +42,7 @@ Your tenants must be linked to an Azure subscription for proper billing and acce
 
 **Does guest billing apply to all guest users, including those within the first 50,000 Monthly Active Users (MAU)?**
 
-Yes, there's no free tier for guest billing. Guest billing applies to all guest users, including those within the first 50,000 MAU.
+The 50,000 free Monthly Active Users (MAU) allowance applies exclusively to external users utilizing Microsoft Entra ID P1 and P2. However, this MAU allowance doesn't extend to products like Microsoft Entra ID Governance for guests or Global Secure Access for guests.
 
 **Does guest billing apply to all internal guest users as well?**
 
