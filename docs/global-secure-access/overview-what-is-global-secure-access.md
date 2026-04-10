@@ -70,7 +70,7 @@ Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft s
 
 To use Microsoft Entra Private Access and Microsoft Entra Internet Access, users need a Microsoft Entra ID P1 or Microsoft Entra ID P2 license.
 
-Most Global Secure Access services operate on a per-user license model unless otherwise stated. For more information about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). For more information about purchasing individual licenses, see the Microsoft Entra Suite standalone products tab of the licensing page.
+Most Global Secure Access services operate on a per-user license model unless otherwise stated. For more information about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). For more information about purchasing individual licenses, see the Microsoft Entra Suite standalone products tab of the licensing page. For information about guest user licensing, see [Global Secure Access licensing for guest users](reference-licensing-guest-users.md).
 
 ### Feature comparison table
 

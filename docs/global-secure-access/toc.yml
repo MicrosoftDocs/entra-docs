@@ -387,3 +387,5 @@ items:
     href: reference-global-secure-access-certifications.md
   - name: Global Secure Access in China
     href: reference-china-user-support.md
+  - name: Licensing for guest users
+    href: reference-licensing-guest-users.md
