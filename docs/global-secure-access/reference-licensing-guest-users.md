@@ -18,7 +18,7 @@ Under the guest billing model, guests are identified by a `userType` of `Guest` 
 
 ## Billable access features
 
-Guest users are only billed when they actively sign in to the Global Secure Access client for Private Access or Internet Access. Microsoft Entra Internet Access for Microsoft services capabilities, which are included with a Microsoft Entra ID P1 or P2 license, aren't billed to the guest add-on.
+Guest users are only billed when they actively sign in to the Global Secure Access client for Private Access or Internet Access.
 
 You can identify sign-ins that are billed to Microsoft Entra Private Access or Internet Access for guests by looking at your sign-in logs. Under **Entra ID** > **Monitoring & health** > **Sign-in logs**, each billable sign-in has these properties:
 
