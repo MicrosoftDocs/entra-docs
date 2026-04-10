@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Vonage to support provisioning with Microsoft Entra ID
 
-1. Login to [Vonage admin portal](http://admin.vonage.com) with an admin user.
+1. Log in to [Vonage admin portal](http://admin.vonage.com) with an admin user.
 
    ![Screenshot of Log in to vonage admin portal.](media/vonage-provisioning-tutorial/log-in.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning tab user.](media/vonage-provisioning-tutorial/account-super-user.png)
 
-1. In the **Admin Credentials** section, select Authorize , make sure that you enter your Account Super User credentials, if it doesn't ask you to enter credentials make sure that you logged in with the Account Super User (you can check it http://admin.vonage.com/ on the upper left side, bellow your name you need to see "Account Super User"). Select **Test Connection** to ensure Microsoft Entra ID can connect to Vonage. If the connection fails , ensure your Vonage account has Admin permissions and try again.
+1. In the **Admin Credentials** section, select Authorize, make sure that you enter your Account Super User credentials, if it doesn't ask you to enter credentials make sure that you logged in with the Account Super User (you can check it http://admin.vonage.com/ on the upper left side, bellow your name you need to see "Account Super User"). Select **Test Connection** to ensure Microsoft Entra ID can connect to Vonage. If the connection fails, ensure your Vonage account has Admin permissions and try again.
 
    ![Screenshot of Token.](media/vonage-provisioning-tutorial/authorize.png)
 
