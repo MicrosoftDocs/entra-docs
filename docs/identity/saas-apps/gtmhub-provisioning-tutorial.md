@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 This article describes the steps you need to perform in both Gtmhub and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Gtmhub](https://www.gtmhub.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 >[!NOTE]
->Currently, when automatic user provisioning is configured, Microsoft Entra-only automatically de-provisions users and groups to Gtmhub and map users to their respective teams using the Microsoft Entra provisioning service.But in 2021 once SSO is enabled with Gtmhub,users are automatically provisioned when they log in through SSO and is assigned to their respective team.
+>Currently, when automatic user provisioning is configured, Microsoft Entra-only automatically de-provisions users and groups to Gtmhub and map users to their respective teams using the Microsoft Entra provisioning service. But in 2021 once SSO is enabled with Gtmhub, users are automatically provisioned when they log in through SSO and is assigned to their respective team.
 
 
 ## Capabilities Supported
