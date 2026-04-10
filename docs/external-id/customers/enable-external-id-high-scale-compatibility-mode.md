@@ -26,11 +26,11 @@ In this article, you’ll learn how to:
 
 This article assumes you've already chosen the **High Scale Compatibility (HSC) mode migration approach**. If you still need to decide between approaches (standard vs. HSC mode), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
-## Stage 1: Request allowlisting and enable HSC mode
+Before you begin, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete. You can't proceed to Stage 1 until your tenant is allowlisted.
 
-If you meet the eligibility criteria and have reviewed the limitations, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete.
+## Stage 1: Enable HSC mode
 
-Once your tenant is allow-listed for HSC mode, you can turn on HSC mode by calling the following Microsoft Graph API. The calling account needs the [`Policy.ReadWrite.AuthenticationFlows`](/graph/permissions-reference#policyreadwriteauthenticationflows) permission:
+Once your tenant is allowlisted for HSC mode, you can turn on HSC mode by calling the following Microsoft Graph API. The calling account needs the [`Policy.ReadWrite.AuthenticationFlows`](/graph/permissions-reference#policyreadwriteauthenticationflows) permission:
 
 **POST**: `https://graph.microsoft.com/beta/policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration`  
 **Body**: `{}`
@@ -57,6 +57,9 @@ Then verify with:
 > [!NOTE]
 > If you need to disable HSC mode, contact Microsoft support.
 
+> [!IMPORTANT]
+> After you enable HSC mode, allow up to 1 hour for the changes to take effect across all services before proceeding to Stage 2.
+
 ## Stage 2: Review identity schema for coexistence
 
 During coexistence, applications might authenticate users through different identity endpoints (B2C or External ID). Preparing identity data ensures that existing users can continue to sign in without disruption and that applications receive the claims they expect.
@@ -74,17 +77,26 @@ If you don't use any of these features, continue to Stage 3.
 
 Federated users might fail to sign in after applications move to External ID if required user properties aren't correctly populated.
 
-Review attributes for any users who sign in with Google or Facebook and verify that the `accountEnabled` property on user objects is set to `true`.
+Review attributes for any users who sign in with a social identity provider and verify that the `accountEnabled` property on user objects is set to `true`.
+
+> [!NOTE]
+> The following social identity providers aren't supported in HSC mode: Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C. Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
 
 The following example finds federated users where `accountEnabled` is `false`:
 
-```powershell
-# Find federated users with accountEnabled set to false
-$disabledUsers = Get-MgUser -Filter "accountEnabled eq false" -All | Where-Object {
-    $_.Identities | Where-Object { $_.SignInType -eq 'federated' }
-}
+```http
+GET https://graph.microsoft.com/v1.0/users?$filter=accountEnabled eq false&$select=id,displayName,identities
+```
 
-$disabledUsers | Format-Table DisplayName, Id
+For each returned user, check the `identities` collection for entries where `signInType` is `federated`. Update those users by setting `accountEnabled` to `true`:
+
+```http
+PATCH https://graph.microsoft.com/v1.0/users/{id}
+Content-Type: application/json
+
+{
+  "accountEnabled": true
+}
 ```
 
 This ensures federated users can authenticate successfully once applications move to External ID endpoints.
@@ -93,25 +105,15 @@ This ensures federated users can authenticate successfully once applications mov
 
 Review MFA enrollment data if users previously enrolled in MFA through Azure AD B2C. Without schema alignment, these users might be prompted to re-register or fail MFA challenges in External ID.
 
-Review users with existing MFA methods like phone or SMS OTP and verify that strong authentication is enabled and a preferred MFA method is selected.
+> [!IMPORTANT]
+> Phone-based MFA (SMS and voice call) isn't supported in HSC mode. If your Azure AD B2C tenant uses phone MFA, plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
 
-The following example checks for users who have phone-based MFA methods registered and verifies their strong authentication configuration:
+Review users with existing MFA methods and verify that strong authentication is enabled and a preferred MFA method is selected.
 
-```powershell
-# Get users with phone authentication methods registered
-$usersWithPhone = Get-MgUser -All | ForEach-Object {
-    $methods = Get-MgUserAuthenticationPhoneMethod -UserId $_.Id
-    if ($methods) {
-        [PSCustomObject]@{
-            UserId      = $_.Id
-            DisplayName = $_.DisplayName
-            PhoneNumber = $methods.PhoneNumber
-            PhoneType   = $methods.PhoneType
-        }
-    }
-}
+List users with registered authentication methods:
 
-$usersWithPhone | Format-Table DisplayName, PhoneNumber, PhoneType
+```http
+GET https://graph.microsoft.com/v1.0/users/{id}/authentication/methods
 ```
 
 > [!NOTE]

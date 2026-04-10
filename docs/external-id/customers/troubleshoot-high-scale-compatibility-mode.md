@@ -16,21 +16,21 @@ This article helps you diagnose and resolve common errors when using the [High S
 
 ## Quick reference
 
-| Scenario | HTTP status | Error code | Self-serviceable |
-|---|---|---|---|
-| [Caller lacks required role](#caller-lacks-required-role) | 403 Unauthorized | `Unauthorized` | Yes |
-| [Caller lacks Microsoft Graph permission](#caller-lacks-microsoft-graph-permission) | 403 Unauthorized | `Unauthorized` | Yes |
-| [Wrong tenant type context](#wrong-tenant-type-context) | 400 BadRequest | `AccessDenied_NonB2CTenantNotAllowed` | Yes |
-| [Parent tenant not enabled](#parent-tenant-not-enabled) | 400 BadRequest | `HybridUpgradeNotAllowed` | No |
-| [DELETE on non-hybrid tenant](#delete-on-non-hybrid-tenant) | 403 Forbidden | `AccessDenied_NonHybridTenantNotAllowed` | Yes |
-| [Stale GET response after POST](#stale-get-response-after-post) | 200 OK | N/A (cache) | Yes |
-| [Custom attribute sync fails](#custom-attribute-sync-fails) | 400 BadRequest | `AADB2C99089` | Yes |
-| [No subscription linked](#no-subscription-linked) | 400 BadRequest | `NoResourceProviderDataFound` | Yes |
+| Error message | HTTP status | Self-serviceable |
+|---|---|---|
+| [Unauthorized](#caller-lacks-required-role) | 403 Unauthorized | Yes |
+| [Unauthorized (missing Graph permission)](#caller-lacks-microsoft-graph-permission) | 403 Unauthorized | Yes |
+| ['{tenantId}' is not an Azure AD B2C directory](#wrong-tenant-type-context) | 400 BadRequest | Yes |
+| [Entra External Id Hybrid Upgrade is not allowed for this tenant](#parent-tenant-not-enabled) | 400 BadRequest | No |
+| ['{tenantId}' is not an Azure AD B2C directory with External Id Hybrid mode enabled](#delete-on-non-hybrid-tenant) | 403 Forbidden | Yes |
+| [Stale GET response after POST (cache behavior)](#stale-get-response-after-post) | 200 OK | Yes |
+| [Failed to sync custom attributes from B2C to the hybrid tenant's external ID context](#custom-attribute-sync-fails) | 400 BadRequest | Yes |
+| [Your tenant '{tenantId}' is not linked to a valid subscription](#no-subscription-linked) | 400 BadRequest | Yes |
 
 ## Caller lacks required role
 
-**HTTP status:** 403 Unauthorized
-**Affected endpoints:** All HSC endpoints
+**HTTP status:** 403 Unauthorized\
+**Affected endpoints:** All HSC endpoints\
 **Self-serviceable:** Yes
 
 The calling identity (user or service principal) doesn't have one of the required directory roles:
@@ -50,8 +50,8 @@ The calling identity (user or service principal) doesn't have one of the require
 
 ## Caller lacks Microsoft Graph permission
 
-**HTTP status:** 403 Unauthorized
-**Affected endpoints:** All HSC endpoints
+**HTTP status:** 403 Unauthorized\
+**Affected endpoints:** All HSC endpoints\
 **Self-serviceable:** Yes
 
 The application registration is missing the required Microsoft Graph permission `Policy.ReadWrite.AuthenticationFlows`.
@@ -66,10 +66,10 @@ The application registration is missing the required Microsoft Graph permission 
 
 ## Wrong tenant type context
 
-**HTTP status:** 400 BadRequest
-**Error code:** `AccessDenied_NonB2CTenantNotAllowed`
-**Error message:** `'{tenantId}' is not an Azure AD B2C directory. Access to this Api can only be made for an Azure AD B2C directory.`
-**Affected endpoints:** All HSC endpoints
+**HTTP status:** 400 BadRequest\
+**Error code:** `AccessDenied_NonB2CTenantNotAllowed`\
+**Error message:** `'{tenantId}' is not an Azure AD B2C directory. Access to this Api can only be made for an Azure AD B2C directory.`\
+**Affected endpoints:** All HSC endpoints\
 **Self-serviceable:** Yes
 
 You issued the request against a CIAM or Microsoft Entra ID (workforce) tenant context. The HSC API must be called against your B2C tenant directly.
@@ -82,10 +82,10 @@ You issued the request against a CIAM or Microsoft Entra ID (workforce) tenant c
 
 ## Parent tenant not enabled
 
-**HTTP status:** 400 BadRequest
-**Error code:** `HybridUpgradeNotAllowed`
-**Error message:** `Entra External Id Hybrid Upgrade is not allowed for this tenant`
-**Affected endpoints:** POST (enable hybrid mode)
+**HTTP status:** 400 BadRequest\
+**Error code:** `HybridUpgradeNotAllowed`\
+**Error message:** `Entra External Id Hybrid Upgrade is not allowed for this tenant`\
+**Affected endpoints:** POST (enable hybrid mode)\
 **Self-serviceable:** No
 
 The parent workforce tenant doesn't have the `EnableHybridUpgradeApi` feature flag set. Only Microsoft can toggle this back-end enablement.
@@ -96,10 +96,10 @@ Contact Microsoft Support and request that the `EnableHybridUpgradeApi` flag be 
 
 ## DELETE on non-hybrid tenant
 
-**HTTP status:** 403 Forbidden
-**Error code:** `AccessDenied_NonHybridTenantNotAllowed`
-**Error message:** `'{tenantId}' is not an Azure AD B2C directory with External Id Hybrid mode enabled. Access to this Api can only be made for an Azure AD B2C directory with Hybrid mode enabled.`
-**Affected endpoints:** DELETE (disable hybrid mode)
+**HTTP status:** 403 Forbidden\
+**Error code:** `AccessDenied_NonHybridTenantNotAllowed`\
+**Error message:** `'{tenantId}' is not an Azure AD B2C directory with External Id Hybrid mode enabled. Access to this Api can only be made for an Azure AD B2C directory with Hybrid mode enabled.`\
+**Affected endpoints:** DELETE (disable hybrid mode)\
 **Self-serviceable:** Yes
 
 You sent a DELETE request to disable hybrid mode, but the tenant hasn't been successfully enabled yet (the POST to enable hybrid mode hasn't completed).
@@ -111,9 +111,9 @@ You sent a DELETE request to disable hybrid mode, but the tenant hasn't been suc
 
 ## Stale GET response after POST
 
-**HTTP status:** 200 OK (but data might be outdated)
-**Error code:** None (expected cache behavior)
-**Affected endpoints:** GET (read hybrid status)
+**HTTP status:** 200 OK (but data might be outdated)\
+**Error code:** None (expected cache behavior)\
+**Affected endpoints:** GET (read hybrid status)\
 **Self-serviceable:** Yes
 
 Tenant metadata is cached for up to 1 hour. If you issue a GET request immediately after a successful POST, the response might still reflect the premigration state.
@@ -125,10 +125,10 @@ Tenant metadata is cached for up to 1 hour. If you issue a GET request immediate
 
 ## Custom attribute sync fails
 
-**HTTP status:** 400 BadRequest
-**Error code:** `AADB2C99089`
-**Error message:** `Failed to sync custom attributes from B2C to the hybrid tenant's external ID context. The following attributes couldn't be transferred: {failedAttributeList}. Please retry the operation or contact support.`
-**Affected endpoints:** POST (enable hybrid mode — attribute sync phase)
+**HTTP status:** 400 BadRequest\
+**Error code:** `AADB2C99089`\
+**Error message:** `Failed to sync custom attributes from B2C to the hybrid tenant's external ID context. The following attributes couldn't be transferred: {failedAttributeList}. Please retry the operation or contact support.`\
+**Affected endpoints:** POST (enable hybrid mode — attribute sync phase)\
 **Self-serviceable:** Yes
 
 During the POST to enable hybrid mode, the service attempts to sync all B2C custom attributes to the External ID tenant. If any custom attribute has a null or empty description (sourced from the `AdminHelpText` field), that attribute is added to the failed list and the error `HybridTenantMigrationFailedAttributes` is returned.
@@ -137,24 +137,23 @@ Many B2C custom attributes are created without a description, so this issue can 
 
 **How to fix:**
 
-Before calling POST to enable hybrid mode, patch every custom attribute that has a missing description:
-
-```http
-PATCH https://graph.microsoft.com/v1.0/identity/userFlowAttributes/{id}
-Content-Type: application/json
-
-{
-  "description": "<a meaningful, non-empty description>"
-}
-```
-
 1. List all custom attributes:
 
    ```http
    GET https://graph.microsoft.com/v1.0/identity/userFlowAttributes
    ```
 
-1. For each attribute where `description` is null or empty, issue the PATCH request with a nonempty description.
+1. For each attribute where `description` is null or empty, patch it with a nonempty description:
+
+   ```http
+   PATCH https://graph.microsoft.com/v1.0/identity/userFlowAttributes/{id}
+   Content-Type: application/json
+
+   {
+     "description": "<a meaningful, non-empty description>"
+   }
+   ```
+
 1. After all attributes are updated, retry the POST to enable hybrid mode.
 
 > [!TIP]
@@ -162,10 +161,10 @@ Content-Type: application/json
 
 ## No subscription linked
 
-**HTTP status:** 400 BadRequest
-**Error code:** `NoResourceProviderDataFound`
-**Error message:** `Your tenant '{tenantId}' is not linked to a valid subscription.`
-**Affected endpoints:** POST (enable hybrid mode)
+**HTTP status:** 400 BadRequest\
+**Error code:** `NoResourceProviderDataFound`\
+**Error message:** `Your tenant '{tenantId}' is not linked to a valid subscription.`\
+**Affected endpoints:** POST (enable hybrid mode)\
 **Self-serviceable:** Yes
 
 The resource provider data lookup returned null or has no `SubscriptionTenantId`. The B2C tenant isn't linked to any Azure subscription.
