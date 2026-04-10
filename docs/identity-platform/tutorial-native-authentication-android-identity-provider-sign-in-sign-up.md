@@ -20,7 +20,7 @@ ms.custom:
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your Android app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, and Google.
+This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your Android app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, Google and custom OIDC providers.
 
 In this tutorial, you learn how to:
 
@@ -38,6 +38,10 @@ In this tutorial, you learn how to:
    - [Configure Apple as an identity provider](../external-id/customers/how-to-apple-federation-customers.md)
    - [Configure Facebook as an identity provider](../external-id/customers/how-to-facebook-federation-customers.md)
    - [Configure Google as an identity provider](../external-id/customers/how-to-google-federation-customers.md)
+   - [Configure a custom OIDC provider](../external-id/customers/how-to-custom-oidc-federation-customers.md)
+
+    > [!NOTE]
+    > The domain of the Issuer URI is configured for custom OIDC will be your `domain_hint`.
 
 1. If you'd like to explore our federated IdP Sign in and Sign up implementation, take a look at our [sample Android application](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/blob/main/app/src/main/java/com/azuresamples/msalnativeauthandroidkotlinsampleapp/IdPSignInSignUpWebFragment.kt) before getting started.
 
