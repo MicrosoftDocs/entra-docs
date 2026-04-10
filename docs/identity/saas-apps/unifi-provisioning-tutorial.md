@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Screenshot of Enterprise Application SSO View.](media/unifi-provisioning-tutorial/enterprise-application-view.png)
 
-1. If your identity provider isn't added to UNIFI , then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
+1. If your identity provider isn't added to UNIFI, then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
 
 	![Screenshot of Add Identity Provider View.](media/unifi-provisioning-tutorial/add-identity-provider-view.png)
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, enter your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails, ensure your UNIFI account has Admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
