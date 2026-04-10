@@ -32,7 +32,7 @@ You can identify sign-ins that are billed to Microsoft Entra Private Access for 
 
 ## Guest billing in multitenant organizations
 
-Guest billing only applies for users with a `userType` of `Guest`. If licensed member users are brought into other organization tenants with a `userType` of `Member`, they don't accrue to the billing meter. If these users are brought in with a `userType` of `Guest`, they accrue to the meter. However, you can avoid being charged by setting up or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest doesn't accrue to the billing meter. For more information, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org).
+Guest billing only applies for users with a `userType` of `Guest`. External users, as defined in the [Microsoft Product Terms](https://www.microsoft.com/licensing/news/update-to-external-users-2024), should be labeled with a `userType` of `Guest` in Microsoft Entra ID. If licensed member users are brought into other organization tenants with a `userType` of `Member`, they don't accrue to the billing meter. If these users are brought in with a `userType` of `Guest`, they accrue to the meter. However, you can avoid being charged by setting up or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest doesn't accrue to the billing meter. For more information, see [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org).
 
 ## Link your tenant to a subscription
 
