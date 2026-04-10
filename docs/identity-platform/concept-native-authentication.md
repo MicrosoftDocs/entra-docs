@@ -66,7 +66,7 @@ The following table shows the availability of features for browser-delegated and
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
+| **Social identity provider sign-in (Apple, Facebook, Google and  custom OIDC providers with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
 | **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
 
 ## How to enable native authentication

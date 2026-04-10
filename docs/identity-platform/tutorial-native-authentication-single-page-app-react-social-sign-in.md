@@ -1,6 +1,6 @@
 ---
 title: Support Social Sign-in in a React SPA With Native Auth JS SDK
-description: Learn how to add social sign-in with Apple, Facebook and Google identity providers to your React SPA using native authentication JavaScript SDK.
+description: Learn how to add social sign-in with Apple, Facebook, Google and custom OIDC identity providers to your React SPA using native authentication JavaScript SDK.
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
@@ -9,14 +9,14 @@ ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/30/2026
 ai-usage: ai-assisted
-#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook and Google identity providers.
+#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook, Google and custom OIDC identity providers.
 ---
 
 # Tutorial: Support federated identity providers in a React single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Apple, Facebook and Google, in your React single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
+In this tutorial, you learn how to let users sign up and sign in with their existing social accounts, such as Apple, Facebook, Google and custom OIDC social identity providers in your React single-page application (SPA) by using native authentication's JavaScript SDK for external tenants.
 
 
 In this tutorial, you:
@@ -37,6 +37,7 @@ In this tutorial, you:
     - [Apple](../external-id/customers/how-to-apple-federation-customers.md)
     - [Facebook](../external-id/customers/how-to-facebook-federation-customers.md)  
     - [Google](../external-id/customers/how-to-google-federation-customers.md)
+    - [Custom OIDC identity providers](../external-id/customers/how-to-custom-oidc-federation-customers.md)
 
 ## Update the configuration to set the redirect URI
 
@@ -59,7 +60,7 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 ## Create UI components
 
-In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Apple, Facebook and Google).
+In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Apple, Facebook and Google) or custom OIDC identity providers (such as LinkedIn).
 
 ### Update the sign-in initial form
 
@@ -82,6 +83,10 @@ Update your sign-in `InitialForm.tsx` component to include federated identity pr
         {
             name: "Apple",
             domainHint: "Apple",
+        },
+        {
+            name: "LinkedIn",
+            domainHint: "www.linkedin.com",
         },
     ];
 
@@ -370,6 +375,7 @@ The federated identity provider authentication page doesn't appear, or you recei
 | Apple | `"Apple"` |
 | Facebook | `"Facebook"` |
 | Google | `"Google"` |
+| Custom OIDC (for example, LinkedIn) | The issuer URI you configured, such as `"www.linkedin.com"` |
 
 
 
