@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 03/30/2026
+ms.date: 04/10/2026
 ai-usage: ai-assisted
 #Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my React single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook, Google and custom OIDC identity providers.
 ---

@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 03/30/2026
+ms.date: 04/10/2026
 ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
 #Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook and Google identity providers.
