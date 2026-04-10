@@ -10,7 +10,7 @@ ms.topic: tutorial
 ms.date: 04/10/2026
 ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
-#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook and Google identity providers.
+#Customer intent: As a developer, I want to support federated identity providers (social sign-in) in my Angular single-page application that uses native authentication JavaScript SDK so that users can sign up and sign in with Apple, Facebook, Google or custom OIDC identity providers.
 ---
 
 # Tutorial: Support federated identity providers in an Angular single-page app by using native authentication JavaScript SDK
@@ -60,7 +60,7 @@ Make sure that the redirect URI is configured in the `CustomAuthConfiguration` i
 
 ## Create UI components
 
-In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Apple, Facebook and Google) .
+In this section, you add federated identity provider buttons to your sign-in and sign-up forms, allowing users to authenticate with social identity providers (Apple, Facebook and Google) or custom OIDC identity providers (such as LinkedIn).
 
 ### Update the sign-in form
 
