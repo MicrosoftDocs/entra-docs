@@ -18,7 +18,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.2332.0
 
-April 9, 2026: released for download
+April 13, 2026: released for download
 
 ### New or changed functionality
 
