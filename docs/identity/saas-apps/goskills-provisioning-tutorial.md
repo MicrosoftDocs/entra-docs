@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your GoSkills Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoSkills. If the connection fails, ensure your GoSkills account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your GoSkills Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoSkills. If the connection fails, ensure your GoSkills account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to GoSkills in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GoSkills for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GoSkills API supports filtering users based on that attribute. Select the **Save** button to commit any changes. For automatic provisioning of SSO, please ensure the **externalId** attribute is mapped to **objectId**, and contact your GoSkills account manager to enable SSO provisioning.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to GoSkills in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GoSkills for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GoSkills API supports filtering users based on that attribute. Select the **Save** button to commit any changes. For automatic provisioning of SSO, ensure the **externalId** attribute is mapped to **objectId**, and contact your GoSkills account manager to enable SSO provisioning.
 
       |Attribute|Type|Supported for filtering|Required by GoSkills|
       |---|---|---|---|
