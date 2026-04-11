@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Flock**.
 
-	![Screenshot of The Flock  link in the Applications list](common/all-applications.png)
+	![Screenshot of the Flock link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Flock Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Flock. If the connection fails, ensure your Flock account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Flock Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Flock. If the connection fails, ensure your Flock account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

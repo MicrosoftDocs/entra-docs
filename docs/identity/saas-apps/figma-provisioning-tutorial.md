@@ -57,7 +57,7 @@ Before configuring Figma for automatic user provisioning with Microsoft Entra ID
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/token.png" alt-text="Screenshot of the S C I M provisioning section in the Figma admin console. A link labeled Generate A P I token is highlighted." border="false":::
 
-1. Copy the  **API Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Figma application. 
+1. Copy the **API Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Figma application.
 
 	:::image type="content" source="media/Figma-provisioning-tutorial/figma04.png" alt-text="Screenshot of a page in the Figma admin console. Under Your provisioning A P I token, a placeholder for the token is highlighted." border="false":::
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Figma**.
 
-	![Screenshot of The Figma  link in the Applications list](common/all-applications.png)
+	![Screenshot of the Figma  link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Figma Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Figma. If the connection fails, ensure your Figma account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Figma Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Figma. If the connection fails, ensure your Figma account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

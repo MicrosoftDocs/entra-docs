@@ -1,5 +1,5 @@
 ---
-title: Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
+title: Configure Foodee for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
 author: jeevansd
 ms.topic: how-to
@@ -101,7 +101,7 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Foodee Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Foodee. If the connection fails, ensure your Foodee account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Foodee Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Foodee. If the connection fails, ensure your Foodee account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

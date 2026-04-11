@@ -103,17 +103,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Federated Directory**.
 
-	![Screenshot of The Federated Directory link in the Applications list](common/all-applications.png)
+	![Screenshot of the Federated Directory link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Federated Directory Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Federated Directory Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
