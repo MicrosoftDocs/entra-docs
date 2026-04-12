@@ -2,7 +2,7 @@
 title: Configure Jive for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/10/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jive so that I can streamline the user management process and ensure that users have the appropriate access to Jive.
@@ -52,35 +52,33 @@ As part of this procedure, you're required to provide a user security token you 
 
 1. Select your instance of Jive, then select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**. 
+1. Select **+ New configuration**.
 
-1. Under the **Admin Credentials** section, provide the following configuration settings:
-   
-    1. In the **Jive Admin User Name** textbox, type a Jive account name that has the **System Administrator** profile in Jive.com assigned.
-   
-    1. In the **Jive Admin Password** textbox, type the password for this account.
-   
-    1. In the **Jive Tenant URL** textbox, type the Jive tenant URL.
-      
-      > [!NOTE]
-      > The Jive tenant URL is URL that's used by your organization to log in to Jive.  
-      > Typically, the URL has the following format: **www.\<organization\>.jive.com**.          
+  ![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Jive app.
+1. In the **Tenant URL** field, enter your Jive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Jive. If the connection fails, ensure your Jive account has the required admin permissions and try again.
 
-1. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
+  ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Save.**
+1. Select **Create** to create your configuration.
 
-1. Under the Mappings section, select **Synchronize Microsoft Entra users to Jive.**
+1. Select **Properties** on the **Overview** page.
+
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
+
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to Jive. The attributes selected as **Matching** properties are used to match the user accounts in Jive for update operations. Select the Save button to commit any changes.
 
-1. To enable the Microsoft Entra provisioning service for Jive, change the **Provisioning Status** to **On** in the Settings section
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Select **Save.**
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-It starts the initial synchronization of any users and/or groups assigned to Jive in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Jive app.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
