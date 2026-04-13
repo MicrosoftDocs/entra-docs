@@ -14,7 +14,7 @@ This article outlines the pricing structure for Microsoft Entra Private Access l
 
 Global Secure Access uses Monthly Active User (MAU) licensing for guest users. This model is different from licensing for employees. For complete details on licensing for employees, see [Global Secure Access licensing overview](overview-what-is-global-secure-access.md#licensing-overview).
 
-Under the guest billing model, guests are identified by a `userType` of `Guest` regardless of where the user authenticates. A `userType` of `Guest` is the default `userType` for all B2B invitation methods and can also be set by an identity administrator. Monthly active usage for Global Secure Access is measured when a guest user initiates at least one sign-in during a given month to Microsoft Entra Private Access tunnels using either the Global Secure Access client or supported clientless solutions. For pricing details, see the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+Under the guest billing model, guests are identified by a `userType` of `Guest` regardless of where the user authenticates. A `userType` of `Guest` is the default `userType` for all B2B invitation methods and can also be set by an identity administrator. Monthly active usage for Global Secure Access is measured when a guest user initiates at least one sign-in during a given month to Microsoft Entra Private Access tunnels using the Global Secure Access client solution. For pricing details, see the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 ## Billable access features
 
@@ -32,7 +32,7 @@ You can identify sign-ins that are billed to Microsoft Entra Private Access for 
 
 ## Link your tenant to a subscription
 
-Your tenants must be linked to an Azure subscription for proper billing and access to features. For steps to link your tenant to a subscription and troubleshoot subscription issues, see [Link a workforce tenant to a subscription](~/external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
+Your tenants must be linked to an Azure subscription for proper billing and access to features. Contact your Microsoft account team for details.
 
 ## Global Secure Access guest user licensing FAQs
 
