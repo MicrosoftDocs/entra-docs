@@ -30,7 +30,7 @@ This article describes the steps you need to perform in both Global Relay Identi
 > Global Relay Identity Sync provisioning connector utilizes a SCIM authorization method that's no longer supported due to security concerns. Efforts are underway with Global Relay to switch to a more secure authorization method.
 
 > [!NOTE]
-> Global Relay Identity Sync is now supports Client credential authorization. 
+> Global Relay Identity Sync now supports Client credential authorization. 
 
 ## Prerequisites
 
