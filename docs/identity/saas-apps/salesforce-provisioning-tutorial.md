@@ -125,7 +125,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. Select **Discover identities** in the provisioning overview to [discover accounts](~/identity/app-provisioning/how-to-account-discovery.md) in Salesforce. This option will only be visible for organizations with [Entra ID Governance](~/entra/id-governance/licensing-fundamentals.md) licenses.  
+1. Select **Discover identities** in the provisioning overview to [discover accounts](~/identity/app-provisioning/how-to-account-discovery.md) in Salesforce. This option will only be visible for organizations with [Entra ID Governance](~/id-governance/licensing-fundamentals.md) licenses.  
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Salesforce. Note that the attributes selected as **Matching** properties are used to match the user accounts in Salesforce for update operations. Select the Save button to commit any changes.
 
