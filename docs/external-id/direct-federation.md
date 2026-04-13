@@ -181,30 +181,46 @@ You can test your federation setup by inviting a new B2B guest user. For details
  
 ## Domainless Federation
 
-Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external IdP. Only users with a user principal name (UPN) matching the verified domain are routed to the federated IdP.
+Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP is validated against the domain associated with the configured IdP in Microsoft Entra ID.
 
-When the SAML IdP is configured to be domainless and the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP based on the issuer URI association. If the IdP was set to be domainless, user’s email address domain check is skipped and user with any email (yahoo.com / gmail.com) can redeem using the SAML Idp. 
+If the user’s email domain differs from the domain configured on the SAML IdP (for example, yahoo.com or gmail.com), users may encounter the following error during sign‑in:
+
+**AADSTS5000819**: SAML Assertion is invalid. Email address claim is missing or does not match domain from an external realm.
+
+This error typically occurs when:
+
+- The external SAML IdP does not send an email claim, or
+- The email address domain provided by the IdP does not match the domain configured on the external IdP in Microsoft Entra ID
+
+Even when an email claim is present, authentication may still fail if the email domain does not align with the configured IdP domain due to domain‑based matching requirements.
+
+### Using Domainless Federation
+To address this limitation, you can configure the SAML IdP as domainless.
+When domainless federation is enabled:
+- Microsoft Entra ID routes authentication requests to the configured SAML IdP based on the Issuer URI association
+- The user’s email address domain is not matched against the domain configured for the IdP
+
+This allows users to authenticate successfully using email addresses from any domain (for example, yahoo.com or gmail.com) when signing in with the external SAML IdP.
 
 > [!IMPORTANT]
-> When the **Domain** field is left empty, the federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication flows to this IdP configuration rather than using domain-based routing. Only **one** wildcard IdP can be configured per tenant as of now.
+> When the **Domain** field is left empty, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain‑based routing. Currently, only **one** wildcard IdP can be configured per tenant.
 
-After you configure domainless federation, invite guest users from the partner organization:
+### User Flow Using Domainless Federation
+After configuring domainless federation, you can invite guest users from the partner organization by following these steps:
 
-1. In the Microsoft Entra admin center, go to **Identity** > **Users** > **All users**.
-2. Select **+ New user** > **Invite external user**.
-3. Enter the guest user's email address. The email domain doesn't need to match a verified domain in your tenant.
-4. In the invite redirect URL, add a domain_hint so the users will be routed to the correct IdP depending on the **Issuer URI**. The domain_hint value should match the exact value in the **Issuer URI** in the SAM IdP configuration.
-5. Complete the invitation.
-6. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP based on the issuer URI association.
-7. For subsequent sign-ins, user can directly access resource tenant application by authenticating with the external IdP on SAML.
-
+1. In the Microsoft Entra admin center, navigate to Identity > Users > All users.
+2. Select + New user and choose Invite external user.
+3. Enter the guest user’s email address. The email domain does not need to match a verified domain in your tenant.
+4. In the invitation redirect URL, include a **domain_hint** parameter to ensure the user is routed to the appropriate IdP based on the configured Issuer URI. The **domain_hint** value must match the **Issuer URI** defined in the SAML IdP configuration.
+5. Complete and send the invitation.
+6. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP using the Issuer URI association. The user’s email address domain is not matched against the domain configured for the IdP after authentication and access resource tenant application.
+7. For subsequent sign-ins, the user can directly access the resource tenant application by authenticating with the external SAML IdP.
 
 ### Known issues
 
-We are actively addressing the known issues, and this list will be updated as fixes are rolled out.
+We are actively addressing the known issue, and this list will be updated as fixes are rolled out.
 
-1. When updating an existing external SAML IdP between domainless & domain-based, the list of IdPs does not refresh after saving and causes stale data to be shown. You need to refresh the main IdP page after the update for UX to reflect the change. 
-2. IdP config will get deleted if more than one SAML IdP is set to domainless or if a wrong domain name was added.
+1. The IdP configuration gets removed if more than one SAML IdP is configured as domainless or if an invalid domain name is entered.
 
 
 ## How to update the certificate or configuration details
