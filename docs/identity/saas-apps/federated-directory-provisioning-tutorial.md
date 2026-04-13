@@ -72,7 +72,7 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Federated Directory**, select **Federated Directory** in the results panel.
 
-	![Screenshot of Federated Directory in the results list](common/search-new-app.png)
+	![Screenshot of Federated Directory in the results list.](common/search-new-app.png)
 
 1. Navigate to the **URL** highlighted below in a separate browser. 
 
@@ -86,7 +86,7 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
 	
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage3.png" alt-text="Screenshot of the S C I M A D test page on the Federated Directory site. Log in with your Microsoft account is highlighted." border="false":::
  
-1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Federated Directory account.
+1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you'll be redirected to your Federated Directory account.
 
 ## Configuring automatic user provisioning to Federated Directory 
 
@@ -99,11 +99,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Federated Directory**.
 
-	![Screenshot of the Federated Directory link in the Applications list](common/all-applications.png)
+	![Screenshot of the Federated Directory link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 

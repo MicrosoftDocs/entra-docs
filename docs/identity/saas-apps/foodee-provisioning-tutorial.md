@@ -50,7 +50,7 @@ Before you configure Foodee for automatic user provisioning by using Microsoft E
 
 1. Under **Enterprise portal**, select **Single Sign On**.
 
-	![Screenshot of the Foodee Enterprise Portal left-pane menu](media/Foodee-provisioning-tutorial/scim.png)
+	![Screenshot of the Foodee Enterprise Portal left-pane menu.](media/Foodee-provisioning-tutorial/scim.png)
 
 1. Copy the value in the **API Token** box for later use. You'll enter it in the **Secret Token** box in the **Provisioning** tab of your Foodee application.
 
@@ -65,15 +65,15 @@ To add Foodee from the Microsoft Entra application gallery, do the following:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-	![Screenshot of The Enterprise applications pane](common/enterprise-applications.png)
+	![Screenshot of The Enterprise applications pane.](common/enterprise-applications.png)
 
 1. To add a new application, select **New application** at the top of the pane.
 
-	![Screenshot of the New application button](common/add-new-app.png)
+	![Screenshot of the New application button.](common/add-new-app.png)
 
 1. In the search box, enter **Foodee**, select **Foodee** in the results pane, and then select **Add** to add the application.
 
-	![Screenshot of Foodee in the results list](common/search-new-app.png)
+	![Screenshot of Foodee in the results list.](common/search-new-app.png)
 
 ## Configure automatic user provisioning to Foodee 
 
@@ -87,11 +87,11 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-	![Screenshot of Enterprise applications pane](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications pane.](common/enterprise-applications.png)
 
 1. In the **Applications** list, select **Foodee**.
 
-	![Screenshot of the Foodee link in the Applications list](common/all-applications.png)
+	![Screenshot of the Foodee link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
