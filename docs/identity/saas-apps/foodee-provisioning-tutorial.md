@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
 ---
 
-# Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
+# Configure Foodee for automatic user provisioning with Microsoft Entra ID
 
 This article shows you how to configure Microsoft Entra ID in Foodee and Microsoft Entra ID to automatically provision or deprovision users or groups to Foodee.
 
