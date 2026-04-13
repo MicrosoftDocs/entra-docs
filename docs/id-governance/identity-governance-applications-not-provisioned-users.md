@@ -3,7 +3,7 @@ title: Govern the existing users of an application that does not support provisi
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.  If the application does not support provisioning, then you will need to create application role assignments for the application, and supply the list of changes when a review completes.
 author: markwahl-msft
 ms.topic: how-to
-ms.date: 12/20/2022
+ms.date: 04/13/2026
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
@@ -54,17 +54,113 @@ When you create an assignment for a user to an access package, Microsoft Entra e
 
 The first step toward ensuring that all users are recorded in Microsoft Entra ID is to collect the list of existing users who have access to the application.  
 
-Some applications might have a built-in command to export a list of current users from the data store. In other cases, the application might rely on an external directory or database.
+Some applications might have a built-in command to export a list of current users from the data store. In other cases, the application might rely on an external directory or database. 
 
-In some environments, the application might be located on a network segment or system that isn't appropriate for managing access to Microsoft Entra ID. So you might need to extract the list of users from that application, directory or database, and then transfer it as a file to another system that can be used for Microsoft Entra interactions.
+In some environments, the application might be located on a network segment or system that isn't appropriate for managing access to Microsoft Entra ID. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
-If your application has an LDAP directory or SQL database, then see [Collect existing users from an application](identity-governance-applications-existing-users.md#collect-existing-users-from-an-application) for recommendations on how to extract the user collection.
+This section explains four approaches for how to get a list of users in a comma-separated values (CSV) file:
 
-Otherwise, if the application does not have a directory or database, you will need to contact the owner of the application and have them supply a list of users. This could be in a format such as a CSV file, with one line per user. Ensure that one field of each user in the file contains a unique identifier, such as an email address, that is also present on users in Microsoft Entra ID.
+* From an LDAP directory
+* From a SQL Server database
+* From another SQL-based database
+* From SAP Cloud Identity Services
 
-If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+### Collect existing users from an application that uses an LDAP directory
+
+This section applies to applications that use an LDAP directory as the underlying data store for users who don't authenticate to Microsoft Entra ID. Many LDAP directories, such as Active Directory, include a command that outputs a list of users.
+
+1. Identify which of the users in that directory are in scope for being users of the application. This choice will depend on your application's configuration. For some applications, any user who exists in an LDAP directory is a valid user. Other applications might require the user to have a particular attribute or be a member of a group in that directory.
+
+1. Run the command that retrieves that subset of users from your directory. Ensure that the output includes the attributes of users that will be used for matching with Microsoft Entra ID. Examples of these attributes are employee ID, account name, and email address. 
+
+   For example, this command would produce a CSV file in the current file system directory with the `userPrincipalName` attribute of every person in the LDAP directory:
+
+   ```powershell
+   $out_filename = ".\users.csv"
+   csvde -f $out_filename -l userPrincipalName,cn -r "(objectclass=person)"
+   ```
+1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+1. Continue reading at the [Confirm Microsoft Entra ID has users that match users from the application](#confirm-azure-ad-has-users-that-match-users-from-the-application) section later in this article.
+
+### Collect existing users from an application's database table by using a SQL Server wizard
+
+This section applies to applications that use SQL Server as the underlying data store.
+
+First, get a list of the users from the tables. Most databases provide a way to export the contents of tables to a standard file format, such as to a CSV file. If the application uses a SQL Server database, you can use the SQL Server Import and Export Wizard to export portions of a database. If you don't have a utility for your database, you can use the ODBC driver with PowerShell, as described in the next section.
+
+1. Log in to the system where SQL Server is installed.
+1. Open **SQL Server 2019 Import and Export (64 bit)** or the equivalent for your database.
+1. Select the existing database as the source.
+1. Select **Flat File Destination** as the destination. Provide a file name, and change the **Code page** value to **65001 (UTF-8)**.
+1. Complete the wizard, and select the option to run immediately.
+1. Wait for the execution to finish.
+1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+1. Continue reading at the [Confirm Microsoft Entra ID has users that match users from the application](#confirm-azure-ad-has-users-that-match-users-from-the-application) section later in this article.
+
+### Collect existing users from an application's database table by using PowerShell
+
+This section applies to applications that use another SQL database as the underlying data store, where you're using the [ECMA Connector Host](~/identity/app-provisioning/on-premises-sql-connector-configure.md) to provision users into that application. If you haven't yet configured the provisioning agent, use that guide to create the DSN connection file you'll use in this section.
+
+1. Log in to the system where the provisioning agent is or will be installed.
+1. Open PowerShell.
+1. Construct a connection string for connecting to your database system. 
+   
+   The components of a connection string depend on the requirements of your database. If you're using SQL Server, see the [list of DSN and connection string keywords and attributes](/sql/connect/odbc/dsn-connection-string-attribute). 
+   
+   If you're using a different database, you need to include the mandatory keywords for connecting to that database. For example, if your database uses the fully qualified path name of the DSN file, a user ID, and a password, construct the connection string by using the following commands:
+
+   ```powershell
+   $filedsn = "c:\users\administrator\documents\db.dsn"
+   $db_cs = "filedsn=" + $filedsn + ";uid=p;pwd=secret"
+   ```
+
+1. Open a connection to your database and provide the connection string, by using the following commands:
+
+   ```powershell
+   $db_conn = New-Object data.odbc.OdbcConnection
+   $db_conn.ConnectionString = $db_cs
+   $db_conn.Open()
+   ```
+
+1. Construct a SQL query to retrieve the users from the database table. Be sure to include the columns that will be used to match users in the application's database with those users in Microsoft Entra ID. Columns might include employee ID, account name, or email address. 
+
+   For example, if your users are held in a database table named `USERS` that has columns `name` and `email`, enter the following command:
+
+   ```powershell
+   $db_query = "SELECT name,email from USERS"
+
+   ```
+
+1. Send the query to the database via the connection:
+
+   ```powershell
+   $result = (new-object data.odbc.OdbcCommand($db_query,$db_conn)).ExecuteReader()
+   $table = new-object System.Data.DataTable
+   $table.Load($result)
+   ```
+   The result is the list of rows that represents users that were retrieved from the query.
+
+1. Write the result to a CSV file:
+
+   ```powershell
+   $out_filename = ".\users.csv"
+   $table.Rows | Export-Csv -Path $out_filename -NoTypeInformation -Encoding UTF8
+   ```
+
+1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
+
+### Collect existing users from SAP Cloud Identity Services
+
+This section applies to SAP applications that use SAP Cloud Identity Services as the underlying service for user provisioning.
+
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin`, or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
+1. Navigate to **Users & Authorizations > Export Users**.
+1. Select all attributes required for matching Microsoft Entra users with those in SAP. This includes the `SCIM ID`, `userName`, `emails`, and other attributes you may be using in your SAP Systems.
+1. Select **Export** and wait for the browser to download the CSV file.
+1. If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
 <a name='confirm-azure-ad-has-users-that-match-users-from-the-application'></a>
+
 
 ## Confirm Microsoft Entra ID has users that match users from the application
 
