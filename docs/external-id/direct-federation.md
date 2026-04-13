@@ -193,14 +193,15 @@ After you configure domainless federation, invite guest users from the partner o
 4. In the invite redirect URL, add a domain_hint so the users will be routed to the correct IdP depending on the **Issuer URI**. The domain_hint value should match the exact value in the **Issuer URI** in the SAM IdP configuration.
 5. Complete the invitation.
 6. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP based on the issuer URI association.
+7. For subsequent sign-ins, user can directly access resource tenant application by authenticating with the external IdP on SAML.
 
 
 ### Known issues
 
+We are actively addressing the known issues, and this list will be updated as fixes are rolled out.
+
 1. When updating an existing external SAML IdP between domainless & domain-based, the list of IdPs does not refresh after saving and causes stale data to be shown. You need to refresh the main IdP page after the update for UX to reflect the change. 
-2. When a SAML IdP is set as domainless, the "Domains" counter will show 1. This will be fixed to show 0. 
-3. When switching an IdP to domainless, it will show something along the lines of "Adding the '*' domain". This will be updated to show "Switching to domainless." 
-4. Sometimes updating the IdP from domain based or domainless can cause intermittent error but refreshing the page or retrying fixes it. 
+2. IdP config will get deleted if more than one SAML IdP is set to domainless or if a wrong domain name was added.
 
 
 ## How to update the certificate or configuration details
