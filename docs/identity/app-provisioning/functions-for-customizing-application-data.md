@@ -579,7 +579,18 @@ If the expression evaluates to a string that isn't Null and isn't empty, then th
 | **Expression** |Required |Expression |Expression to be evaluated |
 
 **Example:**
-`Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
+
+`IsPresent([directManager])`
+
+Returns True if the directManager attribute isn't null or empty.
+
+> [!CAUTION]
+> Don't use IsPresent, IsNull, or IsNullOrEmpty as the source parameter of the [Switch](#switch) function. The Switch function performs a case-sensitive string comparison and these functions return boolean values, which leads to unexpected matching behavior.
+
+> [!NOTE]
+> To check whether an attribute has a value and apply a fallback, use the [Switch](#switch) function with the attribute as the source and an empty string as a key. For example:
+> `Switch([country], [country], "", "Other")`
+> This expression returns the country value if present, or "Other" if the attribute is null or empty.
 
 ---
 ### IsString
