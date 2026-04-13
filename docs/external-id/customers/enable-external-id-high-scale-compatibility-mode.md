@@ -10,8 +10,6 @@ ai-usage: ai-assisted
 
 # Enable External ID High Scale Compatibility (HSC) mode
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing B2C user credentials in place. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
 
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
