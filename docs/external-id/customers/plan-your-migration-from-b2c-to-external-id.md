@@ -133,10 +133,12 @@ Some capabilities available in External ID aren't available in HSC mode today. I
   - Authentication context or step-up authentication
   - Session-based controls
 - Application assignment via groups
+- Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
 
 **Federation and ecosystem integrations**
 
-- Apple ID, SAML, and custom OIDC federation
+- Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
+- Custom OIDC federation
 
 **Admin portal UI support**
 

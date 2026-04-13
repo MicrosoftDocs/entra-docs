@@ -35,30 +35,8 @@ Once your tenant is allowlisted for HSC mode, you can turn on HSC mode by callin
 **POST**: `https://graph.microsoft.com/beta/policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration`  
 **Body**: `{}`
 
-Then verify with:
-
-**GET**: `https://graph.microsoft.com/beta/policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration`
-
-**Response:**
-
-```json
-{
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#policies/authenticationFlowsPolicy/externalIdHybridModeConfiguration/$entity",
-    "id": "externalIdHybridModeConfiguration",
-    "externalIdHybridMode": "enabled",
-    "status": "succeeded",
-    "statusDetail": "External Id Hybrid Mode migration is complete.",
-    "createdDateTime": "2025-01-01T00:00:00Z",
-    "lastActionDateTime": "2025-01-01T00:00:00Z",
-    "error": null
-}
-```
-
-> [!NOTE]
-> If you need to disable HSC mode, contact Microsoft support.
-
 > [!IMPORTANT]
-> After you enable HSC mode, allow up to 1 hour for the changes to take effect across all services before proceeding to Stage 2.
+> After you enable HSC mode, allow up to 1 hour for the changes to take effect across all services before proceeding to Stage 2. If you need to disable HSC mode, contact Microsoft support.
 
 ## Stage 2: Review identity schema for coexistence
 
