@@ -448,7 +448,7 @@ Add assignments of existing users, who already have access to the application, t
    ```
 
 ## Add assignments for users existing users who already have accounts in your application
-When you youse the Microsoft Entra provisioning service to discover users in your application, you can easily assign those users to an access package. Download the Assign-CorrelatedUsersWithRules.ps1 file here. 
+When you youse the Microsoft Entra provisioning service to [discover](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file. 
 
 1. Assign all discovered users to a specific access package (dry run)
 
