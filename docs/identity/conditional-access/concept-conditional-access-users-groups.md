@@ -110,5 +110,5 @@ For more information, see the article [Conditional Access for workload identitie
 
 ## Next steps
 
-- [Conditional Access: Cloud apps or actions](concept-conditional-access-cloud-apps.md)
+- [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)

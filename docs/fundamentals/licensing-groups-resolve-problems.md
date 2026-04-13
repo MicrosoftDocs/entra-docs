@@ -5,6 +5,7 @@ keywords: Microsoft Entra ID licensing
 ms.topic: how-to
 ms.date: 03/03/2025
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to resolve group license assignment problems so that I can ensure users have the correct licenses.
 ---
 
 # Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal

@@ -3,8 +3,9 @@ title: Lifecycle Workflows templates and categories
 description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 04/03/2026
 ms.custom: template-concept
+#Customer Intent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
 ---
 
 # Lifecycle Workflows templates and categories
@@ -266,3 +267,5 @@ The default specific parameters for the **Offboard inactive users** template are
 - [`workflowTemplate` resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
 - [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
+- [Custom task extensions for workflows beyond built-in templates](lifecycle-workflow-extensibility.md)
+- [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md)

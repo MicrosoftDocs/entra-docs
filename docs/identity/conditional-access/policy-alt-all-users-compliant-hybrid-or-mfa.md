@@ -83,7 +83,7 @@ Additionally, in the [**Activation**](ms-settings:activation) pane, the followin
 
 The prompt for authentication usually occurs when a device is offline for an extended period of time. This change eliminates the need for an exclusion in the Conditional Access policy for Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later. A Conditional Access policy can still be used with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later if the prompt for user authentication via a toast notification isn't desired.
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

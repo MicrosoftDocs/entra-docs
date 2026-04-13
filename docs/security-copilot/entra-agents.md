@@ -35,7 +35,7 @@ Administrators can configure the agent to run automatically or trigger the agent
 
 Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
 
-- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-are-agent-identities).
+- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/what-are-agent-identities).
 - **Roles**: Specific Microsoft Entra built-in roles are needed to turn on, view, and interact with the agent. Not all roles can perform the same tasks with an agent.
 - **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks. These permissions can't be changed or removed.
 - **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.

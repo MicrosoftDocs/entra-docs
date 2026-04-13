@@ -5,6 +5,7 @@ ms.topic: concept-article
 ms.date: 03/11/2026
 ms.reviewer: jadedsouza
 ai-usage: ai-assisted
+#Customer Intent: As an IT admin, I want to understand license usage insights so that I can monitor and optimize license allocation in my organization.
 ---
 
 # Microsoft Entra license usage insights

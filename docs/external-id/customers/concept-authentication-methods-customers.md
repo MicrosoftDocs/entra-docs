@@ -5,7 +5,7 @@ ms.topic: concept-article
 ms.date: 03/27/2026
 ai-usage: ai-assisted
 ms.custom: it-pro, seo-july-2024
-#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
+#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, Microsoft Entra ID, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity providers for external tenants
@@ -15,7 +15,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, a Microsoft Entra ID tenant, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -88,6 +88,12 @@ By setting up federation with Apple, you can allow users to sign in to your appl
 The following screenshots show the sign-in with Apple experience. On the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
+## Microsoft Entra ID federation
+
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
+
+Learn how to [add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md).
+
 ## Custom OIDC identity provider
 
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
@@ -120,7 +126,8 @@ You can use the following `domain_hint` values to go directly to the sign-in pag
 - **Google**: `domain_hint=google`.
 - **Apple**: `domain_hint=apple`.
 - **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax such as `"www.linkedin.com"` for LinkedIn.
-
+- **Custom OIDC - Entra ID**: For a custom OIDC Entra identity provider, use domain name of the Entra ID tenant like `domain_hint=contoso.onmicrosoft.com`.
+  
    :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Issuer URI domain segment used for domain_hint in custom OpenID Connect configuration.":::
 
 ## Updating sign-in methods
@@ -142,5 +149,6 @@ The following Microsoft Graph API operations are supported for managing identity
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add federation with SAML/WS-Fed identity providers](../direct-federation.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
