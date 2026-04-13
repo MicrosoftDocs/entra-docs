@@ -2,7 +2,7 @@
 title: Learn about the Global Secure Access Dashboard
 description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 04/10/2026
+ms.date: 04/13/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 ---
@@ -156,12 +156,17 @@ The **Cloud applications status** widget displays the total number of cloud appl
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications." lightbox="media/concept-traffic-dashboard/total-cloud-widget.png":::
 ## Network activity by location (preview)
 
-The **Network activity by location** widget is an interactive map that shows user, device, connection, transaction, and remote network activity by location. Administrators can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
+The **Network activity by location** widget has two modes: **Map view** and **Simplified view**. 
+
+The **Map view** is an interactive map that shows user, device, connection, transaction, and remote network activity by location. Administrators can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
 - Security monitoring: Identify traffic from high-risk regions and detect anomalies based on geographic patterns.
 - Operational intelligence: Diagnose ISP-related issues and optimize routing decisions.
 - Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
 
 :::image type="content" source="media/concept-traffic-dashboard/network-activity-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-location.png":::
+
+The **Simplified view** displays per-country telemetry in a detailed table. Select a **Country** from the table to open the connection logs filtered by that country.
+
 ## Alerts
 
 The **Alerts** widget shows a chart of alert counts by type and severity.
