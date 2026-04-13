@@ -194,7 +194,7 @@ This error typically occurs when:
 
 Even when an email claim is present, authentication may still fail if the email domain does not align with the configured IdP domain due to domain‑based matching requirements.
 
-### Using Domainless Federation
+### Configuring Domainless Federation
 To address this limitation, you can configure the SAML IdP as domainless.
 When domainless federation is enabled:
 - Microsoft Entra ID routes authentication requests to the configured SAML IdP based on the Issuer URI association
@@ -202,8 +202,13 @@ When domainless federation is enabled:
 
 This allows users to authenticate successfully using email addresses from any domain (for example, yahoo.com or gmail.com) when signing in with the external SAML IdP.
 
+1. On the New SAML/WS-Fed IdP page, select **Domainless** - Selecting Domainless will enforce no domain check of the user's email address.
+
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-domain-less.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-idp-domain-less.png":::
+
+
 > [!IMPORTANT]
-> When the **Domain** field is left empty, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain‑based routing. Currently, only **one** wildcard IdP can be configured per tenant.
+> When the **Domainless** field is selected, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain‑based routing. Currently, only **one** wildcard IdP can be configured per tenant.    
 
 ### User Flow Using Domainless Federation
 After configuring domainless federation, you can invite guest users from the partner organization by following these steps:
