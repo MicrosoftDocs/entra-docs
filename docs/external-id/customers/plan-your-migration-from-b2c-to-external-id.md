@@ -125,7 +125,7 @@ Some limitations are fundamental to operating at high scale and exist today in A
 Some capabilities available in External ID aren't available in HSC mode today. If you're considering HSC mode, review these features carefully before making a decision.
 
 > [!NOTE]
-> Feature availability timelines might differ between External ID HSC mode and standard deployment modes. Always refer to the official roadmap for the latest status and rollout expectations.
+> Some features listed here might be partially available but haven't been fully validated in HSC mode. Feature availability timelines might differ between External ID HSC mode and standard deployment modes. Always refer to the official roadmap for the latest status and rollout expectations.
 
 **Authentication and access control**
 
@@ -134,15 +134,45 @@ Some capabilities available in External ID aren't available in HSC mode today. I
   - Session-based controls
 - Application assignment via groups
 - Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
+- Passkeys. Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
 
 **Federation and ecosystem integrations**
 
 - Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
+- Third-party identity providers configured through Azure AD B2C custom policies
 - Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported)
+
+**Security and fraud prevention**
+
+- Microsoft Entra ID Protection (Fraud Protection) integration
+
+**User experience and compliance**
+
+- Age gating. Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
 
 **Admin portal UI support**
 
 Full Microsoft Entra admin center UI support isn't yet available for External ID scenarios in HSC mode tenants. Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
+
+#### Known gaps between External ID standard mode and HSC mode
+
+Some features supported in External ID standard deployments aren't yet available in HSC mode. Review the following list before deciding on HSC mode.
+
+- Social identity provider federation (Google, Facebook, Apple) is available in External ID standard mode but not in HSC mode.
+- Phone-based MFA (SMS and voice call) is available in External ID standard mode but not in HSC mode.
+- Full Microsoft Entra admin center UI support is available in External ID standard mode but not in HSC mode.
+- Advanced directory queries (filtering, sorting, count, search, transitive membership) are available in External ID standard mode but not in HSC mode.
+- Change-based (delta) queries are available in External ID standard mode but not in HSC mode.
+- SCIM outbound user provisioning is available in External ID standard mode but not in HSC mode.
+
+For a comprehensive comparison, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
+
+### Application requirements for HSC mode
+
+When migrating applications to External ID in HSC mode, the following requirements apply:
+
+- **Create new application registrations.** Don't reuse existing Azure AD B2C application registrations. External ID requires new registrations due to differences in application properties and Native Authentication support.
+- **Use single-tenant configuration.** Register each application as single-tenant (_Accounts in this organizational directory only_). Multi-tenant application registrations aren't supported for External ID endpoints.
 
 ### Understand how coexistence works
 

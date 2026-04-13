@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing users and credentials in place. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
+Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing B2C user credentials in place. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
 
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
@@ -42,7 +42,7 @@ Once your tenant is allowlisted for HSC mode, you can turn on HSC mode by callin
 
 During coexistence, applications might authenticate users through different identity endpoints (B2C or External ID). Preparing identity data ensures that existing users can continue to sign in without disruption and that applications receive the claims they expect.
 
-When you enable External ID in HSC mode, your Azure AD B2C user directory remains unchanged. Most tenants don’t need to make any identity data changes.
+When you enable External ID in HSC mode, your Azure AD B2C user directory and existing B2C user credentials remain unchanged. Most tenants don't need to make any identity data changes.
 
 You only need to complete this step before migrating applications if your tenant uses one or more of the following:
 - Federated identities (social or enterprise IdPs)
@@ -107,6 +107,9 @@ If your applications rely on specific claims, most commonly `email` or `sub` cla
 - Applications rely on `email` or `sub`
 - Local accounts where `mail` isn’t populated
 - Claims populated only via sign-in names or custom policies
+
+> [!IMPORTANT]
+> In External ID, the `sub` claim is not set to the same value as `oid`. If your applications depend on the `sub` claim matching the user's `oid`, request the `profile` scope to retrieve the `oid` claim and use it as the stable user identifier instead.
 
 Before migrating applications:
 - Validate how attributes map to token claims used by your applications.

@@ -14,6 +14,9 @@ ai-usage: ai-assisted
 
 This article helps you diagnose and resolve common errors when using the [High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md) API for Microsoft Entra External ID and Azure AD B2C tenants.
 
+> [!IMPORTANT]
+> Access to the HSC API depends on both the correct **permissions** and **admin consent**. Most HSC operations require Global Administrator access. If you're using delegated permissions, ensure an admin has granted consent for the required scopes.
+
 ## Quick reference
 
 | Error message | HTTP status | Self-serviceable |
@@ -134,6 +137,8 @@ Tenant metadata is cached for up to 1 hour. If you issue a GET request immediate
 During the POST to enable hybrid mode, the service attempts to sync all B2C custom attributes to the External ID tenant. If any custom attribute has a null or empty description (sourced from the `AdminHelpText` field), that attribute is added to the failed list and the error `HybridTenantMigrationFailedAttributes` is returned.
 
 Many B2C custom attributes are created without a description, so this issue can affect a large number of attributes silently.
+
+Custom attributes that require a nonempty `description` field include any attribute where `AdminHelpText` is null or empty. Common examples include attributes created programmatically or through older B2C portal experiences.
 
 **How to fix:**
 
