@@ -154,6 +154,7 @@ The **Top used cloud applications** widget shows the most used cloud application
 The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of generative AI applications, and the total number of high-risk applications accessed.
 
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications." lightbox="media/concept-traffic-dashboard/total-cloud-widget.png":::
+
 ## Network activity by location (preview)
 
 The **Network activity by location** widget has two modes: **Map view** and **Simplified view**. 
