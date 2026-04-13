@@ -81,7 +81,7 @@ After you open an access request pending approval, you can see details that will
 
     If none of the configured approvers in a stage are able to approve or deny the access request, the request expires after the configured request duration. The user gets notified that their access request has expired, and that they need to resubmit the access request.
 
-## Revoke a request (preview)
+## Revoke a request 
 
 Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This revokes the approval and the requestor will no longer have access to the access package. 
 
