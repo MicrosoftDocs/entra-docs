@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/13/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myPolicies so that I can streamline the user management process and ensure that users have the appropriate access to myPolicies.
@@ -22,7 +22,7 @@ The objective of this article is to demonstrate the steps to be performed in myP
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A myPolicies tenant](https://mypolicies.com/).
 * A user account in myPolicies with Admin permissions.
 
@@ -45,7 +45,7 @@ Before configuring myPolicies for automatic user provisioning with Microsoft Ent
 
 1. Reach out to your myPolicies representative at **support@mypolicies.com** to obtain the secret token needed to configure SCIM provisioning.
 
-2.  Save the token value provided by the myPolicies representative. This value is entered in the **Secret Token** field in the Provisioning tab of your myPolicies application.
+1.  Save the token value provided by the myPolicies representative. This value is entered in the **Secret Token** field in the Provisioning tab of your myPolicies application.
 
 ## Add myPolicies from the gallery
 
@@ -79,30 +79,33 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The myPolicies link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://<myPoliciesCustomDomain>.mypolicies.com/scim` in **Tenant URL** where `<myPoliciesCustomDomain>` is your myPolicies custom domain. You can retrieve your myPolicies customer domain, from your URL.
-Example: `<demo0-qa>`.mypolicies.com.
+1. In the **Tenant URL** field, enter your myPolicies Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has the required admin permissions and try again.
 
-6. In **Secret Token**, enter the token value which was retrieved earlier. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has Admin permissions and try again.
+   > [!NOTE]
+   > Enter `https://scim.mx3.app` in the **Tenant URL**.`https://<myPoliciesCustomDomain>.mypolicies.com/scim` in **Tenant URL** where `<myPoliciesCustomDomain>` is your myPolicies custom domain. You can retrieve your myPolicies customer domain, from your URL.
+   > Example: `<demo0-qa>`.mypolicies.com.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-7. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-8. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to myPolicies**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to myPolicies in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in myPolicies for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to myPolicies in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in myPolicies for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the myPolicies API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -116,24 +119,11 @@ Example: `<demo0-qa>`.mypolicies.com.
    |addresses[type eq "work"].country|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
 
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-12. To enable the Microsoft Entra provisioning service for myPolicies, change the **Provisioning Status** to **On** in the **Settings** section.
-
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-13. Define the users and/or groups that you would like to provision to myPolicies by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-14. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on myPolicies.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Connector limitations
 

@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 ms.author: jeedes
 ms.reviewer: jomondi
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/13/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netpresenter Next so that I can streamline the user management process and ensure that users have the appropriate access to Netpresenter Next.
 ---
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both Netpresenter Next a
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An administrator account with Netpresenter Next.
 
 ## Step 1: Plan your provisioning deployment
@@ -73,17 +73,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-1. Under the **Admin Credentials** section, input your Netpresenter Next Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netpresenter Next. If the connection fails, ensure your Netpresenter Next account has Admin permissions and try again.
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-   ![Screenshot shows the fields for tenant URL and token.](common/provisioning-testconnection-tenanturltoken.png)
+1. In the **Tenant URL** field, enter your Netpresenter Next Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netpresenter Next. If the connection fails, ensure your Netpresenter Next account has the required admin permissions and try again.
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. Select **Save**.
+1. Select **Create** to create your configuration.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Netpresenter Next**.
+1. Select **Properties** on the **Overview** page.
+
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Netpresenter Next in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Netpresenter Next for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Netpresenter Next API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -98,17 +104,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |phoneNumbers[type eq "work"].value|String||
     |phoneNumbers[type eq "mobile"].value|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Netpresenter Next, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-1. Define the users and/or groups that you would like to provision to Netpresenter Next by choosing the desired values in **Scope** in the **Settings** section.
-
-   ![Screenshot shows the Scope dropdown in the Settings section.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
