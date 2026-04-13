@@ -239,7 +239,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
 1. To switch to domainless federation, select the **Domainless** checkbox and select **Done**
 
-   :::image type="content" source="media/direct-federation/edit-domains-domainless.png" alt-text="Screenshot of the domain configuration page for domainless.":::
+   :::image type="content" source="media/direct-federation/edit-domains-domain-less.png" alt-text="Screenshot of the domain configuration page for domainless.":::
 
 
    > [!NOTE]
