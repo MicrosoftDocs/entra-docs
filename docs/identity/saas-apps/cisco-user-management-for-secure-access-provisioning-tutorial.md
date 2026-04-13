@@ -29,7 +29,7 @@ This article describes the steps you need to perform in both Cisco User Manageme
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A [Cisco Umbrella subscription](https://signup.umbrella.com).
 * A user account in Cisco Umbrella with full admin permissions.
 
