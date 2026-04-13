@@ -1,18 +1,14 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 06/20/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
 # Troubleshoot sign-in problems with Conditional Access
+
+## Overview
 
 Use this article to fix unexpected sign-in outcomes related to Conditional Access by checking error messages and Microsoft Entra sign-in logs.
 
@@ -47,7 +43,7 @@ In this error, the message says you can only use the application from devices or
 
 To get detailed information about the sign-in interruption, review the Microsoft Entra sign-in events to see which Conditional Access policy or policies applied and why.
 
-More information can be found about the problem by clicking **More Details** in the initial error page. Clicking **More Details** reveals troubleshooting information that is helpful when searching the Microsoft Entra sign-in events for the specific failure event the user saw or when opening a support incident with Microsoft.
+More information can be found about the problem by selecting **More Details** in the initial error page. Selecting **More Details** reveals troubleshooting information that is helpful when searching the Microsoft Entra sign-in events for the specific failure event the user saw or when opening a support incident with Microsoft.
 
 ![Screenshot showing more details from a Conditional Access interrupted web browser sign-in.](./media/troubleshoot-conditional-access/image2.png)
 
@@ -67,7 +63,7 @@ Follow these steps to find out which Conditional Access policy or policies appli
 
 1. After finding the sign-in event that corresponds to the user's sign-in failure, select the **Conditional Access** tab. The Conditional Access tab shows the specific policy or policies that resulted in the sign-in interruption.
    1. Information in the **Troubleshooting and support** tab might provide a clear reason as to why a sign-in failed such as a device that didn't meet compliance requirements.
-   1. To investigate further, drill down into the configuration of the policies by clicking on the **Policy Name**. Clicking the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
+   1. To investigate further, drill down into the configuration of the policies by selecting the **Policy Name**. Selecting the **Policy Name** shows the policy configuration user interface for the selected policy for review and editing.
    1. The **client user** and **device details** that were used for the Conditional Access policy assessment are also available in the **Basic Info**, **Location**, **Device Info**, **Authentication Details**, and **Additional Details** tabs of the sign-in event.
 
 ### Policy not working as intended
@@ -120,10 +116,10 @@ Admins use the audience report to learn why a CA policy applies or doesn't apply
 If you're locked out because of an incorrect setting in a Conditional Access policy:
 
 - Check if there are other admins in your organization who aren't blocked yet. An admin with access can disable the policy that's affecting your sign-in.
-- If no admin in your organization can update the policy, submit a support request. Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
+- If no admin in your organization can update the policy, [submit a support request](../../fundamentals/how-to-get-support.md#open-a-support-request). Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
 
 ## Next steps
 
 - [Use the What If tool to troubleshoot Conditional Access policies](what-if-tool.md)
 - [Sign-in activity reports](~/identity/monitoring-health/concept-sign-ins.md)
-- [Troubleshoot Conditional Access using the What If tool](troubleshoot-conditional-access-what-if.md)
+- [The Conditional Access What If tool](what-if-tool.md)

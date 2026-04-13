@@ -1,14 +1,10 @@
 ---
 title: Troubleshoot Microsoft Entra Connect install issues'
 description: This topic provides steps for how to troubleshoot issues with installing Microsoft Entra Connect.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 

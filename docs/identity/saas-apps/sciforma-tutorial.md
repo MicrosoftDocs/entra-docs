@@ -2,16 +2,9 @@
 title: Configure Sciforma for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sciforma.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sciforma so that I can control who has access to Sciforma, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure Sciforma for Single sign-on with Microsoft Entra ID
@@ -86,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.sciforma.net/sciforma/main.html`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Sciforma Client support team](https://www.sciforma.com/about/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact Sciforma Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -102,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Sciforma SSO
 
-To configure single sign-on on **Sciforma** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Sciforma support team](https://www.sciforma.com/about/contact). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Sciforma** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to Sciforma support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Sciforma test user
 

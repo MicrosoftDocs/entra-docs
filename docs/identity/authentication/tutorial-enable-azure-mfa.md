@@ -1,14 +1,8 @@
 ---
 title: Enable Microsoft Entra multifactor authentication
 description: In this tutorial, you learn how to enable Microsoft Entra multifactor authentication for a group of users and test the secondary factor prompt during a sign-in event.
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
 ms.reviewer: jupetter
 
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use Microsoft Entra multifactor authentication so that the user accounts in my organization are secured and require an additional form of verification during a sign-in event.
@@ -41,7 +35,7 @@ To complete this tutorial, you need the following resources and privileges:
 * An account with at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. Some MFA settings can also be managed by an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
 * A non-administrator account with a password that you know. For this tutorial, we created such an account, named *testuser*. In this tutorial, you test the end-user experience of configuring and using Microsoft Entra multifactor authentication.
-    * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/add-users.md).
+    * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 
 * A group that the non-administrator user is a member of. For this tutorial, we created such a group, named *MFA-Test-Group*. In this tutorial, you enable Microsoft Entra multifactor authentication for this group.
     * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).

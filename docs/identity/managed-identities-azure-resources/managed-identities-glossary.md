@@ -1,13 +1,7 @@
 ---
 title: Managed identities glossary
 description: A comprehensive glossary of terms related to managed identities for Azure resources.
-
-author: SHERMANOUKO
-manager: pmwongera
-ms.author: shermanouko
 ms.reviewer: arluca
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: reference
 ms.date: 08/19/2025
 ---

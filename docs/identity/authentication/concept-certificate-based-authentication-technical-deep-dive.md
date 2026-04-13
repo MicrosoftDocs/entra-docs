@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra CBA Technical Concepts
 description: Learn how Microsoft Entra certificate-based authentication (CBA) works and the technical concepts you need to set up and manage CBA.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
@@ -79,7 +75,7 @@ To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authenticatio
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot that shows how to turn on issuer hints." lightbox="media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png":::
 
 > [!NOTE]
-> After you turn on issuer hints, the CA URL has the format `<tenantId>.certauth.login.microsoftonline.com`.
+> After you turn on issuer hints, the CA URL has the format `t<tenantId>.certauth.login.microsoftonline.com`.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot that shows the certificate picker after you turn on issuer hints.":::
 
@@ -100,10 +96,7 @@ Here are some supported combinations:
 - CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
 - CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
 - CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
-- Password (first factor) and CBA (second factor) (preview)
-
-> [!NOTE]
-> Currently, using CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We're working to resolve the issues.
+- Password (first factor) and CBA (second factor)
 
 Users must have a way to get MFA and register passwordless sign-in or FIDO2 in advance of signing in by using Microsoft Entra CBA.
 

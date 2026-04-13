@@ -1,25 +1,20 @@
 ---
-title: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
+title: Scenarios, limitations, and known issues for groups that manage licensing in Microsoft Entra ID
 description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: sfi-image-nochange
 ---
 
-# Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
+# Scenarios, limitations, and known issues for groups that manage licensing in Microsoft Entra ID
+
+
+## Overview
 
 Use the following information and examples to gain a more advanced understanding of group-based licensing in Microsoft Entra ID, part of Microsoft Entra.
 
-
-
 [!INCLUDE [Microsoft 365 licensing](../../includes/licensing-microsoft-365.md)]
-
 
 ## Usage location
 
@@ -30,14 +25,14 @@ Some Microsoft services aren't available in all locations. For group license ass
 1. Select Microsoft Entra ID.
 1. Go to **Users** > **All users** and select a user.
 
-   :::image type="content" source="./media/licensing-group-advanced/all-users.png" alt-text="Screenshot of the All users pane.":::
+    :::image type="content" source="./media/licensing-group-advanced/all-users.png" alt-text="Screenshot of the All users pane.":::
 
 1. Select **Edit properties**. 
 1. Select the **Settings** tab and enter a location for the user.
 1. Select the **Save** button.
 
 > [!NOTE]
-> Group license assignment never modifies an existing usage location value on a user. We recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users don't receive services in locations that aren't allowed.
+> Group license assignment never modifies an existing usage location value on a user. Always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users don't receive services in locations that aren't allowed.
 
 ## Use group-based licensing with dynamic membership groups
 
@@ -48,7 +43,7 @@ You can assign the attribute on-premises and sync it with Microsoft Entra ID, or
 > [!WARNING]
 > Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group is re-evaluated. Users who no longer match the new rule are removed (users who still match the new rule aren't affected during this process). Those users have their licenses removed during the process which could result in loss of service, or in some cases, loss of data.
 >
-> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
+> If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](~/fundamentals/licensing-groups-resolve-problems.md).
 
 ## Multiple groups and multiple licenses
 
@@ -81,25 +76,25 @@ When Microsoft adds a new service to a product license plan, it's enabled by def
 
 As an administrator, you can review all groups affected by the change and take action, such as disabling the new service in each group. For example, if you created groups targeting only specific services for deployment, you can revisit those groups and make sure that any newly added services are disabled.
 
-Here's an example of what this process may look like:
+Here's an example of what this process might look like:
 
 1. Originally, you assigned the *Microsoft 365 E5* product to several groups. One of those groups, called *Microsoft 365 E5 - Exchange only* was designed to enable only the *Exchange Online (Plan 2)* service for its members.
 
 1. You received a notification from Microsoft that the E5 product is being extended with a new service - *Microsoft Stream*. When the service becomes available in your organization, you can complete the following steps:
 
-1. 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) 
-1. Select Microsoft Entra ID.
-1. Select **Billing** > **Licenses** > **All products** and select *Microsoft 365 Enterprise E5*, then select **Licensed Groups** to view a list of all groups with that product.
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+    1. Select Microsoft Entra ID.
+    1. Select **Billing** > **Licenses** > **All products** and select *Microsoft 365 Enterprise E5*, then select **Licensed Groups** to view a list of all groups with that product.
 
 1. Select the group you want to review (in this case, *Microsoft 365 E5 - Exchange only*). The **Licenses** tab opens. Select the E5 license to view all enabled services.
 
 
-   :::image type="content" source="./media/licensing-group-advanced/manage-new-services.png" alt-text="Screenshot of new service added to a group license.":::
+    :::image type="content" source="./media/licensing-group-advanced/manage-new-services.png" alt-text="Screenshot of new service added to a group license.":::
 
 1. If you want to disable the new service in this group, select the On/Off toggle next to the service, and select the **Save** button to confirm the change. Microsoft Entra ID now processes all users in the group to apply the change; any new users added to the group won't have the *Microsoft Stream* service enabled.
 
-   > [!NOTE]
-   > Users may still have the service enabled through some other license assignment (another group they are members of or a direct license assignment).
+    > [!NOTE]
+    > Users might still have the service enabled through some other license assignment (another group they are members of or a direct license assignment).
 
 1. If needed, perform the same steps for other groups with this product assigned.
 
@@ -108,11 +103,11 @@ You can use a PowerShell script to check if users have a license assigned direct
 
 1. Run the `Connect-MgGraph -Scopes "Organization.Read.All"` cmdlet to authenticate and connect to your organization using Microsoft Graph.
 
-2. `Get-MgSubscribedSku -All | Select-Object skuid -ExpandProperty serviceplans | select serviceplanid, serviceplanname` can be used to discover all provisioned product licenses in the Microsoft Entra organization.
+1. `Get-MgSubscribedSku -All | Select-Object skuid -ExpandProperty serviceplans | select serviceplanid, serviceplanname` can be used to discover all provisioned product licenses in the Microsoft Entra organization.
 
-   :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-MgSubscribedSku cmdlet.":::
+    :::image type="content" source="./media/licensing-group-advanced/get-mgsubscribedsku-cmdlet.png" alt-text="Screenshot of the Get-MgSubscribedSku cmdlet.":::
 
-3. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-powershell-graph-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
+1. Use the *ServicePlanId* value for the license you're interested in with [this PowerShell script](licensing-powershell-graph-examples.md#check-if-user-license-is-assigned-directly-or-inherited-from-a-group). A list populates the users who have this license and information about how the license is assigned.
 
 ## Use Audit logs to monitor group-based licensing activity
 
@@ -173,7 +168,7 @@ To see the complete log for how a group was processed, including all user change
 - **Initiated By (Actor)**: Microsoft Entra group-Based Licensing (case-sensitive)
 - **Date Range** (optional): Custom range for when you know a specific group started and finished processing
 
-This image shows licensing change processing from stat to finish. 
+This image shows licensing change processing from start to finish. 
 
 :::image type="content" source="./media/licensing-group-advanced/audit-log-license-start-finish.png" alt-text="Screenshot of the Microsoft Entra audit log filters and start and end times of license changes.":::
 
@@ -181,13 +176,13 @@ This image shows licensing change processing from stat to finish.
 
 It isn't possible to delete a group with an active license assigned. The reason is to prevent the unintended deletion of a group used for license assignment. For this reason we require any licenses to be removed from the group first, before it can be deleted.
 
-When trying to delete a group in the portal, you may see an error notification like this:
+When trying to delete a group in the portal, you might see an error notification like this:
 
 :::image type="content" source="./media/licensing-group-advanced/groupdeletionfailed.png" alt-text="Screenshot group deletion failed.":::
 
 Go to the **Licenses** tab on the group and see if there are any licenses assigned. If yes, remove those licenses and try to delete the group again.
 
-You may see similar errors when trying to delete the group through PowerShell or Graph API. If you're using a group synced from on-premises, Microsoft Entra Connect may also report errors if it's failing to delete the group in Microsoft Entra ID. In all such cases, make sure to check if there are any licenses assigned to the group, and remove them first.
+You might see similar errors when trying to delete the group through PowerShell or Graph API. If you're using a group synced from on-premises, Microsoft Entra Connect may also report errors if it's failing to delete the group in Microsoft Entra ID. In all such cases, make sure to check if there are any licenses assigned to the group, and remove them first.
 
 ## Limitations and known issues
 
@@ -201,14 +196,12 @@ If you use group-based licensing, it's a good idea to familiarize yourself with 
 
 - If you're using dynamic membership groups to manage your users' memberships, verify that the user is part of the group, which is necessary for license assignment. If not, [check processing status for the membership rule](groups-create-rule.md) of the dynamic group.
 
-- In certain high load situations, it may take a long time to process license changes for groups or membership changes to groups with existing licenses. If you see your changes take more than 24 hours to process group size of 60 K users or less, please [open a support ticket](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/supportRequest) to allow us to investigate. 
+- In certain high load situations, it might take a long time to process license changes for groups or membership changes to groups with existing licenses. If you see your changes take more than 24 hours to process group size of 60 K users or less, [open a support ticket](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/supportRequest) to allow the support team to investigate. 
 
 ## Next steps
 
 To learn more about other scenarios for license management through group-based licensing, see:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assigning licenses to a group in Microsoft Entra ID](licensing-groups-assign.md)
-* [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
+* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
+* [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)

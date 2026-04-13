@@ -2,14 +2,10 @@
 title: 'Customize an installation of Microsoft Entra Connect'
 description: This article explains the custom installation options for Microsoft Entra Connect. Use these instructions to install Active Directory through Microsoft Entra Connect.
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
@@ -17,7 +13,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 Use *custom settings* in Microsoft Entra Connect when you want more options for the installation. Use these settings, for example, if you have multiple forests or if you want to configure optional features. Use custom settings in all cases where [express installation](how-to-connect-install-express.md) doesn't satisfy your deployment or topology needs.
 
 Prerequisites:
-- [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
+- [Download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
 - Complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md). 
 - Make sure you have the accounts described in [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md).
 

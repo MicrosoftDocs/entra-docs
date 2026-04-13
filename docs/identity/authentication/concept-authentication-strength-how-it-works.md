@@ -1,13 +1,8 @@
 ---
 title: How Authentication Strengths Work in a Conditional Access Policy
 description: Learn how admins can use a Conditional Access policy to require specific authentication combinations to access a resource.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/17/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: inbarc
 ms.custom: sfi-image-nochange
 ---

@@ -17,7 +17,7 @@ ms.collection:
 
 The Payment Card Industry Security Standards Council (PCI SSC) is responsible for developing and promoting data security standards and resources, including the Payment Card Industry Data Security Standard (PCI-DSS), to ensure the security of payment transactions. To achieve PCI compliance, organizations using Microsoft Entra ID can refer to guidance in this document. However, it's the responsibility of the organizations to ensure their PCI compliance. Their IT teams, SecOps teams, and Solutions Architects are responsible for creating and maintaining secure systems, products, and networks that handle, process, and store payment card information. 
 
-While Microsoft Entra ID helps meet some PCI-DSS control requirements, and provides modern identity and access protocols for cardholder data environment (CDE) resources, it shouldn't be the sole mechanism for protecting cardholder data. Therefore, review this document set and all PCI-DSS requirements to establish a comprehensive security program that preserves customer trust. For a complete list of requirements, visit the official PCI Security Standards Council website at pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf)
+While Microsoft Entra ID helps meet some PCI-DSS control requirements, and provides modern identity and access protocols for cardholder data environment (CDE) resources, it shouldn't be the sole mechanism for protecting cardholder data. Therefore, review this document set and all PCI-DSS requirements to establish a comprehensive security program that preserves customer trust. For a complete list of requirements, visit the official PCI Security Standards Council website at pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/)
 
 ## PCI requirements for controls
 
@@ -37,7 +37,7 @@ Microsoft Entra ID is an enterprise identity service that secures applications, 
 
 ## Principal PCI-DSS requirements
 
-PCI-DSS requirements **3**, **4**, **9**, and **12** aren't addressed or met by Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf).
+PCI-DSS requirements **3**, **4**, **9**, and **12** aren't addressed or met by Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/).
 
 |PCI Data Security Standard - High Level Overview|Microsoft Entra ID recommended PCI-DSS controls|
 |-|-|
@@ -208,7 +208,7 @@ PCI-DSS ensures that companies that accept, process, store, or transmit credit c
 
 ## Next steps
 
-PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf).
+PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/).
 
 To configure Microsoft Entra ID to comply with PCI-DSS, see the following articles. 
 

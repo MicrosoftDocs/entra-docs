@@ -2,14 +2,8 @@
 title: Understand how users are assigned to apps
 description: Understand how users get assigned to an app that is using Microsoft Entra ID for identity management.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: reference
 ms.date: 01/07/2021
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 

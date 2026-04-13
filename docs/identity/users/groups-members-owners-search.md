@@ -1,18 +1,16 @@
 ---
 title: Search and filter groups members and owners (preview)
 description: Search and filter groups members and owners in Microsoft Entra.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 09/04/2025
-ms.author: barclayn
 ms.reviewer: Mohit
 ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Search groups and members in Microsoft Entra ID
+
+
+## Overview
 
 This article tells you how to search for members and owners of a group and how to use search filters in Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
 
@@ -24,7 +22,7 @@ This article tells you how to search for members and owners of a group and how t
 
 On the **All groups** page, when you enter a search string, you can toggle between **contains** and **starts with** searches on the **All groups** page only.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >The contains search uses tokenized matching, not literal substring matching. This means the system breaks both your query and the stored values into smaller chunks (tokens), usually words or alphanumeric segments, and checks if any query token appears in the stored tokens.
 
 The substring search is done using whole words only, and any special characters are searched for also as an ANDed search. For example, searching for -Name starts a search for the substring "Name" and a search for "-". Substring search is case-sensitive. Object ID or mailNickname properties are also searched.
@@ -63,7 +61,7 @@ The group **Overview** page provides member counts for groups. You can see the t
 
 These articles provide additional information on working with groups in Microsoft Entra ID.
 
-- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
 - [Manage rules for dynamic membership groups](groups-create-rule.md)
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)

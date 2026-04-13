@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP SSL-VPN solution in Microsoft Entra ID
 description: Tutorial to configure F5 BIG-IP based secure socket layer virtual private network (SSL-VPN) solution with Microsoft Entra ID for secure hybrid access (SHA).
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/19/2024
 ms.author: gasinh

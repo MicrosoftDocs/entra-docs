@@ -1,15 +1,10 @@
 ---
 title: Common alerts and resolutions in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to resolve common alerts generated as part of the health status for Microsoft Entra Domain Services
-author: justinha
-manager: dougeby
 
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: troubleshooting
 ms.date: 02/19/2025
-ms.author: justinha
 ---
 # Known issues: Common alerts and resolutions in Microsoft Entra Domain Services
 
@@ -263,6 +258,21 @@ Then follow these steps to retry onboarding the custom attribute in the **Custom
 1. Select **Add** and choose the desired attributes again, then select **Save**.
 
 Upon successful onboarding, Domain Services back fills synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
+
+## AADDS122: Group policy object conflict detected (private preview)
+
+### Alert message
+
+*Group Policy Object conflict detected. Please review the GPO settings on the domain controllers.*
+
+### Resolution
+
+Review the domains GPO settings and fix the entries which have issues. In the case where a GPO cannot be fixed steps are provided to restore from backup in [Restore GPO from backup](group-policy.md).
+
+4 alerts are sent in case of a GPO conflict after every 7 days if there is no resolution. After 30 days, the system will automatically fix any lingering issues automatically and the alerts will be cleared.
+
+>[!WARNING]
+>Automatic resolution may lead to loss of data from a GPO point of view, but is necessary for us to maintain the domain in a healthy state. Make sure the alert is fixed in time to avoid any loss of data.
 
 ## AADDS500: Synchronization has not completed in a while
 

@@ -1,11 +1,8 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 05/05/2023
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 The following steps show you how to register your daemon app in the Microsoft Entra admin center:

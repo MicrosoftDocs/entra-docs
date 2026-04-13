@@ -3,10 +3,8 @@ title: Configure Salesforce for automatic user provisioning with Microsoft Entra
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/23/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
@@ -78,56 +76,60 @@ The objective of this section is to outline how to enable user provisioning of A
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-2. If you have configured Salesforce for single sign-on, search for your instance of Salesforce using the search field. Otherwise, select **Add** and search for **Salesforce** in the application gallery. Select Salesforce from the search results, and add it to your list of applications.
+1. If you have configured Salesforce for single sign-on, search for your instance of Salesforce using the search field. Otherwise, select **Add** and search for **Salesforce** in the application gallery. Select Salesforce from the search results, and add it to your list of applications.
 
-3. Select your instance of Salesforce, then select the **Provisioning** tab.
+1. Select your instance of Salesforce, then select the **Provisioning** tab.
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, provide the following configuration settings:
+1. Under the **Admin Credentials** section, provide the following configuration settings:
 
     1. In the **Admin Username** textbox, type a Salesforce account name that has the **System Administrator** profile in Salesforce.com assigned.
 
     1. In the **Admin Password** textbox, type the password for this account.
 
-6. To get your Salesforce security token, open a new tab and sign into the same Salesforce admin account. On the top right corner of the page, select your name, and then select **Settings**.
+1. To get your Salesforce security token, open a new tab and sign into the same Salesforce admin account. On the top right corner of the page, select your name, and then select **Settings**.
 
     ![Screenshot shows the Settings link selected.](./media/salesforce-provisioning-tutorial/sf-my-settings.png "Enable automatic user provisioning")
 
-7. On the left navigation pane, select **My Personal Information** to expand the related section, and then select **Reset My Security Token**.
+1. On the left navigation pane, select **My Personal Information** to expand the related section, and then select **Reset My Security Token**.
   
     ![Screenshot shows Reset My Security Token selected from My Personal Information.](./media/salesforce-provisioning-tutorial/sf-personal-reset.png "Enable automatic user provisioning")
 
-8. On the **Reset Security Token** page, select **Reset Security Token** button.
+1. On the **Reset Security Token** page, select **Reset Security Token** button.
 
     ![Screenshot shows the Rest Security Token page, with explanatory text and the option to Reset Security Token](./media/salesforce-provisioning-tutorial/sf-reset-token.png "Enable automatic user provisioning")
 
-9. Check the email inbox associated with this admin account. Look for an email from Salesforce.com that contains the new security token.
+1. Check the email inbox associated with this admin account. Look for an email from Salesforce.com that contains the new security token.
 
-10. Copy the token, go to your Microsoft Entra window, and paste it into the **Secret Token** field.
+1. Copy the token, go to your Microsoft Entra window, and paste it into the **Secret Token** field.
 
-11. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it's optional. Enter the tenant URL using the format of `https://<your-instance>.my.salesforce.com`, replacing `<your-instance>` with the name of your Salesforce instance.
+1. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it's optional. Enter the tenant URL using the format of `https://<your-instance>.my.salesforce.com`, replacing `<your-instance>` with the name of your Salesforce instance.
 
-12. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Salesforce app.
+1. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Salesforce app.
 
-13. In the **Notification Email** field, enter the email address of a person or group who should receive provisioning error notifications, and check the checkbox below.
+1. Select **Create** to create your configuration.
 
-14. Select **Save.**  
+1. Select **Properties** on the **Overview** page.
 
-15. Under the Mappings section, select **Synchronize Microsoft Entra users to Salesforce.**
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-16. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to Salesforce. Note that the attributes selected as **Matching** properties are used to match the user accounts in Salesforce for update operations. Select the Save button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-17. To enable the Microsoft Entra provisioning service for Salesforce, change the **Provisioning Status** to **On** in the Settings section
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-18. Select **Save.**
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Salesforce. Note that the attributes selected as **Matching** properties are used to match the user accounts in Salesforce for update operations. Select the Save button to commit any changes.
 
 > [!NOTE]
 > Once the users are provisioned in the Salesforce application, administrator need to configure the language specific settings for them. Please see [this](https://help.salesforce.com/articleView?id=setting_your_language.htm&type=5) article for more details on language configuration.
 
-This starts the initial synchronization of any users and/or groups assigned to Salesforce in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Monitoring
 
@@ -156,7 +158,6 @@ As users that are in assigned to the application are updated in Microsoft Entra 
 * **SalesforceRequiredFieldMissing:** Salesforce requires certain attributes to be present on the user to successfully create or update the user. This user is missing one of the required attributes. Ensure that attributes such as email and alias are populated on all users that you would like to be provisioned into Salesforce. You can scope users that don't have these attributes out using [attribute based scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 * The default attribute mapping for provisioning to Salesforce includes the SingleAppRoleAssignments expression to map appRoleAssignments in Microsoft Entra ID to ProfileName in Salesforce. Ensure that the users don't have multiple app role assignments in Microsoft Entra ID as the attribute mapping only supports provisioning one role. If you have a group of users where the group is assigned to one role, then a member of that group can't have a direct assignment to the Salesforce application with a different role.
 * Salesforce requires that email updates be approved manually before being changed. As a result, you may see multiple entries in the provisioning logs to update the user's email (until the email change has been approved).
-
 
 ## Additional resources
 

@@ -1,11 +1,8 @@
 ---
 author: Dickson-Mwendia
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 11/22/2023
 ms.author: dmwendia
-ms.manager: dougeby
 ---
 
 To specify your app type to your app registration, follow these steps:

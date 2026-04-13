@@ -3,8 +3,6 @@ title: Tutorial to configure Datawiza to enable Microsoft Entra multifactor auth
 description: Enable Microsoft Entra multifactor authentication and single sign-on for an Oracle Hyperion EPM using Datawiza Access Proxy (DAP)
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 11/01/2023
 ms.author: gasinh

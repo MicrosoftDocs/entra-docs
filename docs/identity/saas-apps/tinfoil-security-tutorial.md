@@ -1,14 +1,9 @@
 ---
 title: Configure TINFOIL SECURITY for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TINFOIL SECURITY.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TINFOIL SECURITY so that I can control who has access to TINFOIL SECURITY, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -140,7 +135,7 @@ In order to enable Microsoft Entra users to sign in to TINFOIL SECURITY, they mu
 
 **To get a user provisioned, perform the following steps:**
 
-1. If the user is a part of an Enterprise account, you need to [contact the TINFOIL SECURITY support team](https://www.tinfoilsecurity.com/contact) to get the user account created.
+1. If the user is a part of an Enterprise account, you need to contact the TINFOIL SECURITY support team to get the user account created.
 
 1. If the user is a regular TINFOIL SECURITY SaaS user, then the user can add a collaborator to any of the user’s sites. This triggers a process to send an invitation to the specified email to create a new TINFOIL SECURITY user account.
 

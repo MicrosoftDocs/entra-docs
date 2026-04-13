@@ -5,7 +5,6 @@ metadata:
   description: Instructions about how to assign and update user roles with Microsoft Entra ID.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: femila
   ms.reviewer: jeffsta
   ms.date: 03/17/2025
   ms.service: entra
@@ -103,7 +102,7 @@ procedureSection:
 
 relatedContent:
   - text: Add or delete users
-    url: ./add-users.md
+    url: ./how-to-create-delete-users.yml
   - text: Add or change profile information
     url: ./how-to-manage-user-profile-info.md
   - text: Add guest users from another directory

@@ -3,8 +3,6 @@ title: Tutorial to configure Conditional Access policies in Cloudflare Access
 description: Configure Conditional Access to enforce application and user policies in Cloudflare Access.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 04/18/2024
 ms.author: gasinh

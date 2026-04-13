@@ -1,19 +1,16 @@
 ---
 title: LinkedIn data sharing and consent
 description: Explains how LinkedIn integration shares data via Microsoft apps in Microsoft Entra ID
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.author: barclayn
 ms.reviewer: beengen
 ms.custom: it-pro
 ---
 
 # LinkedIn account connections data sharing and consent
+
+
+## Overview
 
 You can enable users in your organization in Microsoft Entra ID, part of Microsoft Entra, to consent to connect their Microsoft work or school account with their LinkedIn account. After a user connects their accounts, information and highlights from LinkedIn are available in some Microsoft apps and services. Users can also expect their networking experience on LinkedIn to be improved and enriched with information from Microsoft.
 
@@ -34,9 +31,9 @@ The image shows an example of how LinkedIn information appears on the profile ca
 You must be a Microsoft Entra Admin to manage the setting for your organization. You can enable it for all users, or for a specific set of users.
 
 1. To enable or disable the integration, follow the steps in [Consent to LinkedIn integration for your Microsoft Entra organization](linkedin-integration.md).
-2. When you announce the LinkedIn integration in your organization, point your users to the FAQ about [LinkedIn information in Microsoft apps and services](https://support.office.com/article/about-linkedin-information-and-features-in-microsoft-apps-and-services-dc81cc70-4d64-4755-9f1c-b9536e34d381). The article provides information about where LinkedIn information shows up, [data sharing and privacy](https://support.microsoft.com/office/your-data-ae9c08a7-4d06-45b5-a065-320a97bc1400), [how to connect accounts](https://support.microsoft.com/office/connect-your-linkedin-and-work-or-school-accounts-c7c245f2-fa56-4c9b-ba20-3fceb23c5772) and more.
+1. When you announce the LinkedIn integration in your organization, point your users to the FAQ about [LinkedIn information in Microsoft apps and services](https://support.office.com/article/about-linkedin-information-and-features-in-microsoft-apps-and-services-dc81cc70-4d64-4755-9f1c-b9536e34d381). The article provides information about where LinkedIn information shows up, [data sharing and privacy](https://support.microsoft.com/office/your-data-ae9c08a7-4d06-45b5-a065-320a97bc1400), [how to connect accounts](https://support.microsoft.com/office/connect-your-linkedin-and-work-or-school-accounts-c7c245f2-fa56-4c9b-ba20-3fceb23c5772) and more.
 
-You must announce Linkedin Integration to your users providing them all the information related to [Data sharing and privacy with Linkedin Integration](https://support.microsoft.com/office/your-data-ae9c08a7-4d06-45b5-a065-320a97bc1400). 
+You must announce LinkedIn integration to your users and provide them all the information related to [data sharing and privacy with LinkedIn integration](https://support.microsoft.com/office/your-data-ae9c08a7-4d06-45b5-a065-320a97bc1400). 
 
 ## User consent for data access in Microsoft and LinkedIn
 

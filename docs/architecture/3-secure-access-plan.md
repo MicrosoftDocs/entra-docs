@@ -2,13 +2,11 @@
 title: Create a security plan for external access to resources
 description: Plan the security for external access to your organization's resources.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/23/2023
 ms.author: gasinh
 
+ms.subservice: architecture
 ---
 
 # Create a security plan for external access to resources

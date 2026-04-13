@@ -1,12 +1,10 @@
 ---
 title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
-ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 08/12/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.

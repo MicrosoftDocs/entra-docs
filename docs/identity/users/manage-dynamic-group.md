@@ -1,17 +1,15 @@
 ---
-title: Understand and Manage Dynamic Group Processing in Microsoft Entra ID
+title: Understand and manage dynamic group processing in Microsoft Entra ID
 description: Learn how dynamic group management works. 
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: concept-article
 ms.date: 04/08/2025
-ms.author: barclayn
 ms.reviewer: mbhargava
 ---
 
 # Understand and manage dynamic group processing in Microsoft Entra ID
+
+
+## Overview
 
 Dynamic membership groups in Microsoft Entra ID are a powerful feature that enables administrators to automate the management of group memberships. Changes to memberships are typically processed within a few hours.
 
@@ -31,7 +29,7 @@ The three biggest factors that influence processing and can cause membership upd
 
 - **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.  
 
-## Best practices for managing dynamic membership groups in your tenant
+## Best practices for dynamic membership groups in your tenant
 
 To help ensure efficient processing and minimize delays, consider the following best practices.
 
@@ -48,7 +46,7 @@ You can pause nonessential groups to improve processing performance. You might c
 
 To temporarily halt processing, use the **Pause All Groups** script. Allow the service to recover before resuming.
 
-Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours to allow group processing to catch up. Then, check your audit logs to see if they're back to baseline. If necessary, unpause groups in phases rather than all at once.
+Don't unpause the groups immediately. Wait a minimum of 24 hours to allow group processing to catch up. Then, check your audit logs to see if they're back to baseline. If necessary, unpause groups in phases rather than all at once.
 
 ### Optimize rule efficiency
 

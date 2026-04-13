@@ -2,14 +2,8 @@
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: phsignor, jawoods
 ms.custom: no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all

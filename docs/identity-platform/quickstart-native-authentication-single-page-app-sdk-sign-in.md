@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 09/05/2025
+ms.date: 11/17/2025
 #Customer intent: As a developer, I want to configure a sample single-page application using native authentication react SDK so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
@@ -164,6 +164,10 @@ You've now configured the sample app and it's ready to run.
 1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** buttorespectively.
 
 ---
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Related content
 

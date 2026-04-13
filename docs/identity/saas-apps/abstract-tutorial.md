@@ -2,16 +2,9 @@
 title: Configure Abstract for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Abstract.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Abstract so that I can control who has access to Abstract, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -104,7 +97,7 @@ You're now ready to configure SSO on Abstract:
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract.
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
 3. In the **Configure SSO** section, enter your **Metadata URL** and **Entity ID**.
 4. Enter any manual exceptions you might have. Emails listed in the manual exceptions section bypass SSO and be able to log in with email and password. 
@@ -117,9 +110,9 @@ You're now ready to configure SSO on Abstract:
 
 To test SSO on Abstract:
 
-1. Open the [Abstract web app](https://app.abstract.com/).
+1. Open the Abstract web app.
 2. Go to the **Permissions** page in the left side bar.
-3. Select **Test with my Account**. If the test fails, please [contact our support team](https://help.abstract.com/hc/).
+3. Select **Test with my Account**. If the test fails, please contact the Abstract support team.
 
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract. This organization Admin account needs to be assigned to Abstract.

@@ -2,11 +2,8 @@
 title: Securing workload identities with Microsoft Entra ID Protection
 description: Workload identity risk in Microsoft Entra ID Protection
 ms.service: entra-workload-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/06/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pwongera
 ms.reviewer: etbasser
 ms.custom: sfi-image-nochange
 ---
@@ -50,7 +47,7 @@ We detect risk on workload identities across sign-in behavior and offline indica
 
 | Detection name | Detection type | Description | riskEventType |
 | --- | --- | --- | --- |
-| Microsoft Entra threat intelligence | Offline | This risk detection indicates some activity that is consistent with known attack patterns based on Microsoft's internal and external threat intelligence sources. | investigationsThreatIntelligence |
+| Microsoft Entra threat intelligence | Offline | This risk detection indicates some activity that is consistent with known attack patterns based on Microsoft's internal and external threat intelligence research. | investigationsThreatIntelligence |
 | Suspicious Sign-ins | Offline | This risk detection indicates sign-in properties or patterns that are unusual for this service principal. The detection learns the baselines sign-in behavior for workload identities in your tenant. This detection takes between 2 and 60 days, and fires if one or more of the following unfamiliar properties appear during a later sign-in: IP address / ASN, target resource, user agent, hosting/non-hosting IP change, IP country, credential type. Because of the programmatic nature of workload identity sign-ins, we provide a timestamp for the suspicious activity instead of flagging a specific sign-in event. Sign-ins that are initiated after an authorized configuration change might trigger this detection. | suspiciousSignins |
 | Admin confirmed service principal compromised | Offline | This detection indicates an admin selected 'Confirm compromised' in the Risky Workload Identities UI or using riskyServicePrincipals API. To see which admin confirmed this account compromised, check the account’s risk history (via UI or API). | adminConfirmedServicePrincipalCompromised |
 | Leaked Credentials | Offline | This risk detection indicates that the account's valid credentials leaked. This leak can occur when someone checks in the credentials in public code artifact on GitHub, or when the credentials are leaked through a data breach. When the Microsoft leaked credentials service acquires credentials from GitHub, the dark web, paste sites, or other sources, they're checked against current valid credentials in Microsoft Entra ID to find valid matches. | leakedCredentials |

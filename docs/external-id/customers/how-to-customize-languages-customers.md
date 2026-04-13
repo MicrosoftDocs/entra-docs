@@ -1,12 +1,6 @@
 ---
 title: Customize the browser language
 description: Learn about how to customize the browser language for your app's authentication experience to provide a personalized sign-in.
-author: csmulligan
-ms.author: cmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
 ms.date: 09/16/2025
 ms.custom: it-pro

@@ -106,6 +106,11 @@ export const routes: Routes = [
 
 1. To sign in into an existing account, input your details, select the Sign In button, then follow the prompts.
 
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
+
 ## Next step
 
 > [!div class="nextstepaction"]

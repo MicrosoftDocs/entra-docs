@@ -1,14 +1,9 @@
 ---
 title: Configure Mitel Connect for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mitel Connect.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mitel Connect so that I can control who has access to Mitel Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -135,7 +130,7 @@ To configure MiCloud Connect with SSO for Microsoft Entra ID, it's easiest to op
 
 In this section, you create a user named Britta Simon on your MiCloud Connect account. Users must be created and activated before using single sign-on.
 
-For details about adding users in the Mitel Account portal, see the [Adding a User](https://shoretelcommunity.force.com/s/article/Adding-Users-092815) article in the Mitel Knowledge Base.
+For details about adding users in the Mitel Account portal, see the Adding a User article in the Mitel Knowledge Base.
 
 Create a user on your MiCloud Connect account with the following details:
 

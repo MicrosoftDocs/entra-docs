@@ -1,18 +1,16 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella
-description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
-ms.topic: conceptual
-ms.date: 10/06/2025
-ms.service: global-secure-access
+description: "Deploy Global Secure Access alongside Cisco Umbrella with DNS security. Includes step-by-step configuration for both platforms to support private access, Microsoft 365 traffic, and internet access."
+ms.topic: how-to
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco Umbrella DNS protection
+
+## Overview
 
 Learn how to deploy Global Secure Access and Cisco Umbrella, with DNS security only, in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
 The configurations outlined apply to both Cisco Umbrella and Cisco Secure Access. Detailed instructions for configuring each portal are provided.

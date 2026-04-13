@@ -2,15 +2,10 @@
 title: Microsoft Entra Connect Health and user privacy
 description: Learn about user privacy and data collection with Microsoft Entra Connect Health.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 04/09/2025
-ms.author: jomondi
-
 ---
 
 # User privacy and Microsoft Entra Connect Health

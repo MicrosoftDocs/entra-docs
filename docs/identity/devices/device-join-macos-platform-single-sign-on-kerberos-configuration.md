@@ -1,8 +1,6 @@
 ---
 title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO
 description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2024
 ms.author: cwerner
@@ -17,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). Platform SSO enables users to Entra join their macOS devices and sign in using a hardware-bound key, smart card, or their Microsoft Entra ID password through a PSSO Primary Refresh Token (PRT). 
 
-In addition to the PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO. Customers have the flexibility to determine how these TGTs are utilized in their environment and can configure either the Kerberos SSO extension file accordingly. The Kerberos SSO extension, owned and maintained by Apple, is designed to provide seamless single sign-on for Kerberos-based resources on macOS. For any help needed with Kerberos sso extension configuration, please engage with Apple.
+In addition to the PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO. Customers have the flexibility to determine how these TGTs are utilized in their environment and can configure either the Kerberos SSO extension file accordingly. The Kerberos SSO extension, owned and maintained by Apple, is designed to provide seamless single sign-on for Kerberos-based resources on macOS. For any help needed with Kerberos SSO extension configuration, please engage with Apple.
 
 This tutorial illustrates how to leverage Platform SSO TGT to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
 
@@ -227,7 +225,7 @@ Save the configuration using a text editor with the *mobileconfig* file extensio
 
 ## Intune configuration steps
 
-If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#Kerberos SSO MDM profile configuration for on-premises Active Directory) about replacing **contoso.com** values with the proper values for your organization.
+If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [Previous instructions](#kerberos-sso-mdm-profile-configuration-for-microsoft-entra-id-cloud-kerberos) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Devices** > **Configuration** > **Create** > **New policy**.
@@ -309,6 +307,6 @@ Some browsers require additional configuration to enable Kerberos SSO support, i
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

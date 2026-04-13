@@ -1,8 +1,6 @@
 ---
 title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
 ms.author: cwerner
@@ -134,6 +132,6 @@ Once you've completed the steps above, it's a good idea to check your device reg
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

@@ -2,11 +2,8 @@
 title: Learn about groups, group membership, and access
 description: Learn about Microsoft Entra groups, including how they work, what they can access, and how membership and access is assigned.
 author: shlipsey3
-manager: femila
 
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/12/2025
 ms.author: sarahlipsey
 ms.reviewer: krbain

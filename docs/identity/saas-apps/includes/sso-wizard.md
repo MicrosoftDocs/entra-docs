@@ -2,8 +2,6 @@
 author: omondiatieno
 ms.author: jomondi
 ms.date: 05/12/2025
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: include
 # Purpose:
 # This is used to include the content for app intergration wizard in SaaS apps articles

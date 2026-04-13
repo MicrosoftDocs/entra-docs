@@ -3,13 +3,11 @@ title: Microsoft Entra Suite deployment scenario - Workforce and guest lifecycle
 description: Configure Microsoft Entra Suite products for hiring new remote employees and providing them with secure and seamless access to apps and resources.
 ms.author: gasinh
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
+ms.subservice: architecture
 ---
 # Microsoft Entra Suite deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
 
@@ -82,7 +80,7 @@ Follow these prerequisite steps to add a trusted external organization (B2B) for
 Follow these steps to create an Entitlement management catalog for the scenario.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::

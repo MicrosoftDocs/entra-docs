@@ -1,14 +1,9 @@
 ---
 title: Passwordless sign-in with Authenticator
 description: Learn how to enable passwordless sign-in to Microsoft Entra ID by using Microsoft Authenticator.
-ms.service: entra-id
-ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: jogro
 ---
 
@@ -170,6 +165,6 @@ If a user attempts to upgrade multiple installations (5+) of Authenticator with 
 
 To learn about Microsoft Entra authentication and passwordless methods, see the following articles:
 
-- [Learn how passwordless authentication works](concept-authentication-passwordless.md)
+- [Learn how passwordless authentication works](concept-authentication-passkeys-fido2.md)
 - [Learn about device registration](~/identity/devices/overview.md)
 - [Learn about Microsoft Entra multifactor authentication](~/identity/authentication/howto-mfa-getstarted.md)

@@ -1,15 +1,8 @@
 ---
 title: Use PowerShell to grant a managed identity access to a resource
 description: Step-by-step instructions on using PowerShell to assign a managed identity access to an Azure resource or another resource.
-
-author: SHERMANOUKO
-manager: CelesteDG
-
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 06/03/2024
-ms.author: shermanouko
 ---
 
 # Use PowerShell to grant a managed identity access to a resource

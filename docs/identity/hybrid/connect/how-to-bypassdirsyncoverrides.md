@@ -1,11 +1,8 @@
 ---
 title: How to use the BypassDirSyncOverridesEnabled feature of a Microsoft Entra tenant
 description: Describes how to use BypassDirSyncOverridesEnabled tenant feature to restore synchronization of Mobile and OtherMobile attributes from on-premises Active Directory.
-author: omondiatieno
 ms.date: 04/09/2025
-ms.author: jomondi
 ms.topic: how-to
-ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ms.subservice: hybrid-connect
 ---
@@ -58,6 +55,7 @@ By default, *BypassDirSyncOverridesEnabled* feature is turned off. Enabling *Byp
 To enable BypassDirSyncOverridesEnabled feature, use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 
 ```powershell
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
 $directorySynchronization = Get-MgDirectoryOnPremiseSynchronization
 $directorySynchronization.Features.BypassDirSyncOverridesEnabled = $true
 Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $directorySynchronization.Features

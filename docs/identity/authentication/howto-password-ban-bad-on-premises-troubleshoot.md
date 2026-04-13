@@ -1,15 +1,8 @@
 ---
 title: Troubleshoot on-premises Microsoft Entra Password Protection
 description: Learn how to troubleshoot Microsoft Entra Password Protection for an on-premises Active Directory Domain Services environment
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: jsimmons
 ---
 # Troubleshoot: On-premises Microsoft Entra Password Protection

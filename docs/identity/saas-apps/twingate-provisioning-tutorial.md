@@ -3,10 +3,8 @@ title: Configure Twingate for automatic user provisioning with Microsoft Entra I
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Twingate.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/25/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Twingate so that I can streamline the user management process and ensure that users have the appropriate access to Twingate.
@@ -53,7 +51,6 @@ The scenario outlined in this article assumes that you already have the followin
 
       ![Screenshot of SCIM info modal.](media/twingate-provisioning-tutorial/tenant.png)
 
-
 <a name='step-3-add-twingate-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Twingate from the Microsoft Entra application gallery
@@ -81,27 +78,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of The Twingate link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Twingate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Twingate. If the connection fails, ensure your Twingate account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Twingate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Twingate. If the connection fails, ensure your Twingate account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Twingate**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Twingate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Twingate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Twingate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Twingate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Twingate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Twingate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -112,9 +111,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.givenName|String|
    |name.familyName|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Twingate**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Twingate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Twingate for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Twingate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Twingate for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported For Filtering|
       |---|---|---|
@@ -122,22 +121,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Twingate, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Twingate by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
-
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Change Assignment required setting
 The default setting is **No** which allows users to log into Twingate without being assigned in the enterprise application.

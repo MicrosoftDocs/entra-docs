@@ -1,14 +1,8 @@
 ---
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
-
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.custom: no-azure-ad-ps-ref
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/03/2025
 ---
 

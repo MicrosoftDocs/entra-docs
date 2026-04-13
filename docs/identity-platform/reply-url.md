@@ -207,6 +207,7 @@ In this approach:
 
 1. Create a "shared" redirect URI per application to process the security tokens you receive from the authorization endpoint.
 1. Your application can send application-specific parameters (such as subdomain URL where the user originated or anything like branding information) in the state parameter. When using a state parameter, guard against CSRF protection as specified in [section 10.12 of RFC 6749](https://tools.ietf.org/html/rfc6749#section-10.12).
+    For security and privacy, do not put URLs or other sensitive data directly in the state parameter. Instead, use a key or identifier that corresponds to data stored in browser storage, such as localStorage or sessionStorage. This approach lets your app securely reference the necessary data after authentication.
 1. The application-specific parameters include all the information needed for the application to render the correct experience for the user, that is, construct the appropriate application state. The Microsoft Entra authorization endpoint strips HTML from the state parameter so make sure you aren't passing HTML content in this parameter.
 1. When Microsoft Entra ID sends a response to the "shared" redirect URI, it sends the state parameter back to the application.
 1. The application can then use the value in the state parameter to determine which URL to further send the user to. Make sure you validate for CSRF protection.

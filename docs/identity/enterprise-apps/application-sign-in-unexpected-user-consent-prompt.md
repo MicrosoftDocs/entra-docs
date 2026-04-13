@@ -2,14 +2,8 @@
 title: Unexpected consent prompt when signing in to an application
 description: How to troubleshoot when a user sees a consent prompt for an application you've integrated with Microsoft Entra ID that you didn't expect
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: troubleshooting
 ms.date: 09/07/2022
-ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps

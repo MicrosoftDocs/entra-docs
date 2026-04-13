@@ -1,9 +1,6 @@
 ---
 title: Microsoft Security Copilot scenarios in Microsoft Entra Internet and Private Access
 description: Learn how to use Microsoft Security Copilot with Microsoft Entra Internet Access and Private Access
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

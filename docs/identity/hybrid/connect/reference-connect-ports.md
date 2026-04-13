@@ -2,17 +2,11 @@
 title: 'Hybrid Identity required ports and protocols - Azure'
 description: This page is a technical reference page for ports that are required to be open for Microsoft Entra Connect
 
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: de97b225-ae06-4afc-b2ef-a72a3643255b
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Hybrid Identity Required Ports and Protocols
 The following document is a technical reference on the required ports and protocols for implementing a hybrid identity solution. Use the following illustration and refer to the corresponding table.

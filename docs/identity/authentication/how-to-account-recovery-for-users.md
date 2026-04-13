@@ -1,13 +1,8 @@
 ---
 title: How End Users Can Set Up Account Recovery for Microsoft Entra ID
 description: How end users can set up account recovery for Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/07/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how end users can set up account recovery for Microsoft Entra ID.
@@ -16,6 +11,10 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # How end users can perform account recovery in Microsoft Entra ID
 
 Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organization's configured provider.
+
+## Video: Recover your work or school account in Microsoft Entra ID
+
+> [!VIDEO https://www.youtube.com/embed/5ivST2bw7uQ]
 
 ## User steps
 

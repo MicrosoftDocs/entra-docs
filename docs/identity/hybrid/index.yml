@@ -37,7 +37,7 @@ landingContent:
           - text: Common scenarios
             url: common-scenarios.md
           - text: Choose the right sync client
-            url: https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad
+            url: common-scenarios.md
           - text: Steps to start
             url: get-started.md
    # Card

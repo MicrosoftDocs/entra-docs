@@ -1,15 +1,9 @@
 ---
 title: Microsoft Entra certificate-based authentication on Android devices
 description: Learn about Microsoft Entra certificate-based authentication on Android devices
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---

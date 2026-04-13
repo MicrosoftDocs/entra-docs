@@ -74,7 +74,7 @@ For Microsoft Authenticator app (iOS/Android) FIPS 140 compliance information, S
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 
-FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passwordless.md). Consult with your provider for current FIPS validation status.
+FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passkeys-fido2.md). Consult with your provider for current FIPS validation status.
 
 Platform SSO for macOS is FIPS 140 compliant. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
 

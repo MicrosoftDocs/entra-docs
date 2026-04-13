@@ -1,14 +1,10 @@
 ---
 title: Email one-time passcode authentication
 description: Learn how to enable and use email one-time passcode authentication for B2B guest users in Microsoft Entra External ID. This feature provides a seamless fallback authentication method for sign-in.
-
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 11/17/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
+ms.date: 03/27/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
@@ -39,7 +35,7 @@ Email one-time passcode guest users can also use application endpoints that incl
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://portal.azure.com/<your tenant ID>`
 
-You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
+You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID>?tenantId=<your tenant ID>`.
 
 > [!NOTE]
 > Email one-time passcode guest users can sign in to Microsoft Teams directly from the common endpoint without choosing **Sign-in options**. During the sign-in process to Microsoft Teams, the guest user can select a link to send a one-time passcode.
@@ -50,11 +46,11 @@ When the email one-time passcode feature is enabled, newly invited users [who me
 
 With one-time passcode authentication, the guest user can redeem your invitation by clicking a direct link or by using the invitation email. In either case, a message in the browser indicates that a code will be sent to the guest user's email address. The guest user selects **Send code**:
 
-   ![Screenshot showing the Send code button.](media/one-time-passcode/otp-send-code.png)
+   :::image type="content" source="media/one-time-passcode/otp-send-code.png" alt-text="Screenshot showing the Send code button.":::
 
 A passcode is sent to the user’s email address. The user retrieves the passcode from the email and enters it in the browser window:
 
-   ![Screenshot showing the Enter code page.](media/one-time-passcode/otp-enter-code.png)
+   :::image type="content" source="media/one-time-passcode/otp-enter-code.png" alt-text="Screenshot showing the Enter code page.":::
 
 The guest user is now authenticated, and they can see the shared resource or continue signing in.
 
@@ -101,10 +97,10 @@ The email one-time passcode feature is now turned on by default for all new tena
 1. Under **Email one-time passcode for guests**, select one of the following:
    - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned off. To enable the feature, make sure **Yes** is selected.
    - **No**: If you want to disable the email one-time passcode feature, select **No**.
- 
-:::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshots showing the Email one-time passcode toggle.":::
 
-6. Select **Save**.
+   :::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshot showing the Email one-time passcode toggle.":::
+
+1. Select **Save**.
 
 ## Frequently asked questions
 

@@ -2,7 +2,6 @@
 title: Microsoft Entra External ID deployment guide for authentication and access control architecture
 description: Learn about authentication protocol endpoints, extension design, event handler details, and more in Microsoft Entra External ID.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/22/2025

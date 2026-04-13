@@ -2,14 +2,9 @@
 title: 'On-demand provisioning in Microsoft Entra Cloud Sync'
 description: This article describes how to use the cloud sync feature of Microsoft Entra Connect to test configuration changes.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # On-demand provisioning - Active Directory to Microsoft Entra ID

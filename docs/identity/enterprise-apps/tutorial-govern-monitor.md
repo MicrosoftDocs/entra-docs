@@ -1,11 +1,6 @@
 ---
 title: "Tutorial: Govern and monitor applications"
 description: Learn how to govern and monitor an application in Microsoft Entra ID, including access reviews and integrating logs with Azure Monitor.
-author: omondiatieno
-manager: mwongerapk
-ms.author: jomondi
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 12/04/2024
 ms.reviewer: saibandaru

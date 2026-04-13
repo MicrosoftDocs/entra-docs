@@ -1,14 +1,10 @@
 ---
 title: Manage external access with Microsoft Entra entitlement management
 description: How to use Microsoft Entra Entitlement Management as a part of your overall external access security plan.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 04/29/2025
-ms.author: jricketts
 ms.reviewer: jercon
+ms.subservice: architecture
 ---
 
 # Manage external access with Microsoft Entra entitlement management

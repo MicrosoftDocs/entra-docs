@@ -9,6 +9,8 @@
     href: multi-tenant-organization-overview.md
   - name: What is cross-tenant synchronization?
     href: cross-tenant-synchronization-overview.md
+  - name: What's new in docs
+    href: whats-new.md
 - name: Concepts
   expanded: true
   items:

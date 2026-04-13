@@ -4,8 +4,6 @@ description: Integrating Rippling Human Capital Management (HCM) with Microsoft 
 author: jenniferf-skc
 manager: pmwongera
 ms.reviewer: cmmdesai
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 06/18/2025
 ms.author: jfields

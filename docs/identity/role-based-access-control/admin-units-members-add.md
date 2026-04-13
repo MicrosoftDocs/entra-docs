@@ -1,13 +1,8 @@
 ---
 title: Add users, groups, or devices to an administrative unit
 description: Add users, groups, or devices to an administrative unit in Microsoft Entra ID
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: role-based-access-control
-ms.date: 01/03/2025
-ms.author: barclayn
+ms.date: 03/04/2026
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---
@@ -234,10 +229,12 @@ Body
 
 ### Create a new group in an administrative unit
 
+To create a new group directly in an administrative unit, use the following request. To add an existing group instead, see **Add groups to an administrative unit** earlier in this article.
+
 Request
 
 ```http
-POST https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}/members/
+POST https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}/members
 ```
 
 Body

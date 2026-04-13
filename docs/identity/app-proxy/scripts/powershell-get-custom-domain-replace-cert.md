@@ -1,18 +1,17 @@
 ---
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 05/01/2025
-ms.author: kenwith
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Get all Microsoft Entra application proxy applications published with the identical certificate and replace it
+
+
+## Overview
 
 The PowerShell script example replaces the certificates in bulk for all Microsoft Entra application proxy applications published with identical certificate.
 
@@ -112,7 +111,7 @@ foreach ($item in $allApps) {
          onPremisesPublishing = @{
             verifiedCustomDomainKeyCredential = @{
                 type="X509CertAndPassword";
-                value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
+                value = [convert]::ToBase64String([System.IO.File]::ReadAllBytes($certPfxFilePath));
             };
             verifiedCustomDomainPasswordCredential = @{
                 value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)) };
