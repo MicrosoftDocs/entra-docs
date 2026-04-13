@@ -236,7 +236,7 @@ After making updates to Microsoft Entra users, users in the application, or the 
 
 * If your application is using an LDAP directory, then follow the [LDAP directory provisioning tutorial](~/identity/app-provisioning/on-premises-ldap-connector-configure.md#collect-existing-users-from-the-ldap-directory) starting at the step to collect existing users from the LDAP directory.
 
-* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md#collect-existing-users-from-an-application) starting at the step to collect existing users from the application.
+* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md).
 
 ## Assign users to application roles and enable provisioning
 
