@@ -148,16 +148,18 @@ If the application does not support provisioning, then
 - On the next review of that application's role assignments, the user will be included in the review.
 - If the user is denied in an access review, their application role assignment will be removed. The user will no longer be able to sign in from Microsoft Entra ID to the application.
 
-1. Download the CrorrelatedUsers.ps1 file 
+1. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the CorrelatedUsers.ps1 file. 
 
 1. Create application role assignments for users who don't currently have role assignments (dry run):
 
    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." -DryRun
    ```
 
 1. Create application role assignments for users who don't currently have role assignments:
 
    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..."
    ```
 
 1. Wait one minute for changes to propagate within Microsoft Entra ID.
@@ -228,9 +230,6 @@ In this section, you'll configure Microsoft Entra entitlement management for a r
 1. If you have configured access reviews in the access package assignment policies, then when the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they will review the access package assignments. Once the review completes, you should expect to see denied users, if any, having their application role assignments being removed in a few minutes. Subsequently, Microsoft Entra ID will begin deprovisioning denied users from the application. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to start deprovisioning the denied users. Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all denied users were removed successfully.
 1. If you have [separation of duties](entitlement-management-access-package-incompatible.md) requirements, then configure the incompatible access packages or existing groups for your access package. If your scenario requires the ability to override a separation of duties check, then you can also [set up additional access packages for those override scenarios](entitlement-management-access-package-incompatible.md#configuring-multiple-access-packages-for-override-scenarios).
 1. If you wish to allow users who don't already have access to request access, then in each access package, [create additional access package assignment policies](~/id-governance/entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings) for users to request access. Configure the approval and recurring access review requirements in that policy.
-
-
-## Automate assignments ... 
 
 ## Next steps
 
