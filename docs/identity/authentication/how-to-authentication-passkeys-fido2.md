@@ -20,7 +20,7 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports
+> Microsoft Entra ID currently supports:
 > - synced passkeys
 > - device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator <br>
 >
