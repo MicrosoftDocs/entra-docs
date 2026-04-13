@@ -150,20 +150,12 @@ Some capabilities available in External ID aren't available in HSC mode today. I
 
 - Age gating. Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
 
-**Admin portal UI support**
+**Administration, directory queries, and provisioning**
 
-Full Microsoft Entra admin center UI support isn't yet available for External ID scenarios in HSC mode tenants. Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
-
-#### Known gaps between External ID standard mode and HSC mode
-
-Some features supported in External ID standard deployments aren't yet available in HSC mode. Review the following list before deciding on HSC mode.
-
-- Social identity provider federation (Google, Facebook, Apple) is available in External ID standard mode but not in HSC mode.
-- Phone-based MFA (SMS and voice call) is available in External ID standard mode but not in HSC mode.
-- Full Microsoft Entra admin center UI support is available in External ID standard mode but not in HSC mode.
-- Advanced directory queries (filtering, sorting, count, search, transitive membership) are available in External ID standard mode but not in HSC mode.
-- Change-based (delta) queries are available in External ID standard mode but not in HSC mode.
-- SCIM outbound user provisioning is available in External ID standard mode but not in HSC mode.
+- Full Microsoft Entra admin center UI support. Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
+- Advanced directory queries (filtering, sorting, count, search, transitive membership)
+- Change-based (delta) queries
+- SCIM outbound user provisioning
 
 For a comprehensive comparison, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
 

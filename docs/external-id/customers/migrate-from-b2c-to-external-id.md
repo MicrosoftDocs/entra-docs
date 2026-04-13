@@ -86,7 +86,7 @@ Use the following decision tree to determine the remaining password-preservation
 
 #### Just-in-Time (JIT) password migration (External ID-initiated)
 
-In JIT password migration, applications have already moved to External ID endpoints. When a user signs in, External ID uses the `OnPasswordSubmit` custom authentication extension to validate the user's credentials against the legacy IdP, writes the password to the External ID account, and flags the account as migrated. For step-by-step implementation instructions, see [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md).
+In JIT password migration, applications have already moved to External ID endpoints. When a user signs in, External ID uses the `OnPasswordSubmit` custom authentication extension to validate the user's credentials against the legacy IdP, writes the password to the External ID account, and flags the account as migrated.
 
 This diagram provides a deeper view of the standard migration path, combining bulk migration, JIT password migration, and application cutover.
 
@@ -98,41 +98,13 @@ This diagram provides a deeper view of the standard migration path, combining bu
 :::image type="content" source="media/migrate-from-b2c-to-external-id/external-id-jit-migration-workflow-diagram.png" alt-text="Diagram of a three-stage user migration workflow showing legacy IdP, bulk migration, password sync, and cutover to external ID." lightbox="media/migrate-from-b2c-to-external-id/external-id-jit-migration-workflow-diagram.png":::
 **Considerations when using JIT password migration**
 
-Just-in-time (JIT) password migration introduces a coexistence period between Azure AD B2C and Microsoft Entra External ID. Customers should plan for the following considerations:
+JIT introduces a coexistence period where both Azure AD B2C and External ID must be monitored and supported. Keep the following in mind:
 
-**Bulk user migration is required upfront**  
-Even when using JIT, user accounts must exist in External ID before sign-in:
-- Establishes immutable user identifiers.
-- Enables consistent attribute mapping.
-- Prevents authentication failures during application cutover.
+- **Bulk user migration is still required.** User accounts must exist in External ID before JIT sign-in can work. Complete bulk migration early.
+- **Identity state sync grows harder over time.** Profile updates, password changes, and new sign-ups must stay aligned across both systems. Periodic reconciliation is typically required.
+- **Users who never sign in won't migrate.** Plan forced password resets or a final bulk migration for remaining users, and set clear cutover timelines.
 
-This step is often underestimated and should be completed early.
-
-**Identity state synchronization complexity increases over time**  
-Long-running coexistence requires a clear strategy to keep identity state consistent:
-- Profile updates, password changes, and new sign-ups must remain aligned.
-- One-way or event-driven approaches help reduce conflicts.
-- Periodic reconciliation is typically required.
-
-Operational overhead grows the longer JIT runs.
-
-**Higher operational and support impact**  
-During extended coexistence:
-- Two identity systems must be monitored and supported.
-- Migration issues surface during real user sign-ins.
-- Support teams need visibility into each user's migration state.
-
-This increases support cost compared to shorter migration windows.
-
-**Incomplete migration risk**  
-Users who never sign in during the coexistence period won’t migrate automatically. Plan for:
-- Forced password reset scenarios.
-- Final bulk migration for remaining users.
-- Clear cutover criteria and timelines.
-
-JIT works best **when coexistence is time-boxed, not open-ended**. Bulk user migration is always a prerequisite, and identity state synchronization becomes the dominant risk as JIT runs longer.
-
-For step-by-step implementation instructions, see [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md).
+JIT works best when coexistence is time-boxed, not open-ended.
 
 #### Azure AD B2C-initiated migration
 
