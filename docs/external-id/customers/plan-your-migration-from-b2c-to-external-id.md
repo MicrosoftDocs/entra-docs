@@ -138,7 +138,7 @@ Some capabilities available in External ID aren't available in HSC mode today. I
 **Federation and ecosystem integrations**
 
 - Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
-- Custom OIDC federation
+- Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported)
 
 **Admin portal UI support**
 
