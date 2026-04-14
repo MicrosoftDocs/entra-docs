@@ -448,7 +448,7 @@ Based on the method chosen, a set of inputs and outputs is expected. Define the 
 
 ### Exceptions and restrictions
 
-**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited.
+**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited. Custom claim provider attributes cannot be used as NameID source in Microsoft Entra ID SAML SSO. 
 
 | Source | ID | Description |
 |--------|----|-------------|
