@@ -119,4 +119,11 @@ Microsoft Entra ID uses operational controls such as multifactor authentication 
 
 ## Next steps
 
+To learn more about deploying and building resilience with Microsoft Entra, see:
+
+- [Microsoft Entra deployment plans](deployment-plans.md) — step-by-step deployment guidance for authentication, apps, devices, and hybrid scenarios
+- [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation, with resilience guidance
+- [Building resilience into identity and access management](resilience-overview.md) — resilience patterns for IAM infrastructure and applications
+- [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures and design guidance
+
 To learn more about developing with Microsoft Entra, see the [Microsoft Entra developer's guide](~/identity-platform/index.yml).

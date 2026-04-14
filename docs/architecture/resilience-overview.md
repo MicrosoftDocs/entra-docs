@@ -37,3 +37,9 @@ To build more resilience in your systems, review the following articles:
 * [Build resilience in your IAM infrastructure](resilience-in-infrastructure.md)
 * [Build IAM resilience in your applications](resilience-app-development-overview.md)
 * [Build resilience in your Customer Identity and Access Management (CIAM) systems](resilience-b2c.md)
+
+## Related resources
+
+* [Microsoft Entra deployment plans](deployment-plans.md) — deployment guidance including hybrid scenarios, authentication, and governance
+* [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation topologies
+* [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures and design guidance
