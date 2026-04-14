@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 04/14/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to UiPath so that I can streamline the user management process and ensure that users have the appropriate access to UiPath.
@@ -30,7 +30,7 @@ This article describes the steps you need to perform in both UiPath and Microsof
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to UiPath (recommended).
 
 > [!NOTE]
-> UiPath currently supports user provisioning only. Group provisioning is not supported.
+> UiPath currently supports user provisioning only. Group provisioning isn't supported.
 
 ## Prerequisites
 
@@ -54,11 +54,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. In the left-hand menu, select **Admin**, then navigate to **Security Settings** > **Authentication settings**.
 
-1. Ensure the Microsoft Entra ID directory integration is configured and shows **Active** status.
+1. Ensure the Microsoft Entra directory integration is configured and shows **Active** status.
 
     ![Screenshot shows the Microsoft Entra ID integration card with Active status.](./media/uipath-provisioning-tutorial/integration-active.png)
 
-1. Scroll down to the **Directory integration details** section and click **Enable SCIM**.
+1. Scroll down to the **Directory integration details** section and select **Enable SCIM**.
 
     ![Screenshot shows the Directory integration details section with the Enable SCIM button.](./media/uipath-provisioning-tutorial/enable.png)
 
@@ -68,7 +68,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Screenshot shows the Configure SCIM directory integration dialog with authorization method options.](./media/uipath-provisioning-tutorial/configure.png)
 
-1. Click **Configure**. The **SCIM is enabled!** confirmation screen displays the connection details you need to configure in Microsoft Entra ID.
+1. Select  **Configure**. The **SCIM is enabled!** confirmation screen displays the connection details you need to configure in Microsoft Entra ID.
 
     **For Bearer token:**
     * **SCIM URL** : The endpoint URL for the SCIM connector.
@@ -86,9 +86,9 @@ The scenario outlined in this article assumes that you already have the followin
     Copy these values, you need them later in this tutorial.
 
     > [!NOTE]
-    > Leave this browser tab open. Do not click **I have completed identity provider configuration** until you have completed the steps in Step 5.
+    > Leave this browser tab open. Don't select **I have completed identity provider configuration** until you have completed the steps in Step 5.
 
-1. After completing the Entra ID configuration in Step 5, return to UiPath and click **I have completed identity provider configuration**. The Directory integration details section now confirms SCIM provisioning and deprovisioning are active.
+1. After completing the Microsoft Entra ID configuration in Step 5, return to UiPath and select **I have completed identity provider configuration**. The Directory integration details section now confirms SCIM provisioning and deprovisioning are active.
 
     ![Screenshot shows the Directory integration details after SCIM is configured, with Manage SCIM and Remove SCIM buttons.](./media/uipath-provisioning-tutorial/configured.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-UiPath-provisioning-in-azure-ad'></a>
 
-### To configure automatic user provisioning for UiPath in Microsoft Entra ID
+### Configure automatic user provisioning for UiPath in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an app owner or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
@@ -150,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select users.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to UiPath in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in UiPath for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the UiPath API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -167,7 +167,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
@@ -182,4 +182,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Related content
 
+* [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
