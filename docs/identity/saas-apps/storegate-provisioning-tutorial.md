@@ -43,17 +43,17 @@ Before configuring Storegate for automatic user provisioning with Microsoft Entr
 
 1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by selecting the user icon in the upper right corner and select **Account Settings**.
 
-	![Screenshot of Storegate Add SCIM.](media/storegate-provisioning-tutorial/admin.png)
+	![Screenshot of the Storegate Add SCIM integration page.](media/storegate-provisioning-tutorial/admin.png)
 
 1. Within settings navigate to **Team > Settings** and verify that the toggle switch is switched on in the **Single sign-on** section.
 
-	![Screenshot of Storegate settings.](media/storegate-provisioning-tutorial/team.png)
+	![Screenshot of the Storegate team settings page.](media/storegate-provisioning-tutorial/team.png)
 
-	![Screenshot of Storegate toggle button.](media/storegate-provisioning-tutorial/sso.png)
+	![Screenshot of the Storegate SSO toggle button settings.](media/storegate-provisioning-tutorial/sso.png)
 
 1. Copy the **Tenant URL** and **Token**. These values are entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your Storegate application. 
 
-## Step 2: Add Storegate from the gallery
+## Step 3: Add Storegate from the gallery
 
 To configure Storegate for automatic user provisioning with Microsoft Entra ID, you need to add Storegate from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
@@ -65,25 +65,25 @@ To configure Storegate for automatic user provisioning with Microsoft Entra ID, 
 
 1. Select the **Sign-up for Storegate** button which will redirect you to Storegate's login page. 
 
-	![Screenshot of Storegate OIDC Add.](media/storegate-provisioning-tutorial/signup.png)
+	![Screenshot of the Storegate OIDC Add signup page.](media/storegate-provisioning-tutorial/signup.png)
 
 1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by selecting the user icon in the upper right corner and select **Account Settings**.
 
-	![Screenshot of Storegate login.](media/storegate-provisioning-tutorial/admin.png)
+	![Screenshot of the Storegate admin console login page.](media/storegate-provisioning-tutorial/admin.png)
 
 1. Within settings navigate to **Team > Settings** and select toggle switch in the Single sign-on section, this will start the consent-flow. Select **Activate**.
 
-	![Screenshot of Storegate team.](media/storegate-provisioning-tutorial/team.png)
+	![Screenshot of the Storegate team settings page.](media/storegate-provisioning-tutorial/team.png)
 
-	![Screenshot of Storegate sso.](media/storegate-provisioning-tutorial/sso.png)
+	![Screenshot of the Storegate SSO configuration toggle.](media/storegate-provisioning-tutorial/sso.png)
 
 1. As Storegate is an OpenIDConnect app, choose to log in to Storegate using your Microsoft work account.
 
-	![Screenshot of Storegate OIDC login.](media/storegate-provisioning-tutorial/login.png)
+	![Screenshot of the Storegate OIDC login dialog.](media/storegate-provisioning-tutorial/login.png)
 
-1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Storegate account.
+1. After a successful authentication, accept the consent prompt for the consent page. The application is then automatically added to your tenant and you'll be redirected to your Storegate account.
 
-## Step 3: Configure automatic user provisioning to Storegate 
+## Step 4: Configure automatic user provisioning to Storegate 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Storegate based on user and/or group assignments in Microsoft Entra ID.
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
+	![Screenshot of Storegate in the search results list.](common/search-new-app.png)
 
 1. In the applications list, select **Storegate**.
 
@@ -109,9 +109,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-1.  Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Storegate in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Storegate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+    ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

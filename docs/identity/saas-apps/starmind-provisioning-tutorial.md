@@ -54,7 +54,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-Starmind-in-azure-ad'></a>
 
-### Step 4: Configure automatic user provisioning for Starmind in Microsoft Entra ID
+### Configure automatic user provisioning for Starmind in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
@@ -71,7 +71,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your Starmind Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Starmind. If the connection fails, ensure your Starmind account has the required admin permissions and try again.
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-## Step 5: Monitor your deployment
+## Step 4: Monitor your deployment
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
