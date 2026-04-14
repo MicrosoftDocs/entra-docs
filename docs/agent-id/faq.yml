@@ -1,0 +1,122 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently asked questions (FAQ) about Microsoft Entra Agent ID
+  description: Common questions and answers about Microsoft Entra Agent ID and the Microsoft Entra agent identity platform.
+  author: shlipsey3
+  manager: pmwongera
+  ms.service: entra
+  ms.subservice: fundamentals
+  ms.topic: faq
+  ms.date: 04/13/2026
+  ms.author: sarahlipsey
+  ai-usage: ai-assisted
+
+title: Frequently asked questions about Microsoft Entra Agent ID
+summary: |
+  Microsoft Entra Agent ID is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, they need purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities. Microsoft Entra Agent ID addresses these needs by providing a unified platform for managing agent identities at enterprise scale.
+
+sections:
+  - name: Agent identities and blueprints
+    questions:
+      - question: |
+          How do I filter Microsoft Graph API queries to return only agent identities?
+        answer: |
+          Microsoft Graph APIs that support relationships involving agent identities such as `/ownedObjects`, `/deletedItems`, and `/owners`don't support filtering by entity type. Use the existing APIs and filter results on the client side using the `odata.type` property to identify agent identity objects in the response.
+
+      - question: |
+          What happens to an agent's user account when an agent identity or blueprint is deleted?
+        answer: |
+          When an agent identity blueprint or agent identity is deleted, any associated agents' user accounts remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. Delete orphaned agents' user accounts manually using the Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
+
+      - question: |
+          Why do sequential Microsoft Graph API requests sometimes fail when creating agent identity objects?
+        answer: |
+          When creating agent identity objects in quick succession using Microsoft Graph APIs, requests might fail with errors like `400 Bad Request: Object with id {id} not found`. Common sequences that trigger this behavior include:
+
+          - Creating an agent identity blueprint, then immediately creating a blueprint principal.
+          - Creating a blueprint principal, then immediately using the blueprint to create an agent identity.
+          - Creating an agent identity, then immediately creating an agent's user account.
+
+          These failures are more common when using app-only permissions. Use delegated permissions where possible, and add retry logic with exponential backoff to your requests.
+
+      - question: |
+          Are there limits on the number of agent identity blueprints per tenant?
+        answer: |
+          Yes. Non-Microsoft platforms using app-only permissions are limited to 250 active agent identity blueprints per tenant, and each of those blueprints is limited to 250 active agent identities. Delegated-permission requests from admin users don't count toward this limit. Microsoft-owned platforms like Microsoft Agent 365 aren't subject to this limit.
+
+          For more information, see [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md). Contact your Microsoft representative if your scenario requires exceeding these limits.
+
+  - name: Roles, permissions, and groups
+    questions:
+      - question: |
+          Can I use custom roles to manage agent identities?
+        answer: |
+          Custom role definitions don't support actions for managing agent identities. Use the built-in *Agent ID Administrator* and *Agent ID Developer* roles for all agent identity management.
+
+      - question: |
+          Can I add agent identities to administrative units?
+        answer: |
+          Agent identities, agent identity blueprints, and agent identity blueprint principals can't be added to administrative units. Use the `owners` property of agent identities to limit which users can manage specific objects.
+
+      - question: |
+          Why am I getting 403 errors when creating or modifying agent identities, even though I have the correct permissions?
+        answer: |
+          If the client has been granted the delegated permission *Directory.AccessAsUser.All*, that permission overrides other delegated permissions, including *AgentIdentityBlueprint.Create* and *AgentIdentityBlueprintPrincipal.EnableDisable.All*. Remove *Directory.AccessAsUser.All* from the client, request new access tokens, and retry the request.
+
+      - question: |
+          Can I update the photo for an agent's user account?
+        answer: |
+          The *Agent ID Administrator* role doesn't have permission to update photos for an agent's user account. Use the *User Administrator* role for this task.
+
+      - question: |
+          Can I use dynamic groups to manage an agent's user account?
+        answer: |
+          Dynamic group membership rules don't support targeting an agent's user account. Use assigned groups to manage an agent's user account's group memberships.
+
+  - name: Authentication and consent
+    questions:
+      - question: |
+          Can agent identities sign in to web apps using Single Sign-On?
+        answer: |
+          Agent identities can't sign in to Microsoft Entra ID sign-in pages, which means they can't use Single Sign-On (SSO) with OpenID Connect or SAML protocols. Use available web APIs to integrate agents with workplace apps and services.
+
+      - question: |
+          Does the admin consent workflow work for Microsoft EntraAgent ID permission requests?
+        answer: |
+          The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow) doesn't work correctly for permissions requested by agent identities. Users should contact their Microsoft Entra tenant admin to request that permissions be granted directly to the agent identity.
+
+      - question: |
+          What should I do if a user consent is blocked by risk-based step-up?
+        answer: |
+          Risk-based step-up is enforced for agent identity consent flows. If a user's consent is blocked, there's no workaround. The user must resolve the flagged risk before consent can proceed.
+
+  - name: Monitoring and logs
+    questions:
+      - question: |
+          How can I identify agent identity activities in audit logs?
+        answer: |
+          Audit logs don't distinguish agent identities from other Microsoft Entra identity types by default:
+
+          - Operations on agent identities, blueprints, and blueprint principals are logged in the *ApplicationManagement* category.
+          - Operations on agents' user accounts are logged in the *User Management* category.
+          - Operations initiated by agent identities appear as service principals.
+          - Operations initiated by agents' user accounts appear as users.
+
+          To identify Agent ID-related activity, use object IDs from audit logs to query Microsoft Graph and determine the entity type. You can also use the sign-in logs correlation ID to locate the identity of the actor or subject involved in the activity.
+
+      - question: |
+          How do I identify agent identities in Microsoft Graph activity logs?
+        answer: |
+          Microsoft Graph activity logs don't currently separate agent identities from other identity types:
+
+          - Requests from agent identities are logged as applications, with the agent identity included in the *appID* column.
+          - Requests from agents' user accounts are logged as users, with the agent user ID in the *UserID* column.
+
+          Join with Microsoft Entra sign-in logs to determine the entity type.
+
+  - name: Development resources
+    questions:
+      - question: |
+          Are there SDKs or libraries available for Microsoft EntraAgent ID scenarios?
+        answer: |
+          Yes. For .NET developers, Microsoft recommends [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md), which simplifies managing Federated Identity Credentials (FIC) for agent identities. For other languages, use the [Microsoft Entra SDK for agent identities](./microsoft-entra-sdk-for-agent-identities.md). Both options provide a streamlined integration experience for agent identity scenarios.
