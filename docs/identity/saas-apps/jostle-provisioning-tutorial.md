@@ -58,12 +58,12 @@ The next step is to obtain the **API URL** and **API key** from Jostle:
 1. Under **User data to/from other systems** select **Manage user provisioning** .If you don't see "Manage user provisioning" here and have verified that your account includes SSO/user provisioning, contact Support <support@jostle.me> to have this page enabled in your Admin Settings).
 1. In the **User Provisioning API details** section, go to **Your Base URL** field, select the Copy button and save the URL somewhere you can easily access it later.                                                           
 
-   ![Screenshot of User Provisioning API details](media/jostle-provisioning-tutorial/manage-user-provisioning.png)
+   ![Screenshot of User Provisioning API details.](media/jostle-provisioning-tutorial/manage-user-provisioning.png)
                 
 1. Next, select the **Add a new key**... button
 1. On the following screen, go to the **Automation User** field and use the drop-down menu to select your Automation user account. 
 
-   ![Screenshot of Integration Account](media/jostle-provisioning-tutorial/select-integration-account.png)                                                                                                                                     
+   ![Screenshot of Integration Account.](media/jostle-provisioning-tutorial/select-integration-account.png)                                                                                                                                     
 1. In the **Provisioning API key description** field give your key a name (such as `Azure`) and then select the **Add** button.
 
 1. Once your key is generated, **make sure to copy it right away** and save it where you saved your URL (since it's the only time your key appears).                                                               
@@ -92,15 +92,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Jostle**.
 
-	![Screenshot of the Jostle link in the Applications list](common/all-applications.png)
+	![Screenshot of the Jostle link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab and select **Get Started**.
 
-	![Screenshot of the Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
