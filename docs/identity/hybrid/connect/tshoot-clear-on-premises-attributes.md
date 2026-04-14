@@ -29,7 +29,7 @@ To prevent these issues, we recommend that customers clear the following on-prem
 
  
 ## How to update these attributes
-You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update) API call. You can update these attributes in Entra ID only for Cloud‑Only users. This includes users that were previously synchronized and later converted to Cloud‑Only when tenant synchronization was disabled.
+You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update) API call. You can update these attributes in Microsoft Entra ID only for Cloud‑Only users. This includes users that were previously synchronized and later converted to Cloud‑Only when tenant synchronization was disabled.
 
 
 ### Required roles
