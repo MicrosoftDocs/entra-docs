@@ -70,27 +70,23 @@ Use the following table to determine the required actions for your applications:
 
 You can preview the improved enforcement behavior before the rollout begins:
 
-1. Go to <https://aka.ms/BaselineScopesSettings>.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Conditional Access administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Access the [Baseline scopes settings](https://aka.ms/BaselineScopesSettings) in Conditional Access. This direct link is required to view the preview settings.
 1. Choose **default target resource** (Windows Azure Active Directory).
 1. Select **Save**.
 
 > [!NOTE]
-> This results in immediate enforcement of the improved behavior for All resources policies with resource exclusions. Users that were not previously subject to Conditional Access enforcement might now be subject to it.
+> This setting immediately enables the updated Conditional Access behavior for **All resources** policies with exclusions.
 >
-> To revert to the legacy behavior, select **reset**.
->
-> If a custom target resource isn't selected, the rollout based on Windows Azure Active Directory as the default target resource for baseline scopes is enforced in phases starting May 13, 2026.
+> As a result, some user sign-ins that were not previously subject to CA enforcement may now be evaluated and enforced under Conditional Access using Windows Azure Active Directory as the target resource.
+
+To revert to the legacy behavior, select **reset** from the **Baseline scope settings**.
+
+If a custom target resource isn't selected, the rollout based on Windows Azure Active Directory as the default target resource for baseline scopes is enforced in phases.
 
 ### Identify affected applications with a custom target resource
 
-You can use baseline scope settings to identify which applications in your tenant are affected:
-
-1. Go to <https://aka.ms/BaselineScopesSettings>.
-1. Choose a **custom target resource**. This should be a single-tenant application registered in the tenant.
-1. Select **Save**.
-1. Exclude the custom application from your All resources policies so that you can retain the legacy behavior while evaluating the impact.
-
-Once enabled, sign-in events where the applications request baseline scopes list the custom application as a Conditional Access audience in sign-in logs. For more information, see [Troubleshoot sign-in problems with Conditional Access](troubleshoot-conditional-access.md).
+You can use baseline scope settings to identify which applications in your tenant are affected. Once the preview setting is enabled, sign-in events where the applications request baseline scopes list the custom application as a Conditional Access audience in sign-in logs. For more information, see [Troubleshoot sign-in problems with Conditional Access](troubleshoot-conditional-access.md).
 
 ### Query for affected applications
 
@@ -124,7 +120,7 @@ Use this setting if you have specific scenarios that require you to retain the l
 
 ### How can I preview the enforcement change ahead of the rollout?
 
-Go to <https://aka.ms/BaselineScopesSettings>, choose the **default target resource** (Windows Azure Active Directory), and select **Save**. This immediately enforces the improved behavior. To revert, select **reset**. For more information, see [Preview the enforcement change](#preview-the-enforcement-change).
+Go to <https://aka.ms/BaselineScopesSettings>, choose the **default target resource** (Windows Azure Active Directory), and select **Save**. This setting immediately enforces the improved behavior. To revert back, select **reset**. For more information, see [Preview the enforcement change](#preview-the-enforcement-change).
 
 ### How can I retain the legacy behavior after the rollout?
 

@@ -159,7 +159,7 @@ The scopes listed in the previous section are now evaluated as directory access 
 
 Conditional Access policies that target All resources with one or more resource exclusions, or policies that explicitly target Azure AD Graph, are enforced in user sign-in flows where the client application requests only these scopes. There is no change in behavior when an application requests any additional scope beyond those listed above.
 
-For guidance on assessing impact, identifying affected applications, and retaining legacy behavior, see [Improved enforcement for policies with resource exclusions](improved-enforcement-resource-exclusions.md).
+For guidance on assessing impact, identifying affected applications, and retaining legacy behavior, see [Improved enforcement for policies with resource exclusions](concept-enforcement-resource-exclusions.md).
 
 > [!NOTE]
 > The [Azure AD Graph retirement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/important-update-azure-ad-graph-retirement/4364990) does not affect the Azure AD Graph (Windows Azure Active Directory) resource registered in your tenant.
