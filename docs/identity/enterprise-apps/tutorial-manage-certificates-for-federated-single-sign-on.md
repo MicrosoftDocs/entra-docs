@@ -109,6 +109,11 @@ You can add up to five email addresses to the Notification list (including the e
 
 You receive the notification email from azure-noreply@microsoft.com. To avoid the email going to your spam location, add this email to your contacts.
 
+> [!NOTE]
+> If notification email address configuration is completed programmatically using Microsoft Graph or PowerShell, administrators should open the Single Sign-On blade for the application in the Microsoft Entra admin center to ensure expiration notifications are enabled.
+> Failure to initialize SAML settings in the admin center may result in certificate expiration notification emails not being sent."
+
+
 ## Renew a certificate that is set to expire soon
 
 If a certificate is about to expire, you can renew it using a procedure that results in no significant downtime for your users. To renew an expiring certificate:
