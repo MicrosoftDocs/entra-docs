@@ -12,21 +12,22 @@ ms.reviewer: ergreenl
 
 # Request permissions for agent identity blueprints
 
-Inheritable permissions let agent identities automatically inherit delegated permission (scopes) and app-only permissions (approles) from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes and roles so that newly created agent identities can take action without interactive user or admin consent prompts.
+Inheritable permissions let agent identities automatically inherit delegated permission (scopes) and application permissions (app-roles) from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes and roles so that newly created agent identities can take action without interactive user or admin consent prompts.
 
 ## Prerequisites
 
 - An existing agent identity blueprint already created and configured
-- Agent ID Developer role for managing agent identity blueprints owned by the user
-- Agent ID Administrator role for managing agent identity blueprints
+- Either of the following permissions:
+    - Agent ID Developer role for managing agent identity blueprints owned by the user
+    - Agent ID Administrator role for managing agent identity blueprints
 
 ## How inheritable permissions work
 
 You configure inheritable permissions for one or more resources on the agent identity blueprint, specifying which delegated scopes and application roles should be inherited by the blueprint's child agent identities. 
 
-Inheritable permissions are configured only on the agent identity blueprint. You won't see the inheritable permissions as permissions on the blueprint's child agent identities in the admin center nor when calling Microsoft Graph. During token issuance for an agent identity, the platform merges any eligible inherited scopes and roles with the individual agent identity's granted scopes and roles. The inherited scopes appear in the agent's delegated permission access token (has the 'idtyp' claim as "user") **scp** claim. Inherited application roles appear in the agent's app-only permission token (has the 'idtyp' claim as "app") in the token's **roles** claim.
+Inheritable permissions are configured only on the agent identity blueprint  and granted on the agent identity blueprint principal. You won't see the inheritable permissions as permissions on the blueprint's child agent identities in the admin center nor when calling Microsoft Graph. During token issuance for an agent identity, the platform merges any eligible inherited scopes and roles with the individual agent identity's granted scopes and roles. The inherited scopes appear in the agent's delegated permission access token (has the 'idtyp' claim as "user") **scp** claim. Inherited application roles appear in the agent's application permission token (has the 'idtyp' claim as "app") in the token's **roles** claim.
 
-To be eligible for inheritance, a permissions must be granted by an admin to the agent identity blueprint service principal in the tenant. If inherited scopes or roles don't appear in tokens, verify that the agent identity blueprint principal (service principal) is granted the necessary delegated scopes and app role assignments for the resource application before retrying token acquisition.
+To be eligible for inheritance, the permission's resource must be listed as an inheritable permission in the agent identity blueprint, and the permission must be granted by an admin to the agent identity blueprint principal in the tenant. If inherited scopes or roles don't appear in tokens, verify that the agent identity blueprint principal (service principal) is granted the necessary delegated scopes and app-role assignments for the resource application before retrying token acquisition.
 
 ## Inheritance patterns
 
