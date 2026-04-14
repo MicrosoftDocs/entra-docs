@@ -45,15 +45,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1. Sign in to your [Leapsome Admin Console](https://www.Leapsome.com/app/#/login). Navigate to **Settings > Admin Settings**.
 
-	![Screenshot of Leapsome Admin Console](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
+	![Screenshot of Leapsome Admin Console.](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
 
 1.	Navigate to **Integrations > SCIM User provisioning**.
 
-	![Screenshot of Leapsome Add SCIM](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
+	![Screenshot of Leapsome Add SCIM.](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
 
 1.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Leapsome application.
 
-	![Screenshot of Leapsome Create Token](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
+	![Screenshot of Leapsome Create Token.](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
 
 ## Add Leapsome from the gallery
 
@@ -65,7 +65,7 @@ Before configuring Leapsome for automatic user provisioning with Microsoft Entra
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Leapsome**, select **Leapsome** in the search box.
 1. Select **Leapsome** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Screenshot of Leapsome in the results list](common/search-new-app.png)
+	![Screenshot of Leapsome in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Leapsome 
 
@@ -81,11 +81,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Leapsome**.
 
-	![Screenshot of the Leapsome link in the Applications list](common/all-applications.png)
+	![Screenshot of the Leapsome link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -113,11 +113,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Leapsome for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Leapsome API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![Screenshot of Leapsome User Attributes](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
+	![Screenshot of Leapsome User Attributes.](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Leapsome for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshot of Leapsome Group Attributes](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
+	![Screenshot of Leapsome Group Attributes.](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
