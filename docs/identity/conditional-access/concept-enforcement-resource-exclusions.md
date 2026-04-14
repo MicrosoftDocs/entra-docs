@@ -71,7 +71,7 @@ Use the following table to determine the required actions for your applications:
 You can preview the improved enforcement behavior before the rollout begins:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Conditional Access administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Access the [Baseline scopes settings](https://aka.ms/BaselineScopesSettings) in Conditional Access. This direct link is required to view the preview settings.
+1. Access the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) in Conditional Access. This direct link is required to view the preview settings.
 1. Choose **default target resource** (Windows Azure Active Directory).
 1. Select **Save**.
 
@@ -120,7 +120,7 @@ Use this setting if you have specific scenarios that require you to retain the l
 
 ### How can I preview the enforcement change ahead of the rollout?
 
-Go to <https://aka.ms/BaselineScopesSettings>, choose the **default target resource** (Windows Azure Active Directory), and select **Save**. This setting immediately enforces the improved behavior. To revert back, select **reset**. For more information, see [Preview the enforcement change](#preview-the-enforcement-change).
+Go to <https://aka.ms/BaselineScopesSettingsUX>, choose the **default target resource** (Windows Azure Active Directory), and select **Save**. This setting immediately enforces the improved behavior. To revert back, select **reset**. For more information, see [Preview the enforcement change](#preview-the-enforcement-change).
 
 ### How can I retain the legacy behavior after the rollout?
 
