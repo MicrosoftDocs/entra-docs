@@ -1,5 +1,5 @@
 ---
-title: FAQ - Improved enforcement for Conditional Access policies with resource exclusions
+title: FAQs for the improved enforcement for Conditional Access policies with resource exclusions
 description: Frequently asked questions about the improved Conditional Access enforcement behavior for policies that target All resources with resource exclusions.
 ms.topic: faq
 ms.date: 04/14/2026
@@ -7,7 +7,7 @@ ms.reviewer: kvenkit
 ai-usage: ai-assisted
 ---
 
-# FAQ: Improved enforcement for policies with resource exclusions
+# FAQs: Improved enforcement for policies with resource exclusions
 
 This article answers frequently asked questions about the improved Conditional Access enforcement for policies that target **All resources** with resource exclusions.
 
@@ -24,25 +24,25 @@ Baseline scopes is an umbrella term for the following set of scopes:
 
 ### What is the upcoming Conditional Access behavior change for baseline scopes?
 
-Today, Conditional Access policies that target All resources aren't enforced if the policy has one or more resource exclusions when:
+Currently, Conditional Access policies that target **All resources** aren't enforced if the policy has* one or more* resource exclusions when:
 
 1. A user signs in through a **public client application** (for example, desktop apps such as Microsoft Teams desktop client) that requests only the baseline scopes (OIDC or directory). Examples:
    - A user signs into Visual Studio Code desktop client, which requests `openid` and `profile` scopes.
    - A user signs in using Azure CLI, which requests only `User.Read`.
 
-1. A user signs in through a **confidential client application** (for example, web apps) that is excluded from an All resources policy and requests only the baseline directory scopes. Examples:
+1. A user signs in through a **confidential client application** (for example, web apps) that is excluded from an **All resources** policy and requests only the baseline directory scopes. Examples:
    - A user signs in through a web application (excluded from the policy) that requests only `User.Read` and `People.Read`.
 
-For more information, see [Legacy Conditional Access behavior when an ALL resources policy has a resource exclusion](concept-conditional-access-cloud-apps.md#legacy-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion).
+For more information, see [Legacy Conditional Access behavior when an **ALL resources** policy has a resource exclusion](concept-conditional-access-cloud-apps.md#legacy-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion).
 
-**After this change**, in both of the above scenarios, users might now receive Conditional Access challenges (such as MFA or device compliance) where previously they were allowed access without enforcement. The exact challenges depend on the access controls configured in your policies that target All resources or explicitly target Windows Azure Active Directory (Microsoft Entra ID directory) as the resource.
+**After this change**, in both of the above scenarios, users might now receive Conditional Access challenges (such as MFA or device compliance) where previously they were allowed access without enforcement. The exact challenges depend on the access controls configured in your policies that target **All resources** or explicitly target Windows Azure Active Directory (Microsoft Entra ID directory) as the resource.
 
 In summary, sign-ins that use only these scopes now receive the same Conditional Access protections applied to access your Microsoft Entra ID directory data.
 
-### What isn't changing?
+### What is NOT changing?
 
-- When an application (public or confidential) requests any scope beyond the baseline scopes (for example, `Mail.Read`), it's already subject to Conditional Access enforcement. For example, when a client requests `Mail.Read`, it's subject to Conditional Access policies that include Office 365 Exchange Online as a target resource.
-- For confidential client applications that are excluded from All resources policies and request only OIDC scopes, no change is expected.
+- When an application (public or confidential) requests any scope beyond the baseline scopes, it's already subject to Conditional Access enforcement. For example, when a client requests `Mail.Read`, it's subject to Conditional Access policies that include Office 365 Exchange Online as a target resource.
+- For confidential client applications that are excluded from **All resources** policies and request only OIDC scopes, no change is expected.
 
 ### What action is required?
 
@@ -81,10 +81,7 @@ Baseline scope settings is a tenant-level setting that allows you to use a custo
 
 ### Who should use this setting?
 
-Use this setting if you:
-
-1. Want to preview the Conditional Access enforcement change ahead of the rollout starting May 13, 2026.
-1. Have specific scenarios that require you to retain the legacy behavior. Example scenarios:
+Use this setting if you want to preview the Conditional Access enforcement change ahead of the rollout, *and* have specific scenarios that require you to retain the legacy behavior. Example scenarios:
    - **All resources policies with require a compliant device grant control**: Applications that are excluded from this policy because they must be accessible from unmanaged devices.
    - **All resources policies with require an app protection policy grant control**: Client applications that aren't integrated with the Intune SDK and can't satisfy the app protection policy.
    - **All resources policies with block control**: Client applications that must be excluded from the block policy.
@@ -92,12 +89,13 @@ Use this setting if you:
 
 ### How can I preview the Conditional Access enforcement change?
 
-1. Go to <https://aka.ms/BaselineScopesSettings>.
+1. Go to [https://aka.ms/BaselineScopesSettings](https://aka.ms/BaselineScopesSettings).
 1. Choose **default target resource** (Windows Azure Active Directory).
 1. Select **Save**.
 
 > [!NOTE]
-> This results in immediate enforcement of the improved Conditional Access enforcement behavior for All resources policies with resource exclusions. Users that were not previously subject to Conditional Access enforcement might now be subject to enforcement with Windows Azure Active Directory as the evaluation resource.
+> - This setting change results in immediate enforcement of the improved Conditional Access enforcement behavior for All resources policies with resource exclusions.
+> - Users that were not previously subject to Conditional Access enforcement might now be subject to enforcement with Windows Azure Active Directory as the evaluation resource.
 >
 > To revert to the legacy behavior, select **reset**.
 >
@@ -110,7 +108,7 @@ Use this setting if you:
 1. Select **Save**.
 
 > [!NOTE]
-> - This results in the custom application being evaluated as the target resource when client requests exclusively request baseline scopes.
+> - This setting change results in the custom application being evaluated as the target resource when client requests exclusively request baseline scopes.
 > - Exclude the custom application from your All resources policies so that you can retain the legacy behavior while evaluating the impact to applications in your tenant.
 
 Once enabled, sign-in events where the applications request baseline scopes list the custom application as a Conditional Access audience in sign-in logs. For more information, see [Troubleshoot sign-in problems with Conditional Access](troubleshoot-conditional-access.md).

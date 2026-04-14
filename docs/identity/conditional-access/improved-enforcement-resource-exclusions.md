@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 ## Overview
 
-Starting May 13, 2026, Microsoft Entra ID is rolling out an improved enforcement model for Conditional Access policies that target **All resources** and include one or more **resource exclusions**. This change ensures that sign-ins requesting only baseline scopes receive the same Conditional Access protections as other resource access.
+Microsoft Entra ID is rolling out an improved enforcement model for Conditional Access policies that target **All resources** and include one or more **resource exclusions**. This change ensures that sign-ins requesting only baseline scopes receive the same Conditional Access protections as other resource access.
 
 Previously, certain low-privilege scopes were automatically excluded from policy enforcement when a resource exclusion existed. With this change, those scopes are now evaluated as directory access and are subject to your Conditional Access policies.
 
@@ -39,7 +39,7 @@ Baseline scopes is an umbrella term for the following set of scopes:
 
 ## What is changing
 
-After the rollout, the following scenarios might now trigger Conditional Access challenges (such as MFA or device compliance) where previously access was granted without enforcement:
+After the rollout, the following scenarios might now trigger Conditional Access challenges (such as MFA or device compliance) where access was previously granted without enforcement:
 
 - **Public client applications** (like desktop apps) that request only baseline scopes. For example, a user signs into Visual Studio Code desktop client, which requests `openid` and `profile` scopes, or Azure CLI, which requests only `User.Read`.
 - **Confidential client applications** (like web apps) that are excluded from an All resources policy and request only baseline directory scopes. For example, a web application excluded from the policy that requests only `User.Read` and `People.Read`.
