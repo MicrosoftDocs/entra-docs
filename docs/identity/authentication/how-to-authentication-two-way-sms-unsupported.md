@@ -8,14 +8,7 @@ ms.reviewer: dawoo
 ---
 # Two-way SMS unsupported
 
-> [!IMPORTANT]
-> Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
->
-> - [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
-> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
-> - [Certificate-based authentication](concept-certificate-based-authentication.md)
-
-Two-way SMS for Azure Multi-Factor Authentication Server was originally deprecatedin 2018, and no longer supported after February 24, 2021, except for organizations that received a support extension until August 2, 2021. Administrators should enable another method for users who still use two-way SMS.
+Two-way SMS for Azure Multi-Factor Authentication Server was originally deprecated in 2018, and no longer supported after February 24, 2021, except for organizations that received a support extension until August 2, 2021. Administrators should enable another method for users who still use two-way SMS.
 
 Email notifications and Service Health notifications (portal toasts) were sent to affected admins on December 8, 2020 and January 28, 2021. The alerts went to the Owner, Co-Owner, Admin, and Service Admin RBAC roles tied to the subscriptions. If you've already completed the following steps, no action is necessary.
 
