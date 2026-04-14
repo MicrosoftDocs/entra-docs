@@ -102,7 +102,7 @@ The following table shows which Microsoft Graph capabilities are available based
 | Change-based (delta) queries | Supported | Not supported |
 | SCIM outbound user provisioning | Supported | Not supported |
 
-\* Standard mode supports up to 15 million objects.
+\* The features listed in this table are supported in standard mode for tenants with up to 15 million directory objects.
 
 > [!NOTE]
 > These capabilities aren't available in HSC mode regardless of directory size. HSC mode prioritizes stability and throughput at scale over query-heavy or event-driven directory operations.
