@@ -181,7 +181,7 @@ You can test your federation setup by inviting a new B2B guest user. For details
  
 ## Domainless Federation
 
-Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP is validated against the domain associated with the configured IdP in Microsoft Entra ID.
+Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP after authentication is validated against the domain associated with the configured SAML IdP in Microsoft Entra ID.
 
 If the user’s email domain differs from the domain configured on the SAML IdP (for example, yahoo.com or gmail.com), users may encounter the following error during sign‑in:
 
@@ -218,8 +218,9 @@ After configuring domainless federation, you can invite guest users from the par
 3. Enter the guest user’s email address. The email domain does not need to match a verified domain in your tenant.
 4. In the invitation redirect URL, include a **domain_hint** parameter to ensure the user is routed to the appropriate IdP based on the configured Issuer URI. The **domain_hint** value must match the **Issuer URI** defined in the SAML IdP configuration.
 5. Complete and send the invitation.
-6. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP using the Issuer URI association. The user’s email address domain is not matched against the domain configured for the IdP after authentication and access resource tenant application.
-7. For subsequent sign-ins, the user can directly access the resource tenant application by authenticating with the external SAML IdP.
+6. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP using the Issuer URI in the `domain_hint` parameter. 
+7. User authenticates with external SAML IdP. The user’s email address domain is not matched against the domain configured for the IdP after authentication and user access resource tenant resource.
+8. For subsequent sign-ins, the user can directly access the resource tenant application by authenticating with the external SAML IdP as the user object is updated with the external IdP they are associated with.
 
 ### Known issues
 
