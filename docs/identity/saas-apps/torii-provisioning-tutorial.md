@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Torii Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Torii. If the connection fails, ensure your Torii account has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter your Torii Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Torii. If the connection fails, ensure your Torii account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -143,4 +143,4 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Related content
 
-[Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

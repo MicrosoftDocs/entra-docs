@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Screenshot of Generate Token Page.](media/timeclock-365-provisioning-tutorial/generate-token-page.png)
 
-1. Scroll down to **Azure user synchronization**.Copy and save the **Microsoft Entra token**. This value is entered in the **Secret Token** * field in the Provisioning tab of your TimeClock 365 application. 
+1. Scroll down to **Azure user synchronization**. Copy and save the **Microsoft Entra token**. This value is entered in the **Secret Token** field in the Provisioning tab of your TimeClock 365 SAML application.
 
 	![Screenshot of Generate Token.](media/timeclock-365-provisioning-tutorial/generate-token.png)
 
@@ -129,4 +129,4 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Related content
 
-[Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
