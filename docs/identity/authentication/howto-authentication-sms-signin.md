@@ -9,7 +9,14 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
-Microsoft Entra SMS-based authentication allows users to sign in using only a registered phone number and a one-time passcode (OTP) sent via SMS, no username or password required. This is different from Microsoft Entra SMS multifactor authentication, which typically requires a username, password, and SMS as an MFA method. This authentication method is primarily designed to simplify sign-in experience of frontline workers and not recommended for Information workers (IW).
+> [!IMPORTANT]
+> Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
+>
+> - [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
+> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
+> - [Certificate-based authentication](concept-certificate-based-authentication.md)
+
+Microsoft Entra SMS-based authentication allows users to sign inusing only a registered phone number and a one-time passcode (OTP) sent via SMS, no username or password required. This is different from Microsoft Entra SMS multifactor authentication, which typically requires a username, password, and SMS as an MFA method. This authentication method is primarily designed to simplify sign-in experience of frontline workers and not recommended for Information workers (IW).
 
 Microsoft Entra also has an alternative approach for frontline-workers called [QR code authentication](concept-authentication-qr-code.md) that organizations may want to consider for frontline shared device scenarios.
 

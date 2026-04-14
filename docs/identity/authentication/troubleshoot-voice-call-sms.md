@@ -10,7 +10,14 @@ ms.reviewer: xueca
 ---
 # Troubleshoot MFA voice call and SMS problems
 
-This article explains how to investigate and resolve problems with voice call or SMS sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and cannot see, and what to expect during an investigation.
+> [!IMPORTANT]
+> Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
+>
+> - [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
+> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
+> - [Certificate-based authentication](concept-certificate-based-authentication.md)
+
+This article explains how to investigate and resolve problemswith voice call or SMS sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and cannot see, and what to expect during an investigation.
 
 ## How global telecom delivery works
 

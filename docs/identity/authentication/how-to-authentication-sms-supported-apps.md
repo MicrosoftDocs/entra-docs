@@ -9,7 +9,14 @@ ms.reviewer: anjusingh
 
 # App support for SMS-based authentication
 
-SMS-based authentication is available to Microsoft apps integrated with the Microsoft identity platform (Microsoft Entra ID). The table lists some of the web and mobile apps that support SMS-based authentication. If you would like to add or validate any app, [contact us](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789). 
+> [!IMPORTANT]
+> Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
+>
+> - [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
+> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
+> - [Certificate-based authentication](concept-certificate-based-authentication.md)
+
+SMS-based authentication is available to Microsoft appsintegrated with the Microsoft identity platform (Microsoft Entra ID). The table lists some of the web and mobile apps that support SMS-based authentication. If you would like to add or validate any app, [contact us](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789). 
 
 | App | Web/browser app | Native mobile app |
 | --- |:---:|:---:|
