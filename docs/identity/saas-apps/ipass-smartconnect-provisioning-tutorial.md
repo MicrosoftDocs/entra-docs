@@ -59,7 +59,7 @@ To configure iPass SmartConnect for automatic user provisioning with Microsoft E
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **iPass SmartConnect**, select **iPass SmartConnect** in the search box.
 1. Select **iPass SmartConnect** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Screenshot of iPass SmartConnect in the results list](common/search-new-app.png)
+	![Screenshot of iPass SmartConnect in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to iPass SmartConnect 
 
@@ -75,11 +75,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **iPass SmartConnect**.
 
-	![Screenshot of the iPass SmartConnect link in the Applications list](common/all-applications.png)
+	![Screenshot of the iPass SmartConnect link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of the Provisioning tab automatic configuration.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your iPass SmartConnect Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to iPass SmartConnect. If the connection fails, ensure your iPass SmartConnect account has the required admin permissions and try again.
 

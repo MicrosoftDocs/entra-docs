@@ -54,11 +54,11 @@ As part of this procedure, you're required to provide a user security token you 
 
 1. Select **+ New configuration**.
 
-  ![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+   ![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. In the **Tenant URL** field, enter your Jive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Jive. If the connection fails, ensure your Jive account has the required admin permissions and try again.
 
-  ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1. Select **Create** to create your configuration.
 

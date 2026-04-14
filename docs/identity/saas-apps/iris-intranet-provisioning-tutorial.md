@@ -63,19 +63,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Iris Intranet**.
 
-	![Screenshot of the Iris Intranet link in the Applications list](common/all-applications.png)
+	![Screenshot of the Iris Intranet link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application settings.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic configuration.](common/provisioning-automatic.png)
 
 1. In the **Tenant URL** field, enter your Iris Intranet Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Iris Intranet. If the connection fails, ensure your Iris Intranet account has the required admin permissions and try again.
 
