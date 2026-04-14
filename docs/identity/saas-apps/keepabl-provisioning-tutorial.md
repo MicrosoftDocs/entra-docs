@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Keepabl to support provisioning with Microsoft Entra ID
 
 1. Sign in to [Keepabl Admin Portal](https://app.keepabl.com) and then navigate to **Account Settings > Your Organization**, where you’ll see the **Single Sign-On (SSO)** section.
-1. Select the **Edit Identity Provider** button.You be taken to the SSO Setup page, where once you select Microsoft Azure as your provider and then scroll down, you see your **Tenant URL** and **Secret Token**. These value is entered in the Provisioning tab of your Keepabl application.
+1. Select the **Edit Identity Provider** button. You'll be taken to the SSO Setup page, where once you select Microsoft Azure as your provider and then scroll down, you see your **Tenant URL** and **Secret Token**. These value is entered in the Provisioning tab of your Keepabl application.
 
 	![Screenshot of extraction of tenant url and token.](media/keepabl-provisioning-tutorial/token.png)
 
