@@ -40,7 +40,7 @@ The Entra ID roles that can update on-premises attributes are:
 
  
 ### Required permissions
-The required application permission is **User.ReadWrite.All** and **User-OnPremisesSyncBehavior.ReadWrite.All** for the **onPremisesObjectIdentifier** attribute in particular.
+The required application permissions are **User.ReadWrite.All** and **User-OnPremisesSyncBehavior.ReadWrite.All** (the latter is required specifically for the **onPremisesObjectIdentifier** attribute).
 
 ## Using ADSyncTools PowerShell module 
 
