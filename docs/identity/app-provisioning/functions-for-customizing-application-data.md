@@ -456,6 +456,9 @@ Let's say the SuccessFactors attribute *prefix* is mapped to the on-premises Act
 `IgnoreFlowIfNullOrEmpty(Switch([prefix], "", "3443", "Dr.", "3444", "Prof.", "3445", "Prof. Dr."))` <br>
 The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then ** returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
 
+> [!IMPORTANT]
+> Don't use IgnoreFlowIfNullOrEmpty as the condition argument to [IIF](#iif). It's a flow control wrapper, not a boolean condition. If you need both behaviors, wrap the full IIF expression with IgnoreFlowIfNullOrEmpty: `IgnoreFlowIfNullOrEmpty(IIF(...))`.
+
 ---
 ### IIF
 **Function:** 
@@ -497,7 +500,10 @@ This section includes limitations and workarounds for the IIF function. For info
      * `IIF(IsNullOrEmpty([country]),"Other",[country])`
      * `IIF(IsPresent([country]),[country],"Other")`
    * Recommended workaround: Use the [Switch](#switch) function to check for empty/null values. Example: If country attribute is empty, set value "Other". If it's present, pass the country attribute value to target attribute. 
-     * `Switch([country],[country],"","Other")` 
+     * `Switch([country],[country],"","Other")`
+* Don't use [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) as the condition argument to IIF. IgnoreFlowIfNullOrEmpty is a flow control wrapper, not a boolean condition, and doesn't produce a value that IIF can compare. If you need both behaviors, wrap the full IIF expression with IgnoreFlowIfNullOrEmpty.
+   * Unsupported: `IIF(IgnoreFlowIfNullOrEmpty([country]),[country],"Other")`
+   * Supported: `IgnoreFlowIfNullOrEmpty(IIF([country]="USA",[region],""))`
 <br>   
 ---
 ### InStr
@@ -579,7 +585,18 @@ If the expression evaluates to a string that isn't Null and isn't empty, then th
 | **Expression** |Required |Expression |Expression to be evaluated |
 
 **Example:**
-`Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
+
+`IsPresent([directManager])`
+
+Returns True if the directManager attribute isn't null or empty.
+
+> [!CAUTION]
+> Don't use IsPresent, IsNull, or IsNullOrEmpty as the source parameter of the [Switch](#switch) function. The Switch function performs a case-sensitive string comparison and these functions return boolean values, which leads to unexpected matching behavior.
+
+> [!NOTE]
+> To check whether an attribute has a value and apply a fallback, use the [Switch](#switch) function with the attribute as the source and an empty string as a key. For example:
+> `Switch([country], [country], "", "Other")`
+> This expression returns the country value if present, or "Other" if the attribute is null or empty.
 
 ---
 ### IsString
