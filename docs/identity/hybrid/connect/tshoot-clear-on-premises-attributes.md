@@ -14,7 +14,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Clear on-premises attributes from migrated Microsoft Entra ID users
 
-After you've migrated your users and groups to Microsoft Entra ID, you may be ready to decommission your on-premises Active Directory and uninstall sync tools. After turning off directory synchronization, you can manage these objects directly in Microsoft Entra ID.
+After migrating your users and groups to Microsoft Entra ID, you may be ready to decommission your on-premises Active Directory and uninstall sync tools. After turning off directory synchronization, you can manage these objects directly in Microsoft Entra ID.
 
 However, you may encounter issues in Windows, Intune, and Outlook due to legacy values remaining in the user attributes that were previously synchronized from on-premises. For example, hybrid device joining may fail because the system pulls the username and domain from these outdated attributes.
 
@@ -29,7 +29,7 @@ To prevent these issues, we recommend that customers clear the following on-prem
 
  
 ## How to update these attributes
-You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update) API call. These attributes can only be updated in Entra ID for native Cloud-Only users or for previously synced users that have been converted to Cloud-Only users after turning off synchronization in Entra ID. 
+You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update) API call. You can update these attributes in Entra ID only for Cloud‑Only users. This includes users that were previously synchronized and later converted to Cloud‑Only when tenant synchronization was disabled.
 
 
 ### Required roles
@@ -51,7 +51,7 @@ You can also view and update these on-premises attributes with the PowerShell sc
 - [Windows PowerShell 7](/powershell/scripting/install/installing-powershell-on-windows) 
 - [Microsoft Graph SDK PowerShell module](/powershell/microsoftgraph/installation) 
 
-In order to use [ADSyncTools](reference-connect-adsynctools.md) you need to install the module from PowerShell Gallery, as follows: 
+Install the [ADSyncTools](reference-connect-adsynctools.md) module from PowerShell Gallery: 
 
  ``` powershell
  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
@@ -60,7 +60,7 @@ In order to use [ADSyncTools](reference-connect-adsynctools.md) you need to inst
  ``` 
 
 > [!NOTE]
-> The minimum required version to manage On-Premises attributes in Entra ID is v2.5.0. 
+> The minimum required version to manage on-premises attributes in Entra ID is v2.5.0. 
 
 
 Use the following commands to get started with ADSyncTools.
@@ -69,7 +69,7 @@ Use the following commands to get started with ADSyncTools.
  Import-Module ADSyncTools 
  ```
 
-See the cmdlets available for managing OnPremises attributes: 
+See the cmdlets available for managing on-premises attributes: 
 
  ``` powershell
 Get-Command *onpremises* -Module ADSyncTools 
@@ -85,7 +85,7 @@ Function    Set-ADSyncToolsOnPremisesAttribute       2.5.0   ADSyncTools
 
  ```
  
-Get all the details of a cmdlet (i.e., Syntax, Examples, etc.) with Get-Help &lt;cmdlet&gt; -Full: 
+Get all the details of a cmdlet (Syntax, Examples, etc.) with Get-Help &lt;cmdlet&gt; -Full: 
 
  ```Get-Help Get-ADSyncToolsOnPremisesAttribute -Full ``` 
 
@@ -126,8 +126,8 @@ To clear all on-premises attributes from all users in a bulk fashion, use the ge
 
 This operation requires Microsoft Graph PowerShell SDK, preauthenticated with `Connect-MgGraph -Scopes "User.ReadWrite.All, User-OnPremisesSyncBehavior.ReadWrite.All"`
 
->[!IMPORTANT] 
-> Before clearing on-premises attributes from Entra ID users in production, back up all the user's on-premises properties as a safety recommendation, in case you need to roll back the operation.
+> [!IMPORTANT] 
+> Before clearing on‑premises attributes from Entra ID users in production, back up the user’s on‑premises properties so that you can roll back the operation if needed.
 
 You can back up all the current values with the following command: 
 
@@ -174,13 +174,13 @@ Clears the on-premises properties of a specific Cloud-Only user or all CLoud-Onl
 [[-onPremisesObjectIdentifier]] [[-onPremisesSamAccountName]] [[-onPremisesSecurityIdentifier]] [[-onPremisesUserPrincipalName]] [<CommonParameters>] 
  ```
  
-#### by BodyParameter
+#### By BodyParameter
 
  ``` powershell
   Clear-ADSyncToolsOnPremisesAttribute [-Id] <String> [-BodyParameter] <String> [<CommonParameters>] 
  ```
  
-#### by All
+#### By All
 
  ``` powershell
   Clear-ADSyncToolsOnPremisesAttribute [-Id] <String> [-All] [<CommonParameters>] 
@@ -195,7 +195,7 @@ Clear only onPremisesImmutableId attribute
  ```
  
 #### Example 2
-Clear onpremises attributes based on a json parameter body (-BodyParameter) 
+Clear on-premises attributes based on a json parameter body (-BodyParameter) 
 
 ``` powershell
 $jsonBody = @'
@@ -220,8 +220,8 @@ Sets on-premises attributes for a Cloud-Only user in Entra ID.
 
 This operation requires Microsoft Graph PowerShell SDK, preauthenticated with `Connect-MgGraph -Scopes "User.ReadWrite.All, User-OnPremisesSyncBehavior.ReadWrite.All"`
 
->[!IMPORTANT]
->Before updating on-premises attributes for Entra ID users in production, back up all the user's on-premises properties as a safety recommendation, in case you need to roll back the operation.
+> [!IMPORTANT]
+> Before updating on‑premises attributes for Entra ID users in production, back up the user’s on‑premises properties so that you can roll back the operation if needed.
 
 You can back up all the current values with the following command: 
 
@@ -229,7 +229,7 @@ You can back up all the current values with the following command:
 Get-ADSyncToolsOnPremisesAttribute | Export-Csv backupOnpremisesAttributes.csv -Delimiter ';' 
 ```
 
-This function can be used to set any of the on-premises attributes listed below: 
+This function can be used to set any of the following on-premises attributes: 
 
 - onPremisesDistinguishedName 
 - onPremisesDomainName 
@@ -239,7 +239,7 @@ This function can be used to set any of the on-premises attributes listed below:
 - onPremisesSecurityIdentifier * 
 - onPremisesUserPrincipalName 
 
-   \* Must have the correct Security Identifier format, e.g.: "S-1-5-21-1234567890-0987654321-1234567890-1111"
+   \* Must have the correct Security Identifier format, for example: "S-1-5-21-1234567890-0987654321-1234567890-1111"
 
 ### SYNTAX 
 
@@ -247,7 +247,7 @@ This function can be used to set any of the on-premises attributes listed below:
 Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [[-onPremisesDistinguishedName] <String>] [[-onPremisesDomainName] <String>] [[-onPremisesImmutableId] <String>] [[-onPremisesSamAccountName] <String>] [[-onPremisesSecurityIdentifier] <String>] [[-onPremisesUserPrincipalName] <String>] [<CommonParameters>] 
 ```
 
-#### by BodyParameter
+#### By BodyParameter
 
 ``` powershell
 Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [-BodyParameter] <String> [<CommonParameters>] 
@@ -265,7 +265,7 @@ Set only onPremisesImmutableId (pipelining)
 
 #### Example 2
 
-Set onpremises attributes based on a json parameter body (-BodyParameter) 
+Set on-premises attributes based on a json parameter body (-BodyParameter) 
 
 ``` powershell
 $jsonBody = @' 
