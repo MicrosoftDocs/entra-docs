@@ -14,7 +14,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 # Clear on-premises attributes from migrated Microsoft Entra ID users
 
-After migrating your users and groups to Microsoft Entra ID, you may be ready to decommission your on-premises Active Directory and uninstall sync tools. After turning off directory synchronization, you can manage these objects directly in Microsoft Entra ID.
+After migrating your users and groups to Microsoft Entra ID, you might be ready to decommission your on-premises Active Directory and uninstall sync tools. After turning off directory synchronization, you can manage these objects directly in Microsoft Entra ID.
 
 However, you may encounter issues in Windows, Intune, and Outlook due to legacy values remaining in the user attributes that were previously synchronized from on-premises. For example, hybrid device joining may fail because the system pulls the username and domain from these outdated attributes.
 
