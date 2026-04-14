@@ -259,26 +259,6 @@ To edit a catalog:
 
 1. Select **Save**.
 
-## Update privilege level of a catalog (Preview)
-
-When you add resources that grant elevated permissions, such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-    > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog creator.
-1. Browse to **ID Governance** > **Catalogs**.
-
-1. On the Catalogs page, open the catalog you want to change the privilege level of.
-
-1. On the catalog overview page, under **Privilege level (Preview)**, select which level you want.
-    :::image type="content" source="media/entitlement-management-catalog-create/update-privilege-level.png" alt-text="Screenshot of updating privilege level in a catalog.":::
-1. Select **Save**.
-
-## Update privilege level of a catalog programmatically
-
-To update manually, update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
-
-
 ## Delete a catalog
 
 You can delete a catalog, but only if it doesn't have any access packages.
