@@ -63,7 +63,7 @@ Depending on your provisioning job type, update the expression logic for the acc
 
 ```python
 Switch([StatusTerminationLastDayOfWork],   
-  Switch([Active\], "True",  
+  Switch([Active], "True",  
 "0", "False",   
 "1", IIF(DateDiff("d", DateAdd("h","9",Now()),CDate(  
     Switch([StatusTerminationLastDayOfWork],[StatusTerminationLastDayOfWork],  
@@ -100,7 +100,7 @@ Switch([StatusTerminationLastDayOfWork], 
   Switch([Active], "False",  
 "0", "True",   
 "1", IIF(DateDiff("d", DateAdd("h","9",Now()),CDate(  
-    Switch([StatusTerminationLastDayOfWork\],[StatusTerminationLastDayOfWork],  
+    Switch([StatusTerminationLastDayOfWork],[StatusTerminationLastDayOfWork],  
 "","9999-12-31")  
     )  
   ) <= 0, "True", "False")  
