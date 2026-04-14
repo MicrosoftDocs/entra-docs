@@ -85,7 +85,7 @@ Function    Set-ADSyncToolsOnPremisesAttribute       2.5.0   ADSyncTools
 
  ```
  
-Get all the details of a cmdlet (Syntax, Examples, etc.) with Get-Help &lt;cmdlet&gt; -Full: 
+Get all the details of a cmdlet (for example, Syntax and Examples) with Get-Help &lt;cmdlet&gt; -Full: 
 
  ```Get-Help Get-ADSyncToolsOnPremisesAttribute -Full ``` 
 
