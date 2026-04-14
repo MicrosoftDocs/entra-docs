@@ -3,14 +3,14 @@ title: Configure inheritable permissions for agent identity blueprints
 description: Learn how to configure inheritable permissions for agent identity blueprints to automatically grant OAuth 2.0 delegated permission scopes and application roles to agent identities.
 author: omondiatieno
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 04/14/2026
 ms.author: jomondi
 ms.reviewer: ergreenl
 
 #Customer intent: As an IT administrator managing agent identity blueprints, I want to configure inheritable permissions so that newly created agent identities can automatically inherit OAuth 2.0 delegated permission scopes and application roles without requiring interactive consent prompts.
 ---
 
-# Request permissions for agent identity blueprints
+# Configure inheritable permissions for agent identity blueprints
 
 Inheritable permissions let agent identities automatically inherit delegated permission (scopes) and application permissions (app-roles) from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes and roles so that newly created agent identities can take action without interactive user or admin consent prompts.
 
