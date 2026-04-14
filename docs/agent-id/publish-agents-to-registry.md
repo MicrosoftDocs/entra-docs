@@ -31,11 +31,11 @@ If your agent was built on one of the following Microsoft products, you don't ne
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 Before registering agents with the registry, ensure you have the following requirements:
 
-- The [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) role
+- The [Agent Registry Administrator](../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) role
 - A valid Microsoft Entra access token with the https://graph.microsoft.com/.default scope
 - Either app-only permissions or delegated permissions
 - For non-Microsoft agents, you need your agent's operational endpoint and metadata information

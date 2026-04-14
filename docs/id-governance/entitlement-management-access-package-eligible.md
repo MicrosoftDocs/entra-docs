@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/04/2025
 
-#CustomerIntent: As an IT Administrator I want to assign eligible roles for a group within an access package.
+#Customer Intent: As an IT Administrator I want to assign eligible roles for a group within an access package.
 ---
 
 # Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups

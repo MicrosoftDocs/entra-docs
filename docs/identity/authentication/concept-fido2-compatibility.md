@@ -12,7 +12,7 @@ This article provides a comprehensive overview of passkey (FIDO2) authentication
 For more information about how to sign in with FIDO2 security keys on a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys or in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys, and plans to support synced passkeys for Microsoft Entra ID.
+> Microsoft Entra ID supports both synced passkeys and device-bound passkeys as Generally Available (GA) authentication methods.
 
 ## [**Web browsers**](#tab/web)
 

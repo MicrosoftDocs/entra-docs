@@ -6,6 +6,7 @@ ms.topic: tutorial
 ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to execute employee termination tasks using lifecycle workflows so that I can automate offboarding on an employee's last day of work.
 ---
 
 # Execute employee termination tasks by using lifecycle workflows

@@ -5,6 +5,7 @@ ms.topic: quickstart
 ms.date: 03/12/2026
 ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to create a new Microsoft Entra tenant so that I can set up a directory for my organization or development environment.
 ---
 
 # Quickstart: Create a new tenant in Microsoft Entra ID

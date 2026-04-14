@@ -6,6 +6,7 @@ ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: mwahl
+#Customer Intent: As a user, I want to review my own access to resources so that I can confirm my access is still needed and appropriate.
 ---
 
 # Self-review of access packages and resources in Microsoft entitlement management

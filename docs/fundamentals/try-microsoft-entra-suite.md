@@ -6,6 +6,7 @@ ms.topic: overview
 ms.date: 04/02/2025
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to try Microsoft Entra Suite for free so that I can evaluate the full set of identity and access management capabilities.
 ---
 
 # Trial user guide: Microsoft Entra Suite

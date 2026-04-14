@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/25/2026
 
-#CustomerIntent: As an IT administrator I want to integrate SAP IAG with Microsoft Entra to expand the capabilities of both solutions.
+#Customer Intent: As an IT administrator I want to integrate SAP IAG with Microsoft Entra to expand the capabilities of both solutions.
 ---
 
 # Microsoft Entra SAP IAG integration (Preview)

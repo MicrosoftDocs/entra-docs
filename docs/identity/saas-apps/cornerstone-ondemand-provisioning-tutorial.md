@@ -3,7 +3,7 @@ title: Configure Cornerstone OnDemand for automatic user provisioning with Micro
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Cornerstone OnDemand.
 author: zhchia
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cornerstone OnDemand so that I can streamline the user management process and ensure that users have the appropriate access to Cornerstone OnDemand.
@@ -70,13 +70,15 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 	![The Cornerstone OnDemand link in the applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Cornerstone OnDemand Provisioning](./media/cornerstone-ondemand-provisioning-tutorial/ProvisioningTab.png)
 
-4. Set **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-5. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+
+1. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
 
 	* In the **Admin Username** box, fill in the domain or username of the admin account on your Cornerstone OnDemand tenant. An example is contoso\admin.
 
@@ -84,41 +86,29 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 	* In the **Domain** box, fill in the web service URL of the Cornerstone OnDemand tenant. For example, the service is located at `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, and for Contoso the domain is `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`.
 
-6. After you fill in the boxes shown in Step 5, select **Test Connection** to make sure that Microsoft Entra ID can connect to Cornerstone OnDemand. If the connection fails, make sure that your Cornerstone OnDemand account has admin permissions and try again.
+1. In the **Tenant URL** field, enter your Cornerstone OnDemand Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cornerstone OnDemand. If the connection fails, ensure your Cornerstone OnDemand account has the required admin permissions and try again.
 
-	![Cornerstone OnDemand Test Connection](./media/cornerstone-ondemand-provisioning-tutorial/TestConnection.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-7. In the **Notification Email** box, enter the email address of the person or group to receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Cornerstone OnDemand Notification Email](./media/cornerstone-ondemand-provisioning-tutorial/EmailNotification.png)
+1. Select **Properties** on the **Overview** page.
 
-8. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cornerstone OnDemand**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-10. Review the user attributes that are synchronized from Microsoft Entra ID to Cornerstone OnDemand in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Cornerstone OnDemand for update operations. To save any changes, select **Save**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Cornerstone OnDemand in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Cornerstone OnDemand for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Cornerstone OnDemand API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
 	![Cornerstone OnDemand Attribute Mappings](./media/cornerstone-ondemand-provisioning-tutorial/UserMappingAttributes.png)
 
-11. To configure scoping filters, follow the instructions in the [scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-12. To enable the Microsoft Entra provisioning service for Cornerstone OnDemand, in the **Settings** section, change **Provisioning Status** to **On**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Cornerstone OnDemand Provisioning Status](./media/cornerstone-ondemand-provisioning-tutorial/ProvisioningStatus.png)
-
-13. Define the users or groups that you want to provision to Cornerstone OnDemand. In the **Settings** section, select the values you want in **Scope**.
-
-	![Cornerstone OnDemand Scope](./media/cornerstone-ondemand-provisioning-tutorial/SyncScope.png)
-
-14. When you're ready to provision, select **Save**.
-
-	![Cornerstone OnDemand Save](./media/cornerstone-ondemand-provisioning-tutorial/Save.png)
-
-This operation starts the initial synchronization of all users or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than later syncs. They occur approximately every 40 minutes as long as the Microsoft Entra provisioning service runs. 
-
-You can use the **Synchronization Details** section to monitor progress and follow links to the provisioning activity report. The report describes all the actions performed by the Microsoft Entra provisioning service on Cornerstone OnDemand.
-
-For information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Connector limitations
 

@@ -48,7 +48,7 @@ In this tutorial, you learn how to:
 > 1. Client sees a certificate signed by your enterprise CA.
 > 1. If allowed by policy, SSE forwards the traffic to the original destination server.
 >
-> > ```Example:
+> ```Example:
 > User → GSA Client → SSE Proxy → Destination Server
 >                          │
 >                    [TLS Terminated]

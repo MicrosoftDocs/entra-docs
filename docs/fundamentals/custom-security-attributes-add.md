@@ -8,6 +8,7 @@ ms.date: 05/30/2025
 ms.collection: M365-identity-device-management
 
 #customer-intent: As an admin, I want to define and manage custom security attributes in Microsoft Entra ID, so that I can implement fine-grained access control, organize identity data effectively, and support attribute-based access policies across users and applications.
+#Customer Intent: As an IT admin, I want to add or deactivate custom security attribute definitions so that I can manage custom attributes for my organization's directory objects.
 ---
 
 # Add or deactivate custom security attribute definitions in Microsoft Entra ID

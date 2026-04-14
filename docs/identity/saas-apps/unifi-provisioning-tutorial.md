@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to UNIFI so that I can streamline the user management process and ensure that users have the appropriate access to UNIFI.
@@ -27,7 +27,7 @@ This article describes the steps you need to perform in both UNIFI and Microsoft
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [UNIFI](http://www.unifilabs.com/) tenant.
 * A user account in UNIFI with Admin permissions.
 
@@ -44,19 +44,19 @@ The scenario outlined in this article assumes that you already have the followin
 1. Find the **Login URL** in Single sign-on. In our case it's `https://login.microsoftonline.com/<guid>/saml2`.
 1. Download the Certificate (Base64) under the SAML Signing Certificate section.
 
-	![Enterprise Application SSO View](media/unifi-provisioning-tutorial/enterprise-application-view.png)
+	![Screenshot of Enterprise Application SSO View.](media/unifi-provisioning-tutorial/enterprise-application-view.png)
 
-1. If your identity provider isn't added to UNIFI , then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
+1. If your identity provider isn't added to UNIFI, then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
 
-	![Add Identity Provider View](media/unifi-provisioning-tutorial/add-identity-provider-view.png)
+	![Screenshot of Add Identity Provider View.](media/unifi-provisioning-tutorial/add-identity-provider-view.png)
 
 1. The add SSO Provider modal is displayed.
 
-	![Add Identity Provider Modal](media/unifi-provisioning-tutorial/add-identity-provider-modal.png)
+	![Screenshot of Add Identity Provider Modal.](media/unifi-provisioning-tutorial/add-identity-provider-modal.png)
 
 1. Provide any unique **Name** value you desire. the **URL** is the **Login URL** from your Microsoft Entra Enterprise Application. Provide any value for the **Token**. Place your Certificate (Base64) value in the **Certificate** field. If you want all of your users created from this point forward to use this identity provider, select the **Make this the default identity provider** checkbox.
 
-	![Add Identity Provider Modal Populated](media/unifi-provisioning-tutorial/add-identity-provider-modal-populated.png)
+	![Screenshot of Add Identity Provider Modal Populated.](media/unifi-provisioning-tutorial/add-identity-provider-modal-populated.png)
 
 1. Select SAVE Button.
 
@@ -76,36 +76,38 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-unifi-in-azure-ad'></a>
 
-### To configure automatic user provisioning for UNIFI in Microsoft Entra ID:
+### Configure automatic user provisioning for UNIFI in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **UNIFI**.
 
-	![The UNIFI link in the Applications list](common/all-applications.png)
+	![Screenshot of UNIFI link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, input your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails, ensure your UNIFI account has Admin permissions and try again.
 
-	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to UNIFI**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in UNIFI for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the UNIFI API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -117,8 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String|
    |externalId|String|
 
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to UNIFI**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in UNIFI for update operations. Select the **Save** button to commit any changes.
 
@@ -128,21 +129,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |members|Reference|
       |externalId|String|      
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for UNIFI, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to UNIFI by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

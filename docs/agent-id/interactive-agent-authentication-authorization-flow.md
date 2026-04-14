@@ -37,7 +37,7 @@ Before you begin, ensure you have:
 For admin authorization, you also need:
 
 - An access token with `Application.ReadWrite.OwnedBy` delegated permission. Understand the difference between [delegated and application permissions](/entra/identity-platform/permissions-consent-overview).
-- [Administrator access to grant consent](../identity-professional/grant-agent-access-microsoft-365.md) for application permissions.
+- [Administrator access to grant consent](grant-agent-access-microsoft-365.md) for application permissions.
 
 ## Register a redirect URI
 
@@ -356,6 +356,6 @@ Under the hood, the OBO flow involves two token exchanges: first, the agent iden
 - [Token claims reference](agent-token-claims.md)
 - [On-behalf-of flow in agents](agent-on-behalf-of-oauth-flow.md)
 - [Agent users](agent-users.md)
-- [Request agent tokens for autonomous agents](autonomous-agent-request-tokens.md)
+- [Authenticate and acquire tokens for autonomous agents](autonomous-agent-authentication-authorization-flow.md)
 - [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview)
 - [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow)

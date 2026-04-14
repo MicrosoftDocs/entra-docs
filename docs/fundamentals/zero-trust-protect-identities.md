@@ -9,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect identities and secrets so that I can prevent unauthorized access to critical resources.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect identities and secrets

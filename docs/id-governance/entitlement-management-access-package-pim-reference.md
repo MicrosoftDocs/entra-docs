@@ -4,7 +4,7 @@ description: This article serves as a reference for Microsoft Entra ID behavior 
 ms.topic: concept-article
 ms.date: 06/26/2025
 
-#CustomerIntent: As a customer, I want to become informed on what happens in the different scenarios when PIM expiration dates differ from the access package expiration date.
+#Customer Intent: As a customer, I want to become informed on what happens in the different scenarios when PIM expiration dates differ from the access package expiration date.
 ---
 
 # Using groups managed by Privileged Identity Management with access packages

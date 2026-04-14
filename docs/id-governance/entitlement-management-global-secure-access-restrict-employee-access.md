@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 05/13/2025
 ms.reviewer: jercon
+#Customer Intent: As an IT admin, I want to use entitlement management and Global Secure Access to restrict employee access to cloud apps so that I can enforce least-privilege access.
 ---
 
 

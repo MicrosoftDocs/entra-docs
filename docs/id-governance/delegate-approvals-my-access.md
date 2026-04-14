@@ -4,7 +4,7 @@ description: A how-to article explaining how system admins can delegate approval
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/26/2025
 
-#CustomerIntent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
+#Customer Intent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
 ---
 
 # Delegate approvals in My Access (Preview)

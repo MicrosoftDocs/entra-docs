@@ -53,7 +53,7 @@ sections:
         imageUrl: media/index/hero-image-data-charts.png
         links:
           - componentType: link
-            url: ./identity-platform/what-is-agent-id-platform.md
+            url: ./what-is-agent-id-platform.md
             text: Protect agents
 
   # FEATURE GRID #############################################################################
@@ -64,15 +64,15 @@ sections:
       - componentType: summary-card
         title: Agent identity blueprints
         summary: Define reusable templates for agent identities with preconfigured permissions, policies, and settings.
-        url: ./identity-platform/agent-blueprint.md
+        url: ./agent-blueprint.md
       - componentType: summary-card
         title:  Microsoft Entra SDK for agents
         summary: Integrate agent authentication and authorization with familiar SDKs and developer tools.
-        url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md
+        url: ./microsoft-entra-sdk-for-agent-identities.md
       - componentType: summary-card
         title: OAuth protocols for agents
         summary: Understand how agents authenticate and obtain tokens using OAuth 2.0 flows optimized for AI workloads.
-        url: ./identity-platform/agent-oauth-protocols.md
+        url: ./agent-oauth-protocols.md
       - componentType: summary-card
         title: Security for AI
         summary: Explore how Microsoft Entra Agent ID integrates with Security for AI to protect your agents

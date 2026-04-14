@@ -233,7 +233,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 - Microsoft Entra Kerberos doesn't issue partial TGTs to identities that aren't synced to Microsoft Entra ID.
 - Microsoft Entra Kerberos uses a secure TGT exchange model via KDC Proxy. This model minimizes exposure to domain controllers and reduces the attack surface.
 - Admins can configure group resolution policies to limit which groups are included in Kerberos tickets. These controls are essential for managing ticket size and reducing exposure to unnecessary group data.
-- We advise you to maintain clear separation between cloud and on-premises environments. We discourage synchronizing sensitive accounts like `krbtgt_AzureAD` to on-premises Active Directory due to privilege escalation risks.
+- We advise you to clear separation between cloud and on-premises environments and not syncing krbtgt_AzureAD sensitive account to prevent privilege escalation risks. The `krbtgt_AzureAD` account should exist only in Entra ID, created and managed automatically by Microsoft's cloud services.
 - Use the RODC object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
 
 ## Limitations and other considerations

@@ -5,7 +5,7 @@ ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/12/2026
 
-#CustomerIntent: As an ID administrator, I want to create catalog access reviews so that I can set up access reviews for multiple resources within a catalog at once.
+#Customer Intent: As an ID administrator, I want to create catalog access reviews so that I can set up access reviews for multiple resources within a catalog at once.
 ---
 
 # Catalog Access Reviews (preview)

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/07/2025
 ---
 
-# Group Policy (Private Preview)
+# Group Policy (Preview)
 
 Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks.
 

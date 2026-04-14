@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: template-how-to
+#Customer Intent: As an IT admin, I want to configure an Azure Logic App for use with lifecycle workflows so that I can extend workflow automation capabilities.
 ---
 
 # Configure a Logic App for Lifecycle Workflow use

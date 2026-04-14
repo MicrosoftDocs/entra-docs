@@ -105,6 +105,9 @@ The roles in this scenario are:
 
 The issuer is an organization that creates an issuance solution requesting information from a user. The information is used to verify the user’s identity. For example, Woodgrove, Inc. has an issuance solution that enables them to create and distribute verifiable credentials (VCs) to all their employees. The employee uses the Authenticator app to sign in with their username and password, which passes an ID token to the issuing service. Once Woodgrove, Inc. validates the ID token submitted, the issuance solution creates a VC that includes claims about the employee and is signed with Woodgrove, Inc. DID. The employee now has an employer signed verifiable credential which includes the employee's DID as the subject DID.
 
+> [!NOTE]
+> The sign-in step uses traditional authentication (such as username and password) to verify the employee's identity with the issuer. This is separate from the verifiable credential itself. The verifiable credential is a portable, cryptographically signed proof that the employee can later present to any verifier without the verifier needing to contact Woodgrove or any central authority.
+
 ### User
 
 The user is the person or entity that is requesting a VC. For example, Alice is a new Woodgrove employee and was previously issued her proof of employment verifiable credential. When Alice needs to provide proof of employment to get a discount at Proseware, she can grant access to the credential in her Authenticator app by signing a verifiable presentation that proves Alice is the owner of the DID. Proseware is able to validate Woodgrove-issued credentials and Alice's verifiable credential ownership.

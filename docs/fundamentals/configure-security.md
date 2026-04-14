@@ -9,6 +9,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to configure Microsoft Entra for increased security so that I can harden my organization's identity infrastructure.
 ---
 # Configure Microsoft Entra for increased security (Preview)
 

@@ -20,7 +20,7 @@ Before you begin, ensure you have:
 - [Set up the Microsoft Entra SDK for Agent ID](/entra/msidweb/agent-id-sdk/installation)
 - [An agent identity](./create-delete-agent-identities.md). Record the agent identity client ID.
 - [An agent identity blueprint](./create-blueprint.md). Record the agent identity blueprint client ID.
-- Necessary [permissions configured in Microsoft Entra ID](../identity-professional/grant-agent-access-microsoft-365.md)
+- Necessary [permissions configured in Microsoft Entra ID](grant-agent-access-microsoft-365.md)
 
 ## Deploy your containerized service
 

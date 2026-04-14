@@ -5,6 +5,7 @@ editor: markwahl-msft
 ms.topic: overview
 ms.date: 04/09/2025
 ms.reviewer: markwahl-msft
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
 
 # What is Microsoft Entra ID Governance?

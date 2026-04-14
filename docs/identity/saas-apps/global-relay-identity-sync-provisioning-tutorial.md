@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 04/08/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Global Relay Identity Sync so that I can streamline the user management process and ensure that users have the appropriate access to Global Relay Identity Sync.
@@ -30,7 +30,7 @@ This article describes the steps you need to perform in both Global Relay Identi
 > Global Relay Identity Sync provisioning connector utilizes a SCIM authorization method that's no longer supported due to security concerns. Efforts are underway with Global Relay to switch to a more secure authorization method.
 
 > [!NOTE]
-> Global Relay Identity Sync is now supports Client credential authorization. 
+> Global Relay Identity Sync now supports Client credential authorization. 
 
 ## Prerequisites
 
@@ -41,8 +41,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Global Relay Identity Sync](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Global Relay Identity Sync](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-global-relay-identity-sync-to-support-provisioning-with-azure-ad'></a>
 
@@ -77,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Global Relay Identity Sync link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Global Relay Identity Sync for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Global Relay Identity Sync API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Global Relay Identity Sync for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Global Relay Identity Sync API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -173,9 +173,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 
 
-10. Select **Groups**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Global Relay Identity Sync for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Global Relay Identity Sync for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|

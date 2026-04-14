@@ -4,10 +4,10 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ideo so that I can streamline the user management process and ensure that users have the appropriate access to Ideo.
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to IDEO so that I can streamline the user management process and ensure that users have the appropriate access to IDEO.
 ---
 
 # Configure IDEO for automatic user provisioning with Microsoft Entra ID
@@ -34,8 +34,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and IDEO](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and IDEO](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-ideo-to-support-provisioning-with-azure-ad'></a>
 
@@ -72,27 +72,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The IDEO link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM 2.0 base URL and Access Token** values retrieved earlier from the IDEO support team in the **Tenant URL** and **Secret Token** fields respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to IDEO. If the connection fails, ensure your IDEO account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your IDEO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to IDEO. If the connection fails, ensure your IDEO account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to IDEO**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to IDEO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in IDEO for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to IDEO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in IDEO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the IDEO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -101,31 +103,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean|
    |name.givenName|String|
    |name.familyName|String|
-
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to IDEO**.
    
-11. Review the group attributes that are synchronized from Microsoft Entra ID to ideo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in IDEO for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to IDEO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in IDEO for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|
       |displayName|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for IDEO, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to IDEO by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

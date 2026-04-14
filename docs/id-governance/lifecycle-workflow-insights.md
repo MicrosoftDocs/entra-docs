@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: krbain
 
-#CustomerIntent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
+#Customer Intent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
 ---
 
 # Workflow Insights

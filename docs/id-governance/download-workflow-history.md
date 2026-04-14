@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 03/12/2026
 
-#CustomerIntent: As an admin, I want to download history reports as a CSV.
+#Customer Intent: As an admin, I want to download history reports as a CSV.
 ---
 
 # Download workflow history reports

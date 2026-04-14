@@ -41,7 +41,6 @@ To complete this article, you need the following resources:
    - **TLS 1.2 Only Mode**
    - **NTLM v1 Authentication**
    - **NTLM Password Synchronization**
-   - **Kerberos RC4 Encryption**
    - **Kerberos Armoring**
    - **LDAP Signing**
    - **LDAP Channel Binding**

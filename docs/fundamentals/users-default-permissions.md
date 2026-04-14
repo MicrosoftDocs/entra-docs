@@ -5,6 +5,7 @@ ms.topic: concept-article
 ms.date: 03/05/2025
 ms.reviewer: vincesm
 ms.custom: sfi-ga-nochange, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand default user permissions in Microsoft Entra ID so that I can manage what actions users can perform by default.
 ---
 # What are the default user permissions in Microsoft Entra ID?
 

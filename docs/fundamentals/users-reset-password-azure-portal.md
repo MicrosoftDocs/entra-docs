@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 08/27/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to reset a user's password so that I can help users regain access to their accounts.
 ---
 
 # Reset a user's password

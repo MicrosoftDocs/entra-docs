@@ -4,7 +4,7 @@ description: This step-by-step tutorial shows how to create an access package fo
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
-#Customer intent: As an IT admin, I want step-by-step instructions for creating an access package for managing the lifecycle of group-based licenses.
+#Customer Intent: As an IT admin, I want to manage the lifecycle of group-based licenses using entitlement management so that I can automate license assignment and removal.
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
 

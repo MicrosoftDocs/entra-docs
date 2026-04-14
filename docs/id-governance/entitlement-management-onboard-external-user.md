@@ -5,7 +5,7 @@ author: Sammak
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 07/15/2024
-#Customer intent: As a IT admin, I want step-by-step instructions for creating an access package for managing external users through approvals.
+#Customer Intent: As an IT admin, I want to onboard external users through an approval process so that I can ensure appropriate access for external collaborators.
 ---
 # Tutorial - Onboard external users to Microsoft Entra ID through an approval process
 

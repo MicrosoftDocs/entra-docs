@@ -4,6 +4,7 @@ description: Learn about the new Microsoft Entra bulk operations experience for 
 ms.topic: article
 ms.date: 02/24/2026
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to understand bulk operations in Microsoft Entra ID so that I can perform large-scale user management tasks efficiently.
 ---
 
 # Bulk operations in Microsoft Entra ID (Preview)
