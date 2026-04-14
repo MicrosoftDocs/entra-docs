@@ -13,42 +13,6 @@ ms.custom: sfi-image-nochange
 
 This article shows you how to create and manage a catalog of resources and access packages in entitlement management. Catalogs are also used in [access reviews (preview)](catalog-access-reviews.md).
 
-## Catalog privilege levels (Preview)
-
-Microsoft Entra ID Governance catalogs have two privilege levels that determine their security and management requirements:
-
-### Privilege levels
-
-- **Standard catalog**
-     - The default type for most catalogs.
-     - Remains standard as long as it doesn't contain privileged resources.
-     - Supports all catalog management actions and access patterns.
-
-- **Privileged catalog**
-     - Automatically assigned when a catalog contains resources that grant elevated permissions, such as:
-         - Microsoft Entra roles
-         - Application API permissions
-     - These catalogs apply stricter access and governance controls due to their security‑sensitive nature, such as more restrictive application permissions, tighter role requirements for catalog modification, and limits on automation to reduce the risk of unintended privileged access assignments.
-
-### What changes for privileged catalogs?
-
-Privileged catalogs have stricter controls to protect sensitive resources:
-
-- **Application access:**
-    - Applications must have directory role management permissions to write to a privileged catalog.
-    - Requests without these permissions are blocked.
-
-- **User access:**
-    - Only users who are either:
-        - Global Administrators, or Privileged Role Administrators who also have the Identity Governance Administrator role can perform create, update, or delete actions.
-    - Other users can read the catalog but can't modify it.
-
-- **Auto-assignment policies:**
-    - You can't create new auto-assignment policies for privileged catalogs.
-    - This prevents automated distribution of privileged roles or permissions.
-
-To manually update the privilege level of a catalog, see: [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
-
 ## Create a catalog
 
 A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. An administrator can create a catalog. In addition, a user delegated to the [catalog creator](entitlement-management-delegate.md) role can create a catalog for resources that they own. A nonadministrator who creates the catalog becomes the first catalog owner. A catalog owner can add more users, groups of users, or application service principals as catalog owners.  
