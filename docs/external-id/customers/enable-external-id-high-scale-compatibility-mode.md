@@ -26,6 +26,8 @@ This article assumes you've already chosen the **High Scale Compatibility (HSC) 
 
 Before you begin, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete. You can't proceed to Stage 1 until your tenant is allowlisted.
 
+If your Azure AD B2C tenant uses custom attributes, verify that every custom attribute has a nonempty `description` value before enabling HSC mode. The enable API syncs custom attributes to the External ID context and fails if any attribute has a null or empty description. To check and fix attribute descriptions, see [Custom attribute sync fails](troubleshoot-high-scale-compatibility-mode.md#custom-attribute-sync-fails).
+
 ## Stage 1: Enable HSC mode
 
 Once your tenant is allowlisted for HSC mode, you can turn on HSC mode by calling the following Microsoft Graph API. The calling account needs the [`Policy.ReadWrite.AuthenticationFlows`](/graph/permissions-reference#policyreadwriteauthenticationflows) permission:
