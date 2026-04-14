@@ -20,11 +20,11 @@ Microsoft maintains robust processes to help ensure the successful delivery of e
 
 ## The journey of an SMS or voice MFA request
 
-When you sign in and an MFA challenge is triggered, Microsoft is able to confirm the following steps given a Correlation ID and timestamp:
+When you sign in and an SMS or voice MFA challenge is triggered, Microsoft is able to confirm the following steps given a Correlation ID and timestamp:
 
-1. **Request received.** Microsoft receives the MFA request and constructs the payload for the SMS or voice request with the expected Microsoft or company branding.
-1. **Provider selected.** Microsoft sends the request to a selection of external third-party telecom providers matching your country code.
-1. **Channel matched.** The request is routed through the correct channel (SMS or voice) per your request and policy requirements.
+1. **Request received.** Microsoft Entra generates the MFA request and constructs the payload for the SMS or voice request with the expected Microsoft or company branding.
+1. **Provider selected.** Microsoft sends the request to one of multiple external third-party telecom providers matching your country code.
+1. **Channel matched.** The request is routed through the correct channel (SMS or voice) per your configuration, selection, and policy requirements.
 1. **Delivery confirmed.** The provider confirms receipt of the telecom request and marks it as successfully delivered with no alterations.
 
 After step 4, the request enters external telecom networks where Microsoft doesn't have direct visibility. Problems that occur beyond this point require collaboration with the provider to investigate.
