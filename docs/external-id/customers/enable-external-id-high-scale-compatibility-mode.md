@@ -188,4 +188,3 @@ After the initial application is validated:
 - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Decide whether HSC mode or the standard approach is right for your tenant.
 - [Troubleshoot HSC mode](troubleshoot-high-scale-compatibility-mode.md) – Diagnose and resolve common errors when using the HSC API.
 - [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – Follow the standard approach implementation steps (for tenants that aren't using HSC mode).
-- [B2C HSC native auth configuration sample](https://github.com/microsoft/b2c-hsc-native-auth-configuration) – Sample configuration for native authentication in HSC mode.
