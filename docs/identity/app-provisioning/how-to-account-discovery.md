@@ -2,7 +2,7 @@
 title: Discover identities in target applications with Account Discovery (preview)
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 03/31/2026
+ms.date: 04/15/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -43,20 +43,29 @@ Before you can use Account Discovery, the following must be in place:
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- See [Supported applications](#supported-applications) for applications that support Account Discovery. Account Discovery isn't supported for some applications, including:
-  - Workday
-  - SAP SuccessFactors
-  - API-driven provisioning apps
-  - ServiceNow
-  - Amazon Web Services (AWS)
+- See [Supported applications](#supported-applications) for applications that support Account Discovery. 
 
-## Supported applications
+## Application support
+For SCIM based connectors, account discovery requires that the application support [RFC 7644, Section 3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).
 
-Account Discovery is validated for the following applications:
+### Connectors with established discovery behavior
 
-- SAP Cloud Identity Services
-- Salesforce
-- Atlassian
+Customers using account discovery with the following applications consistently receive complete discovery results:
+
+- SAP Cloud Identity Services  
+- Salesforce  
+- Atlassian Cloud  
+
+### Connectors that do not support discovery
+Account Discovery is currently unsupported for the following applications:
+
+- HR provisioning (Workday, SAP SuccessFactors, API-driven provisioning)
+- ServiceNow  
+- Amazon Web Services (AWS)  
+
+### All other connectors
+
+Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If you discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
 
 ## Discover identities in a target application
 
