@@ -133,7 +133,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 1. On the **New SAML/WS-Fed IdP** page, enter the following:
    - **Display name** - Enter a name to help you identify the partner's IdP.
    - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
-   - **Domainless** - Selecting **Domainless** will enforce no domain check of the user's email address. For more details, [Domainless Federation](./direct-federation.md#domainless-federation)
+   - **Domainless** - Selecting **Domainless** will enforce no domain check of the user's email address. For more details, [Domainless Federation](./direct-federation.md#domainless-saml-idp-federation)
    - **Domain name of federating IdP** - Enter your partner’s IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
