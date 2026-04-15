@@ -2,7 +2,7 @@
 title: Learn about the Global Secure Access Dashboard
 description: "View real-time insights on active devices, alerts, traffic patterns, and cross-tenant usage across Microsoft Entra Private Access and Internet Access services."
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 04/15/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 ---
@@ -49,7 +49,7 @@ This widget summarizes the number of users and devices using the service and the
 - **Users**: The number of distinct users seen in the last 24 hours. The data uses the *user principal name (UPN)*.
 - **Devices**: The number of distinct devices seen in the last 24 hours. The data uses the *device ID*.
 - **Destinations**: The number of distinct destinations seen in the last 24 hours. The data uses fully qualified domain names (FQDNs) and IP addresses.
-- **Agents**: The number of distinct agents seen in the last 24 hours. The data uses the *agent ID*.
+- **Agents**: The number of distinct agents seen in the last 24 hours. The data uses the *agent ID* or *agent name*.
 
 :::image type="content" source="media/concept-traffic-dashboard/snapshot-widget.png" alt-text="Screenshot of the Global Secure Access snapshot widget." lightbox="media/concept-traffic-dashboard/snapshot-widget.png":::
 
@@ -57,7 +57,7 @@ The **Global Secure Access snapshot** defaults to showing all types of traffic, 
 
 :::image type="content" source="media/concept-traffic-dashboard/snapshot-filter.png" alt-text="Screenshot of the Global Secure Access snapshot widget with the filter open." lightbox="media/concept-traffic-dashboard/snapshot-filter.png":::
 
-## Alerts and notifications (preview)
+## Alerts and notifications
 
 This widget shows network activity and helps you spot suspicious activities or trends in the network data.
 
@@ -176,7 +176,7 @@ The **Alerts** widget shows a chart of alert counts by type and severity.
 
 ## No data available
 
-If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](quickstart-access-admin-center.md) guide to onboard your tenant.
+If your dashboard shows the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](quickstart-access-admin-center.md) guide to onboard your tenant.
 
 :::image type="content" source="media/concept-traffic-dashboard/no-data-available.png" alt-text="Screenshot of a widget with no data available." lightbox="media/concept-traffic-dashboard/no-data-available.png":::
 
