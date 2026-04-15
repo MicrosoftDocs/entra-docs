@@ -224,10 +224,9 @@ After configuring domainless federation, you can invite guest users from the par
 
 ### Known issues
 
-We are actively addressing the known issue, and this list will be updated as fixes are rolled out.
+We are actively addressing one known issue as noted below and will be updated after fix is rolled out.
 
-1. The IdP configuration gets removed if more than one SAML IdP is configured as domainless or if an invalid domain name is entered.
-
+1. The IdP configuration gets deleted if an invalid domain name is entered even when the IdP config is not saved.
 
 ## How to update the certificate or configuration details
 
