@@ -44,9 +44,11 @@ You can set token lifetime policies for access tokens, SAML tokens, and ID token
 
 ### Access tokens
 
-Clients use access tokens to access a protected resource. An access token can be used only for a specific combination of user, client, and resource. Access tokens can't be revoked and are valid until their expiry. A malicious actor that obtains an access token can use it for the extent of its lifetime. Adjusting the lifetime of an access token is a trade-off between improving system performance and increasing the amount of time that the client retains access after the user's account is disabled. Improved system performance is achieved by reducing the number of times a client needs to acquire a fresh access token.
+Clients use access tokens to access a protected resource. An access token can be used only for a specific combination of user, client, and resource. Adjusting the lifetime of an access token is a trade-off between improving system performance and increasing the amount of time that the client retains access after the user's account is disabled. Improved system performance is achieved by reducing the number of times a client needs to acquire a fresh access token.
 
-The default lifetime of an access token is variable. When issued, an access token's default lifetime is assigned a random value ranging between 60-90 minutes (75 minutes on average).  The default lifetime also varies depending on the client application requesting the token or if Conditional Access is enabled in the tenant. For more information, see [Access token lifetime](access-tokens.md#token-lifetime).
+The default lifetime of an access token is variable. When issued, an access token's default lifetime is assigned a random value ranging between 60-90 minutes (75 minutes on average). The default lifetime also varies depending on the client application requesting the token, the resource the token is issued for, and whether Conditional Access is enabled in the tenant. For more information, see [Access token lifetime](access-tokens.md#token-lifetime).
+
+When both the client and the resource support [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md), the token lifetime may be automatically extended to 24-28 hours, when it is safe to do so. These long-lived tokens will be revoked in near real time in response to critical events such as account disablement and password changes. Learn more about [how CAE impacts the token lifetime](../identity/conditional-access/concept-continuous-access-evaluation.md#token-lifetime)
 
 ### SAML tokens
 
@@ -66,17 +68,17 @@ A token lifetime policy is a type of policy object that contains token lifetime 
 
 ### Access, ID, and SAML2 token lifetime policy properties
 
-Reducing the Access Token Lifetime property mitigates the risk of an access token or ID token being used by a malicious actor for an extended period of time. (These tokens can't be revoked.) The trade-off is that performance is adversely affected, because the tokens have to be replaced more often.
+Reducing the Access Token Lifetime helps limit the amount of time that a compromised access token or ID token can be used by a malicious actor. The trade-off is that performance is adversely affected, because the tokens have to be replaced more often.
 
 For an example, see [Create a policy for web sign-in](configure-token-lifetimes.yml).
 
-Access, ID, and SAML2 token configuration are affected by the following properties and their respectively set values:
+Token lifetimes for access tokens, ID tokens, and SAML2 tokens are controlled by the following policy property:
 
 - **Property**: Access Token Lifetime
 - **Policy property string**: `AccessTokenLifetime`
 - **Affects**: Access tokens, ID tokens, SAML2 tokens
 - **Default**:
-    - Access tokens: varies, depending on the client application requesting the token. For example, continuous access evaluation (CAE) capable clients that negotiate CAE-aware sessions will see a long lived token lifetime (up to 28 hours).
+    - Access tokens: varies, depending on the client application requesting the token. CAE-capable clients that negotiate CAE-aware sessions may receive long-lived tokens (up to 28 hours).
     - ID tokens, SAML2 tokens: One hour
 - **Minimum**: 10 minutes (`00:10:00`)
 - **Maximum**: One day (`23:59:59`)

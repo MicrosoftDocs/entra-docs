@@ -71,7 +71,7 @@ procedureSection:
   - title: |
       Create a policy and assign it to a service principal
     summary: |
-      In the following steps, you'll create a policy that sets the lifetime of the access/ID tokens to 4 hours and assign the policy to a service principal.
+      In the following steps, you'll create a policy that sets the lifetime of the access/ID tokens to 8 hours and assign the policy to a service principal.
     steps:
       - |
         Create a token lifetime policy.
