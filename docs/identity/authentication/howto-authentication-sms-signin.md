@@ -9,6 +9,8 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
+## Move to modern, phishing-resistant authentication
+
 > [!IMPORTANT]
 > Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
 >

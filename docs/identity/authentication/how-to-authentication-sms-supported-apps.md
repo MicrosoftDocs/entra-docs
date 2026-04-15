@@ -9,6 +9,8 @@ ms.reviewer: anjusingh
 
 # App support for SMS-based authentication
 
+## Move to modern, phishing-resistant authentication
+
 > [!IMPORTANT]
 > Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
 >
