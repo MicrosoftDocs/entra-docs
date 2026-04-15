@@ -1,7 +1,7 @@
 ---
-title: View and manage agent identities in your tenant
+title: View and filter agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
-description: Access Microsoft Entra admin center to effortlessly view and filter agent identities. Streamline tenant oversight and take charge now.
+description: Access Microsoft Entra admin center to view and filter agent identities. Streamline tenant oversight with search, filters, and column customization.
 ms.subservice: 
 ms.topic: how-to
 ms.date: 11/04/2025
@@ -11,9 +11,9 @@ ms.reviewer: alamaral
 #Customer intent: As an administrator, I want to view and search for agent identity blueprints / applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
 ---
 
-# View and manage agent identities in your tenant
+# View and filter agent identities in your tenant
 
-Microsoft Entra admin center provides you with a centralized interface to view and manage your agent identities. This comes with the ability to perform various actions like searching, filtering, sorting, and selecting multiple agent identities to disable.
+Microsoft Entra admin center provides you with a centralized interface to view and filter your agent identities. This comes with the ability to search, filter, sort, and customize columns to find specific agent identities in your tenant.
 
 - To view and manage your agent identity blueprint principals, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md).
 - To view and manage agents registered in the Agent Registry without an identity, see [manage agent identity blueprints with no identities](manage-agents-without-identity.md).
@@ -68,15 +68,6 @@ To customize your view of agent identities, you can change filters or select whi
 | **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service principals](agent-service-principals.md) | 
 | **Owners** | Direct link to the owners and sponsors for a given agent identity | ✗ | ✗ | | 
 | **Uses agent identity** | Represents whether or not this agent has an agent identity object, or utilizes a service principal | ✗ | ✗ | If the answer is "yes," then it uses an agent identity object. If "no" this agent utilizes a service principal
-
-## Disable an agent identity
-
-To disable an agent identity while in this page:
-
-1. Select one or more agents from the list by checking the box next to their logo.
-1. Select the **Disable** button in the toolbar.
-
-You might also navigate into a single agent identity, and disable it there.
 
 ## Related content
 

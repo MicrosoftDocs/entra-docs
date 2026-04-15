@@ -47,7 +47,7 @@ The Microsoft Entra admin center provides a centralized interface to view all ag
 
 To search for a specific agent, enter the **name** or **object ID** in the search box, or add the **Agent Blueprint ID** filter. You can customize which columns are shown by selecting the **Choose columns** button. Available columns include **Name**, **Created On**, **Status**, **Object ID**, **View Access**, **Agent Blueprint ID**, **Owners**, and **Uses agent identity**.
 
-For detailed instructions on filtering, column customization, and managing agents from this view, see [View and manage agent identities in your tenant](agent-lists.md).
+For detailed instructions on filtering, column customization, and viewing agents from this view, see [View and filter agent identities in your tenant](agent-lists.md).
 
 ## Manage agent identity blueprints
 
@@ -90,22 +90,7 @@ Key limits:
 
 Inheritable permissions are configured via the `inheritablePermissions` navigation property on the `agentIdentityBlueprint` application resource using Microsoft Graph. For step-by-step API examples (add, update, delete), see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
 
-## Disable or restrict agent identities
-
-Organizations can control agent identity usage at three levels, depending on the scope needed:
-
-| Scope | What it does | Details |
-|---|---|---|
-| **Individual agent** | Disable a specific agent identity to block its access and token issuance. Administrators use the admin center; owners and sponsors use the My Account portal. | [View and manage agent identities in your tenant](agent-lists.md) · [Manage agents in end user experience](manage-agent-identities-end-user.md) |
-| **Blueprint-level** | Disable an agent identity blueprint from its management page. This prevents new agent identities from being created from that blueprint and blocks existing ones. | [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md) |
-| **Tenant-wide** | Block all agent identity authentication using Conditional Access policies, and optionally block creation of new agent identities through product-specific controls (Microsoft Entra ID, Security Copilot, Copilot Studio, Azure AI Foundry, Microsoft Teams). | [Disable agent identities in your tenant](disable-agent-identities.md) |
-
-Re-enabling a disabled agent identity at any scope restores access and token issuance.
-
-> [!CAUTION]
-> Globally disabling agent identities can cause existing agents to fail, degrade Microsoft product experiences, and push teams to use less transparent application or service principal identities. Evaluate the impact before enforcing. For a partial approach, use Conditional Access policies to block specific agents rather than all agent identities.
-
-## Control agent access with Conditional Access
+## Control agent access to resources
 
 Conditional Access policies provide tenant-wide controls for agent identity authentication. You can use these policies to block all agent identities, allow only specific agents, or block risky agents based on ID Protection signals.
 
@@ -121,7 +106,7 @@ Key points about Conditional Access for agent identities:
 
 For detailed policy configuration, step-by-step walkthroughs, and business scenario examples, see [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id).
 
-## Monitor agent activity and risk
+## Monitor agent activity
 
 ### Sign-in and audit logs
 
@@ -146,6 +131,8 @@ GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/
 
 For full details on log types and access methods, see [Microsoft Entra Agent ID logs](sign-in-audit-logs-agents.md).
 
+## Detect and remediate agent risk
+
 ### Identity Protection for agents
 
 Microsoft Entra ID Protection monitors agent identities for anomalous behavior. It detects six offline risk types, including unfamiliar resource access, sign-in spikes, and failed access attempts. Administrators can review the **Risky Agents report** and take response actions: confirm compromise, confirm safe, dismiss risk, or disable the agent.
@@ -157,7 +144,7 @@ When you confirm an agent as compromised, the risk level is set to **High**. If 
 
 For the full risk detection table, response actions, Graph API details, and report walkthrough, see [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 
-## Respond to agent security incidents
+### Respond to agent security incidents
 
 When agent activity triggers a risk detection or security concern, follow this sequence:
 
@@ -203,6 +190,21 @@ For organizations managing large numbers of agent identities, the following opti
 
 - **Multi-select disable**: The admin center supports selecting multiple agent identities at once and disabling them in batch from the **All agent identities** page.
 - **Microsoft Graph API**: Agent identity endpoints support programmatic management. For example, ID Protection exposes `riskyAgents` and `agentRiskDetections` collections for programmatic risk monitoring.
+
+## Disable or restrict agent identities
+
+Organizations can control agent identity usage at three levels, depending on the scope needed:
+
+| Scope | What it does | Details |
+|---|---|---|
+| **Individual agent** | Disable a specific agent identity to block its access and token issuance. Administrators use the admin center; owners and sponsors use the My Account portal. | [View and filter agent identities in your tenant](agent-lists.md) · [Manage agents in end user experience](manage-agent-identities-end-user.md) |
+| **Blueprint-level** | Disable an agent identity blueprint from its management page. This prevents new agent identities from being created from that blueprint and blocks existing ones. | [View and manage agent identity blueprints in your tenant](manage-agent-blueprint.md) |
+| **Tenant-wide** | Block all agent identity authentication using Conditional Access policies, and optionally block creation of new agent identities through product-specific controls (Microsoft Entra ID, Security Copilot, Copilot Studio, Azure AI Foundry, Microsoft Teams). | [Disable agent identities in your tenant](disable-agent-identities.md) |
+
+Re-enabling a disabled agent identity at any scope restores access and token issuance.
+
+> [!CAUTION]
+> Globally disabling agent identities can cause existing agents to fail, degrade Microsoft product experiences, and push teams to use less transparent application or service principal identities. Evaluate the impact before enforcing. For a partial approach, use Conditional Access policies to block specific agents rather than all agent identities.
 
 ## Related content
 

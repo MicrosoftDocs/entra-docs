@@ -54,6 +54,6 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 ## Next steps
 
 - [Manage agent identities in your organization](manage-agent-identities-admin.md) - Full agent management overview including roles, security, and governance.
-- [View and manage agent identities in your tenant](agent-lists.md) - For organization-wide agent management tasks including inventory, filtering, and bulk disable.
+- [View and filter agent identities in your tenant](agent-lists.md) - For organization-wide agent viewing, filtering, and search.
 - If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](../id-governance/entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
 - [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview) - Understand sponsor responsibilities and access package governance.
