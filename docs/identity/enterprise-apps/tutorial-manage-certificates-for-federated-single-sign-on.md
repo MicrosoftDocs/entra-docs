@@ -111,7 +111,7 @@ You receive the notification email from azure-noreply@microsoft.com. To avoid th
 
 > [!NOTE]
 > If notification email address configuration is completed programmatically using Microsoft Graph or PowerShell, administrators should open the single sign-on blade for the application in the Microsoft Entra admin center to ensure expiration notifications are enabled.
-> Failure to initialize SAML settings in the admin center may result in certificate expiration notification emails not being sent."
+> Failure to initialize SAML settings in the admin center may result in certificate expiration notification emails not being sent.
 
 
 ## Renew a certificate that is set to expire soon
