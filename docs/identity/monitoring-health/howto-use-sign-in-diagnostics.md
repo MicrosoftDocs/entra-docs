@@ -95,7 +95,7 @@ Sign-in logs now contain a Copilot skill (in preview) that provides an AI-enhanc
 > Both the existing diagnostic and the AI-based investigation skill are available during preview and transition to the new experience.
 
 > [!NOTE]
-> To run an AI-based investigation of a sign-in event, your tenant must be onboarded to Microsoft Security Copilot with the Microsoft Entra plugin enabled in Security Copilot.
+> Running this skill does not consume Security Copilot compute units (SCUs). Customers can use this skill without a Security Copilot license.
 
 To use the single log investigator:
 
