@@ -1,75 +1,76 @@
 ---
 title: Configure inheritable permissions for agent identity blueprints
-description: Learn how to configure inheritable permissions for agent identity blueprints to automatically grant OAuth 2.0 delegated permission scopes to agent identities.
+description: Learn how to configure inheritable permissions for agent identity blueprints to automatically grant OAuth 2.0 delegated permission scopes and application roles to agent identities.
 author: omondiatieno
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 04/14/2026
 ms.author: jomondi
 ms.reviewer: ergreenl
 
-#Customer intent: As an IT administrator managing agent identity blueprints, I want to configure inheritable permissions so that newly created agent identities can automatically inherit OAuth 2.0 delegated permission scopes without requiring interactive consent prompts.
+#Customer intent: As an IT administrator managing agent identity blueprints, I want to configure inheritable permissions so that newly created agent identities can automatically inherit OAuth 2.0 delegated permission scopes and application roles without requiring interactive consent prompts.
 ---
 
-# Request permissions for agent identity blueprints
+# Configure inheritable permissions for agent identity blueprints
 
-Inheritable permissions let agent identities automatically inherit OAuth 2.0 delegated permission scopes from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes so that newly created agent identities can take action without interactive user or admin consent prompts for those same scopes.
+Inheritable permissions let agent identities automatically inherit delegated permission (scopes) and application permissions (app-roles) from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes and roles so that newly created agent identities can take action without interactive user or admin consent prompts.
 
 ## Prerequisites
 
 - An existing agent identity blueprint already created and configured
-- Agent ID Administrator role for managing agent identity blueprints
-- Application Administrator or Cloud Application Administrator role for managing OAuth2PermissionGrants
+- Either of the following permissions:
+    - Agent ID Developer role for managing agent identity blueprints owned by the user
+    - Agent ID Administrator role for managing agent identity blueprints
 
 ## How inheritable permissions work
 
-This section explains the technical process of how inheritable permissions function in the Microsoft agent identity platform. You configure inheritable permissions for one or more resources on the client agent identity blueprint.
+You configure inheritable permissions for one or more resources on the agent identity blueprint, specifying which delegated scopes and application roles should be inherited by the blueprint's child agent identities. 
 
-During token issuance for an agent identity, the platform merges any eligible inherited scopes with the agent's requested delegated scopes. The inherited scopes appear in the access token's **scp** claim.
+Inheritable permissions are configured only on the agent identity blueprint  and granted on the agent identity blueprint principal. You won't see the inheritable permissions as permissions on the blueprint's child agent identities in the admin center nor when calling Microsoft Graph. During token issuance for an agent identity, the platform merges any eligible inherited scopes and roles with the individual agent identity's granted scopes and roles. The inherited scopes appear in the agent's delegated permission access token (has the 'idtyp' claim as "user") **scp** claim. Inherited application roles appear in the agent's application permission token (has the 'idtyp' claim as "app") in the token's **roles** claim.
 
-To be eligible for inheritance, the agent identity blueprint service principal must already hold OAuth2PermissionGrants for those scopes to the target resource app. If inherited scopes don't appear in tokens, verify that the agent identity blueprint principal (service principal) is granted the necessary delegated scopes for the resource application before retrying token acquisition.
+To be eligible for inheritance, the permission's resource must be listed as an inheritable permission in the agent identity blueprint, and the permission must be granted by an admin to the agent identity blueprint principal in the tenant. If inherited scopes or roles don't appear in tokens, verify that the agent identity blueprint principal (service principal) is granted the necessary delegated scopes and app-role assignments for the resource application before retrying token acquisition.
 
 ## Inheritance patterns
 
-The following two inheritance patterns are supported per resource app:
+The following inheritance patterns are supported per resource app for both scopes and roles:
 
 | Inheritance | Kind | Description |
 |-------------|------|-------------|
-| All Scopes Inheritance | `allAllowed` | Inherit all available delegated scopes for the specified resource app. Newly granted scopes on the agent identity blueprint principal are automatically included. |
-| Enumerated Scopes Inheritance | `enumerated` | Inherit only the explicitly listed scopes. Use it for fine-grained control and gradual expansion. |
+| All Allowed | `allAllowed` | Inherit all available delegated scopes or application roles for the specified resource app. Newly granted scopes or roles on the agent identity blueprint principal are automatically included. |
+| None | `none` | Inherit no scopes or roles for the specified resource app. Use this to explicitly disable inheritance for scopes (`noScopes`) or roles (`noRoles`) independently. |
 
-When configuring inheritance, start with the enumerated pattern using only essential scopes, then expand as needed. This approach provides better security control and makes it easier to track which permissions are actually being used by your agents.
+You can configure scopes and roles independently on the same resource. For example, you can inherit all scopes while inheriting no roles, or vice versa.
 
 ## Inheritable permissions limitations
 
-- Maximum of 10 resource apps per agent identity blueprint (for example, up to 10 entries in the *inheritablePermissions* collection). If you exceed these limits, reduce the number of resource apps or enumerated scopes to stay within the supported boundaries.
-- For kind: *enumerated*, maximum of 40 scopes per resource app.
-- The blocklist of high-privilege scopes is enforced. Some sensitive scopes aren't inheritable due to platform policy for agent identities. It aligns with the broader restriction on granting high-privilege Microsoft Graph scopes to agents. If you encounter policy errors when configuring inheritance, remove the blocked scopes from your configuration.
+- Maximum of 10 resource apps per agent identity blueprint (for example, up to 10 entries in the *inheritablePermissions* collection). If you exceed this limit, reduce the number of resource apps to stay within the supported boundary.
+- The [blocklist of high-privilege scopes](/graph/api/resources/agentid-platform-overview?#microsoft-graph-permissions-blocked-for-agents) is enforced. Some sensitive scopes aren't inheritable due to platform policy for agent identities. It aligns with the broader restriction on granting high-privilege Microsoft Graph scopes to agents. If you encounter policy errors when configuring inheritance, remove the blocked scopes from your configuration.
 
-Regularly review and monitor your inheritable permissions configuration. Reevaluate inherited scopes to ensure they remain appropriate for your use case. Audit, which inherited scopes are being used by agents and remove any unused scopes from both the agent identity blueprint principal and the inheritable permissions list to maintain security hygiene.
+Regularly review and monitor your inheritable permissions configuration. Reevaluate inherited scopes and roles to ensure they remain appropriate for your use case. Audit which inherited scopes and roles are being used by agents and remove any unused permissions from both the agent identity blueprint principal and the inheritable permissions list to maintain security hygiene.
 
-## Configure inheritable permissions (Microsoft Graph beta)
+## Configure inheritable permissions (using Microsoft Graph)
 
-To configure inheritable permissions, use the inheritablePermissions navigation property on the `agentIdentityBlueprint` application resource. Document your configuration decisions by tracking why each scope is inheritable and who approved it for audit purposes.
+To configure inheritable permissions, use the inheritablePermissions navigation property on the `agentIdentityBlueprint` application resource. Each entry specifies the scopes and roles inheritance configuration for a single resource app. Document your configuration decisions by tracking why each scope or role is inheritable and who approved it for audit purposes.
 
 When specifying the `resourceAppId` in your requests, ensure you provide a valid GUID format. Invalid GUIDs result in 400 Bad Request errors.
 
-### Add enumerated scopes inheritance
+### Add all scopes and roles inheritance for Microsoft Graph
 
 **Request**
 
 ```http
-POST https://graph.microsoft.com/beta/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
+POST https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
 Content-Type: application/json
 OData-Version: 4.0
 
 {
-  "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
   "inheritableScopes": {
-    "@odata.type": "microsoft.graph.enumeratedScopes",
-    "scopes": [
-      "User.Read",
-      "Mail.Read"
-    ]
+    "@odata.type": "#microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
   }
 }
 ```
@@ -81,25 +82,67 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
-  "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
   "inheritableScopes": {
-    "@odata.type": "microsoft.graph.enumeratedScopes",
-    "kind": "enumerated",
-    "scopes": [
-      "User.Read",
-      "Mail.Read"
-    ]
+    "@odata.type": "microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
   }
 }
 ```
 
-### Add all scopes inheritance
+### Add all scopes and roles inheritance for multiple resources
 
-**Request**
+You can configure inheritable permissions for multiple resource apps on the same blueprint. Each resource requires a separate POST request. The following example adds inheritance for both Microsoft Graph and SharePoint Online.
+
+**Request (Microsoft Graph)**
 
 ```http
-POST https://graph.microsoft.com/beta/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0ff1-ce00-000000000000
+POST https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
+Content-Type: application/json
+OData-Version: 4.0
+
+{
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "#microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
+  }
+}
+```
+
+**Response**
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
+  }
+}
+```
+
+**Request (SharePoint Online)**
+
+```http
+POST https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
 Content-Type: application/json
 OData-Version: 4.0
 
@@ -108,6 +151,10 @@ OData-Version: 4.0
   "inheritableScopes": {
     "@odata.type": "#microsoft.graph.allAllowedScopes",
     "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
   }
 }
 ```
@@ -119,34 +166,122 @@ HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
   "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
   "inheritableScopes": {
     "@odata.type": "microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.allAllowedRoles",
     "kind": "allAllowed"
   }
 }
 ```
 
-### Update existing inheritable permissions
+### Add scopes inheritance only (no roles)
 
-If an entry already exists for a resourceAppId, use PATCH to update it rather than attempting to create a duplicate entry, which would result in a 409 Conflict error.
+To inherit delegated scopes but not application roles, set `inheritableRoles` to `noRoles`.
 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0ff1-ce00-000000000000
+POST https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
 Content-Type: application/json
 OData-Version: 4.0
 
 {
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
   "inheritableScopes": {
-    "@odata.type": "microsoft.graph.enumeratedScopes",
-    "scopes": [
-      "User.Read",
-      "Mail.Read",
-      "User.ReadBasic.All"
-    ]
+    "@odata.type": "#microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.noRoles",
+    "kind": "none"
+  }
+}
+```
+
+**Response**
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.noRoles",
+    "kind": "none"
+  }
+}
+```
+
+### Add roles inheritance only (no scopes)
+
+To inherit application roles but not delegated scopes, set `inheritableScopes` to `noScopes`.
+
+**Request**
+
+```http
+POST https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions
+Content-Type: application/json
+OData-Version: 4.0
+
+{
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "#microsoft.graph.noScopes",
+    "kind": "none"
+  },
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
+  }
+}
+```
+
+**Response**
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "microsoft.graph.noScopes",
+    "kind": "none"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
+  }
+}
+```
+
+### Update to disable roles inheritance
+
+If an entry already exists for a resourceAppId, use PATCH to update it rather than attempting to create a duplicate entry, which would result in a 409 Conflict error. The following example disables role inheritance while keeping scope inheritance enabled.
+
+**Request**
+
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0000-c000-000000000000
+Content-Type: application/json
+OData-Version: 4.0
+
+{
+  "inheritableRoles": {
+    "@odata.type": "#microsoft.graph.noRoles",
+    "kind": "none"
   }
 }
 ```
@@ -158,16 +293,54 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
-  "resourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
   "inheritableScopes": {
-    "@odata.type": "microsoft.graph.enumeratedScopes",
-    "kind": "enumerated",
-    "scopes": [
-      "User.Read",
-      "Mail.Read",
-      "User.ReadBasic.All"
-    ]
+    "@odata.type": "microsoft.graph.allAllowedScopes",
+    "kind": "allAllowed"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.noRoles",
+    "kind": "none"
+  }
+}
+```
+
+### Update to disable scopes inheritance
+
+The following example disables scope inheritance while keeping role inheritance enabled.
+
+**Request**
+
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0000-c000-000000000000
+Content-Type: application/json
+OData-Version: 4.0
+
+{
+  "inheritableScopes": {
+    "@odata.type": "#microsoft.graph.noScopes",
+    "kind": "none"
+  }
+}
+```
+
+**Response**
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications('bc057821-f236-49d6-9f2c-1ebf43e9437a')/inheritablePermissions/$entity",
+  "resourceAppId": "00000003-0000-0000-c000-000000000000",
+  "inheritableScopes": {
+    "@odata.type": "microsoft.graph.noScopes",
+    "kind": "none"
+  },
+  "inheritableRoles": {
+    "@odata.type": "microsoft.graph.allAllowedRoles",
+    "kind": "allAllowed"
   }
 }
 ```
@@ -177,7 +350,7 @@ Content-Type: application/json
 **Request**
 
 ```http
-DELETE https://graph.microsoft.com/beta/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0ff1-ce00-000000000000
+DELETE https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/bc057821-f236-49d6-9f2c-1ebf43e9437a/inheritablePermissions/00000003-0000-0000-c000-000000000000
 OData-Version: 4.0
 ```
 
