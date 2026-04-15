@@ -42,17 +42,17 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Navigate to **Integrations** in the left panel and select **Add new integration**.
 
-	![Screenshot of integrations.](media/talentech-provisioning-tutorial/integrations.png)
+	![Screenshot of the Talentech integrations settings page.](media/talentech-provisioning-tutorial/integrations.png)
 
 1. Enter a **Name** for the integration and select **Add**.
 
 1. Navigate to the integration you created and select **Create api-access token**.
 
-	![Screenshot of api.](media/talentech-provisioning-tutorial/token.png)
+	![Screenshot of the Talentech API access token page.](media/talentech-provisioning-tutorial/token.png)
 
 1. An access token is generated. This value is entered in the **Secret Token** field in the Provisioning tab of your Talentech application.
 
-	![Screenshot of permanent.](media/talentech-provisioning-tutorial/bearer.png)
+	![Screenshot of the generated Talentech bearer token.](media/talentech-provisioning-tutorial/bearer.png)
 
 1. Reach out to Talentech support to generate a Tenant URL. This value is entered in the **Tenant URL** field in the Provisioning tab of your Talentech application.
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your Talentech Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Talentech. If the connection fails, ensure your Talentech account has the required admin permissions and try again.
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+    ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Talentech for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Talentech for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|

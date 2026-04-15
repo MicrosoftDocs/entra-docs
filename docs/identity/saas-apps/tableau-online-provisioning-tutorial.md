@@ -91,11 +91,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your Tableau Cloud Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tableau Cloud. If the connection fails, ensure your Tableau Cloud account has the required admin permissions and try again.
 
-	![Screenshot of Token.](media/tableau-online-provisioning-tutorial/tableau-test-connections.png)
+	![Screenshot of the Tableau Cloud test connection dialog.](media/tableau-online-provisioning-tutorial/tableau-test-connections.png)
 
 	> [!NOTE]
 	> You'll have 2 options for your Authentication Method: **Bearer Authentication** and **Basic Authentication**. Make sure that you select Bearer Authentication. Basic authentication doesn't work for the SCIM 2.0 endpoint.
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+    ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

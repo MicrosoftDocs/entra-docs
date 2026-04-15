@@ -71,11 +71,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+   ![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your Tanium SSO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tanium SSO. If the connection fails, ensure your Tanium SSO account has the required admin permissions and try again.
 
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+    ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
