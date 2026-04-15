@@ -179,7 +179,7 @@ You can test your federation setup by inviting a new B2B guest user. For details
 > [!NOTE]
 > You can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
  
-## Domainless SAML Federation
+## Domainless SAML IdP Federation
 
 Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP after authentication is validated against the domain associated with the configured SAML IdP in Microsoft Entra ID.
 
@@ -196,7 +196,7 @@ Even when an email claim is present, authentication may still fail if the email 
 
 Domainless SAML federation with a SAML Identity Provider allows external users to authenticate into your apps or workforce resources using their IdP‑managed credentials, regardless of their email domain. This removes the need for domain matching between the user’s email and pre‑configured IdP domains during sign‑in or invitation redemption. 
 
-### Configuring Domainless SAML Federation
+### Configuring Domainless SAML IdP Federation
 To address this limitation, you can configure the SAML IdP as domainless.
 When domainless federation is enabled:
 - Microsoft Entra ID routes authentication requests to the configured SAML IdP based on the Issuer URI association
@@ -212,7 +212,7 @@ This allows users to authenticate successfully using email addresses from any do
 > [!IMPORTANT]
 > When the **Domainless** field is selected, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain‑based routing. Currently, only **one** wildcard IdP can be configured per tenant.    
 
-### User Flow Using Domainless SAML Federation
+### User Flow Using Domainless SAML IdP Federation
 After configuring domainless federation, you can invite guest users from the partner organization by following these steps:
 
 1. In the Microsoft Entra admin center, navigate to Identity > Users > All users.
