@@ -3,7 +3,7 @@ title: How to Assign a Remote Network to a Traffic Forwarding Profile for Global
 description: "Assign remote networks to traffic forwarding profiles through the Microsoft Entra admin center or Microsoft Graph API to route branch office traffic through Global Secure Access."
 ms.topic: how-to
 ms.reviewer: abhijeetsinha
-ms.date: 04/06/2026
+ms.date: 04/15/2026
 ai-usage: ai-assisted
 ---
 # Assign a remote network to a traffic forwarding profile for Global Secure Access

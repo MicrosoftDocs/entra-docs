@@ -5,7 +5,7 @@ description: Discover the known limitations of Global Secure Access, including p
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-ms.date: 04/01/2026
+ms.date: 04/15/2026
 ms.custom: agent-id-ignite
 
 
