@@ -10,14 +10,16 @@ ms.reviewer: xueca
 ---
 # Troubleshoot MFA voice call and SMS problems
 
-> [!IMPORTANT]
-> Microsoft recommends phishing-resistant authentication methods for improved security. Consider migrating users to one of the following methods:
->
-> - [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
-> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
-> - [Certificate-based authentication](concept-certificate-based-authentication.md)
-
 This article explains how to investigate and resolve problemswith voice call or SMS sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and cannot see, and what to expect during an investigation.
+
+## Move to modern, phishing-resistant authentication
+
+> [!IMPORTANT]
+> Microsoft is committed to helping organizations adopt modern, phishing-resistant authentication methods. While telecom-based MFA provides an important layer of security, methods like passkeys, certificate-based authentication, and Windows Hello for Business offer stronger protection against interception and social engineering attacks. These methods also avoid the delivery variability inherent in global telecom networks. Microsoft recommends transitioning to these more secure alternatives:
+>
+> - [Passkeys (FIDO2)](concept-authentication-passwordless.md#fido2-security-keys)
+> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
+> - [Certificate-based authentication](concept-certificate-based-authentication.md)
 
 ## How global telecom delivery works
 
@@ -83,15 +85,6 @@ To help Microsoft Support investigate provider-related issues:
 
 - **Provide fresh samples.** End carriers often require Correlation IDs from the last 48–72 hours. Older requests may not propagate to the final end carrier in time for investigation. You may be asked to provide multiple samples.
 - **Provide evidence of altered messages.** If the message you received didn't appear with the expected branding or channel, share a screenshot or description of what you received.
-
-## Move to modern, phishing-resistant authentication
-
-> [!IMPORTANT]
-> Microsoft is committed to helping organizations adopt modern, phishing-resistant authentication methods. While telecom-based MFA provides an important layer of security, methods like passkeys, the Microsoft Authenticator app, and Windows Hello for Business offer stronger protection against interception and social engineering attacks. These methods also avoid the delivery variability inherent in global telecom networks. Microsoft recommends transitioning to these more secure alternatives:
->
-> - [Microsoft Authenticator](concept-authentication-authenticator-app.md)
-> - [Passkeys (FIDO2)](concept-authentication-passwordless.md#fido2-security-keys)
-> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
 
 ## Related content
 
