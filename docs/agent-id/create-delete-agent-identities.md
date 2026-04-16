@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 02/19/2026
+ms.date: 04/16/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
@@ -30,6 +30,11 @@ To create agent identities, you need:
 
 - An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
 - A web service or application (running locally or deployed to Azure) that hosts the agent identity creation logic.
+
+There are two ways to create agent identities:
+
+- **Application permissions (app-only)**: The agent identity blueprint principal creates agent identities using its own credentials. This is the approach described in this article's walkthrough.
+- **Delegated permissions (owner-based)**: A user who is an owner of the agent identity blueprint or blueprint principal can create agent identities through a delegated flow. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`. No Agent ID directory role is required for the owner. When a user creates a blueprint, they're automatically assigned as an owner.
 
 ## Get an access token using agent identity blueprint
 

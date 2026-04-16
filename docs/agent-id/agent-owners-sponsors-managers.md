@@ -3,7 +3,7 @@ title: Administrative relationships in Microsoft Entra Agent ID (Owners, sponsor
 description: Learn about the administrative model for agents in Microsoft Entra, including the roles of owners, sponsors, and managers in maintaining secure operations, business accountability, and compliance oversight.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 04/16/2026
 ms.custom: agent-id-ignite
 ms.reviewer: jawoods
 
@@ -33,6 +33,8 @@ Owners can modify properties that the sponsor can't, like authentication propert
 ### Owner access and permissions
 
 Owners have administrative privileges scoped to their assigned agent blueprint or agent identity. They can edit settings, manage credentials, change configurations, and assign more owners.
+
+Owners of an agent identity blueprint or agent identity blueprint principal can also create agent identities from that blueprint using delegated permissions, without needing an Agent ID Administrator or Agent ID Developer role. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`. When a user creates an agent identity blueprint, they're automatically assigned as an owner of that blueprint.
 
 ### Owner typical personas
 

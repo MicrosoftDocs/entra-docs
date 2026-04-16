@@ -2,7 +2,7 @@
 title: How are agent identities created?
 description: Learn about the ways to create Microsoft Entra agent identity blueprints, agent identities, and agents' user accounts as well as monitor and control their introduction into your tenant.
 ms.topic: concept-article
-ms.date: 03/26/2026
+ms.date: 04/16/2026
 author: omondiatieno
 ms.author: jomondi
 ms.reviewer: dastrock
@@ -61,8 +61,9 @@ Creating an agent identity with these tools requires one of the following permis
 | Scenario | Permissions required |
 | --- | --- |
 | User creates identity via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Administrator** directory role. |
-| Client creates identity via Microsoft Graph, using delegated permissions | User must have the directory roles mentioned in the previous row. Client must be granted **AgentIdentity.Create.All** delegated permission. |
-| Client creates agent identity blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
+| Client creates identity via Microsoft Graph, using role-based delegated permissions | User must be assigned **Agent ID Administrator** directory role. Client must be granted **AgentIdentity.Create.All** delegated permission. |
+| Client creates identity via Microsoft Graph, using owner-based delegated permissions | User must be an **owner** of the agent identity blueprint or agent identity blueprint principal. Client must be granted **AgentIdentity.Create.All**, **AgentIdentity.ReadWrite.All**, or **AgentIdentity.ReadWrite.ManagedBy** delegated permission. No Agent ID directory role is required. |
+| Client creates identity via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
 
 Creating an agent's user account with these tools requires one of the following permissions:
 

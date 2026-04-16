@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 03/31/2026
+ms.date: 04/16/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
@@ -30,6 +30,9 @@ To create an agent identity blueprint, you need:
 - Both [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints and agent identity blueprint principals.
     - [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) can configure federated identity credentials on an agent identity blueprint.
     - [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) can configure federated identity credentials on an agent identity blueprint and is required to add a secret or certificate credential.
+
+> [!NOTE]
+> Creating agent identities from a blueprint has different requirements. Blueprint owners can create agent identities using delegated permissions without an Agent ID role. For details, see [Create agent identities](create-delete-agent-identities.md).
 - If using PowerShell, version 7 is required.
 
 ## Prepare your environment

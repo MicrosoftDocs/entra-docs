@@ -4,7 +4,7 @@ description: Describes how to use an AI coding agent to automate the onboarding 
 ms.topic: how-to
 author: arlucaID
 ms.author: arluca
-ms.date: 03/30/2026
+ms.date: 04/16/2026
 ms.reviewer: rolyon
 ---
 
@@ -41,8 +41,11 @@ Before you begin, ensure you have the following prerequisites.
 ### Required accounts and permissions
 
 - **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities.
+  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints. The user who creates a blueprint is automatically assigned as its owner.
   - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) for full administrative access to Agent ID resources.
+
+> [!NOTE]
+> Blueprint owners can create agent identities from their blueprints using delegated permissions without an Agent ID role. The AI-guided setup uses application permissions for agent identity creation, so an Agent ID role or blueprint ownership is not required for that step.
 - **Additional roles for permission grants:**
   - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) to grant Microsoft Graph application permissions.
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) to grant Microsoft Graph delegated permissions.
