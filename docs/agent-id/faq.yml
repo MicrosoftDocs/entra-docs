@@ -83,9 +83,9 @@ sections:
   - name: Authentication and consent
     questions:
       - question: |
-          Can agent identities sign in to web apps using Single Sign-On?
+          Can agent identities sign in to web apps using single sign-on (SSO)?
         answer: |
-          Agent identities can't sign in to Microsoft Entra ID sign-in pages, which means they can't use Single Sign-On (SSO) with OpenID Connect or SAML protocols. Use available web APIs to integrate agents with workplace apps and services.
+          Agent identities can't sign in to Microsoft Entra ID sign-in pages, which means they can't use single sign-on with OpenID Connect or SAML protocols. Use available web APIs to integrate agents with workplace apps and services.
 
       - question: |
           Does the admin consent workflow work for Microsoft EntraAgent ID permission requests?
