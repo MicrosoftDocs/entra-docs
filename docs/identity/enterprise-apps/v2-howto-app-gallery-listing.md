@@ -68,7 +68,7 @@ The following requirements apply to SAML-based SSO applications.
 #### Multi-tenant OIDC application requirements:
 
 #### Authentication Requirements: 
-- Application should support OpenID Connect protocol for authentication as per the guidance provided here by Microsoft. We recommend using the [OAuth 2.0 Auth Code Grant flow](~/entra/identity-platform/v2-oauth2-auth-code-flow.md). Microsoft recommends you do not use [OAuth 2.0 Resource owner Password Credentials flow](~/entra/identity-platform/v2-oauth-ropc.md). Similarly, [OAuth 2.0 device authorization grant flow](~/entra/identity-platform/v2-oauth2-device-code.md) should not be used unless explicitly needed. (Required)
+- Application should support OpenID Connect protocol for authentication as per the guidance provided here by Microsoft. We recommend using the [OAuth 2.0 Auth Code Grant flow](~/identity-platform/v2-oauth2-auth-code-flow.md). Microsoft recommends you do not use [OAuth 2.0 Resource owner Password Credentials flow](~/identity-platform/v2-oauth-ropc.md). Similarly, [OAuth 2.0 device authorization grant flow](~/identity-platform/v2-oauth2-device-code.md) should not be used unless explicitly needed. (Required)
 - If you are developing a cloud application, then Microsoft recommends setting the application as a multi-tenant application. Please see the [guidance here](~/identity-platform/howto-convert-app-to-be-multi-tenant.md). (either single tenant or multi-tenant model is required)
 - If the cloud application is set up for every customer using IaaS or PaaS architecture then the [single tenant application model](~/entra/identity-platform/single-and-multi-tenant-apps.md) is acceptable.
 - Use Microsoft Entra ID V2 endpoint for authentication (Required)
