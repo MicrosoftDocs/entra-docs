@@ -43,7 +43,6 @@ Before you can use Account Discovery, the following must be in place:
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- See [Supported applications](#supported-applications) for applications that support Account Discovery. 
 
 ## Application support
 For SCIM based connectors, account discovery requires that the application support [RFC 7644, Section 3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).
