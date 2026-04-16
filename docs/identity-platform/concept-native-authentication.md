@@ -1,6 +1,6 @@
 ---
-title: Choose your authentication approach
-description: Compare browser-delegated and native authentication in Microsoft Entra External ID to decide the right approach for your app.
+title: Native authentication
+description: Learn how to set up native authentication in Microsoft Entra External ID. Customize the user interface for mobile and desktop apps, and provide a seamless sign-in experience.
 
 author: csmulligan
 manager: dougeby
@@ -12,7 +12,7 @@ ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
 ---
-# Choose your authentication approach
+# Native authentication in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 

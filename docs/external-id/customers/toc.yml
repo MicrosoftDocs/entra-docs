@@ -18,7 +18,7 @@ items:
     - name: Create a tenant
       href: quickstart-tenant-setup.md
     - name: Choose your authentication approach
-      href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+      href: concept-choose-authentication-approach.md
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Add a sign-up and sign-in flow
