@@ -84,7 +84,7 @@ The following requirements apply to SAML-based SSO applications.
 - Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
 - Document your OIDC OAuth SSO configuration publicly (Required)
 - Meet the various compliance requirements for listing your application in different clouds like Public, USGov, China, Germany, France, Singapore etc. This is only required if you plan to publish your application in those clouds. (Required)
-- Microsoft Entra App Gallery does not onboard public client applications. 
+- Microsoft Entra App Gallery doesn't onboard public client applications.
 
 ### Checklist for SCIM Provisioning Apps
 Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra App Gallery.
