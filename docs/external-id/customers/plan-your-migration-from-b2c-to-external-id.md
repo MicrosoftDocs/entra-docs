@@ -134,28 +134,25 @@ Some capabilities available in External ID aren't available in HSC mode today. I
   - Session-based controls
 - Application assignment via groups
 - Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
-- Passkeys. Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
+- Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
 
 **Federation and ecosystem integrations**
 
-- Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
+- Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). 
 - Third-party identity providers configured through Azure AD B2C custom policies
 - Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported)
 
 **Security and fraud prevention**
 
-- Microsoft Entra ID Protection (Fraud Protection) integration
+- Third Party Fraud Protection integration
 
 **User experience and compliance**
 
 - Age gating. Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
 
-**Administration, directory queries, and provisioning**
+**Admin portal experience**
 
-- Full Microsoft Entra admin center UI support. Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
-- Advanced directory queries (filtering, sorting, count, search, transitive membership)
-- Change-based (delta) queries
-- SCIM outbound user provisioning
+- Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
 
 For a comprehensive comparison, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
 
