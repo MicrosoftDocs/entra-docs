@@ -55,7 +55,7 @@ The following requirements apply to SAML-based SSO applications.
 - Application should validate the SAML token for certificate key, certificate validity, Issuer, Audience and other user claims as needed. (Required)
 - Test your SAML integration with Microsoft Entra ID using a non-gallery application. (Required).
 - Applications should support [SAML Single Logout](~/entra/identity-platform/single-sign-out-saml-protocol.md) functionality. (Recommended)
-- Application should fetch the IDP SAML federation metadata from Entra ID using the link which Microsoft provides. This help reduces the configuration overload for customers and certificate rotation. Please see the [guidance here](~/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#guidance-and-best-practices-for-isvs-on-rotating-certificates). (Recommended)
+- Application should fetch the IDP SAML federation metadata from Microsoft Entra ID using the link that Microsoft provides. This helps reduce the configuration overload for customers and certificate rotation. See the [guidance here](~/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#guidance-and-best-practices-for-isvs-on-rotating-certificates). (Recommended).
 - Application should provide the user interface and APIs for customers to configure the single sign-on for their instance of the application. (Recommended)
 - Application should provide an ability to enforce the SSO functionality to the entire tenant so that all the users must use single sign-on. For Administrator and to support Break Glass scenario you can support other authentication options or by pass mechanism as needed. (Recommended)
 
