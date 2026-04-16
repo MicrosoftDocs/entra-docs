@@ -79,7 +79,7 @@ The following requirements apply to SAML-based SSO applications.
 
 #### ISV specific requirements
 - Application should be published in SaaS application model whether in cloud or distributed to customers for their installation so that the application can be owned and configured by customers as needed. (Required)
-- Login Page should have “Sign in with Microsoft” as a button and follow the [branding guidelines here](~/entra/identity-platform/howto-add-branding-in-apps.md). (Recommended)
+- Sign-in page should have a **Sign in with Microsoft** button and follow the [branding guidelines here](~/entra/identity-platform/howto-add-branding-in-apps.md). (Recommended).
 - Application should be publisher verified by using your MPN ID. Please follow the guidance published here. (Required)
 - Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
 - Document your OIDC OAuth SSO configuration publicly (Required)
