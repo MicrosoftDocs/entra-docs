@@ -38,36 +38,23 @@ Once your tenant is allowlisted for HSC mode, you can turn on HSC mode by callin
 > [!IMPORTANT]
 > After you enable HSC mode, allow up to 1 hour for the changes to take effect across all services before proceeding to Stage 2. If you need to disable HSC mode, contact Microsoft support.
 
-## Stage 2: Review identity schema for coexistence
+## Stage 2: Review token claims for coexistence
 
-During coexistence, applications might authenticate users through different identity endpoints (B2C or External ID). Preparing identity data ensures that existing users can continue to sign in without disruption and that applications receive the claims they expect.
+During coexistence, applications authenticate users through either B2C or External ID endpoints. Before migrating applications, review how token claims are populated to avoid breaking changes.
 
-When you enable External ID in HSC mode, your Azure AD B2C user directory and existing B2C user credentials remain unchanged. Most tenants don't need to make any identity data changes.
+Most tenants don't need to make any identity data changes. However, if your applications rely on specific claims — most commonly `email` or `sub` — verify that those attributes are correctly populated and emitted. Applications can break if expected claims are missing or use different claim names in External ID.
 
-You only need to complete this step before migrating applications if your tenant uses applications that rely on specific token claims.
-
-If you don't use any of these features, continue to Stage 3.
-
-### Applications that depend on specific token claims
-
-If your applications rely on specific claims, most commonly `email` or `sub` claim, review how those attributes are populated and emitted. Applications might break if expected claims are missing or emitted under different claim names.
-
-**Common scenarios**
-- Applications rely on `email` or `sub`
-- Local accounts where `mail` isn’t populated
+**Common scenarios to check**
+- Applications that rely on `email` or `sub`
+- Local accounts where `mail` isn't populated
 - Claims populated only via sign-in names or custom policies
 
 > [!IMPORTANT]
 > In External ID, the `sub` claim is not set to the same value as `oid`. If your applications depend on the `sub` claim matching the user's `oid`, request the `profile` scope to retrieve the `oid` claim and use it as the stable user identifier instead.
 
-Before migrating applications:
-- Validate how attributes map to token claims used by your applications.
+Before migrating applications, validate how attributes map to token claims used by your applications. You can configure optional claims using [JWT claims customization](/entra/identity-platform/jwt-claims-customization), or use [custom extensions](/entra/identity-platform/custom-extension-overview) to add external user data to tokens before they're issued.
 
-You can configure optional claims to be returned in `IdToken` using [JWT claims customization](/entra/identity-platform/jwt-claims-customization).
-
-You can use [custom extensions](/entra/identity-platform/custom-extension-overview) to add external user data to the security token before the token is issued.
-
-This helps avoid differences in token contents between B2C‑based and External ID‑based applications during coexistence.
+If your applications don't depend on specific token claims, continue to Stage 3.
 
 ## Stage 3: Build your first External ID application (with existing B2C users)
 
