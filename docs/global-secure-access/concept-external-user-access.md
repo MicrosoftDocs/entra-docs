@@ -87,8 +87,8 @@ A: Yes, the client retains the tenant connection after a reboot. Additionally, i
 **Q: Is this feature supported from a windows Entra registered device(BYOD)?**   
 A: Yes, you can use a windows device which is registered to Entra for switching to resource tenant.
 
-**Q: What is the definition of an External User?**
-A: The definition of an External User is provided in the Microsoft Product Terms. Refer to the official Product Terms glossary and search for “External Users” for the most up‑to‑date definition.
+**Q: What is the definition of an External User?**    
+A: The definition of an External User is provided in the [Microsoft Product Terms](https://www.microsoft.com/licensing/terms/product/Glossary). Refer to the official Product Terms glossary and search for “External Users” for the most up‑to‑date definition.
 
 ## Traffic logs visibility
 
