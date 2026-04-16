@@ -77,7 +77,7 @@ The following requirements apply to SAML-based SSO applications.
 - Application should not be using secrets if the application wants to use client credentials flow, then the certificate should be used instead of secrets for retrieving the access token. (Required)
 - SPA applications shouldn't use the OAuth 2.0 Implicit Grant Flow for [security reasons](~/entra/identity-platform/v2-oauth2-implicit-grant-flow.md#security-concerns-with-implicit-grant-flow) and they should use authorization code flow instead. (Recommended).
 
-#### ISV Specific Requirements: 
+#### ISV specific requirements
 - Application should be published in SaaS application model whether in cloud or distributed to customers for their installation so that the application can be owned and configured by customers as needed. (Required)
 - Login Page should have “Sign in with Microsoft” as a button and follow the [branding guidelines here](~/entra/identity-platform/howto-add-branding-in-apps.md). (Recommended)
 - Application should be publisher verified by using your MPN ID. Please follow the guidance published here. (Required)
