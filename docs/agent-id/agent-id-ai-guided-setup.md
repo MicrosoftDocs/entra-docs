@@ -40,12 +40,13 @@ Before you begin, ensure you have the following prerequisites.
 
 ### Required accounts and permissions
 
-- **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints. The user who creates a blueprint is automatically assigned as its owner.
+- Access to a **Microsoft Entra tenant** with one of the following roles:
+  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities. The first owner of an agent identity blueprint can create an agent identity for that blueprint without an Agent ID role.
   - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) for full administrative access to Agent ID resources.
 
 > [!NOTE]
-> Blueprint owners can create agent identities from their blueprints using delegated permissions without an Agent ID role. The AI-guided setup uses application permissions for agent identity creation, so an Agent ID role or blueprint ownership is not required for that step.
+> The first owner of an agent identity blueprint can create agent identities from that blueprint using delegated permissions without an Agent ID role. The AI-guided setup uses application permissions for agent identity creation, so an Agent ID role or blueprint ownership is not required for that step.
+
 - **Additional roles for permission grants:**
   - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) to grant Microsoft Graph application permissions.
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) to grant Microsoft Graph delegated permissions.

@@ -34,7 +34,9 @@ To create agent identities, you need:
 There are two ways to create agent identities:
 
 - **Application permissions (app-only)**: The agent identity blueprint principal creates agent identities using its own credentials. This is the approach described in this article's walkthrough.
-- **Delegated permissions (owner-based)**: A user who is an owner of the agent identity blueprint or blueprint principal can create agent identities through a delegated flow. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`. No Agent ID directory role is required for the owner. When a user creates a blueprint, they're automatically assigned as an owner.
+- **Delegated permissions (owner-based)**: A user who is an owner of the agent identity blueprint or blueprint principal can create agent identities through a delegated flow. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`. No Agent ID directory role is required for the owner.
+ 
+[!INCLUDE [blueprint-owner-delegated-permission](../includes/blueprint-owner-delegated-permission.md)]
 
 ## Get an access token using agent identity blueprint
 
