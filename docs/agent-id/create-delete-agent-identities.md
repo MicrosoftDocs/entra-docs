@@ -22,6 +22,15 @@ If you want to quickly create agent identities for testing purposes, consider us
 
 [!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
+## Prerequisites
+
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+
+To create agent identities, you need:
+
+- An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
+- A web service or application (running locally or deployed to Azure) that hosts the agent identity creation logic. This prerequisite applies only if you're creating agent identities programmatically.
+
 ## Create an agent identity using the admin center
 
 You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
@@ -39,15 +48,6 @@ You can create an agent identity directly in the Microsoft Entra admin center by
     - Select **Add** > **Add owner** to add users who can manage this agent identity.
     - Select **Add** > **Add sponsor** to assign a business owner responsible for this agent identity.
 1. Select **Review + Create**, review your settings, and then select **Create**.
-
-## Prerequisites
-
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
-To create agent identities, you need:
-
-- An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
-- A web service or application (running locally or deployed to Azure) that hosts the agent identity creation logic.
 
 ## Get an access token using agent identity blueprint
 
