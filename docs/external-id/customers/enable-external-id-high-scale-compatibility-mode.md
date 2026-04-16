@@ -169,8 +169,6 @@ Before you roll out broadly, validate the External ID–enabled application acro
 
 **What to verify**
 - Existing users and newly created users.
-- MFA behavior.
-- Social sign‑in continuity.
 - Token claims consumed by backend APIs.
 - Sign‑in logs and error handling.
 
