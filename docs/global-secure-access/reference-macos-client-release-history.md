@@ -2,7 +2,7 @@
 title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the release notes and download instructions for the Global Secure Access client for macOS.
 ms.topic: reference
-ms.date: 04/03/2026
+ms.date: 04/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -22,7 +22,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.26030601
-Released for download on April __, 2026.
+Released for download on April 16, 2026.
 ### Functional changes
 - Optimizes Intelligent Local Access (ILA) detection by reevaluating the connection status to private networks on each network change.
 ### Other changes
