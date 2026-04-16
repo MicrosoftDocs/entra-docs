@@ -57,6 +57,10 @@ items:
     items:
     - name: Agent creation channels
       href: agent-id-creation-channels.md
+    - name: Agent ID design patterns
+      href: concept-agent-id-design-patterns.md
+    - name: Plan your agent identity architecture
+      href: how-to-plan-agent-identity-architecture.md
     - name: Best practices
       href: best-practices-agent-id.md
     
