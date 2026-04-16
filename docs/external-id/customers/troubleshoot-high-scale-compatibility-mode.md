@@ -26,8 +26,8 @@ This article helps you diagnose and resolve common errors when using the [High S
 | [Unauthorized](#caller-lacks-required-role) | 403 Unauthorized |
 | [Unauthorized (missing Graph permission)](#caller-lacks-microsoft-graph-permission) | 403 Unauthorized |
 | ['{tenantId}' is not an Azure AD B2C directory](#wrong-tenant-type-context) | 400 BadRequest |
-| [Entra External Id Hybrid Upgrade is not allowed for this tenant](#parent-tenant-not-enabled) | 400 BadRequest |
-| ['{tenantId}' is not an Azure AD B2C directory with External Id Hybrid mode enabled](#delete-on-non-hybrid-tenant) | 403 Forbidden |
+| [Entra External ID Hybrid Upgrade is not allowed for this tenant](#parent-tenant-not-enabled) | 400 BadRequest |
+| ['{tenantId}' is not an Azure AD B2C directory with External ID Hybrid mode enabled](#delete-on-non-hybrid-tenant) | 403 Forbidden |
 | [Stale GET response after POST (cache behavior)](#stale-get-response-after-post) | 200 OK |
 | [Failed to sync custom attributes from B2C to the hybrid tenant's external ID context](#custom-attribute-sync-fails) | 400 BadRequest |
 | [Your tenant '{tenantId}' is not linked to a valid subscription](#no-subscription-linked) | 400 BadRequest |

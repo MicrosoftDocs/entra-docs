@@ -58,11 +58,11 @@ The standard migration approach is recommended for most Azure AD B2C customers. 
 
 In the standard approach, you migrate identities and applications to a new Microsoft Entra External ID tenant. This typically includes:
 
-1. Creating the destination tenant and configuring security, compliance, and monitoring
-1. Registering applications and configuring user flows
-1. Migrating user data from your existing tenant
-1. Preserving passwords (if needed)
-1. Cutting over applications to External ID
+- Creating the destination tenant and configuring security, compliance, and monitoring
+- Registering applications and configuring user flows
+- Migrating user data from your existing tenant
+- Preserving passwords (if needed)
+- Cutting over applications to External ID
 
 ### Common migration patterns
 
@@ -74,7 +74,7 @@ In the standard approach, you migrate identities and applications to a new Micro
 
 Before you start implementation, review the following areas at a high level:
 - **Custom business logic**: Identify custom policy logic, token/claim shaping, and downstream dependencies you need to recreate.
-- **User experience**: Inventory sign-in UX customizations and decide which External ID experience to use.
+- **User experience**: Review your current sign-in UX customizations and decide which External ID experience to use.
 - **Identity providers**: List social and enterprise identity providers and any federation requirements.
 - **Access controls**: Note Conditional Access policies and conditions that must be equivalent post-migration.
 - **Age gating**: Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
@@ -161,7 +161,7 @@ For a comprehensive comparison, see [Capability support by scale and deployment 
 When migrating applications to External ID in HSC mode, the following requirements apply:
 
 - **Create new application registrations.** Don't reuse existing Azure AD B2C application registrations. External ID requires new registrations due to differences in application properties and Native Authentication support.
-- **Use single-tenant configuration.** Register each application as single-tenant (_Accounts in this organizational directory only_). Multi-tenant application registrations aren't supported for External ID endpoints.
+- **Use single-tenant configuration.** Register each application as single-tenant (_Accounts in this organizational directory only_). Multitenant application registrations aren't supported for External ID endpoints.
 
 ### Understand how coexistence works
 
