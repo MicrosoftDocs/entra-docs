@@ -31,7 +31,7 @@ Before creating an access package, confirm the following prerequisites are met i
    > [!NOTE]
    > If you'll be adding OAuth API permissions or directory roles to the access package as resource roles, then the catalog will be [marked as privileged](/entra/id-governance/entitlement-management-catalog-create#What-changes-for-privileged-catalogs) when they are added to the access package.
 
-## Create an access package for agent identities (Preview)
+## Create an access package for agent identities
 
 To use access packages for agents, the IT admin first configures a new access package with the relevant resources, including Entra roles, group memberships, and OAuth permission grants to application APIs. Then the admin configures in the access package the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.
 
@@ -52,10 +52,10 @@ As agent identities and service principals can't be added through access package
     > [!TIP]
     > If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](/entra/id-governance/entitlement-management-access-package-resources) later.
 
-1. Select **Next: Requests**. On the **Requests** tab, you create the first policy to specify who can request the access package. in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**. In **Select specific scope**, select the option of **All agents (preview)**.
+1. Select **Next: Requests**. On the **Requests** tab, you create the first policy to specify who can request the access package. in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**. In **Select specific scope**, select the option of **All agents**.
 
    > [!NOTE]
-   > If your agents are using service principals rather than Microsoft Entra agent identities, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
+   > If your agents are using service principals rather than Microsoft Entra agent identities, then also create an access package assignment policy with the option **All Service principals** to allow service principals in your directory to be able to request this access package.
 
 1. Determine how many approval stages are needed. Set the **How many stages** toggle to **1** for single-stage approval, **2** for two-stage approval, or **3** for three-stage approval. Then configure approval stages and who the approvers should be. For more information, see [single stage approval](/entra/id-governance/entitlement-management-access-package-create#single-stage-approval).
 
@@ -76,7 +76,7 @@ In addition to using the Microsoft Entra Admin Center, you can also create an ac
 Agents can then be assigned access packages through three different request pathways.
 
 - The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?tabs=http).
-- The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
+- The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity).
 - An administrator can [directly assign the agent identity or agent's user account to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
 After submission, the access request is routed to designated approvers based on the access package policy configuration.

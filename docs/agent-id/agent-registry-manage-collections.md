@@ -19,7 +19,7 @@ Agent collections provide a way to organize your agent identities. Collections a
 To get to your agent ID blueprint page, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
-1. Browse to **Entra ID** > **Agent ID** > **Agent Collections (Preview)**.
+1. Browse to **Entra ID** > **Agent ID** > **Agent Collections**.
 1. In the **Agent collections** view, you see a tabbed section containing two options:
     - Select **Predefined** tab to view agents added to the **Global** collection.
     - Select **Custom** tab to view agents added to custom collections. This tab displays any custom collections that you created in your tenant. Selecting a custom collection shows the agents that are part of that collection.

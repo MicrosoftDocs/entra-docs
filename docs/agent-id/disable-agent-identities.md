@@ -11,7 +11,7 @@ ms.reviewer: dastrock
 
 # Disable agent identities in your tenant
 
-Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers who want to control which Agent IDs are allowed in their tenant can follow the guidance in this article to configure their preferred settings. Microsoft Entra Agent ID is subject to its [standard preview terms and conditions](/entra/fundamentals/licensing-preview-info).
+Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers who want to control which Agent IDs are allowed in their tenant can follow the guidance in this article to configure their preferred settings.
 
 ## Types of identities used by AI agents
 

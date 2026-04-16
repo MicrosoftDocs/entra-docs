@@ -10,9 +10,6 @@ ms.reviewer: rolyon
 
 # AI-guided setup for Microsoft Entra Agent ID
 
-> [!IMPORTANT]
-> [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) is currently in PREVIEW. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 Microsoft Entra Agent ID integration involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
 
 This AI-guided setup automates this entire workflow by using an AI coding agent (such as GitHub Copilot in VS Code) to execute the steps on your behalf. Instead of navigating between multiple documentation pages and running commands manually, you provide the AI agent with a single instruction file and it walks you through the process interactively.

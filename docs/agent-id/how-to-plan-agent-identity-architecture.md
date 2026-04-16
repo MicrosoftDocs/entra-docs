@@ -22,8 +22,6 @@ Before you integrate your AI agent with Microsoft Entra Agent ID, you need to ma
 
 Work through these decisions in order, because earlier choices shape later ones. Some single-agent deployments might only need the first two steps. For examples of how these decisions map to real-world agent architectures, see [Agent ID design patterns](concept-agent-id-design-patterns.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Step 1: Choose an identity type
 
 Microsoft Entra ID provides several identity types that an AI agent might use. For most AI agents, **agent identity** is the right choice. Configure the **agent's user account** in addition to an agent identity when the agent must access systems that require a user object. Service principals and regular user accounts aren't recommended for AI agents.
