@@ -3,7 +3,7 @@ title: Configure Robin for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Robin Powered.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/16/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Robin so that I can streamline the user management process and ensure that users have the appropriate access to Robin.
@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Rob
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Robin tenant](https://robinpowered.com/pricing/)
 * A user account in Robin with Admin permissions.
 
@@ -44,11 +44,11 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![robin powered Admin Console](media/robin-provisioning-tutorial/robin-admin.png)
 
-2.	Generate a new organization token. If you lose this token, you can always make a new one without affecting existing users.
+1.	Generate a new organization token. If you lose this token, you can always make a new one without affecting existing users.
 
 	![robin powered Add SCIM](media/robin-provisioning-tutorial/robin-token.png)
 
-3.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Robin application.
+1.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Robin application.
 
 
 
@@ -78,61 +78,50 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of the Enterprise applications blade](common/enterprise-applications.png)
 
 1. In the applications list, select **Robin**.
 
-	![The robin powered link in the Applications list](common/all-applications.png)
+	![Screenshot of the Robin link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://api.robinpowered.com/v1.0/scim-2` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Robin. If the connection fails, ensure your Robin account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Robin Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Robin. If the connection fails, ensure your Robin account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	> [!NOTE]
+	> Enter `https://api.robinpowered.com/v1.0/scim-2` in the **Tenant URL**.
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Create** to create your configuration.
 
-7. Select **Save**.
+1. Select **Properties** on the **Overview** page.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Robin**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Robin for update operations. Select the **Save** button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-	![robin powered User Attributes](media/robin-provisioning-tutorial/robin-user-attribute-mapping.png)
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Robin**.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Robin for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Robin API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Robin for update operations. Select the **Save** button to commit any changes.
+	![Screenshot of the Robin powered User Attributes](media/robin-provisioning-tutorial/robin-user-attribute-mapping.png)
 
-	![robin powered Group Attributes](media/robin-provisioning-tutorial/robin-group-attribute-mapping.png)
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Robin for update operations. Select the **Save** button to commit any changes.
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+	![Screenshot of the Robin powered Group Attributes](media/robin-provisioning-tutorial/robin-group-attribute-mapping.png)
 
-13. To enable the Microsoft Entra provisioning service for Robin, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-14. Define the users and/or groups that you would like to provision to Robin by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Robin.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
-
-
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Additional resources
 

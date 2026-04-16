@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/16/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rouse Sales so that I can streamline the user management process and ensure that users have the appropriate access to Rouse Sales.
@@ -41,12 +41,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 To configure Rouse Sales to support provisioning with Microsoft Entra ID, contact [Rouse Sales customer care](https://www.rouseservices.com/contact-us/).
 
-
 <a name='step-3-add-rouse-sales-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Rouse Sales from the Microsoft Entra application gallery
-
-
 
 Add Rouse Sales from the Microsoft Entra application gallery to start managing provisioning to Rouse Sales. If you have previously setup Rouse Sales for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
@@ -75,20 +72,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, select Authorize , make sure that you enter your Rouse Sales account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rouse Sales. If the connection fails , ensure your Rouse Sales account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Rouse Sales Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rouse Sales. If the connection fails, ensure your Rouse Sales account has the required admin permissions and try again.
 
-   ![Token](media/rouse-sales-provisioning-tutorial/rouse-sales-authorize.png)
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Create** to create your configuration.
 
-1. Select **Save**.
+1. Select **Properties** on the **Overview** page.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Rouse Sales**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Rouse Sales in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Rouse Sales for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Rouse Sales API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -102,21 +102,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.formatted|String|
    |externalId|String|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Rouse Sales, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to Rouse Sales by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
