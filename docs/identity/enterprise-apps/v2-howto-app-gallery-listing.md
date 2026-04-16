@@ -46,7 +46,9 @@ You can sign up for a free, test Development account. It's free for 90 days and 
 ### Checklist for applications supporting SSO
 Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra App Gallery.
 
-#### SAML Single sign-on application requirements:
+#### SAML single sign-on application requirements
+
+The following requirements apply to SAML-based SSO applications.
 
 #### Authentication Requirements: 
 - Application should support SAML 2.0 Protocol either in Service Provider initiated mode or Identity Provider Initiated (IDP) mode or both (Required)
