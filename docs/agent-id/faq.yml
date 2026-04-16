@@ -46,6 +46,13 @@ sections:
 
           For more information, see [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md). Contact your Microsoft representative if your scenario requires exceeding these limits.
 
+      - question: |
+          How do I know when an admin approves my agent identity blueprint in their tenant?
+        answer: |
+          There are no built-in notification mechanisms for agent identity blueprint approval. When a tenant admin creates or approves an agent identity blueprint for your agent, you aren't notified through Microsoft Entra or Microsoft Graph.
+          
+          To check whether your blueprint has been approved in a specific tenant, query the Microsoft Graph API for blueprint principal objects associated with your application. If an admin hasn't approved the blueprint yet, the query returns no results for that tenant.
+          
   - name: Roles, permissions, and groups
     questions:
       - question: |
@@ -119,4 +126,12 @@ sections:
       - question: |
           Are there SDKs or libraries available for Microsoft EntraAgent ID scenarios?
         answer: |
-          Yes. For .NET developers, Microsoft recommends [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md), which simplifies managing Federated Identity Credentials (FIC) for agent identities. For other languages, use the [Microsoft Entra SDK for agent identities](./microsoft-entra-sdk-for-agent-identities.md). Both options provide a streamlined integration experience for agent identity scenarios.
+          The SDK you use depends on your scenario:
+
+          Microsoft Entra Agent 365 CLI and SDK are the recommended starting point for most developers. The CLI handles agent identity provisioning, blueprint creation, and permission wiring in a single command. The SDK handles token acquisition at runtime. For more information, see [Microsoft Entra Agent 365 SDK documentation](/entra/msidweb/agent-id-sdk/overview).
+
+          Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
+
+          The Microsoft Entra SDK container wraps Microsoft.Identity.Web as a web service deployed as a sidecar container. Use this option when your agent runs on Kubernetes and/or isn't built in .NET. For more information, see [Microsoft Entra SDK for agent identity scenarios](/entra/msidweb/agent-id-sdk/overview).
+
+          Microsoft Graph APIs provide agent identity management when the other options don't fit your scenario. For more information, see [Microsoft Graph API for agent identity blueprints](/graph/api/resources/agentidentityblueprint).
