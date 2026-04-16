@@ -210,9 +210,12 @@ In this section, you test your Microsoft Entra single sign-on configuration with
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
+## Discover existing users in Salesforce
+Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in Salesforce, identify which users have matching accounts in Entra, and which users are local to Salesforce with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. 
 
 ## Prevent application access through local accounts
 Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 
+
 
 
 ## Related content

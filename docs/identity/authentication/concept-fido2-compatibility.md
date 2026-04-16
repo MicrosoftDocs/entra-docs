@@ -2,7 +2,7 @@
 title: Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID.
 ms.topic: reference
-ms.date: 02/23/2026
+ms.date: 04/16/2026
 ms.reviewer: kimhana
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
@@ -142,7 +142,7 @@ For more information, see the following Apple documentation:
 #### Android
 - Sign-in with FIDO2 security key to native apps requires Android 13 or later.
 - Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
-- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again. For more information, see [FIDO issues on Samsung devices](https://support.yubico.com/hc/articles/18801283920156-FIDO-issues-on-Samsung-devices).
+- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on older Android devices. As a workaround, users can disable YubiOTP and try to sign in again. For more information, see [Android OEM devices FIDO known issues](https://support.yubico.com/s/article/Android-OEM-devices-FIDO-known-issues).
 
 ---
 

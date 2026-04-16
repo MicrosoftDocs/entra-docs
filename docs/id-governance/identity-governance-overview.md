@@ -111,6 +111,7 @@ Once you've started using these identity governance features, you can easily aut
 | Removing guest accounts that have no access package assignments |[Manage the lifecycle of external users](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) |
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
+|Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications.|
 
 ## Identity governance for agents (preview)
 
