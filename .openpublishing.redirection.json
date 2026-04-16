@@ -3504,6 +3504,11 @@
       "source_path": "docs/agent-id/identity-platform/what-is-agent-registry.md",
       "redirect_url": "/entra/agent-id/what-is-agent-registry",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/enable-external-id-hsc-mode.md",
+      "redirect_url": "/entra/external-id/customers/enable-external-id-high-scale-compatibility-mode",
+      "redirect_document_id": true
     }
   ]
 }
