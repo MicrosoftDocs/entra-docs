@@ -188,6 +188,9 @@ This type of exception - sometimes labeled an 'actor' or 'caller' exception - is
 - [Attribute Definition Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator)
 - [Attribute Assignment Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator)
 
+> [!NOTE]
+> If you assign a caller-based exemption to a user, that user still may not be able to use the Entra admin center or Azure portal to modify applications in a way that violates the policy unless they have the [attribute assignment reader role](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-reader).  This isn't required for other app management interfaces, like Microsoft Graph or Powershell.
+
 This example grants a service an exception to the restriction enforcing a max lifetime on new certificates it adds to other applications and service principals. The service will be represented by its service principal. Find the service principal for a service by searching for it in [Enterprise applications](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview).
 
 #### [Microsoft Entra admin center](#tab/portal)
