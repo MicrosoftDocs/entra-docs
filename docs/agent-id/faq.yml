@@ -128,7 +128,7 @@ sections:
         answer: |
           The SDK you use depends on your scenario:
 
-          Microsoft Entra Agent 365 CLI and SDK are the recommended starting point for most developers. The CLI handles agent identity provisioning, blueprint creation, and permission wiring in a single command. The SDK handles token acquisition at runtime. For more information, see [Microsoft Entra Agent 365 SDK documentation](/entra/msidweb/agent-id-sdk/overview).
+          Microsoft Agent 365 CLI and SDK are the recommended starting point for most developers. The CLI handles agent identity provisioning, blueprint creation, and permission wiring in a single command. The SDK handles token acquisition at runtime. For more information, see [Microsoft Entra Agent 365 SDK documentation](/entra/msidweb/agent-id-sdk/overview).
 
           Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
 
