@@ -16,11 +16,29 @@ ms.reviewer: dastrock
 
 After you create an agent identity blueprint, the next step is to create one or more [agent identities](agent-identities.md) that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
 	
-This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs.
+This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs. It also provides instructions to create agent identities directly in the Microsoft Entra admin center.
 	
 If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
 
 [!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
+
+## Create an agent identity using the admin center
+
+You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Agent ID** > **Agent identities**.
+1. Select **New agent identity**.
+1. On the **Basics** tab:
+    - Under **Agent blueprint**, select a blueprint from the dropdown to create your agent identity from.
+    - Enter a display name for the agent identity.
+    - Select **Next**.
+
+    :::image type="content" source="media/create-delete-agent-identities/create-agent-identity-wizard.png" alt-text="Screenshot of the create agent identity wizard showing the Basics tab with blueprint selection and name fields." lightbox="media/create-delete-agent-identities/create-agent-identity-wizard.png":::
+1. On the **Owners & Sponsors** tab, optionally add owners and sponsors for the identity:
+    - Select **Add** > **Add owner** to add users who can manage this agent identity.
+    - Select **Add** > **Add sponsor** to assign a business owner responsible for this agent identity.
+1. Select **Review + Create**, review your settings, and then select **Create**.
 
 ## Prerequisites
 

@@ -15,9 +15,29 @@ ms.reviewer: dastrock
 
 An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also configure an identifier URI and define a scope for agents created from this blueprint if the agent is designed to receive incoming requests from other agents and users.
 
-This guide walks you through creating an agent identity blueprint using the Microsoft Graph REST API and Microsoft Graph PowerShell.
+This guide walks you through creating an agent identity blueprint using the Microsoft Entra admin center, the Microsoft Graph REST API, and Microsoft Graph PowerShell.
 
 [!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
+
+## Create an agent identity blueprint using the admin center
+
+You can create an agent identity blueprint directly in the Microsoft Entra admin center. The admin center wizard creates both the agent identity blueprint and its blueprint principal automatically.
+
+> [!NOTE]
+> The admin center wizard sets the blueprint name and assigns owners and sponsors. To configure credentials, identifier URIs, scopes, or permissions, use the Microsoft Graph API or PowerShell, or configure them after creation through the blueprint's detail pages in the admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Agent ID** > **Agent blueprints**.
+1. Select **New agent blueprint**.
+1. On the **Basics** tab, enter a display name for your agent identity blueprint and select **Next**.
+
+    :::image type="content" source="media/create-blueprint/create-blueprint-wizard.png" alt-text="Screenshot of the create agent blueprint wizard showing the Basics tab with the agent blueprint name field." lightbox="media/create-blueprint/create-blueprint-wizard.png":::
+1. On the **Owners & Sponsors** tab, optionally add owners and sponsors for the blueprint:
+    - Select **Add** > **Add owner** to add users who can manage the blueprint.
+    - Select **Add** > **Add sponsor** to assign a business owner responsible for the blueprint's purpose and lifecycle.
+1. Select **Review + Create**, review your settings, and then select **Create**.
+
+After creation, you can configure credentials, permissions, and other settings from the blueprint's detail page. For more information, see [Manage agent identity blueprints](manage-agent-blueprint.md).
 
 ## Prerequisites
 

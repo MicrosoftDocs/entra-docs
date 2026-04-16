@@ -72,6 +72,8 @@ items:
         href: create-delete-agent-identities.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
+      - name: Manage owners and sponsors
+        href: manage-owners-sponsors-agents.md
       - name: AI-guided setup
         href: agent-id-ai-guided-setup.md
     - name: Authentication, authorization, and permissions
