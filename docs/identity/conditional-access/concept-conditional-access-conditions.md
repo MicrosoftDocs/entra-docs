@@ -196,6 +196,10 @@ This setting has an effect on access attempts made from the following mobile app
 | Power BI app | Power BI service | Windows 10, Android, and iOS |
 | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, iOS, and Android |
 
+> [!NOTE]
+> As Microsoft Entra ID transitions the storage of device identity keys from Apple Keychain to Apple Secure Enclave, the Microsoft Enterprise SSO plug‑in for Apple devices must be enabled for applications that do not use the Microsoft Authentication Library (MSAL), including Safari. Enabling the Enterprise SSO plug‑in ensures that these applications can participate in device-based authentication required by Conditional Access policies, such as Require device to be marked as compliant and Filter for devices condition. For more information about this transition to Apple Secure Enclave, see [Microsoft Enterprise SSO plug‑in for Apple devices – Microsoft identity platform on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin#device-identity-key-storage)
+
+
 ### Exchange ActiveSync clients
 
 - Admins can only select Exchange ActiveSync clients when assigning policy to users or groups. Selecting **All users**, **All guest and external users**, or **Directory roles** causes all users to be subject of the policy.
