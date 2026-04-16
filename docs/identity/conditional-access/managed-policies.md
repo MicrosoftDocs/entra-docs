@@ -46,7 +46,7 @@ As threats evolve, Microsoft might update these policies to use new features, fu
 
 These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies.
 
-- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
+- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources)
 - [Block legacy authentication](#block-legacy-authentication) (also a Baseline security mode policy)
 - [Block device code flow](#block-device-code-flow)
 - [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
@@ -81,7 +81,7 @@ These policies are based on the Microsoft-managed policy framework, but they sho
 
 One important difference between BSM policies and Microsoft-managed policies is that the BSM policies are created by the administrator, not Microsoft.
 
-### Block all high risk agents from accessing all resources (Preview)
+### Block all high risk agents from accessing all resources
 
 This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 

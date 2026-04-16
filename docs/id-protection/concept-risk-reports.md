@@ -104,7 +104,7 @@ With the information provided by the Risk detections report, administrators can 
 - Other risks triggered at the same time
 - Sign-in attempt location
 - Link to more detail from Microsoft Defender for Cloud Apps
-- [Agent detections](concept-risky-agents.md) (Preview)
+- [Agent detections](concept-risky-agents.md)
 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 

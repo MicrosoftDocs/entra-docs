@@ -6,7 +6,7 @@ ms.custom: agent-id-ignite
 ms.topic: how-to
 ms.reviewer: kvenkit
 --- 
-# Block access by high-risk agent identities (Preview)
+# Block access by high-risk agent identities
 
 ## Overview
 
@@ -20,13 +20,13 @@ This Conditional Access policy template blocks agent identities that are detecte
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
-1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
-      1. Under **Include**, select **All agent identities (Preview)**.
+1. Under **Assignments**, select **Users, agents or workload identities**. 
+   1. Under **What does this policy apply to?**, select **Agents**.
+      1. Under **Include**, select **All agent identities**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include, **All resources (formerly 'All cloud apps')**.
-1. Under **Conditions** > **Agent risk (Preview)**, set **Configure** to **Yes**.
+1. Under **Conditions** > **Agent risk**, set **Configure** to **Yes**.
    1. Under **Configure agent risk levels needed for policy to be enforced**, select **High**. This guidance is based on Microsoft recommendations and might be different for each organization.
 1. Under **Access controls** > **Grant**. 
    1. Select **Block**.
