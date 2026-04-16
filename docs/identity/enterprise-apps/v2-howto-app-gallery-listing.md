@@ -50,7 +50,7 @@ Here's the quick checklist for you before you submit the application request to 
 
 The following requirements apply to SAML-based SSO applications.
 
-#### Authentication Requirements: 
+#### Authentication requirements
 - Application should support SAML 2.0 Protocol either in Service Provider initiated mode or Identity Provider Initiated (IDP) mode or both (Required)
 - Application should validate the SAML token for certificate key, certificate validity, Issuer, Audience and other user claims as needed. (Required)
 - Test your SAML integration with Entra ID using Non-Gallery application. (Required)
