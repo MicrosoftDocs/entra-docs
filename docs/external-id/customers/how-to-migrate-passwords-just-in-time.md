@@ -36,7 +36,6 @@ Before you begin, ensure you have:
     - [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator)
     - [Authentication Extensibility Password Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-extensibility-password-administrator). This built-in role is available in the Azure portal and gives you the necessary permissions to create and manage custom authentication extensions for password migration. For more information about role assignments, see [Assign Microsoft Entra roles](/entra/identity/role-based-access-control/manage-roles-portal).
 
-
 ## Overview of the JIT migration process
 
 JIT migration works by invoking a custom API during the sign-in process to validate user credentials against the legacy identity provider. Microsoft Entra External ID supports this process by using [custom authentication extensions](/graph/api/resources/customauthenticationextension) to facilitate the integration. These extensions allow you to define custom logic that runs during the authentication process, enabling you to interact with external systems and perform more processing as part of the sign-in flow.
