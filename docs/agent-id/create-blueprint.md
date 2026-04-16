@@ -60,8 +60,7 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is human the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
-#### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
-
+### Use the Microsoft Entra admin center
 
 You can create an agent identity blueprint directly in the Microsoft Entra admin center. The admin center wizard creates both the agent identity blueprint and its blueprint principal automatically.
 
@@ -81,7 +80,11 @@ You can create an agent identity blueprint directly in the Microsoft Entra admin
 
 After creation, you can configure credentials, permissions, and other settings from the blueprint's detail page. For more information, see [Manage agent identity blueprints](manage-agent-blueprint.md).
 
-#### [Microsoft Graph API](#tab/microsoft-graph-api)
+### Create programmatically
+
+To create an agent identity blueprint using code, use the Microsoft Graph API or PowerShell.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 This step creates the agent identity blueprint, assigns an owner and sponsor, and requires the following details:
 
@@ -214,7 +217,7 @@ New-MgApplicationFederatedIdentityCredential `
 
 For scenarios where managed identities won't work or if you're creating a blueprint locally for testing, use the following steps to add the credentials.
 
-#### [Microsoft Graph API](#tab/microsoft-graph-api)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.AddRemoveCreds.All`
 
@@ -231,7 +234,7 @@ Authorization: Bearer <token>
 }
 ```
 
-#### [Microsoft Graph PowerShell](#tab/powershell)
+### [Microsoft Graph PowerShell](#tab/powershell)
 
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
@@ -268,7 +271,7 @@ If the agents created with the blueprint will support interactive agents, where 
 
 To receive incoming requests from users and other agents, like for any web API, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
 
-## [Microsoft Graph API](#tab/microsoft-graph-api)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request:
 - You need the permission `AgentIdentityBlueprint.UpdateAuthProperties.All`.
@@ -300,7 +303,7 @@ Authorization: Bearer <token>
 
 A successful call generates a 204 response.
 
-## [Microsoft Graph PowerShell](#tab/powershell)
+### [Microsoft Graph PowerShell](#tab/powershell)
 
 This step includes the following distinct tasks:
 
@@ -377,7 +380,7 @@ Your agent blueprint is now ready and visible in the [Microsoft Entra admin cent
 
 When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you should first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
 
-## [Microsoft Graph API](#tab/microsoft-graph-api)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request, you need the permission `AgentIdentityBlueprint.DeleteRestore.All`.
 
@@ -388,7 +391,7 @@ Content-Type: application/json
 Authorization: Bearer <token>
 ```
 
-## [Microsoft Graph PowerShell](#tab/powershell)
+### [Microsoft Graph PowerShell](#tab/powershell)
 
 This step includes the following distinct tasks:
 
