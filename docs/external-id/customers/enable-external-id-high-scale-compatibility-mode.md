@@ -44,60 +44,9 @@ During coexistence, applications might authenticate users through different iden
 
 When you enable External ID in HSC mode, your Azure AD B2C user directory and existing B2C user credentials remain unchanged. Most tenants don't need to make any identity data changes.
 
-You only need to complete this step before migrating applications if your tenant uses one or more of the following:
-- Federated identities (social or enterprise IdPs)
-- Existing MFA enrollments
-- Applications that rely on specific token claims
+You only need to complete this step before migrating applications if your tenant uses applications that rely on specific token claims.
 
 If you don't use any of these features, continue to Stage 3.
-
-### Federated identities (social or enterprise IdPs)
-
-Federated users might fail to sign in after applications move to External ID if required user properties aren't correctly populated.
-
-Review attributes for any users who sign in with a social identity provider and verify that the `accountEnabled` property on user objects is set to `true`.
-
-> [!NOTE]
-> The following social identity providers aren't supported in HSC mode: Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C. Only enterprise identity providers (SAML/WS-Fed and OIDC) are supported for federated sign-in in External ID.
-
-The following example finds federated users where `accountEnabled` is `false`:
-
-```http
-GET https://graph.microsoft.com/v1.0/users?$filter=accountEnabled eq false&$select=id,displayName,identities
-```
-
-For each returned user, check the `identities` collection for entries where `signInType` is `federated`. Update those users by setting `accountEnabled` to `true`:
-
-```http
-PATCH https://graph.microsoft.com/v1.0/users/{id}
-Content-Type: application/json
-
-{
-  "accountEnabled": true
-}
-```
-
-This ensures federated users can authenticate successfully once applications move to External ID endpoints.
-
-### Users with existing MFA enrollment
-
-Review MFA enrollment data if users previously enrolled in MFA through Azure AD B2C. Without schema alignment, these users might be prompted to re-register or fail MFA challenges in External ID.
-
-> [!IMPORTANT]
-> Phone-based MFA (SMS and voice call) isn't supported in HSC mode. If your Azure AD B2C tenant uses phone MFA, plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
-
-Review users with existing MFA methods and verify that strong authentication is enabled and a preferred MFA method is selected.
-
-List users with registered authentication methods:
-
-```http
-GET https://graph.microsoft.com/v1.0/users/{id}/authentication/methods
-```
-
-> [!NOTE]
-> For detailed guidance on managing authentication methods, see [Manage user authentication methods](/graph/api/resources/authenticationmethods-overview?view=graph-rest-1.0&preserve-view=true).
-
-This allows External ID applications to honor existing MFA enrollment and prevents users from being unexpectedly prompted to re‑register MFA.
 
 ### Applications that depend on specific token claims
 
