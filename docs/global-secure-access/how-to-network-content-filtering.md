@@ -2,7 +2,7 @@
 title: Create content policies for network content filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 04/01/2026
+ms.date: 04/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: buzaher,shkhalid
@@ -156,14 +156,6 @@ If you selected the **Scan with Purview** action in your content policy, you mus
 ### Prerequisites for Purview integration
 
 - Microsoft Purview pay-as-you-go billing configured for your tenant. For network data security DLP scenarios, the pay-as-you-go subscription is all you need. If you use other DLP functionality, per-seat licensing is required. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
-- The Global Secure Access integration enabled in the Microsoft Purview portal.
-
-### Enable the Global Secure Access integration in Purview
-
-1. Sign in to the [Microsoft Purview portal](https://purview.microsoft.com).
-1. Select **Settings** (gear icon in the upper-right corner) > **Data loss prevention** > **Integrations**.
-1. Locate the **Microsoft Entra Internet Access** integration and select **Get started**.
-1. Complete the integration steps to connect Global Secure Access with Purview.
 
 > [!NOTE]
 > If you don't see **Data loss prevention** under **Settings**, your account might not have the required permissions or your tenant might not have the required licensing. You need a role such as **DLP Compliance Management** or **Information Protection Admin**, and a Microsoft 365 E5/A5 subscription or a Microsoft Purview DLP add-on. For more information, see [Permissions in the Microsoft Purview portal](/purview/purview-permissions).
