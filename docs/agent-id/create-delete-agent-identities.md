@@ -15,10 +15,13 @@ ms.reviewer: dastrock
 # Create agent identities in agent identity platform
 
 After you create an agent identity blueprint, the next step is to create one or more [agent identities](agent-identities.md) that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
+
+You can create agent identities in two ways:
+
+- **Microsoft Entra admin center** — Use the admin center wizard for quick, individual identity creation.
+- **Microsoft Graph API** — Build a web service that creates agent identities programmatically, which is useful for automated provisioning at scale.
 	
-This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs. It also provides instructions to create agent identities directly in the Microsoft Entra admin center.
-	
-If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
+If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell).
 
 [!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
@@ -31,7 +34,7 @@ To create agent identities, you need:
 - An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
 - A web service or application (running locally or deployed to Azure) that hosts the agent identity creation logic. This prerequisite applies only if you're creating agent identities programmatically.
 
-## Create an agent identity using the admin center
+## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
 
@@ -49,11 +52,11 @@ You can create an agent identity directly in the Microsoft Entra admin center by
     - Select **Add** > **Add sponsor** to assign a business owner responsible for this agent identity.
 1. Select **Review + Create**, review your settings, and then select **Create**.
 
+## [Microsoft Graph API](#tab/microsoft-graph-api)
+
 ## Get an access token using agent identity blueprint
 
 You use the agent identity blueprint to create each agent identity. Request an access token from Microsoft Entra using your agent identity blueprint:
-
-## [Microsoft Graph API](#tab/microsoft-graph-api)
 
 When using a managed identity as a credential, you must first obtain an access token using your managed identity. Managed identity tokens can be requested from an IP address locally exposed in the compute environment. Refer to the [managed identity documentation for details](/entra/identity/managed-identities-azure-resources/).
 
