@@ -70,7 +70,7 @@ Decide whether you need to preserve existing passwords. Not every migration requ
 You typically **don’t** need password preservation if:
 - Users authenticate using **social identity providers** (for example, Google or Facebook).
 - You plan to use **passwordless authentication** (such as email one-time passcodes).
-- You are comfortable requiring users to **reset their password** after migration.
+- You're comfortable requiring users to **reset their password** after migration.
 - Regulatory requirements mandate renewing user consent. In this case, you can obtain consent through outbound email communications followed by a user-initiated password reset.
 - You have access to **plain-text passwords** and can set them directly via Microsoft Graph during bulk user migration.
 

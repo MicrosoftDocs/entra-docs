@@ -1,8 +1,7 @@
 ---
 title: Migrate users and credentials to Microsoft Entra External ID
 description: Learn how to migrate users and credentials from any legacy identity provider to Microsoft Entra External ID.
- 
-author: garrodonnell   
+author: garrodonnell
 ms.topic: how-to
 ms.date: 03/16/2026
 ms.author: godonnell

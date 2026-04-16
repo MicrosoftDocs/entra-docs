@@ -60,7 +60,7 @@ In the standard approach, you migrate identities and applications to a new Micro
 
 1. Creating the destination tenant and configuring security, compliance, and monitoring
 1. Registering applications and configuring user flows
-1. Migrating users data from your existing tenant
+1. Migrating user data from your existing tenant
 1. Preserving passwords (if needed)
 1. Cutting over applications to External ID
 
@@ -130,21 +130,21 @@ Some capabilities available in External ID aren't available in HSC mode today. I
 **Authentication and access control**
 
 - Advanced Conditional Access scenarios, including:
-  - Authentication context or step-up authentication
-  - Session-based controls
-- Application assignment via groups
+  - Authentication context or step-up authentication.
+  - Session-based controls.
+- Application assignment via groups.
 - Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
 - Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
 
 **Federation and ecosystem integrations**
 
 - Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). 
-- Third-party identity providers configured through Azure AD B2C custom policies
-- Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported)
+- Third-party identity providers configured through Azure AD B2C custom policies.
+- Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported).
 
 **Security and fraud prevention**
 
-- Third Party Fraud Protection integration
+- Third-party fraud protection integration.
 
 **User experience and compliance**
 
@@ -167,12 +167,13 @@ When migrating applications to External ID in HSC mode, the following requiremen
 
 In HSC mode, Azure AD B2C and Microsoft Entra External ID run side by side within the same tenant. Existing applications continue to use Azure AD B2C endpoints, while new or migrated applications use External ID endpoints. Users and credentials are shared across both experiences.
 
-Stage 1: All apps running on B2C services as they are now.
-Stage 2: Your tenant is enabled for HSC mode on your existing Azure AD B2C tenant. This is performed without impacting any apps. You can now migrate apps to run on External ID services while others remain on B2C.
+**Stage 1:** All apps running on B2C services as they are now.
+
+**Stage 2:** Your tenant is enabled for HSC mode on your existing Azure AD B2C tenant. This is performed without impacting any apps. You can now migrate apps to run on External ID services while others remain on B2C.
 
 :::image type="content" source="media/plan-your-migration-from-b2c-to-external-id/azure-b2c-external-id-coexistence-migration-flow.png" alt-text="Diagram of HSC mode workflow showing app migration from B2C to External ID with endpoints and artifacts listed." lightbox="media/plan-your-migration-from-b2c-to-external-id/azure-b2c-external-id-coexistence-migration-flow.png":::
 
-Stage 3: All apps completely moved over to External ID and your tenant is ready for Azure AD B2C retirement.
+**Stage 3:** All apps completely moved over to External ID and your tenant is ready for Azure AD B2C retirement.
 
 > [!IMPORTANT]
 > Application migration is always performed by you. HSC mode doesn't automatically move applications.

@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 # Enable External ID High Scale Compatibility (HSC) mode
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 Enable High Scale Compatibility (HSC) mode to transition applications from Azure AD B2C to Microsoft Entra External ID with minimal disruption while keeping existing B2C user credentials in place. New customers evaluating Microsoft Entra External ID at scale should refer to [Planning your solution](concept-planning-your-solution.md).
 
 If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
@@ -50,7 +52,7 @@ Most tenants don't need to make any identity data changes. However, if your appl
 - Claims populated only via sign-in names or custom policies
 
 > [!IMPORTANT]
-> In External ID, the `sub` claim is not set to the same value as `oid`. If your applications depend on the `sub` claim matching the user's `oid`, request the `profile` scope to retrieve the `oid` claim and use it as the stable user identifier instead.
+> In External ID, the `sub` claim isn't set to the same value as `oid`. If your applications depend on the `sub` claim matching the user's `oid`, request the `profile` scope to retrieve the `oid` claim and use it as the stable user identifier instead.
 
 Before migrating applications, validate how attributes map to token claims used by your applications. You can configure optional claims using [JWT claims customization](/entra/identity-platform/jwt-claims-customization), or use [custom extensions](/entra/identity-platform/custom-extension-overview) to add external user data to tokens before they're issued.
 

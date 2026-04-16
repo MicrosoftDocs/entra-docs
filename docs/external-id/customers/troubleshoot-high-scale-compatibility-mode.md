@@ -1,6 +1,8 @@
 ---
 title: Troubleshoot High Scale Compatibility (HSC) mode
 description: Diagnose and resolve common errors when using the High Scale Compatibility (HSC) API for migrating from Azure AD B2C to Microsoft Entra External ID.
+author: garrodonnell
+ms.author: godonnell
 ms.topic: troubleshooting
 ms.date: 04/08/2026
 ms.custom: it-pro
