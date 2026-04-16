@@ -75,7 +75,7 @@ The following requirements apply to SAML-based SSO applications.
 - Application should be using [least privileged permissions](~/graph/permissions-overview.md?tabs=http#best-practices-for-using-microsoft-graph-permissions) for their scenarios. Please refer to our MS Graph API documentation to find the least privileged permission for the APIs. (Required)
 - Application should be using [delegated permissions](~/security/zero-trust/develop/developer-strategy-delegated-permission.md) so that the consent screen can appear and let user or administrator provide the consent to it as needed. [Application Permissions](~/security/zero-trust/develop/developer-strategy-application-permissions.md) should be avoided unless absolutely needed. (Required if using MS Graph APIs)
 - Application should not be using secrets if the application wants to use client credentials flow, then the certificate should be used instead of secrets for retrieving the access token. (Required)
-- SPA applications shouldn't use the OAuth 2.0 Implicit Grant Flow for [security reasons](~/entra/identity-platform/v2-oauth2-implicit-grant-flow.md#security-concerns-with-implicit-grant-flow) and they should use authorization code flow instead. (Recommended).
+- SPA applications shouldn't use the OAuth 2.0 Implicit Grant Flow for [security reasons](~/identity-platform/v2-oauth2-implicit-grant-flow.md#security-concerns-with-implicit-grant-flow) and they should use authorization code flow instead. (Recommended).
 
 #### ISV specific requirements
 - Application should be published in SaaS application model whether in cloud or distributed to customers for their installation so that the application can be owned and configured by customers as needed. (Required)
