@@ -2,14 +2,8 @@
 title: Manage app consent policies for group owners  
 description: Learn how to manage built-in and custom app consent policies for group owner to control when consent can be granted.
 
-manager: mwongerapk
-author: omondiatieno
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 05/16/2025
-ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: 
 zone_pivot_groups: enterprise-apps-minus-portal-aad
@@ -135,7 +129,7 @@ Follow these steps to create a custom group owner consent policy:
 
    Repeat this step to add more "exclude" condition sets.
 
-Once the app consent policy for group has been created, you can [allow group owners consent](configure-user-consent-groups.md) subject to this policy.
+Once the app consent policy for the group has been created, you can [allow group owners to grant consent](configure-user-consent-groups.md) subject to this policy.
 
 ## Delete a custom group owner consent policy using PowerShell
 

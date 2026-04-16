@@ -1,15 +1,10 @@
 ---
 title: Enable security and DNS audits for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to enable security audits to centralize the logging of events for analysis and alerts in Microsoft Entra Domain Services
-author: justinha
-manager: dougeby
 
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 02/19/2025
-ms.author: justinha
 ms.custom: devx-track-azurepowershell
 ---
 # Enable security and DNS audits for Microsoft Entra Domain Services
@@ -228,6 +223,7 @@ The following audit event categories are available:
 | Event Category Name | Event IDs |
 |:---|:---|
 |Account Logon security|4767, 4774, 4775, 4776, 4777|
+|Kerberos Tickets|4768, 4769|
 |Account Management security|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781, 4782, 4793, 4798, 4799, 5376, 5377|
 |Detail Tracking security|None|
 |DNS Server |513-523, 525-531, 533-537, 540-582|

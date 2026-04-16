@@ -1,13 +1,10 @@
 ---
 title: 'Identity Governance custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/03/2025
-ms.author: owinfrey
 ms.custom:
+#Customer Intent: As an IT admin, I want to create custom alerts with Microsoft Entra ID Governance so that I can monitor and respond to identity governance events.
 ---
 
 # Microsoft Entra ID Governance custom alerts

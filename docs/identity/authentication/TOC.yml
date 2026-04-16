@@ -138,7 +138,7 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
-  - name: Plan phishing-resistant MFA
+  - name: Phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
       items:
@@ -152,12 +152,10 @@
         href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
-      - name: Enable passkey profiles
-        href: how-to-authentication-passkey-profiles.md
-      - name: Enable device-bound passkeys 
-        href: how-to-enable-passkey-fido2.md
-      - name: Enable synced passkeys
-        href: how-to-authentication-synced-passkeys.md
+      - name: Enable passkeys (FIDO2)
+        href: how-to-authentication-passkeys-fido2.md
+      - name: Enable Entra passkey on Windows
+        href: how-to-authentication-entra-passkeys-on-windows.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device
@@ -362,6 +360,8 @@
         href: how-to-mfa-server-migration-utility.md
   - name: Troubleshoot
     items:
+    - name: Voice call and SMS authentication
+      href: troubleshoot-voice-call-sms.md
     - name: Self-service password reset (SSPR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback

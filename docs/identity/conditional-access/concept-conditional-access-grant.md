@@ -1,15 +1,8 @@
 ---
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 10/30/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, jogro
 ms.custom:
   - sfi-image-nochange
@@ -19,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access: Grant
+
+## Overview
 
 In a Conditional Access policy, an admin can use access controls to grant or block access to resources.
 
@@ -208,7 +203,7 @@ The following restrictions apply when you configure a policy by using the passwo
 
 ### Require risk remediation
 
-When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation with Microsoft-managed remediation (preview)](../../id-protection/concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview).
+When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation with Microsoft-managed remediation (preview)](../../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control-preview).
 
 When you select **Require risk remediation** as a grant control, the following settings are automatically applied to the policy:
 - **Require authentication strength**

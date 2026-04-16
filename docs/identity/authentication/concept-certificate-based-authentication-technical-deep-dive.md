@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra CBA Technical Concepts
 description: Learn how Microsoft Entra certificate-based authentication (CBA) works and the technical concepts you need to set up and manage CBA.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
@@ -79,7 +75,7 @@ To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authenticatio
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot that shows how to turn on issuer hints." lightbox="media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png":::
 
 > [!NOTE]
-> After you turn on issuer hints, the CA URL has the format `<tenantId>.certauth.login.microsoftonline.com`.
+> After you turn on issuer hints, the CA URL has the format `t<tenantId>.certauth.login.microsoftonline.com`.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot that shows the certificate picker after you turn on issuer hints.":::
 

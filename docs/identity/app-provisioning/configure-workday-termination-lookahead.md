@@ -1,13 +1,8 @@
 ---
 title: Configure Workday Termination Lookahead 
 description: Enable Termination Lookahead query for your Workday-to-AD/Microsoft Entra ID provisioning job.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 10/31/2025
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -68,7 +63,7 @@ Depending on your provisioning job type, update the expression logic for the acc
 
 ```python
 Switch([StatusTerminationLastDayOfWork],   
-  Switch([Active\], "True",  
+  Switch([Active], "True",  
 "0", "False",   
 "1", IIF(DateDiff("d", DateAdd("h","9",Now()),CDate(  
     Switch([StatusTerminationLastDayOfWork],[StatusTerminationLastDayOfWork],  
@@ -105,7 +100,7 @@ Switch([StatusTerminationLastDayOfWork], 
   Switch([Active], "False",  
 "0", "True",   
 "1", IIF(DateDiff("d", DateAdd("h","9",Now()),CDate(  
-    Switch([StatusTerminationLastDayOfWork\],[StatusTerminationLastDayOfWork],  
+    Switch([StatusTerminationLastDayOfWork],[StatusTerminationLastDayOfWork],  
 "","9999-12-31")  
     )  
   ) <= 0, "True", "False")  

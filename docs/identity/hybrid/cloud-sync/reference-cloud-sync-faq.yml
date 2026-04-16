@@ -6,7 +6,7 @@ metadata:
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 10/15/2025
+  ms.date: 03/30/2026
   ms.subservice: hybrid-cloud-sync
   ms.author: jomondi
   
@@ -34,7 +34,7 @@ sections:
       - question: |
           What's the difference between Microsoft Entra Connect Sync and cloud sync?
         answer: |
-          With Microsoft Entra Connect Sync, provisioning runs on the on-premises sync server. Configuration is stored on the on-premises sync server. With Microsoft Entra Cloud Sync, the provisioning configuration is stored in the cloud and runs in the cloud as part of the Microsoft Entra provisioning service. See the detailed article [What is Microsoft Entra Cloud Sync](what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync) for a detailed comparison.
+          With Microsoft Entra Connect Sync, provisioning runs on the on-premises sync server. Configuration is stored on the on-premises sync server. With Microsoft Entra Cloud Sync, the provisioning configuration is stored in the cloud and runs in the cloud as part of the Microsoft Entra provisioning service. See the detailed article [What is Microsoft Entra Cloud Sync](connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync) for a detailed comparison.
 
       - question: |
           Can I use cloud sync to sync from multiple Active Directory forests?
@@ -75,6 +75,11 @@ sections:
           I'm provisioning users using cloud sync. I deleted the configuration. Why do I still see the old synced objects in Microsoft Entra ID? 
         answer: |
           When you delete the configuration, cloud sync doesn't automatically remove the synced objects in Microsoft Entra ID. To ensure you don't have the old objects, change the scope of the configuration to an empty group or Organizational Units. Once the provisioning runs and cleans up the objects, disable and delete the configuration. 
+
+      - question: |
+          I uninstalled the cloud sync agent. How long until it's removed from the portal?
+        answer: |
+          When you uninstall or stop a cloud sync agent, the agent isn't removed from the Microsoft Entra admin center immediately. After approximately one hour, the agent shows as **Inactive**. After approximately 10 days, the agent is soft-deleted and no longer appears in the portal. The agent is permanently removed when its certificate expires, which prevents any further interaction with Microsoft services. For more information, see [Agent removal from the portal after uninstall](how-to-configure.md#agent-removal-from-the-portal-after-uninstall).
 
       - question: |
           Does cloud sync support Exchange hybrid?

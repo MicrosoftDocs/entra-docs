@@ -1,12 +1,8 @@
 ---
 title: Risky user report
 description: Learn about the risky user report in Microsoft Entra ID Protection
-ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 11/05/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risky user report
@@ -56,6 +52,14 @@ From the **Risky users report**, select a user to view more details about their 
 The details include basic information about the user and a timeline of recent risk activities. The **Timeline** section provides a chronological view of risk events associated with the user. The timeline shows when the risk was detected, the risk level, and the type of risk detected. 
 
 To see risk sign-in events together with risky user events, select the **Aggregate risk signals by risky sign-ins** checkbox.
+
+### Unified risk signals (Preview)
+
+Microsoft Entra ID Protection now correlates signals from Microsoft Defender and other sources to provide unified risk signals for user risk detections. This preview feature enhances your risk detection capabilities by calculating a comprehensive Identity Risk Score based on multiple identity signals. This option must be enabled in [settings](id-protection-dashboard.md#unified-risk-signals-for-id-protection-user-risk-preview).
+
+You can view unified risk signals in both the standard view and agent view of the Risky user report. Select a user from the list to see details for each linked account associated with a risky user, helping you understand the full scope of risk across a user's identity, including linked accounts. When the Identity Risk Score is raised, the Microsoft Entra score is also raised using the unified risk signals, which can automatically trigger your risk-based Conditional Access policies.
+
+The Identity Risk Score appears within the context of a selected user from the risky user report. The score, risk summary, and links to investigate further are provided to help you understand the risk and take appropriate action. Select the **View full report in Microsoft Defender** link to see the correlated signals in Microsoft Defender for Identity and investigate the risky user further.
 
 ## Take action on a risky user
 

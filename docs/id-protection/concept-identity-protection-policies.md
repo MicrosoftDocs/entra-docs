@@ -2,11 +2,8 @@
 title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
-ms.topic: conceptual
-ms.date: 01/07/2026
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pwongera
+ms.topic: concept-article
+ms.date: 03/20/2026
 ms.reviewer: cokoopma
 ms.custom: sfi-image-nochange
 ---
@@ -38,16 +35,16 @@ ID Protection analyzes signals about user accounts and calculates a risk score b
 
 Policies requiring either #1 or #2 forces end users to remediate their user risk and unblock themselves.
 
-## Require risk remediation with Microsoft-managed remediation (preview)
+## Require risk remediation control (preview)
 
-The Microsoft-managed remediation risk-based Conditional Access policy lets you author a risk policy that accommodates all authentication methods, including password-based and passwordless. This means that when you select "Require risk remediation" in your policy's grant controls, Microsoft Entra ID Protection manages the appropriate remediation flow based on the threat observed and the user's authentication method.  For detailed steps on how to enable Microsoft-managed remediation, see [Configure risk policies](howto-identity-protection-configure-risk-policies.md#microsoft-recommendations).
+This control uses adaptive risk remediation to let you author a Conditional Access risk policy that accommodates all authentication methods, including password-based and passwordless. This means that when you select "Require risk remediation" in your policy's grant controls, Microsoft Entra ID Protection manages the appropriate remediation flow based on the threat observed and the user's authentication method.  For detailed steps on how to enable adaptive risk remediation, see [Configure risk policies](howto-identity-protection-configure-risk-policies.md#microsoft-recommendations).
 
 - **Password authentication**: Risky user has an active risk detection, such as a leaked credential, password spray, or session history involving a compromised password. The user is prompted to perform a secure password change and when completed, their previous sessions are revoked. 
 - **Passwordless authentication**: Risky user has an active risk detection, but it doesn't involve a compromised password. Possible risk detections include anomalous token, impossible travel, or unfamiliar sign-in properties. The user's sessions are revoked and they're prompted to sign in again.
 
-### Special considerations
+#### Special considerations
 
-- [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use the Microsoft-managed remediation policy.
+- [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use the adaptive risk remediation policy.
 - The **Require Risk Remediation** setting remediates user risk, not sign-in risk.
 - If a user is assigned to both a policy with **Require Risk Remediation** and another policy with **Require Password Change** or **Block**, a conflict will occur, causing the user to be forced through all policies or blocked. Ensure each user is assigned to only one such policy at a time. 
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy for two reasons:

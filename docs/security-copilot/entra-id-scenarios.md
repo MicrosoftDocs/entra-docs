@@ -1,9 +1,6 @@
 ---
 title: Microsoft Security Copilot scenarios in Microsoft Entra ID
 description: Learn how to use Microsoft Security Copilot with Microsoft Entra ID for identity and security scenarios.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -187,7 +184,7 @@ For more information, see:
 
 Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices are Entra ID registered, joined, or hybrid joined.
 
-Refer to the prompts and examples in [Enterprise user management with Microsoft Security CopilotManage identities with Microsoft Security Copilot](./entra-enterprise-user-management.md) to learn how to use Microsoft Security Copilot with device management for the following use-cases;
+Refer to the prompts and examples in [Enterprise user management with Microsoft Security Copilot](./entra-enterprise-user-management.md) to learn how to use Microsoft Security Copilot with device management for the following use-cases;
 
 - [Device identification and status](./entra-security-access-control.md#device-identification-and-status)
 - [Device join types and configuration](./entra-security-access-control.md#device-join-types-and-configuration)

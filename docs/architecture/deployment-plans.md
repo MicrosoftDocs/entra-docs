@@ -2,12 +2,10 @@
 title: Microsoft Entra deployment plans
 description: Guidance on Microsoft Entra deployment, such as authentication, devices, hybrid scenarios, governance, and more.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/07/2024
 ms.author: gasinh
+ms.subservice: architecture
 ---
 
 # Microsoft Entra deployment plans
@@ -51,7 +49,7 @@ Use the following list to plan for authentication deployment.
   - See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
   - See, [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 - **Microsoft Entra self-service password reset (SSPR)** - Help users reset a password without administrator intervention:
-  - See, [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
+  - See, [Passkeys (FIDO2) authentication method in Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md)
     
   - See, [Plan a Microsoft Entra self-service password-reset deployment](~/identity/authentication/concept-sspr-deploy.md)
     

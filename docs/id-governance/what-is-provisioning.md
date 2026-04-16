@@ -1,12 +1,9 @@
 ---
 title: 'What is provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning and the ILM scenarios.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 12/30/2024
-ms.author: owinfrey
+#Customer Intent: As an IT admin, I want to understand what provisioning is with Microsoft Entra ID so that I can plan identity lifecycle management scenarios.
 ---
 
 # What is provisioning?

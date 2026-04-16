@@ -1,13 +1,9 @@
 ---
 title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 01/07/2026
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pwongera
-ms.reviewer: cokoopma
+ms.date: 03/17/2026
+ms.reviewer: lvandenende
 ms.custom: sfi-image-nochange
 ---
 # How to investigate risk
@@ -99,7 +95,7 @@ To investigate a Microsoft Entra threat intelligence risk detection, follow thes
 
 - Detection was triggered by a real-time rule
    1. Validate that no other users in your directory are targets of the same attack. This information can be found using the TI_RI_#### number assigned to the rule.
-   1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
+   1. Real-time rules protect against novel attacks identified by Microsoft's threat intelligence research. If multiple users in your directory were targets of the same attack, investigate unusual patterns in other attributes of the sign in.
 
 ### Atypical travel detections
 
@@ -139,6 +135,8 @@ This detection indicates the user doesn't commonly use the browser or activity w
 
 ### Password spray detections
 
+A password spray detection means Microsoft observed an attacker conducting a spray attack and achieving a successful credential validation against a user in your tenant. The spray attack might have targeted users across many tenants — the detection fires only in tenants where a successful password match was confirmed. Unsuccessful spray attempts don't generate a detection.
+
 - If you confirm that the activity was *not* performed by a legitimate user:
    1. Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation.
    1. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
@@ -153,9 +151,15 @@ For further investigation of password spray risk detections, see the article [Pa
 
 ### Leaked credentials detections
 
+Leaked credentials detections are always high risk because they represent confirmed credential exposure. When this detection fires, investigate right away.
+
 If this detection identified a leaked credential for a user:
-1. Confirm the user as compromised, and invoke a password reset if not already performed by self-remediation.
-1. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+
+1. **Assess the scope of exposure.** Review the user's risk history and sign-in logs to determine if the leaked credential was used for unauthorized access. Look for correlated sign-in risk events such as sign-ins from unfamiliar locations, anonymous IP addresses, or atypical travel.
+1. **Check if the password was already changed.** Verify whether the user changed their password after the date the leak was detected. A cloud-based password reset triggered by a [Microsoft Entra Conditional Access policy](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) fully remediates the user risk for this detection. If the password was changed, the risk might already be self-remediated. If not, confirm the user as compromised and initiate a password reset.
+1. **Block access if an attacker is active.** If sign-in logs show unauthorized access, or if an attacker has the ability to reset the password or perform MFA, block the user, reset the password, and revoke all refresh tokens. Revoking sessions is critical when there's evidence of active compromise.
+1. **Review for lateral movement.** Check the user's recent activity for signs of privilege escalation, new app registrations, mailbox rule changes, or access to sensitive resources that might indicate post-compromise activity.
+1. **Verify connected accounts.** If the user reuses passwords across services, consider the credential compromised beyond your tenant. Advise the user to change passwords on other services where they use the same credential.
 
 ## Mitigate future risks
 

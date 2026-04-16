@@ -1,15 +1,11 @@
 ---
 title: Remove Passwords from Microsoft Entra ID
 description: Removing password usage from Entra through Password scrambling to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
-
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/24/2025
+ms.date: 01/28/2026
 
 ms.author: justinha
 author: sipower
-manager: dougeby
 ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
@@ -86,18 +82,17 @@ The following sample PowerShell script generates a random password of 64 charact
 $userId = "<UPN of the user>"
 
 function Generate-RandomPassword{
-    [CmdletBinding()]
-    param (
-      [int]$Length = 64
-    )
-  $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>/?\|`~"
-  $random = New-Object System.Random
-  $password = ""
-  for ($i = 0; $i -lt $Length; $i++) {
-    $index = $random.Next(0, $chars.Length)
-    $password += $chars[$index]
-  }
-  return $password
+    [CmdletBinding()]  
+    param (  
+      [int]$Length = 64  
+    )  
+  $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>/? \|`~"  
+  $rng = [System.Security.Cryptography.RandomNumberGenerator]::Create()  
+  $bytes = New-Object byte[] $Length  
+  $rng.GetBytes($bytes)  
+  $password = -join ($bytes | ForEach-Object { $chars[$_ % $chars.Length] })  
+  $rng.Dispose()  
+  return $password  
 }
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force

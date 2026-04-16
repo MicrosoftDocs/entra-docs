@@ -1,16 +1,14 @@
 ---
 title: Global Secure Access Threat intelligence threat types
 description: Global Secure Access Threat intelligence threat types
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
 # Global Secure Access Threat intelligence threat types
+
+## Overview
 
 When you set up threat intelligence rules blocking access to high severity threat sites, Microsoft assigns each transaction a threat type. This article provides a list of categories along with explanations.
 

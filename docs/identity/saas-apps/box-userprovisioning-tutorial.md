@@ -1,12 +1,8 @@
 ---
 title: Configure Box for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Box .
-author: nguhiu
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/02/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Box so that I can streamline the user management process and ensure that users have the appropriate access to Box.
@@ -17,6 +13,12 @@ The objective of this article is to show the steps you need to perform in Box an
 
 > [!NOTE]
 > This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+
+Box is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: | :white_check_mark:    |        |
 
 ## Prerequisites
 
@@ -31,15 +33,12 @@ To configure Microsoft Entra integration with Box, you need the following items:
 > [!NOTE]
 > Apps need to be enabled in the Box application first.
 
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
-
 To test the steps in this article,  follow these recommendations:
 
 - don't use your production environment, unless it's necessary.
 - If you don't have a Microsoft Entra trial environment, you can [get a one-month trial](https://azure.microsoft.com/pricing/free-trial/).
 
-## Assigning users to Box 
+## Step 1: Assign users to Box 
 
 Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized.
 
@@ -47,7 +46,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 
-## Assign users and groups
+## Step 2: Assign users and groups
 The **Box > Users and Groups** tab in the Azure portal allows you to specify which users and groups should be granted access to Box. Assignment of a user or group causes the following things to occur:
 
 * Microsoft Entra ID permits the assigned user (either by direct assignment or group membership) to authenticate to Box. If a user isn't assigned, then Microsoft Entra ID doesn't permit them to sign in to Box and returns an error on the Microsoft Entra sign-in page.
@@ -65,7 +64,7 @@ You can use the **Attributes > Single Sign-On** tab to configure which user attr
 
 *   When assigning a user to box, you must select a valid user role. The "Default Access" role doesn't work for provisioning.
 
-## Enable Automated User Provisioning
+## Step 3: Enable Automated User Provisioning
 
 This section guides through connecting your Microsoft Entra ID to Box's user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Box based on user and group assignment in Microsoft Entra ID.
 
@@ -78,7 +77,7 @@ If automatic provisioning is enabled, then the assigned users and/or groups are 
 > [!TIP] 
 > You may also choose to enabled SAML-based Single Sign-On for Box, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
-### To configure automatic user account provisioning:
+### Configure automatic user account provisioning
 
 The objective of this section is to outline how to enable provisioning of Active Directory user accounts to Box.
 
@@ -89,9 +88,9 @@ The objective of this section is to outline how to enable provisioning of Active
 
 3. Select your instance of Box, then select the **Provisioning** tab.
 
-4. Set the **Provisioning Mode** to **Automatic**. 
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot for the new configuration steps into the box.](common/application-provisioning.png)
 
 5. Under the **Admin Credentials** section, select **Authorize** to open a Box login dialog in a new browser window.
 
@@ -105,26 +104,29 @@ The objective of this section is to outline how to enable provisioning of Active
 
 8. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Box app. If the connection fails, ensure your Box account has Team Admin permissions and try the **"Authorize"** step again.
 
-9. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox.
+1. Select **Create** to create your configuration.	
 
-10. Select **Save.**
+1. Select **Properties** in the **Overview** page. 
 
-11. Under the Mappings section, select **Synchronize Microsoft Entra users to Box.**
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 12. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to Box. The attributes selected as **Matching** properties are used to match the user accounts in Box for update operations. Select the Save button to commit any changes.
 
-13. To enable the Microsoft Entra provisioning service for Box, change the **Provisioning Status** to **On** in the Settings section
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-14. Select **Save.**
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-That starts the initial synchronization of any users and/or groups assigned to Box in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Box app.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 In your Box tenant, synchronized users are listed under **Managed Users** in the **Admin Console**.
 
 ![Integration status](./media/box-userprovisioning-tutorial/IC769556.png "Integration status")
-
 
 ## Additional resources
 

@@ -1,18 +1,13 @@
 ---
 title: Conditional Access service dependencies 
-description: Learn how conditions are used in Microsoft Entra Conditional Access to trigger a policy.
-
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: article
-ms.date: 06/20/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+description: Learn about service dependencies in Microsoft Entra Conditional Access and how they affect policy enforcement.
+ms.topic: concept-article
+ms.date: 04/01/2026
 ms.reviewer: kvenkit
 ---
 # Service dependencies in Microsoft Entra Conditional Access
+
+## Overview
 
 With Conditional Access policies, you specify requirements to use websites and services. For example, your requirements can include requiring multifactor authentication (MFA) or [managed devices](./concept-conditional-access-grant.md).
 
@@ -49,9 +44,8 @@ The following table lists some more service dependencies, where the client apps 
 |                     | MS Planner                                  | Late-bound  |
 |                     | Microsoft Stream                            | Late-bound  |
 |                     | SharePoint                                  | Early-bound |
-|                     | Skype for Business Online                   | Early-bound |
 |                     | Microsoft Whiteboard                        | Late-bound  |
-| Office Portal       | Exchange                                    | Late-bound  |
+| Microsoft 365 portal | Exchange                                   | Late-bound  |
 |                     | SharePoint                                  | Late-bound  |
 | Outlook groups      | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
@@ -61,7 +55,6 @@ The following table lists some more service dependencies, where the client apps 
 |                     | Exchange                                    | Early-bound |
 | Power Automate      | Power Apps                                  | Early-bound |
 | Project             | Dynamics CRM                                | Early-bound |
-| Skype for Business  | Exchange                                    | Early-bound |
 | Visual Studio       | Windows Azure Service Management API (portal and API) | Early-bound |
 | Microsoft Forms     | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |

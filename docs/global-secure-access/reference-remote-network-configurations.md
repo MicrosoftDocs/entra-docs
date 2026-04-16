@@ -1,16 +1,14 @@
 ---
 title: Global Secure Access remote network configurations
 description: Valid Global Secure Access configurations for custom remote network device links settings, including IKE, ASN, IPSec, and DH group.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
 # Valid remote network configurations for custom and default configurations
+
+## Overview
 
 Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access. There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 

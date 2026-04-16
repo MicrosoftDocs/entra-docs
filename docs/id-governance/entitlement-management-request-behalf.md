@@ -1,14 +1,11 @@
 ---
 title: Request access packages on-behalf-of other identities
 description: This article describes how to set up an access package so that managers can approve, or deny, requests for identities they own, sponsor, or are reporting to them.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 06/18/2025
 
-#CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+#Customer Intent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
 
 
@@ -31,7 +28,7 @@ Now, managers are empowered to request access on behalf of new hires who haven't
 
 ## Scenarios for requesting on behalf of agent identities (Preview)
 
-The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/identity-platform/manage-agent.md).
+The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/manage-agent.md).
 
 ## Prerequisites
 

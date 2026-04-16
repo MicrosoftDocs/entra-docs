@@ -3,14 +3,12 @@ title: Secure Generative AI with Microsoft Entra
 description: Learn how to mitigate specific security challenges that Generative AI (Gen AI) poses to ensure organizational security with Microsoft Entra.
 author: gargi-sinha
 ms.author: gasinh
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: best-practice
 ms.date: 06/20/2025
 ms.reviewer: joflore
 ms.custom: sfi-ga-nochange
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
+ms.subservice: architecture
 ---
 # Secure Generative AI with Microsoft Entra
 
@@ -64,8 +62,6 @@ To right size access, we recommend that you apply an [expiration date](../id-go
 Conditional Access brings signals together to make decisions and enforce organizational policies. Conditional Access is Microsoft's [Zero Trust policy engine](/security/zero-trust/deploy/identity) that takes into account signals from various sources to enforce policy decisions.
 
 Enforce least privilege principles and apply the right access controls to keep your organization secure with [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md). Think of Conditional Access policies as if-then statements where identities that meet certain criteria can only access resources if they meet specific requirements such as MFA or device compliance status.
-
-[Restrict access to Gen AI apps based on signals](/entra/identity/conditional-access/policy-all-users-copilot-ai-security) like users, groups, roles, location, or risk to enhance policy decisions.
 
 - Use the [authentication strength](../identity/authentication/concept-authentication-strengths.md) Conditional Access control that specifies combinations of authentication methods to access a resource. Require users to complete [phishing-resistant multifactor authentication](../identity/conditional-access/policy-all-users-mfa-strength.md) (MFA) to access Gen AI apps.
 - Deploy [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) to mitigate and manage AI usage risks. Use the [Insider Risk](../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk) condition to [block Gen AI apps access for users with elevated insider risk](../identity/conditional-access/policy-risk-based-insider-block.md).

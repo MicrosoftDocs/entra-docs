@@ -11,7 +11,6 @@ metadata:
   ms.topic: hub-page
   author: justinha
   ms.author: justinha
-  manager: dougeby
   ms.date: 10/23/2025
 
 productDirectory:
@@ -77,6 +76,10 @@ productDirectory:
       imageSrc: ./media/index/domain-services.svg
       summary: "Move legacy apps to managed domains in the cloud while preserving user accounts, groups, and access."
       url: ./domain-services/overview.md
+    - title: Tenant governance
+      imageSrc: ./media/index/domain-services.svg
+      summary: "Discover related tenants, manage cross-tenant governance relationships, monitor tenant configuration and secure tenant creation."
+      url: ../id-governance/tenant-governance/overview.md
     - title: Azure Active Directory B2C
       imageSrc: ./media/index/azure-ad-b2c.svg
       summary: "Business to consumers identity and access management for your app."

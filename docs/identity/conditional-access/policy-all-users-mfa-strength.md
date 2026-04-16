@@ -1,18 +1,13 @@
 ---
 title: Require MFA for all users with Conditional Access
 description: Create a custom Conditional Access policy to require all users do multifactor authentication.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for all users
+
+## Overview
 
 As Alex Weinert, the Director of Identity Security at Microsoft, mentions in his blog post [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Your-Pa-word-doesn-t-matter/ba-p/731984):
 
@@ -37,7 +32,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-behavior-when-an-all-resources-policy-has-an-app-exclusion).
+The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-for-all-resources).
 
 > [!WARNING]
 > [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) are currently incompatible with authentication strength. You should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
@@ -45,7 +40,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**: 
@@ -62,7 +57,7 @@ The following steps help create a Conditional Access policy to require all users
    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication strength** from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

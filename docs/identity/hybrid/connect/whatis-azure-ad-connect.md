@@ -2,14 +2,9 @@
 title: 'What is Microsoft Entra Connect and Connect Health.'
 description: Learn about the tools used to synchronize and monitor your on-premises environment with Microsoft Entra ID.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
 ---
 
 # What is Microsoft Entra Connect?
@@ -79,7 +74,7 @@ Integrating your on-premises directories with Microsoft Entra ID makes your user
 ## Why use Microsoft Entra Connect Health?
 When authenticating with Microsoft Entra ID, your users are more productive because there's a common identity to access both cloud and on-premises resources. Ensuring the environment is reliable, so that users can access these resources, becomes a challenge. Microsoft Entra Connect Health helps monitor and gain insights into your on-premises identity infrastructure thus ensuring the reliability of this environment. It's as simple as installing an agent on each of your on-premises identity servers.
 
-Microsoft Entra Connect Health for AD FS supports AD FS on Windows Server 2012 R2, Windows Server 2016, Windows Server 2019, and Windows Server 2022. It also supports monitoring the web application proxy servers that provide authentication support for extranet access. With an easy and quick installation of the Health Agent, Microsoft Entra Connect Health for AD FS provides you with a set of key capabilities.
+Microsoft Entra Connect Health for AD FS supports AD FS on Windows Server 2012 R2, Windows Server 2016, Windows Server 2019, Windows Server 2022, and Windows Server 2025. It also supports monitoring the web application proxy servers that provide authentication support for extranet access. With an easy and quick installation of the Health Agent, Microsoft Entra Connect Health for AD FS provides you with a set of key capabilities.
 
 Key benefits and best practices:
 

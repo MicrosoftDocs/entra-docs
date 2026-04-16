@@ -1,20 +1,18 @@
 ---
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: barclayn
-ms.reviewer: krbain
+ms.date: 04/03/2026
+ms.reviewer: yukarppa
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
 
-Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) or the [Microsoft Purview compliance portal](/purview/purview-compliance-portal) and the labels are configured for groups and sites. 
+
+## Overview
+
+Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) and the labels are configured for groups and sites. 
 
 Sensitivity labels can be applied to groups across apps and services such as Outlook, Microsoft Teams, and SharePoint. For more information, see [Support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels) from the Purview documentation.
 
@@ -31,8 +29,8 @@ All Microsoft operated regions should choose Microsoft. All other regions should
 1. Open a PowerShell prompt on your computer and install the Graph modules required to run the cmdlets.
 
     ```powershell
-    Install-Module Microsoft.Graph -Scope CurrentUser
-    Install-Module Microsoft.Graph.Beta -Scope CurrentUser
+    Install-Module Microsoft.Graph.Authentication -Scope CurrentUser
+    Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement -Scope CurrentUser
     ```
 
 1. Connect to your tenant.
@@ -85,22 +83,22 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 #### [21Vianet](#tab/21Vianet)
 
-If you are performing these Microsoft 365 operations from 21Vianet:
+If you're performing these Microsoft 365 operations from 21Vianet:
 
 1. Register a Microsoft Entra ID application in Microsoft Entra ID.
-1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsoft Graph.
-1. Generate a client secret and copy it. You need the client secret to connect to MS Graph;
+1. Grant your application API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you might need to get tenant admin's explicit consent to grant the application access to Microsoft Graph.
+1. Generate a client secret and copy it. You need the client secret to connect to Microsoft Graph.
 1. Run PowerShell as administrator:
 
     ```PowerShell
     $ClientSecretCredential = Get-Credential -Credential
     ```
-     After commands run, you'll be prompted to enter a password. The password is the new client secret you copied in earlier step.
+     After commands run, you'll be prompted to enter a password. The password is the new client secret you copied in an earlier step.
 
-1. Run the following command to get access to MS Graph:
+1. Run the following command to get access to Microsoft Graph:
 
     ```PowerShell
-    Connect-MgGraph -TenantId "Current tenant id" - ClientSecretCredential $ClientSecretCredential -Environment China
+    Connect-MgGraph -TenantId "Current tenant id" -ClientSecretCredential $ClientSecretCredential -Environment China
     ```
 1. Fetch the current group settings for the Microsoft Entra organization and display the current group settings.
 
@@ -151,7 +149,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 1. Select **Groups** > **All groups** > **New group**.
 1. On the **New Group** page, select **Microsoft 365**. Then fill out the required information for the new group and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Screenshot that shows assigning a sensitivity label on the New groups page.":::
+    :::image type="content" source="./media/groups-assign-sensitivity-labels/new-group-page.png" alt-text="Screenshot that shows assigning a sensitivity label on the New groups page.":::
 
 1. Select **Create** to save your changes.
 
@@ -165,7 +163,7 @@ Your group is created and the site and group settings associated with the select
 1. From the **All groups** page, select the group that you want to label.
 1. On the selected group's page, select **Properties** and select a sensitivity label from the list.
 
-   :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Screenshot that shows assigning a sensitivity label on the overview page for a group.":::
+    :::image type="content" source="./media/groups-assign-sensitivity-labels/assign-to-existing.png" alt-text="Screenshot that shows assigning a sensitivity label on the overview page for a group.":::
 
 1. Select **Save** to save your changes.
 
@@ -183,7 +181,7 @@ Your group is created and the site and group settings associated with the select
 
 After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up previously. When this feature is enabled, those classifications aren't applied to groups.
 
-## Troubleshooting issues
+## Troubleshoot issues
 
 This section offers troubleshooting tips for common issues.
 
@@ -193,7 +191,7 @@ The sensitivity label option appears for groups only when all the following cond
 
 1. The organization has an active Microsoft Entra ID P1 license.
 1. The feature is enabled and `EnableMIPLabels` is set to **True** in the Microsoft Graph PowerShell module.
-1. The sensitivity labels are published in the Microsoft Purview portal or the Microsoft Purview compliance portal for this Microsoft Entra organization.
+1. The sensitivity labels are published in the Microsoft Purview portal or the Microsoft Purview portal for this Microsoft Entra organization.
 1. Labels are synchronized to Microsoft Entra ID with the `Execute-AzureAdLabelSync` cmdlet in the Security & Compliance PowerShell module. It can take up to 24 hours after synchronization for the label to be available to Microsoft Entra ID.
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
 1. The group is a Microsoft 365 group.
@@ -207,7 +205,7 @@ Make sure all the preceding conditions are met to assign labels to a group.
 
 If the label you're looking for isn't in the list:
 
-- The label might not be published in the Microsoft Purview portal or the Microsoft Purview compliance portal. Also, the label might no longer be published. Check with your administrator for more information.
+- The label might not be published in the Microsoft Purview portal. Also, the label might no longer be published. Check with your administrator for more information.
 - The label might be published, but it isn't available to the user who is signed in. Check with your administrator for more information on how to get access to the label.
 
 ### Change the label on a group
@@ -222,13 +220,13 @@ Labels can be swapped at any time by using the same steps as assigning a label t
 
 ### Group setting changes to published labels aren't updated on the groups
 
-When you make changes to group settings for a published label in the [Microsoft Purview portal](https://purview.microsoft.com/) or the [Microsoft Purview compliance portal](https://compliance.microsoft.com), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the portal.
+When you make changes to group settings for a published label in the [Microsoft Purview portal](https://purview.microsoft.com/), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the portal.
 
 If you must make a change, use a [PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the affected groups. This method makes sure that all existing groups enforce the new setting.
 
 ## Next steps
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
-- [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
+- [Update groups after label policy change manually with a Microsoft Graph PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
 - [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

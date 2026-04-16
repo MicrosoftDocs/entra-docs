@@ -1,22 +1,24 @@
 ---
 title: "Conditional Access: Manage Session Controls Effectively"
 description: Learn how session controls in Microsoft Entra Conditional Access policies enable secure, limited experiences for cloud apps based on device compliance.
-
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
-ms.date: 09/23/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: joflore
 ---
 # Conditional Access: Session
 
+## Overview
+
 In a Conditional Access policy, an admin can use session controls to enable limited experiences in specific cloud applications.
 
 ![Screenshot of a Conditional Access policy with a grant control requiring multifactor authentication.](./media/concept-conditional-access-session/conditional-access-session.png)
+
+In a Microsoft Entra External ID [external tenant](/entra/external-id/customers/concept-supported-features-customers#conditional-access), you can use the following session controls:
+
+- Sign-in frequency
+- Persistent browser session
 
 ## Application enforced restrictions
 

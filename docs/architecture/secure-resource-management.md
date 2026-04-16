@@ -2,13 +2,11 @@
 title: Resource management fundamentals in Microsoft Entra ID
 description: Introduction to resource management in Microsoft Entra ID.
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/15/2024
 ms.author: justinha
 ms.reviewer: justinha
+ms.subservice: architecture
 ---
 # Azure resource management fundamentals
 

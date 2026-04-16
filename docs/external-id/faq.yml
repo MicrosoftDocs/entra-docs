@@ -2,12 +2,8 @@
 metadata:
   title: B2B collaboration FAQs
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
-  ms.service: entra-external-id
   ms.topic: faq
   ms.date: 06/27/2025
-  ms.author: cmulligan
-  author: csmulligan
-  manager: dougeby
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
@@ -33,7 +29,7 @@ sections:
       - question: |
           Can B2B collaboration users access Power BI content?
         answer: |
-          Yes, you can [distribute Power BI content to external guest users using B2B collaboration](/power-bi/guidance/whitepaper-azure-b2b-power-bi). To share Power BI content across Microsoft clouds, you can [use Microsoft cloud settings](cross-tenant-access-overview.md#microsoft-cloud-settings) to establish mutual B2B collaboration between your cloud and an external cloud.
+          Yes, you can [distribute Power BI content to external guest users using B2B collaboration](/fabric/enterprise/powerbi/service-admin-entra-b2b). To share Power BI content across Microsoft clouds, you can [use Microsoft cloud settings](cross-tenant-access-overview.md#microsoft-cloud-settings) to establish mutual B2B collaboration between your cloud and an external cloud.
 
       - question: |
           Is the CSV upload feature still supported?

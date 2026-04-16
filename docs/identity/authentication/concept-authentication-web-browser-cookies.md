@@ -1,19 +1,15 @@
 ---
 title: Web browser cookies used in Microsoft Entra authentication
 description: Learn about Web browser cookies used in Microsoft Entra authentication.
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: overview
 ms.date: 03/04/2025
-
-ms.author: justinha
 author: custorod
-manager: femila
 ms.reviewer: sahenry, michmcla
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.
+
 ---
+
 # Web browser cookies used in Microsoft Entra authentication
 
 During authentication against Microsoft Entra ID through a web browser, multiple cookies are involved in the process. Some of the cookies are common on all requests. Other cookies are used for specific authentication flows or specific client-side conditions.  
@@ -63,6 +59,18 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 > Cookies identified as client-side cookies are set locally on the client device by JavaScript, hence, will be marked with HttpOnly=false.  
 >
 > Cookie definitions and respective names are subject to change at any moment in time according to Microsoft Entra service requirements.  
+
+## When Cookies Are Not Available to Entra ID 
+ 
+Under certain conditions, the cookies listed above might not be fully available to Microsoft Entra ID. This can occur due to factors such as use of unsupported or non‑Microsoft authentication libraries, privacy features, browser-specific behavior including scenarios where InPrivate or Incognito browsing modes are used.
+
+When cookies are not correctly provided to Entra ID, users may experience one or more of the following issues:
+
+- Single sign-on (SSO) does not function as expected, and users are prompted to reauthenticate
+- Users may see unexpected confirmation or consent dialogs
+- The sign-out experience may fail or terminate before completion (for example, the `post_logout_redirect_uri` parameter is not processed)
+
+To ensure a consistent and reliable authentication experience, Microsoft recommends using supported browsers and supported client authentication libraries, such as the Microsoft Authentication Library (MSAL). This helps ensure cookies are handled correctly and authentication and sign-out flows operate as designed.
 
 ## Next steps
 
