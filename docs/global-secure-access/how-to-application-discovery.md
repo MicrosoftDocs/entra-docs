@@ -2,7 +2,7 @@
 title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.topic: how-to
-ms.date: 03/17/2026
+ms.date: 04/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
