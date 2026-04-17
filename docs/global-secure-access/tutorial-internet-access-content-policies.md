@@ -86,7 +86,7 @@ The following video demonstrates how to configure a content policy:
    - `https://chatgpt.com/backend-api/files/process_upload_stream`
 1. Select **Add**
 
-   ![Screenshot showing the content policy rule configuration.](media/tutorial-internet-access-content-policies/file-policy-configuration.png)
+   ![Screenshot showing the content policy rule configuration.](media/tutorial-internet-access-content-policies/content-policy-configuration.png)
 
 > [!NOTE]
 > Apps might use multiple URLs and FQDNs under the hood when you interact with them. In this example, ChatGPT uses `*.oaiusercontent.com` and Gmail uses `mail.google.com`. If you aren't seeing content policies applied, check with dev tools to confirm which URLs and FQDNs the app is using.
