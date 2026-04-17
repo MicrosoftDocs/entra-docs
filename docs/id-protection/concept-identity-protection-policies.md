@@ -27,7 +27,7 @@ Allowing users to self-remediate using this process significantly reduces the ri
 
 
 > [!NOTE]
-> Licensing: [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use risk-based access policies.
+> [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use risk-based access policies.
 
 ## User risk-based Conditional Access policy
 
