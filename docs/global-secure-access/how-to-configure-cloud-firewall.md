@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Configure Global Secure Access cloud firewall
 
-Global Secure Access Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
+Global Secure Access cloud firewall protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
 
 The current scope is using cloud firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access.
 
