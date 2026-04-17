@@ -82,6 +82,8 @@ items:
       href: how-to-sign-in-alias.md
     - name: Native authentication
       items:
+        - name: Overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Challenge types
           href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Web fallback
