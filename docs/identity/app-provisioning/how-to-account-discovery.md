@@ -53,7 +53,8 @@ Customers using account discovery with the following applications consistently r
 
 - Atlassian Cloud  
 - Salesforce  
-- SAP Cloud Identity Services  
+- SAP Cloud Identity Services
+- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)  
 
 ### Connectors that do not support discovery
 Account Discovery is currently unsupported for the following applications:
