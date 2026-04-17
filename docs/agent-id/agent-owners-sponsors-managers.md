@@ -12,11 +12,11 @@ ms.reviewer: jawoods
 
 # Administrative relationships in Microsoft Entra Agent ID (Owners, sponsors, and managers) 
 
-The Microsoft agent identity platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra Agent ID identity types. This guidance applies to [agent identities](/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true), [agent identity blueprints](/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true), [agent identity blueprint principals](/graph/api/resources/agentidentityblueprintprincipal?view=graph-rest-beta&preserve-view=true), and [agents' user accounts](/graph/api/resources/agentuser?view=graph-rest-beta&preserve-view=true). The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
+Microsoft Entra Agent ID introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra Agent ID identity types. This guidance applies to [agent identities](/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true), [agent identity blueprints](/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true), [agent identity blueprint principals](/graph/api/resources/agentidentityblueprintprincipal?view=graph-rest-beta&preserve-view=true), and [agents' user accounts](/graph/api/resources/agentuser?view=graph-rest-beta&preserve-view=true). The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
 
 The administrative relationships available in Agent ID include:
 
-- **Owners**: Technical administrators responsible for operational management of agent blueprints and agent identities, including setup, configuration, and credential management.
+- **Owners**: Technical administrators responsible for operational management of agent identity blueprints and agent identities, including setup, configuration, and credential management.
 - **Sponsors**: Business representatives accountable for the agent's purpose and lifecycle decisions, including access reviews and incident response, without technical administrative access.
 - **Managers**: User responsible for the agent within the organization's hierarchy, able to request access packages for their reporting agents.
 
@@ -32,9 +32,9 @@ Owners can modify properties that the sponsor can't, like authentication propert
 
 ### Owner access and permissions
 
-Owners have administrative privileges scoped to their assigned agent blueprint or agent identity. They can edit settings, manage credentials, change configurations, and assign more owners.
+Owners have administrative privileges scoped to their assigned agent identity blueprint or agent identity. They can edit settings, manage credentials, change configurations, and assign more owners.
 
-Owners of an agent identity blueprint or agent identity blueprint principal can also create agent identities from that blueprint using delegated permissions, without needing an Agent ID Administrator or Agent ID Developer role. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`. When a user creates an agent identity blueprint, they're automatically assigned as an owner of that blueprint.
+Owners of an agent identity blueprint or agent identity blueprint principal can also create agent identities from that blueprint using delegated permissions, without needing an Agent ID Administrator or Agent ID Developer role. The calling application must be granted one of the following delegated permissions: `AgentIdentity.Create.All`, `AgentIdentity.ReadWrite.All`, or `AgentIdentity.ReadWrite.ManagedBy`.
 
 ### Owner typical personas
 
