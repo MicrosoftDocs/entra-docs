@@ -1,16 +1,16 @@
 ---
 title: Global Secure Access Client for macOS Release Notes
-description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
+description: This article tracks the release notes and download instructions for the Global Secure Access client for macOS.
 ms.topic: reference
-ms.date: 02/09/2026
+ms.date: 04/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
-
+ai-usage: ai-assisted
 
 ---
 # Global Secure Access client for macOS release notes
-This article lists the released versions of the Global Secure Access client for macOS and describes the changes in each version.   
+This article lists the released versions of the Global Secure Access client for macOS and the changes in each version.   
 
 ## Download the latest version
 You can download the current version of the Global Secure Access client from the Microsoft Entra admin center.
@@ -19,7 +19,16 @@ You can download the current version of the Global Secure Access client from the
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select the **macOS** tab.
 1. Select **Download Client**.
-:::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+:::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.26030601
+Released for download on April 16, 2026.
+### Functional changes
+- Optimizes Intelligent Local Access (ILA) detection by reevaluating the connection status to private networks on each network change.
+### Other changes
+- Accessibility improvements.
+- Memory management improvements.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 1.1.25111702
 Released for download on February 5, 2026.
@@ -27,7 +36,7 @@ Released for download on February 5, 2026.
 - Supports Intelligent Local Access (preview).
 - Supports contacting Private DNS only when the Private Access channel is active.
 ### Other changes
-- Memory management improvements
+- Memory management improvements.
 - Miscellaneous bug fixes and improvements.
 
 ## Version 1.1.25090800
@@ -82,7 +91,7 @@ Released for download on June 24, 2025.
 ### Functional changes
 - Support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they get mTLS.
+> The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Telemetry collection is enabled.
 - The new UI includes a link to Microsoft's privacy policy to comply with the telemetry collection policy.
 - An uninstaller application is added for easy removal of the Global Secure Access client as an alternative to the uninstall script.
@@ -91,7 +100,7 @@ Released for download on June 24, 2025.
 - Support for Continuous Access Evaluation (CAE) in Global Secure Access client authentication.
 - Accessibility improvements for the Advanced Diagnostics tool and main window.
 - Bug fix: Canonical name (CNAME) records now resolve correctly (previously resolved as A records).
-- Bug fix: Resolved connectivity issues when resuming from sleep.
+- Bug fix: Resolves connectivity issues when resuming from sleep.
 ### Other changes
 - The client version format now uses the build date. Older versions might have higher numerical values than newer ones, but future versions increment numerically.
 - Bug fix: Logging network trace is now disabled by default to optimize performance.
@@ -105,4 +114,4 @@ Released for download on November 18, 2024.
 - First public preview version.
 
 ## Related content
-- [Global Secure Access client for macOS](how-to-install-macos-client.md)
+- Learn how to install the [Global Secure Access client for macOS](how-to-install-macos-client.md).

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/10/2025
 ms.reviewer: jocastel
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As an administrator, I want view resources an identity has access to and view request logs for auditing purposes.
+#Customer Intent: As an IT admin, I want to view reports and audit logs in entitlement management so that I can monitor identity assignments and access changes.
 ---
 
 # View reports and logs in entitlement management
@@ -164,6 +164,10 @@ The workbook *Application role assignment activity* shows if there have been cha
     [ ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png) ](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
 
 1. If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a Global Administrator had directly assigned a user to an application role.
+
+## View orphan or local accounts in your applications
+
+Administrators of your connected applications (Salesforce, SAP Cloud Identity Services, etc.) can manually create accounts in your applications, circumventing the governance controls in place. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching accounts in Entra, and which users are local to your application with one click. It enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). 
 
 ## Next steps
 

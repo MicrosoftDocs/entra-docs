@@ -7,11 +7,12 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 04/01/2026
+ms.date: 04/15/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to review the latest Microsoft Entra releases and announcements so that I can stay current with product updates.
 ---
 
 # Microsoft Entra releases and announcements
@@ -21,6 +22,30 @@ This article provides information about the latest releases and change announcem
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
 ## March 2026
+
+### Plan for change – Agent Registry consolidation into Microsoft Agent 365
+
+**Type:** Plan for change  
+**Service category:** Other  
+**Product capability:** Directory    
+
+We’re consolidating agent management experiences to make it easier to observe, govern, and secure all agents in your tenant. Agent 365 will be the single source of truth, offering a unified catalog, consistent visibility, and simplified management.
+
+**What’s changing**
+
+*   The Agent registry and Agent collections blades in the [Entra admin center](https://entra.microsoft.com/) will be retired on May 1, 2026.  
+*   No action is required by administrators. Agent functionality and management remain unaffected. You can still access the agent inventory in the [All agents view within the Microsoft 365 admin center (MAC)](https://admin.microsoft.com/Adminportal/Home#/homepage).  
+
+**With this change:**
+
+*   Agent 365 becomes the unified registry and control plane for agents.  
+*   Microsoft Entra continues to provide the identity foundation through Agent ID.  
+*   The existing [registry Graph API](/graph/api/resources/agentregistry) will be deprecated and replaced by a new API powered by Agent 365. Agents registered via the current API will need to be re-registered. We’ll follow up soon with details on the deprecation date and the availability of the new registry Graph API.  
+*   All agent access and governance capabilities remain fully available through Agent ID and Agent 365.  
+
+For more information, see: [Agent Registry convergence with Microsoft Agent 365](../agent-id/identity-platform/agent-registry-convergence.md).
+
+---
 
 ### Public Preview - Microsoft Entra Backup and Recovery is now available
 
@@ -108,7 +133,7 @@ Each profile can specify allowed passkey types, attestation requirements, and au
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -118,7 +143,7 @@ This feature allows admins to request and accept tenant governance relationships
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -162,7 +187,7 @@ For more information, see: [What is Microsoft single sign-on for Linux?](../iden
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -223,7 +248,7 @@ TLS 1.1 is deprecated due to security vulnerabilities. This change helps protect
 **What you need to do**  
 Ensure your Entra Connect Health agents are up to date and that your servers are configured to use TLS 1.2 for outbound connections. 
 
-*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
+*   Enable [TLS 1.2](/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
 
 ---
 
@@ -267,7 +292,7 @@ For more information see [Overview of the Tenant Configuration Management APIs](
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Starting in April 2026, the Authentication Methods Policy Update audit log entry has been updated to improve readability and clarity. Previously, audit logs included the full authentication methods policy payload in both the old and new values, even when only a small number of settings were changed. With this update, audit log entries now surface only the specific properties that were modified, along with their corresponding old and new values.
+Starting in April 2026, the Authentication Methods Policy Update and Authentication Methods Policy Reset audit log activities has been updated to improve readability and clarity. Previously, audit logs included the full authentication methods policy payload in both the old and new values, even when only a small number of settings were changed. With this update, audit log entries now surface only the specific properties that were modified, along with their corresponding old and new values.
 
 Policy-wide updates—such as Registration Campaigns and System‑preferred MFA—may continue to include the full policy payload. The activity name and triggering events remain unchanged. This update affects formatting only and does not change policy behavior. For more information, see: [Core Directory](../identity/monitoring-health/reference-audit-activities.md#core-directory)
 
@@ -458,7 +483,7 @@ The Microsoft Entra provisioning service can be used in the 21Vianet / China clo
 **Service category:** Entitlement Management  
 **Product capability:** Identity Governance  
 
-By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
+By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request).
 
 ---
 
@@ -812,7 +837,7 @@ Soft deletion for cloud security groups introduces a safety mechanism that allow
 **Service category:** Other  
 **Product capability:** End User Experiences  
 
-The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/identity-platform/manage-agent.md).
+The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/manage-agent.md).
 
 ---
 
@@ -842,7 +867,7 @@ Managing agent identity sponsors is key for lifecycle governance and access cont
 **Service category:** Other  
 **Product capability:** Platform  
 
-Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
+Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/what-is-agent-registry.md).
 
 ---
 

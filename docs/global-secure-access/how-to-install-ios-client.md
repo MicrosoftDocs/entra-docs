@@ -42,7 +42,7 @@ The iOS device (phone or tablet) must meet the following requirements:
 
 - The device runs iOS 16.0 or newer.
 - The device has the Microsoft Authenticator app or the Intune Company Portal app.
-- If the device is supervised, it must be enrolled to enforce policies for Intune device compliance.
+- If the device is supervised, it must be enrolled to apply Intune device compliance policies.
 
 ## Known limitations
 
@@ -60,7 +60,7 @@ The iOS device (phone or tablet) must meet the following requirements:
 
 1. In the search results, select **Microsoft Defender** and then choose **Select**.
 
-1. Select **iOS 15.0** as the minimum operating system. Review the rest of the information about the app, and then select **Next**.
+1. Select **iOS 16.0** as the minimum operating system. Review the rest of the information about the app, and then select **Next**.
 
 1. In the **Assignments** section, go to the **Required** section and select **Add group**.
 
@@ -157,7 +157,7 @@ You can enable or disable the Global Secure Access client for iOS by setting the
 
 ## Troubleshooting
 
-If the Global Secure Access tile doesn't appear in the Defender app after you onboard the tenant, restart the Defender app.
+If the Global Secure Access tile doesn't appear in the Defender app after you onboard the tenant, reopen the Defender app.
 
 If access to the Private Access application shows a connection timeout error after a successful interactive sign-in, reload the application (or refresh the web browser).
 

@@ -1,0 +1,165 @@
+items:
+  - name: Microsoft Entra Agent ID
+    expanded: true
+    items:
+    - name: What is Microsoft Entra Agent ID?
+      href: what-is-microsoft-entra-agent-id.md
+    - name: What is the Microsoft agent identity platform?
+      href: what-is-agent-id-platform.md
+    - name: Security for AI overview
+      href: security-for-ai-overview.md
+  # LEARN ######################
+  - name: Learn about Agent ID
+    expanded: true
+    items:
+    - name: Core concepts
+      items:
+      - name: Key concepts
+        href: key-concepts.md
+      - name: Agent identities
+        href: what-are-agent-identities.md
+      - name: Agent identity blueprints
+        href: agent-blueprint.md
+      - name: Agent's user account
+        href: agent-users.md
+      - name: Agent service principals
+        href: agent-service-principals.md
+      - name: Owners, sponsors, and managers
+        href: agent-owners-sponsors-managers.md
+    - name: Authentication and authorization
+      items:
+      - name: Authorization in Entra Agent ID
+        href: authorization-agent-id.md
+      - name: Tokens in Microsoft agent identity platform
+        href: agent-tokens.md
+      - name: Authentication protocols for agents
+        href: agent-oauth-protocols.md
+    - name: Governance and protection
+      items:
+      - name: Conditional Access for agents
+        href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: ID Governance for agents
+        href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Access packages for agents
+        href: agent-access-packages.md
+      - name: ID Protection for agents
+        href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Network controls for agents
+        href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Sign-in and audit logs
+        href: sign-in-audit-logs-agents.md
+      - name: Consent and sign-in process
+        href: sign-in-process.md
+
+  # PLAN ######################
+  - name: Plan your agent identity deployment
+    expanded: true
+    items:
+    - name: Agent creation channels
+      href: agent-id-creation-channels.md
+    - name: Agent ID design patterns
+      href: concept-agent-id-design-patterns.md
+    - name: Plan your agent identity architecture
+      href: how-to-plan-agent-identity-architecture.md
+    - name: Best practices
+      href: best-practices-agent-id.md
+    
+  # BUILD / IMPLEMENT ######################
+  - name: Create and configure agents
+    expanded: true
+    items:    
+    - name: Create agent identity objects
+      items:
+      - name: Create an agent blueprint
+        href: create-blueprint.md
+      - name: Create and delete agent identities
+        href: create-delete-agent-identities.md
+      - name: Manage agent blueprints
+        href: manage-agent-blueprint.md
+      - name: AI-guided setup
+        href: agent-id-ai-guided-setup.md
+    - name: Authentication, authorization, and permissions
+      items:
+      - name: Autonomous agent app OAuth flow
+        href: agent-autonomous-app-oauth-flow.md
+      - name: On-behalf-of OAuth flow
+        href: agent-on-behalf-of-oauth-flow.md
+      - name: Agent's user account OAuth flow
+        href: agent-user-oauth-flow.md
+      - name: Configure inheritable permissions
+        href: configure-inheritable-permissions-blueprints.md
+      - name: Grant agent access to Microsoft 365
+        href: grant-agent-access-microsoft-365.md
+      - name: Control user access to agents
+        href: control-user-access-agents.md
+      - name: Autonomous agents
+        items:
+        - name: Authenticate and acquire tokens for autonomous agents
+          href: autonomous-agent-authentication-authorization-flow.md
+      - name: Interactive agents
+        items:
+        - name: Authenticate users and request user tokens
+          href: interactive-agent-authentication-authorization-flow.md
+    - name: Integrate with APIs and services
+      items:
+      - name: Configure SDK for agent identities
+        href: microsoft-entra-sdk-for-agent-identities.md
+      - name: Call Microsoft Graph API
+        href: call-api-microsoft-graph.md
+      - name: Call custom APIs
+        href: call-api-custom.md
+      - name: Call Azure services
+        href: call-api-azure-services.md
+
+  # DEPLOY AND SCALE ######################
+  - name: Deploy and scale
+    expanded: true
+    items:
+    - name: Assign agents to applications
+      href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+    - name: Maintain agent sponsors and lifecycle
+      href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+    - name: Disable agent identities
+      href: disable-agent-identities.md
+    - name: View and manage agent identities
+      href: agent-lists.md
+    - name: Manage agents in end user experience
+      href: manage-agent.md
+
+  # REFERENCE ######################
+  - name: Reference
+    items:
+    - name: Token claims reference
+      href: agent-token-claims.md
+    - name: Microsoft Graph API
+      items:
+      - name: Permissions reference
+        href: /graph/permissions-reference?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity blueprint API
+        href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity blueprint principal API
+        href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity API
+        href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Known issues
+        href: preview-known-issues.md
+      - name: Error codes reference
+        href: error-codes.md
+    - name: Agent registry
+      items:
+      - name: Agent Registry convergence
+        href: agent-registry-convergence.md
+      - name: What is the agent registry?
+        href: what-is-agent-registry.md
+      - name: Register agents with Agent Registry
+        href: publish-agents-to-registry.md
+      - name: Agent Registry collections
+        href: agent-registry-collections.md
+      - name: Manage agent collections
+        href: agent-registry-manage-collections.md
+      - name: Agent communication
+        href: registry-agent-to-agent-protocol.md
+      - name: Manage Agent Registry-only agents
+        href: manage-agents-without-identity.md
+      - name: Agent Registry roles
+        href: reference-registry-roles.md

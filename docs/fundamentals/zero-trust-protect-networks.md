@@ -9,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect networks so that I can implement Zero Trust network security principles.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect networks

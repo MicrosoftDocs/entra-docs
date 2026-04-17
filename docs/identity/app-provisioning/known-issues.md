@@ -119,7 +119,7 @@ Multivalue directory extensions can't be used in attribute mappings or scoping f
 - Provisioning passwords isn't supported. 
 - Provisioning nested groups beyond the first level is not supported. 
 - Provisioning is not supported for B2C tenants, including into or out of the tenant.
-- Provisioning (inbound) is not supported for External ID tenants.
+- Inbound provisioning using System for Cross‑domain Identity Management (SCIM) is not supported. Use Microsoft Graph and [Microsoft Graph batch](/graph/json-batching) instead.
 - Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"

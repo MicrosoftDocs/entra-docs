@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 
 # Install the Global Secure Access client for Android
 
-This article describes how to deploy the Global Secure Access client to compliant Android devices by using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your users to connect to the resources that they need without having to manually configure VPN settings on their devices.
+This article describes how to deploy the Global Secure Access client to Android devices by using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your users to connect to the resources that they need without having to manually configure VPN settings on their devices.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This article describes how to deploy the Global Secure Access client to complian
 
 - You need device installation permissions to install the client.
 
-- Android devices need to run Android 10.0 or later.
+- Android devices need to run Android 11.0 or later.
 
 - Android devices need to be Microsoft Entra registered devices:
   - Devices that your organization doesn't manage need to have the Microsoft Authenticator app installed.

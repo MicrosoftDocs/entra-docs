@@ -5,7 +5,7 @@ description: Discover the known limitations of Global Secure Access, including p
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-ms.date: 02/24/2026
+ms.date: 04/15/2026
 ms.custom: agent-id-ignite
 
 
@@ -221,7 +221,6 @@ Known limitations for remote networks include:
 - The maximum number of remote networks per tenant is 200, and the maximum number of device links per remote network is 25. To increase these limits further for your tenant, contact Microsoft Support.   
 - Universal Conditional Access lets you apply identity controls like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk to network traffic—not just cloud apps. These identity controls apply to devices with the Global Secure Access client installed. Remote network connectivity is a clientless approach where customers create an IPsec tunnel from their on-premises equipment to the Global Secure Access edge service. Network traffic from all devices at that remote network (or branch office) is sent to Global Secure Access through the IPsec tunnel. In other words, Conditional Access policies for Microsoft or Internet traffic are only enforced when a user has the Global Secure Access client.
 - Use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity supports the Microsoft traffic and Internet Access traffic forwarding profiles.
-- Internet over remote network connectivity is supported only in the specific regions listed in the **Region** drop-down when you create a remote network.
 - The [Custom Bypass](how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) feature in the Internet traffic forwarding profile doesn't work with remote network connectivity. You must manually bypass specific URLs from your Customer Premises Equipment (CPE).
 
 ## Access controls limitations

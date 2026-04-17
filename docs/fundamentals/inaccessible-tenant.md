@@ -5,6 +5,7 @@ ms.topic: troubleshooting
 ms.date: 01/15/2025
 ms.reviewer: Sunayana
 ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to troubleshoot inaccessible tenants so that I can regain access to my organization's directory.
 ---
 
 

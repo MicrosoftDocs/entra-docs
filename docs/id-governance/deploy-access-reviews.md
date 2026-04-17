@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
-#Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
+#Customer Intent: As an IT admin, I want to plan a Microsoft Entra access reviews deployment so that I can successfully implement access reviews in my organization.
 ---
 
 # Plan a Microsoft Entra access reviews deployment
@@ -410,12 +410,6 @@ Follow the instructions in the articles listed in the table.
 | [Create access reviews](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Azure resource roles in PIM. |
 | [Self-review your access](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
 | [Complete an access review](../id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
-
-## Access Review Agent (Preview)
-
-The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It proactively scans for active access reviews in your tenant that are flagged for processing by the agent. The agent then analyzes identified reviews by gathering extra insights, and generates a recommendation (approve / deny) and a justification summary for each decision. Once the agent analyzes the recommendations and corresponding justification summaries, it's able to guide reviewers, in natural language, through the review process in Microsoft Teams. As the agent guides them through the review, they're able to review the agent's reasoning behind the recommendations, ask questions in the context of the review itself, and finally make their own informed decision.
-
-After the Access Review Agent is started, you must flag access reviews to be processed by the Access Review Agent. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
 
 ## Use the Access Reviews API
 
