@@ -1,23 +1,23 @@
 ---
-title: Learn how to migrate users to Microsoft Entra External ID
-description: Learn how to migrate users from another identity provider to Microsoft Entra External ID.
- 
-author: garrodonnell   
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
+title: Migrate users and credentials to Microsoft Entra External ID
+description: Learn how to migrate users and credentials from any legacy identity provider to Microsoft Entra External ID.
+author: garrodonnell
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/16/2026
 ms.author: godonnell
+ai-usage: ai-assisted
 ---
 
-# Migrating users to Microsoft Entra External ID
+# Migrate users and credentials to Microsoft Entra External ID
 
-In this guide, you learn the fundamentals of how to migrate users and credentials from your current identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide covers different solutions you can use depending on your current configuration. With each of these approaches, you need to write an application or script that uses the [Microsoft Graph API](/graph/api/resources/identity-network-access-overview) to create user accounts in External ID.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
+In this guide, you learn the fundamentals of how to migrate users and credentials from your current identity provider to Microsoft Entra External ID. This guide applies to any legacy identity provider (including Azure AD B2C) and covers directory preparation, bulk user migration, credential migration setup, and the available credential migration approaches.
 
-## Pre-requisites
+> [!TIP]
+> If you're migrating from Azure AD B2C specifically, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) for B2C-specific decision guidance, password preservation options, and implementation steps.
+
+## Prerequisites
 
 Before you start migrating users to External ID, you need:
 
@@ -30,17 +30,20 @@ Before you start migrating users to External ID, you need:
 Before starting your user migration process, you should take the time to clean up data in your legacy identity provider directory. Doing this helps ensure that you only migrate the data you need and makes the migration process smoother.
 
 - Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can [create custom attributes](concept-user-attributes.md) within External ID to store more data about a user.
-- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID. You may need to apply your own business logic to merge and reconcile accounts for the same user from different sources.
+- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID. You might need to apply your own business logic to merge and reconcile accounts for the same user from different sources.
 - Usernames need to be unique per account in External. If multiple applications use different usernames, you need to apply your own business logic to reconcile and merge accounts. For the password, let the user choose one and set it in the directory. Only the chosen password should be stored in the External ID account.
 - Remove unused user accounts, or don't migrate stale accounts.
 
-## Stage 1: User Data Migration
+## Stage 1: Migrate user data
 
 The first step in the migration process is to migrate user data from your legacy identity provider to External ID. This includes usernames and any other relevant attributes. To do this, you need to:
 
 1. Read the user accounts from your legacy identity provider. 
 1. Create the corresponding user accounts in your External ID directory. For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true). 
 1. If you have access to users' plaintext passwords, you can set them directly on the new accounts as you are migrating user data. If you don't have access to the plaintext passwords, you should set a random password for now that will be updated later as part of the password migration process. 
+
+> [!NOTE]
+> When migrating large numbers of objects, you might encounter throttling limits for Microsoft Graph. See [Throttling limits](/graph/throttling-limits) and [Throttling guidance](/graph/throttling) for best practices to handle or avoid throttling.
 
 Not all information in your legacy identity provider needs to be migrated to your External ID directory. The following recommendations can help you determine the appropriate set of user attributes to store in External ID.
 
@@ -54,36 +57,124 @@ Not all information in your legacy identity provider needs to be migrated to you
 - Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
 - Marketing or communication preferences, user behaviors, and insights.
 
-## Stage 2: Password Migration
+## Alternatives to credential migration
 
-Once you have migrated user data, you need to migrate user passwords from the legacy identity provider to External ID. There are two recommended approaches for migrating user passwords: self-service password reset (SSPR) and seamless migration. If plaintext user passwords aren't accessible, you'll need to use one of these methods. For example, if: 
+Not every migration requires credential migration. If your users authenticate through social identity providers or enterprise federation, their passwords aren't stored in your directory and don't need to be migrated. You can also skip credential migration if you're moving to passwordless authentication or if you're comfortable having users reset their password via [self-service password reset (SSPR)](how-to-enable-password-reset-customers.md).
 
-- The password is stored in Azure AD B2C. 
-- The password is stored in a one-way encrypted format, such as with a hash function. 
-- The password is stored by the legacy identity provider in a way that you can't access. For example, when the identity provider validates credentials by calling a web service. 
+If you don't need credential migration, your user migration is complete. Return to the migrate guide to validate your environment and plan application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
 
-### Self Service Password Reset (SSPR)
+## Stage 2: Prepare for credential migration
 
-Using the Self Service Password Reset (SSPR) feature in External ID, customers can manually set their password the first time they log in to the new system. This approach is simple to implement and doesn't require any custom code.  However, it does require users to reset their passwords manually, which may be inconvenient for some users.
+If you need to preserve existing passwords, prepare user accounts for credential migration before implementing either migration approach. This setup is shared by both the JIT and legacy IdP-initiated approaches described in Stage 3.
 
-To use this approach, you first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You then need to provide users with instructions on how to reset their passwords using SSPR when they log in for the first time. For example, you can send an email to users with instructions on how to reset their passwords or add instructions in your app before the user navigates to the sign in flow.
+### Define an extension property for tracking migration status
 
-### Seamless migration
+Define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview#directory-microsoft-entra-id-extensions).
 
-If you have a large number of users, or if you want to provide a more seamless experience, you can use the seamless migration approach. This process allows users to continue using their existing passwords while migrating their accounts to External ID. To do this, you need to build a custom REST API to validate credentials entered by users against the legacy identity provider. 
+#### [Graph](#tab/graph)
 
-The seamless migration process consists of the following steps:
+Create an extension property using the Microsoft Graph API:
 
-1. Add an extension attribute to user accounts which flags their migration status. 
-1. When a customer signs in, read the External ID user account corresponding to the email address entered. 
-1. If a customer's account is already flagged as migrated, continue with the sign-in process.
-1. If the user's account is not flagged as already migrated, validate the password entered against the legacy identity provider. 
-    1. If the legacy IdP determines the password is incorrect, return a friendly error to the user. 
-    1. If the legacy IdP determines the password is correct, use the REST API to write the password to the External ID account and change the extension attribute to mark the account as migrated.
+``` http
+POST https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/extensionProperties 
 
-Seamless migration happens in two phases. First, legacy credentials are harvested and stored in External ID. Then, once credentials have been updated for a sufficient number of users, applications can be migrated to authenticate directly with External ID. At this point migrated users can continue to use their existing credentials. Any users who have not been migrated will need to reset their password when they log in for the first time.
+{ 
+    "name": "toBeMigrated", 
+    "dataType": "Boolean",
+    "targetObjects":[ 
+        "User" 
+    ] 
+} 
+```
+Replace `00001111-aaaa-2222-bbbb-3333cccc4444` with the object ID of your `b2c-extensions-app` application. The value of this extension should be set to `true` for all users who require migration.
 
-The high-level design for the seamless migration process is shown in the following diagram:
+#### [Admin Center](#tab/admin-center)
+
+To create an extension property using the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1. Navigate to **Identity** > **External Identities** > **Custom user attributes**.
+1. Select **Add**.
+1. Enter the following values:
+   - **Name**: Enter a name for the property (for example, `toBeMigrated`).
+   - **Data Type**: Select **Boolean**.
+   - **Description**: Enter a meaningful description (for example, "Tracks whether the user's password has been migrated from the legacy system").
+1. Select **Create**.
+
+---
+
+#### Get the extension property ID
+
+After creating the extension property, you need to retrieve its unique identifier to use in your credential migration implementation. The extension property ID follows this naming convention: `extension_{applicationId-without-hyphens}_{propertyName}`.
+
+To construct your extension property ID:
+
+1. Navigate to **Entra ID** > **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1. Select **All applications** from above the application list.
+1. Find the application named `b2c-extensions-app` and copy its **Application (client) ID** value.
+1. Remove the hyphens from the application ID and combine it with your attribute name.
+
+For example, if your application ID is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `toBeMigrated`, your extension property ID would be `extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated`.
+
+### Generate random strong passwords
+
+Before creating users, generate unique, strong temporary passwords for each user account. These are replaced with the user's actual password from the legacy identity provider once credential migration completes.
+
+> [!IMPORTANT]
+> Ensure that the temporary passwords are unique and strong to maintain security during the migration process. Consider using a password generation library or service that meets your organization's security requirements.
+
+### Create users with the migration flag
+
+Create user accounts in your External ID tenant. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
+
+The following example demonstrates how to create a user with the migration extension property set to `true` using the Microsoft Graph API. Replace `{extension-property-id}` with the actual extension property ID you constructed in the previous step.
+
+``` http
+POST https://graph.microsoft.com/v1.0/users
+
+{
+    "creationType": "LocalAccount",
+    "accountEnabled": true,
+    "passwordProfile": {
+        "forceChangePasswordNextSignIn": false,
+        "password": "<unique-generated-random-strong-password>"
+    },
+    "{extension-property-id}": true
+}
+```
+
+You can find sample code to support your user migration in the [B2C to MEEID migration tool](https://github.com/microsoft/b2c-to-meeid-migration-tool/).
+
+## Stage 3: Migrate credentials
+
+Once user accounts are prepared with the migration flag, choose a credential migration approach based on where applications authenticate during the migration.
+
+### JIT password migration (External ID-initiated)
+
+In JIT migration, applications have already moved to External ID endpoints. When a user signs in, External ID uses the `OnPasswordSubmit` custom authentication extension to validate the user's credentials against the legacy IdP, writes the password to the External ID account, and flags the account as migrated. Subsequent sign-ins authenticate directly against External ID.
+
+For full implementation instructions, see [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md).
+
+### Legacy IdP-initiated credential harvesting
+
+In this approach, applications remain on the legacy IdP endpoints while a custom policy or flow calls a REST API to validate each user's credentials and write them to the corresponding External ID account. Once enough credentials have been migrated, applications cut over to External ID.
+
+This approach applies when plaintext passwords aren't accessible. For example, if:
+
+- The password is stored by the legacy identity provider in a hashed or encrypted format.
+- The password is managed by the legacy identity provider and can only be validated through its own authentication service.
+
+The credential migration process consists of the following steps:
+
+1. When a customer signs in, read the External ID user account corresponding to the email address entered.
+1. If the account is already flagged as migrated, continue with normal sign-in.
+1. If the account isn't flagged as migrated, validate the password against the legacy identity provider.
+    1. If the legacy IdP determines the password is incorrect, return a friendly error to the user.
+    1. If the legacy IdP determines the password is correct, write the password to the External ID account and update the migration flag.
+
+Credential migration happens in two phases. First, legacy credentials are harvested and stored in External ID. Then, once credentials have been updated for a sufficient number of users, applications can be migrated to authenticate directly with External ID. Users who haven't been migrated need to reset their password when they sign in for the first time.
+
+The high-level design for the credential migration process is shown in the following diagrams:
 
 Harvest credentials from the legacy identity provider and update corresponding accounts in External ID.
 
@@ -93,10 +184,16 @@ Stop harvesting credentials and migrate applications to authenticate with Extern
 
 :::image type="content" source="./media/how-to-migrate-users/pre-migration-stage2.png" alt-text="A diagram showing the high-level design for the second phase of credential migration.":::
 
-> [!Note]
-> If you are using this approach it's important to protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold.
+> [!NOTE]
+> If you're using this approach, it's important to protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold.
+
+## Complete validation and cutover
+
+After you complete user and credential migration, return to the migrate guide to validate end-to-end authentication flows and plan your application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
 
 ## Related content
 
-- If you are migrating from Azure AD B2C, the [seamless user migration sample](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) repository on GitHub contains a seamless migration custom policy example and REST API code sample.
-- Learn more about [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
+- [Migrate to External ID](migrate-to-external-id.md) – Overview of migrating from any legacy CIAM solution.
+- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – B2C-specific decision guidance and password preservation options.
+- [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md) – Preserve passwords during migration using custom authentication extensions.
+- [Custom authentication extensions](/entra/identity-platform/custom-extension-overview) – Invoke external logic during authentication flows.

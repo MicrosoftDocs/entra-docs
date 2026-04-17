@@ -4,11 +4,8 @@ description: Learn how to automatically provision and deprovision user accounts 
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cybozu so that I can streamline the user management process and ensure that users have the appropriate access to Cybozu.
@@ -71,21 +68,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Cybozu Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cybozu. If the connection fails, ensure your Cybozu account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Cybozu Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cybozu. If the connection fails, ensure your Cybozu account has the required admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+1. Select **Create** to create your configuration.
+
+1. Select **Properties** on the **Overview** page.
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Save**.
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cybozu**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Cybozu in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Cybozu for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Cybozu API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -99,21 +98,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String|||
    |externalId|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Cybozu, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to Cybozu by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

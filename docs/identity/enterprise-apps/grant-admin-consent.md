@@ -2,14 +2,8 @@
 title: Grant tenant-wide admin consent to an application 
 description: Learn how to grant tenant-wide consent to an application so that end-users aren't prompted for consent when signing in to an application.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
-ms.date: 11/29/2024
-ms.author: jomondi
+ms.date: 03/25/2025
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom:  enterprise-apps
@@ -38,7 +32,7 @@ To grant tenant-wide admin consent, you need:
 - A Microsoft Entra user account with one of the following roles:
 
   - Privileged Role Administrator, for granting consent for apps requesting any permission, for any API.
-  - Cloud Application Administrator or Application Administrator, for granting consent for apps requesting any permission for any API, *except* Microsoft Graph app roles (application permissions).
+  - Cloud Application Administrator, AI Administrator, or Application Administrator, for granting consent for apps requesting any permission for any API, *except* Microsoft Graph app roles (application permissions).
   - A custom directory role that includes the [permission to grant permissions to applications](~/identity/role-based-access-control/custom-consent-permissions.md), for the permissions required by the application.
 
 :::zone pivot="portal"

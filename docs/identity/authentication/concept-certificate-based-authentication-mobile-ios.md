@@ -1,15 +1,8 @@
 ---
 title: Microsoft Entra certificate-based authentication on Apple devices
 description: Learn about Microsoft Entra certificate-based authentication on Apple devices that run macOS or iOS
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -48,7 +41,7 @@ Microsoft Entra CBA is supported for certificates on-device on native browsers a
 ### Prerequisites
 
 - iOS version must be iOS 9 or later.
-- Microsoft Authenticator is required for Office applications and Outlook on iOS or the applications should have latest MSAL libraries integrated.
+- Microsoft Authenticator or Company portal is required for first party applications.
 
 ### Support for on-device certificates and external storage
 

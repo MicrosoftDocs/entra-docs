@@ -1,13 +1,9 @@
 ---
 title: Overview of Conditional Access Authentication Strengths
 description: Learn how admins can use Microsoft Entra Conditional Access to distinguish which authentication methods users can use based on relevant security factors.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
 author: inbarckms
-manager: dougeby
 ms.reviewer: inbarc
 ---
 
@@ -17,7 +13,7 @@ An authentication strength is a Microsoft Entra Conditional Access control that 
 
 For example, an authentication strength can require users to use only phishing-resistant authentication methods to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as a password and a text message.
 
-An authentication strength is based on the [policy for authentication methods](concept-authentication-methods.md). That is, administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. An authentication strength allows further control over the usage of these methods, based on specific scenarios such as sensitive resource access, user risk, and location.
+An authentication strength is based on the [policy for authentication methods](overview-authentication.md). That is, administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. An authentication strength allows further control over the usage of these methods, based on specific scenarios such as sensitive resource access, user risk, and location.
 
 ## Prerequisites
 

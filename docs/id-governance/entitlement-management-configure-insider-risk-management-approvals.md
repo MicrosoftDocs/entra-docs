@@ -1,14 +1,11 @@
 ---
 title: Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
 description: This article describes how to configure Insider risk management-based approvals for access package requests.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/04/2025
 
-#CustomerIntent: As an IT admin, I want to configure Insider risk management-based approvals for access package requests so that I can ensure risky users are reviewed before gaining access to sensitive resources.
+#Customer Intent: As an IT admin, I want to configure Insider risk management-based approvals for access package requests so that I can ensure risky users are reviewed before gaining access to sensitive resources.
 ---
 
 # Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)

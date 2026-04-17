@@ -1,18 +1,16 @@
 ---
 title: Enforce a group naming policy in Microsoft Entra ID
 description: Learn how to set up a naming policy for Microsoft 365 groups in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 01/14/2025
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Enforce a naming policy on Microsoft 365 groups in Microsoft Entra ID
+
+
+## Overview
 
 To enforce consistent naming conventions for Microsoft 365 groups created or edited by your users, set up a group naming policy for your organizations in Microsoft Entra ID. For example, you could use the naming policy to communicate the function of a group, membership, geographic region, or person who created the group. You could also use the naming policy to help categorize groups in the address book. You can use the policy to block specific words from being used in group names and aliases.
 
@@ -44,7 +42,7 @@ You can use strings to make it easier to scan and differentiate groups in the gl
 
 You can use attributes that can help you and your users identify which department, office, or geographic region for which the group was created. For example, if you define your naming policy as `PrefixSuffixNamingRequirement = "GRP [GroupName] [Department]"` and `User's department = Engineering`, then an enforced group name might be `"GRP My Group Engineering."` Supported Microsoft Entra attributes are `\[Department\]`, `\[Company\]`, `\[Office\]`, `\[StateOrProvince\]`, `\[CountryOrRegion\]`, and `\[Title\]`. Unsupported user attributes are treated as fixed strings. An example is `"\[postalCode\]"`. Extension attributes and custom attributes aren't supported.
 
-We recommend that you use attributes that have values filled in for all users in your organization and don't use attributes that have long values.
+Use attributes that have values filled in for all users in your organization and don't use attributes that have long values.
 
 ### Custom blocked words
 
@@ -77,7 +75,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 1. Select **All groups** > **Groups**, and then select **Naming policy** to open the **Naming policy** page.
 
-   :::image type="content" source="./media/groups-naming-policy/policy.png" alt-text="Screenshot that shows opening the Naming policy page in the admin center.":::
+    :::image type="content" source="./media/groups-naming-policy/policy.png" alt-text="Screenshot that shows opening the Naming policy page in the admin center.":::
 
 ### View or edit the prefix-suffix naming policy
 
@@ -90,7 +88,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 1. On the **Naming policy** page, select **Blocked words**.
 
-   :::image type="content" source="./media/groups-naming-policy/blockedwords.png" alt-text="Screenshot that shows editing and uploading a blocked words list for a naming policy.":::
+    :::image type="content" source="./media/groups-naming-policy/blockedwords.png" alt-text="Screenshot that shows editing and uploading a blocked words list for a naming policy.":::
 
 1. View or edit the current list of custom blocked words by selecting **Download**. You must add new entries to the existing entries.
 1. Upload the new list of custom blocked words by selecting the **file** icon.
@@ -105,15 +103,15 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
 1. Open the Windows PowerShell app as an administrator.
 1. Install the Microsoft Graph cmdlets.
 
-   ```powershell
-   Install-Module Microsoft.Graph -Scope AllUsers
-   ```
+    ```powershell
+    Install-Module Microsoft.Graph -Scope AllUsers
+    ```
 
 1. Install the Microsoft Graph beta cmdlets.
 
-   ```powershell
-   Install-Module Microsoft.Graph.Beta -Scope AllUsers
-   ```
+    ```powershell
+    Install-Module Microsoft.Graph.Beta -Scope AllUsers
+    ```
 
 ## Configure a naming policy in PowerShell
 
@@ -121,11 +119,11 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
 
 1. Run the following command to prepare to run the cmdlets.
   
-   ```powershell
-   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
-   ```
+    ```powershell
+    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+    ```
 
-   On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service.
+    On the **Sign in to your Account** screen that opens, enter your admin account and password to connect to your service.
 
 1. Follow the steps in [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md) to create group settings for this organization.
 
@@ -133,46 +131,46 @@ Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph
 
 1. Fetch the current naming policy to view the current settings.
   
-   ```powershell
-   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-   ```
+    ```powershell
+    $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+    ```
   
 1. Display the current group settings.
   
-   ```powershell
-   $Setting.Values
-   ```
+    ```powershell
+    $Setting.Values
+    ```
   
 ### Set the naming policy and custom blocked words
 
 1. Get the setting.
 
-   ```powershell
-   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-   ```
+    ```powershell
+    $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+    ```
 
 1. Set the group name prefixes and suffixes. For the feature to work properly, `[GroupName]` must be included in the setting. Also, set the custom blocked words that you want to restrict.
   
-   ```powershell
-   $params = @{
-      values = @(
-         @{
-            name = "PrefixSuffixNamingRequirement"
-            value = "GRP_[GroupName]_[Department]"
-         }
-         @{
-            name = "CustomBlockedWordsList"
-            value = "Payroll,CEO,HR"
-         }
-      )
-   }
-   ```
+    ```powershell
+    $params = @{
+       values = @(
+          @{
+             name = "PrefixSuffixNamingRequirement"
+             value = "GRP_[GroupName]_[Department]"
+          }
+          @{
+             name = "CustomBlockedWordsList"
+             value = "Payroll,CEO,HR"
+          }
+       )
+    }
+    ```
   
 1. Update the settings for the new policy to go into effect, as shown in the following example.
   
-   ```powershell
-   Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
-   ```
+    ```powershell
+    Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
+    ```
   
 That's it. You set your naming policy and added your blocked words.
 
@@ -226,32 +224,32 @@ You can use the Azure portal or Microsoft Graph PowerShell to remove a naming po
 
 1. Get the setting.
 
-   ```powershell
-   $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-   ```
+    ```powershell
+    $Setting = Get-MgBetaDirectorySetting -DirectorySettingId (Get-MgBetaDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
+    ```
 
 1. Empty the group name prefixes and suffixes. Empty the custom blocked words.
   
-   ```powershell
-   $params = @{
-      values = @(
-         @{
-            name = "PrefixSuffixNamingRequirement"
-            value = ""
-         }
-         @{
-            name = "CustomBlockedWordsList"
-            value = ""
-         }
-      )
-   }
-   ```
+    ```powershell
+    $params = @{
+       values = @(
+          @{
+             name = "PrefixSuffixNamingRequirement"
+             value = ""
+          }
+          @{
+             name = "CustomBlockedWordsList"
+             value = ""
+          }
+       )
+    }
+    ```
 
 1. Update the setting.
   
-   ```powershell
-   Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
-   ```
+    ```powershell
+    Update-MgBetaDirectorySetting -DirectorySettingId $Setting.Id -BodyParameter $params
+    ```
 
 ## Experience across Microsoft 365 apps
 
@@ -288,5 +286,5 @@ Microsoft 365 admin center | Microsoft 365 admin center is compliant with a nami
 For more information on Microsoft Entra groups, see:
 
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

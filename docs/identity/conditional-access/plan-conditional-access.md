@@ -1,12 +1,8 @@
 ---
 title: Plan Your Microsoft Entra Conditional Access Deployment
 description: Plan your Conditional Access policies to balance security and productivity. Learn how to design and deploy effective policies for your organization.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/29/2025
-ms.author: gasinh
-author: gargi-sinha
+ms.date: 03/24/2026
 manager: martinco
 ms.reviewer: joflore
 ms.custom:
@@ -17,6 +13,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Plan a Conditional Access deployment
+
+## Overview
 
 Planning your Conditional Access deployment is critical to achieving your organization's access strategy for apps and resources. Conditional Access policies provide significant configuration flexibility. However, this flexibility means you need to plan carefully to avoid undesirable results.
 
@@ -37,10 +35,10 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
    - Create, modify, or restore soft-deleted Conditional Access policies.
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
-- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
-### Communicating change
+### Communicate change
 
 Communication is critical to the success of any new functionality. Let users know how their experience changes, when it changes, and how to get support if they have issues.
 
@@ -67,7 +65,7 @@ Here are common questions about [assignments and access controls](concept-condit
 - Which users, groups, directory roles, or workload identities are included in or excluded from the policy?
 - What emergency access accounts or groups should you exclude from the policy?
 
-#### Cloud apps or actions
+#### Target resources
 
 Does this policy apply to an application, user action, or authentication context? If so:
 
@@ -156,7 +154,7 @@ Based on our experience with Conditional Access and supporting other customers, 
 
 ### Minimize the number of Conditional Access policies
 
-Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 195 policies per tenant. This 195-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
+Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 240 policies per tenant. This 240-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
 
 Analyze your apps and group them by the same resource requirements for the same users. For example, if all Microsoft 365 apps or all HR apps have the same requirements for the same users, create a single policy and include all the apps it applies to.
 
@@ -319,7 +317,7 @@ If the user gets a message with a **More details** link, they can collect most o
 After you collect the information, see these resources:
 
 - [Sign-in problems with Conditional Access](troubleshoot-conditional-access.md) – Learn about unexpected sign-in outcomes related to Conditional Access using error messages and the Microsoft Entra sign-in log.
-- [Using the What-If tool](troubleshoot-conditional-access-what-if.md) – Learn why a policy is or isn't applied to a user in a specific situation or if a policy applies in a known state.
+- [The Conditional Access What If tool](what-if-tool.md) – Learn why a policy is or isn't applied to a user in a specific situation or if a policy applies in a known state.
 
 ## Related content
 

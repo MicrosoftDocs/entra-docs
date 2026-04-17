@@ -1,13 +1,10 @@
 ---
 title: 'Best practices for securing the custom extension extensibility to Azure Logic Apps'
 description: This is a reference guide on best practices when securing custom extension extensibility to Azure Logic Apps.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: best-practice
 ms.date: 08/28/2024
 
-#CustomerIntent: As an administrator I want to learn the best practices for securing custom extension extensibility to Azure Logic Apps.
+#Customer Intent: As an administrator I want to learn the best practices for securing custom extension extensibility to Azure Logic Apps.
 ---
 
 
@@ -100,7 +97,7 @@ For a subset of entitlement management custom extensions, you can use the ‘*Up
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**. 
+1. Browse to **ID Governance** > **Catalogs**. 
 
 1. Select the catalog with the custom extension you want to update.
 

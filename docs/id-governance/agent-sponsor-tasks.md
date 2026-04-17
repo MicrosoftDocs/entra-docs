@@ -1,14 +1,11 @@
 ---
 title: Agent identity sponsor tasks in Lifecycle Workflows (Preview)
 description: This article describes workflow tasks that involve sponsors of agent identities.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 10/25/2025
 
-#CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent identity sponsors so that agent identity sponsor management can be streamlined.
+#Customer Intent: As a lifecycle workflows administrator, I want to create workflows that target agent identity sponsors so that agent identity sponsor management can be streamlined.
 ---
 
 # Agent identity sponsor tasks in Lifecycle Workflows (Preview)

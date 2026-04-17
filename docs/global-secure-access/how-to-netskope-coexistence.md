@@ -1,17 +1,16 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Netskope
 description: Learn how to configure and deploy Microsoft Entra and Netskope Security Service Edge (SSE) solutions together for optimized security and connectivity across private applications, Microsoft 365, and internet access.
-author: kenwith
 contributors:
 ms.topic: concept-article
-ms.service: global-secure-access
-ms.date: 10/07/2025
-ms.author: kenwith
+ms.date: 03/13/2026
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
 # Security Service Edge (SSE) coexistence with Microsoft and Netskope
+
+## Overview
 
 In today's rapidly evolving digital landscape, organizations require robust, and unified solutions to ensure secure and seamless connectivity. Microsoft and Netskope offer complementary Secure Access Service Edge (SASE) capabilities that, when integrated, provide enhanced security and connectivity for diverse access scenarios.
 
@@ -46,16 +45,16 @@ To configure Microsoft and Netskope for a unified SASE solution, start by settin
 To set up Global Secure Access and test all scenarios in this documentation:
 
 1. Enable and disable different Microsoft Global Secure Access traffic forwarding profiles for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding).
-1. Install and configure the Microsoft Entra private network connector. To learn how to install and configure the connector, see [How to configure connectors](/entra/global-secure-access/how-to-configure-connectors).
+1. Install and configure the Microsoft Entra private network connector. For information on how to install and configure the connector, see [How to configure connectors](/entra/global-secure-access/how-to-configure-connectors).
     > [!NOTE]
     > Private Network Connectors are required for Microsoft Entra Private Access applications.
-1. Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. To learn how to configure Quick Access, see [How to configure Quick Access](/entra/global-secure-access/how-to-configure-quick-access).
-1. Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](/entra/global-secure-access/concept-clients). To learn how to install the Windows client, see [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client). For macOS, see [Global Secure Access Client for macOS](/entra/global-secure-access/how-to-install-macos-client).
+1. Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. For information on how to configure Quick Access, see [How to configure Quick Access](/entra/global-secure-access/how-to-configure-quick-access).
+1. Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](/entra/global-secure-access/concept-clients). For information on how to install the Windows client, see [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client). For macOS, see [Global Secure Access Client for macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 ## Netskope Private Access and Internet Access
 
-1. Configure Netskope Private Apps. To learn more about configuring Netskope Private Access, see [Netskope One Private Access](https://docs.netskope.com/en/netskope-private-access) documentation.
-1. Configure Netskope Steering Configurations for Private and Internet Access. To learn more about configuring Netskope, see [Netskope Traffic Steering documentation](https://docs.netskope.com/en/creating-a-steering-configuration/). The steps for creating the required steering configurations for each scenario are listed.
+1. Configure Netskope Private Apps. For more information about configuring Netskope Private Access, see [Netskope One Private Access](https://docs.netskope.com/en/netskope-private-access) documentation.
+1. Configure Netskope Steering Configurations for Private and Internet Access. For more information about configuring Netskope, see [Netskope Traffic Steering documentation](https://docs.netskope.com/en/creating-a-steering-configuration/). The steps for creating the required steering configurations for each scenario are listed.
 1. Set up and configure Netskope Real-time Protection Policies to allow access to Private Apps. For more information, see [Netskope Real-time Protection Policy for Private Apps](https://docs.netskope.com/en/create-a-real-time-protection-policy-for-private-apps/).
 1. Invite users to Netskope and send them an email containing links to the Netskope client install package. To invite users, navigate to the **Netskope portal** > **Settings** > **Security** **Cloud** **Platform** > **Users**.
 
@@ -219,7 +218,7 @@ In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netsko
 
 For this scenario:
 
-1. [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-access-profile.md#enable-the-microsoft-access-traffic-forwarding-profile).
+1. [Enable Microsoft Entra Microsoft Access forwarding profile](how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile).
 1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 ### Netskope Private Access and Netskope Internet Access configuration

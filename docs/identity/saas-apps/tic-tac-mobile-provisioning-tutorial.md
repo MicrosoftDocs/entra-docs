@@ -4,9 +4,6 @@ description: Learn how to automatically provision and deprovision user accounts 
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: jeedes

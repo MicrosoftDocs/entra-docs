@@ -1,17 +1,13 @@
 ---
 title: Tutorial - Manage access to resources in entitlement management
 description: Step-by-step tutorial for how to create your first access package using the Microsoft Entra admin center in entitlement management.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 06/26/2025
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
+#Customer Intent: As an IT admin, I want to create my first access package so that I can learn how to manage access to resources using entitlement management.
 ---
 # Tutorial: Manage access to resources in entitlement management
 
@@ -54,7 +50,7 @@ A resource directory has one or more resources to share. In this step, you creat
 
 1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
-1. [Create two users](../fundamentals/add-users.md). Use the following names or different names.
+1. [Create two users](../fundamentals/how-to-create-delete-users.yml). Use the following names or different names.
 
     | Name | Directory role |
     | --- | --- |

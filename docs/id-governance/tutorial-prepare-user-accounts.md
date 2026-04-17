@@ -1,15 +1,12 @@
 ---
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/27/2025
-ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to prepare user accounts for lifecycle workflows so that I can ensure the required user attributes are properly configured.
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 

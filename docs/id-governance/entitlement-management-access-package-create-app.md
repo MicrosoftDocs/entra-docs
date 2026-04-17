@@ -2,14 +2,13 @@
 title: Create a Microsoft Entra entitlement management access package for an application with a single role with PowerShell| Microsoft Docs
 description: You can use Microsoft Entra entitlement management to enforce the policies for who can get assigned access to an application.
 author: markwahl-msft
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to create an access package for an application with PowerShell so that I can enforce policies for application access.
 ---
 
 # Create an access package in entitlement management for an application with a single role using PowerShell

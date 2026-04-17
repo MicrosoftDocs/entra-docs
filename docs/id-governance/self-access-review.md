@@ -1,15 +1,12 @@
 ---
 title: Review your access to resources in access reviews
 description: Learn how to review your own access to resources in access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: mwahl
+#Customer Intent: As a user, I want to review my own access to resources so that I can confirm my access is still needed and appropriate.
 ---
 
 # Self-review of access packages and resources in Microsoft entitlement management
@@ -48,7 +45,7 @@ You can also view your pending access reviews by using your browser to open **My
 1. Under **Groups and Apps**, you can see:
 
     - **Name**: The name of the access review.
-    - **Due**: The due date for the review. After this date, denied users could be removed from the group or app being reviewed.
+    - **Due**: The due date for the review. After this date, denied users might be removed from the group or app being reviewed.
     - **Resource**: The name of the resource under review.
     - **Progress**: The number of users reviewed out of the total number of users who are part of this access review.
 
@@ -75,7 +72,7 @@ You can also view your pending access reviews by using your browser to open **My
     If you want to change your response, reopen the **Access reviews** page and update your response. You can change your response at any time until the access review has ended.
 
     > [!NOTE]
-    > If you indicated that you no longer need access, you aren't removed immediately. You're removed when the review has ended or when an administrator stops the review.
+    > If you indicated that you no longer need access, the system doesn't remove you immediately. You're removed when the review has ended or when an administrator stops the review.
 
 ## Next steps
 

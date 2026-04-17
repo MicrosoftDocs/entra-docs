@@ -3,13 +3,9 @@ title: Restore revoked permissions granted to applications in Microsoft Entra ID
 description: Learn how to review and restore revoked permissions for an application in Microsoft Entra ID.
 
 author: Jackson-Woods
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 
 ms.topic: how-to
 ms.date: 07/05/2023
-ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 zone_pivot_groups: delegated-app-permissions

@@ -1,13 +1,8 @@
 ---
 title: Self-service password reset deep dive
 description: How does self-service password reset work
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: femila
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
@@ -92,18 +87,16 @@ Valid values to prompt a user to confirm their authentication information are fr
 
 ## Authentication methods
 
-When a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](concept-authentication-methods.md).
+When a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](overview-authentication.md).
 
 The following authentication methods are available for SSPR:
 
-* Mobile app notification
-* Mobile app code
-* Hardware OATH token
-* Software OATH token
-* Email
-* Mobile phone
-* Office phone (available only for tenants with paid subscriptions)
-* Security questions
+* [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app)
+* [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
+* [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
+* [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)
+* [Voice call](concept-authentication-phone-options.md)
+* Email OTP
 
 Users can only reset their password if they register an authentication method that the administrator has enabled.
 
@@ -218,6 +211,8 @@ Password reset and change are fully supported on all business-to-business (B2B) 
 * **B2B users**: Any new B2B users created by using the new [Microsoft Entra B2B capabilities](~/external-id/what-is-b2b.md) can also reset their passwords with the email they registered during the invite process.
 
 To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If the user defined an alternate email or authentication email, password reset works as expected.
+
+ 
 
 > [!NOTE]
 > Microsoft accounts that are granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, can't use Microsoft Entra SSPR. For more information, see [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).

@@ -1,8 +1,6 @@
 ---
 title: Configure Security Defaults for Microsoft Entra ID
 description: Enable Microsoft Entra ID security defaults to strengthen your organization's security posture with preconfigured MFA requirements and legacy authentication protection.
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 07/21/2025
 ms.author: joflore
@@ -15,6 +13,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/21/2025
   - ai-gen-description
+#Customer Intent: As an IT admin, I want to configure security defaults for Microsoft Entra ID so that I can protect my organization with baseline security settings.
 ---
 # Security defaults in Microsoft Entra ID
 
@@ -43,6 +42,8 @@ These basic controls include:
 ## Enabling security defaults
 
 If your tenant was created on or after October 22, 2019, security defaults might be enabled in your tenant. To protect all of our users, security defaults are being rolled out to all new tenants at creation. 
+
+While security defaults is enabled on all new tenants by default, there is a 24‑hour grace period before protections are enforced. This allows customers to access and provision their tenant before MFA is required.
 
 To help protect organizations, we're always working to improve the security of Microsoft account services. As part of this protection, customers are periodically notified for the automatic enablement of the security defaults if they: 
 

@@ -3,7 +3,6 @@ title: Frequently asked questions about Microsoft Entra Workload ID
 description: Learn about Microsoft Entra Workload ID license plans, features, and capabilities.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-workload-id
 ms.topic: faq
 ms.date: 03/18/2025
 ms.author: gasinh

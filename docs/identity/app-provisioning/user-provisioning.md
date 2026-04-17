@@ -1,13 +1,8 @@
 ---
 title: What is automated app user provisioning in Microsoft Entra ID
 description: An introduction to how you can use Microsoft Entra ID to automatically provision, deprovision, and continuously update user accounts across multiple third-party applications.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: overview
-ms.date: 04/09/2025
-ms.author: jfields
+ms.date: 04/01/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 #customer intent: As an IT admin, I want to understand app provisioning in Microsoft Entra ID so that I can automate user account management across applications.  
@@ -35,6 +30,7 @@ Microsoft Entra ID also supports provisioning users into applications hosted on-
 - **Automate provisioning**: Automatically create new accounts in the right systems for new people when they join your team or organization.
 - **Automate deprovisioning**: Automatically deactivate accounts in the right systems when people leave the team or organization.
 - **Synchronize data between systems**: Keep the identities in apps and systems up to date based on changes in the directory or human resources system.
+- **Discover accounts:** [Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) existing users in your application, including local or orphan accounts. 
 - **Provision groups**: Provision groups to applications that support them.
 - **Govern access**: Monitor and audit users provisioned in applications.
 - **Seamlessly deploy in brown field scenarios**: Match existing identities between systems and allow for easy integration, even when users already exist in the target system.

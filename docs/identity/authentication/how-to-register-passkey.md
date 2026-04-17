@@ -3,14 +3,8 @@ title:  Register a Passkey (FIDO2)
 description: Registration and management of a passkey (FIDO2).
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/10/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management
@@ -53,5 +47,5 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
 ## Next steps
 
-- [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Choosing authentication methods for your organization](overview-authentication.md)
 

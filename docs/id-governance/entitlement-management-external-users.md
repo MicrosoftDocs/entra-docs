@@ -1,17 +1,13 @@
 --- 
 title: Govern access for external users in entitlement management
 description: Learn about the settings you can specify to govern access for external users in entitlement management.
-author: owinfreyatl
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 09/09/2025
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
+#Customer Intent: As an IT admin, I want to govern access for external users in entitlement management so that I can control how external users access my organization's resources.
 ---
 
 # Govern access for external users in entitlement management

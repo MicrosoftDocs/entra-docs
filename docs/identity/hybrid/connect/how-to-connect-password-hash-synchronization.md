@@ -1,20 +1,17 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
-ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-search.appverid:  
-- MET150
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
+
+> [!NOTE]
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 ## How password hash synchronization works
 The Active Directory domain service stores passwords in the form of a hash value representation, of the actual user password. A hash value is a result of a one-way mathematical function (the *hashing algorithm*). There's no method to revert the result of a one-way function to the plain text version of a password. 
@@ -175,9 +172,22 @@ Update-MgDirectoryOnPremiseSynchronization `
 ```
 
 > [!NOTE]
-> A new user created in Active Directory with "User must change password at next logon" flag will always be provisioned in Microsoft Entra ID with a password policy to "Force change password on next sign-in", irrespective of the *ForcePasswordChangeOnLogOn* feature being true or false. This is a Microsoft Entra internal logic since the new user is provisioned without a password, whereas *ForcePasswordChangeOnLogOn* feature only affects admin password reset scenarios.
->
-> If a user was created in Active Directory with "User must change password at next logon" before the feature was enabled, the user will receive an error while signing in. To remediate this issue, un-check and re-check the field "User must change password at next logon" in Active Directory Users and Computers. After synchronizing the user object changes, the user will receive the expected prompt in Microsoft Entra ID to update their password. 
+> When you create a new user in Active Directory with the **User must change password at next logon** option selected, Microsoft Entra ID always configures that user’s cloud account to **force a password change at the first sign-in**. This happens **whether *ForcePasswordChangeOnLogOn* feature is enabled or not**, because initially new synced user objects have no password in Microsoft Entra ID, hence must be forced to set one before sign-in. The *ForcePasswordChangeOnLogOn* feature itself only affects admin-initiated password reset scenarios from on-premises, not the initial user object synchronization.
+> If a user account was created in Active Directory with **“User must change password at next logon”** while both, the *ForcePasswordChangeOnLogOn* and PasswordHashSync features were disabled, that user receives an error "*Your account or password is incorrect*" when signing in (instead of a password-change prompt). To fix this issue, clear the **“User must change password at next logon”** checkbox for the user in Active Directory, then **select it again**. After the next synchronization, Microsoft Entra ID will prompt the user to update their password at sign-in as expected.
+
+
+When **Password Hash Synchronization (PHS)** is enabled, each new account is still provisioned in Microsoft Entra ID without a password (because the initial object synchronization doesn’t include the user's password). However, the PHS process runs *frequently* (every 2 minutes) to sync password hashes from on-premises AD to the cloud. The moment a user’s password is synced to Microsoft Entra ID, the service will apply or skip the “*force password change on next sign-in*” flag based on whether the **UserForcePasswordChangeOnLogonEnabled** feature is turned on or off. In other words, *UserForcePasswordChangeOnLogonEnabled* only takes effect when PHS actually synchronizes the password to the cloud. However, when *UserForcePasswordChangeOnLogonEnabled* feature is not enabled, the sync client won't even attempt to sync any temporary passwords. Also, if PHS is not running, enabling or disabling *UserForcePasswordChangeOnLogonEnabled* feature has no impact on user sign-in behavior. 
+
+The following table illustrates the feature combinations and expected behaviors:
+
+|**Sync Client PasswordHashSync**|**AD “User must change password at next logon”**|**Entra UserForcePasswordChangeOnLogonEnabled**|**Resulting Sign-In Behavior in Entra ID**|
+| -------- | -------- | -------- | -------- |
+|False (Disabled)|N/A (no effect in the cloud when PHS is disabled)|N/A (no effect in the cloud when PHS is disabled)|Error: "Your account or password is incorrect" since the account has no password. The cloud admin must set a password for the account.|
+|True (Enabled)|Enabled|True (Enabled)|User is prompted to change password at first sign-in (temporary password was synced to Entra ID).|
+|True (Enabled)|Disabled|True (Enabled)|User signs in normally with the synced password (no prompt to change password).|
+|True (Enabled)|Enabled|False (Disabled)|Temporary password isn’t synced; user can’t sign in to Entra until password is changed on-premises and synced.|
+|True (Enabled)|Disabled|False (Disabled)|User signs in normally with the synced password (no prompt to change password).|
+
 
 > [!CAUTION]
 > You should only use this feature when Self-Service Password Reset and Password Writeback are enabled on the tenant. This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
@@ -199,7 +209,7 @@ With password hash synchronization enabled, this AD password hash is synced with
 >
 > Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
 >
-> We recommend that admins person any of the below actions if they have users with a SCRIL bit in their AD Domain
+> We recommend that admins perform any of the below actions if they have users with a SCRIL bit in their AD Domain
 > 1.	Perform a full password hash sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
 > 2.	Scramble the password of an individual user by toggling SCRIL settings off then back on or directly changing the user's password
 > 3.	Periodically rotate the passwords for SCRIL users. Eventually all such users will have their passwords scrambled
@@ -284,6 +294,9 @@ For reference, this snippet is what it should look like:
         </runtime>
     </configuration>
 ```
+
+> [!NOTE]
+> If you change the miiserver.exe.config file, it can result in sync failures when using Connect sync versions 2.5.190.0 and 2.6.1.0. See [Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified](reference-connect-version-history.md#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) for more information.
 
 For information about security and FIPS, see [Microsoft Entra password hash sync, encryption, and FIPS compliance](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/aad-password-sync-encryption-and-fips-compliance/ba-p/243709).
 

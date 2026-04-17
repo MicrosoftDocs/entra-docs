@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: What is Microsoft Entra?
             url: what-is-entra.md
+          - text: What is the Microsoft Entra admin center?
+            url: entra-admin-center.md
           - text: What's new in Microsoft Entra
             url: whats-new.md
       - linkListType: concept
@@ -81,7 +83,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Improve your security posture
-            url: concept-secure-remote-workers.md
+            url: configure-security.md
           - text: Securing identity with Zero Trust
             url: /security/zero-trust/deploy/identity
           - text: Security defaults

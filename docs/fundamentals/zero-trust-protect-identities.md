@@ -2,8 +2,6 @@
 title: Security guidance - Protect identities and secrets
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect identities and secrets.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -11,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect identities and secrets so that I can prevent unauthorized access to critical resources.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect identities and secrets
@@ -31,7 +30,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Applications don't have certificates with expiration longer than 180 days 
 [!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
-### Application Certificates need to be rotated on a regular basis
+### Application certificates must be rotated on a regular basis
 [!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
 
 ### Enforce standards for app secrets and certificates
@@ -49,14 +48,23 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### High Global Administrator to privileged user ratio
 [!INCLUDE [21813](../includes/secure-recommendations/21813.md)]
 
+### Administrative privileges are tightly limited to prevent compromise
+[!INCLUDE [25383](../includes/secure-recommendations/25383.md)]
+
+### Application admin rights are constrained to specific Private Access apps
+[!INCLUDE [25384](../includes/secure-recommendations/25384.md)]
+
 ### Privileged accounts are cloud native identities
 [!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
 
 ### All privileged role assignments are activated just in time and not permanently active
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### All Microsoft Entra privileged role assignments are managed with PIM
+[!INCLUDE [21816](../includes/secure-recommendations/21816.md)]
+
 ### Passkey authentication method enabled
-[!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
+[!INCLUDE [21839](../includes/secure-recommendations/21839.md)]
 
 ### Security key attestation is enforced
 [!INCLUDE [21840](../includes/secure-recommendations/21840.md)]
@@ -67,10 +75,16 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
 
+### Conditional Access policies enforce strong authentication for private apps
+[!INCLUDE [25396](../includes/secure-recommendations/25396.md)]
+
+### Application Proxy applications require preauthentication to block anonymous access
+[!INCLUDE [25401](../includes/secure-recommendations/25401.md)]
+
 ### Require password reset notifications for administrator roles
 [!INCLUDE [21891](../includes/secure-recommendations/21891.md)]
 
-### Block legacy authentication
+### Block legacy authentication policy is configured
 [!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
 
 ### Temporary access pass is enabled
@@ -80,7 +94,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 [!INCLUDE [21846](../includes/secure-recommendations/21846.md)]
 
 ### Migrate from legacy MFA and SSPR policies
-[!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
+[!INCLUDE [21803](../includes/secure-recommendations/21803.md)]
 
 ### Block administrators from using SSPR  
 [!INCLUDE [21842](../includes/secure-recommendations/21842.md)]
@@ -106,8 +120,26 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Users have strong authentication methods configured
 [!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
 
+### Reduce the user-visible password surface area
+[!INCLUDE [21889](../includes/secure-recommendations/21889.md)]
+
 ### User sign-in activity uses token protection
 [!INCLUDE [21786](../includes/secure-recommendations/21786.md)]
+
+### Token protection policies are configured
+[!INCLUDE [21941](../includes/secure-recommendations/21941.md)]
+
+### All user sign-in activity uses phishing-resistant authentication methods
+[!INCLUDE [21784](../includes/secure-recommendations/21784.md)]
+
+### All sign-in activity comes from managed devices
+[!INCLUDE [21892](../includes/secure-recommendations/21892.md)]
+
+### Security key authentication method enabled
+[!INCLUDE [21838](../includes/secure-recommendations/21838.md)]
+
+### Privileged roles aren't assigned to stale identities
+[!INCLUDE [21854](../includes/secure-recommendations/21854.md)]
 
 ### Restrict device code flow
 [!INCLUDE [21808](../includes/secure-recommendations/21808.md)]
@@ -142,11 +174,14 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Entra Connect Sync is configured with Service Principal Credentials
 [!INCLUDE [24570](../includes/secure-recommendations/24570.md)]
 
+### Directory sync account is locked down to specific named location
+[!INCLUDE [21834](../includes/secure-recommendations/21834.md)]
+
 ### No usage of ADAL in the tenant
 [!INCLUDE [21780](../includes/secure-recommendations/21780.md)]
 
 ### Block legacy Azure AD PowerShell module
 [!INCLUDE [21844](../includes/secure-recommendations/21844.md)]
 
-### Enable Microsoft Entra ID security defaults
+### Enable Microsoft Entra ID security defaults for free tenants
 [!INCLUDE [21871](../includes/secure-recommendations/21871.md)]

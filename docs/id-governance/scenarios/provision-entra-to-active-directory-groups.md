@@ -4,9 +4,8 @@ description: This article a tutorial on how to provision users and groups from a
 author: justinha
 manager: dougeby
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/09/2025
-ms.subservice:
 ms.author: justinha
 ---
 

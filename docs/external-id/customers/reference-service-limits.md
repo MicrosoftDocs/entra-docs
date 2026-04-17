@@ -1,15 +1,8 @@
 ---
 title: Service limits and restrictions
 description: Learn about the service limits and restrictions in an external tenant.
- 
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: reference
 ms.date: 07/07/2025
-ms.author: cmulligan
 ms.custom: it-pro
 
 #Customer intent: As an IT admin, I want to know about the service limits and restrictions in my external tenant.
@@ -90,15 +83,31 @@ The following table lists the administrative configuration limits in the Microso
 |Maximum custom authentication extension retries    |1         |
 
 ## Telephony throttling limits
+
 The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
 
 |Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every seven days |
 |-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
-|Limits based on IP address   |20 texts              |60 texts              |100 texts without a proxy</br>200 texts with a proxy |No limit           |
+|Limits based on IP address   |100 texts             |300 texts             |500 texts |No limit           |
 |Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |
-|Limits based on tenant       |100 texts             |300 texts             |1,000 texts                                          |No limit           |
+|Limits based on tenant       |500 texts             |1500 texts            |5,000 texts                                          |No limit           |
 
-## Next steps
+## Capability support by scale and deployment mode
 
-- [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
+The following table shows which Microsoft Graph capabilities are available based on your tenant's directory scale and deployment mode.
+
+| Capability area | Standard mode* | HSC mode |
+|---|---|---|
+| Advanced directory queries (filtering, sorting, count, search, transitive membership) | Supported | Not supported |
+| Change-based (delta) queries | Supported | Not supported |
+| SCIM outbound user provisioning | Supported | Not supported |
+
+\* The features listed in this table are supported in standard mode for tenants with up to 15 million directory objects.
+
+> [!NOTE]
+> These capabilities aren't available in HSC mode regardless of directory size. HSC mode prioritizes stability and throughput at scale over query-heavy or event-driven directory operations.
+
+## Related content
+
 - [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)
+

@@ -2,14 +2,9 @@
 title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # Prerequisites for Microsoft Entra Cloud Sync
@@ -26,18 +21,12 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - Microsoft Entra Cloud Sync agent must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Cloud Sync on Windows Server 2016, but since it's in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
 
-  >[!IMPORTANT]
-  >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Cloud Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
-  >
-  >```
-  >Windows Registry Editor Version 5.00
-  >
-  >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
-  >"2362988687"=dword:00000000
-  >```
-  >
-  >After applying this registry modification, you must restart the server for the change to take effect. This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
 
+  > [!IMPORTANT]
+  > **Windows Server 2025 is NOT supported.** 
+  > There is a known issue on Windows Server 2025 that can cause Microsoft Entra Cloud Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
+  > Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
+  
 
 - This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
@@ -96,7 +85,7 @@ For more information on how to prepare your Active Directory for group Managed S
 
 ## In the Microsoft Entra admin center
 
-1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
+1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only Hybrid Identity Administrator account](~/fundamentals/how-to-create-delete-users.yml). Finishing this step is critical to ensure that you don't get locked out of your tenant.
 1. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ## In your directory in Active Directory
@@ -169,7 +158,8 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
   |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
   |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
    |`mscrl.microsoft.com:80` </br>`crl.microsoft.com:80` </br>`ocsp.msocsp.com:80` </br>`www.microsoft.com:80`| The agent uses these URLs to verify certificates.|
-   |`login.windows.net`|The agent uses these URLs during the registration process.
+   |`login.windows.net`</br> `login.live.com`|The agent uses these URLs during the registration process.
+   |`aadcdn.msauth.net`</br>`aadcdn.msftauth.net`</br>`www.msftconnecttest.com`|The agent uses these URLs during the registration process.
 
 
 
@@ -217,6 +207,9 @@ When using OU scoping filter
 - The scoping configuration has a limitation of 4 MB in character length. In a standard tested environment, this translates to approximately 50 separate Organizational Units (OUs) or Security Groups, including its required metadata, for a given configuration.
 
 - Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **can't** sync 60 separate OUs in the same configuration).
+
+>[!NOTE]
+>At this time, it isn't possible to check the scoping configuration size to determine if it is near to, reached, or exceeded the 4 MB character limit, which includes metadata. 
 
 ### Password Hash Sync
 
