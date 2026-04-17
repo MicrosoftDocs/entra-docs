@@ -44,6 +44,39 @@ In addition to the daily scheduled run, the agent can trigger runs when changes 
 - If you haven't enabled the Conditional Access Optimization Agent, activity-based runs are enabled by default and can be turned off in the agent settings.
 - If the Conditional Access Optimization Agent is already running in your tenant, activity-based runs are opt-in and can be enabled in the agent settings.
 
+## Trigger
+
+### Scheduled runs
+
+The agent is configured to run automatically every 24 hours, based on when it was initially configured. You can also manually run the agent at any time.
+
+### Activity-based runs (Preview)
+
+In addition to the daily scheduled run, the agent can trigger runs based on changes to your Conditional Access policies. Activity-based runs are designed to help the agent respond to changes in your environment sooner, rather than waiting for the next daily run.
+
+The following changes to Conditional Access policies trigger an activity-based run:
+
+- An existing enabled policy is modified.
+- A policy state is changed to **On** from any other state, such as **Off** or **Report-only**.
+- A new policy is created with the state set to **On**.
+
+The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent policy changes, the agent enforces a six-hour cooldown between activity-based runs. For example:
+
+| Time | Event | Agent action |
+|---|---|---|
+| Minute 0 | An enabled policy is modified. | No action yet. |
+| Minute 5 | Agent detects the change. | Agent runs. |
+| Minute 6 | Another enabled policy is modified. | No action yet. |
+| Minute 10 | Agent detects the change. | Cooldown active. No run. |
+| Minute 12 | Another enabled policy is modified. | No action yet. |
+| Minute 15 | Agent detects the change. | Cooldown active. No run. |
+| Hour 6 | Cooldown expires. | Agent runs. |
+
+Activity-based runs don't replace the daily scheduled run. The daily run always occurs regardless of how many activity-based runs happen.
+
+- **New tenants**: Activity-based runs are enabled by default. You can turn them off in the agent settings.
+- **Existing tenants**: Activity-based runs are opt-in. You can enable them in the agent settings.
+
 ## Capabilities
 
 The **Capabilities** category includes important settings that you should review.
