@@ -56,6 +56,8 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 ## Step 2: Choose an authentication approach
 
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
+
 Before you register your app, decide how your users authenticate. Microsoft Entra External ID supports two approaches:
 
 - **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers single sign-on (SSO), broad platform support, and lower maintenance. Microsoft manages the sign-in surface and security updates.
@@ -71,7 +73,7 @@ Your choice affects how you register your app, which SDKs you use, and how you c
 
 ## Step 3: Register your application
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 3 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-3.png" alt-text="Diagram showing step 3 in the setup flow.":::
 
 Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](/entra/identity-platform/quickstart-register-app) establishes a trust relationship and allows you to integrate your app with External ID.
 
@@ -87,7 +89,7 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 ## Step 4: Integrate a sign-in flow with your app
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-3.png" alt-text="Diagram showing step 4 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-4.png" alt-text="Diagram showing step 4 in the setup flow.":::
 
 Once you've set up your external tenant and registered your application, create a sign-up and sign-in user flow. Then integrate your application with the user flow so that anyone who accesses it goes through the sign-up and sign-in experience you've designed.
 
@@ -127,7 +129,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 ## Step 5: Customize and secure your sign-in
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-4.png" alt-text="Diagram showing step 5 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-5.png" alt-text="Diagram showing step 5 in the setup flow.":::
 
 When planning for configuring company branding, language customizations, and custom extensions, consider the following points:
 
