@@ -43,8 +43,8 @@ items:
       href: tutorial-internet-access-threat-intelligence.md
     - name: Discover applications
       href: tutorial-internet-access-application-discovery.md
-    - name: Configure file controls
-      href: tutorial-internet-access-file-controls.md
+    - name: Configure content policies
+      href: tutorial-internet-access-content-policies.md
   - name: Private Access labs
     expanded: true
     items:

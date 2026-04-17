@@ -1,25 +1,25 @@
 ---
 title: Configure Global Secure Access cloud firewall with remote networks for internet access
-description: Learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
+description: Learn how to configure and use cloud firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 author: jenniferf-skc    
 ms.author: jfields
 ms.topic: how-to
 ms.subservice: entra-private-access
-ms.date: 11/18/2025
+ms.date: 04/17/2026
 ms.custom: it-pro
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 
-#customer intent: As a Global Secure Access administrator, I want to learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
+#customer intent: As a Global Secure Access administrator, I want to learn how to configure and use cloud firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Configure Global Secure Access cloud firewall (preview)
+# Configure Global Secure Access cloud firewall
 
-Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
+Global Secure Access cloud firewall protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
 
-The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in preview).
+The current scope is using cloud firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access.
 
-With this preview, you can:
+With cloud firewall, you can:
 
 - Define granular Firewall filtering rules, where you'll define the traffic matching conditions and an action in case the traffic matches.
 
@@ -33,7 +33,7 @@ With this preview, you can:
 
 ## Supported scenarios
 
-This preview supports these scenarios:
+Cloud firewall supports these scenarios:
 
 | # | **Scenario** |
 |---|--------------|

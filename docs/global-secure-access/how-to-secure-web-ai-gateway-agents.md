@@ -51,7 +51,7 @@ After enabling network controls, you can enforce Global Secure Access security p
 1. Select **Next** to review the policy.
 1. Select **Create policy**.
 
-Next, you can create policies like [threat intelligence](how-to-configure-threat-intelligence.md) to protect agents against malicious destinations or [file policy](how-to-network-content-filtering.md) to safeguard against unintended data exposure and prevent inline data leaks.
+Next, you can create policies like [threat intelligence](how-to-configure-threat-intelligence.md) to protect agents against malicious destinations or [content policy](how-to-network-content-filtering.md) to safeguard against unintended data exposure and prevent inline data leaks.
 
 ## Link policies to the baseline profile
 
