@@ -44,8 +44,7 @@ Before you begin, ensure you have the following prerequisites.
   - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities. The first owner of an agent identity blueprint can create an agent identity for that blueprint without an Agent ID role.
   - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) for full administrative access to Agent ID resources.
 
-> [!NOTE]
-> The first owner of an agent identity blueprint can create agent identities from that blueprint using delegated permissions without an Agent ID role. The AI-guided setup uses application permissions for agent identity creation, so an Agent ID role or blueprint ownership is not required for that step.
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
 
 - **Additional roles for permission grants:**
   - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) to grant Microsoft Graph application permissions.
