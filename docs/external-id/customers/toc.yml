@@ -4,8 +4,6 @@ items:
   items:
     - name: Overview of External ID in external tenants
       href: overview-customers-ciam.md
-    - name: Supported features
-      href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Frequently asked questions (FAQ)
