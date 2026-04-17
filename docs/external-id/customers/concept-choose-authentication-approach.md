@@ -16,30 +16,57 @@ ms.author: godonnell
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
+When you build customer-facing apps with Microsoft Entra External ID, you choose between two authentication approaches: browser-delegated authentication and native authentication. Both are fully supported, but they differ in user experience, development effort, and security model.
+
 ## Browser-delegated vs. native authentication
 
-<!-- Compare the two approaches at a high level: what each means for the developer and end user. -->
+With **browser-delegated authentication**, your app redirects users to a Microsoft-hosted sign-in page in a system browser or embedded web view. Microsoft Entra handles the entire authentication flow — your app receives tokens after sign-in completes. This approach requires minimal code and offers built-in branding customization.
+
+With **native authentication**, you build the sign-in screens directly into your app using the Microsoft Authentication Library (MSAL) SDK or the native authentication API. Users never leave your app. You control every aspect of the UI, but your team is responsible for building and maintaining the authentication experience.
 
 ## When to use browser-delegated authentication
 
-<!-- Scenarios where browser-delegated auth is the better fit: broad platform support, SSO, lower maintenance, out-of-the-box branding. -->
+Browser-delegated authentication is the better fit when:
+
+- You need single sign-on (SSO) across multiple apps.
+- You want to support the broadest range of platforms and languages with less code.
+- Your app can accommodate a browser redirect during sign-in without disrupting the user experience.
+- You prefer lower implementation and maintenance effort — Microsoft manages security updates and new features automatically.
 
 ## When to use native authentication
 
-<!-- Scenarios where native auth is the better fit: full UI control, mobile-first, embedded experience, pixel-perfect branding. -->
+Native authentication is the better fit when:
+
+- You need a fully branded, pixel-perfect sign-in experience embedded in your app.
+- Your app is mobile-first and a browser redirect would disrupt the user experience.
+- Your organization operates both the app and the authorization server, and your users perceive them as a single entity.
+- Your development team can take on the additional security responsibility and ongoing maintenance.
 
 ## Feature comparison
 
-<!-- Side-by-side table of supported features (sign-up, sign-in, SSO, MFA, social IdPs, SSPR) for each approach. -->
+The following table shows which features are available in each approach.
+
+| Feature | Browser-delegated | Native |
+|---|---|---|
+| Sign up and sign in with email OTP | ✔️ | ✔️ |
+| Sign up and sign in with email and password | ✔️ | ✔️ |
+| Self-service password reset (SSPR) | ✔️ | ✔️ |
+| Multifactor authentication (email OTP) | ✔️ | ✔️ |
+| Multifactor authentication (SMS OTP) | ✔️ | ✔️ |
+| Social identity providers (Apple, Facebook, Google) | ✔️ | ✔️ |
+| Single sign-on (SSO) | ✔️ | ❌ |
+| Custom claims provider | ✔️ | ✔️ |
 
 ## Security considerations
 
-<!-- Trade-offs: browser-delegated reduces attack surface; native auth shifts security responsibility to the developer. -->
+Browser-delegated authentication is the more secure option. Microsoft manages the sign-in surface, which reduces your app's exposure to phishing and credential-harvesting attacks.
+
+With native authentication, your development team shares security responsibility with Microsoft Entra. Your team must follow security best practices for handling user credentials, and SSO isn't available. Before you choose native authentication, discuss the security implications with your app's business owner and development team.
 
 ## Next steps
 
-<!-- Links to:
-- Native authentication overview: concept-native-authentication.md
-- Register an app quickstart
-- Platform-specific tutorials (Android, iOS, SPA)
--->
+- [Native authentication overview](/entra/identity-platform/concept-native-authentication)
+- [Register an app](/entra/identity-platform/quickstart-register-app)
+- [Android native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
+- [iOS native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app)
+- [Native authentication in React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in)
