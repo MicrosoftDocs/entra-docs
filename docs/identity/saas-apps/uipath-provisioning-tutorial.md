@@ -62,7 +62,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Screenshot shows the Directory integration details section with the Enable SCIM button.](./media/uipath-provisioning-tutorial/enable.png)
 
-1. In the **Configure SCIM directory integration** dialog, select one of the following SCIM authorization methods supported by Entra ID:
+1. In the **Configure SCIM directory integration** dialog, select one of the following SCIM authorization methods supported by Microsoft Entra ID:
     * **OAuth client credentials grant** (Recommended)
     * **Long-lived bearer token**
 
