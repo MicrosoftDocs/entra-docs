@@ -2,9 +2,10 @@
 title: Reset guest redemption status
 description: Learn how to reset the redemption status for a guest user in Microsoft Entra External ID. This guide covers using the admin center, PowerShell, and Microsoft Graph API.
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 04/17/2026
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an admin managing guest users in B2B collaboration, I want to reset the redemption status for a guest user, so that I can update their sign-in information and reinvite them without deleting their account.
 ---
 
@@ -19,7 +20,7 @@ In this article, you'll learn how to update the [guest user's](user-properties.m
 - The user has moved to a different company, but they still need the same access to your resources
 - The user’s responsibilities have been passed along to another user
 
-To manage these scenarios previously, you had to manually delete the guest user’s account from your directory and reinvite the user. Now you can use the Microsoft Entra admin center, PowerShell, or the Microsoft Graph invitation API to reset the user's redemption status and reinvite the user while keeping the user's object ID, group memberships, and app assignments. When the user redeems the new invitation, the UserPrincipalName (UPN) of the user doesn't change, but the user's sign-in name changes to the new email. Then the user can sign in using the new email or an email you've added to the `otherMails` property of the user object.
+In the past, to manage these scenarios, you had to manually delete the guest user's account from your directory and reinvite the user. Now you can use the Microsoft Entra admin center, PowerShell, or the Microsoft Graph invitation API to reset the user's redemption status and reinvite the user while keeping the user's object ID, group memberships, and app assignments. When the user redeems the new invitation, the user principal name (UPN) doesn't change, but the user's sign-in name changes to the new email. The user can then sign in by using the new email or an email you've added to the `otherMails` property of the user object.
 
 <a name='required-azure-ad-roles'></a>
 
@@ -43,11 +44,11 @@ To reset a user's redemption status, you'll need one of the following roles assi
 
 1. On the **Overview** tab, under **My Feed**, select the **Reset redemption status** link in the **B2B collaboration** tile.
 
-   :::image type="content" source="media/reset-redemption-status/user-profile-b2b-collaboration.png" alt-text="Screenshot showing the B2B collaboration reset link." lightbox="media/reset-redemption-status/user-profile-b2b-collaboration.png":::
+   :::image type="content" source="media/reset-redemption-status/user-profile-b2b-collaboration.png" alt-text="Screenshot of a guest user profile in the Microsoft Entra admin center, with the Reset redemption status link highlighted in the B2B collaboration tile on the Overview tab." lightbox="media/reset-redemption-status/user-profile-b2b-collaboration.png":::
 
 1. Under **Reset redemption status**, select **Reset**.
 
-   :::image type="content" source="media/reset-redemption-status/reset-status.png" alt-text="Screenshot showing the reset invitation status setting.":::
+   :::image type="content" source="media/reset-redemption-status/reset-status.png" alt-text="Screenshot of the Reset redemption status pane showing the Reset action that resends the invitation while keeping the guest user object.":::
 
 ## Use PowerShell or Microsoft Graph API to reset redemption status
 
@@ -66,8 +67,8 @@ If a user wants to sign in using a different email:
 ### Use PowerShell to reset redemption status
 
 ```powershell
-Install-Module Microsoft.Graph
-Connect-MgGraph -Scopes "User.ReadWrite.All"
+Install-Module Microsoft.Graph -Scope CurrentUser
+Connect-MgGraph -Scopes "User.Invite.All","User.ReadWrite.All"
 
 $user = Get-MgUser -Filter "startsWith(mail, 'john.doe@fabrikam.net')"
 New-MgInvitation `
@@ -80,12 +81,12 @@ New-MgInvitation `
 
 ### Use Microsoft Graph API to reset redemption status
 
-To use the [Microsoft Graph invitation API](/graph/api/resources/invitation), set the `resetRedemption` property  to `true` and specify the new email address in the `invitedUserEmailAddress` property.
+To use the [Microsoft Graph invitation API](/graph/api/resources/invitation), set the `resetRedemption` property to `true` and specify the new email address in the `invitedUserEmailAddress` property.
 
 ```json
 POST https://graph.microsoft.com/v1.0/invitations  
 Authorization: Bearer eyJ0eX...  
-ContentType: application/json  
+Content-Type: application/json  
 {  
    "invitedUserEmailAddress": "<<external email>>",  
    "sendInvitationMessage": true,  
@@ -101,7 +102,7 @@ ContentType: application/json
       ],  
       "customizedMessageBody": "<<custom message>>"  
 },  
-"inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=",  
+"inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=<tenant-id>",  
 "invitedUser": {  
    "id": "<<ID for the user you want to reset>>"  
 }, 
