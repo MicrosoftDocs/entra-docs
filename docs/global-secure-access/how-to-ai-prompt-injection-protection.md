@@ -115,6 +115,6 @@ You can protect any custom JSON-based LLM or GenAI app by configuring a custom t
 ## Related content
 
 - [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md)
-- [Create a file policy to filter network file content](how-to-network-content-filtering.md)
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Apply Conditional Access policies to Global Secure Access traffic](how-to-target-resource-microsoft-profile.md)
 - [Azure AI Content Safety](/azure/ai-services/content-safety/concepts/jailbreak-detection)

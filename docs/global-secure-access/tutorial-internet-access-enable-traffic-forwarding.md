@@ -22,7 +22,7 @@ In this tutorial, you learn how to:
 
 ## Key concepts
 
-Traffic forwarding profiles are the mechanism that tells the GSA client which traffic to capture and route through Microsoft security service edge (SSE). There are three profiles;
+Traffic forwarding profiles are the mechanism that tells the GSA client which traffic to capture and route through Microsoft security service edge (SSE). There are three profiles:
 
 | Profile | Traffic type | Purpose |
 |---------|--------------|----------|

@@ -41,20 +41,20 @@ With TLS inspection enabled, security tools can see the:
 
 Here's the flow of traffic:
 
-1. Client establishes TLS connection to security service edge (SSE).
+1. The client establishes TLS connection to security service edge (SSE).
 1. SSE establishes separate TLS connection to destination.
-1. SSE decrypts, inspects, and re-encrypts traffic.
-1. Client sees a certificate signed by your enterprise certificate authority (CA).
+1. SSE decrypts, inspects, and reencrypts traffic.
+1. The client sees a certificate signed by your enterprise certificate authority (CA).
 1. If allowed by policy, SSE forwards the traffic to the original destination server.
 
-```Example:
-User → GSA Client → SSE Proxy → Destination server
-                              │
-                  [TLS terminated]
-                  [Content inspected]
-                  [Re-encrypted with Enterprise CA cert]
-                  [Forwarded to destination]
-```
+ ```Example:
+ User → GSA Client → SSE Proxy → Destination Server
+                          │
+                    [TLS Terminated]
+                    [Content Inspected]
+                    [Re-encrypted with Enterprise CA cert]
+                    [Forwarded to destination]
+ ```
 
 ## Objective
 

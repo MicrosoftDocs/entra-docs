@@ -47,7 +47,7 @@ Each lab builds on the previous one and follows a logical progression.
 | [URL filtering](tutorial-internet-access-url-filtering.md) | What the difference is between FQDN and URL filtering, and how TLS inspection enables deeper inspection. |
 | [Threat intelligence](tutorial-internet-access-threat-intelligence.md) | How the Microsoft threat feeds protect against known malicious sites. |
 | [Application discovery](tutorial-internet-access-application-discovery.md) | How to identify shadow IT and manage application risk. |
-| [File controls](tutorial-internet-access-file-controls.md) | How to prevent data exfiltration through file upload controls. |
+| [Content policies](tutorial-internet-access-content-policies.md) | How to prevent data exfiltration through network content filtering and file upload controls. |
 
 ## Next step
 

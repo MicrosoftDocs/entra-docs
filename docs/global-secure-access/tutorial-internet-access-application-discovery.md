@@ -151,10 +151,10 @@ After you discover shadow IT or shadow AI, you can take actions to mitigate risk
 
 - Export data to Microsoft Defender for Cloud Apps for deeper investigation.
 - Use discovered apps to inform web content filtering policies.
-- Combine with file controls to prevent data upload to risky apps.
+- Combine with content policies to prevent data upload to risky apps.
 - Feed insights into security awareness training programs.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Configure file control policies](tutorial-internet-access-file-controls.md)
+> [Tutorial: Configure content policies](tutorial-internet-access-content-policies.md)

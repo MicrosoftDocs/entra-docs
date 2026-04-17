@@ -2,7 +2,7 @@
 title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 ms.topic: overview
-ms.date: 03/13/2026
+ms.date: 04/15/2026
 ms.custom: references_regions
 ai-usage: ai-assisted
 
@@ -70,7 +70,7 @@ Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft s
 
 To use Microsoft Entra Private Access and Microsoft Entra Internet Access, users need a Microsoft Entra ID P1 or Microsoft Entra ID P2 license.
 
-Most Global Secure Access services operate on a per-user license model unless otherwise stated. For more information about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). For more information about purchasing individual licenses, see the Microsoft Entra Suite standalone products tab of the licensing page.
+Most Global Secure Access services operate on a per-user license model unless otherwise stated. For more information about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). For more information about purchasing individual licenses, see the Microsoft Entra Suite standalone products tab of the licensing page. For information about guest user licensing, see [Global Secure Access licensing for guest users](reference-licensing-guest-users.md).
 
 ### Feature comparison table
 
@@ -102,7 +102,7 @@ Most Global Secure Access services operate on a per-user license model unless ot
 
 **Remote Network licensing**
 
-The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). For more information about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
+The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#what-is-the-bandwidth-allocation-for-each-tenant). For more information about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 
 ## Related content
