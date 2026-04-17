@@ -1,5 +1,5 @@
 ---
-title: Choose your authentication approach
+title: Choose an authentication approach
 description: Compare browser-delegated and native authentication in Microsoft Entra External ID to decide the right approach for your app.
 ai-usage: ai-assisted
 
@@ -12,7 +12,7 @@ ms.date: 04/16/2026
 ms.author: godonnell
 ---
 
-# Choose your authentication approach
+# Choose an authentication approach
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
