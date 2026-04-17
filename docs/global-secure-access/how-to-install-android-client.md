@@ -22,7 +22,7 @@ This article describes how to deploy the Global Secure Access client to Android 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - Enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
 - You need device installation permissions to install the client.
-- Android devices need to run Android 10.0 or later.
+- Android devices need to run Android 11.0 or later.
 - Android devices need to be Microsoft Entra registered devices.
   - Devices not managed by your organization need to have the Microsoft Authenticator app installed.
   - Devices not managed through Intune need to have the Company Portal app installed.
