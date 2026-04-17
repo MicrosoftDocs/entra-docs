@@ -113,7 +113,7 @@ $body = @{
 
 $response = Invoke-MgGraphRequest `
     -Method POST `
-    -Uri "https://graph.microsoft.com/v1.0/applications/graph.agentIdentityBlueprint" `
+    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint" `
     -Body $body `
     -ContentType "application/json"
 
@@ -317,7 +317,7 @@ In this step, you create a principal for the agent identity blueprint. For more 
 Replace the `<agent-blueprint-app-id>` placeholder with the `appId` you copied from the results of the previous step.
 
 ```http
-POST https://graph.microsoft.com/v1.0/serviceprincipals/graph.agentIdentityBlueprintPrincipal
+POST https://graph.microsoft.com/v1.0/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -340,7 +340,7 @@ $body = @{
     appId   = "<agent-blueprint-client-id>"
 }
 Invoke-MgGraphRequest -Method POST `
-        -Uri "https://graph.microsoft.com/v1.0/serviceprincipals/graph.agentIdentityBlueprintPrincipal" `
+        -Uri "https://graph.microsoft.com/v1.0/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal" `
         -Headers @{ "OData-Version" = "4.0" } `
         -Body ($body | ConvertTo-Json)
 ```
@@ -377,7 +377,7 @@ $Id = "<agent-blueprint-id>"
 
 Invoke-MgGraphRequest `
     -Method DELETE `
-    -Uri "https://graph.microsoft.com/v1.0/applications/graph.agentIdentityBlueprint$($Id)" `
+    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/$($Id)" `
 ```
 
 ---
