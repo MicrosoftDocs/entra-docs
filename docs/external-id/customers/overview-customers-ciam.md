@@ -122,7 +122,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 ## About Azure AD B2C
 
-Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform.
+Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform. If you're an existing Azure AD B2C customer, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) to get started.
 
 ## Next steps
 

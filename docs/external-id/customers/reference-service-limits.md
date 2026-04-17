@@ -83,6 +83,7 @@ The following table lists the administrative configuration limits in the Microso
 |Maximum custom authentication extension retries    |1         |
 
 ## Telephony throttling limits
+
 The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
 
 |Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every seven days |
@@ -91,6 +92,22 @@ The following table lists the service limits we implement to prevent outages and
 |Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |
 |Limits based on tenant       |500 texts             |1500 texts            |5,000 texts                                          |No limit           |
 
+## Capability support by scale and deployment mode
+
+The following table shows which Microsoft Graph capabilities are available based on your tenant's directory scale and deployment mode.
+
+| Capability area | Standard mode* | HSC mode |
+|---|---|---|
+| Advanced directory queries (filtering, sorting, count, search, transitive membership) | Supported | Not supported |
+| Change-based (delta) queries | Supported | Not supported |
+| SCIM outbound user provisioning | Supported | Not supported |
+
+\* The features listed in this table are supported in standard mode for tenants with up to 15 million directory objects.
+
+> [!NOTE]
+> These capabilities aren't available in HSC mode regardless of directory size. HSC mode prioritizes stability and throughput at scale over query-heavy or event-driven directory operations.
+
 ## Related content
 
 - [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)
+

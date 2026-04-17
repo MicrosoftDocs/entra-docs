@@ -37,7 +37,7 @@ Organizations might migrate to Microsoft Entra External ID from another tool bas
 
 ## Plan your migration
 
-The [Microsoft Entra External ID deployment guide](/entra/architecture/deployment-external-intro) helps organizations get started with their deployment if they're new to the concept of a CIAM solution. Following that along with the steps outlined in this article help organizations with existing CIAM deployments complete their migration to Microsoft Entra External ID. Organizations start by [determining if there are any feature gaps between products](concept-supported-features-customers.md#general-feature-comparison) that might block their migration.
+The [Microsoft Entra External ID deployment guide](/entra/architecture/deployment-external-intro) helps organizations get started with their deployment if they're new to the concept of a CIAM solution. Following that along with the steps outlined in this article help organizations with existing CIAM deployments complete their migration to Microsoft Entra External ID. Organizations start by [evaluating the availability of critical features in Microsoft Entra External ID](concept-supported-features-customers.md#general-feature-comparison) to confirm readiness for migration.
 
 ### Migration steps
 

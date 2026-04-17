@@ -96,7 +96,7 @@ Learn how to [add a Microsoft Entra ID tenant as an OIDC identity provider](how-
 
 ## Custom OIDC identity provider
 
-You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol. If you're planning to migrate from Azure AD B2C rather than federate, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
 
