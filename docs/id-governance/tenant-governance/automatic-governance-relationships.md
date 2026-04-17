@@ -3,7 +3,7 @@ title: Automatic formation of governance relationships (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance automatically establishes governance relationships when you create add-on tenants using secure tenant creation.
 author: barclayn
-ms.author: barclayn
+ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/26/2026
