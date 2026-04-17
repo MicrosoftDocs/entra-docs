@@ -3,9 +3,10 @@ metadata:
   title: B2B collaboration FAQs
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   ms.topic: faq
-  ms.date: 06/27/2025
+  ms.date: 04/17/2026
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
+  ai-usage: ai-assisted
 title: Microsoft Entra B2B collaboration FAQs
 summary: |
 
@@ -19,7 +20,7 @@ sections:
       - question: |
           What's changing in the guest user sign-in experience in B2B collaboration? 
         answer: |
-          Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.
+          In July 2025, Microsoft began rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continued through the end of 2025. With this update, guest users are redirected to their own organization's sign-in page to provide credentials. Guest users see the branding and URL endpoint of their home tenant. This step gives clearer guidance about which sign-in information to use. After successful authentication in their own organization, guest users are returned to your organization to complete sign-in.
           
       - question: |
           Can B2B collaboration users access SharePoint Online and OneDrive?
@@ -171,7 +172,7 @@ sections:
       - question: |
           What happens if I invite a user whose email and UPN don’t match?
         answer: |
-          It depends. By default, Microsoft Entra-only allows UPN for login ID. When UPN and email are the same, Microsoft Entra B2B invitations and subsequent sign-ins work as expected. However, issues can arise when a user’s email and UPN don’t match, and the email is used instead of the UPN to sign in.
+          It depends. By default, Microsoft Entra ID allows only UPN as the login ID. When UPN and email are the same, Microsoft Entra B2B invitations and subsequent sign-ins work as expected. However, issues can arise when a user's email and UPN don't match, and the email is used instead of the UPN to sign in.
           When a user is invited with a non-UPN email, they will be able to redeem the invitation if they redeem using the [email invitation link](redemption-experience.md#redemption-process-through-the-invitation-email), but redemptions via a [direct link](redemption-experience.md#redemption-process-through-a-direct-link) will fail. However, even if the user successfully redeems the invitation, subsequent sign-in attempts using the non-UPN email will fail unless the identity provider (either Microsoft Entra ID or a federated identity provider) is configured to allow email as an alternative login ID. 
           This issue can be mitigated by:
           1. [Enabling email as an alternate login ID](~/identity/authentication/howto-authentication-use-email-signin.md) in the invited/home Microsoft Entra tenant
@@ -180,9 +181,9 @@ sections:
 
           To avoid this issue entirely, administrators should ensure users’ UPN and email are the same value.
 
-          ![Screenshot shows the flow for guest redemption.](media/user-invitation-different-email-upn/guest-redemption.png)
+          ![Flow diagram showing invitation redemption behavior when a guest user's email and UPN don't match.](media/user-invitation-different-email-upn/guest-redemption.png)
 
-          ![Screenshot shows the flow for subsequent sign-ins.](media/user-invitation-different-email-upn/subsequent-sign-in.png)
+          ![Flow diagram showing subsequent sign-in behavior when a guest user's email and UPN don't match.](media/user-invitation-different-email-upn/subsequent-sign-in.png)
           
           >[!NOTE]
           >Invitations and redemptions being sent across Microsoft clouds must use UPN. Email is not supported at this time. For example, if a user from a US Government tenant is invited to a Commercial tenant, the user must be invited using their UPN.

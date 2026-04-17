@@ -2,10 +2,11 @@
 title: Add Facebook as an identity provider
 description: Federate with Facebook to enable external users (guests) to sign in to your Microsoft Entra apps with their own Facebook accounts.
 ms.topic: how-to
-ms.date: 07/07/2025
+ms.date: 04/17/2026
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
-#customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
+ai-usage: ai-assisted
+# Customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows so users can sign in to applications by using their Facebook accounts.
 ---
 
 # Add Facebook as an identity provider for External ID
@@ -17,9 +18,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-noch
 
 You can add Facebook to your self-service sign-up user flows so that users can sign in to your applications using their own Facebook accounts. To allow users to sign in using Facebook, you first need to [enable self-service sign-up](self-service-sign-up-user-flow.yml) for your tenant. After you add Facebook as an identity provider, set up a user flow for the application and select Facebook as one of the sign-in options.
 
-After you add Facebook as one of your application's sign-in options, on the **Sign in** page, a user can enter the email they use to sign in to Facebook, or they can select **Sign-in options** and choose **Sign in with Facebook**. In either case, they're redirected to the Facebook sign in page for authentication.
+After you add Facebook as one of your application's sign-in options, on the **Sign in** page a user can enter the email they use for Facebook. Or they can select **Sign-in options** and choose **Sign in with Facebook**. In either case, they're redirected to the Facebook sign-in page for authentication.
 
-![Sign in options for facebook users](media/facebook-federation/sign-in-with-facebook-overview.png)
+![Screenshot of a Microsoft Entra External ID sign-in page showing Sign-in options and the Sign in with Facebook option.](media/facebook-federation/sign-in-with-facebook-overview.png)
 
 > [!NOTE]
 > Users can only use their Facebook accounts to sign up through apps using self-service sign-up and user flows. Users can't be invited and redeem their invitation using a Facebook account.
@@ -42,15 +43,15 @@ To use a Facebook account as an [identity provider](identity-providers.md), you 
 1. Select **App settings** > **Basic**.
     1. Copy the value of **App ID**. Then select **Show** and copy the value of **App Secret**. You use both of these values to configure Facebook as an identity provider in your tenant. **App Secret** is an important security credential.
     1. Enter a URL for the **Privacy Policy URL**, for example `https://www.contoso.com/privacy`. The policy URL is a page you maintain to provide privacy information for your application.
-    1. Enter a URL for the **Terms of Service URL**, for example `https://www.contoso.com/tos`. The policy URL is a page you maintain to provide terms and conditions for your application.
-    1. Enter a URL for the **User Data Deletion**, for example `https://www.contoso.com/delete_my_data`. The User Data Deletion URL is a page you maintain to provide away for users to request that their data be deleted.
+   1. Enter a URL for the **Terms of Service URL**, for example `https://www.contoso.com/tos`. The Terms of Service URL is a page you maintain to provide terms and conditions for your application.
+   1. Enter a URL for the **User Data Deletion**, for example `https://www.contoso.com/delete_my_data`. The User Data Deletion URL is a page you maintain to provide a way for users to request that their data be deleted.
     1. Choose a **Category**, for example **Business and pages**. Facebook requires this value, but it's not used by Microsoft Entra ID.
 1. At the bottom of the page, select **Add platform**, select **Website**, and then select **Next**.
 1. In **Site URL**, enter the address of your website, for example `https://contoso.com`. 
 1. Select **Save changes**. 
 1. Select **Use cases** on the left and select **Customize** next to **Authentication and account creation**.
 1. Select **Go to settings** under **Facebook Login**.
-1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your Microsoft Entra tenant ID and `<tenant-name>` with your Microsoft Entra tenant name:
+1. In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your Microsoft Entra tenant ID, `<tenant-subdomain>` with your tenant subdomain, and `<tenant-name>` with your Microsoft Entra tenant name:
 
 - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
 - `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
@@ -76,7 +77,7 @@ Now you set the Facebook client ID and client secret, either by entering it in t
 1. For the **Client ID**, enter the **App ID** of the Facebook application that you created earlier.
 1. For the **Client secret**, enter the **App secret** that you recorded.
 
-   :::image type="content" source="media/facebook-federation/add-social-identity-provider-page.png" alt-text="Screenshot showing the Add social identity provider page.":::
+   :::image type="content" source="media/facebook-federation/add-social-identity-provider-page.png" alt-text="Screenshot of the Facebook identity provider configuration pane in the Microsoft Entra admin center with Client ID and Client secret fields.":::
 
 1. Select **Save**.
 

@@ -3,7 +3,7 @@ title: Automatic formation of governance relationships (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance automatically establishes governance relationships when you create add-on tenants using secure tenant creation.
 author: barclayn
-ms.author: barclayn
+ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/26/2026
@@ -18,7 +18,7 @@ When a permissioned user in your organization creates a new tenant using the sec
 
 If you defined a default [governance policy template](governance-policy-templates.md), a new governance relationship forms between the home (governing) tenant and the newly created add-on (governed) tenant, using the default policy template.
 
-If you want to disable this functionality, delete the contents of the default governance policy template.
+If roles and permissions haven't been defined in the default governance policy template, a governance relationship won't be established when a new add-on tenant is created. Changes to the template don't affect governance relationships that have already been established.
 
 ## Microsoft Entra ID Free billing asset
 
