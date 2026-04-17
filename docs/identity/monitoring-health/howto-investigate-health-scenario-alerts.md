@@ -97,7 +97,7 @@ From the selected scenario, you have several options to investigate:
 
     :::image type="content" source="media/howto-investigate-health-scenario-alerts/mark-alert-as.png" alt-text="Screenshot of the alert page with the Mark alert as menu highlighted." lightbox="media/howto-investigate-health-scenario-alerts/mark-alert-as-expanded.png":::
 
-#### Investigate alerts with the health alert investigator (preview)
+#### Investigate alerts with the health alert investigator
 
 The health alert investigator is a Copilot skill embedded within Entra health alerts. It can investigate a health alert on your behalf directly from the alert page, performing correlation analysis to identify actionable root causes within your tenant. After you trigger an investigation, Copilot will post a report of findings that contains a recommended fix and the logic behind the correlation analysis that uses Entra activity logs and tenant configuration data to draw its conclusions.
 
