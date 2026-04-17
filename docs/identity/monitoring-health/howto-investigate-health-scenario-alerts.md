@@ -2,7 +2,8 @@
 title: How to investigate Health monitoring alerts (preview)
 description: Learn how to investigate Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 ms.topic: how-to
-ms.date: 02/09/2026
+ms.date: 04/02/2026
+ai-usage: ai-assisted
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.
@@ -95,6 +96,24 @@ From the selected scenario, you have several options to investigate:
     - The equivalent action using the Microsoft Graph API is to update the alert status to `resolved`.
 
     :::image type="content" source="media/howto-investigate-health-scenario-alerts/mark-alert-as.png" alt-text="Screenshot of the alert page with the Mark alert as menu highlighted." lightbox="media/howto-investigate-health-scenario-alerts/mark-alert-as-expanded.png":::
+
+#### Investigate alerts with the health alert investigator (preview)
+
+The health alert investigator is a Copilot skill embedded within Entra health alerts. It can investigate a health alert on your behalf directly from the alert page, performing correlation analysis to identify actionable root causes within your tenant. After you trigger an investigation, Copilot will post a report of findings that contains a recommended fix and the logic behind the correlation analysis that uses Entra activity logs and tenant configuration data to draw its conclusions.
+
+> [!NOTE]
+> To use the health alert investigator, your tenant must be onboarded to Microsoft Security Copilot, and ensure the Microsoft Entra plugin is enabled in Security Copilot.
+
+> [!NOTE]
+> The health alert investigator isn't accessible through Copilot chat yet. The chat experience is coming soon.
+
+To use the health alert investigator:
+
+1. From the active alert page, select the **Investigate with Copilot** button to launch the health alert investigator.
+
+1. The health alert investigator performs a correlation analysis between the health metrics that led to the alert and the tenant's activity logs and configuration data. When the analysis is complete, the **Investigate health alert** card will display a summary of findings.
+
+1. Click the **Show Copilot investigation** button to display a detailed report of findings with suggested next steps to resolve the root cause.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
