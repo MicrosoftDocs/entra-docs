@@ -1,9 +1,9 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-ms.date: 02/10/2025
+ms.date: 04/17/2026
 ms.topic: how-to
-ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
+ms.custom: it-pro, sfi-ga-nochange
 ms.reviewer: mwahl
 ---
 
@@ -33,18 +33,20 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
     :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Screenshot of creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
 
-1. Select one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
+1. Choose one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
     - [Passkey (FIDO2)](../authentication/concept-authentication-passkeys-fido2.md) (Recommended)
     - [Certificate-based authentication](../authentication/concept-authentication-passkeys-fido2.md) if your organization already has a Public Key Infrastructure (PKI) setup
 
-1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
+1. Register credentials for the authentication method you chose in the previous step.
 
-    - [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md)
-    - [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
-    - [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
+    - **Passkey (FIDO2)**: [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md), then [register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
+    - **Certificate-based authentication**: [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
 
-1. [Require phishing-resistant multifactor authentication](../conditional-access/policy-admin-phish-resistant-mfa.md) for all of your emergency accounts.
+1. Review your Conditional Access policies for administrators and ensure that emergency access accounts are explicitly excluded from all policies, including [phishing-resistant multifactor authentication](../conditional-access/policy-admin-phish-resistant-mfa.md) requirements.
+
+    > [!IMPORTANT]
+    > Emergency access accounts must be excluded from all Conditional Access policies. Because these accounts are used when normal sign-in methods or policies are failing, a Conditional Access policy could block access at exactly the moment it's needed. Security is instead enforced through the phishing-resistant authentication method registered directly on the account in the previous step.
 
 1. [Store account credentials safely](#store-account-credentials-safely).
 
@@ -106,7 +108,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. In your workspace, select **Alerts** > **New alert rule**.
 
-    1. Under **Resource**, verify that the subscription is the one with which you want to associate the alert rule.
+    1. Under **Resource**, select your **Log Analytics workspace** as the resource type. Verify that the subscription matches the workspace you configured in the prerequisites.
     1. Under **Condition**, select **Add**.
     1. Select **Custom log search** under **Signal name**.
     1. Under **Search query**, enter the following query, inserting the object IDs of the two emergency access accounts.
@@ -117,26 +119,24 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         Sample queries:
         ```kusto
         // Search for a single Object ID (UserID)
-        SigninLogs
-        | project UserId 
+        AADSignInLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+        | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for multiple Object IDs (UserIds)
-        SigninLogs
-        | project UserId 
+        AADSignInLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" or UserId == "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
+        | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for a single UserPrincipalName
-        SigninLogs
-        | project UserPrincipalName 
+        AADSignInLogs
         | where UserPrincipalName == "user@yourdomain.onmicrosoft.com"
+        | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
-        
-        ![Add the object IDs of the emergency access accounts to an alert rule](./media/security-emergency-access/query-image1.png)
 
     1. Under **Alert logic**, enter the following:
 
