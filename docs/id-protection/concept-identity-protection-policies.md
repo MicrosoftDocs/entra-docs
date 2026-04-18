@@ -39,7 +39,7 @@ ID Protection analyzes signals about user accounts and calculates a risk score b
 
 Policies requiring either #1 or #2 forces end users to remediate their user risk and unblock themselves.
 
-## Require risk remediation control (preview)
+## Require risk remediation control
 
 This control uses adaptive risk remediation to let you author a Conditional Access risk policy that accommodates all authentication methods, including password-based and passwordless. This means that when you select "Require risk remediation" in your policy's grant controls, Microsoft Entra ID Protection manages the appropriate remediation flow based on the threat observed and the user's authentication method.  For detailed steps on how to enable adaptive risk remediation, see [Configure risk policies](howto-identity-protection-configure-risk-policies.md#microsoft-recommendations).
 
@@ -52,7 +52,9 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 - If a user is assigned to multiple policies, precedence applies: **Require risk remediation** overrides **Require password change**, and **Block** overrides all others. To avoid conflicts, assign each user to only one of these policies at a time.
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy to ensure that end users are immediately prompted to reauthenticate after their sessions are revoked with the specified authentication strength.
 - **Require risk remediation** is not supported for external and guest users because Microsoft Entra ID doesn't support session revocation for those users.
-- **Require risk remediation** is available in Azure for US Government.
+- During the remediation flow, other Conditional Access policies will not be enforced when ID Protection performs delegated authentication to revoke session tokens.
+  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `2e5ecfc8-ea79-48bd-8140-c19324acb278`
+  - `ResourceId`: `00000003-0000-0000-c000-000000000000`
 
 ## Sign-in risk-based Conditional Access policy
 
