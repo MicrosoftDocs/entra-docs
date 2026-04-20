@@ -121,6 +121,8 @@ To use the health alert investigator:
 
     :::image type="content" source="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-results.png" alt-text="Screenshot of the Copilot investigation results showing the detailed report of findings and suggested next steps." lightbox="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-results.png":::
 
+1. Click on the *Root Cause* and *Additional Details* headings to get more information.
+
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 With the Microsoft Graph APIs, you can view the metrics that make up the health signals and alerts and review the impact summary for a health alert.
