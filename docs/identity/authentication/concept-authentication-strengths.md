@@ -100,6 +100,10 @@ Conditional Access administrators can also create custom authentication strength
   
   When the user unlocks their Windows device by using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
 
+- **Authentication strength and registration of security info**: Registering security info requires an MFA session no older than 10 minutes, leading to an interactive request for MFA if such requirement isn't met. This can lead users to choose an MFA method that, when combined with the first factor authentication method previously used, doesn't satisfy the enforced authentication strength, resulting in the error *"Let’s try something else. Another sign-in method is required to access this resource. Close your browser and try again, but choose another way to sign-in"*.
+
+  Changes can be made at the tenant level, such as enforcing "Sign-in frequency: every time" to the "Register security info" user action or enabling Passkeys for Windows Hello for Business users, or at the user level, such as ensuring they authenticate with a session at most 10 minutes old or ensuring they authenticate with a combination of methods included in the enforced Authentication Strength.
+
 ## FAQ
 
 ### Should I use an authentication strength or the policy for authentication methods?
