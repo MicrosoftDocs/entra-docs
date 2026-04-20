@@ -24,10 +24,7 @@ This article explains why AI systems need identity-based security, introduces th
 
 Organizations are deploying AI agents for increasingly diverse tasks, and each deployment model presents distinct security challenges:
 
-[!INCLUDE [interactive-autonomous-agents](includes/interactive-autonomous-agents.md)]
-
-**An agent's user account**
-An agent's user account functions with human user characteristics, including persistent identities and access to organizational systems. An agent's user account might join teams, access documents, participate in meetings, and require mailbox and calendar access.
+[!INCLUDE [agent-type-definitions](includes/agent-type-definitions.md)]
 
 ### Security challenges
 
