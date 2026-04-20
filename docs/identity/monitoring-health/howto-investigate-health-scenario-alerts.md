@@ -1,5 +1,5 @@
 ---
-title: How to investigate Health monitoring alerts (preview)
+title: How to investigate Health monitoring alerts (Preview)
 description: Learn how to investigate Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 ms.topic: how-to
 ms.date: 04/02/2026
@@ -9,14 +9,14 @@ ms.reviewer: sarbar
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.
 ---
 
-# How to investigate Microsoft Entra Health monitoring alerts (preview)
+# How to investigate Microsoft Entra Health monitoring alerts (Preview)
 
 Microsoft Entra Health monitoring helps you monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
 
 The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively. This article provides guidance on how to investigate alerts, in general. For scenario-specific guidance, see the related content at the end of this article.
 
 > [!IMPORTANT]
-> Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
+> Microsoft Entra Health scenario monitoring and alerts are currently in Preview.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -36,7 +36,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the signals and alerts
 
-You can view the Microsoft Entra Health monitoring signals from the Microsoft Entra admin center. You can also view the properties of the signals and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+You can view the Microsoft Entra Health monitoring signals from the [Microsoft Entra admin center](https://entra.microsoft.com). You can also view the properties of the signals and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
 When you receive an alert, you typically need to investigate the following data sets:
 
