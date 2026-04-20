@@ -24,7 +24,7 @@ This article explains why AI systems need identity-based security, introduces th
 
 Organizations are deploying AI agents for increasingly diverse tasks, and each deployment model presents distinct security challenges:
 
-- **Assistive agents** perform specific tasks on demand, such as analyzing customer data for sales recommendations or answering support questions with escalation to human representatives.
+- **Interactive agents** perform specific tasks on demand on behalf of a signed-in user, such as analyzing customer data for sales recommendations or answering support questions with escalation to human representatives.
 
 - **Autonomous agents** operate independently, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
 
