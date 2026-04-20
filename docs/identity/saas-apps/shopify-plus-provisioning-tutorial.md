@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/20/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Shopify Plus so that I can streamline the user management process and ensure that users have the appropriate access to Shopify Plus.
@@ -27,7 +27,7 @@ This article describes the steps you need to perform in both Shopify Plus and Mi
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Verify your domain and create a SAML configuration. You can only manage users who are associated with a verified domain.
 
 ## Step 1: Plan your provisioning deployment
@@ -41,11 +41,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Login to [Shopify Plus organization admin](https://shopify.plus). Navigate to **Users > Security**.
 
-2. Navigate to the **SCIM Integration** section, select **Generate API token**.
+1. Navigate to the **SCIM Integration** section, select **Generate API token**.
 
-3. Copy and save the generated token. This value is entered in the **Secret Token** field in the Provisioning tab of your Shopify Plus application.
+1. Copy and save the generated token. This value is entered in the **Secret Token** field in the Provisioning tab of your Shopify Plus application.
 
-4. The base URL is `https://shopifyscim.com/scim/v2/`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Shopify Plus application.
+1. The base URL is `https://shopifyscim.com/scim/v2/`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Shopify Plus application.
 
 <a name='step-3-add-shopify-plus-from-the-azure-ad-application-gallery'></a>
 
@@ -63,38 +63,41 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-shopify-plus-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Shopify Plus in Microsoft Entra ID:
+### Configure automatic user provisioning for Shopify Plus in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Shopify Plus**.
 
-	![The Shopify Plus link in the Applications list](common/all-applications.png)
+	![Screenshot of Shopify Plus link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Shopify Plus Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Shopify Plus. If the connection fails, ensure your Shopify Plus account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Shopify Plus Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Shopify Plus. If the connection fails, ensure your Shopify Plus account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Shopify Plus**.
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Shopify Plus in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Shopify Plus for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Shopify Plus API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Shopify Plus in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Shopify Plus for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Shopify Plus API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for Filtering|Required by Shopify Plus
    |---|---|---|---
@@ -103,23 +106,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean|
    |name.givenName|String||&check;
    |name.familyName|String||&check;
-   
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Shopify Plus, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Shopify Plus by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
