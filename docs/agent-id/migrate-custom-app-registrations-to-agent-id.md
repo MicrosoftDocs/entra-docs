@@ -15,12 +15,7 @@ ai-usage: ai-assisted
 
 Microsoft Entra Agent ID provides specialized identity constructs that enable secure authentication and authorization patterns for AI agents. Agent identity blueprints serve as governance templates, and agent identities are the runtime principals your agents use to authenticate, acquire tokens, and access resources. These constructs address the requirements of autonomous AI systems that differ from traditional user and application identities.
 
-This guide walks you through migrating agents that authenticate using standard Microsoft Entra app registrations or service principals — where you own the code and the identity configuration — to Agent ID.
-
-> [!TIP]
-> For agents created through Microsoft Copilot Studio, see [Migrate Copilot Studio agents to Agent ID](migrate-copilot-studio-agents-to-agent-id.md).
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
+This guide walks you through migrating agents that authenticate using standard Microsoft Entra app registrations or service principals, where you own the code and the identity configuration, to Agent ID. For agents created through Microsoft Copilot Studio, see [Migrate Copilot Studio agents to Agent ID](migrate-copilot-studio-agents-to-agent-id.md).
 
 ## Why migrate to Agent ID?
 
@@ -45,7 +40,7 @@ Migrating to Agent ID is a structured adoption journey, not a single-step switch
 
 | Phase | Goal | Key output |
 |---|---|---|
-| **Discover** | Inventory all agent-related identities in your tenant — service principals, app registrations, and their usage signals. | A structured report or dashboard with identity metadata, sign-in activity, permissions, ownership, and builder origin for each agent. |
+| **Discover** | Inventory all agent-related identities in your tenant: service principals, app registrations, and their usage signals. | A structured report or dashboard with identity metadata, sign-in activity, permissions, ownership, and builder origin for each agent. |
 | **Classify** | Categorize each identity by usage level and origin. | A prioritized action plan: which identities to clean up, which to migrate, and which to leave as-is. |
 | **Migrate** | Create Agent ID resources (blueprint + agent identity) and update your agents to use them. | New agent identities running on Agent ID with matching permissions and credentials. |
 | **Validate and decommission** | Confirm the new identity works end-to-end, parallel-run if needed, then retire the legacy identity with safeguards. | Legacy identities removed; agents running fully on Agent ID. |
@@ -60,20 +55,19 @@ Scan your tenant for all service principals that might represent AI agents. The 
 
 For each candidate service principal, capture:
 
-- **Identity metadata** — display name, application ID, object ID, creation date, tenant.
-- **Ownership** — assigned owner(s), owning team or department (where available).
-- **Sign-in activity** — last interactive and non-interactive sign-in, sign-in count over 30/90/180 days.
-- **Audit log signals** — source system that created the SP, creation event, recent modifications or permission changes.
-- **Tag analysis** — tags applied to the SP; check whether it carries any builder-specific tag patterns.
-- **API permissions** — delegated and application permissions granted, admin consent status, permission sensitivity level.
-- **Other identity configurations** — credentials used, OAuth flows, custom attributes, RBAC role assignments, redirect URIs, and any downstream dependencies. You need this information during migration to correctly recreate the identity as an Agent ID.
+- **Identity metadata:** display name, application ID, object ID, creation date, tenant.
+- **Ownership:** assigned owner(s), owning team or department (where available).
+- **Sign-in activity:** last interactive and non-interactive sign-in, sign-in count over 30/90/180 days.
+- **Audit log signals:** source system that created the SP, creation event, recent modifications or permission changes.
+- **Tag analysis:** tags applied to the SP; check whether it carries any builder-specific tag patterns.
+- **API permissions:** delegated and application permissions granted, admin consent status, permission sensitivity level.
+- **Other identity configurations:** credentials used, OAuth flows, custom attributes, RBAC role assignments, redirect URIs, and any downstream dependencies. You need this information during migration to correctly recreate the identity as an Agent ID.
 
-> [!TIP]
-> You can pull most of these configuration details programmatically using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
+You can pull most of these configuration details programmatically using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
 
 ### Heuristic discovery (log and permission analysis)
 
-For service principals that carry no tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive — weight them in combination to produce a confidence score.
+For service principals that carry no tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive. Weight them in combination to produce a confidence score.
 
 | Signal category | What to look for | Why it indicates an agent |
 |---|---|---|
@@ -86,8 +80,7 @@ For service principals that carry no tags, use behavioral and configuration sign
 
 To operationalize heuristic discovery, query service principal sign-in logs and permission grants programmatically using Microsoft Graph. For tenants with extended log retention (through Microsoft Sentinel or another SIEM), expand the analysis window beyond Microsoft Entra's default 30-day sign-in retention to improve signal accuracy.
 
-> [!IMPORTANT]
-> Heuristic discovery produces candidates, not confirmed agents. Review every match before proceeding to classification. False positives — such as backend microservices that call Azure OpenAI but aren't autonomous agents — are common and expected.
+Heuristic discovery produces candidates, not confirmed agents. Review every match before proceeding to classification. False positives, such as backend microservices that call Azure OpenAI but aren't autonomous agents, are common and expected.
 
 ### Organizational discovery
 
@@ -105,10 +98,10 @@ For tenants with large numbers of app registrations, publish the migration inven
 
 Run these methods in order:
 
-1. **Tag-based scan** — Identify all tagged agents automatically. These are confirmed candidates.
-1. **Heuristic analysis** — Scan remaining untagged service principals for behavioral signals. Flag high-confidence matches as probable candidates.
-1. **CMDB reconciliation** — Match remaining service principals against your asset inventory to catch agents registered under non-obvious names.
-1. **Developer attestation** — Publish the residual unmatched list to application owners for final classification.
+1. **Tag-based scan:** Identify all tagged agents automatically. These are confirmed candidates.
+1. **Heuristic analysis:** Scan remaining untagged service principals for behavioral signals. Flag high-confidence matches as probable candidates.
+1. **CMDB reconciliation:** Match remaining service principals against your asset inventory to catch agents registered under non-obvious names.
+1. **Developer attestation:** Publish the residual unmatched list to application owners for final classification.
 
 ## Phase 2: Classify
 
@@ -116,12 +109,11 @@ Using the discovery report, classify each service principal by usage level, whic
 
 | Usage | Signals | Recommended action |
 |---|---|---|
-| **Low** | No sign-in activity in 30+ days, no owner assigned, no API permissions in active use. | Candidate for cleanup. Skip migration — decommission directly (Phase 4). |
+| **Low** | No sign-in activity in 30+ days, no owner assigned, no API permissions in active use. | Candidate for cleanup. Skip migration; decommission directly (Phase 4). |
 | **Medium** | Some recent sign-in activity, non-production permissions, identifiable owner. | Candidate for migration. Proceed through Phases 3–4 with standard validation. |
 | **High** | Frequent sign-ins, production API permissions, active workflows dependent on the SP. | Migrate with extreme caution. Requires extended parallel run (Phase 4), rollback plan, and stakeholder sign-off. |
 
-> [!NOTE]
-> The 30-day sign-in threshold is based on Microsoft Entra's default retention period. If your organization has extended audit log retention (through Sentinel or another SIEM), adjust thresholds accordingly.
+The 30-day sign-in threshold is based on Microsoft Entra's default retention period. If your organization has extended audit log retention (through Sentinel or another SIEM), adjust thresholds accordingly.
 
 ## Phase 3: Migrate
 
@@ -134,10 +126,9 @@ Steps 1 through 3 target the Microsoft Entra tenant. Step 4 targets changes to y
 
 ### Step 1: Create an agent identity blueprint
 
-> [!NOTE]
-> **Required Microsoft Entra roles:** Agent ID Developer or Agent ID Administrator to create blueprints and agent identities, and Privileged Role Administrator to grant Microsoft Graph application permissions.
+To complete this step, you need the **Agent ID Developer** or **Agent ID Administrator** role to create blueprints and agent identities, and the **Privileged Role Administrator** role to grant Microsoft Graph application permissions.
 
-The blueprint is the governance template for your agent. It defines credentials and permission policies that all agent identities created under it inherit.
+The blueprint is the governance template for your agent.It defines credentials and permission policies that all agent identities created under it inherit.
 
 Create the blueprint using Microsoft Graph:
 
@@ -202,7 +193,7 @@ Content-Type: application/json
 
 ### Step 2: Create the agent identity
 
-The agent identity is the runtime principal your agent uses. It's created under a blueprint and must have a **sponsor** — a human user or group accountable for the agent.
+The agent identity is the runtime principal your agent uses. It's created under a blueprint and must have a **sponsor**, a human user or group accountable for the agent.
 
 ```http
 POST https://graph.microsoft.com/beta/serviceprincipals/Microsoft.Graph.AgentIdentity
@@ -218,15 +209,14 @@ Content-Type: application/json
 }
 ```
 
-> [!NOTE]
-> Record the agent identity's client ID from the response. You need this value when updating your application code.
+Record the agent identity's client ID from the response. You need this value when updating your application code.
 
 ### Step 3: Configure permissions
 
 Replicate the API permissions from your original app registration onto the agent identity. You have two options:
 
-- **Direct assignment** — Assign permissions directly to the agent identity. Use this option when each agent identity needs different permissions.
-- **Inherited permissions** — Configure permissions on the blueprint and enable inheritance. Use this option when all agent identities under a blueprint share the same permissions.
+- **Direct assignment:** Assign permissions directly to the agent identity. Use this option when each agent identity needs different permissions.
+- **Inherited permissions:** Configure permissions on the blueprint and enable inheritance. Use this option when all agent identities under a blueprint share the same permissions.
 
 For Azure RBAC role assignments, assign the new agent identity's service principal to the same roles:
 
@@ -268,16 +258,15 @@ For agents with high usage, run the old and new identities side by side before c
 1. Gradually increase traffic to the new instance over 1–2 weeks.
 1. Once 100% of traffic runs on the new identity, proceed to decommission.
 
-> [!TIP]
-> Use feature flags or traffic-splitting infrastructure to control the rollout. This approach lets you revert to the old identity instantly if issues arise.
+Use feature flags or traffic-splitting infrastructure to control the rollout. This approach lets you revert to the old identity instantly if issues arise.
 
 ### Decommission safeguards
 
 Once the new Agent ID is validated and carrying production traffic, decommission the old identity. Follow these safeguards to minimize risk:
 
-- **Pre-deletion snapshot** — Export the SP's metadata, permissions, and audit history before deletion. This export provides a rollback reference if anything was missed during validation.
-- **Phased batches** — If you're decommissioning multiple identities, delete in small batches (20–50 SPs per wave) rather than bulk-deleting all at once.
-- **Soft-delete first** — Use Microsoft Entra's soft-delete capability (30-day recycle bin for applications) before hard deletion. This gives you a recovery window.
+- **Pre-deletion snapshot:** Export the SP's metadata, permissions, and audit history before deletion. This export provides a rollback reference if anything was missed during validation.
+- **Phased batches:** If you're decommissioning multiple identities, delete in small batches (20-50 SPs per wave) rather than bulk-deleting all at once.
+- **Soft-delete first:** Use Microsoft Entra's soft-delete capability (30-day recycle bin for applications) before hard deletion. This gives you a recovery window.
 
 ### Decommission steps
 
