@@ -58,7 +58,7 @@ The following changes to Conditional Access policies trigger an activity-based r
 - A policy state is changed from any other state, such as **Off** or **Report-only** to **On**.
 - A new policy is created with the state set to **On**.
 
-The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent changes, the agent enforces a six-hour cooldown between activity-based runs. For example:
+The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent changes, the agent enforces a four-hour cooldown between activity-based runs. For example:
 
 | Time | Event | Agent action |
 |---|---|---|
@@ -69,6 +69,8 @@ The agent checks for these changes every five minutes. When a qualifying change 
 | Minute 12 | Another enabled policy is modified. | No action yet. |
 | Minute 15 | Agent detects the change. | Cooldown active. No run. |
 | Hour 4 | Cooldown expires. | Agent runs. |
+
+Activity-based runs don't replace the daily scheduled run. If enabled, the daily run always occurs regardless of how many activity-based runs happen.
 
 - **New tenants**: Activity-based runs are enabled by default. You can turn them off in the agent settings.
 - **Existing tenants**: Activity-based runs are opt-in. You can enable them in the agent settings.

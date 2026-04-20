@@ -36,7 +36,7 @@ This article provides an overview of the logic behind the suggestions and report
 ### Limitations
 
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs.
+- For policy consolidation, each agent run looks at 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
