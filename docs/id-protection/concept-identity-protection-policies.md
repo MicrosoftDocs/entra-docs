@@ -52,7 +52,7 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 - If a user is assigned to multiple policies, precedence applies: **Require risk remediation** overrides **Require password change**, and **Block** overrides all others. To avoid conflicts, assign each user to only one of these policies at a time.
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy to ensure that after session revocation, end users are immediately prompted to reauthenticate with the specified authentication strength.
 - **Require risk remediation** is not supported for external and guest users because Microsoft Entra ID doesn't support session revocation for those users.
-- During the remediation flow, other Conditional Access policies will not be enforced when ID Protection performs delegated authentication to revoke session tokens.
+- During risk remediation, Microsoft Entra ID uses a dedicated, secure flow to perform actions such as session revocation. To ensure remediation is not blocked, this flow is allowed to proceed without being impacted by other Conditional Access policies.
   - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `2e5ecfc8-ea79-48bd-8140-c19324acb278`
   - `ResourceId`: `00000003-0000-0000-c000-000000000000`
 
