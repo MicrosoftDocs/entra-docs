@@ -70,9 +70,6 @@ The agent checks for these changes every five minutes. When a qualifying change 
 | Minute 15 | Agent detects the change. | Cooldown active. No run. |
 | Hour 4 | Cooldown expires. | Agent runs. |
 
-
-:::image type="content" source="media/conditional-access-agent-optimization-settings/activity-based-run-diagram.png" alt-text="Diagram shows when the flow starts, 5 minutes later the agent detects the change and again 6, 10, 12, and 15 minutes later so a cooldown period is active so the agent won't run again for 4 hours." lightbox="media/conditional-access-agent-optimization-settings/activity-based-run-diagram-expanded.png":::Activity-based runs don't replace the daily scheduled run. The daily run always occurs regardless of how many activity-based runs happen.
-
 - **New tenants**: Activity-based runs are enabled by default. You can turn them off in the agent settings.
 - **Existing tenants**: Activity-based runs are opt-in. You can enable them in the agent settings.
 
