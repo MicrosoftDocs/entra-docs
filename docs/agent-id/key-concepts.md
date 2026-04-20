@@ -50,9 +50,7 @@ Regular Microsoft Entra user accounts are designed for human sign-in patterns. A
 
 The agent identity platform supports two primary patterns for how agents operate and authenticate, each serving different use cases and security requirements.
 
-- **Interactive agents** are agents that sign-in a user and taken action in response to user prompts, often via a chat interface. These agents act *on behalf of* the signed-in user, utilizing that user's authorization to perform actions in various systems. Interactive agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users. Tokens issued to interactive agents are often called user tokens.
-
-- **Autonomous agents** are agents that perform actions using their own identity; not a human user's identity. These agents often run in the background and make autonomous decisions about what actions to take. Tokens issued to autonomous agents are often called agent tokens when an agent identity is authenticated. They can also be called agent's user account tokens when an agent's user account is authenticated.
+[!INCLUDE [interactive-autonomous-agents](includes/interactive-autonomous-agents.md)]
 
 ## Agent owners, sponsors, and managers
 
