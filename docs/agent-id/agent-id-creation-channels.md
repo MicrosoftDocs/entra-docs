@@ -60,16 +60,16 @@ Creating an agent identity with these tools requires one of the following permis
 
 | Scenario | Permissions required |
 | --- | --- |
-| User creates agent identity via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Administrator** role. |
-| Client creates agent identity via Microsoft Graph, using role-based delegated permissions | User must be assigned **Agent ID Administrator** role. Client must be granted **AgentIdentity.Create.All** delegated permission. |
-| Client creates agent identity via Microsoft Graph, using owner-based delegated permissions | User must be the first **owner** of the agent identity blueprint or agent identity blueprint principal. Client must be granted **AgentIdentity.Create.All**, **AgentIdentity.ReadWrite.All**, or **AgentIdentity.ReadWrite.ManagedBy** delegated permission. No Agent ID role is required. |
+| User creates agent identity via Microsoft Entra admin center, Microsoft Graph, or PowerShell/CLI | User must be assigned **Agent ID Administrator**, **Agent ID Administrator**, or **AI Administrator** role. |
+| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be assigned **Agent ID Administrator** role. Client must be granted **AgentIdentity.Create.All** or **AgentIdentity.ReadWrite.Al** delegated permission. |
+| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be the first **owner** of the agent identity blueprint or agent identity blueprint principal. Client must be granted **AgentIdentity.Create.All**, **AgentIdentity.ReadWrite.All**, or **AgentIdentity.ReadWrite.ManagedBy** delegated permission. No Agent ID role is required. |
 | Client creates agent identity via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
 
 Creating an agent's user account with these tools requires one of the following permissions:
 
 | Scenario | Permissions required |
 | --- | --- |
-| User creates agent's user account via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Administrator** or **User Administrator** role. |
+| User creates agent's user account via Microsoft Entra admin center, Microsoft Graph, or PowerShell/CLI | User must be assigned **Agent ID Administrator** or **User Administrator** role. |
 | Client creates agent's user account via Microsoft Graph, using delegated permissions | User must have the roles in the previous row. Client must be granted **AgentIdUser.ReadWrite.All** delegated permission. |
 | Client creates agent's user account via Microsoft Graph, using application permissions | Client must be granted **AgentIdUser.ReadWrite.All** application permission. |
 

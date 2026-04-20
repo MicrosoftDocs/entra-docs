@@ -24,7 +24,7 @@ These administrative relationships must be configured for each Agent ID object a
 
 ## Owners
 
-Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Service principals can also be set as owners, enabling automated management of agent identities.
+Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Service principals, including agent identity blueprint principals and agent identities, can also be set as owners, enabling automated management of agent identities.
 
 ### Owner responsibilities
 
