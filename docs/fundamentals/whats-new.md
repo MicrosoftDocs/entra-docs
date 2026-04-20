@@ -936,6 +936,11 @@ Microsoft Entra ID now supports synced passkeys stored in native and third‑par
 ### Public Preview - Unified Entra App Gallery
 
 **Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication 
+ 
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
+ 
 **Service category:** Enterprise Apps  
 **Product capability:** Access Control  
 
