@@ -44,8 +44,6 @@ In addition to the daily scheduled run, the agent can trigger runs when changes 
 - If you haven't enabled the Conditional Access Optimization Agent, activity-based runs are enabled by default and can be turned off in the agent settings.
 - If the Conditional Access Optimization Agent is already running in your tenant, activity-based runs are opt-in and can be enabled in the agent settings.
 
-## Trigger
-
 ### Scheduled runs
 
 The agent is configured to run automatically every 24 hours, based on when it was initially configured. You can also manually run the agent at any time.
@@ -70,7 +68,7 @@ The agent checks for these changes every five minutes. When a qualifying change 
 | Minute 10 | Agent detects the change. | Cooldown active. No run. |
 | Minute 12 | Another enabled policy is modified. | No action yet. |
 | Minute 15 | Agent detects the change. | Cooldown active. No run. |
-| Hour 6 | Cooldown expires. | Agent runs. |
+| Hour 4 | Cooldown expires. | Agent runs. |
 
 Activity-based runs don't replace the daily scheduled run. The daily run always occurs regardless of how many activity-based runs happen.
 
