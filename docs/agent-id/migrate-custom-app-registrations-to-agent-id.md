@@ -19,7 +19,7 @@ This guide walks you through migrating agents that authenticate using standard M
 
 ## Why migrate to Agent ID?
 
-If you built AI agents before Agent ID was available, your agents are likely using Microsoft Entra app registrations or service principals for authentication. While these identities let agents communicate with services like Azure Bot Service, Microsoft Teams, and Bot Framework skills, Microsoft Entra treats them like any other application. They don't take advantage of the governance capabilities that Agent ID provides.
+If you built AI agents before Agent ID was available, your agents likely use Microsoft Entra app registrations or service principals for authentication. While these identities let agents communicate with services like Azure Bot Service, Microsoft Teams, and Bot Framework skills, Microsoft Entra treats them like any other application. They don't take advantage of the governance capabilities that Agent ID provides.
 
 [!INCLUDE [migrate-why-agent-id](includes/migrate-why-agent-id.md)]
 
@@ -30,9 +30,9 @@ If you built AI agents before Agent ID was available, your agents are likely usi
 Before starting the migration, ensure you have:
 
 - An existing AI agent that uses an app registration or service principal for authentication.
-- The required Microsoft Entra roles are assigned: **Agent ID Developer** or **Agent ID Administrator** to create blueprints and agent identities, and **Privileged Role Administrator** to grant Microsoft Graph application permissions.
-- You have access to the Microsoft Graph v1.0 API.
-- You're familiar with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
+- The required Microsoft Entra roles: **Agent ID Developer** or **Agent ID Administrator** to create blueprints and agent identities, and **Privileged Role Administrator** to grant Microsoft Graph application permissions.
+- Access to the Microsoft Graph v1.0 API.
+- Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
 
 ## How to migrate to agent identities
 
@@ -57,28 +57,29 @@ For each candidate service principal, capture:
 
 - **Identity metadata:** display name, application ID, object ID, creation date, tenant.
 - **Ownership:** assigned owner(s), owning team or department (where available).
-- **Sign-in activity:** last interactive and non-interactive sign-in, sign-in count over 30/90/180 days.
-- **Audit log signals:** source system that created the SP, creation event, recent modifications or permission changes.
-- **Tag analysis:** tags applied to the SP; check whether it carries any builder-specific tag patterns.
+- **Sign-in activity:** last interactive and non-interactive sign-in, sign-in count over 30, 90, and 180 days.
+- **Audit log signals:** source system that created the service principal, creation event, recent modifications or permission changes.
+- **Tag analysis:** tags applied to the service principal; check whether it carries any builder-specific tag patterns.
 - **API permissions:** delegated and application permissions granted, admin consent status, permission sensitivity level.
 - **Other identity configurations:** credentials used, OAuth flows, custom attributes, RBAC role assignments, redirect URIs, and any downstream dependencies. You need this information during migration to correctly recreate the identity as an Agent ID.
 
-You can pull most of these configuration details programmatically using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
+> [!TIP]
+> You can pull most of these configuration details programmatically by using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
 
 ### Heuristic discovery (log and permission analysis)
 
-For service principals that carry no tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive. Weight them in combination to produce a confidence score.
+For service principals that don't have tags, use behavioral and configuration signals to identify likely agent identities. No single signal is definitive. Weight them in combination to produce a confidence score.
 
 | Signal category | What to look for | Why it indicates an agent |
 |---|---|---|
 | **API permissions** | Application permissions targeting Bot Framework, Azure OpenAI, Azure AI Services, or Cognitive Services APIs. | Agents require these APIs to function; traditional applications rarely request them together. |
-| **Redirect URIs** | URIs pointing to `token.botframework.com`, `botframework.com`, or Azure Bot Service endpoints. | These are Bot Framework callback URLs used exclusively by conversational agents. |
+| **Redirect URIs** | URIs pointing to `token.botframework.com`, `botframework.com`, or Azure Bot Service endpoints. | These URIs are Bot Framework callback URLs used exclusively by conversational agents. |
 | **Sign-in patterns** | Non-interactive or service principal sign-ins with high frequency and no associated user context. | Agents authenticate autonomously; human-facing apps typically have interactive sign-in activity. |
-| **Token audience** | Tokens requested for `https://api.botframework.com`, Azure OpenAI endpoints, or AI Services endpoints. | The token audience reveals what resource the SP is calling. |
-| **Resource group association** | SP linked to a resource group containing Bot Service, Azure OpenAI, or AI Search resources. | Co-location with AI infrastructure suggests the SP serves an agent workload. |
+| **Token audience** | Tokens requested for `https://api.botframework.com`, Azure OpenAI endpoints, or AI Services endpoints. | The token audience reveals what resource the service principal is calling. |
+| **Resource group association** | Service principal linked to a resource group containing Bot Service, Azure OpenAI, or AI Search resources. | Co-location with AI infrastructure suggests the service principal serves an agent workload. |
 | **Naming conventions** | Display names containing terms like `agent`, `bot`, `copilot`, `assistant`, or `orchestrator`. | While not deterministic, naming patterns correlate strongly with agent workloads when combined with other signals. |
 
-To operationalize heuristic discovery, query service principal sign-in logs and permission grants programmatically using Microsoft Graph. For tenants with extended log retention (through Microsoft Sentinel or another SIEM), expand the analysis window beyond Microsoft Entra's default 30-day sign-in retention to improve signal accuracy.
+To operationalize heuristic discovery, query service principal sign-in logs and permission grants programmatically by using Microsoft Graph. For tenants with extended log retention (through Microsoft Sentinel or another SIEM), expand the analysis window beyond Microsoft Entra's default 30-day sign-in retention to improve signal accuracy.
 
 Heuristic discovery produces candidates, not confirmed agents. Review every match before proceeding to classification. False positives, such as backend microservices that call Azure OpenAI but aren't autonomous agents, are common and expected.
 
@@ -98,7 +99,7 @@ For tenants with large numbers of app registrations, publish the migration inven
 
 Run these methods in order:
 
-1. **Tag-based scan:** Identify all tagged agents automatically. These are confirmed candidates.
+1. **Tag-based scan:** Automatically identify all tagged agents. These agents are confirmed candidates.
 1. **Heuristic analysis:** Scan remaining untagged service principals for behavioral signals. Flag high-confidence matches as probable candidates.
 1. **CMDB reconciliation:** Match remaining service principals against your asset inventory to catch agents registered under non-obvious names.
 1. **Developer attestation:** Publish the residual unmatched list to application owners for final classification.
@@ -148,7 +149,7 @@ Content-Type: application/json
 }
 ```
 
-Or using PowerShell:
+Or use PowerShell:
 
 ```powershell
 $body = @{
@@ -178,7 +179,7 @@ The recommended credentials depend on your hosting environment:
 |---|---|---|
 | Azure (App Service, AKS, Container Apps, VMs) | User-assigned managed identity | Most secure for production. No secret management required. |
 | Non-Azure cloud (AWS, GCP) | Federated identity credential with external IDP | Configure workload identity federation with your cloud provider. |
-| Local development | Client credentials/certificate for testing only | Use for local testing only. |
+| Local development | Client credentials or certificate for testing only | Use for local testing only. |
 
 Create the blueprint service principal:
 
@@ -193,7 +194,7 @@ Content-Type: application/json
 
 ### Step 2: Create the agent identity
 
-The agent identity is the runtime principal your agent uses. It's created under a blueprint and must have a **sponsor**, a human user or group accountable for the agent.
+The agent identity is the runtime principal your agent uses. Create it under a blueprint and assign a **sponsor**, a human user or group accountable for the agent.
 
 ```http
 POST https://graph.microsoft.com/beta/serviceprincipals/Microsoft.Graph.AgentIdentity
@@ -229,7 +230,7 @@ New-AzRoleAssignment `
 
 ### Step 4: Update application code
 
-Agent ID uses a two-stage token acquisition model. Your agent first acquires a bootstrap token using the blueprint's credential, then exchanges it for an agent-specific token. For more guidance on updating your code, see these scenarios:
+Agent ID uses a two-stage token acquisition model. Your agent first acquires a bootstrap token by using the blueprint's credential, then exchanges it for an agent-specific token. For more guidance on updating your code, see these scenarios:
 
 - [Autonomous agent authentication and authorization flow](autonomous-agent-authentication-authorization-flow.md) for the complete token acquisition walkthrough.
 - [Interactive agent authentication and authorization flow](interactive-agent-authentication-authorization-flow.md) for interactive agents guidance, code samples, and token configuration. The token flow in these agents adds an OBO exchange where a user token is exchanged for an agent token with user context.
@@ -274,7 +275,7 @@ Once the new Agent ID is validated and carrying production traffic, decommission
 1. Revoke Azure RBAC role assignments for the old service principal.
 1. Delete or rotate client secrets and certificates on the old app registration.
 1. Delete the app registration (enters 30-day soft-delete).
-1. After 30 days, confirm the app registration has been permanently deleted or hard-delete if needed.
+1. After 30 days, confirm the app registration is permanently deleted or hard-delete if needed.
 
 ## Troubleshooting
 
