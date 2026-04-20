@@ -111,9 +111,15 @@ To use the health alert investigator:
 
 1. From the active alert page, select the **Investigate with Copilot** button to launch the health alert investigator.
 
+    :::image type="content" source="media/howto-investigate-health-scenario-alerts/investigate-with-copilot.png" alt-text="Screenshot of the active alert page with the Investigate with Copilot button highlighted." lightbox="media/howto-investigate-health-scenario-alerts/investigate-with-copilot.png":::
+
 1. The health alert investigator performs a correlation analysis between the health metrics that led to the alert and the tenant's activity logs and configuration data. When the analysis is complete, the **Investigate health alert** card will display a summary of findings.
 
 1. Click the **Show Copilot investigation** button to display a detailed report of findings with suggested next steps to resolve the root cause.
+
+    :::image type="content" source="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-button.png" alt-text="Screenshot of the Investigate health alert card with the Show Copilot investigation button highlighted." lightbox="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-button.png":::
+
+    :::image type="content" source="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-results.png" alt-text="Screenshot of the Copilot investigation results showing the detailed report of findings and suggested next steps." lightbox="media/howto-investigate-health-scenario-alerts/show-copilot-investigation-results.png":::
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
