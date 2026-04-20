@@ -41,7 +41,7 @@ Before you begin, ensure you have the following prerequisites.
 ### Required accounts and permissions
 
 - Access to a **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities. The first owner of an agent identity blueprint can create an agent identity for that blueprint without an Agent ID role.
+  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities. Any owner of an agent identity blueprint can create an agent identity for that blueprint without an Agent ID role.
   - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) for full administrative access to Agent ID resources.
 
 [!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
@@ -108,7 +108,7 @@ The AI agent reads the instruction file and begins the guided setup. It creates 
 The AI agent pauses at specific points to collect input from you:
 
 - **Display name**: The display name for your agent identity blueprint (for example, "Contoso Budget Agent").
-- **Sponsor**: The user who is accountable for the agent. Defaults to the currently signed-in user.
+- **Sponsor**: The user or group who is accountable for the agent. Defaults to the currently signed-in user.
 - **Owner**: The user or service principal who can make technical changes to the blueprint. Optional but recommended.
 - **Credential type**: Whether to use a managed identity (recommended for production) or a certificate or client secret (for local development).
 - **Agent identity count**: How many agent identities to create under this blueprint.
@@ -160,15 +160,15 @@ Creating an agent identity blueprint (`POST /applications`) does **not** automat
 
 The AI-guided setup always creates the blueprint principal immediately after the blueprint. It also handles the idempotent case. If a previous run created the blueprint but crashed before creating the principal, the setup detects this event and creates the missing principal.
 
-### Sponsors are required and must be users
+### Sponsors are required
 
-Both blueprint and agent identity creation require a `sponsors@odata.bind` field. Without it, you receive:
+Sponsors are required and can be users, groups with dynamic membership, or unified groups. Both blueprint and agent identity creation require a `sponsors@odata.bind` field.  Without it, you receive:
 
 ```
 400: No sponsor specified. Please provide at least one sponsor.
 ```
 
-Sponsors must reference **User** objects. Service principals and groups are **not** accepted as sponsors for blueprints. Use the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The AI-guided setup resolves the current user's object ID and uses it as the default sponsor.
+Sponsors must reference **User** objects or groups with dynamic membership or unified groups. Service principals and other types of groups are **not** accepted as sponsors for blueprints. Use the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The AI-guided setup resolves the current user's object ID and uses it as the default sponsor.
 
 ### Azure CLI tokens are rejected by Agent ID APIs
 
