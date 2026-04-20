@@ -4,17 +4,29 @@ items:
   items:
     - name: Overview of External ID in external tenants
       href: overview-customers-ciam.md
-    - name: Planning guide
-      href: concept-planning-your-solution.md
+    - name: Supported features
+      href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Services and integration partners
+      href: services-integration-partners.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
-- name: Fundamentals
+- name: Get started
   expanded: false
   items:
+    - name: Planning guide
+      href: concept-planning-your-solution.md
     - name: Create a tenant
       href: quickstart-tenant-setup.md
+    - name: Choose your authentication approach
+      items:
+        - name: Native authentication overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Enterprise applications
@@ -36,12 +48,22 @@ items:
 - name: Migrate to External ID
   expanded: false
   items:
-    - name: Migrate to External ID
+    - name: Overview
       href: migrate-to-external-id.md
-    - name: Migrate users to External ID
+    - name: Migrate users and credentials
       href: how-to-migrate-users.md
-    - name: How to migrate passwords
+    - name: Migrate passwords (JIT)
       href: how-to-migrate-passwords-just-in-time.md
+    - name: Migrate from Azure AD B2C
+      items:
+        - name: Plan your migration
+          href: plan-your-migration-from-b2c-to-external-id.md
+        - name: Standard migration
+          href: migrate-from-b2c-to-external-id.md
+        - name: Enable HSC mode
+          href: enable-external-id-high-scale-compatibility-mode.md
+        - name: Troubleshoot HSC mode
+          href: troubleshoot-high-scale-compatibility-mode.md
 - name: Security
   expanded: false
   items:
@@ -49,7 +71,7 @@ items:
       href: concept-security-customers.md
     - name: Use application roles to manage access
       href: how-to-use-app-roles-customers.md
-    - name: Web Application Firewall partners
+    - name: Edge platform integrations
       items: 
       - name: Azure Web Application Firewall
         href: tutorial-configure-external-id-web-app-firewall.md
@@ -57,8 +79,18 @@ items:
         href: how-to-configure-waf-integration.md
       - name: Akamai
         href: how-to-configure-akamai-integration.md
-    - name: Fraud protection integration
-      href: how-to-integrate-fraud-protection.md             
+    - name: Bot & fraud protection
+      items:
+      - name: Web-hosted bot protection (sign-up)
+        href: how-to-integrate-fraud-protection.md
+      - name: Native API bot protection (sign-up)
+        href: tutorial-third-party-bot-protection-native-api-sign-up.md
+      - name: Native API account takeover protection (sign-in)
+        href: tutorial-third-party-account-take-over-protection-native-api.md
+    - name: MFA security
+      items:
+      - name: Native API fraud protection for SMS MFA
+        href: /entra/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json            
 - name: Authentication
   expanded: false
   items:
@@ -72,14 +104,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
-    - name: Native authentication overview
+    - name: Native authentication
       items:
-        - name: Native authentication overview
-          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication challenge types
-          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Native authentication web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
           href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication how-to guides
@@ -142,6 +168,12 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Support web fallback
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Register strong authentication method
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Enable MFA
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Add social sign-in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -152,6 +184,12 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant 
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Register strong authentication method
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Enable MFA
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Add social sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js
@@ -249,6 +287,16 @@ items:
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Auto-sign in after sign-up
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: /entra/identity-platform/tutorial-native-authentication-android-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Self-service password reset
                   href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
@@ -266,6 +314,16 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Auto-sign in after sign-up
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add email OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Federated identity provider sign-in and sign-up using web flow
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register email strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add SMS OTP sign-in
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Register SMS strong authentication
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-sms-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Self-service password reset
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
@@ -354,6 +412,8 @@ items:
       items:
         - name: Custom OIDC federation
           href: how-to-custom-oidc-federation-customers.md
+        - name: Microsoft Entra ID federation
+          href: how-to-entra-id-federation-customers.md
         - name: Microsoft account federation
           href: how-to-microsoft-accounts-federation-customers.md
         - name: Azure AD B2C federation

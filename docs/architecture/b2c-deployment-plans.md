@@ -26,7 +26,7 @@ Azure Active Directory B2C (Azure AD B2C) is an identity and access management s
   - See, [Tutorial: Create an Azure Active Directory B2C tenant](/azure/active-directory-b2c/tutorial-create-tenant)
 - Confirm your application types and supported technologies:
   - [Overview of the Microsoft Authentication Library (MSAL)](~/identity-platform/msal-overview.md)
-  - [Develop with open-source languages, frameworks, databases, and tools in Azure](https://azure.microsoft.com/free/open-source/search/?OCID=AID2200277_SEM_f63bcafc4d5f1d7378bfaa2085b249f9:G:s&ef_id=f63bcafc4d5f1d7378bfaa2085b249f9:G:s&msclkid=f63bcafc4d5f1d7378bfaa2085b249f9).
+  - [Develop with open-source languages, frameworks, databases, and tools in Azure](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
   - For back-end services, use the [client credentials](~/identity-platform/msal-authentication-flows.md#client-credentials) flow
 - To migrate from an identity provider (IdP):
   - [Seamless migration](/azure/active-directory-b2c/user-migration#seamless-migration)
@@ -158,7 +158,7 @@ Use the following checklist to enhance application security.
 
 - Authentication method, such as multifactor authentication:
   - Multifactor authentication is recommended for users that trigger high-value transactions or other risk events. For example, banking, finance, and check-out processes.
-  - See, [What authentication and verification methods are available in Microsoft Entra ID?](~/identity/authentication/concept-authentication-methods.md)
+  - See, [What authentication and verification methods are available in Microsoft Entra ID?](~/identity/authentication/overview-authentication.md)
 - Confirm use of anti-bot mechanisms
 - Assess the risk of attempts to create a fraudulent account or sign-in
   - See, [Tutorial: Configure Microsoft Dynamics 365 Fraud Protection with Azure Active Directory B2C](/azure/active-directory-b2c/partner-dynamics-365-fraud-protection)

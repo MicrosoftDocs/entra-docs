@@ -130,12 +130,6 @@
         href: scenarios/sap-template.md
       - name: Deploy SAP NetWeaver AS ABAP 7
         href: scenarios/deploy-sap-netweaver.md
-- name: Access Review Agent (Preview)
-  items:
-  - name: Get started with the Access Review Agent (Preview)
-    href: ~/security-copilot/access-review-agent.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-  - name: Access Review Agent logs and metrics (Preview)
-    href: ~/security-copilot/access-review-agent-logs-metrics.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Security Copilot for Identity Governance
   items:
   - name: Identity Governance and optimization with Microsoft Security Copilot
@@ -230,12 +224,12 @@
       href: what-are-lifecycle-workflows.md  
     - name: Understanding Lifecycle Workflows
       href: understanding-lifecycle-workflows.md
+    - name: Custom Task Extension
+      href: lifecycle-workflow-extensibility.md
     - name: Templates
       href: lifecycle-workflow-templates.md    
     - name: Built-in tasks
-      href: lifecycle-workflow-tasks.md   
-    - name: Custom Task Extension
-      href: lifecycle-workflow-extensibility.md
+      href: lifecycle-workflow-tasks.md
     - name: Versioning
       href: lifecycle-workflow-versioning.md 
     - name: Workflow Audit logs
@@ -411,6 +405,8 @@
           href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
+        - name: Workflow What-if tool (Preview)
+          href: simulate-workflow-execution.md  
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
@@ -449,7 +445,7 @@
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
   - name: Licensing for guest users
-    href: microsoft-entra-id-governance-licensing-for-guest-users.md  
+    href: microsoft-entra-id-governance-licensing-for-guest-users.md
   - name: Services and integration partners
     href: services-and-integration-partners.md
   - name: Best practices for securing ID Governance

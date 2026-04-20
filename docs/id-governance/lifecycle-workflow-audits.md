@@ -3,21 +3,22 @@ title: Auditing Lifecycle Workflows
 description: Information about audit logs with Lifecycle Workflows
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.custom: template-concept, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand how auditing works with lifecycle workflows so that I can track and review workflow activities.
 ---
 
 # Auditing Lifecycle Workflows
 
-Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With audit logs, every action that Lifecycle Workflows complete over a time-frame up to 30 days are recorded.
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle tasks for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. Workflows that aren't processed correctly can lead to many issues in terms of security and compliance. With audit logs, every action that Lifecycle Workflows completes within a timeframe of up to 30 days is recorded.
 
 ## Audit Logs
 
-Every time a workflow is processed, an event is logged. These events are stored in the **Audit Logs** section, and can be used to gain information about workflows for historical, and auditing, purposes. Audit log services, categories, and activities may change frequently.
+Every time a workflow is processed, an event is logged. These events are stored in the **Audit Logs** section, and can be used to gain information about workflows for historical, and auditing, purposes. Audit log services, categories, and activities might change frequently.
 
 :::image type="content" source="media/lifecycle-workflow-audits/audit-logs-concept.png" alt-text="Screenshot of a workflow audit log.":::
 
-On the **Audit Log** page you're presented a sequential list, by date, of every action Lifecycle Workflows has taken. From this information you're able to filter based on the following parameters:
+On the **Audit Log** page, you're presented with a sequential list, by date, of every action Lifecycle Workflows has taken. From this information, you can filter based on the following parameters:
 
 |Filter  |Description  |
 |---------|---------|
@@ -29,10 +30,10 @@ On the **Audit Log** page you're presented a sequential list, by date, of every 
 
 After filtering this information, you're also able to see other information in the log such as:
 
-- **Status**: Whether or not the logged event was successful or not.
+- **Status**: Whether or not the logged event was successful.
 - **Status Reason**: If the event failed, a reason is given why.
 - **Target(s)**: Who the logged event ran for. Information given as their Microsoft Entra object ID.
-- **Initiated by (actor)**: Who did the event being logged. Information given by the user name. 
+- **Initiated by (actor)**: Who did the event being logged. Information given as the user name. 
 
 ## Next steps
 

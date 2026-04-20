@@ -1,11 +1,6 @@
 ---
 title: Get signed in identity
 description: Get the unique identifier for the currently signed in account for Azure CLI so that you can use this identity with role-based access control in Azure to connect to various Azure services.
-author: seesharprun
-ms.author: sidandrews
-ms.reviewer: barclayn
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 04/11/2025
 zone_pivot_groups: interface-portal-cli-powershell
@@ -14,13 +9,16 @@ zone_pivot_groups: interface-portal-cli-powershell
 
 # Get the signed in Microsoft Entra account's identity
 
+
+## Overview
+
 This article gives simple steps to get the identity of the currently signed in account. You can use this identity information later to grant role-based access control access to the signed in account to either manage data or resources in Azure.
 
 The current Azure CLI session could be signed in with a human identity (your account), a managed identity, a workload identity, or a service principal. No matter what type of identity you use with Azure CLI, to steps to get the details of the identity can be similar. For more information, see [Microsoft Entra identity fundamentals](/entra/fundamentals/identity-fundamental-concepts#identity).
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ::: zone pivot="interface-cli"
 

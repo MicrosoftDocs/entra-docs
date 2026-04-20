@@ -46,7 +46,7 @@ $ExePath           = "C:\Program Files\Global Secure Access Client\GlobalSecureA
 # Registry settings for Global Secure Access client, Edge DoH/QUIC, Chrome DoH/QUIC
 $RegistrySettings = @(
     # Global Secure Access-related keys
-    @{ Key="HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"; Name="DisabledComponents"; Type="DWord"; Value=255 },
+    @{ Key="HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"; Name="DisabledComponents"; Type="DWord"; Value=0x20 },
     @{ Key="HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Parameters"; Name="FarKdcTimeout"; Type="DWord"; Value=0 },
     @{ Key="HKLM:\Software\Microsoft\Terminal Server Client"; Name="TimeoutTcpDirectConnection"; Type="DWord"; Value=60 },
     @{ Key="HKLM:\Software\Microsoft\Global Secure Access Client"; Name="HideDisablePrivateAccessButton"; Type="DWord"; Value=0 },
@@ -63,7 +63,7 @@ $RegistrySettings = @(
 # We will only prompt for reboot if this value needed to change.
 $Ipv6ParamsKey                 = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters"
 $Ipv4PrefValueName             = "DisabledComponents"
-$Ipv4PrefDesired               = 255
+$Ipv4PrefDesired               = 0x20
 $WasIpv4PreferredAlreadyCorrect = $false
 try {
     $prop = Get-ItemProperty -Path $Ipv6ParamsKey -Name $Ipv4PrefValueName -ErrorAction Stop

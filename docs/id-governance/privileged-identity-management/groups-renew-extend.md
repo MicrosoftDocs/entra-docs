@@ -1,16 +1,16 @@
 ---
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
-author: barclayn
 ms.reviewer: markwahl-msft
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 12/16/2024
-ms.author: barclayn
+ms.date: 03/23/2026
 ms.custom: pim, sfi-image-nochange
 ---
 
-# Extend or renew PIM for groups assignments 
+# Extend or renew PIM for groups assignments
+
+
+## Overview
 
 Privileged Identity Management (PIM) in Microsoft Entra ID provides controls to manage the access and assignment lifecycle for group membership and ownership. Administrators can assign start and end date-time properties for group membership and ownership. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to administrators of the resource to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access isn't extended.
 
@@ -47,8 +47,8 @@ When the assignment end date-time is within 14 days, the **Extend** command is a
 
 :::image type="content" source="media/pim-for-groups/pim-group-12.png" alt-text="Screenshot of where to extend group assignment pane with a Reason box and details." lightbox="media/pim-for-groups/pim-group-12.png":::
 
->[!NOTE]
->We recommend including the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
+> [!NOTE]
+> Include the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
 
 Administrators receive an email notification requesting that they review the extension request. If a request to extend has already been submitted, an Azure notification appears in the portal.
 
@@ -60,11 +60,11 @@ To view the status of or cancel your request, open the **Pending requests** page
 
 When a user or group submits a request to extend a group assignment, administrators receive an email notification that contains the details of the original assignment and the reason for the request. The notification includes a direct link to the request for the administrator to approve or deny.
 
-In addition to using following the link from email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
+In addition to following the link from the email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
 
-:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the **Approve requests** page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
+:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the Approve requests page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
 
-When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
+When an administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
 :::image type="content" source="media/pim-for-groups/pim-group-15.png" alt-text="Screenshot of where to approve group assignment request with requestor reason, assignment type, start time, end time, and reason." lightbox="media/pim-for-groups/pim-group-15.png":::
 

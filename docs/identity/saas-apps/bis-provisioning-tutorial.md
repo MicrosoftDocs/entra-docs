@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 02/27/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIS so that I can streamline the user management process and ensure that users have the appropriate access to BIS.
@@ -41,13 +41,13 @@ The scenario outlined in this article assumes that you already have the followin
 <a name='step-2-configure-bis-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BIS to support provisioning with Microsoft Entra ID
-To get your credentials for authorization please contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
+To get your credentials for authorization contact  [BIS Support](mailto:help@bistrainer.com) or your Account's Manager.
 
 <a name='step-3-add-bis-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add BIS from the Microsoft Entra application gallery
 
-Add BIS from the Microsoft Entra application gallery to start managing provisioning to BIS. If you have previously setup BIS for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add BIS from the Microsoft Entra application gallery to start managing provisioning to BIS. If you have previously setup BIS for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -74,21 +74,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of setting Provisioning Mode to automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your BIS Tenant URL as `https://www.bistrainer.com/scim` and corresponding Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to BIS. If the connection fails, ensure your BIS account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your BIS Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to BIS. If the connection fails, ensure your BIS account has the required admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-1. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to BIS**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to BIS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BIS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the BIS API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -119,19 +121,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for BIS, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to BIS by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

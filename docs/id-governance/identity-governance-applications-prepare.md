@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/21/2024
 ms.reviewer: markwahl-msft
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to govern access for applications in my environment so that I can balance security and productivity with the right processes and visibility.
 ---
 
 # Govern access for applications in your environment

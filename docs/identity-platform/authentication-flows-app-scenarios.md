@@ -112,7 +112,7 @@ For more information, see [Sign in users in a sample web app](./quickstart-web-a
 
 To call a web API from a web app on behalf of a user, use the authorization code flow and store the acquired tokens in the token cache. When needed, MSAL refreshes tokens and the controller silently acquires tokens from the cache.
 
-For more information, see [Web app that calls web APIs](scenario-web-api-call-api-app-configuration.md).
+For more information, see [Web app that calls web APIs](scenario-web-app-call-api-app-configuration.md).
 
 ### Desktop app that calls a web API on behalf of a signed-in user
 

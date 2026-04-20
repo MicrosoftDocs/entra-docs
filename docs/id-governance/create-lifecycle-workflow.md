@@ -3,8 +3,9 @@ title: Create a lifecycle workflow - Microsoft Entra ID
 description: This article guides you in creating a lifecycle workflow.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/25/2024
+ms.date: 03/12/2026
 ms.custom: template-how-to
+#Customer Intent: As an IT admin, I want to create a lifecycle workflow so that I can automate identity lifecycle processes in my organization.
 ---
 
 # Create a lifecycle workflow
@@ -24,7 +25,7 @@ You can create and customize workflows for common scenarios by using templates, 
 ## Create a lifecycle workflow by using a template in the Microsoft Entra admin center
 
 
-If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for pre-hire common scenarios.
+If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for common pre-hire scenarios.
 
 To create a workflow based on a template:
 

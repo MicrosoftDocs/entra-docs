@@ -3,12 +3,13 @@ title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
 ms.topic: concept-article
-ms.date: 02/11/2026
+ms.date: 03/24/2026
 
 ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect networks so that I can implement Zero Trust network security principles.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect networks
@@ -47,17 +48,38 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Web content filtering integrates with Conditional Access
 [!INCLUDE [25407](../includes/secure-recommendations/25407.md)]
 
+### Web content filtering blocks high-risk categories
+[!INCLUDE [27000](../includes/secure-recommendations/27000.md)]
+
 ### TLS inspection is enabled and correctly configured for outbound traffic
 [!INCLUDE [25411](../includes/secure-recommendations/25411.md)]
 
+### TLS inspection bypass rules are regularly reviewed
+[!INCLUDE [27001](../includes/secure-recommendations/27001.md)]
+
+### TLS inspection certificates have a sufficient validity period
+[!INCLUDE [27002](../includes/secure-recommendations/27002.md)]
+
+### TLS inspection failure rate is below 1%
+[!INCLUDE [27003](../includes/secure-recommendations/27003.md)]
+
+### TLS inspection custom bypass rules don't duplicate system bypass destinations
+[!INCLUDE [27004](../includes/secure-recommendations/27004.md)]
+
 ### Threat intelligence filtering protects internet traffic
 [!INCLUDE [25412](../includes/secure-recommendations/25412.md)]
+
+### File transfer policies are configured to prevent data exfiltration
+[!INCLUDE [25413](../includes/secure-recommendations/25413.md)]
 
 ### AI Gateway protects enterprise generative AI applications from prompt injection attacks
 [!INCLUDE [25415](../includes/secure-recommendations/25415.md)]
 
 ### Global Secure Access cloud firewall protects branch office internet traffic
 [!INCLUDE [25416](../includes/secure-recommendations/25416.md)]
+
+### Internet traffic is inspected across all Secure Web Gateway defense layers
+[!INCLUDE [27014](../includes/secure-recommendations/27014.md)]
 
 ### Microsoft 365 traffic is actively flowing through Global Secure Access
 [!INCLUDE [25376](../includes/secure-recommendations/25376.md)]
@@ -70,9 +92,6 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
-
-### Source IP restoration is enabled
-[!INCLUDE [25370](../includes/secure-recommendations/25370.md)]
 
 ### Global Secure Access signaling for Conditional Access is enabled
 [!INCLUDE [25380](../includes/secure-recommendations/25380.md)]
@@ -89,8 +108,14 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Private network connectors are running the latest version
 [!INCLUDE [25392](../includes/secure-recommendations/25392.md)]
 
+### At least two Private Access connectors are active and healthy per connector group
+[!INCLUDE [25466](../includes/secure-recommendations/25466.md)]
+
 ### Private DNS is configured for internal name resolution
 [!INCLUDE [25399](../includes/secure-recommendations/25399.md)]
+
+### DNS traffic for internal domains is routed through Private Access
+[!INCLUDE [25400](../includes/secure-recommendations/25400.md)]
 
 ### Intelligent Local Access is enabled and configured
 [!INCLUDE [25405](../includes/secure-recommendations/25405.md)]
@@ -116,17 +141,4 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### All Private Access apps have user or group assignments
 [!INCLUDE [25481](../includes/secure-recommendations/25481.md)]
 
-### Outbound traffic from VNet integrated workloads is routed through Azure Firewall
-[!INCLUDE [25535](../includes/secure-recommendations/25535.md)]
 
-### Threat intelligence is enabled in deny mode on Azure Firewall
-[!INCLUDE [25537](../includes/secure-recommendations/25537.md)]
-
-### IDPS inspection is enabled in deny mode on Azure Firewall
-[!INCLUDE [25539](../includes/secure-recommendations/25539.md)]
-
-### Application Gateway WAF is enabled in prevention mode
-[!INCLUDE [25541](../includes/secure-recommendations/25541.md)]
-
-### Azure Front Door WAF is enabled in prevention mode
-[!INCLUDE [25543](../includes/secure-recommendations/25543.md)]

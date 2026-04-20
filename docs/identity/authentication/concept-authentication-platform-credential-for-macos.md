@@ -45,4 +45,4 @@ To enable it, an administrator needs to configure PSSO by using Microsoft Intune
 
 ## Related content
 
-[What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+[What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
