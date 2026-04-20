@@ -126,6 +126,15 @@ items:
     - name: Manage agents in end user experience
       href: manage-agent.md
 
+  # MIGRATE ######################
+  - name: Migrate to Agent ID
+    expanded: true
+    items:
+    - name: Migrate custom app registrations
+      href: migrate-custom-app-registrations-to-agent-id.md
+    - name: Migrate Copilot Studio agents
+      href: migrate-copilot-studio-agents-to-agent-id.md
+
   # REFERENCE ######################
   - name: Reference
     items:
