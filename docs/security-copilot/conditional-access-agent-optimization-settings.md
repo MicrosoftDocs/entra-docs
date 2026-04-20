@@ -55,10 +55,10 @@ In addition to the daily scheduled run, the agent can trigger runs based on chan
 The following changes to Conditional Access policies trigger an activity-based run:
 
 - An existing enabled policy is modified.
-- A policy state is changed to **On** from any other state, such as **Off** or **Report-only**.
+- A policy state is changed from any other state, such as **Off** or **Report-only** to **On**.
 - A new policy is created with the state set to **On**.
 
-The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent policy changes, the agent enforces a six-hour cooldown between activity-based runs. For example:
+The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent changes, the agent enforces a six-hour cooldown between activity-based runs. For example:
 
 | Time | Event | Agent action |
 |---|---|---|
