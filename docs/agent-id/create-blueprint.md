@@ -68,17 +68,19 @@ You can create an agent identity blueprint directly in the Microsoft Entra admin
 > The admin center wizard sets the blueprint name and assigns owners and sponsors. To configure credentials, identifier URIs, scopes, or permissions, use the Microsoft Graph API or PowerShell, or configure them after creation through the blueprint's detail pages in the admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Agent ID** > **Agent blueprints**.
+1. Browse to **Entra ID** > **Agent ID** > **Agent blueprints**.
 1. Select **New agent blueprint**.
 1. On the **Basics** tab, enter a display name for your agent identity blueprint and select **Next**.
 
     :::image type="content" source="media/create-blueprint/create-blueprint-wizard.png" alt-text="Screenshot of the create agent blueprint wizard showing the Basics tab with the agent blueprint name field." lightbox="media/create-blueprint/create-blueprint-wizard.png":::
-1. On the **Owners & Sponsors** tab, optionally add owners and sponsors for the blueprint:
-    - Select **Add** > **Add owner** to add users who can manage the blueprint.
-    - Select **Add** > **Add sponsor** to assign a business owner responsible for the blueprint's purpose and lifecycle.
-1. Select **Review + Create**, review your settings, and then select **Create**.
+1. On the **Owners & Sponsors** tab, optionally change or add owners and sponsors for the blueprint:
+    - Select the pencil icon next to the **Owners** field to change or add users who can manage the blueprint.
+    - Select the pencil icon next to the **Sponsors** field to change or add users who can sponsor the blueprint.
+1. Select **Next**.
+1. Review your settings, and then select **Create**.
+1. Select **Done** to exit the wizard or **Go to agent blueprint** to view the blueprint's detail page or configure more settings.
 
-After creation, you can configure credentials, permissions, and other settings from the blueprint's detail page. For more information, see [Manage agent identity blueprints](manage-agent-blueprint.md).
+For more information on managing agent identity blueprints, see [Manage agent identity blueprints](manage-agent-blueprint.md).
 
 ### Create programmatically
 

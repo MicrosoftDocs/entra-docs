@@ -39,18 +39,25 @@ To create agent identities, you need:
 You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Agent ID** > **Agent identities**.
+1. Browse to **Entra ID** > **Agent ID** > **Agent identities**.
 1. Select **New agent identity**.
 1. On the **Basics** tab:
-    - Under **Agent blueprint**, select a blueprint from the dropdown to create your agent identity from.
-    - Enter a display name for the agent identity.
-    - Select **Next**.
 
-    :::image type="content" source="media/create-delete-agent-identities/create-agent-identity-wizard.png" alt-text="Screenshot of the create agent identity wizard showing the Basics tab with blueprint selection and name fields." lightbox="media/create-delete-agent-identities/create-agent-identity-wizard.png":::
+   - Under **Agent blueprint**, select a blueprint from the dropdown to create your agent identity from.
+   - Enter a display name for the agent identity and select **Next**.
+
+     :::image type="content" source="media/create-delete-agent-identities/create-agent-identity-wizard.png" alt-text="Screenshot of the create agent identity wizard showing the Basics tab with blueprint selection and name fields." lightbox="media/create-delete-agent-identities/create-agent-identity-wizard.png":::
+
 1. On the **Owners & Sponsors** tab, optionally add owners and sponsors for the identity:
-    - Select **Add** > **Add owner** to add users who can manage this agent identity.
-    - Select **Add** > **Add sponsor** to assign a business owner responsible for this agent identity.
-1. Select **Review + Create**, review your settings, and then select **Create**.
+
+   - Select the pencil icon next to the **Owners** field to change or add users who can manage this agent identity.
+   - Select the pencil icon next to the **Sponsors** field to change or add users who can sponsor this agent identity.
+   
+1. Select **Next**.
+1. Review your settings, and then select **Create**.
+1. Select **Done** to exit the wizard or **Go to agent identity** to view the identity's detail page or configure more settings.
+
+In the following steps, you'll learn how to create agent identities programmatically using Microsoft Graph API and Microsoft.Identity.Web.
 
 To create agent identities programmatically, get an access token first, then call the creation API.
 

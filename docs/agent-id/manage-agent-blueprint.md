@@ -20,7 +20,7 @@ The Microsoft Entra admin center allows you to view all agent identity blueprint
 ## Navigate to the agent identity blueprint list
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Agent ID** > **Agent blueprints**.
+1. Browse to **Entra ID** > **Agent ID** > **Agent blueprints**.
 1. Select a blueprint principal to open its management page.
 
 ## Search and filter blueprints
@@ -39,7 +39,7 @@ To customize your view, select **Choose columns** to configure which columns are
 | **Agent identities** | The number of child agent identities created by the agent blueprint principal| ✗ | ✗ | Select this to see a list of linked child agent identities for that agent identity blueprint principal|
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  |
 | **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | |
-| **Object ID** | Unique identifier for agent identity | ✗ | ✓ | |
+| **Object ID** | Unique identifier for agent blueprint principal | ✗ | ✓ | |
 
 ## View linked agent identities
 
@@ -54,7 +54,7 @@ View the agent identities that were created from a blueprint.
 
 Review the permissions assigned to a blueprint principal, organized by consent type.
 
-1. From the blueprint's management page, select **Granted permissions** from the left menu.
+1. From the blueprint's management page, select **Granted permissions** under **Access**.
 1. Select the **Admin consent** tab to view permissions granted through administrator consent, or select the **User consent** tab to view permissions granted through user consent.
 1. The list shows the **API name**, **Claim value**, **Permission**, **Type**, **Granted through**, and **Granted by** for each permission entry.
 
@@ -69,7 +69,7 @@ Configure the credentials that agent identities use to authenticate. The credent
 
 ### Upload a certificate
 
-1. From the blueprint's management page, select **Credentials** from the left menu.
+1. From the blueprint's management page, select **Credentials** under **Developer settings**.
 1. Select the **Certificates** tab.
 1. Select **Upload certificate**.
 1. Browse to and select the certificate file, and optionally add a description.
@@ -77,7 +77,7 @@ Configure the credentials that agent identities use to authenticate. The credent
 
 ### Create a client secret
 
-1. From the blueprint's management page, select **Credentials** from the left menu.
+1. From the blueprint's management page, select **Credentials** under **Developer settings**.
 1. Select the **Client secrets** tab.
 1. Select **New client secret**.
 1. Enter a **Description** for the secret.
@@ -90,7 +90,11 @@ Configure the credentials that agent identities use to authenticate. The credent
 
 ### Add a federated credential
 
-1. From the blueprint's management page, select **Credentials** from the left menu.
+Federated credentials use workload identity federation to establish trust between Microsoft Entra and external identity providers without storing secrets. For more information about these scenarios and how workload identity federation works, see [Workload identity federation](/entra/workload-id/workload-identity-federation).
+ 
+Take the following steps to add a federated credential for an agent identity blueprint principal.
+
+1. From the blueprint's management page, select **Credentials** under **Developer settings**.
 1. Select the **Federated credentials** tab.
 1. Select **Add credential**.
 1. Under **Federated credential scenario**, select a scenario:
@@ -103,13 +107,42 @@ Configure the credentials that agent identities use to authenticate. The credent
 
 ## Manage owners and sponsors
 
-Owners and sponsors help establish governance for your blueprint. You can add or remove owners and sponsors from the **Owners and sponsors** page in the left menu. For detailed steps, see [Add and manage owners and sponsors for agent identities](manage-owners-sponsors-agents.md).
+Owners and sponsors help establish governance for your blueprint. From the **Owners and sponsors** page in the left menu, you can manage ownership for both the agent blueprint and the agent blueprint principal.
+
+The page displays owners and sponsors for both the agent blueprint and agent blueprint principal. Owners have full access to manage the agent, while sponsors are responsible parties who can manage lifecycle workflows and access.
+
+### Agent blueprint owners and sponsors
+
+1. From the blueprint's management page, select **Owners and sponsors** from the left menu under **Access**.
+1. Select the **Agent blueprint** tab.
+1. Use this tab to view, add, or remove owners and sponsors for the identity blueprint. The identity blueprint defines the shared identity and access settings for multiple agent instances.
+1. To add owners or sponsors, select **Add** and search for users by name or email.
+1. To remove owners or sponsors, select the checkbox next to their name and select **Remove**.
+
+### Agent blueprint principal owners and sponsors
+
+1. From the blueprint's management page, select **Owners and sponsors** from the left menu under **Access**.
+1. Select the **Agent blueprint principal** tab.
+1. Use this tab to view, add, or remove owners and sponsors specifically for the blueprint principal.
+1. To add owners or sponsors, select **Add** and search for users by name or email.
+1. To remove owners or sponsors, select the checkbox next to their name and select **Remove**.
+
+For detailed steps on managing owners and sponsors, see [Add and manage owners and sponsors for agent identities](manage-owners-sponsors-agents.md).
 
 ## View audit and sign-in logs
 
-- To view administrative actions taken on the blueprint, select **Audit logs** from the left menu under **Activity**. For more information, see [view audit logs for agents](sign-in-audit-logs-agents.md).
-- To view sign-in activity, select **Sign-in logs** from the left menu under **Activity**. For more information, see [view sign-in logs for agents](sign-in-audit-logs-agents.md).
+You can view logs for both the agent blueprint principal and the blueprint itself from the blueprint's management page.
+
+### Agent blueprint principal activity
+
+- To view administrative actions taken on the blueprint principal, select **Audit logs** from the left menu under **Agent blueprint principal activity**.
+- To view sign-in activity for the blueprint principal, select **Sign-in logs** from the left menu under **Agent blueprint principal activity**. For more information, see [view sign-in logs for agents](sign-in-audit-logs-agents.md).
+
+### Agent blueprint activity 
+
+- To view administrative actions related to the blueprint configuration, select **Audit logs** from the left menu under **Agent blueprint activity**.
+- To view sign-in activity related to the blueprint, select **Sign-in logs** from the left menu under **Agent blueprint activity**. For more information, see [view sign-in logs for agents](sign-in-audit-logs-agents.md).
 
 ## Disable an agent identity blueprint principal
 
-To disable an agent identity blueprint principal, select the **Disable** button in the command bar at the top of the blueprint's management page.
+To disable an agent identity blueprint principal, select the **Disable** button in the command bar at the top of the blueprint's overview page.
