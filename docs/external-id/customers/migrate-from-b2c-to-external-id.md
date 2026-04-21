@@ -164,6 +164,7 @@ Ongoing monitoring enables proactive issue resolution, data-driven optimization,
 - [Microsoft Entra External ID](/entra/external-id/)
 - [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
 - [Migrate users and credentials](how-to-migrate-users.md)
+- [Services and integration partners for External ID](services-integration-partners.md)
 - [MSAL overview](/azure/active-directory/develop/msal-overview)
 - [Microsoft Entra External ID Q&A](/answers/tags/438/entra-external-id)
 - [External authentication and access control](/entra/architecture/deployment-external-authentication-access-control)

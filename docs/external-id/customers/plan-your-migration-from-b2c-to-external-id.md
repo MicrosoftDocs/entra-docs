@@ -184,9 +184,14 @@ If you've decided to use High Scale Compatibility (HSC) mode, continue to [Enabl
 
 If after reviewing the HSC mode limitations you'd prefer the standard approach instead, see [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md).
 
+## Get help from a migration partner
+
+Microsoft works with services and integration partners who specialize in Azure AD B2C to Microsoft Entra External ID migrations. Partners can help with advisory, implementation, and engineering-led delivery across both the standard and HSC mode approaches. For a list of partners and how to engage them, see [Services and integration partners for External ID](services-integration-partners.md).
+
 ## Related content
 
 - [Microsoft Entra External ID overview](/entra/external-id/external-identities-overview)
 - [Supported features in External ID](concept-supported-features-customers.md)
 - [Planning your solution](concept-planning-your-solution.md)
+- [Services and integration partners for External ID](services-integration-partners.md)
 - [Service limits and restrictions](reference-service-limits.md)
