@@ -71,7 +71,7 @@ Follow the steps below to configure your SCIM settings in the console.
 	![Screenshot of the SCIM test mode configuration option.](media/knowbe4-security-awareness-training-provisioning-tutorial\test-mode.png)
 
    >[!NOTE]
-   >We recommend keeping **Test Mode** enabled until you’ve configured the connection between KnowBe4 and your identity provider and have run a successful sync. Test Mode is used to generate a report of what will happen when SCIM is enabled. This means no changes are made to your console so you can configure your setup without worrying about changes to your console. When you're ready, you can disable **Test Mode** from your **Account Settings** to enable syncing.If you're switching from ADI to SCIM, **Test Mode** is enabled automatically after you save your **Account Settings**.
+   >We recommend keeping **Test Mode** enabled until you’ve configured the connection between KnowBe4 and your identity provider and have run a successful sync. Test Mode is used to generate a report of what will happen when SCIM is enabled. This means no changes are made to your console so you can configure your setup without worrying about changes to your console. When you're ready, you can disable **Test Mode** from your **Account Settings** to enable syncing. If you're switching from ADI to SCIM, **Test Mode** is enabled automatically after you save your **Account Settings**.
 
 1. Scroll down to the bottom of the **Account Settings** page and select **Save Changes**.
 Now that you have enabled SCIM in your KnowBe4 account, you're ready to finalize the connection with your identity provider. See one of the articles below to find instructions on configuring SCIM for the identity provider that you're using.
