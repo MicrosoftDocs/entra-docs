@@ -54,7 +54,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Select **Generate New**. The system generates a random secrete token. **Select Copy**.
 
-	![Screenshot of the SCIM token generation dialog](media/lanschool-air-provisioning-tutorial/generate-token.png)
+	![Screenshot of the SCIM token generation dialog.](media/lanschool-air-provisioning-tutorial/generate-token.png)
 
 <a name='step-3-add-lanschool-air-from-the-azure-ad-application-gallery'></a>
 
