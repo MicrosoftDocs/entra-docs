@@ -62,6 +62,12 @@ Simplify lifecycle management:
 - Access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](workload-identity-federation.md) for supported scenarios such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure.
 - Review service principals and applications that are assigned to privileged directory roles in Microsoft Entra ID using [access reviews for service principals](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 
+## Agent identities for AI workloads
+
+AI agents — autonomous software systems that reason, make decisions, and take actions on behalf of users or organizations — represent a distinct category of machine identity with unique security requirements. Unlike traditional workloads that execute predetermined logic, AI agents make dynamic decisions and adapt behavior, which requires purpose-built identity constructs with stronger governance controls.
+
+[Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) provides these constructs through agent identities and agent identity blueprints. Agent identities offer enforced human sponsorship, lifecycle governance from provisioning through deactivation, and at-scale management through blueprints that apply centralized security policies across all agent instances of a given type. For more information, see [Microsoft Entra security for AI overview](~/agent-id/security-for-ai-overview.md).
+
 ## Next steps
 
 - Get answers to [frequently asked questions about workload identities](workload-identities-faqs.md). 

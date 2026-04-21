@@ -110,6 +110,8 @@ As organizations deploy more AI agents, identity governance becomes critical to 
 - Govern agent identities at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent identity, preventing orphaned agent identities.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
+- Apply Conditional Access rules, permissions, and governance controls at the [blueprint level](identity-platform/agent-blueprint.md) so all current and future agent instances inherit them automatically, with the ability to disable an entire class of agents in a single operation.
+- Maintain a complete inventory of all agent identities through centralized discovery and management in the Microsoft Entra admin center and [Microsoft Graph](/graph/api/resources/agentidentity?view=graph-rest-beta&preserve-view=true), preventing shadow AI and enabling organizations to track agents across the full lifecycle — from registration and credential management through deactivation and decommissioning.
 
 For more information, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview).
 
