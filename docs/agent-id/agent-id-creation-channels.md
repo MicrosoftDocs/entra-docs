@@ -18,7 +18,7 @@ Administrators who work in identity and access management and security need clea
 
 **Agent identity blueprints** can enter your tenant through multiple channels. Each channel implies different monitoring and control points:
 
-| Channel | Typical Actors | Who can control it? |
+| Channel | Typical Actors | Can be controlled by |
 |---------|----------------|-----------------|
 | Microsoft Entra admin center / Azure portal | Developers, Administrators | Role assignments | 
 | Microsoft Graph API | Automation, DevOps pipelines, integration services | Microsoft Graph permission grants |
