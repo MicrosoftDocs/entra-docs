@@ -23,18 +23,18 @@ In this tutorial, you learn how to:
 
 ### What is shadow IT?
 
-Shadow IT refers to applications and services that are used by employees without the IT department's knowledge or approval. This use creates risk such as the following examples.
+*Shadow IT* refers to applications and services that are used by employees without the IT department's knowledge or approval. This use creates risk such as the following examples.
 
 | Risk category | Examples | Why it matters |
 |---|---|---|
 | Data loss | Uploading files to personal cloud storage | Sensitive data leaves corporate control. |
 | Compliance | Using apps that don't meet regulatory requirements | Health Insurance Portability and Accountability Act (HIPAA) and Sarbanes-Oxley Act violations. |
-| Security | Apps with poor security practices | Credential theft and malware delivery. |
-| Licensing | Duplicate tools across teams | Wasted IT budget. |
+| Security | Using apps with poor security practices | Credential theft and malware delivery. |
+| Licensing | Duplicating tools across teams | Wasted IT budget. |
 
 #### Shadow AI: The new frontier
 
-Generative AI tools (ChatGPT, Claude, Gemini, and others) present unique challenges:
+*Shadow AI* is the unauthorized use of AI tools by employees without approval or security clearance. Generative AI tools (ChatGPT, Claude, Gemini, and others) present unique challenges:
 
 - Employees might paste sensitive data into prompts.
 - Confidential information might be used to train AI models.
@@ -108,8 +108,7 @@ Cloud application analytics give admins visibility into the cloud applications t
 
 ## Step 3: Identify generative AI applications
 
-> [!NOTE]
-> Cloud application analytics can help you identify generative AI applications that are used in your organization. These apps are often referred to as "shadow AI." Analytics can help you to assess and manage potential risks.
+Cloud application analytics can help you identify generative AI applications that are used in your organization. Analytics can help you to assess and manage potential risks.
 
 1. Browse to **Global Secure Access** > **Applications** > **Insights & Analytics** > **Cloud Applications**.
 1. Enable the **Generative AI apps and tools** toggle.

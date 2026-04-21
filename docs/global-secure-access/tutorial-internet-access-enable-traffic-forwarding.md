@@ -63,7 +63,7 @@ With the Internet Access traffic profile enabled and assigned to users, the GSA 
 
 1. Download the GSA client for Windows 11 from one of the following links. You can also use the [sample PowerShell script](scripts/powershell-windows-client-install-proof-of-concept.md).
    - For standard Windows 11 machines, use `https://aka.ms/GlobalSecureAccess-Windows`.
-   - For ARM-based Windows 11 machines, use `https://aka.ms/GlobalSecureAccess-WindowsOnArm`.
+   - For Arm-based Windows 11 machines, use `https://aka.ms/GlobalSecureAccess-WindowsOnArm`.
 1. Select the downloaded file and complete the wizard to install the GSA client.
 1. After installation is complete, verify that the GSA client icon appears in the Windows system tray.
 

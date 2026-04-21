@@ -11,7 +11,7 @@ ms.custom: sfi-image-nochange
 
 # Tutorial: Configure content policies
 
-Network content filtering in Microsoft Entra Internet Access allows administrators to use content policies to prevent the transport of specific file types over the network. This feature helps protect sensitive data by blocking uploads and downloads of certain file formats (such as .doc, .docx, .pdf, and .zip) to and from web applications like ChatGPT, Gmail, and file-sharing apps. It can also use Purview to scan files and apply network-level policies based on document sensitivity labels.
+Network content filtering in Microsoft Entra Internet Access allows administrators to use content policies to prevent the transport of specific file types over the network. This feature helps protect sensitive data by blocking uploads and downloads of certain file formats (such as .doc, .docx, .pdf, and .zip) to and from web applications like ChatGPT, Gmail, and file-sharing apps. It can also use Microsoft Purview to scan files and apply network-level policies based on document sensitivity labels.
 
 In this tutorial, you learn how to:
 > [!div class="checklist"]

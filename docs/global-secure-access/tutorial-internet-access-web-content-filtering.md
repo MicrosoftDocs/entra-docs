@@ -35,7 +35,7 @@ Security profiles are containers that hold one or more filtering policies. They'
    - **100 = highest priority**: Evaluated first.
    - **65,000 = lowest priority**: Evaluated last.
    - **Traditional firewall logic**: Lower numbers = higher precedence.
-   - **Best practice:** Add spacing of ~100 between priorities for future flexibility.
+   - **Best practice:** Add spacing of about 100 between priorities for future flexibility.
 
 - **Multi-profile processing**: When multiple Conditional Access policies match a user's traffic, *all matching security profiles are processed* in priority order of the security profiles themselves.
 
@@ -53,7 +53,7 @@ User "Angie" matches a Conditional Access policy → Custom Security Profile (pr
    ↓
 All policies in Custom Security Profile are evaluated
    ↓
-Baseline Profile (priority 65000) ALSO executes ← Always runs as catch-all
+Baseline Profile (priority 65,000) ALSO executes ← Always runs as catch-all
 ```
 
 You can create organization-wide protections in the baseline profile while still allowing higher-priority custom profiles to create exceptions for specific groups. Higher-priority security profiles still take precedence over the baseline security profile if there are conflicting rules between the two profiles.
@@ -127,13 +127,13 @@ You received this error message because you didn't enable Transport Layer Securi
 In this exercise, you accomplished the following tasks:
 
 - **Created a web content filtering policy:** You defined rules by using both FQDN-based blocking (specific domains) and category-based blocking (gambling as a web category).
-- **Understood the baseline profile:** You learned that the baseline profile applies to all internet traffic tunneled through Global Secure Access (GSA), which makes it ideal for organization-wide protections.
+- **Understood the baseline profile:** You learned that the baseline profile applies to all internet traffic tunneled through GSA, which makes it ideal for organization-wide protections.
 - **Linked policies to security profiles:** You learned that policies must be linked to a security profile. Security profiles must be linked to Conditional Access policies to be assigned to users and take effect. The baseline security profile (used in this tutorial) doesn't require Conditional Access and applies to all internet traffic.
 - **Observed the "connection reset" error:** You learned that without TLS inspection, GSA can only drop the connection, which results in a generic browser error rather than a helpful message.
 
 ### Deep dive: Why did the "connection reset" error appear?
 
-When TLS inspection isn't enabled, the security service edge (SSE) can see:
+When TLS inspection isn't enabled, security service edge (SSE) can see:
 
 - The destination IP address.
 - The server name indication in the TLS handshake, which reveals the FQDN, like `www.bing.com`.

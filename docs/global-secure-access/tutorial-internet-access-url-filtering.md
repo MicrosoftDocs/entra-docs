@@ -30,11 +30,11 @@ Understanding the difference between FQDN and URL filtering is critical for effe
 
 | Aspect | FQDN filtering | URL filtering |
 |--------|----------------|---------------|
-| Requires TLS inspection | No | Yes. |
-| Visibility | Domain only | Full path. |
-| Example match | `www.youtube.com` | `www.youtube.com/shorts`. |
-| Use case | Block or allow entire sites | Block or allow specific sites. |
-| Granularity | Coarse | Fine-grained. |
+| Requires TLS inspection | No | Yes |
+| Visibility | Domain only | Full path |
+| Example match | `www.youtube.com` | `www.youtube.com/shorts` |
+| Use case | Block or allow entire sites | Block or allow specific sites |
+| Granularity | Coarse | Fine-grained |
 
 ## Objective
 
