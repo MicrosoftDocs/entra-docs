@@ -2,11 +2,12 @@
 title: Add custom attributes
 description: Learn how to add custom attributes to self-service sign-up flows in Microsoft Entra External ID. Extend the set of attributes stored on a guest account and customize the user experience.
 ms.topic: how-to
-ms.date: 10/06/2025
+ms.date: 04/17/2026
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 
-#customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
+# Customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
 ---
 
 # Collect custom user attributes during B2B collaboration sign-up
@@ -30,10 +31,10 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Entra ID** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External identities** > **Overview**.
 1. Select **Custom user attributes**. The available user attributes are listed.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of the External identities overview page in the Microsoft Entra admin center, with Custom user attributes selected." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
 
 
 1. To add an attribute, select **Add**.
@@ -43,7 +44,7 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
    - **Data Type** - Choose a data type (**String**, **Boolean**, or **Int**).
    - **Description** - Optionally, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/add-an-attribute.png" alt-text="Screenshot of adding a custom attribute.":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/add-an-attribute.png" alt-text="Screenshot of the Add an attribute pane showing Name, Data Type, and Description fields before creating a custom user attribute.":::
 
 1. Select **Create**.
 

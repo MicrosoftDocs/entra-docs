@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 06/27/2025
 ms.reviewer: sponnada
 ms.custom: sfi-ga-nochange
-#Customer intent: As an admin, I want steps for how to add a Microsoft Entra role as a resource in an access packages so that I can assign Microsoft Entra roles using access packages.
+#Customer Intent: As an IT admin, I want to assign Microsoft Entra roles with access packages so that I can manage role assignments through entitlement management.
 ---
 
 # Assign Microsoft Entra roles (Preview)
@@ -25,7 +25,7 @@ You can find more information on privileged built-in roles in the [roles referen
 
 
 > [!NOTE]
-> Assigning a Microsoft Entra role to a catalog automatically changes its [privilege level](entitlement-management-catalog-create.md#catalog-privilege-levels-preview) to **Privileged**.
+> Assigning a Microsoft Entra role to a catalog can change its access and governance controls.
 
 ## Scenarios for Microsoft Entra role assignment using access packages
 

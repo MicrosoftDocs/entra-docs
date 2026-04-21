@@ -10,7 +10,7 @@ ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 03/30/2026
+ms.date: 04/10/2026
 ms.custom:
 #Customer intent: As an iOS developer, I want to enable federated identity provider sign-in and sign-up using native authentication web flow so that users can authenticate with existing social accounts like Apple, Google, or Facebook.
 ---
@@ -19,7 +19,7 @@ ms.custom:
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your iOS app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, and Google.
+This tutorial demonstrates how to implement federated identity provider (IdP) authentication into your iOS app using native authentication with web flow. Federated IdP authentication allows users to sign in or sign up using their existing accounts from providers like Apple, Facebook, Google and custom OIDC providers.
 
 In this tutorial, you learn how to:
 
@@ -37,6 +37,7 @@ In this tutorial, you learn how to:
    - [Configure Apple as an identity provider](../external-id/customers/how-to-apple-federation-customers.md)
    - [Configure Facebook as an identity provider](../external-id/customers/how-to-facebook-federation-customers.md)
    - [Configure Google as an identity provider](../external-id/customers/how-to-google-federation-customers.md)
+   - [Configure a custom OIDC provider](../external-id/customers/how-to-custom-oidc-federation-customers.md). Use the domain of the Issuer URI configured for custom OIDC as the `domain_hint`.
   
 1. Ensure your app supports web fallback [Tutorial: Support web fallback](tutorial-native-authentication-ios-macos-support-web-fallback.md).
 

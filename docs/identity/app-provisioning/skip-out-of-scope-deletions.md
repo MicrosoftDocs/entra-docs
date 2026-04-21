@@ -34,6 +34,8 @@ Because this configuration is widely used with the *Workday to Active Directory 
 
 1. Upon successful sign-in, the user account details appear in the left-hand pane.
 
+1. Select the **Modify permissions** tab and consent to the `Synchronization.ReadWrite.All` permission. This permission is required for the Graph API queries in the following steps.
+
 ## Step 3: Get existing app credentials and connectivity details
 
 In the Microsoft Graph Explorer, run the following GET query replacing [servicePrincipalId]  with the **ServicePrincipalId** extracted from the [Step 1](#step-1-retrieve-your-provisioning-app-service-principal-id-object-id).

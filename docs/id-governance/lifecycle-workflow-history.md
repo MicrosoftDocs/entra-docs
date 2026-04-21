@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand lifecycle workflow history and reporting capabilities so that I can monitor and review past workflow executions.
 ---
 
 

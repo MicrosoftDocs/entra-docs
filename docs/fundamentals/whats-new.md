@@ -7,11 +7,12 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 04/01/2026
+ms.date: 04/15/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to review the latest Microsoft Entra releases and announcements so that I can stay current with product updates.
 ---
 
 # Microsoft Entra releases and announcements
@@ -132,7 +133,7 @@ Each profile can specify allowed passkey types, attestation requirements, and au
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -142,7 +143,7 @@ This feature allows admins to request and accept tenant governance relationships
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -186,7 +187,7 @@ For more information, see: [What is Microsoft single sign-on for Linux?](../iden
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -247,7 +248,7 @@ TLS 1.1 is deprecated due to security vulnerabilities. This change helps protect
 **What you need to do**  
 Ensure your Entra Connect Health agents are up to date and that your servers are configured to use TLS 1.2 for outbound connections. 
 
-*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
+*   Enable [TLS 1.2](/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
 
 ---
 
@@ -482,7 +483,7 @@ The Microsoft Entra provisioning service can be used in the 21Vianet / China clo
 **Service category:** Entitlement Management  
 **Product capability:** Identity Governance  
 
-By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
+By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request).
 
 ---
 
@@ -836,7 +837,7 @@ Soft deletion for cloud security groups introduces a safety mechanism that allow
 **Service category:** Other  
 **Product capability:** End User Experiences  
 
-The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/identity-platform/manage-agent.md).
+The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/manage-agent.md).
 
 ---
 
@@ -866,7 +867,7 @@ Managing agent identity sponsors is key for lifecycle governance and access cont
 **Service category:** Other  
 **Product capability:** Platform  
 
-Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
+Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/what-is-agent-registry.md).
 
 ---
 
@@ -935,6 +936,11 @@ Microsoft Entra ID now supports synced passkeys stored in native and third‑par
 ### Public Preview - Unified Entra App Gallery
 
 **Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication 
+ 
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
+ 
 **Service category:** Enterprise Apps  
 **Product capability:** Access Control  
 

@@ -2,10 +2,11 @@
 title: Set up AD FS federation
 description: Learn how to set up SAML/WS-Fed IdP federation with AD FS for B2B collaboration in Microsoft Entra External ID. Configure AD FS as a SAML 2.0 or WS-Fed IdP and manage attributes and claims.
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 04/17/2026
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-#customer intent: As an IT admin, I want to configure SAML/WS-Fed based identity provider federation with AD FS, so that I can enable federation between Microsoft Entra B2B and IdPs that use the SAML or WS-Fed protocol.
+ai-usage: ai-assisted
+# Customer intent: As an IT admin, I want to configure SAML/WS-Fed-based identity provider federation with AD FS so that I can enable federation between Microsoft Entra B2B and IdPs that use the SAML or WS-Fed protocol.
 ---
 
 # Example: Set up SAML/WS-Fed IdP federation with AD FS for B2B collaboration
@@ -26,11 +27,11 @@ Microsoft Entra B2B can be configured to federate with IdPs that use the SAML pr
 
 To set up federation, the following attributes must be received in the SAML 2.0 response from the IdP. These attributes can be configured by linking to the online security token service XML file or by entering them manually. Step 12 in [Create a test AD FS instance](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) describes how to find the AD FS endpoints or how to generate your metadata URL, for example `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`.
 
-|Attribute  |Value  |
-|---------|---------|
-|AssertionConsumerService     |`https://login.microsoftonline.com/login.srf`         |
-|Audience     |`urn:federation:MicrosoftOnline`         |
-|Issuer     |The issuer URI of the partner IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
+| Attribute | Value |
+| --- | --- |
+| AssertionConsumerService | `https://login.microsoftonline.com/login.srf` |
+| Audience | `urn:federation:MicrosoftOnline` |
+| Issuer | The issuer URI of the partner IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
 The following claims need to be configured in the SAML 2.0 token issued by the IdP:
 
@@ -106,22 +107,22 @@ An AD FS server must already be set up and functioning before you begin this pro
 
 ## Configure AD FS for WS-Fed federation
 
-Microsoft Entra B2B can be configured to federate with IdPs that use the WS-Fed protocol with the specific requirements listed below. Currently, the two WS-Fed providers have been tested for compatibility with Microsoft Entra External ID include AD FS and Shibboleth. Here, we use Active Directory Federation Services (AD FS) as an example of the WS-Fed IdP. For more information about establishing a relying party trust between a WS-Fed compliant provider with Microsoft Entra External ID, download the Microsoft Entra identity provider compatibility docs.
+Microsoft Entra B2B can be configured to federate with IdPs that use the WS-Fed protocol with the specific requirements listed below. Currently, the two WS-Fed providers tested for compatibility with Microsoft Entra External ID are AD FS and Shibboleth. Here, we use Active Directory Federation Services (AD FS) as an example of the WS-Fed IdP. For more information about establishing a relying party trust between a WS-Fed compliant provider and Microsoft Entra External ID, download the Microsoft Entra identity provider compatibility docs.
 
 To set up federation, the following attributes must be received in the WS-Fed message from the IdP. These attributes can be configured by linking to the online security token service XML file or by entering them manually. Step 12 in [Create a test AD FS instance](https://medium.com/in-the-weeds/create-a-test-active-directory-federation-services-3-0-instance-on-an-azure-virtual-machine-9071d978e8ed) describes how to find the AD FS endpoints or how to generate your metadata URL, for example `https://fs.iga.azure-test.net/federationmetadata/2007-06/federationmetadata.xml`.
  
-|Attribute  |Value  |
-|---------|---------|
-|PassiveRequestorEndpoint     |`https://login.microsoftonline.com/login.srf`         |
-|Audience     |`urn:federation:MicrosoftOnline`         |
-|Issuer     |The issuer URI of the partner IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
+| Attribute | Value |
+| --- | --- |
+| PassiveRequestorEndpoint | `https://login.microsoftonline.com/login.srf` |
+| Audience | `urn:federation:MicrosoftOnline` |
+| Issuer | The issuer URI of the partner IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
 Required claims for the WS-Fed token issued by the IdP:
 
-|Attribute  |Value  |
-|---------|---------|
-|ImmutableID     |`http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID`         |
-|emailaddress     |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`         |
+| Attribute | Value |
+| --- | --- |
+| ImmutableID | `http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID` |
+| emailaddress | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` |
 
 The next section illustrates how to configure the required attributes and claims using AD FS as an example of a WS-Fed IdP.
 
@@ -149,7 +150,8 @@ An AD FS server must already be set up and functioning before you begin this pro
 1. Select **Next**.
 1. In the **Choose Access Control Policy** page, select a policy, and then select **Next**.
 1. In the **Ready to Add Trust** page, review the settings, and then select **Next** to save your relying party trust information.
-1. In the **Finish** page, select **Close**. select Relying Party Trust and select **Edit Claim Issuance Policy**.
+1. In the **Finish** page, select **Close**.
+1. Select the relying party trust, and then select **Edit Claim Issuance Policy**.
 
 
 ### Create claims rules
@@ -175,4 +177,4 @@ An AD FS server must already be set up and functioning before you begin this pro
 1. Select **OK**. The AD FS server is now configured for federation using WS-Fed.
 
 ## Next steps
-Next, you [configure SAML/WS-Fed IdP federation in Microsoft Entra External ID](direct-federation.md#step-3-configure-samlws-fed-idp-federation-in-azure-ad) either in the Azure portal or by using the Microsoft Graph API.
+Next, you [configure SAML/WS-Fed IdP federation in Microsoft Entra External ID](direct-federation.md#step-3-configure-samlws-fed-idp-federation-in-azure-ad) either in the Microsoft Entra admin center or by using the Microsoft Graph API.
