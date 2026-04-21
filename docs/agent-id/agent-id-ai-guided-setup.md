@@ -228,7 +228,7 @@ When adding federated identity credentials (FIC) for managed identity federation
 POST /applications/{blueprint-obj-id}/microsoft.graph.agentIdentityBlueprint/federatedIdentityCredentials
 ```
 
-Using the standard `/applications/{id}/federatedIdentityCredentials` path might not work correctly for agent identity blueprints.
+Using the `/applications/{id}/federatedIdentityCredentials` path might work for agent identity blueprints, but it's not supported and isn't recommended.
 
 ### Token issuer varies by endpoint version
 

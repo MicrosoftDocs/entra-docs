@@ -20,13 +20,17 @@ Administrators who work in identity and access management and security need clea
 
 | Channel | Typical Actors | Can be controlled by |
 |---------|----------------|-----------------|
-| Microsoft Entra admin center / Azure portal | Developers, Administrators | Role assignments | 
+| *Microsoft Entra admin center / Azure portal | Developers, Administrators | Role assignments | 
 | Microsoft Graph API | Automation, DevOps pipelines, integration services | Microsoft Graph permission grants |
 | CLI, PowerShell, Infrastructure as Code | DevOps, Administrators | Role assignments | 
-| Microsoft product integrations | Users of Microsoft agent platforms | Administrative controls for each product |
-| Microsoft Entra ID consent experience | Employees, members of organization | App consent policies | 
+| *Microsoft product integrations | Users of Microsoft agent platforms | Administrative controls for each product |
+| *Microsoft Entra ID consent experience | Employees, members of organization | App consent policies | 
 
-When an agent identity blueprint is added to your tenant through one of these channels, an **agent identity blueprint principal** object is created in the tenant. This principal is assigned privileges to create agent identities and agents' user accounts in the tenant. In addition to the channels listed in the previous table, any system with an agent identity blueprint principal in your tenant becomes a channel for the agent identity and agent's user account creation:
+* Indicates a managed experience channel
+
+When an agent identity blueprint is added to your tenant through one of the managed experiences, an **agent identity blueprint principal** object is also created in the tenant. This principal is assigned privileges to create agent identities and agents' user accounts in the tenant. If an agent identity blueprint is added through the Microsoft Graph API, CLI, PowerShell, or Infrastructure as Code tools channels, the associated principal must be manually created.
+
+In addition to the channels listed in the previous table, any system with an agent identity blueprint principal in your tenant becomes a channel for the agent identity and agent's user account creation:
 
 | Channel | Typical Actors | Can be controlled by | 
 |---------|----------------|-----------------|
@@ -53,7 +57,7 @@ Creating an agent identity blueprint with these tools requires one of the follow
 | Scenario | Permissions required |
 | --- | --- |
 | User creates blueprint via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Developer** or **Agent ID Administrator** roles. |
-| Client creates blueprint via Microsoft Graph, using delegated permissions | User must have the roles mentioned in the previous row. Client must be granted **AgentIdentityBlueprint.Create** delegated permission. |
+| Client creates blueprint via Microsoft Graph, using delegated permissions | User must have the roles mentioned in the previous row. Client must be granted *at least* the **AgentIdentityBlueprint.Create** delegated permission. |
 | Client creates blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdentityBlueprint.Create** application permission. |
 
 Creating an agent identity with these tools requires one of the following permissions:
