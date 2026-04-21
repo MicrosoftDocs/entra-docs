@@ -3914,6 +3914,8 @@
         href: twingate-provisioning-tutorial.md
       - name: Uber
         href: uber-provisioning-tutorial.md
+      - name: UiPath
+        href: uipath-provisioning-tutorial.md
       - name: UNIFI
         href: unifi-provisioning-tutorial.md
       - name: uniFLOW Online
