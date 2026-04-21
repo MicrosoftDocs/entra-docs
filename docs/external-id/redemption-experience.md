@@ -2,7 +2,7 @@
 title: B2B Invitation Redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
-ms.date: 12/05/2025
+ms.date: 04/21/2026
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024, sfi-image-nochange
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
@@ -63,6 +63,9 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can't be used for the redemption flow.) If the user’s user principal name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
 
 1. If an admin enables [SAML/WS-Fed IdP federation](direct-federation.md), Microsoft Entra ID checks if the user’s domain suffix matches the domain of a configured SAML/WS-Fed identity provider and redirects the user to the preconfigured identity provider.
+
+    > [!NOTE]
+    > Direct SAML/WS-Fed federation between two Microsoft Entra tenants is not a supported or recommended configuration. Even if a SAML trust is technically configured between two Entra tenants, Microsoft Entra still uses the native Entra-to-Entra [B2B collaboration](direct-federation-overview.md) model and not SAML.
 
 1. If an admin enables [Google federation](google-federation.md), Microsoft Entra ID checks if the user’s domain suffix is gmail.com or googlemail.com and redirects the user to Google.
 
