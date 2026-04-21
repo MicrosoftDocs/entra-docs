@@ -115,54 +115,52 @@ Organizations should monitor sign-in and audit log activity from the emergency a
     
         > [!NOTE]
         > For each additional emergency access account you want to include, add another `or UserId == "ObjectGuid"` to the query.
+        > 
+        > The table name in these queries depends on your workspace type. Use `SigninLogs` for standard Log Analytics workspaces, or `AADSignInLogs` for Microsoft Sentinel workspaces.
                 
         Sample queries:
         ```kusto
         // Search for a single Object ID (UserID)
-        AADSignInLogs
+        SigninLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for multiple Object IDs (UserIds)
-        AADSignInLogs
+        SigninLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" or UserId == "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for a single UserPrincipalName
-        AADSignInLogs
+        SigninLogs
         | where UserPrincipalName == "user@yourdomain.onmicrosoft.com"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
 
     1. Under **Alert logic**, enter the following:
 
-        - Based on: Number of results
-        - Operator: Greater than
-        - Threshold value: 0
+        - Threshold type: **Static**
+        - Operator: **Greater than**
+        - Threshold value: **0**
 
-    1. Under **Evaluated based on**, select the **Period (in minutes)** for how long you want the query to run, and the **Frequency (in minutes)** for how often you want the query to run. The frequency should be less than or equal to the period.
+    1. For **Frequency of evaluation**, select how often you want the query to run.
 
         ![alert logic](./media/security-emergency-access/alert-image2.png)
 
-    1. Select **Done**. You can now view the estimated monthly cost of this alert.
+    1. Select **Next** to proceed.
 
-1. Select an action group of users to be notified by the alert. If you want to create one, see [Create an action group](#create-an-action-group).
+1. Select an action group to be notified by the alert. If you want to create one, see [Create an action group](#create-an-action-group).
 
-1. To customize the email notification sent to the members of the action group, select actions under **Customize Actions**.
+1. Under **Alert rule details**, specify the alert rule name and add an optional description.
 
-1. Under **Alert Details**, specify the alert rule name and add an optional description.
+1. Set the **Severity** of the event. We recommend **0 - Critical**.
 
-1. Set the **Severity level** of the event. We recommend that you set it to **Critical(Sev 0)**.
+1. Ensure **Enable alert rule upon creation** is selected.
 
-1. Under **Enable rule upon creation**, leave it set as **yes**.
-
-1. To turn off alerts for a while, select the **Suppress Alerts** check box and enter the wait duration before alerting again, and then select **Save**.
-
-1. Select **Create alert rule**.
+1. Select **Review + create**, then select **Create**.
 
 ### Create an action group
 
@@ -170,21 +168,24 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
     ![create an action group for notification actions](./media/security-emergency-access/action-group-image3.png)
 
-1. Enter the action group name and a short name.
+1. On the **Basics** tab, enter the following:
 
-1. Verify the subscription and resource group.
+    - **Subscription** and **Resource group**: Select where the action group will be stored.
+    - **Region**: Select the region for the action group.
+    - **Action group name**: Enter a descriptive name.
+    - **Display name**: Enter a short name (maximum 12 characters) that appears in notifications.
 
-1. Under action type, select **Email/SMS/Push/Voice**.
+1. Select **Next: Notifications**.
 
-1. Enter an action name such as **Notify Global Administrator**.
+1. Under **Notification type**, select **Email/SMS message/Push/Voice**.
 
-1. Select the **Action Type** as **Email/SMS/Push/Voice**.
+1. Enter a notification name such as **Notify Global Administrator**.
 
-1. Select **Edit details** to select the notification methods you want to configure and enter the required contact information, and then select **Ok** to save the details.
+1. Select **Edit details**, configure the notification methods and contact information, and then select **OK**.
 
-1. Add any additional actions you want to trigger.
+1. Add any additional notifications you want to trigger.
 
-1. Select **OK**.
+1. Select **Next: Actions** to configure any additional automated actions, or select **Review + create** to finish.
 
 ### Prepare a post-mortem team to evaluate each emergency access account credential use
  
