@@ -30,7 +30,7 @@ Microsoft is actively collaborating with members of the Decentralized Identity F
 * [W3C Decentralized Identifiers](https://www.w3.org/TR/did-core/)
 * [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/)
 * [DIF Sidetree](https://identity.foundation/sidetree/spec/)
-* [DIF Well Known DID Configuration](https://identity.foundation/specs/did-configuration/)
+* [DIF Well Known DID Configuration](https://identity.foundation/well-known-did-configuration/resources/did-configuration/)
 * [DIF DID-SIOP](https://identity.foundation/did-siop/)
 * [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/)
 
@@ -104,6 +104,9 @@ The roles in this scenario are:
 ### Issuer
 
 The issuer is an organization that creates an issuance solution requesting information from a user. The information is used to verify the user’s identity. For example, Woodgrove, Inc. has an issuance solution that enables them to create and distribute verifiable credentials (VCs) to all their employees. The employee uses the Authenticator app to sign in with their username and password, which passes an ID token to the issuing service. Once Woodgrove, Inc. validates the ID token submitted, the issuance solution creates a VC that includes claims about the employee and is signed with Woodgrove, Inc. DID. The employee now has an employer signed verifiable credential which includes the employee's DID as the subject DID.
+
+> [!NOTE]
+> The sign-in step uses traditional authentication (such as username and password) to verify the employee's identity with the issuer. This is separate from the verifiable credential itself. The verifiable credential is a portable, cryptographically signed proof that the employee can later present to any verifier without the verifier needing to contact Woodgrove or any central authority.
 
 ### User
 

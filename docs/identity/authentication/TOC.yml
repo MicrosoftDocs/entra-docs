@@ -138,7 +138,7 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
-  - name: Plan phishing-resistant MFA
+  - name: Phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
       items:
@@ -360,6 +360,8 @@
         href: how-to-mfa-server-migration-utility.md
   - name: Troubleshoot
     items:
+    - name: Voice call and SMS authentication
+      href: troubleshoot-voice-call-sms.md
     - name: Self-service password reset (SSPR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback
