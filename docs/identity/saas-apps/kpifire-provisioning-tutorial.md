@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 1. Sign in to https://app.kpifire.com with admin rights
 1. Navigate to **Settings->API Settings->Add New Token** to generate the SCIM token.
 
-	[ ![Screenshot of kpifire token generation](media/kpifire-provisioning-tutorial/kpifire-token-generation.png) ](media/kpifire-provisioning-tutorial/kpifire-token-generation.png#lightbox)
+	[ ![Screenshot of the kpifire token generation page.](media/kpifire-provisioning-tutorial/kpifire-token-generation.png) ](media/kpifire-provisioning-tutorial/kpifire-token-generation.png#lightbox)
 
 1. Copy and save the SCIM token. This value is entered in the **Secret Token** field in the Provisioning tab of your kpifire application. 
 
@@ -70,19 +70,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **kpifire**.
 
-	![Screenshot of The kpifire link in the Applications list](common/all-applications.png)
+	![Screenshot of the kpifire link in the Applications list](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application settings.](common/provisioning.png)
 
 1.  Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your kpifire Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to kpifire. If the connection fails, ensure your kpifire account has the required admin permissions and try again.
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-      ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+      ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

@@ -46,15 +46,15 @@ The scenario outlined in this article assumes that you already have the followin
 1. Log into LanSchool Air as Site Admin.
 1. Select the menu at the top left then select **Settings**.
 
-	![Screenshot of Settings menu](media/lanschool-air-provisioning-tutorial/settings.png)
+	![Screenshot of the Settings menu in the LanSchool Air admin.](media/lanschool-air-provisioning-tutorial/settings.png)
 
 1. Select **SSO Configuration**.
 
-	![Screenshot of Configuration](media/lanschool-air-provisioning-tutorial/sso-configuration.png)
+	![Screenshot of the the SSO Configuration settings page.](media/lanschool-air-provisioning-tutorial/sso-configuration.png)
 
 1. Select **Generate New**. The system generates a random secrete token. **Select Copy**.
 
-	![Screenshot of Token generation](media/lanschool-air-provisioning-tutorial/generate-token.png)
+	![Screenshot of the SCIM token generation dialog](media/lanschool-air-provisioning-tutorial/generate-token.png)
 
 <a name='step-3-add-lanschool-air-from-the-azure-ad-application-gallery'></a>
 
@@ -77,19 +77,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **LanSchool Air**.
 
-	![Screenshot of The LanSchool Air link in the Applications list](common/all-applications.png)
+	![Screenshot of the LanSchool Air link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application settings.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your LanSchool Air Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to LanSchool Air. If the connection fails, ensure your LanSchool Air account has the required admin permissions and try again.
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+	![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

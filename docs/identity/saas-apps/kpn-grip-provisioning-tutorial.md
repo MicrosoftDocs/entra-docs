@@ -65,19 +65,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **KPN Grip**.
 
-	![Screenshot of The KPN Grip link in the Applications list](common/all-applications.png)
+	![Screenshot of the KPN Grip link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application settings.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic](common/application-provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your KPN Grip Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to KPN Grip. If the connection fails, ensure your KPN Grip account has the required admin permissions and try again.
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
