@@ -732,7 +732,7 @@ Microsoft Entra ID Account Recovery is an advanced authentication recovery mecha
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation with Microsoft-managed remediation (preview)](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control-preview).
+**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation control](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control).
 
 ---
 
