@@ -23,6 +23,8 @@ To prevent these issues, we recommend that customers clear the following on-prem
 - onPremisesDistinguishedName 
 - onPremisesDomainName 
 - onPremisesImmutableId 
+- onPremisesObjectIdentifier 
+
 - onPremisesSamAccountName 
 - onPremisesSecurityIdentifier 
 - onPremisesUserPrincipalName 
@@ -157,6 +159,8 @@ You can also use `Clear-ADSyncToolsOnPremisesAttribute ` to clear any of the fol
 - onPremisesDistinguishedName 
 - onPremisesDomainName 
 - onPremisesImmutableId 
+- onPremisesObjectIdentifier 
+
 - onPremisesSamAccountName 
 - onPremisesSecurityIdentifier 
 - onPremisesUserPrincipalName 
@@ -234,12 +238,14 @@ This function can be used to set any of the following on-premises attributes:
 - onPremisesDistinguishedName 
 - onPremisesDomainName 
 - onPremisesImmutableId 
-- onPremisesObjectIdentifier
+- onPremisesObjectIdentifier *
 - sonPremisesSamAccountName 
-- onPremisesSecurityIdentifier * 
+- onPremisesSecurityIdentifier **
 - onPremisesUserPrincipalName 
 
-   \* Must have the correct Security Identifier format, for example: "S-1-5-21-1234567890-0987654321-1234567890-1111"
+   \* System-generated attribute. Clearing it is supported, but setting a specific value can fail depending on service behavior.
+   \** Must have the correct Security Identifier format, for example: "S-1-5-21-1234567890-0987654321-1234567890-1111"
+
 
 ### SYNTAX 
 
