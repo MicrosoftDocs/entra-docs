@@ -1,18 +1,17 @@
 ---
-title: Add and manage owners and sponsors for agent identities
+title: Add and Manage Owners and Sponsors for Agent Identities and Blueprints
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to add and manage owners and sponsors for agent identity blueprints and agent identities in the Microsoft Entra admin center.
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 04/16/2026
-ms.custom: agent-id-ignite
-ms.reviewer: dastrock
+ms.date: 04/21/2026
+ms.reviewer: arluca
 
 #customer intent: As an IT administrator, I want to assign owners and sponsors to agent identity blueprints and agent identities so that I can establish clear accountability and governance for my organization's AI agents.
 ---
 
-# Add and manage owners and sponsors for agent identities
+# Add and manage owners and sponsors for agent identities and blueprints
 
 Owners and sponsors play distinct governance roles for agent identity blueprints and agent identities in Microsoft Entra ID. Owners are technical administrators who can manage the configuration and operations of an agent. Sponsors are business owners who are accountable for the agent's purpose, lifecycle decisions, and access reviews.
 
