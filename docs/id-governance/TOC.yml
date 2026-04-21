@@ -414,7 +414,7 @@
         - name: Reprocess workflows
           href: reprocess-workflow.md
         - name: Cancel workflow runs (Preview)
-          href: cancel-workflow-runs.md    
+          href: cancel-workflow-runs.md
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users
