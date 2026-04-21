@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **kpifire**.
 
-	![Screenshot of the kpifire link in the Applications list](common/all-applications.png)
+	![Screenshot of the kpifire link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
