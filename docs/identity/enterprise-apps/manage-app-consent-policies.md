@@ -17,6 +17,9 @@ App consent policies are a way to manage the permissions that apps have to acces
 
 In this article, you learn how to manage built-in and custom app consent policies to control when consent can be granted. App consent policies can be assigned to specific users or groups using custom roles, or you can set a default app consent policy for end-users in your organization.
 
+> [!NOTE]
+> There are other ways to give a user or service principal the ability to grant consent besides using app consent policies.  Don't use the list of principals assigned roles with consent policies attached as an exhaustive list of what can grant consent in your organization.
+
 
 ## App consent policy segments
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set. The exclusion and inclusions are used to determine whether the actor affected by the given policy can grant consent or not.
@@ -68,9 +71,11 @@ An additional policy is enabled by default is the **microsoft-user-allow-default
 - Android-Mail (application ID:2cee05de-2b8f-45a2-8289-2a06ca32c4c8)
 - Thunderbird (application ID:9e5f94bc-e8a4-4e73-b8be-63364c29d753)
 
-## Multiple policies
+## Multiple policies or authorization mechanisms to grant consent
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
+
+Similarly, a user or service principal can be given the ability to grant consent through means other than an app consent policy.  For example: a user that is assigned as 'owner' to a service principal can grant consent for the app roles that service principal exposes, even if that user hasn't been assigned any roles with consent policies attached; an application assigned the `Application.ReadWrite.All` application permission can grant consent for any app role (except those exposed by Microsoft Graph).  The user or service principal only needs one authorization mechanism to approve to be allowed to grant consent for a specific event.
 
 ## Prerequisites
 

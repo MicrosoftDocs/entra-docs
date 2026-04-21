@@ -31,7 +31,7 @@ Before you begin, ensure you have:
 
 - An [agent identity blueprint](agent-blueprint.md). Record the agent identity blueprint app ID (client ID).
 - An [agent identity](create-delete-agent-identities.md).
-- An agent application configured for your agent identity.
+- A client application registered in Microsoft Entra to handle user authentication.
 - Familiarity with the [OAuth 2.0 authorization code flow](/entra/identity-platform/v2-oauth2-auth-code-flow).
 
 For admin authorization, you also need:
