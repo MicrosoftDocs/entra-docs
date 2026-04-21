@@ -3,7 +3,7 @@ title: Govern an application's existing users in Microsoft Entra ID with Microso
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.
 author: markwahl-msft
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 04/21/2026
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-blocked, sfi-ropc-nochange
@@ -148,18 +148,20 @@ If the application does not support provisioning, then
 - On the next review of that application's role assignments, the user will be included in the review.
 - If the user is denied in an access review, their application role assignment will be removed. The user will no longer be able to sign in from Microsoft Entra ID to the application.
 
+For applications that you have completed generating an account discovery report, you can automate assigning these users to your enterprise application by using the following steps:  
+
 1. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the CorrelatedUsers.ps1 file. 
 
-1. Create application role assignments for users who don't currently have role assignments (dry run):
+1. Create application role assignments for users who don't currently have role assignments in a dry run mode. This will allow you to see which users will be assigned, without assigning them to the application:
 
    ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." -DryRun
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "InputServicePrincipalIdHere" -DryRun
    ```
 
 1. Create application role assignments for users who don't currently have role assignments:
 
    ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..."
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "InputServicePrincipalIdHere"
    ```
 
 1. Wait one minute for changes to propagate within Microsoft Entra ID.
