@@ -87,6 +87,9 @@ If a user is in the scope of password hash synchronization, by default the cloud
 
 You can continue to sign in to your cloud services by using a synchronized password that is expired in your on-premises environment. Your cloud password is updated the next time you change the password in the on-premises environment.
 
+> [!NOTE]
+> Even if a user’s password has expired, the user isn't prompted to change their password as long as they have an active sign-in session with Microsoft Entra ID using cookies or tokens. A password change prompt is shown only when the user explicitly completes authentication using a password. If the user has an existing single sign-on (SSO) cookie, refresh token, or primary refresh token (PRT), they won't be prompted to change their password. Additionally, when a user signs in using a passwordless authentication method, password expiration isn't evaluated, and the user isn't prompted to change their password. For more information, see [Token revocation](~/identity-platform/refresh-tokens.md).
+
 ##### CloudPasswordPolicyForPasswordSyncedUsersEnabled
 
 The Cloud Password Policy for Password-Synced Users feature ensures that Microsoft Entra ID enforces its native password policies (such as expiration and lockout), for users whose passwords are synchronized from on-premises Active Directory. This feature enables you to align the same on-premises Active Directory password policy with the Microsoft Entra password policy, for synchronized users.

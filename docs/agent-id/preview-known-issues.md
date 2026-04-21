@@ -38,7 +38,7 @@ The following known issues and gaps relate to roles and permissions for managing
 
 ### Directory.AccessAsUser.All causes other permissions to be ignored
 
-When creating, updating, and deleting Agent IDs, clients can use delegated permissions like *AgentIdentityBlueprint.Create* and *AgentIdentityBlueprintPrincipal.EnableDisable.All*. However, if the client has been granted the delegated permission *Directory.AccessAsUser.All*, the client's permission to create and modify Agent IDs are ignored. This can cause Microsoft Graph requests to fail with `403 Unauthorized`, even though the client and user have the appropriate permissions.
+When creating, updating, and deleting Agent IDs, clients can use delegated permissions like *AgentIdentityBlueprint.Create* and *AgentIdentityBlueprintPrincipal.EnableDisable.All*. However, if the client has been granted the delegated permission *Directory.AccessAsUser.All*, the client's permission to create and modify Agent IDs are ignored. This can cause Microsoft Graph requests to fail with `403 Forbidden`, even though the client and user have the appropriate permissions.
 
 **Resolution**: Remove the *Directory.AccessAsUser.All* permission from the client, request new access tokens, and retry the request.
 

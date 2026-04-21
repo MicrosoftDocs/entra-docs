@@ -72,7 +72,7 @@ Creates an encrypted SMB (Server Message Block) share with the following charact
 
 ### Access Control
 
-The backup location and network share are configured with appropriate Active Directory security groups to ensure only authorized administrators can access the backup data.
+The backup location and network share are configured with appropriate Active Directory security groups to ensure only authorized administrators can access the backup data. The ACL model aligns with the permissions used in Group Policy Management Console (GPMC), maintaining consistency with existing GPO management practices.
 
 ## Usage Examples
 
