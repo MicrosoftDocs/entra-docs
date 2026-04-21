@@ -1,4 +1,7 @@
 ---
+author: shlipsey3
+ms.service: entra
+ms.author: sarahlipsey
 ms.topic: include
 ms.date: 04/20/2026
 ms.custom: include file
