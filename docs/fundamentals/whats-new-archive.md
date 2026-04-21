@@ -57,18 +57,6 @@ We’re excited to announce the **public preview of SMS for self-service passwo
 
 ---
 
-### Public Preview - Microsoft Security Copilot Access Review Agent in Microsoft Entra
-
-**Type:** New feature    
-**Service category:** Access Reviews        
-**Product capability:** Identity Governance    
-
-Say goodbye to time-consuming research and the uncertainty of rushed decisions. With the public preview of the [Microsoft Security Copilot Access Review Agent in Microsoft Entra](https://aka.ms/ARAgent), we’re bringing the power of AI directly into the heart of access governance.
-
-The agent works for your reviewers by automatically gathering insights and generating recommendations to help them make fast, accurate access decisions. Reviewers are guided through a natural, conversational flow right inside Microsoft Teams, so they can make the final call with confidence and clarity.
-
----
-
 ---
 
 ### General Availability - Cross-tenant synchronization (cross-cloud)
@@ -660,7 +648,7 @@ CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA
 **Service category:** Authentications (Login)   
 **Product capability:** User Authentication 
  
-CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
  
 ---
 
