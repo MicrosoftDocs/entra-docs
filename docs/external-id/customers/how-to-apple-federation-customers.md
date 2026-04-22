@@ -2,19 +2,20 @@
 title: Add Apple for customer sign-in
 description: Learn how to add Apple as an identity provider for your external tenant.
 ms.topic: how-to
-ms.date: 04/10/2025
+ms.date: 04/17/2026
 ms.custom: it-pro, sfi-image-nochange
-#Customer intent: As a dev, devops, or it admin, I want to learn how to add Apple as an identity provider for my external tenant.
+ai-usage: ai-assisted
+# Customer intent: As a developer, DevOps engineer, or IT admin, I want to add Apple as an identity provider so customers can sign in with their Apple accounts.
 ---
 # Add Apple as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with Apple, you can allow customers to sign in to your applications with their own Apple accounts. After you've added Apple as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with an Apple account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with Apple, you can let customers sign in to your applications by using their own Apple accounts. After you add Apple as one of your application's sign-in options, customers can sign in to Microsoft Entra External ID with an Apple account. Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
 
 ## Create an Apple application
 
-To enable sign-in for customers with an Apple ID, you need to create an application in [Apple Developer panel](https://developer.apple.com/). If you don't already have an Apple ID, you can create one at Certificates, Identifiers & Profiles section.
+To enable sign-in for customers with an Apple ID, you need to create an application in the [Apple Developer portal](https://developer.apple.com/). If you don't already have an Apple ID, you can create one in the **Certificates, IDs, & Profiles** section.
 
 > [!NOTE]
 > This document was created using the state of the provider’s developer page at the time of creation, and changes may occur.
@@ -76,7 +77,7 @@ After you create the Apple app, in this step you set the Apple app details in Mi
 1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Under the Built-in tab, select **Apple**.
 
-    :::image type="content" source="media/how-to-apple-federation-customers/configure-apple-identity-provider.png" alt-text="Screenshot that shows how to add Apple identity provider.":::
+    :::image type="content" source="media/how-to-apple-federation-customers/configure-apple-identity-provider.png" alt-text="Screenshot of the Apple identity provider configuration page in the Microsoft Entra admin center with fields for client ID, team ID, key ID, and client secret key.":::
 
 1. The **Name** *Apple* is autopopulated. It cannot be changed.
 1. Enter the following details: 
@@ -84,15 +85,15 @@ After you create the Apple app, in this step you set the Apple app details in Mi
     - **Apple developer team ID**: The Apple developer team ID related to the Apple application you created in the previous step.
     - **Key ID**: The key ID of the Apple application you created in the previous step.
     - **Client secret (.p8) key**: The client secret key of the Apple application you created in the previous step.
-1. Select **Save**. You’ll see Apple listed as a configured identity provider.
+1. Select **Save**. You see Apple listed as a configured identity provider.
 
-    :::image type="content" source="media/how-to-apple-federation-customers/configured-apple-identity-provider.png" alt-text="Screenshot that shows that Apple is added to the identity providers list.":::
+    :::image type="content" source="media/how-to-apple-federation-customers/configured-apple-identity-provider.png" alt-text="Screenshot of the All identity providers list showing Apple as a configured built-in identity provider.":::
 
 ## Add Apple identity provider to a user flow
 
-At this point, the Apple identity provider has been set up in your Microsoft Entra External ID, but it's not yet available in any of the sign-in pages. To add the Apple identity provider to a user flow:
+At this point, the Apple identity provider is set up in your external tenant, but it isn't yet available on sign-in pages. To add the Apple identity provider to a user flow:
 
-1. In your customer tenant, browse to **Entra ID** > **External Identities** > **User flows**.
+1. In your customer tenant, browse to **Entra ID** > **External identities** > **User flows**.
 1. Select the user flow where you want to add the Apple identity provider.
 1. Under Settings, select **Identity providers**.
 1. Under **Other Identity Providers**, select **Apple**.

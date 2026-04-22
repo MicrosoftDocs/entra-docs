@@ -20,7 +20,11 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports synced passkeys and device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Passkeys (FIDO2) are available in all Microsoft Entra ID editions, including Microsoft Entra ID Free. No extra licenses are required. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
+> Microsoft Entra ID currently supports:
+> - synced passkeys
+> - device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator <br>
+>
+> Passkeys (FIDO2) are available in all Microsoft Entra ID editions, including Microsoft Entra ID Free. No extra licenses are required. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
 
 ## Get started
 
@@ -169,7 +173,7 @@ You can work with your passkey vendor to determine the AAGUID of the passkey (FI
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile." lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
-## Passkeys (FIDO2)
+## Synced passkeys (FIDO2)
 
 ### What are synced versus device-bound passkeys?
 

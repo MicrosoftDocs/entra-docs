@@ -8,7 +8,7 @@ ms.date: 03/12/2026
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As an IT admin, I want to ensure access to specific applications is governed, by setting up access reviews for those applications.
+#Customer Intent: As an IT admin, I want to ensure access to specific applications is governed by setting up access reviews for those applications.
 ---
 
 # Prepare for an access review of users' access to an application

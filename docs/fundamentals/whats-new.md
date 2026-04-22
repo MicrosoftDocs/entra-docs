@@ -7,11 +7,12 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 04/01/2026
+ms.date: 04/15/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to review the latest Microsoft Entra releases and announcements so that I can stay current with product updates.
 ---
 
 # Microsoft Entra releases and announcements
@@ -22,49 +23,27 @@ This article provides information about the latest releases and change announcem
 
 ## March 2026
 
-### Plan for change – Conditional Access enforcement during credential registration for Windows Hello for Business and macOS Platform SSO
+### Plan for change – Agent Registry consolidation into Microsoft Agent 365
 
-**Type:** Plan for Change  
-**Service category:** Conditional Access  
-**Product capability:** User Authentication
+**Type:** Plan for change  
+**Service category:** Other  
+**Product capability:** Directory    
 
-Starting in **May 2026**, if your organization has Conditional Access policies scoped to the **Register security information** user action, those policies will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. Rollout begins in late April 2026. This ensures that your security requirements are met when users set up these credentials, not just when they sign in. Organizations without CA policies targeting this user action aren't affected by this change.
+We’re consolidating agent management experiences to make it easier to observe, govern, and secure all agents in your tenant. Agent 365 will be the single source of truth, offering a unified catalog, consistent visibility, and simplified management.
 
-**Important:** Even without Conditional Access policies protecting the Register security information user action, MFA continues to be required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types.
+**What’s changing**
 
-**What's changing**
+*   The Agent registry and Agent collections blades in the [Entra admin center](https://entra.microsoft.com/) will be retired on May 1, 2026.  
+*   No action is required by administrators. Agent functionality and management remain unaffected. You can still access the agent inventory in the [All agents view within the Microsoft 365 admin center (MAC)](https://admin.microsoft.com/Adminportal/Home#/homepage).  
 
-Beginning in May 2026, when a user provisions Windows Hello for Business on a new device or registers macOS Platform SSO credentials, Microsoft Entra ID evaluates any Conditional Access policies that target the **Register security information** user action. If the user doesn't meet the policy requirements, they're prompted to satisfy them before completing registration. This only applies to organizations that have configured CA policies protecting this user action.
+**With this change:**
 
-Depending on your organization's Conditional Access policies, users may be asked to:
+*   Agent 365 becomes the unified registry and control plane for agents.  
+*   Microsoft Entra continues to provide the identity foundation through Agent ID.  
+*   The existing [registry Graph API](/graph/api/resources/agentregistry) will be deprecated and replaced by a new API powered by Agent 365. Agents registered via the current API will need to be re-registered. We’ll follow up soon with details on the deprecation date and the availability of the new registry Graph API.  
+*   All agent access and governance capabilities remain fully available through Agent ID and Agent 365.  
 
-*   Authenticate with additional credentials before completing setup
-*   Use a specific authentication method, such as a phishing-resistant credential
-*   Be on a compliant device or connect from a trusted network location
-*   Satisfy other requirements defined in the policy
-
-This appears as a standard Conditional Access prompt during the setup process — the same experience users already see during sign-in.
-
-**What's not changing**
-
-*   Organizations without CA policies targeting the **Register security information** user action aren't affected by this change.
-*   MFA remains required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types — regardless of whether CA policies are configured.
-*   Sign-in behavior and existing CA policy evaluation for sign-in aren't affected.
-*   Credential registration through My Security Info in continues to work as before.
-
-**Customer action required**
-
-Review your Conditional Access policies for possible impact before enforcement reaches your tenant:
-
-1.  In the **Microsoft Entra admin center**, go to **Protection** > **Conditional Access** > **Policies**.
-1.  Identify policies where the target is set to **User actions** > **Register security information**.
-1.  Review the **Grant** controls on those policies — these will apply during Windows Hello for Business and macOS Platform SSO registration.
-1.  Check the **Users and groups** scope to understand which users are affected.
-1.  Consider whether users setting up a new device for the first time can satisfy your policy requirements. If your policy requires methods users may not have during initial provisioning, you may need to adjust conditions or add exclusions.
-1.  Enable **report-only mode** on relevant policies to understand the impact before enforcement begins.
-
-Enforcement begins rolling out in late April 2026 and becomes the default for all tenants in **May 2026**.
-
+For more information, see: [Agent Registry convergence with Microsoft Agent 365](../agent-id/identity-platform/agent-registry-convergence.md).
 
 ---
 
@@ -154,7 +133,7 @@ Each profile can specify allowed passkey types, attestation requirements, and au
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to request and accept tenant governance relationships, which grant admins of the governing tenant access and administrative control over the governed tenant. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -164,7 +143,7 @@ This feature allows admins to request and accept tenant governance relationships
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+This feature allows admins to discover related tenants connected to their own by B2B activity or shared billing information. Admins can use this information to request and establish tenant governance relationships, or to quarantine potential risks. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -208,7 +187,7 @@ For more information, see: [What is Microsoft single sign-on for Linux?](../iden
 **Service category:** Tenant Governance  
 **Product capability:** Tenant Governance  
 
-Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](https://learn.microsoft.com/entra/id-governance/tenant-governance/).
+Permissioned users can now create add-on tenants that are owned and governed by their home tenant. Governance is established through tenant governing relationships, granting admins access and control via GDAP. For more information, see: [Microsoft Entra tenant governance documentation (preview)](~/id-governance/tenant-governance/overview.md).
 
 ---
 
@@ -269,7 +248,7 @@ TLS 1.1 is deprecated due to security vulnerabilities. This change helps protect
 **What you need to do**  
 Ensure your Entra Connect Health agents are up to date and that your servers are configured to use TLS 1.2 for outbound connections. 
 
-*   Enable [TLS 1.2](https://learn.microsoft.com/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
+*   Enable [TLS 1.2](/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment) support in your environment
 
 ---
 
@@ -504,7 +483,7 @@ The Microsoft Entra provisioning service can be used in the 21Vianet / China clo
 **Service category:** Entitlement Management  
 **Product capability:** Identity Governance  
 
-By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request-preview).
+By end of March Microsoft Entra ID Governance approvers can now revoke access to an access package after an approval has already been granted. This gives approvers greater control to respond to changes, mistakes, or updated business needs. With this update, an approver can undo a prior approval decision, immediately removing the requestor’s access to the access package. Only the approver who originally approved the request can revoke it, even if multiple approvers belong to the same approver group. For more information, see: [Revoke a request](../id-governance/entitlement-management-request-approve.md#revoke-a-request).
 
 ---
 
@@ -753,7 +732,7 @@ Microsoft Entra ID Account Recovery is an advanced authentication recovery mecha
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation with Microsoft-managed remediation (preview)](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control-preview).
+**Self-remediation for passwordless users:** Risk-based access policies in Microsoft Entra Conditional Access now support self-remediation of risks across all authentication methods, including passwordless ones. This new control revokes compromised sessions in real-time, enables frictionless self-service, and reduces help-desk load. For more information, see: [Require risk remediation control](../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control).
 
 ---
 
@@ -858,7 +837,7 @@ Soft deletion for cloud security groups introduces a safety mechanism that allow
 **Service category:** Other  
 **Product capability:** End User Experiences  
 
-The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/identity-platform/manage-agent.md).
+The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/manage-agent.md).
 
 ---
 
@@ -888,7 +867,7 @@ Managing agent identity sponsors is key for lifecycle governance and access cont
 **Service category:** Other  
 **Product capability:** Platform  
 
-Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md).
+Microsoft Entra agent registry is a centralized metadata store of all deployed agents in an organization. As AI agents increasingly handle data retrieval, orchestration, and autonomous decision‑making, enterprises face rising security, compliance, and governance risks without clear visibility or control. Microsoft Entra agent registry, part of Microsoft Entra Agent ID, solves this by providing an extensible repository that delivers a unified view of every agent across Microsoft and non‑Microsoft ecosystems — enabling consistent discovery, governance, and secure collaboration at scale. For more information, see: [What is the Microsoft Entra Agent Registry?](../agent-id/what-is-agent-registry.md).
 
 ---
 
@@ -957,6 +936,11 @@ Microsoft Entra ID now supports synced passkeys stored in native and third‑par
 ### Public Preview - Unified Entra App Gallery
 
 **Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication 
+ 
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
+ 
 **Service category:** Enterprise Apps  
 **Product capability:** Access Control  
 

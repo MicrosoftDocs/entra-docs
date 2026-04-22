@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "docs/global-secure-access/tutorial-internet-access-file-controls.md",
+      "redirect_url": "/entra/global-secure-access/tutorial-internet-access-content-policies",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/security-copilot/access-review-agent.md",
       "redirect_url": "/entra/id-governance/access-reviews-overview",
       "redirect_document_id": false
@@ -3152,22 +3157,22 @@
     },
     {
       "source_path": "docs/agent-id/identity-platform/interactive-agent-authenticate-user.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_url": "/entra/agent-id/interactive-agent-authentication-authorization-flow",
       "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-authorization.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_url": "/entra/agent-id/interactive-agent-authentication-authorization-flow",
       "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/interactive-agent-request-admin-authorization.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_url": "/entra/agent-id/interactive-agent-authentication-authorization-flow",
       "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/interactive-agent-request-user-tokens.md",
-      "redirect_url": "/entra/agent-id/identity-platform/interactive-agent-authentication-authorization-flow",
+      "redirect_url": "/entra/agent-id/interactive-agent-authentication-authorization-flow",
       "redirect_document_id": false
     },
     {
@@ -3213,6 +3218,36 @@
     {
       "source_path": "docs/includes/secure-recommendations/25543.md",
       "redirect_url": "/azure/networking/security/zero-trust-front-door-waf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#grant-application-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#authenticate-as-an-agent-user",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-authorization-entra-admin.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#grant-application-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/autonomous-agent-request-agent-user-tokens.md",
+      "redirect_url": "/entra/agent-id/autonomous-agent-authentication-authorization-flow#authenticate-as-an-agent-user",
       "redirect_document_id": false
     },
     {
@@ -3292,7 +3327,7 @@
     },
     {
       "source_path": "docs/agent-id/identity-platform/what-is-agent-id.md",
-      "redirect_url": "/entra/agent-id/identity-platform/what-are-agent-identities",
+      "redirect_url": "/entra/agent-id/what-are-agent-identities",
       "redirect_document_id": true
     },
     {
@@ -3304,6 +3339,191 @@
       "source_path": "docs/agent-id/identity-professional/index.yml",
       "redirect_url": "/entra/agent-id/index",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-autonomous-app-oauth-flow.md",
+      "redirect_url": "/entra/agent-id/agent-autonomous-app-oauth-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-blueprint.md",
+      "redirect_url": "/entra/agent-id/agent-blueprint",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-id-ai-guided-setup.md",
+      "redirect_url": "/entra/agent-id/agent-id-ai-guided-setup",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-identities.md",
+      "redirect_url": "/entra/agent-id/agent-identities",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-lists.md",
+      "redirect_url": "/entra/agent-id/agent-lists",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-metadata-discoverability.md",
+      "redirect_url": "/entra/agent-id/agent-metadata-discoverability",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-oauth-protocols.md",
+      "redirect_url": "/entra/agent-id/agent-oauth-protocols",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-on-behalf-of-oauth-flow.md",
+      "redirect_url": "/entra/agent-id/agent-on-behalf-of-oauth-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-owners-sponsors-managers.md",
+      "redirect_url": "/entra/agent-id/agent-owners-sponsors-managers",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-registry-collections.md",
+      "redirect_url": "/entra/agent-id/agent-registry-collections",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-registry-convergence.md",
+      "redirect_url": "/entra/agent-id/agent-registry-convergence",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-registry-manage-collections.md",
+      "redirect_url": "/entra/agent-id/agent-registry-manage-collections",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-service-principals.md",
+      "redirect_url": "/entra/agent-id/agent-service-principals",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-token-claims.md",
+      "redirect_url": "/entra/agent-id/agent-token-claims",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-tokens.md",
+      "redirect_url": "/entra/agent-id/agent-tokens",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-user-oauth-flow.md",
+      "redirect_url": "/entra/agent-id/agent-user-oauth-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/agent-users.md",
+      "redirect_url": "/entra/agent-id/agent-users",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/call-api-azure-services.md",
+      "redirect_url": "/entra/agent-id/call-api-azure-services",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/call-api-custom.md",
+      "redirect_url": "/entra/agent-id/call-api-custom",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/call-api-microsoft-graph.md",
+      "redirect_url": "/entra/agent-id/call-api-microsoft-graph",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/create-blueprint.md",
+      "redirect_url": "/entra/agent-id/create-blueprint",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/create-delete-agent-identities.md",
+      "redirect_url": "/entra/agent-id/create-delete-agent-identities",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/error-codes.md",
+      "redirect_url": "/entra/agent-id/error-codes",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/interactive-agent-authentication-authorization-flow.md",
+      "redirect_url": "/entra/agent-id/interactive-agent-authentication-authorization-flow",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/key-concepts.md",
+      "redirect_url": "/entra/agent-id/key-concepts",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/manage-agent-blueprint.md",
+      "redirect_url": "/entra/agent-id/manage-agent-blueprint",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/manage-agent.md",
+      "redirect_url": "/entra/agent-id/manage-agent",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/microsoft-entra-sdk-for-agent-identities.md",
+      "redirect_url": "/entra/agent-id/microsoft-entra-sdk-for-agent-identities",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/preview-known-issues.md",
+      "redirect_url": "/entra/agent-id/preview-known-issues",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/publish-agents-to-registry.md",
+      "redirect_url": "/entra/agent-id/publish-agents-to-registry",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/registry-agent-to-agent-protocol.md",
+      "redirect_url": "/entra/agent-id/registry-agent-to-agent-protocol",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/what-are-agent-identities.md",
+      "redirect_url": "/entra/agent-id/what-are-agent-identities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/what-is-agent-id-platform.md",
+      "redirect_url": "/entra/agent-id/what-is-agent-id-platform",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/identity-platform/what-is-agent-registry.md",
+      "redirect_url": "/entra/agent-id/what-is-agent-registry",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/agent-id/manage-agent-identities-organization.md",
+      "redirect_url": "/entra/agent-id/manage-agent-identities-admin",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/manage-agent.md",
+      "redirect_url": "/entra/agent-id/manage-agent-identities-end-user",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/enable-external-id-hsc-mode.md",
+      "redirect_url": "/entra/external-id/customers/enable-external-id-high-scale-compatibility-mode",
+      "redirect_document_id": true
     }
   ]
 }

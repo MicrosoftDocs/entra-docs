@@ -54,6 +54,10 @@ In the previous section, you created a Conditional Access policy requiring terms
 
 To test your policy, try to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using a test account. You should see a dialog that requires you to accept your terms of use.
 
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
 ## Related content
 
 [Microsoft Entra terms of use](terms-of-use.md)

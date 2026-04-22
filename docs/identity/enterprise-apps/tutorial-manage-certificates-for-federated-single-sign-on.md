@@ -109,6 +109,11 @@ You can add up to five email addresses to the Notification list (including the e
 
 You receive the notification email from azure-noreply@microsoft.com. To avoid the email going to your spam location, add this email to your contacts.
 
+> [!NOTE]
+> If notification email address configuration is completed programmatically using Microsoft Graph or PowerShell, administrators should open the single sign-on blade for the application in the Microsoft Entra admin center to ensure expiration notifications are enabled.
+> Failure to initialize SAML settings in the admin center may result in certificate expiration notification emails not being sent.
+
+
 ## Renew a certificate that is set to expire soon
 
 If a certificate is about to expire, you can renew it using a procedure that results in no significant downtime for your users. To renew an expiring certificate:
@@ -126,7 +131,7 @@ If a certificate is about to expire, you can renew it using a procedure that res
 If your app lacks certificate expiration validation and the certificate matches both Microsoft Entra ID and your app, it remains accessible. This condition is true even if the certificate is expired. Ensure your application can validate certificate expiration.
 
 ## Guidance and best practices for ISVs on rotating certificates
-This section will outline best practices independent software vendors (ISV’s) can adopt to enable automated certificate rollover when SAML certificates are near expiry and when applications federated with Microsoft Entra ID. SAML certificates in Entra ID are used for signing assertions in federated single sign-on (SSO). These certificates expire (typically every 1-3 years) and rotation requires a Customer and SaaS ISV coordination to update a mutual certificate in both systems without downtime. Industry trends are shortening certificate lifetimes, manual rollover processes increasingly create operational burden and risk service disruption — especially in large organizations with many SAML enterprise applications.
+This section will outline best practices independent software vendors (ISVs) can adopt to enable automated certificate rollover when SAML certificates are near expiry and when applications federated with Microsoft Entra ID. SAML certificates in Entra ID are used for signing assertions in federated single sign-on (SSO). These certificates expire (typically every 1-3 years) and rotation requires a Customer and SaaS ISV coordination to update a mutual certificate in both systems without downtime. Industry trends are shortening certificate lifetimes, manual rollover processes increasingly create operational burden and risk service disruption — especially in large organizations with many SAML enterprise applications.
 
 At a high level, the recommended rollover model relies on customers generating (or uploading) a new signing certificate in Microsoft Entra ID, and the SAML application automatically discovering it via the application’s federation metadata endpoint. The application should download metadata on a regular cadence, add newly discovered certificates as a secondary signing certificate while the new key is still inactive, and then seamlessly promote it to primary after the customer activates it in Microsoft Entra ID. Once the new certificate is in use, the old certificate can be safely removed from both Microsoft Entra ID and the application, completing the rotation without downtime. 
 
