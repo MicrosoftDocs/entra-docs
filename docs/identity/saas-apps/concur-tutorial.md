@@ -2,16 +2,9 @@
 title: Configure Concur for Single sign-on with Microsoft Entra ID
 description: Learn how to configure SSO between Microsoft Entra ID and Concur.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Concur so that I can control who has access to Concur, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -100,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://<customer-domain>.concursolutions.com` | 
 
     > [!NOTE]
-    > These values aren't real. Update these values with the actual Sign-on URL, Identifier and Reply URL. Contact [Concur Client support team](https://www.concur.co.in/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Sign-on URL, Identifier and Reply URL. Contact Concur Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -116,10 +109,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Concur SSO
 
-To configure single sign-on on **Concur** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Concur support team](https://www.concur.co.in/contact). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Concur** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to Concur support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
   > [!NOTE]
-  > The configuration of your Concur subscription for federated SSO via SAML is a separate task, which you must contact [Concur Client support team](https://www.concur.co.in/contact) to perform.
+  > The configuration of your Concur subscription for federated SSO via SAML is a separate task, which you must contact Concur Client support team to perform.
 
 ### Create Concur test user
 

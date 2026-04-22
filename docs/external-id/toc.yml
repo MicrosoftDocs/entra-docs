@@ -8,8 +8,6 @@ items:
     href: external-identities-overview.md
   - name: What are workforce and external configurations?
     href: tenant-configurations.md
-  - name: Supported features
-    href: customers/concept-supported-features-customers.md
   - name: External ID pricing
     href: external-identities-pricing.md
   - name: What's new in docs?
@@ -176,5 +174,3 @@ items:
       href: https://azure.microsoft.com/updates/?product=active-directory
     - name: Stack Overflow
       href: https://stackoverflow.com/questions/tagged/azure-active-directory
-    - name: Videos
-      href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

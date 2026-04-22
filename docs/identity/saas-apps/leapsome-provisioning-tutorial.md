@@ -2,11 +2,8 @@
 title: Configure Leapsome for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Leapsome.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/08/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Leapsome so that I can streamline the user management process and ensure that users have the appropriate access to Leapsome.
@@ -25,7 +22,7 @@ The objective of this article is to demonstrate the steps to be performed in Lea
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A [Leapsome](https://www.Leapsome.com/pricing) tenant.
 * A user account in Leapsome with Admin permissions.
 
@@ -48,15 +45,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1. Sign in to your [Leapsome Admin Console](https://www.Leapsome.com/app/#/login). Navigate to **Settings > Admin Settings**.
 
-	![Leapsome Admin Console](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
+	![Screenshot of Leapsome Admin Console.](media/Leapsome-provisioning-tutorial/leapsome-admin-console.png)
 
-2.	Navigate to **Integrations > SCIM User provisioning**.
+1.	Navigate to **Integrations > SCIM User provisioning**.
 
-	![Leapsome Add SCIM](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
+	![Screenshot of Leapsome Add SCIM.](media/Leapsome-provisioning-tutorial/leapsome-add-scim.png)
 
-3.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Leapsome application.
+1.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Leapsome application.
 
-	![Leapsome Create Token](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
+	![Screenshot of Leapsome Create Token.](media/Leapsome-provisioning-tutorial/leapsome-create-token.png)
 
 ## Add Leapsome from the gallery
 
@@ -68,7 +65,7 @@ Before configuring Leapsome for automatic user provisioning with Microsoft Entra
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Leapsome**, select **Leapsome** in the search box.
 1. Select **Leapsome** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Leapsome in the results list](common/search-new-app.png)
+	![Screenshot of Leapsome in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Leapsome 
 
@@ -84,59 +81,49 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Leapsome**.
 
-	![The Leapsome link in the Applications list](common/all-applications.png)
+	![Screenshot of the Leapsome link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input `https://www.leapsome.com/api/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Leapsome. If the connection fails, ensure your Leapsome account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Leapsome Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Leapsome. If the connection fails, ensure your Leapsome account has the required admin permissions and try again.
+	> [!NOTE]
+	> Enter `https://www.leapsome.com/api/scim` in **Tenant URL**.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Leapsome**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Leapsome for update operations. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-	![Leapsome User Attributes](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Leapsome for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Leapsome API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Leapsome**.
+	![Screenshot of Leapsome User Attributes.](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Leapsome for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Leapsome for update operations. Select the **Save** button to commit any changes.
 
-	![Leapsome Group Attributes](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
+	![Screenshot of Leapsome Group Attributes.](media/Leapsome-provisioning-tutorial/Leapsome-group-attributes.png)
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Leapsome, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Leapsome by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Leapsome.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Connector Limitations
 

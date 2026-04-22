@@ -2,12 +2,14 @@
 title: PowerShell samples for Global Secure Access
 description: Use these PowerShell samples for Global Secure Access.
 ms.topic: sample
-ms.date: 02/21/2025
-ms.reviewer: sumi
+ms.date: 03/13/2026
+ms.reviewer: katabish
 ai-usage: ai-assisted
 ---
 
 # Global Secure Access PowerShell examples
+
+## Overview
 
 Sample scripts provide guidance on tasks for Global Secure Access using PowerShell.
 The samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.

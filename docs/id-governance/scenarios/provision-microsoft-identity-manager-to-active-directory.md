@@ -1,7 +1,10 @@
 ---
 title: 'Govern on-premises users that are provisioned to Active Directory with Microsoft Identity Manager'
 description: This article a tutorial on how to provision users and groups to Active Directory using MIM.
-ms.topic: article
+author: owinfreyATL
+manager: femila
+ms.service: entra-id-governance
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice:
 ---

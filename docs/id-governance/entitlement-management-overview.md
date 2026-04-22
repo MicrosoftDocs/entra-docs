@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 11/25/2024
 ms.reviewer: markwahl-msft
-#Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
+#Customer Intent: As an IT admin, I want to understand what entitlement management is so that I can manage access to groups, applications, and SharePoint Online sites for internal and external users.
 ---
 # What is entitlement management?
 
@@ -67,7 +67,7 @@ Entitlement management introduces the concept of an *access package*. An access 
 
 You can also control access to other resources that rely upon Microsoft Entra security groups or Microsoft 365 Groups. For example:
 
-- You can give identities licenses for Microsoft 365 by using a Microsoft Entra security group in an access package and configuring [group-based licensing](~/identity/users/licensing-groups-assign.md) for that group.
+- You can give identities licenses for Microsoft 365 by using a Microsoft Entra security group in an access package and configuring [group-based licensing](~/fundamentals/concept-group-based-licensing.md) for that group.
 - You can give identities access to manage Azure resources by using a Microsoft Entra security group in an access package and creating an [Azure role assignment](/azure/role-based-access-control/role-assignments-portal) for that group.
 - You can give identities access to manage Microsoft Entra roles by using groups assignable to Microsoft Entra roles in an access package and [assigning a Microsoft Entra role to that group](../identity/role-based-access-control/manage-roles-portal.md).
 
@@ -118,7 +118,7 @@ To better understand entitlement management and its documentation, you can refer
 | access package | A bundle of resources that a team or project needs and is governed with policies. An access package is always contained in a catalog. You would create a new access package for a scenario in which identities need to request access for themselves. |
 | access request | A request to access the resources in an access package. A request typically goes through an approval workflow. If approved, the requesting identity receives an access package assignment. |
 | assignment | An assignment of an access package to an identity ensures the identity has all the resource roles of that access package. Access package assignments typically have a time limit before they expire. |
-| catalog | A container of related resources and access packages. Catalogs are used for delegation, so that nonadministrators can create their own access packages. Catalog owners can add resources they own to a catalog. Catalogs can have a [privilege level](entitlement-management-catalog-create.md#catalog-privilege-levels-preview) of **Standard**, or a catalog with regular resources in it, or **Privileged** where it contains resources that grant elevated permissions. |
+| catalog | A container of related resources and access packages. Catalogs are used for delegation, so that nonadministrators can create their own access packages. Catalog owners can add resources they own to a catalog. |
 | catalog creator | A collection of identities who are authorized to create new catalogs. When a nonadministrator identity who is authorized to be a catalog creator creates a new catalog, they automatically become the owner of that catalog. |
 | connected organization | An external Microsoft Entra directory or domain that you have a relationship with. The identities from a connected organization can be specified in a policy as being allowed to request access. |
 | policy | A set of rules that defines the access lifecycle, such as how identities get access, who can approve, and how long they have access through an assignment. A policy is linked to an access package. For example, an access package could have two policies - one for employees to request access and a second for external identities to request access. |

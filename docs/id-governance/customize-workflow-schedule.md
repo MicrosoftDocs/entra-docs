@@ -3,8 +3,9 @@ title: Customize a workflow schedule
 description: Learn how to customize the schedule of a lifecycle workflow.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/25/2025
+ms.date: 03/12/2026
 ms.reviewer: krbain
+#Customer Intent: As an IT admin, I want to customize the schedule of a lifecycle workflow so that I can control when workflows are executed.
 ---
 
 # Customize the schedule of workflows

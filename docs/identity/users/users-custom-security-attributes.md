@@ -1,16 +1,15 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-author: rolyon
-ms.author: rolyon
-ms.date: 08/25/2024
+ms.date: 04/03/2026
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: users
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
+
+
+## Overview
 
 [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) in Microsoft Entra ID, part of Microsoft Entra, are business-specific attributes (key-value pairs) that you can define and assign to Microsoft Entra objects. For example, you can assign custom security attribute to filter your employees or to help determine who gets access to resources. This article describes how to assign, update, list, or remove custom security attributes for Microsoft Entra ID.
 
@@ -20,6 +19,11 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
+- Connect to Microsoft Graph with the required scope:
+
+    ```PowerShell
+    Connect-MgGraph -Scopes "CustomSecAttributeAssignment.ReadWrite.All"
+    ```
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
@@ -110,7 +114,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 To manage custom security attribute assignments for users in your Microsoft Entra organization, you can use PowerShell or Microsoft Graph API. The following examples can be used to manage assignments.
 
-#### Assign a custom security attribute with a string value to a user
+### Assign a custom security attribute with a string value to a user
 
 The following example assigns a custom security attribute with a string value to a user.
 
@@ -153,7 +157,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Assign a custom security attribute with a multi-string value to a user
+### Assign a custom security attribute with a multi-string value to a user
 
 The following example assigns a custom security attribute with a multi-string value to a user.
 
@@ -198,7 +202,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Assign a custom security attribute with an integer value to a user
+### Assign a custom security attribute with an integer value to a user
 
 The following example assigns a custom security attribute with an integer value to a user.
 
@@ -243,7 +247,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Assign a custom security attribute with a multi-integer value to a user
+### Assign a custom security attribute with a multi-integer value to a user
 
 The following example assigns a custom security attribute with a multi-integer value to a user.
 
@@ -288,7 +292,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Assign a custom security attribute with a Boolean value to a user
+### Assign a custom security attribute with a Boolean value to a user
 
 The following example assigns a custom security attribute with a Boolean value to a user.
 
@@ -331,7 +335,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Update a custom security attribute assignment with an integer value for a user
+### Update a custom security attribute assignment with an integer value for a user
 
 The following example updates a custom security attribute assignment with an integer value for a user.
 
@@ -376,7 +380,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Update a custom security attribute assignment with a Boolean value for a user
+### Update a custom security attribute assignment with a Boolean value for a user
 
 The following example updates a custom security attribute assignment with a Boolean value for a user.
 
@@ -419,7 +423,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Update a custom security attribute assignment with a multi-string value for a user
+### Update a custom security attribute assignment with a multi-string value for a user
 
 The following example updates a custom security attribute assignment with a multi-string value for a user.
 
@@ -464,7 +468,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Get the custom security attribute assignments for a user
+### Get the custom security attribute assignments for a user
 
 The following example gets the custom security attribute assignments for a user.
 
@@ -506,7 +510,7 @@ Key         Value
 EmployeeId  KX45897
 ```
 
-If there are no custom security attributes assigned to the user or if the calling principal does not have access, the response will be empty.
+If there are no custom security attributes assigned to the user or if the calling principal doesn't have access, the response will be empty.
 
 
 # [Microsoft Graph](#tab/ms-graph)
@@ -545,7 +549,7 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=customSecurityAttributes
 }
 ```
 
-If there are no custom security attributes assigned to the user or if the calling principal does not have access, the response will look like:
+If there are no custom security attributes assigned to the user or if the calling principal doesn't have access, the response will look like:
 
 ```http
 {
@@ -555,7 +559,7 @@ If there are no custom security attributes assigned to the user or if the callin
 
 ---
 
-#### List all users with a custom security attribute assignment that equals a value
+### List all users with a custom security attribute assignment that equals a value
 
 The following example lists all users with a custom security attribute assignment that equals a value. It retrieves users with a custom security attribute named `AppCountry` with a value that equals `Canada`. The filter value is case sensitive. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
 
@@ -648,7 +652,7 @@ ConsistencyLevel: eventual
 
 ---
 
-#### List all users with a custom security attribute assignment that starts with a value
+### List all users with a custom security attribute assignment that starts with a value
 
 The following example lists all users with a custom security attribute assignment that starts with a value. It retrieves users with a custom security attribute named `EmployeeId` with a value that starts with `GS`. The filter value is case sensitive. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
 
@@ -759,9 +763,9 @@ ConsistencyLevel: eventual
 
 ---
 
-#### List all users with a custom security attribute assignment that does not equal a value
+### List all users with a custom security attribute assignment that doesn't equal a value
 
-The following example lists all users with a custom security attribute assignment that does not equal a value. It retrieves users with a custom security attribute named `AppCountry` with a value that does not equal `Canada`. The filter value is case sensitive. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
+The following example lists all users with a custom security attribute assignment that doesn't equal a value. It retrieves users with a custom security attribute named `AppCountry` with a value that doesn't equal `Canada`. The filter value is case sensitive. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
 
 - Attribute set: `Marketing`
 - Attribute: `AppCountry`
@@ -874,7 +878,7 @@ ConsistencyLevel: eventual
 
 ---
 
-#### Remove a single-valued custom security attribute assignment from a user
+### Remove a single-valued custom security attribute assignment from a user
 
 The following example removes a single-valued custom security attribute assignment from a user by setting the value to null.
 
@@ -918,7 +922,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 ---
 
-#### Remove a multi-valued custom security attribute assignment from a user
+### Remove a multi-valued custom security attribute assignment from a user
 
 The following example removes a multi-valued custom security attribute assignment from a user by setting the value to an empty collection.
 
@@ -964,11 +968,11 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 **Where are custom security attribute assignments for users supported?**
 
-Custom security attribute assignments for users are supported in Microsoft Entra admin center, PowerShell, and Microsoft Graph APIs. Custom security attribute assignments are not supported in My Apps or Microsoft 365 admin center.
+Custom security attribute assignments for users are supported in Microsoft Entra admin center, PowerShell, and Microsoft Graph APIs. Custom security attribute assignments aren't supported in My Apps or Microsoft 365 admin center.
 
 **Who can view the custom security attributes assigned to a user?**
 
-Only users that have been assigned the Attribute Assignment Administrator or Attribute Assignment Reader roles at tenant scope can view custom security attributes assigned to any users in the tenant. Users cannot view the custom security attributes assigned to their own profile or other users. Guests cannot view the custom security attributes regardless of the guest permissions set on the tenant.
+Only users that have been assigned the Attribute Assignment Administrator or Attribute Assignment Reader roles at tenant scope can view custom security attributes assigned to any users in the tenant. Users can't view the custom security attributes assigned to their own profile or other users. Guests can't view the custom security attributes regardless of the guest permissions set on the tenant.
 
 **Do I need to create an app to add custom security attribute assignments?**
 
@@ -988,11 +992,11 @@ Yes, directory synced users from an on-premises Active Directory can be assigned
 
 **Are custom security attribute assignments available for rules for dynamic membership groups?**
 
-No, custom security attributes assigned to users are not supported for configuring rules for dynamic membership groups.
+No, custom security attributes assigned to users aren't supported for configuring rules for dynamic membership groups.
 
 **Are custom security attributes the same as the custom attributes in B2C tenants?**
 
-No, custom security attributes are not supported in B2C tenants and are not related to B2C features.
+No, custom security attributes aren't supported in B2C tenants and aren't related to B2C features.
 
 ## Next steps
 

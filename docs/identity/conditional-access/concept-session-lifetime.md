@@ -1,11 +1,15 @@
 ---
 title: Conditional Access adaptive session lifetime policies
 description: Learn to configure Conditional Access adaptive session lifetime policies to protect critical apps, sensitive data, and high-impact users in your organization.
-ms.topic: article
-ms.date: 12/05/2025
+ms.service: entra-id
+ms.subservice: conditional-access
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: inbarc
 ---
 # Conditional Access adaptive session lifetime policies
+
+## Overview
 
 Conditional Access adaptive session lifetime policies let organizations restrict authentication sessions in complex deployments. Scenarios include:
 

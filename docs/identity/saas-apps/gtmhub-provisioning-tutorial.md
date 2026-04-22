@@ -3,10 +3,8 @@ title: Configure Gtmhub for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Gtmhub.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Gtmhub so that I can streamline the user management process and ensure that users have the appropriate access to Gtmhub.
@@ -17,7 +15,7 @@ ms.custom: sfi-image-nochange
 This article describes the steps you need to perform in both Gtmhub and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Gtmhub](https://www.gtmhub.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 >[!NOTE]
->Currently, when automatic user provisioning is configured, Microsoft Entra-only automatically de-provisions users and groups to Gtmhub and map users to their respective teams using the Microsoft Entra provisioning service.But in 2021 once SSO is enabled with Gtmhub,users are automatically provisioned when they log in through SSO and is assigned to their respective team.
+>Currently, when automatic user provisioning is configured, Microsoft Entra-only automatically de-provisions users and groups to Gtmhub and map users to their respective teams using the Microsoft Entra provisioning service. But in 2021 once SSO is enabled with Gtmhub, users are automatically provisioned when they log in through SSO and is assigned to their respective team.
 
 
 ## Capabilities Supported
@@ -36,8 +34,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Gtmhub](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Gtmhub](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-gtmhub-to-support-team-mapping-and-user-de-provisioning-with-azure-ad'></a>
 
@@ -50,10 +48,10 @@ In order to connect your provisioning application to your Gtmhub account you nee
 1. Sign in to your **Gtmhub account**. Navigate to **Settings > Configuration > API Tokens**.
 
     ![API Tokens tab](media/gtmhub-provisioning-tutorial/api-tokens.png)
-2. Select **Issue Token** and select **SCIM**. Enter a name for the token and select the **Generate API Token** button.
+1. Select **Issue Token** and select **SCIM**. Enter a name for the token and select the **Generate API Token** button.
 
     ![Generate Tokens tab](media/gtmhub-provisioning-tutorial/generate-token.png)
-3. Once the token is generated you can copy and use it in your Microsoft Entra provisioning application.
+1. Once the token is generated you can copy and use it in your Microsoft Entra provisioning application.
 
     ![Copy Token](media/gtmhub-provisioning-tutorial/token.png)
 
@@ -63,11 +61,11 @@ In order to connect your provisioning application to your Gtmhub account you nee
 
     `https://app.gtmhub.com/api/v1/scim/azure/{account_id}`
 
-2. If your Gtmhub account is located in the US data center you also have to add the data center to the URL:
+1. If your Gtmhub account is located in the US data center you also have to add the data center to the URL:
     
      `https://app.us.gtmhub.com/api/v1/scim/azure/{account_id}`
 
-3. To get the account ID go to **Settings** then select the **API Tokens** tab and copy the account ID:
+1. To get the account ID go to **Settings** then select the **API Tokens** tab and copy the account ID:
     ![Account ID](media/gtmhub-provisioning-tutorial/account-id.png)
 
 <a name='step-3-add-gtmhub-from-the-azure-ad-application-gallery'></a>
@@ -97,27 +95,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Gtmhub link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Gtmhub Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Gtmhub. If the connection fails, ensure your Gtmhub account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Gtmhub Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Gtmhub. If the connection fails, ensure your Gtmhub account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Gtmhub**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Gtmhub in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Gtmhub for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Gtmhub API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Gtmhub in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Gtmhub for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Gtmhub API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -125,21 +125,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String|&check;|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Gtmhub, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Gtmhub by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page. 
 
 ## Step 6: Monitor your deployment
 

@@ -23,7 +23,7 @@ If you don't see certain SSPR options or you can't configure them in the Microso
 
 You don't see **Password reset** if you don't have a Microsoft Entra ID license assigned to the administrator performing the operation.
 
-To assign a license to an administrator account, see [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses).
+To assign a license to an administrator account, see [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-admin-center.md).
 
 ### I don't see a particular configuration option
 
@@ -53,7 +53,7 @@ If you disable app notifications in SSPR but enable it in MFA policy, that optio
 
 A Microsoft Entra ID license isn't assigned to the administrator performing the operation.
 
-To assign a license to the administrator account in question, see [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses).
+To assign a license to the administrator account in question, see [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-admin-center.md).
 
 ### User registrations show multiple times
 
@@ -77,7 +77,7 @@ In the Microsoft Entra admin center, change the **Self-service password reset en
 
 Only one Microsoft Entra group can currently be enabled for SSPR using the Microsoft Entra admin center. As part of a wider deployment of SSPR, nested groups are supported. Make sure that the users in the groups you choose are assigned the appropriate licenses. Review the previous troubleshooting step to enable SSPR as required.
 
-Also review troubleshooting steps to make sure that the administrator performing the configuration options has a license assigned. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses).
+Also review troubleshooting steps to make sure that the administrator performing the configuration options has a license assigned. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-admin-center.md).
 
 ## SSPR usage
 
@@ -86,7 +86,7 @@ To help resolve problems with SSPR, review these steps.
 | Error | Solution |
 | --- | --- |
 | The directory isn't enabled for password reset. | In the Microsoft Entra admin center, change the **Self-service password reset enabled** configuration to *Selected* or *All* and then select **Save**. |
-| The user doesn't have a Microsoft Entra ID license assigned. | A Microsoft Entra ID license isn't assigned to the desired user. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses). |
+| The user doesn't have a Microsoft Entra ID license assigned. | A Microsoft Entra ID license isn't assigned to the desired user. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-admin-center.md). |
 | The directory is enabled for password reset, but the authentication information for the user is missing or malformed. | Make sure that user account is properly formed contact data on file in the directory. For more information, see [Data used by Microsoft Entra self-service password reset](howto-sspr-authenticationdata.md). |
 | The directory is enabled for password reset, but the user has only one piece of contact data on file when the policy is set to require two verification methods. | Make sure that the user has at least two properly configured contact methods. An example is having both a mobile phone number *and* an office phone number. |
 | The directory is enabled for password reset and the user is properly configured, but the user is unable to be contacted. | A temporary service error, or there's incorrect contact data that we can't properly detect. <br> If the user waits 10 seconds, a link is displayed to "Try again" and "Contact your administrator". If the user selects "Try again," it retries the call. If the user selects "Contact your administrator," it sends a form email to the administrators requesting a password reset to be performed for that user account. |

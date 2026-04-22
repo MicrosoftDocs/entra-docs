@@ -2,16 +2,11 @@
 title: Factors influencing the performance of Microsoft Entra Connect
 description: This document explains how various factors influence the Microsoft Entra Connect provisioning engine. These factors help organizations to plan their Microsoft Entra Connect deployment to make sure it meets their sync requirements.
 
-author: omondiatieno
-manager: mwongerapk
 tags: azuread
-ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.reviewer: martincoetzer
-ms.author: jomondi
-
 ---
 # Factors influencing the performance of Microsoft Entra Connect
 
@@ -153,9 +148,7 @@ Make sure your Microsoft Entra Connect server meets the hardware requirements ba
 
 ### Microsoft Entra ID factors
 
-Microsoft Entra ID uses throttling to protect the cloud service from denial-of-service (DoS) attacks. Currently Microsoft Entra ID has a throttling limit of 7,000 writes per 5 minutes (84,000 per hour). For example, the following operations can be throttled:
-
-
+Microsoft Entra ID uses throttling to protect the cloud service from denial-of-service (DoS) attacks. Currently Microsoft Entra ID has a throttling limit of 6,000 writes per 5 minutes (72,000 per hour). For example, the following operations can be throttled:
 
 - Microsoft Entra Connect export to Microsoft Entra ID.
 - PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as dynamic membership groups.

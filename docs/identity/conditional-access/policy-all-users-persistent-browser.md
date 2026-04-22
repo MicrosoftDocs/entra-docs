@@ -2,10 +2,12 @@
 title: Require reauthentication with Conditional Access
 description: Create a custom Conditional Access policy requiring reauthentication.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require reauthentication and disable browser persistence
+
+## Overview
 
 Protect user access on unmanaged devices by preventing browser sessions from remaining signed in after the browser is closed and setting a sign-in frequency to 1 hour.
 
@@ -19,7 +21,7 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
@@ -34,11 +36,11 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
    1. Select **Persistent browser session**, and set **Persistent browser session** to **Never persistent**.
    1. Select, **Select**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

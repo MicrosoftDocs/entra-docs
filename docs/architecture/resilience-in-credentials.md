@@ -2,18 +2,15 @@
 title: Build resilience with credential management in Microsoft Entra ID
 description: A guide for architects
  and IT administrators on building a resilient credential strategy.
-author: janicericketts
-ms.service: entra
+ms.topic: best-practice
+ms.date: 04/03/2026
 ms.subservice: architecture
-ms.topic: article
-ms.date: 11/16/2022
-ms.author: jricketts
 ---
 # Build resilience with credential management
 
 When a credential is presented to Microsoft Entra ID in a token request, there can be multiple dependencies that must be available for validation. The first authentication factor relies on Microsoft Entra authentication and, in some cases, on external (non-Entra ID) dependency, such as on-premises infrastructure. For more information on hybrid authentication architectures, see [Build resilience in your hybrid infrastructure](resilience-in-hybrid.md). 
 
-The most secure and resilient credential strategy is to use passwordless authentication. [Windows Hello for Business](~/identity/authentication/concept-authentication-passwordless.md#windows-hello-for-business) and [Passkey (FIDO 2.0)](~/identity/authentication/concept-authentication-passwordless.md#passkeys-fido2) security keys have fewer dependencies than other MFA methods. For macOS users customers can enable [Platform Credential for macOS](~/identity/authentication/concept-authentication-passwordless.md#platform-credential-for-macos). When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA). 
+The most secure and resilient credential strategy is to use passwordless authentication. [Windows Hello for Business](~/identity/authentication/concept-authentication-passkeys-fido2.md) and [Passkey (FIDO 2.0)](~/identity/authentication/concept-authentication-passkeys-fido2.md) security keys have fewer dependencies than other MFA methods. For macOS users customers can enable [Platform Credential for macOS](~/identity/authentication/concept-authentication-passkeys-fido2.md). When you implement these methods users are able to perform strong passwordless and **phishing-resistant** Multi-Factor authentication (MFA). 
 
 ![Image of preferred authentication methods and dependencies](./media/resilience-in-credentials/passwordless-pr.png)
 
@@ -42,7 +39,7 @@ For second factors, the Microsoft Authenticator app or other authenticator apps 
 |Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas)|
 |Pass Through Authentication (PTA)|PTA uses on-premise agents to process the password authentication.|[How does Microsoft Entra pass-through authentication work?](~/identity/hybrid/connect/how-to-connect-pta-how-it-works.md#how-does-microsoft-entra-pass-through-authentication-work)|
 |Federation| Federation server(s) must be online and available to process the authentication attempt|[High availability cross-geographic AD FS deployment in Azure with Azure Traffic Manager](/windows-server/identity/ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager)|
-|External Authentication Methods (EAM)| EAM provides a path for customers to use external MFA providers.|[Manage an external authentication method in Microsoft Entra ID (Preview)](~/identity/authentication/how-to-authentication-external-method-manage.md)|
+|External Multifactor Authentication (External MFA)| External MFA provides a path for customers to use external MFA providers.|[Manage external MFA in Microsoft Entra ID](~/identity/authentication/how-to-authentication-external-method-manage.md)|
 
 ## How do multiple credentials help resilience?
 

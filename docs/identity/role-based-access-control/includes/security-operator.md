@@ -1,22 +1,18 @@
 ---
 title: Security Operator
 description: Security Operator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
-This is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts and have global read-only access on security-related features, including all information in Microsoft 365 Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts and have global read-only access on security-related features, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
 | In | Can do |
 | --- | --- |
-| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft 365 Defender portal |
+| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft Defender portal |
 | [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
 | [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |
 | [Microsoft Purview portal](/purview/purview-portal) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |

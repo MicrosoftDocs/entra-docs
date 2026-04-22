@@ -1,17 +1,17 @@
 ---
 title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
-author: kenwith
-ms.service: entra-id
-ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/27/2025
-ms.author: kenwith
+ms.date: 03/18/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
 # What is a multitenant organization in Microsoft Entra ID?
+
+
+## Overview
 
 Multitenant organization is a feature in Microsoft Entra ID and Microsoft 365 that enables you to define a boundary around the Microsoft Entra tenants that your organization owns. In the directory, it takes the form of a tenant group representing your organization. Each pair of tenants in the group is governed by cross-tenant access settings that you can use to configure B2B collaboration.
 
@@ -137,10 +137,10 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
-- A multitenant organization is not allowed between a Cloud Solution Provider (CSP) and their customer tenants.
+- A multitenant organization isn't allowed between a Cloud Solution Provider (CSP) and their customer tenants.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
-- Any active tenant may leave a multitenant organization by removing themselves from it.
+- Any active tenant might leave a multitenant organization by removing themselves from it.
 - A multitenant organization is deleted when the only remaining active (owner) tenant leaves.
 
 ## Limits
@@ -179,7 +179,7 @@ For more information about using Microsoft 365 admin center to join the multiten
 
 ### Step 4: Provision external member users
 
-Multitenant organization collaboration in Microsoft 365 relies on the provisioning of B2B collaboration member users. Depending on your use case, you may want to provision users using one or more of the following methods:
+Multitenant organization collaboration in Microsoft 365 relies on the provisioning of B2B collaboration member users. Depending on your use case, you might want to provision users using one or more of the following methods:
 
 - [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
 - [Configure cross-tenant synchronization in the Microsoft Entra admin center](cross-tenant-synchronization-configure.md)
@@ -190,12 +190,12 @@ For more information about provisioning external member users, see [Options to p
 
 ### Step 5: Complete Microsoft 365 application requirements
 
-The following multitenant organization collaboration applications may have additional requirements:
+The following multitenant organization collaboration applications might have additional requirements:
 
 - [Microsoft Teams requirement for multitenant organizations](/microsoft-365/enterprise/plan-multi-tenant-org-overview#the-new-microsoft-teams-desktop-client)
 - [Viva Engage setup for multitenant organizations](/Viva/engage/mto-setup)
 
-Once your Microsoft 365 application requirements have been completed, your employees will be able to collaborate seamlessly across your organization of multiple tenants.
+After your Microsoft 365 application requirements have been completed, your employees can collaborate seamlessly across your organization of multiple tenants.
 
 ## License requirements
 

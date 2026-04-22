@@ -3,11 +3,15 @@ title: PowerShell sample - List users & groups for a Microsoft Entra application
 description: PowerShell example that lists all the users and groups assigned to a specific Microsoft Entra application proxy application.
 ms.custom:
 ms.topic: sample
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Display users and groups assigned to an application proxy application
+
+
+## Overview
 
 The PowerShell script example lists the users and groups assigned to a specific Microsoft Entra application proxy application.
 

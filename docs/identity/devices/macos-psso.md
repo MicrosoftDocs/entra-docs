@@ -1,8 +1,6 @@
 ---
 title: macOS Platform Single Sign-on (PSSO) overview
 description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: overview
 ms.date: 06/12/2025
 ms.author: godonnell
@@ -63,7 +61,7 @@ Passwords are a primary attack vector for bad actors. They use social engineerin
 
 Learn how you can use Platform SSO for macOS to enable passwordless authentication for your organization.
 
-* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
+* [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../../identity/authentication/concept-authentication-passkeys-fido2.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
 Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`

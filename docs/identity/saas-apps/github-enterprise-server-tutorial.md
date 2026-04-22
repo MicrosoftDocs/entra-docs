@@ -2,16 +2,9 @@
 title: Configure GitHub Enterprise Server for Single Sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: jomondi
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 02/13/2026
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server so that I can control who has access to GitHub Enterprise Server, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -41,7 +34,7 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 * GitHub Enterprise Server supports [Automated user provisioning](./github-enterprise-server-provisioning-tutorial.md).
 
 > [!NOTE]
-> The `GitHub Enterprise Server` application currently doesn't support any of the government cloud platforms.
+> The GitHub Enterprise Server application currently doesn't support SCIM provisioning in government cloud platforms. This limitation is due to GitHub Enterprise Server requiring the `User-Agent` header, which isn't included in provisioning requests sent from government cloud environments.
 
 ## Add GitHub Enterprise Server from the gallery
 

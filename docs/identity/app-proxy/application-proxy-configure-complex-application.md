@@ -2,12 +2,15 @@
 title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: dhruvinshah
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Understand complex applications in Microsoft Entra application proxy
+
+
+## Overview
 
 Applications are often made up of multiple individual web applications. These situations use different domain suffixes or different ports or paths in the URL. The individual web application instances must be published in separate Microsoft Entra application proxy apps. In these situations, the following problems might arise:
 - **Pre authentication:** The client must separately acquire an access token or cookie for each Microsoft Entra application proxy app. The multiple acquisitions lead to more redirects at sign in to `microsoftonline.com`.
@@ -18,12 +21,12 @@ The following figure shows an example for complex application domain structure.
 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-structure-1.png" alt-text="Diagram of domain structure for a complex application showing resource sharing between primary and secondary application.":::
 
-With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address this issue by using complex application publishing that is made up of multiple URLs across various domains. 
+With [Microsoft Entra application proxy](overview-what-is-app-proxy.md), you can address these challenges by using complex application publishing that is made up of multiple URLs across various domains. 
 
 :::image type="content" source="./media/application-proxy-configure-complex-application/complex-app-flow-1.png" alt-text="Diagram of a Complex application with multiple application segments definition.":::
 
 A complex app has multiple app segments. Each app segment has an internal and external URL.
-One Conditional Access policy is associated with the app. Access to any of the external URLs work with preauthentication with the same set of policies. These policies are enforced for all app segments.
+One Conditional Access policy is associated with the app. Access to any of the external URLs works with preauthentication with the same set of policies. These policies are enforced for all app segments.
 
 Complex apps provide several benefits: 
 - User authentication
@@ -32,8 +35,11 @@ Complex apps provide several benefits:
 
 This article shows you how to configure wildcard application publishing in your environment.
 
-## Characteristics of application segments for complex application. 
-- Application segments are only configured a wildcard application.
+## Characteristics of application segments for complex applications
+
+Application segments for complex applications have the following characteristics:
+
+- Application segments are only configured on a wildcard application.
 - External and alternate URL should match the wildcard external and alternate URL domain of the application respectively.
 - Application segment URLs (internal and external) need to maintain uniqueness across complex applications.
 - CORS Rules (optional) can be configured per application segment.
@@ -45,13 +51,16 @@ This article shows you how to configure wildcard application publishing in your 
     > Regular applications always take precedence over a complex app (wildcard application).
 
 ## Prerequisites
+
+Complete the following prerequisites:
+
 - Enable application proxy and install a connector that has line of sight to your applications. See the tutorial [Add an on-premises application for remote access through application proxy](application-proxy-add-on-premises-application.md) to learn how to prepare your on-premises environment, install and register a connector, and test the connector.
 
 
-## Configure application segments for complex application. 
+## Configure application segments for complex applications
 
 > [!NOTE]
-> Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
+> Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 To publish a complex distributed app through application proxy with application segments:
 
@@ -73,23 +82,23 @@ To publish a complex distributed app through application proxy with application 
 
 7. Select **Create**.
 
-    :::image type="content" source="./media/application-proxy-configure-complex-application/create-app-segment.png" alt-text="Screenshot of add or edit application segment context plane.":::
+    :::image type="content" source="./media/application-proxy-configure-complex-application/create-app-segment.png" alt-text="Screenshot of add or edit application segment context pane.":::
 
 8. Assign users to the application. 
 
-To edit/update an application segment, select the application segment from the list on the manage and configure application segments page. Upload a certificate for the updated domain, if necessary, and update the Domain Name System (DNS) record. 
+To edit/update an application segment, select the application segment from the list on the manage and configure application segments page. Upload a certificate for the application segment's custom domain, if necessary, and update the Domain Name System (DNS) record. 
 
 ## Configuring single sign-on (SSO)
 
 > [!NOTE]
 > Single sign-on with Integrated Windows Authentication (IWA) doesn't support wildcard Service Principal Names (SPNs). For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
 
-## DNS updates
+## Update DNS records
 
 > [!IMPORTANT]
 > The CNAME instructions shown in the portal UI when editing an application segment might differ from the instructions in this section. For complex (wildcard) applications, always use the CNAME configuration described here, pointing to `tenant.runtime.msappproxy.net`, not the generic `.msappproxy.net` endpoint shown in the portal.
 
-When using custom domains, create a DNS entry with a CNAME record for the external URL. For example, point `*.adventure-works.com` to the external URL of the application proxy endpoint. For wildcard applications, point the CNAME record to the relevant external URL: `<yourAADTenantId>.tenant.runtime.msappproxy.net`.
+When using custom domains, create a DNS entry with a CNAME record for the external URL. For example, point `*.adventure-works.com` to the external URL of the application proxy endpoint. For wildcard applications, point the CNAME record to the tenant runtime endpoint: `<yourAADTenantId>.tenant.runtime.msappproxy.net`.
 
 Alternatively, a dedicated DNS entry with a CNAME record for every individual application segment can be created as follows:
 

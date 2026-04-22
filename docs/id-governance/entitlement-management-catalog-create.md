@@ -7,47 +7,11 @@ ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: hanki
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want detailed information about the options available for creating and managing a catalog so that I can most effectively use catalogs in my organization.
+#Customer Intent: As an IT admin, I want to create and manage a catalog of resources so that I can organize resources and access packages in entitlement management.
 ---
 # Create and manage a catalog of resources in entitlement management
 
 This article shows you how to create and manage a catalog of resources and access packages in entitlement management. Catalogs are also used in [access reviews (preview)](catalog-access-reviews.md).
-
-## Catalog privilege levels (Preview)
-
-Microsoft Entra ID Governance catalogs have two privilege levels that determine their security and management requirements:
-
-### Privilege levels
-
-- **Standard catalog**
-     - The default type for most catalogs.
-     - Remains standard as long as it doesn't contain privileged resources.
-     - Supports all catalog management actions and access patterns.
-
-- **Privileged catalog**
-     - Automatically assigned when a catalog contains resources that grant elevated permissions, such as:
-         - Microsoft Entra roles
-         - Application API permissions
-     - These catalogs apply stricter access and governance controls due to their security‑sensitive nature, such as more restrictive application permissions, tighter role requirements for catalog modification, and limits on automation to reduce the risk of unintended privileged access assignments.
-
-### What changes for privileged catalogs?
-
-Privileged catalogs have stricter controls to protect sensitive resources:
-
-- **Application access:**
-    - Applications must have directory role management permissions to write to a privileged catalog.
-    - Requests without these permissions are blocked.
-
-- **User access:**
-    - Only users who are either:
-        - Global Administrators, or Privileged Role Administrators who also have the Identity Governance Administrator role can perform create, update, or delete actions.
-    - Other users can read the catalog but can't modify it.
-
-- **Auto-assignment policies:**
-    - You can't create new auto-assignment policies for privileged catalogs.
-    - This prevents automated distribution of privileged roles or permissions.
-
-To manually update the privilege level of a catalog, see: [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
 
 ## Create a catalog
 
@@ -71,6 +35,9 @@ To create a catalog:
 1. If you want the access packages in this catalog to be available for users to request as soon as they're created, set **Enabled** to **Yes**.
 
 1. If you want to allow users in external directories from connected organizations to be able to request access packages in this catalog, set **Enabled for external users** to **Yes**. The access packages must also have a policy allowing users from connected organizations to request. If the access packages in this catalog are intended only for users already in the directory, then set **Enabled for external users** to **No**.
+
+    > [!NOTE]
+    > This setting controls whether external users can **request** access packages through self-service. This setting isn't required for administrators to [directly assign](entitlement-management-access-package-assignments.md) external users to an access package, which is controlled by the access package's policy.
 
     ![Screenshot that shows the New catalog pane.](./media/entitlement-management-shared/new-catalog.png)
 
@@ -114,9 +81,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 * [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
 
-* When resources added to a catalog grant elevated permission, the catalog automatically has a **Privileged** [privilege level](#catalog-privilege-levels-preview).
-
-**Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+**Prerequisite roles:**See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
 To add resources to a catalog:
 
@@ -293,26 +258,6 @@ To edit a catalog:
     ![Screenshot that shows editing catalog settings.](./media/entitlement-management-shared/catalog-edit.png)
 
 1. Select **Save**.
-
-## Update privilege level of a catalog (Preview)
-
-When you add resources that grant elevated permissions, such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-    > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog creator.
-1. Browse to **ID Governance** > **Catalogs**.
-
-1. On the Catalogs page, open the catalog you want to change the privilege level of.
-
-1. On the catalog overview page, under **Privilege level (Preview)**, select which level you want.
-    :::image type="content" source="media/entitlement-management-catalog-create/update-privilege-level.png" alt-text="Screenshot of updating privilege level in a catalog.":::
-1. Select **Save**.
-
-## Update privilege level of a catalog programmatically
-
-To update manually, update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
-
 
 ## Delete a catalog
 

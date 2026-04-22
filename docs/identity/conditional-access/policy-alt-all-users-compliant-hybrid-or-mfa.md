@@ -2,10 +2,12 @@
 title: Require compliant, hybrid joined devices, or MFA
 description: Create a custom Conditional Access policy to require compliant, hybrid joined devices, or multifactor authentication.
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users
+
+## Overview
 
 Organizations who deploy Microsoft Intune can use the information returned from their devices to identify devices that meet compliance requirements such as:
 
@@ -30,7 +32,7 @@ The following steps help create a Conditional Access policy to require multifact
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**: 
@@ -44,7 +46,7 @@ The following steps help create a Conditional Access policy to require multifact
    1. **For multiple controls** select **Require one of the selected controls**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -81,7 +83,7 @@ Additionally, in the [**Activation**](ms-settings:activation) pane, the followin
 
 The prompt for authentication usually occurs when a device is offline for an extended period of time. This change eliminates the need for an exclusion in the Conditional Access policy for Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later. A Conditional Access policy can still be used with Windows 11, version 23H2 with [KB5034848](https://support.microsoft.com/help/5034848) or later if the prompt for user authentication via a toast notification isn't desired.
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

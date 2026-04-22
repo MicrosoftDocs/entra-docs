@@ -1,13 +1,8 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
 ms.date: 02/10/2025
 ms.topic: how-to
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ms.reviewer: mwahl
 ---
@@ -40,8 +35,8 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. Select one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
-    - [Passkey (FIDO2)](../authentication/concept-authentication-passwordless.md#passkeys-fido2) (Recommended)
-    - [Certificate-based authentication](../authentication/concept-authentication-passwordless.md#certificate-based-authentication) if your organization already has a Public Key Infrastructure (PKI) setup
+    - [Passkey (FIDO2)](../authentication/concept-authentication-passkeys-fido2.md) (Recommended)
+    - [Certificate-based authentication](../authentication/concept-authentication-passkeys-fido2.md) if your organization already has a Public Key Infrastructure (PKI) setup
 
 1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
 

@@ -1,13 +1,9 @@
 ---
 title: Application Administrator
 description: Application Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 01/26/2026
 ms.custom: include file
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
@@ -50,6 +46,7 @@ This role also grants the ability to consent for delegated permissions and appli
 > | microsoft.directory/applications/create | Create all types of applications |
 > | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/applications/delete | Delete all types of applications |
+> | microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
 > | microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |

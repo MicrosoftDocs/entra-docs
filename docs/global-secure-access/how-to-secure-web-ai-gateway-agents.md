@@ -36,7 +36,7 @@ To enable network controls for Copilot Studio agents, you must first enable traf
 
 
 > [!NOTE]
-> After enabling GSA for Agents in a given environment or environment group, you need to create or update any existing custom connectors for them to route traffic through Global Secure Access.
+> After enabling Global Secure Access for Agents in the environment or environment group, any existing Copilot Studio custom connector must be edited and saved to ensure its traffic is routed through Global Secure Access. Custom connectors created afterward automatically use this configuration.
 
 ## Create security policies for Copilot Studio agents
 
@@ -51,7 +51,7 @@ After enabling network controls, you can enforce Global Secure Access security p
 1. Select **Next** to review the policy.
 1. Select **Create policy**.
 
-Next, you can create policies like [threat intelligence](how-to-configure-threat-intelligence.md) to protect agents against malicious destinations or [file policy](how-to-network-content-filtering.md) to safeguard against unintended data exposure and prevent inline data leaks.
+Next, you can create policies like [threat intelligence](how-to-configure-threat-intelligence.md) to protect agents against malicious destinations or [content policy](how-to-network-content-filtering.md) to safeguard against unintended data exposure and prevent inline data leaks.
 
 ## Link policies to the baseline profile
 

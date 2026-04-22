@@ -2,8 +2,6 @@
 title: Security guidance - Protect tenants and isolate production systems
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect tenants and isolate production systems.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -11,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect tenants and isolate production systems so that I can reduce the blast radius of security incidents.
 ---
 # Configure Microsoft Entra for Zero Trust: Protect tenants and isolate production systems
 

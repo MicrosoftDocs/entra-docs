@@ -1,13 +1,8 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 06/20/2025
-ms.author: barclayn
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
@@ -390,7 +385,7 @@ Here are the least privileged roles you should use when performing tasks for [ro
 
 ## Security - Authentication methods least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/concept-authentication-methods.md) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/overview-authentication.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |

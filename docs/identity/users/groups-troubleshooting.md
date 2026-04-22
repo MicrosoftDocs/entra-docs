@@ -1,19 +1,16 @@
 ---
 title: Fix problems with dynamic membership groups
 description: Troubleshooting tips for dynamic membership groups in Microsoft Entra ID
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: troubleshooting
 ms.date: 01/15/2025
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
 # Troubleshoot and resolve groups issues
+
+
+## Overview
 
 This article contains troubleshooting information for groups in Microsoft Entra ID, part of Microsoft Entra.
 
@@ -25,41 +22,41 @@ The **User can create security groups in Azure portals** setting in the Azure po
 To disable group creation for nonadmin users in PowerShell:
 1. Verify that nonadmin users are allowed to create groups:
 
-   ```powershell
-   Get-MgBetaDirectorySetting | select -ExpandProperty values
-   ```
+    ```powershell
+    Get-MgBetaDirectorySetting | select -ExpandProperty values
+    ```
 
-2. If it returns `EnableGroupCreation : True`, then nonadmin users can create groups. To disable this feature:
+1. If it returns `EnableGroupCreation : True`, then nonadmin users can create groups. To disable this feature:
 
-   ```powershell
-   Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-   Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-   $params = @{
-   TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
-   Values = @(    
-    @{
-      Name = "EnableGroupCreation"
-      Value = "false"
-    }    
-   )
-    }
-   Connect-MgGraph -Scopes "Directory.ReadWrite.All"
-   New-MgBetaDirectorySetting -BodyParameter $params
-   ```
+    ```powershell
+    Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+    Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+    $params = @{
+    TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
+    Values = @(    
+     @{
+       Name = "EnableGroupCreation"
+       Value = "false"
+     }    
+    )
+     }
+    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
+    New-MgBetaDirectorySetting -BodyParameter $params
+    ```
 
 **I received a max groups allowed error when trying to create a Dynamic Group in PowerShell**  
 
-The max number of Dynamic groups per organization is 5,000.
-When you reach the maximum number of Dynamic groups in your organization, you receive a message in PowerShell that says *Dynamic group policies max allowed groups count reached*. 
+The max number of dynamic groups per organization is 5,000.
+When you reach the maximum number of dynamic groups in your organization, you receive a message in PowerShell that says *Dynamic group policies max allowed groups count reached*. 
 
-If you run into this limit, to create any new Dynamic groups, you first need to delete some existing Dynamic groups. There's no way to increase the limit.
+If you run into this limit, to create any new dynamic groups, you first need to delete some existing dynamic groups. There's no way to increase the limit.
 
 ## Troubleshoot dynamic membership groups
 
 **I configured a rule on a group but no memberships get updated in the group**  
 1. Verify the values for user or device attributes in the rule. Ensure there are users that satisfy the rule.
-For devices, check the device properties to ensure any synced attributes contain the expected values.  
-2. Check the membership processing status to confirm if it's complete. You can check the [membership processing status](groups-create-rule.md#check-the-processing-status-for-a-rule) and the last updated date on the **Overview** page for the group.
+    For devices, check the device properties to ensure any synced attributes contain the expected values.  
+1. Check the membership processing status to confirm if it's complete. You can check the [membership processing status](groups-create-rule.md#check-the-processing-status-for-a-rule) and the last updated date on the **Overview** page for the group.
 
 If everything looks good, allow some time for the group to populate. Depending on the size of your Microsoft Entra organization, the group could take up to 24 hours for populating for the first time or after a rule change.
 

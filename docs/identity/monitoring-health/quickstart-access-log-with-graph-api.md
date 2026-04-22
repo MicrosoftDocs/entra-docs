@@ -1,13 +1,8 @@
 ---
 title: Analyze a sign-in with the Microsoft Graph API
 description: Learn how to access the sign-in log and analyze a single sign-in attempt using the Microsoft Graph API.
-ms.service: entra-id
-ms.subservice: monitoring-health
 ms.topic: quickstart
 ms.date: 11/13/2024
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
 ms.reviewer: besiler
 ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to be able to find a failed sign-in attempt with the Microsoft Graph API.
@@ -21,7 +16,7 @@ In this Quickstart, you'll use the information in the Microsoft Entra sign-in lo
 To complete the scenario in this quickstart, you need:
 
 - **Access to a Microsoft Entra tenant**: If you don't have access to a Microsoft Entra tenant, see [Create your Azure free account today](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). 
-- **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](../../fundamentals/add-users.md#add-a-new-user).
+- **A test account called Isabella Simonsen**: If you don't know how to create a test account, see [Add cloud-based users](../../fundamentals/how-to-create-delete-users.yml).
 - **Access to the Microsoft Graph API**: If you don't have access yet, see [Microsoft Graph authentication and authorization basics](/graph/auth/auth-concepts).
 
 ## Perform a failed sign-in
@@ -53,7 +48,7 @@ This section provides the steps to locate the failed sign-in attempt using the M
 
 ## Clean up resources
 
-When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](../../fundamentals/add-users.md#delete-a-user).
+When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](../../fundamentals/how-to-create-delete-users.yml).
 
 ## Next steps
 

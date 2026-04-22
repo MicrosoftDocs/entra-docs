@@ -2,11 +2,8 @@
 title: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to SAP Cloud Identity Services.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 04/13/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Cloud Identity Services so that I can streamline the user management process and ensure that users have the appropriate access to SAP Cloud Identity Services.
@@ -172,6 +169,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
+1. Select **Discover identities** in the provisioning overview to [discover accounts](~/identity/app-provisioning/how-to-account-discovery.md) in SAP Cloud Identity Services. This option will only be visible for organizations with [Entra ID Governance](~/id-governance/licensing-fundamentals.md) licenses.  
+
 1. Under the **Mappings** section, select **Provision Microsoft Entra ID users** or **Provision Microsoft Entra ID groups** depending on your scenario.
 
 	![Screenshot of the user and group mappings for SAP Cloud Identity Services.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mappings.png)
@@ -280,6 +279,27 @@ Finally, you can remove the test user from Microsoft Entra ID.
 1. Select the test user, select **Delete**, and select **OK**. This action soft-deletes the test user from Microsoft Entra ID.
 
 You can also then remove the test user from SAP Cloud Identity Services.
+
+## Identify existing users in your application and assign them to the enterprise application 
+Microsoft Entra can discover the existing users in your application and simplify getting them assigned to the enterprise application. Click on the [discover identities](~/identity/app-provisioning/how-to-account-discovery.md) button in the provisioning overview page. Once the report is generated, you will have a view of all the users in your application, which users in the application match with a Microsoft Entra ID user, which users are already assigned to the enterprise application in Microsoft Entra ID, and which users in the application are not matched with a Microsoft Entra ID user. You can then run a simple PowerShell script to assign the discovered users to the application:   
+
+1. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the CorrelatedUsers.ps1 file. 
+
+1. Create application role assignments for users who don't currently have role assignments (dry run):
+
+   ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." -DryRun
+   ```
+
+1. Create application role assignments for users who don't currently have role assignments:
+
+   ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..."
+   ```
+
+1. Wait one minute for changes to propagate within Microsoft Entra ID.
+
+The discovery functionality requires [Entra ID Governance](~/id-governance/licensing-fundamentals.md) licenses. Organizations without the necessary licenses can still follow the steps below to identify existing users in SAP CLout Identity Services and assign them to the enterprise application in Microsoft Entra. 
 
 ## Ensure existing SAP Cloud Identity Services users have the necessary matching attributes
 
