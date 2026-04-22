@@ -1,5 +1,5 @@
 ---
-title: Configure STACKIT Cloud for Single sign-on with Microsoft Entra ID
+title: Configure STACKIT Cloud for single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and STACKIT Cloud.
 ms.reviewer: jomondi
 ms.topic: how-to
@@ -8,9 +8,9 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and STACKIT Cloud so that I can control who has access to STACKIT Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Configure STACKIT Cloud for Single sign-on with Microsoft Entra ID
+# Configure STACKIT Cloud for single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate STACKIT Cloud with Microsoft Entra ID. When you integrate STACKIT Cloud with Microsoft Entra ID, you can:
+In this article, you learn how to integrate STACKIT Cloud with Microsoft Entra ID. When you integrate STACKIT Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to STACKIT Cloud.
 * Enable your users to be automatically signed-in to STACKIT Cloud with their Microsoft Entra accounts.
@@ -25,18 +25,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Scenario description
 
-In this article,  you configure and test Microsoft Entra SSO in a test environment.
+In this article, you configure and test Microsoft Entra SSO in a test environment.
 
 STACKIT Cloud supports **SP** initiated SSO.
 
-## Adding STACKIT Cloud from the gallery
+## Add STACKIT Cloud from the gallery
 
 To configure the integration of STACKIT Cloud into Microsoft Entra ID, you need to add STACKIT Cloud from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
-1. In the **Add from the gallery** section, type **STACKIT Cloud** in the search box.
-1. Select **STACKIT Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, enter **STACKIT Cloud** in the search box.
+1. Select **STACKIT Cloud** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
@@ -80,15 +80,15 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://accounts.stackit.cloud/ui/login/login/externalidp/saml/acs`
 
 	> [!NOTE]
-	> The Identifier value isn't  real. Update the value with the actual Identifier, which is obtained from the STACKIT during the federated directory setup process.
+	> The Identifier value isn't real. Update the value with the actual Identifier, which is obtained from the STACKIT during the federated directory setup process.
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select the copy button to copy **App Federation Metadata URL** and save it on your computer.
 
     ![Screenshot of Certificate download link.](common/copy-metadataurl.png)
 
 1. On the **Set up STACKIT Cloud** section, copy the appropriate URL(s) based on your requirement.
 
-    ![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")
+    ![Screenshot that shows how to copy the configuration URLs.](common/copy-configuration-urls.png "Metadata")
     
 ### Create and assign Microsoft Entra test user
     
@@ -98,10 +98,10 @@ Follow the guidelines in the [create and assign a user account](~/identity/enter
 
 To configure STACKIT Cloud SSO, go to the STACKIT Portal and open a support ticket with the following information:
 
-1. Select **Federation type** as SAML 2.0 with Entra ID.
+1. Select **Federation type** as SAML 2.0 with Microsoft Entra ID.
 1. Provide the **Reason for integration** with brief explanation (for example, “Enable SSO for enterprise users”).
 1. Enter the **Email domains** with all email domains your employees use for login (for example, @example.org and @foobar.com).
-1. Give the **IdP metadata URL** as publicly accessible URL to your IdP’s metadata file. Our system uses this URL to automatically retrieve configuration details (endpoints, certificates, etc.)
+1. Enter the **IdP metadata URL** as a publicly accessible URL to your IdP’s metadata file. The system uses this URL to automatically retrieve configuration details such as endpoints and certificates.
 
 > [!NOTE]
 > The downloaded file is also enough to configure the federation on STACKIT side.
@@ -110,13 +110,13 @@ After you provide the required information, STACKIT support team configures the 
 
 ### Create STACKIT Cloud test user
 
-In your Organization page, click on **Grant Access** to invite the user into the org. Here you have to introduce the email of your user on Entra ID.
+On the **Organization** page, select **Grant Access** to invite the user into the organization. Enter the email address of the user in Microsoft Entra ID.
 
-![Grant Access button on Organization view](./media/stackit-cloud-tutorial/test-user.png)
+![Screenshot of the Grant Access button on the Organization page in STACKIT Cloud.](./media/stackit-cloud-tutorial/test-user.png)
 
 ## Test SSO
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options.
+In this section, you test your Microsoft Entra single sign-on configuration with the following options.
 
 * Select **Test this application**, this option redirects to STACKIT Cloud Sign-on URL where you can initiate the login flow.
 
@@ -126,4 +126,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Related content
 
-Once you configure STACKIT Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure STACKIT Cloud, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
