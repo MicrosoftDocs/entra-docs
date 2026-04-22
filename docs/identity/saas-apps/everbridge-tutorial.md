@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/17/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EverBridge so that I can control who has access to EverBridge, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure EverBridge for Single sign-on with Microsoft Entra ID
@@ -96,10 +96,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
    * If you want to configure the application in SP-initiated mode, select **Set additional URLs** and follow this step:
 
-     a. In the **Sign on URL** box, enter a URL that follows the pattern `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
+     a. In the **Sign on URL** box, enter a URL that follows the pattern `https://manager.everbridge.net/saml/login/<API_Name>`
 
      > [!NOTE]
-     > The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual Identifier. To get those values, check your SSO configuration in Everbridge Manager Portal.
+     > The URLs above illustrate a general pattern, not actual data. You need to update strings in <> with the actual value. To get those values, check your SSO configuration in Everbridge Manager Portal.
 
 7. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML**. Save it on your computer.
 
@@ -145,7 +145,7 @@ To configure SSO on **EverBridge** as an **EverBridge manager portal** applicati
 
 ### Create EverBridge test user
 
-Create a test user in EverBridge. Ensure the "SSO User ID" field of the user matches the user's identifier in your IDP. 
+Create a test user in EverBridge. Ensure the **SSO User ID** field of the user matches the user's identifier in your IDP. 
 
 ## Test SSO
 

@@ -77,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, enter your Thrive LXP Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Thrive LXP. If the connection fails, ensure your Thrive LXP account has the required admin permissions and try again.
+5. Under the **Admin Credentials** section, enter your Thrive LXP Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Thrive LXP. If the connection fails, ensure your Thrive LXP account has Admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
