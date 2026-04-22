@@ -66,8 +66,10 @@ The following table shows the availability of features for browser-delegated and
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Social identity provider sign-in (Apple, Facebook, Google and  custom OIDC providers with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
-| **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
+| **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
+| **Single sign-on (SSO)**<sup>1</sup> | :heavy_check_mark:  | :heavy_check_mark:  |
+
+<sup>1</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication. For information, see [SSO](#single-sign-on-sso).
 
 ## How to enable native authentication
 
@@ -88,9 +90,21 @@ If your team determines that native authentication is necessary for your applica
 After enabling the native authentication APIs in the admin center, you still need to update your application's configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types in [Native authentication challenge types](/entra/external-id/customers/concept-native-authentication-challenge-types). 
 If the configuration isn't updated to integrate native authentication components, the native authentication SDKs and APIs aren't usable. 
 
-## Risk of enabling native authentication
+## Security considerations for native authentication
 
-Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the app's security lies with your development team.
+Native authentication gives your development team full control over the authentication experience. With this control comes the responsibility to follow security best practices in your app's implementation, such as secure token handling and transport security (HTTPS).
+
+
+## Single sign-on (SSO)
+
+Native authentication supports single sign-on (SSO) for embedded web views. This allows users to sign in once through the native app's UI and then access web resources hosted in an embedded web view (for example, `WKWebView` on iOS or `WebView` on Android) without encountering a second login prompt.
+
+The app achieves this by retrieving an access token using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md) and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
+
+For implementation steps, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md).
+
+> [!NOTE]
+> Cross-app SSO through system browsers isn't supported with native authentication.
 
 ## How to use native authentication
 
