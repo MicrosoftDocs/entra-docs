@@ -241,9 +241,10 @@ This function can be used to set any of the following on-premises attributes:
 - onPremisesObjectIdentifier *
 - sonPremisesSamAccountName 
 - onPremisesSecurityIdentifier **
-- onPremisesUserPrincipalName 
+- onPremisesUserPrincipalName
 
    \* System-generated attribute. Clearing it is supported, but setting a specific value can fail depending on service behavior.
+
    \** Must have the correct Security Identifier format, for example: "S-1-5-21-1234567890-0987654321-1234567890-1111"
 
 
