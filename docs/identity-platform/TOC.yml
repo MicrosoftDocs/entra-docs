@@ -726,6 +726,10 @@
                   href: custom-extension-email-otp-get-started.md
                 - name: On email OTP send event reference
                   href: custom-extension-email-otp-send-data.md
+            - name: Account recovery claim validation
+              items:
+                - name: Create a custom authentication extension for account recovery
+                  href: tutorial-custom-authentication-extension-account-recovery.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
