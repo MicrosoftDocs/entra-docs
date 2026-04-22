@@ -48,9 +48,7 @@ To create the access package and its associated policies and assignments, you'll
 
 This section shows how to interact with Microsoft Entra ID Governance by using [Microsoft Graph PowerShell](https://www.powershellgallery.com/packages/Microsoft.Graph) cmdlets.
 
-The first time your organization uses these cmdlets for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be used in your tenant. Subsequent interactions can use a lower-privileged role, such as:
-
-- [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+The first time your organization uses these cmdlets for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be used in your tenant. Subsequent interactions can use a lower-privileged role, such as [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Open PowerShell.
 1. If you don't have the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the `Microsoft.Graph.Identity.Governance` module and others by using this command:
@@ -320,7 +318,7 @@ If the application relies upon a group, then you link the group membership of th
 
 In this section you'll create the first access package assignment policy in the access package, an [access package assignment policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), that can be used to track the users who already have access to the application. In the example policy created in this section, only the administrators or access package assignment managers can assign access, users retain access indefinitely, and there are no approvals or access reviews.
 
-1. Create a policy.
+- Create a policy.
 
    ```powershell
    $policy1Name = "Direct assignment policy"
