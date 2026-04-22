@@ -7,6 +7,7 @@ ms.custom: include file
 ---
 
 Assign the AI Administrator role to users who need to do the following tasks:
+
 - Manage all aspects of Microsoft 365 Copilot, AI-related enterprise services, extensibility, and Search content.
 - Approve and publish line-of-business copilot agents.
 - Manage the full lifecycle of agent users, their licenses, and sign-in sessions.

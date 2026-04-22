@@ -10,6 +10,7 @@ ms.author: ombongifaith
 ---
 
 Assign the Customer Delegated Admin Relationship Administrator role to users who need to do the following tasks:
+
 - Accept a granular delegated admin privileges (GDAP) relationship from a partner for their tenant.
 - List and view GDAP relationships with partners.
 - Terminate a GDAP relationship with a partner.
