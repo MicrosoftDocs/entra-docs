@@ -403,8 +403,41 @@ For each access package that is to be marked as incompatible with another, you c
 1. If your scenario requires the ability to override a separation of duties check, then you can also [set up additional access packages for those override scenarios](entitlement-management-access-package-incompatible.md#configuring-multiple-access-packages-for-override-scenarios).
 
 ## Add assignments of existing users who already have access to the application
+**Option 1**
+When you use the Microsoft Entra provisioning service to [discover](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file. See the example approaches for adding assignments.
 
-Add assignments of existing users, who already have access to the application, to the access package and its direct assignment policy. You can [directly assign each user](entitlement-management-access-package-assignments.md#assign-a-user-to-an-access-package-with-powershell) to an access package.
+1. Assign all discovered users to a specific access package (dry run):
+
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
+   ```
+
+1. Assign all discovered users to a specific access package:
+
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
+   ```
+
+1. Assign users to packages based on rules that you define (example rules file):
+
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   ```
+
+1. Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
+
+   ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   ```
+
+1. Assign users to access packages and skip app role assignments:
+ 
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   ```
+    
+**Option 2** 
+Add assignments of existing users, who are already assigned to the Entra Enterprise application, to the access package and its direct assignment policy. You can [directly assign each user](entitlement-management-access-package-assignments.md#assign-a-user-to-an-access-package-with-powershell) to an access package.
 
 1. Retrieve the existing application role assignments.
 
@@ -445,39 +478,6 @@ Add assignments of existing users, who already have access to the application, t
       write-error "cannot create request for user $upn"
     }
    }
-   ```
-
-## Add assignments for users existing users who already have accounts in your application
-When you use the Microsoft Entra provisioning service to [discover](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file. See the example approaches for adding assignments.
-
-1. Assign all discovered users to a specific access package (dry run):
-
-   ```powershell
-   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
-   ```
-
-1. Assign all discovered users to a specific access package:
-
-   ```powershell
-   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
-   ```
-
-1. Assign users to packages based on rules that you define (example rules file):
-
-    ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
-   ```
-
-1. Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
-
-   ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
-   ```
-
-1. Assign users to access packages and skip app role assignments:
- 
-    ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
    ```
 
 ## Add assignments for any additional users who should have access to the application
