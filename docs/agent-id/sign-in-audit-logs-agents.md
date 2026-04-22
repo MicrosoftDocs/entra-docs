@@ -36,10 +36,10 @@ To identify whether an audit event involves an agent identity, check the `agentT
 The `agentType` value further clarifies agent identity actions. The `agentType` property indicates whether the identity involved in an audit event is an agent identity, agent identity blueprint, or an agent's user account.
 
 The `agentType` property appears on the following resources:
-- [auditAppIdentity](/graph/api/resources/auditappidentity?view=graph-rest-beta&preserve-view=true)
+- `auditAppIdentity`
 - [auditUserIdentity](/graph/api/resources/audituseridentity?view=graph-rest-beta&preserve-view=true)
 - [targetResource](/graph/api/resources/targetresource?view=graph-rest-beta&preserve-view=true)
-- [auditActivityPerformer](/graph/api/resources/auditactivityperformer?view=graph-rest-beta&preserve-view=true)
+- `auditActivityPerformer`
 
 | Value | Description |
 |---|---|
@@ -67,7 +67,7 @@ The following table summarizes how these agent activities and values map togethe
 
 ### blueprintId
 
-The `blueprintId` property is the object ID of the [agentIdentityBlueprint](/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true) associated with the agent. Use this property to correlate an agent identity (instance) back to its blueprint (template). This property appears on [auditAppIdentity](/graph/api/resources/auditappidentity?view=graph-rest-beta&preserve-view=true), [targetResource](/graph/api/resources/targetresource?view=graph-rest-beta&preserve-view=true), and [auditActivityPerformer](/graph/api/resources/auditactivityperformer?view=graph-rest-beta&preserve-view=true).
+The `blueprintId` property is the object ID of the [agentIdentityBlueprint](/graph/api/resources/agentidentityblueprint?view=graph-rest-beta&preserve-view=true) associated with the agent. Use this property to correlate an agent identity (instance) back to its blueprint (template). This property appears on `auditAppIdentity`, [targetResource](/graph/api/resources/targetresource?view=graph-rest-beta&preserve-view=true), and `auditActivityPerformer`.
 
 The relationship between `blueprintId` and the agent identity is similar to the relationship between an app registration and its service principal. Multiple agent identities can share the same blueprint.
 
@@ -75,10 +75,10 @@ The relationship between `blueprintId` and the agent identity is similar to the 
 
 The following changes to the audit log schema enable agent identity tracking:
 
-- The `initiatedBy.app` property now uses the [auditAppIdentity](/graph/api/resources/auditappidentity?view=graph-rest-beta&preserve-view=true) resource type, which includes `agentType` and `blueprintId` alongside the existing `appId`, `displayName`, `servicePrincipalId`, and `servicePrincipalName` properties.
+- The `initiatedBy.app` property now uses the `auditAppIdentity` resource type, which includes `agentType` and `blueprintId` alongside the existing `appId`, `displayName`, `servicePrincipalId`, and `servicePrincipalName` properties.
 - The [targetResource](/graph/api/resources/targetresource?view=graph-rest-beta&preserve-view=true) resource type now includes `agentType` and `blueprintId` properties.
 - The [auditUserIdentity](/graph/api/resources/audituseridentity?view=graph-rest-beta&preserve-view=true) resource type now includes an `agentType` property.
-- A new [auditActivityPerformer](/graph/api/resources/auditactivityperformer?view=graph-rest-beta&preserve-view=true) resource type provides `agentType`, `appId`, and `blueprintId` for the actor of an audit event.
+- A new `auditActivityPerformer` resource type provides `agentType`, `appId`, and `blueprintId` for the actor of an audit event.
 
 ## Sign-in logs
 
