@@ -133,7 +133,6 @@ Some capabilities available in External ID aren't available in HSC mode today. I
   - Authentication context or step-up authentication.
   - Session-based controls.
 - Application assignment via groups.
-- Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
 - Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
 
 **Federation and ecosystem integrations**
