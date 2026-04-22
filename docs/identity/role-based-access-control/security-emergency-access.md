@@ -1,7 +1,7 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-ms.date: 04/17/2026
+ms.date: 04/22/2026
 ms.topic: how-to
 ms.custom: it-pro, sfi-ga-nochange
 ms.reviewer: mwahl
@@ -102,11 +102,13 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Monitoring Contributor](/azure/role-based-access-control/built-in-roles#monitoring-contributor).
 
-1. Browse to **Monitor** > **Log Analytics workspaces**.
+1. Search for and open **Monitor**.
 
-1. Select a workspace.
+1. In the left menu, select **Alerts**.
 
-1. In your workspace, select **Alerts** > **New alert rule**.
+1. Click **+ Create** > **Alert rule**.
+
+1. In the **Select a resource** pane, find and select your Log Analytics workspace. Select **Apply**.
 
     1. Under **Resource**, select your **Log Analytics workspace** as the resource type. Verify that the subscription matches the workspace you configured in the prerequisites.
     1. Under **Condition**, select **Add**.
