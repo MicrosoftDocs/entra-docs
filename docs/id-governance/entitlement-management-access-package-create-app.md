@@ -404,6 +404,7 @@ For each access package that is to be marked as incompatible with another, you c
 
 ## Add assignments of existing users who already have access to the application
 **Option 1**
+
 When you use the Microsoft Entra provisioning service to [discover](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file. See the example approaches for adding assignments.
 
 1. Assign all discovered users to a specific access package (dry run):
@@ -437,6 +438,7 @@ When you use the Microsoft Entra provisioning service to [discover](~/identity/a
    ```
     
 **Option 2** 
+
 Add assignments of existing users, who are already assigned to the Entra Enterprise application, to the access package and its direct assignment policy. You can [directly assign each user](entitlement-management-access-package-assignments.md#assign-a-user-to-an-access-package-with-powershell) to an access package.
 
 1. Retrieve the existing application role assignments.
