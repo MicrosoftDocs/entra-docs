@@ -3,7 +3,7 @@ title: Authentication transfer as a condition to secure mobile users
 description: Learn how authentication transfer connects users to apps across desktop and mobile devices, including supported apps, end-user experience, limitations, and troubleshooting.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 04/08/2026
+ms.date: 04/22/2026
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication transfer (preview)
@@ -36,12 +36,12 @@ Authentication transfer only transfers authentication claims. Device-related cla
 
 When a user performs authentication transfer, the session is considered [protocol tracked](concept-authentication-flows.md#protocol-tracking). Protocol tracking means that the session state persists through subsequent token refreshes. Subsequent sign-in attempts within the same session might be subject to authentication flows policy enforcement, even if they don't use authentication transfer.
 
-## Supported apps and platforms
+## Supported apps
 
-Authentication transfer is available for Microsoft apps that support the cross-device QR code flow. The transfer flow works from desktop apps on Windows or macOS to mobile apps on iOS or Android.
+Authentication transfer is available for Microsoft apps that support the cross-device QR code flow. For example, users might see a QR code in the desktop version of Outlook that, when scanned on their mobile device, transfers their authenticated state to the mobile version of Outlook. Support varies by app and version. Check the relevant Microsoft app documentation to confirm whether it supports authentication transfer.
 
 > [!IMPORTANT]
-> Authentication transfer is only supported for Microsoft apps. Non-Microsoft apps don't support this flow.
+> Authentication transfer isn't supported for non-Microsoft apps.
 
 ## End-user experience
 
@@ -107,9 +107,9 @@ Consider the following recommendations:
 
 ## Authentication transfer in sign-in logs
 
-Admins can check the sign-in logs to see if users are using authentication transfer to sign in. Authentication transfer usage appears under **Authentication Details** in the [Microsoft Entra sign-in logs](../monitoring-health/concept-sign-ins.md). Admins see events back to back, with the first event showing a QR code as the authentication method.
+Admins can check the [Microsoft Entra sign-in logs](../monitoring-health/concept-sign-ins.md) to see if users are using authentication transfer to sign in. Authentication transfer events appear back to back, with the first event showing a QR code as the authentication method.
 
-To identify authentication transfer events, use the **Authentication Protocol** filter in the sign-in logs. The **Original transfer method** property in the **Activity details** pane shows the protocol tracking state. For a session where authentication transfer was performed, the original transfer method is set to **Authentication transfer**.
+To check the protocol tracking state of a sign-in, select the sign-in event and find the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane. For a session in which authentication transfer was performed, the **Original transfer method** is set to **Authentication transfer**.
 
 ## Manage authentication transfer for specific users and apps
 
@@ -137,7 +137,7 @@ Use the following steps to troubleshoot issues with authentication transfer.
 
 **Users can't initiate authentication transfer:**
 
-- Verify the user has a Microsoft Entra ID P1 license assigned.
+- If a Conditional Access policy manages authentication transfer for the user, verify the user has a Microsoft Entra ID P1 license assigned.
 - Verify no Conditional Access policy blocks authentication transfer for the user's group or target app.
 - Confirm the user is using a supported Microsoft app on both the source and target devices.
 
