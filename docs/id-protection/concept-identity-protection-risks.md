@@ -79,7 +79,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Authenticator-assisted phishing detection
 
-This detection identifies sign-ins where unfamiliar properties such as ASN, browser, device, and GPS location data indicate a potential social engineering or phishing attack. The detection fires during sessions that use a password *and* multifactor authentication (MFA) *plus* telemetry from the Microsoft Authenticator app. The combination of these signals helps to increase the precision of the detection. Location proximity between the authentication *requesting* device and the authentication *approving* device is analyzed by Microsoft Entra ID to help distinguish legitimate sign-ins from attacker-initiated sessions.
+This detection identifies sign-ins where unfamiliar properties such as ASN, browser, device, and GPS location data indicate a potential social engineering or phishing attack. The detection fires during sessions that use a *Password + MFA* authentication method *plus* telemetry from the Microsoft Authenticator app. The combination of these signals helps to increase the precision of the detection and flags the sign-in attempt as **High risk**. Location proximity between the authentication *requesting* device and the authentication *approving* device is analyzed by Microsoft Entra ID to help distinguish legitimate sign-ins from attacker-initiated sessions.
 
 - Calculated in real-time
 - License requirement: Microsoft Entra ID P2
