@@ -330,6 +330,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
                   href: /entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Implement WebView SSO
+              href: /entra/identity-platform/how-to-native-authentication-webview-sso?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Command-line interface (CLI) app tutorials
       items:
         - name: Node.js
