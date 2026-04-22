@@ -268,7 +268,7 @@ After your custom authentication extension is created, grant application consent
 
 Now you associate the custom authentication extension with the identity verification profile's account validation settings so it's invoked during the recovery flow.
 
-# [Entra admin center](#tab/entra-admin-center)
+# [Azure portal](#tab/azure-portal)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
