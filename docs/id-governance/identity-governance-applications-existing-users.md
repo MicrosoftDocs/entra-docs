@@ -127,7 +127,7 @@ If your application uses an LDAP directory, a SQL database, SAP Cloud Identity S
 
 ## Collect existing users from the application and confirm which ones match with Microsoft Entra ID users 
 
-Now that you have provided the connectivity details and matching attribute as part of your provisioning configureation, Microsoft Entra can discover the existing users in your application. Click on the [discover identities](~/identity/app-provisioning/how-to-account-discovery.md) button in the provisioning overview page. Once the report is generatd, you will have a view of all the users in your application, which users in the application match with a Microsoft Entra ID user, which users are already assigned to the enterprise application in Microsoft Entra ID, and which users in the application are not matched with a Microsoft Entra ID user).   
+Now that you have provided the connectivity details and matching attribute as part of your provisioning configuration, Microsoft Entra can discover the existing users in your application. Click on the [discover identities](~/identity/app-provisioning/how-to-account-discovery.md) button in the provisioning overview page. Once the report is generated, you will have a view of all the users in your application, which users in the application match with a Microsoft Entra ID user, which users are already assigned to the enterprise application in Microsoft Entra ID, and which users in the application are not matched with a Microsoft Entra ID user).   
 
 
 ## Create app role assignments in Microsoft Entra ID
@@ -137,7 +137,7 @@ For Microsoft Entra ID to match the users in the application with the users in M
 When an application role assignment is created in Microsoft Entra ID for a user to an application, and the application supports provisioning, then:
 
 - Microsoft Entra ID will query the application via SCIM, or its directory or database, to determine if the user already exists.
-- When subsequent updates are made to the user's attributes in Microsoft Entra ID, Microsoft Entra ID will sent those updates to the application.
+- When subsequent updates are made to the user's attributes in Microsoft Entra ID, Microsoft Entra ID will send those updates to the application.
 - The user will remain in the application indefinitely unless they're updated outside Microsoft Entra ID, or until the assignment in Microsoft Entra ID is removed.
 - On the next access review of that application's role assignments, the user will be included in the access review.
 - If the user is denied in an access review, their application role assignment will be removed. Microsoft Entra ID will notify the application that the user is blocked from sign-in.
