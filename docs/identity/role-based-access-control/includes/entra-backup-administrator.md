@@ -2,7 +2,7 @@
 title: Entra Backup Administrator
 description: Entra Backup Administrator
 ms.topic: include
-ms.date: 03/23/2026
+ms.date: 04/22/2026
 ms.custom: include file
 ---
 
@@ -21,7 +21,6 @@ Assign the Entra Backup Administrator role to users who need to do the following
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/auditLogs/standard/read | Read standard properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/backup/preview/cancel | Cancel a Microsoft Entra backup operation to compare a backup snapshot with the current state. |
 > | microsoft.directory/backup/preview/create | Create a Microsoft Entra backup operation that allows a user to compare a backup snapshot with the current state. |
 > | microsoft.directory/backup/recovery/cancel | Cancel a Microsoft Entra recovery operation to recover the contents of a backup snapshot |
