@@ -3,7 +3,7 @@ title: Continuous access evaluation for workload identities in Microsoft Entra I
 description: Learn how continuous access evaluation for workload identities enforces Conditional Access policies in real time, instantly revokes tokens, and improves security for service principals.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 04/08/2026
+ms.date: 04/22/2026
 ms.reviewer: sreyanthmora
 ms.custom:
   - ai-gen-docs-bap
@@ -70,7 +70,7 @@ CAE for workload identities supports Conditional Access policies that target loc
 
 ## Enable your application
 
-Developers can opt in to CAE for workload identities by declaring the `cp1` client capability when requesting tokens. Declaring `cp1` signals to Microsoft Entra ID that the client application can handle claims challenges. Microsoft Graph and other CAE-capable resource providers only send claims challenges to clients that declare this capability.
+Developers can opt in to CAE for workload identities by declaring the `cp1` client capability when requesting tokens. Declaring `cp1` signals to Microsoft Entra ID that the client application can handle claims challenges. Microsoft Graph (the only supported resource provider for workload identity CAE) only sends claims challenges to clients that declare this capability.
 
 To declare CAE capability, include the following claims parameter in your token request:
 
@@ -115,7 +115,7 @@ For general CAE monitoring tools, including the **Continuous access evaluation i
 
 ## Troubleshooting
 
-When a client's access to a resource is blocked because CAE is triggered, the client's session is revoked, and the client needs to reauthenticate. Use the following steps to investigate.
+When a CAE-enabled resource rejects a workload identity token, the application should handle the `401` claims challenge and request a new token from Microsoft Entra ID. Microsoft Entra ID then reevaluates conditions before deciding whether to issue a new token. Use the following steps to investigate.
 
 **Service principal access is unexpectedly blocked:**
 
