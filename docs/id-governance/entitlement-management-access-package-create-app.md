@@ -4,7 +4,7 @@ description: You can use Microsoft Entra entitlement management to enforce the p
 author: markwahl-msft
 editor: markwahl-msft
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 04/22/2026
 ms.author: mwahl
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
@@ -452,33 +452,33 @@ When you use the Microsoft Entra provisioning service to [discover](~/identity/a
 
 1. Assign all discovered users to a specific access package (dry run):
 
- ```powershell
-.\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
-```
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
+   ```
 
 1. Assign all discovered users to a specific access package:
 
- ```powershell
-.\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
-```
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
+   ```
 
 1. Assign users to packages based on rules that you define (example rules file):
 
- ```powershell
-.\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
-```
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   ```
 
 1. Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
 
- ```powershell
-.\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
-```
+   ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   ```
 
 1. Assign users to access packages and skip app role assignments:
  
- ```powershell
-.\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
-```
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   ```
 
 ## Add assignments for any additional users who should have access to the application
 
