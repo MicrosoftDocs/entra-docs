@@ -21,7 +21,7 @@ This article demonstrates the steps to perform in Zscaler One and Microsoft Entr
 
 The scenario outlined in this article assumes that you have:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler One tenant.
 * A user account in Zscaler One with admin permissions.
 

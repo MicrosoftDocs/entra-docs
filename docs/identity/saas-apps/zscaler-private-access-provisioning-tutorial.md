@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Zscaler Private Access (ZPA) tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
 * A user account in Zscaler Private Access (ZPA) with Admin permissions.
 
@@ -74,7 +74,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1.	Scroll down to view the **SCIM Service Provider Endpoint** at the end of the page. Copy the **SCIM Service Provider Endpoint**. This value is entered in the Tenant URL field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
-	![Screenshot of Zscaler Private Access (ZPA) SCIM URL.](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
+	![Screenshot of the Zscaler Private Access (ZPA) SCIM URL.](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
 
 ## Step 3: Add Zscaler Private Access (ZPA) from the gallery
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)**.
 
-	![The Zscaler Private Access (ZPA) link in the Applications list.](common/all-applications.png)
+	![Screenshot of the Zscaler Private Access (ZPA) link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -118,11 +118,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of  New configuration.](common/application-provisioning.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
 1. Under the **Admin Credentials** section, enter the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
 
-	![Screenshot of Tenant URL + Token.](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of the Provisioning test connection.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. Select **Create** to create your configuration.
 
@@ -130,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
