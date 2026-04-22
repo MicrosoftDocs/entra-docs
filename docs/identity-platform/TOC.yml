@@ -604,6 +604,8 @@
               href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
+        - name: Implement WebView SSO with native authentication
+          href: how-to-native-authentication-webview-sso.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
