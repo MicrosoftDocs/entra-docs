@@ -2,7 +2,7 @@
 title: Tutorial - Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.topic: tutorial
-ms.date: 04/30/2025
+ms.date: 04/22/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
@@ -300,6 +300,13 @@ The photo should be clear and sharp in quality and no smaller than 200 pixels x 
 For more information on how to improve the photo processing accuracy, see [Face API characteristics and limitations](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy).
 
 For more information on verifiable credentials sizing limits, see [Verified ID FAQ](verifiable-credentials-faq.md).
+
+### What are the device security requirements for Face Check?
+
+Face Check requires devices to meet minimum security standards to ensure the integrity of the liveness check and protect against tampering:
+
+- **Android**: Face Check requires Android 10 or later with the latest security patches. The device must have Google Play Services installed and a functioning front-facing camera. Rooted devices or devices with unlocked bootloaders aren't supported.
+- **iOS**: Face Check requires iOS 16 or later with the latest security updates. The device must have a functioning front-facing camera. Jailbroken devices aren't supported.
 
 ## Next steps
 

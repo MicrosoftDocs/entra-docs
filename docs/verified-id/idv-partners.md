@@ -2,7 +2,7 @@
 title: Identity Proofing and Verification (IDV) Partner gallery for Microsoft Entra Verified ID
 description: Learn how to integrate with our IDV partners to tailor your end-user experience to your needs.
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 04/22/2026
 ---
 
 # Microsoft Entra Verified ID Identity Verification partners
@@ -31,6 +31,8 @@ The following table showcases the list of Verified ID IDV partners. If you're an
 |---------|----------------------|-------------------------------|-------------|
 | AU10TIX | [AU10TIX offer](https://securitystore.microsoft.com/solutions/au10tix1662380672540.au10tixverifiedid) | [VerifiedIdentity](https://verifiedid.did.msidentity.com/v1.0/tenants/7e3c5dae-db64-4f71-8eed-e9608f62da12/verifiableCredentials/contracts/370f04a8-c259-5ef7-b61a-a4302ddb2a78/manifest) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
 | IDEMIA | [IDEMIA offer](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | [VerifiedIdentity](https://verifiedid.did.msidentity.com/v1.0/tenants/927eef35-435d-482f-be37-477c1a5164d4/verifiableCredentials/contracts/07b489b6-b20d-55af-2b38-62a7562ccde9/manifest) | IDEMIA Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| 1Kosmos | [1Kosmos offer](https://aka.ms/1kosmos) | TBD <!-- TODO: Add manifest URI --> | 1Kosmos and Microsoft Entra Verified ID unite to deliver trusted, privacy-preserving identity verification that empowers secure, passwordless access across ecosystems. |
+| CLEAR | [CLEAR offer](https://aka.ms/clear1) | TBD <!-- TODO: Add manifest URI --> | CLEAR collaborates with Microsoft to create more secure digital experiences through verification credentials. |
 | TrueCredential (LexisNexis) | [TrueCredential offer](https://securitystore.microsoft.com/solutions/whoiamai1647469237981.truecredential) | [VerifiedIdentity](https://verifiedid.did.msidentity.com/v1.0/tenants/1dd3b364-3147-4083-96ac-e66b1e1f7b5f/verifiableCredentials/contracts/ac0bf718-61fe-2d72-f7ef-3131699bc9ed/manifest) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
 
 

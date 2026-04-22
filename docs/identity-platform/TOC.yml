@@ -710,8 +710,6 @@
                   href: custom-extension-tokenissuancestart-configuration.md
                 - name: Custom claims provider reference
                   href: custom-claims-provider-reference.md
-                - name: Configure a custom extension for account recovery
-                  href: custom-extension-account-recovery-configuration.md
             - name: Attribute collection
               items: 
                 - name: Create attribute collection start and submit events
