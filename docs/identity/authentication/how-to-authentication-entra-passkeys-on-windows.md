@@ -142,5 +142,5 @@ During public preview, if a tenant allows Microsoft Entra passkey on Windows and
 
 ## Related content
 
-- [How to enable passkey (FIDO2) profiles in Microsoft Entra ID (preview)](how-to-authentication-passkey-profiles.md)
+- [Enable passkeys (FIDO2) for your organization](how-to-authentication-passkeys-fido2.md)
 - [Microsoft Entra ID attestation for FIDO2 authenticators](concept-fido2-hardware-vendor.md)
