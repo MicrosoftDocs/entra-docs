@@ -137,15 +137,15 @@ Fill in these details with the values you obtain from Azure app registration por
 
 :::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js":::
 
-2. Next, create a new file named *auth.js* under the *routes* folder and add the following code there:
+1. Next, create a new file named *auth.js* under the *routes* folder and add the following code there:
 
 :::code language="js" source="~/../ms-identity-node/App/routes/auth.js":::
 
-3. Update the *index.js* route by replacing the existing code with the following code snippet:
+1. Update the *index.js* route by replacing the existing code with the following code snippet:
 
 :::code language="js" source="~/../ms-identity-node/App/routes/index.js":::
 
-4. Finally, update the *users.js* route by replacing the existing code with the following code snippet:
+1. Finally, update the *users.js* route by replacing the existing code with the following code snippet:
 
 :::code language="js" source="~/../ms-identity-node/App/routes/users.js":::
 
