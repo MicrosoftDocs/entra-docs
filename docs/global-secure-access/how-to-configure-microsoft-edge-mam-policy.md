@@ -12,7 +12,9 @@ author: idmdev
 
 ## Limitations
 
-This policy only works on Microsoft Edge for Windows.
+- This method to apply policy only works on Microsoft Edge for Windows.
+- If the user is signing in with your organization's work/school account to a device with MDM settings that conflict with settings that the MAM policy delivers, the MDM policy will apply.
+
 
 ## Prerequisites
 
