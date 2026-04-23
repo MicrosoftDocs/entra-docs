@@ -32,17 +32,24 @@ For more information, see:
 
 Copilot chat is available directly from the left side navigation in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
 1. Select **Copilot chat** from the side navigation menu.
+
+    :::image type="content" source="./media/security-copilot-in-entra/copilot-chat-left-nav.png" alt-text="Screenshot of the Copilot chat option in the Microsoft Entra admin center." lightbox="./media/security-copilot-in-entra/copilot-chat-left-nav-expanded.png":::
+
+1. Enter a question or task in the chat prompt bar, or select one of the suggestion cards to get started.
 
 The **Entra Copilot** panel opens with the following options:
 
 - **New chat**: Start a new conversation with Copilot.
 - **Agent chat**: Select a specialized agent, such as the **Identity Risk Management Agent** or the **Conditional Access Optimization Agent**, to get targeted assistance.
 - **Recent sessions**: View and resume previous Copilot chat sessions.
-- **Prompt suggestions**: Choose from suggested prompts to summarize, analyze, or troubleshoot common identity tasks.
 
-Enter a question or task in the chat prompt bar, or select one of the suggestion cards to get started.
+The Microsoft Entra Copilot chat experience is designed to meet you where you are in your workflow and stay with you when needed. You can expand or collapse the chat history pane on the left and switch between "sidecar mode" and "fullscreen mode" in the upper-right corner.
+
+:::image type="content" source="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png" alt-text="Screenshot of the Copilot chat buttons to expand and collapse the views." lightbox="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png":::
+
+In addition, when you navigate around the Microsoft Entra admin center from the Copilot chat experience, the sidecar remains open in the new page, allowing you to continue your conversation with Copilot without interruption. 
 
 ## Get started
 
