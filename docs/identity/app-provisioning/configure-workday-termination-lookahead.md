@@ -105,7 +105,7 @@ Switch([StatusTerminationLastDayOfWork], 
   Switch([Active], "False",  
 "0", "True",   
 "1", IIF(DateDiff("n", DateAdd("h","-7",Now()),CDate(  
-    Switch([StatusTerminationLastDayOfWork],[StatusTerminationLastDayOfWork],  
+    Switch([StatusTerminationLastDayOfWork],Mid([StatusTerminationLastDayOfWork],1,10),  
 "","9999-12-31")  
     )  
   ) <= 0, "True", "False")  
