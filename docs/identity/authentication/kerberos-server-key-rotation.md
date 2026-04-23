@@ -1,6 +1,6 @@
 ---
-title: Kerberos server key rotation for Microsoft Entra Kerberos
-description: Learn how to rotate the Microsoft Entra Kerberos server key to maintain security in hybrid identity environments.
+title: Rotate the Kerberos server key for Microsoft Entra Kerberos
+description: Learn how to rotate the Microsoft Entra Kerberos server key to maintain security and align with best practices in hybrid identity environments.
 author: barclayn
 manager: pmwongera
 ms.service: entra-id
@@ -9,15 +9,24 @@ ms.topic: how-to
 ms.date: 04/23/2026
 ms.author: barclayn
 ms.reviewer: Vimala
+ms.custom: msecd-doc-authoring-1012
+#customer intent: As an IT admin, I want to rotate the Microsoft Entra Kerberos server key so that I can maintain security in my hybrid identity environment.
 ---
 
-# Kerberos server key rotation for Microsoft Entra Kerberos
+# Rotate the Kerberos server key for Microsoft Entra Kerberos
 
-In hybrid identity environments, Microsoft Entra Kerberos uses a shared Kerberos server key between on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. This key encrypts and protects Ticket Granting Tickets (TGTs) issued by Microsoft Entra ID.
+In hybrid identity environments, Microsoft Entra Kerberos uses a shared Kerberos server key between on-premises Active Directory Domain Services (AD DS) and Microsoft Entra ID. This key encrypts and protects Ticket Granting Tickets (TGTs) issued by Microsoft Entra ID. This article shows you how to rotate the key to maintain security and align with Active Directory best practices.
 
-The key is stored on a dedicated Microsoft Entra Kerberos server object in on-premises Active Directory and securely published to Microsoft Entra ID. This object is logical—it doesn't represent a physical server—and functions similarly to a read-only domain controller (RODC) from a Kerberos trust perspective.
+The key is stored on a dedicated Microsoft Entra Kerberos server object in on-premises Active Directory and securely published to Microsoft Entra ID. This object is logical, not a physical server, and functions like a read-only domain controller (RODC) for Kerberos trust.
 
-## Why key rotation is important
+## Prerequisites
+
+- The `AzureADHybridAuthenticationManagement` PowerShell module installed.
+- Domain admin or equivalent credentials for on-premises AD DS.
+- Cloud admin credentials for Microsoft Entra ID.
+- A Microsoft Entra Kerberos server object already configured in on-premises Active Directory.
+
+## Understand why key rotation matters
 
 Regular rotation of the Kerberos server key helps:
 
