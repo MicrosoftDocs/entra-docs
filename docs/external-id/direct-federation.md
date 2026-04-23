@@ -210,7 +210,7 @@ To enable domainless federation for a new SAML IdP, follow these steps:
 
 1. On the **New SAML/WS-Fed IdP** page, select **Domainless**. Selecting **Domainless** enforces no domain check of the user's email address.
 
-    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-domain-less.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-idp-domain-less.png":::
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-domainless.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-idp-domainless.png":::
 
 
 > [!IMPORTANT]
