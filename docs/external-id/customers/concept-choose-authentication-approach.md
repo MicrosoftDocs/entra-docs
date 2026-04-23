@@ -10,19 +10,19 @@ ms.subservice: customers
 ms.topic: concept-article
 ms.date: 04/16/2026
 ms.author: godonnell
+
+#customer intent: As a developer, I want to understand the differences between browser-delegated and native authentication so that I can choose the right approach for my customer-facing app.
 ---
 
 # Choose an authentication approach
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-When you build customer-facing apps with Microsoft Entra External ID, you choose between two authentication approaches: browser-delegated authentication and native authentication. Both are fully supported, but they differ in user experience, development effort, and security model.
-
-## Browser-delegated vs. native authentication
+Browser-delegated authentication and native authentication are two sign-in approaches in Microsoft Entra External ID that define how your customer-facing app handles the authentication experience. Both approaches are fully supported, but they differ in user experience, development effort, and security model. Understanding these differences helps you choose the approach that best fits your app.
 
 With **browser-delegated authentication**, your app redirects users to a Microsoft-hosted sign-in page in a system browser or embedded web view. Microsoft Entra handles the entire authentication flow — your app receives tokens after sign-in completes. This approach requires minimal code and offers built-in branding customization.
 
-With **native authentication**, you build the sign-in screens directly into your app using the Microsoft Authentication Library (MSAL) SDK or the native authentication API. Users never leave your app. You control every aspect of the UI, but your team is responsible for building and maintaining the authentication experience.
+With **native authentication**, you build the sign-in UI experience directly into your app using the Microsoft Authentication Library (MSAL) SDK or the native authentication API. Users never leave your app. You control every aspect of the UI, but your team is responsible for building and maintaining the authentication experience.
 
 ## When to use browser-delegated authentication
 
@@ -49,7 +49,7 @@ For specific feature availability, see the [feature comparison](#feature-compari
 
 The following table shows which features are available in each approach.
 
-| Feature | Browser-delegated | Native |
+| Feature | Browser-delegated | Native authentication |
 |---|---|---|
 | Sign up and sign in with email OTP | ✔️ | ✔️ |
 | Sign up and sign in with email and password | ✔️ | ✔️ |
@@ -57,7 +57,7 @@ The following table shows which features are available in each approach.
 | Multifactor authentication (email OTP) | ✔️ | ✔️ |
 | Multifactor authentication (SMS OTP) | ✔️ | ✔️ |
 | Social identity providers (Apple, Facebook, Google) | ✔️ | ✔️ |
-| Single sign-on (SSO) | ✔️ | ❌ |
+| Single sign-on (SSO) | ✔️ | ✔️ |
 | Custom claims provider | ✔️ | ✔️ |
 
 ## Security considerations
