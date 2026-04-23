@@ -74,6 +74,8 @@ items:
         href: create-blueprint.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
+      - name: Cascade deletion for blueprint principals
+        href: cascade-deletion-agent-identities.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
       - name: AI-guided setup
@@ -133,6 +135,8 @@ items:
     items:
     - name: Token claims reference
       href: agent-token-claims.md
+    - name: FAQ
+      href: faq.yml
     - name: Microsoft Graph API
       items:
       - name: Permissions reference
@@ -143,8 +147,6 @@ items:
         href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Agent identity API
         href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
-      - name: Known issues
-        href: preview-known-issues.md
       - name: Error codes reference
         href: error-codes.md
     - name: Agent registry

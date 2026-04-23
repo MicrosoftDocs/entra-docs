@@ -231,3 +231,14 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 	return jsonResult;
 })
 ```
+
+---
+
+## Understand cascade deletion for blueprint principals
+
+When you delete an agent identity blueprint principal, the system automatically soft deletes all child agent identities created by that blueprint after approximately 24 hours. Agents' user accounts aren't automatically deleted but can't authenticate after their associated agent identity is deleted.
+
+> [!IMPORTANT]
+> Restore the blueprint principal before the background cleanup task runs (approximately 24 hours) to prevent child agent identities from being soft deleted. After the cleanup runs, each child identity must be restored individually.
+
+For details on the deletion timeline, restore procedures, and frequently asked questions, see [Cascade deletion for agent identity blueprint principals](cascade-deletion-agent-identities.md).

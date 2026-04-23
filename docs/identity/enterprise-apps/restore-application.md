@@ -15,6 +15,9 @@ zone_pivot_groups: enterprise-apps-minus-portal
 
 In this article, you learn how to restore a soft deleted enterprise application in your Microsoft Entra tenant. Soft deleted enterprise applications can be restored from the recycle bin within the first 30 days after their deletion. After the 30-day window, the enterprise application is permanently deleted and can't be restored.
 
+> [!NOTE]
+> Agent identity blueprint principals follow a cascade deletion model. When a blueprint principal is soft deleted, its child agent identities are automatically soft deleted after approximately 24 hours. If you need to restore a blueprint principal, do so before the cleanup task runs to prevent child identities from being affected. This behavior applies only to agent identity blueprint principals, not to other types of service principals. For more information, see [Cascade deletion for agent identity blueprint principals](~/agent-id/cascade-deletion-agent-identities.md).
+
 If you deleted an [application registration](~/identity-platform/howto-remove-app.md) in its home tenant through app registrations in the Microsoft Entra admin center, the enterprise application, which is its corresponding service principal also got deleted. 
 
 If you restore the deleted application registration through the Microsoft Entra admin center, its corresponding service principal, is also restored. You therefore be able to recover the service principal's previous configurations, except its previous policies such as Conditional Access policies, which aren't restored.
