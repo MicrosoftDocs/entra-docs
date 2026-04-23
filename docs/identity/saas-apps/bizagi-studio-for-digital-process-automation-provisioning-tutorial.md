@@ -3,8 +3,6 @@ title: Configure Bizagi Studio for Digital Process Automation for automatic user
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -88,28 +86,28 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Manage options, with Provisioning highlighted.](common/provisioning.png)
 
-4. Set **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of Provisioning Mode control, with Automatic highlighted.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. In the **Admin Credentials** section, enter your tenant URL and secret token for Bizagi Studio for Digital Process Automation. 
+1. In the **Tenant URL** field, input your Bizagi Studio for Digital Process Automation Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Bizagi Studio for Digital Process Automation. If the connection fails, ensure your Bizagi Studio for Digital Process Automation account has the required admin permissions and try again.
 
-      * **Tenant URL:** Enter the Bizagi SCIM endpoint, with the following structure:  `<Your_Bizagi_Project>/scim/v2/`.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+   * **Tenant URL:** Enter the Bizagi SCIM endpoint, with the following structure:  `<Your_Bizagi_Project>/scim/v2/`.
          For example: `https://my-company.bizagi.com/scim/v2/`.
 
-      * **Secret token:** This value is retrieved from the step discussed earlier in this article.
+   * **Secret token:** This value is retrieved from the step discussed earlier in this article.
 
-      To ensure that Microsoft Entra ID can connect to Bizagi Studio for Digital Process Automation, select **Test Connection**. If the connection fails, ensure that your Bizagi Studio for Digital Process Automation account has administrator permissions, and try again.
+1. Select **Create** to create your configuration.	
 
-   ![Screenshot of Admin Credentials, with Test Connection highlighted.](common/provisioning-testconnection-tenanturltoken.png)
+1. Select **Properties** in the **Overview** page. 
 
-6. For **Notification Email**, enter the email address of a person or group who should receive the provisioning error notifications. Select the option to **Send an email notification when a failure occurs**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-	![Screenshot of Notification Email options.](common/provisioning-notification-email.png)
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-7. Select **Save**.
-
-8. In the **Mappings** section, select **Synchronize Microsoft Entra users to Bizagi Studio for Digital Process Automation**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. In the **Attribute-Mapping** section, review the user attributes that are synchronized from Microsoft Entra ID to Bizagi Studio for Digital Process Automation. The attributes selected as **Matching** properties are used to match the user accounts in Bizagi Studio for Digital Process Automation for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Bizagi Studio for Digital Process Automation API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
@@ -132,21 +130,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > [!NOTE]
 > Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types aren't supported yet.
 
-10. To configure scoping filters, see the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Bizagi Studio for Digital Process Automation, in the **Settings** section, change the **Provisioning Status** to **On**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status toggle.](common/provisioning-toggle-on.png)
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-12. Define the users and groups that you want to provision to Bizagi Studio for Digital Process Automation. In the **Settings** section, choose the desired values in **Scope**.
-
-	![Screenshot of Scope options.](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Screenshot of Save control.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Monitor your deployment
 

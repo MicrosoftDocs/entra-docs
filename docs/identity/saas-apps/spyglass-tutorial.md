@@ -2,15 +2,10 @@
 title: Configure Spyglass for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Spyglass.
 services: active-directory
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 05/07/2024
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 

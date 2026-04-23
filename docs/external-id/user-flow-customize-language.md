@@ -1,12 +1,6 @@
 ---
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 11/17/2025
 

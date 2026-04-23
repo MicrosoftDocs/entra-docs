@@ -4,9 +4,6 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: jeedes
@@ -16,7 +13,7 @@ ms.author: jeedes
 
 # Configure Shopify Plus for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Shopify Plus and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Shopify Plus](https://www.shopify.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Shopify Plus and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Shopify Plus](https://www.shopify.com/plus) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported

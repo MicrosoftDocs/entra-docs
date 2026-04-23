@@ -1,15 +1,9 @@
 ---
 title: Microsoft Entra synchronization protocol overview
 description: Architectural guidance on integrating Microsoft Entra ID with legacy synchronization protocols
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 2/8/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Microsoft Entra integrations with synchronization protocols

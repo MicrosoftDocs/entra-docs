@@ -1,28 +1,26 @@
 ---
 title: Discover Azure resources to manage in PIM
 description: Learn how to discover Azure resources to manage in Privileged Identity Management (PIM).
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 01/06/2025
-ms.subservice: privileged-identity-management
-ms.author: barclayn
+ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: sfi-ga-nochange
 ---
 
 # Discover Azure resources to manage in Privileged Identity Management
 
+
+## Overview
+
 You can use Privileged Identity Management (PIM) in Microsoft Entra ID, to improve the protection of your Azure resources. This helps:
 
 - Organizations that already use Privileged Identity Management to protect Microsoft Entra roles
 - Management group and subscription owners who are trying to secure production resources
 
-When you first set up Privileged Identity Management for Azure resources, you need to discover and select the resources you want to protect with Privileged Identity Management. When you discover resources through Privileged Identity Management, PIM creates the PIM service principal (MS-PIM) assigned as User Access Administrator on the resource. There's no limit to the number of resources that you can manage with Privileged Identity Management. However, we recommend starting with your most critical production resources.
+When you first set up Privileged Identity Management for Azure resources, you need to discover and select the resources you want to protect with Privileged Identity Management. When you discover resources through Privileged Identity Management, PIM creates the PIM service principal (MS-PIM) assigned as User Access Administrator on the resource. There's no limit to the number of resources that you can manage with Privileged Identity Management. However, start with your most critical production resources.
 
 >[!NOTE]
->PIM can now automatically manage Azure resources in a tenant with no onboarding required. The updated user experience uses the latest PIM ARM API, allowing for improved performance and granularity in choosing the correct scope you want to manage. 
+>PIM can now automatically manage Azure resources in a tenant with no onboarding required. The updated user experience uses the latest PIM ARM API, allowing for improved performance and granularity in choosing the correct scope you want to manage. The new experience is the default when you navigate to **Azure resources** in PIM. The steps in this article describe the legacy experience. To switch between the new and legacy experiences, use the banner link at the top of the Azure resources page.
 
 ## Required permissions
 
@@ -33,7 +31,7 @@ You can view and manage the management groups or subscriptions to which you have
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1.  Browse to **ID Governance** > **Privileged Identity Management** > **Azure Resources**.
+1.  Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.
 
     If it is your first time using Privileged Identity Management for Azure resources, you see a **Discover resources** page.
 

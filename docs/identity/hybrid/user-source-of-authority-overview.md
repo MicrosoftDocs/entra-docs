@@ -1,9 +1,8 @@
 ---
-title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud (Preview)
+title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud
 description: Learn about Source of Authority (SOA) for users, including prerequisites and supported scenarios.
 author: owinfreyATL
-ms.topic: conceptual
-ms.service: entra-id
+ms.topic: concept-article
 ms.subservice: hybrid
 ms.date: 08/13/2025
 ms.author: owinfrey
@@ -12,7 +11,7 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to learn about user Source of Authority (SOA) so that I can minimize my on-premises footprint.
 ---
 
-# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)
+# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud
 
 Organizations are increasingly adopting a cloud-first approach to modernize their Identity and Access Management (IAM) solutions. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals. Transitioning the Source of Authority (SOA) for users from on-premises Active Directory Domain Services (AD DS) to the cloud is a key step in this journey. This process, known as AD DS minimization, reduces the complexity of on-premises infrastructure by managing users directly in the cloud.
 
@@ -39,7 +38,7 @@ The next sections explain more details about the scenario that User SOA supports
  
 ### Password-less authentication of SOA transferred users
  
-**Scenario**:  You’ve transferred the SOA for users and now want to allow them to access both on-premises, and cloud, resources. Instead of completely removing users from on-premises, introduce Cloud Kerberos Trust password-less authentication to allow them to maintain a hybrid presence allowing them to continue to access their on-premises resources, while also allowing them to access cloud resources. Password-less authentication methods, such as [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md), can be used to allow these users to access both their on-premises resources, and cloud resources such as [Azure Files](/azure/storage/files/storage-files-introduction) through [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md). Using Password-less authentication also enables Multifactor Authentication on the SOA transferred users increasing security. Password-less authentication also allows you to enable Conditional Access policies on the on-premises resources, allowing greater control and security over these resources. **The user account must remain in Active Directory for this scenario to work**.
+**Scenario**:  You’ve transferred the SOA for users and now want to allow them to access both on-premises, and cloud, resources. Instead of completely removing users from on-premises, introduce Cloud Kerberos Trust password-less authentication to allow them to maintain a hybrid presence allowing them to continue to access their on-premises resources, while also allowing them to access cloud resources. Password-less authentication methods, such as [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-authentication-passkeys-fido2.md), can be used to allow these users to access both their on-premises resources, and cloud resources such as [Azure Files](/azure/storage/files/storage-files-introduction) through [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md). Using Password-less authentication also enables Multifactor Authentication on the SOA transferred users increasing security. Password-less authentication also allows you to enable Conditional Access policies on the on-premises resources, allowing greater control and security over these resources. **The user account must remain in Active Directory for this scenario to work**.
  
 :::image type="content" source="media/user-source-of-authority-overview/passwordless-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
 
@@ -57,5 +56,5 @@ Before you begin transferring the SOA for users in your organization, your envir
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
-- [Prepare Your Environment for User SOA (Preview)](prepare-user-source-of-authority-environment.md)
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID](how-to-user-source-of-authority-configure.md)
+- [Prepare Your Environment for User SOA](prepare-user-source-of-authority-environment.md)

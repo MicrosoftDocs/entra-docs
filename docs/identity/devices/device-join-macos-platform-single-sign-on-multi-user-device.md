@@ -1,10 +1,8 @@
 ---
 title: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
 description: How users can set up a Microsoft Entra Joined Mac that supports multiple users for shared device scenarios with macOS Platform Single Sign-on
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
-ms.date: 05/13/2023
+ms.date: 02/23/2026
 ms.author: godonnell
 author: garrodonnell
 manager: leventbesik
@@ -164,6 +162,6 @@ If the user cannot sign in successfully, then use the following resources to tro
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

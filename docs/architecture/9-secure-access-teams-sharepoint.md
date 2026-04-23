@@ -1,14 +1,9 @@
 ---
 title: Secure external access to Microsoft Teams, SharePoint, and OneDrive with Microsoft Entra ID
 description: Secure access to Microsoft 365 services as a part of your external access security plan
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/28/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Secure external access to Microsoft Teams, SharePoint, and OneDrive with Microsoft Entra ID

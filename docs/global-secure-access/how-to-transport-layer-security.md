@@ -3,11 +3,9 @@ title: Configure Transport Layer Security Inspection Policies
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 11/07/2025
+ms.date: 04/18/2026
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -34,7 +32,7 @@ The **Default action** specifies what to do if no rules match. The default setti
 1.  Select **Next** > **Add rule**. On the **Rules** page, you can define a custom rule by specifying an **FQDN** or selecting a **Web category**.
 :::image type="content" source="media/how-to-transport-layer-security/add-rule.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Rules tab.":::
 
-1. To complete the policy configuration, go to **Save** > **Next** > **Submit**. Note a system rule has been auto created to exclude destinations that do not work with TLS inspection. An editable recommended bypass rule is automatically created to exclude Education, Finance, Government, and Health & Medicine categories for TLS policies migrating from the preview. 
+1. To complete the policy configuration, go to **Save** > **Next** > **Submit**. Note a system rule has been auto created to exclude destinations that do not work with TLS inspection. An editable recommended bypass rule is automatically created to exclude Education, Finance, Government, and Health & Medicine categories. 
 1. To review rules, including the auto-created rules, select a policy and then go to **Edit** > **Rules**.
 :::image type="content" source="media/how-to-transport-layer-security/edit-policy-rules.png" alt-text="Screenshot of the Edit a TLS inspection policy screen open to the Rules tab.":::
 
@@ -69,7 +67,7 @@ To test the configuration:
 
 1. Set up the Global Secure Access client:
     - Disable secure DNS and built-in DNS.  
-    - Block QUIC traffic from your device. QUIC isn't supported in Microsoft Entra Internet Access. Most websites support fallback to TCP when QUIC can't be established. For an improved user experience, deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443`.   
+    - Block QUIC traffic from your device. QUIC isn't supported in Microsoft Entra Internet Access. Most websites support fallback to TCP when QUIC can't be established. For an improved user experience, deploy a Windows Firewall rule that blocks outbound UDP 443: `New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443`.   
     - Make sure Internet Access Traffic Forwarding is enabled.   
 1. Open a browser on a client device and test various websites. Inspect the certificate information and confirm the Global Secure Access certificate.
 :::image type="content" source="media/how-to-transport-layer-security/certificate-viewer.png" alt-text="Screenshot of the Certificate Viewer with the Global Secure Access certificate highlighted.":::    

@@ -8,18 +8,19 @@
         "typos": "(NOT HANDLED) Common typos to fix in the documentation."
     },
     "roleDisplayNames": {
-        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator"
+        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator",
+        "Customer LockBox Access Approver" : "Customer Lockbox Access Approver"
     },
     "roleDescriptions": {
-        "Can manage Azure DevOps organization policy and settings.": "Can manage Azure DevOps policies and settings.",
-        "Can manage all aspects of the Cloud App Security product.": "Can manage all aspects of the Defender for Cloud Apps product.",
-        "Manages all aspects of Microsoft Fabric.": "Can manage all aspects of the Fabric and Power BI products.",
+        "Can manage Azure DevOps organization policy and settings.": "Manage Azure DevOps policies and settings.",
+        "Can manage all aspects of the Cloud App Security product.": "Manage all aspects of the Defender for Cloud Apps product.",
+        "Manages all aspects of Microsoft Fabric.": "Manage all aspects of the Fabric and Power BI products.",
         "Create and manage all aspects of Global Secure Internet Access and Microsoft Global Secure Private Access, including managing access to public and private endpoints.": "Create and manage all aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access, including managing access to public and private endpoints.",
         "Can manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, and federation settings.": "Manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.",
-        "Can view and share dashboards and insights via the M365 Insights app.": "Can view and share dashboards and insights via the Microsoft 365 Insights app.",
-        "Has access to topic management dashboard and can manage content.": "Can organize, create, manage, and promote topics and knowledge.",
+        "Can view and share dashboards and insights via the M365 Insights app.": "View and share dashboards and insights via the Microsoft Viva Insights app.",
+        "Has access to topic management dashboard and can manage content.": "Organize, create, manage, and promote topics and knowledge.",
         "Manage all aspects of Entra Permissions Management.": "Manage all aspects of Microsoft Entra Permissions Management.",
-        "Can create and manage all aspects of Microsoft Dynamics 365, PowerApps and Microsoft Flow.": "Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate.",
+        "Can create and manage all aspects of Microsoft Dynamics 365, PowerApps and Microsoft Flow.": "Manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate.",
         "Can see only tenant level aggregates in Microsoft 365 Usage Analytics and Productivity Score.": "Read Usage reports and Adoption Score, but can't access user details."
     },
     "resourceActionDescriptions": {
@@ -106,9 +107,69 @@
             ],
             "inheritsPermissionsFrom@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/roleDefinitions('d24aef57-1500-4070-84db-2666f29cf966')/inheritsPermissionsFrom",
             "inheritsPermissionsFrom": []
+        },
+        {
+            "id": "00cf5c54-4693-4f59-a0ac-ab79ef0a974d",
+            "assignmentMode": "allowed",
+            "categories": "other",
+            "description": "Do not use - not intended for general use.",
+            "displayName": "Microsoft 365 Support Engineer",
+            "isBuiltIn": true,
+            "isEnabled": true,
+            "isPrivileged": false,
+            "resourceScopes": [
+                "/"
+            ],
+            "richDescription": "",
+            "templateId": "00cf5c54-4693-4f59-a0ac-ab79ef0a974d",
+            "version": "1",
+            "rolePermissions": [
+                {
+                    "allowedResourceActions": [
+                        "microsoft.directory/applications/allProperties/read",
+                        "microsoft.directory/auditLogs/allProperties/read",
+                        "microsoft.directory/authorizationPolicy/standard/read",
+                        "microsoft.directory/conditionalAccessPolicies/standard/read",
+                        "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
+                        "microsoft.directory/deviceManagementPolicies/standard/read",
+                        "microsoft.directory/deviceRegistrationPolicy/standard/read",
+                        "microsoft.directory/devices/standard/read",
+                        "microsoft.directory/directoryRoles/allProperties/read",
+                        "microsoft.directory/directoryRoles/members/read",
+                        "microsoft.directory/domains/allProperties/read",
+                        "microsoft.directory/domains/standard/read",
+                        "microsoft.directory/groups/allProperties/read",
+                        "microsoft.directory/groupSettings/allProperties/read",
+                        "microsoft.directory/groups/members/read",
+                        "microsoft.directory/groups/owners/read",
+                        "microsoft.directory/groups/standard/read",
+                        "microsoft.directory/organization/allProperties/read",
+                        "microsoft.directory/policies/standard/read",
+                        "microsoft.directory/securityRiskPolicy/standard/read",
+                        "microsoft.directory/servicePrincipals/allProperties/read",
+                        "microsoft.directory/servicePrincipals/appRoleAssignments/limitedRead",
+                        "microsoft.directory/servicePrincipals/standard/read",
+                        "microsoft.directory/subscribedSkus/allProperties/read",
+                        "microsoft.directory/users/directReports/read",
+                        "microsoft.directory/users/licenseDetails/read",
+                        "microsoft.directory/users/manager/read",
+                        "microsoft.directory/users/memberOf/read",
+                        "microsoft.directory/users/registeredDevices/read",
+                        "microsoft.directory/users/standard/read",
+                        "microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/read",
+                        "microsoft.office365.protectionCenter/attackSimulator/reports/allProperties/read",
+                        "microsoft.teams/allEntities/allProperties/read"
+                    ],
+                    "condition": null
+                }
+            ],
+            "inheritsPermissionsFrom@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/roleDefinitions('00cf5c54-4693-4f59-a0ac-ab79ef0a974d')/inheritsPermissionsFrom",
+            "inheritsPermissionsFrom": []
         }
     ], 
     "typos": {
-        "’": "'"
+        "’": "'",
+        "allowlist": "allow list",
+        "blocklist": "block list"
     }
 }

@@ -2,8 +2,6 @@
 title: Configure an application to trust a managed identity
 description: Learn how to configure an application to trust a managed identity in Microsoft Entra ID.
 author: cilwerner
-manager: CelesteDG
-ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 06/06/2025
 ms.author: cwerner

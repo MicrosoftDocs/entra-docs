@@ -9,7 +9,7 @@
 - name: Quickstarts
   items:
   - name: Add users to Microsoft Entra ID
-    href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/how-to-create-delete-users.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Set groups expiration    
     href: groups-quickstart-expiration.md
   - name: Set groups naming policy    
@@ -35,7 +35,7 @@
   - name: Users
     items: 
     - name: Create a user 
-      href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-create-delete-users.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Create users in bulk
       href: users-bulk-add.md
     - name: Convert external users to internal
@@ -72,6 +72,8 @@
       href: clean-up-unmanaged-accounts.md 
     - name: Clean up stale guest accounts
       href: clean-up-stale-guest-accounts.md
+    - name: Get signed-in user identity
+      href: how-to-get-signed-in-identity.md
     - name: Dynamic groups and guests   
       href: ~/external-id/use-dynamic-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Organization (tenant)
@@ -145,7 +147,7 @@
   - name: Licenses
     items:
     - name: Assign licenses to users    
-      href: ~/fundamentals/license-users-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Use Admin center to assign licenses to groups
       href: licensing-admin-center.md
     - name: Additional scenarios    
@@ -179,7 +181,7 @@
 - name: Reference
   items:
   - name: Microsoft Graph API  
-    href: /graph/api/resources/azure-ad-overview
+    href: /graph/api/resources/identity-network-access-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
   - name: Microsoft Entra service limits

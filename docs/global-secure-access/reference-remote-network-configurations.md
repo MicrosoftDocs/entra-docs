@@ -1,16 +1,14 @@
 ---
 title: Global Secure Access remote network configurations
 description: Valid Global Secure Access configurations for custom remote network device links settings, including IKE, ASN, IPSec, and DH group.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ai-usage: ai-assisted
 ---
 
 # Valid remote network configurations for custom and default configurations
+
+## Overview
 
 Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access. There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 
@@ -80,11 +78,11 @@ When you select **Default** as your IPsec/IKE policy when configuring remote net
 
 ### IKE Phase 1 combinations
 
-| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 |
-| --- | --- | --- | --- | --- |
-| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 |
-| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 |
-| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 |
+| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 | Combination 5 | Combination 6 | Combination 7 | Combination 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 | GCMAES256 | GCMAES128 | AES256 | AES128 |
+| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA384 | SHA256 | SHA384 | SHA256 |
+| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup14 | DHGroup14 | DHGroup14 | DHGroup14 |
 
 ### IKE Phase 2 combinations
 

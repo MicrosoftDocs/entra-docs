@@ -1,16 +1,12 @@
 ---
 title: Multiple Domain Support for Federating with Microsoft Entra ID
 description: This document describes setting up and configuring multiple top level domains with Microsoft 365 and Microsoft Entra ID.
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 5595fb2f-2131-4304-8a31-c52559128ea4
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 09/18/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ---
 # Multiple Domain Support for Federating with Microsoft Entra ID
 

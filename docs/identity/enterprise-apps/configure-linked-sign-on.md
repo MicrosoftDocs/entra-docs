@@ -1,15 +1,9 @@
 ---
 title: Add linked single sign-on to an application
 description: Add linked single sign-on to an application in Microsoft Entra ID.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/20/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
 # Customer intent: As an Application Administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.

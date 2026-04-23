@@ -5,10 +5,6 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -23,6 +19,7 @@ This article describes the steps you need to perform in both Atlassian Cloud and
 
 ## Capabilities supported
 > [!div class="checklist"]
+> * [Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in Atlassian Cloud 
 > * Create users in Atlassian Cloud
 > * Remove users in Atlassian Cloud when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Atlassian Cloud

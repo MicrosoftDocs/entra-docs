@@ -3,8 +3,6 @@ title: PowerShell Sample - Create a TLS Certificate Using OpenSSL
 description: Use this PowerShell script to generate and sign Transport Layer Security (TLS) certificates using OpenSSL in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
-manager: dougeby
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 09/09/2025
 ms.reviewer: teresayao
@@ -152,10 +150,11 @@ chain       = Get-Content -Path $RootCert -Raw
 # -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
 # -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
 
-try {Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
--ErrorAction Stop} catch {
-Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
-exit 1
+try {
+    Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload -ErrorAction Stop
+} catch {
+    Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
+    exit 1
 }
 
 Write-Host "Certificate is uploaded successfully via Microsoft Graph SDK."

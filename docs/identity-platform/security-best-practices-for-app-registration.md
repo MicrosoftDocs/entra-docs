@@ -81,12 +81,6 @@ Scenarios that required **implicit flow** can now use **Auth code flow** to redu
 
 :::image type="content" source="./media/application-registration-best-practices/implict-grant-flow.png" alt-text="Screenshot that shows where the implicit flow property is located.":::
 
-Consider the following guidance related to implicit flow:
-
-- Understand if [implicit flow is required](./v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). Don't use implicit flow unless explicitly required.
-- If the application was configured to receive access tokens using implicit flow, but doesn't actively use them, turn off the setting to protect from misuse.
-- Use separate applications for valid implicit flow scenarios.
-
 ## Application ID URI (also known as Identifier URI)
 
 The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for the scope value in requests to Microsoft Entra. It's also the value of the audience (`aud`) claim in v1.0 access tokens. For multitenant applications, the value must also be globally unique. It's also referred to as an **Identifier URI**. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.

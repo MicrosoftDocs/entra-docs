@@ -1,9 +1,6 @@
 ---
 title: Microsoft Security Copilot scenarios in Microsoft Entra overview
 description: Learn about the Microsoft Security Copilot scenarios across Microsoft Entra products and services.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

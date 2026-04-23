@@ -21,6 +21,8 @@ items:
         href: road-to-the-cloud-implement.md
       - name: Transition to the cloud
         href: road-to-the-cloud-migrate.md
+      - name: AD minimization case studies
+        href: road-to-the-cloud-ad-minimization.md
     - name: Parallel identity options
       href: parallel-identity-options.md
     - name: Automate identity provisioning to applications
@@ -177,6 +179,8 @@ items:
     items:
     - name: Microsoft Entra deployment plans
       href: deployment-plans.md
+    - name: Identity architecture in Azure (Architecture Center)
+      href: /azure/architecture/identity/identity-start-here
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
     - name: Microsoft Entra External ID deployment architectures
@@ -335,6 +339,10 @@ items:
         href: service-accounts-user-on-premises.md
       - name: Govern on-premises service accounts
         href: service-accounts-govern-on-premises.md
+  - name: AI for Security
+    items:
+    - name: Security Copilot for Entra PoC
+      href: security-copilot-entra-proof-of-concept.md
   - name: Secure for AI
     items: 
     - name: Secure Generative AI 

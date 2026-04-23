@@ -1,22 +1,20 @@
 ---
 title: Approve activation requests for group members and owners
 description: Learn how to approve activation requests for group members and owners in Microsoft Entra Privileged Identity Management (PIM).
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 04/30/2025
-ms.author: barclayn
+ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
 ---
 
 # Approve activation requests for group members and owners
 
+
+## Overview
+
 With Privileged Identity Management (PIM) and Microsoft Entra ID, you can configure activation of group membership and ownership to require approval. You can also choose users or groups from your Microsoft Entra organization as delegated approvers.
 
-We recommend that you select two or more approvers for each group. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, the eligible user must resubmit a new request. The 24-hour approval time window isn't configurable.
+Select two or more approvers for each group. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, the eligible user must resubmit a new request. The 24-hour approval time window isn't configurable.
 
 Follow the steps in this article to approve or deny requests for group membership or ownership.
 
@@ -25,7 +23,7 @@ Follow the steps in this article to approve or deny requests for group membershi
 
 As a delegated approver, you receive an email notification when an Azure resource role request is pending your approval. You can view pending requests in Privileged Identity Management.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who has been set as an approver.
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests** > **Groups**.
 
@@ -34,6 +32,9 @@ As a delegated approver, you receive an email notification when an Azure resourc
     :::image type="content" source="media/pim-for-groups/pim-group-9.png" alt-text="Screenshot that shows requests for role activations." lightbox="media/pim-for-groups/pim-group-9.png":::
 
 ## Approve requests
+
+> [!NOTE]
+> Approvers can't approve their own role activation requests. Additionally, service principals aren't allowed to approve requests.
 
 1. Find and select the request that you want to approve and select **Approve**.
 

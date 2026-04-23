@@ -2,14 +2,12 @@
 title: Troubleshoot custom security attributes in Microsoft Entra ID
 description: Learn how to troubleshoot custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: femila
 ms.author: rolyon
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: troubleshooting
 ms.date: 11/27/2024
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to troubleshoot custom security attributes issues so that I can resolve problems with attribute definitions and assignments.
 ---
 
 # Troubleshoot custom security attributes in Microsoft Entra ID

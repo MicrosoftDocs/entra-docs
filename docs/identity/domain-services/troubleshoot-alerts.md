@@ -1,15 +1,10 @@
 ---
 title: Common alerts and resolutions in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to resolve common alerts generated as part of the health status for Microsoft Entra Domain Services
-author: justinha
-manager: dougeby
 
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: troubleshooting
 ms.date: 02/19/2025
-ms.author: justinha
 ---
 # Known issues: Common alerts and resolutions in Microsoft Entra Domain Services
 
@@ -263,6 +258,49 @@ Then follow these steps to retry onboarding the custom attribute in the **Custom
 1. Select **Add** and choose the desired attributes again, then select **Save**.
 
 Upon successful onboarding, Domain Services back fills synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
+
+## AADDS122: Group policy object conflict detected (preview)
+
+### Alert message
+
+*Group Policy Object conflict detected. Please review the GPO settings on the domain controllers.*
+
+### Resolution
+
+Review the domains GPO settings and fix the entries which have issues. In the case where a GPO cannot be fixed steps are provided to restore from backup in [Restore GPO from backup](group-policy.md).
+
+4 alerts are sent in case of a GPO conflict after every 7 days if there is no resolution. After 30 days, the system will automatically fix any lingering issues automatically and the alerts will be cleared.
+
+>[!WARNING]
+>Automatic resolution may lead to loss of data from a GPO point of view, but is necessary for us to maintain the domain in a healthy state. Make sure the alert is fixed in time to avoid any loss of data.
+
+## AADDS123: Kerberos RC4 usage detected for service ticket issuance
+
+### Alert message
+
+*Microsoft Entra Domain Services detected Kerberos RC4 usage for service ticket issuance that can block security enforcement related to [CVE-2026-20833](https://www.cve.org/CVERecord?id=CVE-2026-20833).*
+
+### Resolution
+
+Windows security updates related to CVE-2026-20833 move Kerberos KDC behavior to AES-first defaults and reduce RC4 usage. If workloads still rely on RC4, authentication failures can occur when enforcement is enabled.
+
+To resolve this alert, complete the following steps:
+
+1. Update and validate affected workloads, devices, and service accounts to support AES Kerberos encryption.
+2. Turn on security events for the managed domain by following [Enable security and DNS audits for Microsoft Entra Domain Services](security-audit-events.md).
+3. Monitor Kerberos ticket event IDs **4768** and **4769** to identify RC4 dependencies that block enforcement.
+4. For workloads that temporarily require RC4, explicitly configure the affected service account **msDS-SupportedEncryptionTypes** value to include RC4 as documented in [How to manage Kerberos KDC usage of RC4 for service account ticket issuance changes related to CVE-2026-20833](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc).
+5. Keep domain-wide Kerberos security hardened by using [Security settings](secure-your-domain.md) and avoid broad RC4 enablement unless no other mitigation is possible.
+6. Continue monitoring Kerberos-related system events and Domain Services health until the alert is removed.
+
+The managed domain's health automatically updates itself within two hours and removes the alert when RC4 dependencies are remediated.
+
+> [!WARNING]
+> Windows updates for CVE-2026-20833 enforce RC4 hardening in phases. Plan and complete remediation before full enforcement:
+>
+> * **January 13, 2026 - Initial deployment phase:** Updates introduce audit signals and preparation controls.
+> * **April 2026 - Enforcement phase (manual rollback available):** Default Kerberos KDC behavior shifts to AES-first, and RC4-dependent scenarios can start failing unless explicitly configured.
+> * **July 2026 - Enforcement phase (final):** Updates remove rollback support and keep enforcement enabled.
 
 ## AADDS500: Synchronization has not completed in a while
 

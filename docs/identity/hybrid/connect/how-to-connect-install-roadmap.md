@@ -2,15 +2,10 @@
 title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap.'
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
 ---
 
 # Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap
@@ -22,7 +17,7 @@ ms.author: jomondi
 > [!IMPORTANT]
 > Microsoft doesn't support modifying or operating Microsoft Entra Connect Sync outside of the actions that are formally documented. Any of these actions might result in an inconsistent or unsupported state of Microsoft Entra Connect Sync. As a result, Microsoft can't provide technical support for such deployments.
 
-You can find the download for Microsoft Entra Connect on [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=615771).
+You can find the download for Microsoft Entra Connect on [Microsoft Download Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
 
 | Solution | Scenario |
 | --- | --- |
@@ -39,7 +34,7 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 ### Next steps to Install Microsoft Entra Connect
 |Topic |Link|  
 | --- | --- |
-|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
+|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted)|
 |Install using Express settings | [Express installation of Microsoft Entra Connect](./how-to-connect-install-express.md)|
 |Install using Customized settings | [Custom installation of Microsoft Entra Connect](./how-to-connect-install-custom.md)|
 |Upgrade from DirSync | [Upgrade from Azure AD Sync tool (DirSync)](./how-to-dirsync-upgrade-get-started.md)|
@@ -152,7 +147,7 @@ To get started with Microsoft Entra Connect Health, use the following steps:
     * [Download Microsoft Entra Connect Health Agent for AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-ad-fs).
 * Get started using Microsoft Entra Connect Health for sync
-    * [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The Health Agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or higher).
+    * [Download and install the latest version of Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). The Health Agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or higher).
 * Get started using Microsoft Entra Connect Health for AD DS
     * [Download Microsoft Entra Connect Health Agent for AD DS](https://go.microsoft.com/fwlink/?LinkID=820540).
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-azure-ad-ds).

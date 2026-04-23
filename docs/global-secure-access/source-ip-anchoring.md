@@ -2,18 +2,19 @@
 title: Source IP anchoring with Global Secure Access
 description: Configure Microsoft Entra Private Access to tunnel specific application traffic through a private network for application's network-based access control policy.
 author: jricketts
-manager: martinco
 ms.author: jricketts
 ms.reviewer: jebley
-ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 02/21/2026
 ---
 
 # Source IP anchoring with Global Secure Access
 
 Organizations with Software-as-a-Service (SaaS) or Line-of-Business (LOB) applications might enforce specific network locations before allowing access. One approach is to use Microsoft Entra Private Access to route specific web application traffic with a privately controlled network. This approach allows you to enforce specific egress IPs that only your organization uses. This article describes how to configure Microsoft Entra Private Access to tunnel specific application traffic through a private network to satisfy an application's network-based access control policy.
+
+> [!TIP]
+> **Source IP anchoring** and **source IP restoration** are different features. Source IP anchoring (this article) routes application traffic through your private network connector so that a SaaS app sees your known egress IP address. [Source IP restoration](how-to-source-ip-restoration.md) preserves the user's original public IP address in Microsoft Entra sign-in logs when traffic flows through Global Secure Access. Choose the feature that matches your scenario.
 
 ## Configure source IP anchoring to route traffic from a dedicated IP address
 

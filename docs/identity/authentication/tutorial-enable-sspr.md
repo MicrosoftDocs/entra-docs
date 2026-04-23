@@ -1,12 +1,8 @@
 ---
 title: Enable Microsoft Entra self-service password reset
 description: In this tutorial, you learn how to enable Microsoft Entra self-service password reset for a group of users and test the password reset process.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: tilarso
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use self-service password reset so that my end-users can unlock their accounts or reset their passwords through a web browser.
@@ -43,7 +39,7 @@ To finish this tutorial, you need the following resources and privileges:
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Microsoft Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
 * An account with at least the Authentication Policy Administrator role.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
-    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
     * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 

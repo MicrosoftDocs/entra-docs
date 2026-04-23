@@ -3,8 +3,6 @@ title: Configure Contentstack for automatic user provisioning with Microsoft Ent
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentstack.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes

@@ -3,12 +3,11 @@ title: Microsoft Entra authentication management operations reference guide
 description: This operations reference guide describes the checks and actions you should take to secure authentication management
 author: martincoetzer
 manager: travisgr
-ms.service: entra
-ms.topic: article
-ms.subservice: architecture
+ms.topic: best-practice
 ms.date: 08/25/2024
 ms.author: martinco
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra authentication management operations reference guide
@@ -139,7 +138,7 @@ If you're managing devices with MDM or Microsoft Intune, but not using device co
 
 In Windows 10, [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) replaces passwords with strong two-factor authentication on PCs. Windows Hello for Business enables a more streamlined multifactor authentication experience for users and reduces your dependency on passwords. If you haven't begun rolling out Windows 10 devices, or have only partially deployed them, we recommend you upgrade to Windows 10 and [enable Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-manage-in-organization) on all devices.
 
-If you would like to learn more about passwordless authentication, see [A world without passwords with Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md).
+If you would like to learn more about passwordless authentication, see [A world without passwords with Microsoft Entra ID](~/identity/authentication/concept-authentication-passkeys-fido2.md).
 
 ## Application authentication and assignment
 

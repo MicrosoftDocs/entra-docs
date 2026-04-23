@@ -2,17 +2,15 @@
 title: Perform an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to review access of Azure resource and Microsoft Entra roles
   in Privileged Identity Management (PIM).
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
-ms.author: barclayn
+ms.date: 03/23/2026
 ms.custom: pim
 ---
 
 # Perform an access review of Azure resource and Microsoft Entra roles in PIM
+
+
+## Overview
 
 Privileged Identity Management (PIM) simplifies how enterprises manage privileged access to resources in Microsoft Entra ID, and other Microsoft online services like Microsoft 365 or Microsoft Intune. Follow the steps in this article to perform reviews of access to roles.
 
@@ -22,11 +20,11 @@ If you're at least a Privileged Role Administrator interested in access reviews,
 
 ## Approve or deny access
 
-You can approve or deny access based on whether the user still needs access to the role. Choose **Approve** if you want them to stay in the role, or **Deny** if they don't need the access anymore. The users' assignment status doesn't change until the review closes and the administrator applies the results. Common scenarios in which certain denied users can't have results applied to them may include the following:
+You can approve or deny access based on whether the user still needs access to the role. Choose **Approve** if you want them to stay in the role, or **Deny** if they don't need the access anymore. The users' assignment status doesn't change until the review closes and the administrator applies the results. Common scenarios in which certain denied users can't have results applied to them might include the following:
 
 - **Reviewing members of a synced on-premises Windows AD group**: If the group is synced from an on-premises Windows AD, the group can't be managed in Microsoft Entra ID, and therefore membership can't be changed.
 - **Reviewing a role with nested groups assigned**: For users who have membership through a nested group, the access review doesn't remove their membership to the nested group and therefore they retain access to the role being reviewed.
-- **User not found or other errors**: These may also result in an apply result not being supported.
+- **User not found or other errors**: These might also result in an apply result not being supported.
 
 Follow these steps to find and complete the access review:
 

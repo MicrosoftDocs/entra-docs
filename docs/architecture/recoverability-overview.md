@@ -1,14 +1,10 @@
 ---
 title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: best-practice
 ms.date: 11/03/2025
-ms.author: jricketts
 ms.reviewer: jricketts
+ms.subservice: architecture
 ---
 
 # Recoverability best practices
@@ -199,6 +195,7 @@ Preventing unwanted changes is far less difficult than needing to re-create and 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
 - Administrative control of an object enables configuration and deletion. Use less privileged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
 - [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
+- Use [protected actions in Microsoft Entra ID](../identity/role-based-access-control/protected-actions-overview.md) to enforce an additional layer of Conditional Access policy protection, independent of the role being used or how the user was given the permission. Protected actions should be applied to sensitive operations such as hard deletion, authentication context changes and Conditional Access changes.
 
 ## Next steps
 

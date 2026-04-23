@@ -31,9 +31,9 @@ While relying on static consent and a single permissions list keeps the code nic
 
 ## Incremental and dynamic user consent
 
-With the Microsoft identity platform endpoint, you can ignore the static permissions defined in the application registration information in the Microsoft Entra admin center. Instead, you can request permissions incrementally. You can ask for a bare minimum set of permissions upfront and request more over time as the customer uses more application features. To do so, you can specify the scopes your application needs at any time by including the new scopes in the `scope` parameter when [requesting an access token](#requesting-individual-user-consent) - without the need to predefine them in the application registration information. 
+With the Microsoft identity platform endpoint, you can ignore the static permissions defined in the application registration information in the Microsoft Entra admin center. Instead, you can request permissions dynamically, from the application's code. You can start by asking for a bare minimum set of permissions upfront and request others over time as the customer uses more application features. To do so, you can specify the scopes your application needs at any time by including the scopes in the `scope` parameter when [requesting an access token](#requesting-individual-user-consent) - without the need to predefine them in the application registration information.
 
-If the user doesn't consent to new scopes added to the request, they get a prompt to consent only to the new permissions. Incremental, or dynamic consent, only applies to delegated permissions and not to application permissions.
+If the user hasn't consented to any of the scopes in the request, they get a prompt to consent for all permissions in that request. These will be granted in addition to any other permissions that were already granted for that app (i.e. incremental). Incremental consent, only applies to delegated permissions and not to application permissions.
 
 Allowing an application to request permissions dynamically through the `scope` parameter gives developers full control over your user's experience. You front load your consent experience and ask for all permissions in one initial authorization request. If your application requires a large number of permissions, you can gather those permissions from the user incrementally as they try to use certain features of the application over time.
 
@@ -72,7 +72,7 @@ When the user approves the permission request, consent is recorded. The user doe
 
 ## Requesting consent for an entire tenant through admin consent
 
-Requesting consent for an entire tenant requires admin consent. Admin consent done on behalf of an organization requires the static permissions registered for the app. Set those permissions in the app registration portal if you need an admin to give consent on behalf of the entire organization.
+Requesting consent for an entire tenant requires admin consent. Admin consent done on behalf of an organization requires the static permissions registered for the app. Set those permissions in the Microsoft Entra app registration portal if you need an admin to give consent on behalf of the entire organization.
 
 ### Admin Consent for Delegated Permissions
 
@@ -119,14 +119,14 @@ When you sign the user into your app, you can identify the organization to which
 
 To sign the user in, follow the [Microsoft identity platform protocol tutorials](./v2-protocols.md).
 
-### Request the permissions in the app registration portal
+### Request the permissions in the Microsoft Entra app registration portal
 
-In the app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Microsoft Entra admin center's **Grant admin consent** option.  
+In the Microsoft Entra app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Microsoft Entra admin center's **Grant admin consent** option.  
 
 In general, the permissions should be statically defined for a given application. They should be a superset of the permissions that the application requests dynamically or incrementally.
 
 > [!NOTE]
->Application permissions can be requested only by using [`.default`](scopes-oidc.md#the-default-scope). So if your application needs application permissions, make sure they're listed in the app registration portal.
+>Application permissions can be requested only by using [`.default`](scopes-oidc.md#the-default-scope). So if your application needs application permissions, make sure they're listed in the Microsoft Entra app registration portal.
 
 To configure the list of statically requested permissions for an application:
 
@@ -194,3 +194,4 @@ For more information about the OAuth 2.0 protocol and how to get access tokens, 
 - [Consent experience](application-consent-experience.md)
 - [ID tokens](id-tokens.md)
 - [Access tokens](access-tokens.md)
+- [App registrations](quickstart-register-app.md)

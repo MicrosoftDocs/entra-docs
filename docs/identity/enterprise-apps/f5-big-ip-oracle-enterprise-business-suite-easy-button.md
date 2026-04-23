@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Easy Button for SSO to Oracle EBS
 description: Learn to implement SHA with header-based SSO to Oracle EBS using F5 BIG-IP Easy Button Guided Configuration
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/23/2023
 ms.author: gasinh

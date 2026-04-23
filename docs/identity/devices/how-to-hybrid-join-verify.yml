@@ -5,7 +5,6 @@ metadata:
   description: Verify configurations for Microsoft Entra hybrid joined devices
   author: owinfreyATL
   ms.author: owinfrey
-  manager: dougeby
   ms.reviewer: sandeo
   ms.date: 11/25/2024
   ms.service: entra-id

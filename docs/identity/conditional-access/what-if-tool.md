@@ -1,17 +1,14 @@
 ---
 title: The Conditional Access What If tool
 description: Simulate Conditional Access policy results with the What If tool to troubleshoot and optimize your environment.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting-general
-ms.date: 11/06/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
+
+## Overview
 
 The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user, agent identity, or single tenant service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
@@ -48,7 +45,7 @@ The following conditions are required: identity, target resource, device platfor
 
 ## Evaluation
 
-Start an evaluation by clicking **What If**. The evaluation result provides you with a report that consists of:
+Start an evaluation by selecting **What If**. The evaluation result provides you with a report that consists of:
 
 - An indicator showing whether classic policies exist in your environment.
 - Policies that apply to your user, agent, or workload identity.
