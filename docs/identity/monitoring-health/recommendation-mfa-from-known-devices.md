@@ -12,7 +12,12 @@ ms.custom: sfi-image-nochange
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to minimize multifactor authentication prompts from known devices. This recommendation is called `tenantMFA` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to minimize multifactor authentication prompts from known devices. This recommendation is called `tenantMFA` in the recommendations API in Microsoft Graph.
+
+> [!NOTE]
+> The Remember multifactor authentication on trusted device setting is no longer the recommended approach for reducing MFA prompts.
+For an optimal user experience and stronger security posture, Microsoft recommends using Conditional Access Sign-in frequency to control how often users are prompted for MFA on trusted devices, trusted locations, or risk sessions.
+If you continue to use Remember MFA on a trusted device, ensure the duration is configured to 90 days or more. However, new and updated deployments should prefer Conditional Access–based session management instead.
 
 ## Description
 
