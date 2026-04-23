@@ -46,7 +46,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Enable passkeys (FIDO2) for your organization
-            url: how-to-enable-passkey-fido2.md
+            url: how-to-authentication-passkeys-fido2.md
           - text: Enable certificate-based authentication
             url: how-to-certificate-based-authentication.md
 
