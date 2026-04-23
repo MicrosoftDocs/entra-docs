@@ -3153,6 +3153,11 @@
     {
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/synced-passkey-faq.yml",
+      "redirect_url": "/entra/identity/authentication/passkey-faq",
       "redirect_document_id": true
     },
     {
@@ -3524,6 +3529,11 @@
       "source_path": "docs/external-id/customers/enable-external-id-hsc-mode.md",
       "redirect_url": "/entra/external-id/customers/enable-external-id-high-scale-compatibility-mode",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/passkey-authenticator-faq.yml",
+      "redirect_url": "/entra/identity/authentication/passkey-faq",
+      "redirect_document_id": false
     }
   ]
 }
