@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 04/23/2026
-ms.author: barclayn
+ms.author: vranganathan
 ms.reviewer: Vimala
 ms.custom: msecd-doc-authoring-1012
 #customer intent: As an IT admin, I want to rotate the Microsoft Entra Kerberos server key so that I can maintain security in my hybrid identity environment.
