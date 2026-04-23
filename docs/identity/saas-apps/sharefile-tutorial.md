@@ -1,25 +1,27 @@
 ---
-title: Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
-description: Learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile.
+title: Configure Progress ShareFile for Single sign-on with Microsoft Entra ID
+description: Learn how to configure single sign-on between Microsoft Entra ID and Progress ShareFile.
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile so that I can control who has access to Citrix ShareFile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Progress ShareFile so that I can control who has access to Progress ShareFile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
+# Configure Progress ShareFile for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Citrix ShareFile with Microsoft Entra ID. When you integrate Citrix ShareFile with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Progress ShareFile with Microsoft Entra ID. When you integrate Progress ShareFile with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Citrix ShareFile.
-* Enable your users to be automatically signed-in to Citrix ShareFile with their Microsoft Entra accounts.
+* Control in Microsoft Entra ID who has access to Progress ShareFile.
+* Enable your users to be automatically signed-in to Progress ShareFile with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* Citrix ShareFile single sign-on (SSO) enabled subscription.
+* Progress ShareFile single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -28,34 +30,34 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Citrix ShareFile supports **SP** initiated SSO.
+* Progress ShareFile supports **SP** initiated SSO.
 
-## Add Citrix ShareFile from the gallery
+## Add Progress ShareFile from the gallery
 
-To configure the integration of Citrix ShareFile into Microsoft Entra ID, you need to add Citrix ShareFile from the gallery to your list of managed SaaS apps.
+To configure the integration of Progress ShareFile into Microsoft Entra ID, you need to add Progress ShareFile from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
-1. In the **Add from the gallery** section, type **Citrix ShareFile** in the search box.
-1. Select **Citrix ShareFile** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. In the **Add from the gallery** section, type **Progress ShareFile** in the search box.
+1. Select **Progress ShareFile** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-citrix-sharefile'></a>
+<a name='configure-and-test-azure-ad-sso-for-progress-sharefile'></a>
 
-## Configure and test Microsoft Entra SSO for Citrix ShareFile
+## Configure and test Microsoft Entra SSO for Progress ShareFile
 
-In this section, you configure and test Microsoft Entra single sign-on with Citrix ShareFile based on a test user called **Britta Simon**.
-For single sign-on to work, a link relationship between a Microsoft Entra user and the related user in Citrix ShareFile needs to be established.
+In this section, you configure and test Microsoft Entra single sign-on with Progress ShareFile based on a test user called **Britta Simon**.
+For single sign-on to work, a link relationship between a Microsoft Entra user and the related user in Progress ShareFile needs to be established.
 
-To configure and test Microsoft Entra single sign-on with Citrix ShareFile, perform the following steps:
+To configure and test Microsoft Entra single sign-on with Progress ShareFile, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 	
 	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 	1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-2. **[Configure Citrix ShareFile SSO](#configure-citrix-sharefile-sso)** - to configure the Single Sign-On settings on application side.
-	1. **[Create Citrix ShareFile test user](#create-citrix-sharefile-test-user)** - to have a counterpart of Britta Simon in Citrix ShareFile that's linked to the Microsoft Entra representation of user.
+2. **[Configure Progress ShareFile SSO](#configure-progress-sharefile-sso)** - to configure the Single Sign-On settings on application side.
+	1. **[Create Progress ShareFile test user](#create-progress-sharefile-test-user)** - to have a counterpart of Britta Simon in Progress ShareFile that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -65,7 +67,7 @@ To configure and test Microsoft Entra single sign-on with Citrix ShareFile, perf
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Citrix ShareFile** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Progress ShareFile** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -101,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the Certificate download link](common/certificatebase64.png "Certificate")
 
-1. On the **Set up Citrix ShareFile** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Progress ShareFile** section, copy the appropriate URL(s) as per your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
@@ -109,9 +111,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
-## Configure Citrix ShareFile SSO
+## Configure Progress ShareFile SSO
 
-1. In a different web browser window, sign in to your Citrix ShareFile company site as an administrator
+1. In a different web browser window, sign in to your Progress ShareFile company site as an administrator
 
 1. In the **Dashboard**, select **Settings** and select **Admin Settings**.
 
@@ -141,9 +143,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 5. Select **Save**.
 
-## Create Citrix ShareFile test user
+## Create Progress ShareFile test user
 
-1. Log in to your **Citrix ShareFile** tenant.
+1. Log in to your **Progress ShareFile** tenant.
 
 2. Select **People** > **Manage Users Home** > **Create New Users** > **Create Employee**.
    
@@ -162,18 +164,18 @@ Follow these steps to enable Microsoft Entra SSO.
 4. Select **Add User**.
   
 	>[!NOTE]
-	>The Microsoft Entra account holder will receive an email and follow a link to confirm their account before it becomes active.You can use any other Citrix ShareFile user account creation tools or APIs provided by Citrix ShareFile to provision Microsoft Entra user accounts.
+	>The Microsoft Entra account holder will receive an email and follow a link to confirm their account before it becomes active.You can use any other Progress ShareFile user account creation tools or APIs provided by Progress ShareFile to provision Microsoft Entra user accounts.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Select **Test this application**, this option redirects to Citrix ShareFile Sign-on URL where you can initiate the login flow.
+* Select **Test this application**, this option redirects to Progress ShareFile Sign-on URL where you can initiate the login flow.
 
-* Go to Citrix ShareFile Sign-on URL directly and initiate the login flow from there.
+* Go to Progress ShareFile Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Citrix ShareFile tile in the My Apps, this option redirects to Citrix ShareFile Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Progress ShareFile tile in the My Apps, this option redirects to Progress ShareFile Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
-Once you configure Citrix ShareFile you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure Progress ShareFile you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
