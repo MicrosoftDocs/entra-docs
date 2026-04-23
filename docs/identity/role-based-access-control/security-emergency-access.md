@@ -106,14 +106,17 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. In the left menu, select **Alerts**.
 
-1. Click **+ Create** > **Alert rule**.
+1. Select **+ Create** > **Alert rule**. The **Create an alert rule** page opens.
 
-1. In the **Select a resource** pane, find and select your Log Analytics workspace. Select **Apply**.
+1. On the **Scope** tab: 
+    1. In the **Select a resource** pane, find and select your Log Analytics workspace.
+    1. Verify that the subscription matches the workspace you configured in the prerequisites.
+    1. Select **Apply**.
 
-    1. Under **Resource**, select your **Log Analytics workspace** as the resource type. Verify that the subscription matches the workspace you configured in the prerequisites.
-    1. Under **Condition**, select **Add**.
-    1. Select **Custom log search** under **Signal name**.
-    1. Under **Search query**, enter the following query, inserting the object IDs of the two emergency access accounts.
+1. On the **Condition** tab:
+    1. From the **Signal name** drop-down, select **Custom log search**.
+    1. Set the **Query type** to **Aggregated logs**.
+    1. Under **Search query**, enter one of the following queries, inserting the object IDs of the two emergency access accounts.
     
         > [!NOTE]
         > For each additional emergency access account you want to include, add another `or UserId == "ObjectGuid"` to the query.
@@ -142,25 +145,32 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
 
-    1. Under **Alert logic**, enter the following:
+    1. Under **Measurement**, set how to summarize the results of the query:
+        1. Select the **Measure**.
+        1. Select the **Aggregation type**.
+        1. Select the **Aggregation granularity**.
+    1. Under **Split by dimensions**, select the **Resource ID column**.
+    1. Under **Alert logic**:
+        1. Set the **Threshold type** to **Static**.
+        1. Set the **Operator** to **Greater than**.
+        1. Set the **Threshold value** to **0**.
+        1. Set the **Frequency of evaluation** to how often you want the query to run.
 
-        - Threshold type: **Static**
-        - Operator: **Greater than**
-        - Threshold value: **0**
-
-    1. For **Frequency of evaluation**, select how often you want the query to run.
-
-        ![alert logic](./media/security-emergency-access/alert-image2.png)
+        :::image type="content" source="./media/security-emergency-access/alert-logic.png" alt-text="Screenshot of Alert logic settings with example values for Threshold type, Operator, Threshold vlaue, and Frequency of evaluation." lightbox="./media/security-emergency-access/alert-logic.png":::
 
     1. Select **Next** to proceed.
 
-1. Select an action group to be notified by the alert. If you want to create one, see [Create an action group](#create-an-action-group).
+1. On the **Actions** tab, select an action group to be notified by the alert. If you want to create one, see [Create an action group](#create-an-action-group).
 
-1. Under **Alert rule details**, specify the alert rule name and add an optional description.
+1. On the **Details** tab:
+    1. Select the **Severity** of the event. We recommend **0 - Critical**.
+    1. Enter the **Alert rule name** and add an optional description.
+    1. Select the **Region**.
+    1. Select which **Identity** to use when running the log query.
+    1. Under **Advanced options**, select **Enable upon creation**.
+    1. Select **Next** to proceed.
 
-1. Set the **Severity** of the event. We recommend **0 - Critical**.
-
-1. Ensure **Enable alert rule upon creation** is selected.
+1. On the **Tags** tab, add any tags you want to associate with the alert rule.
 
 1. Select **Review + create**, then select **Create**.
 
@@ -168,7 +178,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Select **Create an action group**.
 
-    ![create an action group for notification actions](./media/security-emergency-access/action-group-image3.png)
+    :::image type="content" source="./media/security-emergency-access/create-action-group.png" alt-text="Screenshot of the Create an action group screen open to the Basics tab." lightbox="./media/security-emergency-access/create-action-group.png":::
 
 1. On the **Basics** tab, enter the following:
 
