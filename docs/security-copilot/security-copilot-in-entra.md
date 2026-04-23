@@ -28,6 +28,23 @@ For more information, see:
 - [Microsoft Security Copilot agents](/security-copilot/agents-overview)
 - [Microsoft Security Copilot scenarios](entra-security-scenarios.md)
 
+## Get started
+
+In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin.
+
+1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
+    - This guide contains guidance around subscription requirements, billing, and capacity.
+    - Take a moment to [understand authentication in Microsoft Security Copilot](/security-copilot/authentication).
+1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar and turn on the Microsoft Entra plugin for Security Copilot, if it's not already on.
+
+Once you're all set up in Security Copilot, you can start using [natural language prompts](/security-copilot/prompting-security-copilot) to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
+
+- *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
+- *Does karita@woodgrovebank.com have any registered devices in Microsoft Entra?*
+- *List the recent risky sign-ins for karita@woodgrovebank.com.*
+- *Can you give me sign-in logs for karita@woodgrovebank.com for the past 48 hours? Put this information in a table format.*
+- *Get Microsoft Entra audit logs for karita@woodgrovebank.com for the past 72 hours. Put information in table format.*
+
 ## Access Copilot chat in the Microsoft Entra admin center
 
 Copilot chat is available directly from the left side navigation in the Microsoft Entra admin center.
@@ -49,24 +66,7 @@ The Microsoft Entra Copilot chat experience is designed to meet you where you ar
 
 :::image type="content" source="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png" alt-text="Screenshot of the Copilot chat buttons to expand and collapse the views." lightbox="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png":::
 
-In addition, when you navigate around the Microsoft Entra admin center from the Copilot chat experience, the sidecar remains open in the new page, allowing you to continue your conversation with Copilot without interruption. 
-
-## Get started
-
-In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin.
-
-1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
-    - This guide contains guidance around subscription requirements, billing, and capacity.
-    - Take a moment to [understand authentication in Microsoft Security Copilot](/security-copilot/authentication).
-1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar and turn on the Microsoft Entra plugin for Security Copilot, if it's not already on.
-
-Once you're all set up in Security Copilot, you can start using [natural language prompts](/security-copilot/prompting-security-copilot) to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
-
-- *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
-- *Does karita@woodgrovebank.com have any registered devices in Microsoft Entra?*
-- *List the recent risky sign-ins for karita@woodgrovebank.com.*
-- *Can you give me sign-in logs for karita@woodgrovebank.com for the past 48 hours? Put this information in a table format.*
-- *Get Microsoft Entra audit logs for karita@woodgrovebank.com for the past 72 hours. Put information in table format.*
+In addition, when you navigate around the Microsoft Entra admin center from the Copilot chat experience, the sidecar remains open in the new page, allowing you to continue your conversation with Copilot without interruption.
 
 ## Provide feedback
 
