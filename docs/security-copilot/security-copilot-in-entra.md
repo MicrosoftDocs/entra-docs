@@ -2,13 +2,14 @@
 title: Security Copilot in Microsoft Entra
 description: Use Security Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
 ms.reviewer: ptyagi
-ms.date: 09/23/2025
+ms.date: 04/23/2026
 ms.update-cycle: 180-days
 ms.topic: concept-article
 ms.service: entra
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
-#Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
+ai-usage: ai-assisted
+#Customer intent:As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
 # Security Copilot in Microsoft Entra
@@ -27,9 +28,25 @@ For more information, see:
 - [Microsoft Security Copilot agents](/security-copilot/agents-overview)
 - [Microsoft Security Copilot scenarios](entra-security-scenarios.md)
 
+## Access Copilot chat in the Microsoft Entra admin center
+
+Copilot chat is available directly from the left side navigation in the Microsoft Entra admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Select **Copilot chat** from the side navigation menu.
+
+The **Entra Copilot** panel opens with the following options:
+
+- **New chat**: Start a new conversation with Copilot.
+- **Agent chat**: Select a specialized agent, such as the **Identity Risk Management Agent** or the **Conditional Access Optimization Agent**, to get targeted assistance.
+- **Recent sessions**: View and resume previous Copilot chat sessions.
+- **Prompt suggestions**: Choose from suggested prompts to summarize, analyze, or troubleshoot common identity tasks.
+
+Enter a question or task in the chat prompt bar, or select one of the suggestion cards to get started.
+
 ## Get started
 
-In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin. 
+In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin.
 
 1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
     - This guide contains guidance around subscription requirements, billing, and capacity.
