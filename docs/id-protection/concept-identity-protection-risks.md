@@ -3,7 +3,7 @@ title: What are risk detections?
 description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
 ms.service: entra-id-protection
 ms.topic: reference
-ms.date: 03/17/2026
+ms.date: 04/22/2026
 ms.reviewer: lvandenende
 ---
 
@@ -26,6 +26,7 @@ Select a risk detection from the list to view the description of the risk detect
 | Sign-in risk detection | Detection type | Type | riskEventType |
 | --- | --- | --- | --- |
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
+| [Suspicious MFA authentication approval ](#suspicious-mfa-authentication-approval) | Real-time | Premium | authenticatorPhishing |
 | [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic ^ |
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
@@ -75,6 +76,13 @@ This detection is discovered using information provided by [Microsoft Defender
 - License requirement:
     - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
     - Microsoft 365 E5 with Enterprise Mobility + Security E5
+
+### Suspicious MFA authentication approval
+
+This detection identifies sign-ins where unfamiliar properties such as ASN, browser, device, and GPS location data indicate a potential social engineering or phishing attack. The detection fires during sessions that use a *Password + MFA* authentication method *plus* telemetry from the Microsoft Authenticator app. The combination of these signals helps to increase the precision of the detection and flags the sign-in attempt as **High risk**. Location proximity between the authentication *requesting* device and the authentication *approving* device is analyzed by Microsoft Entra ID to help distinguish legitimate sign-ins from attacker-initiated sessions.
+
+- Calculated in real-time
+- License requirement: Microsoft Entra ID P2
 
 ### Additional risk detected (sign-in) 
 
