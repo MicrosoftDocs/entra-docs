@@ -120,10 +120,10 @@ Fill in these details with the values you obtain from Azure app registration por
 > [!WARNING]
 > Any plaintext secret in source code poses an increased security risk. This article uses a plaintext client secret for simplicity only. Use [certificate credentials](./certificate-credentials.md) instead of client secrets in your confidential client applications, especially those apps you intend to deploy to production.
 - `Enter_the_Graph_Endpoint_Here`: The Microsoft Graph API cloud instance that your app will call. For the main (global) Microsoft Graph API service, enter `https://graph.microsoft.com/` (include the trailing forward-slash).
-- `Enter_the_Express_Session_Secret_Here`: the secret used to sign the Express session cookie. Choose a random string of characters to replace this string with, such as your client secret.
+- `Enter_the_Express_Session_Secret_Here`: The secret used to sign the Express session cookie. Choose a random string of characters to replace this string with, such as your client secret.
 
 > [!IMPORTANT]
-> Before deploying this app to Azure Web App or another hosting environment, update `REDIRECT_URI` and `POST_LOGOUT_REDIRECT_URI` to match your deployed application URL.
+> Before deploying this app to Azure App Service or another hosting environment, update `REDIRECT_URI` and `POST_LOGOUT_REDIRECT_URI` to match your deployed application URL.
 >
 > Also ensure these redirect URIs are configured in your app registration in the Microsoft Entra admin center. Values used for local development, such as `http://localhost:3000/auth/redirect`, won't work after deployment unless your deployed app uses the same URI.
 
