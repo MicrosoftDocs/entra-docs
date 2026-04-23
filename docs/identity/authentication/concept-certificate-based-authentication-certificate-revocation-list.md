@@ -116,7 +116,7 @@ The following steps outline the process for updating and invalidating the author
 Connect-MgGraph -Scopes "User.Read.All"
 
 # Get the user
-$user = Get-MgUser -UserPrincipalName "test@contoso.com"
+$user = Get-MgUser -UserPrincipalName "test@yourdomain.com"
 
 # Get the StsRefreshTokensValidFrom property
 $user.StsRefreshTokensValidFrom
