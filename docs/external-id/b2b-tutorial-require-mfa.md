@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Multifactor authentication for B2B
+title: 'Tutorial: Multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 ms.topic: tutorial
 ms.date: 04/24/2026
