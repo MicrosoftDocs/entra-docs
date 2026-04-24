@@ -221,7 +221,7 @@ In May, requestors will be able to see the name and email address of approvers f
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-system-preferred-multifactor-authentication#faq). 
+General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](https://learn.microsoft.com/entra/identity/authentication/concept-system-preferred-multifactor-authentication#faq). 
 
   
 
