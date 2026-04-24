@@ -3,7 +3,7 @@ title: Approve requests for Azure resource roles in PIM
 description: Learn how to approve or deny requests for Azure resource roles in Privileged
   Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim
 #Customer Intent: As an approver, I want to review and approve or deny activation requests for Azure resource roles to control access to Azure subscriptions and resources.
