@@ -58,10 +58,20 @@ The following table shows which features are available in each approach.
 | Custom claims provider | :heavy_check_mark: | :heavy_check_mark: |
 | Multifactor authentication with email one-time passcode (OTP) | :heavy_check_mark: | :heavy_check_mark: |
 | Multifactor authentication with SMS one-time passcode (OTP) | :heavy_check_mark: | :heavy_check_mark: |
-| Social identity provider sign-in (Apple, Facebook, and Google with browser-delegated) | :heavy_check_mark: | :heavy_check_mark: |
-| Single sign-on (SSO)<sup>1</sup> | :heavy_check_mark: | :heavy_check_mark: |
+| Social identity provider sign-in (Apple, Facebook, and Google)<sup>1</sup> | :heavy_check_mark: | :heavy_check_mark: |
+| Single sign-on (SSO)<sup>2</sup> | :heavy_check_mark: | :heavy_check_mark: |
 
-<sup>1</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication.
+<sup>1</sup> With native authentication, the app is still built using the native authentication SDK or API, but social sign-in defers to a browser window only for the identity provider step.
+
+<sup>2</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication.
+
+## Supported languages and frameworks
+
+The following languages and frameworks are supported for each approach.
+
+|   | Browser-delegated authentication | Native authentication |
+|---|---|---|
+| Supported languages and frameworks | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Node.js</li><li>Python</li><li>Java</li></ul> | <ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular)</li></ul> For other languages and platforms, you can use the [native authentication API](/entra/identity-platform/reference-native-authentication-api). |
 
 ## Security considerations
 
@@ -71,8 +81,17 @@ With native authentication, your development team shares security responsibility
 
 ## Next steps
 
-- [Native authentication overview](/entra/identity-platform/concept-native-authentication)
+After you decide on an approach, return to the [planning guide](concept-planning-your-solution.md) to continue your integration, or jump directly to the next step for your chosen path:
+
+**Browser-delegated authentication**:
+
 - [Register an app](/entra/identity-platform/quickstart-register-app)
-- [Android native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
-- [iOS native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app)
-- [Native authentication in React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in)
+- [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
+- [Samples by app type and language](samples-ciam-all.md)
+
+**Native authentication**:
+
+- [Native authentication overview](/entra/identity-platform/concept-native-authentication)
+- [Android native authentication tutorial](how-to-run-native-authentication-sample-android-app.md)
+- [iOS native authentication tutorial](how-to-run-native-authentication-sample-ios-app.md)
+- [Native authentication in a React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in)

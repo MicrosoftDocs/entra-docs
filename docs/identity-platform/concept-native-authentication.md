@@ -40,7 +40,7 @@ When it comes to implementing authentication for mobile and desktop apps on Exte
 
 The approach you choose depends on your app's specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
 
-For a side-by-side comparison of the two approaches, including feature availability, user experience, customization, and security trade-offs, see [Choose an authentication approach](/entra/external-id/customers/concept-choose-authentication-approach).
+For a side-by-side comparison of the two approaches, including feature availability, supported languages and frameworks, user experience, customization, and security trade-offs, see [Choose an authentication approach](/entra/external-id/customers/concept-choose-authentication-approach).
 
 ## How to enable native authentication
 

@@ -134,13 +134,13 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 When planning for configuring company branding, language customizations, and custom extensions, consider the following points:
 
-- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appear in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. Learn more about [customizing the sign-in look and feel](concept-branding-customers.md).
+- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appear in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. For details, see [Customize the sign-in look and feel](concept-branding-customers.md).
 
-- **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. Learn more about [adding your own business logic](concept-custom-extensions.md) with custom authentication extensions.
+- **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. For details, see [Add your own business logic with custom authentication extensions](concept-custom-extensions.md).
 
-- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [available MFA authentication methods](concept-multifactor-authentication-customers.md).
+- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. For details, see [Available MFA authentication methods](concept-multifactor-authentication-customers.md).
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant.
+- **Security and governance**. For details, see [Security and governance](concept-security-customers.md) features available in your external tenant.
 
 ### How to customize and secure your sign-in
 
