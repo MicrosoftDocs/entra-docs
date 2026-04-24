@@ -6,11 +6,8 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: pim
 ---
-
+#Customer Intent: As a reviewer, I want to perform an access review to evaluate whether users still need their assigned privileged roles.
 # Perform an access review of Azure resource and Microsoft Entra roles in PIM
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As a reviewer, I want to perform an access review to evaluate whether users still need their assigned privileged roles.
 
 ## Overview
 
