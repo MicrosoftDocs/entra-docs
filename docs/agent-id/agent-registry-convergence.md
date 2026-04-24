@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 ms.service: entra
 ms.topic: concept-article
 ms.date: 04/05/2026
-ms.reviewer: jadedsouza
-ms.custom: agent-id-ignite
+ms.reviewer: paparth
 ai-usage: ai-assisted
 
 #customer-intent: As an IT administrator, I want to understand how the agent registry experiences are converging under Microsoft Agent 365 so that I can manage agents in one place while continuing to use Microsoft Entra for identity and access control.
@@ -18,13 +17,13 @@ ai-usage: ai-assisted
 
 Organizations are rapidly adopting AI agents across Microsoft platforms, partner ecosystems, and custom applications. As agents grow in number and capability, organizations need a centralized way to observe, govern, and secure them.
 
-Microsoft Agent 365 is Microsoft's control plane for AI agents. It helps organizations:
+[Microsoft Agent 365](/microsoft-agent-365/overview) is Microsoft's control plane for AI agents. It helps organizations:
 
 - Observe agents across the enterprise.
 - Govern how agents access systems, data, and tools.
 - Secure agents using Microsoft identity and security capabilities.
 
-A key capability within Microsoft Agent 365 is the agent registry, which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
+A key capability within Microsoft Agent 365 is the [agent registry](/microsoft-365/admin/manage/agent-registry), which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
 
 ## Registry convergence
 

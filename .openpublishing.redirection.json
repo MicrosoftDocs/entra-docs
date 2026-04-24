@@ -3539,6 +3539,41 @@
       "source_path": "docs/identity/authentication/passkey-authenticator-faq.yml",
       "redirect_url": "/entra/identity/authentication/passkey-faq",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-metadata-discoverability.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-registry-collections.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-service-principals.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/publish-agents-to-registry.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/registry-agent-to-agent-protocol.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/what-is-agent-registry.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/reference-registry-roles.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
     }
   ]
 }
