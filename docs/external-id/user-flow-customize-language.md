@@ -2,11 +2,12 @@
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 04/24/2026
 
 ms.collection: M365-identity-device-management
-ms.custom:  
-#customer intent: As a B2B collaboration user, I want to customize the language of the authentication experience in Microsoft Entra External ID, so that I can accommodate different languages for my users and provide a personalized user flow.
+ms.custom:
+ai-usage: ai-assisted
+# Customer intent: As a B2B collaboration user flow administrator, I want to customize the language of the authentication experience in Microsoft Entra External ID so that I can accommodate different languages for my users and provide a personalized user flow.
 ---
 
 # Language customization in Microsoft Entra External ID
@@ -16,7 +17,7 @@ ms.custom:
 > [!TIP]
 > This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md).
 
-Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.yml#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
+Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your users' needs. Microsoft provides translations for [36 languages](#supported-languages). In this article, you learn how to customize attribute names on the [attribute collection page](self-service-sign-up-user-flow.yml#select-the-layout-of-the-attribute-collection-form), even if your experience is provided in only a single language.
 
 ## How language customization works
 
@@ -36,7 +37,7 @@ Language customization enables you to customize any string in your user flow.
 
 These steps give you a JSON file that you can use to start editing your strings.
 
-  :::image type="content" source="media/user-flow-customize-language/language-customization-download-defaults.png" alt-text="Screenshot of downloading the default language customization json file." lightbox="media/user-flow-customize-language/language-customization-download-defaults.png":::
+  :::image type="content" source="media/user-flow-customize-language/language-customization-download-defaults.png" alt-text="Screenshot of a user flow language page showing the Download defaults option for the Attribute collection page." lightbox="media/user-flow-customize-language/language-customization-download-defaults.png":::
 
 ### Change any string on the page
 
@@ -46,7 +47,7 @@ These steps give you a JSON file that you can use to start editing your strings.
 1. For every string that you want to change, change `Override` to `true`. If the `Override` value isn't changed to `true`, the entry is ignored.
 1. Save the file and [upload your changes](#upload-your-changes). 
 
-  :::image type="content" source="media/user-flow-customize-language/language-customization-upload-override.png" alt-text="Screenshot of uploading the language customization json file.":::
+  :::image type="content" source="media/user-flow-customize-language/language-customization-upload-override.png" alt-text="Screenshot of the language customization workflow showing where to upload an override JSON file.":::
 
 ### Change extension attributes
 
@@ -111,7 +112,7 @@ If you want to provide a set list of values for responses, you need to create a 
 1. The changes are saved to your user flow automatically. You can find the override under the **Configured** tab.
 1. To remove or download your customized override file, select the language and expand the **Attribute collection page**. 
 
-  :::image type="content" source="media/user-flow-customize-language/language-customization-remove-download-overrides.png" alt-text="Screenshot of removing or downloading the language customization json file."::: 
+  :::image type="content" source="media/user-flow-customize-language/language-customization-remove-download-overrides.png" alt-text="Screenshot of configured language overrides with options to download or remove the override JSON file."::: 
 
 ## Additional information
 
