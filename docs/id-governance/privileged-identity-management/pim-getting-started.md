@@ -6,10 +6,8 @@ ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
 ---
+#Customer Intent: As an IT administrator, I want to enable and start using PIM in my organization to manage privileged access.
 # Start using Privileged Identity Management
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an IT administrator, I want to enable and start using PIM in my organization to manage privileged access.
 
 ## Overview
 
