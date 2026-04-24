@@ -2,7 +2,7 @@
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
 ms.topic: how-to
-ms.date: 03/27/2026
+ms.date: 04/23/2026
 ms.reviewer: tamimsangrar
 ms.custom: pim, sfi-image-nochange
 ai-usage: ai-assisted
