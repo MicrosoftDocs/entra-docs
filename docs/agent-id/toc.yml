@@ -74,8 +74,10 @@ items:
         href: create-blueprint.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
-      - name: Cascade deletion for blueprint principals
-        href: cascade-deletion-agent-identities.md
+      - name: Understand agent identity deletion
+        href: concept-agent-identity-deletion.md
+      - name: Delete and restore agent identity objects
+        href: howto-delete-agent-identity.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
       - name: AI-guided setup
