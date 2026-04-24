@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 03/09/2026
 ms.author: godonnell
 author: garrodonnell
-ms.custom: it-pro
+ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
-#Customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
+#customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
 
@@ -72,6 +72,8 @@ After you set up the identity provider, add it to a user flow so it appears on t
 
 ## Test the user flow
 
+To verify your federation setup, test the user flow:
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
@@ -115,7 +117,7 @@ With Microsoft Entra ID federation:
 - Workforce Conditional Access and MFA policies are enforced.
 - The sign-in experience is a full redirect to the home tenant, rather than the mixed-branding experience associated with B2B guest sign-in.
 
-**Do Microsoft Entra ID Conditional Access and MFA policies apply?**
+**Do Microsoft Entra Conditional Access and MFA policies apply?**
 
 Yes. Because all authentication occurs in the user's home Microsoft Entra ID tenant, the following are enforced exactly as they are for native Microsoft Entra ID sign-ins:
 
@@ -132,11 +134,11 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 **Can new users be automatically redirected based on their email domain when they enter their email address on the sign-in page?**
 
-There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The domain_hint value for Entra ID should be the domain name like domain_hint=contoso.onmicrosoft.com. For more information see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration)
+There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration).
 
 **Can I hide other identity provider buttons and show only Microsoft Entra ID?**
 
-You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is utilized.
+You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is used.
 
 **Are ID tokens returned as opaque values?**
 
