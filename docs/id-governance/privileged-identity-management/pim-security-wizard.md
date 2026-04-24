@@ -6,11 +6,8 @@ ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
-
+#Customer Intent: As an administrator, I want to discover existing permanent role assignments and convert them to just-in-time assignments using PIM.
 # Discovery and insights (preview) for Microsoft Entra roles (formerly Security Wizard)
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator, I want to discover existing permanent role assignments and convert them to just-in-time assignments using PIM.
 
 ## Overview
 
