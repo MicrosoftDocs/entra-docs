@@ -169,7 +169,7 @@ Entra Certificate-Based Authentication (CBA) is now generally available on iOS. 
 
 ---
 
-### GA - Microsoft Identity Manager (MIM) 2016 Service Pack 3 (SP3).
+### General Availability - Microsoft Identity Manager (MIM) 2016 Service Pack 3 (SP3)
 
 **Type:** General Availability  
 **Service category:** Microsoft Identity Manager  
