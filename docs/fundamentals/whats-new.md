@@ -53,7 +53,7 @@ Microsoft Entra ID federation with External ID (EEID) enables organizations to l
 **Service category:** User Experience and Management  
 **Product capability:** User Authentication  
 
-In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview) - Microsoft Entra External ID | Microsoft Learn](https://learn.microsoft.com/entra/external-id/customers/how-to-customize-branding-themes-apps)
+In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview) - Microsoft Entra External ID | Microsoft Learn](../external-id/customers/how-to-customize-branding-themes-apps)
 
 ---
 
@@ -111,11 +111,11 @@ What’s changing
 *   This capability applies to the following provisioning scenarios:  
     
 
-*   [SAP SuccessFactors to Active Directory user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) 
+*   [SAP SuccessFactors to Active Directory user provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) 
     
-*   [SAP SuccessFactors to Microsoft Entra ID user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial) 
+*   [SAP SuccessFactors to Microsoft Entra ID user provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial) 
     
-*   [SAP SuccessFactors writeback (Entra to SuccessFactors)](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-writeback-tutorial) 
+*   [SAP SuccessFactors writeback (Entra to SuccessFactors)](../identity/saas-apps/sap-successfactors-writeback-tutorial) 
     
 
 What this means for you 
@@ -165,7 +165,7 @@ This Workday connector update resolves termination processing delays observed fo
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-mobile-ios)
+Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices - Microsoft Entra ID | Microsoft Learn](../identity/authentication/concept-certificate-based-authentication-mobile-ios)
 
 ---
 
@@ -199,9 +199,9 @@ MIM Service and Portal
 
 Download and upgrade information 
 
-*   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](https://learn.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
+*   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
     
-*   SP3 introduces a new upgrade process. Please follow the documented steps carefully: [Upgrade Microsoft Identity Manager 2016 from SP2 to SP3 | Microsoft Learn](https://learn.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016-upgrade-from-service-pack-2-to-service-pack-3)
+*   SP3 introduces a new upgrade process. Please follow the documented steps carefully: [Upgrade Microsoft Identity Manager 2016 from SP2 to SP3 | Microsoft Learn](/microsoft-identity-manager/microsoft-identity-manager-2016-upgrade-from-service-pack-2-to-service-pack-3)
 
 ---
 
@@ -221,7 +221,7 @@ In May, requestors will be able to see the name and email address of approvers f
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](https://learn.microsoft.com/entra/identity/authentication/concept-system-preferred-multifactor-authentication#faq). 
+General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](../identity/authentication/concept-system-preferred-multifactor-authentication#faq). 
 
   
 
@@ -245,7 +245,7 @@ We are excited to announce the general availability of the iOS Global Secure Acc
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Entra CBA Certificate Authority (CA) scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs. More information at [https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping)
+Entra CBA Certificate Authority (CA) scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs. More information at [Certificate Authority (CA) scoping](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping)
 
 ---
 
@@ -307,7 +307,7 @@ The **License Usage** page in the Microsoft Entra admin center helps customers o
 
 Issuer Hints is generally available now and helps improve the sign‑in experience for Entra Certificate‑Based Authentication (CBA) by ensuring users are prompted to select only certificates that are trusted and valid for their organization. This reduces confusion, minimizes sign‑in errors, and streamlines certificate selection especially on devices with multiple certificates installed. Issuers hints are designed to enhance both security and usability without changing how certificates are issued or managed.
 
-More information at [https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#issuer-hints](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#issuer-hints)
+More information at [Issuer hints](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive#issuer-hints)
 
 ---
 
@@ -321,7 +321,7 @@ Configurable token lifetime policies are now generally available in Microsoft En
 
   
 
-With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](https://learn.microsoft.com/entra/identity-platform/configurable-token-lifetimes).
+With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](../identity-platform/configurable-token-lifetimes).
 
 ---
 
