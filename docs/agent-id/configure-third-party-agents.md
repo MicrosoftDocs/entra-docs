@@ -205,7 +205,7 @@ Before you start, make sure you have:
 - **Docker** and **Docker Compose** (for sidecar pattern).
 - **Credentials or federation setup** (depends on pattern).
 - **PowerShell 7.5 or later** with Microsoft.Graph PowerShell module.
-- **Global Administrator** role (required only for initial setup).
+- **Global Administrator** role (required only for initial setup). Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
 - **Cloud Application Administrator** or **Application Administrator** role to grant Microsoft Graph delegated permissions for agent management operations.
 
 Complete the following steps to verify your environment is ready:
