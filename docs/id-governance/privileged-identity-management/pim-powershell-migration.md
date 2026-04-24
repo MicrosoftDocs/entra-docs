@@ -8,10 +8,8 @@ ms.reviewer: shaunliu
 ms.custom: pim, devx-track-azurepowershell
 
 ---
+#Customer Intent: As an administrator, I want to migrate from legacy PIM PowerShell cmdlets to the new Azure PowerShell module for managing Azure resource roles.
 # PIM PowerShell for Azure resources migration guidance
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator, I want to migrate from legacy PIM PowerShell cmdlets to the new Azure PowerShell module for managing Azure resource roles.
 
 ## Overview
 
