@@ -7,11 +7,8 @@ ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim
 ---
-
+#Customer Intent: As a user with eligible group membership or ownership, I want to activate my just-in-time access when I need to perform tasks that require group permissions.
 # Activate your group membership or ownership in Privileged Identity Management
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As a user with eligible group membership or ownership, I want to activate my just-in-time access when I need to perform tasks that require group permissions.
 
 ## Overview
 
