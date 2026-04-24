@@ -6,15 +6,13 @@ metadata:
   ms.date: 06/27/2025
   ms.topic: how-to
   ms.custom:
+# Customer intent: As a user with eligible Azure resource role assignments, I want to activate my roles when needed to manage Azure subscriptions and resources.
     - pim
     - ge-structured-content-pilot
     - sfi-image-nochange
 title: |
   Activate my Azure resource roles in Privileged Identity Management
 introduction: |
-  > [!div class="op_single_selector"]
-  > - **Customer intent:** As a user with eligible Azure resource role assignments, I want to activate my roles when needed to manage Azure subscriptions and resources.
-
   Use Microsoft Entra Privileged Identity Management (PIM), to allow eligible role members for Azure resources to schedule activation for a future date and time. They can also select a specific activation duration within the maximum (configured by administrators).
 
   This article is for members who need to activate their Azure resource role in Privileged Identity Management.
