@@ -6,11 +6,8 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: pim, sfi-image-nochange
 ---
-
+#Customer Intent: As an administrator or group member, I want to extend or renew time-bound group membership or ownership assignments before they expire to maintain necessary access.
 # Extend or renew PIM for groups assignments
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator or group member, I want to extend or renew time-bound group membership or ownership assignments before they expire to maintain necessary access.
 
 ## Overview
 
