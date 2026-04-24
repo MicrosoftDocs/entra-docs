@@ -37,13 +37,13 @@ This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suit
 
 ---
 
-### Public Preview - Microsoft Entra ID federation with External ID (EEID) enables organizations to let users sign in to customer‑facing applications using their existing workforce Entra ID identities.
+### Public Preview - Microsoft Entra ID federation with External ID (EEID)
 
 **Type:** Public Preview  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** 3rd Party Integration  
 
-**Public preview of Microsoft Entra ID federation with External ID (EEID)** enables organizations to let users sign in to customer‑facing applications using their existing workforce Entra ID identities. By leveraging standards‑based federation, users authenticate with their home tenant while applications hosted in an External ID tenant rely on trusted identity assertions from Entra ID. This approach reduces the need for duplicate accounts, streamlines sign‑in experiences, and allows organizations to extend consistent security controls across workforce and customer scenarios.
+Microsoft Entra ID federation with External ID (EEID) enables organizations to let users sign in to customer‑facing applications using their existing workforce Entra ID identities. By leveraging standards‑based federation, users authenticate with their home tenant while applications hosted in an External ID tenant rely on trusted identity assertions from Entra ID. This approach reduces the need for duplicate accounts, streamlines sign‑in experiences, and allows organizations to extend consistent security controls across workforce and customer scenarios.
 
 ---
 
