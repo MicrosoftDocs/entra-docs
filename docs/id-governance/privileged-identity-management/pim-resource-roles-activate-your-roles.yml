@@ -3,8 +3,9 @@ metadata:
   title: Activate Azure resource roles in PIM
   description: Learn how to activate your Azure resource roles in Microsoft Entra Privileged Identity Management (PIM).
   ms.reviewer: rianakarim
-  ms.date: 06/27/2025
+  ms.date: 04/23/2026
   ms.topic: how-to
+  # Customer intent: As a user with eligible Azure resource role assignments, I want to activate my roles when needed to manage Azure subscriptions and resources.
   ms.custom:
     - pim
     - ge-structured-content-pilot
