@@ -21,6 +21,321 @@ This article provides information about the latest releases and change announcem
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## April 2026
+
+### Public Preview - Account Discovery
+
+**Type:** Public Preview  
+**Service category:** Provisioning  
+**Product capability:** 3rd Party Integration  
+
+Microsoft Entra ID Governance now supports account discovery for connected applications in public preview. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts. 
+
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that are not assigned to the enterprise application in Entra and simplify onboarding the application. 
+
+This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation)
+
+---
+
+### Public Preview - Microsoft Entra ID federation with External ID (EEID) enables organizations to let users sign in to customer‑facing applications using their existing workforce Entra ID identities.
+
+**Type:** Public Preview  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** 3rd Party Integration  
+
+**Public preview of Microsoft Entra ID federation with External ID (EEID)** enables organizations to let users sign in to customer‑facing applications using their existing workforce Entra ID identities. By leveraging standards‑based federation, users authenticate with their home tenant while applications hosted in an External ID tenant rely on trusted identity assertions from Entra ID. This approach reduces the need for duplicate accounts, streamlines sign‑in experiences, and allows organizations to extend consistent security controls across workforce and customer scenarios.
+
+---
+
+### Public Preview - App-based branding via Branding themes in Entra tenants
+
+**Type:** Public Preview  
+**Service category:** User Experience and Management  
+**Product capability:** User Authentication  
+
+In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview) - Microsoft Entra External ID | Microsoft Learn](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps)
+
+---
+
+### Public Preview - Upgrade SuccessFactors provisioning app to use JWT-based authentication
+
+**Type:** Public Preview  
+**Service category:** Provisioning  
+**Product capability:** Outbound to SaaS Applications  
+
+The Microsoft Entra team is preparing to conduct a security-related service change where customers will transition from using the OAuth 2.0 Authorization Code grant for SCIM provisioning applications to one of two modern authentication methods: OAuth 2.0 Client Credentials or workload identity federation.
+
+**What’s changing**
+
+*   Over the next few months, SCIM provisioning applications that rely on the OAuth 2.0 Authorization Code grant authentication method will be updated to use OAuth 2.0 Client Credentials or workload identity federation.
+*   There may be a small number of SCIM provisioning applications that are unable to migrate to a modern authentication method. These applications will be retired from the Microsoft Entra app gallery.
+*   Given this service change, we recommend that customers refrain from creating new provisioning jobs that rely on the OAuth 2.0 Authorization Code grant authentication method.
+
+**With this change**
+
+*   For updated applications, customers will be asked to update the configuration of affected provisioning jobs to use a modern authentication method (for retired applications, customers may need to migrate off these applications fully).
+*   By switching to a modern authentication method, customers will be provided with a more secure authentication experience—it will be easier than ever for customers to manage credentials, rotate credentials, etc.
+
+Please keep an eye on our monthly What’s new articles and the M365 Message Center for updates. This is where we will release further announcements on the service change, impacted applications, deadlines for customers to complete the service change, references to documentation, etc.
+
+---
+
+### Public Preview - $count filtering in sign-ins API
+
+**Type:** Public Preview  
+**Service category:** MS Graph  
+**Product capability:** Monitoring & Reporting  
+
+The ability to use $count in sign-ins API requests is now here, allowing customers to perform count computations directly in API requests!
+
+---
+
+### Private Preview - User provisioning supports complex attribute calculations via Logic App extensibility
+
+**Type:** Private Preview  
+**Service category:** Provisioning  
+**Product capability:** Inbound to Entra ID  
+
+This feature enables admins to invoke custom code during the user provisioning process by allowing you to map an Azure Logic App to a target attribute. This opens up your ability to define complex attribute transformations beyond the basic transformations that we support today, so that you can fulfill scenarios such as generating a unique alias for newly hired employees before they onboard to the company
+
+---
+
+### Plan for change - Switch from basic auth to workload identity based auth for SAP SuccessFactors provisioning integrations
+
+**Type:** Plan for change  
+**Service category:** Provisioning  
+**Product capability:** Inbound to Entra ID  
+
+Microsoft Entra is introducing workload identity–based authentication for SAP SuccessFactors provisioning. This new capability allows the Microsoft Entra provisioning service to authenticate to SAP SuccessFactors using Entra workload identity and short‑lived tokens instead of static credentials (username and password). 
+
+This change helps customers transition to a more secure authentication model in preparation for SAP’s plan to [deprecate basic authentication for SuccessFactors APIs by November 2026](https://help.sap.com/docs/successfactors-release-information/8e0d540f96474717bbf18df51e54e522/fcc05a902b4140e585d968c2fe4a96bc.html). 
+
+What’s changing 
+
+*   A new authentication option will be available starting May 2026 in the SAP SuccessFactors provisioning apps to use Entra workload identity-based authentication instead of basic authentication. 
+    
+*   Customers can switch existing provisioning configurations from basic authentication to workload identity–based authentication directly through updated connectivity settings in the provisioning experience, without needing to recreate or restart their configuration. 
+    
+*   This method removes the need to store long-lived credentials and uses a standards-based authentication method between Entra and SAP SuccessFactors through SAP Cloud Identity Services. 
+    
+*   This capability applies to the following provisioning scenarios:  
+    
+
+*   [SAP SuccessFactors to Active Directory user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) 
+    
+*   [SAP SuccessFactors to Microsoft Entra ID user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial) 
+    
+*   [SAP SuccessFactors writeback (Entra to SuccessFactors)](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-writeback-tutorial) 
+    
+
+What this means for you 
+
+*   If you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations. 
+    
+*   No immediate action is required, but we recommend planning your migration early to avoid last-minute disruption. 
+    
+*   The new method improves security by:  
+    
+
+*   Eliminating stored passwords 
+    
+*   Using short-lived, verifiable tokens 
+    
+*   Aligning with SAP’s supported authentication model 
+    
+
+Recommended action 
+
+*   Evaluate the new authentication option once available in your tenant 
+    
+*   Plan and test migration of existing provisioning jobs to workload identity-based authentication 
+    
+*   Update any internal documentation or operational processes that reference basic authentication 
+    
+
+Additional information 
+
+Detailed configuration guidance and step-by-step instructions will be published in Microsoft Learn documentation.
+
+---
+
+### General Availability- Prefetch Workday termination data to customize account disable logic
+
+**Type:** General Availability  
+**Service category:** Provisioning  
+**Product capability:** Inbound to Entra ID  
+
+This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more details, refer to: [https://aka.ms/WorkdayTerminationLookaheadDoc](https://aka.ms/WorkdayTerminationLookaheadDoc)
+
+---
+
+### General Availability: Entra Certificate-based authentication (CBA) support on iOS and CBA as second factor.
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-mobile-ios)
+
+---
+
+### GA - Microsoft Identity Manager (MIM) 2016 Service Pack 3 (SP3).
+
+**Type:** General Availability  
+**Service category:** Microsoft Identity Manager  
+**Product capability:** Identity Governance  
+
+Microsoft Identity Manager (MIM) 2016 Service Pack 3 (SP3) is now available. SP3 focuses on stability and supportability, modernizes compatibility with current platform components (SQL Server, SharePoint, and Exchange), and adds an additional deployment option for the Synchronization Service by enabling Azure SQL Database with managed identity authentication—helping reduce operational risk for hybrid identity environments. 
+
+Issues fixed and improvements added in this update  include 
+
+MIM Synchronization Service 
+
+*   SQL Server 2022 Support:  Full support for installation with and connection to SQL Server 2022.  
+    
+*   Azure SQL Support: MIM Sync can now use Azure SQL Database, with authentication supported via both System Assigned and User Assigned Managed Identities. 
+    
+
+MIM Service and Portal  
+
+*   SQL Server 2022 and Exchange Server Subscription Edition (SE) Support: Updated integration and database compatibility with the latest SQL and Exchange releases.  
+    
+*   SharePoint Subscription Edition (SE) Support: The MIM Portal can now be deployed on SharePoint SE.  
+    
+*   System Center Service Manager Data Warehouse (DW) 2022 Support: Enables reporting and audit integration with the latest SCSM DW.    
+    
+*   Active Directory Federation Services (AD FS) Single Sign-On (SSO):  Introduces support for claims-based authentication, allowing end-users to sign in via AD FS instead of Windows Integrated Authentication 
+    
+
+Download and upgrade information 
+
+*   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
+    
+*   SP3 introduces a new upgrade process. Please follow the documented steps carefully: [Upgrade Microsoft Identity Manager 2016 from SP2 to SP3 | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016-upgrade-from-service-pack-2-to-service-pack-3)
+
+---
+
+### General Availability - As an AP requestor, I can see in My Access who my approver(s) are if the access package owner allows me to
+
+**Type:** General Availability  
+**Service category:** Entitlement Management  
+**Product capability:** Entitlement Management  
+
+In May, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal will be in General Availability. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy.
+
+---
+
+### General Availability - Entra certificate-based authentication (CBA) method is in the third place in system preferred MFA methods.
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-system-preferred-multifactor-authentication#faq). 
+
+  
+
+We have enhanced the user experience during sign-in with certificate in native iOS apps by removing unnecessary passwords and MFA prompts with all the known issues addressed. The feature enhancement enables us to support CBA as a second factor on iOS, and to move CBA to the third place in system preferred MFA methods.
+
+---
+
+### General Availability - GSA iOS client support
+
+**Type:** General Availability  
+**Service category:** iOS client  
+**Product capability:** Network Access  
+
+We are excited to announce the general availability of the iOS Global Secure Access (GSA) client. The Global Secure Access client on iOS and iPadOS requires no new agent installation. It leverages the existing Microsoft Defender for Endpoint (MDE) to route traffic through Microsoft SSE for Microsoft 365, internet access, and private access.
+
+---
+
+### General Availability of Entra CBA -Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups.
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+General Availability of Entra CBA -Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs. More information at [https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping)
+
+---
+
+### General Availability - Network Content Filtering based on File Types
+
+**Type:** General Availability  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+Global Secure Access supports network-based content filtering based on file types. This allows you to monitor and control file transfers across the network to GenAI and SaaS apps to prevent unauthorized exfiltration of content.
+
+---
+
+### General Availability GSA Cloud Firewall for Remote Networks
+
+**Type:** General Availability  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+Customer can use GSA cloud firewall to apply admin configurable, 5-tuple (source IP, destination IP, protocol, source port, destination port) based filtering for all internet traffic acquired from branch offices through GSA remote networks capability.
+
+---
+
+### General Availability – Enabling Social Identity Providers in Entra External ID Native Authentication via browser‑delegated (web‑view) flows using SDKs for applications
+
+**Type:** General Availability  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** Developer Experience  
+
+Build secure sign‑in and sign‑up experiences for applications in Entra External ID using Native Authentication, with Social Identity Provider support such as Google, Facebook, and Apple available through browser‑delegated (web‑view) authentication using developer‑friendly SDKs.
+
+---
+
+### General Available - Enforce Conditional Access policies like MFA on every PIM activation
+
+**Type:** General Availability  
+**Service category:** Privileged Identity Management  
+**Product capability:** Privileged Identity Management  
+
+Generally available feature for configuring reauthentication with Conditional Access for Microsoft Entra Privileged Identity Management role activation
+
+---
+
+### General Availability - License Usage
+
+**Type:** General Availability  
+**Service category:** Reporting  
+**Product capability:** Monitoring & Reporting  
+
+The **License Usage** page in the Microsoft Entra admin center helps customers optimize their Entra licenses by providing visibility into feature usage across their tenant. It shows how many Entra ID P1, P2, and Suite licenses you own, along with usage of key features such as Conditional Access and risk‑based Conditional Access mapped to each license type. You can also review usage trends over the past six months. This view gives you a clearer understanding of your license footprint, the value you’re deriving from Entra, and potential over‑usage risks within your tenant.
+
+---
+
+### General Availability - Issuer Hints make Microsoft Entra CBA simpler, safer, and more user‑friendly by aligning certificate selection with your tenant’s trusted CAs.
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication  
+
+Issuer Hints is generally available now and helps improve the sign‑in experience for Entra Certificate‑Based Authentication (CBA) by ensuring users are prompted to select only certificates that are trusted and valid for their organization. This reduces confusion, minimizes sign‑in errors, and streamlines certificate selection especially on devices with multiple certificates installed. Issuers hints are designed to enhance both security and usability without changing how certificates are issued or managed.
+
+More information at [https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#issuer-hints  
+](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#issuer-hints)
+
+---
+
+### General Availability - Configurable Token Lifetime Policies
+
+**Type:** General Availability  
+**Service category:** Authentications (Logins)  
+**Product capability:** Platform  
+
+Configurable token lifetime policies are now generally available in Microsoft Entra ID. This feature allows administrators to customize the lifetimes of access tokens, ID tokens, and SAML tokens issued by the Microsoft identity platform by creating and assigning token lifetime policies to applications and service principals. 
+
+  
+
+With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/configurable-token-lifetimes).
+
+---
+
 ## March 2026
 
 ### Plan for change – Agent Registry consolidation into Microsoft Agent 365
