@@ -165,7 +165,7 @@ This Workday connector update resolves termination processing delays observed fo
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-mobile-ios)
+Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-mobile-ios)
 
 ---
 
