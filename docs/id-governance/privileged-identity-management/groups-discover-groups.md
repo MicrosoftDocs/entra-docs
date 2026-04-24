@@ -6,11 +6,8 @@ ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: sfi-image-nochange
 ---
-
+#Customer Intent: As an administrator, I want to onboard groups into PIM management so I can control just-in-time membership and ownership for those groups.
 # Bring groups into Privileged Identity Management
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator, I want to onboard groups into PIM management so I can control just-in-time membership and ownership for those groups.
 
 ## Overview
 
