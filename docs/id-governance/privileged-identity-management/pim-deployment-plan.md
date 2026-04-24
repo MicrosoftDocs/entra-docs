@@ -6,11 +6,8 @@ ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
 ---
-
+#Customer Intent: As an IT administrator, I want to plan and execute a successful PIM deployment to secure privileged access across my organization.
 # Plan a Privileged Identity Management deployment
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an IT administrator, I want to plan and execute a successful PIM deployment to secure privileged access across my organization.
 
 ## Overview
 
