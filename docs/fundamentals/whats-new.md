@@ -269,7 +269,7 @@ Customer can use GSA cloud firewall to apply admin configurable, 5-tuple (source
 
 ---
 
-### General Availability – Enabling Social Identity Providers in Entra External ID Native Authentication via browser‑delegated (web‑view) flows using SDKs for applications
+### General Availability - Social Identity Providers in Entra External ID Native Authentication
 
 **Type:** General Availability  
 **Service category:** B2C - Consumer Identity Management  
