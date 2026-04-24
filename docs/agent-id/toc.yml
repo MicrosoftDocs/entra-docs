@@ -104,6 +104,8 @@ items:
       items:
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
+      - name: Configure third-party agents with Entra SDKs
+        href: configure-third-party-agents.md
       - name: Call Microsoft Graph API
         href: call-api-microsoft-graph.md
       - name: Call custom APIs
