@@ -55,7 +55,7 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 ## Create an agent identity blueprint
 
-Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is human the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+Agent identity blueprints must have a sponsor, which is the user or [supported group](agent-owners-sponsors-managers.md#sponsors) that's accountable for the agent. An owner is recommended, which is the user or service principal that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -113,7 +113,7 @@ $body = @{
 
 $response = Invoke-MgGraphRequest `
     -Method POST `
-    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint" `
+    -Uri "https://graph.microsoft.com/v1.0/applications/graph.agentIdentityBlueprint" `
     -Body $body `
     -ContentType "application/json"
 
@@ -317,7 +317,7 @@ In this step, you create a principal for the agent identity blueprint. For more 
 Replace the `<agent-blueprint-app-id>` placeholder with the `appId` you copied from the results of the previous step.
 
 ```http
-POST https://graph.microsoft.com/v1.0/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal
+POST https://graph.microsoft.com/v1.0/serviceprincipals/graph.agentIdentityBlueprintPrincipal
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -340,7 +340,7 @@ $body = @{
     appId   = "<agent-blueprint-client-id>"
 }
 Invoke-MgGraphRequest -Method POST `
-        -Uri "https://graph.microsoft.com/v1.0/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal" `
+        -Uri "https://graph.microsoft.com/v1.0/serviceprincipals/graph.agentIdentityBlueprintPrincipal" `
         -Headers @{ "OData-Version" = "4.0" } `
         -Body ($body | ConvertTo-Json)
 ```
@@ -377,7 +377,7 @@ $Id = "<agent-blueprint-id>"
 
 Invoke-MgGraphRequest `
     -Method DELETE `
-    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/$($Id)" `
+    -Uri "https://graph.microsoft.com/v1.0/applications/graph.agentIdentityBlueprint$($Id)" `
 ```
 
 ---

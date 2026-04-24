@@ -165,7 +165,7 @@ Both blueprint and agent identity creation require a `sponsors@odata.bind` field
 400: No sponsor specified. Please provide at least one sponsor.
 ```
 
-Sponsors must reference **User** objects. Service principals and groups are **not** accepted as sponsors for blueprints. Use the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The AI-guided setup resolves the current user's object ID and uses it as the default sponsor.
+The AI-guided setup only accepts **User** objects for sponsor assignment and uses the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The setup resolves the current user's object ID and uses it as the default sponsor. To assign a [supported group](agent-owners-sponsors-managers.md#sponsors) as sponsor for a blueprint, use the Microsoft Graph API directly.
 
 ### Azure CLI tokens are rejected by Agent ID APIs
 
@@ -174,9 +174,9 @@ Azure CLI tokens include the `Directory.AccessAsUser.All` delegated permission. 
 > [!WARNING]
 > Do **not** use `DefaultAzureCredential` or `AzureCliCredential` in custom scripts to call Agent ID APIs. They produce tokens with `Directory.AccessAsUser.All`, which causes every Agent ID API call to fail with 403. Use a dedicated app registration with `client_credentials` flow, or use the Microsoft Graph PowerShell SDK with explicit scopes.
 
-### Permission propagation takes 30–120+ seconds
+### Permission propagation takes 30ΓÇô120+ seconds
 
-After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30–120 seconds or more.
+After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30ΓÇô120 seconds or more.
 
 The AI-guided setup handles recent permission changes by retrying operations with exponential backoff when a 403 is received. If you're scripting this manually, implement retry logic:
 
@@ -253,7 +253,7 @@ Please start from Step 1 in the setup instructions and work through each step in
 
 The most common causes of 403 errors:
 
-- **Permission propagation delay**: Wait 1–2 minutes after admin consent and retry.
+- **Permission propagation delay**: Wait 1ΓÇô2 minutes after admin consent and retry.
 - **Azure CLI token contamination**: If you previously used `az` commands in the same session, the cached token might contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
 - **Missing admin consent**: Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
@@ -266,7 +266,7 @@ This result happens when the `OData-Version: 4.0` header is missing or the `@oda
 The blueprint principal must be created as a separate step after the blueprint. Run:
 
 ```http
-POST https://graph.microsoft.com/beta/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal
+POST https://graph.microsoft.com/beta/serviceprincipals/graph.agentIdentityBlueprintPrincipal
 OData-Version: 4.0
 Content-Type: application/json
 
