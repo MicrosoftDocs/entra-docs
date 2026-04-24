@@ -6,11 +6,8 @@ ms.topic: concept-article
 ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ---
-
+#Customer Intent: As an administrator, I want to understand which roles cannot be managed in PIM to plan my privileged access management strategy.
 # Roles you can't manage in Privileged Identity Management
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator, I want to understand which roles cannot be managed in PIM to plan my privileged access management strategy.
 
 ## Overview
 
