@@ -39,7 +39,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Shopify Plus to support provisioning with Microsoft Entra ID
 
-1. Login to [Shopify Plus organization admin](https://shopify.plus). Navigate to **Users > Security**.
+1. Log in to [Shopify Plus organization admin](https://shopify.plus). Navigate to **Users > Security**.
 
 1. Navigate to the **SCIM Integration** section, select **Generate API token**.
 
