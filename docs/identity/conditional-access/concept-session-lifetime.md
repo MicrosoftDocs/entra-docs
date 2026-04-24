@@ -4,8 +4,8 @@ description: Learn to configure Conditional Access adaptive session lifetime pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
-ms.reviewer: inbarc
+ms.date: 04/08/2026
+ms.reviewer: inbarc, sreyanthmora
 ---
 # Conditional Access adaptive session lifetime policies
 
@@ -122,7 +122,7 @@ In persistent browsers, cookies remain stored on the user's device even after th
 Conditional Access is a Microsoft Entra ID P1 or P2 capability that requires a premium license. For more information about Conditional Access, see [What is Conditional Access in Microsoft Entra ID?](overview.md#license-requirements).
 
 > [!WARNING]
-> If you use the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature currently in public preview, don't create two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.
+> If you use the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature, don't create two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.
 >
 > Before enabling sign-in frequency, ensure other reauthentication settings are disabled in your tenant. If "Remember MFA on trusted devices" is enabled, disable it before using sign-in frequency, as using these two settings together might prompt users unexpectedly. For more information about reauthentication prompts and session lifetime, see [Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
