@@ -199,7 +199,7 @@ MIM Service and Portal
 
 Download and upgrade information 
 
-*   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
+*   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](https://learn.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
     
 *   SP3 introduces a new upgrade process. Please follow the documented steps carefully: [Upgrade Microsoft Identity Manager 2016 from SP2 to SP3 | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016-upgrade-from-service-pack-2-to-service-pack-3)
 
