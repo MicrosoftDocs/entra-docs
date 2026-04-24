@@ -39,7 +39,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure TimeClock 365 SAML to support provisioning with Microsoft Entra ID
 
-1. Login to [Timeclock365 admin console](https://live.timeclock365.com).
+1. Log in to [Timeclock365 admin console](https://live.timeclock365.com).
 
 1. Navigate to **Settings > Company profile > General**.
 
