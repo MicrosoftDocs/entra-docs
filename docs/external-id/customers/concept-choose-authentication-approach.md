@@ -92,6 +92,6 @@ After you decide on an approach, return to the [planning guide](concept-planning
 **Native authentication**:
 
 - [Native authentication overview](/entra/identity-platform/concept-native-authentication)
-- [Android native authentication tutorial](how-to-run-native-authentication-sample-android-app.md)
-- [iOS native authentication tutorial](how-to-run-native-authentication-sample-ios-app.md)
+- [Android native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
+- [iOS native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app)
 - [Native authentication in a React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in)
