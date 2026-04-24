@@ -215,7 +215,7 @@ In May, requestors will be able to see the name and email address of approvers f
 
 ---
 
-### General Availability - Entra certificate-based authentication (CBA) method is in the third place in system preferred MFA methods.
+### General Availability - Entra CBA as third option in system-preferred MFA methods
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
