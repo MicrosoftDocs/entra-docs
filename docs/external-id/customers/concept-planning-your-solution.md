@@ -62,14 +62,14 @@ Before you register your app, decide how you want to build the sign-in experienc
 
 - **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers single sign-on (SSO), broad platform support, and lower maintenance. Microsoft manages the sign-in surface and security updates.
 
-- **Native authentication** lets you build the sign-in UI experience directly into your app using the MSAL SDK or native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
+- **Native authentication** lets you build the sign-in UI experience directly into your app by using the MSAL SDK or native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
 
 Your choice affects how you register your app, which SDKs you use, and how you configure user flows. Make this decision early so the rest of your integration follows the right path.
 
 ### How to choose an authentication approach
 
-- [Choose an authentication approach](concept-choose-authentication-approach.md) — compare features, security trade-offs, and supported platforms.
-- [Native authentication overview](/entra/identity-platform/concept-native-authentication) — detailed guidance if you're considering native authentication.
+- [Choose an authentication approach](concept-choose-authentication-approach.md). Compare features, security trade-offs, and supported platforms.
+- [Native authentication overview](/entra/identity-platform/concept-native-authentication). Detailed guidance if you're considering native authentication.
 
 ## Step 3: Register your application
 
@@ -109,7 +109,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Number of user flows**. Each application can have only one sign-up and sign-in user flow. If you have several applications, you can use a single user flow for all of them. Or, if you want a different experience for each application, you can create multiple user flows. The maximum is 10 user flows per external tenant.
 
-- **Company branding and language customizations**. Although we describe configuring company branding and language customizations later in Step 4, you can configure them anytime, either before or after you integrate an app with a user flow. If you configure company branding before you create the user flow, the sign-in pages reflect that branding. Otherwise, the sign-in pages reflect the default, neutral branding.
+- **Company branding and language customizations**. Although we describe configuring company branding and language customizations later in Step 5, you can configure them anytime, either before or after you integrate an app with a user flow. If you configure company branding before you create the user flow, the sign-in pages reflect that branding. Otherwise, the sign-in pages reflect the default, neutral branding.
 
 - **Attributes to collect**. In the user flow settings, you can select from a set of built-in user attributes you want to collect from customers. The customer enters the information on the sign-up page, and it's stored with their profile in your directory. If you want to collect more information, you can [define custom attributes](how-to-define-custom-attributes.md) and add them to your user flow.
 
