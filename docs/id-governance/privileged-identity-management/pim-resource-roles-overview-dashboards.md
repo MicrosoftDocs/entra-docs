@@ -10,6 +10,8 @@ ms.custom: pim
 
 # Use a resource dashboard to perform an access review in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to use the PIM resource dashboard to monitor role activations and perform access reviews.
 
 ## Overview
 

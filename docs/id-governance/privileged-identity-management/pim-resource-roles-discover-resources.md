@@ -9,6 +9,8 @@ ms.custom: sfi-ga-nochange
 
 # Discover Azure resources to manage in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to discover and onboard Azure resources to PIM to protect access to my subscriptions and resource groups.
 
 ## Overview
 

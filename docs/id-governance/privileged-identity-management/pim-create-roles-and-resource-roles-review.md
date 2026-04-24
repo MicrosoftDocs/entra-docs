@@ -8,6 +8,8 @@ ms.custom: pim, sfi-image-nochange
 
 # Create an access review of Azure resource and Microsoft Entra roles in PIM
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to create access reviews for privileged roles to regularly validate that users still need their assigned access.
 
 ## Overview
 

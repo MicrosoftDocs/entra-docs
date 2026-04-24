@@ -8,6 +8,8 @@ ms.custom: sfi-image-nochange
 ---
 # Audit activity history for group assignments in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to view audit logs and activity history for PIM group assignments to monitor access changes and maintain compliance.
 
 ## Overview
 

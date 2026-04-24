@@ -9,6 +9,8 @@ ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 
 # Email notifications in PIM
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to understand the email notifications sent by PIM so I can manage communication about role assignments and activations.
 
 ## Overview
 

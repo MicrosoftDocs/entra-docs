@@ -9,6 +9,8 @@ ms.reviewer: shaunliu
 
 # Troubleshoot access to Azure resources denied in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to troubleshoot and resolve access issues in PIM to ensure proper management of Azure resource roles.
 
 ## Overview
 

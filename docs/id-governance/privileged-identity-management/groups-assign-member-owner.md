@@ -9,6 +9,8 @@ ms.custom: pim, sfi-image-nochange
 
 # Assign eligibility for a group in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to assign eligible membership or ownership for groups in PIM to enable just-in-time access for users who need temporary group permissions.
 
 ## Overview
 

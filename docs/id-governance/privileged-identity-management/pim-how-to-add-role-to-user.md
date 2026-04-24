@@ -9,6 +9,8 @@ ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 
 # Assign Microsoft Entra roles in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to assign Microsoft Entra roles to users with time-bound or eligible assignments to implement just-in-time privileged access.
 
 ## Overview
 

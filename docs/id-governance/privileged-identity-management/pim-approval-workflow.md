@@ -8,6 +8,8 @@ ms.custom: pim, sfi-ga-nochange
 
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an approver, I want to review and approve or deny role activation requests to ensure appropriate access to Microsoft Entra roles.
 
 ## Overview
 

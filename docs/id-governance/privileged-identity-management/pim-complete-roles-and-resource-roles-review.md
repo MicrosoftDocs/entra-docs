@@ -9,6 +9,8 @@ ms.custom: pim, sfi-image-nochange
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to complete an access review to finalize role access decisions and apply changes to privileged role assignments.
 
 ## Overview
 

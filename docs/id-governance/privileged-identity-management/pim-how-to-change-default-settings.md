@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to configure role settings for Microsoft Entra roles including approval workflows, MFA requirements, and activation duration.
 
 ## Overview
 

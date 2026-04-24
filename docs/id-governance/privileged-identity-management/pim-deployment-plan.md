@@ -9,6 +9,8 @@ ms.custom: pim, sfi-ga-nochange
 
 # Plan a Privileged Identity Management deployment
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an IT administrator, I want to plan and execute a successful PIM deployment to secure privileged access across my organization.
 
 ## Overview
 

@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 # Configure Azure resource role settings in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to configure role settings for Azure resource roles including approval workflows, MFA requirements, and assignment duration.
 
 ## Overview
 

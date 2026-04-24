@@ -9,6 +9,8 @@ ms.custom: pim
 ---
 # Privileged Identity Management APIs
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As a developer or administrator, I want to understand the PIM APIs so I can programmatically manage privileged access assignments and automation workflows.
 
 ## Overview
 

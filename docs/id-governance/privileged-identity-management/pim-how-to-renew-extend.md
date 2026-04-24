@@ -9,6 +9,8 @@ ms.custom: pim, sfi-ga-nochange
 
 # Extend or renew Microsoft Entra role assignments in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator or user, I want to extend or renew time-bound Microsoft Entra role assignments before they expire to maintain necessary access.
 
 ## Overview
 

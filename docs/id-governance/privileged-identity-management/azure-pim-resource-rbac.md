@@ -6,8 +6,8 @@ ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: sfi-image-nochange
 ---
+#Customer Intent: As an administrator, I want to view activity and audit history for Azure resource roles to monitor privileged access and maintain compliance.
 # View activity and audit history for Azure resource roles in Privileged Identity Management
-
 
 ## Overview
 

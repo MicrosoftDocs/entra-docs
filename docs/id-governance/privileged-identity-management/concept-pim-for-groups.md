@@ -8,6 +8,8 @@ ms.custom: pim, sfi-ga-nochange
 
 # Privileged Identity Management (PIM) for Groups
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an IT administrator, I want to understand how to use PIM for Groups to provide just-in-time group membership and ownership for controlling access to resources.
 
 ## Overview
 

@@ -9,6 +9,8 @@ ms.custom: pim, sfi-image-nochange
 
 # Approve activation requests for group members and owners
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an approver, I want to review and approve or deny activation requests for group membership and ownership to ensure appropriate access control.
 
 ## Overview
 

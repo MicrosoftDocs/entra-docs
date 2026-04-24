@@ -8,6 +8,8 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Assign Azure resource roles in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an Azure resource administrator, I want to assign Azure resource roles using PIM to provide just-in-time access to subscriptions, resource groups, and other Azure resources.
 
 ## Overview
 

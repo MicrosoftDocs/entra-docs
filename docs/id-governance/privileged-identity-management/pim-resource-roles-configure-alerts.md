@@ -10,6 +10,8 @@ ms.custom: pim
 
 # Configure security alerts for Azure roles in Privileged Identity Management
 
+> [!div class="op_single_selector"]
+> - **Customer intent:** As an administrator, I want to configure and monitor security alerts for Azure resource roles to detect and respond to suspicious activity.
 
 ## Overview
 
