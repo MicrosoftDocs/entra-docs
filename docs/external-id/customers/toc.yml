@@ -58,6 +58,8 @@ items:
       items:
         - name: Plan your migration
           href: plan-your-migration-from-b2c-to-external-id.md
+        - name: HSC mode limitations
+          href: plan-your-migration-from-b2c-to-external-id.md#hsc-mode-limitations
         - name: Standard migration
           href: migrate-from-b2c-to-external-id.md
         - name: Enable HSC mode
