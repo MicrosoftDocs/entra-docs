@@ -8,20 +8,20 @@ ms.author: alexpav
 author: idmdev
 ---
 
-# Configure Microsoft Edge MAM policy for explicit forward proxy
+# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy using Intune Mobile Application Management Policy
 
 ## Limitations
 
 - This method to apply policy only works on Microsoft Edge for Windows.
-- If the user is signing in with your organization's work/school account to a device with MDM settings that conflict with settings that the MAM policy delivers, the MDM policy will apply.
+- If Mobile Device Management (MDM) is configured on the device, and the MDM policy has conflicting Microsoft Edge settings, the Mobile Application Management (MAM) policy isn't applied.
 
 
 ## Prerequisites
 
 - Microsoft Entra ID identity with at least the Global Secure Access Administrator Reader role and Intune Administrator role.
-- Explicit forward proxy configured in the Microsoft Entra portal.
-- A security group in Microsoft Entra ID with users that should receive explicit forward proxy configuration in Microsoft Edge (for example, GSA EFP Users).
-- Plaintext public key of the TLS inspection root certificate used when Microsoft Entra Internet Access TLS inspection was configured.
+- Explicit forward proxy configured in the Microsoft Entra admin center.
+- A security group in Microsoft Entra ID with users that should receive explicit forward proxy configuration in Microsoft Edge (for example, Global Secure Access (GSA) Explicit Forward Proxy (EFP) Users).
+- Plaintext public key of the Transport Layer Security (TLS) inspection root certificate used when Microsoft Entra Internet Access TLS inspection was configured.
 
 ## Configuration
 
@@ -104,7 +104,7 @@ author: idmdev
 
         If the output is `PEM (plain text)`, you can continue. Otherwise, convert the binary encoded file to PEM.
 
-    1. Convert the PEM certificate string to extract only the key, without the line breaks:
+    1. Extract the key from the file, omitting line breaks:
 
         ```bash
         awk '!/-----/{printf "%s",$0}' cert.pem | tr -d '\r'
@@ -115,9 +115,9 @@ author: idmdev
 1. Paste the output of the converted, plain-text string without line breaks in the text field of the **Certificate management settings** section of the policy.
 
     > [!NOTE]
-    > Don't use the 'Import' button to import the certificate file. Import is intended for bulk configuring settings, where you have multiple certificates that need to be trusted. The Import function of the Intune portal expects a CSV file with a list of plain text contiguous keys, not the PEM/CER file.
+    > Don't use the 'Import' button in this section. Import is intended for bulk configuring settings, where you have multiple certificates that need to be trusted. The Import function of the Intune portal expects a CSV file with a list of plain text contiguous keys, not the PEM/CER file.
 
-1. Your resulting configuration should look similar to this. Select **Next**.
+1. Your resulting configuration should look similar to the screenshot. Select **Next**.
 
     ![Screenshot showing the completed proxy and certificate configuration.](media/how-to-configure-microsoft-edge-mam-policy/completed-settings-configuration.png)
 
@@ -125,7 +125,7 @@ author: idmdev
 
 1. Under **Assignments**, select **Add Groups**, and select the security group in Microsoft Entra ID that contains users of GSA EFP. Then, select **Next**.
 
-1. Your **Review + create** screen should look similar to this. Select **Create**.
+1. Your **Review + create** screen should look similar to the screenshot. Select **Create**.
 
     ![Screenshot showing the Review + create screen with the configured policy.](media/how-to-configure-microsoft-edge-mam-policy/review-create.png)
 
