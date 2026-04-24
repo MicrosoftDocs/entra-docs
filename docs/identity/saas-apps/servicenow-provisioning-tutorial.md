@@ -4,7 +4,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/20/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow so that I can streamline the user management process and ensure that users have the appropriate access to ServiceNow.
@@ -68,9 +68,10 @@ Add ServiceNow from the Microsoft Entra application gallery to start managing pr
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and groups in TestApp. You can base the configuration on user and group assignments in Microsoft Entra ID.
 
-To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
+### Configure automatic user provisioning for ServiceNow in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+
 1. Browse to **Entra ID** > **Enterprise apps**.
 
    ![Screenshot that shows the Enterprise applications pane.](common/enterprise-applications.png)
@@ -79,15 +80,23 @@ To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
 
 1. Select the **Provisioning** tab.
 
-1. Set **Provisioning Mode** to **Automatic**.
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. In the **Admin Credentials** section, enter your ServiceNow admin credentials and username. Select **Test Connection** to ensure that Microsoft Entra ID can connect to ServiceNow. If the connection fails, ensure that your ServiceNow account has admin permissions and try again.
-   
-1. In the **Notification Email** box, enter the email address of a person or group that should receive the provisioning error notifications. Then select the **Send an email notification when a failure occurs** check box.
+1. Select **+ New configuration**.
 
-1. Select **Save**.
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to ServiceNow**.
+1. In the **Tenant URL** field, enter your ServiceNow Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to ServiceNow. If the connection fails, ensure your ServiceNow account has the required admin permissions and try again.
+
+1. Select **Create** to create your configuration.
+
+1. Select **Properties** on the **Overview** page.
+
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
+
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to ServiceNow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ServiceNow for update operations. 
 
@@ -95,21 +104,15 @@ To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
    
    Select the **Save** button to commit any changes.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to ServiceNow**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to ServiceNow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ServiceNow for update operations. Select the **Save** button to commit any changes.
 
-1. To configure scoping filters, see the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for ServiceNow, change **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-1. Define the users and groups that you want to provision to ServiceNow by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot that shows choices for provisioning scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles. Subsequent cycles occur about every 40 minutes, as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
@@ -136,7 +139,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
   If you still can't resolve your problem, contact ServiceNow support, and ask them to turn on SOAP debugging to help troubleshoot. 
 
-- The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
+- The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allow list of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
 
 - Self-hosted ServiceNow instances aren't supported. 
 

@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/20/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Sigma Computing so that I can streamline the user management process and ensure that users have the appropriate access to Sigma Computing.
@@ -28,7 +28,7 @@ This article describes the steps you need to perform in both Sigma Computing and
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An admin account in your Sigma organization.
 * An existing [SSO](./sigma-computing-tutorial.md) integration with Sigma Computing.
 
@@ -43,25 +43,25 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to your Sigma account.
 
-2. Navigate to the **Admin Portal** by selecting **Administration** from the user menu.
+1. Navigate to the **Admin Portal** by selecting **Administration** from the user menu.
 
-3. In the left panel, select **Authentication** to open your organization’s Authentication page.
+1. In the left panel, select **Authentication** to open your organization’s Authentication page.
 
-4. Ensure the **Authentication Method** is **SAML** only.
+1. Ensure the **Authentication Method** is **SAML** only.
 
-5. Select the **Setup** button under **Account Type and Team Provisioning** to open the Provisioning modal.
+1. Select the **Setup** button under **Account Type and Team Provisioning** to open the Provisioning modal.
 
-   ![Role](media/sigma-computing-provisioning-tutorial/sigma-role-and-team-provisioning.png)
+   ![Screenshot of Account Type and Team Provisioning.](media/sigma-computing-provisioning-tutorial/sigma-role-and-team-provisioning.png)
 
-6. Read through the notes provided on the getting started section of the Provisioning modal. Check the confirmation box, and select **Next** to continue.
+1. Read through the notes provided on the getting started section of the Provisioning modal. Check the confirmation box, and select **Next** to continue.
 
-7. Enter a Token name and select **Next**.
+1. Enter a Token name and select **Next**.
 
-   ![Next](media/sigma-computing-provisioning-tutorial/sigma-create-token.png)
+   ![Screenshot of Token name and Next option.](media/sigma-computing-provisioning-tutorial/sigma-create-token.png)
 
-8. Sigma will provide you with a **Bearer Token** and **Directory Base URL**. Copy and save these values in a secure location. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Sigma Computing application. Select **Done**.
+1. Sigma will provide you with a **Bearer Token** and **Directory Base URL**. Copy and save these values in a secure location. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Sigma Computing application. Select **Done**.
 
-   ![Sigma](media/sigma-computing-provisioning-tutorial/sigma-copy-keys.png)
+   ![Screenshot of Sigma Computing application.](media/sigma-computing-provisioning-tutorial/sigma-copy-keys.png)
    
 <a name='step-3-add-sigma-computing-from-the-azure-ad-application-gallery'></a>
 
@@ -79,38 +79,40 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-sigma-computing-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Sigma Computing in Microsoft Entra ID:
+### Configure automatic user provisioning for Sigma Computing in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-   ![Enterprise applications blade](common/enterprise-applications.png)
+   ![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Sigma Computing**.
 
-   ![The Sigma Computing link in the Applications list](common/all-applications.png)
+   ![Screenshot of Sigma Computing link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-   ![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-   ![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Sigma Computing Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sigma Computing. If the connection fails, ensure your Sigma Computing account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Sigma Computing Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sigma Computing. If the connection fails, ensure your Sigma Computing account has the required admin permissions and try again.
 
-   ![Auth](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-   ![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Sigma Computing**.
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sigma Computing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sigma Computing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sigma Computing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sigma Computing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -121,31 +123,20 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.givenName|String|
    |name.familyName|String|
 
+1. Select **Groups**.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Sigma Computing**.
-
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Sigma Computing for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Sigma Computing for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported For Filtering|
       |---|---|---|
       |displayName|String|&check;|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Sigma Computing, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-   ![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Sigma Computing by choosing the desired values in **Scope** in the **Settings** section.
-
-   ![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-   ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
