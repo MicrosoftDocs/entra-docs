@@ -149,7 +149,7 @@ Detailed configuration guidance and step-by-step instructions will be published 
 
 ---
 
-### General Availability- Prefetch Workday termination data to customize account disable logic
+### General Availability - Prefetch Workday termination data to customize account disable logic
 
 **Type:** General Availability  
 **Service category:** Provisioning  
