@@ -5,8 +5,8 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-image-nochange
----
 #Customer Intent: As an administrator or user, I want to extend or renew time-bound Azure resource role assignments before they expire to maintain necessary access.
+---
 # Extend or renew Azure resource role assignments in Privileged Identity Management
 
 ## Overview

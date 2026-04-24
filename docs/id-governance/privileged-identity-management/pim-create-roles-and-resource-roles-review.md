@@ -4,8 +4,8 @@ description: Learn how to create an access review of Azure resource and Microsof
 ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: pim, sfi-image-nochange
----
 #Customer Intent: As an administrator, I want to create access reviews for privileged roles to regularly validate that users still need their assigned access.
+---
 # Create an access review of Azure resource and Microsoft Entra roles in PIM
 
 ## Overview

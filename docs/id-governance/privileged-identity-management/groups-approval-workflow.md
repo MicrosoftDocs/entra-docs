@@ -5,8 +5,8 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
----
 #Customer Intent: As an approver, I want to review and approve or deny activation requests for group membership and ownership to ensure appropriate access control.
+---
 # Approve activation requests for group members and owners
 
 ## Overview

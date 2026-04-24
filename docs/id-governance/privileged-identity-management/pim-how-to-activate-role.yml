@@ -5,8 +5,8 @@ metadata:
   ms.reviewer: ilyal
   ms.date: 01/06/2025
   ms.topic: how-to
+  # Customer intent: As a user with eligible Microsoft Entra role assignments, I want to activate my roles when needed to perform administrative tasks.
   ms.custom:
-# Customer intent: As a user with eligible Microsoft Entra role assignments, I want to activate my roles when needed to perform administrative tasks.
     - ge-structured-content-pilot
     - sfi-ga-nochange
     - sfi-image-nochange

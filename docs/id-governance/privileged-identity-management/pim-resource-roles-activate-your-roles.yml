@@ -5,8 +5,8 @@ metadata:
   ms.reviewer: rianakarim
   ms.date: 06/27/2025
   ms.topic: how-to
+  # Customer intent: As a user with eligible Azure resource role assignments, I want to activate my roles when needed to manage Azure subscriptions and resources.
   ms.custom:
-# Customer intent: As a user with eligible Azure resource role assignments, I want to activate my roles when needed to manage Azure subscriptions and resources.
     - pim
     - ge-structured-content-pilot
     - sfi-image-nochange

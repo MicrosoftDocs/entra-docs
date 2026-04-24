@@ -4,8 +4,8 @@ description: Learn how to assign Azure resource roles in Privileged Identity Man
 ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: sfi-ga-nochange, sfi-image-nochange
----
 #Customer Intent: As an Azure resource administrator, I want to assign Azure resource roles using PIM to provide just-in-time access to subscriptions, resource groups, and other Azure resources.
+---
 # Assign Azure resource roles in Privileged Identity Management
 
 ## Overview

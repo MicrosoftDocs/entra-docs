@@ -6,8 +6,8 @@ ms.date: 03/27/2026
 ms.reviewer: tamimsangrar
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ai-usage: ai-assisted
----
 #Customer Intent: As an administrator, I want to configure role settings for Azure resource roles including approval workflows, MFA requirements, and assignment duration.
+---
 # Configure Azure resource role settings in Privileged Identity Management
 
 ## Overview

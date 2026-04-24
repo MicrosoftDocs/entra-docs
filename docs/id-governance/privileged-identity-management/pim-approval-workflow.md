@@ -4,8 +4,8 @@ description: Learn how to approve or deny requests for Microsoft Entra roles in 
 ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: pim, sfi-ga-nochange
----
 #Customer Intent: As an approver, I want to review and approve or deny role activation requests to ensure appropriate access to Microsoft Entra roles.
+---
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
 ## Overview

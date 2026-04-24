@@ -6,8 +6,8 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.reviewer: rianakarim
 ms.custom: pim
----
 #Customer Intent: As an administrator, I want to configure and monitor security alerts for Azure resource roles to detect and respond to suspicious activity.
+---
 # Configure security alerts for Azure roles in Privileged Identity Management
 
 ## Overview
