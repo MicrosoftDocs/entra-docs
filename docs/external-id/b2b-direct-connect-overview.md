@@ -2,8 +2,9 @@
 title: B2B direct connect Microsoft Entra overview
 description: Microsoft Entra B2B direct connect lets users from other Microsoft Entra tenants seamlessly sign in to your shared resources via Teams shared channels. There's no need for a guest user object in your Microsoft Entra directory.
 ms.topic: concept-article
-ms.date: 07/07/2025
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin managing collaboration between organizations, I want to configure B2B direct connect settings, so that I can control inbound and outbound access for users and groups from external organizations and ensure secure collaboration.
 ---
@@ -34,6 +35,7 @@ Microsoft Entra organizations can manage their trust relationships with other Mi
 
 > [!IMPORTANT]
 > B2B direct connect is possible only when both organizations allow access to and from the other organization. For example, Contoso can allow inbound B2B direct connect from Fabrikam, but sharing isn't possible until Fabrikam also enables outbound B2B direct connect with Contoso. Therefore, you’ll need to coordinate with the external organization’s admin to make sure their cross-tenant access settings allow sharing with you. This mutual agreement is important because B2B direct connect enables limited sharing of data for the users you enable for B2B direct connect.
+
 ### Default settings
 
 The default cross-tenant access settings apply to all external Microsoft Entra organizations, except organizations for which you've configured individual settings. Initially, Microsoft Entra ID blocks all inbound and outbound B2B direct connect capabilities by default for all external Microsoft Entra tenants. You can change these default settings, but typically you can leave them as-is and enable B2B direct connect access with individual organizations.
@@ -99,13 +101,13 @@ In your cross-tenant access settings, you can use **Trust settings** to trust cl
 
 Currently, B2B direct connect enables the Teams Connect shared channels feature. B2B direct connect users can access an external organization's Teams shared channel without having to switch tenants or sign in with a different account. The B2B direct connect user’s access is determined by the shared channel’s policies.
 
-In the resource organization, the Teams shared channel owner can search within Teams for users from an external organization and add them to the shared channel. After they're added, the B2B direct connect users can access the shared channel from within their home instance of Teams, where they collaborate using features such as chat, calls, file-sharing, and app-sharing.  For details, see [Overview of teams and channels in Microsoft Teams](/microsoftteams/teams-channels-overview). For details about the resources, files, and applications that are available to the B2B direct connect user via the Teams shared channel refer to [Chat, teams, channels, & apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
+In the resource organization, the Teams shared channel owner can search within Teams for users from an external organization and add them to the shared channel. After they're added, B2B direct connect users can access the shared channel from within their home instance of Teams, where they collaborate using features such as chat, calls, file sharing, and app sharing. For details, see [Overview of teams and channels in Microsoft Teams](/microsoftteams/teams-channels-overview). For details about the resources, files, and applications that are available to B2B direct connect users via the Teams shared channel, see [Chat, teams, channels, and apps in Microsoft Teams](/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page).
 
 ### User access and management
 
 B2B direct connect users collaborate via a mutual connection between two organizations, whereas B2B collaboration users are invited to an organization and managed via a user object.
 
-- B2B direct connect offers way to collaborate with users from another Microsoft Entra organization through a mutual, two-way connection configured by admins from both organizations. Users have single sign-on access to B2B direct connect-enabled Microsoft applications. Currently, B2B direct connect support Teams Connect shared channels.
+- B2B direct connect offers a way to collaborate with users from another Microsoft Entra organization through a mutual, two-way connection configured by admins from both organizations. Users have single sign-on access to B2B direct connect-enabled Microsoft applications. Currently, B2B direct connect supports Teams Connect shared channels.
 
 - B2B collaboration lets you invite external partners to access your Microsoft, SaaS, or custom-developed apps. B2B collaboration is especially useful when the external partner doesn't use Microsoft Entra ID or it's not practical or possible to set up B2B direct connect. B2B collaboration allows external users to sign in using their preferred identity, including their Microsoft Entra account, consumer Microsoft account, or a social identity you enable such as Google. With B2B collaboration, you can let external users sign in to your Microsoft applications, SaaS apps, custom-developed apps, and so on.  
 
@@ -163,9 +165,9 @@ For more information about Microsoft Teams audit logs, see the [Microsoft Teams 
 
 B2B direct connect lets your users and groups access apps and resources that are hosted by an external organization. To establish a connection, an admin from the external organization must also enable B2B direct connect.
 
-By enabling B2B connect with an external organization, you're allowing the external organizations that you have enabled outbound settings with to access limited contact data about your users. Microsoft shares this data with those organizations to help them send a request to connect with your users. Data collected by external organizations, including limited contact data, is subject to the privacy policies and practices of those organizations.
+By enabling B2B direct connect with an external organization, you're allowing external organizations that you have enabled outbound settings with to access limited contact data about your users. Microsoft shares this data with those organizations to help them send a request to connect with your users. Data collected by external organizations, including limited contact data, is subject to the privacy policies and practices of those organizations.
 
-When you configure a policy with a specific target resource tenant, you're consenting for that policy to be stored both in your tenant and in the target resource tenant. This includes a consent for your policy to be stored outside your geographic region if your target resource tenant is situated in a different region than your tenant. When you configure a default cross-tenant access policy, you're consenting for that policy to be accessed by other tenants. This means the policy is stored for general availability to other Microsoft tenants and will be stored outside of your tenant boundary. It follows a cross-geo replicated pattern to ensure access by possible collaboration partner tenants with reasonable performance. Either the tenant to specific tenant policy or the default policy can be implemented independently, each with their respective policy sharing conditions listed above.
+When you configure a policy with a specific target resource tenant, you're consenting for that policy to be stored both in your tenant and in the target resource tenant. This includes consent for your policy to be stored outside your geographic region if your target resource tenant is in a different region than your tenant. When you configure a default cross-tenant access policy, you're consenting for that policy to be accessed by other tenants. This means the policy is stored for general availability to other Microsoft tenants and might be stored outside your tenant boundary. It follows a cross-geo replicated pattern to ensure access by potential collaboration partner tenants with reasonable performance. Either the tenant-to-tenant policy or the default policy can be implemented independently, each with the respective policy sharing conditions listed earlier.
 
 ### Outbound access
 
