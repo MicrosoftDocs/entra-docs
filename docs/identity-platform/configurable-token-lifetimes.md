@@ -32,12 +32,6 @@ Before configuring token lifetime policies, be aware of the following:
 - **Managed identities**: Configuring token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md) isn't supported.
 - **Refresh & session token lifetimes**: Refresh and session token lifetimes are no longer configurable through token lifetime policies. Microsoft Entra ID uses only the default values described below. To control how frequently users are required to sign in, use [Conditional Access sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) instead.
 
-## License requirements
-
-Using this feature requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-
-Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
-
 ## Token lifetime policies for access, SAML, and ID tokens
 
 You can set token lifetime policies for access tokens, SAML tokens, and ID tokens.
