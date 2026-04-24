@@ -7,11 +7,8 @@ ms.reviewer: tamimsangrar
 ms.custom: pim, sfi-image-nochange
 ai-usage: ai-assisted
 ---
-
+#Customer Intent: As an administrator, I want to configure role settings for PIM groups including approval requirements, MFA, and activation duration to enforce security policies.
 # Configure PIM for Groups settings
-
-> [!div class="op_single_selector"]
-> - **Customer intent:** As an administrator, I want to configure role settings for PIM groups including approval requirements, MFA, and activation duration to enforce security policies.
 
 ## Overview
 
