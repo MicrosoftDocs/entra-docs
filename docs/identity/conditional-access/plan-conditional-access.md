@@ -65,7 +65,7 @@ Here are common questions about [assignments and access controls](concept-condit
 - Which users, groups, directory roles, or workload identities are included in or excluded from the policy?
 - What emergency access accounts or groups should you exclude from the policy?
 
-#### Cloud apps or actions
+#### Target resources
 
 Does this policy apply to an application, user action, or authentication context? If so:
 

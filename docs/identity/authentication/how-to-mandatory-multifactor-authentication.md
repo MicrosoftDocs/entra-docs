@@ -1,14 +1,15 @@
 ---
-title: How to verify that users are set up for mandatory Microsoft Entra multifactor authentication (MFA) 
-description: Steps to verify mandatory multifactor authentication for users who sign in to Azure and other management portals.
+title: Verify mandatory MFA setup for Microsoft Entra users
+description: Verify that your users meet mandatory MFA requirements for Azure and admin portals. Check and enable MFA for Microsoft Entra ID P1, P2, and Free licenses.
 ms.topic: how-to
-ms.date: 09/17/2025
+ms.date: 03/12/2026
+ms.custom: msecd-doc-authoring-106
 author: najshahid
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
-# How to verify that users are set up for mandatory MFA
+# Verify that users are set up for mandatory multifactor authentication (MFA)
 
 This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md). 
 

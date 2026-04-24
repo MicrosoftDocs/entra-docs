@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: reference
 ms.date: 03/02/2026
 ms.reviewer: jercon
+#Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
 
 # Microsoft Entra ID Governance licensing for guest users
@@ -99,6 +100,13 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 - Tailspin Toys creates an inactive guest access review for 200 users. 
 - Tailspin creates a second access review for a security group with 300 guest users with the user-to-group affiliation feature enabled. 
 - Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
+
+**June**:
+
+- Contoso has 10,000 guest accounts in their tenant and they want to perform an access review on those guests who are inactive. 
+- Contoso creates an Access Review scoped to Guests only and to Inactive Users only. The Access Review scans all 10,000 guest users and identifies 240 that are considered inactive.  The campaign includes those 240 guest users only.
+- There are no other governance-releated events that take place on any of the 10,000 guest users.
+- Billing: For June, Contoso is billed for 240 users – only those inactive guests who had an Access Review performed on them.
 
 
 ### Link your tenant to a subscription

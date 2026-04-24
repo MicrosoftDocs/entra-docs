@@ -69,7 +69,7 @@ Follow the instructions in the article [Add or deactivate custom security attrib
 1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **New policy** or select an existing policy to update.
 1. When configuring your **Target resources**, select the following options:
-   1. Select what this policy applies to **Cloud apps**.
+   1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include **Select resources**.
    1. Select **Edit filter**.
    1. Set **Configure** to **Yes**.

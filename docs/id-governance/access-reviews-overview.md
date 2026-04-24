@@ -7,6 +7,7 @@ ms.topic: reference
 ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to understand what access reviews are and when to use them so that I can manage group memberships, application access, and role assignments effectively.
 ---
 
 # What are access reviews?

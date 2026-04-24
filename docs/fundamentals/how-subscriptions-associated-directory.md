@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 04/02/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to add an existing Azure subscription to my tenant so that I can manage resources under my organization's directory.
 ---
 
 # Associate or add an Azure subscription to your Microsoft Entra tenant

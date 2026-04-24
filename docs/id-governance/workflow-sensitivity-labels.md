@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/12/2026
 
-#CustomerIntent: As an identity governance administrator, I want to view sensitivity labels of groups or teams so that I can maintain security within my environment.
+#Customer Intent: As an identity governance administrator, I want to view sensitivity labels of groups or teams so that I can maintain security within my environment.
 ---
 
 # Sensitivity labels in Lifecycle Workflows
