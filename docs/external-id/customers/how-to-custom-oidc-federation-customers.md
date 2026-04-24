@@ -109,6 +109,13 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
 
 1. Select **Save**.
 
+## Known limitations
+
+Conditional Access policies that require MFA registration don't function as expected when an External ID tenant is federated with an external identity provider (IdP). This can result in one of the following behaviors:
+
+- Users are unable to register an MFA method and can't complete sign-in, often encountering an error.
+- Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
+
 ## Related content
 
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)

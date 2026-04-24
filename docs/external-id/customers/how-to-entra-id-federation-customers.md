@@ -80,10 +80,6 @@ After you set up the identity provider, add it to a user flow so it appears on t
 1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
 1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
-## Known limitations
-
-Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users can't register an MFA method and can't complete sign-in. This limitation applies only for External ID to Microsoft Entra ID federation and doesn't affect other external identity provider federations.
-
 ## Frequently asked questions
 
 **I get an error: "No email address was obtained from the external OIDC identity provider." How do I fix it?**
@@ -128,7 +124,7 @@ Yes. Because all authentication occurs in the user's home Microsoft Entra ID ten
 - Device-based and risk-based controls
 
 > [!NOTE]
-> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Known limitations](#known-limitations).
+> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Known limitations](how-to-custom-oidc-federation-customers.md#known-limitations) in the custom OIDC federation article.
 
 **Why do I see a domain confirmation dialog when using domain_hint?**
 
