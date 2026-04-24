@@ -259,7 +259,7 @@ Global Secure Access supports network-based content filtering based on file type
 
 ---
 
-### General Availability GSA Cloud Firewall for Remote Networks
+### General Availability - GSA Cloud Firewall for Remote Networks
 
 **Type:** General Availability  
 **Service category:** Internet Access  
