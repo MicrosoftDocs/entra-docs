@@ -53,7 +53,7 @@ This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suit
 **Service category:** User Experience and Management  
 **Product capability:** User Authentication  
 
-In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview) - Microsoft Entra External ID | Microsoft Learn](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps)
+In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview) - Microsoft Entra External ID | Microsoft Learn](https://learn.microsoft.com/entra/external-id/customers/how-to-customize-branding-themes-apps)
 
 ---
 
