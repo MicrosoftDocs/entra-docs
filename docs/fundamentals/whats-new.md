@@ -321,7 +321,7 @@ Configurable token lifetime policies are now generally available in Microsoft En
 
   
 
-With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/configurable-token-lifetimes).
+With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](https://learn.microsoft.com/entra/identity-platform/configurable-token-lifetimes).
 
 ---
 
