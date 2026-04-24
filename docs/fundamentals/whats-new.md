@@ -90,16 +90,6 @@ The ability to use $count in sign-ins API requests is now here, allowing custome
 
 ---
 
-### Private Preview - User provisioning supports complex attribute calculations via Logic App extensibility
-
-**Type:** Private Preview  
-**Service category:** Provisioning  
-**Product capability:** Inbound to Entra ID  
-
-This feature enables admins to invoke custom code during the user provisioning process by allowing you to map an Azure Logic App to a target attribute. This opens up your ability to define complex attribute transformations beyond the basic transformations that we support today, so that you can fulfill scenarios such as generating a unique alias for newly hired employees before they onboard to the company
-
----
-
 ### Plan for change - Switch from basic auth to workload identity based auth for SAP SuccessFactors provisioning integrations
 
 **Type:** Plan for change  
