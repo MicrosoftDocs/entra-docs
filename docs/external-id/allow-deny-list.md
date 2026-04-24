@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 You can use an allowlist or a blocklist to allow or block invitations to B2B collaboration users from specific organizations. For example, if you want to block personal email address domains, you can set up a blocklist that contains domains like Gmail.com and Outlook.com. Or, if your business has a partnership with other businesses like Contoso.com, Fabrikam.com, and Litware.com, and you want to restrict invitations to only these organizations, you can add Contoso.com, Fabrikam.com, and Litware.com to your allowlist. 
 
-This article discusses two ways to configure an allow or blocklist for B2B collaboration:
+This article explains how to configure an allowlist or blocklist for B2B collaboration.
 
 - In the portal by configuring collaboration restrictions in your organization's [External collaboration settings](external-collaboration-settings-configure.md)
 
@@ -37,7 +37,7 @@ By default, the **Allow invitations to be sent to any domain (most inclusive)** 
 ### Add a blocklist
 
  
-This is the most typical scenario, where your organization wants to work with almost any organization, but wants to prevent users from specific domains to be invited as B2B users.
+This is the most common scenario, where your organization wants to work with almost any organization but wants to prevent users from specific domains from being invited as B2B users.
 
 To add a blocklist:
 
@@ -60,19 +60,19 @@ After you set the policy, if you try to invite a user from a blocked domain, you
 
 With this more restrictive configuration, you can set specific domains in the allowlist and restrict invitations to any other organizations or domains that aren't mentioned.
 
-If you want to use an allowlist, make sure that you spend time to fully evaluate what your business needs are. If you make this policy too restrictive, your users can choose to send documents over email, or find other non-IT sanctioned ways of collaborating.
+If you want to use an allowlist, take time to fully evaluate your business needs. If you make this policy too restrictive, users might send documents over email or use other unsanctioned ways to collaborate.
 
 
 To add an allowlist:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
 1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
-4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
-5. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
+1. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
+1. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
 
     :::image type="content" source="media/allow-deny-list/allow-list-settings.png" alt-text="Screenshot showing the allow option with added domains.":::
  
-6. When you're done, select **Save**.
+1. When you're done, select **Save**.
 
 After you set the policy, if you try to invite a user from a domain that's not on the allowlist, you receive a message saying that the domain of the user is currently blocked by your invitation policy.
 
