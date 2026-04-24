@@ -239,13 +239,13 @@ We are excited to announce the general availability of the iOS Global Secure Acc
 
 ---
 
-### General Availability of Entra CBA -Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups.
+### General Availability - Entra CBA Certificate Authority (CA) scoping
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-General Availability of Entra CBA -Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs. More information at [https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping)
+Entra CBA Certificate Authority (CA) scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs. More information at [https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping](https://learn.microsoft.com/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#certificate-authority-ca-scoping)
 
 ---
 
