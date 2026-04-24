@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/14/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Talentech so that I can streamline the user management process and ensure that users have the appropriate access to Talentech.
@@ -13,7 +13,6 @@ ms.custom: sfi-image-nochange
 # Configure Talentech for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Talentech and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Talentech](https://www.talentech.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
-
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -27,13 +26,13 @@ This article describes the steps you need to perform in both Talentech and Micro
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A user account in Talentech.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Talentech](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Talentech](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-talentech-to-support-provisioning-with-azure-ad'></a>
 
@@ -41,21 +40,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in [Talentech](https://www.talentech.com).
 
-2. Navigate to **Integrations** in the left panel and select **Add new integration**.
+1. Navigate to **Integrations** in the left panel and select **Add new integration**.
 
-	![Navigate](media/talentech-provisioning-tutorial/integrations.png)
+	![Screenshot of the Talentech integrations settings page.](media/talentech-provisioning-tutorial/integrations.png)
 
-3. Enter a **Name** for the integration and select **Add**.
+1. Enter a **Name** for the integration and select **Add**.
 
-4. Navigate to the integration you created and select **Create api-access token**.
+1. Navigate to the integration you created and select **Create api-access token**.
 
-	![api](media/talentech-provisioning-tutorial/token.png)
+	![Screenshot of the Talentech API access token page.](media/talentech-provisioning-tutorial/token.png)
 
-5. An access token is generated. This value is entered in the **Secret Token** field in the Provisioning tab of your Talentech application.
+1. An access token is generated. This value is entered in the **Secret Token** field in the Provisioning tab of your Talentech application.
 
-	![permanent](media/talentech-provisioning-tutorial/bearer.png)
+	![Screenshot of the generated Talentech bearer token.](media/talentech-provisioning-tutorial/bearer.png)
 
-6. Reach out to Talentech support to generate a Tenant URL. This value is entered in the **Tenant URL** field in the Provisioning tab of your Talentech application.
+1. Reach out to Talentech support to generate a Tenant URL. This value is entered in the **Tenant URL** field in the Provisioning tab of your Talentech application.
 
 <a name='step-3-add-talentech-from-the-azure-ad-application-gallery'></a>
 
@@ -73,38 +72,40 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-talentech-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Talentech in Microsoft Entra ID:
+### Configure automatic user provisioning for Talentech in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Talentech**.
 
-	![The Talentech link in the Applications list](common/all-applications.png)
+	![Screenshot of Talentech link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Talentech Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Talentech. If the connection fails, ensure your Talentech account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Talentech Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Talentech. If the connection fails, ensure your Talentech account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Talentech**.
+    ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Talentech for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Talentech API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Talentech for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Talentech API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -114,9 +115,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.givenName|String|
    |name.familyName|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Talentech**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Talentech for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Talentech for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
@@ -124,21 +125,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Talentech, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and groups that you would like to provision to Talentech by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
