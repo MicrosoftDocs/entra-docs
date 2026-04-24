@@ -1,11 +1,12 @@
 ---
-title: B2B Direct Connect Setup
+title: Set up B2B direct connect
 description: Learn how to configure B2B direct connect with other Microsoft Entra organizations, using cross-tenant access settings to manage outbound and inbound access.
 ms.topic: how-to
-ms.date: 07/07/2025
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
-#customer intent: As an IT admin managing cross-tenant collaboration with external organizations, I want to configure cross-tenant access settings for B2B direct connect, so that I can lets users from other Microsoft Entra tenants seamlessly sign in to my shared resources via Teams shared channels.
+# Customer intent: As an IT admin managing cross-tenant collaboration with external organizations, I want to configure cross-tenant access settings for B2B direct connect so that users from other Microsoft Entra tenants can seamlessly sign in to my shared resources via Teams shared channels.
 ---
 
 # Set up B2B direct connect with an external organization
@@ -24,7 +25,7 @@ Use cross-tenant access settings to manage how you collaborate with other Micros
 Learn more about using cross-tenant access settings to [manage B2B direct connect](b2b-direct-connect-overview.md#managing-cross-tenant-access-for-b2b-direct-connect).
 
 > [!IMPORTANT]
-> Microsoft is beginning to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you will be unable to make changes to your settings. If you're unable to make a change, you should wait a few moments and try the change again. Once the migration completes, [you'll no longer be capped with 25kb of storage space,](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
+> Microsoft began moving customers who use cross-tenant access settings to a new storage model on August 30, 2023. You might notice an audit log entry indicating that your cross-tenant access settings were updated as an automated task migrated your settings. For a brief window during migration processing, you might be unable to make changes to your settings. If you're unable to make a change, wait a few moments and then try again. After migration completes, [you are no longer capped at 25 KB of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-), and there are no limits on the number of partners you can add.
 
 ## Before you begin
 
@@ -36,7 +37,6 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 - To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
-
 
 Default cross-tenant access settings apply to all external organizations for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 
