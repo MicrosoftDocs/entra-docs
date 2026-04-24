@@ -299,7 +299,7 @@ The **License Usage** page in the Microsoft Entra admin center helps customers o
 
 ---
 
-### General Availability - Issuer Hints make Microsoft Entra CBA simpler, safer, and more user‑friendly by aligning certificate selection with your tenant’s trusted CAs.
+### General Availability - Issuer Hints for Microsoft Entra CBA
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
