@@ -1,8 +1,9 @@
 ---
 title: Plan a CIAM Deployment
 description: Discover the steps for setting up a customer identity and access management (CIAM) solution in an external tenant, including creating a tenant, registering apps, and setting up user flows for sign-in.
+ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 10/02/2025
+ms.date: 04/24/2026
 
 ms.custom: it-pro, seo-july-2024
 
@@ -60,7 +61,7 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 Before you register your app, decide how you want to build the sign-in experience. Microsoft Entra External ID supports two approaches:
 
-- **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers single sign-on (SSO), broad platform support, and lower maintenance. Microsoft manages the sign-in surface and security updates.
+- **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers broad platform support, cross-app single sign-on (SSO) through the system browser, and lower maintenance. Microsoft manages the sign-in surface and security updates.
 
 - **Native authentication** lets you build the sign-in UI experience directly into your app by using the MSAL SDK or native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
 
@@ -138,8 +139,6 @@ When planning for configuring company branding, language customizations, and cus
 - **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. Learn more about [adding your own business logic](concept-custom-extensions.md) with custom authentication extensions.
 
 - **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [available MFA authentication methods](concept-multifactor-authentication-customers.md).
-
-- **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
 - **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant.
 
