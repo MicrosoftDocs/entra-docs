@@ -279,7 +279,7 @@ Build secure sign‑in and sign‑up experiences for applications in Entra Exter
 
 ---
 
-### General Available - Enforce Conditional Access policies like MFA on every PIM activation
+### General Availability - Enforce Conditional Access policies like MFA on every PIM activation
 
 **Type:** General Availability  
 **Service category:** Privileged Identity Management  
