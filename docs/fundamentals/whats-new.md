@@ -159,7 +159,7 @@ This Workday connector update resolves termination processing delays observed fo
 
 ---
 
-### General Availability: Entra Certificate-based authentication (CBA) support on iOS and CBA as second factor.
+### General Availability - Entra Certificate-based authentication (CBA) support on iOS and CBA as second factor
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
