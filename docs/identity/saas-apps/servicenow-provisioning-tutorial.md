@@ -139,7 +139,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
   If you still can't resolve your problem, contact ServiceNow support, and ask them to turn on SOAP debugging to help troubleshoot. 
 
-- The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
+- The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allow list of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
 
 - Self-hosted ServiceNow instances aren't supported. 
 
