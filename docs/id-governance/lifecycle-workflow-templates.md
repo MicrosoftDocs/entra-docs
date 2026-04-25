@@ -32,8 +32,8 @@ The list of templates is as follows:
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
 - [Pre-Offboard inactive users](lifecycle-workflow-templates.md#pre-offboard-inactive-users)
 - [Offboard inactive users](lifecycle-workflow-templates.md#offboard-inactive-users)
-- [Transition agent sponsorships for leaver](lifecycle-workflow-templates.md#transition-agent-sponsorships-for-leaver)
-- [Transition agent sponsorships for mover](lifecycle-workflow-templates.md#transition-agent-sponsorships-for-mover)
+- [Transition agent sponsorships when a sponsor leaves](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-leaves)
+- [Transition agent sponsorships when a sponsor changes roles](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-changes-roles)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
@@ -264,11 +264,11 @@ The default specific parameters for the **Offboard inactive users** template are
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
 
-### Transition agent sponsorships for leaver
+### Transition agent sponsorships when a sponsor leaves
 
-The **Transition agent sponsorships for leaver** template is designed to configure tasks that transition agent sponsorships when a sponsor leaves the organization. This template is available for tenants with an A365 Assistive license.
+The **Transition agent sponsorships when a sponsor leaves** template is designed to configure tasks that transition agent sponsorships when a sponsor leaves the organization. This template is available for tenants with an A365 Assistive license.
 
-The default specific parameters for the **Transition agent sponsorships for leaver** template are as follows:
+The default specific parameters for the **Transition agent sponsorships when a sponsor leaves** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
@@ -281,11 +281,11 @@ The default specific parameters for the **Transition agent sponsorships for leav
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, **Transfer agent sponsorships to manager**     |  ✔️       |
 
-### Transition agent sponsorships for mover
+### Transition agent sponsorships when a sponsor changes roles
 
-The **Transition agent sponsorships for mover** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with an A365 Assistive license.
+The **Transition agent sponsorships when a sponsor changes roles** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with an A365 Assistive license.
 
-The default specific parameters for the **Transition agent sponsorships for mover** template are as follows:
+The default specific parameters for the **Transition agent sponsorships when a sponsor changes roles** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
