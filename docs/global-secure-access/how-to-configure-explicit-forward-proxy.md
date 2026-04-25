@@ -34,7 +34,7 @@ You can enable and manage EFP using the Microsoft Entra admin portal.
 1. Sign in to https://entra.microsoft.com
 1. Navigate to Global Secure Access > Session management and navigate to the Explicit Forward Proxy tab.
 1. Toggle the Internet Access setting to On. By default, Smart Session Management is enabled when you enable EFP.
-1. Optionally, enable HTTP Header Session Management. For more information, see [Configure HTTP Header Session management](how-to-configure-efp-header-session-management.md).
+1. Optionally, enable HTTP Header Session Management. For more information, see [Configure HTTP Header Session management](how-to-configure-explicit-forward-proxy-headers.md).
 
    :::image type="content" border="true" source="./media/how-to-configure-explicit-forward-proxy/enable-explicit-forward-proxy.png" alt-text="Screenshot of the Configure EFP screen." lightbox="./media/how-to-configure-explicit-forward-proxy/enable-explicit-forward-proxy.png":::
 
