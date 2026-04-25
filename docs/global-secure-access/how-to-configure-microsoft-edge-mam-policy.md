@@ -8,13 +8,7 @@ ms.author: alexpav
 author: idmdev
 ---
 
-# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy using Intune Mobile Application Management Policy
-
-## Limitations
-
-- This method to apply policy only works on Microsoft Edge for Windows.
-- If Mobile Device Management (MDM) is configured on the device, and the MDM policy has conflicting Microsoft Edge settings, the Mobile Application Management (MAM) policy isn't applied.
-
+# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy (preview) using Intune Mobile Application Management Policy
 
 ## Prerequisites
 
@@ -24,6 +18,10 @@ author: idmdev
 - Plaintext public key of the Transport Layer Security (TLS) inspection root certificate used when Microsoft Entra Internet Access TLS inspection was configured.
 
 ## Configuration
+
+> [!IMPORTANT]
+> The Explicit Forward Proxy feature is currently in PREVIEW.   
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -136,3 +134,8 @@ author: idmdev
 1. Once signed in, navigate to `edge://policy`. You should see the configured policy settings related to GSA EFP:
 
     ![Screenshot showing the edge://policy page with the configured GSA EFP policy settings.](media/how-to-configure-microsoft-edge-mam-policy/edge-policy-validation.png)
+
+## Limitations
+
+- This method to apply policy only works on Microsoft Edge for Windows.
+- If Mobile Device Management (MDM) is configured on the device, and the MDM policy has conflicting Microsoft Edge settings, the Mobile Application Management (MAM) policy isn't applied.

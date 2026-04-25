@@ -8,12 +8,14 @@ author: idmdev
 ms.reviewer: 
 ---
 
-# Explicit Forward Proxy Session Management
+# Explicit Forward Proxy (preview) Session Management
 
 Explicit Forward Proxy (EFP) uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic, allowing for adaptive politics in Microsoft Entra Conditional Access, modern credentials like passkeys, and Continuous Access Evaluation (CAE) with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
 
+
 > [!IMPORTANT]
-> We recommend that you enable a Conditional Access policy that only allows access to EFP from your trusted networks.
+> The Explicit Forward Proxy feature is currently in PREVIEW.   
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Session Management Settings
 
@@ -25,6 +27,10 @@ EFP supports smart session management (enabled by default), HTTP header-based se
 | Can be disabled | No | Yes | Yes |
 | Supports User Profile Assignments | No | Yes | Yes |
 | Relies on EFP-based PAC hosting | No | Yes | No |
+
+
+> [!IMPORTANT]
+> We recommend that you enable a Conditional Access policy that only allows access to EFP from your trusted networks.
 
 ## EFP Smart Session Management
 
