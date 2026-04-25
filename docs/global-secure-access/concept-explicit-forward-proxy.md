@@ -8,10 +8,14 @@ author: idmdev
 ms.reviewer: 
 ---
 
-# Explicit Forward Proxy Overview
+# Explicit Forward Proxy (preview) Overview
 
 Explicit Forward Proxy (EFP) is one of the traffic acquisition mechanisms that's useful in scenarios where installation of the Global Secure Access (GSA) client is difficult or not possible. EFP is an effective mechanism to protect internet traffic when users use browsers to access resources from multi-session Virtual Desktop Infrastructure (VDI), from browsers on Linux desktops, or on lightly managed devices.
 EFP relies on proxy automatic configuration (PAC) files to configure browsers for Microsoft Entra Internet Access connectivity. HTTP CONNECT protocol is used to facilitate network communication between the end user and the Microsoft Entra Internet Access service. Microsoft Entra ID and Microsoft Entra Conditional Access are used to authenticate and authorize user access to internet resources.
+
+> [!IMPORTANT]
+> The Explicit Forward Proxy feature is currently in PREVIEW.   
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Traffic Flow
  
