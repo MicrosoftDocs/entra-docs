@@ -36,7 +36,7 @@ You can enable and manage EFP using the Microsoft Entra admin portal.
 1. Toggle the Internet Access setting to On. By default, Smart Session Management is enabled when you enable EFP.
 1. Optionally, enable HTTP Header Session Management. For more information, see [Configure HTTP Header Session management](how-to-configure-efp-header-session-management.md).
 
-   :::image type="content" border="true" source="./media/how-to-configure-explicit-forward-proxy/enable-efp.png" alt-text="Screenshot of the Configure EFP screen." lightbox="./media/how-to-configure-explicit-forward-proxy/enable-efp.png":::
+   :::image type="content" border="true" source="./media/how-to-configure-explicit-forward-proxy/enable-explicit-forward-proxy.png" alt-text="Screenshot of the Configure EFP screen." lightbox="./media/how-to-configure-explicit-forward-proxy/enable-explicit-forward-proxy.png":::
 
 > [!IMPORTANT]
 > EFP session management relies on IP affinity as one of the session management anchors. We recommend that you configure a Conditional Access policy that restricts the use of EFP to networks you trust. For more information, please see EFP Session Management and Configure Conditional Access Policy for EFP.
@@ -44,5 +44,5 @@ You can enable and manage EFP using the Microsoft Entra admin portal.
 ## Next Steps
 
 [Configure Conditional Access Policy for Explicit Forward Proxy](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
-[Configure HTTP Header Session management](how-to-configure-efp-header-session-management.md)
-[Configure EFP in Microsoft Edge using Intune Mobile Application Management (MAM)](how-to-configure-efp-with-edge-and-intune.md)
+[Configure HTTP Header Session management](how-to-configure-explicit-forward-proxy-headers.md)
+[Configure EFP in Microsoft Edge using Intune Mobile Application Management (MAM)](how-to-configure-explicit-forward-proxy-intune-policy.md)

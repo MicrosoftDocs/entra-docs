@@ -36,11 +36,24 @@ Explicit Forward Proxy (EFP) for Microsoft Entra Internet Access relies on IP af
 1. Toggle the **Enable policy control** to **On** and select the **Create** button.
 
 > [!Note]
-> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group.
 
 
 ## Assigning Security Profiles to EFP
 
-Security profiles are assigned using Microsoft Entra Conditional Access policies. You can assign policies to EFP using either the ‘All internet resources with Global Secure Access’ resource assignment (if your security profiles are the same for EFP as they are for the Global Secure Access client), or by explicitly targeting the GSA-ExplicitForwardProxy workload identity (if your security profiles for EFP and GSA Client scenarios are different).
-To configure the policy, follow https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-web-content-filtering?tabs=microsoft-entra-admin-center#create-and-link-conditional-access-policy 
+Security profiles are assigned using Microsoft Entra Conditional Access policies. You can assign policies to EFP by explicitly targeting the GSA-ExplicitForwardProxy workload identity.
 
+> [!Note]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group.
+
+1. Navigate to the Microsoft Entra admin center. Under **Entra ID**, select  **Conditional Access**. Then, select **+Create new policy**.
+1. Give the policy a name that aligns with your organization’s policy naming standards. For example, **GSA – Explicit Forward Proxy Security Profile**.
+1. Under Assignments, select **Users and Groups**. You can scope the policy to apply to all users, or create multiple policies to assign different security profiles to different groups of users. Configure exceptions (for example, your break-glass accounts) as necessary on the Exclude tab.
+1. Under Target Resources, select **Select resources** radio button, and then **Select specific resources**. Search for **GSA-ExplicitForwardProxy** workload identity and select it.
+1. On the **Session** tab of the new policy, select **Use Global Secure Access security profile**. You don't have to configure the **Grant** section.
+1. Toggle the **Enable policy control** to **On** and select the **Create** button.
+
+## Next steps
+
+[EFP Session Management](concept-explicit-forward-proxy-session-management.md)
+[Configure Web Filtering Policies](how-to-configure-web-content-filtering.md)

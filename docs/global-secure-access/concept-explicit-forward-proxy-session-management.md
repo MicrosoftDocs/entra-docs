@@ -21,7 +21,7 @@ Explicit Forward Proxy (EFP) uses Microsoft Entra ID authentication and authoriz
 
 EFP supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Different capabilities available with different affinity methods:
 
-| | IP affinity | Session ID	| HTTP header |
+| Capability | IP affinity | Session ID	| HTTP header |
 | --- | --- | --- | --- |
 | Enabled by default | Yes | Yes | No |
 | Can be disabled | No | Yes | Yes |

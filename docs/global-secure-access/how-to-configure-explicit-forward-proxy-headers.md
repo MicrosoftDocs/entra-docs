@@ -32,4 +32,4 @@ You can configure Explicit Forward Proxy (preview) to rely on the private IP add
 >Don't skip the Conditional Access policy step. HTTP headers can be easily manipulated and as such, it's essential that x-ms-gsa-efp-forwarded-for is only sent from networks that you trust.
 
 ## Next Steps
-[Learn about Explicit Forward Proxy Session Management Concepts](concept-efp-session-management.md)
+[Learn about Explicit Forward Proxy Session Management Concepts](concept-explicit-forward-proxy-session-management.md)
