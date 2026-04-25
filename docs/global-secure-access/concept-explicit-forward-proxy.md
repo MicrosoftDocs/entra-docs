@@ -68,7 +68,7 @@ EFP supports Continuous Access Evaluation (CAE). With CAE, user’s EFP session 
 
 ## Next Steps
 
-- [Learn about Explicit Forward Proxy Session Management Concepts](concept-efp-session-management.md)
-- [Learn about Proxy Automatic Configuration (PAC)](concept-pac-files.md)
+- [Learn about Explicit Forward Proxy Session Management Concepts](concept-explicit-forward-proxy-session-management.md)
+- [Learn about Proxy Automatic Configuration (PAC)](concept-proxy-automatic-configuration-files.md)
 - [Learn how to configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)
-- [Learn how to configure HTTP Header session management](how-to-configure-efp-header-session-management.md)
+- [Learn how to configure HTTP Header session management](how-to-configure-explicit-forward-proxy-headers.md)
