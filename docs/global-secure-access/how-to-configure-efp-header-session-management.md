@@ -10,7 +10,11 @@ ms.reviewer:
 
 # HTTP Header Session Management
 
-You can configure Explicit Forward Proxy (EFP) to rely on the private IP addresses of devices on your network to associate authenticated users with their devices. To use HTTP header session management with EFP, you need to securely communicate the private IP address of the device with the EFP service.
+> [!IMPORTANT]
+> The Explicit Forward Proxy feature is currently in PREVIEW.   
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+You can configure Explicit Forward Proxy (preview) to rely on the private IP addresses of devices on your network to associate authenticated users with their devices. To use HTTP header session management with Explicit Forward Proxy (EFP), you need to securely communicate the private IP address of the device with the EFP service.
 
 ## Prerequisites
 - The account used to configure HTTP Header Session Management has an active Global Secure Access Administrator role assignment.
