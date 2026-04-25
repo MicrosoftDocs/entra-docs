@@ -8,9 +8,9 @@ author: idmdev
 ms.reviewer: 
 ---
 
-# Introduction to PAC Files
+# Introduction to Proxy Automatic Configuration (PAC) Files
 
-A Proxy Auto-Configuration (PAC) file is a mechanism used to automatically determine which proxy server a web browser or application should use for a given request. PAC files are an integral part of Explicit Forward Proxy configuration, enabling flexible and dynamic traffic steering decisions. In the context of Global Secure Access, PAC files are similar to the traffic forwarding policies of the GSA client.
+A PAC file is a mechanism used to automatically determine which proxy server a web browser or application should use for a given request. PAC files are an integral part of Explicit Forward Proxy configuration, enabling flexible and dynamic traffic steering decisions. In the context of Global Secure Access, PAC files are similar to the traffic forwarding policies of the GSA client.
 
 ## How PAC Files Work
 
@@ -41,3 +41,4 @@ The mechanism for applying PAC file settings varies depending on device manageme
 ## Next Steps
 
 [Learn How to Configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)
+[Configure Microsoft Edge MAM policy for explicit forward proxy](how-to-configure-explicit-forward-proxy-intune-policy.md)
