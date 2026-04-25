@@ -1,11 +1,12 @@
 ---
 title: 'Quickstart: Add a guest user and send an invitation'
 description: Use this quickstart to learn how Microsoft Entra admins can add B2B guest users in the Microsoft Entra admin center and walk through the B2B invitation workflow.
-ms.date: 12/05/2025
+ms.date: 04/24/2026
 ms.topic: quickstart
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: it-pro, mode-ui, sfi-image-nochange
-#Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
+# Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---
 
 # Quickstart: Add a guest user and send an invitation
@@ -21,8 +22,8 @@ This guide provides the basic steps to invite an external user. To learn about a
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 > [!NOTE]
-> B2B invitation emails originating from Onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting Onmicrosoft Domain Usage for Sending Emails](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
-> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](~/fundamentals/add-custom-domain.md).
+> B2B invitation emails that originate from onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting onmicrosoft domain usage for sending emails](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
+> Consider updating to a custom domain if you need higher limits. For more information, see [Add your custom domain name to your tenant](~/fundamentals/add-custom-domain.md).
 
 ## Prerequisites
 
@@ -33,7 +34,6 @@ To complete the scenario in this quickstart, you need:
 - Access to a valid email address outside of your Microsoft Entra tenant, such as a separate work, school, or social email address. You'll use this email to create the guest account in your tenant directory and access the invitation.
 
 ## Invite an external guest user
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
@@ -53,7 +53,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 
 - **Display name**: Provide the display name.
 
--  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and another CC recipient.
+- **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When you enable this checkbox, you can also set up a customized short message and another CC recipient.
 
 :::image type="content" source="media/quickstart-add-users-portal/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 

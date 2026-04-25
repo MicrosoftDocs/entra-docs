@@ -1,9 +1,10 @@
 ---
-title: 'Tutorial - multifactor authentication for B2B'
+title: 'Tutorial: Multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
 ms.topic: tutorial
-ms.date: 04/28/2025
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
@@ -24,8 +25,8 @@ Example:
 1. The user is asked to complete an MFA challenge. 
 1. The user sets up MFA with Company A and chooses their MFA option. The user is allowed access to the application.
 
->[!NOTE]
->Microsoft Entra multifactor authentication is done at resource tenancy to ensure predictability. When the guest user signs in, they see the resource tenant sign-in page displayed in the background, and their own home tenant sign-in page and company logo in the foreground.
+> [!NOTE]
+> Microsoft Entra multifactor authentication is performed by the resource tenant to ensure predictability. When the guest user signs in, they see the resource tenant sign-in page displayed in the background, and their own home tenant sign-in page and company logo in the foreground.
 
 In this tutorial, you will:
 
