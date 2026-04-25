@@ -3,7 +3,7 @@ title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 04/25/2026
 ms.custom: sfi-image-nochange
 #Customer Intent: As an IT admin, I want to understand lifecycle workflow task definitions and parameters so that I can configure workflow tasks correctly.
 ---
