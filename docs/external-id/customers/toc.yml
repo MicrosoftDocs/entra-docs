@@ -387,7 +387,7 @@ items:
         - name: Language-specific branding
           href: how-to-customize-languages-customers.md
       - name: Branding themes
-        href: how-to-customize-branding-themes-apps.md
+        href: /entra/fundamentals/how-to-customize-branding-themes-apps?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Customize attribute collection
       items:
         - name: Collect custom user attributes during sign-up
