@@ -266,7 +266,7 @@ This result happens when the `OData-Version: 4.0` header is missing or the `@oda
 The blueprint principal must be created as a separate step after the blueprint. Run:
 
 ```http
-POST https://graph.microsoft.com/beta/serviceprincipals/graph.agentIdentityBlueprintPrincipal
+POST https://graph.microsoft.com/beta/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal
 OData-Version: 4.0
 Content-Type: application/json
 

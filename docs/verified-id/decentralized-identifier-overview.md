@@ -30,7 +30,7 @@ Microsoft is actively collaborating with members of the Decentralized Identity F
 * [W3C Decentralized Identifiers](https://www.w3.org/TR/did-core/)
 * [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model/)
 * [DIF Sidetree](https://identity.foundation/sidetree/spec/)
-* [DIF Well Known DID Configuration](https://identity.foundation/specs/did-configuration/)
+* [DIF Well Known DID Configuration](https://identity.foundation/well-known-did-configuration/resources/did-configuration/)
 * [DIF DID-SIOP](https://identity.foundation/did-siop/)
 * [DIF Presentation Exchange](https://identity.foundation/presentation-exchange/)
 

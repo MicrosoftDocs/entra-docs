@@ -25,7 +25,7 @@ You can find more information on privileged built-in roles in the [roles referen
 
 
 > [!NOTE]
-> Assigning a Microsoft Entra role to a catalog automatically changes its [privilege level](entitlement-management-catalog-create.md#catalog-privilege-levels-preview) to **Privileged**.
+> Assigning a Microsoft Entra role to a catalog can change its access and governance controls.
 
 ## Scenarios for Microsoft Entra role assignment using access packages
 

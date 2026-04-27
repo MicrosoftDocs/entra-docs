@@ -9,7 +9,7 @@ ms.reviewer: etbasser
 
 # ID Protection for agents (Preview)
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md) platform.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ In the risky agent report, select an entry to view the full details including th
 - Risk state and risk level
 - Agent type and sponsors (if specified)
 
-You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. 
+You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. Risk detections are retained for up to 90 days for investigation purposes.
 
 :::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agent details." lightbox="media/concept-risky-agents/risky-agent-details.png":::
 
@@ -80,3 +80,9 @@ You can also query risky agents [using the Microsoft Graph API](/graph/use-the-a
 
    - `riskyAgents`
    - `agentRiskDetections`
+
+## Related content
+
+- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
+- [Conditional Access for Agent ID](../identity/conditional-access/agent-id.md) - Enforce Zero Trust policies across agent identity token acquisition flows.
+- [Governing Agent Identities](../id-governance/agent-id-governance-overview.md) - Preventive governance approaches including access packages and sponsor oversight.

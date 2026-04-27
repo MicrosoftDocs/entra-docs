@@ -52,12 +52,12 @@ The assignmentRequired property on an application or agent identity determines w
 
 ## Why use assignmentRequired?
 
-Here are reasons why you might use the assignmentRequired property:
+You might use the assignmentRequired property for the following reasons:
 
 - Enforces least privilege by requiring explicit assignment.
 - Prevents accidental access by users or agents who weren't intended to use the agent.
 
-Enable `assignmentRequired` for sensitive agent applications to enforce explicit role assignment and ensure only authorized principals can access critical agent functionality. If users can access an application without explicit assignment, it indicates that `assignmentRequired` is set to `false`. Change this setting to true and assign roles explicitly to maintain security controls.
+Enable `assignmentRequired` for sensitive agent identity blueprints to enforce explicit role assignment and ensure only authorized principals can access critical agent functionality. If users can access an application without explicit assignment, it indicates that `assignmentRequired` is set to `false`. Change this setting to true and assign roles explicitly to maintain security controls.
 
 ## Configure assignmentRequired
 
@@ -73,7 +73,7 @@ Authorization: Bearer <token>
 }
 ```
 
-The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent application, enforcing least privilege and preventing accidental access.
+The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent identity blueprint, enforcing least privilege and preventing accidental access.
 
 ## Assign app roles to control access
 

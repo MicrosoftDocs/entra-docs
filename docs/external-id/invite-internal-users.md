@@ -1,10 +1,11 @@
 ---
 title: Invite internal users to B2B collaboration
-description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can change to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials or sign-in. Use either PowerShell or the Microsoft Graph invitation API.
+description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can move to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials. Use either PowerShell or the Microsoft Graph invitation API.
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 04/17/2026
 ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 ---
 
@@ -14,7 +15,7 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 
 Before the availability of Microsoft Entra B2B collaboration, organizations could collaborate with distributors, suppliers, vendors, and other guest users by setting up internal credentials for them. If you have internal guest users like these, you can invite them to use B2B collaboration instead. These B2B guest users are able to sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 
-Sending an invitation to an existing internal account lets you retain that user’s object ID, User Principal Name (UPN), group memberships, and app assignments. You don’t need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
+Sending an invitation to an existing internal account lets you retain that user's object ID, user principal name (UPN), group memberships, and app assignments. You don't need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user's email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resource services by using B2B credentials.
 
 ## Things to consider
 
@@ -45,14 +46,14 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 1. Find the user in the list or use the search box. Then select the user.
 1. In the **Overview** tab, under **My Feed**, select **Convert to external user**. 
 
-    :::image type="content" source="media/invite-internal-users/manage-b2b-collaboration-link.png" alt-text="Screenshot of user profile Overview tab with B2B collaboration card.":::
+    :::image type="content" source="media/invite-internal-users/manage-b2b-collaboration-link.png" alt-text="Screenshot of a user profile Overview tab in the Microsoft Entra admin center, with the Convert to external user action shown in the B2B collaboration card.":::
 
    > [!NOTE] 
    > If the card says "Resend this B2B user's invitation or reset their redemption status." the user has already been invited to use external credentials for B2B collaboration.
 
 1. Add an external email address and select **Send**. 
 
-    :::image type="content" source="media/invite-internal-users/invite-internal-user-selector.png" alt-text="Screenshot showing the convert to external user page.":::
+    :::image type="content" source="media/invite-internal-users/invite-internal-user-selector.png" alt-text="Screenshot of the Convert to external user pane where an external email address is entered before sending the invitation.":::
 
    > [!NOTE]
    > If the option is unavailable, make sure the user's **Email** property is set to the external email address they should use for B2B collaboration.
@@ -65,7 +66,7 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
-Connect-MgGraph -Scopes "User.ReadWrite.All"
+Connect-MgGraph -Scopes "User.Invite.All","User.ReadWrite.All"
 $msGraphUser = Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
 New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```
@@ -77,7 +78,7 @@ The sample below illustrates how to call the invitation API to invite an interna
 ```json
 POST https://graph.microsoft.com/v1.0/invitations
 Authorization: Bearer eyJ0eX...
-ContentType: application/json
+Content-Type: application/json
 {
     "invitedUserEmailAddress": "<<external email>>",
     "sendInvitationMessage": true,
@@ -93,7 +94,7 @@ ContentType: application/json
         ],
         "customizedMessageBody": "<<custom message>>"
     },
-    "inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=",
+    "inviteRedirectUrl": "https://myapps.microsoft.com?tenantId=<tenant-id>",
     "invitedUser": {
         "id": "<<ID for the user you want to convert>>"
     }
