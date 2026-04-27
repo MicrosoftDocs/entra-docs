@@ -63,20 +63,35 @@ In Entra tenants, customers can create a single, tenant-wide, customized brandin
 **Service category:** Provisioning  
 **Product capability:** Outbound to SaaS Applications  
 
-The Microsoft Entra team is preparing to conduct a security-related service change where customers will transition from using the OAuth 2.0 Authorization Code grant for SCIM provisioning applications to one of two modern authentication methods: OAuth 2.0 Client Credentials or workload identity federation.
+**What is changing**
 
-**What’s changing**
 
-*   Over the next few months, SCIM provisioning applications that rely on the OAuth 2.0 Authorization Code grant authentication method will be updated to use OAuth 2.0 Client Credentials or workload identity federation.
-*   There may be a small number of SCIM provisioning applications that are unable to migrate to a modern authentication method. These applications will be retired from the Microsoft Entra app gallery.
-*   Given this service change, we recommend that customers refrain from creating new provisioning jobs that rely on the OAuth 2.0 Authorization Code grant authentication method.
+*   Affected SCIM provisioning applications will be updated to support modern authentication methods.
+*   Existing provisioning jobs will not switch automatically. Customers will need to update job configuration after the new method is available.
+*   A small number of applications that cannot support a modern method may be retired from the Microsoft Entra app gallery.
 
-**With this change**
+**When this is changing**
 
-*   For updated applications, customers will be asked to update the configuration of affected provisioning jobs to use a modern authentication method (for retired applications, customers may need to migrate off these applications fully).
-*   By switching to a modern authentication method, customers will be provided with a more secure authentication experience—it will be easier than ever for customers to manage credentials, rotate credentials, etc.
 
-Please keep an eye on our monthly What’s new articles and the M365 Message Center for updates. This is where we will release further announcements on the service change, impacted applications, deadlines for customers to complete the service change, references to documentation, etc.
+This change will roll out over the coming months, and timing will vary by application. We will share impacted applications, customer deadlines, and supporting documentation through monthly What’s new articles and the Microsoft 365 Message Center.
+
+**Why this is changing**
+
+
+This update strengthens the security of Microsoft Entra provisioning integrations by moving away from older authentication patterns. Modern methods are better suited for service-to-service scenarios and can reduce credential management overhead, including the need to rotate shared secrets.
+
+**Action required from customers**
+
+
+*   Identify existing provisioning jobs that use the OAuth 2.0 Authorization Code grant.
+*   Watch for announcements about affected applications and availability of updated authentication methods.
+*   Update and test provisioning job configuration when your application supports a modern authentication method.
+*   If an application is retired, plan to migrate to a supported alternative.
+
+**Stay informed**
+
+
+Please monitor monthly What’s new articles and the Microsoft 365 Message Center for future announcements, migration guidance, deadlines, and documentation.
 
 ---
 
