@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **SmartFile**.
 
-	![The SmartFile link in the Applications list](common/all-applications.png)
+	![Screenshot of the SmartFile link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -110,17 +110,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SmartFile for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SmartFile API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![SmartFile User Attributes](media/smartfile-provisioning-tutorial/userattribute.png)
+	![Screenshot of SmartFile user attribute mappings configuration.](media/smartfile-provisioning-tutorial/userattribute.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SmartFile for update operations. Select the **Save** button to commit any changes.
 
-	![SmartFile Group Attributes](media/smartfile-provisioning-tutorial/groupattribute.png)
+	![Screenshot of SmartFile group attribute mappings configuration.](media/smartfile-provisioning-tutorial/groupattribute.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

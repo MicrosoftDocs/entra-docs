@@ -70,7 +70,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 1. In the applications list, select **Slack**.
 
-	![The Slack link in the Applications list](common/all-applications.png)
+	![Screenshot of the Slack link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -84,7 +84,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the new window, sign into Slack using your Team Admin account. in the resulting authorization dialog, select the Slack team that you want to enable provisioning for, and then select **Authorize**. Once completed, return to the Azure portal to complete the provisioning configuration.
+1. In the new window, sign into Slack using your Team Admin account. In the resulting authorization dialog, select the Slack team that you want to enable provisioning for, and then select **Authorize**. Once completed, return to the Microsoft Entra admin center to complete the provisioning configuration.
 
     ![Authorization Dialog](./media/slack-provisioning-tutorial/slackauthorize.png)
 
@@ -94,7 +94,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

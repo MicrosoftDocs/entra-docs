@@ -67,7 +67,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab.](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application management menu.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       Example: 
 
-      *`https://sas.viya.example.com/identities/scim/v2`.
+      `https://sas.viya.example.com/identities/scim/v2`
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
