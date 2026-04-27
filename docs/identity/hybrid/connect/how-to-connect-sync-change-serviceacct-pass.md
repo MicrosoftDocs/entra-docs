@@ -57,27 +57,27 @@ If you need to abandon the encryption key, use the following procedures to accom
 
 5. [Reinitialize the password of the Entra ID Connector account](#reinitialize-the-password-of-the-entra-id-connector-account)
 
-<br><nbsp>
-
+  
+  
 #### 1. Stop the Synchronization Service
 First you can stop the service in the Windows Service Control Manager.  Make sure that the service isn't running when attempting to stop it.  If it is, wait until it completes and then stop it.
 
 
-1. Go to Windows Service Control Manager (START → Services).
-2. Select **Microsoft Entra ID Sync** and click Stop.
+1.1. Go to Windows Service Control Manager (START → Services).
+1.2. Select **Microsoft Entra ID Sync** and click Stop.
 
   
   
 #### 2. Abandon the existing encryption key
 Abandon the existing encryption key so that new encryption key can be created:
 
-1. Sign in to your Microsoft Entra Connect Server as administrator.
+2.1. Sign in to your Microsoft Entra Connect Server as administrator.
 
-2. Start a new PowerShell session.
+2.2. Start a new PowerShell session.
 
-3. Navigate to folder: `'$env:ProgramFiles\Microsoft Azure AD Sync\bin\'`
+2.3. Navigate to folder: `'$env:ProgramFiles\Microsoft Azure AD Sync\bin\'`
 
-4. Run the command: `./miiskmu.exe /a`
+2.4. Run the command: `./miiskmu.exe /a`
 
 ![Screenshot that shows PowerShell after running the command.](./media/how-to-connect-sync-change-serviceacct-pass/key5.png)
 
@@ -87,37 +87,37 @@ Abandon the existing encryption key so that new encryption key can be created:
 Now that the Synchronization Service has access to the encryption key and all the passwords it needs, you can restart the service in the Windows Service Control Manager:
 
 
-1. Go to Windows Service Control Manager (START → Services).
-2. Select **Microsoft Entra ID Sync** and click Restart.
+3.1. Go to Windows Service Control Manager (START → Services).
+3.2. Select **Microsoft Entra ID Sync** and click Restart.
 
   
   
 #### 4. Provide the password of the AD DS Connector account
 As the existing passwords stored inside the database can no longer be decrypted, you need to provide the Synchronization Service with the password of the AD DS Connector account. The Synchronization Service encrypts the passwords using the new encryption key:
 
-1. Start the Synchronization Service Manager (START → Synchronization Service).
+4.1. Start the Synchronization Service Manager (START → Synchronization Service).
 </br>![Sync Service Manager](./media/how-to-connect-sync-change-serviceacct-pass/startmenu.png)  
-2. Go to the **Connectors** tab.
-3. Select the **AD Connector** that corresponds to your on-premises AD. If you have more than one AD connector, repeat the following steps for each of them.
-4. Under **Actions**, select **Properties**.
-5. In the pop-up dialog, select **Connect to Active Directory Forest**:
-6. Enter the password of the AD DS connector account in the **Password** textbox. If you don't know its password, you must set it to a known value before performing this step.
-7. Click **OK** to save the new password and close the pop-up dialog.
+4.2. Go to the **Connectors** tab.
+4.3. Select the **AD Connector** that corresponds to your on-premises AD. If you have more than one AD connector, repeat the following steps for each of them.
+4.4. Under **Actions**, select **Properties**.
+4.5. In the pop-up dialog, select **Connect to Active Directory Forest**:
+4.6. Enter the password of the AD DS connector account in the **Password** textbox. If you don't know its password, you must set it to a known value before performing this step.
+4.7. Click **OK** to save the new password and close the pop-up dialog.
 ![Screenshot that shows the "Connect to Active Directory Forest" page in the "Properties" window.](./media/how-to-connect-sync-change-serviceacct-pass/key6.png)
 
   
   
 #### 5. Reinitialize the password of the Entra ID Connector account
 
-You can't directly provide the password of the Microsoft Entra Id connector account to the Synchronization Service. Instead, you need to use the cmdlet **Add-ADSyncAADServiceAccount** to reinitialize the Microsoft Entra Id Connector account. The cmdlet resets the account password and makes it available to the Synchronization Service:
+You can't directly provide the password of the Microsoft Entra ID connector account to the Synchronization Service. Instead, you need to use the cmdlet **Add-ADSyncAADServiceAccount** to reinitialize the Microsoft Entra ID Connector account. The cmdlet resets the account password and makes it available to the Synchronization Service:
 
-1. Sign in to the Microsoft Entra Connect Sync server and open PowerShell.
-2. To provide the Microsoft Entra Id Global Administrator credentials, run `$credential = Get-Credential`.
-3. Run the cmdlet `Add-ADSyncAADServiceAccount -AADCredential $credential`.
+5.1. Sign in to the Microsoft Entra Connect Sync server and open PowerShell.
+5.2. To provide the Microsoft Entra ID Global Administrator credentials, run `$credential = Get-Credential`.
+5.3. Run the cmdlet `Add-ADSyncAADServiceAccount -AADCredential $credential`.
  
    If the cmdlet is successful, the PowerShell command prompt appears. 
    
-The cmdlet resets the password for the Entra Id Connector account and updates it in Microsoft Entra ID and the Synchronization Service.
+The cmdlet resets the password for the Entra ID Connector account and updates it in Microsoft Entra ID and the Synchronization Service.
 
 
 
