@@ -296,7 +296,7 @@ Generally available feature for configuring reauthentication with Conditional Ac
 **Service category:** Reporting  
 **Product capability:** Monitoring & Reporting  
 
-The **License Usage** page in the Microsoft Entra admin center helps customers optimize their Entra licenses by providing visibility into feature usage across their tenant. It shows how many Entra ID P1, P2, and Suite licenses you own, along with usage of key features such as Conditional Access and risk‑based Conditional Access mapped to each license type. You can also review usage trends over the past six months. This view gives you a clearer understanding of your license footprint, the value you’re deriving from Entra, and potential over‑usage risks within your tenant.
+The **License Usage** page in the Microsoft Entra admin center helps customers optimize their Entra licenses by providing visibility into feature usage across their tenant. It shows how many Entra ID P1, P2, and Suite licenses you own, along with usage of key features such as Conditional Access and risk‑based Conditional Access mapped to each license type. You can also review usage trends over the past six months. This view gives you a clearer understanding of your license footprint, the value you’re deriving from Entra, and potential over‑usage risks within your tenant. For more information, see: [Microsoft Entra license usage insights](../fundamentals/concept-license-usage-insights.md).
 
 ---
 
