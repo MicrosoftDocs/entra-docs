@@ -28,7 +28,7 @@ The syntax for Expressions for Attribute Mappings is reminiscent of Visual Basic
 
 ## List of Functions
 
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [AppRoleAssignmentsComplex](#approleassignmentscomplex) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [CDate](#cdate) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateAdd](#dateadd) &nbsp;&nbsp;&nbsp;&nbsp; [DateDiff](#datediff) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) &nbsp;&nbsp;&nbsp;&nbsp;[IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp;[InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Len](#len) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) &nbsp;&nbsp; &nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Now](#now) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [RandomString](#randomstring) &nbsp;&nbsp;&nbsp;&nbsp; [Redact](#redact) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [AppRoleAssignmentsComplex](#approleassignmentscomplex) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [CDate](#cdate) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateAdd](#dateadd) &nbsp;&nbsp;&nbsp;&nbsp; [DateDiff](#datediff) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[DefaultDomain](#defaultdomain) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) &nbsp;&nbsp;&nbsp;&nbsp;[IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp;[InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Len](#len) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) &nbsp;&nbsp; &nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Now](#now) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [RandomString](#randomstring) &nbsp;&nbsp;&nbsp;&nbsp; [Redact](#redact) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
 
 ---
 ### Append
@@ -368,6 +368,28 @@ The DateFromNum function converts a value in AD's date format to a DateTime type
 Returns a DateTime representing January 1, 2012 at 11:00PM.
 
 ---
+### DefaultDomain
+**Function:** 
+DefaultDomain()
+
+**Description:** 
+Returns the name of the default verified domain for the current Microsoft Entra tenant. The default verified domain is the domain in the tenant's list of verified domains that is marked as the default. If no default verified domain is found, the function returns an error.
+
+This function takes no input parameters.
+
+**Parameters:** 
+
+| Name | Required/ Repeating | Type | Notes |
+| --- | --- | --- | --- |
+| *None* | | | This function doesn't accept any parameters. |
+
+**Example:**
+
+To generate a user principal name using the tenant's default domain:
+
+`Join("@", [mailNickname], DefaultDomain())`
+
+---
 ### FormatDateTime
 **Function:** 
 FormatDateTime(source, dateTimeStyles, inputFormat, outputFormat)
@@ -434,6 +456,9 @@ Let's say the SuccessFactors attribute *prefix* is mapped to the on-premises Act
 `IgnoreFlowIfNullOrEmpty(Switch([prefix], "", "3443", "Dr.", "3444", "Prof.", "3445", "Prof. Dr."))` <br>
 The above expression first evaluates the [Switch](#switch) function. If the *prefix* attribute doesn't have any of the values listed within the *Switch* function, then ** returns an empty string and the attribute *personalTitle* is not included in the provisioning flow to on-premises Active Directory.
 
+> [!IMPORTANT]
+> Don't use IgnoreFlowIfNullOrEmpty as the condition argument to [IIF](#iif). It's a flow control wrapper, not a boolean condition. If you need both behaviors, wrap the full IIF expression with IgnoreFlowIfNullOrEmpty: `IgnoreFlowIfNullOrEmpty(IIF(...))`.
+
 ---
 ### IIF
 **Function:** 
@@ -475,7 +500,10 @@ This section includes limitations and workarounds for the IIF function. For info
      * `IIF(IsNullOrEmpty([country]),"Other",[country])`
      * `IIF(IsPresent([country]),[country],"Other")`
    * Recommended workaround: Use the [Switch](#switch) function to check for empty/null values. Example: If country attribute is empty, set value "Other". If it's present, pass the country attribute value to target attribute. 
-     * `Switch([country],[country],"","Other")` 
+     * `Switch([country],[country],"","Other")`
+* Don't use [IgnoreFlowIfNullOrEmpty](#ignoreflowifnullorempty) as the condition argument to IIF. IgnoreFlowIfNullOrEmpty is a flow control wrapper, not a boolean condition, and doesn't produce a value that IIF can compare. If you need both behaviors, wrap the full IIF expression with IgnoreFlowIfNullOrEmpty.
+   * Unsupported: `IIF(IgnoreFlowIfNullOrEmpty([country]),[country],"Other")`
+   * Supported: `IgnoreFlowIfNullOrEmpty(IIF([country]="USA",[region],""))`
 <br>   
 ---
 ### InStr
@@ -557,7 +585,18 @@ If the expression evaluates to a string that isn't Null and isn't empty, then th
 | **Expression** |Required |Expression |Expression to be evaluated |
 
 **Example:**
-`Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
+
+`IsPresent([directManager])`
+
+Returns True if the directManager attribute isn't null or empty.
+
+> [!CAUTION]
+> Don't use IsPresent, IsNull, or IsNullOrEmpty as the source parameter of the [Switch](#switch) function. The Switch function performs a case-sensitive string comparison and these functions return boolean values, which leads to unexpected matching behavior.
+
+> [!NOTE]
+> To check whether an attribute has a value and apply a fallback, use the [Switch](#switch) function with the attribute as the source and an empty string as a key. For example:
+> `Switch([country], [country], "", "Other")`
+> This expression returns the country value if present, or "Other" if the attribute is null or empty.
 
 ---
 ### IsString

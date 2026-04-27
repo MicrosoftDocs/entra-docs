@@ -80,7 +80,7 @@ Effective governance prevents agent sprawl and ensures agents remain accountable
 
 - **Include agents in access reviews.** Configure periodic [access reviews](/entra/id-governance/access-reviews-overview) that include agent identities. Have sponsors attest every 6-12 months that each agent is still needed and properly configured. If a sponsor doesn't confirm, evaluate the agent for decommissioning.
 
-- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and manage agent identities](identity-platform/agent-lists.md).
+- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and filter agent identities](identity-platform/agent-lists.md).
 
 - **Use access packages for standardized access.** For agents with common access patterns (for example, a fleet of customer support agents), use [access packages](agent-access-packages.md) to grant time-bound, auditable access through approval workflows rather than direct permission assignments.
 
@@ -116,5 +116,6 @@ Smooth agent deployments require alignment between developers building agents an
 
 ## Related content
 
+- [Manage agent identities in your organization](manage-agent-identities-admin.md)
 - [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
 - [Microsoft Entra security for AI overview](security-for-ai-overview.md)

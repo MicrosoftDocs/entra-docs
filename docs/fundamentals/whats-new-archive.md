@@ -57,18 +57,6 @@ We’re excited to announce the **public preview of SMS for self-service passwo
 
 ---
 
-### Public Preview - Microsoft Security Copilot Access Review Agent in Microsoft Entra
-
-**Type:** New feature    
-**Service category:** Access Reviews        
-**Product capability:** Identity Governance    
-
-Say goodbye to time-consuming research and the uncertainty of rushed decisions. With the public preview of the [Microsoft Security Copilot Access Review Agent in Microsoft Entra](https://aka.ms/ARAgent), we’re bringing the power of AI directly into the heart of access governance.
-
-The agent works for your reviewers by automatically gathering insights and generating recommendations to help them make fast, accurate access decisions. Reviewers are guided through a natural, conversational flow right inside Microsoft Teams, so they can make the final call with confidence and clarity.
-
----
-
 ---
 
 ### General Availability - Cross-tenant synchronization (cross-cloud)
@@ -660,7 +648,7 @@ CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA
 **Service category:** Authentications (Login)   
 **Product capability:** User Authentication 
  
-CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
  
 ---
 
@@ -1592,7 +1580,7 @@ In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/wh
 **Product capability:** Identity Security & Protection            
 
 Microsoft Entra ID now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
-For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API](../identity/authentication/how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ---
 
