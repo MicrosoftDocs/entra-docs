@@ -316,9 +316,7 @@ Issuer Hints is generally available now and helps improve the sign‑in experien
 **Service category:** Authentications (Logins)  
 **Product capability:** Platform  
 
-Configurable token lifetime policies are now generally available in Microsoft Entra ID. This feature allows administrators to customize the lifetimes of access tokens, ID tokens, and SAML tokens issued by the Microsoft identity platform by creating and assigning token lifetime policies to applications and service principals. 
-
-  
+Configurable token lifetime policies are now generally available in Microsoft Entra ID. This feature allows administrators to customize the lifetimes of access tokens, ID tokens, and SAML tokens issued by the Microsoft identity platform by creating and assigning token lifetime policies to applications and service principals.  
 
 With configurable token lifetime policies, organizations can adjust token durations to meet their security and usability requirements -- for example, shortening access token lifetimes for sensitive applications or extending them for long-running automation scenarios. For more information, see: [Configurable token lifetimes in the Microsoft identity platform](../identity-platform/configurable-token-lifetimes.md).
 
