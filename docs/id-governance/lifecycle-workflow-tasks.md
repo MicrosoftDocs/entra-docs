@@ -997,6 +997,21 @@ Example of usage within the workflow:
 }
 ```
 
+### Transfer agent identity sponsorships to manager (Preview)
+
+<!-- TODO: Fill in task description, taskdefinitionID, category, and example usage. -->
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Transfer agent identity sponsorships to manager  |
+|description     |         |
+|taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
+
 ### Remove all license assignments from User
 
 Allows all direct license assignments to be removed from a user. For group-based license assignments, you would run a task to remove the user from the group the license assignment is part of.
@@ -1270,21 +1285,6 @@ Example of usage within the workflow:
     ]
 }
 ```
-
-### Transfer agent identity sponsorships to manager (Preview)
-
-<!-- TODO: Fill in task description, taskdefinitionID, category, and example usage. -->
-
-You're able to customize the task name and description for this task in the Microsoft Entra admin center.
-
-For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
-
-|Parameter |Definition  |
-|---------|---------|
-|category    |  leaver, mover      |
-|displayName     |  Transfer agent identity sponsorships to manager  |
-|description     |         |
-|taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
 
 ## Next steps
 
