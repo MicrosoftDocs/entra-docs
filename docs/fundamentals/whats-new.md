@@ -306,9 +306,7 @@ The **License Usage** page in the Microsoft Entra admin center helps customers o
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Issuer Hints is generally available now and helps improve the sign‑in experience for Entra Certificate‑Based Authentication (CBA) by ensuring users are prompted to select only certificates that are trusted and valid for their organization. This reduces confusion, minimizes sign‑in errors, and streamlines certificate selection especially on devices with multiple certificates installed. Issuers hints are designed to enhance both security and usability without changing how certificates are issued or managed.
-
-More information at [Issuer hints](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#issuer-hints)
+Issuer Hints is generally available now and helps improve the sign‑in experience for Entra Certificate‑Based Authentication (CBA) by ensuring users are prompted to select only certificates that are trusted and valid for their organization. This reduces confusion, minimizes sign‑in errors, and streamlines certificate selection especially on devices with multiple certificates installed. Issuers hints are designed to enhance both security and usability without changing how certificates are issued or managed. For more information, see: [Issuer hints](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#issuer-hints).
 
 ---
 
