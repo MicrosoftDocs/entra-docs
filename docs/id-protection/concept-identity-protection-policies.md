@@ -25,6 +25,10 @@ The previous example also demonstrates a main benefit of a risk-based policy: **
 
 Allowing users to self-remediate using this process significantly reduces the risk investigation and remediation burden on administrators while protecting your organization from security compromises. More information about risk remediation can be found in the article, [Remediate risks and unblock users](howto-identity-protection-remediate-unblock.md).
 
+
+> [!NOTE]
+> [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use risk-based access policies.
+
 ## User risk-based Conditional Access policy
 
 ID Protection analyzes signals about user accounts and calculates a risk score based on the probability that the user is compromised. If a user has risky user sign-in behavior, or their credentials were leaked, ID Protection uses these signals to calculate the user risk level. Administrators can configure risk-based Conditional Access policies to enforce access controls based on user risk, including requirements such as: 
@@ -35,7 +39,7 @@ ID Protection analyzes signals about user accounts and calculates a risk score b
 
 Policies requiring either #1 or #2 forces end users to remediate their user risk and unblock themselves.
 
-## Require risk remediation control (preview)
+## Require risk remediation control
 
 This control uses adaptive risk remediation to let you author a Conditional Access risk policy that accommodates all authentication methods, including password-based and passwordless. This means that when you select "Require risk remediation" in your policy's grant controls, Microsoft Entra ID Protection manages the appropriate remediation flow based on the threat observed and the user's authentication method.  For detailed steps on how to enable adaptive risk remediation, see [Configure risk policies](howto-identity-protection-configure-risk-policies.md#microsoft-recommendations).
 
@@ -44,15 +48,13 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 
 #### Special considerations
 
-- [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use the adaptive risk remediation policy.
-- The **Require Risk Remediation** setting remediates user risk, not sign-in risk.
-- If a user is assigned to both a policy with **Require Risk Remediation** and another policy with **Require Password Change** or **Block**, a conflict will occur, causing the user to be forced through all policies or blocked. Ensure each user is assigned to only one such policy at a time. 
-- **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy for two reasons:
-   - Users need to be prompted to reauthenticate after their sessions are revoked.
-   - Requiring auth strength ensures that password-based and passwordless users are covered by the policy.
-- Risky Workload ID isn't supported.
-- External and guest users must continue to self-remediate through secure password reset, as Microsoft Entra ID doesn't support session revocation for external and guest users.
-- The "Require risk remediation" grant control is now available in Azure for US Government.
+- **Require Risk Remediation** remediates user risk, not sign-in risk.
+- If a user is assigned to multiple policies, precedence applies: **Require risk remediation** overrides **Require password change**, and **Block** overrides all others. To avoid conflicts, assign each user to only one of these policies at a time.
+- **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy to ensure that after session revocation, end users are immediately prompted to reauthenticate with the specified authentication strength.
+- **Require risk remediation** is not supported for external and guest users because Microsoft Entra ID doesn't support session revocation for those users.
+- During risk remediation, Microsoft Entra ID uses a dedicated, secure flow to perform actions such as session revocation. To ensure remediation is not blocked, this flow is allowed to proceed without being impacted by other Conditional Access policies.
+  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `2e5ecfc8-ea79-48bd-8140-c19324acb278`
+  - `ResourceId`: `00000003-0000-0000-c000-000000000000`
 
 ## Sign-in risk-based Conditional Access policy
 

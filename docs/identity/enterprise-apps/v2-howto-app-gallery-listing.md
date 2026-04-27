@@ -43,6 +43,49 @@ To publish your application in the gallery, you must first read and agree to spe
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
 
+### Checklist for applications supporting SSO
+Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra App Gallery.
+
+#### SAML single sign-on application requirements
+
+The following requirements apply to SAML-based SSO applications.
+
+#### Authentication requirements
+- Application should support SAML 2.0 Protocol either in Service Provider initiated mode or Identity Provider Initiated (IDP) mode or both (Required)
+- Application should validate the SAML token for certificate key, certificate validity, Issuer, Audience and other user claims as needed. (Required)
+- Test your SAML integration with Microsoft Entra ID using a non-gallery application. (Required).
+- Applications should support [SAML Single Logout](~/identity-platform/single-sign-out-saml-protocol.md) functionality. (Recommended)
+- Application should fetch the IDP SAML federation metadata from Microsoft Entra ID using the link that Microsoft provides. This helps reduce the configuration overload for customers and certificate rotation. See the [guidance here](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#guidance-and-best-practices-for-isvs-on-rotating-certificates). (Recommended).
+- Application should provide the user interface and APIs for customers to configure the single sign-on for their instance of the application. (Recommended)
+- Application should provide an ability to enforce the SSO functionality to the entire tenant so that all the users must use single sign-on. For administrators, and to support break glass scenarios, you can support other authentication options or bypass mechanisms as needed. (Recommended).
+
+#### ISV Specific Requirements: 
+- Application should be published in SaaS application model in cloud or distributed to customers for their installation (IaaS) so that the application can be owned and configured by customers as needed. (Required)
+- Establish an engineering and support point of contact to support customers during App Gallery onboarding and post onboarding (Required)
+- Document your SAML SSO configuration publicly (Required)
+- Meet the various compliance requirements for listing your application in those clouds like Public, USGov, China, Germany, France, Singapore etc. This is only required if you plan to publish your application in those clouds. (Required)
+
+#### Multi-tenant OIDC application requirements:
+
+#### Authentication Requirements: 
+- Application should support OpenID Connect protocol for authentication as per the guidance provided here by Microsoft. We recommend using the [OAuth 2.0 Auth Code Grant flow](~/identity-platform/v2-oauth2-auth-code-flow.md). Microsoft recommends you do not use [OAuth 2.0 Resource owner Password Credentials flow](~/identity-platform/v2-oauth-ropc.md). Similarly, [OAuth 2.0 device authorization grant flow](~/identity-platform/v2-oauth2-device-code.md) should not be used unless explicitly needed. (Required)
+- If you are developing a cloud application, then Microsoft recommends setting the application as a multi-tenant application. Please see the [guidance here](~/identity-platform/howto-convert-app-to-be-multi-tenant.md). (either single tenant or multi-tenant model is required)
+- If the cloud application is set up for every customer using IaaS or PaaS architecture then the [single tenant application model](~/identity-platform/single-and-multi-tenant-apps.md) is acceptable.
+- Use Microsoft Entra ID V2 endpoint for authentication (Required)
+- Application should be using [least privileged permissions](/graph/permissions-overview?tabs=http#best-practices-for-using-microsoft-graph-permissions) for their scenarios. Please refer to our MS Graph API documentation to find the least privileged permission for the APIs. (Required)
+- Application should be using [delegated permissions](/security/zero-trust/develop/developer-strategy-delegated-permission) so that the consent screen can appear and let user or administrator provide the consent to it as needed. [Application Permissions](/security/zero-trust/develop/developer-strategy-application-permissions) should be avoided unless absolutely needed. (Required if using MS Graph APIs)
+- Application should not be using secrets if the application wants to use client credentials flow, then the certificate should be used instead of secrets for retrieving the access token. (Required)
+- SPA applications shouldn't use the OAuth 2.0 Implicit Grant Flow for [security reasons](~/identity-platform/v2-oauth2-implicit-grant-flow.md#security-concerns-with-implicit-grant-flow) and they should use authorization code flow instead. (Recommended).
+
+#### ISV specific requirements
+- Application should be published in SaaS application model whether in cloud or distributed to customers for their installation so that the application can be owned and configured by customers as needed. (Required)
+- Sign-in page should have a **Sign in with Microsoft** button and follow the [branding guidelines here](~/identity-platform/howto-add-branding-in-apps.md). (Recommended).
+- Application should be publisher verified by using your MPN ID. Please follow the guidance published here. (Required)
+- Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
+- Document your OIDC OAuth SSO configuration publicly (Required)
+- Meet the various compliance requirements for listing your application in different clouds like Public, USGov, China, Germany, France, Singapore etc. This is only required if you plan to publish your application in those clouds. (Required)
+- Microsoft Entra App Gallery doesn't onboard public client applications.
+
 ### Checklist for SCIM Provisioning Apps
 Here's the quick checklist for you before you submit the application request to list your application in Microsoft Entra App Gallery.
 
@@ -50,7 +93,7 @@ Here's the quick checklist for you before you submit the application request to 
 - Support a SCIM 2.0 user and group endpoint (Only User Provisioning is required but User and Group Provisioning both are recommended).
 - Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required).
 - Validate and test your SCIM User and/or Group Provisioning integration with [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) and [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) template (Required).
-- Validate your Client Credentials Grant or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) (Required).
+- Validate your Client Credentials authentication or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) (Required).
 - Support either soft delete or hard delete of users. Either one is needed, both are also supported (Required).
 - On querying a nonexistent user your SCIM server shouldn't return bad request, rather success with 0 results (Required).
 - Support Schema Discovery feature on your SCIM endpoint (Required).
