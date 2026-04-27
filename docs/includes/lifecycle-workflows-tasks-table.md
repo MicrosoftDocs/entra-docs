@@ -40,5 +40,5 @@ Lifecycle Workflows currently support the following tasks:
 | [Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         | 
 | [Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
 | [Send email about user inactivity](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
-| [Transfer agent identity sponsorships to manager (Preview)](../id-governance/lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager)     |        |          |
+| [Transfer agent identity sponsorships to manager (Preview)](../id-governance/lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager-preview)     |        |          |
 
