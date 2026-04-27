@@ -15,7 +15,7 @@ Changing the ADSync service account password can prevent the Synchronization Ser
 >[!IMPORTANT]
 > If you use Connect with a build from 2017 March or earlier, then you should not reset the password on the service account since Windows destroys the encryption keys for security reasons. You can't change the account to any other account without reinstalling Microsoft Entra Connect. If you upgrade to a build from 2017 April or later, then it is supported to change the password on the service account, but you can't change the account used. 
 
-Microsoft Entra Connect, as part of the Synchronization Services uses an encryption key to store the passwords of the AD DS Connector account and Entra ID Connector  account. These accounts are encrypted before they're stored in the database. 
+Microsoft Entra Connect, as part of the Synchronization Service, uses an encryption key to store the passwords of the AD DS Connector account and Microsoft Entra ID Connector account. These accounts are encrypted before they're stored in the database. 
 
 The encryption key used is secured using [Windows Data Protection (DPAPI)](/previous-versions/ms995355(v=msdn.10)). DPAPI protects the encryption key using the **ADSync service account**. 
 
@@ -55,7 +55,7 @@ If you need to abandon the encryption key, use the following procedures to accom
    
 4. [Provide the password of the AD DS Connector account](#provide-the-password-of-the-ad-ds-connector-account)
 
-5. [Reinitialize the password of the Entra Id Connector account](#reinitialize-the-password-of-the-entra-id-connector-account)
+5. [Reinitialize the password of the Entra ID Connector account](#reinitialize-the-password-of-the-entra-id-connector-account)
 
 <br><nbsp>
 
