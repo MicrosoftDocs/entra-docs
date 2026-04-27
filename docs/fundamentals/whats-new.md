@@ -47,13 +47,13 @@ Microsoft Entra ID federation with External ID (EEID) enables organizations to l
 
 ---
 
-### Public Preview - App-based branding via Branding themes in Entra tenants
+### Public Preview - App-based branding via Branding themes in Microsoft Entra tenants
 
 **Type:** Public Preview  
 **Service category:** User Experience and Management  
 **Product capability:** User Authentication  
 
-In Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview)](../external-id/customers/how-to-customize-branding-themes-apps.md)
+In Microsoft Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview)](../external-id/customers/how-to-customize-branding-themes-apps.md)
 
 ---
 
@@ -174,13 +174,13 @@ This Workday connector update resolves termination processing delays observed fo
 
 ---
 
-### General Availability - Entra Certificate-based authentication (CBA) support on iOS and CBA as second factor
+### General Availability - Microsoft Entra Certificate-based authentication (CBA) support on iOS and CBA as second factor
 
 **Type:** General Availability  
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices](../identity/authentication/concept-certificate-based-authentication-mobile-ios.md)
+Microsoft Entra Certificate-Based Authentication (CBA) is now generally available on iOS. Native iOS sign-ins now avoid unnecessary password and MFA prompts, enabling CBA as a supported second factor and allowing it to be prioritized as a system‑preferred MFA method. Users can choose another allowed MFA method if needed, based on tenant policy. More information at [Microsoft Entra certificate-based authentication on Apple devices](../identity/authentication/concept-certificate-based-authentication-mobile-ios.md)
 
 ---
 
@@ -1284,6 +1284,16 @@ To learn more, see: 
 - [Microsoft Entra Global Secure Access](/entra/global-secure-access/) 
 
 - [Microsoft Defender for Cloud Apps overview](/defender-cloud-apps/)
+
+---
+
+### General Availability - Protect enterprise GenAI applications with Prompt Injection Protection
+
+**Type:** New feature  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+AI Gateway, part of Microsoft's Security Service Edge (SSE) solution, safeguards generative AI applications, agents, and language models. The Prompt Injection Protection capability provides real-time protection against malicious prompt injection attacks to enterprise GenAI apps, a top risk for LLMs. By enforcing guardrails at the network level, Prompt Injection Protection ensures consistent security across all generative AI applications without the need for code changes. For more information, see: [Protect enterprise generative AI applications with prompt injection protection](../global-secure-access/how-to-ai-prompt-injection-protection.md).
 
 ---
 
