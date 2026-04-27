@@ -74,7 +74,7 @@ items:
         href: create-blueprint.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
-      - name: Understand agent identity deletion
+      - name: Learn about agent identity deletion
         href: concept-agent-identity-deletion.md
       - name: Delete and restore agent identity objects
         href: howto-delete-agent-identity.md

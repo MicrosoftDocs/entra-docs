@@ -241,4 +241,4 @@ When you delete an agent identity blueprint principal, the system automatically 
 > [!IMPORTANT]
 > Restore the blueprint principal before the background cleanup task runs (approximately 24 hours) to prevent child agent identities from being soft deleted. After the cleanup runs, each child identity must be restored individually.
 
-For details on the deletion timeline, restore procedures, and frequently asked questions, see [Cascade deletion for agent identity blueprint principals](cascade-deletion-agent-identities.md).
+For details on the deletion timeline, restore procedures, and frequently asked questions, see [Agent identity deletion](concept-agent-identity-deletion.md).
