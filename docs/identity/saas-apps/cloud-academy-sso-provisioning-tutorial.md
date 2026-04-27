@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure QA to support provisioning with Microsoft Entra ID
 
-1. Login to [QA](https://www.qa.com) admin portal.
+1. Log in to [QA](https://www.qa.com) admin portal.
 
 2. Select **Dashboard** on the home page next to the profile icon.
 
