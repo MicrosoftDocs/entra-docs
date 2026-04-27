@@ -143,7 +143,7 @@ sections:
              3. Run PowerShell as an Administrator. In PowerShell, call 'New-AzureADSSOAuthenticationContext'. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
              4. Call 'Enable-AzureADSSO -Enable $false'.
              
-             At this point Seamless SSO is disabled but the domains remain configured in case you would like to enable Seamless SSO back. If you would like to remove the domains from Seamless SSO configuration completely, call the following cmdlet after you completed step 5 above: 'Disable-AzureADSSOForest -DomainFqdn <value>'.
+             At this point Seamless SSO is disabled but the domains remain configured in case you would like to enable Seamless SSO back. If you would like to remove the domains from Seamless SSO configuration completely, call the following cmdlet after you completed step 5 above: Disable-AzureADSSOForest -DomainFqdn "<fqdn>"
           
              >[!IMPORTANT]
              >Disabling Seamless SSO using PowerShell won't change the state in Microsoft Entra Connect. Seamless SSO shows as enabled in the **Change user sign-in** page.
