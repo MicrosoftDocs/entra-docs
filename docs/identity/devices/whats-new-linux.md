@@ -186,7 +186,10 @@ To add the appropriate package repository for your Linux distribution, follow th
 
 ## Changes
 
-### 3.0.1 - March 31, 2026 - (GA Major Release)
+### 3.0.2 - April 27, 2026  - (Production)
+
+###   
+3.0.1 - March 31, 2026 - (GA Major Release)
 
 GA release of the Microsoft Identity Broker for Linux, now using a newly rewritten C++ broker instead of the previous Java-based broker.
 
