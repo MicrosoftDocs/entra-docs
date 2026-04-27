@@ -1271,6 +1271,21 @@ Example of usage within the workflow:
 }
 ```
 
+### Transfer agent identity sponsorships to manager
+
+<!-- TODO: Fill in task description, taskdefinitionID, category, and example usage. -->
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |        |
+|displayName     |  Transfer agent identity sponsorships to manager  |
+|description     |         |
+|taskDefinitionId     |        |
+
 ## Next steps
 
 - [Manage lifecycle workflows properties](manage-workflow-properties.md)
