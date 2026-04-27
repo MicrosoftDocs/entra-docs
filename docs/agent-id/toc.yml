@@ -80,6 +80,8 @@ items:
         href: howto-delete-agent-identity.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
+      - name: Manage owners and sponsors
+        href: manage-owners-sponsors-agents.md
       - name: AI-guided setup
         href: agent-id-ai-guided-setup.md
     - name: Authentication, authorization, and permissions
@@ -131,7 +133,9 @@ items:
       href: agent-lists.md
     - name: Manage agents (owner and sponsor portal)
       href: manage-agent-identities-end-user.md
-
+    - name: Agent Registry convergence
+      href: agent-registry-convergence.md
+  
   # REFERENCE ######################
   - name: Reference
     items:
@@ -151,21 +155,3 @@ items:
         href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Error codes reference
         href: error-codes.md
-    - name: Agent registry
-      items:
-      - name: Agent Registry convergence
-        href: agent-registry-convergence.md
-      - name: What is the agent registry?
-        href: what-is-agent-registry.md
-      - name: Register agents with Agent Registry
-        href: publish-agents-to-registry.md
-      - name: Agent Registry collections
-        href: agent-registry-collections.md
-      - name: Manage agent collections
-        href: agent-registry-manage-collections.md
-      - name: Agent communication
-        href: registry-agent-to-agent-protocol.md
-      - name: Manage Agent Registry-only agents
-        href: manage-agents-without-identity.md
-      - name: Agent Registry roles
-        href: reference-registry-roles.md
