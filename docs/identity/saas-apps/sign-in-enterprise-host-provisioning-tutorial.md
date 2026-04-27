@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision hosts from Mi
 author: jeevansd
 manager: beatrizd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/20/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Sign In Enterprise Host Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Sign In Enterprise Host Provisioning.
@@ -57,9 +57,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-sign-in-enterprise-host-provisioning-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Sign In Enterprise Host Provisioning in Microsoft Entra ID:
+### Configure automatic user provisioning for Sign In Enterprise Host Provisioning in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+
 1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
@@ -70,23 +71,25 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab.](common/provisioning.png)
+	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Sign In Enterprise Tenant URL and Token you copied in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sign In Enterprise. If the connection fails, ensure your and try again.
+1. In the **Tenant URL** field, enter your Sign In Enterprise Host Provisioning Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sign In Enterprise Host Provisioning. If the connection fails, ensure your Sign In Enterprise Host Provisioning account has the required admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Provision Microsoft Entra users**.
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Sign In Enterprise Host Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sign In Enterprise Host Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sign In Enterprise Host Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -103,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
    |emails[type eq "other"].value|String||
 
-1. Under the **Mappings** section, select **Provision  Microsoft Entra groups**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Sign In Enterprise in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Sign In Enterprise for update operations. Select the **Save** button to commit any changes.
 
@@ -112,21 +115,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String|&check;|&check;
    |members|Reference||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Sign In Enterprise Host Provisioning, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to Sign In Enterprise by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

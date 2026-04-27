@@ -2,13 +2,12 @@
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 04/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
+#Customer Intent: As an administrator, I want to assign eligible membership or ownership for groups in PIM to enable just-in-time access for users who need temporary group permissions.
 ---
-
 # Assign eligibility for a group in Privileged Identity Management
-
 
 ## Overview
 
