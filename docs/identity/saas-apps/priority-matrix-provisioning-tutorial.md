@@ -68,12 +68,11 @@ To configure Priority Matrix for automatic user provisioning with Microsoft Entr
 
 	![Priority Matrix OIDC Add](media/priority-matrix-provisioning-tutorial/signup.png)
 
-1. As Priority Matrix is an OpenIDConnect app, choose to log in to Priority Matrix using your Microsoft work account.
+1. As Priority Matrix is an OpenIDConnect app, choose to sign in to Priority Matrix using your Microsoft work account.
 
 	![Priority Matrix OIDC login](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
-1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Priority Matrix account.
-
+1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you'll be redirected to your Priority Matrix account.
 
 ## Configure automatic user provisioning to Priority Matrix 
 
@@ -116,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

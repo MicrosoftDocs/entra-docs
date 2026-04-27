@@ -78,11 +78,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Screenshot of the Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Robin**.
 
-	![Screenshot of the Robin link in the Applications list](common/all-applications.png)
+	![Screenshot of the Robin link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -105,17 +105,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Robin for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Robin API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![Screenshot of the Robin powered User Attributes](media/robin-provisioning-tutorial/robin-user-attribute-mapping.png)
+	![Screenshot of the Robin powered User Attributes.](media/robin-provisioning-tutorial/robin-user-attribute-mapping.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Robin in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Robin for update operations. Select the **Save** button to commit any changes.
 
-	![Screenshot of the Robin powered Group Attributes](media/robin-provisioning-tutorial/robin-group-attribute-mapping.png)
+	![Screenshot of the Robin powered Group Attributes.](media/robin-provisioning-tutorial/robin-group-attribute-mapping.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

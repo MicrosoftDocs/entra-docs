@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure PrinterLogic SaaS to support provisioning with Microsoft Entra ID
 
-1. In PrinterLogic, Navigate to **Tools > Settings > General**.
+1. In PrinterLogic, navigate to **Tools > Settings > General**.
 
 1. Scroll to the **Identity Provider Settings** section.
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
