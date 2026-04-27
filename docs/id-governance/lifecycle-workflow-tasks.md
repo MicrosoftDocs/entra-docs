@@ -1009,6 +1009,7 @@ The Microsoft Entra prerequisites to run the **Transfer agent identity sponsorsh
 
 For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
 
+
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
@@ -1016,9 +1017,9 @@ For Microsoft Graph, the parameters for the **Transfer agent identity sponsorshi
 |description     |  Transfer all agent identities sponsored by user to manager.       |
 |taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
 
-Example of usage within the workflow:
 
-```json
+
+```Example of usage within the workflow
 {
     "category": "mover",
     "continueOnError": false,
