@@ -285,11 +285,8 @@ Build secure sign‑in and sign‑up experiences for applications in Entra Exter
 **Service category:** Privileged Identity Management  
 **Product capability:** Privileged Identity Management  
 
-Generally available feature for configuring reauthentication with Conditional Access for Microsoft Entra Privileged Identity Management role activation. For more information see:
+Generally available feature for configuring reauthentication with Conditional Access for Microsoft Entra Privileged Identity Management role activation. For more information see: [On activation, require Microsoft Entra Conditional Access authentication context](../id-governance/privileged-identity-management/groups-role-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context)
 
-- [On activation, require Microsoft Entra Conditional Access authentication context](../id-governance/privileged-identity-management/groups-role-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context)
-- 
-- 
 
 ---
 
