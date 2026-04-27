@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of the Provisioning properties page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your MX3 Diagnostics Connector Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to MX3 Diagnostics Connector. If the connection fails, ensure your MX3 Diagnostics Connector account has the required admin permissions and try again.
     > [!NOTE]

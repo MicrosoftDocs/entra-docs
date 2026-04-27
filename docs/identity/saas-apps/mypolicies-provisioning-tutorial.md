@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, enter your myPolicies Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has the required admin permissions and try again.
 
    > [!NOTE]
-   > Enter `https://scim.mx3.app` in the **Tenant URL**.`https://<myPoliciesCustomDomain>.mypolicies.com/scim` in **Tenant URL** where `<myPoliciesCustomDomain>` is your myPolicies custom domain. You can retrieve your myPolicies customer domain, from your URL.
+   > Enter `https://<myPoliciesCustomDomain>.mypolicies.com/scim` in the **Tenant URL** where `<myPoliciesCustomDomain>` is your myPolicies custom domain. You can retrieve your myPolicies customer domain from your URL.
    > Example: `<demo0-qa>`.mypolicies.com.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
