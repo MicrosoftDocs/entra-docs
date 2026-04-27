@@ -1009,7 +1009,7 @@ For Microsoft Graph, the parameters for the **Transfer agent identity sponsorshi
 |---------|---------|
 |category    |  leaver, mover      |
 |displayName     |  Transfer agent identity sponsorships to manager (Preview)  |
-|description     |         |
+|description     |  Transfer all agent identities sponsored by user to manager.       |
 |taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
 
 ### Remove all license assignments from User
