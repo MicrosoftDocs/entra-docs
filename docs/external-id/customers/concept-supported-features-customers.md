@@ -3,7 +3,6 @@ title: External Tenant Features
 description: Compare features and capabilities of a workforce versus an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.topic: concept-article
 ms.date: 03/30/2026
-
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, DevOps, or IT admin, I want to learn about features supported in a CIAM tenant so that I can configure tenants according to my organization's needs.
 ---
@@ -74,17 +73,18 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 You can use some authentication methods as the primary factor when users sign in to an application, such username and password. Other authentication methods are available only as a secondary factor. The following table outlines when you can use an authentication method during sign-in, self-service sign-up, self-service password reset, and MFA in External ID.
 
-| Method | Sign-in | Sign-up | Password reset | MFA |
-| ------ | ------- | ------- | -------------- | --- |
-| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Emailed one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication) | | | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [Apple federation](./how-to-apple-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Facebook federation](./how-to-facebook-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [SAML/WS-Fed federation](../direct-federation.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
+|Method  |Sign-in  |Sign-up  |Password reset  |MFA  |
+|---------|---------|---------|---------|---------|
+| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication)|  |  |  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [Apple federation](./how-to-apple-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   |  |  |
+| [Facebook federation](./how-to-facebook-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Microsoft Entra ID federation](./how-to-entra-id-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [SAML/WS-Fed federation](../direct-federation.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 
 ## Application registration
 

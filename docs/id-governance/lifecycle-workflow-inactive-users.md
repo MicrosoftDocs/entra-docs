@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/12/2026
 
-#CustomerIntent: As an IT administrator, I want to automate managing users with Lifecycle Workflows so that management and security is streamlined.
+#Customer Intent: As an IT administrator, I want to automate managing users with Lifecycle Workflows so that management and security is streamlined.
 ---
 
 # Manage inactive users using Lifecycle Workflows

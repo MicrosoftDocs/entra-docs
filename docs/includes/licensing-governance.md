@@ -4,7 +4,7 @@ description: include file
 author: owinfreyATL
 ms.service: entra-id
 ms.topic: include
-ms.date: 12/19/2025
+ms.date: 03/27/2026
 ms.author: owinfrey
 ms.custom: include file
 ---
@@ -20,6 +20,7 @@ The following table shows what features associated with identity governance are 
 |**Provisioning**||||||
 |[API-driven provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+[Account Discovery](~/identity/app-provisioning/how-to-account-discovery.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated group provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated provisioning to on-premises apps](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -37,7 +38,6 @@ The following table shows what features associated with identity governance are 
 |[AR - Machine learning assisted access certifications and reviews](~/id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: | :white_check_mark: |
 |[AR - Catalog Access Reviews (Preview)](~/id-governance/catalog-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
 |[AR - Custom data provided resource (Preview)](~/id-governance/custom-data-resource-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
-|[AR Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |**Entitlement management (EM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Users assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |

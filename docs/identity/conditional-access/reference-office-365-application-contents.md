@@ -2,13 +2,27 @@
 title: Office 365 App in Conditional Access reference
 description: What are all of the services included in the Office 365 app in Microsoft Entra Conditional Access
 ms.topic: reference
-ms.date: 03/24/2026
+ms.date: 04/07/2026
 ms.reviewer: kvenkit
+ai-usage: ai-assisted
 ---
 
 # Apps included in Conditional Access Office 365 app suite
 
-The following list is provided as a reference and includes a detailed list of services and applications that are included in the Conditional Access [Office 365](concept-conditional-access-cloud-apps.md#office-365) app. In Conditional Access, the Microsoft 365 suite of applications appears under 'Office 365'.
+Microsoft 365 offers cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. In Conditional Access, the Microsoft 365 suite of applications appears under **Office 365**. These cloud services are deeply integrated, which means some apps like Microsoft Teams depend on others like SharePoint or Exchange.
+
+The Office 365 app grouping makes it possible to target these services all at once. Use the Office 365 grouping instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md). Targeting this group helps avoid issues that might arise from inconsistent policies and dependencies. For example, Exchange Online is tied to traditional Exchange Online data like mail, calendar, and contact information, but related metadata might be exposed through different resources like search. Assigning policies to the Office 365 app helps ensure that all related metadata is protected as intended.
+
+For more information about when to use this app grouping, see [Office 365](concept-conditional-access-cloud-apps.md#office-365).
+
+## About this list
+
+The following list includes all services and applications that are part of the Office 365 app in Conditional Access. This list is subject to change as Microsoft adds or removes services. To view the current list of applications in your tenant, go to the [Microsoft Entra admin center](https://entra.microsoft.com) > **Protection** > **Conditional Access** > **Policies** and select the **Office 365** cloud app in the target resources configuration.
+
+> [!NOTE]
+> This list includes both user-facing applications and backend services. Some entries might be internal service names that aren't directly visible to end users.
+
+## Included applications
 
 - App Studio for Microsoft Teams
 - Augmentation Loop
@@ -138,4 +152,9 @@ The following list is provided as a reference and includes a detailed list of se
 - Teams Walkie Talkie Service
 - Teams Walkie Talkie Service - GCC
 - Viva Engage
-  
+
+## Related content
+
+- [Office 365 app in Conditional Access](concept-conditional-access-cloud-apps.md#office-365)
+- [Service dependencies in Conditional Access](service-dependencies.md)
+- [What is Conditional Access?](overview.md)

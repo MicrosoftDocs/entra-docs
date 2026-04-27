@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/12/2026
 
-#CustomerIntent: As a Lifecycle Workflow Administrator, I want to reprocess workflow runs so that I can quickly re-run workflows that may have failed.
+#Customer Intent: As a Lifecycle Workflow Administrator, I want to reprocess workflow runs so that I can quickly re-run workflows that may have failed.
 ---
 
 # Reprocess workflow runs using Lifecycle Workflows

@@ -41,7 +41,7 @@ The Conditional Access Optimization Agent evaluates policies such as requiring m
 ### Limitations
 
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs.
+- For policy consolidation, each agent run looks at 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -176,7 +176,7 @@ Both features provide different insights into your Conditional Access policies. 
 
 It's possible that the agent was enabled before Microsoft Ignite 2025 with an account that required role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. Conditional Access Optimization Agents that were turned on after November 17, 2025 no longer use the identity of the user who activated the agent.
           
-You can resolve this issue by migrating to use [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
+You can resolve this issue by migrating to use [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
 ## Related content
 

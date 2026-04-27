@@ -35,7 +35,7 @@ This article describes each of these steps and outlines important planning consi
 
 An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. Your external tenant is where you register your application. It also contains a directory where you manage customer identities and access, separate from your workforce tenant.
 
-When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants.
+When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants. For guidance on migrating from Azure AD B2C, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
@@ -99,7 +99,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 
-- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options
+- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md), a [Microsoft Entra ID tenant](how-to-entra-id-federation-customers.md), or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options.
 
 ### How to integrate a user flow with your app
 

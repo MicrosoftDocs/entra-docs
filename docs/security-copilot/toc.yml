@@ -68,12 +68,6 @@ items:
       href: conditional-access-agent-optimization-passkeys.md
     - name: Knowledge base
       href: conditional-access-agent-optimization-knowledge-base.md
-  - name: Access Review Agent (Preview)
-    items: 
-    - name: Get started (Preview)
-      href: access-review-agent.md
-    - name: Access Review Agent logs and Metrics (Preview)
-      href: access-review-agent-logs-metrics.md
 - name: Responsible AI
   items:
   - name: Responsible AI overview

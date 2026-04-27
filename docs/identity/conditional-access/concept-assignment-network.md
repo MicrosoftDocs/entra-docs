@@ -2,7 +2,7 @@
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 04/01/2026
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange
 ---
@@ -126,7 +126,7 @@ To use **Determine location by GPS coordinates**, users need the Microsoft Authe
 - After 24 hours, the user must open the app and approve the notification.
 - Every time the user shares their GPS location, the app does jailbreak detection using the same logic as the Microsoft Intune MAM SDK. If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
-- Users can modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies.
+- Users can modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based policies.
 - The country code returned depends on the device platform API: For example one platform might report US for Puerto Rico, while another reports PR.
 
 > [!NOTE]

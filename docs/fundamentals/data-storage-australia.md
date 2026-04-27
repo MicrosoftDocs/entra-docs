@@ -6,6 +6,7 @@ ms.topic: concept-article
 ms.date: 03/05/2025
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to understand where identity data is stored for Australian and New Zealand customers so that I can meet regional data residency requirements.
 ---
 
 # Identity data storage for Australian and New Zealand customers in Microsoft Entra ID

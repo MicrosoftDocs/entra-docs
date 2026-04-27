@@ -29,7 +29,7 @@ The following table outlines when an authentication method can be used for prima
 | [Authenticator Lite](/entra/identity/authentication/how-to-mfa-authenticator-lite)            | No                     | MFA     |
 | [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No            | MFA and SSPR |
 | [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)          | No                  | MFA and SSPR   |
-| [External authentication methods (preview)](/entra/identity/authentication/how-to-authentication-external-method-manage)| No    | MFA  |
+| [External MFA](/entra/identity/authentication/how-to-authentication-external-method-manage)| No    | MFA  |
 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)    | Yes                    | MFA                       |
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)                   | No                     | MFA and SSPR              |

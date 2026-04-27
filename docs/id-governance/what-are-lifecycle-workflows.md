@@ -4,6 +4,7 @@ description: Get an overview of the lifecycle workflow feature of Microsoft Entr
 ms.subservice: lifecycle-workflows
 ms.topic: overview
 ms.date: 03/12/2026
+#Customer Intent: As an IT admin, I want to understand what lifecycle workflows are so that I can evaluate how to automate identity lifecycle management in my organization.
 ---
 
 # What are lifecycle workflows?
@@ -45,6 +46,7 @@ Key reasons to use lifecycle workflows include:
 - Manage user lifecycle at scale. As your organization grows, the need for other resources to manage user lifecycle decreases.
 - Reduce or remove manual tasks.
 - Apply logic apps to extend workflows for more complex scenarios with your existing logic apps.
+- Use [Microsoft Security Copilot to create and manage lifecycle workflows](../security-copilot/entra-lifecycle-workflows.md) using natural language.
 
 Those capabilities can help ensure a holistic experience by allowing you to remove other dependencies and applications to achieve the same result. You can then increase efficiency in new employee orientation and in removal of former employees from the system.
 
@@ -78,3 +80,4 @@ With Lifecycle Workflows, you can:
 
 - [Create a custom workflow by using the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [Create a lifecycle workflow](create-lifecycle-workflow.md)
+- [Manage lifecycle workflows with Microsoft Security Copilot](../security-copilot/entra-lifecycle-workflows.md)

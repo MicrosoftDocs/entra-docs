@@ -36,6 +36,7 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 
 This feature currently supports the following Windows Server distributions:
 
+- Windows 11 24H2 or later installed.
 - Windows Server 2025 or later installed with Desktop Experience.
 
 This feature is now available in the following Azure clouds:
@@ -172,6 +173,8 @@ You can sign in over RDP using one of two methods:
 
 To use passwordless authentication for your Windows Server VMs in Azure, the session host (VM) must be running:
 
+- Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
+- Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 - Windows Server 2025 or later installed.
 
@@ -204,9 +207,9 @@ To connect to the remote computer:
 Both [Password-based authentication](../../architecture/auth-password-based-sso.md), and [Passwordless authentication](../../identity/authentication/concept-authentication-passkeys-fido2.md) are supported to sign in to Windows virtual machines.
 
 > [!IMPORTANT]
-> Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from client devices that are either Microsoft Entra registered or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
+> Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered(minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
 >
-> If you're using a Microsoft Entra registered client device, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
+> If you're using a Microsoft Entra registered windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
 
 To sign in to your Windows Server 2019 virtual machine by using Microsoft Entra ID:
 
@@ -229,7 +232,7 @@ You can enforce Conditional Access policies, such as "[phishing resistant MFA](.
 Conditional Access policies that restrict sign in using device configuration rules aren't supported when connecting from a Windows Server device. For a guide on setting conditional access policies, see: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md).
 
 > [!NOTE]
-> If you require MFA as a control, then you must supply an MFA claim as part of the client that initiates the RDP session to the target Windows Server virtual machine. The Remote Desktop application supports Conditional Access policies, however if you're using web sign in, you must use a Windows Hello for Business PIN or biometric authentication. Remote desktop using Windows Hello for Business authentication is available only for deployments that use a certificate trust model and isn't available for a key trust model.
+> If you require MFA as a control, then you must supply an MFA claim as part of the client that initiates the RDP session to the target Windows Server virtual machine. The Remote Desktop application supports Conditional Access policies, however if you're using web sign in, you must use a Windows Hello for Business PIN or biometric authentication. Support for biometric authentication was added to the RDP client in Windows 10 version 1809. Remote desktop using Windows Hello for Business authentication is available only for deployments that use a certificate trust model and isn't available for a key trust model.
 
 ## Use Azure Policy to meet standards and assess compliance
 
@@ -323,7 +326,7 @@ Exit code -2145648607 translates to `DSREG_AUTOJOIN_DISC_FAILED`. The extension 
 
 Exit code 51 translates to "This extension isn't supported on this operating system."
 
-The AADLoginForWindows extension is intended to be installed only on Azure virtual machines with Windows Server 2022 or later operating systems. Ensure that your version of Windows Server is supported. If it isn't supported, uninstall the extension.
+The AADLoginForWindows extension is intended to be installed only on Azure virtual machines with Windows Server 2022 or Windows 10 1809 or later. Ensure that your version of Windows Server is supported. If it isn't supported, uninstall the extension.
 
 ## Troubleshoot sign-in problems
 
@@ -351,9 +354,9 @@ You might get the following error message when you initiate a remote desktop con
 
 Try these solutions:
 
-- The client device that you're using to initiate the remote desktop connection must be Microsoft Entra joined, or Microsoft Entra hybrid joined to the same Microsoft Entra directory. For more information about device identity, see the article [What is a device identity?](./overview.md).
+- The Windows 10 or later PC that you're using to initiate the remote desktop connection must be Microsoft Entra joined, or Microsoft Entra hybrid joined to the same Microsoft Entra directory. For more information about device identity, see the article [What is a device identity?](./overview.md).
 
-  A Microsoft Entra registered client device is also supported to initiate an RDP connection to your virtual machine. When you're using a client device that's Microsoft Entra registered (not Microsoft Entra joined or Microsoft Entra hybrid joined) as the RDP client to initiate connections to your virtual machine, you must enter credentials in the format `AzureAD\UPN` (for example, `AzureAD\john@contoso.com`).
+  Windows 10 Build 20H1 added support for a Microsoft Entra registered PC to initiate an RDP connection to your virtual machine. When you're using a client device that's Microsoft Entra registered (not Microsoft Entra joined or Microsoft Entra hybrid joined) as the RDP client to initiate connections to your virtual machine, you must enter credentials in the format `AzureAD\UPN` (for example, `AzureAD\john@contoso.com`).
 
   Verify that the AADLoginForWindows extension wasn't uninstalled after the Microsoft Entra join finished.
 
@@ -398,7 +401,7 @@ If you configure a legacy per-user **Enabled/Enforced Microsoft Entra multifacto
 
 If Windows Hello for Business isn't an option, configure a Conditional Access policy that excludes the Microsoft Azure Windows Virtual Machine Sign-in app. To learn more about Windows Hello for Business, see [Windows Hello for Business overview](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
+Support for biometric authentication with RDP was added in Windows 10 version 1809. Using Windows Hello for Business authentication during RDP is available for deployments that use a certificate trust model or key trust model.
 
 Share your feedback about this feature or report problems with using it on the [Microsoft Entra feedback forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 

@@ -1,8 +1,8 @@
 ---
-title: Adaptive Session Lifetime Policies for Conditional Access
+title: Configure adaptive session lifetime policies
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 04/02/2026
 ms.reviewer: inbarc
 ms.custom:
   - ai-gen-docs-bap
@@ -15,7 +15,7 @@ ms.custom:
 ## Overview
 
 > [!WARNING]
-> If you're using the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature currently in public preview, we don't support creating two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.  
+> If you're using the [configurable token lifetime](~/identity-platform/configurable-token-lifetimes.md) feature, we don't support creating two different policies for the same user or app combination: one with this feature and another with the configurable token lifetime feature. Microsoft retired the configurable token lifetime feature for refresh and session token lifetimes on January 30, 2021, and replaced it with the Conditional Access authentication session management feature.  
 >
 > Before enabling Sign-in Frequency, make sure other reauthentication settings are disabled in your tenant. If "Remember MFA on trusted devices" is enabled, disable it before using Sign-in Frequency, as using these two settings together might prompt users unexpectedly. To learn more about reauthentication prompts and session lifetime, see the article, [Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 

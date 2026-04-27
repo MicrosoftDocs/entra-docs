@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to 
 ms.date: 03/12/2026
 
-#CustomerIntent: As a Lifecycle Workflow administrator, I want to delegate management of specific lifecycle workflows so that workflow management is more granular.
+#Customer Intent: As a Lifecycle Workflow administrator, I want to delegate management of specific lifecycle workflows so that workflow management is more granular.
 ---
 
 

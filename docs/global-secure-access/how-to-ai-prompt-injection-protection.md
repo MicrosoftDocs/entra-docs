@@ -1,8 +1,8 @@
 ---
-title: Protect enterprise generative AI apps with prompt injection protection (preview)
+title: Protect enterprise generative AI apps with prompt injection protection
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 04/08/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Protect enterprise generative AI applications with prompt injection protection (preview)
+# Protect enterprise generative AI applications with prompt injection protection
 
 Prompt injection attacks pose a significant risk for generative AI apps. Bad actors craft malicious input to make a large language model (LLM) ignore instructions, expose sensitive data, perform unintended actions, or generate harmful content.
 
@@ -26,10 +26,6 @@ Prompt Injection Protection:
 
 ## High-level architecture
 :::image type="content" source="media/how-to-ai-prompt-injection-protection/prompt-shield-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-ai-prompt-injection-protection/prompt-shield-architecture.png":::
-
-> [!IMPORTANT]
-> The Prompt Injection Protection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -119,6 +115,6 @@ You can protect any custom JSON-based LLM or GenAI app by configuring a custom t
 ## Related content
 
 - [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md)
-- [Create a file policy to filter network file content](how-to-network-content-filtering.md)
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Apply Conditional Access policies to Global Secure Access traffic](how-to-target-resource-microsoft-profile.md)
 - [Azure AI Content Safety](/azure/ai-services/content-safety/concepts/jailbreak-detection)

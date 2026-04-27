@@ -6,6 +6,7 @@ ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 01/29/2024
 ms.reviewer: markwahl-msft
+#Customer Intent: As an IT admin, I want to manage access to SAP applications so that I can bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP systems.
 ---
 
 # Manage access to your SAP applications

@@ -1,7 +1,7 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-ms.date: 08/25/2024
+ms.date: 04/03/2026
 ms.topic: how-to
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
@@ -19,6 +19,11 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
+- Connect to Microsoft Graph with the required scope:
+
+    ```PowerShell
+    Connect-MgGraph -Scopes "CustomSecAttributeAssignment.ReadWrite.All"
+    ```
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
