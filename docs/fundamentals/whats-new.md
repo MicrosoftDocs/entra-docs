@@ -253,7 +253,7 @@ Entra CBA Certificate Authority (CA) scoping in Microsoft Entra allows tenant ad
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-Global Secure Access supports network-based content filtering based on file types. This allows you to monitor and control file transfers across the network to GenAI and SaaS apps to prevent unauthorized exfiltration of content.
+Global Secure Access supports network-based content filtering based on file types. This allows you to monitor and control file transfers across the network to GenAI and SaaS apps to prevent unauthorized exfiltration of content. For more information, see: [Create a content policy to filter network file content](../global-secure-access/how-to-network-content-filtering.md).
 
 ---
 
