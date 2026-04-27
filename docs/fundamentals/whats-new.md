@@ -211,7 +211,7 @@ Download and upgrade information
 **Service category:** Entitlement Management  
 **Product capability:** Entitlement Management  
 
-In May, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal will be in General Availability. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy.
+In May, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal will be in General Availability. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy. For more information, see: [View approver information for pending requests (preview)](../id-governance/entitlement-management-request-access.md#view-approver-information-for-pending-requests-preview).
 
 ---
 
@@ -223,9 +223,7 @@ In May, requestors will be able to see the name and email address of approvers f
 
 General Availability - Due to known issues on iOS platform, the Entra certificate-based authentication (CBA) method was not allowed as a second factor on iOS and CBA was moved to the last place in the system-preferred MFA list as documented at [FAQ](../identity/authentication/concept-system-preferred-multifactor-authentication.md#faq). 
 
-  
-
-We have enhanced the user experience during sign-in with certificate in native iOS apps by removing unnecessary passwords and MFA prompts with all the known issues addressed. The feature enhancement enables us to support CBA as a second factor on iOS, and to move CBA to the third place in system preferred MFA methods.
+We've enhanced the user experience during sign-in with certificate in native iOS apps by removing unnecessary passwords and MFA prompts with all the known issues addressed. The feature enhancement enables us to support CBA as a second factor on iOS, and to move CBA to the third place in system preferred MFA methods.
 
 ---
 
@@ -265,7 +263,7 @@ Global Secure Access supports network-based content filtering based on file type
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-Customer can use GSA cloud firewall to apply admin configurable, 5-tuple (source IP, destination IP, protocol, source port, destination port) based filtering for all internet traffic acquired from branch offices through GSA remote networks capability.
+Customer can use GSA cloud firewall to apply admin configurable, 5-tuple (source IP, destination IP, protocol, source port, destination port) based filtering for all internet traffic acquired from branch offices through GSA remote networks capability. For more information, see: [Configure Global Secure Access cloud firewall](../global-secure-access/how-to-configure-cloud-firewall.md).
 
 ---
 
