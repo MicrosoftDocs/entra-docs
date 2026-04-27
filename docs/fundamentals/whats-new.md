@@ -57,9 +57,9 @@ In Entra tenants, customers can create a single, tenant-wide, customized brandin
 
 ---
 
-### Public Preview - Upgrade SuccessFactors provisioning app to use JWT-based authentication
+### Plan for change - Upgrade SuccessFactors provisioning app to use JWT-based authentication
 
-**Type:** Public Preview  
+**Type:** Plan for change  
 **Service category:** Provisioning  
 **Product capability:** Outbound to SaaS Applications  
 
