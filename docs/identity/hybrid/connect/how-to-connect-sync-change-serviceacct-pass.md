@@ -47,15 +47,15 @@ Use the following procedures to abandon the encryption key.
 
 If you need to abandon the encryption key, use the following procedures to accomplish that.
 
-1. [Stop the Synchronization Service](#stop-the-synchronization-service)
+1. [Stop the Synchronization Service](#1-stop-the-synchronization-service)
 
-2. [Abandon the existing encryption key](#abandon-the-existing-encryption-key)
+2. [Abandon the existing encryption key](#2-abandon-the-existing-encryption-key)
 
-3. [Start the Synchronization Service](#start-the-synchronization-service)
+3. [Start the Synchronization Service](#3-start-the-synchronization-service)
    
-4. [Provide the password of the AD DS Connector account](#provide-the-password-of-the-ad-ds-connector-account)
+4. [Provide the password of the AD DS Connector account](#4-provide-the-password-of-the-ad-ds-connector-account)
 
-5. [Reinitialize the password of the Entra ID Connector account](#reinitialize-the-password-of-the-entra-id-connector-account)
+5. [Reinitialize the password of the Entra ID Connector account](#5-reinitialize-the-password-of-the-entra-id-connector-account)
 
   
   
