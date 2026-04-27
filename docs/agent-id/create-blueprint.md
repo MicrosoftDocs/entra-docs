@@ -25,7 +25,7 @@ This guide walks you through creating an agent identity blueprint using the Micr
 
 To create an agent identity blueprint, you need:
 
-- [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph Application permissions.
+- [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
 - Both [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints and agent identity blueprint principals.
     - [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) can configure federated identity credentials on an agent identity blueprint.
@@ -63,7 +63,7 @@ This step creates the agent identity blueprint, assigns an owner and sponsor, an
 
 - The `AgentIdentityBlueprint.Create` permission.
 - The OData-Version header must be set to 4.0.
-- An owner and a sponsor.
+- A user ID for the owner and sponsor fields in the example request body. A sponsor is required, but an owner is optional.
 
 ```http
 POST https://graph.microsoft.com/v1.0/applications/
@@ -79,7 +79,7 @@ Authorization: Bearer <token>
   ],
   "owners@odata.bind": [
     "https://graph.microsoft.com/v1.0/users/<id>"
-  ]
+  ],
 }
 
 ```
