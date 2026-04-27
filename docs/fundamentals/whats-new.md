@@ -267,13 +267,13 @@ Customer can use GSA cloud firewall to apply admin configurable, 5-tuple (source
 
 ---
 
-### General Availability - Social Identity Providers in Entra External ID Native Authentication
+### General Availability – Enabling Social Identity Providers in Entra External ID Native Authentication via browser‑delegated (web‑view) flows using SDKs for applications
 
 **Type:** General Availability  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** Developer Experience  
 
-Build secure sign‑in and sign‑up experiences for applications in Entra External ID using Native Authentication, with Social Identity Provider support such as Google, Facebook, and Apple available through browser‑delegated (web‑view) authentication using developer‑friendly SDKs.
+Build secure sign‑in and sign‑up experiences for applications in Entra External ID using Native Authentication, with Social Identity Provider support such as Google, Facebook, and Apple available through browser‑delegated (web‑view) authentication using developer‑friendly SDKs. For more information, see: [Native authentication in Microsoft Entra External ID](../identity-platform/concept-native-authentication.md).
 
 ---
 
