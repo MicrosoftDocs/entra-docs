@@ -1271,7 +1271,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Transfer agent identity sponsorships to manager
+### Transfer agent identity sponsorships to manager (Preview)
 
 <!-- TODO: Fill in task description, taskdefinitionID, category, and example usage. -->
 
