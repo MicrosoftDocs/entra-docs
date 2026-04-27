@@ -9,38 +9,38 @@ ms.author: rolyon
 ms.custom: include file
 ---
 
-The automatic redemption setting is an inbound and outbound organizational trust setting to automatically redeem invitations so users don't have to accept the consent prompt the first time they access the resource/target tenant. This setting is a check box with the following name:
+The automatic redemption setting is an inbound and outbound organizational trust setting to automatically redeem invitations. With this setting, users don't have to accept the consent prompt the first time they access the resource or target tenant. This setting is a checkbox with the name **Automatically redeem invitations with the tenant** *tenant name*.
 
-- **Automatically redeem invitations with the tenant** &lt;tenant&gt;
+:::image type="content" source="~/media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the checkbox for inbound automatic redemption." lightbox="~/media/external-identities/inbound-consent-prompt-setting.png":::
 
-:::image type="content" source="~/media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="~/media/external-identities/inbound-consent-prompt-setting.png":::
-
-#### Compare setting for different scenarios
+### How does the setting work in various scenarios?
 
 The automatic redemption setting applies to cross-tenant synchronization, B2B collaboration, and B2B direct connect in the following situations:
 
-- When users are created in a target tenant using cross-tenant synchronization.
-- When users are added to a resource tenant using B2B collaboration.
-- When users access resources in a resource tenant using B2B direct connect.
+- When users are created in a target tenant through cross-tenant synchronization.
+- When users are added to a resource tenant through B2B collaboration.
+- When users access resources in a resource tenant by using B2B direct connect.
 
-The following table shows how this setting compares when enabled for these scenarios:
+The following table shows how this setting works when you enable it for these scenarios:
 
 | Item | Cross-tenant synchronization | B2B collaboration | B2B direct connect |
 | --- | :---: | :---: | :---: |
 | Automatic redemption setting | Required | Optional | Optional |
-| Users receive a [B2B collaboration invitation email](~/external-id/invitation-email-elements.md) | No | No | N/A |
+| Users receive a [B2B collaboration invitation email](~/external-id/invitation-email-elements.md) | No | No | Not applicable |
 | Users must accept a [consent prompt](~/external-id/redemption-experience.md#consent-experience-for-the-guest) | No | No | No |
-| Users receive a [B2B collaboration notification email](~/external-id/redemption-experience.md#automatic-redemption-process-setting) | No | Yes | N/A |
+| Users receive a [B2B collaboration notification email](~/external-id/redemption-experience.md#automatic-redemption-process-setting) | No | Yes | Not applicable |
 
-This setting doesn't impact application consent experiences. For more information, see [Consent experience for applications in Microsoft Entra ID](~/identity-platform/application-consent-experience.md). This setting is supported for organizations across different Microsoft cloud environments, such as Azure commercial and Azure Government. For more information, see [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization).
+This setting doesn't affect application consent experiences. For more information, see [Consent experience for applications in Microsoft Entra ID](~/identity-platform/application-consent-experience.md).
 
-#### When is consent prompt suppressed?
+This setting is supported for organizations across different Microsoft cloud environments, such as Azure commercial and Azure Government. For more information, see [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization).
 
-The automatic redemption setting will only suppress the consent prompt and invitation email if both the home/source tenant (outbound) and resource/target tenant (inbound) checks this setting.
+### When is the consent prompt suppressed?
 
-:::image type="content" source="../media/automatic-redemption-include/automatic-redemption-setting.png" alt-text="Diagram that shows automatic redemption setting for both outbound and inbound.":::
+The automatic redemption setting suppresses the consent prompt and invitation email only if you select this setting for both the home/source tenant (outbound) and resource/target tenant (inbound).
 
-The following table shows the consent prompt behavior for source tenant users when the automatic redemption setting is checked for different cross-tenant access setting combinations.
+:::image type="content" source="../media/automatic-redemption-include/automatic-redemption-setting.png" alt-text="Diagram that shows the automatic redemption setting for both outbound and inbound.":::
+
+The following table shows the consent prompt behavior for source tenant users when the automatic redemption setting is selected for various combinations of cross-tenant access settings.
 
 | Home/source tenant | Resource/target tenant | Consent prompt behavior<br/>for source tenant users |
 | :---: | :---: | :---: |
