@@ -2,7 +2,7 @@
 title: Create content policies for network content filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.topic: how-to
-ms.date: 04/16/2026
+ms.date: 04/18/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: buzaher,shkhalid
@@ -58,7 +58,7 @@ To use the content policy feature, you need the following prerequisites:
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443:
 
     ```powershell
-    @New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443
+    New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443
     ```
 
 ## Initial configuration
