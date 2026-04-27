@@ -999,9 +999,11 @@ Example of usage within the workflow:
 
 ### Transfer agent identity sponsorships to manager (Preview)
 
-Transfers all agent identity sponsorships from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
+Allows all agent identity sponsorships to be transferred from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+
 
 The Microsoft Entra prerequisites to run the **Transfer agent identity sponsorships to manager** task are:
 
