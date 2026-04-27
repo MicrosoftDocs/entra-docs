@@ -12,10 +12,11 @@ ms.date: 10/25/2025
 
 Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. For an overview of agent identity governance including access packages and sponsor responsibilities, see [Governing Agent Identities](agent-id-governance-overview.md).
 
-Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent identities:
+Lifecycle Workflows currently contain the following tasks that involve the governing of sponsors of agent identities:
 
 - [Send email to manager about sponsorship changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes-preview)
 - [Send email to cosponsors about sponsor changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes-preview)
+- [Transfer agent identity sponsorships to manager (Preview)](lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager-preview)
 
 These tasks ensure continuity of sponsorship when an agent's sponsor changes roles or leaves the organization. Both tasks are classified as **mover and leaver** tasks and are available only under mover or leaver workflow templates.
 
