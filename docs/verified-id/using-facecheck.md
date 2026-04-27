@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
-description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
+title: Tutorial - Use Face Check with Microsoft Entra Verified ID
+description: Learn how to set up and use Face Check with Microsoft Entra Verified ID for high-assurance facial matching verifications that protect user privacy at enterprise scale.
 ms.topic: tutorial
 ms.date: 04/22/2026
 ms.custom: sfi-image-nochange
