@@ -10,7 +10,7 @@ ms.subservice: hybrid-connect
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Changing the ADSync service account password
-Changing the ADSync service account password can prevent the Synchronization Service from starting successfully. When this occurs, the encryption key must be discarded and re-created, and the passwords for both the AD Connector account and the Microsoft Entra ID Connect account must be re-condfigured. 
+Changing the ADSync service account password can prevent the Synchronization Service from starting successfully. When this occurs, the encryption key must be discarded and re-created, and the passwords for both the AD Connector account and the Microsoft Entra ID Connect account must be reconfigured. 
 
 >[!IMPORTANT]
 > If you use Connect with a build from 2017 March or earlier, then you should not reset the password on the service account since Windows destroys the encryption keys for security reasons. You can't change the account to any other account without reinstalling Microsoft Entra Connect. If you upgrade to a build from 2017 April or later, then it is supported to change the password on the service account, but you can't change the account used. 
