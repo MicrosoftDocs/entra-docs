@@ -999,9 +999,13 @@ Example of usage within the workflow:
 
 ### Transfer agent identity sponsorships to manager (Preview)
 
-<!-- TODO: Fill in task description, taskdefinitionID, category, and example usage. -->
+Transfers all agent identity sponsorships from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+The Microsoft Entra prerequisites to run the **Transfer agent identity sponsorships to manager** task are:
+
+- A populated manager attribute for the user.
 
 For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
 
@@ -1011,6 +1015,20 @@ For Microsoft Graph, the parameters for the **Transfer agent identity sponsorshi
 |displayName     |  Transfer agent identity sponsorships to manager (Preview)  |
 |description     |  Transfer all agent identities sponsored by user to manager.       |
 |taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Transfer all agent identities sponsored by user to manager.",
+    "displayName": "Transfer agent identity sponsorships to manager",
+    "isEnabled": true,
+    "taskDefinitionId": "b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a",
+    "arguments": []
+}
+```
 
 ### Remove all license assignments from User
 
