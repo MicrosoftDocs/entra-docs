@@ -86,7 +86,7 @@ Please keep an eye on our monthly What’s new articles and the M365 Message Cen
 **Service category:** MS Graph  
 **Product capability:** Monitoring & Reporting  
 
-The ability to use $count in sign-ins API requests is now here, allowing customers to perform count computations directly in API requests!
+The ability to use $count in sign-ins API requests is now here, allowing customers to perform count computations directly in API requests. For more information, see: [Customize Microsoft Graph responses with query parameters](/graph/query-parameters).
 
 ---
 
