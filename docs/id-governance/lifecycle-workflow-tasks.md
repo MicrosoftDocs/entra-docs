@@ -1284,7 +1284,7 @@ For Microsoft Graph, the parameters for the **Transfer agent identity sponsorshi
 |category    |        |
 |displayName     |  Transfer agent identity sponsorships to manager  |
 |description     |         |
-|taskDefinitionId     |        |
+|taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
 
 ## Next steps
 
