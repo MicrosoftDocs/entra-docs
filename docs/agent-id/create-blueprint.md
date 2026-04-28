@@ -57,7 +57,7 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 ## Create an agent identity blueprint
 
-Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is the human user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+Agent identity blueprints must have a sponsor, which is the user or [supported group](agent-owners-sponsors-managers.md#sponsors) that's accountable for the agent. An owner is recommended, which is the user or service principal that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 ### Use the Microsoft Entra admin center
 
@@ -138,8 +138,8 @@ Write-Host "Sponsor user: $($user.DisplayName) ($($user.Id))"
 $body = @{
     "@odata.type" = "Microsoft.Graph.AgentIdentityBlueprint"
     "displayName" = "My Agent Identity Blueprint"
-    "sponsors@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
-    "owners@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
+    "sponsors@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
+    "owners@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
 } | ConvertTo-Json -Depth 5
 
 $response = Invoke-MgGraphRequest `
