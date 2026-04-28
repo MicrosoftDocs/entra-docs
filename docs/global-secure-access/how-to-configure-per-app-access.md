@@ -173,7 +173,7 @@ Session persistence is useful for applications that rely on connector egress IP 
 > [!TIP]
 > Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
 
-You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For the `trafficRoutingMethod` property definition and supported values, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 Update the application object with a separate `PATCH` request to Microsoft Graph:
 
