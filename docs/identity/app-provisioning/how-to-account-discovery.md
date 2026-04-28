@@ -119,36 +119,43 @@ Use the search and filter capabilities to find specific accounts:
 - Manage columns to view the imported attributes from the target application and the correlation status.
 
 ## Assign correlated users to your enterprise application and/or access packages
-After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users.  
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
 
-* Assign all discovered users to a specific access package (dry run):
+| Parameter | Description |
+|---|---|
+| **`-DryRun`** | Shows what *would* happen without making any changes.|
+| **`-SkipAppRoleAssignment`** | Only manage access packages, skip assigning app roles |
+| **Duplicate detection** | Checks for existing assignments before creating new ones |
+| **Client-side status filter** | Verifies API results match expected status (guards against API quirks) |
+| **`-OutputFile`** | Full audit trail as CSV with timestamps, actions, and error details |
+| **Strict mode** | Runs with `Set-StrictMode -Version Latest` and `$ErrorActionPreference = "Stop"` to fail fast on unexpected issues |
 
+* Assign correlated users to the enterprise app:
    ```powershell
-   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." 
    ```
-
-* Assign all discovered users to a specific access package:
+* Assign all discovered users to a specific access package (the DryRun property is optional and can be removed):
 
    ```powershell
-   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '55939d8a-7ea2-4402-ad0a-96be85891771' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
    ```
 
 * Assign users to packages based on rules that you define (example rules file):
 
     ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
    ```
 
 * Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
 
    ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
    ```
 
 * Assign users to access packages and skip app role assignments:
  
     ```powershell
-   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
    ```
 
 ## Integrate with Identity Governance
