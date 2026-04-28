@@ -1,5 +1,5 @@
 ---
-title: Agent identity sponsor tasks in Lifecycle Workflows (Preview)
+title: Agent identity sponsor tasks in Lifecycle Workflows
 description: This article describes workflow tasks that involve sponsors of agent identities.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
@@ -8,15 +8,15 @@ ms.date: 10/25/2025
 #Customer Intent: As a lifecycle workflows administrator, I want to create workflows that target agent identity sponsors so that agent identity sponsor management can be streamlined.
 ---
 
-# Agent identity sponsor tasks in Lifecycle Workflows (Preview)
+# Agent identity sponsor tasks in Lifecycle Workflows
 
 Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. For an overview of agent identity governance including access packages and sponsor responsibilities, see [Governing Agent Identities](agent-id-governance-overview.md).
 
 Lifecycle Workflows currently contain the following tasks that involve the governing of sponsors of agent identities:
 
-- [Send email to manager about sponsorship changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes-preview)
-- [Send email to cosponsors about sponsor changes (Preview)](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes-preview)
-- [Transfer agent identity sponsorships to manager (Preview)](lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager-preview)
+- [Send email to manager about sponsorship changes](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes)
+- [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
+- [Transfer agent identity sponsorships to manager](lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager)
 
 These tasks ensure continuity of sponsorship when an agent's sponsor changes roles or leaves the organization. All three tasks are classified as **mover and leaver** tasks and are available only under mover or leaver workflow templates.
 
