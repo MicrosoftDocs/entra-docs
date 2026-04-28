@@ -3351,7 +3351,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "entra/global-secure-access/how-to-efp-conditional-access.md",
+      "source_path": "docs/global-secure-access/how-to-efp-conditional-access.md",
       "redirect_url": "/entra/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy",
       "redirect_document_id": false
     },
@@ -3546,7 +3546,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "entra/global-secure-access/concept-edr-antivirus-coexistence.md",
+      "source_path": "docs/global-secure-access/concept-edr-antivirus-coexistence.md",
       "redirect_url": "/entra/global-secure-access/how-to-edr-antivirus-coexistence",
       "redirect_document_id": false
     }
