@@ -91,9 +91,9 @@ To manage the Authentication methods policy by using Microsoft Graph, you need t
 
 Users who are enabled for external MFA can use it when they sign-in and multifactor authentication is required. 
 
-If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select external MFA. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
+If the user has other ways to sign in and [system-preferred authentication](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select external MFA. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
-:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an external MFA when system-preferred MFA is enabled.":::
+:::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an external MFA when system-preferred authentication is enabled.":::
 
 If the user has no other methods enabled, they can just choose external MFA. They're redirected to the external authentication provider to complete authentication.
 
@@ -133,7 +133,7 @@ In the Microsoft Entra admin center:
 1. Select the user who needs to be registered for external MFA.
 1. In the User menu, select **Authentication Methods**, and select **+ Add Authentication Method**. 
 1. Select **External authentication method**.
-1. Select one or more external MFA method, and select **Save**.
+1. Select one or more external MFA methods, and select **Save**.
 1. A success message appears, and the methods that you previously selected are listed in **Usable authentication methods**. 
 
 ## Best practices for using external MFA and Conditional Access

@@ -648,7 +648,7 @@ CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA
 **Service category:** Authentications (Login)   
 **Product capability:** User Authentication 
  
-CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping).
  
 ---
 
@@ -1580,7 +1580,7 @@ In [October 2023](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/wh
 **Product capability:** Identity Security & Protection            
 
 Microsoft Entra ID now supports FIDO2 provisioning via API, allowing organizations to pre-provision security keys (passkeys) for users. These new APIs can simplify user onboarding, and provide seamless phishing-resistant authentication on day one for employees. 
-For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API](../identity/authentication/how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+For more information on how to use this feature, see: [Provision FIDO2 security keys using Microsoft Graph API](../identity/authentication/how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ---
 

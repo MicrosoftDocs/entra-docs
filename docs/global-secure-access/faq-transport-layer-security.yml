@@ -48,7 +48,7 @@ sections:
           
       - question: How should I handle applications that use certificate pinning? 
         answer: |
-          The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
+          The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, use a [custom TLS bypass rule](how-to-transport-layer-security.md) to bypass TLS inspection only for these applications.
 
       - question: What destinations are included in the system bypass?
         answer: |

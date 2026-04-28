@@ -3,7 +3,7 @@ title: Configure Reward Gateway for automatic user provisioning with Microsoft E
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Reward Gateway.
 author: jeevansd
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/20/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Reward Gateway so that I can streamline the user management process and ensure that users have the appropriate access to Reward Gateway.
@@ -64,7 +64,8 @@ To configure Reward Gateway for automatic user provisioning with Microsoft Entra
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Reward Gateway**, select **Reward Gateway** in the search box.
 1. Select **Reward Gateway** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Reward Gateway in the results list](common/search-new-app.png)
+
+	![Screenshot of the Reward Gateway in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Reward Gateway  
 
@@ -80,51 +81,43 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Reward Gateway**.
 
-	![The Reward Gateway link in the Applications list](common/all-applications.png)
+	![Screenshot of the Reward Gateway link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM URL (v2)** and **OAuth Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to reward gateway. If the connection fails, ensure your reward gateway account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Reward Gateway Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Reward Gateway. If the connection fails, ensure your Reward Gateway account has the required admin permissions and try again.
 
-	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page.
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Reward Gateway**.
+	![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select users.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Reward Gateway in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Reward Gateway for update operations. Select the **Save** button to commit any changes.
 
 	![Screenshot of the Attribute Mappings section with six mappings displayed.](media/reward-gateway-provisioning-tutorial/user-attributes.png)
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
-11. To enable the Microsoft Entra provisioning service for Reward Gateway, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Reward Gateway by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Reward Gateway.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 

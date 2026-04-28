@@ -1013,6 +1013,7 @@ After you complete JIT password migration setup and testing, return to the migra
 - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Choose between the standard and HSC mode migration approaches.
 - [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – End-to-end guide for the standard migration approach.
 - [Migrate users and credentials to External ID](how-to-migrate-users.md)
+- [Services and integration partners for External ID](services-integration-partners.md) – Find a partner to help plan and execute your migration.
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
 - [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
