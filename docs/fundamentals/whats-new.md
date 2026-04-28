@@ -120,7 +120,7 @@ Stay tuned to this page for further updates.
 
 ---
 
-### Plan for change - Update SCIM provisioning applications to use modern authentication"
+### Plan for change - Update SCIM provisioning applications to use modern authentication
 
 **Type:** Plan for change  
 **Service category:** Provisioning  
