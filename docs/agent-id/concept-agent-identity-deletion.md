@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: shlipsey3
 ms.author: sarahlipsey
 ms.topic: concept-article
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.custom: agent-id
 ai-usage: ai-assisted
 

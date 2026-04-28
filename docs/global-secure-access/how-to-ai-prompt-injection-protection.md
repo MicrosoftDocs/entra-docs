@@ -2,7 +2,7 @@
 title: Protect enterprise generative AI apps with prompt injection protection
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
-ms.date: 04/08/2026
+ms.date: 04/27/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: KaTabish
@@ -110,7 +110,7 @@ You can protect any custom JSON-based LLM or GenAI app by configuring a custom t
 
 - Prompt Injection Protection currently supports only text prompts. It doesn't support files.
 - Prompt Injection Protection supports only JSON-based generative AI apps.
-- Prompt Injection Protection supports prompts up to 10,000 characters. Anything longer is truncated.
+- Prompt Injection Protection supports prompts up to 64,000 characters. Anything longer is truncated.
 
 ## Related content
 
