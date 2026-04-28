@@ -175,6 +175,21 @@ Session persistence is useful for applications that rely on connector egress IP 
 
 You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
+Update the application object with a separate `PATCH` request to Microsoft Graph:
+
+```http
+PATCH https://graph.microsoft.com/beta/applications/{applicationObjectId}
+Content-Type: application/json
+
+{
+    "onPremisesPublishing": {
+        "trafficRoutingMethod": "sessionPersistence"
+    }
+}
+```
+
+Replace `{applicationObjectId}` with the object ID of the application. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true).
+
 ## Enable or disable access with the Global Secure Access Client
 
 You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.
