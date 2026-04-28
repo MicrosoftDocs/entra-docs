@@ -119,9 +119,9 @@ Use the search and filter capabilities to find specific accounts:
 - Manage columns to view the imported attributes from the target application and the correlation status.
 
 ## Assign correlated users to your enterprise application and/or access packages
-After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
 
-### Parameters
+### Optional parameters
 
 | Parameter | Description |
 |---|---|
@@ -132,12 +132,13 @@ After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) use
 | **`-OutputFile`** | Full audit trail as CSV with timestamps, actions, and error details |
 | **Strict mode** | Runs with `Set-StrictMode -Version Latest` and `$ErrorActionPreference = "Stop"` to fail fast on unexpected issues |
 
-### Examples
-* Assign correlated users to the enterprise app:
+### Example scenarios
+
+* Assign all correlated users to the enterprise app:
    ```powershell
    pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." 
    ```
-* Assign all discovered users to a specific access package (example [rules](https://aka.ms/AssignCorrelatedUsersCSV) file):
+* Assign all correlated users to a specific access package (example [rules](https://aka.ms/AssignCorrelatedUsersCSV) file):
 
    ```powershell
    pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '7A22...' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
