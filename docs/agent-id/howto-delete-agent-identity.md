@@ -81,7 +81,7 @@ Remove-EntraServicePrincipal -ObjectId <blueprint-principal-object-id>
 
 ---
 
-After you delete the blueprint or its principal, Microsoft Entra automatically soft deletes all associated child agent identities and agents' user accounts.
+After you delete the blueprint or its principal, Microsoft Entra automatically soft deletes all associated child agent identities and agents' user accounts. For more information on this process, see [Agent identity deletion](concept-agent-identity-deletion.md).
 
 > [!IMPORTANT]
 > If you restore the blueprint principal before the cascade cleanup runs, child agent identities aren't affected. After the cleanup runs, each child identity must be restored individually. Restoring the blueprint principal doesn't reverse cascade deletions that already occurred.
@@ -89,6 +89,10 @@ After you delete the blueprint or its principal, Microsoft Entra automatically s
 ## Restore a blueprint principal
 
 You can restore a soft-deleted blueprint principal within 30 days.
+
+### [Microsoft Entra admin center](#tab/entra-admin-center)
+
+Restoring a soft-deleted blueprint principal isn't currently supported in the Microsoft Entra admin center. Use the API or PowerShell to restore the principal.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -111,6 +115,10 @@ If the cascade cleanup already ran and child agent identities were soft deleted,
 
 > [!NOTE]
 > The Microsoft Graph `/directory/deletedItems` endpoint doesn't support filtering by agent identity type. Query for deleted service principals and filter results on the client side using known object IDs, app IDs, or display names to identify the correct agent identities.
+
+### [Microsoft Entra admin center](#tab/entra-admin-center)
+
+Restoring a soft-deleted agent identity isn't currently supported in the Microsoft Entra admin center. Use the API or PowerShell to restore the agent identity.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -145,6 +153,10 @@ Restore-EntraDeletedDirectoryObject -Id <agent-identity-object-id>
 <!-- TODO: Confirm with engineering whether the cascade cleanup automatically includes agents' user accounts, and whether deleting an individual agent identity also deletes its associated agent's user account. Update or remove this section accordingly. -->
 
 Agents' user accounts are paired 1:1 with agent identities. If agents' user accounts aren't automatically cleaned up as part of cascade deletion, delete them manually.
+
+### [Microsoft Entra admin center](#tab/entra-admin-center)
+
+Restoring a soft-deleted agent's user account isn't currently supported in the Microsoft Entra admin center. Use the API or PowerShell to restore the agent's user account.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
