@@ -8,8 +8,6 @@ items:
       href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Services and integration partners
-      href: services-integration-partners.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
 - name: Get started
@@ -64,6 +62,8 @@ items:
           href: enable-external-id-high-scale-compatibility-mode.md
         - name: Troubleshoot HSC mode
           href: troubleshoot-high-scale-compatibility-mode.md
+        - name: Services and integration partners
+          href: services-integration-partners.md
 - name: Security
   expanded: false
   items:
