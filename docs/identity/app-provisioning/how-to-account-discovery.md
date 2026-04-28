@@ -68,7 +68,7 @@ Account Discovery is currently unsupported for the following applications:
 
 ### All other connectors
 
-Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If you discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
+Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If your discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
 
 ## Discover identities in a target application
 
@@ -170,8 +170,8 @@ The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with
 | `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
 | `Operator` | `eq` \| `ne` \| `contains` \| `startswith` \| `endswith` \| `regex` |
 | `Value` | The value to compare against (case-insensitive). |
-| `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Entra Portal. |
-| `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Entra Portal. |
+| `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
+| `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
 
 ## Integrate with Identity Governance
 
