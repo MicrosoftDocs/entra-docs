@@ -902,7 +902,7 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 }
 ```
 
-### Send email to manager about sponsorship changes (Preview)
+### Send email to manager about sponsorship changes
 
 Allows an email to be sent to the manager of an employee that has moved or left. This email notifies the manager that the employee, who moved or left, was the sponsor of one or more agent IDs. This allows the manager to decide if the agent ID should have a different employee as their sponsor.
 
@@ -914,7 +914,7 @@ For Microsoft Graph, the parameters for the **Send email to manager about sponso
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to manager about sponsorship changes (Preview)     |
+|displayName     |  Send email to manager about sponsorship changes     |
 |description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
 |taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
 
