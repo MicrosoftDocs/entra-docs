@@ -147,7 +147,6 @@ Before you move to production and decommission Azure AD B2C apps, validate end-t
 > [!NOTE]
 > The following Azure AD B2C features aren't available in Microsoft Entra External ID and should be addressed before migration:
 > - **Social identity providers configured through B2C custom policies.** Social federation must be reconfigured using External ID's built-in social identity provider support. Third-party identity providers configured through B2C custom policies aren't supported.
-> - **Phone-based MFA (SMS and voice call).** Plan to transition affected users to a supported MFA method such as email one-time passcode.
 
 See [Test user flows](how-to-test-user-flows.md), [Samples](samples-ciam-all.md), and [Custom extension attribute collection](~/identity-platform/custom-extension-attribute-collection.md) for guidance.
 
@@ -164,6 +163,7 @@ Ongoing monitoring enables proactive issue resolution, data-driven optimization,
 - [Microsoft Entra External ID](/entra/external-id/)
 - [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md)
 - [Migrate users and credentials](how-to-migrate-users.md)
+- [Services and integration partners for External ID](services-integration-partners.md)
 - [MSAL overview](/azure/active-directory/develop/msal-overview)
 - [Microsoft Entra External ID Q&A](/answers/tags/438/entra-external-id)
 - [External authentication and access control](/entra/architecture/deployment-external-authentication-access-control)

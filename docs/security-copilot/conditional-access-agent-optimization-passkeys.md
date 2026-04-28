@@ -34,7 +34,7 @@ The agent continuously evaluates progress and advances users through the campaig
 - You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
-- You must have [passkeys enabled in the Authentication methods policy](../identity/authentication/how-to-enable-passkey-fido2.md).
+- You must have [passkeys enabled in the Authentication methods policy](../identity/authentication/how-to-authentication-passkeys-fido2.md).
 - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) is required to manage passkey campaigns.
     - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role doesn't have sufficient privileges to manage passkey campaigns.
 

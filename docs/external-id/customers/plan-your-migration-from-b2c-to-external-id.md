@@ -14,6 +14,9 @@ ai-usage: ai-assisted
 
 Decide which migration approach is right for your Azure AD B2C tenant before you begin implementation. This article helps you choose between the standard migration and High Scale Compatibility (HSC) mode, understand the key decision points, and find the right next step. This article is for existing customers of Azure AD B2C who are planning to migrate. New customers evaluating Microsoft Entra External ID should refer to [Planning your solution](concept-planning-your-solution.md).
 
+> [!IMPORTANT]
+> Before you choose an approach, review the feature and service limitations that apply to Microsoft Entra External ID, and the additional limitations that apply in HSC mode. Some Azure AD B2C capabilities (for example, social identity providers, passkeys, age gating, and certain Conditional Access scenarios) aren't available in HSC mode today. See [HSC mode limitations](#hsc-mode-limitations) and [Capability support by scale and deployment mode](reference-service-limits.md#capability-support-by-scale-and-deployment-mode).
+
 In this article, you’ll learn how to:
 - Compare the available migration approaches (standard and High Scale Compatibility)
 - Understand the key decision points and eligibility criteria
@@ -44,7 +47,7 @@ HSC mode migration might be a good choice if **all** the following are true:
 
 | Standard migration | High Scale Compatibility (HSC) mode migration |
 |---|---|
-| **Best for**: Most tenants<br>**Typical trigger**: Below high-scale thresholds<br>**Identity approach**: Plan to migrate users (and, where required, credentials) as part of moving to External ID<br>**Coexistence**: Not designed for long-running side-by-side operation at very large scale<br>**Feature coverage**: Broadest compatibility | **Best for**: Very large Azure AD B2C tenants<br>**Typical trigger**: ~5 million+ directory objects and scale-driven constraints<br>**Identity approach**: Keep existing users and credentials in place while migrating applications in phases<br>**Coexistence**: Azure AD B2C and External ID run side by side in the same tenant and might require schema updates<br>**Feature coverage**: Some External ID features aren’t available yet in HSC mode. Review limitations carefully |
+| **Best for**: Most tenants<br>**Typical trigger**: Below high-scale thresholds<br>**Identity approach**: Plan to migrate users (and, where required, credentials) as part of moving to External ID<br>**Coexistence**: Not designed for long-running side-by-side operation at very large scale<br>**Feature coverage**: Broadest compatibility | **Best for**: Very large Azure AD B2C tenants<br>**Typical trigger**: ~5 million+ directory objects and scale-driven constraints<br>**Identity approach**: Keep existing users and credentials in place while migrating applications in phases<br>**Coexistence**: Azure AD B2C and External ID run side by side in the same tenant and might require schema updates<br>**Feature coverage**: Significant feature gaps today — no social identity providers, no passkeys, no age gating, no admin portal experience, and limited Conditional Access. See [HSC mode limitations](#hsc-mode-limitations) |
 
 If your tenant meets the HSC mode eligibility criteria, review both approaches below before deciding. The standard approach might still be the better fit depending on your feature requirements.
 
@@ -70,16 +73,24 @@ In the standard approach, you migrate identities and applications to a new Micro
 - **Bulk user migration with just-in-time (JIT) password migration**: Users are migrated to External ID first, then password validation/migration happens during sign-in or password reset over a time-boxed coexistence period.
 - **Azure AD B2C-initiated migration**: Applications initially continue authenticating through your legacy B2C tenant while passwords are progressively migrated in the background, then applications cut over to External ID.
 
-### Common considerations
+### Considerations
 
 Before you start implementation, review the following areas at a high level:
 - **Custom business logic**: Identify custom policy logic, token/claim shaping, and downstream dependencies you need to recreate.
 - **User experience**: Review your current sign-in UX customizations and decide which External ID experience to use.
 - **Identity providers**: List social and enterprise identity providers and any federation requirements.
 - **Access controls**: Note Conditional Access policies and conditions that must be equivalent post-migration.
-- **Age gating**: Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
 - **Application-level changes**: Migration requires changes at the application level, not just the tenant level. Each application must be updated to use External ID endpoints and validate tokens accordingly. If your tenant contains applications owned by third parties (for example, ISV tenants where customers register their own apps), coordinate with those app owners early. You can't complete migration until every application is updated.
 - **Automation and operations**: Plan Microsoft Graph-based lifecycle operations, monitoring, and runbooks.
+
+### Known limitations
+
+Some Azure AD B2C capabilities aren't available (or aren't yet fully available) in Microsoft Entra External ID. Review these before you commit to a migration plan.
+
+- **Age gating**: Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
+- **Custom policies (IEF)**: Custom policy logic must be recreated using custom authentication extensions. One-to-one parity isn't guaranteed.
+
+For the full list of service limits and capability differences, see [Service limits and restrictions](reference-service-limits.md).
 
 ### When to choose standard migration
 
@@ -116,45 +127,9 @@ If your tenant doesn't exceed this object quota, HSC mode provides no additional
 ### Review limitations and roadmap alignment
 
 > [!IMPORTANT]
-> HSC mode is appropriate only if you can accept limitations that apply at large scale. Review the limitations before enabling HSC mode or migrating additional applications.
+> HSC mode is appropriate only if you can accept limitations that apply at large scale. Review the [HSC mode limitations](#hsc-mode-limitations) section below before enabling HSC mode or migrating additional applications.
 
-Some limitations are fundamental to operating at high scale and exist today in Azure AD B2C. These same constraints apply when running External ID in HSC mode. For a comprehensive list, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
-
-#### External ID features not yet supported in HSC mode
-
-Some capabilities available in External ID aren't available in HSC mode today. If you're considering HSC mode, review these features carefully before making a decision.
-
-> [!NOTE]
-> Some features listed here might be partially available but haven't been fully validated in HSC mode. Feature availability timelines might differ between External ID HSC mode and standard deployment modes. Always refer to the official roadmap for the latest status and rollout expectations.
-
-**Authentication and access control**
-
-- Advanced Conditional Access scenarios, including:
-  - Authentication context or step-up authentication.
-  - Session-based controls.
-- Application assignment via groups.
-- Phone-based MFA (SMS and voice call). Plan to transition affected users to a supported MFA method such as email one-time passcode before migrating applications.
-- Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
-
-**Federation and ecosystem integrations**
-
-- Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C). 
-- Third-party identity providers configured through Azure AD B2C custom policies.
-- Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported).
-
-**Security and fraud prevention**
-
-- Third-party fraud protection integration.
-
-**User experience and compliance**
-
-- Age gating. Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches. Age gating isn't currently supported in Microsoft Entra External ID.
-
-**Admin portal experience**
-
-- Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
-
-For a comprehensive comparison, see [Capability support by scale and deployment mode](/entra/external-id/customers/reference-service-limits#capability-support-by-scale-and-deployment-mode).
+Some limitations are fundamental to operating at high scale and exist today in Azure AD B2C. These same constraints apply when running External ID in HSC mode. For a comprehensive list, see [Capability support by scale and deployment mode](reference-service-limits.md#capability-support-by-scale-and-deployment-mode).
 
 ### Application requirements for HSC mode
 
@@ -184,9 +159,44 @@ If you've decided to use High Scale Compatibility (HSC) mode, continue to [Enabl
 
 If after reviewing the HSC mode limitations you'd prefer the standard approach instead, see [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md).
 
+## HSC mode limitations
+
+Review these limitations carefully before enabling HSC mode. They apply in addition to the general [External ID service limits](reference-service-limits.md). Some features might be partially available but haven't been fully validated in HSC mode, and feature availability timelines can differ between HSC mode and standard deployment. Refer to the official roadmap for the latest status.
+
+**Authentication and access control**
+
+- Advanced Conditional Access scenarios, including authentication context, step-up authentication, and session-based controls.
+- Application assignment via groups.
+- Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
+
+**Federation and ecosystem integrations**
+
+- Social identity providers (Google, Facebook, Apple, and any other social identity providers configured in Azure AD B2C).
+- Third-party identity providers configured through Azure AD B2C custom policies.
+- Custom OIDC federation as configured in Azure AD B2C custom policies (enterprise OIDC identity providers are supported).
+
+**Security and fraud prevention**
+
+- Third-party fraud protection integration.
+
+**User experience and compliance**
+
+- Age gating. Azure AD B2C tenants that use custom policies to derive or store age-based attributes (such as minor or major classification) need to plan for alternate approaches.
+
+**Admin portal experience**
+
+- Administrative configuration and management are currently performed programmatically using Microsoft Graph and automation.
+
+For the authoritative capability comparison, see [Capability support by scale and deployment mode](reference-service-limits.md#capability-support-by-scale-and-deployment-mode).
+
+## Get help from a migration partner
+
+Microsoft works with services and integration partners who specialize in Azure AD B2C to Microsoft Entra External ID migrations. Partners can help with advisory, implementation, and engineering-led delivery across both the standard and HSC mode approaches. For a list of partners and how to engage them, see [Services and integration partners for External ID](services-integration-partners.md).
+
 ## Related content
 
 - [Microsoft Entra External ID overview](/entra/external-id/external-identities-overview)
 - [Supported features in External ID](concept-supported-features-customers.md)
 - [Planning your solution](concept-planning-your-solution.md)
+- [Services and integration partners for External ID](services-integration-partners.md)
 - [Service limits and restrictions](reference-service-limits.md)

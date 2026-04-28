@@ -40,7 +40,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. [Configure your emergency access accounts](#configuration-requirements) to use passwordless authentication.
 
-    - [Enable passkeys (FIDO2) for your organization](../authentication/how-to-enable-passkey-fido2.md)
+    - [Enable passkeys (FIDO2) for your organization](../authentication/how-to-authentication-passkeys-fido2.md)
     - [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
     - [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
 
@@ -74,7 +74,7 @@ Some organizations use Active Directory Domain Services and Active Directory Fed
 
 ## Store account credentials safely
 
-Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. For example, you might use [FIDO2 security keys](../authentication/how-to-enable-passkey-fido2.md) for Microsoft Entra ID or smartcards for Windows Server Active Directory. Credentials should be stored in secure, fireproof safes that are in secure, separate locations.
+Organizations need to ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. For example, you might use [FIDO2 security keys](../authentication/how-to-authentication-passkeys-fido2.md) for Microsoft Entra ID or smartcards for Windows Server Active Directory. Credentials should be stored in secure, fireproof safes that are in secure, separate locations.
 
 ## Monitor sign-in and audit logs
 
