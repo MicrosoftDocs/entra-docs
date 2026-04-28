@@ -1,6 +1,6 @@
 ---
-title: How to configure per-app access using Global Secure Access applications
-description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
+title: How to configure per-app access using Microsoft Entra Private Access applications
+description: Learn how to configure per-app access to your private, internal resources using Microsoft Entra Private Access applications.
 ms.topic: how-to
 ms.date: 03/25/2026
 ms.subservice: entra-private-access
@@ -8,7 +8,7 @@ ms.reviewer: katabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
-# How to configure per-app access using Global Secure Access applications
+# How to configure per-app access using Microsoft Entra Private Access applications
 
 ## Overview
 
@@ -25,7 +25,7 @@ To configure a Global Secure Access Enterprise app, you must have:
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
-To manage Microsoft Entra private network connector groups, which is required for Global Secure Access apps, you must have:
+To manage Microsoft Entra private network connector groups, which is required for Microsoft Entra Private Access apps, you must have:
 
 - An **Application Administrator** role in Microsoft Entra ID
 - Microsoft Entra ID P1 or P2 licenses
@@ -36,7 +36,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 ## High level steps
 
-Per-App Access is configured by creating a new Global Secure Access app. You create the app, select a connector group, and add network access segments. These settings make up the individual app that you can assign users and groups to.
+Per-App Access is configured by creating a new Microsoft Entra Private Access app. You create the app, select a connector group, and add network access segments. These settings make up the individual app that you can assign users and groups to.
 
 To configure Per-App Access, you need to have a connector group with at least one active [Microsoft Entra private network](/entra/identity/app-proxy/) connector. This connector group handles the traffic to this new application. With Connectors, you can isolate apps per network and connector.
 
@@ -45,7 +45,7 @@ To summarize, the overall process is as follows:
 1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
-1. [Create a Global Secure Access app](#create-a-global-secure-access-enterprise-application).
+1. [Create a Microsoft Entra Private Access app](#create-a-microsoft-entra-private-access-enterprise-application).
 
 1. [Assign users and groups to the app](#assign-users-and-groups).
 
@@ -55,7 +55,7 @@ To summarize, the overall process is as follows:
 
 ## Create a private network connector group
 
-To configure a Global Secure Access app, you must have a connector group with at least one active private network connector.
+To configure a Microsoft Entra Private Access app, you must have a connector group with at least one active private network connector.
 
 If you don't already have a connector set up, see [Configure connectors](how-to-configure-connectors.md).
 
@@ -64,7 +64,7 @@ If you don't already have a connector set up, see [Configure connectors](how-to-
 >
 > The minimum version of connector required for Private Access is **1.5.3417.0**.
 
-## Create a Global Secure Access Enterprise application
+## Create a Microsoft Entra Private Access Enterprise application
 
 To create a new app, you provide a name, select a connector group, and then add application segments. App segments include the fully qualified domain names (FQDNs) and IP addresses you want to tunnel through the service. You can complete all three steps at the same time, or you can add them after the initial setup is complete.
 
@@ -164,7 +164,7 @@ You can add or update the FQDNs and IP addresses included in your app at any tim
 
 ## Configure traffic routing for the app
 
-Traffic routing is configured per Global Secure Access application. The default traffic routing method is **Random**, which distributes requests across the available connectors in the selected connector group.
+Traffic routing is configured per Microsoft Entra Private Access application. The default traffic routing method is **Random**, which distributes requests across the available connectors in the selected connector group.
 
 For Microsoft Entra Private Access applications, you can change the routing behavior to use session persistence, also called session affinity. Session persistence consistently routes requests from the same user and device to the same connector for the duration of a session.
 
@@ -173,7 +173,7 @@ Session persistence is useful for applications that rely on connector egress IP 
 > [!TIP]
 > Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
 
-You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For the `trafficRoutingMethod` property definition and supported values, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+You can configure the traffic routing method for the Microsoft Entra Private Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For the `trafficRoutingMethod` property definition and supported values, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 Update the application object with a separate `PATCH` request to Microsoft Graph:
 
@@ -188,7 +188,7 @@ Content-Type: application/json
 }
 ```
 
-Replace `{appRegistrationObjectId}` with the application registration's object ID. You can find this value in the Microsoft Entra admin center under **Identity** > **Applications** > **App registrations** by selecting the app registration for your Global Secure Access application and copying the **Object ID** from the **Overview** page. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
+Replace `{appRegistrationObjectId}` with the application registration's object ID. You can find this value in the Microsoft Entra admin center under **Identity** > **Applications** > **App registrations** by selecting the app registration for your Microsoft Entra Private Access application and copying the **Object ID** from the **Overview** page. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
 
 To confirm that the configuration was committed, retrieve the app registration object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
 
@@ -200,7 +200,7 @@ For more information, see [Get application](/graph/api/application-get?view=grap
 
 ## Enable or disable access with the Global Secure Access Client
 
-You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.
+You can enable or disable access to the Microsoft Entra Private Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.
 
 ![Screenshot that shows the enable access checkbox.](media/how-to-configure-per-app-access/per-app-access-enable-checkbox.png)
 
@@ -215,7 +215,7 @@ For more information, see [Apply Conditional Access policies to Private Access a
 
 ## Enable Microsoft Entra Private Access
 
-Once you have your app configured, your private resources added, users assigned to the app, you can enable the Private access traffic forwarding profile. You can enable the profile before configuring a Global Secure Access app, but without the app and profile configured, there's no traffic to forward.
+Once you have your app configured, your private resources added, users assigned to the app, you can enable the Private access traffic forwarding profile. You can enable the profile before configuring a Microsoft Entra Private Access app, but without the app and profile configured, there's no traffic to forward.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
@@ -246,4 +246,4 @@ For more information about Private Access, see the following articles:
 
 - [Learn about traffic management profiles](concept-traffic-forwarding.md)
 - [Manage the Private Access traffic profile](how-to-manage-private-access-profile.md)
-- [Apply Conditional Access policies to the Global Secure Access application](how-to-target-resource-private-access-apps.md)
+- [Apply Conditional Access policies to the Microsoft Entra Private Access application](how-to-target-resource-private-access-apps.md)
