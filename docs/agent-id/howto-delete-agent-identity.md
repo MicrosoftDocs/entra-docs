@@ -151,13 +151,10 @@ Restore-EntraDeletedDirectoryObject -Id <agent-identity-object-id>
 
 ## Permanently delete agent identity objects
 
-Soft-deleted objects continue to count toward [directory quota](../identity/users/directory-service-limits-restrictions.md) until they're permanently deleted. If you're at the 250 agent identity limit for a blueprint using app-only permissions, you might need to force permanent deletion to free up quota immediately rather than waiting for the 30-day retention period to expire.
+Soft-deleted objects continue to count toward [directory quota](../identity/users/directory-service-limits-restrictions.md) until they're permanently deleted. If you're at the 250 agent identity limit for a blueprint using app-only permissions, you might need to force permanent deletion to free up quota immediately rather than waiting for the 30-day retention period to expire. Permanent deletion of an agent identity blueprint principal is blocked. To permanently free quota used by a blueprint principal, wait for the 30-day retention period to expire.
 
 > [!CAUTION]
 > Permanently deleted objects can't be restored. Only permanently delete objects when you're certain they're no longer needed.
-
-> [!NOTE]
-> Permanent deletion of an agent identity blueprint principal is blocked. To permanently free quota used by a blueprint principal, wait for the 30-day retention period to expire.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
