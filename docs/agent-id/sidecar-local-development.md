@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # Run the sidecar for local development
 
-This article walks you through running the [Microsoft Entra SDK auth sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) on your laptop with Docker Compose. You start a four-container stack — chat agent, sidecar, downstream weather API, and a local LLM ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API.
+This article shows how to run the [Microsoft Entra SDK auth sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) in your local environment by using Docker Compose. You start a four-container stack - chat agent, sidecar, downstream weather API, and a local LLM ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API.
 
 The sample demonstrates two execution modes and two identity flows:
 
@@ -34,15 +34,15 @@ This sample works on macOS, Linux, and Windows 10/11.
 | PowerShell 7+ | `brew install --cask powershell` | [Install PowerShell on Linux](/powershell/scripting/install/installing-powershell-on-linux) | Built-in (or install PowerShell 7+) |
 | Azure CLI | `brew install azure-cli` | [Install the Azure CLI](/cli/azure/install-azure-cli-linux) | `winget install -e Microsoft.AzureCLI` |
 
-You also need a **Microsoft Entra tenant** with the following objects already created:
+You also need a **Microsoft Entra tenant** with these objects:
 
-- An agent identity blueprint with a client secret. Record the `BLUEPRINT_APP_ID` and `BLUEPRINT_CLIENT_SECRET`.
-- An agent identity created from the blueprint. Record the `AGENT_CLIENT_ID`.
-- For the on-behalf-of (OBO) flow only: a SPA app registration. Record the `CLIENT_SPA_APP_ID`.
+- An agent identity blueprint with a client secret. Record the values for `BLUEPRINT_APP_ID` and `BLUEPRINT_CLIENT_SECRET`.
+- An agent identity created from that blueprint. Record the `AGENT_CLIENT_ID`.
+- (OBO flow only) A SPA app registration. Record the `CLIENT_SPA_APP_ID`.
 
-To create these objects, follow the PowerShell workflow in the [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples). The workflow creates the blueprint app, agent identity, and (optionally) the SPA app used for OBO sign-in.
+To create these objects, follow the PowerShell workflow in the [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples). The workflow creates the blueprint app, the agent identity, and optionally the SPA app for OBO sign-in.
 
-Ollama is **not** a prerequisite on your host — it runs inside the compose stack and pulls `qwen2.5:1.5b` automatically.
+Ollama is **not** a prerequisite on your host - it runs inside the compose stack and pulls `qwen2.5:1.5b` automatically.
 
 ## Clone the sample repository
 
@@ -90,7 +90,7 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 
 | SourceType | When to use |
 |---|---|
-| `ClientSecret` | Local development only. This is the default for this sample. |
+| `ClientSecret` | Local development only. This type is the default for this sample. |
 | `SignedAssertionFromManagedIdentity` | Deployed on Azure. Zero secrets, recommended for production. |
 | `KeyVault` | Certificate from Azure Key Vault. |
 | `StoreWithThumbprint` | Certificate from local machine store. |
@@ -99,7 +99,7 @@ For more information, see [microsoft-identity-web Client Credentials](https://gi
 
 ## Set up OBO sign-in (optional)
 
-If you want to test the on-behalf-of flow, create the SPA app and wire up OBO consent. Run one of the following script pairs from the repository root:
+To test the on-behalf-of flow, create the SPA app and configure OBO consent. Run one of the following script pairs from the repository root:
 
 ### [Bash](#tab/bash)
 
@@ -139,7 +139,7 @@ Start all four containers:
 docker compose up --build -d
 ```
 
-The first run takes about 30 seconds while Ollama pulls the `qwen2.5:1.5b` model. Check readiness:
+The first run takes about 30 seconds while Ollama pulls the `qwen2.5:1.5b` model. To verify the stack is ready:
 
 ### [Bash](#tab/bash)
 
@@ -159,7 +159,7 @@ The response shows `ollama_available: true` when the stack is ready.
 
 ## Review the architecture
 
-The stack runs four containers on an internal Docker network. Only the chat UI is exposed to your host. The sidecar and weather API are reachable only within the Docker network. Ollama exposes port 11434 to the host for optional direct access.
+The stack runs four containers on an internal Docker network. Only the chat UI (port 3003) and Ollama (port 11434) are exposed to your host. The sidecar and weather API are reachable only from within the Docker network.
 
 | Service | Container | Host port | Role |
 |---|---|---|---|
@@ -168,11 +168,11 @@ The stack runs four containers on an internal Docker network. Only the chat UI i
 | `weather-api` | `weather-api-dev` | None | Downstream API. Validates agent tokens on every request. |
 | `ollama` | `ollama-dev` | **11434** | Local LLM. Used only in Ollama execution mode. |
 
-The agent never talks to Microsoft Entra ID directly and never sees a credential. It asks the sidecar for an `Authorization` header and receives a `Bearer` token. The agent then passes the token to the weather API. The sidecar is the only component that communicates with `login.microsoftonline.com`.
+The agent never contacts Microsoft Entra ID directly and never sees a credential - it asks the sidecar for an `Authorization` header, receives a `Bearer` token, and passes that token to the weather API. Only the sidecar communicates with `login.microsoftonline.com`.
 
 ## Review the token flow
 
-Three tokens are involved in the full OBO flow. The autonomous flow uses only T1 and TR.
+The full OBO flow uses three tokens. The autonomous flow uses only T1 and TR.
 
 | Token | Issued to | When | How |
 |---|---|---|---|
@@ -182,7 +182,7 @@ Three tokens are involved in the full OBO flow. The autonomous flow uses only T1
 
 ### Autonomous flow
 
-No user sign-in. The agent authenticates as itself using the blueprint's client credentials.
+No user sign-in is required. The agent authenticates as itself by using the blueprint's client credentials.
 
 :::image type="content" source="media/sidecar-local-development/sequence-autonomous.png" alt-text="Diagram that shows the autonomous flow sequence from agent to sidecar to Microsoft Entra ID to weather API." lightbox="media/sidecar-local-development/sequence-autonomous.png":::
 
@@ -210,27 +210,27 @@ The agent acts on behalf of a signed-in user. The sidecar performs a three-step 
 
 1. Open `http://localhost:3003` in your browser.
 
-1. In the header bar, confirm your **Tenant ID** and **Agent ID** are displayed.
+1. In the header bar, verify that your **Tenant ID** and **Agent ID** appear.
 
 1. Use the two toggles to select your demo configuration:
 
     - **Execution Mode**: Select **Direct** to skip the LLM and call the weather API directly, or select **Ollama** to use a LangChain ReAct agent.
-    - **Identity Flow**: Select **Autonomous** for an app-only token, or select **OBO** to act on behalf of a signed-in user. If you select OBO, select **Sign in** to authenticate through an MSAL.js popup.
+    - **Identity Flow**: Select **Autonomous** for an app-only token, or **OBO** to act on behalf of a signed-in user. For OBO, choose **Sign in** to authenticate through an MSAL.js popup.
 
-1. Send the prepopulated query "Weather in Dallas?" and observe the result.
+1. Send the prepopulated query "Weather in Dallas?" and review the result.
 
-1. In the right panel, expand the **Identity Trace** to see each step of the token flow. The trace shows:
+1. In the right panel, expand **Identity Trace** to inspect each step of the token flow:
 
-    - Token request to the sidecar with the `AgentIdentity` parameter.
-    - Decoded JWT claims on each token (**Tc**, **T1**, **TR** for OBO; **T1** and **TR** for autonomous).
-    - Downstream API validation results: signature (JWKS, RS256), issuer, expiry, and audience checks.
+    - The token request to the sidecar, including the `AgentIdentity` parameter.
+    - Decoded JWT claims for each token (**Tc**, **T1**, **TR** for OBO; **T1** and **TR** for autonomous).
+    - Downstream API validation results, including signature (JWKS, RS256), issuer, expiry, and audience checks.
 
 ## Troubleshoot common issues
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `/api/status` returns `ollama_available: false` | Model is still downloading. | Wait about 30 seconds. Check logs with `docker logs ollama-dev`. |
-| Weather API returns `401 Unauthorized` | Token tenant mismatch, expired secret, or signature check failed. | Verify `TENANT_ID` matches the blueprint's tenant. Check sidecar logs with `docker logs agent-id-sidecar-dev`. |
+| `/api/status` returns `ollama_available: false` | Model is still downloading. | Wait about 30 seconds. Check logs by using `docker logs ollama-dev`. |
+| Weather API returns `401 Unauthorized` | Token tenant mismatch, expired secret, or signature check failed. | Verify `TENANT_ID` matches the blueprint's tenant. Check sidecar logs by using `docker logs agent-id-sidecar-dev`. |
 | LLM returns weather without calling the tool | The `qwen2.5:1.5b` model is too small for reliable tool calling. | Change `OLLAMA_MODEL` to `qwen2.5:7b` or `llama3.1:8b` in your `.env` file. |
 | OBO sign-in popup is blocked | Browser popup blocker is active. | Allow popups for `localhost:3003`. |
 | `4xx` error from sidecar during OBO | `CLIENT_SPA_APP_ID` is missing or the SPA redirect URI doesn't match. | Re-run the OBO setup scripts. Verify `http://localhost:3003` is listed in the SPA's redirect URIs. |

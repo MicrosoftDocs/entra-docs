@@ -15,14 +15,14 @@ ai-usage: ai-assisted
 
 # Validate agent identity tokens in a downstream API
 
-When an AI agent calls your API through the Microsoft Entra SDK auth sidecar, the request includes a `Bearer` token. Your API validates this token to confirm the request comes from an authenticated agent with the correct permissions. On success, your API processes the request. On any validation failure, your API returns HTTP 401 with a reason.
+When an AI agent calls your API through the Microsoft Entra SDK auth sidecar, the request includes a `Bearer` token. Your API validates this token to confirm the request comes from an authenticated agent with the correct permissions. If validation fails, your API returns HTTP 401 with a reason.
 
 This article explains the validation checks and shows how to run a sample API that validates agent identity tokens end-to-end.
 
 ## Prerequisites
 
 - **Docker Desktop** (macOS / Windows) or **Docker Engine** (Linux).
-- A **Microsoft Entra tenant** with an agent identity blueprint and an agent identity. See [Create an agent blueprint](create-blueprint.md) and [Create and delete agent identities](create-delete-agent-identities.md).
+- A **Microsoft Entra tenant** with an agent identity blueprint and an agent identity. For setup steps, see [Create an agent blueprint](create-blueprint.md) and [Create and delete agent identities](create-delete-agent-identities.md).
 - An agent identity token for testing. You can get one from the [sidecar local development sample](sidecar-local-development.md) or from the scripts in the [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples).
 
 ## Token validation checks
@@ -31,12 +31,12 @@ Your downstream API should perform four checks on every incoming agent identity 
 
 | Check | What it verifies | Details |
 |---|---|---|
-| **Signature** | The token hasn't been tampered with. | Verify the RS256 signature against the JSON Web Key Set (JWKS) at `https://login.microsoftonline.com/<tenant>/discovery/v2.0/keys`. |
-| **Issuer** | The token was issued by Microsoft Entra ID. | The `iss` claim must match `https://sts.windows.net/<tenant>/` or `https://login.microsoftonline.com/<tenant>/v2.0`. |
-| **Audience** | The token is intended for your API. | The `aud` claim must match your API's expected audience value. |
-| **Agent identity marker** | The token was issued to an agent, not a regular app. | The `xms_par_app_azp` claim is present in agent identity tokens and absent in standard app-only tokens. This claim identifies the blueprint that minted the agent. |
+| **Signature** | The token isn't tampered with. | Verify the RS256 signature against the JSON Web Key Set (JWKS) at `https://login.microsoftonline.com/<tenant>/discovery/v2.0/keys`. |
+| **Issuer** | Microsoft Entra ID issued the token. | The `iss` claim matches `https://sts.windows.net/<tenant>/` or `https://login.microsoftonline.com/<tenant>/v2.0`. |
+| **Audience** | The token is intended for your API. | The `aud` claim matches your API's expected audience value. |
+| **Agent identity marker** | The token was issued to an agent, not a regular app. | The `xms_par_app_azp` claim is present in agent identity tokens and absent in standard app-only tokens. This claim identifies the blueprint that created the agent. |
 
-When all four checks pass, your API can trust the request and process it. When any check fails, return HTTP 401 with a reason.
+When all four checks pass, your API can trust and process the request.
 
 ## How the sample API works
 
@@ -47,7 +47,7 @@ The API exposes two endpoints:
 | Endpoint | Purpose |
 |---|---|
 | `GET /weather?city=<name>` | Validates the `Authorization: Bearer <token>` header and returns weather data for the specified city. |
-| `GET /health` | Health check endpoint. Returns a status response without token validation. |
+| `GET /health` | Returns a health status without requiring token validation. |
 
 The following diagram shows how tokens flow from the agent through the sidecar to the weather API:
 
@@ -61,7 +61,7 @@ The following diagram shows how tokens flow from the agent through the sidecar t
                                  └──────────────────┘
 ```
 
-Both the [local development (Ollama)](sidecar-local-development.md) and AWS (Bedrock) sidecar samples call the same weather API container. A shared known-good validator makes issues easier to isolate. If both samples fail against the weather API, the problem is the sidecar or Microsoft Entra configuration, not the downstream API.
+Both the [local development (Ollama)](sidecar-local-development.md) and AWS (Bedrock) sidecar samples call the same weather API container. Using a single shared validator simplifies troubleshooting - if both samples fail against the weather API, the problem is in the sidecar or Microsoft Entra configuration, not in the downstream API.
 
 ## Run the sample validation API
 
@@ -114,9 +114,9 @@ The `is_agent_identity`, `agent_app_id`, and `validated_by` fields confirm token
 
 | Field | Meaning |
 |---|---|
-| `is_agent_identity` | `true` when the `xms_par_app_azp` claim is present in the token. Confirms the token was issued to an agent identity, not a standard app registration. |
-| `agent_app_id` | The value of the `xms_par_app_azp` claim. Identifies which blueprint application issued the agent identity. |
-| `validated_by` | Describes the validation method used. Shows `Agent Identity Token` for tokens with the agent marker claim. |
+| `is_agent_identity` | Set to `true` when the `xms_par_app_azp` claim is present, which confirms the token was issued to an agent identity rather than a standard app registration. |
+| `agent_app_id` | The value of the `xms_par_app_azp` claim, which identifies the blueprint application that created the agent identity. |
+| `validated_by` | The validation method applied to the token. Displays `Agent Identity Token` when the agent marker claim is present. |
 
 ## Configure the sample API
 
@@ -124,8 +124,8 @@ The sample API accepts the following environment variables:
 
 | Variable | Required | Default | Purpose |
 |---|---|---|---|
-| `TENANT_ID` | Yes | — | Your Microsoft Entra tenant ID. Used to build the JWKS URL and verify the issuer claim. |
-| `EXPECTED_AUDIENCE` | No | `https://graph.microsoft.com` | The expected `aud` claim value on incoming tokens. Defaults to Microsoft Graph so the same agent tokens work for local testing. |
+| `TENANT_ID` | Yes | — | Your Microsoft Entra tenant ID, used to build the JWKS URL and verify the issuer claim. |
+| `EXPECTED_AUDIENCE` | No | `https://graph.microsoft.com` | The expected `aud` claim value. Defaults to Microsoft Graph so that the same agent tokens work for local testing. |
 | `PORT` | No | `8080` | The HTTP port the API listens on. |
 
 ## Review the sample files
@@ -138,7 +138,7 @@ The weather API sample consists of three files:
 | `Dockerfile` | Uses `python:3.11-slim` as the base image. Runs `python app.py` on port 8080. |
 | `requirements.txt` | Dependencies: `flask`, `flask-cors`, `pyjwt[crypto]`, `requests`. |
 
-Token validation libraries differ between ecosystems (Python, Node.js, .NET). This sample uses PyJWT with the `cryptography` backend for RS256 signature verification. When you build your own downstream API, use the equivalent JWT validation library for your technology stack.
+Token validation libraries differ across ecosystems (Python, Node.js, .NET). This sample uses PyJWT with the `cryptography` backend for RS256 signature verification. When you build your own downstream API, choose the equivalent JWT validation library for your technology stack.
 
 ## Related content
 
