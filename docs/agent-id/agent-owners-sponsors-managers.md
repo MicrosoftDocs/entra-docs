@@ -17,14 +17,14 @@ Microsoft Entra Agent ID introduces an administrative model that separates techn
 The administrative relationships available in Agent ID include:
 
 - **Owners**: Technical administrators responsible for operational management of agent identity blueprints and agent identities, including setup, configuration, and credential management.
-- **Sponsors**: Business representatives accountable for the agent's purpose and lifecycle decisions, including access reviews and agent retention, without technical administrative access.
+- **Sponsors**: Business representatives accountable for the agent's purpose and lifecycle decisions, including access reviews and agent retention, without technical administrative access. At least one sponsor is required for each agent identity and agent identity blueprint.
 - **Managers**: User responsible for the agent within the organization's hierarchy, able to request access packages for their reporting agents.
 
 These administrative relationships must be configured for each Agent ID object and are separate from the administrative rights granted by Microsoft Entra Role Based Access Control (RBAC) roles, like Agent ID Administrator.
 
 ## Owners
 
-Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities.
+Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for agent identity blueprints and agent identities.
 
 ### Owner responsibilities
 
@@ -44,11 +44,9 @@ Service principals can also be set as owners when some other managing service ne
 
 ## Sponsors
 
-Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access.
+Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner.
 
-Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object.
-
-Not all group types are supported as sponsors. The following group types are allowed:
+Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
 
 - Dynamic membership groups (security or Microsoft 365)
 - Assigned membership groups (Microsoft 365)
@@ -70,7 +68,7 @@ Sponsors operate under least-privilege with limited administrative permissions. 
 
 Sponsors are usually business owners, product managers, team leads, or stakeholders who understand the agent's purpose. For unpublished agents, creators often serve as sponsors. For published agents, sponsors typically come from teams using the agent.
 
-## Manager
+## Managers
 
 Managers are individual users responsible for an agent identity within the organizational hierarchy. For agents that are active in user scenarios, consider setting a manager on the agent's user account. Managers can request access packages for their agents' user accounts, and will see agents designated as reporting to them in the Microsoft Entra admin center. Managers don't have authorization to modify or delete agents; owners, sponsors, or administrators are required to take those actions.
 
@@ -80,7 +78,7 @@ The administrative model enforces specific requirements and constraints to ensur
 
 ### Creation requirements
 
-A sponsor is required when creating an agent identity or agent blueprint. Agent blueprint principals are exempt from the sponsor requirement during creation. Owners and managers are always optional.
+A sponsor is required when creating an agent identity or agent blueprint. Agent identity blueprint principals are exempt from the sponsor requirement during creation. Owners and managers are always optional.
 
 ### Assignment policies
 
