@@ -189,7 +189,7 @@ To add the appropriate package repository for your Linux distribution, follow th
 ### 3.0.2 - April 27, 2026 
 
 **Support for Ubuntu 26.04 LTS and notice of deprecation for Ubuntu 22.04 LTS**
-Microsoft Intune now supports Ubuntu 26.04 LTS. Support for Ubuntu 22.04 LTS ends in August 2026. Devices already enrolled on Ubuntu 22.04 remain enrolled, but you should notify users to upgrade to a supported Ubuntu version. You can identify devices running Ubuntu 22.04 in the Intune admin center by going to Devices > All devices, filtering by Linux, and adding the OS version column. For more information, see [Enroll Linux desktop devices in Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux).
+Microsoft Intune now supports Ubuntu 26.04 LTS. Support for Ubuntu 22.04 LTS ends in August 2026. Devices already enrolled on Ubuntu 22.04 remain enrolled, but you should notify users to upgrade to a supported Ubuntu version. You can identify devices running Ubuntu 22.04 in the Intune admin center by going to Devices > All devices, filtering by Linux, and adding the OS version column. For more information, see [Enroll Linux desktop devices in Microsoft Intune](/intune/device-enrollment/guide-linux).
 
 **Fixes/Improvements**
 - Ensure that all browser calls are done in the same thread
