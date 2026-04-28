@@ -44,7 +44,7 @@ Microsoft does not facilitate user consent collection through cross-tenant synch
 
 With cross-tenant synchronization, you can:
 
-- Automatically create B2B collaboration users within your organization and provide them access to the applications that they need, without creating and maintaining custom scripts.
+- Automatically create B2B collaboration users within your organization and give them access to the applications that they need, without creating and maintaining custom scripts.
 - Improve the user experience by ensuring that users can access resources without receiving an invitation email and having to accept a consent prompt in each tenant.
 - Automatically update users and remove them when they leave the organization.
 
@@ -95,7 +95,7 @@ Here are the basic steps to start using cross-tenant synchronization.
 
 ### Step 1: Define how to structure the tenants in your organization
 
-Cross-tenant synchronization provides a flexible solution to enable collaboration, but every organization is different. For example, you might have a central tenant, satellite tenants, or sort of a mesh of tenants. Cross-tenant synchronization supports any of these topologies. For more information, see [Topologies for cross-tenant synchronization](cross-tenant-synchronization-topology.md).
+Cross-tenant synchronization provides a flexible solution to enable collaboration, but every organization is different. For example, you might have a central tenant, satellite tenants, or a mesh of tenants. Cross-tenant synchronization supports any of these topologies. For more information, see [Topologies for cross-tenant synchronization](cross-tenant-synchronization-topology.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/topology-all.png" alt-text="Diagram that shows various tenant topologies.":::
 
@@ -113,7 +113,7 @@ In any source tenant, go to the **Cross-tenant access settings** page and enable
 - What attributes you want to include.
 - Any transformations.
 
-For anyone who has used Microsoft Entra ID to [provision identities into a software as service (SaaS) application](~/identity/app-provisioning/user-provisioning.md), this experience is familiar. After you configure synchronization, you can start testing with a few users and make sure they're created with all the attributes that you need. When you finish testing, you can quickly add additional users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+For anyone who has used Microsoft Entra ID to [provision identities into a software as service (SaaS) application](~/identity/app-provisioning/user-provisioning.md), this experience is familiar. After you configure synchronization, you can start testing with a few users and make sure they're created with all the attributes that you need. When you finish testing, you can quickly add more users to synchronize and roll out across your organization. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/configure-source.png" alt-text="Diagram that shows a cross-tenant synchronization job configured in the source tenant.":::
 
@@ -223,7 +223,7 @@ For cross-tenant synchronization configurations created after January 2024 with 
 - Manager updates apply on the incremental cycle for users who are undergoing changes (for example, a manager change). The sync engine doesn't automatically update all existing users who were provisioned previously.
 - To update the manager for existing users who are in scope for provisioning, you can use on-demand provisioning for specific users or do a restart to provision the manager for all users.
 
-For cross-tenant synchronization configurations created before January 2024 with a custom schema/attribute mappings (for example, you added an attribute to the mappings or changed the default mappings):
+For cross-tenant synchronization configurations created before January 2024 with custom schema/attribute mappings (for example, you added an attribute to the mappings or changed the default mappings):
 
 - You need to add the `manager` attribute to your attribute mappings. This action triggers a restart and updates all users who are in scope for provisioning. This process should be a direct mapping of the `manager` attribute in the source tenant to the `manager` attribute in the target tenant.
 
@@ -372,7 +372,7 @@ Yes. When the following actions occur in the source tenant, the user is [soft de
 - You remove the user from a group that's assigned to the cross-tenant synchronization configuration.
 - An attribute on the user changes such that they don't meet the scoping filter conditions defined on the cross-tenant synchronization configuration anymore.
 
-If the user is blocked from sign-in in the source tenant (`accountEnabled = false`), they're blocked from sign-in in the target. This isn't a deletion but an update to the `accountEnabled` property.
+If the user is blocked from sign-in in the source tenant (`accountEnabled = false`), they're blocked from sign-in in the target. This action isn't a deletion but an update to the `accountEnabled` property.
 
 Users aren't soft deleted from the target tenant in this scenario:
 

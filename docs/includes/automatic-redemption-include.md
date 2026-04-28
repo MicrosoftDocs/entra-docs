@@ -1,6 +1,6 @@
 ---
-title: include file
-description: include file
+title: Include file
+description: Include file
 author: rolyon
 ms.service: entra-id
 ms.topic: include
