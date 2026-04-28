@@ -16,7 +16,7 @@ The objective of this article is to demonstrate the steps to be performed in Air
 > [!NOTE]
 > This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
->[!NOTE]
+> [!NOTE]
 > Airstack supports Long lived bearer token authentication.
 
 ## Prerequisites
