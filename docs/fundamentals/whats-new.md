@@ -57,7 +57,70 @@ In Microsoft Entra tenants, customers can create a single, tenant-wide, customiz
 
 ---
 
-### Plan for change - Upgrade SuccessFactors provisioning app to use JWT-based authentication
+### Upcoming Change - Migrate from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync
+
+**Type:** Plan for change  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+As organizations look to strengthen identity security and advance their Zero Trust strategies, many are looking for simpler, more reliable ways to manage hybrid identity. To support these needs, we’re beginning the transition from [Microsoft Entra Connect Sync](../identity/hybrid/connect/whatis-azure-ad-connect-v2.md) to the cloud‑native [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) - helping reduce on‑premises complexity while improving security, reliability, and day‑to‑day manageability.  
+
+This shift is a key step toward a cloud-managed identity future that will provide a more secure, resilient, and easier-to-operate synchronization experience. As part of ongoing modernization efforts, Microsoft’s strategy remains to deliver stronger security, improved reliability, and simpler identity operations.  
+
+**What's next**
+
+Beginning in July 2026, we will begin notifying customers through the M365 Message Center, Entra Connect Health, and targeted emails about their individual transition timelines. The transition will be rolled out in phases, and we will reach out directly to each organization when their assigned transition window begins. This phased approach ensures that we can provide tailored guidance and support to all our customers. 
+
+*   **Initial phases:** In the first waves, we will focus on tenants for whom Entra Cloud Sync already meets all their identity synchronization needs. If your organization relies on advanced features or has a large directory, you will **_not_** be among the initial targeted groups. We will prioritize early transitions for customers with straightforward configurations that are fully supported by Entra Cloud Sync’s current capabilities. 
+
+*   **Subsequent phases:** As Entra Cloud Sync’s capabilities expand, we will progressively notify the later groups and ensure they can transition successfully once equivalent support is available in Entra Cloud Sync 
+
+We are committed to supporting you by providing tooling and documentation for the transition to Entra Cloud Sync. 
+
+**What's changing**
+
+Once your organization is notified of its assigned transition window, you will receive detailed guidance and resources to help you begin the move to Entra Cloud Sync. During this period: 
+
+*   You will have review your current configuration, assess readiness, and familiarize yourself with Cloud Sync’s capabilities. 
+
+*   You will gain access to the transition tool and step-by-step documentation to support a smooth transition. 
+
+*   You will move and test your synchronization environment in Entra Cloud Sync before any permanent changes are made.  
+
+Once your transition to Entra Cloud Sync is successfully completed: 
+
+*   Entra Cloud Sync will be the primary mechanism for identity synchronization capabilities between Active Directory and Entra ID, replacing the identity sync functionality in Entra Connect tool. 
+
+**What’s not changing**
+
+Once you migrate to Cloud Sync, your hybrid authentication features that enable on‑premises credentials to be used for accessing cloud resources will continue to be available after migration on the Connect Sync config wizard.
+
+**Start preparing today**
+
+We recommend that you take steps to begin your migration. You can begin familiarizing yourself with [Entra Cloud Sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) and review our dedicated resources to ensure a smooth transition: 
+
+*   [Cloud Sync deep dive – how it works](../identity/hybrid/cloud-sync/concept-how-it-works.md) 
+*   [Step-by-step migration guidance](../identity/hybrid/cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md) 
+*   Migration scenarios: 
+
+*   [Migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest](../identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp.md) 
+*   [Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md) 
+
+*   [Microsoft Entra Cloud Sync vs. Microsoft Entra Connect Sync feature comparison](../identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-microsoft-entra-connect-and-cloud-sync) 
+
+Microsoft Entra supports Source of Authority (SOA) capabilities that allow you to shift user and group management to the cloud while continuing to operate existing Connect Sync deployments. These capabilities can help simplify environments, reduce long‑term dependency on on‑prem infrastructure, and improve readiness for future transitions. If this aligns with your identity strategy, the following resources may be helpful: 
+
+*   IT Architect Guidance for SOA planning: [https://aka.ms/SOAITArchitectsGuidance](https://aka.ms/SOAITArchitectsGuidance) 
+*   [User SOA](https://aka.ms/UserSOAdocs): Manage users directly in Entra ID while maintaining hybrid coexistence 
+*   [Group SOA](https://aka.ms/GroupSOAdocs): Cloud‑managed groups with on‑premises impact where required 
+
+This is not a prerequisite to move to Cloud Sync, but provides an opportunity to prepare at your own pace. 
+
+Stay tuned to this page for further updates.
+
+---
+
+### Plan for change - Update SCIM provisioning applications to use modern authentication"
 
 **Type:** Plan for change  
 **Service category:** Provisioning  
@@ -66,7 +129,7 @@ In Microsoft Entra tenants, customers can create a single, tenant-wide, customiz
 **What is changing**
 
 
-*   Affected SCIM provisioning applications will be updated to support modern authentication methods.
+*   SCIM provisioning applications that use the OAuth 2.0 Authorization Code grant will be updated to support modern authentication methods, such as OAuth 2.0 Client Credentials and workload identity federation.
 *   Existing provisioning jobs will not switch automatically. Customers will need to update job configuration after the new method is available.
 *   A small number of applications that cannot support a modern method may be retired from the Microsoft Entra app gallery.
 
