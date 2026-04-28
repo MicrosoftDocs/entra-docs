@@ -950,7 +950,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email to co-sponsors about sponsor changes (Preview)
+### Send email to co-sponsors about sponsor changes
 
 Allows an email to be sent to co-sponsors of an agent ID when a user, who was also a sponsor of the agent ID, has moved or left. This notifies cosponsors of changes happening to sponsorship of their agent ID.
 
@@ -962,7 +962,7 @@ For Microsoft Graph, the parameters for the **Send email to co-sponsors about sp
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to co-sponsors about sponsor changes (Preview)  |
+|displayName     |  Send email to co-sponsors about sponsor changes  |
 |description     |  Notify co-sponsors about agent identity sponsorship changes.       |
 |taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
 
