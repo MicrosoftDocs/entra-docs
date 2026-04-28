@@ -53,11 +53,11 @@ The cascade process works as follows:
 
 ## Orphaned objects and quota considerations
 
-When an agent identity blueprint principal is permanently deleted, any associated agent identities and agents' user accounts that weren't deleted become **orphaned objects**. Orphaned objects can't authenticate but continue to count toward directory quota until they're permanently deleted after the 30-day retention period expires.
+When an agent identity blueprint principal is permanently deleted, any associated agent identities and agents' user accounts that weren't deleted become **orphaned objects** and become soft-deleted. Orphaned objects can't authenticate but continue to count toward directory quota until they're permanently deleted after the 30-day retention period expires.
 
 Agent identity deletion follows the same quota rules as other Microsoft Entra objects. Soft-deleted objects continue to count toward quota limits until permanently deleted. For general quota information, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
-One consideration specific to agent identities: if you're using app-only permissions and are at the 250 agent identity limit for a blueprint, deleting an agent identity doesn't free up space until it's permanently deleted after the 30-day retention period expires.
+One consideration specific to agent identities: if you're using app-only permissions and are at the 250 agent identity limit for a blueprint, deleting an agent identity doesn't free up space until it's permanently deleted after the 30-day retention period expires. Agent identity blueprints also follow this 250 limit when using app-only permissions.
 
 ## Related content
 

@@ -22,7 +22,7 @@ Your Microsoft Entra tenant might contain AI agents with or without a Microsoft 
 
 - **Agents with agent identities**: Agents created in Microsoft Entra Agent ID or using the latest iterations of systems like Microsoft Copilot Studio, Azure AI Foundry, and Security Copilot are created with agent identities. Agent identities have clear classification, richer metadata, and features designed to address the unique security challenges of AI agents.
 
-- **Agents without agent identities**: Agents created in earlier versions of Copilot Studio and Azure AI Foundry might have been created as classic applications / service principals in your tenant. These applications / service principals have tag values that denote them as AI agents, but they don't have Microsoft Entra agent identities. They're subject to the same policies, governance, and processes as all other applications / service principals in your tenant.
+- **Agents without agent identities**: Agents created in earlier versions of Copilot Studio and Azure AI Foundry might have been created as classic applications / service principals in your tenant. These applications / service principals might have tag values that denote them as AI agents, but they don't have Microsoft Entra agent identities. They're subject to the same policies, governance, and processes as all other applications / service principals in your tenant.
 
 ## Disabling agent identity considerations
 
@@ -54,8 +54,7 @@ We recommend running these policies in [report-only mode](/entra/identity/condit
 
 **Disable agents in the Microsoft Entra admin center when:**
 
-- You don't want new agent identities created from an agent identity blueprint, but you want existing agent identities to continue functioning, disable the agent identity blueprint principal.
-- You want to prevent an agent identity from receiving tokens and authenticating, but you need to keep the agent identity and its metadata in your tenant, disable the agent identity.
+- You want to prevent an agent identity from receiving tokens and authenticating, but you need to keep the agent identity and its metadata in your tenant.
 
 **Use Conditional Access policies when:**
 
@@ -71,13 +70,13 @@ We recommend running these policies in [report-only mode](/entra/identity/condit
 
 To disable an agent identity:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID ]().
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
 1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select the agent identity you want to disable then select **Disable**.
 
 To disable an agent identity blueprint: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID ]().
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
 1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select **View agent blueprints**.
 1. Select the agent identity blueprint you want to disable then select **Disable**.
@@ -148,8 +147,7 @@ Content-type: application/json
 ---
 
 
-### Policy 2: 
-Block agent's user account authentication
+### Policy 2: Block agent's user account authentication
 
 The following steps help create a Conditional Access policy to block issuance of access tokens requested using agents' user accounts.
 
@@ -290,7 +288,7 @@ See the [Microsoft Graph permissions reference](/graph/permissions-reference) fo
 
 To prevent users from creating agent identities by granting consent to an ISVs agent identity blueprint, use Microsoft Entra [settings to disable user ability to consent to applications](/entra/identity/enterprise-apps/configure-user-consent). There's no method to prevent users from granting consent to agent identities without also affecting ability to grant consent to applications. Disabling user consent is broad and also blocks onboarding of legitimate non-agent SaaS apps that depend on user consent flows and granting permissions to existing non-agent apps.
 
-If this impact is too high, keep user consent enabled and instead rely on the [Conditional Access block policies](#block-token-issuance-to-agent-identities-using-conditional-access) to prevent tokens for unapproved ISV agent identities.
+If this impact is too high, keep user consent enabled and instead rely on the [Conditional Access block policies](#policy-1-block-agent-identity-authentication) to prevent tokens for unapproved ISV agent identities.
 
 ### Block creation of agent identities by Microsoft products and services
 
