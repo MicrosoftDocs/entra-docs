@@ -3544,6 +3544,11 @@
       "source_path": "docs/identity/authentication/passkey-authenticator-faq.yml",
       "redirect_url": "/entra/identity/authentication/passkey-faq",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "entra/global-secure-access/concept-edr-antivirus-coexistence.md",
+      "redirect_url": "entra/global-secure-access/how-to-edr-antivirus-coexistence",
+      "redirect_document_id": false
     }
   ]
 }
