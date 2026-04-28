@@ -162,6 +162,19 @@ You can add or update the FQDNs and IP addresses included in your app at any tim
     - To add a new FQDN or IP address, select **Add  application segment**.
     - To edit an existing app, select it from the **Destination type** column.
 
+## Configure traffic routing for the app
+
+Traffic routing is configured per Global Secure Access application. The default traffic routing method is **Random**, which distributes requests across the available connectors in the selected connector group.
+
+For Microsoft Entra Private Access applications, you can change the routing behavior to use session persistence, also called session affinity. Session persistence consistently routes requests from the same user and device to the same connector for the duration of a session.
+
+Session persistence is useful for applications that rely on connector egress IP for authentication or access control lists (ACLs).
+
+> [!TIP]
+> Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
+
+You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+
 ## Enable or disable access with the Global Secure Access Client
 
 You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.

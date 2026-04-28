@@ -74,22 +74,13 @@ One option for small companies is to use a single Microsoft Entra tenant, while 
 
 ## Connector load balancing
 
-When you add multiple connectors to a connector group, the group uses different methods to choose which connector handles each request.
+When you add multiple connectors to a connector group, the group selects which connector handles each request.
 
 ### Random
 
-Random is the default method. Each new request from the client goes to the next available connector server.
+Random is the default traffic routing method. New requests for a Global Secure Access application are distributed across the available connectors in the assigned connector group.
 
-### Session persistence
-
-Session persistence, also called session affinity, consistently routes every request from a given user and device to the same connector within a group for the duration of a session.
-
-> [!TIP]
-> Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
-
-This approach is useful for applications that rely on connector egress IP for authentication and access control lists (ACLs). It ensures continuity and reduces the need for repeated authentication or data retrieval.
-
-You can configure connector load balancing by updating the `trafficRoutingMethod` property on the app through the Microsoft Graph API. For details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+You can change the traffic routing behavior per Global Secure Access application. For more information about traffic routing options and when to use them, see [How to configure per-app access using Global Secure Access applications](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app). For Microsoft Graph details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 ## Sample configurations
 
