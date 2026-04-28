@@ -5,8 +5,6 @@ ai-usage: ai-assisted
 
 author: garrodonnell
 manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/16/2026
 ms.author: godonnell
