@@ -106,8 +106,6 @@ We recommend that you take steps to begin your migration. You can begin familia
 *   [Migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest](../identity/hybrid/cloud-sync/tutorial-pilot-aadc-aadccp.md) 
 *   [Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/migrate-group-writeback.md) 
 
-*   [Microsoft Entra Cloud Sync vs. Microsoft Entra Connect Sync feature comparison](../identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-microsoft-entra-connect-and-cloud-sync) 
-
 Microsoft Entra supports Source of Authority (SOA) capabilities that allow you to shift user and group management to the cloud while continuing to operate existing Connect Sync deployments. These capabilities can help simplify environments, reduce long‑term dependency on on‑prem infrastructure, and improve readiness for future transitions. If this aligns with your identity strategy, the following resources may be helpful: 
 
 *   IT Architect Guidance for SOA planning: [https://aka.ms/SOAITArchitectsGuidance](https://aka.ms/SOAITArchitectsGuidance) 
