@@ -89,26 +89,30 @@ You can start the Sign-in diagnostic from a specific sign-in event in the Sign-i
 
 #### Investigate a sign-in log with Copilot (preview)
 
-Sign-in logs now contain a Copilot skill (in preview) that provides an AI-enhanced diagnostic for failed and interrupted sign-ins. Unlike the standard sign-in diagnostic, this method uses AI to analyze the sign-in event and provide contextual remediation steps.
+Sign-in logs include a Copilot skill (in preview) that provides an AI-enhanced diagnostic for failed and interrupted sign-ins. Unlike the standard sign-in diagnostic, this method uses AI to analyze the sign-in event and provide contextual remediation steps.
 
 > [!NOTE]
-> Both the existing diagnostic and the AI-based investigation skill are available during preview and transition to the new experience.
+> During preview, both the existing sign-in diagnostic and the AI-based investigation skill are available so you can transition to the new experience.
 
 > [!NOTE]
-> Running this skill does not consume Security Copilot compute units (SCUs). Customers can use this skill without a Security Copilot license.
+> Running this skill doesn't consume Security Copilot compute units (SCUs). You can use this skill without a Security Copilot license.
 
 To use the single log investigator:
 
-1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** and select a failed sign-in event.
+1. Browse to **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs** and select a sign-in event with a **Failure** status.
 
-1. From the Activity Details window, select the **Copilot** button to launch the single log investigator.
+1. From the **Activity Details** window, select the **Investigate with Copilot** button to launch the single log investigator.
 
-1. The single log investigator analyzes the sign-in event and provides:
+    [![Screenshot showing the Investigate with Copilot button in the Activity Details pane of a sign-in event.](media/howto-use-sign-in-diagnostics/investigate-with-copilot-button.png)](media/howto-use-sign-in-diagnostics/investigate-with-copilot-button.png#lightbox)
+
+1. Review the analysis, which provides:
     - A summary of why the sign-in failed.
     - The root cause of the failure.
     - Recommended remediation steps to resolve the issue.
 
 1. Follow the recommended actions to address the sign-in failure.
+
+    [![Screenshot showing the investigation results from the single log investigator, including summary, next steps, and root cause details.](media/howto-use-sign-in-diagnostics/investigate-with-copilot-results.png)](media/howto-use-sign-in-diagnostics/investigate-with-copilot-results.png#lightbox)
 
 ### [From a support request](#tab/from-a-support-request)
 
