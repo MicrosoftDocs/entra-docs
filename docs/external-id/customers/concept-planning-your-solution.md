@@ -63,7 +63,7 @@ Before you register your app, decide how you want to build the sign-in experienc
 
 - **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers broad platform support, cross-app single sign-on (SSO) through the system browser, and lower maintenance. Microsoft manages the sign-in surface and security updates.
 
-- **Native authentication** lets you build the sign-in UI experience directly into your app by using the MSAL SDK or native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
+- **Native authentication** lets you build the sign-in UI experience directly into your app by using the Microsoft Authentication Library (MSAL) or the native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
 
 Your choice affects how you register your app, which SDKs you use, and how you configure user flows. Make this decision early so the rest of your integration follows the right path.
 
@@ -92,7 +92,7 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-4.png" lightbox="media/concept-planning-your-solution/overview-setup-step-4.png" alt-text="Diagram showing step 4, integrate a sign-in flow with your app, highlighted in the setup flow.":::
 
-Once you've set up your external tenant and registered your application, create a sign-up and sign-in user flow. Then integrate your application with the user flow so that anyone who accesses it goes through the sign-up and sign-in experience you've designed.
+After you set up your external tenant and registered your application, create a sign-up and sign-in user flow. Then integrate your application with the user flow so that anyone who accesses it goes through the sign-up and sign-in experience you've designed.
 
 To integrate your application with a user flow, you add your application to the user flow properties and update your application code with your tenant information and authorization endpoint. 
 
@@ -134,7 +134,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 When planning for configuring company branding, language customizations, and custom extensions, consider the following points:
 
-- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appear in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. For details, see [Customize the sign-in look and feel](concept-branding-customers.md).
+- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appears in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. For details, see [Customize the sign-in look and feel](concept-branding-customers.md).
 
 - **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. For details, see [Add your own business logic with custom authentication extensions](concept-custom-extensions.md).
 

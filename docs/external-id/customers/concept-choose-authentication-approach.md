@@ -1,6 +1,6 @@
 ---
 title: Choose an authentication approach
-description: Compare browser-delegated and native authentication in Microsoft Entra External ID to decide the right approach for your app.
+description: Compare browser-delegated and native authentication in Microsoft Entra External ID and choose the right approach for your customer-facing app.
 ai-usage: ai-assisted
 
 author: garrodonnell
@@ -49,7 +49,7 @@ For specific feature availability, see the [feature comparison](#feature-compari
 
 The following table shows which features are available in each approach.
 
-| Feature | Browser-delegated | Native authentication |
+| Feature | Browser-delegated authentication | Native authentication |
 |---|---|---|
 | Sign up and sign in with email one-time passcode (OTP) | :heavy_check_mark: | :heavy_check_mark: |
 | Sign up and sign in with email and password | :heavy_check_mark: | :heavy_check_mark: |
@@ -61,7 +61,7 @@ The following table shows which features are available in each approach.
 | Social identity provider sign-in (Apple, Facebook, and Google)<sup>1</sup> | :heavy_check_mark: | :heavy_check_mark: |
 | Single sign-on (SSO)<sup>2</sup> | :heavy_check_mark: | :heavy_check_mark: |
 
-<sup>1</sup> With native authentication, the app is still built using the native authentication SDK or API, but social sign-in defers to a browser window only for the identity provider step.
+<sup>1</sup> Even with native authentication, social sign-in still uses a browser window for the identity provider step.
 
 <sup>2</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication.
 
@@ -81,17 +81,16 @@ With native authentication, your development team shares security responsibility
 
 ## Next steps
 
-After you decide on an approach, return to the [planning guide](concept-planning-your-solution.md) to continue your integration, or jump directly to the next step for your chosen path:
+After you decide on an approach, register your app to continue your integration:
 
 **Browser-delegated authentication**:
 
-- [Register an app](/entra/identity-platform/quickstart-register-app)
-- [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
+- [Register an app](/entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
 - [Samples by app type and language](samples-ciam-all.md)
 
 **Native authentication**:
 
-- [Native authentication overview](/entra/identity-platform/concept-native-authentication)
-- [Android native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app)
-- [iOS native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app)
-- [Native authentication in a React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in)
+- [Native authentication overview](/entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
+- [Android native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
+- [iOS native authentication tutorial](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
+- [Native authentication in a React SPA](/entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
