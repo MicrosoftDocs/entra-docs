@@ -104,6 +104,10 @@ items:
           href: interactive-agent-authentication-authorization-flow.md
     - name: Integrate with APIs and services
       items:
+      - name: Run the sidecar for local development
+        href: sidecar-local-development.md
+      - name: Validate agent tokens in a downstream API
+        href: how-to-validate-agent-tokens-downstream-api.md
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Call Microsoft Graph API
