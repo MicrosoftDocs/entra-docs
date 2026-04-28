@@ -38,7 +38,7 @@ The [Microsoft Entra SDK auth sidecar](https://mcr.microsoft.com/en-us/product/e
 - Acquires tokens through client credentials or federated identity credentials (FIC) for the agent identity in autonomous flows.
 - Handles on-behalf-of (OBO) flows for user-context calls.
 - Caches tokens and manages refresh and expiry.
-- Abstracts the credential source — uses `ClientSecret` for development and `SignedAssertionFromManagedIdentity` for Azure deployments through the same API.
+- Abstracts the credential source - uses `ClientSecret` for development and `SignedAssertionFromManagedIdentity` for Azure deployments through the same API.
 
 The following table summarizes the flow of auth actions between your agent and the sidecar:
 
