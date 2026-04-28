@@ -57,7 +57,7 @@ When an agent identity blueprint principal is permanently deleted, any associate
 
 Agent identity deletion follows the same quota rules as other Microsoft Entra objects. Soft-deleted objects continue to count toward quota limits until permanently deleted. For general quota information, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
-One consideration specific to agent identities: if you're using app-only permissions and are at the 250 agent identity limit for a blueprint, deleting an agent identity doesn't free up space until it's permanently deleted after the 30-day retention period expires. Agent identity blueprints also follow this 250 limit when using app-only permissions.
+One consideration specific to agent identities: if you're using app-only permissions and are at the 250 agent identity limit for a blueprint, deleting an agent identity doesn't free up space until it's permanently deleted. By default, permanent deletion happens automatically after the 30-day retention period expires. If you need to free up quota immediately, you can force permanent deletion of soft-deleted agent identities. For steps, see [Permanently delete agent identity objects](howto-delete-agent-identity.md#permanently-delete-agent-identity-objects). Agent identity blueprints also follow this 250 limit when using app-only permissions.
 
 ## Related content
 
