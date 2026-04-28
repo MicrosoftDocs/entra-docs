@@ -997,7 +997,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Transfer agent identity sponsorships to manager (Preview)
+### Transfer agent identity sponsorships to manager
 
 Allows all agent identity sponsorships to be transferred from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
 
@@ -1013,7 +1013,7 @@ For Microsoft Graph, the parameters for the **Transfer agent identity sponsorshi
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Transfer agent identity sponsorships to manager (Preview)  |
+|displayName     |  Transfer agent identity sponsorships to manager  |
 |description     |  Transfer all agent identities sponsored by user to manager.       |
 |taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
 
