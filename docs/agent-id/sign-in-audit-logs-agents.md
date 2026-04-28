@@ -15,8 +15,7 @@ ms.reviewer: egreenberg14
 As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity. The audit and sign-in logs are helpful when you you need to investigate the following types of scenarios:
 
 - Sign-in logs for agents or agent related traffic 
-- Audit logs for when an agent identity is performing an operation in my tenant
-- Audit logs for when the target of an operation was an agent identity
+- Audit logs for when an agent identity or agent's user account is either the initiator or performer of an operation in my tenant
 
 This article describes how agent identity activities are logged in Microsoft Entra ID and how to access those logs using the Microsoft Entra admin center and Microsoft Graph.
 
@@ -28,7 +27,7 @@ Agent activity is logged under the base identity type from where the activity or
 - **Agent identity** activities appear as *service principal events* (for example, "Add service principal" or "Update service principal").
 - **Agent's user account** activities appear as *user events* (for example, "Add user").
 
-To identify whether an audit event involves an agent identity, check the `agentType` property on the `initiatedBy` and `targetResources` fields. A value other than `notAgentic` indicates agent involvement.
+To identify whether an audit event involves an agent identity, check the `agentType` property on the `initiatedBy`, `performedBy`, and `targetResources` fields. An agent identity and an agent's user account can both be represented in the `initiatedBy` and `performedBy` events. A value other than `notAgentic` indicates agent involvement. 
 
 ### agentType
 
@@ -81,9 +80,9 @@ The following changes to the audit log schema enable agent identity tracking:
 
 ## Sign-in logs
 
-The `agentSignIn` resource type appears in the Microsoft Entra sign-in logs and contains properties about the agent, such as if the agent is an app or an instance of an app. Because agents can sign in with either user-delegated or app-only permissions, their sign-ins might appear across each of the four sign-in log types.
+The `agentSignIn` sign-in event type contains properties about the agent, such as if the agent is an app or an instance of an app. Because agents can sign in with either user-delegated or app-only permissions, their sign-ins might appear across each of the four sign-in log types.
 
-The `agentSignIn` resource type is available in the Microsoft Entra admin center and the Microsoft Graph API.
+The `agentSignIn` sign-in event type is available in the Microsoft Entra admin center and the Microsoft Graph API.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
