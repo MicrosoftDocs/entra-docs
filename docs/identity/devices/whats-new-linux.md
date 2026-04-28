@@ -186,16 +186,19 @@ To add the appropriate package repository for your Linux distribution, follow th
 
 ## Changes
 
-### 3.0.2 - April 27, 2026 - (Production)
+### 3.0.2 - April 27, 2026 
 
+**Support for Ubuntu 26.04 LTS and notice of deprecation for Ubuntu 22.04 LTS**
+Microsoft Intune now supports Ubuntu 26.04 LTS. Support for Ubuntu 22.04 LTS ends in August 2026. Devices already enrolled on Ubuntu 22.04 remain enrolled, but you should notify users to upgrade to a supported Ubuntu version. You can identify devices running Ubuntu 22.04 in the Intune admin center by going to Devices > All devices, filtering by Linux, and adding the OS version column. For more information, see [Enroll Linux desktop devices in Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-enrollment/guide-linux).
+
+**Fixes/Improvements**
 - Ensure that all browser calls are done in the same thread
-- Removed some PII from logs
+- updated logging to provide better insights into the broker's behavior and issues
 - Fix the package file time missing issue on RHEL 10
 - PKCE support
-- Brings microsoft-identity-broker support to Ubuntu 26.04
 
 #### Assets
-- Ubuntu-26.04 - [microsoft-identity-broker_3.0.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/26.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-noble_amd64.deb)
+- Ubuntu-26.04 - [microsoft-identity-broker_3.0.2-resolute_amd64.deb ](https://packages.microsoft.com/ubuntu/26.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-resolute_amd64.deb)
 - Ubuntu-24.04 - [microsoft-identity-broker_3.0.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-noble_amd64.deb)
 - Ubuntu-22.04 - [microsoft-identity-broker_3.0.2-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-jammy_amd64.deb)
 - Red Hat Enterprise Linux 10 - [microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm)
