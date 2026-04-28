@@ -531,7 +531,7 @@ Billing: When you configure machine-to-machine (M2M) authentication for Microso
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-In Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. A new Live Preview feature also helps quickly visualize the changes before saving. For more information, see: [Customize the sign‑in experience for your application with branding themes in external tenants - Microsoft Entra External ID](../external-id/customers/how-to-customize-branding-themes-apps.md).
+In Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. A new Live Preview feature also helps quickly visualize the changes before saving. For more information, see: [Customize the sign‑in experience for your application with branding themes](how-to-customize-branding-themes-apps.md).
 
 ---
 
@@ -1087,7 +1087,7 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabli
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
  
-In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [Customize branding themes for apps](/entra/external-id/customers/how-to-customize-branding-themes-apps).
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [Customize branding themes for apps](/entra/fundamentals/how-to-customize-branding-themes-apps).
 
 ---
 

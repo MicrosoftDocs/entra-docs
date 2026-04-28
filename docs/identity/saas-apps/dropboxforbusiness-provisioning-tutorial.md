@@ -3,7 +3,7 @@ title: Configure Dropbox for Business for automatic user provisioning with Micro
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Dropbox for Business.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dropbox Business so that I can streamline the user management process and ensure that users have the appropriate access to Dropbox Business.
@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 The objective of this article is to demonstrate the steps to be performed in Dropbox for Business and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Dropbox for Business.
 
 > [!IMPORTANT]
-> In the future, Microsoft and Dropbox is deprecating the old Dropbox integration. This was originally planned for 4/1/2021, but has been postponed indefinitely. However, to avoid disruption of service, we recommend migrating to the new SCIM 2.0 Dropbox integration which supports Groups. To migrate to the new Dropbox integration, add and configure a new instance of Dropbox for Provisioning in your Microsoft Entra tenant using the steps below. Once you have configured the new Dropbox integration, disable Provisioning on the old Dropbox integration to avoid Provisioning conflicts. For more detailed steps on migrating to the new Dropbox integration, see [Update to the newest Dropbox for Business application using Microsoft Entra ID](https://help.dropbox.com/installs-integrations/third-party/update-dropbox-azure-ad-connector) and [Connect Dropbox with Microsoft Entra ID](https://help.dropbox.com/integrations/microsoft-entra-id).
+> In the future, Microsoft and Dropbox are deprecating the old Dropbox integration. This was originally planned for 4/1/2021, but has been postponed indefinitely. However, to avoid disruption of service, we recommend migrating to the new SCIM 2.0 Dropbox integration which supports Groups. To migrate to the new Dropbox integration, add and configure a new instance of Dropbox for Provisioning in your Microsoft Entra tenant using the steps below. Once you have configured the new Dropbox integration, disable Provisioning on the old Dropbox integration to avoid Provisioning conflicts. For more detailed steps on migrating to the new Dropbox integration, see [Update to the newest Dropbox for Business application using Microsoft Entra ID](https://help.dropbox.com/installs-integrations/third-party/update-dropbox-azure-ad-connector) and [Connect Dropbox with Microsoft Entra ID](https://help.dropbox.com/integrations/microsoft-entra-id).
 
 > [!NOTE]
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
@@ -37,7 +37,7 @@ Before configuring Dropbox for Business for automatic user provisioning with Mic
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Dropbox for Business**, select **Dropbox for Business** in the search box.
 1. Select **Dropbox for Business** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Dropbox for Business in the results list](common/search-new-app.png)
+	![Screenshot of Dropbox for Business in the results list.](common/search-new-app.png)
 
 ## Assigning users to Dropbox for Business
 
@@ -67,65 +67,59 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Dropbox for Business**.
 
-	![The Dropbox for Business link in the Applications list](common/all-applications.png)
+	![Screenshot of The Dropbox for Business link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, select **Authorize**. It opens a Dropbox for Business login dialog in a new browser window.
+1. In the **Tenant URL** field, input your Dropbox Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Dropbox. If the connection fails, ensure your Dropbox account has the required admin permissions and try again.
 
-	![Provisioning](common/provisioning-oauth.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. On the **Sign-in to Dropbox for Business to link with Microsoft Entra ID** dialog, sign in to your Dropbox for Business tenant and verify your identity.
+1. On the **Sign-in to Dropbox for Business to link with Microsoft Entra ID** dialog, sign in to your Dropbox for Business tenant and verify your identity.
 
-	![Dropbox for Business sign-in](media/dropboxforbusiness-provisioning-tutorial/dropbox01.png)
+	![Screenshot of Dropbox for Business sign-in.](media/dropboxforbusiness-provisioning-tutorial/dropbox01.png)
 
-7. Upon completing steps 5 and 6, select **Test Connection** to ensure Microsoft Entra ID can connect to Dropbox for Business. If the connection fails, ensure your Dropbox for Business account has Admin permissions and try again.
+1. Select **Test Connection** to ensure Microsoft Entra ID can connect to Dropbox for Business. If the connection fails, ensure your Dropbox for Business account has Admin permissions and try again.
 
-	![Token](common/provisioning-testconnection-oauth.png)
+	![Screenshot of Token.](common/provisioning-testconnection-oauth.png)
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-9. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dropbox**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dropbox for update operations. Select the **Save** button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-	![Dropbox User Attributes](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-attributes.png)
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Dropbox**.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dropbox for update operations. Select the **Save** button to commit any changes.
 
-13. Review the group attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Dropbox for update operations. Select the **Save** button to commit any changes.
+	![Screenshot of Dropbox User Attributes.](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-attributes.png)
 
-	![Dropbox Group Attributes](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-attributes.png)
+1. Select **Attribute Mapping** in the left panel and select **Groups**.
 
-14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Dropbox for update operations. Select the **Save** button to commit any changes.
 
-15. To enable the Microsoft Entra provisioning service for Dropbox, change the **Provisioning Status** to **On** in the **Settings** section.
+	![Screenshot of Dropbox Group Attributes.](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-attributes.png)
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-16. Define the users and/or groups that you would like to provision to Dropbox by choosing the desired values in **Scope** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	![Provisioning Scope](common/provisioning-scope.png)
-
-17. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Dropbox.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 

@@ -3,7 +3,7 @@ title: Configure Comeet Recruiting Software for automatic user provisioning with
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Comeet Recruiting Software.
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/03/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Comeet Recruiting Software so that I can streamline the user management process and ensure that users have the appropriate access to Comeet Recruiting Software.
@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Com
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Comeet Recruiting Software tenant](https://www.comeet.co/)
 * A user account in Comeet Recruiting Software with Admin permissions.
 
@@ -67,59 +67,43 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Comeet Recruiting Software**.
 
-	![The Comeet Recruiting Software link in the Applications list](common/all-applications.png)
+	![Screenshot of the Comeet Recruiting Software link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
+	![Screenshot of the Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Comeet Recruiting Software's account as described in Step 6.
+1. In the **Tenant URL** field, enter your Comeet Recruiting Software Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Comeet Recruiting Software. If the connection fails, ensure your Comeet Recruiting Software account has the required admin permissions and try again.
 
-6. In the [Comeet Recruiting Software admin console](https://app.comeet.co/), navigate to  **Comeet > Settings > Authentication > Microsoft Azure**, and copy the **Secret Token for your company** value to the **Secret Token** field in Microsoft Entra ID.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![Comeet Recruiting Software Provisioning](./media/comeet-recruiting-software-provisioning-tutorial/secret-token-1.png)
+1. Select **Create** to create your configuration.
 
-7. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Comeet Recruiting Software. If the connection fails, ensure your Comeet Recruiting Software account has Admin permissions and try again.
+1. Select **Properties** on the **Overview** page.
 
-	![Token](common/provisioning-testconnection-token.png)
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+   ![Screenshot of the Provisioning properties configuration page.](common/provisioning-properties.png)
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Select **Save**.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Comeet Recruiting Software in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Comeet Recruiting Software for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Comeet Recruiting Software API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Comeet**.
+	![Screenshot of the Comeet Recruiting Software Group Attributes page.](media/comeet-recruiting-software-provisioning-tutorial/user-mapping-attributes.png)
 
-11. Review the user attributes that are synchronized from Microsoft Entra ID to Comeet Recruiting Software in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Comeet Recruiting Software for update operations. Select the **Save** button to commit any changes.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-	![Comeet Recruiting Software Group Attributes](media/comeet-recruiting-software-provisioning-tutorial/user-mapping-attributes.png)
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-13. To enable the Microsoft Entra provisioning service for Comeet Recruiting Software, change the **Provisioning Status** to **On** in the **Settings** section.
-
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to Comeet Recruiting Software by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Comeet Recruiting Software.
-
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Connector Limitations
 
