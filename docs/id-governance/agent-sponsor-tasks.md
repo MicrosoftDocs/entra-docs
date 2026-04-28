@@ -36,7 +36,7 @@ To create a workflow that notifies the manager or cosponsors of an existing agen
 
 1. On the workflow screen, select the specific mover or leaver workflow template you want to add the sponsorship email tasks to, or create a new workflow based on a template.
     > [!NOTE]
-    > The **Send email to manager about sponsorship changes (Preview)**, **Send email to co-sponsors about sponsor changes (Preview)**, and **Transfer agent identity sponsorships to manager (Preview)** are mover and leaver tasks, and are only available as selectable tasks under workflow templates of the same category.
+    > The **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, and **Transfer agent identity sponsorships to manager** are mover and leaver tasks, and are only available as selectable tasks under workflow templates of the same category.
 1. On the **Basics** tab, after entering a unique display name and description for the workflow,  select your trigger and select **Next**.
 
 1. On the **Configure scope** screen, select the scope of the workflow and select **Next**.
