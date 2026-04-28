@@ -36,7 +36,7 @@ The following diagram shows how you can use cross-tenant synchronization to enab
 
 Organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant application access can benefit from cross-tenant synchronization.
 
-Cross-tenant synchronization can be used across organizations, but doing so might introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements—including the European Union General Data Protection Regulation (GDPR).
+Cross-tenant synchronization can be used across organizations, but doing so might introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements.
 
 Microsoft does not facilitate user consent collection through cross-tenant synchronization. Customers should assess whether their scenario requires user consent, data minimization, or other safeguards. Customers should also consult their legal or compliance teams before enabling cross-organization synchronization or cross-tenant synchronization across organizations.
 
@@ -89,7 +89,7 @@ For cross-tenant synchronization, users don't receive an email or have to accept
 
 For more information, including privacy information, see [Leave an organization as an external user](~/external-id/leave-the-organization.md).
 
-## Get started
+## Steps for getting started
 
 Here are the basic steps to start using cross-tenant synchronization.
 
@@ -101,13 +101,13 @@ Cross-tenant synchronization provides a flexible solution to enable collaboratio
 
 ### Step 2: Enable cross-tenant synchronization in the target tenant
 
-In the target tenant where users are created, go to the **Cross-tenant access settings** page. Here you enable cross-tenant synchronization and the B2B automatic redemption settings by selecting the respective checkboxes. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+In the target tenant where users are created, go to the **Cross-tenant access settings** pane. Here you enable cross-tenant synchronization and the B2B automatic redemption settings by selecting the respective checkboxes. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-overview/configure-target.png" alt-text="Diagram that shows cross-tenant synchronization enabled in the target tenant.":::
 
 ### Step 3: Enable cross-tenant synchronization in the source tenant
 
-In any source tenant, go to the **Cross-tenant access settings** page and enable the B2B automatic redemption feature. Next, use the **Cross-tenant synchronization** page to set up a cross-tenant synchronization job and specify:
+In any source tenant, go to the **Cross-tenant access settings** pane and enable the B2B automatic redemption feature. Next, use the **Cross-tenant synchronization** pane to set up a cross-tenant synchronization job and specify:
 
 - Which users you want to synchronize.
 - What attributes you want to include.
@@ -163,7 +163,7 @@ Cross-tenant synchronization and cross-cloud synchronization are built via the s
 
 Synchronization of the `manager` attribute isn't currently supported in cross-cloud synchronization.
 
-For multitenant organization limitations, see [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq#can-an-mto-be-created-across-worldwide-geographies).
+For limitations with multitenant organizations, see [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq#can-an-mto-be-created-across-worldwide-geographies).
 
 For Microsoft 365 limitations with external members, see [Collaborate with guests from other Microsoft 365 cloud environments](/microsoft-365/solutions/collaborate-guests-cross-cloud).
 
@@ -207,7 +207,7 @@ For more information about the `userType` definitions, see [Understand and manag
 
 #### I have existing B2B collaboration users. What will happen to them?
 
-Cross-tenant synchronization matches the user and makes any necessary updates to the user, such as updating the display name. By default, `userType` isn't updated from `guest` to `member`, but you can configure this property in the attribute mappings.
+Cross-tenant synchronization matches the user and makes any necessary updates to the user, such as updating the display name. By default, `userType` isn't updated from `guest` to `member`. You can configure this property in the attribute mappings.
 
 ### Attributes
 
@@ -237,13 +237,13 @@ You can't use cross-tenant synchronization to synchronize attributes such as pho
 
 Cross-tenant synchronization doesn't offer direct control over the source of authority. The user and its attributes are deemed authoritative at the source tenant.
 
-There are parallel sources-of-authority workstreams that will evolve source-of-authority controls for users down to the attribute level. A user object at the source might ultimately reflect multiple underlying sources. For the tenant-to-tenant process, this situation is still treated as the source tenant's values being authoritative for the sync process (even if pieces actually originate elsewhere) into the target tenant. Currently, there's no support for reversing the sync process's source of authority.
+There are parallel sources-of-authority workstreams that will evolve source-of-authority controls for users down to the attribute level. A user object at the source might ultimately reflect multiple underlying sources. For the tenant-to-tenant process, this situation is still treated as the source tenant's values being authoritative for the sync process (even if pieces originate elsewhere) into the target tenant. Currently, there's no support for reversing the sync process's source of authority.
 
 Cross-tenant synchronization supports the source of authority only at the object level. All attributes of a user must come from the same source, including credentials. It isn't possible to reverse the source of authority or federation direction of a synchronized object.
 
 #### What happens if I change attributes for a synced user in the target tenant?
 
-Cross-tenant synchronization doesn't query for changes in the target. If you don't make any changes to the synced user in the source tenant, then user attribute changes that you made in the target tenant persist. However, if you make changes to the user in the source tenant, then during the next synchronization cycle, the user in the target tenant is updated to match the user in the source tenant.
+Cross-tenant synchronization doesn't query for changes in the target. If you don't make any changes to the synced user in the source tenant, then user attribute changes that you made in the target tenant persist. If you make changes to the user in the source tenant, then during the next synchronization cycle, the user in the target tenant is updated to match the user in the source tenant.
 
 #### Can the target tenant manually block sign-in for a specific home/source tenant user who's synced?
 

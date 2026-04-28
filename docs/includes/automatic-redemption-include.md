@@ -21,7 +21,7 @@ The automatic redemption setting applies to cross-tenant synchronization, B2B co
 - When users are added to a resource tenant through B2B collaboration.
 - When users access resources in a resource tenant by using B2B direct connect.
 
-The following table shows how this setting works when you enable it for these scenarios:
+The following table shows how this setting works when you enable it for these scenarios.
 
 | Item | Cross-tenant synchronization | B2B collaboration | B2B direct connect |
 | --- | :---: | :---: | :---: |
