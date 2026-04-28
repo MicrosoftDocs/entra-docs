@@ -32,6 +32,8 @@ To create an agent identity blueprint, you need:
     - [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) can configure federated identity credentials on an agent identity blueprint and is required to add a secret or certificate credential.
 - If using PowerShell, version 7 is required.
 
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
+
 ## Prepare your environment
 
 To streamline the process, take a few moments to get your environment set up for the right permissions.

@@ -3,7 +3,7 @@ title: Configure inheritable permissions for agent identity blueprints
 description: Learn how to configure inheritable permissions for agent identity blueprints to automatically grant OAuth 2.0 delegated permission scopes and application roles to agent identities.
 author: omondiatieno
 ms.topic: how-to
-ms.date: 04/14/2026
+ms.date: 04/16/2026
 ms.author: jomondi
 ms.reviewer: ergreenl
 
@@ -20,6 +20,8 @@ Inheritable permissions let agent identities automatically inherit delegated per
 - Either of the following permissions:
     - Agent ID Developer role for managing agent identity blueprints owned by the user
     - Agent ID Administrator role for managing agent identity blueprints
+
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
 
 ## How inheritable permissions work
 
@@ -43,7 +45,7 @@ You can configure scopes and roles independently on the same resource. For examp
 ## Inheritable permissions limitations
 
 - Maximum of 10 resource apps per agent identity blueprint (for example, up to 10 entries in the *inheritablePermissions* collection). If you exceed this limit, reduce the number of resource apps to stay within the supported boundary.
-- The [blocklist of high-privilege scopes](/graph/api/resources/agentid-platform-overview?#microsoft-graph-permissions-blocked-for-agents) is enforced. Some sensitive scopes aren't inheritable due to platform policy for agent identities. It aligns with the broader restriction on granting high-privilege Microsoft Graph scopes to agents. If you encounter policy errors when configuring inheritance, remove the blocked scopes from your configuration.
+- The [block list of high-privilege scopes](/graph/api/resources/agentid-platform-overview?#microsoft-graph-permissions-blocked-for-agents) is enforced. Some sensitive scopes aren't inheritable due to platform policy for agent identities. It aligns with the broader restriction on granting high-privilege Microsoft Graph scopes to agents. If you encounter policy errors when configuring inheritance, remove the blocked scopes from your configuration.
 
 Regularly review and monitor your inheritable permissions configuration. Reevaluate inherited scopes and roles to ensure they remain appropriate for your use case. Audit which inherited scopes and roles are being used by agents and remove any unused permissions from both the agent identity blueprint principal and the inheritable permissions list to maintain security hygiene.
 
