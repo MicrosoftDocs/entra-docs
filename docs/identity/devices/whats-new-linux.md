@@ -186,10 +186,23 @@ To add the appropriate package repository for your Linux distribution, follow th
 
 ## Changes
 
-### 3.0.2 - April 27, 2026  - (Production)
+### 3.0.2 - April 27, 2026 - (Production)
 
-###   
-3.0.1 - March 31, 2026 - (GA Major Release)
+- Ensure that all browser calls are done in the same thread
+- Removed some PII from logs
+- Fix the package file time missing issue on RHEL 10
+- PKCE support
+- Brings microsoft-identity-broker support to Ubuntu 26.04
+
+#### Assets
+- Ubuntu-26.04 - [microsoft-identity-broker_3.0.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/26.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-noble_amd64.deb)
+- Ubuntu-24.04 - [microsoft-identity-broker_3.0.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_3.0.2-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm)
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-3.0.2-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el9.x86_64.rpm)
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-3.0.2-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el8.x86_64.rpm)
+
+### 3.0.1 - March 31, 2026 - (GA Major Release)
 
 GA release of the Microsoft Identity Broker for Linux, now using a newly rewritten C++ broker instead of the previous Java-based broker.
 
@@ -265,8 +278,10 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 #### Assets
 
 - Ubuntu-24.04 - [microsoft-identity-broker_2.5.0-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-noble_amd64.deb)
+
 - Ubuntu-22.04 - [microsoft-identity-broker_2.5.0-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-jammy_amd64.deb)
 
+---
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 
