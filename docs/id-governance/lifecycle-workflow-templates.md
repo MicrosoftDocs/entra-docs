@@ -283,7 +283,7 @@ The default specific parameters for the **Transition agent sponsorships when a s
 
 ### Transition agent sponsorships when a sponsor changes roles
 
-The **Transition agent sponsorships when a sponsor changes roles** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with an A365 Assistive license.
+The **Transition agent sponsorships when a sponsor changes roles** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with the Microsoft Agent 365 license. For more information, see: [Microsoft Agent 365 Documentation](https://aka.ms/entraagent365).
 
 The default specific parameters for the **Transition agent sponsorships when a sponsor changes roles** template are as follows:
 
