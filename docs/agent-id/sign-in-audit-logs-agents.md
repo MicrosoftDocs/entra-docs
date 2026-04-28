@@ -4,10 +4,9 @@ description: Learn how audit and sign-in activities associated with agent identi
 author: shlipsey3
 ms.service: entra
 ms.topic: concept-article
-ms.date: 11/07/2025
+ms.date: 04/28/2026
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-ms.custom: agent-id-ignite
 
 # Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
@@ -37,8 +36,8 @@ The `agentType` value further clarifies agent identity actions. The `agentType` 
 
 The `agentType` property appears on the following resources:
 - `auditAppIdentity`
-- [auditUserIdentity](/graph/api/resources/audituseridentity?view=graph-rest-beta&preserve-view=true)
-- [targetResource](/graph/api/resources/targetresource?view=graph-rest-beta&preserve-view=true)
+- `auditUserIdentity`
+- `targetResource`
 - `auditActivityPerformer`
 
 | Value | Description |
@@ -84,11 +83,6 @@ The following changes to the audit log schema enable agent identity tracking:
 
 The `agentSignIn` resource type appears in the Microsoft Entra sign-in logs and contains properties about the agent, such as if the agent is an app or an instance of an app. Because agents can sign in with either user-delegated or app-only permissions, their sign-ins might appear across each of the four sign-in log types.
 
-- To find sign-in logs for <>, use the **Interactive user sign-ins** log type and filter for `agentType` values of `agentIDuser`.
-- To find sign-in logs for <>, use the **Non-interactive user sign-ins** log type and filter for `agentType` values of `agentIDuser`.
-- To find sign-in logs for <>, use the **Service principal sign-ins** log type and filter for `agentType` values of `agenticAppInstance` or `agentIdentityBlueprintPrincipal`.
-- To find sign-in logs for <>, use the **Managed identity sign-ins** log type and filter for `agentType` values of `agenticAppInstance`.
-
 The `agentSignIn` resource type is available in the Microsoft Entra admin center and the Microsoft Graph API.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
@@ -98,7 +92,6 @@ The `agentSignIn` resource type is available in the Microsoft Entra admin center
 1. Use the following filter options to view agent sign-ins:
    - **Agent type**: Choose from **Agent ID user**, **Agent Identity**, **Agent Identity Blueprint** or **Not Agentic**
    - **Is Agent**: Choose from **No** or **Yes**
-
 
 ### [Microsoft Graph](#tab/microsoft-graph)
 
