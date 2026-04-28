@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > The Sign-on URL value isn't real. Update the value with the actual Sign-on URL. Contact [ClearCo Client support team](support@clearcompany.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-7. On the **Set up Single Sign-On with SAML** page, go to the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement to you Computer. Also, download the **Federation Metadata XML**, as you will need it.
+7. On the **Set up Single Sign-On with SAML** page, go to the **SAML Signing Certificate** section, and then select **Download** to download the **Certificate (Base64)** and save it to your computer. Also download the **Federation Metadata XML**, as you'll need it later.
 
     ![The Certificate download link](common/certificatebase64.png)
    
