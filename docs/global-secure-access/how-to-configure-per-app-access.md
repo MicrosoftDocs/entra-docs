@@ -178,7 +178,7 @@ You can configure the traffic routing method for the Global Secure Access app by
 Update the application object with a separate `PATCH` request to Microsoft Graph:
 
 ```http
-PATCH https://graph.microsoft.com/beta/applications/{applicationObjectId}
+PATCH https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
 Content-Type: application/json
 
 {
@@ -188,7 +188,15 @@ Content-Type: application/json
 }
 ```
 
-Replace `{applicationObjectId}` with the object ID of the application. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true).
+Replace `{appRegistrationObjectId}` with the application registration's object ID. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
+
+To confirm that the configuration was committed, retrieve the application object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
+
+```http
+GET https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
+```
+
+For more information, see [Get application](/graph/api/application-get?view=graph-rest-beta&preserve-view=true).
 
 ## Enable or disable access with the Global Secure Access Client
 
