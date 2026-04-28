@@ -27,9 +27,9 @@ Sensitivity labels for cloud security groups share the same underlying label inf
 
 | Behavior | Microsoft 365 groups | Cloud security groups |
 |---|---|---|
-| **Label mutability** | Labels can be changed or removed by group owners and admins at any time. | **Labels are immutable** once applied. Labels can't be changed or removed. |
-| **Label assignment** | Available at group creation or on existing groups. | Available at group creation or on existing groups. To label a group with child groups, remove all child groups first, apply the label, and then add the child groups back. |
-| **Membership validation** | Membership additions are validated against label policies. | Membership additions are validated against label policies. Existing membership is validated against label guest policy on first assignment of label. |
+| **Label mutability** | Group owners and admins can change or remove labels at any time. | **Labels are immutable** once applied. You can't change or remove labels. |
+| **Label assignment** | Assign labels when creating a group or on existing groups. | Assign labels when creating a group or on existing groups. To label a group with child groups, remove all child groups first, apply the label, and then add the child groups back. |
+| **Membership validation** | Validate membership additions against label policies. | Validate membership additions against label policies. Validate existing membership against label guest policy on first assignment of label. |
 | **Nesting support** | Microsoft 365 groups don't support nesting. | Supported, but child groups must have labels that are equally or more restrictive than the parent group's label. For details, see [Nesting behavior with labeled groups](#nesting-behavior-with-labeled-groups). |
 | **Admin / high-privilege bypass** | Admins respect label policies. | During preview, certain built-in admin roles and apps with specific permissions **can bypass label enforcement**. For the full list, see [Known limitations](#known-limitations-preview). This behavior might change before general availability. |
 
@@ -47,13 +47,13 @@ Security groups are used directly in authorization decisions such as Conditional
 > [!WARNING]
 > Changes to a sensitivity label's protection policies in Microsoft Purview take effect immediately on all security groups that use that label. For example, if you change a label from blocking guest access to allowing it, all groups with that label immediately permit guest membership. Conversely, tightening a policy takes effect immediately as well. Deleting a label in Purview removes its protections from all labeled groups.
 >
-> **We strongly recommend that you don't change the policy of a label or delete a label** after the label is in use on security groups. Group owners adopt a label based on the protections it provides at the time of assignment, and weakening or removing those protections silently breaks that promise across every group that uses the label. For broader Purview guidance, see [Sensitivity labels in Microsoft Purview](/purview/sensitivity-labels) and [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites).
+> **Don't change the policy of a label or delete a label** after the label is in use on security groups. Group owners adopt a label based on the protections it provides at the time of assignment. Weakening or removing those protections silently breaks that promise across every group that uses the label. For broader Purview guidance, see [Sensitivity labels in Microsoft Purview](/purview/sensitivity-labels) and [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites).
 
 ## Known limitations (preview)
 
 During preview, the following limitations apply:
 
-- **Label immutability:** Once applied, a label can't be changed or removed. Choose labels carefully before you apply them.
+- **Label immutability:** You can't change or remove a label after you apply it. Choose labels carefully before you apply them.
 - **High-privilege bypass:** The following admin roles and application permissions can bypass label policy enforcement when adding members. This behavior might change before general availability.
 
   | | |
@@ -74,8 +74,10 @@ Before you can assign sensitivity labels to cloud security groups, ensure the fo
 1. Your organization has at least one active **Microsoft Entra ID P1** or P2 license (or Microsoft 365 E3/E5).
 1. The `EnableMIPLabels` setting is set to `True` for cloud security groups in your tenant directory settings.
 1. Sensitivity labels are published in the Microsoft Purview portal with the **Groups & Sites** scope enabled.
-1. Labels are synchronized to Microsoft Entra ID by using the `Execute-AzureAdLabelSync` cmdlet. Labels can take up to 24 hours after synchronization to become available.
-1. The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is installed.
+1. Labels are synchronized to Microsoft Entra ID by using the `Execute-AzureADLabelSync` cmdlet. Labels can take up to 24 hours after synchronization to become available.
+1. The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is installed for the directory-settings and group-management cmdlets in this article.
+1. [Security & Compliance PowerShell](/powershell/exchange/connect-to-scc-powershell) is installed and connected. The `Execute-AzureADLabelSync` cmdlet is available only in Security & Compliance PowerShell, not in the Microsoft Graph PowerShell SDK.
+<!-- @mbhargav Please confirm Security & Compliance PowerShell is the correct/only module customers need for label sync in the security-groups labeling scenario. Public Purview docs say Execute-AzureADLabelSync lives only in S&C PowerShell, but the original draft didn't call this out as a prereq. -->
 
 ## Enable sensitivity label support in PowerShell
 
@@ -101,7 +103,9 @@ To apply sensitivity labels to cloud security groups, you must enable the featur
 
    ```powershell
    $params = @{
-       templateId = "d209f6fa-3839-4d70-b83f-60b1c64d0e8f"
+       templateId = "<group-security-template-id>"
+<!-- @mbhargav Please confirm the canonical Group.Security template GUID. For reference, the original draft used d209f6fa-3839-4d70-b83f-60b1c64d0e8f. If that is a sepcific GUID to make the snippet work (or if it's a universal GUID for all customers), we need to add it back in this article AND add it to the SFI Known GUIDs allowlist. Depending on this decision, we will either keep the replacement <group-security-template-id> OR restore the original GUID and request it be added to the SFI allowlist via https://aka.ms/SFIAllowListRequest so the article can pass security review. -->
+
        values = @(
            @{
                name = "AllowToAddGuests"
@@ -155,7 +159,7 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 1. Fill out the required information and select a sensitivity label from the **Sensitivity label** dropdown.
 
    > [!WARNING]
-   > Once a sensitivity label is applied and the group is created, the label can't be changed or removed. Verify the label aligns with your intended access and usage policy before you proceed. This behavior might change before general availability.
+   > Once you apply a sensitivity label and create the group, you can't change or remove the label. Verify the label aligns with your intended access and usage policy before you proceed. This behavior might change before general availability.
 
 1. Add owners and members as needed. If the selected label includes a policy that blocks guest access, you can't add guest members.
 1. Select **Create** to save your changes.
@@ -166,12 +170,12 @@ The group is created and the membership restrictions associated with the selecte
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a Groups Administrator.
 1. Select **Microsoft Entra ID**.
-1. Select **Groups** > **All groups**, then select the group you want to label.
+1. Select **Groups** > **All groups**, and then select the group you want to label.
 1. On the group's page, select **Properties**.
 1. Select a sensitivity label from the **Sensitivity label** dropdown.
 
    > [!WARNING]
-   > Once applied, the label can't be changed or removed. If the group's current membership conflicts with the selected label's policy (for example, the group contains guests and the label blocks guest access), the save operation fails. Resolve the conflict before you apply the label.
+   > Once you apply the label, you can't change or remove it. If the group's current membership conflicts with the selected label's policy (for example, the group contains guests and the label blocks guest access), the save operation fails. Resolve the conflict before you apply the label.
 
 1. Select **Save** to apply your changes.
 
@@ -179,7 +183,7 @@ You can also assign labels to security groups from the [My Groups portal](https:
 
 ## Assign a label using PowerShell or Microsoft Graph
 
-Use the following PowerShell snippets, which call the Microsoft Graph beta endpoint, to manage labels and labeled-group membership programmatically.
+To manage labels and labeled-group membership programmatically, use the following PowerShell snippets that call the Microsoft Graph beta endpoint.
 
 ### Apply a label to a new security group
 
@@ -197,7 +201,9 @@ $param = @{
 New-MgBetaGroup @param
 ```
 
-To retrieve available label IDs, use the [List sensitivityLabels](/graph/api/security-sensitivitylabel-list) Microsoft Graph API.
+To retrieve available label IDs, use the [List sensitivityLabels](/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-beta&preserve-view=true) Microsoft Graph API.
+<!-- @mbhargav Please confirm this is the correct Graph API path for retrieving sensitivity-label IDs in the security-groups labeling scenario. The original URL (/graph/api/security-sensitivitylabel-list) didn't resolve. -->
+
 
 ### Apply a label to an existing security group
 
@@ -217,15 +223,15 @@ $odataID = "https://graph.microsoft.com/v1.0/directoryObjects/" + $user.Id
 New-MgBetaGroupMemberByRef -GroupId <groupId> -OdataId $odataID
 ```
 
-When you add members to a labeled group, Microsoft Entra ID validates that the new member complies with the label's restrictions. If validation fails (for example, adding a guest to a group with a no-guests policy), the operation is blocked and an error is returned.
+When you add members to a labeled group, Microsoft Entra ID checks that the new member meets the label's restrictions. If the member doesn't meet the restrictions (for example, if you try to add a guest to a group with a no-guests policy), the operation is blocked and an error is returned.
 
 ## Nesting behavior with labeled groups
 
-When working with nested groups and sensitivity labels, the following rules apply:
+When you work with nested groups and sensitivity labels, the following rules apply:
 
 - **You can't label a group that currently contains nested groups.** To label a parent group, remove all nested (child) groups first, apply the label to the parent, and then add the child groups back.
-- **Child groups must have a compatible label.** When you add a child group back to a labeled parent, the child group's label must be at least as restrictive as the parent's label. A child group with a less restrictive label (lower priority) can't be added as a member of a more restrictive parent group.
-- **Unlabeled groups cannot be nested under a labeled parent.** If the parent group has a label, all child groups must also be labeled with a compatible label before they can be added.
+- **Child groups must have a compatible label.** When you add a child group back to a labeled parent, the child group's label must be at least as restrictive as the parent's label. You can't add a child group with a less restrictive label (lower priority) as a member of a more restrictive parent group.
+- **You can't nest unlabeled groups under a labeled parent.** If the parent group has a label, you must label all child groups with a compatible label before you can add them.
 
 ### Steps to label a parent group with nested groups
 
@@ -236,14 +242,14 @@ When working with nested groups and sensitivity labels, the following rules appl
 
 ## Troubleshooting
 
-### Sensitivity labels aren't available for assignment on a security group
+### You can't assign sensitivity labels to a security group
 
 The sensitivity label option appears for cloud security groups only when all the following conditions are met:
 
 1. The organization has an active Microsoft Entra ID P1 license.
 1. `EnableMIPLabels` is set to `True` in the `Group.Security` directory settings.
 1. Sensitivity labels are published in the Microsoft Purview portal for this Microsoft Entra organization.
-1. Labels are synchronized to Microsoft Entra ID by using the `Execute-AzureAdLabelSync` cmdlet. Labels can take up to 24 hours after synchronization to become available.
+1. Labels are synchronized to Microsoft Entra ID by using the `Execute-AzureADLabelSync` cmdlet (run from Security & Compliance PowerShell). Labels can take up to 24 hours after synchronization to become available.
 1. The sensitivity label scope is configured for **Groups & Sites**.
 1. The group is a Cloud Security group with **assigned** membership type (not dynamic).
 1. The current signed-in user has sufficient privileges to assign sensitivity labels (group owner or at least a Groups Administrator) and is within the scope of the sensitivity label publishing policy.
@@ -263,9 +269,9 @@ If you attempt to add a member (guest or nested group) to a cloud security group
 - **Adding an unlabeled nested group to a labeled parent group.** Resolution: Apply a label to the nested group that's equally or more restrictive than the parent group's label, then add the nested group.
 - **Adding a nested group with a less restrictive label to a parent group.** Resolution: The nested group must have a label that's equally or more restrictive than the parent group's label. If the nested group has a less restrictive label, you can't add it.
 
-### The label cannot be changed or removed
+### You can't change or remove the label
 
-During preview, sensitivity labels on cloud security groups are immutable. Once you apply a label, it can't be modified or removed. To change a label, create a new security group with the correct label, then re-add the members to the new group.
+During preview, you can't change sensitivity labels on cloud security groups. After you apply a label, you can't modify or remove it. To change a label, create a new security group with the correct label, and then re-add the members to the new group.
 
 ### Known issue: assignedLabels not returned in PowerShell
 
@@ -275,7 +281,7 @@ There's a known issue where the `assignedLabels` property might not be populated
 GET https://graph.microsoft.com/v1.0/groups/{groupId}?$select=assignedLabels
 ```
 
-or
+Or
 
 ```http
 GET https://graph.microsoft.com/v1.0/groups/{groupId}/assignedlabels
