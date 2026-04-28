@@ -16,6 +16,8 @@
     href: tutorial-enable-cloud-sync-sspr-writeback.md
   - name: Enable password writeback to on-premises
     href: tutorial-enable-sspr-writeback.md
+  - name: Password policy overview and frequently asked questions
+    href: tutorial-password-policy-overview-frequently-asked-questions.md
   - name: Configure custom banned password lists
     href: tutorial-configure-custom-password-protection.md
   - name: Enable security notifications
@@ -79,7 +81,7 @@
       href: concept-mfa-howitworks.md
     - name: Default protection
       href: concept-authentication-default-enablement.md
-    - name: System-preferred MFA
+    - name: System-preferred authentication
       href: concept-system-preferred-multifactor-authentication.md
     - name: Mandatory MFA
       href: concept-mandatory-multifactor-authentication.md
@@ -138,7 +140,7 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
-  - name: Plan phishing-resistant MFA
+  - name: Phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
       items:
@@ -162,8 +164,8 @@
         href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
-      - name: Synced passkeys FAQ
-        href: synced-passkey-faq.yml
+      - name: Passkey FAQ
+        href: passkey-faq.yml
       - name: Passkey (FIDO2) compatibility matrix
         href: concept-fido2-compatibility.md
       - name: Become a passkey (FIDO2) vendor
@@ -360,6 +362,8 @@
         href: how-to-mfa-server-migration-utility.md
   - name: Troubleshoot
     items:
+    - name: Voice call and SMS authentication
+      href: troubleshoot-voice-call-sms.md
     - name: Self-service password reset (SSPR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback

@@ -43,8 +43,8 @@ items:
       href: tutorial-internet-access-threat-intelligence.md
     - name: Discover applications
       href: tutorial-internet-access-application-discovery.md
-    - name: Configure file controls
-      href: tutorial-internet-access-file-controls.md
+    - name: Configure content policies
+      href: tutorial-internet-access-content-policies.md
   - name: Private Access labs
     expanded: true
     items:
@@ -319,6 +319,8 @@ items:
             href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md       
+      - name: Troubleshoot prompt injection protection
+        href: troubleshoot-prompt-injection-protection.md
       - name: Troubleshoot application access
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
@@ -387,3 +389,5 @@ items:
     href: reference-global-secure-access-certifications.md
   - name: Global Secure Access in China
     href: reference-china-user-support.md
+  - name: Licensing for guest users
+    href: reference-licensing-guest-users.md

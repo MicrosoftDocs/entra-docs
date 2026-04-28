@@ -17,7 +17,7 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 | **Definition** | <ul><li>Joined only to Microsoft Entra ID requiring organizational account to sign in to the device</li></ul> |
 | **Primary audience** | <ul><li>Suitable for both cloud-only and hybrid organizations. </li><li>Applicable to all users in an organization</li></ul> |
 | **Device ownership** | <ul><li>Organization</li></ul> |
-| **Operating Systems** | <ul><li>All Windows 11 and Windows 10 devices except Home editions</li><li>[Windows Enterprise multi-session Virtual Machines running in Azure](/azure/virtual-desktop/windows-multisession-faq#can-windows-enterprise-multi-session-be-microsoft-entra-joined)</li><li>[Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported)</li><li>Apple devices running macOS 13 or newer</li><li>Linux editions:<ul><li>Ubuntu 22.04/24.04 LTS</li><li>Red Hat Enterprise Linux 8/9 LTS</li></ul></li></ul> |
+| **Operating Systems** | <ul><li>All Windows 11 and Windows 10 devices except Home editions</li><li>[Windows Enterprise multi-session Virtual Machines running in Azure](/azure/virtual-desktop/windows-multisession-faq#can-windows-enterprise-multi-session-be-microsoft-entra-joined)</li><li>[Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported)</li><li>Apple devices running macOS 13 or newer</li><li>Linux editions:<ul><li>Ubuntu 22.04/24.04/26.04 LTS</li><li>Red Hat Enterprise Linux 9/10 LTS</li></ul></li></ul> |
 | **Provisioning** | <ul><li>Self-service: Windows Out of Box Experience (OOBE) or Settings</li><li>Bulk enrollment</li><li>Windows Autopilot</li><li>(Public preview) Apple Automated Device Enrollment (applies to Apple devices only)</li></ul> |
 | **Device management** | <ul><li>Mobile Device Management (example: Microsoft Intune)</li><li>[Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview)</li></ul> |
 | **Key capabilities** | <ul><li>single sign-on (SSO) to both cloud and on-premises resources</li><li>Conditional Access</li><li>[Self-service Password Reset and Windows Hello PIN reset on lock screen](../authentication/howto-sspr-windows.md)</li></ul> |
@@ -27,12 +27,12 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 
 The following are the supported sign-in options for Microsoft Entra joined devices. The availability of these options depends on the device's operating system and configuration. For example, Windows Hello for Business requires additional setup and may not be available on all devices.
 
-| Platform | Password | SmartCard | Microsoft Authenticator phone sign-in | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) / [Platform Credentials](macos-psso.md) | Web Sign-In | FIDO2  |
+| Platform | Password | SmartCard | Microsoft Authenticator<br/> phone sign-in | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) / <br/>[Platform Credentials](macos-psso.md) | Web Sign-In | FIDO2  |
 | --------------------- | --- | --- | --- | --- | ---| --- |  
 |Windows 10/11          | ✅  | ✅ | ✅ | ✅ | ✅ |  ✅ |
-|macOS 13+              | ✅  | ✅ |     |    |     |      |
-|Ubuntu 22.04/24.04 LTS | ✅  | ✅ | ✅ |    |     |      |
-|RHEL 8/9/10            | ✅  | ⚠️ | ✅ |    |     |      |
+|macOS 13+              | ✅  | ✅ |   | ✅   |     |      |
+|Ubuntu 22.04/24.04/26.04 LTS | ✅  | ✅ | ✅ |    |     |      |
+|RHEL 9/10            | ✅  | ⚠️ Preview | ✅ |    |     |      |
 
 
 You sign in to Microsoft Entra joined devices using a Microsoft Entra account. Access to resources can be controlled based on your account and [Conditional Access policies](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) applied to the device.

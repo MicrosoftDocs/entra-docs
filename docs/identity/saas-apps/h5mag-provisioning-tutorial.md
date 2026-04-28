@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to H5mag so that I can streamline the user management process and ensure that users have the appropriate access to H5mag.
@@ -29,13 +29,13 @@ This article describes the steps you need to perform in both H5mag and Microsoft
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A user account in [H5mag](https://account.h5mag.com) with an Enterprise license. If your account needs an upgrade to an Enterprise license, reach out to `support@h5mag.com`.  
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and H5mag](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and H5mag](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-h5mag-to-support-provisioning-with-azure-ad'></a>
 
@@ -43,11 +43,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to your [H5mag environment](https://account.h5mag.com/login) and navigate to **[Account](https://account.h5mag.com/account)** > **[Provisioning & SSO](https://account.h5mag.com/account/provisioning)**.
 
-2. Select the **Generate Token** button. The provisioning URL and API Token is displayed. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your H5mag application.
+1. Select the **Generate Token** button. The provisioning URL and API Token is displayed. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your H5mag application.
 
-3. Select the **Save** button to store the generated token.
+1. Select the **Save** button to store the generated token.
 
-4. If you want to redirect your users to use Microsoft login page when they attempt to log in using H5mag's own system, you can set a SSO redirect on this page as well by selecting **Microsoft 365 / Microsoft Entra ID** in the SSO Provider options.
+1. If you want to redirect your users to use Microsoft login page when they attempt to log in using H5mag's own system, you can set an SSO redirect on this page as well by selecting **Microsoft 365 / Microsoft Entra ID** in the SSO Provider options.
 
 <a name='step-3-add-h5mag-from-the-azure-ad-application-gallery'></a>
 
@@ -76,27 +76,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The H5mag link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your H5mag Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to H5mag. If the connection fails, ensure your H5mag account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your H5mag Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to H5mag. If the connection fails, ensure your H5mag account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to H5mag**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to H5mag in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in H5mag for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the H5mag API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to H5mag in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in H5mag for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the H5mag API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -113,21 +115,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |timezone|String||
    |userType|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for H5mag, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to H5mag by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

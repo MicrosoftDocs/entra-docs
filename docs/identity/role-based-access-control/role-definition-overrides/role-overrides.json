@@ -17,7 +17,7 @@
         "Manages all aspects of Microsoft Fabric.": "Manage all aspects of the Fabric and Power BI products.",
         "Create and manage all aspects of Global Secure Internet Access and Microsoft Global Secure Private Access, including managing access to public and private endpoints.": "Create and manage all aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access, including managing access to public and private endpoints.",
         "Can manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, and federation settings.": "Manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.",
-        "Can view and share dashboards and insights via the M365 Insights app.": "View and share dashboards and insights via the Microsoft 365 Insights app.",
+        "Can view and share dashboards and insights via the M365 Insights app.": "View and share dashboards and insights via the Microsoft Viva Insights app.",
         "Has access to topic management dashboard and can manage content.": "Organize, create, manage, and promote topics and knowledge.",
         "Manage all aspects of Entra Permissions Management.": "Manage all aspects of Microsoft Entra Permissions Management.",
         "Can create and manage all aspects of Microsoft Dynamics 365, PowerApps and Microsoft Flow.": "Manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate.",

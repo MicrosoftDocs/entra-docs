@@ -5,7 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 03/12/2026
 
-#CustomerIntent: As a Lifecycle Workflows Administrator, I want to use Custom Attribute triggers as an attribute change trigger so that I can trigger workflows based on other custom attributes.
+#Customer Intent: As a Lifecycle Workflows Administrator, I want to use Custom Attribute triggers as an attribute change trigger so that I can trigger workflows based on other custom attributes.
 ---
 
 

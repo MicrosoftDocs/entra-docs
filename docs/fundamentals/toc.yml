@@ -23,6 +23,8 @@ items:
     href: properties-area.md
   - name: Add company branding
     href: how-to-customize-branding.md
+  - name: Branding themes for applications
+    href: how-to-customize-branding-themes-apps.md
 - name: Add users and groups
   expanded: false
   items:

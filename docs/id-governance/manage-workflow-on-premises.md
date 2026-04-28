@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 ms.subservice: lifecycle-workflows
 ms.custom: template-how-to, sfi-image-nochange
-#CustomerIntent: As an administrator, I want to be able to edit user account tasks in workflows so that they will run for users synchronized from Active Directory Domain Services.
+#Customer Intent: As an administrator, I want to be able to edit user account tasks in workflows so that they will run for users synchronized from Active Directory Domain Services.
 ---
 
 # Manage users synchronized from Active Directory Domain Services with workflows

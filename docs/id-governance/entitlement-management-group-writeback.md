@@ -6,6 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: sponnada
+#Customer Intent: As an IT admin, I want to set up group writeback in entitlement management so that I can synchronize cloud-managed groups to on-premises Active Directory.
 ---
 
 # Setting up group writeback within entitlement management

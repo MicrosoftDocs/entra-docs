@@ -29,71 +29,77 @@ This script automates generating and signing Transport Layer Security (TLS) cert
 #    - Module: Microsoft.Graph.Beta
 #
 # Before you begin:
-#    
+#
 # - Make sure you're running PowerShell as an administrator
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
-# Ensure Microsoft.Graph.Beta module is available
-
-# Import Module
+# - Make sure OpenSSL is installed
+# - Replace the OpenSSL path below if needed
 
 Import-Module Microsoft.Graph.Beta.NetworkAccess
 
-# Connect to Microsoft Graph (handles token for you)
+# Connect to Microsoft Graph
 Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All" -NoWelcome
 
 # Modify the following with your own settings before running the script:
-# Parameters of the certificate sign request (letters and numbers only and within 12 characters).
-    $name = "TLSiDemoCA"
-    $commonName = "Contoso TLS Demo"
-    $organizationName = "Contoso"
+$name = "TLSiDemoCA"
+$commonName = "Contoso TLS Demo"
+$organizationName = "Contoso"
 
-# Replace with your openSSLpath
-    $openSSLPath = "C:\Program Files\OpenSSL-Win64\bin\openssl.exe"
+# Replace with your OpenSSL path
+$openSSLPath = "C:\Program Files\OpenSSL-Win64\bin\openssl.exe"
 
-# Self-signed CA file names
+# Generated file names
 $rootKey = "TlsDemorootCA.key"
 $rootCert = "TlsDemorootCAcert.pem"
 $subject = "/C=US/ST=Washington/L=Redmond/O=Contoso/CN=Contoso"
 $signedCert = "signedcertificate.pem"
+$csrPath = "$name.csr"
+$opensslCnfPath = "openssl.cnf"
 
-#: Check if External Certificate Authority Certificates already exists
+# Check if External Certificate Authority Certificates already exist
 try {
-    $response = Get-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate
+    $response = Get-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ErrorAction Stop
     if ($response.Count -gt 0) {
         Write-Host "A certificate for TLS inspection already exists."
-	    exit 1
-    } 
+        exit 1
+    }
 }
 catch {
-    Write-Error "The Graph SDK call failed: $($_.Exception.Message)"
+    if ($_.Exception.Message -match "404|NotFound|Tenant TLS Tenant Settings does not exist") {
+        Write-Host "TLS inspection tenant settings do not exist yet. Continuing with CSR creation..."
+    }
+    else {
+        Write-Error "The Graph SDK call failed: $($_.Exception.Message)"
+        exit 1
+    }
 }
 
 # Create the certificate signing request (CSR)
-
 $paramscsr = @{
-	"@odata.type" = "#microsoft.graph.networkaccess.externalCertificateAuthorityCertificate"
-	name = $name
-	commonName =  $commonName
-	organizationName = $organizationName
+    "@odata.type"    = "#microsoft.graph.networkaccess.externalCertificateAuthorityCertificate"
+    name             = $name
+    commonName       = $commonName
+    organizationName = $organizationName
 }
+
 $createResponse = $null
 try {
-  $createResponse = New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr -ErrorAction Stop
-} 
+    $createResponse = New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr -ErrorAction Stop
+}
 catch {
     Write-Error "Failed to create certificate signing request: $($_.Exception.Message)"
-    Exit 1	
+    exit 1
 }
+
 # Save CSR to file
 $csr = $createResponse.CertificateSigningRequest
-$csrPath = "$name.csr"
-Set-Content -Path $csrPath -Value $csr
+Set-Content -Path $csrPath -Value $csr -Encoding ASCII
 Write-Host "CSR saved to $csrPath"
 
-# Save the certificate ID to upload later:
+# Save certificate ID to upload later
 $externalCertificateAuthorityCertificateId = $createResponse.Id
 
-# Create openssl.cnf with predefined profiles
+# Create OpenSSL config
 $opensslCnfContent = @"
 [ rootCA_ext ]
 subjectKeyIdentifier = hash
@@ -108,7 +114,9 @@ basicConstraints = critical, CA:true, pathlen:1
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 
 [ signedCA_ext ]
-basicConstraints = critical, CA:true
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:1
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 extendedKeyUsage = serverAuth
 
@@ -120,39 +128,68 @@ keyUsage = critical, digitalSignature
 extendedKeyUsage = serverAuth
 "@
 
-$opensslCnfPath = "openssl.cnf"
-
-# Write content to openssl.cnf file
 Set-Content -Path $opensslCnfPath -Value $opensslCnfContent -Encoding ASCII
 
-
-
-# Generate Root CA private key and certificate. Note: You need to install the Root CA certificate in the trusted certificate store of testing users' devices.
+# Generate Root CA private key and certificate
 Write-Host "Generating Root CA key and certificate..."
-& $openSSLPath req -x509 -new -nodes -newkey rsa:4096 -keyout $rootKey -sha256 -days 370 -out $rootCert -subj $subject -config $opensslCnfPath -extensions rootCA_ext
+& $openSSLPath req -x509 -new -nodes -newkey rsa:4096 `
+    -keyout $rootKey `
+    -sha256 `
+    -days 370 `
+    -out $rootCert `
+    -subj $subject `
+    -config $opensslCnfPath `
+    -extensions rootCA_ext
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to generate the Root CA certificate."
+    exit 1
+}
 
 # Sign CSR using Root CA
 if (Test-Path $csrPath) {
     Write-Host "Signing CSR file $csrPath..."
-    & $openSSLPath x509 -req -in $csrPath -CA $rootCert -CAkey $rootKey -CAcreateserial -out $signedCert -days 370 -sha256 -extfile $opensslCnfPath -extensions signedCA_ext
+    & $openSSLPath x509 -req `
+        -in $csrPath `
+        -CA $rootCert `
+        -CAkey $rootKey `
+        -CAcreateserial `
+        -out $signedCert `
+        -days 370 `
+        -sha256 `
+        -extfile $opensslCnfPath `
+        -extensions signedCA_ext
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Failed to sign the CSR."
+        exit 1
+    }
+
     Write-Host "Successfully saved signed certificate to $signedCert"
-} else {
-    Write-Host "CSR file '$csrPath' not found. Please generate it first."
 }
+else {
+    Write-Error "CSR file '$csrPath' not found. Please generate it first."
+    exit 1
+}
+
+# Optional validation output
+Write-Host "`nValidating signed certificate..."
+& $openSSLPath x509 -in $signedCert -text -noout
 
 # Read certificate and chain
 $paramsupload = @{
-certificate = Get-Content -Path $SignedCert -Raw
-chain       = Get-Content -Path $RootCert -Raw
+    certificate = Get-Content -Path $signedCert -Raw
+    chain       = Get-Content -Path $rootCert -Raw
 }
 
-# Upload the signed certificate and its chain to Microsoft Graph using the SDK cmdlet.
-# -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
-# -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
-
+# Upload the signed certificate and its chain to Microsoft Graph
 try {
-    Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload -ErrorAction Stop
-} catch {
+    Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate `
+        -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId `
+        -BodyParameter $paramsupload `
+        -ErrorAction Stop
+}
+catch {
     Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
     exit 1
 }
