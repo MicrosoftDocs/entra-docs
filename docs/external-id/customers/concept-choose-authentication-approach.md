@@ -6,7 +6,7 @@ ai-usage: ai-assisted
 author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/16/2026
 ms.author: godonnell
@@ -69,9 +69,10 @@ The following table shows which features are available in each approach.
 
 The following languages and frameworks are supported for each approach.
 
-|   | Browser-delegated authentication | Native authentication |
-|---|---|---|
-| Supported languages and frameworks | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Node.js</li><li>Python</li><li>Java</li></ul> | <ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular)</li></ul> For other languages and platforms, you can use the [native authentication API](/entra/identity-platform/reference-native-authentication-api). |
+| Approach | Supported languages and frameworks |
+|---|---|
+| Browser-delegated authentication | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Node.js</li><li>Python</li><li>Java</li></ul> |
+| Native authentication | <ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular)</li></ul> For other languages and platforms, you can use the [native authentication API](/entra/identity-platform/reference-native-authentication-api). |
 
 ## Security considerations
 
