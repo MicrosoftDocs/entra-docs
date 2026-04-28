@@ -295,7 +295,7 @@ If a group exists in the target tenant (created outside cross-tenant synchroniza
 
 Cross-tenant synchronization is configured as a single-direction peer-to-peer sync. That is, synchronization is configured between one source and one target tenant. You can configure multiple instances of cross-tenant synchronization to sync from a single source to multiple targets and from multiple sources into a single target. But only one sync instance can exist between a source and a target.
 
-Cross-tenant synchronization synchronizes only users who are internal to the home/source tenant. This limitation ensures that you can't have a loop where a user is written back to the same tenant.
+Cross-tenant synchronization syncs only users who are internal to the home/source tenant. This limitation ensures that you can't have a loop where a user is written back to the same tenant.
 
 Multiple topologies are supported. For more information, see [Topologies for cross-tenant synchronization](cross-tenant-synchronization-topology.md).
 
@@ -309,9 +309,9 @@ No. Cross-tenant synchronization isn't a migration tool because the source tenan
 
 ### B2B collaboration
 
-#### Does cross-tenant synchronization resolve any present [B2B collaboration](~/external-id/what-is-b2b.md) limitations?
+#### Does cross-tenant synchronization resolve any present B2B collaboration limitations?
 
-Because cross-tenant synchronization is built on existing B2B collaboration technology, existing limitations apply. Examples include (but aren't limited to):
+Because cross-tenant synchronization is built on existing [B2B collaboration](~/external-id/what-is-b2b.md) technology, existing limitations apply. Examples include (but aren't limited to):
 
 [!INCLUDE [user-type-workload-limitations-include](~/includes/user-type-workload-limitations-include.md)]
 
@@ -319,9 +319,11 @@ Because cross-tenant synchronization is built on existing B2B collaboration tech
 
 #### How does cross-tenant synchronization relate to B2B direct connect?
 
-- [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) is the underlying identity technology required for [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels).
-- We recommend B2B collaboration for all other cross-tenant application access scenarios, including both Microsoft and non-Microsoft applications.
-- B2B direct connect and cross-tenant synchronization are designed to coexist, and you can enable them both for broad coverage of cross-tenant scenarios.
+[B2B direct connect](~/external-id/b2b-direct-connect-overview.md) is the underlying identity technology required for [Teams Connect shared channels](/microsoftteams/platform/concepts/build-and-test/shared-channels).
+
+B2B direct connect and cross-tenant synchronization are designed to coexist. You can enable them both for broad coverage of cross-tenant scenarios.
+
+We recommend B2B collaboration for all other cross-tenant application access scenarios, including both Microsoft and non-Microsoft applications.
 
 #### I'm trying to determine the extent to which I'll need to use cross-tenant synchronization in my multitenant organization. Do you plan to extend support for B2B direct connect beyond Teams Connect?
 
@@ -337,7 +339,7 @@ Synchronized users have the same cross-tenant Microsoft 365 experiences availabl
 
 #### Can cross-tenant synchronization enable people-search scenarios in Microsoft 365?
 
-Yes, cross-tenant synchronization can enable people search in Microsoft 365. Ensure that the `showInAddressList` attribute is set to `True` on users in the target tenant. The `showInAddressList` attribute is set to `True` by default in the cross-tenant synchronization [attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
+Yes, cross-tenant synchronization can enable people search in Microsoft 365. Ensure that the `showInAddressList` attribute is set to `True` on users in the target tenant. The `showInAddressList` attribute is set to `True` by default in the [attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings) for cross-tenant synchronization.
 
 Cross-tenant synchronization creates B2B collaboration users and doesn't create contacts.
 
@@ -351,7 +353,9 @@ Synchronized users have the same cross-tenant Microsoft 365 experiences that are
 
 #### What federation options are supported for users in the target tenant back to the source tenant?
 
-For each internal user in the source tenant, cross-tenant synchronization creates a federated external user (commonly used in B2B) in the target. It supports syncing internal users. This support includes internal users federated to other identity systems through domain federation (such as [Active Directory Federation Services](/windows-server/identity/ad-fs/ad-fs-overview)). It doesn't support syncing external users.
+For each internal user in the source tenant, cross-tenant synchronization creates a federated external user (commonly used in B2B) in the target.
+
+Cross-tenant synchronization supports syncing internal users. This support includes internal users federated to other identity systems through domain federation (such as [Active Directory Federation Services](/windows-server/identity/ad-fs/ad-fs-overview)). Cross-tenant synchronization doesn't support syncing external users.
 
 #### Does cross-tenant synchronization use SCIM?
 
@@ -368,7 +372,7 @@ Yes. When the following actions occur in the source tenant, the user is [soft de
 - You remove the user from a group that's assigned to the cross-tenant synchronization configuration.
 - An attribute on the user changes such that they don't meet the scoping filter conditions defined on the cross-tenant synchronization configuration anymore.
 
-If the user is blocked from sign-in in the source tenant (`accountEnabled = false`) they're blocked from sign-in in the target. This isn't a deletion but an update to the `accountEnabled` property.
+If the user is blocked from sign-in in the source tenant (`accountEnabled = false`), they're blocked from sign-in in the target. This isn't a deletion but an update to the `accountEnabled` property.
 
 Users aren't soft deleted from the target tenant in this scenario:
 
@@ -380,7 +384,7 @@ Users aren't soft deleted from the target tenant in this scenario:
 
 #### Does cross-tenant synchronization support restoring users?
 
-If the user in the source tenant is restored, reassigned to the app, and meets the scoping condition again within 30 days of soft deletion, the user is restored in the target tenant.
+Yes. If the user in the source tenant is restored, reassigned to the app, and meets the scoping condition again within 30 days of soft deletion, the user is restored in the target tenant.
 
 IT admins can also [manually restore](~/fundamentals/users-restore.md) the user directly in the target tenant.
 
@@ -388,7 +392,7 @@ IT admins can also [manually restore](~/fundamentals/users-restore.md) the user 
 
 Unassign all users and groups from the cross-tenant synchronization configuration. This action triggers all the users who were unassigned, either directly or through group membership, to be deprovisioned in subsequent sync cycles. The target tenant needs to keep the inbound policy for sync enabled until deprovisioning is complete.
 
-If the scope is set to **Sync all users**, you need to change it to **Sync only assigned users and groups**. The users are automatically soft deleted by cross-tenant synchronization. The users are automatically hard deleted after 30 days, or you can choose to hard delete the users directly from the target tenant.
+If the scope is set to **Sync all users**, you need to change it to **Sync only assigned users and groups**. Cross-tenant synchronization automatically soft deletes the users. The users are automatically hard deleted after 30 days, or you can choose to hard delete the users directly from the target tenant.
 
 #### If the sync relationship is severed, are external users who were previously managed by cross-tenant synchronization deleted in the target tenant?
 
