@@ -34,7 +34,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |
 | [Send email to manager about sponsorship changes](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes)     | b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f        | Leaver, Mover |
 | [Send email to co-sponsors about sponsor changes](../id-governance/lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)     | ad3b85cd-75b1-43e7-b4b9-0e52faba3944        | Leaver, Mover |
-| [Transfer agent identity sponsorships to manager (Preview)](../id-governance/lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager-preview)     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      | Leaver, Mover         |
+| [Transfer agent identity sponsorships to manager](../id-governance/lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager)     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      | Leaver, Mover         |
 | [Remove all license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-all-license-assignments-from-user)     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver |
 | [Delete user](../id-governance/lifecycle-workflow-tasks.md#delete-user)   |    8d18588d-9ad3-4c0f-99d0-ec215f0e3dff     | Leaver         |
 | [Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |
