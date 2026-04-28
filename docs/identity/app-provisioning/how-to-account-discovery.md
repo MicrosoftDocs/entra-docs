@@ -118,6 +118,39 @@ Use the search and filter capabilities to find specific accounts:
 - Filter results by category (local, unassigned, or assigned).
 - Manage columns to view the imported attributes from the target application and the correlation status.
 
+## Assign correlated users to your enterprise application and/or access packages
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users.  
+
+* Assign all discovered users to a specific access package (dry run):
+
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." ` -RulesFile ".\access-package-rules.csv" -DryRun
+   ```
+
+* Assign all discovered users to a specific access package:
+
+   ```powershell
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
+   ```
+
+* Assign users to packages based on rules that you define (example rules file):
+
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   ```
+
+* Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
+
+   ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   ```
+
+* Assign users to access packages and skip app role assignments:
+ 
+    ```powershell
+   .\Assign-CorrelatedUsers.ps1 -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   ```
+
 ## Integrate with Identity Governance
 
 Account Discovery works alongside [Microsoft Entra ID Governance](/entra/id-governance/identity-governance-overview) to help you manage the full identity lifecycle. After you discover identities in your target applications, you can:
