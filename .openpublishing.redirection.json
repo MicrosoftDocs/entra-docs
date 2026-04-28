@@ -3351,6 +3351,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/global-secure-access/how-to-efp-conditional-access.md",
+      "redirect_url": "docs/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-autonomous-app-oauth-flow.md",
       "redirect_url": "/entra/agent-id/agent-autonomous-app-oauth-flow",
       "redirect_document_id": true
