@@ -17,6 +17,9 @@ Microsoft Entra Agent ID provides specialized identity constructs for secure AI 
 
 This guide walks you through migrating agents that authenticate with standard Microsoft Entra app registrations or service principals, where you own the code and the identity configuration, to Agent ID. For agents created through Microsoft Copilot Studio, see [Migrate Copilot Studio agents to Agent ID](migrate-copilot-studio-agents-to-agent-id.md).
 
+> [!NOTE]
+> This guide covers custom-built agents and Copilot Studio agents. For agents built on other platforms such as Microsoft 365 Copilot, GitHub Copilot, or Microsoft Fabric, check the platform-specific documentation for Agent ID integration guidance as it becomes available.
+
 ## Why migrate to Agent ID?
 
 If you built AI agents before Agent ID was available, your agents likely use Microsoft Entra app registrations or service principals for authentication. While these identities let agents communicate with services like Azure Bot Service, Microsoft Teams, and Bot Framework skills, Microsoft Entra treats them like any other application. They don't take advantage of the governance capabilities that Agent ID provides.
@@ -171,7 +174,7 @@ Invoke-MgGraphRequest `
 
 #### Configure credentials on the blueprint
 
-Agent ID uses federated identity credentials (FIC) as the recommended credential type. Managed identities are the preferred option for production deployments because they eliminate secret management. Client secrets and certificates are supported but are recommended only for local development and testing.
+Agent ID uses federated identity credentials (FIC) as the recommended credential type. Managed identities are the preferred option for production deployments because they eliminate secret management. Client secrets and certificates are also supported for production use. To reduce migration effort, consider reusing the same credential type your existing app registration uses.
 
 The recommended credentials depend on your hosting environment:
 
@@ -179,7 +182,7 @@ The recommended credentials depend on your hosting environment:
 |---|---|---|
 | Azure (App Service, AKS, Container Apps, VMs) | User-assigned managed identity | Most secure for production. No secret management required. |
 | Non-Azure cloud (AWS, GCP) | Federated identity credential with external IDP | Configure workload identity federation with your cloud provider. |
-| Local development | Client credentials or certificate for testing only | Use for local testing only. |
+| On-premises or local development | Client secret or certificate | Certificates are recommended over client secrets for production on-premises deployments. Use client secrets for local testing only. |
 
 Create the blueprint service principal:
 
@@ -194,7 +197,9 @@ Content-Type: application/json
 
 ### Step 2: Create the agent identity
 
-The agent identity is the runtime principal your agent uses. Create it under a blueprint and assign a **sponsor**, a human user or group accountable for the agent.
+To complete this step, you need the **Agent ID Developer** or **Agent ID Administrator** role.
+
+The agent identity is the runtime principal your agent uses. Create it under a blueprint and assign a **sponsor** (required), a human user or group accountable for the agent. Assigning an **owner** is recommended for management purposes.
 
 ```http
 POST https://graph.microsoft.com/beta/serviceprincipals/Microsoft.Graph.AgentIdentity
@@ -214,10 +219,16 @@ Record the agent identity's client ID from the response. You need this value whe
 
 ### Step 3: Configure permissions
 
-Replicate the API permissions from your original app registration onto the agent identity. You have two options:
+Replicate the API permissions from your original app registration onto the agent identity. To complete this step, you need the **Privileged Role Administrator** role to grant application permissions that require admin consent. You have two options:
 
 - **Direct assignment:** Assign permissions directly to the agent identity. Use this option when each agent identity needs different permissions.
 - **Inherited permissions:** Configure permissions on the blueprint and enable inheritance. Use this option when all agent identities under a blueprint share the same permissions.
+
+To replicate Microsoft Graph application permissions, grant the same `appRoles` to the agent identity's service principal by using the [Grant an appRoleAssignment to a service principal](/graph/api/serviceprincipal-post-approleassignments) API. For delegated permissions, add the required `oauth2PermissionGrants` by using the [Create oAuth2PermissionGrant](/graph/api/oauth2permissiongrant-post) API. Ensure admin consent is granted for application permissions that require it.
+
+#### Configure OBO support (interactive agents only)
+
+If your agent uses the on-behalf-of (OBO) flow to act on behalf of a user, you need to add a custom scope to the blueprint so that front-end applications can request tokens for it. After adding the scope, update your front-end application to request a token for the blueprint's resource instead of the previous resource. For the complete OBO configuration walkthrough, see [Interactive agent authentication and authorization flow](interactive-agent-authentication-authorization-flow.md).
 
 For Azure RBAC role assignments, assign the new agent identity's service principal to the same roles:
 

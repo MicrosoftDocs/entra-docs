@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Migrate Copilot Studio agents to Agent ID
 
-Microsoft Copilot Studio agents created before Agent ID integration authenticate by using service principals that the platform auto-creates. These service principals enable agents to communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents.
+Microsoft Copilot Studio agents created before March 18, 2026 (or before your tenant opted in to Agent ID integration) authenticate by using service principals that the platform auto-creates. These service principals enable agents to communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents.
 
 This guide covers how to migrate these platform-managed service principals to Agent ID. Because Copilot Studio manages the agent code, credentials, and deployment lifecycle, not you, the migration approach differs from custom-built agents. For agents where you own the code and identity configuration, see [Migrate custom app registrations to Agent ID](migrate-custom-app-registrations-to-agent-id.md).
 
@@ -29,7 +29,7 @@ Copilot Studio agents that use legacy service principals miss out on the governa
 
 Before you begin, confirm you have the following:
 
-- One or more Copilot Studio agents that use legacy (pre-Agent ID) service principals.
+- One or more Copilot Studio agents that use legacy (pre-Agent ID) service principals, created before March 18, 2026 or before your tenant opted in to Agent ID.
 - Access to the **Copilot Studio admin center** and the **Microsoft Entra admin center**.
 - The required Microsoft Entra roles: **Agent ID Developer** or **Agent ID Administrator** to manage agent identities.
 - Your tenant has opted in to Agent ID integration for Copilot Studio.
