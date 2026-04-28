@@ -106,8 +106,6 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
-  - name: Configure antivirus-client coexistence
-    href: concept-edr-antivirus-coexistence.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
@@ -131,6 +129,8 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
+      - name: Configure antivirus-client coexistence
+        href: how-to-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
     items:
@@ -268,17 +268,17 @@ items:
         href: how-to-ai-prompt-injection-protection.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
-      - name: Explicit Forward Proxy
-        expanded: false
-        items:
-        - name: Configure Explicit Forward Proxy
-          href: how-to-configure-explicit-forward-proxy.md
-        - name: Configure Conditional Access policy for Explicit Forward Proxy
-          href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
-        - name: Configure HTTP Header Session Management
-          href: how-to-configure-explicit-forward-proxy-headers.md
-        - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune Mobile Application Management
-          href: how-to-configure-explicit-forward-proxy-intune-policy.md
+  - name: Explicit Forward Proxy
+    expanded: false
+    items:
+      - name: Configure Explicit Forward Proxy
+        href: how-to-configure-explicit-forward-proxy.md
+      - name: Configure Conditional Access policy for Explicit Forward Proxy
+        href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
+      - name: Configure HTTP Header Session Management
+        href: how-to-configure-explicit-forward-proxy-headers.md
+      - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune Mobile Application Management
+        href: how-to-configure-explicit-forward-proxy-intune-policy.md
   - name: Logs and monitoring
     expanded: false
     items:
