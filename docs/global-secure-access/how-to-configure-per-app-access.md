@@ -188,9 +188,9 @@ Content-Type: application/json
 }
 ```
 
-Replace `{appRegistrationObjectId}` with the application registration's object ID. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
+Replace `{appRegistrationObjectId}` with the application registration's object ID. You can find this value in the Microsoft Entra admin center under **Identity** > **Applications** > **App registrations** by selecting the app registration for your Global Secure Access application and copying the **Object ID** from the **Overview** page. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
 
-To confirm that the configuration was committed, retrieve the application object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
+To confirm that the configuration was committed, retrieve the app registration object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
 
 ```http
 GET https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
