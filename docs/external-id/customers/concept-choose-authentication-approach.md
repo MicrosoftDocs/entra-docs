@@ -81,7 +81,7 @@ With native authentication, your development team shares security responsibility
 
 ## Next steps
 
-After you decide on an approach, register your app to continue your integration:
+After you decide on an approach, register your app to continue your integration, or return to the [planning guide](concept-planning-your-solution.md) for the full sequence of steps:
 
 **Browser-delegated authentication**:
 
