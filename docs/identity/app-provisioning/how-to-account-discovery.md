@@ -121,6 +121,8 @@ Use the search and filter capabilities to find specific accounts:
 ## Assign correlated users to your enterprise application and/or access packages
 After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
 
+### Parameters
+
 | Parameter | Description |
 |---|---|
 | **`-DryRun`** | Shows what *would* happen without making any changes.|
@@ -130,14 +132,15 @@ After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) use
 | **`-OutputFile`** | Full audit trail as CSV with timestamps, actions, and error details |
 | **Strict mode** | Runs with `Set-StrictMode -Version Latest` and `$ErrorActionPreference = "Stop"` to fail fast on unexpected issues |
 
+### Examples
 * Assign correlated users to the enterprise app:
    ```powershell
    pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." 
    ```
-* Assign all discovered users to a specific access package (the DryRun property is optional and can be removed):
+* Assign all discovered users to a specific access package (example [rules](https://aka.ms/AssignCorrelatedUsersCSV) file):
 
    ```powershell
-   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '55939d8a-7ea2-4402-ad0a-96be85891771' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '7A22...' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
    ```
 
 * Assign users to packages based on rules that you define (example rules file):
@@ -157,6 +160,17 @@ After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) use
     ```powershell
    pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
    ```
+### Rules file description
+The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with these columns:
+
+| Column | Purpose |
+|---|---|
+| `RuleGroup` | Rows sharing the same group number are AND-ed together. Different groups are evaluated independently. |
+| `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
+| `Operator` | `eq` \| `ne` \| `contains` \| `startswith` \| `endswith` \| `regex` |
+| `Value` | The value to compare against (case-insensitive). |
+| `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Entra Portal. |
+| `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Entra Portal. |
 
 ## Integrate with Identity Governance
 
