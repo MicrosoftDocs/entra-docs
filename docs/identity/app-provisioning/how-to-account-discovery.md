@@ -2,7 +2,7 @@
 title: Discover identities in target applications with Account Discovery (preview)
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 04/16/2026
+ms.date: 04/28/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -52,9 +52,11 @@ For SCIM based connectors, account discovery requires that the application suppo
 Customers using account discovery with the following applications consistently receive complete discovery results:
 
 - Atlassian Cloud  
+- SCIM
 - Salesforce  
 - SAP Cloud Identity Services
-- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)  
+- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)
+- GitHub Enterprise Cloud (see [here](https://docs.github.com/enterprise-cloud@latest/rest/scim/scim?apiVersion=2026-03-10#list-scim-provisioned-identities) for limitations)
 
 ### Connectors that do not support discovery
 Account Discovery is currently unsupported for the following applications:
