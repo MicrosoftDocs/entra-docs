@@ -100,6 +100,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
+    - name: Sign in users and manage passkeys in a React SPA
+      href: tutorial-passkey.md
     - name: Native authentication
       items:
         - name: Overview
