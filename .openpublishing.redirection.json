@@ -3408,7 +3408,12 @@
     {
       "source_path": "docs/agent-id/identity-platform/agent-registry-manage-collections.md",
       "redirect_url": "/microsoft-365/admin/manage/agent-registry?view=o365-worldwide",
-      "redirect_document_id": true
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-registry-manage-collections.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/agent-service-principals.md",
