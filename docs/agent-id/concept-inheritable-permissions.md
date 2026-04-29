@@ -21,9 +21,11 @@ Understanding the relationship between these configurations and how they affect 
 
 ## Required resource access
 
-Required resource access is the agent identity blueprint's initial declaration of the APIs and permissions it needs to operate. It's expressed as a set of target resource applications and the specific delegated scopes and application roles the agent requests.
+Required resource access is the agent identity blueprint's initial declaration of the APIs and permissions that the blueprint's child agent identities need to operate. It's expressed as a set of target resource applications and the specific delegated scopes and application roles the agent requests.
 
-Required resource access serves as the agent's install-time manifest. When a tenant administrator reviews the agent for approval, this list makes the consent decision explicit and reviewable. It answers the question: *"What does this agent need to function?"*
+Required resource access serves as the agent's list of static consent permissions. When a tenant administrator reviews the agent for approval, this list makes the consent decision explicit and reviewable. It answers the question: *"What does this agent need to function?"*
+
+Dynamic consent can still grant permissions that are inherited when the permission is explicitly requested and the resource app is configured as inheritable. However, dynamically requested permissions aren't visible up front unless they're also declared in required resource access.
 
 Key characteristics of required resource access:
 
@@ -39,10 +41,12 @@ Inheritable permissions address a common deployment challenge: when you have mul
 
 ### Two conditions for inheritance
 
-For a permission to be inherited by an agent identity, both of the following conditions must be met:
+For a permission to be inherited by an agent identity, *both* of the following conditions must be met:
 
-- The **resource app must be listed** in the inheritable permissions configuration on the agent identity blueprint.
-- The **permission must be granted** by an administrator to the agent identity blueprint principal in the tenant.
+- The **resource scopes, roles, or both must be listed** in the inheritable permissions configuration on the agent identity blueprint.
+- The **permission must be granted** with:
+    -  static consent using *required resource access*, or
+    -  dynamic consent with the permissions explicitly declared on the consent request.
 
 If either condition is missing, inheritance doesn't occur.
 
@@ -50,7 +54,7 @@ If either condition is missing, inheritance doesn't occur.
 
 Inheritable permissions support both:
 
-- **Delegated scopes**: Appear in the agent's delegated permission access token `scp` claim.
+- **Delegated scopes**: Appear in the agent's delegated application permission access token `scp` claim.
 - **Application roles**: Appear in the agent's application permission token `roles` claim.
 
 ### Inheritance patterns
@@ -81,14 +85,32 @@ Required resource access and inheritable permissions are *configurations*: they 
 
 ## Permission configuration cheat sheet
 
-The following table summarizes how the configuration of required resource access and inheritable permissions affects where consent can be granted and what's visible to administrators.
+Use these quick rules:
 
-| Is the permission in the required resource access? | Is the resource app declared as inheritable? | Where can consent be granted? | Can an administrator see the permissions up front? |
+- Static consent at the blueprint level depends on the permission being in required resource access.
+- Dynamic consent at the blueprint level can work even when the permission isn't in required resource access, but the permission must be explicitly requested.
+- Inheritance to agent identities depends on whether the resource app is configured as inheritable.
+- Up-front visibility depends on whether the permission is in required resource access.
+
+### Static consent (blueprint principal)
+
+| Permission in required resource access? | Resource app is inheritable? | Inherited by agent identities? | Visible to admins up front? |
 |---|---|---|---|
-| Yes | Yes | Blueprint principal (applies to all present and future agent identities) or directly on the agent identity | Yes |
-| Yes | No | Blueprint principal or directly on the agent identity | Yes |
-| No | Yes | Blueprint principal (applies to all present and future agent identities) or directly on the agent identity | No |
-| No | No | Directly on the agent identity only | No |
+| Yes | Yes | Yes | Yes |
+| Yes | No | No | Yes |
+| No | Yes | No | No |
+| No | No | No | No |
+
+### Dynamic consent (blueprint principal, permission explicitly requested)
+
+| Permission in required resource access? | Resource app is inheritable? | Inherited by agent identities? | Visible to admins up front? |
+|---|---|---|---|
+| Yes | Yes | Yes | Yes |
+| Yes | No | No | Yes |
+| No | Yes | Yes | No |
+| No | No | No | No |
+
+Direct consent on an agent identity remains available in all cases, but those grants apply only to that specific agent identity.
 
 ## Best practices
 

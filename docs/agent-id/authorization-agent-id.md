@@ -158,4 +158,4 @@ Always review the permission's scope: tenant-wide read access might be fine for 
 
 Agent identity blueprints support inheritable permissions, which let administrators grant permissions once at the blueprint level and have those grants automatically apply to all agent identities created from the blueprint. This capability reduces repeated consent prompts across multiple deployments and environments.
 
-For more information about how inheritable permissions, required resource access, and direct grants work together, see [Inheritable permissions and required resource access concepts](concept-inheritable-permissions-required-resource-access.md). To configure inheritable permissions, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
+For more information about how inheritable permissions, required resource access, and direct grants work together, see [Inheritable permissions](concept-inheritable-permissions.md).

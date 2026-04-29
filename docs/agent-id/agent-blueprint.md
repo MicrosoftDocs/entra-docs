@@ -67,7 +67,7 @@ Agent identity blueprints include two important permission-related configuration
 
 These configurations are declarations that don't grant authorization by themselves. Administrators must still consent to permissions on the blueprint principal or individual agent identities.
 
-For more information, see [Inheritable permissions and required resource access concepts](concept-inheritable-permissions-required-resource-access.md). To configure inheritable permissions, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
+For more information, see [Inheritable permissions and required resource access concepts](concept-inheritable-permissions-required-resource-access.md). To configure inheritable permissions, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions.md).
 
 ## Agent identity blueprint principals
 
