@@ -95,7 +95,7 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 | `KeyVault` | Certificate from Azure Key Vault. |
 | `StoreWithThumbprint` | Certificate from local machine store. |
 
-For more information, see [microsoft-identity-web Client Credentials](https://github.com/AzureAD/microsoft-identity-web/wiki/Client-Credentials).
+For more information, see [Credentials overview for Microsoft.Identity.Web](/entra/msidweb/authentication/credentials-overview).
 
 ## Set up OBO sign-in (optional)
 
@@ -197,7 +197,7 @@ No user sign-in is required. The agent authenticates as itself by using the blue
 
 The agent acts on behalf of a signed-in user. The sidecar performs a three-step token exchange.
 
-:::image type="content" source="media/sidecar-local-development/sequence-obo.png" alt-text="Diagram that shows the OBO flow sequence from browser sign-in through sidecar token exchange to weather API." lightbox="media/sidecar-local-development/sequence-obo.png":::
+:::image type="content" source="media/sidecar-local-development/on-behalf-of-flow-sequence.png" alt-text="Diagram that shows the on-behalf-of flow sequence from browser sign-in through sidecar token exchange to weather API." lightbox="media/sidecar-local-development/on-behalf-of-flow-sequence.png":::
 
 1. The user signs in through MSAL.js in the browser and receives Tc (user access token, audience = `api://{BlueprintAppId}`).
 1. The user sends a query. The agent receives Tc with the request.

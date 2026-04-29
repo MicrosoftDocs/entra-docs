@@ -1,6 +1,6 @@
 ---
 title: Integrate third-party agents with Microsoft Entra Agent ID
-description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure, credential-free authentication using sidecar and federation patterns.
+description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure authentication using sidecar and federation patterns.
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/29/2026
