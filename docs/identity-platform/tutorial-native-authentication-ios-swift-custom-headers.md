@@ -32,13 +32,13 @@ In this tutorial, you:
 ## Prerequisites
 
 - An iOS (Swift) app that uses MSAL native authentication. If you don't have one, complete [Tutorial: Prepare your iOS/macOS mobile app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
-- Your app is initialized with an `MSALNativeAuthPublicClientApplication` instance.
+- Your app is initialized with an `MSALNativeAuthPublicClientApplication` instance. The steps in this tutorial show you how to update your existing app initialization code to register the interceptor.
 
 ## Understand header naming rules
 
 MSAL applies the following rules when evaluating the headers you provide:
 
-- Headers **must** start with `x-`. Headers that don't start with `x-` are ignored.
+- Headers **must** start with `x-` (case-insensitive). Headers that don't start with `x-` are ignored.
 - Headers that start with any of the following reserved prefixes are ignored:
   - `x-client-`
   - `x-ms-`
@@ -52,7 +52,7 @@ Use these rules to verify your vendor-required header names before implementing 
 
 The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MSAL calls before it sends each network request. Your implementation receives the request URL and a completion block, and then calls the completion block with a dictionary of headers to add—or `nil` if no headers are needed for that request.
 
-1. Make your view controller (or another class in your app) conform to `MSALNativeAuthRequestInterceptor`:
+- Make your view controller (or another class in your app) conform to `MSALNativeAuthRequestInterceptor`:
 
     ```swift
     extension EmailAndPasswordViewController: MSALNativeAuthRequestInterceptor {
@@ -79,7 +79,8 @@ The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MS
 
     The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires—for example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
 
-1. Only call `completionBlock` once per invocation. Always call it — pass `nil` if no extra headers are needed for that request.
+    > [!NOTE]
+    > Always call `completionBlock` exactly once per invocation. Pass `nil` if no extra headers are needed for that request.
 
 ## Register the interceptor
 
