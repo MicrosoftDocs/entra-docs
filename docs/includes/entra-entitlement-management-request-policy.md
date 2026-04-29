@@ -65,7 +65,7 @@ Follow these steps if you want to allow identities not in your directory to requ
     | --- | --- |
     | **Specific connected organizations** | Choose this option if you want to select from a list of organizations that your administrator previously added. All users from the selected organizations can request this access package. |
     | **All connected organizations** | Choose this option if all users from all your configured connected organizations can request this access package. |
-    | **All users (All connected organizations + any new external users)** | Choose this option if any users can request this access package and the B2B allowlist or blocklist settings should take precedence for any new external user. |
+    | **All users (All connected organizations + any new external users)** | Choose this option if any users can request this access package and the B2B allow list or block list settings should take precedence for any new external user. |
 
     A connected organization is an external Microsoft Entra directory or domain that you have a relationship with.
 
@@ -83,7 +83,7 @@ Follow these steps if you want to allow identities not in your directory to requ
 
 1. After you select all your connected organizations, choose **Select**.
 
-    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allowlist or blocklist blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
+    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allow list or block list blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
 
 1. Skip down to the [Specify approval settings](#specify-approval-settings) section.
 
