@@ -38,8 +38,7 @@ In this tutorial, you:
 
 MSAL applies the following rules when evaluating the headers you provide:
 
-- Headers **must** start with `x-` (case-insensitive). Headers that don't start with `x-` are ignored.
-<!-- TODO: Confirm with engineering whether x- prefix matching is case-insensitive -->
+- Headers **must** start with `x-`. Headers that don't start with `x-` are ignored.
 - Headers that start with any of the following reserved prefixes are ignored:
   - `x-client-`
   - `x-ms-`
