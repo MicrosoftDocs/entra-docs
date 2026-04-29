@@ -39,6 +39,7 @@ In this tutorial, you:
 MSAL applies the following rules when evaluating the headers you provide:
 
 - Headers **must** start with `x-` (case-insensitive). Headers that don't start with `x-` are ignored.
+<!-- TODO: Confirm with engineering whether x- prefix matching is case-insensitive -->
 - Headers that start with any of the following reserved prefixes are ignored:
   - `x-client-`
   - `x-ms-`
@@ -79,7 +80,7 @@ The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MS
 
     The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires—for example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
 
-1. Only call `completionBlock` once per invocation. MSAL doesn't retry if the completion block isn't called.
+1. Only call `completionBlock` once per invocation. Always call it — pass `nil` if no extra headers are needed for that request.
 
 ## Register the interceptor
 
