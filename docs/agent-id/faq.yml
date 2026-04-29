@@ -66,11 +66,6 @@ sections:
           Agent identities, agent identity blueprints, and agent identity blueprint principals can't be added to administrative units. Use the `owners` property of agent identities to limit which users can manage specific objects.
 
       - question: |
-          Why am I getting 403 errors when creating or modifying agent identities, even though I have the correct permissions?
-        answer: |
-          If the client has been granted the delegated permission *Directory.AccessAsUser.All*, that permission overrides other delegated permissions, including *AgentIdentityBlueprint.Create* and *AgentIdentityBlueprintPrincipal.EnableDisable.All*. Remove *Directory.AccessAsUser.All* from the client, request new access tokens, and retry the request.
-
-      - question: |
           Can I update the photo for an agent's user account?
         answer: |
           The *Agent ID Administrator* role doesn't have permission to update photos for an agent's user account. Use the *User Administrator* role for this task.

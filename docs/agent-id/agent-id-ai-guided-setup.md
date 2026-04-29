@@ -170,14 +170,7 @@ Sponsors are required and can be users, groups with dynamic membership, or unifi
 
 The AI-guided setup only accepts **User** objects for sponsor assignment and uses the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The setup resolves the current user's object ID and uses it as the default sponsor. To assign a [supported group](agent-owners-sponsors-managers.md#sponsors) as sponsor for a blueprint, use the Microsoft Graph API directly.
 
-### Azure CLI tokens are rejected by Agent ID APIs
-
-Azure CLI tokens include the `Directory.AccessAsUser.All` delegated permission. The Agent ID APIs explicitly reject any token containing this permission, returning a generic **403 Forbidden**. The AI-guided setup uses Microsoft Graph PowerShell with specific scoped permissions instead, avoiding this issue entirely.
-
-> [!WARNING]
-> Do **not** use `DefaultAzureCredential` or `AzureCliCredential` in custom scripts to call Agent ID APIs. They produce tokens with `Directory.AccessAsUser.All`, which causes every Agent ID API call to fail with 403. Use a dedicated app registration with `client_credentials` flow, or use the Microsoft Graph PowerShell SDK with explicit scopes.
-
-### Permission propagation takes 30-120+ seconds
+### Permission propagation takes 30–120+ seconds
 
 After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30-120 seconds or more.
 
@@ -256,8 +249,7 @@ Please start from Step 1 in the setup instructions and work through each step in
 
 The most common causes of 403 errors:
 
-- **Permission propagation delay**: Wait 1-2 minutes after admin consent and retry.
-- **Azure CLI token contamination**: If you previously used `az` commands in the same session, the cached token might contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
+- **Permission propagation delay**: Wait 1–2 minutes after admin consent and retry.
 - **Missing admin consent**: Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
 ### Blueprint creation succeeds but returns a standard application
