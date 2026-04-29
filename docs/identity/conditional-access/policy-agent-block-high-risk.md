@@ -16,7 +16,9 @@ This Conditional Access policy template blocks agent identities that are detecte
 
 ## Create a Conditional Access policy
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+The following steps create a Conditional Access policy to block agent identities detected as high risk.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
@@ -36,7 +38,7 @@ This Conditional Access policy template blocks agent identities that are detecte
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## Related content
 
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
