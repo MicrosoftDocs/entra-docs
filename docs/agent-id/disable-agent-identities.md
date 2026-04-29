@@ -33,7 +33,7 @@ Agent identities might already exist in your tenant. Before making changes, take
 
 1. In the Microsoft Entra admin center, navigate to **Identity** > **Agent ID** to view all agent identities.
 1. Alternatively, use Microsoft Graph API:
-    - Query: `GET https://graph.microsoft.com/beta/servicePrincipals/graph.agentIdentity`
+    - Query: `GET https://graph.microsoft.com/beta/servicePrincipals/microsoft.graph.agentIdentity`
     - This returns a list of agent identities in your tenant.
 
 1. Review the list to understand which agent identities have been created, their sponsors, and their usage.
