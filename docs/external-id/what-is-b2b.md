@@ -1,14 +1,15 @@
 ---
-title: Workforce Tenant Overview
+title: What is Microsoft Entra B2B collaboration?
 description: Learn about B2B collaboration for sharing apps with external identities, business partners, and guests, using External ID for authentication and identity access management.
 ms.topic: overview
-ms.date: 02/19/2025
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
-# Overview: B2B collaboration with external guests for your workforce
+# What is Microsoft Entra B2B collaboration?
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -50,9 +51,9 @@ When you're considering B2B collaboration with a specific external Microsoft Ent
 - **Example 2**: You allow B2B collaboration with Fabrikam in your cross-tenant access settings, but then you add `fabrikam.com` to your blocked domains in your external collaboration settings. Your users can't invite new Fabrikam business guests, but existing Fabrikam guests can continue using B2B collaboration.
 
 > [!NOTE]
-> Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.   
+> Microsoft began rolling out an update to the guest user sign-in experience for B2B collaboration in July 2025, and the rollout completed by the end of 2025. With this update, guest users are redirected to their own organization's sign-in page to provide credentials. Guest users see the branding and URL endpoint of their home tenant. Following successful authentication in their own organization, guest users are returned to your organization to complete sign-in.
 
-### Manage B2B collaboration with other Microsoft Clouds
+### Manage B2B collaboration with other Microsoft clouds
 
 Microsoft Azure cloud services are available in separate national clouds, which are physically isolated instances of Azure. Increasingly, organizations are finding the need to collaborate with organizations and users across global cloud and national cloud boundaries. With Microsoft cloud settings, you can establish mutual B2B collaboration between the following Microsoft Azure clouds:
 
@@ -109,7 +110,7 @@ Bring your external partners on board in ways customized to your organization's 
 - Use [Microsoft Entra entitlement management](~/id-governance/entitlement-management-overview.md) to configure policies that [manage access for external users](~/id-governance/entitlement-management-external-users.md#how-access-works-for-external-users).
 - Use the [B2B collaboration invitation APIs](/graph/api/resources/invitation) to customize your onboarding experiences.
 
-## Integrate with Identity providers
+## Integrate with identity providers
 
 Microsoft Entra External ID supports external identity providers like Facebook, Microsoft accounts, Google, or enterprise identity providers. You can set up federation with identity providers. This way your guests can sign in with their existing social or enterprise accounts instead of creating a new account just for your application. Learn more about [identity providers for External ID](identity-providers.md).
 
@@ -123,4 +124,5 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 
 ## Related content
 
-To learn more about B2B collaboration users, see the following article: [Add B2B collaboration guest users in the admin center](add-users-administrator.yml). To learn more about how to establish mutual trust relationships between organizations for seamless collaboration using Microsoft Teams shared channels, see the following article:  [B2B direct connect](b2b-direct-connect-overview.md).
+- [Add B2B collaboration guest users in the admin center](add-users-administrator.yml)
+- [B2B direct connect](b2b-direct-connect-overview.md)

@@ -2,13 +2,12 @@
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
+#Customer Intent: As an IT administrator, I want to plan and execute a successful PIM deployment to secure privileged access across my organization.
 ---
-
 # Plan a Privileged Identity Management deployment
-
 
 ## Overview
 

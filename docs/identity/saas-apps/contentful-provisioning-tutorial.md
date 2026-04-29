@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/03/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful so that I can streamline the user management process and ensure that users have the appropriate access to Contentful.
@@ -37,8 +37,8 @@ The scenario outlined in this article assumes that you already have the followin
 ## Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and Contentful](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and Contentful](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='configure-contentful-to-support-provisioning-with-azure-ad'></a>
 
@@ -46,21 +46,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. In Contentful, create a **Service User** account. All provisioning permissions for Azure are provided through this account. We recommend that you choose **Owner** as the organization role for this account.
 
-2. Sign in to Contentful as the **Service User**.
+1. Sign in to Contentful as the **Service User**.
 
-3. In the left menu, select **Organization settings** > **Access Tools** > **User provisioning**.
+1. In the left menu, select **Organization settings** > **Access Tools** > **User provisioning**.
 
    ![Screenshot of the Organization settings menu in Contentful, with User provisioning highlighted under Access Tools.](media/contentful-provisioning-tutorial/access.png)
 
-4. Copy and save the **SCIM URL**. You'll enter this value in the Azure portal, on the **Provisioning** tab of your Contentful application.
+1. Copy and save the **SCIM URL**. You'll enter this value in the Azure portal, on the **Provisioning** tab of your Contentful application.
 
-5. Select **Generate personal access token**.
+1. Select **Generate personal access token**.
 
     ![Screenshot showing the SCIM URL to generate a personal access token.](media/contentful-provisioning-tutorial/generate.png)
 
-6. In the modal window, enter a name for your personal access token, and then select **Generate**.
+1. In the modal window, enter a name for your personal access token, and then select **Generate**.
 
-7. The SCIM URL and the secret token are generated. Copy and save these values. You'll enter these values on the **Provisioning** tab of your Contentful application.
+1. The SCIM URL and the secret token are generated. Copy and save these values. You'll enter these values on the **Provisioning** tab of your Contentful application.
 
     ![Screenshot of the Personal access token pane, with C F P A T and the token placeholder name highlighted.](media/contentful-provisioning-tutorial/token.png)
 
@@ -94,27 +94,29 @@ This section guides you through the steps to set up the Microsoft Entra provisio
 
    ![Screenshot that shows the first 20 results returned in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
    ![Screenshot of the Provisioning tab highlighted in the Manage section of the left menu.](common/provisioning.png)
 
-4. Set **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-   ![Screenshot that shows the Provisioning Mode options, with Automatic highlighted.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. In the **Admin Credentials** section, enter your Contentful tenant URL and secret token. To ensure that Microsoft Entra ID can connect to Contentful, select **Test Connection**. If the connection fails, be sure that your Contentful account has Admin permissions, and then try again.
+1. In the **Tenant URL** field, enter your Contentful Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Contentful. If the connection fails, ensure your Contentful account has the required admin permissions and try again.
 
-   ![Screenshot that shows the Tenant U R L and Secret Token text boxes, with the Test Connection button highlighted.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In **Notification Email**, enter the email address of a person or group who should receive the provisioning error notifications, and then select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-   ![Screenshot that shows the Notification Email text box.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. In the **Mappings** section, select **Synchronize Microsoft Entra users to Contentful**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. In the **Attribute-Mapping** section, review the user attributes that are synced from Microsoft Entra ID to Contentful. The attributes selected as **Matching** properties are used to match the user accounts in Contentful for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you must ensure that the Contentful API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Contentful in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Contentful for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Contentful API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -122,30 +124,18 @@ This section guides you through the steps to set up the Microsoft Entra provisio
    |name.givenName|String||
    |name.familyName|String||
 
-10. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Contentful**.
-
-11. In the **Attribute-Mapping** section, review the group attributes that are synced from Microsoft Entra ID to Contentful. The attributes selected as **Matching** properties are used to match the groups in Contentful for update operations. Select the **Save** button to commit any changes.
+1. In the **Attribute-Mapping** section, review the group attributes that are synced from Microsoft Entra ID to Contentful. The attributes selected as **Matching** properties are used to match the groups in Contentful for update operations. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|
     |---|---|---|
     |displayName|String|&check;|
     |members|Reference||
 
-12. To set up scoping filters, complete the steps that are described in the [scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for Contentful, in the **Settings** section, for **Provisioning Status**, select **On**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Screenshot that shows Provisioning Status On and Off toggle.](common/provisioning-toggle-on.png)
-
-14. To define the users or groups that you want to provision to Contentful, in the **Settings** section, for **Scope**, select the relevant option.
-
-    ![Screenshot that shows options you can select in the Scope pane.](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-    ![Screenshot that shows the Save button and the Cancel button.](common/provisioning-configuration-save.png)
-
-This operation starts the initial sync cycle of all users and groups defined in **Scope** under **Settings**. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Monitor your deployment
 
