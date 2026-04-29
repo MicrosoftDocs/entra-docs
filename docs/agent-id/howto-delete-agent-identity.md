@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: shlipsey3
 ms.author: sarahlipsey
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 04/29/2026
 ms.custom: agent-id
 ai-usage: ai-assisted
 
@@ -41,7 +41,7 @@ How you delete a blueprint depends on whether you use the Microsoft Entra admin 
 ### [Microsoft Entra admin center](#tab/entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Find and select your agent identity blueprint application.
 1. Select **Delete**, then confirm.
 
@@ -156,6 +156,10 @@ Soft-deleted objects continue to count toward [directory quota](../identity/user
 > [!CAUTION]
 > Permanently deleted objects can't be restored. Only permanently delete objects when you're certain they're no longer needed.
 
+### [Microsoft Entra admin center](#tab/entra-admin-center)
+
+Permanently deleting a soft-deleted agent identity isn't currently supported in the Microsoft Entra admin center. Use the API or PowerShell to permanently delete the agent identity.
+
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 Permanently delete a soft-deleted agent identity:
@@ -189,8 +193,6 @@ Remove-EntraDeletedDirectoryObject -DirectoryObjectId <blueprint-app-object-id>
 ---
 
 ## Agents' user accounts
-
-<!-- TODO: Confirm with engineering whether the cascade cleanup automatically includes agents' user accounts, and whether deleting an individual agent identity also deletes its associated agent's user account. Update or remove this section accordingly. -->
 
 Agents' user accounts are paired 1:1 with agent identities. If agents' user accounts aren't automatically cleaned up as part of cascade deletion, delete them manually.
 
