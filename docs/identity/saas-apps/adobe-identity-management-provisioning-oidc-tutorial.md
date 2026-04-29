@@ -27,6 +27,7 @@ This article describes the steps you need to perform in both Adobe Identity Mana
 > * Keep user attributes synchronized between Microsoft Entra ID and Adobe Identity Management (OIDC)
 > * Provision groups and group memberships in Adobe Identity Management (OIDC)
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Adobe Identity Management (OIDC) (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
