@@ -2,7 +2,7 @@
 title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.topic: reference
-ms.date: 02/09/2026
+ms.date: 04/27/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -18,7 +18,24 @@ You can download the current version of the Global Secure Access client from the
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-:::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+:::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted." lightbox="media/reference-windows-client-release-history/client-download-screen.png":::
+
+## Version 2.28.96
+Released for download on April 27, 2026.
+### Functional changes
+- The **Sign Out** button shows by default only on Microsoft Entra-registered devices. For Microsoft Entra-joined devices, the option is hidden and you can show it by setting a registry key. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
+- The **Sign Out** button is now in the user interface in the account control in the main Global Secure Access client window. It's no longer available in the system tray menu.
+- A user can sign out from the Global Secure Access client and sign in as a different user in a different tenant onboarded to Global Secure Access.
+- When the client is signed out, the **Sign In** button replaces **Sign Out** in the account control in the main Global Secure Access client window.
+- Traffic logs in the Microsoft Entra admin center include the device join type, cross-tenant access type, and home tenant ID.
+- Enhancement to Intelligent Local Access: supports the ability to assign (in the portal) a private application to multiple private networks.
+- Enhancement to Intelligent Local Access: adds **Private Networks** section to the **Forwarding profile** tab in the **Advanced diagnostics** tool.
+### Other changes
+- Internal internet connection test no longer requires access to `msn.com` (this change removes a dependency on an external website introduced in version 2.26.108). Note: the connection test still requires access to `www.msftconnecttest.com`.
+- Advanced log collection includes Kerberos logs and the output of `gpresult`.
+- Log collection includes the list of the device's root Certificate Authorities (CAs).
+- New telemetries are available.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.26.108
 Released for download on February 9, 2026.
@@ -27,7 +44,7 @@ Released for download on February 9, 2026.
 - Removes **Device is Microsoft Entra Joined** and **Entra user signed in to Windows** from health check tests since these checks are no longer prerequisites. The client supports Microsoft Entra-registered devices.
 - Optimizes Intelligent Local Access (ILA) detection by reevaluating the status on each network change.
 - The client interface adds **Join type** to indicate whether the device is registered or joined to the user's Microsoft Entra ID tenant.
-- The Global Secure Access tracert includes a 50-MB speed test between the client and the edge.
+- The Global Secure Access `tracert` includes a 50-MB speed test between the client and the edge.
 - Support for Windows in Turkish.
 ### Other changes
 - The Global Secure Access client certificate is removed if the certificate is no longer needed.
@@ -44,7 +61,7 @@ Released for download on December 3, 2025.
 ### Functional changes
 - Support for [Intelligent Local Access](enable-intelligent-local-access.md).
 - Support for [B2B guest access](concept-external-user-access.md).
-- The client package includes a tracert tool.
+- The client package includes a `tracert` tool.
 - Support to display the **Disable Private Access** button when the **Disable** button is hidden. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
 - The Global Secure Access interface includes a **View account** link to the user's Microsoft Entra **My Account** homepage.
 ### Other changes
@@ -123,7 +140,7 @@ Released for download on November 26, 2024.
 > The mTLS connection gradually rolls out to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Adds support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Shows health check tests when loading a log zip file to Advanced diagnostics.
-- Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
+- Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, you can install the Global Secure Access client on the guest machine, on the host machine, or both. 
 > [!NOTE]
 > The Global Secure Access client doesn't support host machines with a Hyper-V external virtual switch.
 - Triggers the forwarding profile update when a user signs in to Windows.

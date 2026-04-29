@@ -32,6 +32,8 @@ To create an agent identity blueprint, you need:
     - [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) can configure federated identity credentials on an agent identity blueprint and is required to add a secret or certificate credential.
 - If using PowerShell, version 7 is required.
 
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
+
 ## Prepare your environment
 
 To streamline the process, take a few moments to get your environment set up for the right permissions.
@@ -55,7 +57,7 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 ## Create an agent identity blueprint
 
-Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is the human user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+Agent identity blueprints must have a sponsor, which is the user or [supported group](agent-owners-sponsors-managers.md#sponsors) that's accountable for the agent. An owner is recommended, which is the user or service principal that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 ### Use the Microsoft Entra admin center
 
@@ -136,8 +138,8 @@ Write-Host "Sponsor user: $($user.DisplayName) ($($user.Id))"
 $body = @{
     "@odata.type" = "Microsoft.Graph.AgentIdentityBlueprint"
     "displayName" = "My Agent Identity Blueprint"
-    "sponsors@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
-    "owners@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
+    "sponsors@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
+    "owners@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
 } | ConvertTo-Json -Depth 5
 
 $response = Invoke-MgGraphRequest `
@@ -406,7 +408,7 @@ $Id = "<agent-blueprint-id>"
 
 Invoke-MgGraphRequest `
     -Method DELETE `
-    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/$($Id)" `
+    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint$($Id)" `
 ```
 
 ---
