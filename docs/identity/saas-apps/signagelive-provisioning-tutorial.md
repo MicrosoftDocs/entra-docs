@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Sig
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+ [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Signagelive tenant](https://signagelive.com/pricing/)
 * A user account in Signagelive with Admin permissions.
 
@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the applications list, select **Signagelive**.
 
-	![Screenshot of the Signagelive link in the Applications list](common/all-applications.png)
+	![Screenshot of the Signagelive link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 

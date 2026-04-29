@@ -75,8 +75,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Tenant URL** field, enter your SAS Viya SSO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SAS Viya SSO. If the connection fails, ensure your SAS Viya SSO account has the required admin permissions and try again.
 
-   ### Tenant URL
-
    * To configure the Microsoft Entra provisioning service, you need your tenant URL.
 
       Example: 
