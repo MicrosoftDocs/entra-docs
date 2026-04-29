@@ -184,7 +184,7 @@ The full OBO flow uses three tokens. The autonomous flow uses only T1 and TR.
 
 No user sign-in is required. The agent authenticates as itself by using the blueprint's client credentials.
 
-:::image type="content" source="media/sidecar-local-development/sequence-autonomous.png" alt-text="Diagram that shows the autonomous flow sequence from agent to sidecar to Microsoft Entra ID to weather API." lightbox="media/sidecar-local-development/sequence-autonomous.png":::
+:::image type="content" source="media/sidecar-local-development/autonomous-flow-sequence.png" alt-text="Diagram that shows the autonomous flow sequence from agent to sidecar to Microsoft Entra ID to weather API." lightbox="media/sidecar-local-development/autonomous-flow-sequence.png":::
 
 1. The user sends a query through the chat UI.
 1. The agent (or LangGraph ReAct agent) decides to call the `get_weather` tool.
