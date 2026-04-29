@@ -4,7 +4,7 @@ description: Customer Delegated Admin Relationship Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 04/22/2026
+ms.date: 04/29/2026
 author: FaithOmbongi
 ms.author: ombongifaith
 ---
@@ -22,3 +22,4 @@ Assign the Customer Delegated Admin Relationship Administrator role to users who
 > | --- | --- |
 > | microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks | Manage all aspects of granular delegated admin privileges (GDAP) relationships in a customer tenant. |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+

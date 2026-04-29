@@ -2,7 +2,7 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 ms.topic: whats-new
-ms.date: 04/22/2026
+ms.date: 04/29/2026
 
 ---
 
@@ -14,7 +14,6 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
-| April 2026 | Roles | Updated permissions for the [AI Administrator](permissions-reference.md#ai-administrator) role to include capabilities to manage the lifecycle of agent users. |
 | April 2026 | Roles | Added [AI Reader](permissions-reference.md#ai-reader) and [Customer Delegated Admin Relationship Administrator](permissions-reference.md#customer-delegated-admin-relationship-administrator) roles. |
 | March 2026 | Roles | Added [Teams External Collaboration Administrator](permissions-reference.md#teams-external-collaboration-administrator) role. |
 | March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
