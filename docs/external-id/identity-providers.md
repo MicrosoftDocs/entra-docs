@@ -2,10 +2,11 @@
 title: Identity providers for workforce tenants
 description: Learn how to use Microsoft Entra ID as your default identity provider for sharing with external users.
 ms.topic: concept-article
-ms.date: 04/16/2025
+ms.date: 04/24/2026
 
 ms.collection: M365-identity-device-management
-#customer intent: As a B2B collaboration administrator, I want to configure and enable multiple identity providers (such as Microsoft Entra ID, Microsoft accounts, email one-time passcode, Google, Facebook, and SAML/WS-Fed) for external users, so that they can easily sign in and access our apps and resources.
+ai-usage: ai-assisted
+# Customer intent: As a B2B collaboration administrator, I want to configure and enable multiple identity providers (such as Microsoft Entra ID, Microsoft accounts, email one-time passcode, Google, Facebook, and SAML/WS-Fed) for external users so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity providers for External ID in workforce tenants
@@ -29,8 +30,8 @@ External ID offers various identity providers.
 
    > [!IMPORTANT]
    >
-   > - **As of July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-   > - **On September 30, 2021**, Google [deprecated embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or self-service sign-up, Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+   > - Since July 12, 2021, if Microsoft Entra B2B customers set up new Google integrations for self-service sign-up for custom or line-of-business applications, authentication with Google identities doesn't work until authentications are moved to system web views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+   > - Since September 30, 2021, Google has [deprecated embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or self-service sign-up, Google Gmail users can't authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
 
 - **Facebook**: When building an app, you can configure self-service sign-up and enable Facebook federation so that users can sign up for your app using their own Facebook accounts. Facebook can only be used for self-service sign-up user flows and isn't available as a sign-in option when users are redeeming  invitations from you. See how to [add Facebook as an identity provider](facebook-federation.md).
 
