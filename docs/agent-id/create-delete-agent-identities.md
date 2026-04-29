@@ -24,8 +24,6 @@ If you want to quickly create agent identities for testing purposes, consider us
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 To create agent identities, you need:
 
 - An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
