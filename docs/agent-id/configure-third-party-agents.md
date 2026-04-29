@@ -3,7 +3,7 @@ title: Integrate third-party agents with Microsoft Entra Agent ID
 description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure, credential-free authentication using sidecar and federation patterns.
 ms.service: entra
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 04/29/2026
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.reviewer: gargi.sinha
@@ -85,7 +85,7 @@ The **sidecar pattern** runs the Microsoft Entra Auth SDK as a companion contain
 
 The following diagram shows the sidecar architecture. An agent container and a sidecar container run together in the same orchestration environment. The agent requests tokens from the sidecar, which communicates with Microsoft Entra Agent ID to acquire access tokens.
 
-:::image type="content" source="media/configure-third-party-agents/sidecar-pattern-architecture.png" alt-text="Diagram that shows the sidecar pattern architecture with an agent and sidecar container running in the same orchestration environment, where the sidecar requests tokens from Microsoft Entra Agent ID." border="false":::
+:::image type="content" source="media/configure-third-party-agents/sidecar-pattern-architecture.png" alt-text="Diagram that shows the sidecar pattern architecture with an agent and sidecar container running in the same orchestration environment, where the sidecar requests tokens from Microsoft Entra Agent ID." lightbox="media/configure-third-party-agents/sidecar-pattern-architecture.png" border="false":::
 
 ### Use Workload Identity Federation (direct identity exchange)
 
@@ -116,7 +116,7 @@ The **federation pattern** uses Workload Identity Federation to exchange credent
 
 The following diagram shows the federation flow. An agent on a third-party platform authenticates through its native workload identity provider, exchanges the resulting OIDC token for a Microsoft Entra token, and then calls your APIs.
 
-:::image type="content" source="media/configure-third-party-agents/federation-pattern-token-exchange.png" alt-text="Diagram that shows the federation pattern flow where a third-party platform agent exchanges an OIDC token through Microsoft Entra Agent ID to access your APIs or Microsoft APIs." border="false":::
+:::image type="content" source="media/configure-third-party-agents/federation-pattern-token-exchange.png" alt-text="Diagram that shows the federation pattern flow where a third-party platform agent exchanges an OIDC token through Microsoft Entra Agent ID to access your APIs or Microsoft APIs." lightbox="media/configure-third-party-agents/federation-pattern-token-exchange.png" border="false":::
 
 ## Understand the token flow
 
@@ -132,9 +132,7 @@ Both patterns follow the same core token flow:
 
 ### AWS Bedrock agent calling Microsoft Graph
 
-An AWS Bedrock agent, such as Claude, needs to query Microsoft 365 data or manage resources through Microsoft Graph. The sidecar pattern is ideal for this scenario.
-
-To integrate an AWS Bedrock agent with the sidecar pattern:
+An AWS Bedrock agent, such as Claude, needs to query Microsoft 365 data or manage resources through Microsoft Graph. The sidecar pattern is ideal for this scenario. To integrate an AWS Bedrock agent with the sidecar pattern:
 
 1. Deploy the agent and sidecar to AWS or your own infrastructure.
 1. Configure an Agent Identity in Microsoft Entra with permissions to Microsoft Graph.
@@ -144,9 +142,7 @@ To integrate an AWS Bedrock agent with the sidecar pattern:
 
 ### GCP Vertex AI agent accessing a custom API
 
-A GCP Vertex AI agent needs to call your internal API. The federation pattern works best for this scenario.
-
-To set up GCP federation with Microsoft Entra Agent ID:
+A GCP Vertex AI agent needs to call your internal API. The federation pattern works best for this scenario. To set up GCP federation with Microsoft Entra Agent ID:
 
 1. Configure a Federated Identity Credential in Microsoft Entra that trusts GCP Workload Identity.
 1. The agent authenticates to GCP Workload Identity, which is native to GCP.
@@ -155,9 +151,7 @@ To set up GCP federation with Microsoft Entra Agent ID:
 
 ### Local development with Ollama
 
-You're developing with a local LLM like Ollama and want to test authentication before deploying. Use the sidecar pattern with Docker Compose.
-
-To test locally:
+You're developing with a local LLM like Ollama and want to test authentication before deploying. Use the sidecar pattern with Docker Compose. To test locally:
 
 1. Run the agent and sidecar in Docker Compose.
 1. The agent calls `localhost:7000/token` to request a token from the sidecar.
@@ -189,6 +183,8 @@ When you integrate third-party agents, follow these security principles:
 - **Keep the Microsoft Entra SDK updated.** Security and compatibility updates are released regularly.
 
 ## Troubleshoot common issues
+
+If you run into problems during integration, use the following guidance to identify the cause and resolution:
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
