@@ -30,8 +30,8 @@ landingContent:
             url: ~/identity/saas-apps/atlassian-cloud-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
       - linkListType: how-to-guide
         links:
-          - text: Adding a gallery app? Configure provisioning to the app
-            url: configure-automatic-user-provisioning-portal.md
+          - text: Discover existing users in an application
+            url: how-to-account-discovery.md
           - text: Customize attribute mappings
             url: customize-application-attributes.md
           - text: Use scoping filters

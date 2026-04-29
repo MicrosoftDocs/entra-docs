@@ -48,7 +48,7 @@ The following table lists each setting that can be set to Microsoft managed and 
 | [Registration campaign](how-to-mfa-registration-campaign.md)                                    | Enabled for text message and voice call users |
 | [Location in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)           | Disabled      |
 | [Application name in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)   | Disabled      |
-| [System-preferred MFA](concept-system-preferred-multifactor-authentication.md)                  | Enabled       |
+| [System-preferred authentication](concept-system-preferred-multifactor-authentication.md)        | Enabled       |
 | [Authenticator Lite](how-to-mfa-authenticator-lite.md)                                          | Enabled       |  
 | [Report suspicious activity](howto-mfa-mfasettings.md#report-suspicious-activity)               | Disabled      |
 

@@ -1,20 +1,23 @@
 ---
-title: About SAML/WS-Fed identity provider federation
+title: SAML/WS-Fed identity provider federation
 description: Learn about federation with an external organization's SAML/WS-Fed identity provider (IdP) for external user self-service sign-up and invitation redemption.
 ms.topic: concept-article
-ms.date: 05/07/2025
-
+ms.date: 04/21/2026
+ms.custom: msecd-doc-authoring-1012
 ms.collection: M365-identity-device-management
 #customer intent: As an External ID admin of a workforce or external tenant, I want to configure and enable federation with a SAML/WS-Fed identity provider (IdP) for external users, so that they can easily use self-service sign-up or redeem  invitations and access our apps and resources.
 ---
 
-# SAML/WS-Fed identity providers
+# SAML/WS-Fed identity provider federation
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
 In Microsoft Entra workforce and external tenants, you can set up federation with other organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or unverified.
+
+> [!NOTE]
+> Direct SAML/WS-Fed federation between two Microsoft Entra tenants is not a supported or recommended configuration. Even if a SAML trust is technically configured between two Entra tenants, Microsoft Entra still uses the native Entra-to-Entra B2B collaboration model and not SAML.
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner needs to update their DNS text records. They also need to update their IdP with the required claims and relying party trusts.
 
@@ -85,6 +88,6 @@ Federation doesn't replace the need for B2B guest accounts in your directory. Wi
 
 Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support sending a signed authentication token to the SAML identity provider.  
 
-## Next steps
+## Next step
 
 [Add federation with a SAML/WS-Fed identity provider](direct-federation.md)

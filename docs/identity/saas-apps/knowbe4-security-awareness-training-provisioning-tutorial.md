@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/13/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training so that I can streamline the user management process and ensure that users have the appropriate access to KnowBe4 Security Awareness Training.
@@ -50,12 +50,12 @@ Follow the steps below to configure your SCIM settings in the console.
 1. Navigate to the **User Management > User Provisioning** section of your settings.
 1. Select **Enable User Provisioning (User Syncing)** to display more provisioning settings.
 
-	![User Provisioning (User Syncing)](media/knowbe4-security-awareness-training-provisioning-tutorial\user-sync.png) 
+	![Screenshot of User Provisioning (User Syncing).](media/knowbe4-security-awareness-training-provisioning-tutorial\user-sync.png)
 
 1. By default, the toggle is set to **ADI**. Select the **SCIM** toggle to begin setting up.
 1. Expand your SCIM settings by selecting **+ SCIM Settings**.
 
-	![Tenant Url](media/knowbe4-security-awareness-training-provisioning-tutorial\tenant-url.png)
+	![Screenshot of the SCIM tenant URL configuration settings.](media/knowbe4-security-awareness-training-provisioning-tutorial\tenant-url.png)
 
 1. Select **Generate SCIM Token**. This will open a new window with your token ID. Copy this ID and save it to a place that you can easily access later. It's important that you save this token because once you close this window, you can't view the token again. Once you’ve saved the information, select **OK** to close the window.
 
@@ -68,10 +68,10 @@ Follow the steps below to configure your SCIM settings in the console.
 1. Copy the Tenant URL and save it to a place that you can easily access later.
 1. Make sure that the Test Mode option is selected.
 
-	![Tenant Mode](media/knowbe4-security-awareness-training-provisioning-tutorial\test-mode.png)
+	![Screenshot of the SCIM test mode configuration option.](media/knowbe4-security-awareness-training-provisioning-tutorial\test-mode.png)
 
    >[!NOTE]
-   >We recommend keeping **Test Mode** enabled until you’ve configured the connection between KnowBe4 and your identity provider and have run a successful sync. Test Mode is used to generate a report of what will happen when SCIM is enabled. This means no changes are made to your console so you can configure your setup without worrying about changes to your console. When you're ready, you can disable **Test Mode** from your **Account Settings** to enable syncing.If you're switching from ADI to SCIM, **Test Mode** is enabled automatically after you save your **Account Settings**.
+   >We recommend keeping **Test Mode** enabled until you’ve configured the connection between KnowBe4 and your identity provider and have run a successful sync. Test Mode is used to generate a report of what will happen when SCIM is enabled. This means no changes are made to your console so you can configure your setup without worrying about changes to your console. When you're ready, you can disable **Test Mode** from your **Account Settings** to enable syncing. If you're switching from ADI to SCIM, **Test Mode** is enabled automatically after you save your **Account Settings**.
 
 1. Scroll down to the bottom of the **Account Settings** page and select **Save Changes**.
 Now that you have enabled SCIM in your KnowBe4 account, you're ready to finalize the connection with your identity provider. See one of the articles below to find instructions on configuring SCIM for the identity provider that you're using.
@@ -97,31 +97,35 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **KnowBe4 Security Awareness Training**.
 
-	![The KnowBe4 Security Awareness Training link in the Applications list](common/all-applications.png)
+	![Screenshot of the KnowBe4 Security Awareness Training link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the application settings.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your KnowBe4 Security Awareness Training Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to KnowBe4 Security Awareness Training. If the connection fails, ensure your KnowBe4 Security Awareness Training account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your KnowBe4 Security Awareness Training Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to KnowBe4 Security Awareness Training. If the connection fails, ensure your KnowBe4 Security Awareness Training account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to KnowBe4 Security Awareness Training**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to KnowBe4 Security Awareness Training in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in KnowBe4 Security Awareness Training for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the KnowBe4 Security Awareness Training API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -166,7 +170,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:lastPasswordChangeDateTime|DateTime||
 |
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to KnowBe4 Security Awareness Training**.
+1. Select **Attribute Mapping** in the left panel and select **groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to KnowBe4 Security Awareness Training in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in KnowBe4 Security Awareness Training for update operations. Select the **Save** button to commit any changes.
 
@@ -176,21 +180,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |members|Reference||   
    |externalId|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for KnowBe4 Security Awareness Training, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to KnowBe4 Security Awareness Training by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
@@ -199,7 +193,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 ## Step 7: Troubleshooting Tips
 * Once SCIM has been enabled, you see three buttons in the SCIM section of your Account Settings that can be used for troubleshooting purposes. For more information on these options, see the list below.
 
-	![Troubleshooting Tips](media/knowbe4-security-awareness-training-provisioning-tutorial\troubleshoot.png)
+	![Screenshot of the SCIM troubleshooting tips and buttons.](media/knowbe4-security-awareness-training-provisioning-tutorial\troubleshoot.png)
 
    * **Regenerate SCIM token**: Use this button to generate a new SCIM token. This token can only be viewed once, so make sure you save this information before closing the window. The link between your identity providers and your KnowBe4 console is disabled until you provide the new SCIM token.
 

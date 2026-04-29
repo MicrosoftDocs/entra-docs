@@ -224,12 +224,12 @@
       href: what-are-lifecycle-workflows.md  
     - name: Understanding Lifecycle Workflows
       href: understanding-lifecycle-workflows.md
+    - name: Custom Task Extension
+      href: lifecycle-workflow-extensibility.md
     - name: Templates
       href: lifecycle-workflow-templates.md    
     - name: Built-in tasks
-      href: lifecycle-workflow-tasks.md   
-    - name: Custom Task Extension
-      href: lifecycle-workflow-extensibility.md
+      href: lifecycle-workflow-tasks.md
     - name: Versioning
       href: lifecycle-workflow-versioning.md 
     - name: Workflow Audit logs
@@ -412,7 +412,9 @@
         - name: Check the status of a workflow
           href: check-status-workflow.md
         - name: Reprocess workflows
-          href: reprocess-workflow.md    
+          href: reprocess-workflow.md
+        - name: Cancel workflow runs (Preview)
+          href: cancel-workflow-runs.md
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users

@@ -106,7 +106,7 @@ To resolve these possible scenarios:
 
 There's a known issue where there's a pre-existing, unregistered account, like `user@contoso.com` in Microsoft Edge, or if a user signs in without registering using the Heads Up Page, then the account isn't properly enrolled in MAM. This configuration blocks the user from being properly enrolled in MAM.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Intune app management?](/mem/intune/apps/app-management)
 - [App protection policies overview](/mem/intune/apps/app-protection-policy)

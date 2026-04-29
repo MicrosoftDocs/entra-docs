@@ -36,7 +36,7 @@ Require guest users perform multifactor authentication when accessing your organ
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

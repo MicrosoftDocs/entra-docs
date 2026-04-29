@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to manage user profile information in the Microsoft Entra admin center so that I can keep user details accurate and up to date.
 ---
 
 # Add or update a user's profile information and settings in the Microsoft Entra admin center

@@ -7,6 +7,7 @@ ms.topic: concept-article
 ms.date: 02/12/2025
 ms.author: sarahlipsey
 ms.reviewer: krbain
+#Customer Intent: As an IT admin, I want to learn about groups and group membership so that I can manage access to resources effectively.
 ---
 
 # Learn about group types, membership types, and access management 

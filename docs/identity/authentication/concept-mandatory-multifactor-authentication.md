@@ -2,7 +2,7 @@
 title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Learn about mandatory multifactor authentication (MFA) enforcement for Azure, Microsoft 365, and other admin portals, and how to prepare your tenant.
 ms.topic: concept-article
-ms.date: 01/28/2026
+ms.date: 04/03/2026
 ms.reviewer: shahjoy
 ms.custom: sfi-ga-nochange, msecd-doc-authoring-106
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal so that my organization is prepared before enforcement begins.
@@ -65,7 +65,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 All accounts that sign in to perform operations cited in the [applications section](#application-ids-and-urls) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
-[Break glass or emergency access accounts](/entra/identity/role-based-access-control/security-emergency-access) are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+[Break glass or emergency access accounts](/entra/identity/role-based-access-control/security-emergency-access) are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-authentication-passkeys-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
@@ -173,9 +173,9 @@ For more information about how to migrate from user-based service accounts to wo
 
 Some customers apply Conditional Access policies to user-based service accounts. You can reclaim the user-based license, and add a [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
 
-## Migrate federated Identity Provider to external authentication methods 
+## Migrate federated Identity Provider to external MFA 
 
-Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.
+Support for external MFA solutions is available with [external MFA](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to external MFA to use an external solution with Microsoft Entra ID.
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
@@ -305,9 +305,9 @@ An option to postpone the enforcement start date is available for customers. Glo
 
 **Question**: What if I have a "break glass" scenario?  
 
-**Answer**: We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+**Answer**: We recommend updating these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-authentication-passkeys-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
  
-**Question**: What if I don't receive an email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it? 
+**Question**: What if I don't receivean email about enabling MFA before it was enforced, and then I get locked-out. How should I resolve it? 
 
 **Answer**: Users shouldn't be locked out, but they may get a message that prompts them to enable MFA once enforcement for their tenant has started. If the user is locked out, there may be other issues. For more information, see [Account has been locked](https://support.microsoft.com/account-billing/account-has-been-locked-805e8b0d-4141-29b2-7b65-df6ff6c9ce27).  
 

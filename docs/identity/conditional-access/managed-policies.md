@@ -250,7 +250,7 @@ Depending on your Certificate-Based Authentication (CBA) configuration, it can f
 
 [Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider must support external authentication methods and provide the necessary configuration guidance for integration.
 
-### How do I monitor when Microsoft makes a change to these policies or adds a new one?
+### How do I monitor when Microsoft makes a change to these policies, adds a new one, or deletes one?
 
 Administrators with **AuditLog.Read.All** and **Directory.Read** permissions can query the audit log for entries initiated by **Microsoft Managed Policy Manager** in the **Policy** category. For example, use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to find entries with this query string: `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=initiatedBy/app/displayName eq 'Microsoft Managed Policy Manager' and category eq 'Policy'`.
 

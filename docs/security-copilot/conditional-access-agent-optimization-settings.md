@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 03/16/2026
+ms.date: 04/09/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -44,12 +44,45 @@ In addition to the daily scheduled run, the agent can trigger runs when changes 
 - If you haven't enabled the Conditional Access Optimization Agent, activity-based runs are enabled by default and can be turned off in the agent settings.
 - If the Conditional Access Optimization Agent is already running in your tenant, activity-based runs are opt-in and can be enabled in the agent settings.
 
+### Scheduled runs
+
+The agent is configured to run automatically every 24 hours, based on when it was initially configured. You can also manually run the agent at any time.
+
+### Activity-based runs (Preview)
+
+In addition to the daily scheduled run, the agent can trigger runs based on changes to your Conditional Access policies. Activity-based runs are designed to help the agent respond to changes in your environment sooner, rather than waiting for the next daily run.
+
+The following changes to Conditional Access policies trigger an activity-based run:
+
+- An existing enabled policy is modified.
+- A policy state is changed from any other state, such as **Off** or **Report-only** to **On**.
+- A new policy is created with the state set to **On**.
+
+The agent checks for these changes every five minutes. When a qualifying change is detected, the agent initiates a run. To prevent excessive runs during periods of frequent changes, the agent enforces a four-hour cooldown between activity-based runs. For example:
+
+| Time | Event | Agent action |
+|---|---|---|
+| Minute 0 | An enabled policy is modified. | No action yet. |
+| Minute 5 | Agent detects the change. | Agent runs. |
+| Minute 6 | Another enabled policy is modified. | No action yet. |
+| Minute 10 | Agent detects the change. | Cooldown active. No run. |
+| Minute 12 | Another enabled policy is modified. | No action yet. |
+| Minute 15 | Agent detects the change. | Cooldown active. No run. |
+| Hour 4 | Cooldown expires. | Agent runs. |
+
+Activity-based runs don't replace the daily scheduled run. If enabled, the daily run always occurs regardless of how many activity-based runs happen.
+
+- **New tenants**: Activity-based runs are enabled by default. You can turn them off in the agent settings.
+- **Existing tenants**: Activity-based runs are opt-in. You can enable them in the agent settings.
+
 ## Capabilities
 
 The **Capabilities** category includes important settings that you should review.
 
 - **Microsoft Entra objects to monitor**: Use the checkboxes to specify what the agent should monitor when making policy suggestions. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
-- **Agent capabilities**: By default, the Conditional Access Optimization Agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+- **Agent capabilities**: By default, the Conditional Access Optimization Agent *can't create new policies*, even in report-only mode. You can change this setting so that the agent can create report-only policies on your behalf.
+  - With this setting enabled, an administrator must approve the new report-only policy before it's turned on. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+  - With this setting disabled, you still receive the suggestion, insights, and policy details but you must manually approve the policy before it's created in report-only mode.
 - **Phased rollout**: When the agent creates a new policy in report-only mode and that policy meets the criteria for a phased rollout, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png" alt-text="Screenshot of the Conditional Access Optimization agent Capabilities settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings-capabilities.png":::
@@ -155,7 +188,7 @@ Select **Manage agent identity** to view the agent details in Microsoft Entra Ag
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png" alt-text="Screenshot of the agent settings view for permissions and identities.png" lightbox="media/conditional-access-agent-optimization-settings/agent-settings-permissions.png":::
 
-- New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-are-agent-identities.md).
+- New installations of the agent default to use an [agent identity](../agent-id/what-are-agent-identities.md).
 - Existing installations can switch from the user context to run under an agent identity at any time. 
   - This change doesn't impact reporting or analytics.
   - Existing policies and recommendations remain unaffected.

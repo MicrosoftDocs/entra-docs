@@ -2,24 +2,29 @@
 title: How to Assign a Remote Network to a Traffic Forwarding Profile for Global Secure Access
 description: "Assign remote networks to traffic forwarding profiles through the Microsoft Entra admin center or Microsoft Graph API to route branch office traffic through Global Secure Access."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.reviewer: abhijeetsinha
+ms.date: 04/15/2026
 ai-usage: ai-assisted
 ---
 # Assign a remote network to a traffic forwarding profile for Global Secure Access
 
 ## Overview
 
-If you're tunneling your Microsoft traffic through the Global Secure Access service, you can assign remote networks to the traffic forwarding profile. Your end users can access Microsoft resources by connecting to the service from a remote network, such as a branch office location.
+If you tunnel your Microsoft traffic through the Global Secure Access service, you can assign remote networks to the traffic forwarding profile. Your end users can access Microsoft resources by connecting to the service from a remote network, such as a branch office location.
 
-There are multiple ways to assign a remote network to the traffic forwarding profile:
+You can assign a remote network to the traffic forwarding profile in several ways:
 
 - When you create or manage a remote network in the Microsoft Entra admin center
 - When you enable or manage the traffic forwarding profile in the Microsoft Entra admin center
-- Using the Microsoft Graph API
+- By using the Microsoft Graph API
+
+### Traffic profile enforcement on remote network device links
+
+[!INCLUDE [remote-network-traffic-enforcement-include](../includes/remote-network-traffic-enforcement-include.md)]
 
 ## Prerequisites 
 
-To assign a remote network to a traffic forwarding profile to, you must have:
+To assign a remote network to a traffic forwarding profile, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID. 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
@@ -48,20 +53,20 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 
 ### Assign a traffic profile to a remote network using the Microsoft Graph API
 
-Associating a traffic profile to your remote network using the Microsoft Graph API is two-step process. First, you need to get the traffic forwarding profile ID. This ID is unique for all tenants. With the traffic forwarding profile ID, you can assign the traffic forwarding profile with your remote network. 
+To associate a traffic profile with your remote network by using the Microsoft Graph API, complete two steps. First, get the traffic forwarding profile ID. This ID is unique for all tenants. Then, use the traffic forwarding profile ID to assign the traffic forwarding profile to your remote network. 
 
-A traffic forwarding profile can be assigned using Microsoft Graph on the `/beta` endpoint.
+Assign a traffic forwarding profile by using Microsoft Graph on the `/beta` endpoint.
  
-1. Open a web browser and navigate to **Graph Explorer** at https://aka.ms/ge.
-1. Select **GET** as the HTTP method from the dropdown. 
-1. Select the API version to **beta**. 
+1. Open a web browser and go to **Graph Explorer** at https://aka.ms/ge.
+1. Select **GET** as the HTTP method from the dropdown. 
+1. Select the API version as **beta**. 
 1. Enter the query.
     ```
     GET https://graph.microsoft.com/beta/networkaccess/forwardingprofiles 
     ```
-1. Select **Run query**. 
+1. Select **Run query**. 
 1. Find the ID of the desired traffic forwarding profile. 
-1. Select PATCH as the HTTP method from the dropdown. 
+1. Select **PATCH** as the HTTP method from the dropdown. 
 1. Enter the query.
     ```
         PATCH https://graph.microsoft.com/beta/networkaccess/branches/d2b05c5-1e2e-4f1d-ba5a-1a678382ef16/forwardingProfiles
@@ -73,7 +78,7 @@ A traffic forwarding profile can be assigned using Microsoft Graph on the `/beta
             }]
         }
     ```
-1. Select **Run query** to update the branch. 
+1. Select **Run query** to update the branch. 
 
 
 

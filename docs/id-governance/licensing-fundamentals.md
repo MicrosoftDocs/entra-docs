@@ -6,6 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/27/2026
+#Customer Intent: As an IT admin, I want to understand the licensing requirements for Microsoft Entra ID Governance features so that I can ensure my organization has the correct licenses.
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals

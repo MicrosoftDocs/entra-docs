@@ -6,7 +6,8 @@ metadata:
   author: cilwerner
   ms.author: cwerner
   manager: pmwongera
-  ms.date: 05/11/2025
+  ms.date: 04/08/2026
+  ms.reviewer: sreyanthmora
   ms.service: identity-platform
   ms.custom:
     - ge-structured-content-pilot
@@ -15,13 +16,13 @@ metadata:
 #Customer intent: As an IT admin, I want to create and assign token lifetime policies to apps and service principals, so that I can control the lifetime of access, SAML, or ID tokens for improved security and authentication management.
 
 title: |
-  Configure token lifetime policies (preview)
+  Configure token lifetime policies
 introduction: 
-  This article explains how to configure token lifetime policies for access, SAML, or ID tokens issued by the Microsoft identity platform. Learn how to set token lifetimes for all apps in your organization, specific apps, or multi-tenant applications to improve security and authentication management.
+  This article explains how to configure token lifetime policies for access, SAML, and ID tokens issued by the Microsoft identity platform. Learn how to set token lifetimes for all apps in your organization, specific apps, or multi-tenant applications to improve security and authentication management.
   
-  You might want to increase the token lifetime so that a script will run for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy. 
+  You might want to increase the token lifetime so that a script will run for more than an hour. Many Microsoft libraries and applications, such as Microsoft Graph PowerShell SDK, proactively refresh access tokens as needed and you don't need to make changes to the access token policy.
 
-  For more information, see [configurable token lifetimes](configurable-token-lifetimes.md).
+  For more information, see [configurable token lifetimes](configurable-token-lifetimes.md). To control how frequently users are required to sign in, use [Conditional Access sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) instead.
 
 prerequisites:
   summary: |
@@ -31,7 +32,7 @@ procedureSection:
   - title: |
       Create a policy and assign it to an app
     summary: | 
-      In the following steps, you'll create a policy that requires users to authenticate less frequently in your web app. Assign the policy to an app, which sets the lifetime of the access/ID tokens to 4 hours for your web app.
+      In the following steps, you'll create a policy that sets the lifetime of the access/ID tokens to 4 hours and assign the policy to an app.
     code: |
       ```powershell
       Install-Module Microsoft.Graph
@@ -40,7 +41,7 @@ procedureSection:
 
       # Create a token lifetime policy
       $params = @{
-        Definition = @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"4:00:00"}}') 
+        Definition = @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"04:00:00"}}') 
           DisplayName = "WebPolicyScenario"
         IsOrganizationDefault = $false
       }
@@ -70,7 +71,7 @@ procedureSection:
   - title: |
       Create a policy and assign it to a service principal
     summary: |
-      In the following steps, you'll create a policy that requires users to authenticate less frequently in your web app. Assign the policy to service principal, which sets the lifetime of the access/ID tokens to 8 hours for your web app.
+      In the following steps, you'll create a policy that sets the lifetime of the access/ID tokens to 8 hours and assign the policy to a service principal.
     steps:
       - |
         Create a token lifetime policy.
@@ -80,7 +81,7 @@ procedureSection:
         Content-Type: application/json
         {
             "definition": [
-                "{\"TokenLifetimePolicy\":{\"Version\":1,\"AccessTokenLifetime\":\"8:00:00\"}}"
+                "{\"TokenLifetimePolicy\":{\"Version\":1,\"AccessTokenLifetime\":\"08:00:00\"}}"
             ],
             "displayName": "Contoso token lifetime policy",
             "isOrganizationDefault": false
@@ -113,8 +114,11 @@ procedureSection:
     summary: |
       To see all policies that have been created in your organization, run the
       [Get-MgPolicyTokenLifetimePolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicytokenlifetimepolicy)
-      cmdlet. Any results with defined property values that differ from the
-      defaults listed above are in scope of the retirement.
+      cmdlet. Any results that define refresh or session token properties
+      (such as `MaxInactiveTime`, `MaxAgeSingleFactor`, `MaxAgeMultiFactor`)
+      contain legacy settings that are no longer honored. These properties
+      were retired on January 30, 2021. Consider updating or removing these
+      policies to avoid confusion.
     steps:
       - |
         Run the `Get-MgPolicyTokenLifetimePolicy` to see all policies that have

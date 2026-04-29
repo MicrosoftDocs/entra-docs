@@ -3,7 +3,7 @@ title: PowerShell V2 examples for managing groups
 description: This page provides PowerShell examples to help you manage your groups in Microsoft Entra ID
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/02/2026
 ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
@@ -19,6 +19,12 @@ ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 >
 
 This article contains examples of how to use PowerShell to manage your groups in Microsoft Entra ID, part of Microsoft Entra. It also tells you how to get set up with the Microsoft Graph PowerShell module. First, you must [download the Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
+
+## Prerequisites
+
+- [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) installed.
+- Sign in with an account that has at least the [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator) role.
+- The `Group.ReadWrite.All` permission scope must be consented for the Microsoft Graph PowerShell application in your tenant. When you run `Connect-MgGraph`, you're prompted to consent if it hasn't been granted previously. An admin account is required for initial consent. For more information, see [Get started with the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true).
 
 ## Install the Microsoft Graph PowerShell module
 

@@ -1,5 +1,5 @@
 ---
-title: Grant consent on behalf of a single user
+title: Grant Consent on Behalf of a Single User
 description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
 ms.custom: enterprise-apps
 
-#customer intent: As an IT admin, I want to grant consent on behalf of a single user using PowerShell, so that I can manage access to applications and APIs for that user.
+#customer intent: As an IT admin, I want to grant consent on behalf of a single user by using PowerShell, so that I can manage access to applications and APIs for that user.
 ---
 
 # Grant consent on behalf of a single user by using PowerShell
@@ -21,27 +21,24 @@ When a user grants consent for themselves, the following events occur more often
 
 1. For each API to which the application requires access, a delegated permission grant to that API is created for the permissions that the application needs. The access is granted on behalf of the user. A delegated permission grant authorizes an application to access an API on behalf of a user, when that user signs in.
 
-1. The user is assigned the client application. Assigning the application to the user ensures that the application is listed in the [My Apps](./myapps-overview.md) portal for that user. The user can review and revoke the access that granted on their behalf from their My Apps portal.
+1. The user is assigned the client application. Assigning the application to the user ensures that the application is listed in the [My Apps](./myapps-overview.md) portal for that user. The user can review and revoke the access granted on their behalf from the My Apps portal.
 
 ## Prerequisites
 
-To grant consent to an application on behalf of one user, you need:
+- A user account with a Privileged Role Administrator, Application Administrator, or Cloud Application Administrator role.
 
-- A user account with a Privileged Role Administrator, Application Administrator, or Cloud Application Administrator
+- The following details from the Microsoft Entra admin center:
+  - The app ID for the app that you're granting consent for. For purposes of this article, we call it the *client application*.
+  - The API permissions that the client application requires. Find out the app ID of the API and the permission IDs or claim values.
+  - The username or object ID for the user on whose behalf access is granted.
 
 ## Grant consent on behalf of a single user
 
-Before you start, record the following details from the Microsoft Entra admin center:
-
-- The app ID for the app that you're granting consent. For purposes of this article, we call it the client application.
-- The API permissions that the client application requires. Find out the app ID of the API and the permission IDs or claim values.
-- The username or object ID for the user on whose behalf access is granted.
-
 :::zone pivot="msgraph-powershell"
 
-For this example, we use [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started) to grant consent on behalf of a single user. The client application is [Microsoft Graph Explorer](https://aka.ms/ge), and we grant access to the Microsoft Graph API.
+The example in this article uses [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started) to grant consent on behalf of a single user. The client application is [Microsoft Graph Explorer](https://aka.ms/ge), and we grant access to the Microsoft Graph API.
 
-To grant consent to an application on behalf of one user using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+To grant consent to an application on behalf of one user by using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
 # The app for which consent is being granted.
@@ -51,7 +48,7 @@ $clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Your client application
 # requests to the Microsoft Graph API, so we'll use that here.
 $resourceAppId = "00000003-0000-0000-c000-000000000000" # Microsoft Graph API
 
-# The permissions to grant. Here we're including "openid", "profile", "User.Read"
+# The permissions to grant. Here we're including "openid", "profile", "User.Read",
 # and "offline_access" (for basic sign-in), as well as "User.ReadBasic.All" (for 
 # reading other users' basic profile).
 $permissions = @("openid", "profile", "offline_access", "User.Read", "User.ReadBasic.All")
@@ -112,20 +109,22 @@ if ($clientSp.AppRoles | ? { $_.AllowedMemberTypes -contains "User" }) {
 
 :::zone pivot="ms-graph"
 
-To grant consent to an application on behalf of one user using Microsoft Graph API, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+To grant consent to an application on behalf of one user who's using the Microsoft Graph API, sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-You need to consent to the following permissions:
+You need to consent to the following permissions: `Application.ReadWrite.All`, `Directory.ReadWrite.All`, `DelegatedPermissionGrant.ReadWrite.All`.
 
-`Application.ReadWrite.All`, `Directory.ReadWrite.All`, `DelegatedPermissionGrant.ReadWrite.All`.
+In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user. In the example:
 
-In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user.
-
-In the example, the resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
+- The resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
+- Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`.
+- The consentType is `Principal`, which indicates that you're consenting on behalf of a single user in the tenant.
+- The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
+- The principal ID of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
 
-1. Retrieve all the delegated permissions defined by Microsoft graph (the resource application) in your tenant application. Identify the delegated permissions that you want to grant the client application. In this example, the delegation permissions are `User.Read.All` and `Group.Read.All`
+1. Retrieve all the delegated permissions that Microsoft Graph (the resource application) defines in your tenant application. Identify the delegated permissions that you want to grant the client application. In this example, the delegation permissions are `User.Read.All` and `Group.Read.All`.
 
    ```http
    GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=displayName eq 'Microsoft Graph'&$select=id,displayName,appId,oauth2PermissionScopes
@@ -152,7 +151,9 @@ In the example, the resource enterprise application is Microsoft Graph of object
    GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'Principal'
    ```
 
-1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required, and ensures that app is available through the user's My Apps portal. In the following example, `resourceId`represents the client app to which the user is being assigned. The user is assigned the default app role that is `00000000-0000-0000-0000-000000000000`.
+1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required. It also ensures that the app is available through the user's My Apps portal.
+
+   In the following example, `resourceId` represents the client app to which the user is being assigned. The user is assigned the default app role (`00000000-0000-0000-0000-000000000000`).
 
     ```http
         POST /servicePrincipals/resource-servicePrincipal-id/appRoleAssignedTo
@@ -166,8 +167,8 @@ In the example, the resource enterprise application is Microsoft Graph of object
 
 :::zone-end
 
-## Next steps
+## Related content
 
 - [Configure the admin consent workflow](configure-admin-consent-workflow.md)
 - [Configure how users consent to applications](configure-user-consent.md)
-- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
+- [Overview of permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)

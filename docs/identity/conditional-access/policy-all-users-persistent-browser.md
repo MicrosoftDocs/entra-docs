@@ -40,7 +40,7 @@ Protect user access on unmanaged devices by preventing browser sessions from rem
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Next steps
+## Related content
 
 [Conditional Access templates](concept-conditional-access-policy-common.md)
 

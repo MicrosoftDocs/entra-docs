@@ -80,7 +80,11 @@ This policy blocks all Exchange ActiveSync clients using basic authentication fr
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+## Related content
 
 - [App protection policies overview](/mem/intune/apps/app-protection-policy)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)

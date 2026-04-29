@@ -3,7 +3,6 @@ title: External Tenant Features
 description: Compare features and capabilities of a workforce versus an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.topic: concept-article
 ms.date: 03/30/2026
-
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, DevOps, or IT admin, I want to learn about features supported in a CIAM tenant so that I can configure tenants according to my organization's needs.
 ---
@@ -74,17 +73,18 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 You can use some authentication methods as the primary factor when users sign in to an application, such username and password. Other authentication methods are available only as a secondary factor. The following table outlines when you can use an authentication method during sign-in, self-service sign-up, self-service password reset, and MFA in External ID.
 
-| Method | Sign-in | Sign-up | Password reset | MFA |
-| ------ | ------- | ------- | -------------- | --- |
-| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Emailed one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication) | | | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: |
-| [Apple federation](./how-to-apple-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Facebook federation](./how-to-facebook-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
-| [SAML/WS-Fed federation](../direct-federation.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | | |
+|Method  |Sign-in  |Sign-up  |Password reset  |MFA  |
+|---------|---------|---------|---------|---------|
+| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication)|  |  |  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [Apple federation](./how-to-apple-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   |  |  |
+| [Facebook federation](./how-to-facebook-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Microsoft Entra ID federation](./how-to-entra-id-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [SAML/WS-Fed federation](../direct-federation.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
 
 ## Application registration
 
@@ -243,7 +243,7 @@ The following table compares the features for SSO in each type of tenant.
 | User provisioning | Use [automatic user provisioning](/entra/architecture/sync-scim) with System for Cross-domain Identity Management (SCIM) to sync user accounts between External ID and supported apps. This approach keeps user data up to date automatically.<br><br> User provisioning supports differential queries. These queries sync only the changes since the last update. This behavior improves performance and reduces system load. | Same as workforce. |
 | Session invalidation | Scenarios where SSO might be invalidated, which requires reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache</li><li>Conditional Access policy, such as a multifactor authentication requirement</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity</li></ul><br>The application specifies in the authorization request to prompt the user for credentials by using the `login=prompt` query string parameter in OpenID Connect and the `ForceAuthn` attribute in the SAML request. | Same as workforce. |
 | Conditional Access | Check the [Conditional Access](#conditional-access) section. | Check the [Conditional Access](#conditional-access) section. |
-| Microsoft Entra native authentication | Not available. | [Native authentication](concept-native-authentication.md) doesn't support SSO. |
+| Microsoft Entra native authentication | Not available. | [Native authentication](concept-native-authentication.md) supports SSO for embedded web views. Cross-app SSO through system browsers isn't available with native authentication. |
 | Sign-out | When a [SAML](../../identity-platform/single-sign-out-saml-protocol.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#send-a-sign-out-request) application directs the user to the logout endpoint, Microsoft Entra ID removes and invalidates the user's session from the browser. | Same as workforce. |
 | Single sign-out | Upon successful sign-out, Microsoft Entra ID sends a sign-out notification to all other [SAML](../../identity-platform/single-sign-out-saml-protocol.md) and [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#single-sign-out) applications that the user is signed in to. | Same as workforce. |
 
