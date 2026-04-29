@@ -1,9 +1,10 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-ms.date: 04/03/2026
+ms.date: 04/27/2026
 ms.topic: how-to
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
@@ -554,6 +555,121 @@ If there are no custom security attributes assigned to the user or if the callin
 ```http
 {
     "customSecurityAttributes": null
+}
+```
+
+---
+
+### List all users and any custom security attribute assignments
+
+The following example lists all users and any custom security attribute assignments. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
+
+# [PowerShell](#tab/ms-powershell)
+
+[Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser)
+
+```powershell
+$userAttributes = Get-MgUser -All -CountVariable CountVar -Property "id,displayName,customSecurityAttributes" -ConsistencyLevel eventual
+$userAttributes | select Id,DisplayName,CustomSecurityAttributes
+$userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
+```
+
+```Output
+Id                                   DisplayName CustomSecurityAttributes
+--                                   ----------- ------------------------
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee Alain
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff Joe         Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa Isabella    Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+33dd33dd-ee44-ff55-aa66-77bb77bb77bb Jiya        Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
+44ee44ee-ff55-aa66-bb77-88cc88cc88cc Admin
+
+Key   : Engineering
+Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [Project@odata.type, #Collection(String)], [Project, System.Object[]],
+        [CostCenter@odata.type, #Collection(Int32)], [CostCenter, System.Object[]], [Certification, True]}
+
+Key   : Marketing
+Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [EmployeeId, QN26904]}
+
+Key   : Marketing
+Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [AppCountry@odata.type, #Collection(String)], [AppCountry, System.Object[]]}
+
+Key   : Engineering
+Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [ProjectDate, 2026-04-23]}
+```
+
+# [Microsoft Graph](#tab/ms-graph)
+
+[List users](/graph/api/user-list)
+
+```http
+GET https://graph.microsoft.com/v1.0/users?$count=true&$select=id,displayName,customSecurityAttributes
+ConsistencyLevel: eventual
+```
+
+If your tenant has more users than fit in a single page, the response includes an `@odata.nextLink` property. Follow that link to retrieve the next page of results. For more information, see [Paging Microsoft Graph data in your app](/graph/paging).
+
+```http
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(id,displayName,customSecurityAttributes)",
+    "@odata.count": 42,
+    "value": [
+        {
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+            "displayName": "Alain",
+            "customSecurityAttributes": null
+        },
+        {
+            "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+            "displayName": "Joe",
+            "customSecurityAttributes": {
+                "Engineering": {
+                    "@odata.type": "#microsoft.graph.customSecurityAttributeValue",
+                    "Project@odata.type": "#Collection(String)",
+                    "Project": [
+                        "Baker",
+                        "Cascade"
+                    ],
+                    "CostCenter@odata.type": "#Collection(Int32)",
+                    "CostCenter": [
+                        1001
+                    ],
+                    "Certification": true
+                },
+                "Marketing": {
+                    "@odata.type": "#microsoft.graph.customSecurityAttributeValue",
+                    "EmployeeId": "QN26904"
+                }
+            }
+        },
+        {
+            "id": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
+            "displayName": "Isabella",
+            "customSecurityAttributes": {
+                "Marketing": {
+                    "@odata.type": "#microsoft.graph.customSecurityAttributeValue",
+                    "AppCountry@odata.type": "#Collection(String)",
+                    "AppCountry": [
+                        "France"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "33dd33dd-ee44-ff55-aa66-77bb77bb77bb",
+            "displayName": "Jiya",
+            "customSecurityAttributes": {
+                "Engineering": {
+                    "@odata.type": "#microsoft.graph.customSecurityAttributeValue",
+                    "ProjectDate": "2026-04-23"
+                }
+            }
+        },
+        {
+            "id": "44ee44ee-ff55-aa66-bb77-88cc88cc88cc",
+            "displayName": "Admin",
+            "customSecurityAttributes": null
+        }
+    ]
 }
 ```
 

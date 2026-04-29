@@ -2,7 +2,7 @@
 title: Recommendation to minimize MFA prompts from known devices
 description: Learn about the recommendation to minimize multifactor authentication prompts from known devices in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 06/12/2025
+ms.date: 04/28/2026
 ms.reviewer: jadedsouza
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to minimize the number of multifactor authentication prompts my users receive from known devices so that they can access resources more easily and securely.
@@ -13,6 +13,10 @@ ms.custom: sfi-image-nochange
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to minimize multifactor authentication prompts from known devices. This recommendation is called `tenantMFA` in the recommendations API in Microsoft Graph. 
+
+## Prerequisites
+
+[!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]
 
 ## Description
 
