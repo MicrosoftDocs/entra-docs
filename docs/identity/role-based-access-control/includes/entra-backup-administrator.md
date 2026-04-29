@@ -2,7 +2,7 @@
 title: Entra Backup Administrator
 description: Entra Backup Administrator
 ms.topic: include
-ms.date: 03/23/2026
+ms.date: 04/29/2026
 ms.custom: include file
 ---
 
@@ -27,3 +27,4 @@ Assign the Entra Backup Administrator role to users who need to do the following
 > | microsoft.directory/backup/recovery/cancel | Cancel a Microsoft Entra recovery operation to recover the contents of a backup snapshot |
 > | microsoft.directory/backup/recovery/create | Create a Microsoft Entra recovery operation that allows a user to recover the contents of a backup snapshot. |
 > | microsoft.directory/backup/standard/read | List Microsoft Entra backups (for example, backup IDs and timestamps), view difference reports, and list recovery jobs and their associated properties. |
+
