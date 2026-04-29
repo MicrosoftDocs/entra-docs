@@ -12,7 +12,7 @@ For a high-level guide to managing agent identities across your organization, se
 
 ## Overview
 
-The [agent user](https://learn.microsoft.com/en-us/entra/agent-id/agent-users) is a specialized identity typedesigned to bridge the gap between agents and human user capabilities. The agent user enables AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage the agent's access using similar capabilities as they do for human users.
+The [agent user](/entra/agent-id/agent-users) is a specialized identity typedesigned to bridge the gap between agents and human user capabilities. The agent user enables AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage the agent's access using similar capabilities as they do for human users.
 
 In contrast to the [on-behalf-of flow](agent-id.md), where an agent operates within the delegated context of a signed-in user, an agent user is actually a user, functioning as a digital worker. For example, digital employees that function as team members with their own mailboxes, chat access and participate in collaborative workflows as a team member.
 

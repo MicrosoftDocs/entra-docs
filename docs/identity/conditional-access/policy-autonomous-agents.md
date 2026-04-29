@@ -18,7 +18,7 @@ This walkthrough explains how to configure Conditional Access for agents that au
 - Agents don't always act on a user's behalf when accessing resources. Sometimes they operate entirely on their own. For example, a backend SMS service that is not accessible to users. In this scenario, the OBO flow is not applicable and agent accesses the target resource by authenticating directly with its own identity. 
 - Agents published on the web for public use. These agents either don’t authenticate the user or don’t support delegating the user’s context to downstream resources
 
-In those scenarios, the agent is the one who requests access, and the issued access token's subject is the [agent identity](https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities) rather than the user. As a result, the Conditional Access policy scope apply to the **agent identity**, not a user. 
+In those scenarios, the agent is the one who requests access, and the issued access token's subject is the [agent identity](/entra/agent-id/what-are-agent-identities) rather than the user. As a result, the Conditional Access policy scope apply to the **agent identity**, not a user. 
 
 > [!IMPORTANT]
 > Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries and limitations. To  ensure you cover all scenarios and your corporate data and services are well protected.
@@ -32,7 +32,7 @@ In those scenarios, the agent is the one who requests access, and the issued acc
 
 ## Allow only specific agents to access resources
 
-There are two key business scenarios where Conditional Access policies can help you manage agents effectively. In the first scenario you might want to ensure that only approved agents can access resources. You can do this by tagging agents and resources with [custom security attributes](https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview) targeted in your policy, or by manually selecting them using the enhanced object picker.
+There are two key business scenarios where Conditional Access policies can help you manage agents effectively. In the first scenario you might want to ensure that only approved agents can access resources. You can do this by tagging agents and resources with [custom security attributes](/entra/fundamentals/custom-security-attributes-overview) targeted in your policy, or by manually selecting them using the enhanced object picker.
 
 #### [Using custom security attributes](#tab/custom-security-attributes)
 

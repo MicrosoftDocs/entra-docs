@@ -36,23 +36,23 @@ Custom security attributes aren't just for agent identities, you can also use th
 
 ## Agent identity blueprints
 
-Another way to apply a Conditional Access policy to multiple agent identities at once is by targeting their parent blueprint. Every agent identity is derived from an agent blueprint, which defines its configuration and governance model, so applying a policy at the blueprint level automatically covers all agents derived from it, including any new ones added in the future.
+Another way to apply a Conditional Access policy to multiple agent identities at once is by targeting their parent agent identity blueprint. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model, so applying a policy at the blueprint level automatically covers all agents derived from it, including any new ones added in the future.
 
 The following diagram shows that only agent identities associated with blueprint "A" are granted access; all other agents are excluded and blocked.
 
 :::image type="content" source="media/agent-id/conditional-access-agent-identity-blueprint-diagram.png" alt-text="Diagram showing the Conditional Access flow for agent identity blueprints." lightbox="media/agent-id/conditional-access-agent-identity-blueprint-diagram.png":::
 
-For example, a project where you have several agents, each with its own purpose. Some operate independently, while others collaborate with other agents (A2A) to complete tasks. If they are all created under the same blueprint, a single policy applied to that blueprint enforces consistent access controls across the entire collection.
+For example, imagine a project where you have several agents, each with its own purpose. Some operate independently, while others collaborate with other agents (A2A) to complete tasks. If they are all created under the same blueprint, a single policy applied to that blueprint enforces consistent access controls across the entire collection.
 
 ## Data access patterns overview
 
-To access a corporate resource such as SharePoint file, MCP servers or Open API services, a user or agent first requests an access token from Microsoft Entra ID. However, access token(s) are issued only after the required Conditional Access controls are satisfied. Once the access token is issued, the agent presents that token to the resource to prove its identity. The resource validates the token and uses its claims to enforce authorization.
+To access a corporate resource such as SharePoint file, MCP servers, or Open API services, a user or agent first requests an access token from Microsoft Entra ID. However, access tokens are issued only after the required Conditional Access controls are satisfied. Once the access token is issued, the agent presents that token to the resource to prove its identity. The resource validates the token and uses its claims to enforce authorization.
 
 The following diagram illustrates the data access patterns.
 
 :::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
-Conditional Access policies at their core are if-then statements: if a user or agent wants to access a resource, then something must happen first. For example: if an agent needs to read a user's email on their behalf through the Work IQ Email MCP, the user must complete multifactor authentication before access is granted. Likewise, if an agent attempts to access any resource not explicitly included in the policy, access is blocked by default.
+Conditional Access policies are if-then statements: *if* a user or agent wants to access a resource, *then* something must happen first. For example, if an agent needs to read a user's email on their behalf through the Work IQ MCP, the user must complete multifactor authentication before access is granted. Likewise, if an agent attempts to access any resource not explicitly included in the policy, access is blocked by default.
 
 Microsoft Entra ID issues an access token to a subject for a specific audience (resource). Each token has exactly one subject and one audience.
 
@@ -60,15 +60,15 @@ The "subject" identifies who the token was issued to. When an application or age
 
 The "audience" identifies the target resource the token is meant for. This resource must be registered in Microsoft Entra ID. If the subject needs to call multiple resources (for example, two different MCP servers), it typically needs a separate access token for each resource, each with its own audience and permissions.
 
-Conditional Access policies are re-evaluated each time an access token is requested, typically happens upon token expiration or when critical event is triggered like Continuous Access Evaluation.
+Conditional Access policies are re-evaluated each time an access token is requested, which typically happens upon token expiration or when a critical event is triggered, such as Continuous Access Evaluation.
 
-Agents access corporate resources protected by Microsoft Entra ID using one of the following patterns:
+Agents can access corporate resources that are protected by Microsoft Entra ID using one of the following patterns:
 
 - [On behalf of a user](#on-behalf-of-obo-flow)
 - [App only credentials](#application-only-access-flow)
 - [Agent user's account](#agents-user-account)
 
-For more information about the types of agents and the identity and access management challenges they present, see [Security for AI with Microsoft Entra agent identity](../../agent-id/security-for-ai-overview.md).
+For more information about the types of agents and the identity and access management challenges they present, see [Security for AI](../../agent-id/security-for-ai-overview.md).
 
 ## On-Behalf-Of (OBO) flow
 
@@ -87,7 +87,7 @@ The following diagram shows the OBO flow used when an agent accesses a resource 
 - **AI platform**: the runtime environment in which the large language model (LLM) runs.
 - **Resource**: the resource the agent calls to retrieve data or perform an action, such as Work IQ, SharePoint online or custom MCP server.
 
-1. The flow starts when a user accesses the agent application. The agent application is registered in Microsoft Entra ID and its access is governed by Microsoft Entra ID. To access the app, users first must authenticate with their account. This is where Conditional Access comes in. Admins can target the agent application in the conditional access policy. For example, require MFA for all users, or restrict access to compliant and registered devices only.
+1. The flow starts when a user accesses the agent application. The agent application is registered in Microsoft Entra ID and its access is governed by Microsoft Entra ID. To access the app, users first must authenticate with their account. This is where Conditional Access comes in. Admins can target the agent application in the Conditional Access policy. For example, require MFA for all users, or restrict access to compliant and registered devices only.
 
 1. After the user signs in, the app validates the user's access token and grants access. The user then submits a prompt to the AI platform (for example, Copilot Studio, Microsoft Foundry, or a third-party platform). To handle and respond to the request, the LLM may call a corporate resource, such as SharePoint Online, Exchange Online, Work IQ, or MCP server to retrieve data or perform an action, such as sending an email.
 
@@ -126,10 +126,10 @@ In these scenarios, the agent requests an access token using its own agent ident
 
 To create a Conditional Access policy for agents operating with their own identity, use the following settings:
 
-- **Assignments** – In an agent access flow, the access token is issued to the agent identity (the token subject), so you assign the policy to agent identities or their agent identity blueprint.
-- **Target resources** – Select the resources the agent identity needs to access.
-- **Conditions** – Configure the whether the agent identity is at risk. For more information, see "ID Protection for agents".
-- **Access control** – since this agent access resources with its own identity, there is no remediation and the only available option is blocking access.
+- **Assignments**: In an agent access flow, the access token is issued to the agent identity (the token subject), so you assign the policy to agent identities or their agent identity blueprint.
+- **Target resources**: Select the resources the agent identity needs to access.
+- **Conditions**: Configure the whether the agent identity is at risk. For more information, see "ID Protection for agents".
+- **Access control**: Because this agent accesses resources with its own identity, there is no remediation and the only available option is blocking access.
 
 ## Agent's user account
 
@@ -145,10 +145,10 @@ In this model, the access token is issued to the agent's user account (the token
 
 To create a Conditional Access policy for agents' user account, use the following settings:
 
-- **Assignments** – In an agent user flow, choose the "Select agents active as users", and then select "All agent users".
-- **Target resources** – all resources.
-- **Conditions** – Configure the whether the agent identity is at risk. For more information, see "ID Protection for agents".
-- **Access control** – since this agent user, there is no remediation to authentication challenges, therefore and the only available option is blocking access.
+- **Assignments**: In an agent user flow, choose the "Select agents active as users", and then select "All agent users".
+- **Target resources**: all resources.
+- **Conditions**: Configure the whether the agent identity is at risk. For more information, see "ID Protection for agents".
+- **Access control**: since this agent user, there is no remediation to authentication challenges, therefore and the only available option is blocking access.
 
 ## Select the target resource
 
@@ -193,6 +193,6 @@ Admins can use the Sign-in logs to investigate why a Conditional Access policy d
 
 Learn how to configure conditional access policies for agent identities:
 
-- [Agents operate on behalf of a signed-in user](policy-agent-obo.md)
+- [Agents operate on behalf of a signed-in user](policy-on-behalf-of-agents.md)
 - [Agents operate with their own identity](policy-agent-block-high-risk.md)
-- [Agent acts as user (agent user)](policy-agent-user.md)
+- [Agent acts as user (agent user)](policy-agent-user-account.md)
