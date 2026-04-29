@@ -112,6 +112,10 @@ items:
         href: call-api-custom.md
       - name: Call Azure services
         href: call-api-azure-services.md
+    - name: Integrate third-party agent platforms
+      items:
+      - name: Configure third-party agents with Agent ID
+        href: configure-third-party-agents.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
