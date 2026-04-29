@@ -44,7 +44,7 @@ MSAL applies the following rules when evaluating the headers you provide:
   - `x-ms-`
   - `x-broker-`
   - `x-app-`
-- If a header name you provide doesn't conflict with the reserved prefixes, MSAL adds it to the network request. If there's a naming conflict, your value takes precedence.
+- MSAL adds headers that pass both rules to the network request. If a header you provide has the same name as one of MSAL's own internal headers, your value takes precedence.
 
 Use these rules to verify your vendor-required header names before implementing the interceptor.
 
@@ -52,35 +52,35 @@ Use these rules to verify your vendor-required header names before implementing 
 
 The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MSAL calls before it sends each network request. Your implementation receives the request URL and a completion block, and then calls the completion block with a dictionary of headers to add—or `nil` if no headers are needed for that request.
 
-- Make your view controller (or another class in your app) conform to `MSALNativeAuthRequestInterceptor`:
+Make your view controller (or another class in your app) conform to `MSALNativeAuthRequestInterceptor`:
 
-    ```swift
-    extension EmailAndPasswordViewController: MSALNativeAuthRequestInterceptor {
+```swift
+extension EmailAndPasswordViewController: MSALNativeAuthRequestInterceptor {
 
-        func addAdditionalHeaderFields(
-            _ requestUrl: URL?,
-            completionBlock: @escaping MSALNativeAuthRequestInterceptorAddHeaderCompletionBlock
-        ) {
-            // Scope headers to specific endpoints only.
-            if requestUrl?.absoluteString.contains("oauth2/v2.0/initiate") == true {
-                completionBlock([
-                    "value_1": "customer_header_1",          // Ignored: doesn't start with "x-"
-                    "x-client-header": "customer_header_2",  // Ignored: starts with reserved prefix "x-client-"
-                    "X-my-custom-header": "my data"          // Added to the network request.
-                ])
-                return
-            }
-
-            // Return nil for all other requests to avoid over-sending signals.
-            completionBlock(nil)
+    func addAdditionalHeaderFields(
+        _ requestUrl: URL?,
+        completionBlock: @escaping MSALNativeAuthRequestInterceptorAddHeaderCompletionBlock
+    ) {
+        // Scope headers to specific endpoints only.
+        if requestUrl?.absoluteString.contains("oauth2/v2.0/initiate") == true {
+            completionBlock([
+                "value_1": "customer_header_1",          // Ignored: doesn't start with "x-"
+                "x-client-header": "customer_header_2",  // Ignored: starts with reserved prefix "x-client-"
+                "X-my-custom-header": "my data"          // Added to the network request.
+            ])
+            return
         }
+
+        // Return nil for all other requests to avoid over-sending signals.
+        completionBlock(nil)
     }
-    ```
+}
+```
 
-    The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires—for example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
+The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires—for example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
 
-    > [!NOTE]
-    > Always call `completionBlock` exactly once per invocation. Pass `nil` if no extra headers are needed for that request.
+> [!NOTE]
+> Always call `completionBlock` exactly once per invocation. Pass `nil` if no extra headers are needed for that request.
 
 ## Register the interceptor
 
