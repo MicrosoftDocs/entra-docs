@@ -35,32 +35,32 @@ author: idmdev
 
 1. Select **+ Create** > **Managed Apps**:
 
-    - **Name** = `GSA Explicit Forward Proxy Settings for Edge` (feel free to choose your own name).
-    - **Target policy to**: Selected Apps.
+    1. **Name** = `GSA Explicit Forward Proxy Settings for Edge` (feel free to choose your own name).
+    1. **Target policy to**: Selected Apps.
 
 1. Select **+ Select public apps**:
 
-    - Search for `Edge`.
-    - Select **Microsoft Edge** / **Windows**.
-    - Select **Select**.
+    1. Search for `Edge`.
+    1. Select **Microsoft Edge** / **Windows**.
+    1. Select **Select**.
 
     ![Screenshot showing the public apps selection with Microsoft Edge selected.](media/how-to-configure-microsoft-edge-mam-policy/select-target-apps.png)
 
 1. Select **Next** to advance to the Settings Catalog. Then, select **+ Add setting**:
 
-    - Type `proxy` in the **Search for a setting** bar and select **Search**.
-    - Select **Microsoft Edge** > **Proxy server** in the results.
-    - Check the **Proxy settings** checkbox.
+    1. Type `proxy` in the **Search for a setting** bar and select **Search**.
+    1. Select **Microsoft Edge** > **Proxy server** in the results.
+    1. Check the **Proxy settings** checkbox.
 
     ![Screenshot showing the proxy settings search results in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/proxy-settings.png)
 
-    - Select the search box again, type `TLS`, and select **Search**.
-    - Select **Microsoft Edge Certificate Management settings** in the search results.
-    - Check the **TLS server certificates that should be trusted by Microsoft Edge** checkbox.
+    1. Select the search box again, type `TLS`, and select **Search**.
+    1. Select **Microsoft Edge Certificate Management settings** in the search results.
+    1. Check the **TLS server certificates that should be trusted by Microsoft Edge** checkbox.
 
     ![Screenshot showing the TLS certificate settings in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/tls-certificate-settings.png)
 
-    - Close the **Settings** picker (X on the top right) to return to the policy configuration page.
+    1. Close the **Settings** picker (X on the top right) to return to the policy configuration page.
 
 1. Under the **Proxy Server** section, configure proxy settings as follows:
 
