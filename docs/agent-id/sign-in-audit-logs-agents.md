@@ -12,7 +12,7 @@ ms.reviewer: egreenberg14
 ---
 # Microsoft Entra Agent ID logs
 
-As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity. The audit and sign-in logs are helpful when you you need to investigate the following types of scenarios:
+As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity. The audit and sign-in logs are helpful when you need to investigate the following types of scenarios:
 
 - Sign-in logs for agents or agent related traffic 
 - Audit logs for when an agent identity or agent's user account is either the initiator or performer of an operation in my tenant
