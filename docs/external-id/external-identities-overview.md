@@ -3,10 +3,11 @@
 title: Microsoft Entra External ID Overview
 description: Compare solutions for using Microsoft Entra External ID to work with people outside your organization, including B2B collaboration and Azure AD B2C.
 ms.topic: overview
-ms.date: 01/30/2026
+ms.date: 04/24/2026
 
 ms.collection: M365-identity-device-management
-#customer intent: As a developer who creates apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID so that I can manage my customers' identity experiences and allow them to use their own credentials to sign in.
+ai-usage: ai-assisted
+# Customer intent: As a developer who creates apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID so that I can manage my customers' identity experiences and allow them to use their own credentials to sign in.
 ---
 
 # Introduction to Microsoft Entra External ID
