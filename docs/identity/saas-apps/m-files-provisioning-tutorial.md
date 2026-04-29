@@ -116,8 +116,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
    1. Select **Ok**.
    1. **Optional**: To synchronize two additional data fields to M-Files Manage, add a second mapping with the other available target attribute.
 
-  > [!NOTE]
-  > It isn't recommended to make changes to the default attribute mappings.
+   > [!NOTE]
+   > It isn't recommended to make changes to the default attribute mappings.
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

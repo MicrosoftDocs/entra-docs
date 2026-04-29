@@ -35,6 +35,7 @@ Before configuring Dynamic Signal for automatic user provisioning with Microsoft
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Dynamic Signal**, select **Dynamic Signal** in the search box.
 1. Select **Dynamic Signal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+
 	![Screenshot of Dynamic Signal in the results list.](common/search-new-app.png)
 
 ## Step 2: Assign users to Dynamic Signal
