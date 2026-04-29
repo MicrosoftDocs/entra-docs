@@ -77,8 +77,7 @@ To disable an agent identity:
 To disable an agent identity blueprint: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
-1. Browse to **Entra ID** > **Agents** > **Agent identities**.
-1. Select **View agent blueprints**.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select the agent identity blueprint you want to disable then select **Disable**.
 
 ## Create Conditional Access policies to disable agent activities
