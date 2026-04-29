@@ -3556,11 +3556,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "docs/agent-id/agent-service-principals.md",
-      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "docs/agent-id/publish-agents-to-registry.md",
       "redirect_url": "/microsoft-365/admin/manage/agent-registry",
       "redirect_document_id": false
