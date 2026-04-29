@@ -128,8 +128,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
 
-> [!NOTE]
-> **Schema Discovery** is enabled on this app. Hence you might see more attributes in the application than mentioned in the table above.
+    > [!NOTE]
+    > **Schema Discovery** is enabled on this app. Hence you might see more attributes in the application than mentioned in the table above.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Palo Alto Networks SCIM Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Palo Alto Networks SCIM Connector for update operations. Select the **Save** button to commit any changes.
 

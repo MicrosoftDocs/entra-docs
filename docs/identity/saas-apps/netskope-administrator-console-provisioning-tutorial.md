@@ -119,11 +119,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Netskope User Authentication in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Netskope User Authentication for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Netskope User Authentication API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![Netskope User Authentication User Attributes](media/netskope-administrator-console-provisioning-tutorial/userattributes.png)
+	![Screenshot of the Netskope User Authentication User Attributes.](media/netskope-administrator-console-provisioning-tutorial/userattributes.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Netskope User Authentication in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Netskope User Authentication for update operations. Select the **Save** button to commit any changes.
 
-	![Netskope User Authentication Group Attributes](media/netskope-administrator-console-provisioning-tutorial/groupattributes.png)
+	![Screenshot of the Netskope User Authentication Group Attributes.](media/netskope-administrator-console-provisioning-tutorial/groupattributes.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
