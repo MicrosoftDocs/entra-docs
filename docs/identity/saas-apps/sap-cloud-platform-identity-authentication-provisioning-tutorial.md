@@ -3,7 +3,7 @@ title: Configure SAP Cloud Identity Services for automatic user provisioning wit
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to SAP Cloud Identity Services.
 author: jeevansd
 ms.topic: how-to
-ms.date: 04/13/2026
+ms.date: 04/20/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Cloud Identity Services so that I can streamline the user management process and ensure that users have the appropriate access to SAP Cloud Identity Services.
@@ -46,9 +46,9 @@ If you're configuring provisioning into SAP Cloud Identity Services in a product
 
 ## Set up SAP Cloud Identity Services for provisioning
 
-In this article,  you add an admin system in SAP Cloud Identity Services and then configure Microsoft Entra.
+In this article, you add an admin system in SAP Cloud Identity Services and then configure Microsoft Entra.
 
-![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra.](./media/sap-cloud-platform-identity-authentication-provisioning-tutorial/architecture.png)
+![Screenshot of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra.](./media/sap-cloud-platform-identity-authentication-provisioning-tutorial/architecture.png)
 
 1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial. Navigate to **Users & Authorizations > Administrators**.
 
@@ -153,27 +153,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, select the **OAuth2 Client Credentials Grant**. Input `https://<tenantID>.accounts.ondemand.com/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/scim` if a trial, with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Token Endpoint**, which may look something like this `https://<tenantID>.accounts.ondemand.com/oauth2/token`. Input the **Client ID** and **Client Secret** values that you [previously generated from the admin console for SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning). Select **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
+1. In the **Tenant URL** field, input your SAP Cloud Identity Services Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services account has the required admin permissions and try again.
 
-	![Screenshot of the Admin Credentials section in the provisioning UX.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/auth-method.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![Screenshot of the SAP Cloud Identity Services admin console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/sap-admin-console.png)
+1. Select **Create** to create your configuration.
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
+1. Select **Properties** in the **Overview** page.
 
-	![Screenshot of the Notification Email.](common/provisioning-notification-email.png)
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Select **Save**.
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
-1. Select **Discover identities** in the provisioning overview to [discover accounts](~/identity/app-provisioning/how-to-account-discovery.md) in SAP Cloud Identity Services. This option will only be visible for organizations with [Entra ID Governance](~/id-governance/licensing-fundamentals.md) licenses.  
-
-1. Under the **Mappings** section, select **Provision Microsoft Entra ID users** or **Provision Microsoft Entra ID groups** depending on your scenario.
-
-	![Screenshot of the user and group mappings for SAP Cloud Identity Services.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/mappings.png)
+1. Select **Attribute Mapping** in the left panel and select users.
 
 1. Review the user and group attributes that are synchronized from Microsoft Entra ID to SAP Cloud Identity Services in the **Attribute Mapping** section. If you don't see the attributes in your SAP Cloud Identity Services available as a target for mapping, then select **Show advanced options** and select **Edit attribute list for SAP Cloud Platform Identity Authentication Service** to [edit the list of supported attributes](~/identity/app-provisioning/customize-application-attributes.md#editing-the-list-of-supported-attributes). Add the attributes of your SAP Cloud Identity Services tenant.
 1. Review and record the source and target attributes selected as **Matching** properties, mappings that have a **Matching precedence**, as these attributes are used to match the users and groups in SAP Cloud Identity Services for the Microsoft Entra provisioning service to determine whether to create a new user/group or update an existing user/group. For more information on matching, see [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems). In a subsequent step, you ensure that any users already in SAP Cloud Identity Services have the attributes selected as **Matching** properties populated, to prevent duplicate users from being created.
@@ -230,21 +226,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |`urn:sap:cloud:scim:schemas:extension:custom:2.0:Group:description`|String|||
    |`members`|Reference||&check;|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-1. To enable the Microsoft Entra provisioning service for SAP Cloud Identity Services, change the **Provisioning Status** to **On** in the **Settings** section.
-
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1.  For the value of **Scope** in the **Settings** section, select **Sync only assigned users and groups**.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) article.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
-This operation starts the initial synchronization of all users defined in **Scope** in the **Settings** section. If you have the scope set to **Sync only assigned users and groups** and no users or groups have been assigned to the application, then no synchronization will occur, until users are assigned to the application.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
+
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Provision a new test user from Microsoft Entra ID to SAP Cloud Identity Services
 

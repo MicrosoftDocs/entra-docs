@@ -7,7 +7,7 @@ author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to directprint.io so that I can streamline the user management process and ensure that users have the appropriate access to directprint.io.
@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. log into your [directprint.io account](https://directprint.io/login/).
 1. Navigate to the Microsoft Entra SSO and Provisioning screen.
-1. Save the Tenant URL and secret toke for future reference. You need it in **Step 5**.
+1. Save the Tenant URL and secret token for future reference. You need it in **Step 5**.
 
 ## Step 3: Add directprint.io from the Microsoft Entra application gallery
 
@@ -67,41 +67,36 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **directprint.io**.
 
-	![The directprint.io link in the Applications list](common/all-applications.png)
+	![Screenshot of The directprint.io link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your directprint.io Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to directprint.io. If the connection fails, ensure your directprint.io account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your directprint Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to directprint. If the connection fails, ensure your directprint account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+      ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to directprint.io**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to directprint.io in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in directprint.io for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the directprint.io API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   |Attribute|Type|Supported for filtering|
-   |---|---|---|
-   |userName|String|&check;|
-   |externalId|String||
-   |active|Boolean||
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to directprint.io**.
+1. Select **Attribute Mapping** in the left panel and select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to directprint.io in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in directprint.io for update operations. Select the **Save** button to commit any changes.
 
@@ -111,21 +106,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String||
       |members|Reference||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for directprint.io, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to directprint.io by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

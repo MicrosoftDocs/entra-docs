@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: ArvindHarinder1
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/21/2026
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Pingboard so that I can streamline the user management process and ensure that users have the appropriate access to Pingboard.
@@ -55,36 +55,31 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 
 1. Select your instance of Pingboard, and then select the **Provisioning** tab.
 
-1. Set **Provisioning Mode** to **Automatic**.
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+1. Select **+ New configuration**.
 
-1. Under the **Admin Credentials** section, use the following steps:
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-    a. In **Tenant URL**, enter `https://your_domain.pingboard.com/scim/v2`, and replace "your_domain" with your real domain.
+1. In the **Tenant URL** field, enter your Pingboard Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Pingboard. If the connection fails, ensure your Pingboard account has the required admin permissions and try again.
 
-    b. Sign in to [Pingboard](https://pingboard.com/) by using your admin account.
+    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-    c. Select **Add-ons** > **Integrations** > **Microsoft Entra ID**.
+1. Select **Create** to create your configuration.
 
-    d. Go to the **Configure** tab, and select **Enable user provisioning from Azure**.
+1. Select **Properties** in the **Overview** page.
 
-    e. Copy the token in **OAuth Bearer Token**, and enter it in **Secret Token**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Select **Test Connection** to test that you can connect to your Pingboard app. If the connection fails, test that your Pingboard account has admin permissions, and try the **Test Connection** step again.
+    ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
-1. Enter the email address of a person or group that you want to receive provisioning error notifications in **Notification Email**. Select the check box underneath.
-
-1. Select **Save**.
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Pingboard**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. In the **Attribute Mappings** section, review the user attributes to be synchronized from Microsoft Entra ID to Pingboard. The attributes selected as **Matching** properties are used to match the user accounts in Pingboard for update operations. Select **Save** to commit any changes. For more information, see [Customize user provisioning attribute mappings](~/identity/app-provisioning/customize-application-attributes.md).
 
-1. To enable the Microsoft Entra provisioning service for Pingboard, in the **Settings** section, change **Provisioning Status** to **On**.
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Select **Save** to start the initial synchronization of users assigned to Pingboard.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-The initial synchronization takes longer to run than following syncs, which occur approximately every 40 minutes as long as the service is running. Use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs. The logs describe all actions taken by the provisioning service on your Pingboard app.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Report on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
