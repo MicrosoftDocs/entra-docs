@@ -49,7 +49,7 @@ The security boundary is explicit: the sidecar has no host port. Only services i
 
 ## Identity objects in the sidecar pattern
 
-The following table describes the Microsoft Entra objects in the sidecar pattern and where each one lives:
+The following table describes the Microsoft Entra objects in the sidecar pattern:
 
 | Object | Role | Location |
 |---|---|---|
@@ -69,12 +69,12 @@ The sidecar's configuration determines which credential source to use. Your agen
 
 ## Sidecar sample scenarios
 
-The [Microsoft Entra Agent ID sidecar samples](https://github.com/microsoft/entra-agentid-samples/tree/dev/sidecar) demonstrate the following:
+The [Microsoft Entra Agent ID sidecar samples](https://github.com/microsoft/entra-agentid-samples/tree/dev/sidecar) demonstrate the following concepts:
 
-- How a blueprint differs from an agent identity, and why agents need their own identity.
+- How a blueprint differs from an agent identity and why agents need their own identity.
 - How the sidecar exposes `/AuthorizationHeader` (get token) and `/DownstreamApi` (token + proxied call) endpoints.
 - How the sidecar forwards a signed-in user's token and has the Microsoft Entra SDK mint an agent-on-behalf-of-user token via OBO.
-- How the downstream API validates agent tokens cryptographically — signature, issuer, `xms_par_app_azp`, and audience.
+- How the downstream API validates agent tokens including the signature, issuer, `xms_par_app_azp`, and audience.
 - How to swap from `ClientSecret` (development) to `SignedAssertionFromManagedIdentity` (Azure deployments) without changing agent code.
 
 ## Related content
