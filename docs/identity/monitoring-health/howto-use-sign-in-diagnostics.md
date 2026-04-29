@@ -112,8 +112,6 @@ To use the single log investigator:
 
 1. Follow the recommended actions to address the sign-in failure.
 
-    [![Screenshot showing the investigation results from the single log investigator, including summary, next steps, and root cause details.](media/howto-use-sign-in-diagnostics/investigate-with-copilot-results.png)](media/howto-use-sign-in-diagnostics/investigate-with-copilot-results.png#lightbox)
-
 ### [From a support request](#tab/from-a-support-request)
 
 If you're in the middle of creating a support request *and* the options you selected are related to sign-in activity, you're prompted to run the Sign-in diagnostics during the support request process.
