@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both BenQ IAM and Micros
 > * Remove users in BenQ IAM when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and BenQ IAM
 > * [Single sign-on](benq-iam-tutorial.md) to BenQ IAM (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

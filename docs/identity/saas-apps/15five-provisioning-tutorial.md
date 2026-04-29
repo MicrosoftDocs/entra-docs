@@ -23,6 +23,7 @@ The objective of this article is to demonstrate the steps to be performed in 15F
 > * Keep user attributes synchronized between Microsoft Entra ID and 15Five
 > * Provision groups and group memberships in 15Five
 > * [Single sign-on](./15five-tutorial.md) to 15Five (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
