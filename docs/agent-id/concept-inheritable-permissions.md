@@ -6,7 +6,7 @@ ms.author: sarahlipsey
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1012
-ms.date: 04/28/2026
+ms.date: 04/29/2026
 ai-usage: ai-assisted
 
 #customer intent: As a developer or IT administrator, I want to understand the difference between required resource access and inheritable permissions so that I can configure agent identity blueprints to balance security with ease of deployment.
@@ -77,7 +77,7 @@ Required resource access and inheritable permissions are *configurations*: they 
 | **Required resource access** | The list of APIs and permissions the agent needs to function | Developer (on the blueprint) | Visible to admins during consent review. Doesn't grant access. |
 | **Inheritable permissions** | The list of resource apps eligible for inheritance | Developer (on the blueprint) | Defines which resource apps can have permissions flow to agent identities. Doesn't grant access. |
 | **Consent on blueprint principal** | Permissions granted by an admin to the blueprint principal in a tenant | Tenant administrator | Grants authorization. If the resource app is also listed as inheritable, the permission flows to all agent identities. |
-| **Consent on agent identity** | Permissions granted directly to a specific agent identity | Tenant administrator | Grants authorization for that specific agent identity only. |
+| **User or agent consent on agent identity** | Permissions granted directly to a specific agent identity | Tenant administrator | Grants authorization for that specific agent identity only. |
 | **Effective permissions in token** | The merged set of inherited + directly granted permissions | Platform (at token issuance) | What the agent identity can actually do at runtime. |
 
 > [!NOTE]
