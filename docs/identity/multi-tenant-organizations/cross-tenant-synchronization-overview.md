@@ -2,7 +2,7 @@
 title: What is a cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: overview
-ms.date: 03/18/2026
+ms.date: 04/27/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -252,6 +252,7 @@ What group types are supported?
 
 What are the restrictions for synchronizing groups?
 
+- Creating groups as role assignable is not currently supported.
 - Nested groups are not supported.
 - Cross-tenant synchronization will not create Microsoft 365 groups, distribution groups, mail-enabled security groups, or distribution lists.
 - The synchronization scope must be set to **Sync only assigned users and groups**. The **Sync all users** option is not supported when group synchronization is enabled. 

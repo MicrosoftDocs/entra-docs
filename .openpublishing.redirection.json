@@ -3106,6 +3106,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/external-id/customers/how-to-customize-branding-themes-apps.md",
+      "redirect_url": "/entra/fundamentals/how-to-customize-branding-themes-apps",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
       "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
       "redirect_document_id": false

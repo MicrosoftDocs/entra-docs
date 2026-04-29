@@ -16,6 +16,8 @@
     href: tutorial-enable-cloud-sync-sspr-writeback.md
   - name: Enable password writeback to on-premises
     href: tutorial-enable-sspr-writeback.md
+  - name: Password policy overview and frequently asked questions
+    href: tutorial-password-policy-overview-frequently-asked-questions.md
   - name: Configure custom banned password lists
     href: tutorial-configure-custom-password-protection.md
   - name: Enable security notifications
