@@ -1,6 +1,6 @@
 ---
-title: Learn about Explicit Forward Proxy Session Management Concepts
-description: Learn about Explicit Forward Proxy Session Management Concepts
+title: Learn about Explicit Forward Proxy session management concepts
+description: Learn about Explicit Forward Proxy session management concepts
 ms.topic: concept-article
 ms.date: 04/06/2026
 ms.author: alexpav
@@ -17,7 +17,7 @@ Explicit Forward Proxy (EFP) uses Microsoft Entra ID authentication and authoriz
 > The Explicit Forward Proxy feature is currently in PREVIEW.   
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Session Management Settings
+## Session management settings
 
 EFP supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Different capabilities available with different affinity methods:
 
@@ -40,18 +40,14 @@ Browsers request PAC files when the browser is first started, upon change of net
 
 EFP also supports HTTP header session management. You can configure your organization’s outbound proxy service to inject x-ms-gsa-efp-forwarded-for header to all traffic for *.interent.efp.globalsecureaccess.microsoft.com with a unique IP address of the device (for example, internal IP address), allowing EFP to use x-ms-gsa-efp-forwarded-for values to map authenticated users to EFP sessions.
 
-## IP-based Session Affinity
+## IP-based session affinity
 
 Once the user session is authenticated and authorized, EFP records the source IP of that user connection. Subsequent requests from the same IP address are allowed. If no other session management mechanism can be negotiated besides the source IP, EFP falls back to baseline security profile enforcement.
-
-## Cookie-based Session Affinity
-
-To be completed.
 
 ## Continuous Access Evaluation
 
 If the user session is revoked (for example, due to account becoming disabled, password reset/change, MFA methods reset, or user session revocation), EFP receives a Continuous Access Evaluation (CAE) signal from Microsoft Entra ID and invalidate sessions associated with that user identity in near real time (2-5 minutes). After that, the user is required to reauthenticate with Microsoft Entra ID, and if successful, EFP connectivity is re-established.
 
-## Next Steps
+## Next steps
 
 - [Learn How to Configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)

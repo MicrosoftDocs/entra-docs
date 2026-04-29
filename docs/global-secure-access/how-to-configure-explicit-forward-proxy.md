@@ -1,6 +1,6 @@
 ---
-title: Learn How to Configure Explicit Forward Proxy
-description: Learn How to Configure Explicit Forward Proxy
+title: Learn how to configure Explicit Forward Proxy
+description: Learn how to configure Explicit Forward Proxy
 ms.topic: concept-article
 ms.date: 04/06/2026
 ms.author: alexpav
@@ -41,7 +41,7 @@ You can enable and manage EFP using the Microsoft Entra admin portal.
 > [!IMPORTANT]
 > EFP session management relies on IP affinity as one of the session management anchors. We recommend that you configure a Conditional Access policy that restricts the use of EFP to networks you trust. For more information, please see EFP Session Management and Configure Conditional Access Policy for EFP.
 
-## Next Steps
+## Next steps
 
 [Configure Conditional Access Policy for Explicit Forward Proxy](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
 [Configure HTTP Header Session management](how-to-configure-explicit-forward-proxy-headers.md)
