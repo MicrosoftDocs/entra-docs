@@ -28,8 +28,12 @@ This article describes the steps you need to perform in both PrinterLogic SaaS a
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* A [PrinterLogic SaaS](https://www.printerlogic.com/) tenant.
+- A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles: 
+    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
+    - [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+- A [PrinterLogic SaaS](https://www.printerlogic.com/) tenant.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

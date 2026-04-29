@@ -21,9 +21,13 @@ The objective of this article is to demonstrate the steps to be performed in Pri
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A Priority Matrix tenant](https://appfluence.com/pricing/)
-* A user account on a Priority Matrix with Admin permissions.
+- A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles: 
+    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
+    - [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+- [A Priority Matrix tenant](https://appfluence.com/pricing/).
+- A user account on a Priority Matrix with Admin permissions.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -50,7 +54,7 @@ Before configuring Priority Matrix for automatic user provisioning with Microsof
 
 1. Select **Oauth login token** for Priority Matrix
 
-	![Priority Matrix Add SCIM](media/priority-matrix-provisioning-tutorial/oauthlogin.png)
+	![Priority Matrix Add SCIM.](media/priority-matrix-provisioning-tutorial/oauthlogin.png)
 
 1. Select the **GET NEW TOKEN** button. Copy the **Token String**. This value is entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application.
 
@@ -121,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Priority Matrix in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Priority Matrix for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Priority Matrix API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![Priority Matrix User Attributes](media/priority-matrix-provisioning-tutorial/userattributes.png)
+	![Screenshot of the Priority Matrix User Attributes.](media/priority-matrix-provisioning-tutorial/userattributes.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

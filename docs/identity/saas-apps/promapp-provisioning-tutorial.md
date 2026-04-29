@@ -21,9 +21,13 @@ The objective of this article is to demonstrate the steps to be performed in Pro
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A Promapp tenant](https://www.promapp.com/licensing/)
-* A user account in Promapp with Admin permissions.
+- A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles: 
+    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
+    - [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+-  [A Promapp tenant](https://www.promapp.com/licensing/).
+- A user account in Promapp with Admin permissions.
 
 ## Assigning users to Promapp
 
@@ -66,7 +70,8 @@ Before configuring Promapp for automatic user provisioning with Microsoft Entra 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Promapp**, select **Promapp** in the search box.
 1. Select **Promapp** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Promapp in the results list](common/search-new-app.png)
+
+	![Promapp in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Promapp 
 
@@ -77,7 +82,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-promapp-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Promapp in Microsoft Entra ID:
+### To configure automatic user provisioning for Promapp in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
@@ -99,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, enter your Promapp Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Promapp. If the connection fails, ensure your Promapp account has the required admin permissions and try again.
 	
 	> [!NOTE]
-	> Enter `https://api.promapp.com/api/scim` in the **Tenant URL**
+	> Enter `https://api.promapp.com/api/scim` in the **Tenant URL**.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -115,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Promapp in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Promapp for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Promapp API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-	![Promapp User Attributes](media/promapp-provisioning-tutorial/userattributes.png)
+	![Screenshot of the Promapp User Attributes.](media/promapp-provisioning-tutorial/userattributes.png)
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

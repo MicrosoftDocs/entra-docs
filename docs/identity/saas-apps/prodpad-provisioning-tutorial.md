@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure ProdPad to support provisioning with Microsoft Entra ID
 
-1. Login to [ProdPad admin console](https://app.prodpad.com/).
+1. Sign in to [ProdPad admin console](https://app.prodpad.com/).
 1. Navigate to **Profile Settings**.
 
 	![Profile](media/prodpad-provisioning-tutorial/profile-settings.png)
@@ -107,9 +107,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |---|---|---|---|
    |userName|String|&check;|&check;
    |emails[type eq "work"].value|String||&check; 
-   |active|Boolean||; 
-   |name.givenName|String||; 
-   |name.familyName|String||; 
+   |active|Boolean|| 
+   |name.givenName|String|| 
+   |name.familyName|String||
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

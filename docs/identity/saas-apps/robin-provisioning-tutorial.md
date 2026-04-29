@@ -21,9 +21,13 @@ The objective of this article is to demonstrate the steps to be performed in Rob
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A Robin tenant](https://robinpowered.com/pricing/)
-* A user account in Robin with Admin permissions.
+- A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- One of the following roles: 
+    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
+    - [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+- [A Robin tenant](https://robinpowered.com/pricing/).
+- A user account in Robin with Admin permissions.
 
 ## Assigning users to Robin
 
@@ -62,7 +66,8 @@ Before configuring Robin for automatic user provisioning with Microsoft Entra ID
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Robin**, select **Robin** in the search box.
 1. Select **Robin** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Robin in the results list](common/search-new-app.png)
+
+	![Robin in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Robin 
 
