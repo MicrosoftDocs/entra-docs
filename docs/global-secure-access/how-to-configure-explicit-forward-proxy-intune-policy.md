@@ -60,7 +60,7 @@ You can automatically deliver the proxy settings and the automatic Certificate A
    1. Select **Microsoft Edge Certificate Management settings** in the search results.
    1. Check the **TLS server certificates that should be trusted by Microsoft Edge** checkbox.
 
-  ![Screenshot showing the TLS certificate settings in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/tls-certificate-settings.png)
+   ![Screenshot showing the TLS certificate settings in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/tls-certificate-settings.png)
 
    1. Close the **Settings** picker (X on the top right) to return to the policy configuration page.
 
