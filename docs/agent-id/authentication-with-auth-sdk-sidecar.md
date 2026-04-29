@@ -1,7 +1,7 @@
 ---
-title: Sidecar design pattern for agent authentication
+title: Authentication with Microsoft Entra Auth SDK (sidecar)
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how the sidecar design pattern keeps credentials out of AI agent code while giving each agent its own auditable Microsoft Entra identity.
+description: Learn how Microsoft Entra Auth SDK (sidecar) manages credentials and tokens for AI agents so that secrets never enter agent code.
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: concept-article
@@ -9,28 +9,24 @@ ms.date: 04/28/2026
 ms.custom: agent-id, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
-#customer intent: As a developer or architect building AI agents, I want to understand the sidecar design pattern for agent authentication so that I can keep credentials out of agent code while giving each agent its own auditable identity.
+#customer intent: As a developer or architect building AI agents, I want to understand how Microsoft Entra Auth SDK (sidecar) handles authentication so that I can keep credentials out of agent code while giving each agent its own auditable identity.
 
 ---
 
-# Sidecar design pattern for AI agent authentication
+# Authentication with Microsoft Entra Auth SDK (sidecar)
 
-In the sidecar design pattern, a separate container handles authentication and token management for your AI agent. The sidecar runs as a second container next to your agent and exposes a small HTTP API on the pod-local network. Your agent asks the sidecar for an authorization header and gets back a `Bearer` token. Credentials never live in agent memory.
+The [Microsoft Entra Auth SDK (sidecar)](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) handles authentication and token operations for your AI agent. It runs as a second container next to your agent that handles client-credentials exchange, on-behalf-of flows, and token lifecycle management. This article explains the Microsoft Entra Auth SDK (sidecar) design pattern, how it works, and the identity objects involved. 
 
-This article explains why the sidecar pattern exists, how it works, and the identity objects it uses.
+## Why use the Microsoft Entra SDK auth sidecar?
 
-For implementation steps, see [Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agent ID](microsoft-entra-sdk-for-agent-identities.md).
+AI agents need credentials to call downstream APIs, but the common approaches to agent authentication fall short:
 
-## The problem the sidecar solves
-
-Two common approaches to agent authentication fall short:
-
-- **Hard-coded secrets in agent code.** Every agent image holds a copy of your app's `client_secret`. Any compromise, log leak, or forgotten `.env` file committed to Git exposes the full tenant.
-- **Delegated user tokens for everything.** The agent can only act when a human is present. You also lose individual auditability because every call looks like the same service principal.
+- **Hard-coded secrets in agent code:** Every agent image holds a copy of your app's `client_secret`. Any compromise, log leak, or forgotten `.env` file committed to Git exposes the full tenant.
+- **Delegated user tokens for everything:** The agent can only act when a human is present. You also lose individual auditability because every call looks like the same service principal.
 
 Microsoft Entra Agent ID gives each agent its own identity. The sidecar pattern makes that identity easy to use by keeping all credential handling outside your agent code.
 
-## How the sidecar works
+## How the Microsoft Entra SDK auth sidecar works
 
 The [Microsoft Entra SDK auth sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) runs as a container that exposes HTTP endpoints on the pod-local network. It handles the following responsibilities:
 
@@ -67,7 +63,7 @@ For more information about blueprints and agent identities, see [Agent identity 
 
 ## Credential source abstraction
 
-The sidecar abstracts the credential source from your agent code. During development, you can use a `ClientSecret` for convenience. In production Azure deployments, you can switch to `SignedAssertionFromManagedIdentity` (a federated identity credential backed by managed identity) without changing your agent code.
+The sidecar abstracts the credential source from your agent code. During development, you can use a `ClientSecret` for convenience. In production Azure deployments, you can switch to `SignedAssertionFromManagedIdentity`, a federated identity credential backed by managed identity, without changing your agent code.
 
 The sidecar's configuration determines which credential source to use. Your agent continues to call the same `/AuthorizationHeader` endpoint regardless of the authentication mechanism.
 
