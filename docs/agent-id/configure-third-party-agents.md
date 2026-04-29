@@ -1,5 +1,5 @@
 ---
-title: Configure third-party agents with Microsoft Entra Agent ID
+title: Integrate third-party agents with Microsoft Entra Agent ID
 description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure, credential-free authentication using sidecar and federation patterns.
 ms.service: entra
 ms.topic: how-to
@@ -16,7 +16,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Integrate third-party agents with Microsoft Entra Agent ID
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - using the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as AWS Bedrock, GCP Vertex AI, and n8n.
+Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as AWS Bedrock, GCP Vertex AI, and n8n.
 
 ## Prerequisites
 
@@ -44,12 +44,12 @@ Organizations use AI agents from multiple platforms, such as AWS Bedrock, GCP Ve
 - Access your internal APIs and resources.
 - Authenticate securely without storing secrets in code or configuration.
 
-Microsoft Entra Agent ID provides a centralized, secure identity service that third-party agents can use to acquire tokens on demand, without managing secrets or certificates directly. Microsoft Entra Agent ID enables the following:
+Microsoft Entra Agent ID provides a centralized, secure identity service that third-party agents can use to acquire tokens on demand, without managing secrets or certificates directly. By using Microsoft Entra Agent ID, you can:
 
-- Removes the need for agents to handle credentials directly.
-- Provides workload identity federation for agents running outside Azure.
-- Supports multiple authentication patterns, including client credentials, federated identity, and on-behalf-of.
-- Integrates seamlessly with third-party agent platforms using the Microsoft Entra Auth SDK (sidecar).
+- Remove the need for agents to handle credentials directly.
+- Use workload identity federation for agents running outside Azure.
+- Support multiple authentication patterns, including client credentials, federated identity, and on-behalf-of.
+- Integrate with third-party agent platforms by using the Microsoft Entra Auth SDK (sidecar).
 
 ## Integration patterns for third-party agents
 
