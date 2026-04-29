@@ -2,7 +2,7 @@
 title: Agent identity blueprints in Microsoft Entra Agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
-ms.date: 03/31/2026
+ms.date: 04/28/2026
 ms.custom: agent-id-ignite
 ms.topic: concept-article
 
@@ -57,6 +57,17 @@ Blueprints don't just hold information. They're also a special identity type in 
 A service uses the blueprint's client ID, credentials, and permissions to send agent identity creation requests via Microsoft Graph APIs. The agent identities created by a blueprint share common characteristics.
 
 For more information, see [create agent identities](create-delete-agent-identities.md).
+
+## Inheritable permissions and required resource access
+
+Agent identity blueprints include two important permission-related configurations that control how agent identities access resources:
+
+- **Required resource access** declares the APIs and permissions the agent needs to function. This list is visible to administrators during consent review and helps them evaluate whether to approve the agent.
+- **Inheritable permissions** define which resource apps can have their permissions automatically inherited by agent identities created from the blueprint. When an administrator grants permissions on the blueprint principal from an inheritable resource app, all agent identities in that organization receive those permissions automatically.
+
+These configurations are declarations that don't grant authorization by themselves. Administrators must still consent to permissions on the blueprint principal or individual agent identities.
+
+For more information, see [Inheritable permissions and required resource access concepts](concept-inheritable-permissions-required-resource-access.md). To configure inheritable permissions, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
 
 ## Agent identity blueprint principals
 

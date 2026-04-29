@@ -30,6 +30,8 @@ items:
       items:
       - name: Authorization in Entra Agent ID
         href: authorization-agent-id.md
+      - name: Inheritable permissions
+        href: concept-inheritable-permissions.md
       - name: Tokens in Microsoft agent identity platform
         href: agent-tokens.md
       - name: Authentication protocols for agents

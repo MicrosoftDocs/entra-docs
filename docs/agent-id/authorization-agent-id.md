@@ -3,7 +3,7 @@ title: Authorization in Microsoft Entra Agent ID
 description: Learn about how authorization in Microsoft Entra Agent ID works for AI agents.
 author: rolyon
 ms.author: rolyon
-ms.date: 11/04/2025
+ms.date: 04/28/2026
 ms.topic: concept-article
 #customer intent: As a developer or IT administrator, I want to understand authorization controls for agent IDs so that I can properly configure roles and permissions while maintaining security boundaries for AI agents in my organization.
 ---
@@ -153,3 +153,9 @@ Depending on what an agent needs to do, administrators can grant access in diffe
 **If an agent runs autonomously across the tenant (service scenarios)**: Use Microsoft Graph application permissions sparingly. Grant only the specific app permissions needed, and only if they aren't high-privilege. For example, an agent that generates organizational org-charts might need User.Read.All app permission to read all profiles – that could be acceptable (and isn't on the blocked list), whereas User.ReadWrite.All would be rejected.
 
 Always review the permission's scope: tenant-wide read access might be fine for certain data, but tenant-wide write or control isn't allowed for agents. Administrators must explicitly consent to any app permission an agent gets, so there's an opportunity to review these requests carefully. For more information, see [Overview of permissions and consent in the Microsoft identity platform](../identity-platform/permissions-consent-overview.md).
+
+## Inheritable permissions for agent identities
+
+Agent identity blueprints support inheritable permissions, which let administrators grant permissions once at the blueprint level and have those grants automatically apply to all agent identities created from the blueprint. This capability reduces repeated consent prompts across multiple deployments and environments.
+
+For more information about how inheritable permissions, required resource access, and direct grants work together, see [Inheritable permissions and required resource access concepts](concept-inheritable-permissions-required-resource-access.md). To configure inheritable permissions, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
